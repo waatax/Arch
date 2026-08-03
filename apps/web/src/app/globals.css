@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;600;700&family=Noto+Serif+TC:wght@400;500;600;700&display=swap');
 @import "tailwindcss";
 
 :root {
@@ -43,4 +44,83 @@ body {
 h1, h2, h3, h4, h5, h6 {
   font-family: "Noto Serif TC", serif;
   font-weight: 600;
+}
+
+/* ── Smooth scroll ── */
+html {
+  scroll-behavior: smooth;
+}
+
+/* ── Selection colour ── */
+::selection {
+  background-color: rgba(11, 98, 91, 0.18);
+  color: var(--color-ink-900);
+}
+
+/* ── Focus ring ── */
+:focus-visible {
+  outline: 2px solid var(--color-teal-700);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* ── Fade-in animation ── */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.6s ease-out both;
+}
+
+/* stagger children: use data-delay attribute on elements */
+.animate-fade-in-up[style*="--delay"] {
+  animation-delay: var(--delay);
+}
+
+/* ── Subtle gradient overlay for hero ── */
+.hero-gradient {
+  background: linear-gradient(
+    160deg,
+    var(--color-paper-100) 0%,
+    var(--color-paper-50) 40%,
+    rgba(11, 98, 91, 0.04) 100%
+  );
+}
+
+/* ── Card hover lift ── */
+.card-lift {
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.card-lift:hover {
+  transform: translateY(-3px);
+  box-shadow:
+    0 8px 24px -8px rgba(30, 41, 38, 0.08),
+    0 2px 6px -2px rgba(30, 41, 38, 0.04);
+}
+
+/* ── Scrollbar (WebKit) ── */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-paper-100);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-concrete-300);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-ink-650);
 }
