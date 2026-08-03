@@ -1,3 +1,5 @@
+import Image from 'next/image';
+
 interface CaseHeroProps {
   title: string;
   location: string;
@@ -6,9 +8,11 @@ interface CaseHeroProps {
   question: string;
   description: string;
   category: string;
+  imageSrc?: string;
+  imageAlt?: string;
 }
 
-export default function CaseHero({ title, location, architect, year, question, description, category }: CaseHeroProps) {
+export default function CaseHero({ title, location, architect, year, question, description, category, imageSrc, imageAlt }: CaseHeroProps) {
   return (
     <section className="w-full bg-(--color-paper-100) border-b border-(--color-concrete-300) py-8 sm:py-12 px-4 sm:px-6 lg:px-8">
       <div className="max-w-4xl mx-auto">
@@ -31,9 +35,26 @@ export default function CaseHero({ title, location, architect, year, question, d
           </p>
         </div>
 
-        <p className="text-base sm:text-lg text-(--color-ink-650) leading-relaxed">
+        <p className="text-base sm:text-lg text-(--color-ink-650) leading-relaxed mb-8">
           {description}
         </p>
+
+        {imageSrc && (
+          <figure className="overflow-hidden rounded-xl border border-(--color-concrete-300) shadow-sm bg-(--color-paper-50)">
+            <div className="relative aspect-video w-full">
+              <Image
+                src={imageSrc}
+                alt={imageAlt || title}
+                className="object-cover"
+                fill
+                priority
+              />
+            </div>
+            <figcaption className="px-4 py-2 text-xs font-mono text-(--color-ink-650) border-t border-(--color-concrete-300) text-right">
+              AI Generated Visualization
+            </figcaption>
+          </figure>
+        )}
       </div>
     </section>
   );

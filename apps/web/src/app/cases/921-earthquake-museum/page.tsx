@@ -32,6 +32,8 @@ export default function EarthquakeMuseumPage() {
         question="建築能不能不掩蓋傷痕，反而幫大家讀懂斷層錯動？"
         description="園區保存了 921 大地震斷層錯動與校舍毀損的原址現場。建築以極低調的膜結構與金屬鋼架穿插其中，將災害現場轉化為極具震撼力的防災教育與歷史場所。"
         category="安全與記憶 · 斷層縫合與構造保存"
+        imageSrc={`${process.env.NEXT_PUBLIC_BASE_PATH ?? ''}/learning-visuals/cases/921-earthquake-museum.webp`}
+        imageAlt="921地震教育園區的膜結構與斷層錯動遺跡"
       />
 
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
