@@ -25,6 +25,8 @@ export default function CaseVisualStudy({
   readingGuide,
   credit,
 }: CaseVisualStudyProps) {
+  const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? '';
+
   return (
     <section aria-labelledby="case-visual-study" className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
       <div className="mb-5 grid gap-3 lg:grid-cols-[minmax(0,1fr)_19rem] lg:items-end">
@@ -42,7 +44,7 @@ export default function CaseVisualStudy({
       <div className="grid overflow-hidden rounded-2xl border border-(--color-concrete-300) bg-(--color-paper-100) shadow-sm lg:grid-cols-2">
         <figure className="relative min-w-0 border-b border-(--color-concrete-300) lg:border-b-0 lg:border-r">
           <div className="relative aspect-[3/2] overflow-hidden bg-(--color-concrete-300)">
-            <Image src={photo} alt={photoAlt} fill priority sizes="(min-width: 1024px) 50vw, 100vw" className="object-cover" />
+            <Image src={`${basePath}${photo}`} alt={photoAlt} fill priority sizes="(min-width: 1024px) 50vw, 100vw" className="object-cover" />
             <span className="absolute left-3 top-3 rounded-full bg-black/70 px-3 py-1 text-[11px] font-mono tracking-wider text-white backdrop-blur">
               01 · 實景觀察
             </span>
@@ -57,7 +59,7 @@ export default function CaseVisualStudy({
 
         <figure className="relative min-w-0">
           <div className="relative aspect-[3/2] overflow-hidden bg-[#e8dfcf]">
-            <Image src={sketch} alt={sketchAlt} fill sizes="(min-width: 1024px) 50vw, 100vw" className="object-cover" />
+            <Image src={`${basePath}${sketch}`} alt={sketchAlt} fill sizes="(min-width: 1024px) 50vw, 100vw" className="object-cover" />
             <span className="absolute left-3 top-3 rounded-full bg-(--color-teal-700)/90 px-3 py-1 text-[11px] font-mono tracking-wider text-white backdrop-blur">
               02 · AI 工程圖解
             </span>

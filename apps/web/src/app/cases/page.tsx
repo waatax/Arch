@@ -2,6 +2,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 
 export default function CasesPage() {
+  const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? '';
   const cases = [
     {
       slug: 'taichung-national-theater',
@@ -94,7 +95,7 @@ export default function CasesPage() {
           <div key={item.slug} className="overflow-hidden bg-(--color-paper-100) border border-(--color-concrete-300) rounded-xl flex flex-col justify-between hover:border-(--color-teal-700) transition-all">
             <div>
               <div className="relative aspect-[16/10] overflow-hidden bg-(--color-concrete-300)">
-                <Image src={item.image} alt={`${item.title}實景照片`} fill sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw" className="object-cover transition-transform duration-500 hover:scale-[1.03]" />
+                <Image src={`${basePath}${item.image}`} alt={`${item.title}實景照片`} fill sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw" className="object-cover transition-transform duration-500 hover:scale-[1.03]" />
               </div>
               <div className="p-5 sm:p-6 pb-0">
               <div className="flex flex-wrap justify-between items-center gap-2 mb-3">
