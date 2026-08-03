@@ -1,0 +1,14 @@
+# Fact Checking Registry
+# 本檔所有標記【待查核】之處，必須在實作前以當年度官方公告核對，並將結果寫入此檔。
+
+facts:
+  - id: tcte-115-subjects
+    description: 115 學年度四技二專統測土木與建築群考科
+    checked_at: "2026-08-03"
+    next_check_at: "2027-01-01"
+    source_url: "https://www.tcte.edu.tw/index.php?mod=TVETest%2Finfo4y"
+    status: "verified"
+    details: |
+      共同科目為國文、英文、數學 C；
+      專業科目（一）為基礎工程力學、材料與試驗；
+      專業科目（二）為測量實習、製圖實習。

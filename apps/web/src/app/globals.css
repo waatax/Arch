@@ -1,0 +1,46 @@
+@import "tailwindcss";
+
+:root {
+  --color-paper-50: #F6F3EA;
+  --color-paper-100: #EDE8DD;
+  --color-ink-900: #1E2926;
+  --color-ink-650: #5C6661;
+  --color-teal-700: #0B625B;
+  --color-brick-700: #9E4431;
+  --color-blueprint-700: #245A73;
+  --color-moss-700: #526B4F;
+  --color-sun-500: #D9A62E;
+  --color-concrete-300: #DAD7CF;
+  --color-danger-750: #983B3B;
+
+  --background: var(--color-paper-50);
+  --foreground: var(--color-ink-900);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-paper-50: var(--color-paper-50);
+  --color-paper-100: var(--color-paper-100);
+  --color-ink-900: var(--color-ink-900);
+  --color-ink-650: var(--color-ink-650);
+  --color-teal-700: var(--color-teal-700);
+  --color-brick-700: var(--color-brick-700);
+  --color-blueprint-700: var(--color-blueprint-700);
+  --color-moss-700: var(--color-moss-700);
+  --color-sun-500: var(--color-sun-500);
+  --color-concrete-300: var(--color-concrete-300);
+  --color-danger-750: var(--color-danger-750);
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: "Noto Sans TC", "PingFang TC", "Microsoft JhengHei", system-ui, sans-serif;
+  line-height: 1.7;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Noto Serif TC", serif;
+  font-weight: 600;
+}

@@ -1,0 +1,13 @@
+{
+  "name": "arch",
+  "private": true,
+  "scripts": {
+    "build": "pnpm --filter web build",
+    "dev": "pnpm --filter web dev",
+    "lint": "pnpm --filter web lint",
+    "start": "pnpm --filter web start"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

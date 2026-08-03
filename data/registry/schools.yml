@@ -1,0 +1,12 @@
+# Schools Registry
+# 用於管理各校課程、軟體、實習設備等差異 (Layer 2 Overlay)
+
+schools:
+  - id: tcivs
+    name: 國立臺中高級工業職業學校
+    dept: architecture
+    cad_software: [AutoCAD, SketchUp]
+    facilities: [製圖教室, 材料試驗室, 測量儀器室, 電腦繪圖室]
+    term_progress_ref: docs/overlay/tcivs-progress.md
+    source_url: https://tcivs.tc.edu.tw/p/412-1081-9786.php?Lang=zh-tw
+    checked_at: "2026-08-03"

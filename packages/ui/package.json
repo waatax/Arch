@@ -1,0 +1,12 @@
+{
+  "name": "@arch/ui",
+  "version": "1.0.0",
+  "main": "index.ts",
+  "scripts": {
+    "lint": "eslint ."
+  },
+  "dependencies": {
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
+  }
+}
