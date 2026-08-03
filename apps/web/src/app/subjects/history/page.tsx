@@ -1,78 +1,73 @@
-export default function HistoryPage() {
-  const topics = [
-    {
-      title: '1. 台灣史',
-      desc: '原住民文化、荷西清治時期、日治近代化建設、戰後政治經濟發展與民主化。',
-      tags: ['108課綱'],
-    },
-    {
-      title: '2. 中國史',
-      desc: '先秦至清代政經文化發展、近代變局、民國建立與兩岸關係。',
-      tags: ['108課綱'],
-    },
-    {
-      title: '3. 世界史',
-      desc: '文藝復興、工業革命、兩次世界大戰、冷戰與全球化發展。',
-      tags: ['108課綱'],
-    },
-    {
-      title: '4. 建築史連結',
-      desc: '台灣傳統建築（三合院、廟宇）、日治建築（巴洛克牌樓）、現代主義建築脈絡。',
-      tags: ['建築素養', '跨領域'],
-    },
-    {
-      title: '5. 文化資產保存',
-      desc: '古蹟分級制度、歷史建築登錄、文化景觀與聚落保存再利用。',
-      tags: ['建築素養', '實務'],
-    },
-    {
-      title: '6. 社會變遷與空間',
-      desc: '都市發展史、住宅政策演變、公共建設與社會正義的空間面向。',
-      tags: ['跨領域'],
-    },
-  ];
+import Link from 'next/link';
+import { notFound } from 'next/navigation';
+import { allSubjects } from '@/data/subjects';
+
+export default function SubjectPage() {
+  const subject = allSubjects.find(s => s.slug === 'history');
+  
+  if (!subject) {
+    notFound();
+  }
 
   return (
     <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
       <div className="mb-8">
-        <span className="text-xs font-mono text-(--color-sun-500) uppercase tracking-widest block">
-          一般科目 · 社會領域
+        <span className="text-xs font-mono uppercase tracking-wider block" style={{ color: `var(--color-${subject.color})` }}>
+          {subject.category}
         </span>
         <h1 className="text-3xl sm:text-4xl font-bold font-serif text-(--color-ink-900) mt-1 mb-4">
-          歷史 (History)
+          {subject.title}
         </h1>
-        <p className="text-base text-(--color-ink-650) max-w-3xl leading-relaxed">
-          歷史是理解建築文化脈絡的基礎。從台灣傳統聚落到現代都市發展，歷史視角讓建築設計不僅是技術，更是文化回應。
+        <p className="text-base text-(--color-ink-650)">
+          {/* We can use the first topic's desc or a general desc if we add it to SubjectData */}
+          選擇下方章節開始學習。
         </p>
       </div>
 
-      <div className="p-5 bg-(--color-paper-100) border-l-4 border-(--color-sun-500) rounded-r-xl mb-8">
-        <span className="text-xs font-mono font-bold text-(--color-sun-500) block mb-1 uppercase tracking-wider">
-          與建築科的連結
-        </span>
-        <p className="text-sm text-(--color-ink-900)">
-          建築是歷史的具體載體。學習歷史有助於理解不同時代的建築風格演變、文化資產保存的意義，以及城市規劃背後的社會因素。
-        </p>
-      </div>
-
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-        {topics.map((t, idx) => (
+      <div className="space-y-4">
+        {subject.topics.map((t) => (
           <div
-            key={idx}
-            className="card-lift p-6 bg-(--color-paper-100) border border-(--color-concrete-300) rounded-xl hover:border-(--color-sun-500)/60 transition-all duration-300"
+            key={t.slug}
+            className={`p-6 border rounded-xl flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 transition-all ${
+              t.status === 'done'
+                ? 'bg-(--color-paper-100) shadow-sm hover:border-(--color-ink-900)'
+                : 'bg-(--color-paper-50) border-(--color-concrete-300) opacity-70'
+            }`}
+            style={t.status === 'done' ? { borderColor: `var(--color-${subject.color})` } : {}}
           >
-            <h2 className="text-lg font-bold font-serif text-(--color-ink-900) mb-2">{t.title}</h2>
-            <p className="text-sm text-(--color-ink-650) mb-4 leading-relaxed">{t.desc}</p>
-            <div className="flex flex-wrap gap-2">
-              {t.tags.map((tag) => (
-                <span
-                  key={tag}
-                  className="text-[11px] font-mono bg-(--color-sun-500)/10 text-(--color-sun-500) px-2 py-0.5 rounded-full"
-                >
-                  {tag}
-                </span>
-              ))}
+            <div>
+              <div className="flex items-center gap-2 mb-1">
+                <h2 className="text-lg font-bold font-serif text-(--color-ink-900)">{t.title}</h2>
+                {t.status === 'done' && (
+                  <span className="text-xs text-(--color-paper-50) px-2 py-0.5 rounded font-mono" style={{ backgroundColor: `var(--color-${subject.color})` }}>
+                    已上線
+                  </span>
+                )}
+                {t.status !== 'done' && (
+                  <span className="text-xs bg-(--color-concrete-300) text-(--color-ink-650) px-2 py-0.5 rounded font-mono">
+                    建置中
+                  </span>
+                )}
+              </div>
+              <p className="text-sm text-(--color-ink-650)">{t.desc}</p>
             </div>
+            
+            {t.status === 'done' ? (
+              <Link
+                href={`/subjects/${subject.slug}/${t.slug}`}
+                className="px-4 py-2 text-(--color-paper-50) text-xs font-mono font-medium rounded hover:bg-opacity-90 transition-colors whitespace-nowrap"
+                style={{ backgroundColor: `var(--color-${subject.color})` }}
+              >
+                進入學習 →
+              </Link>
+            ) : (
+              <button
+                disabled
+                className="px-4 py-2 bg-(--color-concrete-300) text-(--color-ink-650) text-xs font-mono font-medium rounded cursor-not-allowed whitespace-nowrap"
+              >
+                即將推出
+              </button>
+            )}
           </div>
         ))}
       </div>

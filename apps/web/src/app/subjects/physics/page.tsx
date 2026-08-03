@@ -1,78 +1,73 @@
-export default function PhysicsPage() {
-  const topics = [
-    {
-      title: '1. 力學與運動',
-      desc: '牛頓三大運動定律、等加速度運動、拋體運動與圓周運動。',
-      tags: ['建築應用'],
-    },
-    {
-      title: '2. 功與能量',
-      desc: '功與功率、動能位能守恆、彈性碰撞與能量轉換應用。',
-      tags: ['建築應用'],
-    },
-    {
-      title: '3. 熱學',
-      desc: '溫度與熱量、比熱與熱容量、熱傳導對流輻射與建築隔熱。',
-      tags: ['建築應用', '綠建築'],
-    },
-    {
-      title: '4. 波動與聲學',
-      desc: '波的基本性質、聲波傳播、共振現象與建築隔音設計原理。',
-      tags: ['建築應用'],
-    },
-    {
-      title: '5. 光學',
-      desc: '光的反射折射、透鏡成像、光強度與建築採光設計基礎。',
-      tags: ['建築應用'],
-    },
-    {
-      title: '6. 電學基礎',
-      desc: '電流電壓電阻、歐姆定律、電功率與建築用電安全計算。',
-      tags: ['實務應用'],
-    },
-  ];
+import Link from 'next/link';
+import { notFound } from 'next/navigation';
+import { allSubjects } from '@/data/subjects';
+
+export default function SubjectPage() {
+  const subject = allSubjects.find(s => s.slug === 'physics');
+  
+  if (!subject) {
+    notFound();
+  }
 
   return (
     <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
       <div className="mb-8">
-        <span className="text-xs font-mono text-(--color-moss-700) uppercase tracking-widest block">
-          一般科目 · 自然科學
+        <span className="text-xs font-mono uppercase tracking-wider block" style={{ color: `var(--color-${subject.color})` }}>
+          {subject.category}
         </span>
         <h1 className="text-3xl sm:text-4xl font-bold font-serif text-(--color-ink-900) mt-1 mb-4">
-          物理 (Physics)
+          {subject.title}
         </h1>
-        <p className="text-base text-(--color-ink-650) max-w-3xl leading-relaxed">
-          物理是理解建築結構行為的科學基礎。從力的分析到熱學光學，每個概念都能連結到建築設計與施工實務。
+        <p className="text-base text-(--color-ink-650)">
+          {/* We can use the first topic's desc or a general desc if we add it to SubjectData */}
+          選擇下方章節開始學習。
         </p>
       </div>
 
-      <div className="p-5 bg-(--color-paper-100) border-l-4 border-(--color-moss-700) rounded-r-xl mb-8">
-        <span className="text-xs font-mono font-bold text-(--color-moss-700) block mb-1 uppercase tracking-wider">
-          與建築科的連結
-        </span>
-        <p className="text-sm text-(--color-ink-900)">
-          物理概念直接應用於工程力學（力系分析）、建築物理環境（隔熱、隔音、採光）以及綠建築設計。理解物理有助於掌握專業科目核心原理。
-        </p>
-      </div>
-
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-        {topics.map((t, idx) => (
+      <div className="space-y-4">
+        {subject.topics.map((t) => (
           <div
-            key={idx}
-            className="card-lift p-6 bg-(--color-paper-100) border border-(--color-concrete-300) rounded-xl hover:border-(--color-moss-700)/60 transition-all duration-300"
+            key={t.slug}
+            className={`p-6 border rounded-xl flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 transition-all ${
+              t.status === 'done'
+                ? 'bg-(--color-paper-100) shadow-sm hover:border-(--color-ink-900)'
+                : 'bg-(--color-paper-50) border-(--color-concrete-300) opacity-70'
+            }`}
+            style={t.status === 'done' ? { borderColor: `var(--color-${subject.color})` } : {}}
           >
-            <h2 className="text-lg font-bold font-serif text-(--color-ink-900) mb-2">{t.title}</h2>
-            <p className="text-sm text-(--color-ink-650) mb-4 leading-relaxed">{t.desc}</p>
-            <div className="flex flex-wrap gap-2">
-              {t.tags.map((tag) => (
-                <span
-                  key={tag}
-                  className="text-[11px] font-mono bg-(--color-moss-700)/10 text-(--color-moss-700) px-2 py-0.5 rounded-full"
-                >
-                  {tag}
-                </span>
-              ))}
+            <div>
+              <div className="flex items-center gap-2 mb-1">
+                <h2 className="text-lg font-bold font-serif text-(--color-ink-900)">{t.title}</h2>
+                {t.status === 'done' && (
+                  <span className="text-xs text-(--color-paper-50) px-2 py-0.5 rounded font-mono" style={{ backgroundColor: `var(--color-${subject.color})` }}>
+                    已上線
+                  </span>
+                )}
+                {t.status !== 'done' && (
+                  <span className="text-xs bg-(--color-concrete-300) text-(--color-ink-650) px-2 py-0.5 rounded font-mono">
+                    建置中
+                  </span>
+                )}
+              </div>
+              <p className="text-sm text-(--color-ink-650)">{t.desc}</p>
             </div>
+            
+            {t.status === 'done' ? (
+              <Link
+                href={`/subjects/${subject.slug}/${t.slug}`}
+                className="px-4 py-2 text-(--color-paper-50) text-xs font-mono font-medium rounded hover:bg-opacity-90 transition-colors whitespace-nowrap"
+                style={{ backgroundColor: `var(--color-${subject.color})` }}
+              >
+                進入學習 →
+              </Link>
+            ) : (
+              <button
+                disabled
+                className="px-4 py-2 bg-(--color-concrete-300) text-(--color-ink-650) text-xs font-mono font-medium rounded cursor-not-allowed whitespace-nowrap"
+              >
+                即將推出
+              </button>
+            )}
           </div>
         ))}
       </div>

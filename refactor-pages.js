@@ -1,9 +1,14 @@
-import Link from 'next/link';
+const fs = require('fs');
+const path = require('path');
+
+const subjectsDir = path.join(__dirname, 'apps', 'web', 'src', 'app', 'subjects');
+
+const template = (slug) => `import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { allSubjects } from '@/data/subjects';
 
 export default function SubjectPage() {
-  const subject = allSubjects.find(s => s.slug === 'english');
+  const subject = allSubjects.find(s => s.slug === '${slug}');
   
   if (!subject) {
     notFound();
@@ -12,7 +17,7 @@ export default function SubjectPage() {
   return (
     <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
       <div className="mb-8">
-        <span className="text-xs font-mono uppercase tracking-wider block" style={{ color: `var(--color-${subject.color})` }}>
+        <span className="text-xs font-mono uppercase tracking-wider block" style={{ color: \`var(--color-\${subject.color})\` }}>
           {subject.category}
         </span>
         <h1 className="text-3xl sm:text-4xl font-bold font-serif text-(--color-ink-900) mt-1 mb-4">
@@ -28,18 +33,18 @@ export default function SubjectPage() {
         {subject.topics.map((t) => (
           <div
             key={t.slug}
-            className={`p-6 border rounded-xl flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 transition-all ${
+            className={\`p-6 border rounded-xl flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 transition-all \${
               t.status === 'done'
                 ? 'bg-(--color-paper-100) shadow-sm hover:border-(--color-ink-900)'
                 : 'bg-(--color-paper-50) border-(--color-concrete-300) opacity-70'
-            }`}
-            style={t.status === 'done' ? { borderColor: `var(--color-${subject.color})` } : {}}
+            }\`}
+            style={t.status === 'done' ? { borderColor: \`var(--color-\${subject.color})\` } : {}}
           >
             <div>
               <div className="flex items-center gap-2 mb-1">
                 <h2 className="text-lg font-bold font-serif text-(--color-ink-900)">{t.title}</h2>
                 {t.status === 'done' && (
-                  <span className="text-xs text-(--color-paper-50) px-2 py-0.5 rounded font-mono" style={{ backgroundColor: `var(--color-${subject.color})` }}>
+                  <span className="text-xs text-(--color-paper-50) px-2 py-0.5 rounded font-mono" style={{ backgroundColor: \`var(--color-\${subject.color})\` }}>
                     已上線
                   </span>
                 )}
@@ -54,9 +59,9 @@ export default function SubjectPage() {
             
             {t.status === 'done' ? (
               <Link
-                href={`/subjects/${subject.slug}/${t.slug}`}
+                href={\`/subjects/\${subject.slug}/\${t.slug}\`}
                 className="px-4 py-2 text-(--color-paper-50) text-xs font-mono font-medium rounded hover:bg-opacity-90 transition-colors whitespace-nowrap"
-                style={{ backgroundColor: `var(--color-${subject.color})` }}
+                style={{ backgroundColor: \`var(--color-\${subject.color})\` }}
               >
                 進入學習 →
               </Link>
@@ -74,3 +79,22 @@ export default function SubjectPage() {
     </div>
   );
 }
+`;
+
+const subjects = [
+  'mechanics', 'materials', 'surveying', 'drafting', 
+  'chinese', 'english', 'math-c', 'physics', 
+  'chemistry', 'history', 'geography', 'civics', 'extensions'
+];
+
+subjects.forEach(slug => {
+  const dirPath = path.join(subjectsDir, slug);
+  const filePath = path.join(dirPath, 'page.tsx');
+  
+  if (!fs.existsSync(dirPath)) {
+    fs.mkdirSync(dirPath, { recursive: true });
+  }
+  
+  fs.writeFileSync(filePath, template(slug));
+  console.log('Updated ' + filePath);
+});
