@@ -53,7 +53,7 @@ export default function CasesPage() {
   ];
 
   return (
-    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
       <div className="mb-10 max-w-3xl">
         <span className="text-xs font-mono text-(--color-teal-700) uppercase tracking-wider block">Taiwan Architecture Case Lab</span>
         <h1 className="text-3xl sm:text-4xl font-bold font-serif text-(--color-ink-900) mt-1 mb-4">
@@ -66,9 +66,9 @@ export default function CasesPage() {
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {cases.map((item) => (
-          <div key={item.slug} className="bg-(--color-paper-100) border border-(--color-concrete-300) rounded-xl p-6 flex flex-col justify-between hover:border-(--color-teal-700) transition-all">
+          <div key={item.slug} className="bg-(--color-paper-100) border border-(--color-concrete-300) rounded-xl p-5 sm:p-6 flex flex-col justify-between hover:border-(--color-teal-700) transition-all">
             <div>
-              <div className="flex justify-between items-center mb-3">
+              <div className="flex flex-wrap justify-between items-center gap-2 mb-3">
                 <span className="text-xs font-mono bg-(--color-paper-50) px-2 py-0.5 border border-(--color-concrete-300) rounded text-(--color-ink-650)">
                   {item.region} · {item.category}
                 </span>
@@ -80,7 +80,7 @@ export default function CasesPage() {
                 {item.architect}
               </p>
               <p className="text-sm text-(--color-ink-900) mb-6 bg-(--color-paper-50) p-3 border-l-2 border-(--color-brick-700) rounded-r">
-                "{item.question}"
+                「{item.question}」
               </p>
             </div>
 

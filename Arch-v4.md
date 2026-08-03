@@ -1,9 +1,18 @@
-# Arch — 台灣高工建築科學習、建築素養與志向養成平台
+# Arch V4 — 台灣高工建築科學習、建築素養與志向養成平台
 
-> **給 CODE Agent 的產品／內容／視覺／技術總規格（v3.0）**
-> 最後更新：2026-08-03｜語言：繁體中文（台灣）｜取代 v2.0
+> **給 CODE Agent 的產品／內容／視覺／技術總規格（V4.0）**
+> 最後更新：2026-08-03｜語言：繁體中文（台灣）｜取代 V3.0
 > Canonical repository：[`https://github.com/waatax/Arch`](https://github.com/waatax/Arch)
 > 本檔為**唯一事實來源（single source of truth）**。與程式碼衝突時，先修本檔再修程式碼。
+> 可執行交付順序、現況與 issue-ready backlog：[`docs/implementation-plan.md`](docs/implementation-plan.md)。
+
+---
+
+## V4 發布摘要
+
+V4 將 V3 規格正式落地為可發布的完整學習網站：13 科、82 個章節均具概念教材、練習與詳解；每章配置 OpenAI 生成的核心觀念圖解，公式以「視覺關係＋精確 HTML 文字」雙層呈現；全站完成 320–1440 px 響應式、手機觸控、寬表格與長公式處理，並加入內容完整度驗證、課程覆蓋 registry、SQLite schema 與 GitHub Pages 靜態部署契約。
+
+V3 以下各節保留為 V4 的產品與架構基線；若與本摘要及現行程式碼衝突，以 V4 實作、`docs/implementation-plan.md` 與自動驗證結果為準。
 
 ---
 
@@ -1210,7 +1219,7 @@ PortfolioEvidence(id, project_id, category, local_file_ref, reflection, consent)
 | Production source | 受保護的 `main` 分支 |
 | Production hosting | GitHub Pages；預設 project site：`https://waatax.github.io/Arch/` |
 | Build | GitHub Actions 自訂 workflow，產出 `apps/web/out/` 並以 Pages artifact 部署 |
-| Spec location | `docs/Arch-v3.md`；根目錄 `AGENTS.md` 明令 CODE Agent 先讀本檔 |
+| Spec location | 根目錄 `Arch-v4.md`；CODE Agent 先讀本檔 |
 | Issues／PR／ADR | 全部只在此 repo；不得另建影子倉庫或以聊天紀錄取代決策 |
 | Runtime server | **無**；P0–P4 禁止引入必需的外部後端 |
 
@@ -1319,7 +1328,7 @@ GitHub 官方目前建議 Pages source repo 約 1 GB，發布站不得超過 1 G
 - `.github/CODEOWNERS` 至少區分：`packages/domain`、`content/subjects`、`content/cases`、`data/registry`、`.github/workflows`、`packages/ui`。
 - Issue labels：`area:learning`、`area:content`、`area:case`、`area:design`、`area:data`、`area:infra`、`risk:rights`、`risk:student-safety`、`priority:p0..p3`、`status:needs-review`。
 - 所有架構變更寫 `docs/adr/NNNN-title.md`；改變靜態邊界、個資、AI、授權或內容 schema 的 PR 沒有 ADR 不可 merge。
-- `AGENTS.md` 明令 CODE Agent：先讀 `docs/Arch-v3.md`、檢查 dirty tree、只處理 issue 範圍、不得抓取未登記來源、不得自行降低驗收門檻。
+- CODE Agent 開工前先讀 `Arch-v4.md`、檢查 dirty tree、只處理 issue 範圍、不得抓取未登記來源、不得自行降低驗收門檻。
 
 ### 9.12 發布、版本與回滾
 

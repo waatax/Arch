@@ -55,7 +55,7 @@ export default function TaichungTheaterPage() {
         <LensSwitcher lenses={lenses} />
 
         {/* Worked Example / Concept Bridge */}
-        <section className="bg-(--color-paper-100) border border-(--color-concrete-300) rounded-xl p-6 sm:p-8">
+        <section className="bg-(--color-paper-100) border border-(--color-concrete-300) rounded-xl p-4 min-[380px]:p-5 sm:p-8">
           <span className="text-xs font-mono text-(--color-teal-700) uppercase tracking-wider block mb-1">Concept Bridge · 概念橋</span>
           <h3 className="text-2xl font-bold font-serif text-(--color-ink-900) mb-4">
             從歌劇院曲牆看「殼體結構（Shell Structure）」
@@ -64,14 +64,14 @@ export default function TaichungTheaterPage() {
             為什麼雞蛋殼那麼薄卻不容易壓破？因為當力量作用於曲面上時，力量會沿著表面方向以『薄膜拉應力與壓應力』均勻傳遞，而不產生極端的彎矩（Bending Moment）。歌劇院的曲牆就是利用這個力學原理！
           </p>
 
-          <div className="bg-(--color-paper-50) border border-(--color-concrete-300) p-4 rounded-lg flex items-center justify-between">
+          <div className="bg-(--color-paper-50) border border-(--color-concrete-300) p-4 rounded-lg flex flex-col min-[440px]:flex-row min-[440px]:items-center min-[440px]:justify-between gap-4">
             <div>
               <span className="font-bold text-sm text-(--color-ink-900) block">關聯考點練習</span>
               <span className="text-xs text-(--color-ink-650)">基礎工程力學：應力應變與張力受力分析</span>
             </div>
             <Link
               href="/subjects/mechanics/force-equilibrium"
-              className="px-4 py-2 bg-(--color-teal-700) text-(--color-paper-50) text-xs font-mono font-medium rounded hover:bg-opacity-90 transition-colors"
+              className="inline-flex min-h-11 w-full min-[440px]:w-auto items-center justify-center px-4 py-2 bg-(--color-teal-700) text-(--color-paper-50) text-center text-xs font-mono font-medium rounded hover:bg-opacity-90 transition-colors"
             >
               練一題平衡題目 →
             </Link>
@@ -79,8 +79,8 @@ export default function TaichungTheaterPage() {
         </section>
 
         {/* Studio Task */}
-        <section className="bg-(--color-paper-100) border border-(--color-concrete-300) rounded-xl p-6 sm:p-8">
-          <div className="flex items-center justify-between mb-4">
+        <section className="bg-(--color-paper-100) border border-(--color-concrete-300) rounded-xl p-4 min-[380px]:p-5 sm:p-8">
+          <div className="flex flex-wrap items-center justify-between gap-2 mb-4">
             <span className="text-xs font-mono bg-(--color-brick-700) text-(--color-paper-50) px-2.5 py-1 rounded">20 分鐘微實作</span>
             <span className="text-xs font-mono text-(--color-ink-650)">材料：圖畫紙 2 張、剪刀、膠帶</span>
           </div>

@@ -3,7 +3,7 @@ import { SubjectData } from '../types';
 export const historyData: SubjectData = {
   slug: 'history',
   title: '歷史',
-  category: '共同科目',
+  category: '社會領域',
   color: 'amber-700',
   topics: [
     {

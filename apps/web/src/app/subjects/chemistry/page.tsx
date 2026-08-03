@@ -10,7 +10,7 @@ export default function SubjectPage() {
   }
 
   return (
-    <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
       <div className="mb-8">
         <span className="text-xs font-mono uppercase tracking-wider block" style={{ color: `var(--color-${subject.color})` }}>
           {subject.category}
@@ -36,7 +36,7 @@ export default function SubjectPage() {
             style={t.status === 'done' ? { borderColor: `var(--color-${subject.color})` } : {}}
           >
             <div>
-              <div className="flex items-center gap-2 mb-1">
+              <div className="flex flex-wrap items-center gap-2 mb-1">
                 <h2 className="text-lg font-bold font-serif text-(--color-ink-900)">{t.title}</h2>
                 {t.status === 'done' && (
                   <span className="text-xs text-(--color-paper-50) px-2 py-0.5 rounded font-mono" style={{ backgroundColor: `var(--color-${subject.color})` }}>
@@ -55,7 +55,7 @@ export default function SubjectPage() {
             {t.status === 'done' ? (
               <Link
                 href={`/subjects/${subject.slug}/${t.slug}`}
-                className="px-4 py-2 text-(--color-paper-50) text-xs font-mono font-medium rounded hover:bg-opacity-90 transition-colors whitespace-nowrap"
+                className="inline-flex min-h-11 w-full sm:w-auto items-center justify-center px-4 py-2 text-(--color-paper-50) text-xs font-mono font-medium rounded hover:bg-opacity-90 transition-colors"
                 style={{ backgroundColor: `var(--color-${subject.color})` }}
               >
                 進入學習 →

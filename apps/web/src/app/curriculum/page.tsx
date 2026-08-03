@@ -1,9 +1,11 @@
 import Link from 'next/link';
 import { allSubjects } from '@/data/subjects';
+import type { SubjectData, TopicContent } from '@/data/types';
 
 export default function CurriculumPage() {
   const getSubject = (slug: string) => allSubjects.find(s => s.slug === slug);
-  const getGroup = (slugs: string[]) => slugs.map(getSubject).filter(Boolean);
+  const getGroup = (slugs: string[]) =>
+    slugs.map(getSubject).filter((subject): subject is SubjectData => Boolean(subject));
 
   const group1 = getGroup(['mechanics', 'materials']);
   const group2 = getGroup(['surveying', 'drafting']);
@@ -17,7 +19,7 @@ export default function CurriculumPage() {
   const doneTopics = allSubjects.reduce((acc, curr) => acc + curr.topics.filter(t => t.status === 'done').length, 0);
   const progressPercent = Math.round((doneTopics / totalTopics) * 100);
 
-  const renderSubjectColumn = (subject: any) => (
+  const renderSubjectColumn = (subject: SubjectData) => (
     <div key={subject.slug} className={`border-l-2 pl-4`} style={{ borderColor: `var(--color-${subject.color})` }}>
       <h3 className="font-bold text-lg text-(--color-ink-900) mb-2">
         <Link href={`/subjects/${subject.slug}`} className="hover:opacity-80 transition-opacity" style={{ color: `var(--color-${subject.color})` }}>
@@ -25,7 +27,7 @@ export default function CurriculumPage() {
         </Link>
       </h3>
       <ul className="text-sm space-y-2 text-(--color-ink-650)">
-        {subject.topics.map((t: any) => (
+        {subject.topics.map((t: TopicContent) => (
           <li key={t.slug} className="flex items-start gap-1">
             <span className="shrink-0">•</span>
             {t.status === 'done' ? (
@@ -42,12 +44,12 @@ export default function CurriculumPage() {
   );
 
   return (
-    <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
       <div className="mb-10">
-        <div className="flex justify-between items-end mb-4">
+        <div className="flex flex-col sm:flex-row sm:justify-between sm:items-end gap-4 mb-4">
           <div>
             <span className="text-xs font-mono text-(--color-teal-700) uppercase tracking-widest block">Curriculum Map</span>
-            <h1 className="text-3xl sm:text-4xl font-bold font-serif text-(--color-ink-900) mt-1">
+            <h1 className="text-[1.8rem] leading-tight sm:text-4xl font-bold font-serif text-(--color-ink-900) mt-1">
               台灣高工建築科 · 全科學習地圖
             </h1>
           </div>
@@ -69,7 +71,7 @@ export default function CurriculumPage() {
 
       <div className="space-y-10">
         {/* Section 1: 專一 */}
-        <div className="bg-(--color-paper-100) border border-(--color-concrete-300) rounded-xl p-6 sm:p-8">
+        <div className="bg-(--color-paper-100) border border-(--color-concrete-300) rounded-xl p-4 min-[380px]:p-5 sm:p-8">
           <div className="flex items-center gap-3 mb-6">
             <span className="bg-(--color-teal-700) text-(--color-paper-50) font-mono text-xs px-2.5 py-1 rounded-full">統測專一</span>
             <h2 className="text-2xl font-serif font-bold text-(--color-ink-900)">專業科目（一）</h2>
@@ -80,7 +82,7 @@ export default function CurriculumPage() {
         </div>
 
         {/* Section 2: 專二 */}
-        <div className="bg-(--color-paper-100) border border-(--color-concrete-300) rounded-xl p-6 sm:p-8">
+        <div className="bg-(--color-paper-100) border border-(--color-concrete-300) rounded-xl p-4 min-[380px]:p-5 sm:p-8">
           <div className="flex items-center gap-3 mb-6">
             <span className="bg-(--color-blueprint-700) text-(--color-paper-50) font-mono text-xs px-2.5 py-1 rounded-full">統測專二</span>
             <h2 className="text-2xl font-serif font-bold text-(--color-ink-900)">專業科目（二）</h2>
@@ -91,7 +93,7 @@ export default function CurriculumPage() {
         </div>
 
         {/* 統測共同 */}
-        <div className="bg-(--color-paper-100) border border-(--color-concrete-300) rounded-xl p-6 sm:p-8">
+        <div className="bg-(--color-paper-100) border border-(--color-concrete-300) rounded-xl p-4 min-[380px]:p-5 sm:p-8">
           <div className="flex items-center gap-3 mb-6">
             <span className="bg-(--color-brick-700) text-(--color-paper-50) font-mono text-xs px-2.5 py-1 rounded-full">統測共同</span>
             <h2 className="text-2xl font-serif font-bold text-(--color-ink-900)">共同科目（國·英·數）</h2>
@@ -102,7 +104,7 @@ export default function CurriculumPage() {
         </div>
 
         {/* 自然科學 */}
-        <div className="bg-(--color-paper-100) border border-(--color-concrete-300) rounded-xl p-6 sm:p-8">
+        <div className="bg-(--color-paper-100) border border-(--color-concrete-300) rounded-xl p-4 min-[380px]:p-5 sm:p-8">
           <div className="flex items-center gap-3 mb-6">
             <span className="bg-(--color-moss-700) text-(--color-paper-50) font-mono text-xs px-2.5 py-1 rounded-full">自然科學</span>
             <h2 className="text-2xl font-serif font-bold text-(--color-ink-900)">自然科學領域</h2>
@@ -113,7 +115,7 @@ export default function CurriculumPage() {
         </div>
 
         {/* 社會領域 */}
-        <div className="bg-(--color-paper-100) border border-(--color-concrete-300) rounded-xl p-6 sm:p-8">
+        <div className="bg-(--color-paper-100) border border-(--color-concrete-300) rounded-xl p-4 min-[380px]:p-5 sm:p-8">
           <div className="flex items-center gap-3 mb-6">
             <span className="bg-(--color-sun-500) text-(--color-paper-50) font-mono text-xs px-2.5 py-1 rounded-full">社會領域</span>
             <h2 className="text-2xl font-serif font-bold text-(--color-ink-900)">社會領域</h2>
@@ -124,7 +126,7 @@ export default function CurriculumPage() {
         </div>
 
         {/* 延伸 */}
-        <div className="bg-(--color-paper-100) border border-(--color-concrete-300) rounded-xl p-6 sm:p-8">
+        <div className="bg-(--color-paper-100) border border-(--color-concrete-300) rounded-xl p-4 min-[380px]:p-5 sm:p-8">
           <div className="flex items-center gap-3 mb-6">
             <span className="bg-(--color-ink-900) text-(--color-paper-50) font-mono text-xs px-2.5 py-1 rounded-full">延伸</span>
             <h2 className="text-2xl font-serif font-bold text-(--color-ink-900)">建築素養與生涯發展</h2>

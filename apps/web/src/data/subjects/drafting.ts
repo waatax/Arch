@@ -3,7 +3,7 @@ import { SubjectData } from '../types';
 export const draftingData: SubjectData = {
   slug: 'drafting',
   title: '製圖實習',
-  category: '專業科目（一）',
+  category: '專業科目（二）',
   color: 'blue-600',
   topics: [
     {

@@ -29,10 +29,12 @@
   - [ ] 樑的受力與剪力彎矩圖 (`/subjects/mechanics/beam`)
   - [ ] 應力與應變 (`/subjects/mechanics/stress-strain`)
 - [ ] **材料與試驗**
-  - [ ] 材料基本物理與力學性質 (`/subjects/materials/properties`)
+  - [ ] 材料與試驗概論與基本性質 (`/subjects/materials/basic-properties`)
+  - [ ] 水泥材料與性質試驗 (`/subjects/materials/cement`)
   - [ ] 木材構造與應用 (`/subjects/materials/wood`)
   - [ ] 混凝土構造與配比 (`/subjects/materials/concrete`)
-  - [ ] 水泥與粒料試驗 (`/subjects/materials/cement-aggregate`)
+  - [ ] 石材、陶瓷製品與玻璃 (`/subjects/materials/stone-ceramics-glass`)
+  - [ ] 高分子、瀝青與防水塗料 (`/subjects/materials/polymers-asphalt`)
   - [ ] 金屬材料與防蝕 (`/subjects/materials/metals`)
   - [ ] 綠建材與永續材料 (`/subjects/materials/green-materials`)
 

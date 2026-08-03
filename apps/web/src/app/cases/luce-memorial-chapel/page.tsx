@@ -45,7 +45,7 @@ export default function LuceChapelPage() {
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
         <LensSwitcher lenses={lenses} />
 
-        <section className="bg-(--color-paper-100) border border-(--color-concrete-300) rounded-xl p-6 sm:p-8">
+        <section className="bg-(--color-paper-100) border border-(--color-concrete-300) rounded-xl p-4 min-[380px]:p-5 sm:p-8">
           <h3 className="text-xl font-bold font-serif text-(--color-ink-900) mb-2">
             課綱連結與核心練習
           </h3>

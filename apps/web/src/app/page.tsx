@@ -3,40 +3,40 @@ import SubjectCard from '@/components/SubjectCard';
 
 export default function Home() {
   return (
-    <div className="space-y-20 pb-20">
+    <div className="space-y-14 sm:space-y-20 pb-14 sm:pb-20">
       {/* Hero Section */}
-      <section className="hero-gradient border-b border-(--color-concrete-300) py-20 px-4 sm:px-6 lg:px-8">
+      <section className="hero-gradient border-b border-(--color-concrete-300) py-12 sm:py-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-5xl mx-auto text-center sm:text-left">
           <div className="animate-fade-in-up inline-block bg-(--color-teal-700) text-(--color-paper-50) text-xs px-3.5 py-1 rounded-full font-mono tracking-wider mb-6">
             台灣高工建築科學習平台 · 108 課綱
           </div>
           <h1
-            className="animate-fade-in-up text-4xl sm:text-5xl lg:text-6xl font-bold font-serif text-(--color-ink-900) tracking-tight mb-6 leading-[1.2]"
+            className="animate-fade-in-up text-[2.15rem] min-[390px]:text-4xl sm:text-5xl lg:text-6xl font-bold font-serif text-(--color-ink-900) tracking-tight mb-5 sm:mb-6 leading-[1.2]"
             style={{ animationDelay: '0.1s' } as React.CSSProperties}
           >
             看懂設計、學會概念、<br className="hidden sm:inline"/>
             動手做出屬於你的建築作品。
           </h1>
           <p
-            className="animate-fade-in-up text-lg sm:text-xl text-(--color-ink-650) max-w-3xl leading-relaxed mb-10"
+            className="animate-fade-in-up text-base min-[390px]:text-lg sm:text-xl text-(--color-ink-650) max-w-3xl leading-relaxed mb-8 sm:mb-10"
             style={{ animationDelay: '0.2s' } as React.CSSProperties}
           >
             免登入即可學習。從一棟真實台灣建築或一道統測考點開始，帶你由「我可能不會」走到「我能做出來，而且我想成為其中的一員」。
           </p>
 
           <div
-            className="animate-fade-in-up flex flex-wrap gap-4"
+            className="animate-fade-in-up flex flex-col sm:flex-row sm:flex-wrap gap-3 sm:gap-4"
             style={{ animationDelay: '0.3s' } as React.CSSProperties}
           >
             <Link
               href="/curriculum"
-              className="px-7 py-3.5 bg-(--color-teal-700) text-(--color-paper-50) font-medium rounded-xl hover:shadow-lg hover:shadow-(--color-teal-700)/20 transition-all duration-300 shadow-sm"
+              className="flex min-h-12 w-full sm:w-auto items-center justify-center px-5 sm:px-7 py-3.5 bg-(--color-teal-700) text-(--color-paper-50) text-center font-medium rounded-xl hover:shadow-lg hover:shadow-(--color-teal-700)/20 transition-all duration-300 shadow-sm"
             >
               瀏覽完整課程地圖
             </Link>
             <Link
               href="/cases/taichung-national-theater"
-              className="px-7 py-3.5 bg-(--color-paper-50) text-(--color-ink-900) border border-(--color-concrete-300) font-medium rounded-xl hover:border-(--color-teal-700) hover:shadow-md transition-all duration-300"
+              className="flex min-h-12 w-full sm:w-auto items-center justify-center px-5 sm:px-7 py-3.5 bg-(--color-paper-50) text-(--color-ink-900) border border-(--color-concrete-300) text-center font-medium rounded-xl hover:border-(--color-teal-700) hover:shadow-md transition-all duration-300"
             >
               探索首發案例：臺中國家歌劇院
             </Link>

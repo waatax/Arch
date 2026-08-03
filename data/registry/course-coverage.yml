@@ -1,0 +1,38 @@
+schema_version: 1
+updated_at: "2026-08-03"
+curriculum_scope: "台灣高工建築科、115 學年度四技二專統測土木與建築群，以及建築素養延伸"
+
+official_sources:
+  professional_1:
+    title: "115 學年度統測土木與建築群專業科目（一）考試大綱"
+    url: "https://www.tcte.edu.tw/doc/115Range_4y/115-4y-06-1-range.pdf"
+    checked_at: "2026-08-03"
+  professional_2:
+    title: "115 學年度統測土木與建築群專業科目（二）考試大綱"
+    url: "https://www.tcte.edu.tw/doc/115Range_4y/115-4y-06-2-range.pdf"
+    checked_at: "2026-08-03"
+
+coverage:
+  - { slug: mechanics, category: "專業科目（一）", topics: 7, status: complete, official_source: professional_1 }
+  - { slug: materials, category: "專業科目（一）", topics: 8, status: complete, official_source: professional_1 }
+  - { slug: surveying, category: "專業科目（二）", topics: 6, status: complete, official_source: professional_2 }
+  - { slug: drafting, category: "專業科目（二）", topics: 8, status: complete, official_source: professional_2 }
+  - { slug: chinese, category: "共同科目", topics: 6, status: complete }
+  - { slug: english, category: "共同科目", topics: 6, status: complete }
+  - { slug: math-c, category: "共同科目", topics: 6, status: complete }
+  - { slug: physics, category: "自然科學", topics: 6, status: complete }
+  - { slug: chemistry, category: "自然科學", topics: 6, status: complete }
+  - { slug: history, category: "社會領域", topics: 6, status: complete }
+  - { slug: geography, category: "社會領域", topics: 6, status: complete }
+  - { slug: civics, category: "社會領域", topics: 6, status: complete }
+  - { slug: extensions, category: "實習與實務", topics: 5, status: complete }
+
+totals:
+  subjects: 13
+  topics: 82
+  published_topics: 82
+  incomplete_topics: 0
+
+notes:
+  - "complete 表示平台主題具摘要、至少三張概念卡、練習題、解題步驟及答案；不表示內容永不需要年度複查。"
+  - "專業科目的較細官方章目可合併於一個平台主題；對照關係記錄於 docs/course-coverage.md。"

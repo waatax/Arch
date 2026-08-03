@@ -24,31 +24,19 @@ export function useTheme() {
 }
 
 export default function ThemeProvider({ children }: { children: ReactNode }) {
-  const [theme, setTheme] = useState<Theme>('light');
-  const [fontSize, setFontSizeState] = useState<FontSize>('base');
-  const [mounted, setMounted] = useState(false);
+  const [theme, setTheme] = useState<Theme>(() => {
+    if (typeof window === 'undefined') return 'light';
+    const savedTheme = localStorage.getItem('arch-theme');
+    if (savedTheme === 'light' || savedTheme === 'dark') return savedTheme;
+    return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+  });
+  const [fontSize, setFontSizeState] = useState<FontSize>(() => {
+    if (typeof window === 'undefined') return 'base';
+    const savedFontSize = localStorage.getItem('arch-font-size');
+    return savedFontSize === 'sm' || savedFontSize === 'lg' ? savedFontSize : 'base';
+  });
 
   useEffect(() => {
-    // Read from localStorage on mount
-    const savedTheme = localStorage.getItem('arch-theme') as Theme | null;
-    const savedFontSize = localStorage.getItem('arch-font-size') as FontSize | null;
-
-    if (savedTheme) {
-      setTheme(savedTheme);
-    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-      setTheme('dark');
-    }
-
-    if (savedFontSize) {
-      setFontSizeState(savedFontSize);
-    }
-
-    setMounted(true);
-  }, []);
-
-  useEffect(() => {
-    if (!mounted) return;
-
     const root = document.documentElement;
 
     // Theme
@@ -63,7 +51,7 @@ export default function ThemeProvider({ children }: { children: ReactNode }) {
     root.classList.remove('text-size-sm', 'text-size-base', 'text-size-lg');
     root.classList.add(`text-size-${fontSize}`);
     localStorage.setItem('arch-font-size', fontSize);
-  }, [theme, fontSize, mounted]);
+  }, [theme, fontSize]);
 
   const toggleTheme = () => {
     setTheme(prev => prev === 'light' ? 'dark' : 'light');
@@ -72,11 +60,6 @@ export default function ThemeProvider({ children }: { children: ReactNode }) {
   const setFontSize = (size: FontSize) => {
     setFontSizeState(size);
   };
-
-  // Prevent flash of wrong theme
-  if (!mounted) {
-    return <>{children}</>;
-  }
 
   return (
     <ThemeContext.Provider value={{ theme, fontSize, toggleTheme, setFontSize }}>

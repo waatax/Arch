@@ -1,8 +1,10 @@
 {
   "name": "arch",
+  "version": "4.0.0",
   "private": true,
   "scripts": {
     "build": "pnpm --filter web build",
+    "validate:content": "node scripts/validate-course-data.mjs",
     "dev": "pnpm --filter web dev",
     "lint": "pnpm --filter web lint",
     "start": "pnpm --filter web start"

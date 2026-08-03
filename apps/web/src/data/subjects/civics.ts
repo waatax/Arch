@@ -3,7 +3,7 @@ import { SubjectData } from '../types';
 export const civicsData: SubjectData = {
   slug: 'civics',
   title: '公民與社會',
-  category: '共同科目',
+  category: '社會領域',
   color: 'indigo-600',
   topics: [
     {

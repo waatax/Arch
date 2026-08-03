@@ -76,6 +76,51 @@ body {
   font-family: "Noto Sans TC", "PingFang TC", "Microsoft JhengHei", system-ui, sans-serif;
   line-height: 1.7;
   transition: background-color 0.3s ease, color 0.3s ease;
+  overflow-x: hidden;
+}
+
+main {
+  min-width: 0;
+}
+
+img,
+svg,
+video {
+  max-width: 100%;
+}
+
+/* Prevent long formulas, URLs and bilingual terms from widening mobile pages. */
+p,
+li,
+td,
+th,
+figcaption {
+  overflow-wrap: anywhere;
+}
+
+.safe-bottom {
+  padding-bottom: max(1rem, env(safe-area-inset-bottom));
+}
+
+.mobile-scroll {
+  scrollbar-width: thin;
+  overscroll-behavior-inline: contain;
+  -webkit-overflow-scrolling: touch;
+}
+
+@media (max-width: 639px) {
+  .mobile-scroll-hint {
+    position: relative;
+  }
+
+  .mobile-scroll-hint::after {
+    content: "左右滑動查看完整內容 →";
+    display: block;
+    padding-top: 0.5rem;
+    color: var(--color-ink-650);
+    font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+    font-size: 0.6875rem;
+  }
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -86,6 +131,20 @@ h1, h2, h3, h4, h5, h6 {
 /* ── Smooth scroll ── */
 html {
   scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }
 
 /* ── Selection colour ── */
@@ -154,6 +213,13 @@ html {
   box-shadow:
     0 8px 24px -8px rgba(30, 41, 38, 0.08),
     0 2px 6px -2px rgba(30, 41, 38, 0.04);
+}
+
+@media (hover: none) {
+  .card-lift:hover {
+    transform: none;
+    box-shadow: none;
+  }
 }
 
 .dark .card-lift:hover {

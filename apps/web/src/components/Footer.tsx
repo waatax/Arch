@@ -1,6 +1,6 @@
 export default function Footer() {
   return (
-    <footer className="w-full bg-(--color-paper-100) border-t border-(--color-concrete-300) py-10 mt-auto">
+    <footer className="safe-bottom w-full bg-(--color-paper-100) border-t border-(--color-concrete-300) py-8 sm:py-10 mt-auto">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
           {/* Brand */}
@@ -14,7 +14,7 @@ export default function Footer() {
           </div>
 
           {/* Info Tags */}
-          <div className="flex flex-wrap gap-3 text-xs font-mono">
+          <div className="flex flex-wrap gap-2 sm:gap-3 text-xs font-mono">
             <span className="px-3 py-1.5 bg-(--color-paper-50) border border-(--color-concrete-300) rounded-full text-(--color-ink-650)">
               108 課綱對齊
             </span>

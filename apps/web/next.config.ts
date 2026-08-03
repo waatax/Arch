@@ -6,6 +6,7 @@ const nextConfig: NextConfig = {
   output: "export",
   images: { unoptimized: true },
   basePath: isGithubActions ? "/Arch" : "",
+  env: { NEXT_PUBLIC_BASE_PATH: isGithubActions ? "/Arch" : "" },
 };
 
 export default nextConfig;

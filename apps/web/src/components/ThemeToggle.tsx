@@ -12,19 +12,20 @@ export default function ThemeToggle() {
   ];
 
   return (
-    <div className="flex items-center gap-1.5">
+    <div className="flex shrink-0 items-center gap-1 min-[360px]:gap-1.5">
       {/* Font Size Controls */}
       <div className="flex items-center border border-(--color-concrete-300) dark:border-[#3a4a5c] rounded-lg overflow-hidden">
         {fontSizes.map((fs) => (
           <button
             key={fs.key}
             onClick={() => setFontSize(fs.key)}
-            className={`px-2 py-1 text-xs font-mono transition-all duration-200 ${
+            className={`min-h-9 min-w-8 px-1.5 min-[360px]:px-2 py-1 text-xs font-mono transition-all duration-200 ${
               fontSize === fs.key
                 ? 'bg-(--color-teal-700) text-(--color-paper-50) font-bold'
                 : 'text-(--color-ink-650) hover:bg-(--color-concrete-300)/40'
             }`}
-            aria-label={`Font size ${fs.label}`}
+            aria-label={`字體大小 ${fs.label}`}
+            aria-pressed={fontSize === fs.key}
           >
             {fs.label}
           </button>
@@ -34,7 +35,7 @@ export default function ThemeToggle() {
       {/* Theme Toggle */}
       <button
         onClick={toggleTheme}
-        className="w-9 h-9 flex items-center justify-center rounded-lg border border-(--color-concrete-300) dark:border-[#3a4a5c] text-(--color-ink-650) hover:bg-(--color-concrete-300)/40 transition-all duration-200"
+        className="w-10 h-10 flex items-center justify-center rounded-lg border border-(--color-concrete-300) dark:border-[#3a4a5c] text-(--color-ink-650) hover:bg-(--color-concrete-300)/40 transition-all duration-200"
         aria-label={theme === 'dark' ? '切換至亮色模式' : '切換至暗色模式'}
       >
         {theme === 'dark' ? (

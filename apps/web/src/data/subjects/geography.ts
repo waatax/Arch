@@ -3,7 +3,7 @@ import { SubjectData } from '../types';
 export const geographyData: SubjectData = {
   slug: 'geography',
   title: '地理與建築風土選址',
-  category: '人文與社會',
+  category: '社會領域',
   color: 'emerald-600',
   topics: [
     {
