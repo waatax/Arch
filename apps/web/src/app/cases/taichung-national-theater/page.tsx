@@ -1,4 +1,5 @@
 import CaseHero from '@/components/CaseHero';
+import CaseVisualStudy from '@/components/CaseVisualStudy';
 import LensSwitcher from '@/components/LensSwitcher';
 import Link from 'next/link';
 
@@ -50,6 +51,25 @@ export default function TaichungTheaterPage() {
         category="形與建造 · 雙曲面結構"
         imageSrc={`${process.env.NEXT_PUBLIC_BASE_PATH ?? ''}/learning-visuals/cases/taichung-national-theater.webp`}
         imageAlt="臺中國家歌劇院 (Taichung National Theater) 連續雙曲面牆的 3D 結構剖析圖"
+      />
+
+      <CaseVisualStudy
+        title="從城市界面追蹤曲牆與洞穴空間"
+        photo="/cases/taichung-national-theater/photo-v2.jpg"
+        sketch="/cases/taichung-national-theater/sketch.png"
+        photoAlt="臺中國家歌劇院外部水景與周邊高層都市環境的夜間實景"
+        sketchAlt="由實景衍生的臺中國家歌劇院工程草圖，呈現曲牆、開口與殼體受力概念"
+        observation="照片交代歌劇院與水景、廣場和高層街廓的關係；草圖放大曲牆與孔洞，讓學生從城市尺度逐步讀到結構尺度。"
+        readingGuide={[
+          '看基地：水景與廣場形成前景，拉開觀看曲面立面的距離。',
+          '看開口：不規則洞口並非貼附裝飾，而是連續曲牆的一部分。',
+          '看力流：曲面把樓板與牆整合，受力沿殼體向下傳到基礎。',
+        ]}
+        credit={{
+          label: 'Xiquinho Silva／Wikimedia Commons',
+          href: 'https://commons.wikimedia.org/wiki/File:2017-10-29_National_Taichung_Theater.jpg',
+          license: 'CC BY 2.0',
+        }}
       />
 
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">

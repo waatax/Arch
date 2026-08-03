@@ -1,4 +1,5 @@
 import CaseHero from '@/components/CaseHero';
+import CaseVisualStudy from '@/components/CaseVisualStudy';
 import LensSwitcher from '@/components/LensSwitcher';
 import Link from 'next/link';
 
@@ -42,6 +43,25 @@ export default function LuceChapelPage() {
         category="結構與光 · 雙曲面薄殼"
         imageSrc={`${process.env.NEXT_PUBLIC_BASE_PATH ?? ''}/learning-visuals/cases/luce-memorial-chapel.webp`}
         imageAlt="路思義教堂的拋物雙曲面結構與頂部天光"
+      />
+
+      <CaseVisualStudy
+        title="從曲面外觀讀懂薄殼受力"
+        photo="/cases/luce-memorial-chapel/photo.jpg"
+        sketch="/cases/luce-memorial-chapel/sketch.png"
+        photoAlt="由草地仰望路思義教堂的曲面薄殼、玻璃端牆與黃色面磚"
+        sketchAlt="由實景照片衍生的路思義教堂建築工程草圖，呈現薄殼與基礎受力"
+        observation="先比較照片與草圖的輪廓，再追蹤曲面如何把自重傳到地面；影像安排讓造型、材料與力流可以在同一視線中對讀。"
+        readingGuide={[
+          '看輪廓：四片曲面向上收束，端部玻璃讓殼體邊界更容易辨認。',
+          '看表面：面磚保護混凝土，也把雙曲面的細微扭轉顯示出來。',
+          '看落地：殼體在底部加厚並向外展開，把力導入連續基礎。',
+        ]}
+        credit={{
+          label: 'Daderot／Wikimedia Commons',
+          href: 'https://commons.wikimedia.org/wiki/File:Luce_Memorial_Chapel_-_Tunghai_University_-_DSC01696.JPG',
+          license: 'CC0',
+        }}
       />
 
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">

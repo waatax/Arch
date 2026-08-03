@@ -1,4 +1,5 @@
 import CaseHero from '@/components/CaseHero';
+import CaseVisualStudy from '@/components/CaseVisualStudy';
 import LensSwitcher from '@/components/LensSwitcher';
 import Link from 'next/link';
 
@@ -34,6 +35,25 @@ export default function EarthquakeMuseumPage() {
         category="安全與記憶 · 斷層縫合與構造保存"
         imageSrc={`${process.env.NEXT_PUBLIC_BASE_PATH ?? ''}/learning-visuals/cases/921-earthquake-museum.webp`}
         imageAlt="921地震教育園區的膜結構與斷層錯動遺跡"
+      />
+
+      <CaseVisualStudy
+        title="沿著斷層閱讀保護性構造"
+        photo="/cases/921-earthquake-museum/photo.jpg"
+        sketch="/cases/921-earthquake-museum/sketch.png"
+        photoAlt="九二一地震教育園區車籠埔斷層保存館的弧形室內廊道"
+        sketchAlt="由保存館實景衍生的工程草圖，分解弧形外殼、玻璃框架與跨越斷層的構造"
+        observation="實景先提供構造尺度與行走經驗，草圖再把弧形外殼、框架節點與跨越地層的策略拆開，幫助學生由空間回推工程目的。"
+        readingGuide={[
+          '看路徑：彎曲廊道順著遺址延伸，使參觀動線成為閱讀斷層的時間線。',
+          '看框架：玻璃側的細柱與拉桿維持視線通透，同時支撐輕質圍護。',
+          '看保護：弧形外殼遮蔽遺址，新增構造避免直接干擾原有地層。',
+        ]}
+        credit={{
+          label: 'Malcolm Koo／Wikimedia Commons',
+          href: 'https://commons.wikimedia.org/wiki/File:921_Earthquake_Museum_of_Taiwan,_Chelungpu_Fault,_interior.jpg',
+          license: 'CC BY-SA 4.0',
+        }}
       />
 
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
