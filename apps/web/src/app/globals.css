@@ -1,6 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;600;700&family=Noto+Serif+TC:wght@400;500;600;700&display=swap');
 @import "tailwindcss";
 
+/* ══════════════════════════════════════════════════════
+   LIGHT MODE (default) — Warm Paper + Dark Ink
+   ══════════════════════════════════════════════════════ */
 :root {
   --color-paper-50: #F6F3EA;
   --color-paper-100: #EDE8DD;
@@ -16,6 +19,39 @@
 
   --background: var(--color-paper-50);
   --foreground: var(--color-ink-900);
+}
+
+/* ══════════════════════════════════════════════════════
+   DARK MODE — Deep Blueprint / Slate  
+   ══════════════════════════════════════════════════════ */
+:root.dark {
+  --color-paper-50: #0F1923;
+  --color-paper-100: #162230;
+  --color-ink-900: #E8ECF0;
+  --color-ink-650: #9DAAB5;
+  --color-teal-700: #2DD4BF;
+  --color-brick-700: #F87171;
+  --color-blueprint-700: #60A5FA;
+  --color-moss-700: #86EFAC;
+  --color-sun-500: #FCD34D;
+  --color-concrete-300: #2A3A4C;
+  --color-danger-750: #FB7185;
+
+  --background: var(--color-paper-50);
+  --foreground: var(--color-ink-900);
+}
+
+/* ══════════════════════════════════════════════════════
+   FONT SIZE SCALING
+   ══════════════════════════════════════════════════════ */
+:root.text-size-sm {
+  font-size: 14px;
+}
+:root.text-size-base {
+  font-size: 16px;
+}
+:root.text-size-lg {
+  font-size: 18px;
 }
 
 @theme inline {
@@ -39,6 +75,7 @@ body {
   color: var(--foreground);
   font-family: "Noto Sans TC", "PingFang TC", "Microsoft JhengHei", system-ui, sans-serif;
   line-height: 1.7;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -55,6 +92,10 @@ html {
 ::selection {
   background-color: rgba(11, 98, 91, 0.18);
   color: var(--color-ink-900);
+}
+
+.dark ::selection {
+  background-color: rgba(45, 212, 191, 0.25);
 }
 
 /* ── Focus ring ── */
@@ -80,7 +121,6 @@ html {
   animation: fadeInUp 0.6s ease-out both;
 }
 
-/* stagger children: use data-delay attribute on elements */
 .animate-fade-in-up[style*="--delay"] {
   animation-delay: var(--delay);
 }
@@ -95,6 +135,15 @@ html {
   );
 }
 
+.dark .hero-gradient {
+  background: linear-gradient(
+    160deg,
+    var(--color-paper-100) 0%,
+    var(--color-paper-50) 40%,
+    rgba(45, 212, 191, 0.06) 100%
+  );
+}
+
 /* ── Card hover lift ── */
 .card-lift {
   transition: transform 0.25s ease, box-shadow 0.25s ease;
@@ -105,6 +154,12 @@ html {
   box-shadow:
     0 8px 24px -8px rgba(30, 41, 38, 0.08),
     0 2px 6px -2px rgba(30, 41, 38, 0.04);
+}
+
+.dark .card-lift:hover {
+  box-shadow:
+    0 8px 24px -8px rgba(0, 0, 0, 0.4),
+    0 2px 6px -2px rgba(0, 0, 0, 0.2);
 }
 
 /* ── Scrollbar (WebKit) ── */

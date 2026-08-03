@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
+import ThemeToggle from './ThemeToggle';
 
 const navLinks = [
   { href: '/curriculum', label: '課程總覽' },
@@ -14,7 +15,7 @@ export default function Navbar() {
   const [open, setOpen] = useState(false);
 
   return (
-    <nav className="w-full bg-(--color-paper-100)/85 backdrop-blur-md border-b border-(--color-concrete-300) sticky top-0 z-50 transition-shadow duration-300 hover:shadow-sm">
+    <nav className="w-full bg-(--color-paper-100)/85 backdrop-blur-md border-b border-(--color-concrete-300) sticky top-0 z-50 transition-all duration-300 hover:shadow-sm">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
         {/* Logo */}
         <Link href="/" className="flex items-center gap-2.5 group">
@@ -38,30 +39,41 @@ export default function Navbar() {
               <span className="absolute bottom-0.5 left-1/2 -translate-x-1/2 w-0 h-0.5 bg-(--color-teal-700) rounded-full transition-all duration-300 group-hover:w-4" />
             </Link>
           ))}
+
+          {/* Divider */}
+          <div className="w-px h-6 bg-(--color-concrete-300) mx-2" />
+
+          {/* Theme & Font Controls */}
+          <ThemeToggle />
         </div>
 
-        {/* Mobile Hamburger */}
-        <button
-          onClick={() => setOpen(!open)}
-          className="md:hidden relative w-10 h-10 flex flex-col items-center justify-center gap-1.5 rounded-lg hover:bg-(--color-concrete-300)/40 transition-colors"
-          aria-label="Toggle menu"
-        >
-          <span
-            className={`block w-5 h-[2px] bg-(--color-ink-900) rounded-full transition-all duration-300 ${
-              open ? 'rotate-45 translate-y-[5px]' : ''
-            }`}
-          />
-          <span
-            className={`block w-5 h-[2px] bg-(--color-ink-900) rounded-full transition-all duration-300 ${
-              open ? 'opacity-0 scale-x-0' : ''
-            }`}
-          />
-          <span
-            className={`block w-5 h-[2px] bg-(--color-ink-900) rounded-full transition-all duration-300 ${
-              open ? '-rotate-45 -translate-y-[5px]' : ''
-            }`}
-          />
-        </button>
+        {/* Mobile Right Side */}
+        <div className="flex md:hidden items-center gap-2">
+          <ThemeToggle />
+          
+          {/* Mobile Hamburger */}
+          <button
+            onClick={() => setOpen(!open)}
+            className="relative w-10 h-10 flex flex-col items-center justify-center gap-1.5 rounded-lg hover:bg-(--color-concrete-300)/40 transition-colors"
+            aria-label="Toggle menu"
+          >
+            <span
+              className={`block w-5 h-[2px] bg-(--color-ink-900) rounded-full transition-all duration-300 ${
+                open ? 'rotate-45 translate-y-[5px]' : ''
+              }`}
+            />
+            <span
+              className={`block w-5 h-[2px] bg-(--color-ink-900) rounded-full transition-all duration-300 ${
+                open ? 'opacity-0 scale-x-0' : ''
+              }`}
+            />
+            <span
+              className={`block w-5 h-[2px] bg-(--color-ink-900) rounded-full transition-all duration-300 ${
+                open ? '-rotate-45 -translate-y-[5px]' : ''
+              }`}
+            />
+          </button>
+        </div>
       </div>
 
       {/* Mobile Dropdown */}

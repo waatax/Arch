@@ -87,27 +87,34 @@ export default function TopicPageLayout({ subject, topic }: TopicPageLayoutProps
       ))}
 
       {/* Practice Exam Question */}
-      {topic.practice && (
-        <section className="bg-(--color-paper-100) border border-(--color-concrete-300) rounded-xl p-6 sm:p-8 space-y-6">
-          <div className="flex justify-between items-center">
-            <span className="text-xs font-mono text-(--color-paper-50) px-2.5 py-1 rounded" style={{ backgroundColor: `var(--color-${subject.color})` }}>隨堂練習</span>
-            <span className="text-xs font-mono text-(--color-ink-650)">難度: {topic.practice.difficulty}</span>
-          </div>
+      {((topic.practices && topic.practices.length > 0) || topic.practice) && (
+        <div className="space-y-6">
+          <h2 className="text-2xl font-bold font-serif text-(--color-ink-900)">隨堂練習與考題演練</h2>
+          {((topic.practices && topic.practices.length > 0) ? topic.practices : (topic.practice ? [topic.practice] : [])).map((p, index) => (
+            <section key={index} className="bg-(--color-paper-100) border border-(--color-concrete-300) rounded-xl p-6 sm:p-8 space-y-6">
+              <div className="flex justify-between items-center">
+                <span className="text-xs font-mono text-(--color-paper-50) px-2.5 py-1 rounded" style={{ backgroundColor: `var(--color-${subject.color})` }}>
+                  隨堂練習 {topic.practices && topic.practices.length > 1 ? `#${index + 1}` : ''}
+                </span>
+                <span className="text-xs font-mono text-(--color-ink-650)">難度: {p.difficulty}</span>
+              </div>
 
-          <div className="space-y-4">
-            <h3 className="text-base font-bold text-(--color-ink-900) whitespace-pre-line">
-              [題目] {topic.practice.question}
-            </h3>
+              <div className="space-y-4">
+                <h3 className="text-base font-bold text-(--color-ink-900) whitespace-pre-line">
+                  [題目] {p.question}
+                </h3>
 
-            <div className="bg-(--color-paper-50) p-4 rounded-lg border border-(--color-concrete-300) space-y-3 text-sm">
-              <div className="font-bold" style={{ color: `var(--color-${subject.color})` }}>【詳細解題步驟】</div>
-              <ul className="list-disc list-inside pl-4 font-mono text-xs space-y-1 text-(--color-ink-650)">
-                {topic.practice.steps.map((step, i) => <li key={i}>{step}</li>)}
-              </ul>
-              <p>答案： <strong className="font-mono text-base" style={{ color: `var(--color-${subject.color})` }}>{topic.practice.answer}</strong></p>
-            </div>
-          </div>
-        </section>
+                <div className="bg-(--color-paper-50) p-4 rounded-lg border border-(--color-concrete-300) space-y-3 text-sm">
+                  <div className="font-bold" style={{ color: `var(--color-${subject.color})` }}>【詳細解題步驟】</div>
+                  <ul className="list-disc list-inside pl-4 font-mono text-xs space-y-1 text-(--color-ink-650)">
+                    {p.steps.map((step, i) => <li key={i}>{step}</li>)}
+                  </ul>
+                  <p>答案： <strong className="font-mono text-base" style={{ color: `var(--color-${subject.color})` }}>{p.answer}</strong></p>
+                </div>
+              </div>
+            </section>
+          ))}
+        </div>
       )}
 
       {/* Navigation */}

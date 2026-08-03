@@ -1,3 +1,17 @@
+export interface PracticeQuestion {
+  question: string;
+  difficulty: string;
+  steps: string[];
+  answer: string;
+}
+
+export interface PracticeItem {
+  question: string;
+  difficulty: string; 
+  steps: string[];
+  answer: string;
+}
+
 export interface TopicContent {
   slug: string;
   title: string;
@@ -9,12 +23,8 @@ export interface TopicContent {
     formula?: string;
     table?: { headers: string[]; rows: string[][] }; 
   }[];
-  practice?: {
-    question: string;
-    difficulty: string; 
-    steps: string[];
-    answer: string;
-  };
+  practice?: PracticeItem;
+  practices?: PracticeItem[];
   status: 'done' | 'draft' | 'stub';
 }
 

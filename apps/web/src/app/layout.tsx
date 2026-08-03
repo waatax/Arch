@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import ThemeProvider from "@/components/ThemeProvider";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -14,11 +15,13 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="zh-TW" className="h-full antialiased">
-      <body className="min-h-full flex flex-col bg-(--color-paper-50) text-(--color-ink-900)">
-        <Navbar />
-        <main className="flex-1">{children}</main>
-        <Footer />
+    <html lang="zh-TW" className="h-full antialiased" suppressHydrationWarning>
+      <body className="min-h-full flex flex-col bg-(--color-paper-50) text-(--color-ink-900) transition-colors duration-300">
+        <ThemeProvider>
+          <Navbar />
+          <main className="flex-1">{children}</main>
+          <Footer />
+        </ThemeProvider>
       </body>
     </html>
   );
