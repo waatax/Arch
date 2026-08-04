@@ -1,586 +1,586 @@
 {
   "111-1-2": {
-    "questionImage": "/exams/pages/111/professional-1-p2.webp",
+    "figureImage": "/exams/figures/111/professional-1-q2.webp",
     "originalPage": 2
   },
   "111-1-3": {
-    "questionImage": "/exams/pages/111/professional-1-p2.webp",
+    "figureImage": "/exams/figures/111/professional-1-q3.webp",
     "originalPage": 2
   },
   "111-1-4": {
-    "questionImage": "/exams/pages/111/professional-1-p2.webp",
+    "figureImage": "/exams/figures/111/professional-1-q4.webp",
     "originalPage": 2
   },
   "111-1-5": {
-    "questionImage": "/exams/pages/111/professional-1-p3.webp",
+    "figureImage": "/exams/figures/111/professional-1-q5.webp",
     "originalPage": 3
   },
   "111-1-6": {
-    "questionImage": "/exams/pages/111/professional-1-p3.webp",
+    "figureImage": "/exams/figures/111/professional-1-q6.webp",
     "originalPage": 3
   },
   "111-1-7": {
-    "questionImage": "/exams/pages/111/professional-1-p3.webp",
+    "figureImage": "/exams/figures/111/professional-1-q7.webp",
     "originalPage": 3
   },
   "111-1-8": {
-    "questionImage": "/exams/pages/111/professional-1-p4.webp",
+    "figureImage": "/exams/figures/111/professional-1-q8.webp",
     "originalPage": 4
   },
   "111-1-9": {
-    "questionImage": "/exams/pages/111/professional-1-p4.webp",
+    "figureImage": "/exams/figures/111/professional-1-q9.webp",
     "originalPage": 4
   },
   "111-1-10": {
-    "questionImage": "/exams/pages/111/professional-1-p4.webp",
+    "figureImage": "/exams/figures/111/professional-1-q10.webp",
     "originalPage": 4
   },
   "111-1-11": {
-    "questionImage": "/exams/pages/111/professional-1-p4.webp",
+    "figureImage": "/exams/figures/111/professional-1-q11.webp",
     "originalPage": 4
   },
   "111-1-13": {
-    "questionImage": "/exams/pages/111/professional-1-p5.webp",
+    "figureImage": "/exams/figures/111/professional-1-q13.webp",
     "originalPage": 5
   },
   "111-1-14": {
-    "questionImage": "/exams/pages/111/professional-1-p5.webp",
+    "figureImage": "/exams/figures/111/professional-1-q14.webp",
     "originalPage": 5
   },
   "111-1-15": {
-    "questionImage": "/exams/pages/111/professional-1-p5.webp",
+    "figureImage": "/exams/figures/111/professional-1-q15.webp",
     "originalPage": 5
   },
   "111-1-16": {
-    "questionImage": "/exams/pages/111/professional-1-p6.webp",
+    "figureImage": "/exams/figures/111/professional-1-q16.webp",
     "originalPage": 6
   },
   "111-1-17": {
-    "questionImage": "/exams/pages/111/professional-1-p6.webp",
+    "figureImage": "/exams/figures/111/professional-1-q17.webp",
     "originalPage": 6
   },
   "111-1-18": {
-    "questionImage": "/exams/pages/111/professional-1-p6.webp",
+    "figureImage": "/exams/figures/111/professional-1-q18.webp",
     "originalPage": 6
   },
   "111-1-19": {
-    "questionImage": "/exams/pages/111/professional-1-p7.webp",
+    "figureImage": "/exams/figures/111/professional-1-q19.webp",
     "originalPage": 7
   },
   "111-1-27": {
-    "questionImage": "/exams/pages/111/professional-1-p8.webp",
+    "figureImage": "/exams/figures/111/professional-1-q27.webp",
     "originalPage": 8
   },
   "111-1-36": {
-    "questionImage": "/exams/pages/111/professional-1-p9.webp",
+    "figureImage": "/exams/figures/111/professional-1-q36.webp",
     "originalPage": 9
   },
   "111-2-1": {
-    "questionImage": "/exams/pages/111/professional-2-p2.webp",
+    "figureImage": "/exams/figures/111/professional-2-q1.webp",
     "originalPage": 2
   },
   "111-2-6": {
-    "questionImage": "/exams/pages/111/professional-2-p3.webp",
+    "figureImage": "/exams/figures/111/professional-2-q6.webp",
     "originalPage": 3
   },
   "111-2-9": {
-    "questionImage": "/exams/pages/111/professional-2-p3.webp",
+    "figureImage": "/exams/figures/111/professional-2-q9.webp",
     "originalPage": 3
   },
   "111-2-10": {
-    "questionImage": "/exams/pages/111/professional-2-p4.webp",
+    "figureImage": "/exams/figures/111/professional-2-q10.webp",
     "originalPage": 4
   },
   "111-2-19": {
-    "questionImage": "/exams/pages/111/professional-2-p5.webp",
+    "figureImage": "/exams/figures/111/professional-2-q19.webp",
     "originalPage": 5
   },
   "111-2-23": {
-    "questionImage": "/exams/pages/111/professional-2-p6.webp",
+    "figureImage": "/exams/figures/111/professional-2-q23.webp",
     "originalPage": 6
   },
   "111-2-24": {
-    "questionImage": "/exams/pages/111/professional-2-p7.webp",
+    "figureImage": "/exams/figures/111/professional-2-q24.webp",
     "originalPage": 7
   },
   "111-2-25": {
-    "questionImage": "/exams/pages/111/professional-2-p7.webp",
+    "figureImage": "/exams/figures/111/professional-2-q25.webp",
     "originalPage": 7
   },
   "111-2-26": {
-    "questionImage": "/exams/pages/111/professional-2-p8.webp",
+    "figureImage": "/exams/figures/111/professional-2-q26.webp",
     "originalPage": 8
   },
   "111-2-29": {
-    "questionImage": "/exams/pages/111/professional-2-p9.webp",
+    "figureImage": "/exams/figures/111/professional-2-q29.webp",
     "originalPage": 9
   },
   "111-2-34": {
-    "questionImage": "/exams/pages/111/professional-2-p10.webp",
+    "figureImage": "/exams/figures/111/professional-2-q34.webp",
     "originalPage": 10
   },
   "111-2-36": {
-    "questionImage": "/exams/pages/111/professional-2-p10.webp",
+    "figureImage": "/exams/figures/111/professional-2-q36.webp",
     "originalPage": 10
   },
   "111-2-37": {
-    "questionImage": "/exams/pages/111/professional-2-p11.webp",
+    "figureImage": "/exams/figures/111/professional-2-q37.webp",
     "originalPage": 11
   },
   "111-2-39": {
-    "questionImage": "/exams/pages/111/professional-2-p12.webp",
+    "figureImage": "/exams/figures/111/professional-2-q39.webp",
     "originalPage": 12
   },
   "111-2-40": {
-    "questionImage": "/exams/pages/111/professional-2-p12.webp",
+    "figureImage": "/exams/figures/111/professional-2-q40.webp",
     "originalPage": 12
   },
   "112-1-1": {
-    "questionImage": "/exams/pages/112/professional-1-p2.webp",
+    "figureImage": "/exams/figures/112/professional-1-q1.webp",
     "originalPage": 2
   },
   "112-1-2": {
-    "questionImage": "/exams/pages/112/professional-1-p2.webp",
+    "figureImage": "/exams/figures/112/professional-1-q2.webp",
     "originalPage": 2
   },
   "112-1-4": {
-    "questionImage": "/exams/pages/112/professional-1-p2.webp",
+    "figureImage": "/exams/figures/112/professional-1-q4.webp",
     "originalPage": 2
   },
   "112-1-5": {
-    "questionImage": "/exams/pages/112/professional-1-p3.webp",
+    "figureImage": "/exams/figures/112/professional-1-q5.webp",
     "originalPage": 3
   },
   "112-1-7": {
-    "questionImage": "/exams/pages/112/professional-1-p3.webp",
+    "figureImage": "/exams/figures/112/professional-1-q7.webp",
     "originalPage": 3
   },
   "112-1-8": {
-    "questionImage": "/exams/pages/112/professional-1-p3.webp",
+    "figureImage": "/exams/figures/112/professional-1-q8.webp",
     "originalPage": 3
   },
   "112-1-9": {
-    "questionImage": "/exams/pages/112/professional-1-p4.webp",
+    "figureImage": "/exams/figures/112/professional-1-q9.webp",
     "originalPage": 4
   },
   "112-1-11": {
-    "questionImage": "/exams/pages/112/professional-1-p4.webp",
+    "figureImage": "/exams/figures/112/professional-1-q11.webp",
     "originalPage": 4
   },
   "112-1-12": {
-    "questionImage": "/exams/pages/112/professional-1-p4.webp",
+    "figureImage": "/exams/figures/112/professional-1-q12.webp",
     "originalPage": 4
   },
   "112-1-13": {
-    "questionImage": "/exams/pages/112/professional-1-p5.webp",
+    "figureImage": "/exams/figures/112/professional-1-q13.webp",
     "originalPage": 5
   },
   "112-1-15": {
-    "questionImage": "/exams/pages/112/professional-1-p5.webp",
+    "figureImage": "/exams/figures/112/professional-1-q15.webp",
     "originalPage": 5
   },
   "112-1-17": {
-    "questionImage": "/exams/pages/112/professional-1-p6.webp",
+    "figureImage": "/exams/figures/112/professional-1-q17.webp",
     "originalPage": 6
   },
   "112-1-19": {
-    "questionImage": "/exams/pages/112/professional-1-p7.webp",
+    "figureImage": "/exams/figures/112/professional-1-q19.webp",
     "originalPage": 7
   },
   "112-1-20": {
-    "questionImage": "/exams/pages/112/professional-1-p7.webp",
+    "figureImage": "/exams/figures/112/professional-1-q20.webp",
     "originalPage": 7
   },
   "112-1-22": {
-    "questionImage": "/exams/pages/112/professional-1-p7.webp",
+    "figureImage": "/exams/figures/112/professional-1-q22.webp",
     "originalPage": 7
   },
   "112-1-33": {
-    "questionImage": "/exams/pages/112/professional-1-p9.webp",
+    "figureImage": "/exams/figures/112/professional-1-q33.webp",
     "originalPage": 9
   },
   "112-2-5": {
-    "questionImage": "/exams/pages/112/professional-2-p3.webp",
+    "figureImage": "/exams/figures/112/professional-2-q5.webp",
     "originalPage": 3
   },
   "112-2-21": {
-    "questionImage": "/exams/pages/112/professional-2-p6.webp",
+    "figureImage": "/exams/figures/112/professional-2-q21.webp",
     "originalPage": 6
   },
   "112-2-22": {
-    "questionImage": "/exams/pages/112/professional-2-p6.webp",
+    "figureImage": "/exams/figures/112/professional-2-q22.webp",
     "originalPage": 6
   },
   "112-2-23": {
-    "questionImage": "/exams/pages/112/professional-2-p7.webp",
+    "figureImage": "/exams/figures/112/professional-2-q23.webp",
     "originalPage": 7
   },
   "112-2-26": {
-    "questionImage": "/exams/pages/112/professional-2-p8.webp",
+    "figureImage": "/exams/figures/112/professional-2-q26.webp",
     "originalPage": 8
   },
   "112-2-28": {
-    "questionImage": "/exams/pages/112/professional-2-p9.webp",
+    "figureImage": "/exams/figures/112/professional-2-q28.webp",
     "originalPage": 9
   },
   "112-2-29": {
-    "questionImage": "/exams/pages/112/professional-2-p9.webp",
+    "figureImage": "/exams/figures/112/professional-2-q29.webp",
     "originalPage": 9
   },
   "112-2-33": {
-    "questionImage": "/exams/pages/112/professional-2-p10.webp",
+    "figureImage": "/exams/figures/112/professional-2-q33.webp",
     "originalPage": 10
   },
   "112-2-34": {
-    "questionImage": "/exams/pages/112/professional-2-p10.webp",
+    "figureImage": "/exams/figures/112/professional-2-q34.webp",
     "originalPage": 10
   },
   "112-2-35": {
-    "questionImage": "/exams/pages/112/professional-2-p10.webp",
+    "figureImage": "/exams/figures/112/professional-2-q35.webp",
     "originalPage": 10
   },
   "112-2-36": {
-    "questionImage": "/exams/pages/112/professional-2-p11.webp",
+    "figureImage": "/exams/figures/112/professional-2-q36.webp",
     "originalPage": 11
   },
   "112-2-38": {
-    "questionImage": "/exams/pages/112/professional-2-p12.webp",
+    "figureImage": "/exams/figures/112/professional-2-q38.webp",
     "originalPage": 12
   },
   "113-1-2": {
-    "questionImage": "/exams/pages/113/professional-1-p2.webp",
+    "figureImage": "/exams/figures/113/professional-1-q2.webp",
     "originalPage": 2
   },
   "113-1-3": {
-    "questionImage": "/exams/pages/113/professional-1-p2.webp",
+    "figureImage": "/exams/figures/113/professional-1-q3.webp",
     "originalPage": 2
   },
   "113-1-6": {
-    "questionImage": "/exams/pages/113/professional-1-p2.webp",
+    "figureImage": "/exams/figures/113/professional-1-q6.webp",
     "originalPage": 2
   },
   "113-1-9": {
-    "questionImage": "/exams/pages/113/professional-1-p3.webp",
+    "figureImage": "/exams/figures/113/professional-1-q9.webp",
     "originalPage": 3
   },
   "113-1-10": {
-    "questionImage": "/exams/pages/113/professional-1-p3.webp",
+    "figureImage": "/exams/figures/113/professional-1-q10.webp",
     "originalPage": 3
   },
   "113-1-11": {
-    "questionImage": "/exams/pages/113/professional-1-p4.webp",
+    "figureImage": "/exams/figures/113/professional-1-q11.webp",
     "originalPage": 4
   },
   "113-1-13": {
-    "questionImage": "/exams/pages/113/professional-1-p4.webp",
+    "figureImage": "/exams/figures/113/professional-1-q13.webp",
     "originalPage": 4
   },
   "113-1-14": {
-    "questionImage": "/exams/pages/113/professional-1-p4.webp",
+    "figureImage": "/exams/figures/113/professional-1-q14.webp",
     "originalPage": 4
   },
   "113-1-15": {
-    "questionImage": "/exams/pages/113/professional-1-p5.webp",
+    "figureImage": "/exams/figures/113/professional-1-q15.webp",
     "originalPage": 5
   },
   "113-1-16": {
-    "questionImage": "/exams/pages/113/professional-1-p5.webp",
+    "figureImage": "/exams/figures/113/professional-1-q16.webp",
     "originalPage": 5
   },
   "113-1-17": {
-    "questionImage": "/exams/pages/113/professional-1-p5.webp",
+    "figureImage": "/exams/figures/113/professional-1-q17.webp",
     "originalPage": 5
   },
   "113-1-21": {
-    "questionImage": "/exams/pages/113/professional-1-p6.webp",
+    "figureImage": "/exams/figures/113/professional-1-q21.webp",
     "originalPage": 6
   },
   "113-1-39": {
-    "questionImage": "/exams/pages/113/professional-1-p9.webp",
+    "figureImage": "/exams/figures/113/professional-1-q39.webp",
     "originalPage": 9
   },
   "113-2-11": {
-    "questionImage": "/exams/pages/113/professional-2-p3.webp",
+    "figureImage": "/exams/figures/113/professional-2-q11.webp",
     "originalPage": 3
   },
   "113-2-13": {
-    "questionImage": "/exams/pages/113/professional-2-p3.webp",
+    "figureImage": "/exams/figures/113/professional-2-q13.webp",
     "originalPage": 3
   },
   "113-2-17": {
-    "questionImage": "/exams/pages/113/professional-2-p4.webp",
+    "figureImage": "/exams/figures/113/professional-2-q17.webp",
     "originalPage": 4
   },
   "113-2-18": {
-    "questionImage": "/exams/pages/113/professional-2-p4.webp",
+    "figureImage": "/exams/figures/113/professional-2-q18.webp",
     "originalPage": 4
   },
   "113-2-19": {
-    "questionImage": "/exams/pages/113/professional-2-p4.webp",
+    "figureImage": "/exams/figures/113/professional-2-q19.webp",
     "originalPage": 4
   },
   "113-2-20": {
-    "questionImage": "/exams/pages/113/professional-2-p5.webp",
+    "figureImage": "/exams/figures/113/professional-2-q20.webp",
     "originalPage": 5
   },
   "113-2-24": {
-    "questionImage": "/exams/pages/113/professional-2-p5.webp",
+    "figureImage": "/exams/figures/113/professional-2-q24.webp",
     "originalPage": 5
   },
   "113-2-25": {
-    "questionImage": "/exams/pages/113/professional-2-p6.webp",
+    "figureImage": "/exams/figures/113/professional-2-q25.webp",
     "originalPage": 6
   },
   "113-2-26": {
-    "questionImage": "/exams/pages/113/professional-2-p6.webp",
+    "figureImage": "/exams/figures/113/professional-2-q26.webp",
     "originalPage": 6
   },
   "113-2-27": {
-    "questionImage": "/exams/pages/113/professional-2-p6.webp",
+    "figureImage": "/exams/figures/113/professional-2-q27.webp",
     "originalPage": 6
   },
   "113-2-29": {
-    "questionImage": "/exams/pages/113/professional-2-p7.webp",
+    "figureImage": "/exams/figures/113/professional-2-q29.webp",
     "originalPage": 7
   },
   "114-1-1": {
-    "questionImage": "/exams/pages/114/professional-1-p2.webp",
+    "figureImage": "/exams/figures/114/professional-1-q1.webp",
     "originalPage": 2
   },
   "114-1-2": {
-    "questionImage": "/exams/pages/114/professional-1-p2.webp",
+    "figureImage": "/exams/figures/114/professional-1-q2.webp",
     "originalPage": 2
   },
   "114-1-5": {
-    "questionImage": "/exams/pages/114/professional-1-p3.webp",
+    "figureImage": "/exams/figures/114/professional-1-q5.webp",
     "originalPage": 3
   },
   "114-1-7": {
-    "questionImage": "/exams/pages/114/professional-1-p3.webp",
+    "figureImage": "/exams/figures/114/professional-1-q7.webp",
     "originalPage": 3
   },
   "114-1-8": {
-    "questionImage": "/exams/pages/114/professional-1-p3.webp",
+    "figureImage": "/exams/figures/114/professional-1-q8.webp",
     "originalPage": 3
   },
   "114-1-9": {
-    "questionImage": "/exams/pages/114/professional-1-p4.webp",
+    "figureImage": "/exams/figures/114/professional-1-q9.webp",
     "originalPage": 4
   },
   "114-1-11": {
-    "questionImage": "/exams/pages/114/professional-1-p4.webp",
+    "figureImage": "/exams/figures/114/professional-1-q11.webp",
     "originalPage": 4
   },
   "114-1-12": {
-    "questionImage": "/exams/pages/114/professional-1-p4.webp",
+    "figureImage": "/exams/figures/114/professional-1-q12.webp",
     "originalPage": 4
   },
   "114-1-13": {
-    "questionImage": "/exams/pages/114/professional-1-p5.webp",
+    "figureImage": "/exams/figures/114/professional-1-q13.webp",
     "originalPage": 5
   },
   "114-1-14": {
-    "questionImage": "/exams/pages/114/professional-1-p5.webp",
+    "figureImage": "/exams/figures/114/professional-1-q14.webp",
     "originalPage": 5
   },
   "114-1-15": {
-    "questionImage": "/exams/pages/114/professional-1-p5.webp",
+    "figureImage": "/exams/figures/114/professional-1-q15.webp",
     "originalPage": 5
   },
   "114-1-16": {
-    "questionImage": "/exams/pages/114/professional-1-p6.webp",
+    "figureImage": "/exams/figures/114/professional-1-q16.webp",
     "originalPage": 6
   },
   "114-1-17": {
-    "questionImage": "/exams/pages/114/professional-1-p6.webp",
+    "figureImage": "/exams/figures/114/professional-1-q17.webp",
     "originalPage": 6
   },
   "114-1-18": {
-    "questionImage": "/exams/pages/114/professional-1-p6.webp",
+    "figureImage": "/exams/figures/114/professional-1-q18.webp",
     "originalPage": 6
   },
   "114-1-19": {
-    "questionImage": "/exams/pages/114/professional-1-p6.webp",
+    "figureImage": "/exams/figures/114/professional-1-q19.webp",
     "originalPage": 6
   },
   "114-1-20": {
-    "questionImage": "/exams/pages/114/professional-1-p7.webp",
+    "figureImage": "/exams/figures/114/professional-1-q20.webp",
     "originalPage": 7
   },
   "114-1-36": {
-    "questionImage": "/exams/pages/114/professional-1-p9.webp",
+    "figureImage": "/exams/figures/114/professional-1-q36.webp",
     "originalPage": 9
   },
   "114-2-24": {
-    "questionImage": "/exams/pages/114/professional-2-p6.webp",
+    "figureImage": "/exams/figures/114/professional-2-q24.webp",
     "originalPage": 6
   },
   "114-2-25": {
-    "questionImage": "/exams/pages/114/professional-2-p6.webp",
+    "figureImage": "/exams/figures/114/professional-2-q25.webp",
     "originalPage": 6
   },
   "114-2-26": {
-    "questionImage": "/exams/pages/114/professional-2-p7.webp",
+    "figureImage": "/exams/figures/114/professional-2-q26.webp",
     "originalPage": 7
   },
   "114-2-27": {
-    "questionImage": "/exams/pages/114/professional-2-p7.webp",
+    "figureImage": "/exams/figures/114/professional-2-q27.webp",
     "originalPage": 7
   },
   "114-2-29": {
-    "questionImage": "/exams/pages/114/professional-2-p8.webp",
+    "figureImage": "/exams/figures/114/professional-2-q29.webp",
     "originalPage": 8
   },
   "114-2-30": {
-    "questionImage": "/exams/pages/114/professional-2-p8.webp",
+    "figureImage": "/exams/figures/114/professional-2-q30.webp",
     "originalPage": 8
   },
   "114-2-31": {
-    "questionImage": "/exams/pages/114/professional-2-p9.webp",
+    "figureImage": "/exams/figures/114/professional-2-q31.webp",
     "originalPage": 9
   },
   "114-2-32": {
-    "questionImage": "/exams/pages/114/professional-2-p9.webp",
+    "figureImage": "/exams/figures/114/professional-2-q32.webp",
     "originalPage": 9
   },
   "114-2-39": {
-    "questionImage": "/exams/pages/114/professional-2-p12.webp",
+    "figureImage": "/exams/figures/114/professional-2-q39.webp",
     "originalPage": 12
   },
   "114-2-40": {
-    "questionImage": "/exams/pages/114/professional-2-p12.webp",
+    "figureImage": "/exams/figures/114/professional-2-q40.webp",
     "originalPage": 12
   },
   "115-1-1": {
-    "questionImage": "/exams/pages/115/professional-1-p2.webp",
+    "figureImage": "/exams/figures/115/professional-1-q1.webp",
     "originalPage": 2
   },
   "115-1-2": {
-    "questionImage": "/exams/pages/115/professional-1-p2.webp",
+    "figureImage": "/exams/figures/115/professional-1-q2.webp",
     "originalPage": 2
   },
   "115-1-3": {
-    "questionImage": "/exams/pages/115/professional-1-p2.webp",
+    "figureImage": "/exams/figures/115/professional-1-q3.webp",
     "originalPage": 2
   },
   "115-1-4": {
-    "questionImage": "/exams/pages/115/professional-1-p2.webp",
+    "figureImage": "/exams/figures/115/professional-1-q4.webp",
     "originalPage": 2
   },
   "115-1-5": {
-    "questionImage": "/exams/pages/115/professional-1-p3.webp",
+    "figureImage": "/exams/figures/115/professional-1-q5.webp",
     "originalPage": 3
   },
   "115-1-6": {
-    "questionImage": "/exams/pages/115/professional-1-p3.webp",
+    "figureImage": "/exams/figures/115/professional-1-q6.webp",
     "originalPage": 3
   },
   "115-1-9": {
-    "questionImage": "/exams/pages/115/professional-1-p4.webp",
+    "figureImage": "/exams/figures/115/professional-1-q9.webp",
     "originalPage": 4
   },
   "115-1-10": {
-    "questionImage": "/exams/pages/115/professional-1-p4.webp",
+    "figureImage": "/exams/figures/115/professional-1-q10.webp",
     "originalPage": 4
   },
   "115-1-11": {
-    "questionImage": "/exams/pages/115/professional-1-p4.webp",
+    "figureImage": "/exams/figures/115/professional-1-q11.webp",
     "originalPage": 4
   },
   "115-1-12": {
-    "questionImage": "/exams/pages/115/professional-1-p5.webp",
+    "figureImage": "/exams/figures/115/professional-1-q12.webp",
     "originalPage": 5
   },
   "115-1-13": {
-    "questionImage": "/exams/pages/115/professional-1-p5.webp",
+    "figureImage": "/exams/figures/115/professional-1-q13.webp",
     "originalPage": 5
   },
   "115-1-15": {
-    "questionImage": "/exams/pages/115/professional-1-p6.webp",
+    "figureImage": "/exams/figures/115/professional-1-q15.webp",
     "originalPage": 6
   },
   "115-1-16": {
-    "questionImage": "/exams/pages/115/professional-1-p6.webp",
+    "figureImage": "/exams/figures/115/professional-1-q16.webp",
     "originalPage": 6
   },
   "115-1-17": {
-    "questionImage": "/exams/pages/115/professional-1-p6.webp",
+    "figureImage": "/exams/figures/115/professional-1-q17.webp",
     "originalPage": 6
   },
   "115-1-18": {
-    "questionImage": "/exams/pages/115/professional-1-p7.webp",
+    "figureImage": "/exams/figures/115/professional-1-q18.webp",
     "originalPage": 7
   },
   "115-1-19": {
-    "questionImage": "/exams/pages/115/professional-1-p7.webp",
+    "figureImage": "/exams/figures/115/professional-1-q19.webp",
     "originalPage": 7
   },
   "115-1-20": {
-    "questionImage": "/exams/pages/115/professional-1-p7.webp",
+    "figureImage": "/exams/figures/115/professional-1-q20.webp",
     "originalPage": 7
   },
   "115-1-37": {
-    "questionImage": "/exams/pages/115/professional-1-p10.webp",
+    "figureImage": "/exams/figures/115/professional-1-q37.webp",
     "originalPage": 10
   },
   "115-1-40": {
-    "questionImage": "/exams/pages/115/professional-1-p11.webp",
+    "figureImage": "/exams/figures/115/professional-1-q40.webp",
     "originalPage": 11
   },
   "115-2-7": {
-    "questionImage": "/exams/pages/115/professional-2-p2.webp",
+    "figureImage": "/exams/figures/115/professional-2-q7.webp",
     "originalPage": 2
   },
   "115-2-9": {
-    "questionImage": "/exams/pages/115/professional-2-p3.webp",
+    "figureImage": "/exams/figures/115/professional-2-q9.webp",
     "originalPage": 3
   },
   "115-2-10": {
-    "questionImage": "/exams/pages/115/professional-2-p3.webp",
+    "figureImage": "/exams/figures/115/professional-2-q10.webp",
     "originalPage": 3
   },
   "115-2-12": {
-    "questionImage": "/exams/pages/115/professional-2-p3.webp",
+    "figureImage": "/exams/figures/115/professional-2-q12.webp",
     "originalPage": 3
   },
   "115-2-15": {
-    "questionImage": "/exams/pages/115/professional-2-p4.webp",
+    "figureImage": "/exams/figures/115/professional-2-q15.webp",
     "originalPage": 4
   },
   "115-2-17": {
-    "questionImage": "/exams/pages/115/professional-2-p4.webp",
+    "figureImage": "/exams/figures/115/professional-2-q17.webp",
     "originalPage": 4
   },
   "115-2-19": {
-    "questionImage": "/exams/pages/115/professional-2-p5.webp",
+    "figureImage": "/exams/figures/115/professional-2-q19.webp",
     "originalPage": 5
   },
   "115-2-20": {
-    "questionImage": "/exams/pages/115/professional-2-p5.webp",
+    "figureImage": "/exams/figures/115/professional-2-q20.webp",
     "originalPage": 5
   },
   "115-2-30": {
-    "questionImage": "/exams/pages/115/professional-2-p8.webp",
+    "figureImage": "/exams/figures/115/professional-2-q30.webp",
     "originalPage": 8
   },
   "115-2-36": {
-    "questionImage": "/exams/pages/115/professional-2-p9.webp",
+    "figureImage": "/exams/figures/115/professional-2-q36.webp",
     "originalPage": 9
   },
   "115-2-37": {
-    "questionImage": "/exams/pages/115/professional-2-p10.webp",
+    "figureImage": "/exams/figures/115/professional-2-q37.webp",
     "originalPage": 10
   },
   "115-2-38": {
-    "questionImage": "/exams/pages/115/professional-2-p10.webp",
+    "figureImage": "/exams/figures/115/professional-2-q38.webp",
     "originalPage": 10
   },
   "115-2-39": {
-    "questionImage": "/exams/pages/115/professional-2-p11.webp",
+    "figureImage": "/exams/figures/115/professional-2-q39.webp",
     "originalPage": 11
   },
   "115-2-40": {
-    "questionImage": "/exams/pages/115/professional-2-p11.webp",
+    "figureImage": "/exams/figures/115/professional-2-q40.webp",
     "originalPage": 11
   }
 }
