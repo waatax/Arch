@@ -43,7 +43,9 @@ export const englishData: SubjectData = {
               ['Load-bearing', 'adj.', '承重的', 'Removing a load-bearing wall requires structural recalculation.'],
               ['Fenestration', 'n.', '開窗設計 / 門窗佈局', 'Proper fenestration maximizes natural light and ventilation.'],
               ['Sustainability', 'n.', '永續性 / 環保發展', 'Using recycled steel enhances the sustainability of the project.'],
-              ['Elevation', 'n.', '立面圖 / 海拔高度', 'The front elevation illustrates the vertical height of the roof.']
+              ['Elevation', 'n.', '立面圖 / 海拔高度', 'The front elevation illustrates the vertical height of the roof.'],
+              ['Insulation', 'n.', '隔熱材 / 絕緣體', 'High-density fiberglass provides effective thermal insulation.'],
+              ['Cantilever', 'n./v.', '懸臂樑 / 懸臂伸出', 'The modern house features a dramatic cantilevered balcony.']
             ]
           }
         },
@@ -61,7 +63,8 @@ export const englishData: SubjectData = {
               ['Set up / Erect', '架設 / 組裝', 'Scaffolding was set up around the perimeter of the tower.'],
               ['Comply with', '符合 / 遵守規範', 'The building design must comply with seismic safety codes.'],
               ['Break down', '細分 / 故障', 'The budget is broken down into material and labor costs.'],
-              ['Call for', '呼籲 / 需要', 'The unexpected soil settlement calls for immediate inspection.']
+              ['Call for', '呼籲 / 需要', 'The unexpected soil settlement calls for immediate inspection.'],
+              ['Pave the way for', '為…鋪路 / 為…奠定基礎', 'Sustainable urban planning paves the way for greener cities.']
             ]
           }
         },
@@ -73,7 +76,8 @@ export const englishData: SubjectData = {
             rows: [
               ['Construct vs. Fabricate', 'Construct 指工地現場建造總體結構；Fabricate 指工廠預製零組件。', 'Steel beams are fabricated in factories and assembled on site.'],
               ['Durable vs. Sturdy', 'Durable 強調材質經久耐用抗風化；Sturdy 強調結構實體堅固穩重。', 'Durable granite counter; sturdy load-bearing masonry wall.'],
-              ['Demolish vs. Dismantle', 'Demolish 為毀壞性拆除；Dismantle 為按零組件完整拆卸。', 'Dismantle steel scaffolding for future reuse.']
+              ['Demolish vs. Dismantle', 'Demolish 為毀壞性拆除；Dismantle 為按零組件完整拆卸。', 'Dismantle steel scaffolding for future reuse.'],
+              ['Renovate vs. Restore', 'Renovate 著重翻新現代化設施；Restore 著重將古蹟修復回歷史原貌。', 'Restore the historic chapel façade; renovate the interior office.']
             ]
           }
         },
@@ -84,8 +88,22 @@ export const englishData: SubjectData = {
             'adjacent to (緊鄰/相鄰): The secondary exit is adjacent to the main elevator shaft.',
             'parallel to (平行於): The main corridor runs parallel to the exterior curtain wall.',
             'perpendicular to (垂直於): Structural cross-beams must be perpendicular to the main joists.',
-            'beneath / underneath (在…正下方): High-voltage cables are embedded beneath the sub-floor.'
+            'beneath / underneath (在…正下方): High-voltage cables are embedded beneath the sub-floor.',
+            'opposite to / facing (面對/正對): The entrance gate is directly facing the central plaza.'
           ]
+        },
+        {
+          heading: '綠建築與永續材料專有名詞彙編 (Green Building & Eco-Material Vocabulary)',
+          body: '最新能源規範與 LEED 認證高頻評估名詞。',
+          table: {
+            headers: ['術語名詞', '中文名稱', '技術涵義與應用'],
+            rows: [
+              ['Carbon Footprint', '碳足跡', 'Total greenhouse gas emissions generated during building lifecycle'],
+              ['Photovoltaic (PV)', '太陽能光電板', 'Devices converting solar energy directly into electricity'],
+              ['Thermal Envelope', '建築外皮隔熱層', 'Insulated barrier preventing indoor heat loss or gain'],
+              ['Graywater System', '中水/灰水回收系統', 'Reusing wastewater from sinks and showers for landscape irrigation']
+            ]
+          }
         }
       ],
       practices: [
@@ -100,6 +118,16 @@ export const englishData: SubjectData = {
           answer: '(B) tear down'
         },
         {
+          difficulty: '基礎',
+          question: 'The main _______ of the newly designed museum features transparent glass panels that allow natural sunlight to illuminate the lobby.\n(A) sub-base (B) façade (C) scaffold (D) joist',
+          steps: [
+            '1. 句意分析：新博物館的主「外牆/立面」採用透明玻璃板，使陽光能照亮大廳。',
+            '2. 選項辨析：(A) sub-base 次底層 (B) façade 建築外牆/立面 (C) scaffold 腳手架 (D) joist 樓板樑。',
+            '3. 故正確答案為 (B) façade。'
+          ],
+          answer: '(B) façade'
+        },
+        {
           difficulty: '中等',
           question: 'Before launching construction, the contractor must ensure that the building design _______ local safety codes and environmental regulations.\n(A) complies with (B) consists of (C) structuralizes in (D) departs from',
           steps: [
@@ -108,6 +136,16 @@ export const englishData: SubjectData = {
             '3. (B) consist of 表示「由…組成」，(D) depart from 表示「偏離/離開」。故選 (A)。'
           ],
           answer: '(A) complies with'
+        },
+        {
+          difficulty: '中等',
+          question: 'Structural cross-beams in steel framing must be placed _______ to the main supporting joists to guarantee load balance.\n(A) parallel (B) perpendicular (C) subterranean (D) adjacent',
+          steps: [
+            '1. 句意分析：鋼框架中的結構交叉樑必須與主要支撐樑「垂直」擺設，以確保載重平衡。',
+            '2. 詞彙選擇：(A) parallel 平行的 (B) perpendicular 垂直的 (C) subterranean 地下的 (D) adjacent 相鄰的。',
+            '3. 答案為 (B) perpendicular。'
+          ],
+          answer: '(B) perpendicular'
         },
         {
           difficulty: '進階',
@@ -128,18 +166,28 @@ export const englishData: SubjectData = {
             '3. 正確答案為 (B)。'
           ],
           answer: '(B) façade'
+        },
+        {
+          difficulty: '進階',
+          question: 'Unlike temporary housing structures, civic monuments are engineered with highly _______ stone materials to withstand centuries of weathering.\n(A) perishable (B) durable (C) fragile (D) vulnerable',
+          steps: [
+            '1. 分析對比與句意：不同於臨時房屋，市立紀念碑採用極其「經久耐用的」石材建造，以抵禦數世紀的風化。',
+            '2. 詞彙辨析：(A) perishable 易腐爛的 (B) durable 經久耐用的 (C) fragile 易碎的 (D) vulnerable 脆弱的。',
+            '3. 故選 (B) durable。'
+          ],
+          answer: '(B) durable'
+        },
+        {
+          difficulty: '進階',
+          question: 'To eliminate toxic indoor pollutants, green building standards demand the installation of high-efficiency thermal _______ within exterior walls.\n(A) insulation (B) elevation (C) fluctuation (D) orientation',
+          steps: [
+            '1. 句意分析：為了提升能效與舒適度，綠建築標準要求在外牆內安裝高效能熱「隔熱材」(thermal insulation)。',
+            '2. 詞彙選擇：(A) insulation 隔熱/絕緣 (B) elevation 立面/海拔 (C) fluctuation 波動 (D) orientation 朝向。',
+            '3. 答案為 (A) insulation。'
+          ],
+          answer: '(A) insulation'
         }
-      ],
-      practice: {
-        difficulty: '基礎',
-        question: 'The engineering firm decided to _______ the old factory building to make way for a modern eco-friendly housing complex.\n(A) put off (B) tear down (C) look after (D) turn into',
-        steps: [
-          '1. 分析句意：工程公司決定「拆除」舊工廠建築，以改建為現代化環保住宅區。',
-          '2. 選項分析：(A) put off (延期) (B) tear down (拆除) (C) look after (照顧) (D) turn into (變成)。',
-          '3. 故正確答案為 (B) tear down。'
-        ],
-        answer: '(B) tear down'
-      }
+      ]
     },
     {
       slug: 'grammar-patterns',
@@ -196,6 +244,15 @@ export const englishData: SubjectData = {
           heading: '假設語氣與工程風險預測句型 (Subjunctive Mood & Inversion)',
           body: '用於評估未發生情境、施工風險與結構設計假設。',
           formula: '與過去事實相反：If + S + had + p.p., S + would/could + have + p.p.\n倒裝句型：Had + S + p.p., S + would/could + have + p.p.'
+        },
+        {
+          heading: '使役動詞與感官動詞句型 (Causative Verbs in Engineering Guidelines)',
+          body: '工程指示中常使用 make, have, let, get 引導受詞完成指定工項。',
+          steps: [
+            'Make / Have + 受詞 + 原形動詞 (V)：The site supervisor made the contractor rebuild the wall.',
+            'Get + 受詞 + to V / p.p.：We got the technician to recalibrate the total station. / We got the beam inspected.',
+            'Let + 受詞 + 原形動詞 (V)：Let the concrete cure for 28 days.'
+          ]
         }
       ],
       practices: [
@@ -210,6 +267,16 @@ export const englishData: SubjectData = {
           answer: '(B) which'
         },
         {
+          difficulty: '基礎',
+          question: 'The safety inspector insisted that all construction workers _______ hard hats while present on the job site.\n(A) wear (B) wore (C) wearing (D) to wear',
+          steps: [
+            '1. 文法結構：insist (堅決要求) 引導之 N-clause 需使用假設語氣命令動詞 (S + (should) + 原形動詞)。',
+            '2. 選項比對：應填入原形動詞 wear。',
+            '3. 故正確答案為 (A) wear。'
+          ],
+          answer: '(A) wear'
+        },
+        {
           difficulty: '中等',
           question: '_______ with high-tensile steel fiber, the concrete slab exhibits remarkable resistance against heavy seismic shocks.\n(A) Reinforce (B) Reinforcing (C) Reinforced (D) To reinforce',
           steps: [
@@ -218,6 +285,16 @@ export const englishData: SubjectData = {
             '3. 分詞構句規則：簡化從屬子句（Because it was reinforced...），保留過去分詞 (p.p.) "Reinforced"。'
           ],
           answer: '(C) Reinforced'
+        },
+        {
+          difficulty: '中等',
+          question: 'The structural engineers spent three weeks _______ the maximum load capacity of the wooden truss system.\n(A) calculate (B) calculating (C) calculated (D) to calculate',
+          steps: [
+            '1. 句型搭配：spend + 時間/金錢 + (in) V-ing。',
+            '2. 分析：spent three weeks後應搭配動名詞 (V-ing) calculating。',
+            '3. 答案為 (B) calculating。'
+          ],
+          answer: '(B) calculating'
         },
         {
           difficulty: '進階',
@@ -238,18 +315,28 @@ export const englishData: SubjectData = {
             '3. 詞性選擇：inadequate 為形容詞「不充足的/不符合要求的」，充當受詞補語。'
           ],
           answer: '(A) inadequate'
+        },
+        {
+          difficulty: '進階',
+          question: 'Not until the city council passed the zoning amendment _______ to begin phase two of the downtown urban revitalization project.\n(A) the developers were able (B) were the developers able (C) did the developers able (D) the developers had been able',
+          steps: [
+            '1. 否定倒裝語句：句首出現 "Not until + 子句" 時，主要子句必須採用倒裝語序 (助動詞/be動詞 + 主詞)。',
+            '2. 分析主要子句：be able to 的過去式倒裝為 "were the developers able"。',
+            '3. 正確答案為 (B)。'
+          ],
+          answer: '(B) were the developers able'
+        },
+        {
+          difficulty: '進階',
+          question: 'The architect was seen _______ the revised blueprints with the client when the power outage suddenly occurred.\n(A) discuss (B) discussing (C) discussed (D) to be discussed',
+          steps: [
+            '1. 感官/觀察動詞被動態：see sb doing sth 在被動語態中保留分詞作補語 (be seen V-ing)。',
+            '2. 分析：表示當停電發生時，建築師正「正在進行」討論，故用現在分詞 (discussing)。',
+            '3. 答案為 (B) discussing。'
+          ],
+          answer: '(B) discussing'
         }
-      ],
-      practice: {
-        difficulty: '基礎',
-        question: 'The new museum, _______ was designed by a world-renowned architect, will open to the public next month.\n(A) who (B) which (C) where (D) what',
-        steps: [
-          '1. 判斷先行詞：The new museum（建築物/事物）。',
-          '2. 判斷子句結構與標點：逗號引導非限定關係子句，需使用 which 作為指代物的關係代名詞（that 不能用於非限定子句）。',
-          '3. 正確答案為 (B) which。'
-        ],
-        answer: '(B) which'
-      }
+      ]
     },
     {
       slug: 'reading-comprehension',
@@ -308,6 +395,15 @@ export const englishData: SubjectData = {
             'Supporting Details (支持細節): 列舉數據、實驗成果、施工步驟。',
             'Concluding / Transition Sentence (小結/轉折句): 總結本段並預告下一段主題。'
           ]
+        },
+        {
+          heading: '綠建築評估系統 LEED 閱讀考題常考知識彙整',
+          body: '理解 Leadership in Energy and Environmental Design (LEED) 四大評估面向：水資源效率、能耗、材料選擇與室內環境品質。',
+          steps: [
+            'Water Efficiency (WE): Rainwater harvesting and low-flow fixtures.',
+            'Energy & Atmosphere (EA): Renewable energy adoption and zero-carbon envelope.',
+            'Materials & Resources (MR): Life-cycle impact reduction and recycled content.'
+          ]
         }
       ],
       practices: [
@@ -322,6 +418,16 @@ export const englishData: SubjectData = {
           answer: '(C) Passive design utilizes structural elements without mechanical devices.'
         },
         {
+          difficulty: '基礎',
+          question: 'What is the primary function of "Thermal Mass" in passive solar building design?\n(A) To generate electricity during power outages\n(B) To store thermal energy and regulate indoor temperatures naturally\n(C) To increase the height of the foundation wall\n(D) To reflect sunlight away from south-facing windows',
+          steps: [
+            '1. 掃描短文關鍵字：thermal mass。',
+            '2. 閱讀細節："...materials like concrete or stone that store thermal energy..."。',
+            '3. 選項判定：(B) 正確指出蓄熱體能儲存熱能並自然調節室溫。'
+          ],
+          answer: '(B) To store thermal energy and regulate indoor temperatures naturally'
+        },
+        {
           difficulty: '中等',
           question: 'What role does a Tuned Mass Damper (TMD) play in a tall skyscraper like Taipei 101?\n(A) It increases the total weight of the foundation.\n(B) It dampens oscillations by moving in the opposite direction of lateral forces.\n(C) It powers the electricity of the entire building during earthquakes.\n(D) It makes the exterior walls completely rigid and immovable.',
           steps: [
@@ -330,6 +436,16 @@ export const englishData: SubjectData = {
             '3. 匹配選項：(B) 符合擺錘反向移動抵消搖晃之原理。'
           ],
           answer: '(B) It dampens oscillations by moving in the opposite direction of lateral forces.'
+        },
+        {
+          difficulty: '中等',
+          question: 'Why do modern structural engineers avoid relying purely on "rigid strength" in seismic regions?\n(A) Rigid materials are too expensive to transport to job sites.\n(B) Rigid structures lack energy dissipation and can undergo brittle failure during earthquakes.\n(C) Building codes completely prohibit the use of steel in tall structures.\n(D) Rigid structures cannot support glass curtain walls.',
+          steps: [
+            '1. 推理段落意涵：文中提及工程強調 "energy dissipation and flexibility" 比單純 rigid strength 更可靠。',
+            '2. 分析：完全剛硬的結構在強震下缺乏消能韌性，容易發生脆性破壞毀損。',
+            '3. 正確答案為 (B)。'
+          ],
+          answer: '(B) Rigid structures lack energy dissipation and can undergo brittle failure during earthquakes.'
         },
         {
           difficulty: '進階',
@@ -350,18 +466,27 @@ export const englishData: SubjectData = {
             '3. 答案為 (B)。'
           ],
           answer: '(B) Flexible designs allow the building to absorb and dissipate seismic energy without catastrophic collapse.'
+        },
+        {
+          difficulty: '進階',
+          question: 'Which of the following titles best summarizes the main idea of Technical Passage 2?\n(A) The Architectural History of Taipei 101\n(B) How Tuned Mass Dampers Generate Renewable Energy\n(C) Modern Seismic Mitigation and Energy Dissipation in Skyscrapers\n(D) The Environmental Impact of Wind Forces on High-Rise Buildings',
+          steps: [
+            '1. 掌握全篇主旨：文章重點討論高樓大廈如何利用韌性與 TMD 阻尼器達到抗震與風力消能。',
+            '2. 評估選項：(C) 精準概括全篇主題「摩天大樓現代抗震與消能技術」。',
+            '3. 故選 (C)。'
+          ],
+          answer: '(C) Modern Seismic Mitigation and Energy Dissipation in Skyscrapers'
+        },
+        {
+          difficulty: '進階',
+          question: 'Based on the passage, what happens when strong typhoon winds push a skyscraper to the right?\n(A) The Tuned Mass Damper swings to the right to add counterweight.\n(B) The Tuned Mass Damper\'s inertial force moves to the left to balance the sway.\n(C) The foundation of the building immediately disconnects.\n(D) The glass façade automatically detaches from the frame.',
+          steps: [
+            '1. 細節定位：當外力將建築推向某一方向（如右邊）時，懸掛擺錘的慣性力會向相反方向（左邊）晃動。',
+            '2. 匹配選項：(B) 完全符合原理。'
+          ],
+          answer: '(B) The Tuned Mass Damper\'s inertial force moves to the left to balance the sway.'
         }
-      ],
-      practice: {
-        difficulty: '基礎',
-        question: 'According to the passage on passive solar design, what is the main difference between passive and active solar systems?\n(A) Passive systems rely on mechanical pumps.\n(B) Active systems operate without solar panels.\n(C) Passive design utilizes structural elements without mechanical devices.\n(D) Active design relies solely on thermal mass like stone and concrete.',
-        steps: [
-          '1. 定位關鍵字：passive vs active solar systems。',
-          '2. 掃描短文細節："Unlike active solar systems, passive solar design operates without mechanical devices such as pumps..."。',
-          '3. 選項比對：(C) 正確說明被動式設計不依賴機械設備，利用建築構造運作。'
-        ],
-        answer: '(C) Passive design utilizes structural elements without mechanical devices.'
-      }
+      ]
     },
     {
       slug: 'conversation-daily-use',
@@ -416,6 +541,14 @@ export const englishData: SubjectData = {
             '詢問交貨期: "Could you inform us about the lead time for site delivery?"',
             '結尾確認: "We would appreciate it if you could send the catalog by end of day."'
           ]
+        },
+        {
+          heading: '工程驗收與缺失整改會話 (Snag List & Final Inspection Dialogue)',
+          body: '竣工點交 (handover) 時與監造技師確認缺失清單 (snag list / punch list) 的用語。',
+          steps: [
+            'Point out deficiencies: "We noticed some uneven plastering on the third-floor corridor."',
+            'Set rectification deadline: "All punch list items must be rectified within 10 business days."'
+          ]
         }
       ],
       practices: [
@@ -430,6 +563,15 @@ export const englishData: SubjectData = {
           answer: '(B) It\'s back to the drawing board to revise the structural calculations.'
         },
         {
+          difficulty: '基礎',
+          question: 'Safety Inspector: "Sir, you cannot enter the construction area without a helmet."\nVisitor: "________"\n(A) I am sorry. Where can I borrow a hard hat?\n(B) Yes, the elevator is over there.\n(C) I already ate my dinner.\n(D) Blueprints are very colorful.',
+          steps: [
+            '1. 分析情境：安全檢查員提醒未戴安全帽不可進入施工區。',
+            '2. 適當回應：(A) 道歉並詢問何處可借安全帽，符合工地安全對話常理。'
+          ],
+          answer: '(A) I am sorry. Where can I borrow a hard hat?'
+        },
+        {
           difficulty: '中等',
           question: 'Contractor: "Can we substitute this high-grade steel with a cheaper alternative to save money?"\nProject Manager: "Absolutely not! We must never _______ when it comes to structural safety."\n(A) cut corners (B) hit the road (C) burn the midnight oil (D) call it a day',
           steps: [
@@ -438,6 +580,16 @@ export const englishData: SubjectData = {
             '3. 正確答案為 (A)。'
           ],
           answer: '(A) cut corners'
+        },
+        {
+          difficulty: '中等',
+          question: 'Architect: "We\'ve settled the overall design concept for the lobby."\nClient: "Excellent. Now let\'s _______ before we sign the final contract."\n(A) iron out the details (B) break a leg (C) spill the beans (D) bite the bullet',
+          steps: [
+            '1. 語境理解：大廳整體概念已確定，業主提議在簽約前「敲定細節」。',
+            '2. 慣用語選擇："iron out the details" 即為敲定/磨平細節。',
+            '3. 故選 (A)。'
+          ],
+          answer: '(A) iron out the details'
         },
         {
           difficulty: '進階',
@@ -458,18 +610,26 @@ export const englishData: SubjectData = {
             '3. 正確答案為 (B)。'
           ],
           answer: '(B) It usually takes approximately four weeks after sample approval.'
+        },
+        {
+          difficulty: '進階',
+          question: 'Architect: "Would you consider incorporating a green roof to lower summer cooling loads?"\nOwner: "________"\n(A) That sounds like a sustainable idea, provided the waterproofing budget is manageable.\n(B) No, roofs are strictly meant for rain.\n(C) I don\'t like wearing green clothes.\n(D) The elevator is out of order today.',
+          steps: [
+            '1. 對話解析：建築師提議綠屋頂降溫，業主評估可行性。',
+            '2. 匹配回答：(A) 表示概念具永續性，前提是防水預算可控，符合商務談判邏輯。'
+          ],
+          answer: '(A) That sounds like a sustainable idea, provided the waterproofing budget is manageable.'
+        },
+        {
+          difficulty: '進階',
+          question: 'Inspector: "There are minor cosmetic scratches on the entry door frame."\nContractor: "________"\n(A) I will add it to the punch list and have it repainted by tomorrow.\n(B) Doors should always be scratched.\n(C) We forgot to build the door.\n(D) The project is canceled.',
+          steps: [
+            '1. 對話情境：檢查員指出大門框微小刮痕（cosmetic scratches）。',
+            '2. 承包商回應：(A) 表示列入缺失清單（punch list）並於明日重新噴漆修復。'
+          ],
+          answer: '(A) I will add it to the punch list and have it repainted by tomorrow.'
         }
-      ],
-      practice: {
-        difficulty: '基礎',
-        question: 'Architect: "The structural review revealed that the column thickness is inadequate."\nClient: "So what should we do now?"\nArchitect: "________"\n(A) Great! Let me buy you lunch.\n(B) It\'s back to the drawing board to revise the structural calculations.\n(C) Never mind, let\'s build it without columns.\n(D) The building is completely finished.',
-        steps: [
-          '1. 理解語意：建築師表示柱厚度不足，業主詢問對策。',
-          '2. 慣用語應用："back to the drawing board" 表示回到設計/計算階段重新推導。',
-          '3. 選項 (B) 最符合邏輯對話。'
-        ],
-        answer: '(B) It\'s back to the drawing board to revise the structural calculations.'
-      }
+      ]
     },
     {
       slug: 'cloze-passage-structure',
@@ -528,6 +688,14 @@ export const englishData: SubjectData = {
             '接 to V (不定詞): intend, plan, decide, fail, manage, attempt.',
             '名詞 + 介系詞: solution to, response to, approach to, impact on, key to.'
           ]
+        },
+        {
+          heading: '篇章指代與特指冠詞規避法 (Article & Pronoun Cohesion Rules)',
+          body: '在篇章結構題中，根據冠詞 `a/an`（泛指首次出現）與 `the`（特指已知事物）鎖定前後句順序。',
+          steps: [
+            'Step 1: First sentence introduces a concept (e.g., "The team designed a new damper system.").',
+            'Step 2: Subsequent sentence refers back with the definite article (e.g., "The damper system was tested...").'
+          ]
         }
       ],
       practices: [
@@ -542,6 +710,16 @@ export const englishData: SubjectData = {
           answer: '(B) as a result'
         },
         {
+          difficulty: '基礎',
+          question: 'The client liked the general floor layout; _______, she requested minor modifications to the master bedroom window.\n(A) therefore (B) however (C) in addition (D) for example',
+          steps: [
+            '1. 句意分析：業主喜歡整體平面配置；「然而」，她要求對主臥室窗戶進行微調。',
+            '2. 邏輯判定：轉折關係 (however)。',
+            '3. 故選 (B)。'
+          ],
+          answer: '(B) however'
+        },
+        {
           difficulty: '中等',
           question: '_______ the extreme heat and humidity during the summer months, the construction team managed to finish the foundation on time.\n(A) Although (B) Despite (C) Because (D) Even though',
           steps: [
@@ -550,6 +728,16 @@ export const englishData: SubjectData = {
             '3. 選項比對：Although 與 Even though 後接子句 (S+V)；Despite 為介系詞，後接名詞片語。故選 (B)。'
           ],
           answer: '(B) Despite'
+        },
+        {
+          difficulty: '中等',
+          question: 'The new energy code limits maximum power consumption; _______, all newly built offices must install motion-sensor LED lighting.\n(A) accordingly (B) in contrast (C) on the other hand (D) surprisingly',
+          steps: [
+            '1. 分析：新能源法規限制最大耗電量；「因此/相應地」，所有新建辦公室必須安裝感應 LED 照明。',
+            '2. 邏輯：因果相應 (accordingly)。',
+            '3. 答案為 (A)。'
+          ],
+          answer: '(A) accordingly'
         },
         {
           difficulty: '進階',
@@ -570,18 +758,28 @@ export const englishData: SubjectData = {
             '3. 答案為 (B) compromising。'
           ],
           answer: '(B) compromising'
+        },
+        {
+          difficulty: '進階',
+          question: 'Read the sentence: "_______ solar panels generate clean energy during daylight hours, battery storage units are necessary to supply power at night."\n(A) While (B) Unless (C) Until (D) Lest',
+          steps: [
+            '1. 分析引導從屬連詞語意：雖然太陽能板在白日產生清潔能源，但夜間供電仍需電池儲能。',
+            '2. 連詞選擇：While 引導讓步對比子句（相當於 Although/Whereas）。',
+            '3. 選項 (A) 正確。'
+          ],
+          answer: '(A) While'
+        },
+        {
+          difficulty: '進階',
+          question: 'The structural analysis report was thoroughly reviewed by senior engineers; _______, the municipal authority granted the construction permit.\n(A) nevertheless (B) subsequently (C) otherwise (D) instead',
+          steps: [
+            '1. 句間邏輯：結構分析報告經資深工程師徹底審查；「隨後」，市政機關核發了施工許可。',
+            '2. 時間順序副詞：subsequently 表示「隨後/接著」。',
+            '3. 答案為 (B) subsequently。'
+          ],
+          answer: '(B) subsequently'
         }
-      ],
-      practice: {
-        difficulty: '基礎',
-        question: 'The contractor worked extra hours every night; ________, the renovation project was completed two weeks ahead of schedule.\n(A) however (B) as a result (C) otherwise (D) nevertheless',
-        steps: [
-          '1. 兩句邏輯分析：前句為「承包商每晚加班」，後句為「裝修計畫提早兩週完成」。',
-          '2. 關係判定：前後句為明確的「因果關係」。',
-          '3. 選項解析：(A) however (然而) (B) as a result (結果/因此) (C) otherwise (否則) (D) nevertheless (儘管如此)。故選 (B)。'
-        ],
-        answer: '(B) as a result'
-      }
+      ]
     },
     {
       slug: 'translation-writing',
@@ -637,65 +835,100 @@ export const englishData: SubjectData = {
           body: '示範將複雜中文句拆解並翻譯為符合英文語法之標準句子。\n中文：「為了減少碳排放，越來越多建築師開始在都市設計中使用木材與太陽能板。」',
           steps: [
             '步驟一 (找主謂受): 主詞 (Architects) + 動詞 (are beginning to use / are adopting) + 受詞 (timber and solar panels)。',
-            '步驟二 (目的片語): "To reduce carbon emissions" 或 "In order to lower carbon footprint"。',
-            '步驟三 (地方與修飾語): "in urban design"。',
-            '整合句子: "To reduce carbon emissions, an increasing number of architects are incorporating timber and solar panels into urban design."'
+            '步驟二 (放置目的片語): To reduce carbon emissions, an increasing number of architects are incorporating timber and solar panels into urban designs.',
+            '步驟三 (檢查時態與修飾): 確保主謂一致性與修飾語平列。'
+          ]
+        },
+        {
+          heading: '學術英文摘要 (Abstract) 撰寫要領',
+          body: '摘要需精煉涵蓋背景 (Background)、方法 (Method)、結果 (Results) 與結論 (Conclusion)。',
+          steps: [
+            'Background: "Urban heat island effect poses a challenge..."',
+            'Method: "This study evaluates the cooling efficiency of green roofs..."',
+            'Results: "Data indicates a 3°C reduction in surface temperature..."',
+            'Conclusion: "Therefore, green roofs provide a viable mitigation strategy."'
           ]
         }
       ],
       practices: [
         {
           difficulty: '基礎',
-          question: '請將以下句子翻譯成英文：「這座歷史建築在去年完成了全面翻修。」\n(Hint: 使用被動語態與 last year)',
+          question: '請將以下中文翻譯為英文：「為了確保結構安全，承包商必須每日檢查施工腳手架。」\n(A) To ensure structural safety, the contractor must inspect the scaffolding daily.\n(B) For ensuring safety structure, contractor must look scaffolding every day.\n(C) The contractor inspect daily scaffolding to ensure safety.\n(D) Inspection of scaffolding is done by contractor for safety.',
           steps: [
-            '1. 確定主詞：「這座歷史建築」 -> This historic building。',
-            '2. 確定動詞與時態與語態：「在去年完成了翻修」 -> 被動語態 + 過去式 (was completely renovated last year)。',
-            '3. 組合翻譯：This historic building was completely renovated last year.'
+            '1. 句型分析：目的片語「為了…」譯為 "To ensure structural safety,"。',
+            '2. 主謂賓：主詞 "the contractor"，助動詞 "must"，動詞 "inspect"，受詞 "the scaffolding"，時間副詞 "daily"。',
+            '3. 比對選項：(A) 語法最嚴謹標準。'
           ],
-          answer: 'This historic building was completely renovated last year.'
+          answer: '(A) To ensure structural safety, the contractor must inspect the scaffolding daily.'
+        },
+        {
+          difficulty: '基礎',
+          question: '選出標點符號使用最正確的句子：\n(A) Concrete is strong in compression; however, it is weak in tension.\n(B) Concrete is strong in compression, however; it is weak in tension.\n(C) Concrete is strong in compression however it is weak in tension.\n(D) Concrete is strong in compression; however it is weak, in tension.',
+          steps: [
+            '1. 標點規則：連接兩完整獨立句時，使用分號 (;) 隔開，轉折副詞 (however) 後加逗號 (,)。',
+            '2. 比對選項：(A) 的標點符號完全正確。'
+          ],
+          answer: '(A) Concrete is strong in compression; however, it is weak in tension.'
         },
         {
           difficulty: '中等',
-          question: 'Identify the sentence with CORRECT punctuation and grammar:\n(A) Concrete is strong in compression, however it is weak in tension.\n(B) Concrete is strong in compression; however, it is weak in tension.\n(C) Concrete is strong in compression however it is weak in tension.\n(D) Concrete is strong in compression; However it is weak in tension.',
+          question: '請將以下中文翻譯為英文：「這座建築不僅節省能源，還能為居民提供舒適的居住環境。」\n(A) This building not only saves energy but also provides a comfortable living environment for residents.\n(B) Not only this building save energy, but also provide comfortable living.\n(C) This building both saves energy so provides comfortable living environment.\n(D) This building is saving energy not only but providing comfort environment.',
           steps: [
-            '1. 分析文法：however 為轉折副詞 (conjunctive adverb)，不能直接連接兩個獨立子句（會造成 comma splice 錯誤）。',
-            '2. 正確標點：兩個獨立子句中間需使用分號 `;`，且 however 後加逗號 `,`。',
-            '3. 選項 (B) 標點與大小寫完全正確。'
+            '1. 句型：Not only A but also B (不僅A而且B)。',
+            '2. 檢查動詞平列：saves energy (V1) ... provides (V2)。',
+            '3. (A) 選項語義完全符合且語法正確。'
           ],
-          answer: '(B) Concrete is strong in compression; however, it is weak in tension.'
+          answer: '(A) This building not only saves energy but also provides a comfortable living environment for residents.'
+        },
+        {
+          difficulty: '中等',
+          question: 'Which of the following sentences effectively uses a participle phrase to combine two ideas?\n(A) Built with recycled materials, the sustainable house received a LEED certification.\n(B) The sustainable house built recycled materials, it received a LEED certification.\n(C) Building recycled materials, the house receiving LEED certification.\n(D) To build recycled materials, the house receives LEED certification.',
+          steps: [
+            '1. 分詞構句被動用法：Because it was built with recycled materials... 簡化為 "Built with recycled materials,"。',
+            '2. 檢查主句：the sustainable house received a LEED certification.',
+            '3. (A) 選項文法精煉正確。'
+          ],
+          answer: '(A) Built with recycled materials, the sustainable house received a LEED certification.'
         },
         {
           difficulty: '進階',
-          question: '請將以下中文句子翻譯成流暢的英文：「良好通風與自然採光是創造健康室內環境的關鍵要素。」',
+          question: '將中文句子翻譯為英文：「若未經結構技師事先核准，切勿拆除任何承重牆。」\n(A) Never remove any load-bearing wall unless prior approval is granted by a structural engineer.\n(B) Do not tear down load wall without structural engineer think ok.\n(C) Structural wall never remove prior approval by engineer.\n(D) Unless structural engineer approve, removing load wall is never.',
           steps: [
-            '1. 找出主詞複合結構：「良好通風與自然採光」 -> Good ventilation and natural lighting。',
-            '2. 找出主要動詞與補語：「是關鍵要素」 -> are key elements / essential factors。',
-            '3. 目的/對象片語：「創造健康室內環境」 -> for creating a healthy indoor environment。',
-            '4. 完整翻譯：Good ventilation and natural lighting are key elements for creating a healthy indoor environment.'
+            '1. 祈使句與條件從屬子句：Never remove any load-bearing wall... (切勿拆除任何承重牆)。',
+            '2. 條件子句："unless prior approval is granted by a structural engineer" (除非獲得事先核准)。',
+            '3. (A) 選項用語道地且符合工程規範。'
           ],
-          answer: 'Good ventilation and natural lighting are key elements for creating a healthy indoor environment.'
+          answer: '(A) Never remove any load-bearing wall unless prior approval is granted by a structural engineer.'
+        },
+        {
+          question: 'Identify the sentence with the most logical topic sentence structure for an academic paragraph on urban heat islands:\n(A) Urban heat islands, caused primarily by dark asphalt and dense concrete, pose severe microclimate challenges to modern cities.\n(B) Asphalt is dark and concrete is heavy in cities.\n(C) Cities are warm because of many things people do.\n(D) I think urban heat islands are bad for everyone.',
+          difficulty: '進階',
+          steps: [
+            '1. 主題句 (Topic Sentence) 要求：必須明確宣示論點、包含核心關鍵字且具學術嚴謹性。',
+            '2. 選項比對：(A) 包含了定義因果（asphalt & concrete）與學術論點（microclimate challenges），最適合做主題句。'
+          ],
+          answer: '(A) Urban heat islands, caused primarily by dark asphalt and dense concrete, pose severe microclimate challenges to modern cities.'
         },
         {
           difficulty: '進階',
-          question: 'Which of the following best combines the two simple sentences into a sophisticated participle phrase?\nSentence 1: The architect recognized the environmental impact of traditional concrete.\nSentence 2: The architect decided to switch to recycled building materials.\n(A) Recognizing the environmental impact of traditional concrete, the architect decided to switch to recycled building materials.\n(B) Recognized the environmental impact, the architect decided to switch.\n(C) The architect recognized the environmental impact, so he deciding to switch.\n(D) Because recognizing the impact, the architect decided to switch.',
+          question: 'Translate to English: 「這項工程預計將於明年底前竣工，總預算估計為五百萬美元。」\n(A) The project is scheduled to be completed by the end of next year, with an estimated total budget of five million dollars.\n(B) The project estimate complete next year end, total budget five million dollar.\n(C) Completing next year end, the project has five million dollar budget.\n(D) The project will complete end of next year, estimating budget is five million.',
           steps: [
-            '1. 分析兩句：主詞相同（The architect）。',
-            '2. 分詞簡化：將句 1 的主動動詞 recognized 改為現在分詞 Recognizing (V-ing)。',
-            '3. 比對選項：(A) 文法無瑕且句型流暢專業。'
+            '1. 分析：is scheduled to be completed (預計被完成/竣工) + by the end of next year (於明年底前)。',
+            '2. 獨立分詞/介系詞片語：with an estimated total budget of five million dollars.',
+            '3. (A) 為標準翻譯。'
           ],
-          answer: '(A) Recognizing the environmental impact of traditional concrete, the architect decided to switch to recycled building materials.'
+          answer: '(A) The project is scheduled to be completed by the end of next year, with an estimated total budget of five million dollars.'
+        },
+        {
+          difficulty: '進階',
+          question: 'Which of the following demonstrates the correct use of a colon in technical paragraph writing?\n(A) The site safety audit evaluated three critical parameters: soil stability, scaffolding integrity, and worker PPE compliance.\n(B) The site safety audit: evaluated three critical parameters soil stability.\n(C) Evaluated three parameters: the safety audit was conducted.\n(D) The site: safety audit evaluated parameters soil stability.',
+          steps: [
+            '1. 冒號 (Colon) 用法：前面必須為完整的獨立句子 (complete independent clause)，用於引出具體清單。',
+            '2. 檢視 (A)："The site safety audit evaluated three critical parameters" 為完整句子，冒號後列出三項參數。用法完全正確。'
+          ],
+          answer: '(A) The site safety audit evaluated three critical parameters: soil stability, scaffolding integrity, and worker PPE compliance.'
         }
-      ],
-      practice: {
-        difficulty: '基礎',
-        question: '請將以下句子翻譯成英文：「這座歷史建築在去年完成了全面翻修。」\n(Hint: 使用被動語態與 last year)',
-        steps: [
-          '1. 確定主詞：「這座歷史建築」 -> This historic building。',
-          '2. 確定動詞與時態與語態：「在去年完成了翻修」 -> 被動語態 + 過去式 (was completely renovated last year)。',
-          '3. 組合翻譯：This historic building was completely renovated last year.'
-        ],
-        answer: 'This historic building was completely renovated last year.'
-      }
+      ]
     }
   ]
 };

@@ -2,8 +2,23 @@ import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { allSubjects } from '@/data/subjects';
 
-export default function SubjectPage() {
-  const subject = allSubjects.find(s => s.slug === 'mechanics');
+export function generateStaticParams() {
+  return allSubjects.map(s => ({ subject: s.slug }));
+}
+
+export async function generateMetadata({ params }: { params: Promise<{ subject: string }> }) {
+  const p = await params;
+  const subject = allSubjects.find(s => s.slug === p.subject);
+  if (!subject) return { title: 'Not Found' };
+  return {
+    title: `${subject.title} | Arch 建築教育`,
+    description: `探索 ${subject.title} 的核心觀念、建築案例與統測解析`,
+  };
+}
+
+export default async function SubjectPage({ params }: { params: Promise<{ subject: string }> }) {
+  const p = await params;
+  const subject = allSubjects.find(s => s.slug === p.subject);
   
   if (!subject) {
     notFound();
@@ -19,8 +34,7 @@ export default function SubjectPage() {
           {subject.title}
         </h1>
         <p className="text-base text-(--color-ink-650)">
-          {/* We can use the first topic's desc or a general desc if we add it to SubjectData */}
-          選擇下方章節開始學習。
+          選擇下方章節開始深入學習觀念、工程對點與考古題解析。
         </p>
       </div>
 
@@ -55,7 +69,7 @@ export default function SubjectPage() {
             {t.status === 'done' ? (
               <Link
                 href={`/subjects/${subject.slug}/${t.slug}`}
-                className="inline-flex min-h-11 w-full sm:w-auto items-center justify-center px-4 py-2 text-(--color-paper-50) text-xs font-mono font-medium rounded hover:bg-opacity-90 transition-colors"
+                className="inline-flex min-h-11 w-full sm:w-auto items-center justify-center px-4 py-2 text-(--color-paper-50) text-xs font-mono font-medium rounded hover:bg-opacity-90 transition-colors whitespace-nowrap"
                 style={{ backgroundColor: `var(--color-${subject.color})` }}
               >
                 進入學習 →
