@@ -74,7 +74,7 @@ export default function CasesPage() {
       category: '交通建築與城市縫合',
       question: '雲朵天棚與綠之丘如何把鐵路兩側重新連在一起？',
       architect: 'Mecanoo',
-      image: '/cases/kaohsiung-main-station/photo.jpg',
+      image: '/cases/kaohsiung-main-station/hero-v2.webp',
     },
   ];
 
