@@ -42,6 +42,24 @@ for (const year of [111, 112, 113, 114, 115]) {
     const question = common.questions.find((item) => item.year === year && item.exam === 'english' && item.questionNo === number);
     if (!question?.groupId) errors.push(`${year}-english-${number}: cloze/reading question must belong to a passage group`);
   }
+
+  for (const number of [...Array.from({ length: 8 }, (_, index) => index + 1), ...Array.from({ length: 10 }, (_, index) => index + 11)]) {
+    const question = common.questions.find((item) => item.year === year && item.exam === 'english' && item.questionNo === number);
+    const blanks = question?.excerpt?.match(/________/g)?.length ?? 0;
+    if (blanks !== 1) errors.push(`${year}-english-${number}: expected exactly one answer blank, got ${blanks}`);
+  }
+
+  for (const number of [9, 10]) {
+    const question = common.questions.find((item) => item.year === year && item.exam === 'english' && item.questionNo === number);
+    if (question?.excerpt?.includes('________')) errors.push(`${year}-english-${number}: underlined-word question must not gain an answer blank`);
+  }
+
+  for (let number = 21; number <= 28; number++) {
+    const question = common.questions.find((item) => item.year === year && item.exam === 'english' && item.questionNo === number);
+    if (!new RegExp(`(?:^|\\D)${number} ________`).test(question?.passage ?? '')) {
+      errors.push(`${year}-english-${number}: cloze passage is missing its numbered answer blank`);
+    }
+  }
 }
 
 if (fs.existsSync(path.join(publicRoot, 'exams', 'pages'))) errors.push('full-page exam image directory must be removed');

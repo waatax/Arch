@@ -294,6 +294,124 @@ def locate_question_tops(pdf_path: Path, pages: dict[int, int], expected: int) -
     return result
 
 
+def restore_english_answer_blanks(
+    pdf_path: Path,
+    records: dict[int, dict],
+    pages: dict[int, int],
+    tops: dict[int, float],
+) -> None:
+    """Restore answer blanks that are drawn as PDF shapes instead of text.
+
+    Vocabulary (1–8) and dialogue (11–20) questions each contain one answer
+    blank.  Several official PDFs draw that blank as a thin rectangle, so plain
+    text extraction silently drops it.  Rebuilding only those stems from word
+    and shape coordinates preserves the intended location without inserting
+    blanks into underlined-word or reading-comprehension questions.
+    """
+
+    blank_questions = [*range(1, 9), *range(11, 21)]
+    with pdfplumber.open(pdf_path) as pdf:
+        for number in blank_questions:
+            page = pdf.pages[pages[number] - 1]
+            top = tops[number] - 3.0
+            next_top = tops.get(number + 1) if pages.get(number + 1) == pages[number] else None
+            bottom = next_top - 1.0 if next_top else float(page.height) - 30.0
+            words = [
+                word
+                for word in page.extract_words(use_text_flow=True)
+                if top <= float(word["top"]) < bottom and float(word["x0"]) >= 55.0
+            ]
+
+            option_tops = [
+                float(word["top"])
+                for word in words
+                if re.match(r"^\([A-D]\)", normalize(word["text"]).strip())
+            ]
+            if option_tops:
+                stem_bottom = min(option_tops) - 1.0
+                words = [word for word in words if float(word["top"]) < stem_bottom]
+            else:
+                stem_bottom = bottom
+
+            shapes = [
+                rect
+                for rect in page.rects
+                if top <= float(rect.get("top", 9999.0)) < stem_bottom
+                and float(rect.get("width", 0.0)) >= 18.0
+                and float(rect.get("height", 99.0)) <= 3.0
+            ]
+
+            # Some years encode the line as underscores in the text layer.
+            # In those files the existing extraction already preserves the
+            # correct dialogue line breaks, so only normalize its length.
+            if not shapes:
+                records[number]["excerpt"] = re.sub(r"_{3,}", "________", records[number]["excerpt"])
+                continue
+
+            items = [
+                {
+                    "text": normalize(word["text"]).strip(),
+                    "x0": float(word["x0"]),
+                    "top": float(word["top"]),
+                    "bottom": float(word["bottom"]),
+                }
+                for word in words
+            ]
+            for shape in shapes:
+                shape_top = float(shape["top"])
+                same_line = [item for item in items if abs(item["bottom"] - shape_top) <= 5.0]
+                if not same_line:
+                    continue
+                line_top = min(same_line, key=lambda item: abs(item["bottom"] - shape_top))["top"]
+                items.append(
+                    {
+                        "text": "________",
+                        "x0": float(shape["x0"]),
+                        "top": line_top,
+                        "bottom": shape_top,
+                    }
+                )
+
+            lines: list[list[dict]] = []
+            for item in sorted(items, key=lambda value: (value["top"], value["x0"])):
+                line = next((candidate for candidate in lines if abs(candidate[0]["top"] - item["top"]) <= 2.5), None)
+                if line is None:
+                    lines.append([item])
+                else:
+                    line.append(item)
+
+            rebuilt_lines: list[str] = []
+            for line in lines:
+                text = " ".join(item["text"] for item in sorted(line, key=lambda value: value["x0"]))
+                text = re.sub(r"\s+([,.;:?!])", r"\1", text)
+                text = re.sub(r"\(\s+", "(", text)
+                text = re.sub(r"\s+\)", ")", text)
+                rebuilt_lines.append(text.strip())
+            rebuilt = "\n".join(line for line in rebuilt_lines if line)
+            rebuilt = re.sub(rf"^\s*{number}\s*[.．]\s*", "", rebuilt, count=1)
+            rebuilt = re.sub(r"_{3,}", "________", rebuilt)
+            records[number]["excerpt"] = rebuilt
+
+    # Cloze passages (21–28) share one passage per group. Restore each numbered
+    # answer position once in that shared passage; reading questions 29–42 are
+    # intentionally left untouched.
+    seen_groups: set[int] = set()
+    for number in range(21, 29):
+        group = records[number].get("group")
+        if not group or id(group) in seen_groups:
+            continue
+        seen_groups.add(id(group))
+        passage = group["passage"]
+        for member in range(max(21, int(group["first"])), min(28, int(group["last"])) + 1):
+            passage = re.sub(
+                rf"(?<!\d){member}(?!\d|\s*_{{3,}})",
+                f"{member} ________",
+                passage,
+                count=1,
+            )
+        group["passage"] = passage
+
+
 def crop_route(year: int, exam: str, name: str) -> str:
     return f"/exams/figures/{year}/{exam}-{name}.webp"
 
@@ -348,6 +466,8 @@ def main() -> None:
             text_records, _ = extract_common_text(stem_path, count)
             pages = {number: int(text_records[number]["page"]) for number in range(1, count + 1)}
             tops = locate_question_tops(stem_path, pages, count)
+            if exam == "english":
+                restore_english_answer_blanks(stem_path, text_records, pages, tops)
             common_sources.append(
                 {
                     "year": year,
