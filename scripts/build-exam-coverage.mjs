@@ -13,10 +13,26 @@ function cleanStem(value) {
   return value.replace(/\s+/g, ' ').replace(/ˉ/g, '').trim().slice(0, 280);
 }
 
+function cleanOption(value) {
+  return value
+    .split(/\s*(?:【以下空白】|公告試題僅供參考|第\s*\d+\s*頁\s*\d{3}\s*年四技|\d{3}\s*年四技\s+第\s*\d+\s*頁)/, 1)[0]
+    .trim()
+    .slice(0, 220);
+}
+
+function cleanProfessionalStem(value) {
+  return cleanStem(
+    value
+      .replace(/公告試題僅供參考/g, ' ')
+      .replace(/\s+-\s*\d+\s*-\s+/g, ' ')
+      .replace(/第\s*\d+\s*頁\s*\d{3}\s*年四技/g, ' '),
+  );
+}
+
 function extractOptions(value) {
   const flat = value.replace(/\s+/g, ' ').replace(/ˉ/g, '').trim();
   const result = {};
-  for (const match of flat.matchAll(/\(([ABCD])\)\s*(.*?)(?=\s*\([ABCD]\)\s*|$)/g)) result[match[1]] = match[2].trim().slice(0, 220);
+  for (const match of flat.matchAll(/\(([ABCD])\)\s*(.*?)(?=\s*\([ABCD]\)\s*|$)/g)) result[match[1]] = cleanOption(match[2]);
   for (const key of ['A', 'B', 'C', 'D']) result[key] ??= `選項 ${key}（請配合官方題本圖面判讀）`;
   return result;
 }
@@ -30,7 +46,7 @@ function extractQuestions(text) {
     if (no < 1 || no > 40 || questions.has(no)) continue;
     const block = match[2];
     const stem = block.split(/\n\s*\(A\)/)[0];
-    const excerpt = cleanStem(stem);
+    const excerpt = cleanProfessionalStem(stem);
     questions.set(no, { excerpt, options: extractOptions(block), requiresOfficialFigure: /如圖|圖\s*\(/.test(excerpt) });
   }
   return questions;

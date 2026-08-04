@@ -7,6 +7,7 @@ const professional = JSON.parse(fs.readFileSync(path.join(root, 'data', 'registr
 const pageMap = JSON.parse(fs.readFileSync(path.join(root, 'data', 'registry', 'exam-page-map.json'), 'utf8'));
 const publicRoot = path.join(root, 'apps', 'web', 'public');
 const errors = [];
+const documentNoise = /(?:共同科目\s*共\s*12\s*頁|非選擇題|寫作測驗|【以下空白】|公告試題僅供參考|答案卷之作答欄|第\s*\d+\s*頁\s*\d{3}\s*年四技)/;
 
 if (common.questions.length !== 525) errors.push(`expected 525 common questions, got ${common.questions.length}`);
 if (professional.questions.length + common.questions.length !== 925) errors.push('all-subject total must be 925 questions');
@@ -23,6 +24,12 @@ for (const question of common.questions) {
   if (!/^(?:[ABCD]{1,2}|送分)$/.test(question.answer)) errors.push(`${question.id}: invalid answer`);
   if (!question.excerpt?.trim()) errors.push(`${question.id}: missing recognized question text`);
   if (!['A', 'B', 'C', 'D'].every((key) => question.options?.[key]?.trim())) errors.push(`${question.id}: missing recognized options`);
+  for (const [key, value] of Object.entries(question.options ?? {})) {
+    if (documentNoise.test(value)) errors.push(`${question.id} option ${key}: contains page chrome or another exam section`);
+  }
+  if (documentNoise.test(question.excerpt ?? '') || documentNoise.test(question.passage ?? '')) {
+    errors.push(`${question.id}: question text contains page chrome or another exam section`);
+  }
   if ('questionImage' in question) errors.push(`${question.id}: full-page image field is forbidden`);
   if (question.figureImage) {
     const image = path.join(publicRoot, ...question.figureImage.split('/').filter(Boolean));
@@ -70,6 +77,15 @@ for (const question of professional.questions.filter((item) => item.requiresOffi
   else {
     const image = path.join(publicRoot, ...mapping.figureImage.split('/').filter(Boolean));
     if (!fs.existsSync(image)) errors.push(`${question.id}: missing professional single-question figure crop`);
+  }
+}
+
+for (const question of professional.questions) {
+  for (const [key, value] of Object.entries(question.options ?? {})) {
+    if (documentNoise.test(value)) errors.push(`${question.id} option ${key}: contains page chrome or another exam section`);
+  }
+  if (documentNoise.test(question.excerpt ?? '')) {
+    errors.push(`${question.id}: question text contains page chrome or another exam section`);
   }
 }
 

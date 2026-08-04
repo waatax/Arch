@@ -157,6 +157,36 @@ def clean_piece(text: str) -> str:
     return "\n".join(lines).strip()
 
 
+PAGE_CHROME = re.compile(
+    r"\s*(?:(?:國文|英文)\s*共同科目\s*共\s*12\s*頁"
+    r"|第\s*\d+\s*頁\s*\d{3}\s*年四技"
+    r"|\d{3}\s*年四技\s*(?:國文|英文|數學)?\s*共同科目\s*共\s*12\s*頁"
+    r"|【以下空白】|公告試題僅供參考)"
+)
+
+OPTION_TAIL = re.compile(
+    r"\s*(?:(?:國文|英文)\s*共同科目\s*共\s*12\s*頁"
+    r"|第\s*\d+\s*頁\s*\d{3}\s*年四技"
+    r"|\d{3}\s*年四技\s*(?:國文|英文|數學)?\s*共同科目\s*共\s*12\s*頁"
+    r"|【以下空白】|公告試題僅供參考"
+    r"|二、\s*(?:非選擇題|寫作測驗)"
+    r"|(?:II|III)\.\s*(?:對話題|綜合測驗))"
+)
+
+
+def remove_page_chrome(text: str) -> str:
+    """Remove printed headers/footers without discarding following passage lines."""
+    cleaned_lines = []
+    for line in text.splitlines():
+        cleaned_lines.append(PAGE_CHROME.split(line, maxsplit=1)[0].rstrip())
+    return "\n".join(line for line in cleaned_lines if line.strip()).strip()
+
+
+def clean_option_tail(text: str) -> str:
+    """Stop an option before page chrome or the next non-multiple-choice section."""
+    return OPTION_TAIL.split(re.sub(r"\s+", " ", text).strip(), maxsplit=1)[0].strip()
+
+
 def strip_group_instruction(context: str) -> tuple[str, str]:
     lines = clean_piece(context).splitlines()
     title_lines: list[str] = []
@@ -220,7 +250,7 @@ def extract_common_text(pdf_path: Path, expected: int) -> tuple[dict[int, dict],
             continue
         raw_context = body[match.start() : starts[first]]
         title, passage = strip_group_instruction(raw_context)
-        passage = OCR_PASSAGE_OVERRIDES.get((pdf_path.name, first, last), passage)
+        passage = remove_page_chrome(OCR_PASSAGE_OVERRIDES.get((pdf_path.name, first, last), passage))
         if not passage:
             continue
         groups.append(
@@ -258,7 +288,7 @@ def extract_common_text(pdf_path: Path, expected: int) -> tuple[dict[int, dict],
             if key in options:
                 continue
             next_start = option_matches[index + 1].start() if index + 1 < len(option_matches) else len(block)
-            options[key] = re.sub(r"\s+", " ", block[match.end() : next_start]).strip()
+            options[key] = clean_option_tail(block[match.end() : next_start])
         missing = [key for key in "ABCD" if not options.get(key)]
         for key in missing:
             options[key] = f"選項 {key}(公式或圖形請參照本題圖面)"
