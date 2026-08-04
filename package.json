@@ -6,6 +6,7 @@
     "build": "pnpm --filter web build",
     "validate:content": "node scripts/validate-course-data.mjs && node scripts/validate-exam-coverage.mjs",
     "build:exam-coverage": "node scripts/build-exam-coverage.mjs",
+    "validate:built-links": "node scripts/validate-built-learning-links.mjs",
     "dev": "pnpm --filter web dev",
     "lint": "pnpm --filter web lint",
     "start": "pnpm --filter web start"

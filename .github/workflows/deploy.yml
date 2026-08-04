@@ -43,6 +43,7 @@ jobs:
           pnpm validate:content
           pnpm lint
           pnpm build
+          pnpm validate:built-links
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
