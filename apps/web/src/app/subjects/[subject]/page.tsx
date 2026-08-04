@@ -42,29 +42,36 @@ export default async function SubjectPage({ params }: { params: Promise<{ subjec
         {subject.topics.map((t) => (
           <div
             key={t.slug}
-            className={`p-6 border rounded-xl flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 transition-all ${
+            className={`group p-6 border rounded-xl flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 transition-all ${
               t.status === 'done'
                 ? 'bg-(--color-paper-100) shadow-sm hover:border-(--color-ink-900)'
                 : 'bg-(--color-paper-50) border-(--color-concrete-300) opacity-70'
             }`}
             style={t.status === 'done' ? { borderColor: `var(--color-${subject.color})` } : {}}
           >
-            <div>
-              <div className="flex flex-wrap items-center gap-2 mb-1">
-                <h2 className="text-lg font-bold font-serif text-(--color-ink-900)">{t.title}</h2>
-                {t.status === 'done' && (
+            {t.status === 'done' ? (
+              <Link href={`/subjects/${subject.slug}/${t.slug}`} className="block flex-1">
+                <div className="flex flex-wrap items-center gap-2 mb-1">
+                  <h2 className="text-lg font-bold font-serif text-(--color-ink-900) group-hover:underline">
+                    {t.title}
+                  </h2>
                   <span className="text-xs text-(--color-paper-50) px-2 py-0.5 rounded font-mono" style={{ backgroundColor: `var(--color-${subject.color})` }}>
                     已上線
                   </span>
-                )}
-                {t.status !== 'done' && (
+                </div>
+                <p className="text-sm text-(--color-ink-650)">{t.desc}</p>
+              </Link>
+            ) : (
+              <div>
+                <div className="flex flex-wrap items-center gap-2 mb-1">
+                  <h2 className="text-lg font-bold font-serif text-(--color-ink-900)">{t.title}</h2>
                   <span className="text-xs bg-(--color-concrete-300) text-(--color-ink-650) px-2 py-0.5 rounded font-mono">
                     建置中
                   </span>
-                )}
+                </div>
+                <p className="text-sm text-(--color-ink-650)">{t.desc}</p>
               </div>
-              <p className="text-sm text-(--color-ink-650)">{t.desc}</p>
-            </div>
+            )}
             
             {t.status === 'done' ? (
               <Link
