@@ -7,7 +7,6 @@ import ThemeToggle from './ThemeToggle';
 const navLinks = [
   { href: '/', label: '學習首頁' },
   { href: '/curriculum', label: '完整課程' },
-  { href: '/exams', label: '五年統測題庫' },
   { href: '/practice', label: '模擬練習' },
   { href: '/cases', label: '建築案例' },
 ];
