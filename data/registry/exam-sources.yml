@@ -1,0 +1,22 @@
+version: 5.0.0
+verified_at: 2026-08-04
+authority: 財團法人技專校院入學測驗中心基金會
+scope: 111–115 學年度四技二專統測 06 土木與建築群
+years:
+  - year: 115
+    landing: https://web1.tcte.edu.tw/EXAM/115_4y/
+  - year: 114
+    landing: https://web1.tcte.edu.tw/EXAM/114_4y/
+  - year: 113
+    landing: https://web1.tcte.edu.tw/EXAM/113_4y/
+  - year: 112
+    landing: https://web1.tcte.edu.tw/EXAM/112_4y/
+  - year: 111
+    landing: https://web1.tcte.edu.tw/EXAM/111_4y/
+papers:
+  "1": 基礎工程力學、材料與試驗
+  "2": 測量實習、製圖實習
+verification_policy:
+  - AI Agent 交叉比對題本題號、官方標準答案、答案確認說明與 Arch 教學路由。
+  - 發現來源或教材矛盾時，依最新官方確認說明直接校正並保留紀錄。
+  - 每次建置以 validator 檢查 5 年 × 2 科 × 40 題，共 400 筆。

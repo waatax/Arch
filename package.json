@@ -1,10 +1,11 @@
 {
   "name": "arch",
-  "version": "4.0.0",
+  "version": "5.0.0",
   "private": true,
   "scripts": {
     "build": "pnpm --filter web build",
-    "validate:content": "node scripts/validate-course-data.mjs",
+    "validate:content": "node scripts/validate-course-data.mjs && node scripts/validate-exam-coverage.mjs",
+    "build:exam-coverage": "node scripts/build-exam-coverage.mjs",
     "dev": "pnpm --filter web dev",
     "lint": "pnpm --filter web lint",
     "start": "pnpm --filter web start"

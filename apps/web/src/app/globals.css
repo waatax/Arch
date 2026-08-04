@@ -5,16 +5,16 @@
    LIGHT MODE (default) — Warm Paper + Dark Ink
    ══════════════════════════════════════════════════════ */
 :root {
-  --color-paper-50: #F6F3EA;
-  --color-paper-100: #EDE8DD;
-  --color-ink-900: #1E2926;
-  --color-ink-650: #5C6661;
-  --color-teal-700: #0B625B;
-  --color-brick-700: #9E4431;
-  --color-blueprint-700: #245A73;
-  --color-moss-700: #526B4F;
-  --color-sun-500: #D9A62E;
-  --color-concrete-300: #DAD7CF;
+  --color-paper-50: #F7F3E8;
+  --color-paper-100: #EFE9DC;
+  --color-ink-900: #182722;
+  --color-ink-650: #56655F;
+  --color-teal-700: #08766C;
+  --color-brick-700: #B34D35;
+  --color-blueprint-700: #1F6484;
+  --color-moss-700: #557552;
+  --color-sun-500: #D9A126;
+  --color-concrete-300: #D8D1C4;
   --color-danger-750: #983B3B;
 
   --background: var(--color-paper-50);
@@ -77,6 +77,17 @@ body {
   line-height: 1.7;
   transition: background-color 0.3s ease, color 0.3s ease;
   overflow-x: hidden;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background:
+    radial-gradient(circle at 8% 12%, color-mix(in srgb, var(--color-sun-500) 10%, transparent) 0 8rem, transparent 8.1rem),
+    radial-gradient(circle at 92% 30%, color-mix(in srgb, var(--color-blueprint-700) 7%, transparent) 0 11rem, transparent 11.1rem);
 }
 
 main {
@@ -192,6 +203,39 @@ html {
     var(--color-paper-50) 40%,
     rgba(11, 98, 91, 0.04) 100%
   );
+}
+
+.blueprint-grid {
+  background-image:
+    linear-gradient(color-mix(in srgb, var(--color-blueprint-700) 8%, transparent) 1px, transparent 1px),
+    linear-gradient(90deg, color-mix(in srgb, var(--color-blueprint-700) 8%, transparent) 1px, transparent 1px),
+    linear-gradient(145deg, var(--color-paper-100), var(--color-paper-50));
+  background-size: 24px 24px, 24px 24px, 100% 100%;
+}
+
+.accent-orbit {
+  position: absolute;
+  right: -3rem;
+  top: -4rem;
+  width: 17rem;
+  height: 17rem;
+  border: 1.5rem solid color-mix(in srgb, var(--color-teal-700) 13%, transparent);
+  border-radius: 42% 58% 63% 37%;
+  transform: rotate(18deg);
+}
+
+.image-wash::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(145deg, color-mix(in srgb, var(--color-sun-500) 10%, transparent), color-mix(in srgb, var(--color-blueprint-700) 9%, transparent));
+  mix-blend-mode: multiply;
+}
+
+.dark .image-wash::after {
+  mix-blend-mode: screen;
+  opacity: 0.22;
 }
 
 .dark .hero-gradient {

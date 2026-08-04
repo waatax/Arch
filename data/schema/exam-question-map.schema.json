@@ -1,0 +1,50 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://arch.local/schema/exam-question-map.schema.json",
+  "title": "Arch V5 Exam Question Map",
+  "type": "object",
+  "required": ["version", "generatedAt", "sources", "questions"],
+  "properties": {
+    "version": { "const": "5.0.0" },
+    "generatedAt": { "type": "string", "format": "date-time" },
+    "sources": { "type": "array", "minItems": 10 },
+    "questions": {
+      "type": "array",
+      "minItems": 400,
+      "maxItems": 400,
+      "items": {
+        "type": "object",
+        "required": ["id", "year", "paper", "questionNo", "answer", "excerpt", "options", "requiresOfficialFigure", "sourceLabel", "subject", "topic", "lessonRoute", "coverage", "sourceUrl", "answerUrl", "verifiedAt", "verification"],
+        "properties": {
+          "id": { "type": "string", "pattern": "^11[1-5]-[12]-([1-9]|[1-3][0-9]|40)$" },
+          "year": { "type": "integer", "minimum": 111, "maximum": 115 },
+          "paper": { "type": "integer", "enum": [1, 2] },
+          "questionNo": { "type": "integer", "minimum": 1, "maximum": 40 },
+          "answer": { "type": "string", "enum": ["A", "B", "C", "D", "AB", "AC", "AD", "BC", "BD", "CD", "送分"] },
+          "excerpt": { "type": "string", "minLength": 4 },
+          "options": {
+            "type": "object",
+            "required": ["A", "B", "C", "D"],
+            "properties": {
+              "A": { "type": "string" }, "B": { "type": "string" },
+              "C": { "type": "string" }, "D": { "type": "string" }
+            },
+            "additionalProperties": false
+          },
+          "requiresOfficialFigure": { "type": "boolean" },
+          "sourceLabel": { "type": "string", "pattern": "^11[1-5] 年統測試題$" },
+          "subject": { "type": "string", "enum": ["mechanics", "materials", "surveying", "drafting"] },
+          "topic": { "type": "string", "minLength": 2 },
+          "lessonRoute": { "type": "string", "pattern": "^/subjects/" },
+          "coverage": { "type": "string", "enum": ["covered", "partial", "missing", "source-conflict"] },
+          "sourceUrl": { "type": "string", "format": "uri" },
+          "answerUrl": { "type": "string", "format": "uri" },
+          "verifiedAt": { "type": "string", "format": "date" },
+          "verification": { "type": "string", "minLength": 10 }
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  "additionalProperties": false
+}

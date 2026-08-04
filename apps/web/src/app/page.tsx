@@ -138,7 +138,7 @@ export default function Home() {
             category="專業科目（一）"
             description="木材、混凝土、水泥粒料、金屬與綠建材之物理力學性質與檢驗法。"
             href="/subjects/materials"
-            topicsCount={6}
+            topicsCount={12}
             tag="統測必考"
           />
           <SubjectCard

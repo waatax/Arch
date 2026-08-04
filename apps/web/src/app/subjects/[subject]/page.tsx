@@ -1,97 +1,42 @@
+import Image from 'next/image';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { allSubjects } from '@/data/subjects';
 
 export function generateStaticParams() {
-  return allSubjects.map(s => ({ subject: s.slug }));
+  return allSubjects.map((subject) => ({ subject: subject.slug }));
 }
 
 export async function generateMetadata({ params }: { params: Promise<{ subject: string }> }) {
-  const p = await params;
-  const subject = allSubjects.find(s => s.slug === p.subject);
+  const { subject: slug } = await params;
+  const subject = allSubjects.find((item) => item.slug === slug);
   if (!subject) return { title: 'Not Found' };
-  return {
-    title: `${subject.title} | Arch 建築教育`,
-    description: `探索 ${subject.title} 的核心觀念、建築案例與統測解析`,
-  };
+  return { title: `${subject.title} | Arch V5`, description: `從圖像、白話觀念到統測練習，學會 ${subject.title}。` };
 }
 
 export default async function SubjectPage({ params }: { params: Promise<{ subject: string }> }) {
-  const p = await params;
-  const subject = allSubjects.find(s => s.slug === p.subject);
-  
-  if (!subject) {
-    notFound();
-  }
+  const { subject: slug } = await params;
+  const subject = allSubjects.find((item) => item.slug === slug);
+  if (!subject) notFound();
+  const doneCount = subject.topics.filter((topic) => topic.status === 'done').length;
 
-  return (
-    <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
-      <div className="mb-8">
-        <span className="text-xs font-mono uppercase tracking-wider block" style={{ color: `var(--color-${subject.color})` }}>
-          {subject.category}
-        </span>
-        <h1 className="text-3xl sm:text-4xl font-bold font-serif text-(--color-ink-900) mt-1 mb-4">
-          {subject.title}
-        </h1>
-        <p className="text-base text-(--color-ink-650)">
-          選擇下方章節開始深入學習觀念、工程對點與考古題解析。
-        </p>
-      </div>
+  return <div className="mx-auto max-w-6xl px-4 py-8 sm:px-6 sm:py-12">
+    <header className="blueprint-grid relative mb-10 overflow-hidden rounded-2xl border border-(--color-concrete-300) bg-(--color-paper-100) p-6 sm:p-10">
+      <div className="accent-orbit" aria-hidden="true" />
+      <div className="relative z-10 max-w-3xl"><p className="text-xs font-mono uppercase tracking-[0.2em]" style={{ color: `var(--color-${subject.color})` }}>{subject.category} · Visual syllabus</p><h1 className="mt-2 font-serif text-3xl font-bold leading-tight text-(--color-ink-900) sm:text-5xl">{subject.title}</h1><p className="mt-5 max-w-2xl text-base leading-8 text-(--color-ink-650)">每一章都從一張觀念圖開始：先看懂形狀、方向與關係，再學名詞、公式或操作步驟，最後用統測題驗證。</p><div className="mt-6 flex flex-wrap gap-2 text-xs font-mono"><span className="rounded-full bg-(--color-ink-900) px-3 py-1.5 text-(--color-paper-50)">{doneCount} / {subject.topics.length} 章上線</span><Link href="/practice" className="rounded-full border border-(--color-concrete-300) bg-(--color-paper-50) px-3 py-1.5 font-bold text-(--color-teal-700)">前往模擬練習 →</Link></div></div>
+    </header>
 
-      <div className="space-y-4">
-        {subject.topics.map((t) => (
-          <div
-            key={t.slug}
-            className={`group p-6 border rounded-xl flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 transition-all ${
-              t.status === 'done'
-                ? 'bg-(--color-paper-100) shadow-sm hover:border-(--color-ink-900)'
-                : 'bg-(--color-paper-50) border-(--color-concrete-300) opacity-70'
-            }`}
-            style={t.status === 'done' ? { borderColor: `var(--color-${subject.color})` } : {}}
-          >
-            {t.status === 'done' ? (
-              <Link href={`/subjects/${subject.slug}/${t.slug}`} className="block flex-1">
-                <div className="flex flex-wrap items-center gap-2 mb-1">
-                  <h2 className="text-lg font-bold font-serif text-(--color-ink-900) group-hover:underline">
-                    {t.title}
-                  </h2>
-                  <span className="text-xs text-(--color-paper-50) px-2 py-0.5 rounded font-mono" style={{ backgroundColor: `var(--color-${subject.color})` }}>
-                    已上線
-                  </span>
-                </div>
-                <p className="text-sm text-(--color-ink-650)">{t.desc}</p>
-              </Link>
-            ) : (
-              <div>
-                <div className="flex flex-wrap items-center gap-2 mb-1">
-                  <h2 className="text-lg font-bold font-serif text-(--color-ink-900)">{t.title}</h2>
-                  <span className="text-xs bg-(--color-concrete-300) text-(--color-ink-650) px-2 py-0.5 rounded font-mono">
-                    建置中
-                  </span>
-                </div>
-                <p className="text-sm text-(--color-ink-650)">{t.desc}</p>
-              </div>
-            )}
-            
-            {t.status === 'done' ? (
-              <Link
-                href={`/subjects/${subject.slug}/${t.slug}`}
-                className="inline-flex min-h-11 w-full sm:w-auto items-center justify-center px-4 py-2 text-(--color-paper-50) text-xs font-mono font-medium rounded hover:bg-opacity-90 transition-colors whitespace-nowrap"
-                style={{ backgroundColor: `var(--color-${subject.color})` }}
-              >
-                進入學習 →
-              </Link>
-            ) : (
-              <button
-                disabled
-                className="px-4 py-2 bg-(--color-concrete-300) text-(--color-ink-650) text-xs font-mono font-medium rounded cursor-not-allowed whitespace-nowrap"
-              >
-                即將推出
-              </button>
-            )}
-          </div>
-        ))}
-      </div>
+    <div className="grid gap-5 md:grid-cols-2">
+      {subject.topics.map((topic, index) => {
+        const href = `/subjects/${subject.slug}/${topic.slug}`;
+        const visualSrc = `${process.env.NEXT_PUBLIC_BASE_PATH ?? ''}/learning-visuals/${subject.slug}/${topic.slug}.webp`;
+        return <article key={topic.slug} className={`group overflow-hidden rounded-2xl border border-(--color-concrete-300) bg-(--color-paper-100) shadow-sm transition duration-300 ${topic.status === 'done' ? 'card-lift' : 'opacity-65'}`}>
+          <Link href={topic.status === 'done' ? href : '#'} className="grid h-full grid-cols-[7.5rem_1fr] sm:grid-cols-[10rem_1fr]" aria-disabled={topic.status !== 'done'}>
+            <div className="image-wash relative min-h-44 overflow-hidden border-r border-(--color-concrete-300)"><Image src={visualSrc} alt={`${topic.title}觀念插圖`} fill className="object-cover transition duration-500 group-hover:scale-[1.04]" sizes="(max-width: 640px) 120px, 160px" /><span className="absolute left-3 top-3 rounded-full bg-(--color-paper-50)/90 px-2 py-1 text-[10px] font-mono font-bold text-(--color-ink-900) backdrop-blur">{String(index + 1).padStart(2, '0')}</span></div>
+            <div className="flex min-w-0 flex-col justify-between p-4 sm:p-5"><div><div className="mb-2 flex flex-wrap items-center gap-2"><span className="h-1.5 w-8 rounded-full" style={{ backgroundColor: `var(--color-${subject.color})` }} /><span className="text-[10px] font-mono uppercase tracking-widest text-(--color-ink-650)">{topic.status === 'done' ? 'Ready to learn' : 'Coming soon'}</span></div><h2 className="font-serif text-lg font-bold leading-7 text-(--color-ink-900) group-hover:text-(--color-teal-700)">{topic.title}</h2><p className="mt-2 line-clamp-3 text-sm leading-6 text-(--color-ink-650)">{topic.desc}</p></div><span className="mt-4 text-xs font-bold" style={{ color: `var(--color-${subject.color})` }}>{topic.status === 'done' ? '看圖開始學習 →' : '內容建置中'}</span></div>
+          </Link>
+        </article>;
+      })}
     </div>
-  );
+  </div>;
 }
