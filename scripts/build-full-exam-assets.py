@@ -27,7 +27,7 @@ GROUP_RANGE = re.compile(
     r"(?m)^[ \t]*[▲△][\s\S]{0,180}?(?:回答第|為第|第)\s*(\d{1,2})\s*(?:至|-|~|～)\s*(\d{1,2})\s*題"
 )
 FIGURE_WORDS = re.compile(
-    r"如圖|下圖|圖表|附圖|示意圖|line graph|bar graph|chart|diagram|map\b|picture\b",
+    r"如圖|右圖|左圖|上圖|下圖|圖\s*[（(]|圖表|附圖|示意圖|line graph|bar graph|chart|diagram|map\b|picture\b",
     re.IGNORECASE,
 )
 OCR_PASSAGE_OVERRIDES = {
@@ -454,6 +454,8 @@ def render_question_crop(
     page_number: int,
     top: float,
     bottom: float,
+    left: float = 38.0,
+    right: float | None = None,
 ) -> str:
     output_dir = FIGURE_DIR / str(year)
     output_dir.mkdir(parents=True, exist_ok=True)
@@ -471,9 +473,9 @@ def render_question_crop(
     scale = 150 / 72
     image = full_image.crop(
         (
-            round(38.0 * scale),
+            round(left * scale),
             round(safe_top * scale),
-            round((float(page.width) - 38.0) * scale),
+            round((right if right is not None else float(page.width) - 38.0) * scale),
             round(safe_bottom * scale),
         )
     )
@@ -515,8 +517,18 @@ def main() -> None:
                 if text_record["requiresFigure"] or exam == "math-c":
                     next_top = tops.get(number + 1) if pages.get(number + 1) == pages[number] else None
                     bottom = (next_top - 34.0) if next_top else 806.0
+                    figure_left = 330.0 if exam == "chinese" and re.search(r"右圖|左圖", text_record["excerpt"]) else 38.0
+                    if figure_left > 38.0:
+                        bottom = min((next_top - 8.0) if next_top else bottom, 806.0)
                     figure_image = render_question_crop(
-                        stem_path, year, exam, f"q{number}", pages[number], tops[number], bottom
+                        stem_path,
+                        year,
+                        exam,
+                        f"q{number}",
+                        pages[number],
+                        tops[number],
+                        bottom,
+                        left=figure_left,
                     )
                 common_questions.append(
                     {
