@@ -49,8 +49,8 @@ export default function TaichungTheaterPage() {
         question="沒有平牆的建築，樓板和門窗怎麼接上去？"
         description="臺中國家歌劇院以『美聲涵洞』為設計核心，放棄傳統的樑柱結構，改以 58 面連續曲牆支撐整體三座劇院空間，被譽為全球最難興建的建築之一。"
         category="形與建造 · 雙曲面結構"
-        imageSrc={`${process.env.NEXT_PUBLIC_BASE_PATH ?? ''}/learning-visuals/cases/taichung-national-theater.webp`}
-        imageAlt="臺中國家歌劇院 (Taichung National Theater) 連續雙曲面牆的 3D 結構剖析圖"
+        imageSrc={`${process.env.NEXT_PUBLIC_BASE_PATH ?? ''}/learning-visuals/cases/taichung-national-theater-v2.webp`}
+        imageAlt="臺中國家歌劇院灰白曲面外牆、玻璃立面與圓形開孔的建築外觀"
       />
 
       <CaseVisualStudy

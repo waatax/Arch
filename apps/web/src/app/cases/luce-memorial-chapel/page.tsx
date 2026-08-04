@@ -41,8 +41,8 @@ export default function LuceChapelPage() {
         question="為什麼四片牆既像屋頂又像結構？光從哪裡讓空間變莊嚴？"
         description="路思義教堂是台灣現代建築的里程碑。以四片雙曲面鋼筋混凝土薄殼立於大地，內部無任何柱子，展現力學結構與建築形式高度統一的極致美學。"
         category="結構與光 · 雙曲面薄殼"
-        imageSrc={`${process.env.NEXT_PUBLIC_BASE_PATH ?? ''}/learning-visuals/cases/luce-memorial-chapel.webp`}
-        imageAlt="路思義教堂的拋物雙曲面結構與頂部天光"
+        imageSrc={`${process.env.NEXT_PUBLIC_BASE_PATH ?? ''}/learning-visuals/cases/luce-memorial-chapel-v2.webp`}
+        imageAlt="路思義教堂橘色面磚雙曲薄殼、混凝土邊肋與頂部十字架的建築外觀"
       />
 
       <CaseVisualStudy

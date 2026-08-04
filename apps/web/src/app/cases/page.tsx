@@ -94,9 +94,13 @@ export default function CasesPage() {
         {cases.map((item) => (
           <div key={item.slug} className="overflow-hidden bg-(--color-paper-100) border border-(--color-concrete-300) rounded-xl flex flex-col justify-between hover:border-(--color-teal-700) transition-all">
             <div>
-              <div className="relative aspect-[16/10] overflow-hidden bg-(--color-concrete-300)">
-                <Image src={`${basePath}${item.image}`} alt={`${item.title}實景照片`} fill sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw" className="object-cover transition-transform duration-500 hover:scale-[1.03]" />
-              </div>
+              <Link
+                href={`/cases/${item.slug}`}
+                aria-label={`查看${item.title}案例`}
+                className="group relative block aspect-[16/10] overflow-hidden bg-(--color-concrete-300) focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-(--color-teal-700)"
+              >
+                <Image src={`${basePath}${item.image}`} alt={`${item.title}實景照片`} fill sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw" className="object-cover transition-transform duration-500 group-hover:scale-[1.03] group-focus-visible:scale-[1.03]" />
+              </Link>
               <div className="p-5 sm:p-6 pb-0">
               <div className="flex flex-wrap justify-between items-center gap-2 mb-3">
                 <span className="text-xs font-mono bg-(--color-paper-50) px-2 py-0.5 border border-(--color-concrete-300) rounded text-(--color-ink-650)">
