@@ -1,3 +1,5 @@
+'use client';
+
 import Link from 'next/link';
 import Image from 'next/image';
 
@@ -103,9 +105,21 @@ export default function CasesPage() {
               </Link>
               <div className="p-5 sm:p-6 pb-0">
               <div className="flex flex-wrap justify-between items-center gap-2 mb-3">
-                <span className="text-xs font-mono bg-(--color-paper-50) px-2 py-0.5 border border-(--color-concrete-300) rounded text-(--color-ink-650)">
-                  {item.region} · {item.category}
-                </span>
+                <div className="flex items-center gap-2 text-xs font-mono">
+                  <a
+                    href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(item.title + ' ' + item.region)}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-1 bg-(--color-paper-50) px-2 py-0.5 border border-(--color-concrete-300) rounded text-(--color-ink-650) hover:bg-(--color-concrete-200) transition-colors z-10 relative"
+                    onClick={(e) => e.stopPropagation()}
+                  >
+                    <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                    {item.region}
+                  </a>
+                  <span className="bg-(--color-paper-50) px-2 py-0.5 border border-(--color-concrete-300) rounded text-(--color-ink-650)">
+                    {item.category}
+                  </span>
+                </div>
               </div>
               <h2 className="text-xl font-bold font-serif text-(--color-ink-900) mb-2">
                 {item.title}
