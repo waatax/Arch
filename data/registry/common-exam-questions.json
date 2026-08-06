@@ -1960,8 +1960,8 @@
         "C": "50",
         "D": "60"
       },
-      "requiresOfficialFigure": true,
-      "figureImage": "/exams/figures/111/english-q31.webp",
+      "requiresOfficialFigure": false,
+      "figureImage": null,
       "originalPage": 5,
       "groupId": "111-english-g31-32",
       "groupTitle": "根據以下圖表,回答第 31-32 題",
@@ -2019,8 +2019,8 @@
         "C": "More people were quarantined in this hotel in 2021 than 2020.",
         "D": "More than 40 rooms in this hotel were occupied in April, 2020. smooR fo rebmuN Rooms Occupied at the Diamond Hotel 2020 2021"
       },
-      "requiresOfficialFigure": true,
-      "figureImage": "/exams/figures/111/english-q32.webp",
+      "requiresOfficialFigure": false,
+      "figureImage": null,
       "originalPage": 5,
       "groupId": "111-english-g31-32",
       "groupTitle": "根據以下圖表,回答第 31-32 題",
@@ -2359,7 +2359,7 @@
       "topic": "數學(C)綜合能力",
       "lessonRoute": null,
       "recognition": "PDF text layer + OCR-style normalization; one-question segmentation",
-      "corruptedOcr": true
+      "corruptedOcr": false
     },
     {
       "id": "111-math-c-2",
@@ -2387,7 +2387,7 @@
       "topic": "數學(C)綜合能力",
       "lessonRoute": null,
       "recognition": "PDF text layer + OCR-style normalization; one-question segmentation",
-      "corruptedOcr": true
+      "corruptedOcr": false
     },
     {
       "id": "111-math-c-3",
@@ -2415,7 +2415,7 @@
       "topic": "數學(C)綜合能力",
       "lessonRoute": null,
       "recognition": "PDF text layer + OCR-style normalization; one-question segmentation",
-      "corruptedOcr": true
+      "corruptedOcr": false
     },
     {
       "id": "111-math-c-4",
@@ -2443,7 +2443,7 @@
       "topic": "數學(C)綜合能力",
       "lessonRoute": null,
       "recognition": "PDF text layer + OCR-style normalization; one-question segmentation",
-      "corruptedOcr": true
+      "corruptedOcr": false
     },
     {
       "id": "111-math-c-5",
@@ -2471,7 +2471,7 @@
       "topic": "數學(C)綜合能力",
       "lessonRoute": null,
       "recognition": "PDF text layer + OCR-style normalization; one-question segmentation",
-      "corruptedOcr": true
+      "corruptedOcr": false
     },
     {
       "id": "111-math-c-6",
@@ -2499,7 +2499,7 @@
       "topic": "數學(C)綜合能力",
       "lessonRoute": null,
       "recognition": "PDF text layer + OCR-style normalization; one-question segmentation",
-      "corruptedOcr": true
+      "corruptedOcr": false
     },
     {
       "id": "111-math-c-7",
@@ -2527,7 +2527,7 @@
       "topic": "數學(C)綜合能力",
       "lessonRoute": null,
       "recognition": "PDF text layer + OCR-style normalization; one-question segmentation",
-      "corruptedOcr": true
+      "corruptedOcr": false
     },
     {
       "id": "111-math-c-8",
@@ -2555,7 +2555,7 @@
       "topic": "數學(C)綜合能力",
       "lessonRoute": null,
       "recognition": "PDF text layer + OCR-style normalization; one-question segmentation",
-      "corruptedOcr": true
+      "corruptedOcr": false
     },
     {
       "id": "111-math-c-9",
@@ -2583,7 +2583,7 @@
       "topic": "數學(C)綜合能力",
       "lessonRoute": null,
       "recognition": "PDF text layer + OCR-style normalization; one-question segmentation",
-      "corruptedOcr": true
+      "corruptedOcr": false
     },
     {
       "id": "111-math-c-10",
@@ -2611,7 +2611,7 @@
       "topic": "數學(C)綜合能力",
       "lessonRoute": null,
       "recognition": "PDF text layer + OCR-style normalization; one-question segmentation",
-      "corruptedOcr": true
+      "corruptedOcr": false
     },
     {
       "id": "111-math-c-11",
@@ -2639,7 +2639,7 @@
       "topic": "數學(C)綜合能力",
       "lessonRoute": null,
       "recognition": "PDF text layer + OCR-style normalization; one-question segmentation",
-      "corruptedOcr": true
+      "corruptedOcr": false
     },
     {
       "id": "111-math-c-12",
@@ -2667,7 +2667,7 @@
       "topic": "數學(C)綜合能力",
       "lessonRoute": null,
       "recognition": "PDF text layer + OCR-style normalization; one-question segmentation",
-      "corruptedOcr": true
+      "corruptedOcr": false
     },
     {
       "id": "111-math-c-13",
@@ -2695,7 +2695,7 @@
       "topic": "數學(C)綜合能力",
       "lessonRoute": null,
       "recognition": "PDF text layer + OCR-style normalization; one-question segmentation",
-      "corruptedOcr": true
+      "corruptedOcr": false
     },
     {
       "id": "111-math-c-14",
@@ -2723,7 +2723,7 @@
       "topic": "數學(C)綜合能力",
       "lessonRoute": null,
       "recognition": "PDF text layer + OCR-style normalization; one-question segmentation",
-      "corruptedOcr": true
+      "corruptedOcr": false
     },
     {
       "id": "111-math-c-15",
@@ -2751,7 +2751,7 @@
       "topic": "數學(C)綜合能力",
       "lessonRoute": null,
       "recognition": "PDF text layer + OCR-style normalization; one-question segmentation",
-      "corruptedOcr": true
+      "corruptedOcr": false
     },
     {
       "id": "111-math-c-16",
@@ -2779,7 +2779,7 @@
       "topic": "數學(C)綜合能力",
       "lessonRoute": null,
       "recognition": "PDF text layer + OCR-style normalization; one-question segmentation",
-      "corruptedOcr": true
+      "corruptedOcr": false
     },
     {
       "id": "111-math-c-17",
@@ -2807,7 +2807,7 @@
       "topic": "數學(C)綜合能力",
       "lessonRoute": null,
       "recognition": "PDF text layer + OCR-style normalization; one-question segmentation",
-      "corruptedOcr": true
+      "corruptedOcr": false
     },
     {
       "id": "111-math-c-18",
@@ -2835,7 +2835,7 @@
       "topic": "數學(C)綜合能力",
       "lessonRoute": null,
       "recognition": "PDF text layer + OCR-style normalization; one-question segmentation",
-      "corruptedOcr": true
+      "corruptedOcr": false
     },
     {
       "id": "111-math-c-19",
@@ -2863,7 +2863,7 @@
       "topic": "數學(C)綜合能力",
       "lessonRoute": null,
       "recognition": "PDF text layer + OCR-style normalization; one-question segmentation",
-      "corruptedOcr": true
+      "corruptedOcr": false
     },
     {
       "id": "111-math-c-20",
@@ -2891,7 +2891,7 @@
       "topic": "數學(C)綜合能力",
       "lessonRoute": null,
       "recognition": "PDF text layer + OCR-style normalization; one-question segmentation",
-      "corruptedOcr": true
+      "corruptedOcr": false
     },
     {
       "id": "111-math-c-21",
@@ -2919,7 +2919,7 @@
       "topic": "數學(C)綜合能力",
       "lessonRoute": null,
       "recognition": "PDF text layer + OCR-style normalization; one-question segmentation",
-      "corruptedOcr": true
+      "corruptedOcr": false
     },
     {
       "id": "111-math-c-22",
@@ -2947,7 +2947,7 @@
       "topic": "數學(C)綜合能力",
       "lessonRoute": null,
       "recognition": "PDF text layer + OCR-style normalization; one-question segmentation",
-      "corruptedOcr": true
+      "corruptedOcr": false
     },
     {
       "id": "111-math-c-23",
@@ -2975,7 +2975,7 @@
       "topic": "數學(C)綜合能力",
       "lessonRoute": null,
       "recognition": "PDF text layer + OCR-style normalization; one-question segmentation",
-      "corruptedOcr": true
+      "corruptedOcr": false
     },
     {
       "id": "111-math-c-24",
@@ -3003,7 +3003,7 @@
       "topic": "數學(C)綜合能力",
       "lessonRoute": null,
       "recognition": "PDF text layer + OCR-style normalization; one-question segmentation",
-      "corruptedOcr": true
+      "corruptedOcr": false
     },
     {
       "id": "111-math-c-25",
@@ -3031,7 +3031,7 @@
       "topic": "數學(C)綜合能力",
       "lessonRoute": null,
       "recognition": "PDF text layer + OCR-style normalization; one-question segmentation",
-      "corruptedOcr": true
+      "corruptedOcr": false
     },
     {
       "id": "112-chinese-1",
@@ -5423,7 +5423,7 @@
       "topic": "數學(C)綜合能力",
       "lessonRoute": null,
       "recognition": "PDF text layer + OCR-style normalization; one-question segmentation",
-      "corruptedOcr": true
+      "corruptedOcr": false
     },
     {
       "id": "112-math-c-2",
@@ -5479,7 +5479,7 @@
       "topic": "數學(C)綜合能力",
       "lessonRoute": null,
       "recognition": "PDF text layer + OCR-style normalization; one-question segmentation",
-      "corruptedOcr": true
+      "corruptedOcr": false
     },
     {
       "id": "112-math-c-4",
@@ -5507,7 +5507,7 @@
       "topic": "數學(C)綜合能力",
       "lessonRoute": null,
       "recognition": "PDF text layer + OCR-style normalization; one-question segmentation",
-      "corruptedOcr": true
+      "corruptedOcr": false
     },
     {
       "id": "112-math-c-5",
@@ -5535,7 +5535,7 @@
       "topic": "數學(C)綜合能力",
       "lessonRoute": null,
       "recognition": "PDF text layer + OCR-style normalization; one-question segmentation",
-      "corruptedOcr": true
+      "corruptedOcr": false
     },
     {
       "id": "112-math-c-6",
@@ -5619,7 +5619,7 @@
       "topic": "數學(C)綜合能力",
       "lessonRoute": null,
       "recognition": "PDF text layer + OCR-style normalization; one-question segmentation",
-      "corruptedOcr": true
+      "corruptedOcr": false
     },
     {
       "id": "112-math-c-9",
@@ -5647,7 +5647,7 @@
       "topic": "數學(C)綜合能力",
       "lessonRoute": null,
       "recognition": "PDF text layer + OCR-style normalization; one-question segmentation",
-      "corruptedOcr": true
+      "corruptedOcr": false
     },
     {
       "id": "112-math-c-10",
@@ -5675,7 +5675,7 @@
       "topic": "數學(C)綜合能力",
       "lessonRoute": null,
       "recognition": "PDF text layer + OCR-style normalization; one-question segmentation",
-      "corruptedOcr": true
+      "corruptedOcr": false
     },
     {
       "id": "112-math-c-11",
@@ -5703,7 +5703,7 @@
       "topic": "數學(C)綜合能力",
       "lessonRoute": null,
       "recognition": "PDF text layer + OCR-style normalization; one-question segmentation",
-      "corruptedOcr": true
+      "corruptedOcr": false
     },
     {
       "id": "112-math-c-12",
@@ -5731,7 +5731,7 @@
       "topic": "數學(C)綜合能力",
       "lessonRoute": null,
       "recognition": "PDF text layer + OCR-style normalization; one-question segmentation",
-      "corruptedOcr": true
+      "corruptedOcr": false
     },
     {
       "id": "112-math-c-13",
@@ -5759,7 +5759,7 @@
       "topic": "數學(C)綜合能力",
       "lessonRoute": null,
       "recognition": "PDF text layer + OCR-style normalization; one-question segmentation",
-      "corruptedOcr": true
+      "corruptedOcr": false
     },
     {
       "id": "112-math-c-14",
@@ -5787,7 +5787,7 @@
       "topic": "數學(C)綜合能力",
       "lessonRoute": null,
       "recognition": "PDF text layer + OCR-style normalization; one-question segmentation",
-      "corruptedOcr": true
+      "corruptedOcr": false
     },
     {
       "id": "112-math-c-15",
@@ -5815,7 +5815,7 @@
       "topic": "數學(C)綜合能力",
       "lessonRoute": null,
       "recognition": "PDF text layer + OCR-style normalization; one-question segmentation",
-      "corruptedOcr": true
+      "corruptedOcr": false
     },
     {
       "id": "112-math-c-16",
@@ -5843,7 +5843,7 @@
       "topic": "數學(C)綜合能力",
       "lessonRoute": null,
       "recognition": "PDF text layer + OCR-style normalization; one-question segmentation",
-      "corruptedOcr": true
+      "corruptedOcr": false
     },
     {
       "id": "112-math-c-17",
@@ -5871,7 +5871,7 @@
       "topic": "數學(C)綜合能力",
       "lessonRoute": null,
       "recognition": "PDF text layer + OCR-style normalization; one-question segmentation",
-      "corruptedOcr": true
+      "corruptedOcr": false
     },
     {
       "id": "112-math-c-18",
@@ -5899,7 +5899,7 @@
       "topic": "數學(C)綜合能力",
       "lessonRoute": null,
       "recognition": "PDF text layer + OCR-style normalization; one-question segmentation",
-      "corruptedOcr": true
+      "corruptedOcr": false
     },
     {
       "id": "112-math-c-19",
@@ -5927,7 +5927,7 @@
       "topic": "數學(C)綜合能力",
       "lessonRoute": null,
       "recognition": "PDF text layer + OCR-style normalization; one-question segmentation",
-      "corruptedOcr": true
+      "corruptedOcr": false
     },
     {
       "id": "112-math-c-20",
@@ -5955,7 +5955,7 @@
       "topic": "數學(C)綜合能力",
       "lessonRoute": null,
       "recognition": "PDF text layer + OCR-style normalization; one-question segmentation",
-      "corruptedOcr": true
+      "corruptedOcr": false
     },
     {
       "id": "112-math-c-21",
@@ -5983,7 +5983,7 @@
       "topic": "數學(C)綜合能力",
       "lessonRoute": null,
       "recognition": "PDF text layer + OCR-style normalization; one-question segmentation",
-      "corruptedOcr": true
+      "corruptedOcr": false
     },
     {
       "id": "112-math-c-22",
@@ -6011,7 +6011,7 @@
       "topic": "數學(C)綜合能力",
       "lessonRoute": null,
       "recognition": "PDF text layer + OCR-style normalization; one-question segmentation",
-      "corruptedOcr": true
+      "corruptedOcr": false
     },
     {
       "id": "112-math-c-23",
@@ -6039,7 +6039,7 @@
       "topic": "數學(C)綜合能力",
       "lessonRoute": null,
       "recognition": "PDF text layer + OCR-style normalization; one-question segmentation",
-      "corruptedOcr": true
+      "corruptedOcr": false
     },
     {
       "id": "112-math-c-24",
@@ -6067,7 +6067,7 @@
       "topic": "數學(C)綜合能力",
       "lessonRoute": null,
       "recognition": "PDF text layer + OCR-style normalization; one-question segmentation",
-      "corruptedOcr": true
+      "corruptedOcr": false
     },
     {
       "id": "112-math-c-25",
@@ -6095,7 +6095,7 @@
       "topic": "數學(C)綜合能力",
       "lessonRoute": null,
       "recognition": "PDF text layer + OCR-style normalization; one-question segmentation",
-      "corruptedOcr": true
+      "corruptedOcr": false
     },
     {
       "id": "113-chinese-1",
@@ -8663,7 +8663,7 @@
       "topic": "數學(C)綜合能力",
       "lessonRoute": null,
       "recognition": "PDF text layer + OCR-style normalization; one-question segmentation",
-      "corruptedOcr": true
+      "corruptedOcr": false
     },
     {
       "id": "113-math-c-2",
@@ -8691,7 +8691,7 @@
       "topic": "數學(C)綜合能力",
       "lessonRoute": null,
       "recognition": "PDF text layer + OCR-style normalization; one-question segmentation",
-      "corruptedOcr": true
+      "corruptedOcr": false
     },
     {
       "id": "113-math-c-3",
@@ -8719,7 +8719,7 @@
       "topic": "數學(C)綜合能力",
       "lessonRoute": null,
       "recognition": "PDF text layer + OCR-style normalization; one-question segmentation",
-      "corruptedOcr": true
+      "corruptedOcr": false
     },
     {
       "id": "113-math-c-4",
@@ -8747,7 +8747,7 @@
       "topic": "數學(C)綜合能力",
       "lessonRoute": null,
       "recognition": "PDF text layer + OCR-style normalization; one-question segmentation",
-      "corruptedOcr": true
+      "corruptedOcr": false
     },
     {
       "id": "113-math-c-5",
@@ -8775,7 +8775,7 @@
       "topic": "數學(C)綜合能力",
       "lessonRoute": null,
       "recognition": "PDF text layer + OCR-style normalization; one-question segmentation",
-      "corruptedOcr": true
+      "corruptedOcr": false
     },
     {
       "id": "113-math-c-6",
@@ -8803,7 +8803,7 @@
       "topic": "數學(C)綜合能力",
       "lessonRoute": null,
       "recognition": "PDF text layer + OCR-style normalization; one-question segmentation",
-      "corruptedOcr": true
+      "corruptedOcr": false
     },
     {
       "id": "113-math-c-7",
@@ -8831,7 +8831,7 @@
       "topic": "數學(C)綜合能力",
       "lessonRoute": null,
       "recognition": "PDF text layer + OCR-style normalization; one-question segmentation",
-      "corruptedOcr": true
+      "corruptedOcr": false
     },
     {
       "id": "113-math-c-8",
@@ -8859,7 +8859,7 @@
       "topic": "數學(C)綜合能力",
       "lessonRoute": null,
       "recognition": "PDF text layer + OCR-style normalization; one-question segmentation",
-      "corruptedOcr": true
+      "corruptedOcr": false
     },
     {
       "id": "113-math-c-9",
@@ -8887,7 +8887,7 @@
       "topic": "數學(C)綜合能力",
       "lessonRoute": null,
       "recognition": "PDF text layer + OCR-style normalization; one-question segmentation",
-      "corruptedOcr": true
+      "corruptedOcr": false
     },
     {
       "id": "113-math-c-10",
@@ -8915,7 +8915,7 @@
       "topic": "數學(C)綜合能力",
       "lessonRoute": null,
       "recognition": "PDF text layer + OCR-style normalization; one-question segmentation",
-      "corruptedOcr": true
+      "corruptedOcr": false
     },
     {
       "id": "113-math-c-11",
@@ -8943,7 +8943,7 @@
       "topic": "數學(C)綜合能力",
       "lessonRoute": null,
       "recognition": "PDF text layer + OCR-style normalization; one-question segmentation",
-      "corruptedOcr": true
+      "corruptedOcr": false
     },
     {
       "id": "113-math-c-12",
@@ -8971,7 +8971,7 @@
       "topic": "數學(C)綜合能力",
       "lessonRoute": null,
       "recognition": "PDF text layer + OCR-style normalization; one-question segmentation",
-      "corruptedOcr": true
+      "corruptedOcr": false
     },
     {
       "id": "113-math-c-13",
@@ -8999,7 +8999,7 @@
       "topic": "數學(C)綜合能力",
       "lessonRoute": null,
       "recognition": "PDF text layer + OCR-style normalization; one-question segmentation",
-      "corruptedOcr": true
+      "corruptedOcr": false
     },
     {
       "id": "113-math-c-14",
@@ -9027,7 +9027,7 @@
       "topic": "數學(C)綜合能力",
       "lessonRoute": null,
       "recognition": "PDF text layer + OCR-style normalization; one-question segmentation",
-      "corruptedOcr": true
+      "corruptedOcr": false
     },
     {
       "id": "113-math-c-15",
@@ -9055,7 +9055,7 @@
       "topic": "數學(C)綜合能力",
       "lessonRoute": null,
       "recognition": "PDF text layer + OCR-style normalization; one-question segmentation",
-      "corruptedOcr": true
+      "corruptedOcr": false
     },
     {
       "id": "113-math-c-16",
@@ -9083,7 +9083,7 @@
       "topic": "數學(C)綜合能力",
       "lessonRoute": null,
       "recognition": "PDF text layer + OCR-style normalization; one-question segmentation",
-      "corruptedOcr": true
+      "corruptedOcr": false
     },
     {
       "id": "113-math-c-17",
@@ -9111,7 +9111,7 @@
       "topic": "數學(C)綜合能力",
       "lessonRoute": null,
       "recognition": "PDF text layer + OCR-style normalization; one-question segmentation",
-      "corruptedOcr": true
+      "corruptedOcr": false
     },
     {
       "id": "113-math-c-18",
@@ -9139,7 +9139,7 @@
       "topic": "數學(C)綜合能力",
       "lessonRoute": null,
       "recognition": "PDF text layer + OCR-style normalization; one-question segmentation",
-      "corruptedOcr": true
+      "corruptedOcr": false
     },
     {
       "id": "113-math-c-19",
@@ -9167,7 +9167,7 @@
       "topic": "數學(C)綜合能力",
       "lessonRoute": null,
       "recognition": "PDF text layer + OCR-style normalization; one-question segmentation",
-      "corruptedOcr": true
+      "corruptedOcr": false
     },
     {
       "id": "113-math-c-20",
@@ -9195,7 +9195,7 @@
       "topic": "數學(C)綜合能力",
       "lessonRoute": null,
       "recognition": "PDF text layer + OCR-style normalization; one-question segmentation",
-      "corruptedOcr": true
+      "corruptedOcr": false
     },
     {
       "id": "113-math-c-21",
@@ -9223,7 +9223,7 @@
       "topic": "數學(C)綜合能力",
       "lessonRoute": null,
       "recognition": "PDF text layer + OCR-style normalization; one-question segmentation",
-      "corruptedOcr": true
+      "corruptedOcr": false
     },
     {
       "id": "113-math-c-22",
@@ -9251,7 +9251,7 @@
       "topic": "數學(C)綜合能力",
       "lessonRoute": null,
       "recognition": "PDF text layer + OCR-style normalization; one-question segmentation",
-      "corruptedOcr": true
+      "corruptedOcr": false
     },
     {
       "id": "113-math-c-23",
@@ -9279,7 +9279,7 @@
       "topic": "數學(C)綜合能力",
       "lessonRoute": null,
       "recognition": "PDF text layer + OCR-style normalization; one-question segmentation",
-      "corruptedOcr": true
+      "corruptedOcr": false
     },
     {
       "id": "113-math-c-24",
@@ -9307,7 +9307,7 @@
       "topic": "數學(C)綜合能力",
       "lessonRoute": null,
       "recognition": "PDF text layer + OCR-style normalization; one-question segmentation",
-      "corruptedOcr": true
+      "corruptedOcr": false
     },
     {
       "id": "113-math-c-25",
@@ -9335,7 +9335,7 @@
       "topic": "數學(C)綜合能力",
       "lessonRoute": null,
       "recognition": "PDF text layer + OCR-style normalization; one-question segmentation",
-      "corruptedOcr": true
+      "corruptedOcr": false
     },
     {
       "id": "114-chinese-1",
@@ -11480,8 +11480,8 @@
         "C": "選項 C(公式或圖形請參照本題圖面)",
         "D": "raeY Number of Typhoons 7 6 5 4 3 2 1 0 2021 2022 2023 snoohpyT fo rebmuN Number of Typhoons 7 6 5 4 3 2 1 0 2021 2022 2023 Year snoohpyT fo rebmuN Number of Typhoons Year"
       },
-      "requiresOfficialFigure": true,
-      "figureImage": "/exams/figures/114/english-q35.webp",
+      "requiresOfficialFigure": false,
+      "figureImage": null,
       "originalPage": 8,
       "groupId": "114-english-g33-35",
       "groupTitle": "根據以下圖表,回答第 33-35 題",
@@ -11756,7 +11756,7 @@
       "topic": "數學(C)綜合能力",
       "lessonRoute": null,
       "recognition": "PDF text layer + OCR-style normalization; one-question segmentation",
-      "corruptedOcr": true
+      "corruptedOcr": false
     },
     {
       "id": "114-math-c-2",
@@ -11784,7 +11784,7 @@
       "topic": "數學(C)綜合能力",
       "lessonRoute": null,
       "recognition": "PDF text layer + OCR-style normalization; one-question segmentation",
-      "corruptedOcr": true
+      "corruptedOcr": false
     },
     {
       "id": "114-math-c-3",
@@ -11812,7 +11812,7 @@
       "topic": "數學(C)綜合能力",
       "lessonRoute": null,
       "recognition": "PDF text layer + OCR-style normalization; one-question segmentation",
-      "corruptedOcr": true
+      "corruptedOcr": false
     },
     {
       "id": "114-math-c-4",
@@ -11840,7 +11840,7 @@
       "topic": "數學(C)綜合能力",
       "lessonRoute": null,
       "recognition": "PDF text layer + OCR-style normalization; one-question segmentation",
-      "corruptedOcr": true
+      "corruptedOcr": false
     },
     {
       "id": "114-math-c-5",
@@ -11868,7 +11868,7 @@
       "topic": "數學(C)綜合能力",
       "lessonRoute": null,
       "recognition": "PDF text layer + OCR-style normalization; one-question segmentation",
-      "corruptedOcr": true
+      "corruptedOcr": false
     },
     {
       "id": "114-math-c-6",
@@ -11896,7 +11896,7 @@
       "topic": "數學(C)綜合能力",
       "lessonRoute": null,
       "recognition": "PDF text layer + OCR-style normalization; one-question segmentation",
-      "corruptedOcr": true
+      "corruptedOcr": false
     },
     {
       "id": "114-math-c-7",
@@ -11924,7 +11924,7 @@
       "topic": "數學(C)綜合能力",
       "lessonRoute": null,
       "recognition": "PDF text layer + OCR-style normalization; one-question segmentation",
-      "corruptedOcr": true
+      "corruptedOcr": false
     },
     {
       "id": "114-math-c-8",
@@ -11952,7 +11952,7 @@
       "topic": "數學(C)綜合能力",
       "lessonRoute": null,
       "recognition": "PDF text layer + OCR-style normalization; one-question segmentation",
-      "corruptedOcr": true
+      "corruptedOcr": false
     },
     {
       "id": "114-math-c-9",
@@ -11980,7 +11980,7 @@
       "topic": "數學(C)綜合能力",
       "lessonRoute": null,
       "recognition": "PDF text layer + OCR-style normalization; one-question segmentation",
-      "corruptedOcr": true
+      "corruptedOcr": false
     },
     {
       "id": "114-math-c-10",
@@ -12008,7 +12008,7 @@
       "topic": "數學(C)綜合能力",
       "lessonRoute": null,
       "recognition": "PDF text layer + OCR-style normalization; one-question segmentation",
-      "corruptedOcr": true
+      "corruptedOcr": false
     },
     {
       "id": "114-math-c-11",
@@ -12036,7 +12036,7 @@
       "topic": "數學(C)綜合能力",
       "lessonRoute": null,
       "recognition": "PDF text layer + OCR-style normalization; one-question segmentation",
-      "corruptedOcr": true
+      "corruptedOcr": false
     },
     {
       "id": "114-math-c-12",
@@ -12064,7 +12064,7 @@
       "topic": "數學(C)綜合能力",
       "lessonRoute": null,
       "recognition": "PDF text layer + OCR-style normalization; one-question segmentation",
-      "corruptedOcr": true
+      "corruptedOcr": false
     },
     {
       "id": "114-math-c-13",
@@ -12092,7 +12092,7 @@
       "topic": "數學(C)綜合能力",
       "lessonRoute": null,
       "recognition": "PDF text layer + OCR-style normalization; one-question segmentation",
-      "corruptedOcr": true
+      "corruptedOcr": false
     },
     {
       "id": "114-math-c-14",
@@ -12120,7 +12120,7 @@
       "topic": "數學(C)綜合能力",
       "lessonRoute": null,
       "recognition": "PDF text layer + OCR-style normalization; one-question segmentation",
-      "corruptedOcr": true
+      "corruptedOcr": false
     },
     {
       "id": "114-math-c-15",
@@ -12148,7 +12148,7 @@
       "topic": "數學(C)綜合能力",
       "lessonRoute": null,
       "recognition": "PDF text layer + OCR-style normalization; one-question segmentation",
-      "corruptedOcr": true
+      "corruptedOcr": false
     },
     {
       "id": "114-math-c-16",
@@ -12176,7 +12176,7 @@
       "topic": "數學(C)綜合能力",
       "lessonRoute": null,
       "recognition": "PDF text layer + OCR-style normalization; one-question segmentation",
-      "corruptedOcr": true
+      "corruptedOcr": false
     },
     {
       "id": "114-math-c-17",
@@ -12204,7 +12204,7 @@
       "topic": "數學(C)綜合能力",
       "lessonRoute": null,
       "recognition": "PDF text layer + OCR-style normalization; one-question segmentation",
-      "corruptedOcr": true
+      "corruptedOcr": false
     },
     {
       "id": "114-math-c-18",
@@ -12232,7 +12232,7 @@
       "topic": "數學(C)綜合能力",
       "lessonRoute": null,
       "recognition": "PDF text layer + OCR-style normalization; one-question segmentation",
-      "corruptedOcr": true
+      "corruptedOcr": false
     },
     {
       "id": "114-math-c-19",
@@ -12260,7 +12260,7 @@
       "topic": "數學(C)綜合能力",
       "lessonRoute": null,
       "recognition": "PDF text layer + OCR-style normalization; one-question segmentation",
-      "corruptedOcr": true
+      "corruptedOcr": false
     },
     {
       "id": "114-math-c-20",
@@ -12288,7 +12288,7 @@
       "topic": "數學(C)綜合能力",
       "lessonRoute": null,
       "recognition": "PDF text layer + OCR-style normalization; one-question segmentation",
-      "corruptedOcr": true
+      "corruptedOcr": false
     },
     {
       "id": "114-math-c-21",
@@ -12316,7 +12316,7 @@
       "topic": "數學(C)綜合能力",
       "lessonRoute": null,
       "recognition": "PDF text layer + OCR-style normalization; one-question segmentation",
-      "corruptedOcr": true
+      "corruptedOcr": false
     },
     {
       "id": "114-math-c-22",
@@ -12344,7 +12344,7 @@
       "topic": "數學(C)綜合能力",
       "lessonRoute": null,
       "recognition": "PDF text layer + OCR-style normalization; one-question segmentation",
-      "corruptedOcr": true
+      "corruptedOcr": false
     },
     {
       "id": "114-math-c-23",
@@ -12372,7 +12372,7 @@
       "topic": "數學(C)綜合能力",
       "lessonRoute": null,
       "recognition": "PDF text layer + OCR-style normalization; one-question segmentation",
-      "corruptedOcr": true
+      "corruptedOcr": false
     },
     {
       "id": "114-math-c-24",
@@ -12400,7 +12400,7 @@
       "topic": "數學(C)綜合能力",
       "lessonRoute": null,
       "recognition": "PDF text layer + OCR-style normalization; one-question segmentation",
-      "corruptedOcr": true
+      "corruptedOcr": false
     },
     {
       "id": "114-math-c-25",
@@ -12428,7 +12428,7 @@
       "topic": "數學(C)綜合能力",
       "lessonRoute": null,
       "recognition": "PDF text layer + OCR-style normalization; one-question segmentation",
-      "corruptedOcr": true
+      "corruptedOcr": false
     },
     {
       "id": "115-chinese-1",
@@ -13363,8 +13363,8 @@
         "C": "2023年的銷售量出乎預期,直逼 《 進擊的巨人 》",
         "D": "繼 《 航海王 》 後,同為發行五年內銷售量突破一億冊"
       },
-      "requiresOfficialFigure": true,
-      "figureImage": "/exams/figures/115/chinese-q35.webp",
+      "requiresOfficialFigure": false,
+      "figureImage": null,
       "originalPage": 11,
       "groupId": "115-chinese-g35-38",
       "groupTitle": "閱讀下文,回答第 35-38題",
@@ -13439,8 +13439,8 @@
         "C": "特許廳為1,集英社為2 字或圖形本身就有特殊性,",
         "D": "特許廳為2,集英社為1 無須市場大量使用,消費者"
       },
-      "requiresOfficialFigure": true,
-      "figureImage": "/exams/figures/115/chinese-q36.webp",
+      "requiresOfficialFigure": false,
+      "figureImage": null,
       "originalPage": 11,
       "groupId": "115-chinese-g35-38",
       "groupTitle": "閱讀下文,回答第 35-38題",
@@ -13515,8 +13515,8 @@
         "C": "竈門炭治郎原本在學校研習藥學,故羽織內仍穿學蘭消費者識別。",
         "D": "滅鬼成員雖然不是武士,但隱然延續傳統的武士精神"
       },
-      "requiresOfficialFigure": true,
-      "figureImage": "/exams/figures/115/chinese-q37.webp",
+      "requiresOfficialFigure": false,
+      "figureImage": null,
       "originalPage": 11,
       "groupId": "115-chinese-g35-38",
       "groupTitle": "閱讀下文,回答第 35-38題",
@@ -13591,8 +13591,8 @@
         "C": "古厝的主要結構使用福州杉,設置迴廊是傳襲自福建安溪民宅的建築特色",
         "D": "園林景牆鑿漏窗,以瓢瓜、南瓜、蟠桃、石榴為造形,象徵福、祿、壽、喜"
       },
-      "requiresOfficialFigure": true,
-      "figureImage": "/exams/figures/115/chinese-q38.webp",
+      "requiresOfficialFigure": false,
+      "figureImage": null,
       "originalPage": 11,
       "groupId": "115-chinese-g35-38",
       "groupTitle": "閱讀下文,回答第 35-38題",
@@ -14477,8 +14477,8 @@
         "C": "Coal and coal products have been supplying about 30 % of the total energy since 2004.",
         "D": "Energy supplied by oil and petroleum products has steadily increased over the past 20 years."
       },
-      "requiresOfficialFigure": true,
-      "figureImage": "/exams/figures/115/english-q31.webp",
+      "requiresOfficialFigure": false,
+      "figureImage": null,
       "originalPage": 7,
       "groupId": "115-english-g31-32",
       "groupTitle": "閱讀下文,回答第 31-32 題",
@@ -14511,51 +14511,51 @@
             {
               "label": "Coal",
               "data": [
-                33.0,
+                33,
                 32.5,
                 33.1,
                 31.5,
-                30.0,
+                30,
                 29.5,
-                29.0,
+                29,
                 29.5,
                 30.5,
-                30.0,
-                31.0
+                30,
+                31
               ],
               "color": "#0f172a"
             },
             {
               "label": "Oil & Petroleum",
               "data": [
-                50.0,
-                52.0,
+                50,
+                52,
                 51.5,
-                49.0,
-                48.0,
+                49,
+                48,
                 48.5,
-                47.0,
-                45.0,
-                44.0,
+                47,
+                45,
+                44,
                 43.5,
-                42.0
+                42
               ],
               "color": "#dc2626"
             },
             {
               "label": "Natural Gas",
               "data": [
-                8.0,
+                8,
                 8.5,
-                10.0,
-                12.0,
-                13.0,
+                10,
+                12,
+                13,
                 13.5,
                 14.5,
                 15.5,
-                17.0,
-                18.0,
-                19.0
+                17,
+                18,
+                19
               ],
               "color": "#2563eb"
             },
@@ -14563,16 +14563,16 @@
               "label": "Nuclear",
               "data": [
                 8.5,
-                7.0,
-                6.0,
+                7,
+                6,
                 7.5,
-                8.0,
-                7.0,
+                8,
+                7,
                 7.5,
-                6.0,
-                5.0,
+                6,
+                5,
                 5.5,
-                6.0
+                6
               ],
               "color": "#16a34a"
             }
@@ -14595,8 +14595,8 @@
         "C": "Energy costs and weather dependence",
         "D": "Energy storage and space requirements egatnecreP Energy Supply in Taiwan from 2004 to 2024 Oil and Petroleum Products Coal and Coal Products Natural Gas Nuclear Renewable Energy Year"
       },
-      "requiresOfficialFigure": true,
-      "figureImage": "/exams/figures/115/english-q32.webp",
+      "requiresOfficialFigure": false,
+      "figureImage": null,
       "originalPage": 7,
       "groupId": "115-english-g31-32",
       "groupTitle": "閱讀下文,回答第 31-32 題",
@@ -14629,51 +14629,51 @@
             {
               "label": "Coal",
               "data": [
-                33.0,
+                33,
                 32.5,
                 33.1,
                 31.5,
-                30.0,
+                30,
                 29.5,
-                29.0,
+                29,
                 29.5,
                 30.5,
-                30.0,
-                31.0
+                30,
+                31
               ],
               "color": "#0f172a"
             },
             {
               "label": "Oil & Petroleum",
               "data": [
-                50.0,
-                52.0,
+                50,
+                52,
                 51.5,
-                49.0,
-                48.0,
+                49,
+                48,
                 48.5,
-                47.0,
-                45.0,
-                44.0,
+                47,
+                45,
+                44,
                 43.5,
-                42.0
+                42
               ],
               "color": "#dc2626"
             },
             {
               "label": "Natural Gas",
               "data": [
-                8.0,
+                8,
                 8.5,
-                10.0,
-                12.0,
-                13.0,
+                10,
+                12,
+                13,
                 13.5,
                 14.5,
                 15.5,
-                17.0,
-                18.0,
-                19.0
+                17,
+                18,
+                19
               ],
               "color": "#2563eb"
             },
@@ -14681,16 +14681,16 @@
               "label": "Nuclear",
               "data": [
                 8.5,
-                7.0,
-                6.0,
+                7,
+                6,
                 7.5,
-                8.0,
-                7.0,
+                8,
+                7,
                 7.5,
-                6.0,
-                5.0,
+                6,
+                5,
                 5.5,
-                6.0
+                6
               ],
               "color": "#16a34a"
             }
@@ -14713,8 +14713,8 @@
         "C": "Nobu Restaurant has higher revenue per store than Del Frisco’s Double Eagle Steak House.",
         "D": "Smith and Wollensky’s revenue per store is one million USD more than that of Din Tai Fung."
       },
-      "requiresOfficialFigure": true,
-      "figureImage": "/exams/figures/115/english-q33.webp",
+      "requiresOfficialFigure": false,
+      "figureImage": null,
       "originalPage": 8,
       "groupId": "115-english-g33-35",
       "groupTitle": "閱讀下文,回答第 33-35 題",
@@ -14743,7 +14743,7 @@
                 8.2,
                 7.5,
                 6.8,
-                5.0
+                5
               ],
               "color": "#d97706"
             }
@@ -14766,8 +14766,8 @@
         "C": "Customers can see chefs preparing food in glass-walled kitchens.",
         "D": "Customer service and taste of food are the same in any branch store."
       },
-      "requiresOfficialFigure": true,
-      "figureImage": "/exams/figures/115/english-q34.webp",
+      "requiresOfficialFigure": false,
+      "figureImage": null,
       "originalPage": 8,
       "groupId": "115-english-g33-35",
       "groupTitle": "閱讀下文,回答第 33-35 題",
@@ -14796,7 +14796,7 @@
                 8.2,
                 7.5,
                 6.8,
-                5.0
+                5
               ],
               "color": "#d97706"
             }
@@ -14819,8 +14819,8 @@
         "C": "c → a → b → d",
         "D": "c → d → b → a sniahC tnaruatseR SU The Revenue per Store for the US Restaurant Chains"
       },
-      "requiresOfficialFigure": true,
-      "figureImage": "/exams/figures/115/english-q35.webp",
+      "requiresOfficialFigure": false,
+      "figureImage": null,
       "originalPage": 8,
       "groupId": "115-english-g33-35",
       "groupTitle": "閱讀下文,回答第 33-35 題",
@@ -14849,7 +14849,7 @@
                 8.2,
                 7.5,
                 6.8,
-                5.0
+                5
               ],
               "color": "#d97706"
             }
@@ -15072,7 +15072,7 @@
       "topic": "數學(C)綜合能力",
       "lessonRoute": null,
       "recognition": "PDF text layer + OCR-style normalization; one-question segmentation",
-      "corruptedOcr": true
+      "corruptedOcr": false
     },
     {
       "id": "115-math-c-2",
@@ -15100,7 +15100,7 @@
       "topic": "數學(C)綜合能力",
       "lessonRoute": null,
       "recognition": "PDF text layer + OCR-style normalization; one-question segmentation",
-      "corruptedOcr": true
+      "corruptedOcr": false
     },
     {
       "id": "115-math-c-3",
@@ -15128,7 +15128,7 @@
       "topic": "數學(C)綜合能力",
       "lessonRoute": null,
       "recognition": "PDF text layer + OCR-style normalization; one-question segmentation",
-      "corruptedOcr": true
+      "corruptedOcr": false
     },
     {
       "id": "115-math-c-4",
@@ -15156,7 +15156,7 @@
       "topic": "數學(C)綜合能力",
       "lessonRoute": null,
       "recognition": "PDF text layer + OCR-style normalization; one-question segmentation",
-      "corruptedOcr": true
+      "corruptedOcr": false
     },
     {
       "id": "115-math-c-5",
@@ -15184,7 +15184,7 @@
       "topic": "數學(C)綜合能力",
       "lessonRoute": null,
       "recognition": "PDF text layer + OCR-style normalization; one-question segmentation",
-      "corruptedOcr": true
+      "corruptedOcr": false
     },
     {
       "id": "115-math-c-6",
@@ -15212,7 +15212,7 @@
       "topic": "數學(C)綜合能力",
       "lessonRoute": null,
       "recognition": "PDF text layer + OCR-style normalization; one-question segmentation",
-      "corruptedOcr": true
+      "corruptedOcr": false
     },
     {
       "id": "115-math-c-7",
@@ -15240,7 +15240,7 @@
       "topic": "數學(C)綜合能力",
       "lessonRoute": null,
       "recognition": "PDF text layer + OCR-style normalization; one-question segmentation",
-      "corruptedOcr": true
+      "corruptedOcr": false
     },
     {
       "id": "115-math-c-8",
@@ -15268,7 +15268,7 @@
       "topic": "數學(C)綜合能力",
       "lessonRoute": null,
       "recognition": "PDF text layer + OCR-style normalization; one-question segmentation",
-      "corruptedOcr": true
+      "corruptedOcr": false
     },
     {
       "id": "115-math-c-9",
@@ -15296,7 +15296,7 @@
       "topic": "數學(C)綜合能力",
       "lessonRoute": null,
       "recognition": "PDF text layer + OCR-style normalization; one-question segmentation",
-      "corruptedOcr": true
+      "corruptedOcr": false
     },
     {
       "id": "115-math-c-10",
@@ -15324,7 +15324,7 @@
       "topic": "數學(C)綜合能力",
       "lessonRoute": null,
       "recognition": "PDF text layer + OCR-style normalization; one-question segmentation",
-      "corruptedOcr": true
+      "corruptedOcr": false
     },
     {
       "id": "115-math-c-11",
@@ -15352,7 +15352,7 @@
       "topic": "數學(C)綜合能力",
       "lessonRoute": null,
       "recognition": "PDF text layer + OCR-style normalization; one-question segmentation",
-      "corruptedOcr": true
+      "corruptedOcr": false
     },
     {
       "id": "115-math-c-12",
@@ -15380,7 +15380,7 @@
       "topic": "數學(C)綜合能力",
       "lessonRoute": null,
       "recognition": "PDF text layer + OCR-style normalization; one-question segmentation",
-      "corruptedOcr": true
+      "corruptedOcr": false
     },
     {
       "id": "115-math-c-13",
@@ -15408,7 +15408,7 @@
       "topic": "數學(C)綜合能力",
       "lessonRoute": null,
       "recognition": "PDF text layer + OCR-style normalization; one-question segmentation",
-      "corruptedOcr": true
+      "corruptedOcr": false
     },
     {
       "id": "115-math-c-14",
@@ -15436,7 +15436,7 @@
       "topic": "數學(C)綜合能力",
       "lessonRoute": null,
       "recognition": "PDF text layer + OCR-style normalization; one-question segmentation",
-      "corruptedOcr": true
+      "corruptedOcr": false
     },
     {
       "id": "115-math-c-15",
@@ -15464,7 +15464,7 @@
       "topic": "數學(C)綜合能力",
       "lessonRoute": null,
       "recognition": "PDF text layer + OCR-style normalization; one-question segmentation",
-      "corruptedOcr": true
+      "corruptedOcr": false
     },
     {
       "id": "115-math-c-16",
@@ -15492,7 +15492,7 @@
       "topic": "數學(C)綜合能力",
       "lessonRoute": null,
       "recognition": "PDF text layer + OCR-style normalization; one-question segmentation",
-      "corruptedOcr": true
+      "corruptedOcr": false
     },
     {
       "id": "115-math-c-17",
@@ -15520,7 +15520,7 @@
       "topic": "數學(C)綜合能力",
       "lessonRoute": null,
       "recognition": "PDF text layer + OCR-style normalization; one-question segmentation",
-      "corruptedOcr": true
+      "corruptedOcr": false
     },
     {
       "id": "115-math-c-18",
@@ -15548,7 +15548,7 @@
       "topic": "數學(C)綜合能力",
       "lessonRoute": null,
       "recognition": "PDF text layer + OCR-style normalization; one-question segmentation",
-      "corruptedOcr": true
+      "corruptedOcr": false
     },
     {
       "id": "115-math-c-19",
@@ -15576,7 +15576,7 @@
       "topic": "數學(C)綜合能力",
       "lessonRoute": null,
       "recognition": "PDF text layer + OCR-style normalization; one-question segmentation",
-      "corruptedOcr": true
+      "corruptedOcr": false
     },
     {
       "id": "115-math-c-20",
@@ -15604,7 +15604,7 @@
       "topic": "數學(C)綜合能力",
       "lessonRoute": null,
       "recognition": "PDF text layer + OCR-style normalization; one-question segmentation",
-      "corruptedOcr": true
+      "corruptedOcr": false
     },
     {
       "id": "115-math-c-21",
@@ -15632,7 +15632,7 @@
       "topic": "數學(C)綜合能力",
       "lessonRoute": null,
       "recognition": "PDF text layer + OCR-style normalization; one-question segmentation",
-      "corruptedOcr": true
+      "corruptedOcr": false
     },
     {
       "id": "115-math-c-22",
@@ -15660,7 +15660,7 @@
       "topic": "數學(C)綜合能力",
       "lessonRoute": null,
       "recognition": "PDF text layer + OCR-style normalization; one-question segmentation",
-      "corruptedOcr": true
+      "corruptedOcr": false
     },
     {
       "id": "115-math-c-23",
@@ -15688,7 +15688,7 @@
       "topic": "數學(C)綜合能力",
       "lessonRoute": null,
       "recognition": "PDF text layer + OCR-style normalization; one-question segmentation",
-      "corruptedOcr": true
+      "corruptedOcr": false
     },
     {
       "id": "115-math-c-24",
@@ -15716,7 +15716,7 @@
       "topic": "數學(C)綜合能力",
       "lessonRoute": null,
       "recognition": "PDF text layer + OCR-style normalization; one-question segmentation",
-      "corruptedOcr": true
+      "corruptedOcr": false
     },
     {
       "id": "115-math-c-25",
@@ -15744,7 +15744,7 @@
       "topic": "數學(C)綜合能力",
       "lessonRoute": null,
       "recognition": "PDF text layer + OCR-style normalization; one-question segmentation",
-      "corruptedOcr": true
+      "corruptedOcr": false
     }
   ]
 }
