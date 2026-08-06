@@ -1359,7 +1359,7 @@
       "subjectName": "英文",
       "questionNo": 9,
       "answer": "B",
-      "excerpt": "The police pursued the bank robber through the streets last night.",
+      "excerpt": "The police <u>pursued</u> the bank robber through the streets last night.",
       "options": {
         "A": "begged",
         "B": "chased",
@@ -1386,7 +1386,7 @@
       "subjectName": "英文",
       "questionNo": 10,
       "answer": "D",
-      "excerpt": "I have looked through the records extensively, but couldn’t find anything about the person you mentioned.",
+      "excerpt": "I have looked through the records <u>extensively</u>, but couldn’t find anything about the person you mentioned.",
       "options": {
         "A": "eventually",
         "B": "marginally",
@@ -4283,7 +4283,7 @@
       "subjectName": "英文",
       "questionNo": 9,
       "answer": "A",
-      "excerpt": "William’s mother was seriously hurt in the car accident; she will have to stay in the hospital for a while.",
+      "excerpt": "William’s mother was <u>seriously</u> hurt in the car accident; she will have to stay in the hospital for a while.",
       "options": {
         "A": "badly",
         "B": "cheaply",
@@ -4310,7 +4310,7 @@
       "subjectName": "英文",
       "questionNo": 10,
       "answer": "A",
-      "excerpt": "I’m sorry that I don’t have any spare money to lend you. I spent all my money buying a new cellphone for my mom.",
+      "excerpt": "I’m sorry that I don’t have any <u>spare</u> money to lend you. I spent all my money buying a new cellphone for my mom.",
       "options": {
         "A": "extra",
         "B": "hot",
@@ -7347,7 +7347,7 @@
       "subjectName": "英文",
       "questionNo": 9,
       "answer": "A",
-      "excerpt": "May has to conquer her fear of flying if she wants to travel by airplane.",
+      "excerpt": "May has to <u>conquer</u> her fear of flying if she wants to travel by airplane.",
       "options": {
         "A": "beat",
         "B": "hunt",
@@ -7374,7 +7374,7 @@
       "subjectName": "英文",
       "questionNo": 10,
       "answer": "A",
-      "excerpt": "It is against the law for drivers not to stop at the crosswalk and allow walkers to cross first. If drivers do so, they will be fined.",
+      "excerpt": "It is against the law for drivers not to stop at the crosswalk and <u>allow</u> walkers to cross first. If drivers do so, they will be fined.",
       "options": {
         "A": "illegal",
         "B": "national",
@@ -10587,7 +10587,7 @@
       "subjectName": "英文",
       "questionNo": 9,
       "answer": "D",
-      "excerpt": "Mary came to me and introduced herself again. Apparently, she thought that I had forgotten her name.",
+      "excerpt": "Mary came to me and introduced herself again. <u>Apparently</u>, she thought that I had forgotten her name.",
       "options": {
         "A": "actively",
         "B": "entirely",
@@ -10614,7 +10614,7 @@
       "subjectName": "英文",
       "questionNo": 10,
       "answer": "C",
-      "excerpt": "My sister decided to abandon her old habits and start a fresh chapter in her life.",
+      "excerpt": "My sister decided to <u>abandon</u> her old habits and start a fresh chapter in her life.",
       "options": {
         "A": "bring about",
         "B": "carry on",
@@ -13876,7 +13876,7 @@
       "subjectName": "英文",
       "questionNo": 9,
       "answer": "A",
-      "excerpt": "When buying a car, those who want to save money will pick a used one because it is a more affordable option.",
+      "excerpt": "When buying a car, those who want to save money will pick a used one because it is a more <u>affordable</u> option.",
       "options": {
         "A": "choice",
         "B": "material",
@@ -13903,7 +13903,7 @@
       "subjectName": "英文",
       "questionNo": 10,
       "answer": "C",
-      "excerpt": "Tim was extremely moved by the eight-part polyphony (八部合音) of the Bunun people (布農 族), and he dreamed of singing with them on stage one day.",
+      "excerpt": "Tim was <u>extremely</u> moved by the eight-part polyphony (八部合音) of the Bunun people (布農 族), and he dreamed of singing with them on stage one day.",
       "options": {
         "A": "angrily",
         "B": "bravely",
