@@ -104,6 +104,23 @@ export const englishData: SubjectData = {
               ['Graywater System', '中水/灰水回收系統', 'Reusing wastewater from sinks and showers for landscape irrigation']
             ]
           }
+        },
+        {
+          heading: '統測高頻必考動詞片語與介系詞搭配總整理 (High-Frequency Phrasal Verbs & Collocations)',
+          body: '統測英文單字片語題與克漏字中，動詞介系詞固定搭配（Collocations）為得分核心，需重點熟記介系詞與接續動詞型態。',
+          table: {
+            headers: ['動詞片語 / 搭配詞', '介系詞用法規範', '中文涵義解析', '典型統測考題句型範例'],
+            rows: [
+              ['look forward to', 'to + V-ing / N', '期待 / 盼望', 'We look forward to hearing from you soon concerning the contract.'],
+              ['take advantage of', 'of + N', '利用 / 善用 (機會或資源)', 'Students should take advantage of the library resources.'],
+              ['lead to / result in', 'to / in + N / V-ing', '導致 / 引致 (結果)', 'Careless driving often leads to serious traffic accidents.'],
+              ['result from', 'from + 原因 N', '起因於 / 源自於', 'The structural crack resulted from the severe earthquake.'],
+              ['be responsible for', 'for + N / V-ing', '對…負責', 'The project manager is responsible for staying within budget.'],
+              ['depend on / rely on', 'on / upon + N', '依賴 / 取決於', 'The success of the solar project depends on sunny weather.'],
+              ['carry out / execute', 'out + N', '執行 / 實施 (計畫、試驗)', 'Engineers carried out a series of stress tests on the steel beam.'],
+              ['call off / cancel', 'off + N', '取消 (會議或活動)', 'The outdoor ceremony was called off due to heavy rain.']
+            ]
+          }
         }
       ],
       practices: [
@@ -364,6 +381,19 @@ export const englishData: SubjectData = {
             '題目分析 (Question Analysis)：劃出題目關鍵字 (專有名詞、年代數據、因果邏輯關係)。',
             '掃讀 (Scanning)：以關鍵字為錨點，垂直掃描文章相應段落，精確比對選項細節。'
           ]
+        },
+        {
+          heading: '統測英文閱讀四大常考題型破題密碼 (Reading Question Types & Strategies)',
+          body: '統測閱讀測驗長篇題組固定包含四類題型，掌握對應題目提問語式與文章定點定位技巧可達到 100% 解題精準度。',
+          table: {
+            headers: ['題型類別', '典型英文提問語式 (Question Stems)', '定位與破題技巧說明'],
+            rows: [
+              ['主旨題 (Main Idea)', 'What is the passage mainly about? / Which is the best title for the passage?', '閱讀首段第一句與末段總結句，注意高頻出現的靈魂關鍵字。'],
+              ['細節題 (Fact & Detail)', 'According to the passage, which of the following is TRUE / NOT mentioned?', '標出題目關鍵字 (人名、數字、地點)，在原文中以 Scanning 定位同義改寫句。'],
+              ['推論題 (Inference)', 'What can be inferred from the second paragraph? / What would the author probably agree?', '結合上下文已知事實進行合理延伸推導，切忌無中生有或過度引申。'],
+              ['字義推斷 (Contextual Vocabulary)', 'Which is closest in meaning to the word "..." in paragraph 3?', '檢視該單字前後句之對比詞 (however/but) 或同義重述詞 (in other words/that is)。']
+            ]
+          }
         },
         {
           heading: '綠建築技術短文拆解：被動式太陽能設計 (Technical Passage 1: Passive Solar Design)',
