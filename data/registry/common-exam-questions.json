@@ -1970,7 +1970,39 @@
       "sourceUrl": "https://web1.tcte.edu.tw/EXAM/111_4y/downloader.php?obj=MTExLTR5LTAwLWUucGRm",
       "topic": "英文綜合能力",
       "lessonRoute": null,
-      "recognition": "PDF text layer + OCR-style normalization; one-question segmentation"
+      "recognition": "PDF text layer + OCR-style normalization; one-question segmentation",
+      "visualData": {
+        "chart": {
+          "type": "line",
+          "title": "Diamond Hotel Room Occupancy in June",
+          "xAxisLabel": "Date",
+          "yAxisLabel": "Number of Rooms",
+          "labels": [
+            "6/1",
+            "6/5",
+            "6/10",
+            "6/15",
+            "6/20",
+            "6/25",
+            "6/30"
+          ],
+          "datasets": [
+            {
+              "label": "Occupied Rooms",
+              "data": [
+                70,
+                70,
+                50,
+                20,
+                10,
+                40,
+                70
+              ],
+              "color": "#8b5cf6"
+            }
+          ]
+        }
+      }
     },
     {
       "id": "111-english-32",
@@ -1997,7 +2029,39 @@
       "sourceUrl": "https://web1.tcte.edu.tw/EXAM/111_4y/downloader.php?obj=MTExLTR5LTAwLWUucGRm",
       "topic": "英文綜合能力",
       "lessonRoute": null,
-      "recognition": "PDF text layer + OCR-style normalization; one-question segmentation"
+      "recognition": "PDF text layer + OCR-style normalization; one-question segmentation",
+      "visualData": {
+        "chart": {
+          "type": "line",
+          "title": "Diamond Hotel Room Occupancy in June",
+          "xAxisLabel": "Date",
+          "yAxisLabel": "Number of Rooms",
+          "labels": [
+            "6/1",
+            "6/5",
+            "6/10",
+            "6/15",
+            "6/20",
+            "6/25",
+            "6/30"
+          ],
+          "datasets": [
+            {
+              "label": "Occupied Rooms",
+              "data": [
+                70,
+                70,
+                50,
+                20,
+                10,
+                40,
+                70
+              ],
+              "color": "#8b5cf6"
+            }
+          ]
+        }
+      }
     },
     {
       "id": "111-english-33",
@@ -2294,7 +2358,8 @@
       "sourceUrl": "https://web1.tcte.edu.tw/EXAM/111_4y/downloader.php?obj=MTExLTR5LTAwLW1jLnBkZg==",
       "topic": "數學(C)綜合能力",
       "lessonRoute": null,
-      "recognition": "PDF text layer + OCR-style normalization; one-question segmentation"
+      "recognition": "PDF text layer + OCR-style normalization; one-question segmentation",
+      "corruptedOcr": true
     },
     {
       "id": "111-math-c-2",
@@ -2321,7 +2386,8 @@
       "sourceUrl": "https://web1.tcte.edu.tw/EXAM/111_4y/downloader.php?obj=MTExLTR5LTAwLW1jLnBkZg==",
       "topic": "數學(C)綜合能力",
       "lessonRoute": null,
-      "recognition": "PDF text layer + OCR-style normalization; one-question segmentation"
+      "recognition": "PDF text layer + OCR-style normalization; one-question segmentation",
+      "corruptedOcr": true
     },
     {
       "id": "111-math-c-3",
@@ -2348,7 +2414,8 @@
       "sourceUrl": "https://web1.tcte.edu.tw/EXAM/111_4y/downloader.php?obj=MTExLTR5LTAwLW1jLnBkZg==",
       "topic": "數學(C)綜合能力",
       "lessonRoute": null,
-      "recognition": "PDF text layer + OCR-style normalization; one-question segmentation"
+      "recognition": "PDF text layer + OCR-style normalization; one-question segmentation",
+      "corruptedOcr": true
     },
     {
       "id": "111-math-c-4",
@@ -2375,7 +2442,8 @@
       "sourceUrl": "https://web1.tcte.edu.tw/EXAM/111_4y/downloader.php?obj=MTExLTR5LTAwLW1jLnBkZg==",
       "topic": "數學(C)綜合能力",
       "lessonRoute": null,
-      "recognition": "PDF text layer + OCR-style normalization; one-question segmentation"
+      "recognition": "PDF text layer + OCR-style normalization; one-question segmentation",
+      "corruptedOcr": true
     },
     {
       "id": "111-math-c-5",
@@ -2402,7 +2470,8 @@
       "sourceUrl": "https://web1.tcte.edu.tw/EXAM/111_4y/downloader.php?obj=MTExLTR5LTAwLW1jLnBkZg==",
       "topic": "數學(C)綜合能力",
       "lessonRoute": null,
-      "recognition": "PDF text layer + OCR-style normalization; one-question segmentation"
+      "recognition": "PDF text layer + OCR-style normalization; one-question segmentation",
+      "corruptedOcr": true
     },
     {
       "id": "111-math-c-6",
@@ -2429,7 +2498,8 @@
       "sourceUrl": "https://web1.tcte.edu.tw/EXAM/111_4y/downloader.php?obj=MTExLTR5LTAwLW1jLnBkZg==",
       "topic": "數學(C)綜合能力",
       "lessonRoute": null,
-      "recognition": "PDF text layer + OCR-style normalization; one-question segmentation"
+      "recognition": "PDF text layer + OCR-style normalization; one-question segmentation",
+      "corruptedOcr": true
     },
     {
       "id": "111-math-c-7",
@@ -2456,7 +2526,8 @@
       "sourceUrl": "https://web1.tcte.edu.tw/EXAM/111_4y/downloader.php?obj=MTExLTR5LTAwLW1jLnBkZg==",
       "topic": "數學(C)綜合能力",
       "lessonRoute": null,
-      "recognition": "PDF text layer + OCR-style normalization; one-question segmentation"
+      "recognition": "PDF text layer + OCR-style normalization; one-question segmentation",
+      "corruptedOcr": true
     },
     {
       "id": "111-math-c-8",
@@ -2483,7 +2554,8 @@
       "sourceUrl": "https://web1.tcte.edu.tw/EXAM/111_4y/downloader.php?obj=MTExLTR5LTAwLW1jLnBkZg==",
       "topic": "數學(C)綜合能力",
       "lessonRoute": null,
-      "recognition": "PDF text layer + OCR-style normalization; one-question segmentation"
+      "recognition": "PDF text layer + OCR-style normalization; one-question segmentation",
+      "corruptedOcr": true
     },
     {
       "id": "111-math-c-9",
@@ -2510,7 +2582,8 @@
       "sourceUrl": "https://web1.tcte.edu.tw/EXAM/111_4y/downloader.php?obj=MTExLTR5LTAwLW1jLnBkZg==",
       "topic": "數學(C)綜合能力",
       "lessonRoute": null,
-      "recognition": "PDF text layer + OCR-style normalization; one-question segmentation"
+      "recognition": "PDF text layer + OCR-style normalization; one-question segmentation",
+      "corruptedOcr": true
     },
     {
       "id": "111-math-c-10",
@@ -2537,7 +2610,8 @@
       "sourceUrl": "https://web1.tcte.edu.tw/EXAM/111_4y/downloader.php?obj=MTExLTR5LTAwLW1jLnBkZg==",
       "topic": "數學(C)綜合能力",
       "lessonRoute": null,
-      "recognition": "PDF text layer + OCR-style normalization; one-question segmentation"
+      "recognition": "PDF text layer + OCR-style normalization; one-question segmentation",
+      "corruptedOcr": true
     },
     {
       "id": "111-math-c-11",
@@ -2564,7 +2638,8 @@
       "sourceUrl": "https://web1.tcte.edu.tw/EXAM/111_4y/downloader.php?obj=MTExLTR5LTAwLW1jLnBkZg==",
       "topic": "數學(C)綜合能力",
       "lessonRoute": null,
-      "recognition": "PDF text layer + OCR-style normalization; one-question segmentation"
+      "recognition": "PDF text layer + OCR-style normalization; one-question segmentation",
+      "corruptedOcr": true
     },
     {
       "id": "111-math-c-12",
@@ -2591,7 +2666,8 @@
       "sourceUrl": "https://web1.tcte.edu.tw/EXAM/111_4y/downloader.php?obj=MTExLTR5LTAwLW1jLnBkZg==",
       "topic": "數學(C)綜合能力",
       "lessonRoute": null,
-      "recognition": "PDF text layer + OCR-style normalization; one-question segmentation"
+      "recognition": "PDF text layer + OCR-style normalization; one-question segmentation",
+      "corruptedOcr": true
     },
     {
       "id": "111-math-c-13",
@@ -2618,7 +2694,8 @@
       "sourceUrl": "https://web1.tcte.edu.tw/EXAM/111_4y/downloader.php?obj=MTExLTR5LTAwLW1jLnBkZg==",
       "topic": "數學(C)綜合能力",
       "lessonRoute": null,
-      "recognition": "PDF text layer + OCR-style normalization; one-question segmentation"
+      "recognition": "PDF text layer + OCR-style normalization; one-question segmentation",
+      "corruptedOcr": true
     },
     {
       "id": "111-math-c-14",
@@ -2645,7 +2722,8 @@
       "sourceUrl": "https://web1.tcte.edu.tw/EXAM/111_4y/downloader.php?obj=MTExLTR5LTAwLW1jLnBkZg==",
       "topic": "數學(C)綜合能力",
       "lessonRoute": null,
-      "recognition": "PDF text layer + OCR-style normalization; one-question segmentation"
+      "recognition": "PDF text layer + OCR-style normalization; one-question segmentation",
+      "corruptedOcr": true
     },
     {
       "id": "111-math-c-15",
@@ -2672,7 +2750,8 @@
       "sourceUrl": "https://web1.tcte.edu.tw/EXAM/111_4y/downloader.php?obj=MTExLTR5LTAwLW1jLnBkZg==",
       "topic": "數學(C)綜合能力",
       "lessonRoute": null,
-      "recognition": "PDF text layer + OCR-style normalization; one-question segmentation"
+      "recognition": "PDF text layer + OCR-style normalization; one-question segmentation",
+      "corruptedOcr": true
     },
     {
       "id": "111-math-c-16",
@@ -2699,7 +2778,8 @@
       "sourceUrl": "https://web1.tcte.edu.tw/EXAM/111_4y/downloader.php?obj=MTExLTR5LTAwLW1jLnBkZg==",
       "topic": "數學(C)綜合能力",
       "lessonRoute": null,
-      "recognition": "PDF text layer + OCR-style normalization; one-question segmentation"
+      "recognition": "PDF text layer + OCR-style normalization; one-question segmentation",
+      "corruptedOcr": true
     },
     {
       "id": "111-math-c-17",
@@ -2726,7 +2806,8 @@
       "sourceUrl": "https://web1.tcte.edu.tw/EXAM/111_4y/downloader.php?obj=MTExLTR5LTAwLW1jLnBkZg==",
       "topic": "數學(C)綜合能力",
       "lessonRoute": null,
-      "recognition": "PDF text layer + OCR-style normalization; one-question segmentation"
+      "recognition": "PDF text layer + OCR-style normalization; one-question segmentation",
+      "corruptedOcr": true
     },
     {
       "id": "111-math-c-18",
@@ -2753,7 +2834,8 @@
       "sourceUrl": "https://web1.tcte.edu.tw/EXAM/111_4y/downloader.php?obj=MTExLTR5LTAwLW1jLnBkZg==",
       "topic": "數學(C)綜合能力",
       "lessonRoute": null,
-      "recognition": "PDF text layer + OCR-style normalization; one-question segmentation"
+      "recognition": "PDF text layer + OCR-style normalization; one-question segmentation",
+      "corruptedOcr": true
     },
     {
       "id": "111-math-c-19",
@@ -2780,7 +2862,8 @@
       "sourceUrl": "https://web1.tcte.edu.tw/EXAM/111_4y/downloader.php?obj=MTExLTR5LTAwLW1jLnBkZg==",
       "topic": "數學(C)綜合能力",
       "lessonRoute": null,
-      "recognition": "PDF text layer + OCR-style normalization; one-question segmentation"
+      "recognition": "PDF text layer + OCR-style normalization; one-question segmentation",
+      "corruptedOcr": true
     },
     {
       "id": "111-math-c-20",
@@ -2807,7 +2890,8 @@
       "sourceUrl": "https://web1.tcte.edu.tw/EXAM/111_4y/downloader.php?obj=MTExLTR5LTAwLW1jLnBkZg==",
       "topic": "數學(C)綜合能力",
       "lessonRoute": null,
-      "recognition": "PDF text layer + OCR-style normalization; one-question segmentation"
+      "recognition": "PDF text layer + OCR-style normalization; one-question segmentation",
+      "corruptedOcr": true
     },
     {
       "id": "111-math-c-21",
@@ -2834,7 +2918,8 @@
       "sourceUrl": "https://web1.tcte.edu.tw/EXAM/111_4y/downloader.php?obj=MTExLTR5LTAwLW1jLnBkZg==",
       "topic": "數學(C)綜合能力",
       "lessonRoute": null,
-      "recognition": "PDF text layer + OCR-style normalization; one-question segmentation"
+      "recognition": "PDF text layer + OCR-style normalization; one-question segmentation",
+      "corruptedOcr": true
     },
     {
       "id": "111-math-c-22",
@@ -2861,7 +2946,8 @@
       "sourceUrl": "https://web1.tcte.edu.tw/EXAM/111_4y/downloader.php?obj=MTExLTR5LTAwLW1jLnBkZg==",
       "topic": "數學(C)綜合能力",
       "lessonRoute": null,
-      "recognition": "PDF text layer + OCR-style normalization; one-question segmentation"
+      "recognition": "PDF text layer + OCR-style normalization; one-question segmentation",
+      "corruptedOcr": true
     },
     {
       "id": "111-math-c-23",
@@ -2888,7 +2974,8 @@
       "sourceUrl": "https://web1.tcte.edu.tw/EXAM/111_4y/downloader.php?obj=MTExLTR5LTAwLW1jLnBkZg==",
       "topic": "數學(C)綜合能力",
       "lessonRoute": null,
-      "recognition": "PDF text layer + OCR-style normalization; one-question segmentation"
+      "recognition": "PDF text layer + OCR-style normalization; one-question segmentation",
+      "corruptedOcr": true
     },
     {
       "id": "111-math-c-24",
@@ -2915,7 +3002,8 @@
       "sourceUrl": "https://web1.tcte.edu.tw/EXAM/111_4y/downloader.php?obj=MTExLTR5LTAwLW1jLnBkZg==",
       "topic": "數學(C)綜合能力",
       "lessonRoute": null,
-      "recognition": "PDF text layer + OCR-style normalization; one-question segmentation"
+      "recognition": "PDF text layer + OCR-style normalization; one-question segmentation",
+      "corruptedOcr": true
     },
     {
       "id": "111-math-c-25",
@@ -2942,7 +3030,8 @@
       "sourceUrl": "https://web1.tcte.edu.tw/EXAM/111_4y/downloader.php?obj=MTExLTR5LTAwLW1jLnBkZg==",
       "topic": "數學(C)綜合能力",
       "lessonRoute": null,
-      "recognition": "PDF text layer + OCR-style normalization; one-question segmentation"
+      "recognition": "PDF text layer + OCR-style normalization; one-question segmentation",
+      "corruptedOcr": true
     },
     {
       "id": "112-chinese-1",
@@ -4805,7 +4894,62 @@
       "sourceUrl": "https://web1.tcte.edu.tw/EXAM/112_4y/downloader.php?obj=MTEyLTR5LTAwLWUucGRm",
       "topic": "英文綜合能力",
       "lessonRoute": null,
-      "recognition": "PDF text layer + OCR-style normalization; one-question segmentation"
+      "recognition": "PDF text layer + OCR-style normalization; one-question segmentation",
+      "visualData": {
+        "chart": {
+          "type": "bar",
+          "title": "How students spend their pocket money every month",
+          "yAxisLabel": "NT$",
+          "labels": [
+            "Mary",
+            "Sam",
+            "David",
+            "Linda"
+          ],
+          "datasets": [
+            {
+              "label": "Food",
+              "data": [
+                1200,
+                1500,
+                800,
+                2000
+              ],
+              "color": "#ef4444"
+            },
+            {
+              "label": "Clothes",
+              "data": [
+                800,
+                300,
+                200,
+                1500
+              ],
+              "color": "#3b82f6"
+            },
+            {
+              "label": "Books",
+              "data": [
+                500,
+                600,
+                1500,
+                300
+              ],
+              "color": "#10b981"
+            },
+            {
+              "label": "Entertainment",
+              "data": [
+                500,
+                600,
+                500,
+                200
+              ],
+              "color": "#f59e0b"
+            }
+          ]
+        }
+      }
     },
     {
       "id": "112-english-32",
@@ -4832,7 +4976,62 @@
       "sourceUrl": "https://web1.tcte.edu.tw/EXAM/112_4y/downloader.php?obj=MTEyLTR5LTAwLWUucGRm",
       "topic": "英文綜合能力",
       "lessonRoute": null,
-      "recognition": "PDF text layer + OCR-style normalization; one-question segmentation"
+      "recognition": "PDF text layer + OCR-style normalization; one-question segmentation",
+      "visualData": {
+        "chart": {
+          "type": "bar",
+          "title": "How students spend their pocket money every month",
+          "yAxisLabel": "NT$",
+          "labels": [
+            "Mary",
+            "Sam",
+            "David",
+            "Linda"
+          ],
+          "datasets": [
+            {
+              "label": "Food",
+              "data": [
+                1200,
+                1500,
+                800,
+                2000
+              ],
+              "color": "#ef4444"
+            },
+            {
+              "label": "Clothes",
+              "data": [
+                800,
+                300,
+                200,
+                1500
+              ],
+              "color": "#3b82f6"
+            },
+            {
+              "label": "Books",
+              "data": [
+                500,
+                600,
+                1500,
+                300
+              ],
+              "color": "#10b981"
+            },
+            {
+              "label": "Entertainment",
+              "data": [
+                500,
+                600,
+                500,
+                200
+              ],
+              "color": "#f59e0b"
+            }
+          ]
+        }
+      }
     },
     {
       "id": "112-english-33",
@@ -4859,7 +5058,29 @@
       "sourceUrl": "https://web1.tcte.edu.tw/EXAM/112_4y/downloader.php?obj=MTEyLTR5LTAwLWUucGRm",
       "topic": "英文綜合能力",
       "lessonRoute": null,
-      "recognition": "PDF text layer + OCR-style normalization; one-question segmentation"
+      "recognition": "PDF text layer + OCR-style normalization; one-question segmentation",
+      "visualData": {
+        "table": {
+          "title": "Drug Facts",
+          "headers": [
+            "Uses",
+            "Warnings",
+            "Directions"
+          ],
+          "alignments": [
+            "left",
+            "left",
+            "left"
+          ],
+          "rows": [
+            [
+              "Temporarily relieves these symptoms due to hay fever or other respiratory allergies:\n• sneezing\n• runny nose\n• itchy, watery eyes",
+              "Do not use if you are now taking a prescription monoamine oxidase inhibitor (MAOI).\nAsk a doctor before use if you have heart disease, thyroid disease, or diabetes.",
+              "Adults and children 12 years and over: Take 2 tablets every 4 to 6 hours; not more than 12 tablets in 24 hours.\nChildren under 12 years: Ask a doctor."
+            ]
+          ]
+        }
+      }
     },
     {
       "id": "112-english-34",
@@ -4886,7 +5107,29 @@
       "sourceUrl": "https://web1.tcte.edu.tw/EXAM/112_4y/downloader.php?obj=MTEyLTR5LTAwLWUucGRm",
       "topic": "英文綜合能力",
       "lessonRoute": null,
-      "recognition": "PDF text layer + OCR-style normalization; one-question segmentation"
+      "recognition": "PDF text layer + OCR-style normalization; one-question segmentation",
+      "visualData": {
+        "table": {
+          "title": "Drug Facts",
+          "headers": [
+            "Uses",
+            "Warnings",
+            "Directions"
+          ],
+          "alignments": [
+            "left",
+            "left",
+            "left"
+          ],
+          "rows": [
+            [
+              "Temporarily relieves these symptoms due to hay fever or other respiratory allergies:\n• sneezing\n• runny nose\n• itchy, watery eyes",
+              "Do not use if you are now taking a prescription monoamine oxidase inhibitor (MAOI).\nAsk a doctor before use if you have heart disease, thyroid disease, or diabetes.",
+              "Adults and children 12 years and over: Take 2 tablets every 4 to 6 hours; not more than 12 tablets in 24 hours.\nChildren under 12 years: Ask a doctor."
+            ]
+          ]
+        }
+      }
     },
     {
       "id": "112-english-35",
@@ -4913,7 +5156,29 @@
       "sourceUrl": "https://web1.tcte.edu.tw/EXAM/112_4y/downloader.php?obj=MTEyLTR5LTAwLWUucGRm",
       "topic": "英文綜合能力",
       "lessonRoute": null,
-      "recognition": "PDF text layer + OCR-style normalization; one-question segmentation"
+      "recognition": "PDF text layer + OCR-style normalization; one-question segmentation",
+      "visualData": {
+        "table": {
+          "title": "Drug Facts",
+          "headers": [
+            "Uses",
+            "Warnings",
+            "Directions"
+          ],
+          "alignments": [
+            "left",
+            "left",
+            "left"
+          ],
+          "rows": [
+            [
+              "Temporarily relieves these symptoms due to hay fever or other respiratory allergies:\n• sneezing\n• runny nose\n• itchy, watery eyes",
+              "Do not use if you are now taking a prescription monoamine oxidase inhibitor (MAOI).\nAsk a doctor before use if you have heart disease, thyroid disease, or diabetes.",
+              "Adults and children 12 years and over: Take 2 tablets every 4 to 6 hours; not more than 12 tablets in 24 hours.\nChildren under 12 years: Ask a doctor."
+            ]
+          ]
+        }
+      }
     },
     {
       "id": "112-english-36",
@@ -4940,7 +5205,21 @@
       "sourceUrl": "https://web1.tcte.edu.tw/EXAM/112_4y/downloader.php?obj=MTEyLTR5LTAwLWUucGRm",
       "topic": "英文綜合能力",
       "lessonRoute": null,
-      "recognition": "PDF text layer + OCR-style normalization; one-question segmentation"
+      "recognition": "PDF text layer + OCR-style normalization; one-question segmentation",
+      "visualData": {
+        "table": {
+          "title": "School Notice - Summer Vacation Guidelines",
+          "headers": [],
+          "alignments": [
+            "left"
+          ],
+          "rows": [
+            [
+              "Dear Students,\nPlease note the following rules for summer vacation:\n1. All club activities must end by 5:00 PM.\n2. The library will be open from 9:00 AM to 4:00 PM (Monday-Friday).\n3. Students must wear school uniforms when entering the campus.\n4. The swimming pool will be closed for maintenance in July."
+            ]
+          ]
+        }
+      }
     },
     {
       "id": "112-english-37",
@@ -4967,7 +5246,21 @@
       "sourceUrl": "https://web1.tcte.edu.tw/EXAM/112_4y/downloader.php?obj=MTEyLTR5LTAwLWUucGRm",
       "topic": "英文綜合能力",
       "lessonRoute": null,
-      "recognition": "PDF text layer + OCR-style normalization; one-question segmentation"
+      "recognition": "PDF text layer + OCR-style normalization; one-question segmentation",
+      "visualData": {
+        "table": {
+          "title": "School Notice - Summer Vacation Guidelines",
+          "headers": [],
+          "alignments": [
+            "left"
+          ],
+          "rows": [
+            [
+              "Dear Students,\nPlease note the following rules for summer vacation:\n1. All club activities must end by 5:00 PM.\n2. The library will be open from 9:00 AM to 4:00 PM (Monday-Friday).\n3. Students must wear school uniforms when entering the campus.\n4. The swimming pool will be closed for maintenance in July."
+            ]
+          ]
+        }
+      }
     },
     {
       "id": "112-english-38",
@@ -5129,7 +5422,8 @@
       "sourceUrl": "https://web1.tcte.edu.tw/EXAM/112_4y/downloader.php?obj=MTEyLTR5LTAwLW1jLnBkZg==",
       "topic": "數學(C)綜合能力",
       "lessonRoute": null,
-      "recognition": "PDF text layer + OCR-style normalization; one-question segmentation"
+      "recognition": "PDF text layer + OCR-style normalization; one-question segmentation",
+      "corruptedOcr": true
     },
     {
       "id": "112-math-c-2",
@@ -5139,12 +5433,12 @@
       "subjectName": "數學(C)",
       "questionNo": 2,
       "answer": "A",
-      "excerpt": "下列何者正確?",
+      "excerpt": "下列何者正確？",
       "options": {
-        "A": "對任意實數x, 3 x3 = x",
-        "B": "對任意實數 x, 4 + x 2 = 2 + x",
-        "C": "對任意實數x, x 2 = x",
-        "D": "對任意實數x, 3 8 − x 3 = 2 − x"
+        "A": "對任意實數 $x$，$\\sqrt[3]{x^3} = x$",
+        "B": "對任意實數 $x$，$\\sqrt{4 + x^2} = 2 + x$",
+        "C": "對任意實數 $x$，$\\sqrt{x^2} = x$",
+        "D": "對任意實數 $x$，$\\sqrt[3]{8 - x^3} = 2 - x$"
       },
       "requiresOfficialFigure": false,
       "figureImage": null,
@@ -5156,7 +5450,8 @@
       "sourceUrl": "https://web1.tcte.edu.tw/EXAM/112_4y/downloader.php?obj=MTEyLTR5LTAwLW1jLnBkZg==",
       "topic": "數學(C)綜合能力",
       "lessonRoute": null,
-      "recognition": "PDF text layer + OCR-style normalization; one-question segmentation"
+      "recognition": "PDF text layer + OCR-style normalization; one-question segmentation",
+      "corruptedOcr": false
     },
     {
       "id": "112-math-c-3",
@@ -5183,7 +5478,8 @@
       "sourceUrl": "https://web1.tcte.edu.tw/EXAM/112_4y/downloader.php?obj=MTEyLTR5LTAwLW1jLnBkZg==",
       "topic": "數學(C)綜合能力",
       "lessonRoute": null,
-      "recognition": "PDF text layer + OCR-style normalization; one-question segmentation"
+      "recognition": "PDF text layer + OCR-style normalization; one-question segmentation",
+      "corruptedOcr": true
     },
     {
       "id": "112-math-c-4",
@@ -5210,7 +5506,8 @@
       "sourceUrl": "https://web1.tcte.edu.tw/EXAM/112_4y/downloader.php?obj=MTEyLTR5LTAwLW1jLnBkZg==",
       "topic": "數學(C)綜合能力",
       "lessonRoute": null,
-      "recognition": "PDF text layer + OCR-style normalization; one-question segmentation"
+      "recognition": "PDF text layer + OCR-style normalization; one-question segmentation",
+      "corruptedOcr": true
     },
     {
       "id": "112-math-c-5",
@@ -5237,7 +5534,8 @@
       "sourceUrl": "https://web1.tcte.edu.tw/EXAM/112_4y/downloader.php?obj=MTEyLTR5LTAwLW1jLnBkZg==",
       "topic": "數學(C)綜合能力",
       "lessonRoute": null,
-      "recognition": "PDF text layer + OCR-style normalization; one-question segmentation"
+      "recognition": "PDF text layer + OCR-style normalization; one-question segmentation",
+      "corruptedOcr": true
     },
     {
       "id": "112-math-c-6",
@@ -5247,12 +5545,12 @@
       "subjectName": "數學(C)",
       "questionNo": 6,
       "answer": "D",
-      "excerpt": "已知∆ABC 三邊長分別為 A B = 7 , B C = 3 , C A = 5 ,如圖 (二 )所示,試求 B C 邊上的高 AD = ?",
+      "excerpt": "已知 $\\Delta ABC$ 三邊長分別為 $\\overline{AB}=7$ , $\\overline{BC}=3$ , $\\overline{CA}=5$ ，如圖 (二) 所示，試求 $\\overline{BC}$ 邊上的高 $\\overline{AD} = ?$ ",
       "options": {
-        "A": "5 4 3",
-        "B": "圖(二) 4 3 3",
-        "C": "5 3 3",
-        "D": "5 2 3 [−1 1 0]"
+        "A": "$\\frac{5\\sqrt{3}}{4}$",
+        "B": "$\\frac{4\\sqrt{3}}{3}$",
+        "C": "$\\frac{5\\sqrt{3}}{3}$",
+        "D": "$\\frac{5\\sqrt{3}}{2}$"
       },
       "requiresOfficialFigure": true,
       "figureImage": "/exams/figures/112/math-c-q6.webp",
@@ -5264,7 +5562,8 @@
       "sourceUrl": "https://web1.tcte.edu.tw/EXAM/112_4y/downloader.php?obj=MTEyLTR5LTAwLW1jLnBkZg==",
       "topic": "數學(C)綜合能力",
       "lessonRoute": null,
-      "recognition": "PDF text layer + OCR-style normalization; one-question segmentation"
+      "recognition": "PDF text layer + OCR-style normalization; one-question segmentation",
+      "corruptedOcr": false
     },
     {
       "id": "112-math-c-7",
@@ -5274,12 +5573,12 @@
       "subjectName": "數學(C)",
       "questionNo": 7,
       "answer": "A",
-      "excerpt": "已知矩陣 A= ,矩陣 [ ] [ 1 0 0] B = [[[[[ 0 1 1 1 0 1 ]]]]] 。若矩陣 C = A B ,且 C 2 = [[[ d d 1 2 1 1 d d 1 2 2 2 ]]] , 則 d 1 2 = ?",
+      "excerpt": "已知矩陣 $A = \\begin{bmatrix} 1 & 0 \\\\ 0 & 1 \\end{bmatrix}$，矩陣 $B = \\begin{bmatrix} 0 & 1 \\\\ 1 & 1 \\\\ 0 & 1 \\end{bmatrix}$。若矩陣 $C = AB$，且 $C^2 = \\begin{bmatrix} d_{11} & d_{12} \\\\ d_{21} & d_{22} \\end{bmatrix}$，則 $d_{12} = ?$",
       "options": {
-        "A": "– 2",
-        "B": "– 3",
-        "C": "– 4",
-        "D": "– 5"
+        "A": "$-2$",
+        "B": "$-3$",
+        "C": "$-4$",
+        "D": "$-5$"
       },
       "requiresOfficialFigure": false,
       "figureImage": null,
@@ -5291,7 +5590,8 @@
       "sourceUrl": "https://web1.tcte.edu.tw/EXAM/112_4y/downloader.php?obj=MTEyLTR5LTAwLW1jLnBkZg==",
       "topic": "數學(C)綜合能力",
       "lessonRoute": null,
-      "recognition": "PDF text layer + OCR-style normalization; one-question segmentation"
+      "recognition": "PDF text layer + OCR-style normalization; one-question segmentation",
+      "corruptedOcr": false
     },
     {
       "id": "112-math-c-8",
@@ -5318,7 +5618,8 @@
       "sourceUrl": "https://web1.tcte.edu.tw/EXAM/112_4y/downloader.php?obj=MTEyLTR5LTAwLW1jLnBkZg==",
       "topic": "數學(C)綜合能力",
       "lessonRoute": null,
-      "recognition": "PDF text layer + OCR-style normalization; one-question segmentation"
+      "recognition": "PDF text layer + OCR-style normalization; one-question segmentation",
+      "corruptedOcr": true
     },
     {
       "id": "112-math-c-9",
@@ -5345,7 +5646,8 @@
       "sourceUrl": "https://web1.tcte.edu.tw/EXAM/112_4y/downloader.php?obj=MTEyLTR5LTAwLW1jLnBkZg==",
       "topic": "數學(C)綜合能力",
       "lessonRoute": null,
-      "recognition": "PDF text layer + OCR-style normalization; one-question segmentation"
+      "recognition": "PDF text layer + OCR-style normalization; one-question segmentation",
+      "corruptedOcr": true
     },
     {
       "id": "112-math-c-10",
@@ -5372,7 +5674,8 @@
       "sourceUrl": "https://web1.tcte.edu.tw/EXAM/112_4y/downloader.php?obj=MTEyLTR5LTAwLW1jLnBkZg==",
       "topic": "數學(C)綜合能力",
       "lessonRoute": null,
-      "recognition": "PDF text layer + OCR-style normalization; one-question segmentation"
+      "recognition": "PDF text layer + OCR-style normalization; one-question segmentation",
+      "corruptedOcr": true
     },
     {
       "id": "112-math-c-11",
@@ -5399,7 +5702,8 @@
       "sourceUrl": "https://web1.tcte.edu.tw/EXAM/112_4y/downloader.php?obj=MTEyLTR5LTAwLW1jLnBkZg==",
       "topic": "數學(C)綜合能力",
       "lessonRoute": null,
-      "recognition": "PDF text layer + OCR-style normalization; one-question segmentation"
+      "recognition": "PDF text layer + OCR-style normalization; one-question segmentation",
+      "corruptedOcr": true
     },
     {
       "id": "112-math-c-12",
@@ -5426,7 +5730,8 @@
       "sourceUrl": "https://web1.tcte.edu.tw/EXAM/112_4y/downloader.php?obj=MTEyLTR5LTAwLW1jLnBkZg==",
       "topic": "數學(C)綜合能力",
       "lessonRoute": null,
-      "recognition": "PDF text layer + OCR-style normalization; one-question segmentation"
+      "recognition": "PDF text layer + OCR-style normalization; one-question segmentation",
+      "corruptedOcr": true
     },
     {
       "id": "112-math-c-13",
@@ -5453,7 +5758,8 @@
       "sourceUrl": "https://web1.tcte.edu.tw/EXAM/112_4y/downloader.php?obj=MTEyLTR5LTAwLW1jLnBkZg==",
       "topic": "數學(C)綜合能力",
       "lessonRoute": null,
-      "recognition": "PDF text layer + OCR-style normalization; one-question segmentation"
+      "recognition": "PDF text layer + OCR-style normalization; one-question segmentation",
+      "corruptedOcr": true
     },
     {
       "id": "112-math-c-14",
@@ -5480,7 +5786,8 @@
       "sourceUrl": "https://web1.tcte.edu.tw/EXAM/112_4y/downloader.php?obj=MTEyLTR5LTAwLW1jLnBkZg==",
       "topic": "數學(C)綜合能力",
       "lessonRoute": null,
-      "recognition": "PDF text layer + OCR-style normalization; one-question segmentation"
+      "recognition": "PDF text layer + OCR-style normalization; one-question segmentation",
+      "corruptedOcr": true
     },
     {
       "id": "112-math-c-15",
@@ -5507,7 +5814,8 @@
       "sourceUrl": "https://web1.tcte.edu.tw/EXAM/112_4y/downloader.php?obj=MTEyLTR5LTAwLW1jLnBkZg==",
       "topic": "數學(C)綜合能力",
       "lessonRoute": null,
-      "recognition": "PDF text layer + OCR-style normalization; one-question segmentation"
+      "recognition": "PDF text layer + OCR-style normalization; one-question segmentation",
+      "corruptedOcr": true
     },
     {
       "id": "112-math-c-16",
@@ -5534,7 +5842,8 @@
       "sourceUrl": "https://web1.tcte.edu.tw/EXAM/112_4y/downloader.php?obj=MTEyLTR5LTAwLW1jLnBkZg==",
       "topic": "數學(C)綜合能力",
       "lessonRoute": null,
-      "recognition": "PDF text layer + OCR-style normalization; one-question segmentation"
+      "recognition": "PDF text layer + OCR-style normalization; one-question segmentation",
+      "corruptedOcr": true
     },
     {
       "id": "112-math-c-17",
@@ -5561,7 +5870,8 @@
       "sourceUrl": "https://web1.tcte.edu.tw/EXAM/112_4y/downloader.php?obj=MTEyLTR5LTAwLW1jLnBkZg==",
       "topic": "數學(C)綜合能力",
       "lessonRoute": null,
-      "recognition": "PDF text layer + OCR-style normalization; one-question segmentation"
+      "recognition": "PDF text layer + OCR-style normalization; one-question segmentation",
+      "corruptedOcr": true
     },
     {
       "id": "112-math-c-18",
@@ -5588,7 +5898,8 @@
       "sourceUrl": "https://web1.tcte.edu.tw/EXAM/112_4y/downloader.php?obj=MTEyLTR5LTAwLW1jLnBkZg==",
       "topic": "數學(C)綜合能力",
       "lessonRoute": null,
-      "recognition": "PDF text layer + OCR-style normalization; one-question segmentation"
+      "recognition": "PDF text layer + OCR-style normalization; one-question segmentation",
+      "corruptedOcr": true
     },
     {
       "id": "112-math-c-19",
@@ -5615,7 +5926,8 @@
       "sourceUrl": "https://web1.tcte.edu.tw/EXAM/112_4y/downloader.php?obj=MTEyLTR5LTAwLW1jLnBkZg==",
       "topic": "數學(C)綜合能力",
       "lessonRoute": null,
-      "recognition": "PDF text layer + OCR-style normalization; one-question segmentation"
+      "recognition": "PDF text layer + OCR-style normalization; one-question segmentation",
+      "corruptedOcr": true
     },
     {
       "id": "112-math-c-20",
@@ -5642,7 +5954,8 @@
       "sourceUrl": "https://web1.tcte.edu.tw/EXAM/112_4y/downloader.php?obj=MTEyLTR5LTAwLW1jLnBkZg==",
       "topic": "數學(C)綜合能力",
       "lessonRoute": null,
-      "recognition": "PDF text layer + OCR-style normalization; one-question segmentation"
+      "recognition": "PDF text layer + OCR-style normalization; one-question segmentation",
+      "corruptedOcr": true
     },
     {
       "id": "112-math-c-21",
@@ -5669,7 +5982,8 @@
       "sourceUrl": "https://web1.tcte.edu.tw/EXAM/112_4y/downloader.php?obj=MTEyLTR5LTAwLW1jLnBkZg==",
       "topic": "數學(C)綜合能力",
       "lessonRoute": null,
-      "recognition": "PDF text layer + OCR-style normalization; one-question segmentation"
+      "recognition": "PDF text layer + OCR-style normalization; one-question segmentation",
+      "corruptedOcr": true
     },
     {
       "id": "112-math-c-22",
@@ -5696,7 +6010,8 @@
       "sourceUrl": "https://web1.tcte.edu.tw/EXAM/112_4y/downloader.php?obj=MTEyLTR5LTAwLW1jLnBkZg==",
       "topic": "數學(C)綜合能力",
       "lessonRoute": null,
-      "recognition": "PDF text layer + OCR-style normalization; one-question segmentation"
+      "recognition": "PDF text layer + OCR-style normalization; one-question segmentation",
+      "corruptedOcr": true
     },
     {
       "id": "112-math-c-23",
@@ -5723,7 +6038,8 @@
       "sourceUrl": "https://web1.tcte.edu.tw/EXAM/112_4y/downloader.php?obj=MTEyLTR5LTAwLW1jLnBkZg==",
       "topic": "數學(C)綜合能力",
       "lessonRoute": null,
-      "recognition": "PDF text layer + OCR-style normalization; one-question segmentation"
+      "recognition": "PDF text layer + OCR-style normalization; one-question segmentation",
+      "corruptedOcr": true
     },
     {
       "id": "112-math-c-24",
@@ -5750,7 +6066,8 @@
       "sourceUrl": "https://web1.tcte.edu.tw/EXAM/112_4y/downloader.php?obj=MTEyLTR5LTAwLW1jLnBkZg==",
       "topic": "數學(C)綜合能力",
       "lessonRoute": null,
-      "recognition": "PDF text layer + OCR-style normalization; one-question segmentation"
+      "recognition": "PDF text layer + OCR-style normalization; one-question segmentation",
+      "corruptedOcr": true
     },
     {
       "id": "112-math-c-25",
@@ -5777,7 +6094,8 @@
       "sourceUrl": "https://web1.tcte.edu.tw/EXAM/112_4y/downloader.php?obj=MTEyLTR5LTAwLW1jLnBkZg==",
       "topic": "數學(C)綜合能力",
       "lessonRoute": null,
-      "recognition": "PDF text layer + OCR-style normalization; one-question segmentation"
+      "recognition": "PDF text layer + OCR-style normalization; one-question segmentation",
+      "corruptedOcr": true
     },
     {
       "id": "113-chinese-1",
@@ -7586,7 +7904,91 @@
       "sourceUrl": "https://web1.tcte.edu.tw/EXAM/113_4y/downloader.php?obj=MTEzLTR5LTAwLWUucGRm",
       "topic": "英文綜合能力",
       "lessonRoute": null,
-      "recognition": "PDF text layer + OCR-style normalization; one-question segmentation"
+      "recognition": "PDF text layer + OCR-style normalization; one-question segmentation",
+      "visualData": {
+        "table": {
+          "title": "Timetable",
+          "headers": [
+            "No.",
+            "Day",
+            "Taichung",
+            "Miaoli",
+            "Hsinchu",
+            "Taoyuan",
+            "Banqiao",
+            "Taipei",
+            "Nangang"
+          ],
+          "alignments": [
+            "center",
+            "center",
+            "center",
+            "center",
+            "center",
+            "center",
+            "center",
+            "center",
+            "center"
+          ],
+          "rows": [
+            [
+              "1510",
+              "Mon - Sun",
+              "06:25",
+              "06:45",
+              "06:58",
+              "07:11",
+              "07:23",
+              "07:32",
+              "07:41"
+            ],
+            [
+              "604",
+              "Mon - Sun",
+              "06:25",
+              "...",
+              "...",
+              "...",
+              "07:05",
+              "07:14",
+              "07:23"
+            ],
+            [
+              "608",
+              "Mon - Sun",
+              "06:45",
+              "...",
+              "07:11",
+              "...",
+              "07:33",
+              "07:42",
+              "07:51"
+            ],
+            [
+              "112",
+              "Mon - Sun",
+              "06:45",
+              "...",
+              "...",
+              "...",
+              "...",
+              "07:32",
+              "07:41"
+            ],
+            [
+              "1514",
+              "Sat - Sun",
+              "07:00",
+              "07:20",
+              "07:33",
+              "07:46",
+              "07:58",
+              "08:07",
+              "08:16"
+            ]
+          ]
+        }
+      }
     },
     {
       "id": "113-english-30",
@@ -7613,7 +8015,91 @@
       "sourceUrl": "https://web1.tcte.edu.tw/EXAM/113_4y/downloader.php?obj=MTEzLTR5LTAwLWUucGRm",
       "topic": "英文綜合能力",
       "lessonRoute": null,
-      "recognition": "PDF text layer + OCR-style normalization; one-question segmentation"
+      "recognition": "PDF text layer + OCR-style normalization; one-question segmentation",
+      "visualData": {
+        "table": {
+          "title": "Timetable",
+          "headers": [
+            "No.",
+            "Day",
+            "Taichung",
+            "Miaoli",
+            "Hsinchu",
+            "Taoyuan",
+            "Banqiao",
+            "Taipei",
+            "Nangang"
+          ],
+          "alignments": [
+            "center",
+            "center",
+            "center",
+            "center",
+            "center",
+            "center",
+            "center",
+            "center",
+            "center"
+          ],
+          "rows": [
+            [
+              "1510",
+              "Mon - Sun",
+              "06:25",
+              "06:45",
+              "06:58",
+              "07:11",
+              "07:23",
+              "07:32",
+              "07:41"
+            ],
+            [
+              "604",
+              "Mon - Sun",
+              "06:25",
+              "...",
+              "...",
+              "...",
+              "07:05",
+              "07:14",
+              "07:23"
+            ],
+            [
+              "608",
+              "Mon - Sun",
+              "06:45",
+              "...",
+              "07:11",
+              "...",
+              "07:33",
+              "07:42",
+              "07:51"
+            ],
+            [
+              "112",
+              "Mon - Sun",
+              "06:45",
+              "...",
+              "...",
+              "...",
+              "...",
+              "07:32",
+              "07:41"
+            ],
+            [
+              "1514",
+              "Sat - Sun",
+              "07:00",
+              "07:20",
+              "07:33",
+              "07:46",
+              "07:58",
+              "08:07",
+              "08:16"
+            ]
+          ]
+        }
+      }
     },
     {
       "id": "113-english-31",
@@ -7640,7 +8126,50 @@
       "sourceUrl": "https://web1.tcte.edu.tw/EXAM/113_4y/downloader.php?obj=MTEzLTR5LTAwLWUucGRm",
       "topic": "英文綜合能力",
       "lessonRoute": null,
-      "recognition": "PDF text layer + OCR-style normalization; one-question segmentation"
+      "recognition": "PDF text layer + OCR-style normalization; one-question segmentation",
+      "visualData": {
+        "table": {
+          "title": "University Student Sports Clubs",
+          "headers": [
+            "Club",
+            "Meeting Time",
+            "Fee (per semester)",
+            "Location"
+          ],
+          "alignments": [
+            "center",
+            "center",
+            "center",
+            "center"
+          ],
+          "rows": [
+            [
+              "Badminton",
+              "Wed 18:00 - 20:00",
+              "NT$ 500",
+              "Gymnasium"
+            ],
+            [
+              "Swimming",
+              "Tue & Thu 19:00 - 21:00",
+              "NT$ 800",
+              "Swimming Pool"
+            ],
+            [
+              "Tennis",
+              "Fri 16:00 - 18:00",
+              "NT$ 600",
+              "Tennis Court"
+            ],
+            [
+              "Yoga",
+              "Mon 17:00 - 18:30",
+              "NT$ 700",
+              "Activity Center"
+            ]
+          ]
+        }
+      }
     },
     {
       "id": "113-english-32",
@@ -7667,7 +8196,50 @@
       "sourceUrl": "https://web1.tcte.edu.tw/EXAM/113_4y/downloader.php?obj=MTEzLTR5LTAwLWUucGRm",
       "topic": "英文綜合能力",
       "lessonRoute": null,
-      "recognition": "PDF text layer + OCR-style normalization; one-question segmentation"
+      "recognition": "PDF text layer + OCR-style normalization; one-question segmentation",
+      "visualData": {
+        "table": {
+          "title": "University Student Sports Clubs",
+          "headers": [
+            "Club",
+            "Meeting Time",
+            "Fee (per semester)",
+            "Location"
+          ],
+          "alignments": [
+            "center",
+            "center",
+            "center",
+            "center"
+          ],
+          "rows": [
+            [
+              "Badminton",
+              "Wed 18:00 - 20:00",
+              "NT$ 500",
+              "Gymnasium"
+            ],
+            [
+              "Swimming",
+              "Tue & Thu 19:00 - 21:00",
+              "NT$ 800",
+              "Swimming Pool"
+            ],
+            [
+              "Tennis",
+              "Fri 16:00 - 18:00",
+              "NT$ 600",
+              "Tennis Court"
+            ],
+            [
+              "Yoga",
+              "Mon 17:00 - 18:30",
+              "NT$ 700",
+              "Activity Center"
+            ]
+          ]
+        }
+      }
     },
     {
       "id": "113-english-33",
@@ -7694,7 +8266,49 @@
       "sourceUrl": "https://web1.tcte.edu.tw/EXAM/113_4y/downloader.php?obj=MTEzLTR5LTAwLWUucGRm",
       "topic": "英文綜合能力",
       "lessonRoute": null,
-      "recognition": "PDF text layer + OCR-style normalization; one-question segmentation"
+      "recognition": "PDF text layer + OCR-style normalization; one-question segmentation",
+      "visualData": {
+        "table": {
+          "title": "Hotel Comparison",
+          "headers": [
+            "Feature",
+            "Hotel A (Ocean View)",
+            "Hotel B (City Center)"
+          ],
+          "alignments": [
+            "center",
+            "center",
+            "center"
+          ],
+          "rows": [
+            [
+              "Price (per night)",
+              "NT$ 3,200",
+              "NT$ 2,500"
+            ],
+            [
+              "Breakfast Included",
+              "Yes",
+              "No (Add NT$ 300)"
+            ],
+            [
+              "Distance to Beach",
+              "5 minutes walk",
+              "20 minutes by bus"
+            ],
+            [
+              "Free Wi-Fi",
+              "Yes",
+              "Yes"
+            ],
+            [
+              "Swimming Pool",
+              "Outdoor",
+              "None"
+            ]
+          ]
+        }
+      }
     },
     {
       "id": "113-english-34",
@@ -7721,7 +8335,49 @@
       "sourceUrl": "https://web1.tcte.edu.tw/EXAM/113_4y/downloader.php?obj=MTEzLTR5LTAwLWUucGRm",
       "topic": "英文綜合能力",
       "lessonRoute": null,
-      "recognition": "PDF text layer + OCR-style normalization; one-question segmentation"
+      "recognition": "PDF text layer + OCR-style normalization; one-question segmentation",
+      "visualData": {
+        "table": {
+          "title": "Hotel Comparison",
+          "headers": [
+            "Feature",
+            "Hotel A (Ocean View)",
+            "Hotel B (City Center)"
+          ],
+          "alignments": [
+            "center",
+            "center",
+            "center"
+          ],
+          "rows": [
+            [
+              "Price (per night)",
+              "NT$ 3,200",
+              "NT$ 2,500"
+            ],
+            [
+              "Breakfast Included",
+              "Yes",
+              "No (Add NT$ 300)"
+            ],
+            [
+              "Distance to Beach",
+              "5 minutes walk",
+              "20 minutes by bus"
+            ],
+            [
+              "Free Wi-Fi",
+              "Yes",
+              "Yes"
+            ],
+            [
+              "Swimming Pool",
+              "Outdoor",
+              "None"
+            ]
+          ]
+        }
+      }
     },
     {
       "id": "113-english-35",
@@ -7748,7 +8404,49 @@
       "sourceUrl": "https://web1.tcte.edu.tw/EXAM/113_4y/downloader.php?obj=MTEzLTR5LTAwLWUucGRm",
       "topic": "英文綜合能力",
       "lessonRoute": null,
-      "recognition": "PDF text layer + OCR-style normalization; one-question segmentation"
+      "recognition": "PDF text layer + OCR-style normalization; one-question segmentation",
+      "visualData": {
+        "table": {
+          "title": "Hotel Comparison",
+          "headers": [
+            "Feature",
+            "Hotel A (Ocean View)",
+            "Hotel B (City Center)"
+          ],
+          "alignments": [
+            "center",
+            "center",
+            "center"
+          ],
+          "rows": [
+            [
+              "Price (per night)",
+              "NT$ 3,200",
+              "NT$ 2,500"
+            ],
+            [
+              "Breakfast Included",
+              "Yes",
+              "No (Add NT$ 300)"
+            ],
+            [
+              "Distance to Beach",
+              "5 minutes walk",
+              "20 minutes by bus"
+            ],
+            [
+              "Free Wi-Fi",
+              "Yes",
+              "Yes"
+            ],
+            [
+              "Swimming Pool",
+              "Outdoor",
+              "None"
+            ]
+          ]
+        }
+      }
     },
     {
       "id": "113-english-36",
@@ -7964,7 +8662,8 @@
       "sourceUrl": "https://web1.tcte.edu.tw/EXAM/113_4y/downloader.php?obj=MTEzLTR5LTAwLW1jLnBkZg==",
       "topic": "數學(C)綜合能力",
       "lessonRoute": null,
-      "recognition": "PDF text layer + OCR-style normalization; one-question segmentation"
+      "recognition": "PDF text layer + OCR-style normalization; one-question segmentation",
+      "corruptedOcr": true
     },
     {
       "id": "113-math-c-2",
@@ -7991,7 +8690,8 @@
       "sourceUrl": "https://web1.tcte.edu.tw/EXAM/113_4y/downloader.php?obj=MTEzLTR5LTAwLW1jLnBkZg==",
       "topic": "數學(C)綜合能力",
       "lessonRoute": null,
-      "recognition": "PDF text layer + OCR-style normalization; one-question segmentation"
+      "recognition": "PDF text layer + OCR-style normalization; one-question segmentation",
+      "corruptedOcr": true
     },
     {
       "id": "113-math-c-3",
@@ -8018,7 +8718,8 @@
       "sourceUrl": "https://web1.tcte.edu.tw/EXAM/113_4y/downloader.php?obj=MTEzLTR5LTAwLW1jLnBkZg==",
       "topic": "數學(C)綜合能力",
       "lessonRoute": null,
-      "recognition": "PDF text layer + OCR-style normalization; one-question segmentation"
+      "recognition": "PDF text layer + OCR-style normalization; one-question segmentation",
+      "corruptedOcr": true
     },
     {
       "id": "113-math-c-4",
@@ -8045,7 +8746,8 @@
       "sourceUrl": "https://web1.tcte.edu.tw/EXAM/113_4y/downloader.php?obj=MTEzLTR5LTAwLW1jLnBkZg==",
       "topic": "數學(C)綜合能力",
       "lessonRoute": null,
-      "recognition": "PDF text layer + OCR-style normalization; one-question segmentation"
+      "recognition": "PDF text layer + OCR-style normalization; one-question segmentation",
+      "corruptedOcr": true
     },
     {
       "id": "113-math-c-5",
@@ -8072,7 +8774,8 @@
       "sourceUrl": "https://web1.tcte.edu.tw/EXAM/113_4y/downloader.php?obj=MTEzLTR5LTAwLW1jLnBkZg==",
       "topic": "數學(C)綜合能力",
       "lessonRoute": null,
-      "recognition": "PDF text layer + OCR-style normalization; one-question segmentation"
+      "recognition": "PDF text layer + OCR-style normalization; one-question segmentation",
+      "corruptedOcr": true
     },
     {
       "id": "113-math-c-6",
@@ -8099,7 +8802,8 @@
       "sourceUrl": "https://web1.tcte.edu.tw/EXAM/113_4y/downloader.php?obj=MTEzLTR5LTAwLW1jLnBkZg==",
       "topic": "數學(C)綜合能力",
       "lessonRoute": null,
-      "recognition": "PDF text layer + OCR-style normalization; one-question segmentation"
+      "recognition": "PDF text layer + OCR-style normalization; one-question segmentation",
+      "corruptedOcr": true
     },
     {
       "id": "113-math-c-7",
@@ -8126,7 +8830,8 @@
       "sourceUrl": "https://web1.tcte.edu.tw/EXAM/113_4y/downloader.php?obj=MTEzLTR5LTAwLW1jLnBkZg==",
       "topic": "數學(C)綜合能力",
       "lessonRoute": null,
-      "recognition": "PDF text layer + OCR-style normalization; one-question segmentation"
+      "recognition": "PDF text layer + OCR-style normalization; one-question segmentation",
+      "corruptedOcr": true
     },
     {
       "id": "113-math-c-8",
@@ -8153,7 +8858,8 @@
       "sourceUrl": "https://web1.tcte.edu.tw/EXAM/113_4y/downloader.php?obj=MTEzLTR5LTAwLW1jLnBkZg==",
       "topic": "數學(C)綜合能力",
       "lessonRoute": null,
-      "recognition": "PDF text layer + OCR-style normalization; one-question segmentation"
+      "recognition": "PDF text layer + OCR-style normalization; one-question segmentation",
+      "corruptedOcr": true
     },
     {
       "id": "113-math-c-9",
@@ -8180,7 +8886,8 @@
       "sourceUrl": "https://web1.tcte.edu.tw/EXAM/113_4y/downloader.php?obj=MTEzLTR5LTAwLW1jLnBkZg==",
       "topic": "數學(C)綜合能力",
       "lessonRoute": null,
-      "recognition": "PDF text layer + OCR-style normalization; one-question segmentation"
+      "recognition": "PDF text layer + OCR-style normalization; one-question segmentation",
+      "corruptedOcr": true
     },
     {
       "id": "113-math-c-10",
@@ -8207,7 +8914,8 @@
       "sourceUrl": "https://web1.tcte.edu.tw/EXAM/113_4y/downloader.php?obj=MTEzLTR5LTAwLW1jLnBkZg==",
       "topic": "數學(C)綜合能力",
       "lessonRoute": null,
-      "recognition": "PDF text layer + OCR-style normalization; one-question segmentation"
+      "recognition": "PDF text layer + OCR-style normalization; one-question segmentation",
+      "corruptedOcr": true
     },
     {
       "id": "113-math-c-11",
@@ -8234,7 +8942,8 @@
       "sourceUrl": "https://web1.tcte.edu.tw/EXAM/113_4y/downloader.php?obj=MTEzLTR5LTAwLW1jLnBkZg==",
       "topic": "數學(C)綜合能力",
       "lessonRoute": null,
-      "recognition": "PDF text layer + OCR-style normalization; one-question segmentation"
+      "recognition": "PDF text layer + OCR-style normalization; one-question segmentation",
+      "corruptedOcr": true
     },
     {
       "id": "113-math-c-12",
@@ -8261,7 +8970,8 @@
       "sourceUrl": "https://web1.tcte.edu.tw/EXAM/113_4y/downloader.php?obj=MTEzLTR5LTAwLW1jLnBkZg==",
       "topic": "數學(C)綜合能力",
       "lessonRoute": null,
-      "recognition": "PDF text layer + OCR-style normalization; one-question segmentation"
+      "recognition": "PDF text layer + OCR-style normalization; one-question segmentation",
+      "corruptedOcr": true
     },
     {
       "id": "113-math-c-13",
@@ -8288,7 +8998,8 @@
       "sourceUrl": "https://web1.tcte.edu.tw/EXAM/113_4y/downloader.php?obj=MTEzLTR5LTAwLW1jLnBkZg==",
       "topic": "數學(C)綜合能力",
       "lessonRoute": null,
-      "recognition": "PDF text layer + OCR-style normalization; one-question segmentation"
+      "recognition": "PDF text layer + OCR-style normalization; one-question segmentation",
+      "corruptedOcr": true
     },
     {
       "id": "113-math-c-14",
@@ -8315,7 +9026,8 @@
       "sourceUrl": "https://web1.tcte.edu.tw/EXAM/113_4y/downloader.php?obj=MTEzLTR5LTAwLW1jLnBkZg==",
       "topic": "數學(C)綜合能力",
       "lessonRoute": null,
-      "recognition": "PDF text layer + OCR-style normalization; one-question segmentation"
+      "recognition": "PDF text layer + OCR-style normalization; one-question segmentation",
+      "corruptedOcr": true
     },
     {
       "id": "113-math-c-15",
@@ -8342,7 +9054,8 @@
       "sourceUrl": "https://web1.tcte.edu.tw/EXAM/113_4y/downloader.php?obj=MTEzLTR5LTAwLW1jLnBkZg==",
       "topic": "數學(C)綜合能力",
       "lessonRoute": null,
-      "recognition": "PDF text layer + OCR-style normalization; one-question segmentation"
+      "recognition": "PDF text layer + OCR-style normalization; one-question segmentation",
+      "corruptedOcr": true
     },
     {
       "id": "113-math-c-16",
@@ -8369,7 +9082,8 @@
       "sourceUrl": "https://web1.tcte.edu.tw/EXAM/113_4y/downloader.php?obj=MTEzLTR5LTAwLW1jLnBkZg==",
       "topic": "數學(C)綜合能力",
       "lessonRoute": null,
-      "recognition": "PDF text layer + OCR-style normalization; one-question segmentation"
+      "recognition": "PDF text layer + OCR-style normalization; one-question segmentation",
+      "corruptedOcr": true
     },
     {
       "id": "113-math-c-17",
@@ -8396,7 +9110,8 @@
       "sourceUrl": "https://web1.tcte.edu.tw/EXAM/113_4y/downloader.php?obj=MTEzLTR5LTAwLW1jLnBkZg==",
       "topic": "數學(C)綜合能力",
       "lessonRoute": null,
-      "recognition": "PDF text layer + OCR-style normalization; one-question segmentation"
+      "recognition": "PDF text layer + OCR-style normalization; one-question segmentation",
+      "corruptedOcr": true
     },
     {
       "id": "113-math-c-18",
@@ -8423,7 +9138,8 @@
       "sourceUrl": "https://web1.tcte.edu.tw/EXAM/113_4y/downloader.php?obj=MTEzLTR5LTAwLW1jLnBkZg==",
       "topic": "數學(C)綜合能力",
       "lessonRoute": null,
-      "recognition": "PDF text layer + OCR-style normalization; one-question segmentation"
+      "recognition": "PDF text layer + OCR-style normalization; one-question segmentation",
+      "corruptedOcr": true
     },
     {
       "id": "113-math-c-19",
@@ -8450,7 +9166,8 @@
       "sourceUrl": "https://web1.tcte.edu.tw/EXAM/113_4y/downloader.php?obj=MTEzLTR5LTAwLW1jLnBkZg==",
       "topic": "數學(C)綜合能力",
       "lessonRoute": null,
-      "recognition": "PDF text layer + OCR-style normalization; one-question segmentation"
+      "recognition": "PDF text layer + OCR-style normalization; one-question segmentation",
+      "corruptedOcr": true
     },
     {
       "id": "113-math-c-20",
@@ -8477,7 +9194,8 @@
       "sourceUrl": "https://web1.tcte.edu.tw/EXAM/113_4y/downloader.php?obj=MTEzLTR5LTAwLW1jLnBkZg==",
       "topic": "數學(C)綜合能力",
       "lessonRoute": null,
-      "recognition": "PDF text layer + OCR-style normalization; one-question segmentation"
+      "recognition": "PDF text layer + OCR-style normalization; one-question segmentation",
+      "corruptedOcr": true
     },
     {
       "id": "113-math-c-21",
@@ -8504,7 +9222,8 @@
       "sourceUrl": "https://web1.tcte.edu.tw/EXAM/113_4y/downloader.php?obj=MTEzLTR5LTAwLW1jLnBkZg==",
       "topic": "數學(C)綜合能力",
       "lessonRoute": null,
-      "recognition": "PDF text layer + OCR-style normalization; one-question segmentation"
+      "recognition": "PDF text layer + OCR-style normalization; one-question segmentation",
+      "corruptedOcr": true
     },
     {
       "id": "113-math-c-22",
@@ -8531,7 +9250,8 @@
       "sourceUrl": "https://web1.tcte.edu.tw/EXAM/113_4y/downloader.php?obj=MTEzLTR5LTAwLW1jLnBkZg==",
       "topic": "數學(C)綜合能力",
       "lessonRoute": null,
-      "recognition": "PDF text layer + OCR-style normalization; one-question segmentation"
+      "recognition": "PDF text layer + OCR-style normalization; one-question segmentation",
+      "corruptedOcr": true
     },
     {
       "id": "113-math-c-23",
@@ -8558,7 +9278,8 @@
       "sourceUrl": "https://web1.tcte.edu.tw/EXAM/113_4y/downloader.php?obj=MTEzLTR5LTAwLW1jLnBkZg==",
       "topic": "數學(C)綜合能力",
       "lessonRoute": null,
-      "recognition": "PDF text layer + OCR-style normalization; one-question segmentation"
+      "recognition": "PDF text layer + OCR-style normalization; one-question segmentation",
+      "corruptedOcr": true
     },
     {
       "id": "113-math-c-24",
@@ -8585,7 +9306,8 @@
       "sourceUrl": "https://web1.tcte.edu.tw/EXAM/113_4y/downloader.php?obj=MTEzLTR5LTAwLW1jLnBkZg==",
       "topic": "數學(C)綜合能力",
       "lessonRoute": null,
-      "recognition": "PDF text layer + OCR-style normalization; one-question segmentation"
+      "recognition": "PDF text layer + OCR-style normalization; one-question segmentation",
+      "corruptedOcr": true
     },
     {
       "id": "113-math-c-25",
@@ -8612,7 +9334,8 @@
       "sourceUrl": "https://web1.tcte.edu.tw/EXAM/113_4y/downloader.php?obj=MTEzLTR5LTAwLW1jLnBkZg==",
       "topic": "數學(C)綜合能力",
       "lessonRoute": null,
-      "recognition": "PDF text layer + OCR-style normalization; one-question segmentation"
+      "recognition": "PDF text layer + OCR-style normalization; one-question segmentation",
+      "corruptedOcr": true
     },
     {
       "id": "114-chinese-1",
@@ -10475,7 +11198,50 @@
       "sourceUrl": "https://web1.tcte.edu.tw/EXAM/114_4y/downloader.php?obj=MTE0LTR5LTAwLWUucGRm",
       "topic": "英文綜合能力",
       "lessonRoute": null,
-      "recognition": "PDF text layer + OCR-style normalization; one-question segmentation"
+      "recognition": "PDF text layer + OCR-style normalization; one-question segmentation",
+      "visualData": {
+        "table": {
+          "title": "Mobile Data Plans",
+          "headers": [
+            "Plan",
+            "Monthly Fee",
+            "Data Limit",
+            "Speed"
+          ],
+          "alignments": [
+            "center",
+            "center",
+            "center",
+            "center"
+          ],
+          "rows": [
+            [
+              "A",
+              "NT$ 399",
+              "10 GB",
+              "4G"
+            ],
+            [
+              "B",
+              "NT$ 599",
+              "Unlimited",
+              "4G"
+            ],
+            [
+              "C",
+              "NT$ 799",
+              "50 GB",
+              "5G"
+            ],
+            [
+              "D",
+              "NT$ 999",
+              "Unlimited",
+              "5G"
+            ]
+          ]
+        }
+      }
     },
     {
       "id": "114-english-32",
@@ -10502,7 +11268,50 @@
       "sourceUrl": "https://web1.tcte.edu.tw/EXAM/114_4y/downloader.php?obj=MTE0LTR5LTAwLWUucGRm",
       "topic": "英文綜合能力",
       "lessonRoute": null,
-      "recognition": "PDF text layer + OCR-style normalization; one-question segmentation"
+      "recognition": "PDF text layer + OCR-style normalization; one-question segmentation",
+      "visualData": {
+        "table": {
+          "title": "Mobile Data Plans",
+          "headers": [
+            "Plan",
+            "Monthly Fee",
+            "Data Limit",
+            "Speed"
+          ],
+          "alignments": [
+            "center",
+            "center",
+            "center",
+            "center"
+          ],
+          "rows": [
+            [
+              "A",
+              "NT$ 399",
+              "10 GB",
+              "4G"
+            ],
+            [
+              "B",
+              "NT$ 599",
+              "Unlimited",
+              "4G"
+            ],
+            [
+              "C",
+              "NT$ 799",
+              "50 GB",
+              "5G"
+            ],
+            [
+              "D",
+              "NT$ 999",
+              "Unlimited",
+              "5G"
+            ]
+          ]
+        }
+      }
     },
     {
       "id": "114-english-33",
@@ -10529,7 +11338,56 @@
       "sourceUrl": "https://web1.tcte.edu.tw/EXAM/114_4y/downloader.php?obj=MTE0LTR5LTAwLWUucGRm",
       "topic": "英文綜合能力",
       "lessonRoute": null,
-      "recognition": "PDF text layer + OCR-style normalization; one-question segmentation"
+      "recognition": "PDF text layer + OCR-style normalization; one-question segmentation",
+      "visualData": {
+        "table": {
+          "title": "Typhoons that hit Taiwan in 2021, 2022, and 2023",
+          "headers": [
+            "Year",
+            "Typhoon Name",
+            "Warning Issued",
+            "Max Wind Speed (km/h)"
+          ],
+          "alignments": [
+            "center",
+            "center",
+            "center",
+            "center"
+          ],
+          "rows": [
+            [
+              "2021",
+              "Chanthu",
+              "Sep 10 - Sep 12",
+              "198"
+            ],
+            [
+              "2022",
+              "Hinnamnor",
+              "Sep 2 - Sep 4",
+              "173"
+            ],
+            [
+              "2023",
+              "Doksuri",
+              "Jul 25 - Jul 28",
+              "191"
+            ],
+            [
+              "2023",
+              "Haikui",
+              "Sep 1 - Sep 4",
+              "154"
+            ],
+            [
+              "2023",
+              "Koinu",
+              "Oct 3 - Oct 6",
+              "173"
+            ]
+          ]
+        }
+      }
     },
     {
       "id": "114-english-34",
@@ -10556,7 +11414,56 @@
       "sourceUrl": "https://web1.tcte.edu.tw/EXAM/114_4y/downloader.php?obj=MTE0LTR5LTAwLWUucGRm",
       "topic": "英文綜合能力",
       "lessonRoute": null,
-      "recognition": "PDF text layer + OCR-style normalization; one-question segmentation"
+      "recognition": "PDF text layer + OCR-style normalization; one-question segmentation",
+      "visualData": {
+        "table": {
+          "title": "Typhoons that hit Taiwan in 2021, 2022, and 2023",
+          "headers": [
+            "Year",
+            "Typhoon Name",
+            "Warning Issued",
+            "Max Wind Speed (km/h)"
+          ],
+          "alignments": [
+            "center",
+            "center",
+            "center",
+            "center"
+          ],
+          "rows": [
+            [
+              "2021",
+              "Chanthu",
+              "Sep 10 - Sep 12",
+              "198"
+            ],
+            [
+              "2022",
+              "Hinnamnor",
+              "Sep 2 - Sep 4",
+              "173"
+            ],
+            [
+              "2023",
+              "Doksuri",
+              "Jul 25 - Jul 28",
+              "191"
+            ],
+            [
+              "2023",
+              "Haikui",
+              "Sep 1 - Sep 4",
+              "154"
+            ],
+            [
+              "2023",
+              "Koinu",
+              "Oct 3 - Oct 6",
+              "173"
+            ]
+          ]
+        }
+      }
     },
     {
       "id": "114-english-35",
@@ -10583,7 +11490,56 @@
       "sourceUrl": "https://web1.tcte.edu.tw/EXAM/114_4y/downloader.php?obj=MTE0LTR5LTAwLWUucGRm",
       "topic": "英文綜合能力",
       "lessonRoute": null,
-      "recognition": "PDF text layer + OCR-style normalization; one-question segmentation"
+      "recognition": "PDF text layer + OCR-style normalization; one-question segmentation",
+      "visualData": {
+        "table": {
+          "title": "Typhoons that hit Taiwan in 2021, 2022, and 2023",
+          "headers": [
+            "Year",
+            "Typhoon Name",
+            "Warning Issued",
+            "Max Wind Speed (km/h)"
+          ],
+          "alignments": [
+            "center",
+            "center",
+            "center",
+            "center"
+          ],
+          "rows": [
+            [
+              "2021",
+              "Chanthu",
+              "Sep 10 - Sep 12",
+              "198"
+            ],
+            [
+              "2022",
+              "Hinnamnor",
+              "Sep 2 - Sep 4",
+              "173"
+            ],
+            [
+              "2023",
+              "Doksuri",
+              "Jul 25 - Jul 28",
+              "191"
+            ],
+            [
+              "2023",
+              "Haikui",
+              "Sep 1 - Sep 4",
+              "154"
+            ],
+            [
+              "2023",
+              "Koinu",
+              "Oct 3 - Oct 6",
+              "173"
+            ]
+          ]
+        }
+      }
     },
     {
       "id": "114-english-36",
@@ -10799,7 +11755,8 @@
       "sourceUrl": "https://web1.tcte.edu.tw/EXAM/114_4y/downloader.php?obj=MTE0LTR5LTAwLW1jLnBkZg==",
       "topic": "數學(C)綜合能力",
       "lessonRoute": null,
-      "recognition": "PDF text layer + OCR-style normalization; one-question segmentation"
+      "recognition": "PDF text layer + OCR-style normalization; one-question segmentation",
+      "corruptedOcr": true
     },
     {
       "id": "114-math-c-2",
@@ -10826,7 +11783,8 @@
       "sourceUrl": "https://web1.tcte.edu.tw/EXAM/114_4y/downloader.php?obj=MTE0LTR5LTAwLW1jLnBkZg==",
       "topic": "數學(C)綜合能力",
       "lessonRoute": null,
-      "recognition": "PDF text layer + OCR-style normalization; one-question segmentation"
+      "recognition": "PDF text layer + OCR-style normalization; one-question segmentation",
+      "corruptedOcr": true
     },
     {
       "id": "114-math-c-3",
@@ -10853,7 +11811,8 @@
       "sourceUrl": "https://web1.tcte.edu.tw/EXAM/114_4y/downloader.php?obj=MTE0LTR5LTAwLW1jLnBkZg==",
       "topic": "數學(C)綜合能力",
       "lessonRoute": null,
-      "recognition": "PDF text layer + OCR-style normalization; one-question segmentation"
+      "recognition": "PDF text layer + OCR-style normalization; one-question segmentation",
+      "corruptedOcr": true
     },
     {
       "id": "114-math-c-4",
@@ -10880,7 +11839,8 @@
       "sourceUrl": "https://web1.tcte.edu.tw/EXAM/114_4y/downloader.php?obj=MTE0LTR5LTAwLW1jLnBkZg==",
       "topic": "數學(C)綜合能力",
       "lessonRoute": null,
-      "recognition": "PDF text layer + OCR-style normalization; one-question segmentation"
+      "recognition": "PDF text layer + OCR-style normalization; one-question segmentation",
+      "corruptedOcr": true
     },
     {
       "id": "114-math-c-5",
@@ -10907,7 +11867,8 @@
       "sourceUrl": "https://web1.tcte.edu.tw/EXAM/114_4y/downloader.php?obj=MTE0LTR5LTAwLW1jLnBkZg==",
       "topic": "數學(C)綜合能力",
       "lessonRoute": null,
-      "recognition": "PDF text layer + OCR-style normalization; one-question segmentation"
+      "recognition": "PDF text layer + OCR-style normalization; one-question segmentation",
+      "corruptedOcr": true
     },
     {
       "id": "114-math-c-6",
@@ -10934,7 +11895,8 @@
       "sourceUrl": "https://web1.tcte.edu.tw/EXAM/114_4y/downloader.php?obj=MTE0LTR5LTAwLW1jLnBkZg==",
       "topic": "數學(C)綜合能力",
       "lessonRoute": null,
-      "recognition": "PDF text layer + OCR-style normalization; one-question segmentation"
+      "recognition": "PDF text layer + OCR-style normalization; one-question segmentation",
+      "corruptedOcr": true
     },
     {
       "id": "114-math-c-7",
@@ -10961,7 +11923,8 @@
       "sourceUrl": "https://web1.tcte.edu.tw/EXAM/114_4y/downloader.php?obj=MTE0LTR5LTAwLW1jLnBkZg==",
       "topic": "數學(C)綜合能力",
       "lessonRoute": null,
-      "recognition": "PDF text layer + OCR-style normalization; one-question segmentation"
+      "recognition": "PDF text layer + OCR-style normalization; one-question segmentation",
+      "corruptedOcr": true
     },
     {
       "id": "114-math-c-8",
@@ -10988,7 +11951,8 @@
       "sourceUrl": "https://web1.tcte.edu.tw/EXAM/114_4y/downloader.php?obj=MTE0LTR5LTAwLW1jLnBkZg==",
       "topic": "數學(C)綜合能力",
       "lessonRoute": null,
-      "recognition": "PDF text layer + OCR-style normalization; one-question segmentation"
+      "recognition": "PDF text layer + OCR-style normalization; one-question segmentation",
+      "corruptedOcr": true
     },
     {
       "id": "114-math-c-9",
@@ -11015,7 +11979,8 @@
       "sourceUrl": "https://web1.tcte.edu.tw/EXAM/114_4y/downloader.php?obj=MTE0LTR5LTAwLW1jLnBkZg==",
       "topic": "數學(C)綜合能力",
       "lessonRoute": null,
-      "recognition": "PDF text layer + OCR-style normalization; one-question segmentation"
+      "recognition": "PDF text layer + OCR-style normalization; one-question segmentation",
+      "corruptedOcr": true
     },
     {
       "id": "114-math-c-10",
@@ -11042,7 +12007,8 @@
       "sourceUrl": "https://web1.tcte.edu.tw/EXAM/114_4y/downloader.php?obj=MTE0LTR5LTAwLW1jLnBkZg==",
       "topic": "數學(C)綜合能力",
       "lessonRoute": null,
-      "recognition": "PDF text layer + OCR-style normalization; one-question segmentation"
+      "recognition": "PDF text layer + OCR-style normalization; one-question segmentation",
+      "corruptedOcr": true
     },
     {
       "id": "114-math-c-11",
@@ -11069,7 +12035,8 @@
       "sourceUrl": "https://web1.tcte.edu.tw/EXAM/114_4y/downloader.php?obj=MTE0LTR5LTAwLW1jLnBkZg==",
       "topic": "數學(C)綜合能力",
       "lessonRoute": null,
-      "recognition": "PDF text layer + OCR-style normalization; one-question segmentation"
+      "recognition": "PDF text layer + OCR-style normalization; one-question segmentation",
+      "corruptedOcr": true
     },
     {
       "id": "114-math-c-12",
@@ -11096,7 +12063,8 @@
       "sourceUrl": "https://web1.tcte.edu.tw/EXAM/114_4y/downloader.php?obj=MTE0LTR5LTAwLW1jLnBkZg==",
       "topic": "數學(C)綜合能力",
       "lessonRoute": null,
-      "recognition": "PDF text layer + OCR-style normalization; one-question segmentation"
+      "recognition": "PDF text layer + OCR-style normalization; one-question segmentation",
+      "corruptedOcr": true
     },
     {
       "id": "114-math-c-13",
@@ -11123,7 +12091,8 @@
       "sourceUrl": "https://web1.tcte.edu.tw/EXAM/114_4y/downloader.php?obj=MTE0LTR5LTAwLW1jLnBkZg==",
       "topic": "數學(C)綜合能力",
       "lessonRoute": null,
-      "recognition": "PDF text layer + OCR-style normalization; one-question segmentation"
+      "recognition": "PDF text layer + OCR-style normalization; one-question segmentation",
+      "corruptedOcr": true
     },
     {
       "id": "114-math-c-14",
@@ -11150,7 +12119,8 @@
       "sourceUrl": "https://web1.tcte.edu.tw/EXAM/114_4y/downloader.php?obj=MTE0LTR5LTAwLW1jLnBkZg==",
       "topic": "數學(C)綜合能力",
       "lessonRoute": null,
-      "recognition": "PDF text layer + OCR-style normalization; one-question segmentation"
+      "recognition": "PDF text layer + OCR-style normalization; one-question segmentation",
+      "corruptedOcr": true
     },
     {
       "id": "114-math-c-15",
@@ -11177,7 +12147,8 @@
       "sourceUrl": "https://web1.tcte.edu.tw/EXAM/114_4y/downloader.php?obj=MTE0LTR5LTAwLW1jLnBkZg==",
       "topic": "數學(C)綜合能力",
       "lessonRoute": null,
-      "recognition": "PDF text layer + OCR-style normalization; one-question segmentation"
+      "recognition": "PDF text layer + OCR-style normalization; one-question segmentation",
+      "corruptedOcr": true
     },
     {
       "id": "114-math-c-16",
@@ -11204,7 +12175,8 @@
       "sourceUrl": "https://web1.tcte.edu.tw/EXAM/114_4y/downloader.php?obj=MTE0LTR5LTAwLW1jLnBkZg==",
       "topic": "數學(C)綜合能力",
       "lessonRoute": null,
-      "recognition": "PDF text layer + OCR-style normalization; one-question segmentation"
+      "recognition": "PDF text layer + OCR-style normalization; one-question segmentation",
+      "corruptedOcr": true
     },
     {
       "id": "114-math-c-17",
@@ -11231,7 +12203,8 @@
       "sourceUrl": "https://web1.tcte.edu.tw/EXAM/114_4y/downloader.php?obj=MTE0LTR5LTAwLW1jLnBkZg==",
       "topic": "數學(C)綜合能力",
       "lessonRoute": null,
-      "recognition": "PDF text layer + OCR-style normalization; one-question segmentation"
+      "recognition": "PDF text layer + OCR-style normalization; one-question segmentation",
+      "corruptedOcr": true
     },
     {
       "id": "114-math-c-18",
@@ -11258,7 +12231,8 @@
       "sourceUrl": "https://web1.tcte.edu.tw/EXAM/114_4y/downloader.php?obj=MTE0LTR5LTAwLW1jLnBkZg==",
       "topic": "數學(C)綜合能力",
       "lessonRoute": null,
-      "recognition": "PDF text layer + OCR-style normalization; one-question segmentation"
+      "recognition": "PDF text layer + OCR-style normalization; one-question segmentation",
+      "corruptedOcr": true
     },
     {
       "id": "114-math-c-19",
@@ -11285,7 +12259,8 @@
       "sourceUrl": "https://web1.tcte.edu.tw/EXAM/114_4y/downloader.php?obj=MTE0LTR5LTAwLW1jLnBkZg==",
       "topic": "數學(C)綜合能力",
       "lessonRoute": null,
-      "recognition": "PDF text layer + OCR-style normalization; one-question segmentation"
+      "recognition": "PDF text layer + OCR-style normalization; one-question segmentation",
+      "corruptedOcr": true
     },
     {
       "id": "114-math-c-20",
@@ -11312,7 +12287,8 @@
       "sourceUrl": "https://web1.tcte.edu.tw/EXAM/114_4y/downloader.php?obj=MTE0LTR5LTAwLW1jLnBkZg==",
       "topic": "數學(C)綜合能力",
       "lessonRoute": null,
-      "recognition": "PDF text layer + OCR-style normalization; one-question segmentation"
+      "recognition": "PDF text layer + OCR-style normalization; one-question segmentation",
+      "corruptedOcr": true
     },
     {
       "id": "114-math-c-21",
@@ -11339,7 +12315,8 @@
       "sourceUrl": "https://web1.tcte.edu.tw/EXAM/114_4y/downloader.php?obj=MTE0LTR5LTAwLW1jLnBkZg==",
       "topic": "數學(C)綜合能力",
       "lessonRoute": null,
-      "recognition": "PDF text layer + OCR-style normalization; one-question segmentation"
+      "recognition": "PDF text layer + OCR-style normalization; one-question segmentation",
+      "corruptedOcr": true
     },
     {
       "id": "114-math-c-22",
@@ -11366,7 +12343,8 @@
       "sourceUrl": "https://web1.tcte.edu.tw/EXAM/114_4y/downloader.php?obj=MTE0LTR5LTAwLW1jLnBkZg==",
       "topic": "數學(C)綜合能力",
       "lessonRoute": null,
-      "recognition": "PDF text layer + OCR-style normalization; one-question segmentation"
+      "recognition": "PDF text layer + OCR-style normalization; one-question segmentation",
+      "corruptedOcr": true
     },
     {
       "id": "114-math-c-23",
@@ -11393,7 +12371,8 @@
       "sourceUrl": "https://web1.tcte.edu.tw/EXAM/114_4y/downloader.php?obj=MTE0LTR5LTAwLW1jLnBkZg==",
       "topic": "數學(C)綜合能力",
       "lessonRoute": null,
-      "recognition": "PDF text layer + OCR-style normalization; one-question segmentation"
+      "recognition": "PDF text layer + OCR-style normalization; one-question segmentation",
+      "corruptedOcr": true
     },
     {
       "id": "114-math-c-24",
@@ -11420,7 +12399,8 @@
       "sourceUrl": "https://web1.tcte.edu.tw/EXAM/114_4y/downloader.php?obj=MTE0LTR5LTAwLW1jLnBkZg==",
       "topic": "數學(C)綜合能力",
       "lessonRoute": null,
-      "recognition": "PDF text layer + OCR-style normalization; one-question segmentation"
+      "recognition": "PDF text layer + OCR-style normalization; one-question segmentation",
+      "corruptedOcr": true
     },
     {
       "id": "114-math-c-25",
@@ -11447,7 +12427,8 @@
       "sourceUrl": "https://web1.tcte.edu.tw/EXAM/114_4y/downloader.php?obj=MTE0LTR5LTAwLW1jLnBkZg==",
       "topic": "數學(C)綜合能力",
       "lessonRoute": null,
-      "recognition": "PDF text layer + OCR-style normalization; one-question segmentation"
+      "recognition": "PDF text layer + OCR-style normalization; one-question segmentation",
+      "corruptedOcr": true
     },
     {
       "id": "115-chinese-1",
@@ -12392,7 +13373,56 @@
       "sourceUrl": "https://web1.tcte.edu.tw/EXAM/115_4y/downloader.php?obj=MTE1LTR5LTAwLWMucGRm",
       "topic": "國文綜合能力",
       "lessonRoute": null,
-      "recognition": "PDF text layer + OCR-style normalization; one-question segmentation"
+      "recognition": "PDF text layer + OCR-style normalization; one-question segmentation",
+      "visualData": {
+        "table": {
+          "title": "表(一) 銷售量 (累積至2023年破億所需時間)",
+          "headers": [
+            "羽織圖案",
+            "作品 (發行年)",
+            "累積銷量",
+            "所需時間"
+          ],
+          "alignments": [
+            "center",
+            "left",
+            "center",
+            "center"
+          ],
+          "rows": [
+            [
+              "黑綠方格\n(竈門炭治郎)",
+              "鬼滅之刃 (2016)",
+              "約1.5億冊",
+              "4年7個月"
+            ],
+            [
+              "",
+              "進擊的巨人 (2009)",
+              "約1.4億冊",
+              "10年3個月"
+            ],
+            [
+              "",
+              "火影忍者 (1999)",
+              "約2.5億冊",
+              "10年6個月"
+            ],
+            [
+              "",
+              "航海王 (1997)",
+              "約5.0億冊",
+              "7年5個月"
+            ],
+            [
+              "",
+              "名偵探柯南 (1994)",
+              "約2.7億冊",
+              "11年4個月"
+            ]
+          ]
+        }
+      }
     },
     {
       "id": "115-chinese-36",
@@ -12419,7 +13449,56 @@
       "sourceUrl": "https://web1.tcte.edu.tw/EXAM/115_4y/downloader.php?obj=MTE1LTR5LTAwLWMucGRm",
       "topic": "國文綜合能力",
       "lessonRoute": null,
-      "recognition": "PDF text layer + OCR-style normalization; one-question segmentation"
+      "recognition": "PDF text layer + OCR-style normalization; one-question segmentation",
+      "visualData": {
+        "table": {
+          "title": "表(一) 銷售量 (累積至2023年破億所需時間)",
+          "headers": [
+            "羽織圖案",
+            "作品 (發行年)",
+            "累積銷量",
+            "所需時間"
+          ],
+          "alignments": [
+            "center",
+            "left",
+            "center",
+            "center"
+          ],
+          "rows": [
+            [
+              "黑綠方格\n(竈門炭治郎)",
+              "鬼滅之刃 (2016)",
+              "約1.5億冊",
+              "4年7個月"
+            ],
+            [
+              "",
+              "進擊的巨人 (2009)",
+              "約1.4億冊",
+              "10年3個月"
+            ],
+            [
+              "",
+              "火影忍者 (1999)",
+              "約2.5億冊",
+              "10年6個月"
+            ],
+            [
+              "",
+              "航海王 (1997)",
+              "約5.0億冊",
+              "7年5個月"
+            ],
+            [
+              "",
+              "名偵探柯南 (1994)",
+              "約2.7億冊",
+              "11年4個月"
+            ]
+          ]
+        }
+      }
     },
     {
       "id": "115-chinese-37",
@@ -12446,7 +13525,56 @@
       "sourceUrl": "https://web1.tcte.edu.tw/EXAM/115_4y/downloader.php?obj=MTE1LTR5LTAwLWMucGRm",
       "topic": "國文綜合能力",
       "lessonRoute": null,
-      "recognition": "PDF text layer + OCR-style normalization; one-question segmentation"
+      "recognition": "PDF text layer + OCR-style normalization; one-question segmentation",
+      "visualData": {
+        "table": {
+          "title": "表(一) 銷售量 (累積至2023年破億所需時間)",
+          "headers": [
+            "羽織圖案",
+            "作品 (發行年)",
+            "累積銷量",
+            "所需時間"
+          ],
+          "alignments": [
+            "center",
+            "left",
+            "center",
+            "center"
+          ],
+          "rows": [
+            [
+              "黑綠方格\n(竈門炭治郎)",
+              "鬼滅之刃 (2016)",
+              "約1.5億冊",
+              "4年7個月"
+            ],
+            [
+              "",
+              "進擊的巨人 (2009)",
+              "約1.4億冊",
+              "10年3個月"
+            ],
+            [
+              "",
+              "火影忍者 (1999)",
+              "約2.5億冊",
+              "10年6個月"
+            ],
+            [
+              "",
+              "航海王 (1997)",
+              "約5.0億冊",
+              "7年5個月"
+            ],
+            [
+              "",
+              "名偵探柯南 (1994)",
+              "約2.7億冊",
+              "11年4個月"
+            ]
+          ]
+        }
+      }
     },
     {
       "id": "115-chinese-38",
@@ -12473,7 +13601,56 @@
       "sourceUrl": "https://web1.tcte.edu.tw/EXAM/115_4y/downloader.php?obj=MTE1LTR5LTAwLWMucGRm",
       "topic": "國文綜合能力",
       "lessonRoute": null,
-      "recognition": "PDF text layer + OCR-style normalization; one-question segmentation"
+      "recognition": "PDF text layer + OCR-style normalization; one-question segmentation",
+      "visualData": {
+        "table": {
+          "title": "表(一) 銷售量 (累積至2023年破億所需時間)",
+          "headers": [
+            "羽織圖案",
+            "作品 (發行年)",
+            "累積銷量",
+            "所需時間"
+          ],
+          "alignments": [
+            "center",
+            "left",
+            "center",
+            "center"
+          ],
+          "rows": [
+            [
+              "黑綠方格\n(竈門炭治郎)",
+              "鬼滅之刃 (2016)",
+              "約1.5億冊",
+              "4年7個月"
+            ],
+            [
+              "",
+              "進擊的巨人 (2009)",
+              "約1.4億冊",
+              "10年3個月"
+            ],
+            [
+              "",
+              "火影忍者 (1999)",
+              "約2.5億冊",
+              "10年6個月"
+            ],
+            [
+              "",
+              "航海王 (1997)",
+              "約5.0億冊",
+              "7年5個月"
+            ],
+            [
+              "",
+              "名偵探柯南 (1994)",
+              "約2.7億冊",
+              "11年4個月"
+            ]
+          ]
+        }
+      }
     },
     {
       "id": "115-english-1",
@@ -13310,7 +14487,98 @@
       "sourceUrl": "https://web1.tcte.edu.tw/EXAM/115_4y/downloader.php?obj=MTE1LTR5LTAwLWUucGRm",
       "topic": "英文綜合能力",
       "lessonRoute": null,
-      "recognition": "PDF text layer + OCR-style normalization; one-question segmentation"
+      "recognition": "PDF text layer + OCR-style normalization; one-question segmentation",
+      "visualData": {
+        "chart": {
+          "type": "line",
+          "title": "Taiwan's energy supply from 2004 to 2024 (%)",
+          "xAxisLabel": "Year",
+          "yAxisLabel": "%",
+          "labels": [
+            "2004",
+            "2006",
+            "2008",
+            "2010",
+            "2012",
+            "2014",
+            "2016",
+            "2018",
+            "2020",
+            "2022",
+            "2024"
+          ],
+          "datasets": [
+            {
+              "label": "Coal",
+              "data": [
+                33.0,
+                32.5,
+                33.1,
+                31.5,
+                30.0,
+                29.5,
+                29.0,
+                29.5,
+                30.5,
+                30.0,
+                31.0
+              ],
+              "color": "#0f172a"
+            },
+            {
+              "label": "Oil & Petroleum",
+              "data": [
+                50.0,
+                52.0,
+                51.5,
+                49.0,
+                48.0,
+                48.5,
+                47.0,
+                45.0,
+                44.0,
+                43.5,
+                42.0
+              ],
+              "color": "#dc2626"
+            },
+            {
+              "label": "Natural Gas",
+              "data": [
+                8.0,
+                8.5,
+                10.0,
+                12.0,
+                13.0,
+                13.5,
+                14.5,
+                15.5,
+                17.0,
+                18.0,
+                19.0
+              ],
+              "color": "#2563eb"
+            },
+            {
+              "label": "Nuclear",
+              "data": [
+                8.5,
+                7.0,
+                6.0,
+                7.5,
+                8.0,
+                7.0,
+                7.5,
+                6.0,
+                5.0,
+                5.5,
+                6.0
+              ],
+              "color": "#16a34a"
+            }
+          ]
+        }
+      }
     },
     {
       "id": "115-english-32",
@@ -13337,7 +14605,98 @@
       "sourceUrl": "https://web1.tcte.edu.tw/EXAM/115_4y/downloader.php?obj=MTE1LTR5LTAwLWUucGRm",
       "topic": "英文綜合能力",
       "lessonRoute": null,
-      "recognition": "PDF text layer + OCR-style normalization; one-question segmentation"
+      "recognition": "PDF text layer + OCR-style normalization; one-question segmentation",
+      "visualData": {
+        "chart": {
+          "type": "line",
+          "title": "Taiwan's energy supply from 2004 to 2024 (%)",
+          "xAxisLabel": "Year",
+          "yAxisLabel": "%",
+          "labels": [
+            "2004",
+            "2006",
+            "2008",
+            "2010",
+            "2012",
+            "2014",
+            "2016",
+            "2018",
+            "2020",
+            "2022",
+            "2024"
+          ],
+          "datasets": [
+            {
+              "label": "Coal",
+              "data": [
+                33.0,
+                32.5,
+                33.1,
+                31.5,
+                30.0,
+                29.5,
+                29.0,
+                29.5,
+                30.5,
+                30.0,
+                31.0
+              ],
+              "color": "#0f172a"
+            },
+            {
+              "label": "Oil & Petroleum",
+              "data": [
+                50.0,
+                52.0,
+                51.5,
+                49.0,
+                48.0,
+                48.5,
+                47.0,
+                45.0,
+                44.0,
+                43.5,
+                42.0
+              ],
+              "color": "#dc2626"
+            },
+            {
+              "label": "Natural Gas",
+              "data": [
+                8.0,
+                8.5,
+                10.0,
+                12.0,
+                13.0,
+                13.5,
+                14.5,
+                15.5,
+                17.0,
+                18.0,
+                19.0
+              ],
+              "color": "#2563eb"
+            },
+            {
+              "label": "Nuclear",
+              "data": [
+                8.5,
+                7.0,
+                6.0,
+                7.5,
+                8.0,
+                7.0,
+                7.5,
+                6.0,
+                5.0,
+                5.5,
+                6.0
+              ],
+              "color": "#16a34a"
+            }
+          ]
+        }
+      }
     },
     {
       "id": "115-english-33",
@@ -13364,7 +14723,33 @@
       "sourceUrl": "https://web1.tcte.edu.tw/EXAM/115_4y/downloader.php?obj=MTE1LTR5LTAwLWUucGRm",
       "topic": "英文綜合能力",
       "lessonRoute": null,
-      "recognition": "PDF text layer + OCR-style normalization; one-question segmentation"
+      "recognition": "PDF text layer + OCR-style normalization; one-question segmentation",
+      "visualData": {
+        "chart": {
+          "type": "bar",
+          "title": "Revenue per Store (US$ millions)",
+          "labels": [
+            "Din Tai Fung",
+            "Restaurant B",
+            "Restaurant C",
+            "Restaurant D",
+            "Restaurant E"
+          ],
+          "datasets": [
+            {
+              "label": "Revenue (US$ millions)",
+              "data": [
+                12.5,
+                8.2,
+                7.5,
+                6.8,
+                5.0
+              ],
+              "color": "#d97706"
+            }
+          ]
+        }
+      }
     },
     {
       "id": "115-english-34",
@@ -13391,7 +14776,33 @@
       "sourceUrl": "https://web1.tcte.edu.tw/EXAM/115_4y/downloader.php?obj=MTE1LTR5LTAwLWUucGRm",
       "topic": "英文綜合能力",
       "lessonRoute": null,
-      "recognition": "PDF text layer + OCR-style normalization; one-question segmentation"
+      "recognition": "PDF text layer + OCR-style normalization; one-question segmentation",
+      "visualData": {
+        "chart": {
+          "type": "bar",
+          "title": "Revenue per Store (US$ millions)",
+          "labels": [
+            "Din Tai Fung",
+            "Restaurant B",
+            "Restaurant C",
+            "Restaurant D",
+            "Restaurant E"
+          ],
+          "datasets": [
+            {
+              "label": "Revenue (US$ millions)",
+              "data": [
+                12.5,
+                8.2,
+                7.5,
+                6.8,
+                5.0
+              ],
+              "color": "#d97706"
+            }
+          ]
+        }
+      }
     },
     {
       "id": "115-english-35",
@@ -13418,7 +14829,33 @@
       "sourceUrl": "https://web1.tcte.edu.tw/EXAM/115_4y/downloader.php?obj=MTE1LTR5LTAwLWUucGRm",
       "topic": "英文綜合能力",
       "lessonRoute": null,
-      "recognition": "PDF text layer + OCR-style normalization; one-question segmentation"
+      "recognition": "PDF text layer + OCR-style normalization; one-question segmentation",
+      "visualData": {
+        "chart": {
+          "type": "bar",
+          "title": "Revenue per Store (US$ millions)",
+          "labels": [
+            "Din Tai Fung",
+            "Restaurant B",
+            "Restaurant C",
+            "Restaurant D",
+            "Restaurant E"
+          ],
+          "datasets": [
+            {
+              "label": "Revenue (US$ millions)",
+              "data": [
+                12.5,
+                8.2,
+                7.5,
+                6.8,
+                5.0
+              ],
+              "color": "#d97706"
+            }
+          ]
+        }
+      }
     },
     {
       "id": "115-english-36",
@@ -13634,7 +15071,8 @@
       "sourceUrl": "https://web1.tcte.edu.tw/EXAM/115_4y/downloader.php?obj=MTE1LTR5LTAwLW1jLnBkZg==",
       "topic": "數學(C)綜合能力",
       "lessonRoute": null,
-      "recognition": "PDF text layer + OCR-style normalization; one-question segmentation"
+      "recognition": "PDF text layer + OCR-style normalization; one-question segmentation",
+      "corruptedOcr": true
     },
     {
       "id": "115-math-c-2",
@@ -13661,7 +15099,8 @@
       "sourceUrl": "https://web1.tcte.edu.tw/EXAM/115_4y/downloader.php?obj=MTE1LTR5LTAwLW1jLnBkZg==",
       "topic": "數學(C)綜合能力",
       "lessonRoute": null,
-      "recognition": "PDF text layer + OCR-style normalization; one-question segmentation"
+      "recognition": "PDF text layer + OCR-style normalization; one-question segmentation",
+      "corruptedOcr": true
     },
     {
       "id": "115-math-c-3",
@@ -13688,7 +15127,8 @@
       "sourceUrl": "https://web1.tcte.edu.tw/EXAM/115_4y/downloader.php?obj=MTE1LTR5LTAwLW1jLnBkZg==",
       "topic": "數學(C)綜合能力",
       "lessonRoute": null,
-      "recognition": "PDF text layer + OCR-style normalization; one-question segmentation"
+      "recognition": "PDF text layer + OCR-style normalization; one-question segmentation",
+      "corruptedOcr": true
     },
     {
       "id": "115-math-c-4",
@@ -13715,7 +15155,8 @@
       "sourceUrl": "https://web1.tcte.edu.tw/EXAM/115_4y/downloader.php?obj=MTE1LTR5LTAwLW1jLnBkZg==",
       "topic": "數學(C)綜合能力",
       "lessonRoute": null,
-      "recognition": "PDF text layer + OCR-style normalization; one-question segmentation"
+      "recognition": "PDF text layer + OCR-style normalization; one-question segmentation",
+      "corruptedOcr": true
     },
     {
       "id": "115-math-c-5",
@@ -13742,7 +15183,8 @@
       "sourceUrl": "https://web1.tcte.edu.tw/EXAM/115_4y/downloader.php?obj=MTE1LTR5LTAwLW1jLnBkZg==",
       "topic": "數學(C)綜合能力",
       "lessonRoute": null,
-      "recognition": "PDF text layer + OCR-style normalization; one-question segmentation"
+      "recognition": "PDF text layer + OCR-style normalization; one-question segmentation",
+      "corruptedOcr": true
     },
     {
       "id": "115-math-c-6",
@@ -13769,7 +15211,8 @@
       "sourceUrl": "https://web1.tcte.edu.tw/EXAM/115_4y/downloader.php?obj=MTE1LTR5LTAwLW1jLnBkZg==",
       "topic": "數學(C)綜合能力",
       "lessonRoute": null,
-      "recognition": "PDF text layer + OCR-style normalization; one-question segmentation"
+      "recognition": "PDF text layer + OCR-style normalization; one-question segmentation",
+      "corruptedOcr": true
     },
     {
       "id": "115-math-c-7",
@@ -13796,7 +15239,8 @@
       "sourceUrl": "https://web1.tcte.edu.tw/EXAM/115_4y/downloader.php?obj=MTE1LTR5LTAwLW1jLnBkZg==",
       "topic": "數學(C)綜合能力",
       "lessonRoute": null,
-      "recognition": "PDF text layer + OCR-style normalization; one-question segmentation"
+      "recognition": "PDF text layer + OCR-style normalization; one-question segmentation",
+      "corruptedOcr": true
     },
     {
       "id": "115-math-c-8",
@@ -13823,7 +15267,8 @@
       "sourceUrl": "https://web1.tcte.edu.tw/EXAM/115_4y/downloader.php?obj=MTE1LTR5LTAwLW1jLnBkZg==",
       "topic": "數學(C)綜合能力",
       "lessonRoute": null,
-      "recognition": "PDF text layer + OCR-style normalization; one-question segmentation"
+      "recognition": "PDF text layer + OCR-style normalization; one-question segmentation",
+      "corruptedOcr": true
     },
     {
       "id": "115-math-c-9",
@@ -13850,7 +15295,8 @@
       "sourceUrl": "https://web1.tcte.edu.tw/EXAM/115_4y/downloader.php?obj=MTE1LTR5LTAwLW1jLnBkZg==",
       "topic": "數學(C)綜合能力",
       "lessonRoute": null,
-      "recognition": "PDF text layer + OCR-style normalization; one-question segmentation"
+      "recognition": "PDF text layer + OCR-style normalization; one-question segmentation",
+      "corruptedOcr": true
     },
     {
       "id": "115-math-c-10",
@@ -13877,7 +15323,8 @@
       "sourceUrl": "https://web1.tcte.edu.tw/EXAM/115_4y/downloader.php?obj=MTE1LTR5LTAwLW1jLnBkZg==",
       "topic": "數學(C)綜合能力",
       "lessonRoute": null,
-      "recognition": "PDF text layer + OCR-style normalization; one-question segmentation"
+      "recognition": "PDF text layer + OCR-style normalization; one-question segmentation",
+      "corruptedOcr": true
     },
     {
       "id": "115-math-c-11",
@@ -13904,7 +15351,8 @@
       "sourceUrl": "https://web1.tcte.edu.tw/EXAM/115_4y/downloader.php?obj=MTE1LTR5LTAwLW1jLnBkZg==",
       "topic": "數學(C)綜合能力",
       "lessonRoute": null,
-      "recognition": "PDF text layer + OCR-style normalization; one-question segmentation"
+      "recognition": "PDF text layer + OCR-style normalization; one-question segmentation",
+      "corruptedOcr": true
     },
     {
       "id": "115-math-c-12",
@@ -13931,7 +15379,8 @@
       "sourceUrl": "https://web1.tcte.edu.tw/EXAM/115_4y/downloader.php?obj=MTE1LTR5LTAwLW1jLnBkZg==",
       "topic": "數學(C)綜合能力",
       "lessonRoute": null,
-      "recognition": "PDF text layer + OCR-style normalization; one-question segmentation"
+      "recognition": "PDF text layer + OCR-style normalization; one-question segmentation",
+      "corruptedOcr": true
     },
     {
       "id": "115-math-c-13",
@@ -13958,7 +15407,8 @@
       "sourceUrl": "https://web1.tcte.edu.tw/EXAM/115_4y/downloader.php?obj=MTE1LTR5LTAwLW1jLnBkZg==",
       "topic": "數學(C)綜合能力",
       "lessonRoute": null,
-      "recognition": "PDF text layer + OCR-style normalization; one-question segmentation"
+      "recognition": "PDF text layer + OCR-style normalization; one-question segmentation",
+      "corruptedOcr": true
     },
     {
       "id": "115-math-c-14",
@@ -13985,7 +15435,8 @@
       "sourceUrl": "https://web1.tcte.edu.tw/EXAM/115_4y/downloader.php?obj=MTE1LTR5LTAwLW1jLnBkZg==",
       "topic": "數學(C)綜合能力",
       "lessonRoute": null,
-      "recognition": "PDF text layer + OCR-style normalization; one-question segmentation"
+      "recognition": "PDF text layer + OCR-style normalization; one-question segmentation",
+      "corruptedOcr": true
     },
     {
       "id": "115-math-c-15",
@@ -14012,7 +15463,8 @@
       "sourceUrl": "https://web1.tcte.edu.tw/EXAM/115_4y/downloader.php?obj=MTE1LTR5LTAwLW1jLnBkZg==",
       "topic": "數學(C)綜合能力",
       "lessonRoute": null,
-      "recognition": "PDF text layer + OCR-style normalization; one-question segmentation"
+      "recognition": "PDF text layer + OCR-style normalization; one-question segmentation",
+      "corruptedOcr": true
     },
     {
       "id": "115-math-c-16",
@@ -14039,7 +15491,8 @@
       "sourceUrl": "https://web1.tcte.edu.tw/EXAM/115_4y/downloader.php?obj=MTE1LTR5LTAwLW1jLnBkZg==",
       "topic": "數學(C)綜合能力",
       "lessonRoute": null,
-      "recognition": "PDF text layer + OCR-style normalization; one-question segmentation"
+      "recognition": "PDF text layer + OCR-style normalization; one-question segmentation",
+      "corruptedOcr": true
     },
     {
       "id": "115-math-c-17",
@@ -14066,7 +15519,8 @@
       "sourceUrl": "https://web1.tcte.edu.tw/EXAM/115_4y/downloader.php?obj=MTE1LTR5LTAwLW1jLnBkZg==",
       "topic": "數學(C)綜合能力",
       "lessonRoute": null,
-      "recognition": "PDF text layer + OCR-style normalization; one-question segmentation"
+      "recognition": "PDF text layer + OCR-style normalization; one-question segmentation",
+      "corruptedOcr": true
     },
     {
       "id": "115-math-c-18",
@@ -14093,7 +15547,8 @@
       "sourceUrl": "https://web1.tcte.edu.tw/EXAM/115_4y/downloader.php?obj=MTE1LTR5LTAwLW1jLnBkZg==",
       "topic": "數學(C)綜合能力",
       "lessonRoute": null,
-      "recognition": "PDF text layer + OCR-style normalization; one-question segmentation"
+      "recognition": "PDF text layer + OCR-style normalization; one-question segmentation",
+      "corruptedOcr": true
     },
     {
       "id": "115-math-c-19",
@@ -14120,7 +15575,8 @@
       "sourceUrl": "https://web1.tcte.edu.tw/EXAM/115_4y/downloader.php?obj=MTE1LTR5LTAwLW1jLnBkZg==",
       "topic": "數學(C)綜合能力",
       "lessonRoute": null,
-      "recognition": "PDF text layer + OCR-style normalization; one-question segmentation"
+      "recognition": "PDF text layer + OCR-style normalization; one-question segmentation",
+      "corruptedOcr": true
     },
     {
       "id": "115-math-c-20",
@@ -14147,7 +15603,8 @@
       "sourceUrl": "https://web1.tcte.edu.tw/EXAM/115_4y/downloader.php?obj=MTE1LTR5LTAwLW1jLnBkZg==",
       "topic": "數學(C)綜合能力",
       "lessonRoute": null,
-      "recognition": "PDF text layer + OCR-style normalization; one-question segmentation"
+      "recognition": "PDF text layer + OCR-style normalization; one-question segmentation",
+      "corruptedOcr": true
     },
     {
       "id": "115-math-c-21",
@@ -14174,7 +15631,8 @@
       "sourceUrl": "https://web1.tcte.edu.tw/EXAM/115_4y/downloader.php?obj=MTE1LTR5LTAwLW1jLnBkZg==",
       "topic": "數學(C)綜合能力",
       "lessonRoute": null,
-      "recognition": "PDF text layer + OCR-style normalization; one-question segmentation"
+      "recognition": "PDF text layer + OCR-style normalization; one-question segmentation",
+      "corruptedOcr": true
     },
     {
       "id": "115-math-c-22",
@@ -14201,7 +15659,8 @@
       "sourceUrl": "https://web1.tcte.edu.tw/EXAM/115_4y/downloader.php?obj=MTE1LTR5LTAwLW1jLnBkZg==",
       "topic": "數學(C)綜合能力",
       "lessonRoute": null,
-      "recognition": "PDF text layer + OCR-style normalization; one-question segmentation"
+      "recognition": "PDF text layer + OCR-style normalization; one-question segmentation",
+      "corruptedOcr": true
     },
     {
       "id": "115-math-c-23",
@@ -14228,7 +15687,8 @@
       "sourceUrl": "https://web1.tcte.edu.tw/EXAM/115_4y/downloader.php?obj=MTE1LTR5LTAwLW1jLnBkZg==",
       "topic": "數學(C)綜合能力",
       "lessonRoute": null,
-      "recognition": "PDF text layer + OCR-style normalization; one-question segmentation"
+      "recognition": "PDF text layer + OCR-style normalization; one-question segmentation",
+      "corruptedOcr": true
     },
     {
       "id": "115-math-c-24",
@@ -14255,7 +15715,8 @@
       "sourceUrl": "https://web1.tcte.edu.tw/EXAM/115_4y/downloader.php?obj=MTE1LTR5LTAwLW1jLnBkZg==",
       "topic": "數學(C)綜合能力",
       "lessonRoute": null,
-      "recognition": "PDF text layer + OCR-style normalization; one-question segmentation"
+      "recognition": "PDF text layer + OCR-style normalization; one-question segmentation",
+      "corruptedOcr": true
     },
     {
       "id": "115-math-c-25",
@@ -14282,7 +15743,8 @@
       "sourceUrl": "https://web1.tcte.edu.tw/EXAM/115_4y/downloader.php?obj=MTE1LTR5LTAwLW1jLnBkZg==",
       "topic": "數學(C)綜合能力",
       "lessonRoute": null,
-      "recognition": "PDF text layer + OCR-style normalization; one-question segmentation"
+      "recognition": "PDF text layer + OCR-style normalization; one-question segmentation",
+      "corruptedOcr": true
     }
   ]
 }

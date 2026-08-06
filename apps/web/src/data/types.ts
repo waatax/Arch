@@ -12,6 +12,35 @@ export interface PracticeItem {
   answer: string;
 }
 
+export interface ChartData {
+  type: 'line' | 'bar' | 'pie';
+  title?: string;
+  xAxisLabel?: string;
+  yAxisLabel?: string;
+  labels: string[];
+  datasets: {
+    label: string;
+    data: number[];
+    color?: string;
+  }[];
+}
+
+export interface TableData {
+  headers?: string[];
+  rows: string[][];
+  alignments?: ('left' | 'center' | 'right')[];
+  title?: string;
+}
+
+export interface VisualFigureData {
+  chart?: ChartData;
+  table?: TableData;
+  svg?: string;
+  html?: string;
+  markdown?: string;
+}
+
+
 export interface TopicContent {
   slug: string;
   title: string;

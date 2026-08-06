@@ -1,7 +1,10 @@
 'use client';
 /* eslint-disable @next/next/no-img-element */
-
 import { Fragment, useMemo, useState } from 'react';
+import type { VisualFigureData } from '../data/types';
+import ChartRenderer from './ChartRenderer';
+import TableRenderer from './TableRenderer';
+import MathText from './MathText';
 
 export interface SimulationQuestion {
   id: string;
@@ -13,7 +16,9 @@ export interface SimulationQuestion {
   excerpt: string;
   options: Record<'A' | 'B' | 'C' | 'D', string>;
   requiresOfficialFigure: boolean;
+  corruptedOcr?: boolean;
   figureImage?: string | null;
+  visualData?: VisualFigureData;
   originalPage?: number;
   groupId?: string | null;
   groupTitle?: string | null;
@@ -126,11 +131,20 @@ export default function ExamSimulator({ questions }: { questions: SimulationQues
 
     {submitted ? <section className="rounded-2xl border border-(--color-teal-700) bg-(--color-teal-700)/10 p-6 sm:p-8" aria-labelledby="result-title"><p className="text-xs font-mono uppercase tracking-widest text-(--color-teal-700)">Complete analysis</p><h2 id="result-title" className="mt-1 font-serif text-3xl font-bold text-(--color-ink-900)">整份解析：{score} / {session.length}</h2><p className="mt-3 text-sm leading-7 text-(--color-ink-650)">答對率 {Math.round(score / session.length * 100)}%。下方已一次展開全部題目的正誤與官方答案；專業科目並附對應教學。</p></section> : null}
 
-    <ol className="space-y-6">{session.map((question, index) => { const selected = answers[question.id]; const correct = submitted && isCorrect(question.answer, selected); const startsGroup = Boolean(question.groupId && session[index - 1]?.groupId !== question.groupId); return <Fragment key={question.id}>{startsGroup ? <li className="rounded-2xl border border-(--color-blueprint-700)/30 bg-(--color-paper-50) p-5 sm:p-8"><p className="text-xs font-mono uppercase tracking-widest text-(--color-teal-700)">Passage · 題組 {question.groupId?.split('-g').at(-1)}</p><h2 className="mt-2 font-serif text-xl font-bold leading-8 text-(--color-ink-900)">{question.groupTitle}</h2><div className="mt-5 whitespace-pre-line rounded-xl border-l-4 border-(--color-teal-700) bg-white p-5 text-[15px] leading-8 text-(--color-ink-900) sm:p-7">{question.passage}</div><p className="mt-4 text-xs leading-6 text-(--color-ink-650)">請閱讀上方文章，再依序完成下列所有對應題目。</p></li> : null}<li id={`question-${index + 1}`} className={`scroll-mt-36 rounded-2xl border bg-(--color-paper-100) p-5 sm:p-7 ${submitted ? correct ? 'border-(--color-teal-700)' : 'border-(--color-brick-700)' : 'border-(--color-concrete-300)'}`}>
-      <div className="mb-4 flex flex-wrap items-center justify-between gap-2"><span className="text-xs font-mono font-bold text-(--color-teal-700)">模擬第 {index + 1} 題 · {question.subjectName}原題第 {question.questionNo} 題</span><span className="rounded-full bg-(--color-paper-50) px-3 py-1 text-[11px] font-mono text-(--color-ink-650)">{question.sourceLabel}</span></div>
-      <h2 className="whitespace-pre-line text-base font-bold leading-8 text-(--color-ink-900)">{question.excerpt}</h2>
+    <ol className="space-y-6">{session.map((question, index) => { const selected = answers[question.id]; const correct = submitted && isCorrect(question.answer, selected); const startsGroup = Boolean(question.groupId && session[index - 1]?.groupId !== question.groupId); return <Fragment key={question.id}>{startsGroup ? <li className="rounded-2xl border border-(--color-blueprint-700)/30 bg-(--color-paper-50) p-5 sm:p-8"><p className="text-xs font-mono uppercase tracking-widest text-(--color-teal-700)">Passage · 題組 {question.groupId?.split('-g').at(-1)}</p><h2 className="mt-2 font-serif text-xl font-bold leading-8 text-(--color-ink-900)"><MathText content={question.groupTitle} /></h2><div className="mt-5 whitespace-pre-line rounded-xl border-l-4 border-(--color-teal-700) bg-white p-5 text-[15px] leading-8 text-(--color-ink-900) sm:p-7"><MathText content={question.passage} /></div><p className="mt-4 text-xs leading-6 text-(--color-ink-650)">請閱讀上方文章，再依序完成下列所有對應題目。</p></li> : null}<li id={`question-${index + 1}`} className={`scroll-mt-36 rounded-2xl border bg-(--color-paper-100) p-5 sm:p-7 ${submitted ? correct ? 'border-(--color-teal-700)' : 'border-(--color-brick-700)' : 'border-(--color-concrete-300)'}`}>
+      <div className="mb-4 flex flex-wrap items-center justify-between gap-2"><span className="text-xs font-mono font-bold text-(--color-teal-700)">模擬第 {index + 1} 題 · {question.subjectName}原題第 {question.questionNo} 題</span>{question.sourceUrl ? <a href={question.sourceUrl} target="_blank" rel="noreferrer" className="rounded-full bg-(--color-paper-50) border border-(--color-concrete-300) px-3 py-1 text-[11px] font-mono text-(--color-ink-650) hover:bg-(--color-teal-700) hover:text-white transition-colors" title="開啟官方 PDF 原卷">{question.sourceLabel} ↗</a> : <span className="rounded-full bg-(--color-paper-50) border border-(--color-concrete-300) px-3 py-1 text-[11px] font-mono text-(--color-ink-650)">{question.sourceLabel}</span>}</div>
+      {!question.corruptedOcr && (
+        <h2 className="whitespace-pre-line text-base font-bold leading-8 text-(--color-ink-900)"><MathText content={question.excerpt} /></h2>
+      )}
+      {question.corruptedOcr && (
+        <div className="mb-4 rounded-lg border border-(--color-brick-700)/30 bg-(--color-brick-700)/10 p-4 text-sm text-(--color-brick-700) font-bold">
+          原題含有複雜數學公式，為避免亂碼，已為您展開官方完整截圖以供作答。
+        </div>
+      )}
+      {question.visualData?.table && <TableRenderer data={question.visualData.table} />}
+      {question.visualData?.chart && <ChartRenderer data={question.visualData.chart} />}
       {question.figureImage ? <figure className="mt-4 overflow-hidden rounded-xl border border-(--color-concrete-300) bg-white p-2 sm:p-4"><a href={assetHref(question.figureImage)} target="_blank" rel="noreferrer" title="在新分頁放大本題圖面"><img src={assetHref(question.figureImage)} alt={`${question.sourceLabel}第 ${question.questionNo} 題單題圖面`} loading="lazy" className="mx-auto h-auto max-h-[42rem] max-w-full" /></a><figcaption className="mt-2 flex flex-wrap items-center justify-between gap-2 px-1 text-[11px] text-(--color-ink-650)"><span>官方圖表／公式 · 僅裁切原題第 {question.questionNo} 題</span><a href={assetHref(question.figureImage)} target="_blank" rel="noreferrer" className="font-bold text-(--color-teal-700)">放大本題圖面 ↗</a></figcaption></figure> : null}
-      <fieldset className="mt-5 grid gap-3 sm:grid-cols-2" disabled={submitted}><legend className="sr-only">第 {index + 1} 題選項</legend>{choices.map((choice) => { const active = selected === choice; const answerChoice = submitted && isCorrect(question.answer, choice); const wrongChoice = submitted && active && !answerChoice; return <label key={choice} className={`flex min-h-12 cursor-pointer items-start gap-3 rounded-xl border p-4 text-sm leading-6 ${answerChoice ? 'border-(--color-teal-700) bg-(--color-teal-700)/10' : wrongChoice ? 'border-(--color-brick-700) bg-(--color-brick-700)/10' : active ? 'border-(--color-blueprint-700) bg-(--color-paper-50)' : 'border-(--color-concrete-300)'}`}><input type="radio" name={question.id} value={choice} checked={active} onChange={() => setAnswers((value) => ({ ...value, [question.id]: choice }))} className="mt-1" /><strong className="font-mono text-(--color-ink-900)">{choice}</strong>{question.options[choice] ? <span className="text-(--color-ink-650)">{question.options[choice]}</span> : <span className="text-(--color-ink-650)">選項 {choice}</span>}</label>; })}</fieldset>
+      <fieldset className="mt-5 grid gap-3 sm:grid-cols-2" disabled={submitted}><legend className="sr-only">第 {index + 1} 題選項</legend>{choices.map((choice) => { const active = selected === choice; const answerChoice = submitted && isCorrect(question.answer, choice); const wrongChoice = submitted && active && !answerChoice; return <label key={choice} className={`flex min-h-12 cursor-pointer items-start gap-3 rounded-xl border p-4 text-sm leading-6 ${answerChoice ? 'border-(--color-teal-700) bg-(--color-teal-700)/10' : wrongChoice ? 'border-(--color-brick-700) bg-(--color-brick-700)/10' : active ? 'border-(--color-blueprint-700) bg-(--color-paper-50)' : 'border-(--color-concrete-300)'}`}><input type="radio" name={question.id} value={choice} checked={active} onChange={() => setAnswers((value) => ({ ...value, [question.id]: choice }))} className="mt-1" /><strong className="font-mono text-(--color-ink-900)">{choice}</strong>{!question.corruptedOcr && question.options[choice] ? <MathText className="text-(--color-ink-650)" content={question.options[choice]} /> : <span className="text-(--color-ink-650)">原題選項 {choice}</span>}</label>; })}</fieldset>
       {submitted ? <div className="mt-5 border-t border-(--color-concrete-300) pt-5"><p className="font-bold text-(--color-ink-900)">{correct ? `答對；官方答案：${question.answer}` : `答錯；你的答案：${selected}，官方答案：${question.answer}`}</p><p className="mt-2 text-sm text-(--color-ink-650)">考科／考點：{question.subjectName} · {question.topic}</p>{question.lessonRoute ? <a href={localHref(question.lessonRoute)} className="mt-3 inline-flex min-h-11 items-center rounded-lg bg-(--color-teal-700) px-4 text-sm font-bold text-(--color-paper-50)">開啟對應教學 →</a> : <p className="mt-3 text-xs leading-6 text-(--color-ink-650)">本題文字與選項已逐題辨識，答案依官方標準答案校對。</p>}</div> : null}
     </li></Fragment>; })}</ol>
 

@@ -520,13 +520,18 @@ def main() -> None:
                     figure_left = 330.0 if exam == "chinese" and re.search(r"右圖|左圖", text_record["excerpt"]) else 38.0
                     if figure_left > 38.0:
                         bottom = min((next_top - 8.0) if next_top else bottom, 806.0)
+                    actual_top = tops[number]
+                    if group and FIGURE_WORDS.search(group["passage"]):
+                        if pages[number] == pages[group["first"]] or pages.get(number-1) != pages[number]:
+                            actual_top = 36.0
+                    
                     figure_image = render_question_crop(
                         stem_path,
                         year,
                         exam,
                         f"q{number}",
                         pages[number],
-                        tops[number],
+                        actual_top,
                         bottom,
                         left=figure_left,
                     )
