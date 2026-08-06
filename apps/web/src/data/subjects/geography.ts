@@ -11,6 +11,16 @@ export const geographyData: SubjectData = {
       "title": "1. 地理環境與地形建築選址",
       "desc": "探討內外營力地形、順向坡、土壤液化、斷層退縮、喀斯特溶洞及山坡地開發之地質評估與建築安全選址策略。",
       "status": "done",
+      "covered_question_ids": [],
+      "worked_examples": [
+        {
+          "question": '【步驟化例題】都市熱島效應：在建築規劃時，為減緩「都市熱島效應 (Urban Heat Island Effect)」，下列何種設計策略最無效？',
+          "difficulty": '基礎',
+          "steps": ["步驟 1：理解熱島效應成因。市區不透水鋪面多、綠地少、人為廢熱排放高。","步驟 2：分析減緩策略。有效策略包含：增加綠化率 (屋頂/垂直綠化)、使用高反射率/透水鋪面材料、增加建築間距引入通風。","步驟 3：找出無效策略。增加大面積玻璃帷幕（會造成溫室效應及光害反射）、降低建築棟距（阻擋通風散熱）。"],
+          "answer": '增加大面積玻璃帷幕與降低建築棟距'
+        }
+      ],
+      "illustrations": ['geography-context.webp', 'geography-mechanism.webp', 'geography-comparison.webp', 'geography-step.webp'],
       "concepts": [
         {
           "heading": "內營力與地質構造對建築基地的影響",
@@ -263,6 +273,16 @@ export const geographyData: SubjectData = {
       "title": "2. 氣候環境與氣候應答建築",
       "desc": "分析氣候要素與控制因子、被動式太陽能、遮陽深寬比、微氣候通風、都市熱島減熱與太陽軌跡遮陽幾何。",
       "status": "done",
+      "covered_question_ids": [],
+      "worked_examples": [
+        {
+          "question": '【步驟化例題】都市熱島效應：在建築規劃時，為減緩「都市熱島效應 (Urban Heat Island Effect)」，下列何種設計策略最無效？',
+          "difficulty": '基礎',
+          "steps": ["步驟 1：理解熱島效應成因。市區不透水鋪面多、綠地少、人為廢熱排放高。","步驟 2：分析減緩策略。有效策略包含：增加綠化率 (屋頂/垂直綠化)、使用高反射率/透水鋪面材料、增加建築間距引入通風。","步驟 3：找出無效策略。增加大面積玻璃帷幕（會造成溫室效應及光害反射）、降低建築棟距（阻擋通風散熱）。"],
+          "answer": '增加大面積玻璃帷幕與降低建築棟距'
+        }
+      ],
+      "illustrations": ['geography-context.webp', 'geography-mechanism.webp', 'geography-comparison.webp', 'geography-step.webp'],
       "concepts": [
         {
           "heading": "全球氣候分類與氣候控制因子",
@@ -517,6 +537,16 @@ export const geographyData: SubjectData = {
       "title": "3. 人口結構與都市空間結構",
       "desc": "探討人口轉型、高齡化通用設計、中心地方理論、都市內部空間結構模型、TOD 大眾運輸導向開發與土地競價理論。",
       "status": "done",
+      "covered_question_ids": [],
+      "worked_examples": [
+        {
+          "question": '【步驟化例題】都市熱島效應：在建築規劃時，為減緩「都市熱島效應 (Urban Heat Island Effect)」，下列何種設計策略最無效？',
+          "difficulty": '基礎',
+          "steps": ["步驟 1：理解熱島效應成因。市區不透水鋪面多、綠地少、人為廢熱排放高。","步驟 2：分析減緩策略。有效策略包含：增加綠化率 (屋頂/垂直綠化)、使用高反射率/透水鋪面材料、增加建築間距引入通風。","步驟 3：找出無效策略。增加大面積玻璃帷幕（會造成溫室效應及光害反射）、降低建築棟距（阻擋通風散熱）。"],
+          "answer": '增加大面積玻璃帷幕與降低建築棟距'
+        }
+      ],
+      "illustrations": ['geography-context.webp', 'geography-mechanism.webp', 'geography-comparison.webp', 'geography-step.webp'],
       "concepts": [
         {
           "heading": "人口轉型理論與高齡化社會之空間衝擊",
@@ -765,6 +795,16 @@ export const geographyData: SubjectData = {
       "title": "4. 區域發展與產業區位選址",
       "desc": "分析韋伯工業區位理論、區位商數 LQ、成長極理論、生態工業園區與半導體科技廊帶選址。",
       "status": "done",
+      "covered_question_ids": [],
+      "worked_examples": [
+        {
+          "question": '【步驟化例題】都市熱島效應：在建築規劃時，為減緩「都市熱島效應 (Urban Heat Island Effect)」，下列何種設計策略最無效？',
+          "difficulty": '基礎',
+          "steps": ["步驟 1：理解熱島效應成因。市區不透水鋪面多、綠地少、人為廢熱排放高。","步驟 2：分析減緩策略。有效策略包含：增加綠化率 (屋頂/垂直綠化)、使用高反射率/透水鋪面材料、增加建築間距引入通風。","步驟 3：找出無效策略。增加大面積玻璃帷幕（會造成溫室效應及光害反射）、降低建築棟距（阻擋通風散熱）。"],
+          "answer": '增加大面積玻璃帷幕與降低建築棟距'
+        }
+      ],
+      "illustrations": ['geography-context.webp', 'geography-mechanism.webp', 'geography-comparison.webp', 'geography-step.webp'],
       "concepts": [
         {
           "heading": "韋伯工業區位理論與運費最小化",
@@ -1005,6 +1045,16 @@ export const geographyData: SubjectData = {
       "title": "5. 環境議題與災害防救工程",
       "desc": "探討全球氣候變遷、淹水高程計算、土石流防災退縮、土壤液化防護、海綿城市 LID 與環境影響評估 EIA。",
       "status": "done",
+      "covered_question_ids": [],
+      "worked_examples": [
+        {
+          "question": '【步驟化例題】都市熱島效應：在建築規劃時，為減緩「都市熱島效應 (Urban Heat Island Effect)」，下列何種設計策略最無效？',
+          "difficulty": '基礎',
+          "steps": ["步驟 1：理解熱島效應成因。市區不透水鋪面多、綠地少、人為廢熱排放高。","步驟 2：分析減緩策略。有效策略包含：增加綠化率 (屋頂/垂直綠化)、使用高反射率/透水鋪面材料、增加建築間距引入通風。","步驟 3：找出無效策略。增加大面積玻璃帷幕（會造成溫室效應及光害反射）、降低建築棟距（阻擋通風散熱）。"],
+          "answer": '增加大面積玻璃帷幕與降低建築棟距'
+        }
+      ],
+      "illustrations": ['geography-context.webp', 'geography-mechanism.webp', 'geography-comparison.webp', 'geography-step.webp'],
       "concepts": [
         {
           "heading": "全球氣候變遷與海平面上升防護",
@@ -1245,6 +1295,16 @@ export const geographyData: SubjectData = {
       "title": "6. 地理資訊系統與空間分析",
       "desc": "介紹向量/網格/BIM 整合、疊圖與環域選址演算、視域與日照權分析、網路路徑、IDW/Kriging 內插與數位雙生 3D GIS。",
       "status": "done",
+      "covered_question_ids": [],
+      "worked_examples": [
+        {
+          "question": '【步驟化例題】都市熱島效應：在建築規劃時，為減緩「都市熱島效應 (Urban Heat Island Effect)」，下列何種設計策略最無效？',
+          "difficulty": '基礎',
+          "steps": ["步驟 1：理解熱島效應成因。市區不透水鋪面多、綠地少、人為廢熱排放高。","步驟 2：分析減緩策略。有效策略包含：增加綠化率 (屋頂/垂直綠化)、使用高反射率/透水鋪面材料、增加建築間距引入通風。","步驟 3：找出無效策略。增加大面積玻璃帷幕（會造成溫室效應及光害反射）、降低建築棟距（阻擋通風散熱）。"],
+          "answer": '增加大面積玻璃帷幕與降低建築棟距'
+        }
+      ],
+      "illustrations": ['geography-context.webp', 'geography-mechanism.webp', 'geography-comparison.webp', 'geography-step.webp'],
       "concepts": [
         {
           "heading": "GIS 資料結構與 BIM-GIS 系統整合",

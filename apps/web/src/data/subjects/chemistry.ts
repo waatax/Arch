@@ -11,6 +11,16 @@ export const chemistryData: SubjectData = {
       "title": "1. 物質的組成與分類",
       "desc": "純物質與混合物、原子結構與化學鍵結、塗料/樹脂高分子化學分類、VOCs 揮發機制與光觸媒空氣淨化。",
       "status": "done",
+      "covered_question_ids": [],
+      "worked_examples": [
+        {
+          "question": '【步驟化例題】化學計量與建築材料：鍛燒石灰石 (CaCO3) 製備生石灰 (CaO)，反應式為 CaCO3 → CaO + CO2。若鍛燒 100 公斤純碳酸鈣，可得生石灰多少公斤？(Ca=40, C=12, O=16)',
+          "difficulty": '基礎',
+          "steps": ["步驟 1：計算分子量。CaCO3 = 40+12+(16×3) = 100。CaO = 40+16 = 56。","步驟 2：確認莫耳數。100 kg CaCO3 = 100,000 g / 100 = 1000 莫耳。","步驟 3：由莫耳數比求質量。CaO 生成 1000 莫耳 = 1000 × 56 = 56,000 g = 56 kg。"],
+          "answer": '可得生石灰 56 公斤'
+        }
+      ],
+      "illustrations": ['chemistry-context.webp', 'chemistry-mechanism.webp', 'chemistry-comparison.webp', 'chemistry-step.webp'],
       "concepts": [
         {
           "heading": "物質的分類與建築材料相態 (純物質與混合物)",
@@ -213,6 +223,16 @@ export const chemistryData: SubjectData = {
       "title": "2. 化學反應與混凝土水化化學",
       "desc": "化學反應式平衡、莫耳數與化學計量、波特蘭水泥水化反應 (Concrete Hydration)、波左蘭反應與絕熱溫升。",
       "status": "done",
+      "covered_question_ids": [],
+      "worked_examples": [
+        {
+          "question": '【步驟化例題】化學計量與建築材料：鍛燒石灰石 (CaCO3) 製備生石灰 (CaO)，反應式為 CaCO3 → CaO + CO2。若鍛燒 100 公斤純碳酸鈣，可得生石灰多少公斤？(Ca=40, C=12, O=16)',
+          "difficulty": '基礎',
+          "steps": ["步驟 1：計算分子量。CaCO3 = 40+12+(16×3) = 100。CaO = 40+16 = 56。","步驟 2：確認莫耳數。100 kg CaCO3 = 100,000 g / 100 = 1000 莫耳。","步驟 3：由莫耳數比求質量。CaO 生成 1000 莫耳 = 1000 × 56 = 56,000 g = 56 kg。"],
+          "answer": '可得生石灰 56 公斤'
+        }
+      ],
+      "illustrations": ['chemistry-context.webp', 'chemistry-mechanism.webp', 'chemistry-comparison.webp', 'chemistry-step.webp'],
       "concepts": [
         {
           "heading": "化學反應平衡與質量守恆定律",
@@ -380,6 +400,16 @@ export const chemistryData: SubjectData = {
       "title": "3. 酸鹼化學與混凝土中性化",
       "desc": "酸鹼理論與 pH 值計算、混凝土碳化/中性化機制、酸雨石材腐蝕、硫酸鹽侵蝕與鋼筋鈍化膜。",
       "status": "done",
+      "covered_question_ids": [],
+      "worked_examples": [
+        {
+          "question": '【步驟化例題】化學計量與建築材料：鍛燒石灰石 (CaCO3) 製備生石灰 (CaO)，反應式為 CaCO3 → CaO + CO2。若鍛燒 100 公斤純碳酸鈣，可得生石灰多少公斤？(Ca=40, C=12, O=16)',
+          "difficulty": '基礎',
+          "steps": ["步驟 1：計算分子量。CaCO3 = 40+12+(16×3) = 100。CaO = 40+16 = 56。","步驟 2：確認莫耳數。100 kg CaCO3 = 100,000 g / 100 = 1000 莫耳。","步驟 3：由莫耳數比求質量。CaO 生成 1000 莫耳 = 1000 × 56 = 56,000 g = 56 kg。"],
+          "answer": '可得生石灰 56 公斤'
+        }
+      ],
+      "illustrations": ['chemistry-context.webp', 'chemistry-mechanism.webp', 'chemistry-comparison.webp', 'chemistry-step.webp'],
       "concepts": [
         {
           "heading": "酸鹼定義 (阿瑞尼斯與布忍斯特-勞里學說)",
@@ -556,6 +586,16 @@ export const chemistryData: SubjectData = {
       "title": "4. 氧化還原與金屬腐蝕防蝕",
       "desc": "氧化數與電化學反應、鋼筋濕腐蝕化學機制、犧牲陽極防蝕、熱浸鍍鋅與電化學脫鹽 ECE 技術。",
       "status": "done",
+      "covered_question_ids": [],
+      "worked_examples": [
+        {
+          "question": '【步驟化例題】化學計量與建築材料：鍛燒石灰石 (CaCO3) 製備生石灰 (CaO)，反應式為 CaCO3 → CaO + CO2。若鍛燒 100 公斤純碳酸鈣，可得生石灰多少公斤？(Ca=40, C=12, O=16)',
+          "difficulty": '基礎',
+          "steps": ["步驟 1：計算分子量。CaCO3 = 40+12+(16×3) = 100。CaO = 40+16 = 56。","步驟 2：確認莫耳數。100 kg CaCO3 = 100,000 g / 100 = 1000 莫耳。","步驟 3：由莫耳數比求質量。CaO 生成 1000 莫耳 = 1000 × 56 = 56,000 g = 56 kg。"],
+          "answer": '可得生石灰 56 公斤'
+        }
+      ],
+      "illustrations": ['chemistry-context.webp', 'chemistry-mechanism.webp', 'chemistry-comparison.webp', 'chemistry-step.webp'],
       "concepts": [
         {
           "heading": "氧化還原 Reactions 與氧化數 (Oxidation Number)",
@@ -748,6 +788,16 @@ export const chemistryData: SubjectData = {
       "title": "5. 有機化學與建築高分子樹脂塗料",
       "desc": "有機化合物分類、高分子樹脂 (Epoxy, PU, Acrylic, Silicone) 化學、VOCs 逸散與高分子光降解/水解老化。",
       "status": "done",
+      "covered_question_ids": [],
+      "worked_examples": [
+        {
+          "question": '【步驟化例題】化學計量與建築材料：鍛燒石灰石 (CaCO3) 製備生石灰 (CaO)，反應式為 CaCO3 → CaO + CO2。若鍛燒 100 公斤純碳酸鈣，可得生石灰多少公斤？(Ca=40, C=12, O=16)',
+          "difficulty": '基礎',
+          "steps": ["步驟 1：計算分子量。CaCO3 = 40+12+(16×3) = 100。CaO = 40+16 = 56。","步驟 2：確認莫耳數。100 kg CaCO3 = 100,000 g / 100 = 1000 莫耳。","步驟 3：由莫耳數比求質量。CaO 生成 1000 莫耳 = 1000 × 56 = 56,000 g = 56 kg。"],
+          "answer": '可得生石灰 56 公斤'
+        }
+      ],
+      "illustrations": ['chemistry-context.webp', 'chemistry-mechanism.webp', 'chemistry-comparison.webp', 'chemistry-step.webp'],
       "concepts": [
         {
           "heading": "有機烴類分類、命名與同分異構物",
@@ -940,6 +990,16 @@ export const chemistryData: SubjectData = {
       "title": "6. 環境化學與建材碳足跡",
       "desc": "大氣與水體環境化學、溫室效應、建材碳足跡 LCA、固碳混凝土、低碳水泥與室內空氣品質 IAQ。",
       "status": "done",
+      "covered_question_ids": [],
+      "worked_examples": [
+        {
+          "question": '【步驟化例題】化學計量與建築材料：鍛燒石灰石 (CaCO3) 製備生石灰 (CaO)，反應式為 CaCO3 → CaO + CO2。若鍛燒 100 公斤純碳酸鈣，可得生石灰多少公斤？(Ca=40, C=12, O=16)',
+          "difficulty": '基礎',
+          "steps": ["步驟 1：計算分子量。CaCO3 = 40+12+(16×3) = 100。CaO = 40+16 = 56。","步驟 2：確認莫耳數。100 kg CaCO3 = 100,000 g / 100 = 1000 莫耳。","步驟 3：由莫耳數比求質量。CaO 生成 1000 莫耳 = 1000 × 56 = 56,000 g = 56 kg。"],
+          "answer": '可得生石灰 56 公斤'
+        }
+      ],
+      "illustrations": ['chemistry-context.webp', 'chemistry-mechanism.webp', 'chemistry-comparison.webp', 'chemistry-step.webp'],
       "concepts": [
         {
           "heading": "溫室效應 (Greenhouse Effect) 與大氣化學",

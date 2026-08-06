@@ -11,6 +11,20 @@ export const mechanicsData: SubjectData = {
       title: '1. 單位與向量',
       desc: '力學 SI 單位制、因次同性原理、純量與向量性質、向量拉密與三角分解、平面與空間分力合成法。',
       status: 'done',
+      covered_question_ids: ["111-1-2","111-1-3","111-1-16","112-1-9","112-1-11","112-1-16","115-1-17","110-1-1","110-1-9","110-1-17","110-1-25","110-1-33"],
+      worked_examples: [
+        {
+          question: '【步驟化例題】鋼索力量分解：某建築斜拉索張力 T = 200 kN，與水平夾角為 30°。試求此張力之水平分力與垂直分力。',
+          difficulty: '基礎',
+          steps: [
+            '步驟 1：建立笛卡兒座標系。將張力作用點設為原點，水平為 X 軸，垂直為 Y 軸。',
+            '步驟 2：利用三角函數分解向量。Fx = T · cos(30°), Fy = T · sin(30°)。',
+            '步驟 3：代入數值求得解答。Fx = 200 × 0.866 = 173.2 kN；Fy = 200 × 0.5 = 100 kN。'
+          ],
+          answer: '水平分力為 173.2 kN，垂直分力為 100 kN'
+        }
+      ],
+      illustrations: ['units-vectors-context.webp', 'units-vectors-mechanism.webp', 'units-vectors-comparison.webp', 'units-vectors-step.webp'],
       concepts: [
         {
           heading: 'SI 單位制與工程單位換算 (SI Units & Engineering System)',
@@ -115,6 +129,20 @@ export const mechanicsData: SubjectData = {
       title: '2. 力系與共點力平衡',
       desc: '自由體圖 (FBD) 畫法、二力構件與三力平衡、拉密定理 (Lami\'s Theorem)、平面一般力系平衡條件。',
       status: 'done',
+      covered_question_ids: ["111-1-15","112-1-3","113-1-1","113-1-4","113-1-5","114-1-4","114-1-6","114-1-13","114-1-20","115-1-1","115-1-2","110-1-2","110-1-10","110-1-18","110-1-26","110-1-34"],
+      worked_examples: [
+        {
+          question: '【步驟化例題】招牌吊掛平衡：一重 300 N 之懸臂招牌，由兩根傾斜角分別為 30° 與 60° 的鋼索支撐於牆面，求兩鋼索張力。',
+          difficulty: '基礎',
+          steps: [
+            '步驟 1：畫出招牌懸掛點之自由體圖 (FBD)，標示向下重力 300N，以及兩未知張力 Ta, Tb。',
+            '步驟 2：建立 x-y 平衡方程式。∑Fx = 0: -Ta·cos(30°) + Tb·cos(60°) = 0。',
+            '步驟 3：建立 y 平衡方程式。∑Fy = 0: Ta·sin(30°) + Tb·sin(60°) - 300 = 0。解聯立方程式求得 Ta 與 Tb。'
+          ],
+          answer: 'Ta = 150 N, Tb = 259.8 N'
+        }
+      ],
+      illustrations: ['force-equilibrium-context.webp', 'force-equilibrium-mechanism.webp', 'force-equilibrium-comparison.webp', 'force-equilibrium-step.webp'],
       concepts: [
         {
           heading: '自由體圖 (Free Body Diagram, FBD) 畫法標準流程',
@@ -211,6 +239,20 @@ export const mechanicsData: SubjectData = {
       title: '3. 重心與形心',
       desc: '一次矩 (First Moment of Area)、組合圖形形心計算、二次矩 (Moment of Inertia)、平行軸定理與帕普斯 (Pappus) 定理。',
       status: 'done',
+      covered_question_ids: ["111-1-14","111-1-17","112-1-1","113-1-7","113-1-8","114-1-17","115-1-13","115-1-16","110-1-3","110-1-11","110-1-19","110-1-27","110-1-35"],
+      worked_examples: [
+        {
+          question: '【步驟化例題】T型梁形心計算：一 T 型截面梁，頂部翼板 100mm×20mm，腹板 20mm×80mm，求其距底邊之形心 Y 位置。',
+          difficulty: '中等',
+          steps: [
+            '步驟 1：將 T 型截面分解為上部矩形 (A1) 與下部矩形 (A2)。',
+            '步驟 2：計算個別面積與形心。A1 = 2000 mm², y1 = 90 mm (距底邊)；A2 = 1600 mm², y2 = 40 mm (距底邊)。',
+            '步驟 3：利用面積一次矩公式 Y = (A1·y1 + A2·y2) / (A1 + A2) 求解。'
+          ],
+          answer: 'Y = 67.78 mm'
+        }
+      ],
+      illustrations: ['centroid-context.webp', 'centroid-mechanism.webp', 'centroid-comparison.webp', 'centroid-step.webp'],
       concepts: [
         {
           heading: '形心 (Centroid) 與面積一次矩理論',
@@ -303,6 +345,20 @@ export const mechanicsData: SubjectData = {
       title: '4. 摩擦力',
       desc: '靜摩擦與動摩擦機制、最大靜摩擦力 (fs_max = μs N)、摩擦角與自鎖條件、塊體滑動與翻覆傾倒臨界競爭判斷。',
       status: 'done',
+      covered_question_ids: ["111-1-7","111-1-18","111-1-19","112-1-8","113-1-14","114-1-2","114-1-15","115-1-14"],
+      worked_examples: [
+        {
+          question: '【步驟化例題】擋土牆抗滑分析：擋土牆自重 500 kN，牆底與土壤靜摩擦係數 0.5。若承受側向土壓力 P = 200 kN，判斷是否會滑動？',
+          difficulty: '基礎',
+          steps: [
+            '步驟 1：畫出牆體 FBD。垂直力僅有自重 W = 500 kN，故地表正向力 N = 500 kN。',
+            '步驟 2：計算最大靜摩擦力。fs_max = μs · N = 0.5 × 500 = 250 kN。',
+            '步驟 3：比較側向推力與抗滑力。P = 200 kN < fs_max = 250 kN，故擋土牆不會滑動。'
+          ],
+          answer: '不會滑動 (抗滑安全係數 = 1.25)'
+        }
+      ],
+      illustrations: ['friction-context.webp', 'friction-mechanism.webp', 'friction-comparison.webp', 'friction-step.webp'],
       concepts: [
         {
           heading: '庫侖乾摩擦定律 (Coulomb\'s Law of Dry Friction)',
@@ -393,6 +449,20 @@ export const mechanicsData: SubjectData = {
       title: '5. 平面桁架分析',
       desc: '桁架靜定性判別 (m + r vs. 2j)、零桿判別法則 (Zero-Force Members)、節點法 (Method of Joints) 與剖面法 (Method of Sections) 求解桿件軸力。',
       status: 'done',
+      covered_question_ids: ["111-1-8","111-1-9","111-1-10","113-1-18","113-1-19","114-1-1","115-1-7","115-1-12","115-1-15"],
+      worked_examples: [
+        {
+          question: '【步驟化例題】桁架零桿判別：圖示一屋架桁架，節點 C 兩桿共線且與第三桿垂直相交，且 C 點無外力，判斷垂直桿之軸力。',
+          difficulty: '基礎',
+          steps: [
+            '步驟 1：檢視節點 C。共線兩桿為 AC 與 CE，第三桿為 CD。',
+            '步驟 2：應用零桿定理。「三桿接頭，兩桿共線且無外載，則第三桿為零桿」。',
+            '步驟 3：判定 CD 桿為零桿，軸力為 0。'
+          ],
+          answer: 'CD 桿為零桿 (F_CD = 0)'
+        }
+      ],
+      illustrations: ['truss-context.webp', 'truss-mechanism.webp', 'truss-comparison.webp', 'truss-step.webp'],
       concepts: [
         {
           heading: '桁架基本假設與平面靜定判別式',
@@ -485,6 +555,20 @@ export const mechanicsData: SubjectData = {
       title: '6. 靜定樑之受力',
       desc: '支承反力類型、載重集度 w(x)、剪力 V(x) 與彎矩 M(x) 微積分關係、剪力圖與彎矩圖繪製及最大彎矩 M_max 位置判斷。',
       status: 'done',
+      covered_question_ids: ["111-1-1","112-1-2","112-1-7","112-1-12","112-1-13","112-1-15","112-1-20","113-1-2","113-1-3","113-1-9","113-1-11","114-1-3","114-1-5","114-1-8","114-1-10","114-1-16","115-1-3","115-1-4","115-1-5","115-1-10","115-1-18","115-1-20"],
+      worked_examples: [
+        {
+          question: '【步驟化例題】簡支梁最大彎矩：跨距 L = 10m 的簡支梁，承受中央集中載重 P = 40 kN，求最大彎矩。',
+          difficulty: '基礎',
+          steps: [
+            '步驟 1：求支承反力。因對稱，兩端反力 R = P/2 = 20 kN。',
+            '步驟 2：繪製剪力圖。左半段剪力為 20 kN，跨中突降 40 kN，右半段為 -20 kN。',
+            '步驟 3：計算最大彎矩。發生於剪力為 0 處 (跨中)。M_max = (P·L)/4 = (40 × 10) / 4 = 100 kN·m。'
+          ],
+          answer: '最大彎矩為 100 kN·m'
+        }
+      ],
+      illustrations: ['beam-context.webp', 'beam-mechanism.webp', 'beam-comparison.webp', 'beam-step.webp'],
       concepts: [
         {
           heading: '靜定樑種類與支承約束條件',
@@ -576,6 +660,20 @@ export const mechanicsData: SubjectData = {
       title: '7. 應力與應變',
       desc: '正應力 (σ) 與剪應力 (τ)、正應變 (ε) 與剪應變 (γ)、虎克定律 (Hooke\'s Law)、彈性模數 (E/G/ν) 及軸向桿件變形量 (δ = PL/AE)。',
       status: 'done',
+      covered_question_ids: ["111-1-4","111-1-5","111-1-6","111-1-11","111-1-12","111-1-13","111-1-20","112-1-4","112-1-5","112-1-6","112-1-10","112-1-14","112-1-17","112-1-18","112-1-19","113-1-6","113-1-10","113-1-12","113-1-13","113-1-15","113-1-16","113-1-17","113-1-20","114-1-7","114-1-9","114-1-11","114-1-12","114-1-14","114-1-18","114-1-19","115-1-6","115-1-8","115-1-9","115-1-11","115-1-19","110-1-4","110-1-12","110-1-20","110-1-28","110-1-36"],
+      worked_examples: [
+        {
+          question: '【步驟化例題】鋼筋抗拉應力：一根直徑 16mm (即 #5 鋼筋) 承受 50 kN 之軸向拉力，求其正應力。',
+          difficulty: '中等',
+          steps: [
+            '步驟 1：計算鋼筋截面積。A = (π · D²) / 4 = (3.1416 × 16²) / 4 ≒ 201 mm²。',
+            '步驟 2：將拉力單位轉換。P = 50 kN = 50,000 N。',
+            '步驟 3：計算正應力。σ = P / A = 50,000 / 201 ≒ 248.7 MPa。'
+          ],
+          answer: '正應力 ≒ 248.7 MPa'
+        }
+      ],
+      illustrations: ['stress-strain-context.webp', 'stress-strain-mechanism.webp', 'stress-strain-comparison.webp', 'stress-strain-step.webp'],
       concepts: [
         {
           heading: '應力 (Stress) 與應變 (Strain) 的物理定義',

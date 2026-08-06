@@ -11,6 +11,16 @@ export const civicsData: SubjectData = {
       title: '1. 公民身分與社群',
       desc: '探討公民權利發展、社群結構、社區營造、都市計畫公聽會與公民參與機制在建築空間中的實踐。',
       status: 'done',
+      covered_question_ids: [],
+      worked_examples: [
+        {
+          question: '【V5.1 新增步驟化例題】待補全，對應考點解析',
+          difficulty: '基礎',
+          steps: ['步驟 1：建立模型', '步驟 2：代入公式', '步驟 3：求得解答'],
+          answer: '待補全'
+        }
+      ],
+      illustrations: ['context.webp', 'mechanism.webp', 'comparison.webp', 'step-by-step.webp'],
       concepts: [
         {
           heading: '一、公民權利發展與參政權在都市規劃之應用',
@@ -172,6 +182,16 @@ export const civicsData: SubjectData = {
       title: '2. 建築法規與公民生活空間',
       desc: '深入解析《建築法》、《都市計畫法》、《區域計畫法》與《國土計畫法》法律體系，掌握建蔽率與容積率管制計算、無障礙避難規範、日照權防護及《公寓大廈管理條例》。',
       status: 'done',
+      covered_question_ids: [],
+      worked_examples: [
+        {
+          question: '【V5.1 新增步驟化例題】待補全，對應考點解析',
+          difficulty: '基礎',
+          steps: ['步驟 1：建立模型', '步驟 2：代入公式', '步驟 3：求得解答'],
+          answer: '待補全'
+        }
+      ],
+      illustrations: ['context.webp', 'mechanism.webp', 'comparison.webp', 'step-by-step.webp'],
       concepts: [
         {
           heading: '一、國土規劃與建築法規四階法律體系',
@@ -346,6 +366,16 @@ export const civicsData: SubjectData = {
       title: '3. 經濟發展與永續建築環境',
       desc: '探討綠建築 EEWH 九大指標評估體系、循環經濟與綠色建材、歐盟 CBAM 碳邊境調整與建築碳足跡、ESG 企業永續與不動產經濟。',
       status: 'done',
+      covered_question_ids: [],
+      worked_examples: [
+        {
+          question: '【V5.1 新增步驟化例題】待補全，對應考點解析',
+          difficulty: '基礎',
+          steps: ['步驟 1：建立模型', '步驟 2：代入公式', '步驟 3：求得解答'],
+          answer: '待補全'
+        }
+      ],
+      illustrations: ['context.webp', 'mechanism.webp', 'comparison.webp', 'step-by-step.webp'],
       concepts: [
         {
           heading: '一、台灣綠建築評估體系 (EEWH) 與九大指標',
@@ -519,6 +549,16 @@ export const civicsData: SubjectData = {
       title: '4. 多元社會與包容性空間設計',
       desc: '探討高齡少子化社會空間調適、通用設計七大原則、多元族群文化空間、性別平權空間友善及社會住宅包容性設計。',
       status: 'done',
+      covered_question_ids: [],
+      worked_examples: [
+        {
+          question: '【V5.1 新增步驟化例題】待補全，對應考點解析',
+          difficulty: '基礎',
+          steps: ['步驟 1：建立模型', '步驟 2：代入公式', '步驟 3：求得解答'],
+          answer: '待補全'
+        }
+      ],
+      illustrations: ['context.webp', 'mechanism.webp', 'comparison.webp', 'step-by-step.webp'],
       concepts: [
         {
           heading: '一、超高齡社會來臨與通用設計 (Universal Design) 七大原則',
@@ -699,6 +739,16 @@ export const civicsData: SubjectData = {
       title: '5. 勞工權益與建築職業倫理',
       desc: '深入剖析《職業安全衛生法》工地安全防護、建築師與營造業職業道德規範、《勞動基準法》營建勞工權益、工程採購倫理與反弊端。',
       status: 'done',
+      covered_question_ids: [],
+      worked_examples: [
+        {
+          question: '【V5.1 新增步驟化例題】待補全，對應考點解析',
+          difficulty: '基礎',
+          steps: ['步驟 1：建立模型', '步驟 2：代入公式', '步驟 3：求得解答'],
+          answer: '待補全'
+        }
+      ],
+      illustrations: ['context.webp', 'mechanism.webp', 'comparison.webp', 'step-by-step.webp'],
       concepts: [
         {
           heading: '一、《職業安全衛生法》與建築工地安全管理',
@@ -870,6 +920,16 @@ export const civicsData: SubjectData = {
       title: '6. 環境政策與氣候變遷因應',
       desc: '探討《氣候變遷因應法》2050 淨零排放路徑、《環境影響評估法》公民參與、國土韌性防災、都市熱島減緩與水資源循環。',
       status: 'done',
+      covered_question_ids: [],
+      worked_examples: [
+        {
+          question: '【V5.1 新增步驟化例題】待補全，對應考點解析',
+          difficulty: '基礎',
+          steps: ['步驟 1：建立模型', '步驟 2：代入公式', '步驟 3：求得解答'],
+          answer: '待補全'
+        }
+      ],
+      illustrations: ['context.webp', 'mechanism.webp', 'comparison.webp', 'step-by-step.webp'],
       concepts: [
         {
           heading: '一、《氣候變遷因應法》與 2050 淨零排放建築路徑',

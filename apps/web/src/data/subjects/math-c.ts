@@ -11,6 +11,16 @@ export const mathCData: SubjectData = {
       title: '1. 三角函數與建築應用',
       desc: '深入掌握正弦定理、餘弦定理、無障礙坡道切線、和差角公式推導與極座標系統，應用於建築基地測量、屋頂斜率與聲學週期變化。',
       status: 'done',
+      covered_question_ids: [],
+      worked_examples: [
+        {
+          question: '【V5.1 新增步驟化例題】待補全，對應考點解析',
+          difficulty: '基礎',
+          steps: ['步驟 1：建立模型', '步驟 2：代入公式', '步驟 3：求得解答'],
+          answer: '待補全'
+        }
+      ],
+      illustrations: ['context.webp', 'mechanism.webp', 'comparison.webp', 'step-by-step.webp'],
       concepts: [
         {
           heading: '正弦定理與餘弦定理在建築測量中的證明與應用',
@@ -152,6 +162,16 @@ export const mathCData: SubjectData = {
       title: '2. 平面向量與力學分解',
       desc: '深入掌握向量正交分解、內積證明與夾角、外積與行列式面積、拉米定理靜力平衡及正交投影，應用於結構受力分析與樑柱接頭幾何。',
       status: 'done',
+      covered_question_ids: [],
+      worked_examples: [
+        {
+          question: '【V5.1 新增步驟化例題】待補全，對應考點解析',
+          difficulty: '基礎',
+          steps: ['步驟 1：建立模型', '步驟 2：代入公式', '步驟 3：求得解答'],
+          answer: '待補全'
+        }
+      ],
+      illustrations: ['context.webp', 'mechanism.webp', 'comparison.webp', 'step-by-step.webp'],
       concepts: [
         {
           heading: '平面向量的正交分解與坐標運算',
@@ -291,6 +311,16 @@ export const mathCData: SubjectData = {
       title: '3. 代數與多項式',
       desc: '深入掌握二次多項式配方法頂點式推導、餘式與因式定理證明、克拉瑪公式、線性規劃可行域極值及對數尺度，應用於拱門幾何與材料預算最佳化。',
       status: 'done',
+      covered_question_ids: [],
+      worked_examples: [
+        {
+          question: '【V5.1 新增步驟化例題】待補全，對應考點解析',
+          difficulty: '基礎',
+          steps: ['步驟 1：建立模型', '步驟 2：代入公式', '步驟 3：求得解答'],
+          answer: '待補全'
+        }
+      ],
+      illustrations: ['context.webp', 'mechanism.webp', 'comparison.webp', 'step-by-step.webp'],
       concepts: [
         {
           heading: '二次函數配方法、頂點式推導與拱門造型設計',
@@ -443,6 +473,16 @@ export const mathCData: SubjectData = {
       title: '4. 函數與幾何圖形',
       desc: '深入掌握橢圓標準式證明與聲學畫廊焦跡、雙曲線與雙曲拋物面薄殼、拋物線反射光學證明、3D 空間平面方程式及點到平面距離公式。',
       status: 'done',
+      covered_question_ids: [],
+      worked_examples: [
+        {
+          question: '【V5.1 新增步驟化例題】待補全，對應考點解析',
+          difficulty: '基礎',
+          steps: ['步驟 1：建立模型', '步驟 2：代入公式', '步驟 3：求得解答'],
+          answer: '待補全'
+        }
+      ],
+      illustrations: ['context.webp', 'mechanism.webp', 'comparison.webp', 'step-by-step.webp'],
       concepts: [
         {
           heading: '橢圓標準式推導與聲學焦跡反射原理',
@@ -583,6 +623,16 @@ export const mathCData: SubjectData = {
       title: '5. 機率與統計',
       desc: '深入掌握排列組合原理證明、貝氏定理與風險評估、隨機變數期望值與變異數、常態分佈品質管制及 PERT 三點估算法工期評估。',
       status: 'done',
+      covered_question_ids: [],
+      worked_examples: [
+        {
+          question: '【V5.1 新增步驟化例題】待補全，對應考點解析',
+          difficulty: '基礎',
+          steps: ['步驟 1：建立模型', '步驟 2：代入公式', '步驟 3：求得解答'],
+          answer: '待補全'
+        }
+      ],
+      illustrations: ['context.webp', 'mechanism.webp', 'comparison.webp', 'step-by-step.webp'],
       concepts: [
         {
           heading: '排列組合原理與建築空間模組配置',
@@ -718,6 +768,16 @@ export const mathCData: SubjectData = {
       title: '6. 微積分基礎',
       desc: '深入掌握微商極限定義與微分公式推導、一二階導數極值最佳化、微積分基本定理 (FTC) 證明、定積分計算地形面積土方及樑剪力彎矩積分導引。',
       status: 'done',
+      covered_question_ids: [],
+      worked_examples: [
+        {
+          question: '【V5.1 新增步驟化例題】待補全，對應考點解析',
+          difficulty: '基礎',
+          steps: ['步驟 1：建立模型', '步驟 2：代入公式', '步驟 3：求得解答'],
+          answer: '待補全'
+        }
+      ],
+      illustrations: ['context.webp', 'mechanism.webp', 'comparison.webp', 'step-by-step.webp'],
       concepts: [
         {
           heading: '微商極限定義與多項式/三角函數微分公式推導',

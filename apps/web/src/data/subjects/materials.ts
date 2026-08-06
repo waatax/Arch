@@ -11,6 +11,16 @@ export const materialsData: SubjectData = {
       title: '1. 材料與試驗概論與基本性質',
       desc: '材料分類規格、真密度/體積密度/孔隙率、吸水率與含水率、應力應變關係、泊松比、硬度與衝擊韌性。',
       status: 'done',
+      covered_question_ids: ["111-1-23","111-1-24","111-1-27","111-1-28","111-1-31","111-1-36","112-1-21","112-1-24","112-1-29","112-1-31","112-1-33","112-1-39","113-1-21","113-1-23","113-1-27","113-1-32","113-1-39","114-1-21","114-1-26","114-1-33","114-1-35","115-1-22","115-1-28","115-1-33","115-1-39","110-1-5","110-1-13","110-1-21","110-1-29","110-1-37"],
+      worked_examples: [
+        {
+          question: '【V5.1 新增步驟化例題】待補全，對應考點解析',
+          difficulty: '基礎',
+          steps: ['步驟 1：建立模型', '步驟 2：代入公式', '步驟 3：求得解答'],
+          answer: '待補全'
+        }
+      ],
+      illustrations: ['context.webp', 'mechanism.webp', 'comparison.webp', 'step-by-step.webp'],
       concepts: [
         {
           heading: '材料與試驗總論與品質管理體系',
@@ -119,6 +129,16 @@ export const materialsData: SubjectData = {
       title: '2.1 卜特蘭水泥水化化學成分',
       desc: '深入解析卜特蘭水泥的四大主要化學成分 (C3S, C2S, C3A, C4AF) 及其水化反應機制、釋放熱量與強度貢獻。',
       status: 'done',
+      covered_question_ids: [],
+      worked_examples: [
+        {
+          question: '【V5.1 新增步驟化例題】待補全，對應考點解析',
+          difficulty: '基礎',
+          steps: ['步驟 1：建立模型', '步驟 2：代入公式', '步驟 3：求得解答'],
+          answer: '待補全'
+        }
+      ],
+      illustrations: ['context.webp', 'mechanism.webp', 'comparison.webp', 'step-by-step.webp'],
       concepts: [
         {
           heading: '卜特蘭水泥水化化學成分 (Mineral Compositions)',
@@ -186,6 +206,16 @@ export const materialsData: SubjectData = {
       title: '2.2 CNS 61 卜特蘭水泥五大類型比較',
       desc: '詳解中華民國國家標準 (CNS 61) 劃分之五種基本卜特蘭水泥特性與其適合之工程應用場景。',
       status: 'done',
+      covered_question_ids: ["111-1-22","111-1-32","111-1-33","111-1-40","112-1-26","112-1-30","112-1-37","112-1-40","113-1-25","113-1-33","113-1-36","114-1-22","114-1-28","114-1-31","114-1-34","115-1-21","115-1-23","115-1-29","115-1-34","115-1-38"],
+      worked_examples: [
+        {
+          question: '【V5.1 新增步驟化例題】待補全，對應考點解析',
+          difficulty: '基礎',
+          steps: ['步驟 1：建立模型', '步驟 2：代入公式', '步驟 3：求得解答'],
+          answer: '待補全'
+        }
+      ],
+      illustrations: ['context.webp', 'mechanism.webp', 'comparison.webp', 'step-by-step.webp'],
       concepts: [
         {
           heading: 'CNS 61 卜特蘭水泥五大類型規格比較',
@@ -253,6 +283,16 @@ export const materialsData: SubjectData = {
       title: '2.3 維卡儀 (Vicat) 凝結時間試驗',
       desc: '介紹測定水泥水化過程初凝 (Initial Set) 與終凝 (Final Set) 時間之國家標準步驟。',
       status: 'done',
+      covered_question_ids: ["111-1-29","112-1-28","113-1-22","114-1-23","114-1-24","114-1-38","114-1-39"],
+      worked_examples: [
+        {
+          question: '【V5.1 新增步驟化例題】待補全，對應考點解析',
+          difficulty: '基礎',
+          steps: ['步驟 1：建立模型', '步驟 2：代入公式', '步驟 3：求得解答'],
+          answer: '待補全'
+        }
+      ],
+      illustrations: ['context.webp', 'mechanism.webp', 'comparison.webp', 'step-by-step.webp'],
       concepts: [
         {
           heading: '維卡儀 (Vicat Apparatus) 凝結時間試驗步驟 (CNS 786)',
@@ -315,6 +355,16 @@ export const materialsData: SubjectData = {
       title: '2.4 水泥砂漿抗壓強度試驗',
       desc: '評估水泥品質與強度的標準砂漿試體 (5 × 5 × 5 cm 立方體) 製作與抗壓測試。',
       status: 'done',
+      covered_question_ids: ["111-1-26","112-1-35","112-1-38","113-1-28"],
+      worked_examples: [
+        {
+          question: '【V5.1 新增步驟化例題】待補全，對應考點解析',
+          difficulty: '基礎',
+          steps: ['步驟 1：建立模型', '步驟 2：代入公式', '步驟 3：求得解答'],
+          answer: '待補全'
+        }
+      ],
+      illustrations: ['context.webp', 'mechanism.webp', 'comparison.webp', 'step-by-step.webp'],
       concepts: [
         {
           heading: '水泥砂漿抗壓強度試驗步驟 (CNS 1010)',
@@ -382,6 +432,16 @@ export const materialsData: SubjectData = {
       title: '2.5 水泥儲存與假凝 (False Set) 現象',
       desc: '水泥包裝、工地儲存管理規範，以及與「閃凝」不同的「假凝」現象之原理與處置。',
       status: 'done',
+      covered_question_ids: [],
+      worked_examples: [
+        {
+          question: '【V5.1 新增步驟化例題】待補全，對應考點解析',
+          difficulty: '基礎',
+          steps: ['步驟 1：建立模型', '步驟 2：代入公式', '步驟 3：求得解答'],
+          answer: '待補全'
+        }
+      ],
+      illustrations: ['context.webp', 'mechanism.webp', 'comparison.webp', 'step-by-step.webp'],
       concepts: [
         {
           heading: '水泥包裝與工地儲存防潮',
@@ -459,6 +519,16 @@ export const materialsData: SubjectData = {
       title: '3. 混凝土構造與配比設計',
       desc: '混凝土組成、水灰比 (W/C) 與強度關係 (Abrams Law)、絕對體積法配比設計步驟、坍度試驗、抗壓試驗與 SCC/HPC 特種混凝土。',
       status: 'done',
+      covered_question_ids: ["111-1-38","112-1-27","112-1-34","113-1-26","113-1-30","113-1-37","113-1-40","114-1-29","114-1-30","115-1-24","115-1-25","115-1-26","115-1-31","115-1-35","115-1-37","115-1-40","110-1-6","110-1-14","110-1-22","110-1-30","110-1-38"],
+      worked_examples: [
+        {
+          question: '【V5.1 新增步驟化例題】待補全，對應考點解析',
+          difficulty: '基礎',
+          steps: ['步驟 1：建立模型', '步驟 2：代入公式', '步驟 3：求得解答'],
+          answer: '待補全'
+        }
+      ],
+      illustrations: ['context.webp', 'mechanism.webp', 'comparison.webp', 'step-by-step.webp'],
       concepts: [
         {
           heading: '混凝土組成與水化反應 (Hydration)',
@@ -564,6 +634,16 @@ export const materialsData: SubjectData = {
       title: '4. 石材、陶瓷製品與玻璃',
       desc: '火成岩/堆積岩/變質岩分類與花崗岩/大理石應用、普通磚與面磚試驗、吸水率與抗壓強度、平板玻璃/強化玻璃/複層低輻射 (Low-E) 玻璃與膠合玻璃。',
       status: 'done',
+      covered_question_ids: ["112-1-25","113-1-38","114-1-36"],
+      worked_examples: [
+        {
+          question: '【V5.1 新增步驟化例題】待補全，對應考點解析',
+          difficulty: '基礎',
+          steps: ['步驟 1：建立模型', '步驟 2：代入公式', '步驟 3：求得解答'],
+          answer: '待補全'
+        }
+      ],
+      illustrations: ['context.webp', 'mechanism.webp', 'comparison.webp', 'step-by-step.webp'],
       concepts: [
         {
           heading: '建築石材地質三大分類與物理特性',
@@ -660,6 +740,16 @@ export const materialsData: SubjectData = {
       title: '5. 木材構造與品質試驗',
       desc: '木材年輪構造、纖維飽和點 (FSP)、含水率與強度關係、集成材 (Glulam) 與 CLT 技術規格、木材防腐防蟻壓力注入法與抗灣試驗。',
       status: 'done',
+      covered_question_ids: ["111-1-25","111-1-34","111-1-35","113-1-24","113-1-29","114-1-27","115-1-27","115-1-30","110-1-7","110-1-15","110-1-23","110-1-31","110-1-39"],
+      worked_examples: [
+        {
+          question: '【V5.1 新增步驟化例題】待補全，對應考點解析',
+          difficulty: '基礎',
+          steps: ['步驟 1：建立模型', '步驟 2：代入公式', '步驟 3：求得解答'],
+          answer: '待補全'
+        }
+      ],
+      illustrations: ['context.webp', 'mechanism.webp', 'comparison.webp', 'step-by-step.webp'],
       concepts: [
         {
           heading: '木材微觀構造與年輪組織',
@@ -742,6 +832,16 @@ export const materialsData: SubjectData = {
       title: '6. 高分子、瀝青與防水塗料',
       desc: '石油瀝青 (Asphalt) 物理性質與針入度/軟化點試驗、塑膠 (熱塑性 vs 熱固性)、合成樹脂 (Epoxy, PU, Silicone) 與建築防水材料規範。',
       status: 'done',
+      covered_question_ids: ["111-1-30","112-1-22","112-1-23","113-1-31","114-1-37","115-1-36"],
+      worked_examples: [
+        {
+          question: '【V5.1 新增步驟化例題】待補全，對應考點解析',
+          difficulty: '基礎',
+          steps: ['步驟 1：建立模型', '步驟 2：代入公式', '步驟 3：求得解答'],
+          answer: '待補全'
+        }
+      ],
+      illustrations: ['context.webp', 'mechanism.webp', 'comparison.webp', 'step-by-step.webp'],
       concepts: [
         {
           heading: '石油瀝青 (Asphalt) 分類與膠體學性質',
@@ -847,6 +947,16 @@ export const materialsData: SubjectData = {
       title: '7. 金屬材料與防蝕試驗',
       desc: '鋼材化學成分與碳含量效應、結構鋼規格 (SS400, SN490, SD280, SD420)、鋼筋拉伸試驗 (CNS 2111)、金屬電化學腐蝕與熱浸鍍鋅/陰極防蝕技術。',
       status: 'done',
+      covered_question_ids: ["111-1-21","111-1-39","112-1-32","112-1-36","113-1-34","113-1-35","114-1-32","114-1-40","115-1-32","110-1-8","110-1-16","110-1-24","110-1-32","110-1-40"],
+      worked_examples: [
+        {
+          question: '【V5.1 新增步驟化例題】待補全，對應考點解析',
+          difficulty: '基礎',
+          steps: ['步驟 1：建立模型', '步驟 2：代入公式', '步驟 3：求得解答'],
+          answer: '待補全'
+        }
+      ],
+      illustrations: ['context.webp', 'mechanism.webp', 'comparison.webp', 'step-by-step.webp'],
       concepts: [
         {
           heading: '鋼材化學成分與碳含量效應',
@@ -929,6 +1039,16 @@ export const materialsData: SubjectData = {
       title: '8. 綠建材與永續材料發展',
       desc: '綠建材標章四大分類 (生態、健康、高性能、再生)、TVOC 與甲醛小型釋放腔檢測、飛灰/爐石低碳水泥、再生骨材與 LCA 碳足跡。',
       status: 'done',
+      covered_question_ids: ["111-1-37","114-1-25"],
+      worked_examples: [
+        {
+          question: '【V5.1 新增步驟化例題】待補全，對應考點解析',
+          difficulty: '基礎',
+          steps: ['步驟 1：建立模型', '步驟 2：代入公式', '步驟 3：求得解答'],
+          answer: '待補全'
+        }
+      ],
+      illustrations: ['context.webp', 'mechanism.webp', 'comparison.webp', 'step-by-step.webp'],
       concepts: [
         {
           heading: '綠建材標章四大分類體系 (Green Building Material)',

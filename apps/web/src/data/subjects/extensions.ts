@@ -11,6 +11,16 @@ export const extensionsData: SubjectData = {
       title: '1. 空間設計與觀察',
       desc: '人體工學與空間尺度、空間機能與動線規劃、基地微氣候觀察分析、無障礙通用設計規範與空間型態學。',
       status: 'done',
+      covered_question_ids: [],
+      worked_examples: [
+        {
+          question: '【V5.1 新增步驟化例題】待補全，對應考點解析',
+          difficulty: '基礎',
+          steps: ['步驟 1：建立模型', '步驟 2：代入公式', '步驟 3：求得解答'],
+          answer: '待補全'
+        }
+      ],
+      illustrations: ['context.webp', 'mechanism.webp', 'comparison.webp', 'step-by-step.webp'],
       concepts: [
         {
           heading: '一、人體工學與空間尺度 (Ergonomics & Dimensions)',
@@ -175,6 +185,16 @@ export const extensionsData: SubjectData = {
       title: '2. 營造工法與建築構造細部',
       desc: '詳細剖析鋼筋混凝土 (RC)、鋼骨 (SC) 與鋼骨鋼筋混凝土 (SRC) 構造體系比較，開挖與基礎工法、軀體防水隔熱、門窗帷幕牆細部與裝配式預製工法。',
       status: 'done',
+      covered_question_ids: [],
+      worked_examples: [
+        {
+          question: '【V5.1 新增步驟化例題】待補全，對應考點解析',
+          difficulty: '基礎',
+          steps: ['步驟 1：建立模型', '步驟 2：代入公式', '步驟 3：求得解答'],
+          answer: '待補全'
+        }
+      ],
+      illustrations: ['context.webp', 'mechanism.webp', 'comparison.webp', 'step-by-step.webp'],
       concepts: [
         {
           heading: '一、RC、SC 與 SRC 三大主體結構體系比較',
@@ -352,6 +372,16 @@ export const extensionsData: SubjectData = {
       title: '3. 電腦輔助設計與 BIM 應用',
       desc: '掌握 AutoCAD 2D 製圖圖層與 CNS 標準、Revit BIM 建築資訊模型建立、3D 視覺化渲染、BIM 4D/5D 專案管理與參數化設計。',
       status: 'done',
+      covered_question_ids: [],
+      worked_examples: [
+        {
+          question: '【V5.1 新增步驟化例題】待補全，對應考點解析',
+          difficulty: '基礎',
+          steps: ['步驟 1：建立模型', '步驟 2：代入公式', '步驟 3：求得解答'],
+          answer: '待補全'
+        }
+      ],
+      illustrations: ['context.webp', 'mechanism.webp', 'comparison.webp', 'step-by-step.webp'],
       concepts: [
         {
           heading: '一、AutoCAD 2D 建築繪製標準與 CNS 出圖規範',
@@ -527,6 +557,16 @@ export const extensionsData: SubjectData = {
       title: '4. 作品集製作與模型表達',
       desc: '作品集視覺排版與敘事邏輯、建築實體模型製作技巧與材料運用、圖表 Diagramming 視覺表達、透視圖攝影與簡報評圖術。',
       status: 'done',
+      covered_question_ids: [],
+      worked_examples: [
+        {
+          question: '【V5.1 新增步驟化例題】待補全，對應考點解析',
+          difficulty: '基礎',
+          steps: ['步驟 1：建立模型', '步驟 2：代入公式', '步驟 3：求得解答'],
+          answer: '待補全'
+        }
+      ],
+      illustrations: ['context.webp', 'mechanism.webp', 'comparison.webp', 'step-by-step.webp'],
       concepts: [
         {
           heading: '一、作品集視覺排版、Grid System 與設計敘事邏輯',
@@ -703,6 +743,16 @@ export const extensionsData: SubjectData = {
       title: '5. 建築科升學與證照檢定',
       desc: '建築製圖應用丙/乙級檢定攻防、統測專一專二備考策略、科大/大學建築系選填與面試作品集輔導、建築師國考與技師職涯規劃。',
       status: 'done',
+      covered_question_ids: [],
+      worked_examples: [
+        {
+          question: '【V5.1 新增步驟化例題】待補全，對應考點解析',
+          difficulty: '基礎',
+          steps: ['步驟 1：建立模型', '步驟 2：代入公式', '步驟 3：求得解答'],
+          answer: '待補全'
+        }
+      ],
+      illustrations: ['context.webp', 'mechanism.webp', 'comparison.webp', 'step-by-step.webp'],
       concepts: [
         {
           heading: '一、建築製圖應用技能檢定 (丙級與乙級) 規範與技巧',

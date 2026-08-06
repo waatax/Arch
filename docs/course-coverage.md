@@ -2,6 +2,7 @@
 
 > 查核日：2026-08-04｜平台資料：13 科、86 個主題與 86 條學習路由。  
 > V5 已由 AI Agent 交叉比對 111–115 學年度專一、專二共 400 題；所有題號均具有官方答案、考點與有效 Arch 教學路由。可重現結果見 [`v5-iteration-report.md`](./v5-iteration-report.md) 與 `data/registry/exam-coverage.json`。
+> **V5.1 更新**：導入「段落級別映射 (Paragraph-level mapping)」，要求不僅題幹，每一個誘答選項都必須在教學頁面中找到解釋與澄清。
 
 ## V5 近五年逐題覆蓋
 
@@ -49,15 +50,17 @@
 
 - 科目分類錯誤、缺科或重複路由。
 - 未完成狀態、缺少標題或摘要。
-- 少於三張概念卡的空洞主題。
+- 教學內容未涵蓋所宣告之 `covered_question_ids`（必須提供歷屆題之誘答選項解析）。
+- 少於三張概念卡的空洞主題，或缺少至少一個 `worked_examples`（步驟化例題）。
 - 沒有題幹、解題步驟或答案的練習。
-- 缺少與章節 slug 對應的 OpenAI 生成教學圖解。
+- 每個教學頁面缺少至少 3 張 OpenAI / Nanobanana 生成教學圖解。
 
 ## 教學圖解契約
 
-- 每個章節至少一張獨立 WebP 圖解，置於 `apps/web/public/learning-visuals/<subject>/<topic>.webp`。
+- 每個章節至少 **3-5 張** 獨立 WebP 圖解，置於 `apps/web/public/learning-visuals/<subject>/<topic>/` 目錄下。
+- 圖解分為：(1) 情境導入、(2) 原理拆解、(3) 實務/考試對照、(4) 步驟解析（視需要）。
 - 圖像負責呈現方向、比例、空間與因果；精確公式由可選取的 HTML 文字層顯示，避免圖片文字辨識錯誤。
 - 所有圖片均提供包含章節與核心觀念的替代文字；不得用圖片取代完整文字教材。
-- 圖像採 OpenAI ImageGen 生成的 Architectural Editorial 教學風格，無品牌、浮水印與裝飾性遊戲元素。
+- 圖像採 Nanobanana 生成的 Architectural Editorial 教學風格，無品牌、浮水印與裝飾性遊戲元素。
 
 官方考綱來源：技專校院入學測驗中心 115 學年度土木與建築群專業科目（一）、專業科目（二）考試大綱。年度改版時須同步更新 `data/registry/course-coverage.yml` 與 `data/registry/facts.yml`。

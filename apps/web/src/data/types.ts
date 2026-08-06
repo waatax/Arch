@@ -54,6 +54,9 @@ export interface TopicContent {
   }[];
   practice?: PracticeItem;
   practices?: PracticeItem[];
+  covered_question_ids?: string[];
+  worked_examples?: PracticeItem[];
+  illustrations?: string[];
   status: 'done' | 'draft' | 'stub';
 }
 

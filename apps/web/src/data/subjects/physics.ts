@@ -11,6 +11,16 @@ export const physicsData: SubjectData = {
       "title": "1. 力學與運動 (Structural Kinematics & Static Equilibrium)",
       "desc": "建築運動學基礎、牛頓三大運動定律、靜力平衡條件、斜面摩擦、桁架與樑構件內力及高空落體防護。",
       "status": "done",
+      "covered_question_ids": [],
+      "worked_examples": [
+        {
+          "question": '【步驟化例題】牛頓第二運動定律：一質量 1000 kg 的電梯，以 2 m/s² 的加速度向上起步，求電梯鋼纜之張力 T？ (g = 9.8 m/s²)',
+          "difficulty": '中等',
+          "steps": ["步驟 1：繪製自由體圖 (FBD)。電梯受向下重力 W = mg，向上張力 T。","步驟 2：列出牛頓第二定律方程式。∑F = m a ⇒ T - mg = m a。","步驟 3：代入數值求解。T = m(g + a) = 1000 × (9.8 + 2) = 11800 N。"],
+          "answer": '鋼纜張力為 11800 N'
+        }
+      ],
+      "illustrations": ['physics-context.webp', 'physics-mechanism.webp', 'physics-comparison.webp', 'physics-step.webp'],
       "concepts": [
         {
           "heading": "牛頓三大運動定律與建築地震慣性力 (Newton's Laws & Seismic Inertia)",
@@ -276,6 +286,16 @@ export const physicsData: SubjectData = {
       "title": "2. 功與能量 (Work, Energy & Green Building Thermodynamics)",
       "desc": "功與功率、動能與重力位能、能量守恆定律、綠建築熱功當量、水泵/風機定律與蓄能技術。",
       "status": "done",
+      "covered_question_ids": [],
+      "worked_examples": [
+        {
+          "question": '【步驟化例題】牛頓第二運動定律：一質量 1000 kg 的電梯，以 2 m/s² 的加速度向上起步，求電梯鋼纜之張力 T？ (g = 9.8 m/s²)',
+          "difficulty": '中等',
+          "steps": ["步驟 1：繪製自由體圖 (FBD)。電梯受向下重力 W = mg，向上張力 T。","步驟 2：列出牛頓第二定律方程式。∑F = m a ⇒ T - mg = m a。","步驟 3：代入數值求解。T = m(g + a) = 1000 × (9.8 + 2) = 11800 N。"],
+          "answer": '鋼纜張力為 11800 N'
+        }
+      ],
+      "illustrations": ['physics-context.webp', 'physics-mechanism.webp', 'physics-comparison.webp', 'physics-step.webp'],
       "concepts": [
         {
           "heading": "功與電力功率定義 (Work & Electric Power)",
@@ -495,6 +515,16 @@ export const physicsData: SubjectData = {
       "title": "3. 熱學與建築熱環境 (Building Thermodynamics & HVAC)",
       "desc": "熱傳導/對流/輻射、外牆熱傳透率 U 值與熱阻 R 值、顯熱與潛熱、焓濕圖與冰水主機 COP 性能係數。",
       "status": "done",
+      "covered_question_ids": [],
+      "worked_examples": [
+        {
+          "question": '【步驟化例題】牛頓第二運動定律：一質量 1000 kg 的電梯，以 2 m/s² 的加速度向上起步，求電梯鋼纜之張力 T？ (g = 9.8 m/s²)',
+          "difficulty": '中等',
+          "steps": ["步驟 1：繪製自由體圖 (FBD)。電梯受向下重力 W = mg，向上張力 T。","步驟 2：列出牛頓第二定律方程式。∑F = m a ⇒ T - mg = m a。","步驟 3：代入數值求解。T = m(g + a) = 1000 × (9.8 + 2) = 11800 N。"],
+          "answer": '鋼纜張力為 11800 N'
+        }
+      ],
+      "illustrations": ['physics-context.webp', 'physics-mechanism.webp', 'physics-comparison.webp', 'physics-step.webp'],
       "concepts": [
         {
           "heading": "熱傳遞三大機制 (Mechanisms of Heat Transfer)",
@@ -719,6 +749,16 @@ export const physicsData: SubjectData = {
       "title": "4. 波動與建築聲學 (Building Waves & Acoustics)",
       "desc": "波動物理、聲速與聲壓級 dB(A)、賽賓殘響時間 RT60、隔音等級 STC、樓板衝擊音與交通噪音衰減。",
       "status": "done",
+      "covered_question_ids": [],
+      "worked_examples": [
+        {
+          "question": '【步驟化例題】牛頓第二運動定律：一質量 1000 kg 的電梯，以 2 m/s² 的加速度向上起步，求電梯鋼纜之張力 T？ (g = 9.8 m/s²)',
+          "difficulty": '中等',
+          "steps": ["步驟 1：繪製自由體圖 (FBD)。電梯受向下重力 W = mg，向上張力 T。","步驟 2：列出牛頓第二定律方程式。∑F = m a ⇒ T - mg = m a。","步驟 3：代入數值求解。T = m(g + a) = 1000 × (9.8 + 2) = 11800 N。"],
+          "answer": '鋼纜張力為 11800 N'
+        }
+      ],
+      "illustrations": ['physics-context.webp', 'physics-mechanism.webp', 'physics-comparison.webp', 'physics-step.webp'],
       "concepts": [
         {
           "heading": "聲波性質與空氣中聲速 (Sound Wave Speed & Frequency)",
@@ -925,6 +965,16 @@ export const physicsData: SubjectData = {
       "title": "5. 光學與建築照明設計 (Optics & Architectural Lighting)",
       "desc": "光的折射與反射、照度距離平方反比定律、利用係數法燈具規劃、採光係數 DF 與防眩光 UGR。",
       "status": "done",
+      "covered_question_ids": [],
+      "worked_examples": [
+        {
+          "question": '【步驟化例題】牛頓第二運動定律：一質量 1000 kg 的電梯，以 2 m/s² 的加速度向上起步，求電梯鋼纜之張力 T？ (g = 9.8 m/s²)',
+          "difficulty": '中等',
+          "steps": ["步驟 1：繪製自由體圖 (FBD)。電梯受向下重力 W = mg，向上張力 T。","步驟 2：列出牛頓第二定律方程式。∑F = m a ⇒ T - mg = m a。","步驟 3：代入數值求解。T = m(g + a) = 1000 × (9.8 + 2) = 11800 N。"],
+          "answer": '鋼纜張力為 11800 N'
+        }
+      ],
+      "illustrations": ['physics-context.webp', 'physics-mechanism.webp', 'physics-comparison.webp', 'physics-step.webp'],
       "concepts": [
         {
           "heading": "光的反射、折射與全反射 (Reflection, Refraction & Snell's Law)",
@@ -1130,6 +1180,16 @@ export const physicsData: SubjectData = {
       "title": "6. 電學基礎與建築配電系統 (Building Electrical & Circuits)",
       "desc": "歐姆定律、電功率與焦耳熱、交流電功率因數 cos φ、無熔絲開關 NFB、三相配電與接地保護。",
       "status": "done",
+      "covered_question_ids": [],
+      "worked_examples": [
+        {
+          "question": '【步驟化例題】牛頓第二運動定律：一質量 1000 kg 的電梯，以 2 m/s² 的加速度向上起步，求電梯鋼纜之張力 T？ (g = 9.8 m/s²)',
+          "difficulty": '中等',
+          "steps": ["步驟 1：繪製自由體圖 (FBD)。電梯受向下重力 W = mg，向上張力 T。","步驟 2：列出牛頓第二定律方程式。∑F = m a ⇒ T - mg = m a。","步驟 3：代入數值求解。T = m(g + a) = 1000 × (9.8 + 2) = 11800 N。"],
+          "answer": '鋼纜張力為 11800 N'
+        }
+      ],
+      "illustrations": ['physics-context.webp', 'physics-mechanism.webp', 'physics-comparison.webp', 'physics-step.webp'],
       "concepts": [
         {
           "heading": "歐姆定律與串並聯電路分析 (Ohm's Law & Series-Parallel Circuits)",

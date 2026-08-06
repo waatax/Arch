@@ -69,6 +69,15 @@ for (const file of files) {
         errors.push(`${route}: 第 ${index + 1} 題缺少題幹、步驟或答案`);
       }
     }
+    if (!topic.covered_question_ids || !Array.isArray(topic.covered_question_ids)) {
+      errors.push(`${route}: 缺少 covered_question_ids 陣列`);
+    }
+    if (!topic.worked_examples || topic.worked_examples.length === 0) {
+      errors.push(`${route}: 缺少 worked_examples (至少需 1 題步驟化例題)`);
+    }
+    if (!topic.illustrations || topic.illustrations.length < 3) {
+      errors.push(`${route}: 缺少 3 張以上之 Nanobanana 圖解`);
+    }
   }
 }
 

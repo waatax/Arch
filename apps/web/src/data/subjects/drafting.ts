@@ -11,6 +11,16 @@ export const draftingData: SubjectData = {
       title: '1. 線條種類與字法',
       desc: '深入掌握 CNS 11567 建築與工程製圖規範，包含線條分類、線寬階級、工程字體級距、圖紙圖頭規格與 CAD 線型管理。',
       status: 'done',
+      covered_question_ids: ["111-2-22","111-2-24","111-2-35","112-2-22","112-2-23","112-2-24","112-2-31","112-2-33","113-2-22","113-2-23","113-2-25","113-2-30","113-2-34","113-2-35","114-2-22","114-2-30","114-2-32","114-2-34","114-2-35","114-2-36","114-2-39","115-2-21","115-2-26","115-2-27","115-2-29","115-2-33","115-2-34","110-2-5","110-2-13","110-2-21","110-2-29","110-2-37"],
+      worked_examples: [
+        {
+          question: '【V5.1 新增步驟化例題】待補全，對應考點解析',
+          difficulty: '基礎',
+          steps: ['步驟 1：建立模型', '步驟 2：代入公式', '步驟 3：求得解答'],
+          answer: '待補全'
+        }
+      ],
+      illustrations: ['context.webp', 'mechanism.webp', 'comparison.webp', 'step-by-step.webp'],
       concepts: [
         {
           heading: 'CNS 建築與工程圖線條分類與粗細規範 (CNS 11567 / CNS 3)',
@@ -128,6 +138,16 @@ export const draftingData: SubjectData = {
       title: '2. 比例與尺度',
       desc: '掌握圖面比例換算、三稜比例尺讀取、建築工程常用比例選用表 (1/100, 1/50, 1/20) 及 CAD 出圖比例設定。',
       status: 'done',
+      covered_question_ids: ["111-2-31","112-2-32","113-2-27","114-2-28","115-2-40"],
+      worked_examples: [
+        {
+          question: '【V5.1 新增步驟化例題】待補全，對應考點解析',
+          difficulty: '基礎',
+          steps: ['步驟 1：建立模型', '步驟 2：代入公式', '步驟 3：求得解答'],
+          answer: '待補全'
+        }
+      ],
+      illustrations: ['context.webp', 'mechanism.webp', 'comparison.webp', 'step-by-step.webp'],
       concepts: [
         {
           heading: '比例的定義與 CNS 分類標準',
@@ -231,6 +251,16 @@ export const draftingData: SubjectData = {
       title: '3. 正投影視圖',
       desc: '理解正投影原理、第一角法與第三角法嚴格比較、三視圖「長對正、高平齊、寬相等」與輔助視圖繪製。',
       status: 'done',
+      covered_question_ids: ["111-2-28","111-2-33","111-2-40","112-2-21","112-2-27","112-2-40","113-2-26","113-2-29","114-2-29","114-2-31","115-2-28","115-2-38","115-2-39","110-2-6","110-2-14","110-2-22","110-2-30","110-2-38"],
+      worked_examples: [
+        {
+          question: '【V5.1 新增步驟化例題】待補全，對應考點解析',
+          difficulty: '基礎',
+          steps: ['步驟 1：建立模型', '步驟 2：代入公式', '步驟 3：求得解答'],
+          answer: '待補全'
+        }
+      ],
+      illustrations: ['context.webp', 'mechanism.webp', 'comparison.webp', 'step-by-step.webp'],
       concepts: [
         {
           heading: '正投影基本幾何原理與投影面',
@@ -330,6 +360,16 @@ export const draftingData: SubjectData = {
       title: '4. 剖面圖判讀',
       desc: '掌握剖面圖切割原理、割面線符號、五大剖面類型、CNS 45° 剖面線規範及實心軸與螺栓「不剖」標準。',
       status: 'done',
+      covered_question_ids: ["111-2-27","111-2-29","111-2-36","111-2-37","112-2-25","112-2-34","112-2-36","113-2-21","114-2-21","114-2-25","114-2-33","115-2-24","115-2-31","115-2-32","110-2-7","110-2-15","110-2-23","110-2-31","110-2-39"],
+      worked_examples: [
+        {
+          question: '【V5.1 新增步驟化例題】待補全，對應考點解析',
+          difficulty: '基礎',
+          steps: ['步驟 1：建立模型', '步驟 2：代入公式', '步驟 3：求得解答'],
+          answer: '待補全'
+        }
+      ],
+      illustrations: ['context.webp', 'mechanism.webp', 'comparison.webp', 'step-by-step.webp'],
       concepts: [
         {
           heading: '剖面圖目的與割面線 (Cutting Plane Line) 符號',
@@ -433,6 +473,16 @@ export const draftingData: SubjectData = {
       title: '5. 建築平面圖',
       desc: '掌握建築平面圖水平切面高、牆體構造與厚度標示、門窗編號圖例、建築設備及 CAD 高效繪圖指令。',
       status: 'done',
+      covered_question_ids: ["111-2-25","111-2-32","111-2-39","112-2-26","112-2-29","112-2-30","112-2-38","113-2-32","113-2-36","113-2-38","113-2-40","114-2-23","114-2-24","114-2-38","115-2-36","115-2-37","110-2-8","110-2-16","110-2-24","110-2-32","110-2-40"],
+      worked_examples: [
+        {
+          question: '【V5.1 新增步驟化例題】待補全，對應考點解析',
+          difficulty: '基礎',
+          steps: ['步驟 1：建立模型', '步驟 2：代入公式', '步驟 3：求得解答'],
+          answer: '待補全'
+        }
+      ],
+      illustrations: ['context.webp', 'mechanism.webp', 'comparison.webp', 'step-by-step.webp'],
       concepts: [
         {
           heading: '建築平面圖定義與水平切面高',
@@ -538,6 +588,16 @@ export const draftingData: SubjectData = {
       title: '6. 建築立面圖',
       desc: '掌握立面圖正投影原理、方位與軸線命名法、高程系統符號 (GL, FL, RF, PAR)、外牆材質圖例與陰影表現。',
       status: 'done',
+      covered_question_ids: ["111-2-23","111-2-30","112-2-37","112-2-39","113-2-28","113-2-31","113-2-33","114-2-27","114-2-37","114-2-40","115-2-25","115-2-30"],
+      worked_examples: [
+        {
+          question: '【V5.1 新增步驟化例題】待補全，對應考點解析',
+          difficulty: '基礎',
+          steps: ['步驟 1：建立模型', '步驟 2：代入公式', '步驟 3：求得解答'],
+          answer: '待補全'
+        }
+      ],
+      illustrations: ['context.webp', 'mechanism.webp', 'comparison.webp', 'step-by-step.webp'],
       concepts: [
         {
           heading: '建築立面圖功能與命名原則',
@@ -649,6 +709,16 @@ export const draftingData: SubjectData = {
       title: '7. 尺寸標註與圖例',
       desc: '掌握 CNS 11567 尺寸標註四大要素、符號前綴 (R, Ø, t, □)、建築外圍三階層標註原則、標準圖頭規格與 CAD 標註管理。',
       status: 'done',
+      covered_question_ids: ["111-2-21","111-2-26","111-2-34","111-2-38","112-2-28","112-2-35","113-2-24","113-2-37","113-2-39","114-2-26","115-2-22","115-2-23","115-2-35"],
+      worked_examples: [
+        {
+          question: '【V5.1 新增步驟化例題】待補全，對應考點解析',
+          difficulty: '基礎',
+          steps: ['步驟 1：建立模型', '步驟 2：代入公式', '步驟 3：求得解答'],
+          answer: '待補全'
+        }
+      ],
+      illustrations: ['context.webp', 'mechanism.webp', 'comparison.webp', 'step-by-step.webp'],
       concepts: [
         {
           heading: 'CNS 11567 尺寸標註四大要素',
@@ -757,6 +827,16 @@ export const draftingData: SubjectData = {
       title: '8. CAD 繪圖基礎',
       desc: '掌握 AutoCAD 座標系統、圖層管理 (ByLayer)、狀態列關鍵功能鍵 (OSNAP, ORTHO)、常用 20 大快捷鍵指令及 Viewport 出圖設定。',
       status: 'done',
+      covered_question_ids: [],
+      worked_examples: [
+        {
+          question: '【V5.1 新增步驟化例題】待補全，對應考點解析',
+          difficulty: '基礎',
+          steps: ['步驟 1：建立模型', '步驟 2：代入公式', '步驟 3：求得解答'],
+          answer: '待補全'
+        }
+      ],
+      illustrations: ['context.webp', 'mechanism.webp', 'comparison.webp', 'step-by-step.webp'],
       concepts: [
         {
           heading: 'AutoCAD 座標系統與三種點輸入方式',

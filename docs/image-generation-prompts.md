@@ -1,8 +1,15 @@
-# OpenAI 教學圖解生成紀錄
+# Nanobanana 教學圖解生成紀錄 (V5.1 更新)
 
-生成日期：2026-08-03  
-生成方式：Codex 內建 OpenAI ImageGen  
-用途：13 科、82 個章節的核心觀念與公式關係圖解
+生成日期：2026-08-06  
+生成方式：Nanobanana Image Generator  
+用途：13 科、86 個章節的核心觀念與公式關係圖解 (每主題 3-5 張)
+
+## 分鏡策略 (Storyboard)
+每個教學主題必須配置 3-5 張插畫，依序涵蓋：
+1. **情境導入圖 (Context)**：實務現場的運用（如工地綁鋼筋）。
+2. **原理拆解圖 (Mechanism)**：力學向量、內部結構或化學反應。
+3. **實務/考試對照圖 (Comparison/Exam)**：圖面與實物的對應，或常見錯誤姿勢/觀念對比。
+4. **步驟解析圖 (Step-by-step)**：（視需要）例題的關鍵步驟視覺化。
 
 ## 共用提示規格
 
@@ -34,4 +41,4 @@ Constraints: no words, letters, numerals, formulas, logos, watermark or photorea
 
 ## 輸出契約
 
-最終圖片位於 `apps/web/public/learning-visuals/<subject>/<topic>.webp`。原始圖版保留於 Codex 生成圖片目錄；專案只追蹤經裁切與壓縮的章節成品。
+最終圖片位於 `apps/web/public/learning-visuals/<subject>/<topic>/<image_name>.webp`。原始圖版保留於 Nanobanana 生成紀錄；專案只追蹤經裁切與壓縮的章節成品。

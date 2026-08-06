@@ -11,6 +11,16 @@ export const englishData: SubjectData = {
       title: '1. 字彙與片語',
       desc: '深入掌握構詞法、建築與工程專業字彙 (Architectural Terminology)、高頻動詞片語與空間位置介系詞。',
       status: 'done',
+      covered_question_ids: [],
+      worked_examples: [
+        {
+          question: '【V5.1 新增步驟化例題】待補全，對應考點解析',
+          difficulty: '基礎',
+          steps: ['步驟 1：建立模型', '步驟 2：代入公式', '步驟 3：求得解答'],
+          answer: '待補全'
+        }
+      ],
+      illustrations: ['context.webp', 'mechanism.webp', 'comparison.webp', 'step-by-step.webp'],
       concepts: [
         {
           heading: '字首、字根與字尾構詞分析 (Etymology & Morphology in Technical English)',
@@ -211,6 +221,16 @@ export const englishData: SubjectData = {
       title: '2. 文法句型',
       desc: '五大基本句型、時態與被動語態、關係子句、分詞構句與假設語氣。',
       status: 'done',
+      covered_question_ids: [],
+      worked_examples: [
+        {
+          question: '【V5.1 新增步驟化例題】待補全，對應考點解析',
+          difficulty: '基礎',
+          steps: ['步驟 1：建立模型', '步驟 2：代入公式', '步驟 3：求得解答'],
+          answer: '待補全'
+        }
+      ],
+      illustrations: ['context.webp', 'mechanism.webp', 'comparison.webp', 'step-by-step.webp'],
       concepts: [
         {
           heading: '英文五大基本句型與施工語境應用 (Five Basic Sentence Structures)',
@@ -372,6 +392,16 @@ export const englishData: SubjectData = {
       title: '3. 閱讀測驗',
       desc: '略讀與掃讀技巧、綠建築與建築結構技術短文閱讀、上下文推論與文章主旨分析。',
       status: 'done',
+      covered_question_ids: [],
+      worked_examples: [
+        {
+          question: '【V5.1 新增步驟化例題】待補全，對應考點解析',
+          difficulty: '基礎',
+          steps: ['步驟 1：建立模型', '步驟 2：代入公式', '步驟 3：求得解答'],
+          answer: '待補全'
+        }
+      ],
+      illustrations: ['context.webp', 'mechanism.webp', 'comparison.webp', 'step-by-step.webp'],
       concepts: [
         {
           heading: '高效雙速閱讀法 (Skimming vs. Scanning Methodology)',
@@ -535,6 +565,16 @@ export const englishData: SubjectData = {
       title: '4. 對話與日常應用',
       desc: '建築工地溝通、事務所設計會議、社交與生活英語、職場對話習慣用語。',
       status: 'done',
+      covered_question_ids: [],
+      worked_examples: [
+        {
+          question: '【V5.1 新增步驟化例題】待補全，對應考點解析',
+          difficulty: '基礎',
+          steps: ['步驟 1：建立模型', '步驟 2：代入公式', '步驟 3：求得解答'],
+          answer: '待補全'
+        }
+      ],
+      illustrations: ['context.webp', 'mechanism.webp', 'comparison.webp', 'step-by-step.webp'],
       concepts: [
         {
           heading: '施工現場指令、安全通報與進度對話 (Jobsite Communication)',
@@ -678,6 +718,16 @@ export const englishData: SubjectData = {
       title: '5. 克漏字與篇章結構',
       desc: '篇章銜接、轉折語與邏輯連接詞、克漏字實戰解題策略與篇章結構重建。',
       status: 'done',
+      covered_question_ids: [],
+      worked_examples: [
+        {
+          question: '【V5.1 新增步驟化例題】待補全，對應考點解析',
+          difficulty: '基礎',
+          steps: ['步驟 1：建立模型', '步驟 2：代入公式', '步驟 3：求得解答'],
+          answer: '待補全'
+        }
+      ],
+      illustrations: ['context.webp', 'mechanism.webp', 'comparison.webp', 'step-by-step.webp'],
       concepts: [
         {
           heading: '克漏字三大突破步驟 (Comprehensive Cloze Test Methodology)',
@@ -828,6 +878,16 @@ export const englishData: SubjectData = {
       title: '6. 翻譯與寫作基礎',
       desc: '中譯英技巧、句型結構重組、建築與技術段落寫作結構、標點符號與寫作修辭。',
       status: 'done',
+      covered_question_ids: [],
+      worked_examples: [
+        {
+          question: '【V5.1 新增步驟化例題】待補全，對應考點解析',
+          difficulty: '基礎',
+          steps: ['步驟 1：建立模型', '步驟 2：代入公式', '步驟 3：求得解答'],
+          answer: '待補全'
+        }
+      ],
+      illustrations: ['context.webp', 'mechanism.webp', 'comparison.webp', 'step-by-step.webp'],
       concepts: [
         {
           heading: '中譯英語序轉換與動詞核心化 (Chinese-to-English Translation Principles)',

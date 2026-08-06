@@ -11,6 +11,16 @@ export const surveyingData: SubjectData = {
       title: '1. 距離與角度測量',
       desc: '鋼卷尺距離修正量計算法則、光電測距 (EDM) 原理、經緯儀角度測量與正倒鏡觀測消除儀器系統誤差。',
       status: 'done',
+      covered_question_ids: ["111-2-7","111-2-12","111-2-14","111-2-19","112-2-5","112-2-8","112-2-9","112-2-11","112-2-17","112-2-20","113-2-3","113-2-12","114-2-2","114-2-17","115-2-3","115-2-4","110-2-1","110-2-9","110-2-17","110-2-25","110-2-33"],
+      worked_examples: [
+        {
+          question: '【V5.1 新增步驟化例題】待補全，對應考點解析',
+          difficulty: '基礎',
+          steps: ['步驟 1：建立模型', '步驟 2：代入公式', '步驟 3：求得解答'],
+          answer: '待補全'
+        }
+      ],
+      illustrations: ['context.webp', 'mechanism.webp', 'comparison.webp', 'step-by-step.webp'],
       concepts: [
         {
           heading: '距離測量方法與鋼卷尺五大修正公式',
@@ -127,6 +137,16 @@ export const surveyingData: SubjectData = {
       title: '2. 高程測量與水準儀',
       desc: '水準測量幾何原理、視線高法 (HI) 與高差法 (Rise & Fall) 水準表記錄規範、地球曲率與大氣折光修正、水準儀兩點法檢驗與校正。',
       status: 'done',
+      covered_question_ids: ["111-2-1","111-2-4","111-2-8","111-2-9","111-2-10","111-2-11","111-2-13","111-2-17","111-2-18","111-2-20","112-2-2","112-2-10","112-2-12","112-2-13","112-2-16","112-2-18","113-2-1","113-2-2","113-2-7","113-2-14","113-2-17","113-2-18","113-2-19","113-2-20","114-2-1","114-2-4","114-2-7","114-2-8","114-2-9","114-2-10","114-2-12","114-2-13","114-2-16","115-2-7","115-2-11","115-2-12","115-2-13","115-2-14","115-2-15","115-2-16","115-2-17","115-2-18","115-2-19","110-2-2","110-2-10","110-2-18","110-2-26","110-2-34"],
+      worked_examples: [
+        {
+          question: '【V5.1 新增步驟化例題】待補全，對應考點解析',
+          difficulty: '基礎',
+          steps: ['步驟 1：建立模型', '步驟 2：代入公式', '步驟 3：求得解答'],
+          answer: '待補全'
+        }
+      ],
+      illustrations: ['context.webp', 'mechanism.webp', 'comparison.webp', 'step-by-step.webp'],
       concepts: [
         {
           heading: '水準測量基本幾何原理與水準尺讀數',
@@ -244,6 +264,16 @@ export const surveyingData: SubjectData = {
       title: '3. 儀器操作與整置',
       desc: '經緯儀/全測站儀與水準儀之光學/雷射對中、腳架調整、三螺絲/兩螺絲精平操作 SOP 與儀器三軸檢核。',
       status: 'done',
+      covered_question_ids: ["111-2-3","111-2-5","112-2-1","112-2-3","112-2-7","113-2-13","114-2-11","115-2-10"],
+      worked_examples: [
+        {
+          question: '【V5.1 新增步驟化例題】待補全，對應考點解析',
+          difficulty: '基礎',
+          steps: ['步驟 1：建立模型', '步驟 2：代入公式', '步驟 3：求得解答'],
+          answer: '待補全'
+        }
+      ],
+      illustrations: ['context.webp', 'mechanism.webp', 'comparison.webp', 'step-by-step.webp'],
       concepts: [
         {
           heading: '儀器整置三大核心步驟 (對中、粗平、精平) SOP',
@@ -339,6 +369,16 @@ export const surveyingData: SubjectData = {
       title: '4. 導線測量',
       desc: '導線佈設型式與幾何條件、多邊形內角和與外角和閉合差、正反方位角推算 SOP、角度閉合差分配。',
       status: 'done',
+      covered_question_ids: ["111-2-6","111-2-16","112-2-14","112-2-15","113-2-9","113-2-11","113-2-15","114-2-14","114-2-18","114-2-19","114-2-20","115-2-5","115-2-9","115-2-20","110-2-3","110-2-11","110-2-19","110-2-27","110-2-35"],
+      worked_examples: [
+        {
+          question: '【V5.1 新增步驟化例題】待補全，對應考點解析',
+          difficulty: '基礎',
+          steps: ['步驟 1：建立模型', '步驟 2：代入公式', '步驟 3：求得解答'],
+          answer: '待補全'
+        }
+      ],
+      illustrations: ['context.webp', 'mechanism.webp', 'comparison.webp', 'step-by-step.webp'],
       concepts: [
         {
           heading: '導線佈設型式與幾何檢核條件比較',
@@ -445,6 +485,16 @@ export const surveyingData: SubjectData = {
       title: '5. 座標計算與閉合差',
       desc: '縱橫距計算、位置閉合差與相對精度、羅盤儀法則 (Bowditch Rule) 與經緯儀法則平差、導線計算表。',
       status: 'done',
+      covered_question_ids: ["113-2-6","113-2-16","114-2-3","114-2-5","115-2-1"],
+      worked_examples: [
+        {
+          question: '【V5.1 新增步驟化例題】待補全，對應考點解析',
+          difficulty: '基礎',
+          steps: ['步驟 1：建立模型', '步驟 2：代入公式', '步驟 3：求得解答'],
+          answer: '待補全'
+        }
+      ],
+      illustrations: ['context.webp', 'mechanism.webp', 'comparison.webp', 'step-by-step.webp'],
       concepts: [
         {
           heading: '緯距 (ΔN) 與經距 (ΔE) 正反算公式',
@@ -558,6 +608,16 @@ export const surveyingData: SubjectData = {
       title: '6. 面積計算與誤差處理',
       desc: '座標斜乘法/鞋帶公式 (Shoelace Formula)、倍經距法 (DMD)、測量誤差三大分類、最妥值與中誤差、誤差傳播定律。',
       status: 'done',
+      covered_question_ids: ["111-2-2","111-2-15","112-2-4","112-2-6","112-2-19","113-2-4","113-2-5","113-2-8","113-2-10","114-2-6","114-2-15","115-2-2","115-2-6","115-2-8","110-2-4","110-2-12","110-2-20","110-2-28","110-2-36"],
+      worked_examples: [
+        {
+          question: '【V5.1 新增步驟化例題】待補全，對應考點解析',
+          difficulty: '基礎',
+          steps: ['步驟 1：建立模型', '步驟 2：代入公式', '步驟 3：求得解答'],
+          answer: '待補全'
+        }
+      ],
+      illustrations: ['context.webp', 'mechanism.webp', 'comparison.webp', 'step-by-step.webp'],
       concepts: [
         {
           heading: '座標法 (Shoelace Formula / 鞋帶公式) 幾何原理與推導',
