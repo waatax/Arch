@@ -9,11 +9,11 @@ const publicRoot = path.join(root, 'apps', 'web', 'public');
 const errors = [];
 const documentNoise = /(?:共同科目\s*共\s*12\s*頁|非選擇題|寫作測驗|【以下空白】|公告試題僅供參考|答案卷之作答欄|第\s*\d+\s*頁\s*\d{3}\s*年四技)/;
 
-if (common.questions.length !== 525) errors.push(`expected 525 common questions, got ${common.questions.length}`);
-if (professional.questions.length + common.questions.length !== 925) errors.push('all-subject total must be 925 questions');
+if (common.questions.length !== 630) errors.push(`expected 630 common questions, got ${common.questions.length}`);
+if (professional.questions.length + common.questions.length !== 1110) errors.push('all-subject total must be 1110 questions');
 
 const expectedCounts = { chinese: 38, english: 42, 'math-c': 25 };
-for (const year of [111, 112, 113, 114, 115]) {
+for (const year of [110, 111, 112, 113, 114, 115]) {
   for (const [exam, count] of Object.entries(expectedCounts)) {
     const questions = common.questions.filter((question) => question.year === year && question.exam === exam);
     if (questions.length !== count) errors.push(`${year} ${exam}: expected ${count}, got ${questions.length}`);
@@ -44,7 +44,7 @@ for (const groupId of new Set(common.questions.map((question) => question.groupI
   if (new Set(members.map((question) => question.passage)).size !== 1) errors.push(`${groupId}: passage must be shared once by all member questions`);
 }
 
-for (const year of [111, 112, 113, 114, 115]) {
+for (const year of [110, 111, 112, 113, 114, 115]) {
   for (let number = 21; number <= 42; number++) {
     const question = common.questions.find((item) => item.year === year && item.exam === 'english' && item.questionNo === number);
     if (!question?.groupId) errors.push(`${year}-english-${number}: cloze/reading question must belong to a passage group`);
