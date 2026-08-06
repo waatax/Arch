@@ -232,6 +232,18 @@ export const englishData: SubjectData = {
           }
         },
         {
+          heading: '統測高頻易混淆句型：used to vs. be used to Ving vs. be used to V',
+          body: '統測英文常考 used to 之三大文法變體，必須依據主詞是否為人、動詞形式 (原形 V vs. 動名詞 V-ing) 與文意（過去習慣 vs. 習慣於 vs. 被用來）精準辨析。',
+          table: {
+            headers: ['句型結構', '主詞屬性', '接續動詞形式', '中文翻譯與文意物理意義', '例句說明'],
+            rows: [
+              ['used to + V', '通常為人或事物', '原形動詞 (V)', '過去習慣/過去曾經...（現在已不復存在）', 'He used to work on construction sites when he was young.'],
+              ['be / get used to + V-ing / N', '人 (主動習慣)', '動名詞 (V-ing) / 名詞', '習慣於... / 適應了...', 'Engineers are used to working under severe weather conditions.'],
+              ['be used to + V', '事物 (被動用途)', '原形動詞 (V)', '被用來做...（被動語態）', 'Crane machines are used to lift heavy steel beams.']
+            ]
+          }
+        },
+        {
           heading: '分詞構句簡化法則與懸垂分詞避錯 (Participle Construction)',
           body: '當主句與從屬子句主詞相同時，可省略連接詞與主詞，將動詞轉為現在分詞 (V-ing, 主動) 或過去分詞 (p.p., 被動)。',
           steps: [
