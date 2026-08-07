@@ -20,7 +20,7 @@ export const surveyingData: SubjectData = {
           answer: '正確距離為 90.0162 公尺 (90.016 m)。'
         }
       ],
-      illustrations: ['context.webp', 'mechanism.webp', 'comparison.webp', 'step-by-step.webp'],
+      "illustrations": [ 'context.webp', 'mechanism.webp', 'comparison.webp', 'step-by-step.webp', 'surveying-real-world.webp' ],
       concepts: [
         {
           heading: '距離測量方法與鋼卷尺五大修正公式',
@@ -146,7 +146,7 @@ export const surveyingData: SubjectData = {
           answer: '視線高程 HI = 122.120 m，B 點高程 HB = 121.000 m。'
         }
       ],
-      illustrations: ['context.webp', 'mechanism.webp', 'comparison.webp', 'step-by-step.webp'],
+      "illustrations": [ 'context.webp', 'mechanism.webp', 'comparison.webp', 'step-by-step.webp', 'surveying-real-world.webp' ],
       concepts: [
         {
           heading: '水準測量基本幾何原理與水準尺讀數',
@@ -273,7 +273,7 @@ export const surveyingData: SubjectData = {
           answer: '遵循「雙拇指同時向內或向外」相對轉動原則，氣泡移動方向與左手大拇指旋轉方向一致。'
         }
       ],
-      illustrations: ['context.webp', 'mechanism.webp', 'comparison.webp', 'step-by-step.webp'],
+      "illustrations": [ 'context.webp', 'mechanism.webp', 'comparison.webp', 'step-by-step.webp', 'surveying-real-world.webp' ],
       concepts: [
         {
           heading: '儀器整置三大核心步驟 (對中、粗平、精平) SOP',
@@ -378,7 +378,7 @@ export const surveyingData: SubjectData = {
           answer: '理論內角和為 540°00\'00"；角度閉合差 W_θ 為 +1\'30" (或 +90")。'
         }
       ],
-      illustrations: ['context.webp', 'mechanism.webp', 'comparison.webp', 'step-by-step.webp'],
+      "illustrations": [ 'context.webp', 'mechanism.webp', 'comparison.webp', 'step-by-step.webp', 'surveying-real-world.webp' ],
       concepts: [
         {
           heading: '導線佈設型式與幾何檢核條件比較',
@@ -494,7 +494,7 @@ export const surveyingData: SubjectData = {
           answer: 'B 點座標為 (150.00 m, 286.60 m)。'
         }
       ],
-      illustrations: ['context.webp', 'mechanism.webp', 'comparison.webp', 'step-by-step.webp'],
+      "illustrations": [ 'context.webp', 'mechanism.webp', 'comparison.webp', 'step-by-step.webp', 'surveying-real-world.webp' ],
       concepts: [
         {
           heading: '緯距 (ΔN) 與經距 (ΔE) 正反算公式',
@@ -617,7 +617,7 @@ export const surveyingData: SubjectData = {
           answer: '基地面積為 300 平方公尺 (m²)。'
         }
       ],
-      illustrations: ['context.webp', 'mechanism.webp', 'comparison.webp', 'step-by-step.webp'],
+      "illustrations": [ 'context.webp', 'mechanism.webp', 'comparison.webp', 'step-by-step.webp', 'surveying-real-world.webp' ],
       concepts: [
         {
           heading: '座標法 (Shoelace Formula / 鞋帶公式) 幾何原理與推導',

@@ -20,7 +20,7 @@ export const extensionsData: SubjectData = {
           answer: '最小淨寬度應規劃為 120 公分 (cm)。'
         }
       ],
-      illustrations: ['context.webp', 'mechanism.webp', 'comparison.webp', 'step-by-step.webp'],
+      "illustrations": [ 'context.webp', 'mechanism.webp', 'comparison.webp', 'step-by-step.webp', 'extensions-real-world.webp' ],
       concepts: [
         {
           heading: '一、人體工學與空間尺度 (Ergonomics & Dimensions)',
@@ -194,7 +194,7 @@ export const extensionsData: SubjectData = {
           answer: '自重輕、韌性佳（抗震能力強），且構件斷面小、施工速度快。'
         }
       ],
-      illustrations: ['context.webp', 'mechanism.webp', 'comparison.webp', 'step-by-step.webp'],
+      "illustrations": [ 'context.webp', 'mechanism.webp', 'comparison.webp', 'step-by-step.webp', 'extensions-real-world.webp' ],
       concepts: [
         {
           heading: '一、RC、SC 與 SRC 三大主體結構體系比較',
@@ -381,7 +381,7 @@ export const extensionsData: SubjectData = {
           answer: '4D 加入了「時間（施工進度）」，5D 加入了「成本（工程造價）」。'
         }
       ],
-      illustrations: ['context.webp', 'mechanism.webp', 'comparison.webp', 'step-by-step.webp'],
+      "illustrations": [ 'context.webp', 'mechanism.webp', 'comparison.webp', 'step-by-step.webp', 'extensions-real-world.webp' ],
       concepts: [
         {
           heading: '一、AutoCAD 2D 建築繪製標準與 CNS 出圖規範',
@@ -566,7 +566,7 @@ export const extensionsData: SubjectData = {
           answer: '模型切削高度為 15 公分；採用透明壓克力板或透明賽璐珞片表現玻璃帷幕。'
         }
       ],
-      illustrations: ['context.webp', 'mechanism.webp', 'comparison.webp', 'step-by-step.webp'],
+      "illustrations": [ 'context.webp', 'mechanism.webp', 'comparison.webp', 'step-by-step.webp', 'extensions-real-world.webp' ],
       concepts: [
         {
           heading: '一、作品集視覺排版、Grid System 與設計敘事邏輯',
@@ -752,7 +752,7 @@ export const extensionsData: SubjectData = {
           answer: '可能為「長方體」或「水平放置之圓柱體」（需檢視右側視圖確定）。'
         }
       ],
-      illustrations: ['context.webp', 'mechanism.webp', 'comparison.webp', 'step-by-step.webp'],
+      "illustrations": [ 'context.webp', 'mechanism.webp', 'comparison.webp', 'step-by-step.webp', 'extensions-real-world.webp' ],
       concepts: [
         {
           heading: '一、建築製圖應用技能檢定 (丙級與乙級) 規範與技巧',

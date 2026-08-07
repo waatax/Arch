@@ -20,7 +20,7 @@ export const mathCData: SubjectData = {
           answer: '大樓高度為 50√3 公尺 (約 86.6 m)。'
         }
       ],
-      illustrations: ['context.webp', 'mechanism.webp', 'comparison.webp', 'step-by-step.webp'],
+      "illustrations": [ 'context.webp', 'mechanism.webp', 'comparison.webp', 'step-by-step.webp', 'math-c-real-world.webp' ],
       concepts: [
         {
           heading: '正弦定理與餘弦定理在建築測量中的證明與應用',
@@ -171,7 +171,7 @@ export const mathCData: SubjectData = {
           answer: '內積 A·B = 63，夾角餘弦值 cosθ = 63/65 (約 0.969)。'
         }
       ],
-      illustrations: ['context.webp', 'mechanism.webp', 'comparison.webp', 'step-by-step.webp'],
+      "illustrations": [ 'context.webp', 'mechanism.webp', 'comparison.webp', 'step-by-step.webp', 'math-c-real-world.webp' ],
       concepts: [
         {
           heading: '平面向量的正交分解與坐標運算',
@@ -320,7 +320,7 @@ export const mathCData: SubjectData = {
           answer: '最大庭院面積為 100 平方公尺。'
         }
       ],
-      illustrations: ['context.webp', 'mechanism.webp', 'comparison.webp', 'step-by-step.webp'],
+      "illustrations": [ 'context.webp', 'mechanism.webp', 'comparison.webp', 'step-by-step.webp', 'math-c-real-world.webp' ],
       concepts: [
         {
           heading: '二次函數配方法、頂點式推導與拱門造型設計',
@@ -482,7 +482,7 @@ export const mathCData: SubjectData = {
           answer: 'L2 直線方程式為 3x - 4y - 8 = 0。'
         }
       ],
-      illustrations: ['context.webp', 'mechanism.webp', 'comparison.webp', 'step-by-step.webp'],
+      "illustrations": [ 'context.webp', 'mechanism.webp', 'comparison.webp', 'step-by-step.webp', 'math-c-real-world.webp' ],
       concepts: [
         {
           heading: '橢圓標準式推導與聲學焦跡反射原理',
@@ -632,7 +632,7 @@ export const mathCData: SubjectData = {
           answer: '均為良品之機率為 28/45 (約 62.2%)。'
         }
       ],
-      illustrations: ['context.webp', 'mechanism.webp', 'comparison.webp', 'step-by-step.webp'],
+      "illustrations": [ 'context.webp', 'mechanism.webp', 'comparison.webp', 'step-by-step.webp', 'math-c-real-world.webp' ],
       concepts: [
         {
           heading: '排列組合原理與建築空間模組配置',
@@ -777,7 +777,7 @@ export const mathCData: SubjectData = {
           answer: '最大彎矩位於 x = 3m 處，最大彎矩值 M_max = 22.5 kN·m。'
         }
       ],
-      illustrations: ['context.webp', 'mechanism.webp', 'comparison.webp', 'step-by-step.webp'],
+      "illustrations": [ 'context.webp', 'mechanism.webp', 'comparison.webp', 'step-by-step.webp', 'math-c-real-world.webp' ],
       concepts: [
         {
           heading: '微商極限定義與多項式/三角函數微分公式推導',

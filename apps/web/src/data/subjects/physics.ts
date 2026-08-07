@@ -20,7 +20,7 @@ export const physicsData: SubjectData = {
           answer: '鋼纜張力 T 為 14160 牛頓 (N)。'
         }
       ],
-      "illustrations": ['physics-context.webp', 'physics-mechanism.webp', 'physics-comparison.webp', 'physics-step.webp'],
+      "illustrations": ['physics-context.webp', 'physics-mechanism.webp', 'physics-comparison.webp', 'physics-step.webp', 'physics-real-world.webp'],
       "concepts": [
         {
           "heading": "牛頓三大運動定律與建築地震慣性力 (Newton's Laws & Seismic Inertia)",
@@ -295,7 +295,7 @@ export const physicsData: SubjectData = {
           answer: '接觸瞬間動能 Ek = 4900 J，速度 v = 14 m/s。'
         }
       ],
-      "illustrations": ['physics-context.webp', 'physics-mechanism.webp', 'physics-comparison.webp', 'physics-step.webp'],
+      "illustrations": ['physics-context.webp', 'physics-mechanism.webp', 'physics-comparison.webp', 'physics-step.webp', 'physics-real-world.webp'],
       "concepts": [
         {
           "heading": "功與電力功率定義 (Work & Electric Power)",
@@ -524,7 +524,7 @@ export const physicsData: SubjectData = {
           answer: '每小時傳入熱量 Q 為 5.4 × 10⁶ 焦耳 (5.4 MJ)。'
         }
       ],
-      "illustrations": ['physics-context.webp', 'physics-mechanism.webp', 'physics-comparison.webp', 'physics-step.webp'],
+      "illustrations": ['physics-context.webp', 'physics-mechanism.webp', 'physics-comparison.webp', 'physics-step.webp', 'physics-real-world.webp'],
       "concepts": [
         {
           "heading": "熱傳遞三大機制 (Mechanisms of Heat Transfer)",
@@ -758,7 +758,7 @@ export const physicsData: SubjectData = {
           answer: '兩台同時運作之總聲壓級為 73 dB。'
         }
       ],
-      "illustrations": ['physics-context.webp', 'physics-mechanism.webp', 'physics-comparison.webp', 'physics-step.webp'],
+      "illustrations": ['physics-context.webp', 'physics-mechanism.webp', 'physics-comparison.webp', 'physics-step.webp', 'physics-real-world.webp'],
       "concepts": [
         {
           "heading": "聲波性質與空氣中聲速 (Sound Wave Speed & Frequency)",
@@ -974,7 +974,7 @@ export const physicsData: SubjectData = {
           answer: '檯面點照度 E 為 400 Lux。'
         }
       ],
-      "illustrations": ['physics-context.webp', 'physics-mechanism.webp', 'physics-comparison.webp', 'physics-step.webp'],
+      "illustrations": ['physics-context.webp', 'physics-mechanism.webp', 'physics-comparison.webp', 'physics-step.webp', 'physics-real-world.webp'],
       "concepts": [
         {
           "heading": "光的反射、折射與全反射 (Reflection, Refraction & Snell's Law)",
@@ -1189,7 +1189,7 @@ export const physicsData: SubjectData = {
           answer: '工作電流 I = 20 安培 (A)，等效電阻 R = 5.5 歐姆 (Ω)。'
         }
       ],
-      "illustrations": ['physics-context.webp', 'physics-mechanism.webp', 'physics-comparison.webp', 'physics-step.webp'],
+      "illustrations": ['physics-context.webp', 'physics-mechanism.webp', 'physics-comparison.webp', 'physics-step.webp', 'physics-real-world.webp'],
       "concepts": [
         {
           "heading": "歐姆定律與串並聯電路分析 (Ohm's Law & Series-Parallel Circuits)",

@@ -20,7 +20,7 @@ export const civicsData: SubjectData = {
           answer: '辦理社區公聽會與審議大會，透過公共對話尋求兼顧社區綠化與停車需求的方案。'
         }
       ],
-      illustrations: ['context.webp', 'mechanism.webp', 'comparison.webp', 'step-by-step.webp'],
+      "illustrations": [ 'context.webp', 'mechanism.webp', 'comparison.webp', 'step-by-step.webp', 'civics-real-world.webp' ],
       concepts: [
         {
           heading: '一、公民權利發展與參政權在都市規劃之應用',
@@ -191,7 +191,7 @@ export const civicsData: SubjectData = {
           answer: '最大建築面積為 300 m²，最大建築總樓地板面積為 1100 m²。'
         }
       ],
-      illustrations: ['context.webp', 'mechanism.webp', 'comparison.webp', 'step-by-step.webp'],
+      "illustrations": [ 'context.webp', 'mechanism.webp', 'comparison.webp', 'step-by-step.webp', 'civics-real-world.webp' ],
       concepts: [
         {
           heading: '一、國土規劃與建築法規四階法律體系',
@@ -375,7 +375,7 @@ export const civicsData: SubjectData = {
           answer: '屬於「負外部性」；課徵碳費目的在於「外部成本內部化」，誘發業者減碳與綠色創新。'
         }
       ],
-      illustrations: ['context.webp', 'mechanism.webp', 'comparison.webp', 'step-by-step.webp'],
+      "illustrations": [ 'context.webp', 'mechanism.webp', 'comparison.webp', 'step-by-step.webp', 'civics-real-world.webp' ],
       concepts: [
         {
           heading: '一、台灣綠建築評估體系 (EEWH) 與九大指標',
@@ -558,7 +558,7 @@ export const civicsData: SubjectData = {
           answer: '無障礙坡道之最小水平長度為 6 公尺。'
         }
       ],
-      illustrations: ['context.webp', 'mechanism.webp', 'comparison.webp', 'step-by-step.webp'],
+      "illustrations": [ 'context.webp', 'mechanism.webp', 'comparison.webp', 'step-by-step.webp', 'civics-real-world.webp' ],
       concepts: [
         {
           heading: '一、超高齡社會來臨與通用設計 (Universal Design) 七大原則',
@@ -748,7 +748,7 @@ export const civicsData: SubjectData = {
           answer: '設置符合標準之安全護欄、安全網，並強制施工人員配戴背負式安全帶與防墜器。'
         }
       ],
-      illustrations: ['context.webp', 'mechanism.webp', 'comparison.webp', 'step-by-step.webp'],
+      "illustrations": [ 'context.webp', 'mechanism.webp', 'comparison.webp', 'step-by-step.webp', 'civics-real-world.webp' ],
       concepts: [
         {
           heading: '一、《職業安全衛生法》與建築工地安全管理',
@@ -929,7 +929,7 @@ export const civicsData: SubjectData = {
           answer: '最高等級為「1+ 級 (近零碳建築 Near Zero Carbon Building)」。'
         }
       ],
-      illustrations: ['context.webp', 'mechanism.webp', 'comparison.webp', 'step-by-step.webp'],
+      "illustrations": [ 'context.webp', 'mechanism.webp', 'comparison.webp', 'step-by-step.webp', 'civics-real-world.webp' ],
       concepts: [
         {
           heading: '一、《氣候變遷因應法》與 2050 淨零排放建築路徑',

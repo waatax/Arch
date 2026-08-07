@@ -20,7 +20,7 @@ export const englishData: SubjectData = {
           answer: '「鋼筋混凝土 (Reinforced Concrete, RC)」'
         }
       ],
-      illustrations: ['context.webp', 'mechanism.webp', 'comparison.webp', 'step-by-step.webp'],
+      "illustrations": [ 'context.webp', 'mechanism.webp', 'comparison.webp', 'step-by-step.webp', 'english-real-world.webp' ],
       concepts: [
         {
           heading: '字首、字根與字尾構詞分析 (Etymology & Morphology in Technical English)',
@@ -230,7 +230,7 @@ export const englishData: SubjectData = {
           answer: '"The soil backfill must be compacted in layers by the contractor."'
         }
       ],
-      illustrations: ['context.webp', 'mechanism.webp', 'comparison.webp', 'step-by-step.webp'],
+      "illustrations": [ 'context.webp', 'mechanism.webp', 'comparison.webp', 'step-by-step.webp', 'english-real-world.webp' ],
       concepts: [
         {
           heading: '英文五大基本句型與施工語境應用 (Five Basic Sentence Structures)',
@@ -401,7 +401,7 @@ export const englishData: SubjectData = {
           answer: 'Connecting humans with nature inside built environments to enhance health and well-being.'
         }
       ],
-      illustrations: ['context.webp', 'mechanism.webp', 'comparison.webp', 'step-by-step.webp'],
+      "illustrations": [ 'context.webp', 'mechanism.webp', 'comparison.webp', 'step-by-step.webp', 'english-real-world.webp' ],
       concepts: [
         {
           heading: '高效雙速閱讀法 (Skimming vs. Scanning Methodology)',
@@ -574,7 +574,7 @@ export const englishData: SubjectData = {
           answer: 'hard hat (或 safety helmet)'
         }
       ],
-      illustrations: ['context.webp', 'mechanism.webp', 'comparison.webp', 'step-by-step.webp'],
+      "illustrations": [ 'context.webp', 'mechanism.webp', 'comparison.webp', 'step-by-step.webp', 'english-real-world.webp' ],
       concepts: [
         {
           heading: '施工現場指令、安全通報與進度對話 (Jobsite Communication)',
@@ -727,7 +727,7 @@ export const englishData: SubjectData = {
           answer: 'on'
         }
       ],
-      illustrations: ['context.webp', 'mechanism.webp', 'comparison.webp', 'step-by-step.webp'],
+      "illustrations": [ 'context.webp', 'mechanism.webp', 'comparison.webp', 'step-by-step.webp', 'english-real-world.webp' ],
       concepts: [
         {
           heading: '克漏字三大突破步驟 (Comprehensive Cloze Test Methodology)',
@@ -887,7 +887,7 @@ export const englishData: SubjectData = {
           answer: '"This museum utilizes a steel structure to achieve a long-span space."'
         }
       ],
-      illustrations: ['context.webp', 'mechanism.webp', 'comparison.webp', 'step-by-step.webp'],
+      "illustrations": [ 'context.webp', 'mechanism.webp', 'comparison.webp', 'step-by-step.webp', 'english-real-world.webp' ],
       concepts: [
         {
           heading: '中譯英語序轉換與動詞核心化 (Chinese-to-English Translation Principles)',

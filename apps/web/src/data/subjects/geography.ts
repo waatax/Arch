@@ -20,7 +20,7 @@ export const geographyData: SubjectData = {
           answer: '平均坡度為 50%；超過 30% 限額，依法限制開發。'
         }
       ],
-      "illustrations": ['geography-context.webp', 'geography-mechanism.webp', 'geography-comparison.webp', 'geography-step.webp'],
+      "illustrations": ['geography-context.webp', 'geography-mechanism.webp', 'geography-comparison.webp', 'geography-step.webp', 'geography-real-world.webp'],
       "concepts": [
         {
           "heading": "內營力與地質構造對建築基地的影響",
@@ -282,7 +282,7 @@ export const geographyData: SubjectData = {
           answer: '適宜安裝「水平遮陽板 (Horizontal Louver)」。'
         }
       ],
-      "illustrations": ['geography-context.webp', 'geography-mechanism.webp', 'geography-comparison.webp', 'geography-step.webp'],
+      "illustrations": ['geography-context.webp', 'geography-mechanism.webp', 'geography-comparison.webp', 'geography-step.webp', 'geography-real-world.webp'],
       "concepts": [
         {
           "heading": "全球氣候分類與氣候控制因子",
@@ -546,7 +546,7 @@ export const geographyData: SubjectData = {
           answer: '稱為「中央商業區 (CBD)」，其地租最高、商業活動最密集、建築密度最高。'
         }
       ],
-      "illustrations": ['geography-context.webp', 'geography-mechanism.webp', 'geography-comparison.webp', 'geography-step.webp'],
+      "illustrations": ['geography-context.webp', 'geography-mechanism.webp', 'geography-comparison.webp', 'geography-step.webp', 'geography-real-world.webp'],
       "concepts": [
         {
           "heading": "人口轉型理論與高齡化社會之空間衝擊",
@@ -804,7 +804,7 @@ export const geographyData: SubjectData = {
           answer: '原料指數為 1.5；應選擇「原料區位指向」（靠近原料產地設廠）。'
         }
       ],
-      "illustrations": ['geography-context.webp', 'geography-mechanism.webp', 'geography-comparison.webp', 'geography-step.webp'],
+      "illustrations": ['geography-context.webp', 'geography-mechanism.webp', 'geography-comparison.webp', 'geography-step.webp', 'geography-real-world.webp'],
       "concepts": [
         {
           "heading": "韋伯工業區位理論與運費最小化",
@@ -1054,7 +1054,7 @@ export const geographyData: SubjectData = {
           answer: '(D) 綠地與公園水體大量蒸發帶走熱量（此為減緩熱島之對策，非成因）。'
         }
       ],
-      "illustrations": ['geography-context.webp', 'geography-mechanism.webp', 'geography-comparison.webp', 'geography-step.webp'],
+      "illustrations": ['geography-context.webp', 'geography-mechanism.webp', 'geography-comparison.webp', 'geography-step.webp', 'geography-real-world.webp'],
       "concepts": [
         {
           "heading": "全球氣候變遷與海平面上升防護",
@@ -1304,7 +1304,7 @@ export const geographyData: SubjectData = {
           answer: '應採用「環域分析 (Buffer)」建立斷層避讓區，再以「疊置分析 (Overlay Analysis)」篩選符合條件之基地。'
         }
       ],
-      "illustrations": ['geography-context.webp', 'geography-mechanism.webp', 'geography-comparison.webp', 'geography-step.webp'],
+      "illustrations": ['geography-context.webp', 'geography-mechanism.webp', 'geography-comparison.webp', 'geography-step.webp', 'geography-real-world.webp'],
       "concepts": [
         {
           "heading": "GIS 資料結構與 BIM-GIS 系統整合",

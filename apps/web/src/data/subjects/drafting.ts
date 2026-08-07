@@ -20,7 +20,7 @@ export const draftingData: SubjectData = {
           answer: '線寬比例約為 4:2:1，中實線約為 0.25 mm，細線約為 0.13~0.18 mm。'
         }
       ],
-      illustrations: ['context.webp', 'mechanism.webp', 'comparison.webp', 'step-by-step.webp'],
+      "illustrations": [ 'context.webp', 'mechanism.webp', 'comparison.webp', 'step-by-step.webp', 'drafting-real-world.webp' ],
       concepts: [
         {
           heading: 'CNS 建築與工程圖線條分類與粗細規範 (CNS 11567 / CNS 3)',
@@ -147,7 +147,7 @@ export const draftingData: SubjectData = {
           answer: '實際長度為 6.8 公尺。'
         }
       ],
-      illustrations: ['context.webp', 'mechanism.webp', 'comparison.webp', 'step-by-step.webp'],
+      "illustrations": [ 'context.webp', 'mechanism.webp', 'comparison.webp', 'step-by-step.webp', 'drafting-real-world.webp' ],
       concepts: [
         {
           heading: '比例的定義與 CNS 分類標準',
@@ -260,7 +260,7 @@ export const draftingData: SubjectData = {
           answer: '俯視圖（上視圖）位於前視圖的正上方。'
         }
       ],
-      illustrations: ['context.webp', 'mechanism.webp', 'comparison.webp', 'step-by-step.webp'],
+      "illustrations": [ 'context.webp', 'mechanism.webp', 'comparison.webp', 'step-by-step.webp', 'drafting-real-world.webp' ],
       concepts: [
         {
           heading: '正投影基本幾何原理與投影面',
@@ -369,7 +369,7 @@ export const draftingData: SubjectData = {
           answer: '被剖切到的柱梁結構截面需以粗實線框邊，並塗黑或繪製 45° 細斜剖面線表示。'
         }
       ],
-      illustrations: ['context.webp', 'mechanism.webp', 'comparison.webp', 'step-by-step.webp'],
+      "illustrations": [ 'context.webp', 'mechanism.webp', 'comparison.webp', 'step-by-step.webp', 'drafting-real-world.webp' ],
       concepts: [
         {
           heading: '剖面圖目的與割面線 (Cutting Plane Line) 符號',
@@ -482,7 +482,7 @@ export const draftingData: SubjectData = {
           answer: '圖面上雙線牆體間距應為 4 mm。'
         }
       ],
-      illustrations: ['context.webp', 'mechanism.webp', 'comparison.webp', 'step-by-step.webp'],
+      "illustrations": [ 'context.webp', 'mechanism.webp', 'comparison.webp', 'step-by-step.webp', 'drafting-real-world.webp' ],
       concepts: [
         {
           heading: '建築平面圖定義與水平切面高',
@@ -597,7 +597,7 @@ export const draftingData: SubjectData = {
           answer: '應採用特粗實線（線寬 0.7~1.0 mm）繪製地平線 GL。'
         }
       ],
-      illustrations: ['context.webp', 'mechanism.webp', 'comparison.webp', 'step-by-step.webp'],
+      "illustrations": [ 'context.webp', 'mechanism.webp', 'comparison.webp', 'step-by-step.webp', 'drafting-real-world.webp' ],
       concepts: [
         {
           heading: '建築立面圖功能與命名原則',
@@ -718,7 +718,7 @@ export const draftingData: SubjectData = {
           answer: '預設單位為「公釐 (mm)」，數字旁不需加註 mm 符號。'
         }
       ],
-      illustrations: ['context.webp', 'mechanism.webp', 'comparison.webp', 'step-by-step.webp'],
+      "illustrations": [ 'context.webp', 'mechanism.webp', 'comparison.webp', 'step-by-step.webp', 'drafting-real-world.webp' ],
       concepts: [
         {
           heading: 'CNS 11567 尺寸標註四大要素',
@@ -836,7 +836,7 @@ export const draftingData: SubjectData = {
           answer: '應使用「OFFSET (偏移)」指令，偏移距離設定為 12.5。'
         }
       ],
-      illustrations: ['context.webp', 'mechanism.webp', 'comparison.webp', 'step-by-step.webp'],
+      "illustrations": [ 'context.webp', 'mechanism.webp', 'comparison.webp', 'step-by-step.webp', 'drafting-real-world.webp' ],
       concepts: [
         {
           heading: 'AutoCAD 座標系統與三種點輸入方式',

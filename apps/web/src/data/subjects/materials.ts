@@ -20,7 +20,7 @@ export const materialsData: SubjectData = {
           answer: '表觀密度為 2.0 g/cm³，孔隙率為 20%。'
         }
       ],
-      illustrations: ['context.webp', 'mechanism.webp', 'comparison.webp', 'step-by-step.webp'],
+      "illustrations": [ 'context.webp', 'mechanism.webp', 'comparison.webp', 'step-by-step.webp', 'materials-real-world.webp' ],
       concepts: [
         {
           heading: '材料與試驗總論與品質管理體系',
@@ -138,7 +138,7 @@ export const materialsData: SubjectData = {
           answer: '水化最快且水化熱最高者為「C3A (鋁酸三鈣)」；決定長期強度者為「C2S (矽酸二鈣)」。'
         }
       ],
-      illustrations: ['context.webp', 'mechanism.webp', 'comparison.webp', 'step-by-step.webp'],
+      "illustrations": [ 'context.webp', 'mechanism.webp', 'comparison.webp', 'step-by-step.webp', 'materials-real-world.webp' ],
       concepts: [
         {
           heading: '卜特蘭水泥水化化學成分 (Mineral Compositions)',
@@ -215,7 +215,7 @@ export const materialsData: SubjectData = {
           answer: '應優先選用「第 IV 型（低熱）卜特蘭水泥」。'
         }
       ],
-      illustrations: ['context.webp', 'mechanism.webp', 'comparison.webp', 'step-by-step.webp'],
+      "illustrations": [ 'context.webp', 'mechanism.webp', 'comparison.webp', 'step-by-step.webp', 'materials-real-world.webp' ],
       concepts: [
         {
           heading: 'CNS 61 卜特蘭水泥五大類型規格比較',
@@ -292,7 +292,7 @@ export const materialsData: SubjectData = {
           answer: '初凝時間不得小於 45 分鐘；終凝時間不得大於 375 分鐘。'
         }
       ],
-      illustrations: ['context.webp', 'mechanism.webp', 'comparison.webp', 'step-by-step.webp'],
+      "illustrations": [ 'context.webp', 'mechanism.webp', 'comparison.webp', 'step-by-step.webp', 'materials-real-world.webp' ],
       concepts: [
         {
           heading: '維卡儀 (Vicat Apparatus) 凝結時間試驗步驟 (CNS 786)',
@@ -364,7 +364,7 @@ export const materialsData: SubjectData = {
           answer: '抗壓強度為 30 MPa (N/mm²)。'
         }
       ],
-      illustrations: ['context.webp', 'mechanism.webp', 'comparison.webp', 'step-by-step.webp'],
+      "illustrations": [ 'context.webp', 'mechanism.webp', 'comparison.webp', 'step-by-step.webp', 'materials-real-world.webp' ],
       concepts: [
         {
           heading: '水泥砂漿抗壓強度試驗步驟 (CNS 1010)',
@@ -441,7 +441,7 @@ export const materialsData: SubjectData = {
           answer: '特徵為快速硬化但不發熱；處置方式為「不加水重新強制拌合」即可恢復可塑性。'
         }
       ],
-      illustrations: ['context.webp', 'mechanism.webp', 'comparison.webp', 'step-by-step.webp'],
+      "illustrations": [ 'context.webp', 'mechanism.webp', 'comparison.webp', 'step-by-step.webp', 'materials-real-world.webp' ],
       concepts: [
         {
           heading: '水泥包裝與工地儲存防潮',
@@ -528,7 +528,7 @@ export const materialsData: SubjectData = {
           answer: '水泥用量 C 為 350 公斤 (kg)。'
         }
       ],
-      illustrations: ['context.webp', 'mechanism.webp', 'comparison.webp', 'step-by-step.webp'],
+      "illustrations": [ 'context.webp', 'mechanism.webp', 'comparison.webp', 'step-by-step.webp', 'materials-real-world.webp' ],
       concepts: [
         {
           heading: '混凝土組成與水化反應 (Hydration)',
@@ -643,7 +643,7 @@ export const materialsData: SubjectData = {
           answer: '花崗石耐酸鹼與耐候性極佳，適合外牆；大理石含碳酸鈣易受酸雨侵蝕，適用於室內。'
         }
       ],
-      illustrations: ['context.webp', 'mechanism.webp', 'comparison.webp', 'step-by-step.webp'],
+      "illustrations": [ 'context.webp', 'mechanism.webp', 'comparison.webp', 'step-by-step.webp', 'materials-real-world.webp' ],
       concepts: [
         {
           heading: '建築石材地質三大分類與物理特性',
@@ -749,7 +749,7 @@ export const materialsData: SubjectData = {
           answer: '尺寸體積開始產生「乾縮變形」；物理強度（抗壓/抗彎）則顯著增加。'
         }
       ],
-      illustrations: ['context.webp', 'mechanism.webp', 'comparison.webp', 'step-by-step.webp'],
+      "illustrations": [ 'context.webp', 'mechanism.webp', 'comparison.webp', 'step-by-step.webp', 'materials-real-world.webp' ],
       concepts: [
         {
           heading: '木材微觀構造與年輪組織',
@@ -841,7 +841,7 @@ export const materialsData: SubjectData = {
           answer: '針入度 60 代表貫入深度 6.0 mm；炎熱地區應選用針入度較小（較硬）之瀝青。'
         }
       ],
-      illustrations: ['context.webp', 'mechanism.webp', 'comparison.webp', 'step-by-step.webp'],
+      "illustrations": [ 'context.webp', 'mechanism.webp', 'comparison.webp', 'step-by-step.webp', 'materials-real-world.webp' ],
       concepts: [
         {
           heading: '石油瀝青 (Asphalt) 分類與膠體學性質',
@@ -956,7 +956,7 @@ export const materialsData: SubjectData = {
           answer: '降伏強度 fy 為 280 MPa (N/mm²)。'
         }
       ],
-      illustrations: ['context.webp', 'mechanism.webp', 'comparison.webp', 'step-by-step.webp'],
+      "illustrations": [ 'context.webp', 'mechanism.webp', 'comparison.webp', 'step-by-step.webp', 'materials-real-world.webp' ],
       concepts: [
         {
           heading: '鋼材化學成分與碳含量效應',
@@ -1048,7 +1048,7 @@ export const materialsData: SubjectData = {
           answer: '第四類為「再生綠建材 (Recycled Green Building Material)」。'
         }
       ],
-      illustrations: ['context.webp', 'mechanism.webp', 'comparison.webp', 'step-by-step.webp'],
+      "illustrations": [ 'context.webp', 'mechanism.webp', 'comparison.webp', 'step-by-step.webp', 'materials-real-world.webp' ],
       concepts: [
         {
           heading: '綠建材標章四大分類體系 (Green Building Material)',

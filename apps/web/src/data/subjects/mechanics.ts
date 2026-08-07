@@ -24,7 +24,7 @@ export const mechanicsData: SubjectData = {
           answer: '水平分力為 173.2 kN，垂直分力為 100 kN'
         }
       ],
-      illustrations: ['units-vectors-context.webp', 'units-vectors-mechanism.webp', 'units-vectors-comparison.webp', 'units-vectors-step.webp'],
+      "illustrations": [ 'units-vectors-context.webp', 'units-vectors-mechanism.webp', 'units-vectors-comparison.webp', 'units-vectors-step.webp', 'mechanics-real-world.webp' ],
       concepts: [
         {
           heading: 'SI 單位制與工程單位換算 (SI Units & Engineering System)',
@@ -142,7 +142,7 @@ export const mechanicsData: SubjectData = {
           answer: 'Ta = 150 N, Tb = 259.8 N'
         }
       ],
-      illustrations: ['force-equilibrium-context.webp', 'force-equilibrium-mechanism.webp', 'force-equilibrium-comparison.webp', 'force-equilibrium-step.webp'],
+      "illustrations": [ 'force-equilibrium-context.webp', 'force-equilibrium-mechanism.webp', 'force-equilibrium-comparison.webp', 'force-equilibrium-step.webp', 'mechanics-real-world.webp' ],
       concepts: [
         {
           heading: '自由體圖 (Free Body Diagram, FBD) 畫法標準流程',
@@ -252,7 +252,7 @@ export const mechanicsData: SubjectData = {
           answer: 'Y = 67.78 mm'
         }
       ],
-      illustrations: ['centroid-context.webp', 'centroid-mechanism.webp', 'centroid-comparison.webp', 'centroid-step.webp'],
+      "illustrations": [ 'centroid-context.webp', 'centroid-mechanism.webp', 'centroid-comparison.webp', 'centroid-step.webp', 'mechanics-real-world.webp' ],
       concepts: [
         {
           heading: '形心 (Centroid) 與面積一次矩理論',
@@ -358,7 +358,7 @@ export const mechanicsData: SubjectData = {
           answer: '不會滑動 (抗滑安全係數 = 1.25)'
         }
       ],
-      illustrations: ['friction-context.webp', 'friction-mechanism.webp', 'friction-comparison.webp', 'friction-step.webp'],
+      "illustrations": [ 'friction-context.webp', 'friction-mechanism.webp', 'friction-comparison.webp', 'friction-step.webp', 'mechanics-real-world.webp' ],
       concepts: [
         {
           heading: '庫侖乾摩擦定律 (Coulomb\'s Law of Dry Friction)',
@@ -462,7 +462,7 @@ export const mechanicsData: SubjectData = {
           answer: 'CD 桿為零桿 (F_CD = 0)'
         }
       ],
-      illustrations: ['truss-context.webp', 'truss-mechanism.webp', 'truss-comparison.webp', 'truss-step.webp'],
+      "illustrations": [ 'truss-context.webp', 'truss-mechanism.webp', 'truss-comparison.webp', 'truss-step.webp', 'mechanics-real-world.webp' ],
       concepts: [
         {
           heading: '桁架基本假設與平面靜定判別式',
@@ -568,7 +568,7 @@ export const mechanicsData: SubjectData = {
           answer: '最大彎矩為 100 kN·m'
         }
       ],
-      illustrations: ['beam-context.webp', 'beam-mechanism.webp', 'beam-comparison.webp', 'beam-step.webp'],
+      "illustrations": [ 'beam-context.webp', 'beam-mechanism.webp', 'beam-comparison.webp', 'beam-step.webp', 'mechanics-real-world.webp' ],
       concepts: [
         {
           heading: '靜定樑種類與支承約束條件',
@@ -673,7 +673,7 @@ export const mechanicsData: SubjectData = {
           answer: '正應力 ≒ 248.7 MPa'
         }
       ],
-      illustrations: ['stress-strain-context.webp', 'stress-strain-mechanism.webp', 'stress-strain-comparison.webp', 'stress-strain-step.webp'],
+      "illustrations": [ 'stress-strain-context.webp', 'stress-strain-mechanism.webp', 'stress-strain-comparison.webp', 'stress-strain-step.webp', 'mechanics-real-world.webp' ],
       concepts: [
         {
           heading: '應力 (Stress) 與應變 (Strain) 的物理定義',

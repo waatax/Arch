@@ -24,7 +24,7 @@ export const chineseData: SubjectData = {
           answer: '呈現出建築群依據地形錯落分布，且屋頂與結構精密交錯、立體感強烈的空間特徵。'
         }
       ],
-      illustrations: ['context.webp', 'mechanism.webp', 'comparison.webp', 'step-by-step.webp'],
+      "illustrations": [ 'context.webp', 'mechanism.webp', 'comparison.webp', 'step-by-step.webp', 'chinese-real-world.webp' ],
       concepts: [
         {
           heading: '古典文學體裁演變與韻文格律對比',
@@ -180,7 +180,7 @@ export const chineseData: SubjectData = {
           answer: '不適當。因為發文對象為上級機關，應將「請 查照」修改為「請 核示」或「請 鑒核」。'
         }
       ],
-      illustrations: ['context.webp', 'mechanism.webp', 'comparison.webp', 'step-by-step.webp'],
+      "illustrations": [ 'context.webp', 'mechanism.webp', 'comparison.webp', 'step-by-step.webp', 'chinese-real-world.webp' ],
       concepts: [
         {
           heading: '現代文學體裁與空間詩學',
@@ -318,7 +318,7 @@ export const chineseData: SubjectData = {
           answer: '主要運用了「通感（感官移覺）」修辭。'
         }
       ],
-      illustrations: ['context.webp', 'mechanism.webp', 'comparison.webp', 'step-by-step.webp'],
+      "illustrations": [ 'context.webp', 'mechanism.webp', 'comparison.webp', 'step-by-step.webp', 'chinese-real-world.webp' ],
       concepts: [
         {
           heading: '常見修辭法深度解析與建築語境對比',
@@ -448,7 +448,7 @@ export const chineseData: SubjectData = {
           answer: '核心觀點是「當代綠建築更關注建築與環境的共生」，作者透過轉折詞將論述重心放在後半句。'
         }
       ],
-      illustrations: ['context.webp', 'mechanism.webp', 'comparison.webp', 'step-by-step.webp'],
+      "illustrations": [ 'context.webp', 'mechanism.webp', 'comparison.webp', 'step-by-step.webp', 'chinese-real-world.webp' ],
       concepts: [
         {
           heading: '長篇閱讀與學術論述脈絡分析法',
@@ -587,7 +587,7 @@ export const chineseData: SubjectData = {
           answer: '發揮了「轉折與深化反思」的作用，透過對比過去的美好與現實的殘酷，將文章從單純的懷舊抒情，提升到對社會現代化與文化保留衝突的深刻反思。'
         }
       ],
-      illustrations: ['context.webp', 'mechanism.webp', 'comparison.webp', 'step-by-step.webp'],
+      "illustrations": [ 'context.webp', 'mechanism.webp', 'comparison.webp', 'step-by-step.webp', 'chinese-real-world.webp' ],
       concepts: [
         {
           heading: '起承轉合與現代論說文篇章邏輯架構',
@@ -720,7 +720,7 @@ export const chineseData: SubjectData = {
           answer: '體現了「天人合一」與「師法自然」的核心精神，強調人工造園必須順應自然，不露斧鑿之痕。'
         }
       ],
-      illustrations: ['context.webp', 'mechanism.webp', 'comparison.webp', 'step-by-step.webp'],
+      "illustrations": [ 'context.webp', 'mechanism.webp', 'comparison.webp', 'step-by-step.webp', 'chinese-real-world.webp' ],
       concepts: [
         {
           heading: '古代年齡代稱、稱謂與天干地支紀時',

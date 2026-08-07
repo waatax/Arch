@@ -20,7 +20,7 @@ export const historyData: SubjectData = {
           answer: '稱為「銃眼 (槍孔)」，主要功能為防禦敵襲與內向外射擊。'
         }
       ],
-      illustrations: ['context.webp', 'mechanism.webp', 'comparison.webp', 'step-by-step.webp'],
+      "illustrations": [ 'context.webp', 'mechanism.webp', 'comparison.webp', 'step-by-step.webp', 'history-real-world.webp' ],
       concepts: [
         {
           heading: '一、荷西與明鄭時期的築城技術與空間佈局 (1624–1683)',
@@ -208,7 +208,7 @@ export const historyData: SubjectData = {
           answer: '建立以「材」為模數的標準化制度，使建築構件具備預製化、比例嚴謹與等級規範。'
         }
       ],
-      illustrations: ['context.webp', 'mechanism.webp', 'comparison.webp', 'step-by-step.webp'],
+      "illustrations": [ 'context.webp', 'mechanism.webp', 'comparison.webp', 'step-by-step.webp', 'history-real-world.webp' ],
       concepts: [
         {
           heading: '一、先秦至漢唐建築發展與高台木構演變',
@@ -399,7 +399,7 @@ export const historyData: SubjectData = {
           answer: '「尖拱 (Pointed Arch)」與「飛扶壁 (Flying Buttress)」。'
         }
       ],
-      illustrations: ['context.webp', 'mechanism.webp', 'comparison.webp', 'step-by-step.webp'],
+      "illustrations": [ 'context.webp', 'mechanism.webp', 'comparison.webp', 'step-by-step.webp', 'history-real-world.webp' ],
       concepts: [
         {
           heading: '一、古希臘與古羅馬建築：古典柱式禮制與拱券結構突破',
@@ -591,7 +591,7 @@ export const historyData: SubjectData = {
           answer: '「橫向帶狀長窗 (Horizontal Ribbon Window)」。'
         }
       ],
-      illustrations: ['context.webp', 'mechanism.webp', 'comparison.webp', 'step-by-step.webp'],
+      "illustrations": [ 'context.webp', 'mechanism.webp', 'comparison.webp', 'step-by-step.webp', 'history-real-world.webp' ],
       concepts: [
         {
           heading: '一、歷史主義與十九世紀復古思潮 (Historicism & Revivals)',
@@ -775,7 +775,7 @@ export const historyData: SubjectData = {
           answer: '遵循「真實性、可識別性（新舊可辨）與可逆性（未來可拆卸且不傷原物）」原則。'
         }
       ],
-      illustrations: ['context.webp', 'mechanism.webp', 'comparison.webp', 'step-by-step.webp'],
+      "illustrations": [ 'context.webp', 'mechanism.webp', 'comparison.webp', 'step-by-step.webp', 'history-real-world.webp' ],
       concepts: [
         {
           heading: '一、文化資產保存法規體系與法定等級劃定',
@@ -963,7 +963,7 @@ export const historyData: SubjectData = {
           answer: '採用「預製鐵骨構件與玻璃」於現場快速裝配，開啟建築預製化與工業化生產之先河。'
         }
       ],
-      illustrations: ['context.webp', 'mechanism.webp', 'comparison.webp', 'step-by-step.webp'],
+      "illustrations": [ 'context.webp', 'mechanism.webp', 'comparison.webp', 'step-by-step.webp', 'history-real-world.webp' ],
       concepts: [
         {
           heading: '一、工業革命、都市化潮與十九世紀奧斯曼巴黎大改造',

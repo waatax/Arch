@@ -20,7 +20,7 @@ export const chemistryData: SubjectData = {
           answer: '最大散發 TVOC 重量為 1000 公克 (1.0 kg)。'
         }
       ],
-      "illustrations": ['chemistry-context.webp', 'chemistry-mechanism.webp', 'chemistry-comparison.webp', 'chemistry-step.webp'],
+      "illustrations": ['chemistry-context.webp', 'chemistry-mechanism.webp', 'chemistry-comparison.webp', 'chemistry-step.webp', 'chemistry-real-world.webp'],
       "concepts": [
         {
           "heading": "物質的分類與建築材料相態 (純物質與混合物)",
@@ -232,7 +232,7 @@ export const chemistryData: SubjectData = {
           answer: '需吸收 178,000 kJ (178 MJ) 的熱量。'
         }
       ],
-      "illustrations": ['chemistry-context.webp', 'chemistry-mechanism.webp', 'chemistry-comparison.webp', 'chemistry-step.webp'],
+      "illustrations": ['chemistry-context.webp', 'chemistry-mechanism.webp', 'chemistry-comparison.webp', 'chemistry-step.webp', 'chemistry-real-world.webp'],
       "concepts": [
         {
           "heading": "化學反應平衡與質量守恆定律",
@@ -409,7 +409,7 @@ export const chemistryData: SubjectData = {
           answer: '最多可溶解 50 公克碳酸鈣。'
         }
       ],
-      "illustrations": ['chemistry-context.webp', 'chemistry-mechanism.webp', 'chemistry-comparison.webp', 'chemistry-step.webp'],
+      "illustrations": ['chemistry-context.webp', 'chemistry-mechanism.webp', 'chemistry-comparison.webp', 'chemistry-step.webp', 'chemistry-real-world.webp'],
       "concepts": [
         {
           "heading": "酸鹼定義 (阿瑞尼斯與布忍斯特-勞里學說)",
@@ -595,7 +595,7 @@ export const chemistryData: SubjectData = {
           answer: '將被保護之鋼筋強制設為「陰極」，透過外加直流電子流抑制鐵之氧化溶解反應。'
         }
       ],
-      "illustrations": ['chemistry-context.webp', 'chemistry-mechanism.webp', 'chemistry-comparison.webp', 'chemistry-step.webp'],
+      "illustrations": ['chemistry-context.webp', 'chemistry-mechanism.webp', 'chemistry-comparison.webp', 'chemistry-step.webp', 'chemistry-real-world.webp'],
       "concepts": [
         {
           "heading": "氧化還原 Reactions 與氧化數 (Oxidation Number)",
@@ -797,7 +797,7 @@ export const chemistryData: SubjectData = {
           answer: '屬於交聯加成聚合反應；固化後屬於「熱固性高分子」，無法再次加熱熔融。'
         }
       ],
-      "illustrations": ['chemistry-context.webp', 'chemistry-mechanism.webp', 'chemistry-comparison.webp', 'chemistry-step.webp'],
+      "illustrations": ['chemistry-context.webp', 'chemistry-mechanism.webp', 'chemistry-comparison.webp', 'chemistry-step.webp', 'chemistry-real-world.webp'],
       "concepts": [
         {
           "heading": "有機烴類分類、命名與同分異構物",
@@ -999,7 +999,7 @@ export const chemistryData: SubjectData = {
           answer: '完全氧化產物為「二氧化碳 (CO2)」與「水 (H2O)」。'
         }
       ],
-      "illustrations": ['chemistry-context.webp', 'chemistry-mechanism.webp', 'chemistry-comparison.webp', 'chemistry-step.webp'],
+      "illustrations": ['chemistry-context.webp', 'chemistry-mechanism.webp', 'chemistry-comparison.webp', 'chemistry-step.webp', 'chemistry-real-world.webp'],
       "concepts": [
         {
           "heading": "溫室效應 (Greenhouse Effect) 與大氣化學",
