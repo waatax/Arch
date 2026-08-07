@@ -14,10 +14,10 @@ export const geographyData: SubjectData = {
       "covered_question_ids": [],
       "worked_examples": [
         {
-          "question": '【步驟化例題】都市熱島效應：在建築規劃時，為減緩「都市熱島效應 (Urban Heat Island Effect)」，下列何種設計策略最無效？',
-          "difficulty": '基礎',
-          "steps": ["步驟 1：理解熱島效應成因。市區不透水鋪面多、綠地少、人為廢熱排放高。","步驟 2：分析減緩策略。有效策略包含：增加綠化率 (屋頂/垂直綠化)、使用高反射率/透水鋪面材料、增加建築間距引入通風。","步驟 3：找出無效策略。增加大面積玻璃帷幕（會造成溫室效應及光害反射）、降低建築棟距（阻擋通風散熱）。"],
-          "answer": '增加大面積玻璃帷幕與降低建築棟距'
+          question: '【步驟化例題】等高線圖坡度計算與山坡地開發：在一張 1:5000 地形圖上，兩點間之圖上距離為 2 公分，等高線高程差為 50 公尺。求兩點間之「平均坡度 (Slope)」為百分之多少？是否符合山坡地開發限制？（山坡地坡度 > 30% 限制開發）',
+          difficulty: '中等',
+          steps: [ "步驟 1：計算實際水平距離。圖上 2 cm × 5000 = 10000 cm = 100 公尺。", "步驟 2：計算坡度百分比。坡度 = 高程差 / 水平距離 = 50 m / 100 m = 0.5 = 50%。", "步驟 3：判定開發限制。坡度 50% > 30%，依規定不得作為建築基地開發。" ], 
+          answer: '平均坡度為 50%；超過 30% 限額，依法限制開發。'
         }
       ],
       "illustrations": ['geography-context.webp', 'geography-mechanism.webp', 'geography-comparison.webp', 'geography-step.webp'],
@@ -276,10 +276,10 @@ export const geographyData: SubjectData = {
       "covered_question_ids": [],
       "worked_examples": [
         {
-          "question": '【步驟化例題】都市熱島效應：在建築規劃時，為減緩「都市熱島效應 (Urban Heat Island Effect)」，下列何種設計策略最無效？',
-          "difficulty": '基礎',
-          "steps": ["步驟 1：理解熱島效應成因。市區不透水鋪面多、綠地少、人為廢熱排放高。","步驟 2：分析減緩策略。有效策略包含：增加綠化率 (屋頂/垂直綠化)、使用高反射率/透水鋪面材料、增加建築間距引入通風。","步驟 3：找出無效策略。增加大面積玻璃帷幕（會造成溫室效應及光害反射）、降低建築棟距（阻擋通風散熱）。"],
-          "answer": '增加大面積玻璃帷幕與降低建築棟距'
+          question: '【步驟化例題】太陽軌跡與遮陽板設計：臺灣位於北半球亞熱帶（北緯 23.5° 附近），夏季正午太陽仰角極高，冬季正午太陽偏南。對於南向窗戶，最適宜安裝何種形式的遮陽設施？',
+          difficulty: '基礎',
+          steps: [ "步驟 1：分析太陽方位與仰角。南向窗戶在夏季受高仰角陽光直射，冬季受低仰角陽光照射。", "步驟 2：匹配遮陽板形式。水平遮陽板（Horizontal Shading）能有效阻擋夏季高仰角陽光，同時允許冬季低仰角陽光射入室內採暖。", "步驟 3：得出結論。安裝水平遮陽板。" ], 
+          answer: '適宜安裝「水平遮陽板 (Horizontal Louver)」。'
         }
       ],
       "illustrations": ['geography-context.webp', 'geography-mechanism.webp', 'geography-comparison.webp', 'geography-step.webp'],
@@ -540,10 +540,10 @@ export const geographyData: SubjectData = {
       "covered_question_ids": [],
       "worked_examples": [
         {
-          "question": '【步驟化例題】都市熱島效應：在建築規劃時，為減緩「都市熱島效應 (Urban Heat Island Effect)」，下列何種設計策略最無效？',
-          "difficulty": '基礎',
-          "steps": ["步驟 1：理解熱島效應成因。市區不透水鋪面多、綠地少、人為廢熱排放高。","步驟 2：分析減緩策略。有效策略包含：增加綠化率 (屋頂/垂直綠化)、使用高反射率/透水鋪面材料、增加建築間距引入通風。","步驟 3：找出無效策略。增加大面積玻璃帷幕（會造成溫室效應及光害反射）、降低建築棟距（阻擋通風散熱）。"],
-          "answer": '增加大面積玻璃帷幕與降低建築棟距'
+          question: '【步驟化例題】都市地租與同心元模型：依據伯吉斯 (Burgess) 的「同心圓模型 (Concentric Zone Model)」，都市空間結構的最核心區域稱為何者？其土地利用特徵為何？',
+          difficulty: '基礎',
+          steps: [ "步驟 1：回顧同心圓模型結構。由內向外分為：1. 中央商業區 (CBD), 2. 邊緣過渡帶, 3. 勞工住宅區, 4. 高級住宅區, 5. 通勤者帶。", "步驟 2：分析第一環特徵。第 1 環為「中央商業區 (CBD)」，地租最高、交通最便利、摩天大樓與商業金融機構密集。", "步驟 3：得出結論。中央商業區 CBD。" ], 
+          answer: '稱為「中央商業區 (CBD)」，其地租最高、商業活動最密集、建築密度最高。'
         }
       ],
       "illustrations": ['geography-context.webp', 'geography-mechanism.webp', 'geography-comparison.webp', 'geography-step.webp'],
@@ -798,10 +798,10 @@ export const geographyData: SubjectData = {
       "covered_question_ids": [],
       "worked_examples": [
         {
-          "question": '【步驟化例題】都市熱島效應：在建築規劃時，為減緩「都市熱島效應 (Urban Heat Island Effect)」，下列何種設計策略最無效？',
-          "difficulty": '基礎',
-          "steps": ["步驟 1：理解熱島效應成因。市區不透水鋪面多、綠地少、人為廢熱排放高。","步驟 2：分析減緩策略。有效策略包含：增加綠化率 (屋頂/垂直綠化)、使用高反射率/透水鋪面材料、增加建築間距引入通風。","步驟 3：找出無效策略。增加大面積玻璃帷幕（會造成溫室效應及光害反射）、降低建築棟距（阻擋通風散熱）。"],
-          "answer": '增加大面積玻璃帷幕與降低建築棟距'
+          question: '【步驟化例題】韋伯工業區位論與原料指數：某建材廠生產磚塊，所需原料黏土重量為 150 公噸，成品磚塊重量為 100 公噸。求其「原料指數 (Weight Triangle / Material Index)」為何？該工廠應選擇何種區位？',
+          difficulty: '中等',
+          steps: [ "步驟 1：定義原料指數公式。原料指數 (MI) = 局限原料重量 / 成品重量。", "步驟 2：代入數值計算。MI = 150 / 100 = 1.5。", "步驟 3：判定區位指向。MI = 1.5 > 1（屬於失重原料），運輸成本考量下應選擇「原料區位指向」（設廠於黏土採掘地）。" ], 
+          answer: '原料指數為 1.5；應選擇「原料區位指向」（靠近原料產地設廠）。'
         }
       ],
       "illustrations": ['geography-context.webp', 'geography-mechanism.webp', 'geography-comparison.webp', 'geography-step.webp'],
@@ -1048,10 +1048,10 @@ export const geographyData: SubjectData = {
       "covered_question_ids": [],
       "worked_examples": [
         {
-          "question": '【步驟化例題】都市熱島效應：在建築規劃時，為減緩「都市熱島效應 (Urban Heat Island Effect)」，下列何種設計策略最無效？',
-          "difficulty": '基礎',
-          "steps": ["步驟 1：理解熱島效應成因。市區不透水鋪面多、綠地少、人為廢熱排放高。","步驟 2：分析減緩策略。有效策略包含：增加綠化率 (屋頂/垂直綠化)、使用高反射率/透水鋪面材料、增加建築間距引入通風。","步驟 3：找出無效策略。增加大面積玻璃帷幕（會造成溫室效應及光害反射）、降低建築棟距（阻擋通風散熱）。"],
-          "answer": '增加大面積玻璃帷幕與降低建築棟距'
+          question: '【步驟化例題】都市熱島效應成因與減緩對策：下列何者非造成現代都市「熱島效應 (Urban Heat Island)」的主要原因？\n(A) 人工不透水鋪面比熱小吸收大量輻射\n(B) 冷氣與汽機車排放大量人為廢熱\n(C) 都市中建築物高密度密集阻擋通風\n(D) 綠地與公園水體大量蒸發帶走熱量',
+          difficulty: '基礎',
+          steps: [ "步驟 1：分析熱島效應成因。(A)、(B)、(C) 均會導致都市氣溫顯著高於周圍郊區。", "步驟 2：檢視選項 (D)。綠地與水體具有高比熱及蒸發散熱作用，是「減緩」熱島效應的對策，而非成因。", "步驟 3：確定答案為 (D)。" ], 
+          answer: '(D) 綠地與公園水體大量蒸發帶走熱量（此為減緩熱島之對策，非成因）。'
         }
       ],
       "illustrations": ['geography-context.webp', 'geography-mechanism.webp', 'geography-comparison.webp', 'geography-step.webp'],
@@ -1298,10 +1298,10 @@ export const geographyData: SubjectData = {
       "covered_question_ids": [],
       "worked_examples": [
         {
-          "question": '【步驟化例題】都市熱島效應：在建築規劃時，為減緩「都市熱島效應 (Urban Heat Island Effect)」，下列何種設計策略最無效？',
-          "difficulty": '基礎',
-          "steps": ["步驟 1：理解熱島效應成因。市區不透水鋪面多、綠地少、人為廢熱排放高。","步驟 2：分析減緩策略。有效策略包含：增加綠化率 (屋頂/垂直綠化)、使用高反射率/透水鋪面材料、增加建築間距引入通風。","步驟 3：找出無效策略。增加大面積玻璃帷幕（會造成溫室效應及光害反射）、降低建築棟距（阻擋通風散熱）。"],
-          "answer": '增加大面積玻璃帷幕與降低建築棟距'
+          question: '【步驟化例題】GIS 空間分析工具在建築選址之應用：若欲尋找符合「海拔小於 500m、坡度小於 15%、距離斷層帶 500m 以上」之建築基地，在 GIS 中應採用何種分析功能？',
+          difficulty: '基礎',
+          steps: [ "步驟 1：分析圖層疊加需求。包含 DEM 高程圖層、坡度圖層與斷層緩衝區 (Buffer) 圖層。", "步驟 2：匹配 GIS 分析模組。將多個條件圖層進行交集布林運算，稱為「空間疊置分析 (Overlay Analysis)」。", "步驟 3：得出解答。疊置分析與環域分析 (Buffer Analysis)。" ], 
+          answer: '應採用「環域分析 (Buffer)」建立斷層避讓區，再以「疊置分析 (Overlay Analysis)」篩選符合條件之基地。'
         }
       ],
       "illustrations": ['geography-context.webp', 'geography-mechanism.webp', 'geography-comparison.webp', 'geography-step.webp'],

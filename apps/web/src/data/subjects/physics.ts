@@ -14,10 +14,10 @@ export const physicsData: SubjectData = {
       "covered_question_ids": [],
       "worked_examples": [
         {
-          "question": '【步驟化例題】牛頓第二運動定律：一質量 1000 kg 的電梯，以 2 m/s² 的加速度向上起步，求電梯鋼纜之張力 T？ (g = 9.8 m/s²)',
-          "difficulty": '中等',
-          "steps": ["步驟 1：繪製自由體圖 (FBD)。電梯受向下重力 W = mg，向上張力 T。","步驟 2：列出牛頓第二定律方程式。∑F = m a ⇒ T - mg = m a。","步驟 3：代入數值求解。T = m(g + a) = 1000 × (9.8 + 2) = 11800 N。"],
-          "answer": '鋼纜張力為 11800 N'
+          question: '【步驟化例題】牛頓第二運動定律與施工電梯張力：一總質量 1200 kg 之施工電梯載人升降機，以 2.0 m/s² 之加速度向上加速起動。求懸掛電梯之鋼纜張力 T 為多少牛頓？ (g = 9.8 m/s²)',
+          difficulty: '中等',
+          steps: [ "步驟 1：進行力學受力分析（自由體圖）。電梯受向下重力 W = mg，向上鋼纜拉力 T。", "步驟 2：列牛頓第二運動定律 ∑F = m·a。T - mg = m·a ⇒ T = m(g + a)。", "步驟 3：代入數值求解。T = 1200 kg × (9.8 + 2.0) m/s² = 1200 × 11.8 = 14160 N。" ], 
+          answer: '鋼纜張力 T 為 14160 牛頓 (N)。'
         }
       ],
       "illustrations": ['physics-context.webp', 'physics-mechanism.webp', 'physics-comparison.webp', 'physics-step.webp'],
@@ -289,10 +289,10 @@ export const physicsData: SubjectData = {
       "covered_question_ids": [],
       "worked_examples": [
         {
-          "question": '【步驟化例題】牛頓第二運動定律：一質量 1000 kg 的電梯，以 2 m/s² 的加速度向上起步，求電梯鋼纜之張力 T？ (g = 9.8 m/s²)',
-          "difficulty": '中等',
-          "steps": ["步驟 1：繪製自由體圖 (FBD)。電梯受向下重力 W = mg，向上張力 T。","步驟 2：列出牛頓第二定律方程式。∑F = m a ⇒ T - mg = m a。","步驟 3：代入數值求解。T = m(g + a) = 1000 × (9.8 + 2) = 11800 N。"],
-          "answer": '鋼纜張力為 11800 N'
+          question: '【步驟化例題】重力位能與動能轉換：一重 50 kg 之落錘打樁機錘頭，自距離地面 10 公尺高處自由落下打擊樁頭。若不計空氣阻力，求錘頭剛接觸樁頭瞬間之「動能 Ek」與「速度 v」？ (g = 9.8 m/s²)',
+          difficulty: '基礎',
+          steps: [ "步驟 1：依據能量守恆定律。最高點重力位能 Ep = mgh 轉換為最低點動能 Ek。", "步驟 2：計算動能 Ek。Ek = mgh = 50 kg × 9.8 m/s² × 10 m = 4900 焦耳 (J)。", "步驟 3：計算速度 v。Ek = 1/2 m v² ⇒ 4900 = 1/2 (50) v² ⇒ 25 v² = 4900 ⇒ v² = 196 ⇒ v = 14 m/s。" ], 
+          answer: '接觸瞬間動能 Ek = 4900 J，速度 v = 14 m/s。'
         }
       ],
       "illustrations": ['physics-context.webp', 'physics-mechanism.webp', 'physics-comparison.webp', 'physics-step.webp'],
@@ -518,10 +518,10 @@ export const physicsData: SubjectData = {
       "covered_question_ids": [],
       "worked_examples": [
         {
-          "question": '【步驟化例題】牛頓第二運動定律：一質量 1000 kg 的電梯，以 2 m/s² 的加速度向上起步，求電梯鋼纜之張力 T？ (g = 9.8 m/s²)',
-          "difficulty": '中等',
-          "steps": ["步驟 1：繪製自由體圖 (FBD)。電梯受向下重力 W = mg，向上張力 T。","步驟 2：列出牛頓第二定律方程式。∑F = m a ⇒ T - mg = m a。","步驟 3：代入數值求解。T = m(g + a) = 1000 × (9.8 + 2) = 11800 N。"],
-          "answer": '鋼纜張力為 11800 N'
+          question: '【步驟化例題】建築牆體熱傳導率計算：一單層混凝土外牆厚度 d = 0.2 m，面積 A = 20 m²，混凝土熱傳導係數 k = 1.5 W/(m·K)。若室外氣溫 35°C，室內冷氣維持 25°C，求每小時透過該外牆傳入室內之熱量 Q（焦耳 J）？',
+          difficulty: '中等',
+          steps: [ "步驟 1：利用傅立葉熱傳導定律。傳熱功率 P = k · A · (T1 - T2) / d。", "步驟 2：代入數值求功率 P。P = 1.5 × 20 × (35 - 25) / 0.2 = 300 / 0.2 = 1500 W (J/s)。", "步驟 3：計算一小時 (3600秒) 總熱量 Q。Q = P × t = 1500 J/s × 3600 s = 5.4 × 10⁶ 焦耳 = 5.4 MJ。" ], 
+          answer: '每小時傳入熱量 Q 為 5.4 × 10⁶ 焦耳 (5.4 MJ)。'
         }
       ],
       "illustrations": ['physics-context.webp', 'physics-mechanism.webp', 'physics-comparison.webp', 'physics-step.webp'],
@@ -752,10 +752,10 @@ export const physicsData: SubjectData = {
       "covered_question_ids": [],
       "worked_examples": [
         {
-          "question": '【步驟化例題】牛頓第二運動定律：一質量 1000 kg 的電梯，以 2 m/s² 的加速度向上起步，求電梯鋼纜之張力 T？ (g = 9.8 m/s²)',
-          "difficulty": '中等',
-          "steps": ["步驟 1：繪製自由體圖 (FBD)。電梯受向下重力 W = mg，向上張力 T。","步驟 2：列出牛頓第二定律方程式。∑F = m a ⇒ T - mg = m a。","步驟 3：代入數值求解。T = m(g + a) = 1000 × (9.8 + 2) = 11800 N。"],
-          "answer": '鋼纜張力為 11800 N'
+          question: '【步驟化例題】建築聲學與分貝（dB）加總：施工現場兩台發電機同時運作，若單獨運作第一台時在量測點產生的聲壓級為 70 dB，第二台單獨運作時亦為 70 dB。求兩台同時運作時之總聲壓級為多少 dB？',
+          difficulty: '中等',
+          steps: [ "步驟 1：理解對數分貝加總規則。兩相同分貝能量相加，總分貝增加 3 dB（10 · log10(2) ≒ 3）。", "步驟 2：列分貝能量疊加公式。L_total = 10 · log10(10^(70/10) + 10^(70/10)) = 10 · log10(2 × 10^7)。", "步驟 3：計算結果。L_total = 70 + 10 · log10(2) = 70 + 3.01 ≒ 73 dB。" ], 
+          answer: '兩台同時運作之總聲壓級為 73 dB。'
         }
       ],
       "illustrations": ['physics-context.webp', 'physics-mechanism.webp', 'physics-comparison.webp', 'physics-step.webp'],
@@ -968,10 +968,10 @@ export const physicsData: SubjectData = {
       "covered_question_ids": [],
       "worked_examples": [
         {
-          "question": '【步驟化例題】牛頓第二運動定律：一質量 1000 kg 的電梯，以 2 m/s² 的加速度向上起步，求電梯鋼纜之張力 T？ (g = 9.8 m/s²)',
-          "difficulty": '中等',
-          "steps": ["步驟 1：繪製自由體圖 (FBD)。電梯受向下重力 W = mg，向上張力 T。","步驟 2：列出牛頓第二定律方程式。∑F = m a ⇒ T - mg = m a。","步驟 3：代入數值求解。T = m(g + a) = 1000 × (9.8 + 2) = 11800 N。"],
-          "answer": '鋼纜張力為 11800 N'
+          question: '【步驟化例題】建築照明照度計算：一正上方點光源發光強度為 I = 1600 燭光 (cd)，垂直照射下方距離 2 公尺處之書桌檯面。求該檯面上的「點照度 E」為多少勒克斯 (Lux)？',
+          difficulty: '基礎',
+          steps: [ "步驟 1：利用平方反比定律照度公式。E = I / r²（當垂直照射 θ = 0° 時）。", "步驟 2：代入強度 I = 1600 cd 與距離 r = 2 m。", "步驟 3：計算照度。E = 1600 / (2)² = 1600 / 4 = 400 Lux。" ], 
+          answer: '檯面點照度 E 為 400 Lux。'
         }
       ],
       "illustrations": ['physics-context.webp', 'physics-mechanism.webp', 'physics-comparison.webp', 'physics-step.webp'],
@@ -1183,10 +1183,10 @@ export const physicsData: SubjectData = {
       "covered_question_ids": [],
       "worked_examples": [
         {
-          "question": '【步驟化例題】牛頓第二運動定律：一質量 1000 kg 的電梯，以 2 m/s² 的加速度向上起步，求電梯鋼纜之張力 T？ (g = 9.8 m/s²)',
-          "difficulty": '中等',
-          "steps": ["步驟 1：繪製自由體圖 (FBD)。電梯受向下重力 W = mg，向上張力 T。","步驟 2：列出牛頓第二定律方程式。∑F = m a ⇒ T - mg = m a。","步驟 3：代入數值求解。T = m(g + a) = 1000 × (9.8 + 2) = 11800 N。"],
-          "answer": '鋼纜張力為 11800 N'
+          question: '【步驟化例題】建築配電負載與安全電流計算：某一建築工務所安裝一台額定功率 P = 2200 瓦特 (W) 之冷氣機，供電電壓 V = 110 伏特 (V)。求該冷氣運轉時之「工作電流 I」及「內部等效電阻 R」？',
+          difficulty: '基礎',
+          steps: [ "步驟 1：利用電功率公式 P = V · I。求解電流 I = P / V = 2200 W / 110 V = 20 安培 (A)。", "步驟 2：利用歐姆定律 V = I · R。求解電阻 R = V / I = 110 V / 20 A = 5.5 歐姆 (Ω)。", "步驟 3：確認結果。電流 20 A，電阻 5.5 Ω。" ], 
+          answer: '工作電流 I = 20 安培 (A)，等效電阻 R = 5.5 歐姆 (Ω)。'
         }
       ],
       "illustrations": ['physics-context.webp', 'physics-mechanism.webp', 'physics-comparison.webp', 'physics-step.webp'],

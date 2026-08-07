@@ -14,10 +14,10 @@ export const civicsData: SubjectData = {
       covered_question_ids: [],
       worked_examples: [
         {
-          question: '【V5.1 新增步驟化例題】待補全，對應考點解析',
+          question: '【步驟化例題】社區營造與公共空間權益：某老舊社區推動「社區綠花園」營造計畫，部分居民主張應劃設為私人停車格。依據公民參與原則，何者為最適當的溝通與決策程序？',
           difficulty: '基礎',
-          steps: ['步驟 1：建立模型', '步驟 2：代入公式', '步驟 3：求得解答'],
-          answer: '待補全'
+          steps: [ "步驟 1：分析爭議焦點。私人停車需求（私益） vs 社區綠化與公共活動空間（公益）。", "步驟 2：對應公民參與機制。應透過社區審議式民主、公聽會或居民大會進行對話討論。", "步驟 3：評估最適方案。尋求兼顧停車需求與公共綠化的折衷方案（如透水鋪面綠美化），而非強行私有化。" ], 
+          answer: '辦理社區公聽會與審議大會，透過公共對話尋求兼顧社區綠化與停車需求的方案。'
         }
       ],
       illustrations: ['context.webp', 'mechanism.webp', 'comparison.webp', 'step-by-step.webp'],
@@ -185,10 +185,10 @@ export const civicsData: SubjectData = {
       covered_question_ids: [],
       worked_examples: [
         {
-          question: '【V5.1 新增步驟化例題】待補全，對應考點解析',
-          difficulty: '基礎',
-          steps: ['步驟 1：建立模型', '步驟 2：代入公式', '步驟 3：求得解答'],
-          answer: '待補全'
+          question: '【步驟化例題】建築法規與基地容積計算：一塊基地位於住宅區，面積為 500 平方公尺。當地法定建蔽率為 60%，法定容積率為 220%。求該基地之「最大建築面積」與「最大建築總樓地板面積」？',
+          difficulty: '中等',
+          steps: [ "步驟 1：計算最大建築面積。建築面積 = 基地面積 × 建蔽率 = 500 m² × 60% = 300 m²。", "步驟 2：計算最大建築總樓地板面積。總樓地板面積 = 基地面積 × 容積率 = 500 m² × 220% = 1100 m²。", "步驟 3：確認結果與法規限制。建築面積不可超過 300 m²，總樓地板面積不可超過 1100 m²。" ], 
+          answer: '最大建築面積為 300 m²，最大建築總樓地板面積為 1100 m²。'
         }
       ],
       illustrations: ['context.webp', 'mechanism.webp', 'comparison.webp', 'step-by-step.webp'],
@@ -369,10 +369,10 @@ export const civicsData: SubjectData = {
       covered_question_ids: [],
       worked_examples: [
         {
-          question: '【V5.1 新增步驟化例題】待補全，對應考點解析',
-          difficulty: '基礎',
-          steps: ['步驟 1：建立模型', '步驟 2：代入公式', '步驟 3：求得解答'],
-          answer: '待補全'
+          question: '【步驟化例題】外部效應與碳費政策：鋼鐵與水泥等高碳排建材生產時會排放大量二氧化碳，造成全球氣候變遷。在經濟學上此現象屬於何種「外部性」？政府課徵碳費之主要目的為何？',
+          difficulty: '中等',
+          steps: [ "步驟 1：分析經濟學外部性分類。生產過程造成社會其他人未獲補償的損害，稱為「負外部性 (Negative Externality)」。", "步驟 2：理解政府干預手段。課徵碳費是將環境污染社會成本納入企業生產成本中（外部成本內部化）。", "步驟 3：總結政策影響。促使建材業者研發低碳水泥與再生材料，轉型永續建築。" ], 
+          answer: '屬於「負外部性」；課徵碳費目的在於「外部成本內部化」，誘發業者減碳與綠色創新。'
         }
       ],
       illustrations: ['context.webp', 'mechanism.webp', 'comparison.webp', 'step-by-step.webp'],
@@ -552,10 +552,10 @@ export const civicsData: SubjectData = {
       covered_question_ids: [],
       worked_examples: [
         {
-          question: '【V5.1 新增步驟化例題】待補全，對應考點解析',
+          question: '【步驟化例題】通用設計與無障礙坡道規範：依據《建築物無障礙設施設計規範》，無障礙通路坡道之高差為 0.5 公尺，若無設置機械昇降設備，則該坡道所需之「最小水平長度」為多少公尺？（法定最大坡度限制為 1:12）',
           difficulty: '基礎',
-          steps: ['步驟 1：建立模型', '步驟 2：代入公式', '步驟 3：求得解答'],
-          answer: '待補全'
+          steps: [ "步驟 1：確認坡度公式。坡度 = 高差 / 水平長度 ≤ 1 / 12。", "步驟 2：列出方程式。 0.5 / L ≤ 1 / 12 ⇒ L ≥ 0.5 × 12。", "步驟 3：計算結果。L ≥ 6 公尺。" ], 
+          answer: '無障礙坡道之最小水平長度為 6 公尺。'
         }
       ],
       illustrations: ['context.webp', 'mechanism.webp', 'comparison.webp', 'step-by-step.webp'],
@@ -742,10 +742,10 @@ export const civicsData: SubjectData = {
       covered_question_ids: [],
       worked_examples: [
         {
-          question: '【V5.1 新增步驟化例題】待補全，對應考點解析',
+          question: '【步驟化例題】職業安全衛生法與施工防護：在建築高空作業施工現場（高處作業高差達 2 公尺以上），雇主依法應提供何種安全防護設施以防止施工人員墜落？',
           difficulty: '基礎',
-          steps: ['步驟 1：建立模型', '步驟 2：代入公式', '步驟 3：求得解答'],
-          answer: '待補全'
+          steps: [ "步驟 1：分析高空作業危害。2公尺以上高處作業存在高度墜落風險。", "步驟 2：查考職安法規要求。應設置適當之護欄、握把、安全網或配戴背負式安全帶。", "步驟 3：總結雇主防護責任。提供符合國家標準 CNS 之防墜設備並落實安全檢查。" ], 
+          answer: '設置符合標準之安全護欄、安全網，並強制施工人員配戴背負式安全帶與防墜器。'
         }
       ],
       illustrations: ['context.webp', 'mechanism.webp', 'comparison.webp', 'step-by-step.webp'],
@@ -923,10 +923,10 @@ export const civicsData: SubjectData = {
       covered_question_ids: [],
       worked_examples: [
         {
-          question: '【V5.1 新增步驟化例題】待補全，對應考點解析',
+          question: '【步驟化例題】淨零碳排與建築能效標示：我國宣告「2050 淨零排放」目標，其中對於新建建築物之能效評估標示（PERS），最高等級之能效標章為何？',
           difficulty: '基礎',
-          steps: ['步驟 1：建立模型', '步驟 2：代入公式', '步驟 3：求得解答'],
-          answer: '待補全'
+          steps: [ "步驟 1：了解建築能效標示制度。將建築節能效率分為 1 至 7 級。", "步驟 2：識別最高能效等級。超越 1 級且採用綠能與近零碳設計者，頒予「1+ 級 (近零碳建築近零標章)」或「近零碳建築 (Zero Carbon Building)」。", "步驟 3：總結極致目標。達到「1+ 級 近零碳建築」。" ], 
+          answer: '最高等級為「1+ 級 (近零碳建築 Near Zero Carbon Building)」。'
         }
       ],
       illustrations: ['context.webp', 'mechanism.webp', 'comparison.webp', 'step-by-step.webp'],

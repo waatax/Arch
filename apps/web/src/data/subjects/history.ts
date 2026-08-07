@@ -14,10 +14,10 @@ export const historyData: SubjectData = {
       covered_question_ids: [],
       worked_examples: [
         {
-          question: '【V5.1 新增步驟化例題】待補全，對應考點解析',
+          question: '【步驟化例題】台灣客家圍龍屋防禦構造分析：台灣傳統客家「圍龍屋」與「圍屋」建築，其外牆常開有極小之孔洞，此孔洞在傳統防禦上稱為何者？其主要功能為何？',
           difficulty: '基礎',
-          steps: ['步驟 1：建立模型', '步驟 2：代入公式', '步驟 3：求得解答'],
-          answer: '待補全'
+          steps: [ "步驟 1：回顧客家移民歷史背景。清代台灣族群械鬥頻繁，客家聚落極注重防衛堡壘化。", "步驟 2：識別建築防衛構件。外牆開口極小，外寬內窄，稱為「銃眼（槍孔）」。", "步驟 3：總結功能。防範盜匪入侵，同時可由內部向外觀察與架槍射擊。" ], 
+          answer: '稱為「銃眼 (槍孔)」，主要功能為防禦敵襲與內向外射擊。'
         }
       ],
       illustrations: ['context.webp', 'mechanism.webp', 'comparison.webp', 'step-by-step.webp'],
@@ -202,10 +202,10 @@ export const historyData: SubjectData = {
       covered_question_ids: [],
       worked_examples: [
         {
-          question: '【V5.1 新增步驟化例題】待補全，對應考點解析',
-          difficulty: '基礎',
-          steps: ['步驟 1：建立模型', '步驟 2：代入公式', '步驟 3：求得解答'],
-          answer: '待補全'
+          question: '【步驟化例題】宋代《營造法式》材份制：宋代官方建築規範《營造法式》中，將木構架之「材」分為八等。請問「材份制」在中國古代建築標準化上有何重大意義？',
+          difficulty: '中等',
+          steps: [ "步驟 1：理解「材」的定義。「材」為斗拱拱截面之高與厚，以此作為整座建築構件比例之模數 (Module)。", "步驟 2：分析材份制的作用。根據建築等級選擇材等，所有梁柱斗拱之尺寸均為「材」的倍數（分）。", "步驟 3：總結歷史意義。實現了中國古代木結構建築之模數化、標準化與預製化設計。" ], 
+          answer: '建立以「材」為模數的標準化制度，使建築構件具備預製化、比例嚴謹與等級規範。'
         }
       ],
       illustrations: ['context.webp', 'mechanism.webp', 'comparison.webp', 'step-by-step.webp'],
@@ -393,10 +393,10 @@ export const historyData: SubjectData = {
       covered_question_ids: [],
       worked_examples: [
         {
-          question: '【V5.1 新增步驟化例題】待補全，對應考點解析',
+          question: '【步驟化例題】哥德式教堂結構力學解析：西洋中世紀「哥德式教堂（如巴黎聖母院）」能開闢巨大彩色玻璃花窗並建造高聳穹頂，主要依賴哪兩項結構力學創新？',
           difficulty: '基礎',
-          steps: ['步驟 1：建立模型', '步驟 2：代入公式', '步驟 3：求得解答'],
-          answer: '待補全'
+          steps: [ "步驟 1：對比羅馬式建築。羅馬式採用半圓拱與厚重牆體，開窗極小。", "步驟 2：識別哥德式結構突破。1. 尖拱 (Pointed Arch) 減少側向推力；2. 飛扶壁 (Flying Buttress) 將穹頂側推力引導至室外獨立墩柱。", "步驟 3：得出結論。尖拱與飛扶壁。" ], 
+          answer: '「尖拱 (Pointed Arch)」與「飛扶壁 (Flying Buttress)」。'
         }
       ],
       illustrations: ['context.webp', 'mechanism.webp', 'comparison.webp', 'step-by-step.webp'],
@@ -585,10 +585,10 @@ export const historyData: SubjectData = {
       covered_question_ids: [],
       worked_examples: [
         {
-          question: '【V5.1 新增步驟化例題】待補全，對應考點解析',
+          question: '【步驟化例題】現代主義建築大師科比意「新建築五點」：現代建築大師科比意 (Le Corbusier) 於 1926 年提出著名的「新建築五點 (Five Points of Architecture)」，包含柱子底層獨立（底層架空）、屋頂花園、自由平面、自由立面，以及哪一種窗戶形式？',
           difficulty: '基礎',
-          steps: ['步驟 1：建立模型', '步驟 2：代入公式', '步驟 3：求得解答'],
-          answer: '待補全'
+          steps: [ "步驟 1：回顧新建築五點英文與中文名稱：1. Pilotis (底層架空柱), 2. Roof Garden (屋頂花園), 3. Free Plan (自由平面), 4. Free Facade (自由立面)。", "步驟 2：識別第五點。Ribbon Window / Horizontal Window（橫向帶狀長窗）。", "步驟 3：分析帶狀長窗力學前提。得益於 RC 框架結構，牆體不再承重，故可開全橫向長窗採光。" ], 
+          answer: '「橫向帶狀長窗 (Horizontal Ribbon Window)」。'
         }
       ],
       illustrations: ['context.webp', 'mechanism.webp', 'comparison.webp', 'step-by-step.webp'],
@@ -769,10 +769,10 @@ export const historyData: SubjectData = {
       covered_question_ids: [],
       worked_examples: [
         {
-          question: '【V5.1 新增步驟化例題】待補全，對應考點解析',
-          difficulty: '基礎',
-          steps: ['步驟 1：建立模型', '步驟 2：代入公式', '步驟 3：求得解答'],
-          answer: '待補全'
+          question: '【步驟化例題】文化資產保存法修復原則：依據《文化資產保存法》與國際《威尼斯憲章》，在進行古蹟修復工程時，對於新補強構件與歷史原物的處理，應遵循何種重要原則？',
+          difficulty: '中等',
+          steps: [ "步驟 1：瞭解文化資產保存核心哲學。強調「真實性 (Authenticity)」與「可逆性 (Reversibility)」。", "步驟 2：規範新舊構件識別。新添加之補強構件應與古蹟原物「可識別（不可偽造古貌）」，且未來可安全拆卸（可逆性）。", "步驟 3：總結原則。遵循「最小干預、可識別性與可逆性原則」。" ], 
+          answer: '遵循「真實性、可識別性（新舊可辨）與可逆性（未來可拆卸且不傷原物）」原則。'
         }
       ],
       illustrations: ['context.webp', 'mechanism.webp', 'comparison.webp', 'step-by-step.webp'],
@@ -957,10 +957,10 @@ export const historyData: SubjectData = {
       covered_question_ids: [],
       worked_examples: [
         {
-          question: '【V5.1 新增步驟化例題】待補全，對應考點解析',
+          question: '【步驟化例題】工業革命與水晶宮建築：1851 年倫敦世界博覽會展覽館「水晶宮 (Crystal Palace)」在建築史上被視為現代建築的開端，其採用的突破性建造工法為何？',
           difficulty: '基礎',
-          steps: ['步驟 1：建立模型', '步驟 2：代入公式', '步驟 3：求得解答'],
-          answer: '待補全'
+          steps: [ "步驟 1：分析水晶宮設計者與材料。由約瑟夫·帕克斯頓 (Joseph Paxton) 設計，大量採用鑄鐵 (Cast Iron) 與玻璃。", "步驟 2：解析施工工法。採用工廠預製構件（Pre-fabrication），現場快速組裝（Dry Assembly）。", "步驟 3：總結建築史意義。開啟了預製構件與鐵骨玻璃預製建築之新時代。" ], 
+          answer: '採用「預製鐵骨構件與玻璃」於現場快速裝配，開啟建築預製化與工業化生產之先河。'
         }
       ],
       illustrations: ['context.webp', 'mechanism.webp', 'comparison.webp', 'step-by-step.webp'],

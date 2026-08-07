@@ -14,10 +14,10 @@ export const extensionsData: SubjectData = {
       covered_question_ids: [],
       worked_examples: [
         {
-          question: '【V5.1 新增步驟化例題】待補全，對應考點解析',
+          question: '【步驟化例題】人體工學與走道尺寸規劃：依據建築空間人體工學規範，雙人交錯通行之室內主要走道，其「最小淨寬度」應規劃為多少公分？',
           difficulty: '基礎',
-          steps: ['步驟 1：建立模型', '步驟 2：代入公式', '步驟 3：求得解答'],
-          answer: '待補全'
+          steps: [ "步驟 1：分析單人肩寬與通行需求。單人肩寬約 55~60 cm，單人通行走道最小 75~90 cm。", "步驟 2：計算雙人交錯通行淨寬。兩人之肩寬與避讓安全距離合計約需 120 cm 以上。", "步驟 3：確定標準規範。雙人交錯通行走道最小淨寬為 120 cm。" ], 
+          answer: '最小淨寬度應規劃為 120 公分 (cm)。'
         }
       ],
       illustrations: ['context.webp', 'mechanism.webp', 'comparison.webp', 'step-by-step.webp'],
@@ -188,10 +188,10 @@ export const extensionsData: SubjectData = {
       covered_question_ids: [],
       worked_examples: [
         {
-          question: '【V5.1 新增步驟化例題】待補全，對應考點解析',
+          question: '【步驟化例題】RC 構造 vs. SS 鋼骨構造特點比較：在超高層大樓（如台北 101）結構設計中，採用鋼骨構造 (Steel Structure, SS) 相較於傳統鋼筋混凝土 (RC)，其最主要之結構優點為何？',
           difficulty: '基礎',
-          steps: ['步驟 1：建立模型', '步驟 2：代入公式', '步驟 3：求得解答'],
-          answer: '待補全'
+          steps: [ "步驟 1：分析自重與強度。鋼材強度高，斷面尺寸小，能大幅減輕建築物結構自重。", "步驟 2：分析韌性與抗震。鋼骨具備優異之延展性與韌性（Ductility），能吸收大量地震能量。", "步驟 3：總結優勢。自重輕、韌性高、施工速度快。" ], 
+          answer: '自重輕、韌性佳（抗震能力強），且構件斷面小、施工速度快。'
         }
       ],
       illustrations: ['context.webp', 'mechanism.webp', 'comparison.webp', 'step-by-step.webp'],
@@ -375,10 +375,10 @@ export const extensionsData: SubjectData = {
       covered_question_ids: [],
       worked_examples: [
         {
-          question: '【V5.1 新增步驟化例題】待補全，對應考點解析',
+          question: '【步驟化例題】BIM 建築資訊模型維度分析：在 BIM (Building Information Modeling) 應用中，所謂的「4D BIM」與「5D BIM」分別代表在 3D 幾何模型中加入了哪兩個維度的管理資訊？',
           difficulty: '基礎',
-          steps: ['步驟 1：建立模型', '步驟 2：代入公式', '步驟 3：求得解答'],
-          answer: '待補全'
+          steps: [ "步驟 1：定義 3D BIM。3D 指 X, Y, Z 三維幾何空間模型。", "步驟 2：解析 4D BIM。加入「時間 (Time / Schedule)」維度，用於施工進度模擬。", "步驟 3：解析 5D BIM。加入「成本 (Cost / Budget)」維度，用於工程造價與數量估算。" ], 
+          answer: '4D 加入了「時間（施工進度）」，5D 加入了「成本（工程造價）」。'
         }
       ],
       illustrations: ['context.webp', 'mechanism.webp', 'comparison.webp', 'step-by-step.webp'],
@@ -560,10 +560,10 @@ export const extensionsData: SubjectData = {
       covered_question_ids: [],
       worked_examples: [
         {
-          question: '【V5.1 新增步驟化例題】待補全，對應考點解析',
+          question: '【步驟化例題】1:100 建築概念模型製作比例換算：若要製作一座實際高度為 15 公尺之建築模型（比例尺 1:100），模型之實際切削高度應為多少公分？選用何種材料最適宜表示玻璃帷幕？',
           difficulty: '基礎',
-          steps: ['步驟 1：建立模型', '步驟 2：代入公式', '步驟 3：求得解答'],
-          answer: '待補全'
+          steps: [ "步驟 1：計算模型高度。15 m = 1500 cm。模型高度 = 1500 cm / 100 = 15 cm。", "步驟 2：選擇透明材料表現玻璃。透明壓克力板或透明賽璐珞片 (PET/PVC 膠片)。", "步驟 3：得出解答。高度 15 cm，採用透明壓克力或透明膠片。" ], 
+          answer: '模型切削高度為 15 公分；採用透明壓克力板或透明賽璐珞片表現玻璃帷幕。'
         }
       ],
       illustrations: ['context.webp', 'mechanism.webp', 'comparison.webp', 'step-by-step.webp'],
@@ -746,10 +746,10 @@ export const extensionsData: SubjectData = {
       covered_question_ids: [],
       worked_examples: [
         {
-          question: '【V5.1 新增步驟化例題】待補全，對應考點解析',
-          difficulty: '基礎',
-          steps: ['步驟 1：建立模型', '步驟 2：代入公式', '步驟 3：求得解答'],
-          answer: '待補全'
+          question: '【步驟化例題】建築製圖應用乙級檢定三視圖補線考題：在正投影三視圖中，若前視圖與俯視圖均為完整矩形，則該物體的立體幾何形狀可能為何？',
+          difficulty: '中等',
+          steps: [ "步驟 1：分析前視圖與俯視圖。前視圖矩形說明正面為直立平面，俯視圖矩形說明頂面為水平平面。", "步驟 2：推導可能形體。最典型者為「正方體或長方體 (Rectangular Prism)」；若右側視圖為圓形，則為「圓柱體 (Cylinder) 水平放置」。", "步驟 3：總結可能結果。長方體或水平放置之圓柱體。" ], 
+          answer: '可能為「長方體」或「水平放置之圓柱體」（需檢視右側視圖確定）。'
         }
       ],
       illustrations: ['context.webp', 'mechanism.webp', 'comparison.webp', 'step-by-step.webp'],

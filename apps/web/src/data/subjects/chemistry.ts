@@ -14,10 +14,10 @@ export const chemistryData: SubjectData = {
       "covered_question_ids": [],
       "worked_examples": [
         {
-          "question": '【步驟化例題】化學計量與建築材料：鍛燒石灰石 (CaCO3) 製備生石灰 (CaO)，反應式為 CaCO3 → CaO + CO2。若鍛燒 100 公斤純碳酸鈣，可得生石灰多少公斤？(Ca=40, C=12, O=16)',
-          "difficulty": '基礎',
-          "steps": ["步驟 1：計算分子量。CaCO3 = 40+12+(16×3) = 100。CaO = 40+16 = 56。","步驟 2：確認莫耳數。100 kg CaCO3 = 100,000 g / 100 = 1000 莫耳。","步驟 3：由莫耳數比求質量。CaO 生成 1000 莫耳 = 1000 × 56 = 56,000 g = 56 kg。"],
-          "answer": '可得生石灰 56 公斤'
+          question: '【步驟化例題】塗料高分子與 VOCs 揮發機制：某水性乳膠漆標示總揮發性有機化合物 (TVOC) 含量為 20 g/L。若一室內牆面塗刷 50 公升該乳膠漆，求施工過程可能散發之最大 TVOC 重量（克 g）為多少？',
+          difficulty: '基礎',
+          steps: [ "步驟 1：分析 TVOC 單位定義。20 g/L 表示每公升塗料含 20 克 VOCs。", "步驟 2：列計算式。總 VOCs 重量 = 塗料體積 × 單位 TVOC 含量 = 50 L × 20 g/L。", "步驟 3：計算解答。50 × 20 = 1000 g (或 1.0 kg)。" ], 
+          answer: '最大散發 TVOC 重量為 1000 公克 (1.0 kg)。'
         }
       ],
       "illustrations": ['chemistry-context.webp', 'chemistry-mechanism.webp', 'chemistry-comparison.webp', 'chemistry-step.webp'],
@@ -226,10 +226,10 @@ export const chemistryData: SubjectData = {
       "covered_question_ids": [],
       "worked_examples": [
         {
-          "question": '【步驟化例題】化學計量與建築材料：鍛燒石灰石 (CaCO3) 製備生石灰 (CaO)，反應式為 CaCO3 → CaO + CO2。若鍛燒 100 公斤純碳酸鈣，可得生石灰多少公斤？(Ca=40, C=12, O=16)',
-          "difficulty": '基礎',
-          "steps": ["步驟 1：計算分子量。CaCO3 = 40+12+(16×3) = 100。CaO = 40+16 = 56。","步驟 2：確認莫耳數。100 kg CaCO3 = 100,000 g / 100 = 1000 莫耳。","步驟 3：由莫耳數比求質量。CaO 生成 1000 莫耳 = 1000 × 56 = 56,000 g = 56 kg。"],
-          "answer": '可得生石灰 56 公斤'
+          question: '【步驟化例題】石灰石鍛燒熱化學反應：煅燒石灰石反應 CaCO3(s) → CaO(s) + CO2(g)，其反應熱 ∆H = +178 kJ/mol。若製造 56 公斤生石灰 (CaO, 分子量 56)，需吸收多少千焦耳 (kJ) 的熱量？',
+          difficulty: '中等',
+          steps: [ "步驟 1：計算 CaO 莫耳數。56 kg = 56,000 g。n = 56,000 g / 56 g/mol = 1000 mol。", "步驟 2：列熱化學計算。每生成 1 mol CaO 需吸收 178 kJ。", "步驟 3：求總吸熱量。Q = 1000 mol × 178 kJ/mol = 178,000 kJ (178 MJ)。" ], 
+          answer: '需吸收 178,000 kJ (178 MJ) 的熱量。'
         }
       ],
       "illustrations": ['chemistry-context.webp', 'chemistry-mechanism.webp', 'chemistry-comparison.webp', 'chemistry-step.webp'],
@@ -403,10 +403,10 @@ export const chemistryData: SubjectData = {
       "covered_question_ids": [],
       "worked_examples": [
         {
-          "question": '【步驟化例題】化學計量與建築材料：鍛燒石灰石 (CaCO3) 製備生石灰 (CaO)，反應式為 CaCO3 → CaO + CO2。若鍛燒 100 公斤純碳酸鈣，可得生石灰多少公斤？(Ca=40, C=12, O=16)',
-          "difficulty": '基礎',
-          "steps": ["步驟 1：計算分子量。CaCO3 = 40+12+(16×3) = 100。CaO = 40+16 = 56。","步驟 2：確認莫耳數。100 kg CaCO3 = 100,000 g / 100 = 1000 莫耳。","步驟 3：由莫耳數比求質量。CaO 生成 1000 莫耳 = 1000 × 56 = 56,000 g = 56 kg。"],
-          "answer": '可得生石灰 56 公斤'
+          question: '【步驟化例題】酸雨侵蝕大理石化學計算：大理石主成分為碳酸鈣 (CaCO3)。若酸雨中含有 0.05 M 之稀硫酸 (H2SO4)，反應式為 CaCO3 + H2SO4 → CaSO4 + H2O + CO2。10 公升該酸雨最多可溶解多少公克碳酸鈣？(Ca=40, C=12, O=16)',
+          difficulty: '中等',
+          steps: [ "步驟 1：計算 H2SO4 莫耳數。n = M × V = 0.05 mol/L × 10 L = 0.5 mol。", "步驟 2：由莫耳數比 (1:1) 求溶解之 CaCO3 莫耳數 = 0.5 mol。", "步驟 3：莫耳數換算質量。CaCO3 分子量 100。m = 0.5 mol × 100 g/mol = 50 g。" ], 
+          answer: '最多可溶解 50 公克碳酸鈣。'
         }
       ],
       "illustrations": ['chemistry-context.webp', 'chemistry-mechanism.webp', 'chemistry-comparison.webp', 'chemistry-step.webp'],
@@ -589,10 +589,10 @@ export const chemistryData: SubjectData = {
       "covered_question_ids": [],
       "worked_examples": [
         {
-          "question": '【步驟化例題】化學計量與建築材料：鍛燒石灰石 (CaCO3) 製備生石灰 (CaO)，反應式為 CaCO3 → CaO + CO2。若鍛燒 100 公斤純碳酸鈣，可得生石灰多少公斤？(Ca=40, C=12, O=16)',
-          "difficulty": '基礎',
-          "steps": ["步驟 1：計算分子量。CaCO3 = 40+12+(16×3) = 100。CaO = 40+16 = 56。","步驟 2：確認莫耳數。100 kg CaCO3 = 100,000 g / 100 = 1000 莫耳。","步驟 3：由莫耳數比求質量。CaO 生成 1000 莫耳 = 1000 × 56 = 56,000 g = 56 kg。"],
-          "answer": '可得生石灰 56 公斤'
+          question: '【步驟化例題】鋼筋電化學腐蝕與陰極防蝕法：在混凝土中鋼筋發生電化學鏽蝕時，鐵原子失去電子發生氧化反應：Fe → Fe²⁺ + 2e⁻。防蝕工程中採用「外加電流陰極防護 (ICCP)」，其化學原理為何？',
+          difficulty: '基礎',
+          steps: [ "步驟 1：識別鋼筋鏽蝕本質。鋼筋陽極反應失去電子溶解形成鐵鏽。", "步驟 2：分析陰極防護原理。外加直流電源強制將被保護的鋼筋變成「陰極 (Cathode)」。", "步驟 3：總結作用。使鋼筋獲得電子抑制鐵之陽極溶解，達到永久防蝕效果。" ], 
+          answer: '將被保護之鋼筋強制設為「陰極」，透過外加直流電子流抑制鐵之氧化溶解反應。'
         }
       ],
       "illustrations": ['chemistry-context.webp', 'chemistry-mechanism.webp', 'chemistry-comparison.webp', 'chemistry-step.webp'],
@@ -791,10 +791,10 @@ export const chemistryData: SubjectData = {
       "covered_question_ids": [],
       "worked_examples": [
         {
-          "question": '【步驟化例題】化學計量與建築材料：鍛燒石灰石 (CaCO3) 製備生石灰 (CaO)，反應式為 CaCO3 → CaO + CO2。若鍛燒 100 公斤純碳酸鈣，可得生石灰多少公斤？(Ca=40, C=12, O=16)',
-          "difficulty": '基礎',
-          "steps": ["步驟 1：計算分子量。CaCO3 = 40+12+(16×3) = 100。CaO = 40+16 = 56。","步驟 2：確認莫耳數。100 kg CaCO3 = 100,000 g / 100 = 1000 莫耳。","步驟 3：由莫耳數比求質量。CaO 生成 1000 莫耳 = 1000 × 56 = 56,000 g = 56 kg。"],
-          "answer": '可得生石灰 56 公斤'
+          question: '【步驟化例題】高分子建材環氧樹脂 (Epoxy) 固化化學：環氧樹脂由環氧單體與胺類固化劑 (Amine Hardener) 混合，其分子間形成網狀交聯結構之反應類型屬於何者？固化後是否可再次加熱熔融？',
+          difficulty: '基礎',
+          steps: [ "步驟 1：辨析高分子固化類型。環氧官能基與胺基發生交聯加成聚合反應。", "步驟 2：區分熱塑性與熱固性。網狀交聯高分子屬於「熱固性高分子 (Thermosetting Polymer)」。", "步驟 3：判定受熱行為。熱固性高分子受熱不熔融只會在高溫下炭化分解。" ], 
+          answer: '屬於交聯加成聚合反應；固化後屬於「熱固性高分子」，無法再次加熱熔融。'
         }
       ],
       "illustrations": ['chemistry-context.webp', 'chemistry-mechanism.webp', 'chemistry-comparison.webp', 'chemistry-step.webp'],
@@ -993,10 +993,10 @@ export const chemistryData: SubjectData = {
       "covered_question_ids": [],
       "worked_examples": [
         {
-          "question": '【步驟化例題】化學計量與建築材料：鍛燒石灰石 (CaCO3) 製備生石灰 (CaO)，反應式為 CaCO3 → CaO + CO2。若鍛燒 100 公斤純碳酸鈣，可得生石灰多少公斤？(Ca=40, C=12, O=16)',
-          "difficulty": '基礎',
-          "steps": ["步驟 1：計算分子量。CaCO3 = 40+12+(16×3) = 100。CaO = 40+16 = 56。","步驟 2：確認莫耳數。100 kg CaCO3 = 100,000 g / 100 = 1000 莫耳。","步驟 3：由莫耳數比求質量。CaO 生成 1000 莫耳 = 1000 × 56 = 56,000 g = 56 kg。"],
-          "answer": '可得生石灰 56 公斤'
+          question: '【步驟化例題】光觸媒 TiO2 降解室內甲醛化學：奈米二氧化鈦 (TiO2) 光觸媒在紫外光照射下產生羥基自由基 (·OH)，將室內甲醛 (HCHO) 催化氧化為無害產物。請寫出甲醛完全催化氧化的化學反應產物。',
+          difficulty: '基礎',
+          steps: [ "步驟 1：分析甲醛化學元素成分。甲醛分子式為 HCHO (含 C, H, O)。", "步驟 2：了解強氧化劑 ·OH 作用。將碳水化合物完全氧化。", "步驟 3：確定完全氧化產物。最終轉化為水 (H2O) 與二氧化碳 (CO2)。" ], 
+          answer: '完全氧化產物為「二氧化碳 (CO2)」與「水 (H2O)」。'
         }
       ],
       "illustrations": ['chemistry-context.webp', 'chemistry-mechanism.webp', 'chemistry-comparison.webp', 'chemistry-step.webp'],

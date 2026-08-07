@@ -14,10 +14,10 @@ export const materialsData: SubjectData = {
       covered_question_ids: ["111-1-23","111-1-24","111-1-27","111-1-28","111-1-31","111-1-36","112-1-21","112-1-24","112-1-29","112-1-31","112-1-33","112-1-39","113-1-21","113-1-23","113-1-27","113-1-32","113-1-39","114-1-21","114-1-26","114-1-33","114-1-35","115-1-22","115-1-28","115-1-33","115-1-39","110-1-5","110-1-13","110-1-21","110-1-29","110-1-37"],
       worked_examples: [
         {
-          question: '【V5.1 新增步驟化例題】待補全，對應考點解析',
-          difficulty: '基礎',
-          steps: ['步驟 1：建立模型', '步驟 2：代入公式', '步驟 3：求得解答'],
-          answer: '待補全'
+          question: '【步驟化例題】材料密度與孔隙率計算：某石材試體乾燥後質量為 500 公克，完全密實無孔隙時之絕對體積為 200 立方公分。若該試體之外觀體積（含孔隙）為 250 立方公分，求該石材之「表觀密度」與「孔隙率」？',
+          difficulty: '中等',
+          steps: [ "步驟 1：計算表觀密度 (Apparent Density)。ρ = 乾燥質量 / 外觀體積 = 500 g / 250 cm³ = 2.0 g/cm³。", "步驟 2：計算絕對真密度 (True Density)。ρ0 = 500 g / 200 cm³ = 2.5 g/cm³。", "步驟 3：計算孔隙率 (Porosity n)。n = (1 - ρ/ρ0) × 100% = (1 - 2.0/2.5) × 100% = (1 - 0.8) × 100% = 20%。" ], 
+          answer: '表觀密度為 2.0 g/cm³，孔隙率為 20%。'
         }
       ],
       illustrations: ['context.webp', 'mechanism.webp', 'comparison.webp', 'step-by-step.webp'],
@@ -132,10 +132,10 @@ export const materialsData: SubjectData = {
       covered_question_ids: [],
       worked_examples: [
         {
-          question: '【V5.1 新增步驟化例題】待補全，對應考點解析',
-          difficulty: '基礎',
-          steps: ['步驟 1：建立模型', '步驟 2：代入公式', '步驟 3：求得解答'],
-          answer: '待補全'
+          question: '【步驟化例題】卜特蘭水泥水化化合物分析：水泥四大核心化合物成分中，何者水化反應最快且水化熱最高？何者決定水泥之長期（28天以上）強度發展？',
+          difficulty: '中等',
+          steps: [ "步驟 1：分析 C3S, C2S, C3A, C4AF 特性。", "步驟 2：C3A (鋁酸三鈣) 水化最快、發熱量最大（造成快凝）；C3S (矽酸三鈣) 提供早期（1~7天）強度。", "步驟 3：C2S (矽酸二鈣) 水化極慢，持續提供後期（28天至數年）強度的穩定增長。" ], 
+          answer: '水化最快且水化熱最高者為「C3A (鋁酸三鈣)」；決定長期強度者為「C2S (矽酸二鈣)」。'
         }
       ],
       illustrations: ['context.webp', 'mechanism.webp', 'comparison.webp', 'step-by-step.webp'],
@@ -209,10 +209,10 @@ export const materialsData: SubjectData = {
       covered_question_ids: ["111-1-22","111-1-32","111-1-33","111-1-40","112-1-26","112-1-30","112-1-37","112-1-40","113-1-25","113-1-33","113-1-36","114-1-22","114-1-28","114-1-31","114-1-34","115-1-21","115-1-23","115-1-29","115-1-34","115-1-38"],
       worked_examples: [
         {
-          question: '【V5.1 新增步驟化例題】待補全，對應考點解析',
+          question: '【步驟化例題】CNS 61 卜特蘭水泥類型選用：某工程欲興建大型水庫大壩結構（巨積混凝土），為防止內部水化熱積聚導致溫差裂縫，應優先選用 CNS 61 規範中之哪一種型號水泥？',
           difficulty: '基礎',
-          steps: ['步驟 1：建立模型', '步驟 2：代入公式', '步驟 3：求得解答'],
-          answer: '待補全'
+          steps: [ "步驟 1：分析巨積混凝土工程痛點。水化熱過高引發熱應力裂縫。", "步驟 2：查考 CNS 61 五大水泥分類：I 型普通、II 型中熱、III 型早強、IV 型低熱、V 型抗硫。", "步驟 3：選用最適水泥。第 IV 型低熱卜特蘭水泥 (Type IV Low-Heat Cement)。" ], 
+          answer: '應優先選用「第 IV 型（低熱）卜特蘭水泥」。'
         }
       ],
       illustrations: ['context.webp', 'mechanism.webp', 'comparison.webp', 'step-by-step.webp'],
@@ -286,10 +286,10 @@ export const materialsData: SubjectData = {
       covered_question_ids: ["111-1-29","112-1-28","113-1-22","114-1-23","114-1-24","114-1-38","114-1-39"],
       worked_examples: [
         {
-          question: '【V5.1 新增步驟化例題】待補全，對應考點解析',
+          question: '【步驟化例題】維卡儀水泥凝結時間規範：依據 CNS 水泥試驗標準，採用維卡儀 (Vicat Needle) 測定卜特蘭水泥之「初凝時間」與「終凝時間」，法定限制分別不得小於與大於多少分鐘？',
           difficulty: '基礎',
-          steps: ['步驟 1：建立模型', '步驟 2：代入公式', '步驟 3：求得解答'],
-          answer: '待補全'
+          steps: [ "步驟 1：瞭解維卡儀試驗目的。確定水泥漿由可塑狀態轉為固態之時間點。", "步驟 2：查考初凝規範限制。初凝時間不得少於 45 分鐘（確保施工拌合與運輸時間）。", "步驟 3：查考終凝規範限制。終凝時間不得大於 375 分鐘 (6.25小時)。" ], 
+          answer: '初凝時間不得小於 45 分鐘；終凝時間不得大於 375 分鐘。'
         }
       ],
       illustrations: ['context.webp', 'mechanism.webp', 'comparison.webp', 'step-by-step.webp'],
@@ -358,10 +358,10 @@ export const materialsData: SubjectData = {
       covered_question_ids: ["111-1-26","112-1-35","112-1-38","113-1-28"],
       worked_examples: [
         {
-          question: '【V5.1 新增步驟化例題】待補全，對應考點解析',
-          difficulty: '基礎',
-          steps: ['步驟 1：建立模型', '步驟 2：代入公式', '步驟 3：求得解答'],
-          answer: '待補全'
+          question: '【步驟化例題】水泥砂漿抗壓強度計算：製作 50 mm × 50 mm × 50 mm 之標準水泥砂漿立方體試體，於 28 天養護後進行抗壓試驗。若試體破壞時壓力機讀數為 75.0 kN，求該水泥砂漿之抗壓強度（MPa）？',
+          difficulty: '中等',
+          steps: [ "步驟 1：計算受壓截面積 A。A = 50 mm × 50 mm = 2500 mm²。", "步驟 2：將破壞載重轉換為牛頓 N。P = 75.0 kN = 75,000 N。", "步驟 3：計算抗壓強度 f_c = P / A。f_c = 75,000 N / 2500 mm² = 30 N/mm² = 30 MPa。" ], 
+          answer: '抗壓強度為 30 MPa (N/mm²)。'
         }
       ],
       illustrations: ['context.webp', 'mechanism.webp', 'comparison.webp', 'step-by-step.webp'],
@@ -435,10 +435,10 @@ export const materialsData: SubjectData = {
       covered_question_ids: [],
       worked_examples: [
         {
-          question: '【V5.1 新增步驟化例題】待補全，對應考點解析',
-          difficulty: '基礎',
-          steps: ['步驟 1：建立模型', '步驟 2：代入公式', '步驟 3：求得解答'],
-          answer: '待補全'
+          question: '【步驟化例題】水泥受潮與假凝現象處置：水泥工地倉庫若通風不良導致水泥受潮產生「假凝 (False Set)」現象，其特徵與應變處置方式為何？',
+          difficulty: '中等',
+          steps: [ "步驟 1：分析假凝特徵。拌合後數分鐘內迅速變硬，但「不放出大量水化熱」。", "步驟 2：區分假凝與快凝 (Flash Set)。快凝係 C3A 過高放出劇熱且無法恢復；假凝係石膏結晶析出。", "步驟 3：確定處置方式。假凝試體「未加水重新拌合」即可恢復可塑性，不影響最終強度。" ], 
+          answer: '特徵為快速硬化但不發熱；處置方式為「不加水重新強制拌合」即可恢復可塑性。'
         }
       ],
       illustrations: ['context.webp', 'mechanism.webp', 'comparison.webp', 'step-by-step.webp'],
@@ -522,10 +522,10 @@ export const materialsData: SubjectData = {
       covered_question_ids: ["111-1-38","112-1-27","112-1-34","113-1-26","113-1-30","113-1-37","113-1-40","114-1-29","114-1-30","115-1-24","115-1-25","115-1-26","115-1-31","115-1-35","115-1-37","115-1-40","110-1-6","110-1-14","110-1-22","110-1-30","110-1-38"],
       worked_examples: [
         {
-          question: '【V5.1 新增步驟化例題】待補全，對應考點解析',
+          question: '【步驟化例題】混凝土配比計算：設計一立方公尺 (1 m³) 混凝土，要求水灰比 W/C = 0.50。若經配比計算所需單位用水量 W = 175 kg/m³，求所需水泥用量 C 為多少公斤？',
           difficulty: '基礎',
-          steps: ['步驟 1：建立模型', '步驟 2：代入公式', '步驟 3：求得解答'],
-          answer: '待補全'
+          steps: [ "步驟 1：已知公式 W / C = 0.50。", "步驟 2：代入 W = 175 kg。175 / C = 0.50。", "步驟 3：求解 C。C = 175 / 0.50 = 350 kg。" ], 
+          answer: '水泥用量 C 為 350 公斤 (kg)。'
         }
       ],
       illustrations: ['context.webp', 'mechanism.webp', 'comparison.webp', 'step-by-step.webp'],
@@ -637,10 +637,10 @@ export const materialsData: SubjectData = {
       covered_question_ids: ["112-1-25","113-1-38","114-1-36"],
       worked_examples: [
         {
-          question: '【V5.1 新增步驟化例題】待補全，對應考點解析',
+          question: '【步驟化例題】建築石材性能比較：建築外牆貼飾石材中，花崗石 (Granite) 與大理石 (Marble) 在耐酸雨與耐候性上有何根本差異？外牆應選用何者？',
           difficulty: '基礎',
-          steps: ['步驟 1：建立模型', '步驟 2：代入公式', '步驟 3：求得解答'],
-          answer: '待補全'
+          steps: [ "步驟 1：分析花崗石成分。主要為火成岩（石英、長石），耐酸鹼、硬度高、耐候性極佳。", "步驟 2：分析大理石成分。主要為變質岩（碳酸鈣 CaCO3），易受酸雨侵蝕發黃剝落。", "步驟 3：確定選用原則。外牆應選用花崗石，大理石適用於室內牆面。" ], 
+          answer: '花崗石耐酸鹼與耐候性極佳，適合外牆；大理石含碳酸鈣易受酸雨侵蝕，適用於室內。'
         }
       ],
       illustrations: ['context.webp', 'mechanism.webp', 'comparison.webp', 'step-by-step.webp'],
@@ -743,10 +743,10 @@ export const materialsData: SubjectData = {
       covered_question_ids: ["111-1-25","111-1-34","111-1-35","113-1-24","113-1-29","114-1-27","115-1-27","115-1-30","110-1-7","110-1-15","110-1-23","110-1-31","110-1-39"],
       worked_examples: [
         {
-          question: '【V5.1 新增步驟化例題】待補全，對應考點解析',
-          difficulty: '基礎',
-          steps: ['步驟 1：建立模型', '步驟 2：代入公式', '步驟 3：求得解答'],
-          answer: '待補全'
+          question: '【步驟化例題】木材含水率與纖維飽和點 (FSP)：當木材乾燥過程含水率降低至「纖維飽和點 (FSP, 約 30%)」以下時，木材之物理強度與尺寸體積會產生何種變化？',
+          difficulty: '中等',
+          steps: [ "步驟 1：理解自由水與結合水。FSP 以上減少的是細胞腔內的自由水，不影響體積與強度。", "步驟 2：FSP 以下蒸發結合水。細胞壁內的結合水開始蒸發，導致木材開始「乾縮變形」。", "步驟 3：強度變化。隨著含水率降至 FSP 以下，木材之抗壓與抗彎強度顯著增加。" ], 
+          answer: '尺寸體積開始產生「乾縮變形」；物理強度（抗壓/抗彎）則顯著增加。'
         }
       ],
       illustrations: ['context.webp', 'mechanism.webp', 'comparison.webp', 'step-by-step.webp'],
@@ -835,10 +835,10 @@ export const materialsData: SubjectData = {
       covered_question_ids: ["111-1-30","112-1-22","112-1-23","113-1-31","114-1-37","115-1-36"],
       worked_examples: [
         {
-          question: '【V5.1 新增步驟化例題】待補全，對應考點解析',
-          difficulty: '基礎',
-          steps: ['步驟 1：建立模型', '步驟 2：代入公式', '步驟 3：求得解答'],
-          answer: '待補全'
+          question: '【步驟化例題】瀝青針入度試驗物理意義：瀝青材料進行標準針入度試驗（25°C, 100g 針, 5秒），測得針入度數值為 60（單位為 0.1 mm）。試說明此數值之物理意義及高低溫環境之選用原則。',
+          difficulty: '中等',
+          steps: [ "步驟 1：換算貫入深度。60 代表針貫入深度為 60 × 0.1 mm = 6.0 mm。", "步驟 2：分析軟硬度。針入度越大代表瀝青越軟。", "步驟 3：環境選用原則。炎熱地區應選用較硬瀝青（針入度小如 60/70）防軟化車轍；寒冷地區選用較軟瀝青（85/100）防開裂。" ], 
+          answer: '針入度 60 代表貫入深度 6.0 mm；炎熱地區應選用針入度較小（較硬）之瀝青。'
         }
       ],
       illustrations: ['context.webp', 'mechanism.webp', 'comparison.webp', 'step-by-step.webp'],
@@ -950,10 +950,10 @@ export const materialsData: SubjectData = {
       covered_question_ids: ["111-1-21","111-1-39","112-1-32","112-1-36","113-1-34","113-1-35","114-1-32","114-1-40","115-1-32","110-1-8","110-1-16","110-1-24","110-1-32","110-1-40"],
       worked_examples: [
         {
-          question: '【V5.1 新增步驟化例題】待補全，對應考點解析',
-          difficulty: '基礎',
-          steps: ['步驟 1：建立模型', '步驟 2：代入公式', '步驟 3：求得解答'],
-          answer: '待補全'
+          question: '【步驟化例題】鋼筋拉伸試驗與降伏強度計算：一根標稱直徑為 16 mm (截面積 A = 200 mm²) 之竹節鋼筋進行拉伸試驗。若試體到達降伏點時壓力機拉力為 56.0 kN，求該鋼筋之「降伏強度 fy」為多少 MPa？',
+          difficulty: '中等',
+          steps: [ "步驟 1：轉換拉力單位。P = 56.0 kN = 56,000 N。", "步驟 2：計算降伏應力 fy = P / A。fy = 56,000 N / 200 mm² = 280 N/mm²。", "步驟 3：單位轉換。280 N/mm² = 280 MPa (此即 SD280 鋼筋)。" ], 
+          answer: '降伏強度 fy 為 280 MPa (N/mm²)。'
         }
       ],
       illustrations: ['context.webp', 'mechanism.webp', 'comparison.webp', 'step-by-step.webp'],
@@ -1042,10 +1042,10 @@ export const materialsData: SubjectData = {
       covered_question_ids: ["111-1-37","114-1-25"],
       worked_examples: [
         {
-          question: '【V5.1 新增步驟化例題】待補全，對應考點解析',
+          question: '【步驟化例題】綠建材標章評定體系：我國「綠建材標章 (Green Building Material)」分為四大類別，包含生態綠建材、健康綠建材、高性能綠建材與何者？',
           difficulty: '基礎',
-          steps: ['步驟 1：建立模型', '步驟 2：代入公式', '步驟 3：求得解答'],
-          answer: '待補全'
+          steps: [ "步驟 1：回顧綠建材四大分類體系。1. 生態 (Ecological), 2. 健康 (Healthy, 低 TVOC/甲醛), 3. 高性能 (High Performance, 隔音/透水), 4. 再生 (Recycled)。", "步驟 2：識別第四類。再生綠建材 (Recycled Green Building Materials)。", "步驟 3：總結。第四類為「再生綠建材」。" ], 
+          answer: '第四類為「再生綠建材 (Recycled Green Building Material)」。'
         }
       ],
       illustrations: ['context.webp', 'mechanism.webp', 'comparison.webp', 'step-by-step.webp'],

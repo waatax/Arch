@@ -14,10 +14,10 @@ export const mathCData: SubjectData = {
       covered_question_ids: [],
       worked_examples: [
         {
-          question: '【V5.1 新增步驟化例題】待補全，對應考點解析',
-          difficulty: '基礎',
-          steps: ['步驟 1：建立模型', '步驟 2：代入公式', '步驟 3：求得解答'],
-          answer: '待補全'
+          question: '【步驟化例題】三角函數與建築測高：從平地 A 點觀測大樓頂端仰角為 30°；朝大樓方向水平前進 100 公尺到達 B 點，測得仰角變為 60°。求大樓之高度 h 為多少公尺？',
+          difficulty: '中等',
+          steps: [ "步驟 1：建立直角三角形。設大樓高 h，B 點距大樓底 C 為 x，A 點距大樓底為 x + 100。", "步驟 2：列正切方程式。tan(60°) = h / x ⇒ h = √3 x；tan(30°) = h / (x + 100) ⇒ h = (x + 100) / √3。", "步驟 3：解聯立方程式。√3 x = (x + 100) / √3 ⇒ 3x = x + 100 ⇒ 2x = 100 ⇒ x = 50 m。", "步驟 4：求大樓高度 h。h = 50 × √3 = 50√3 ≒ 86.6 公尺。" ], 
+          answer: '大樓高度為 50√3 公尺 (約 86.6 m)。'
         }
       ],
       illustrations: ['context.webp', 'mechanism.webp', 'comparison.webp', 'step-by-step.webp'],
@@ -165,10 +165,10 @@ export const mathCData: SubjectData = {
       covered_question_ids: [],
       worked_examples: [
         {
-          question: '【V5.1 新增步驟化例題】待補全，對應考點解析',
-          difficulty: '基礎',
-          steps: ['步驟 1：建立模型', '步驟 2：代入公式', '步驟 3：求得解答'],
-          answer: '待補全'
+          question: '【步驟化例題】平面向量內積與夾角計算：已知作用於結構節點之兩力向量向量 A = (3, 4) 與 向量 B = (5, 12)。試求兩向量之「內積 A·B」及兩向量夾角之餘弦值 cosθ？',
+          difficulty: '中等',
+          steps: [ "步驟 1：計算向量內積。A · B = (3 × 5) + (4 × 12) = 15 + 48 = 63。", "步驟 2：計算兩向量之長度（模）。|A| = √(3² + 4²) = 5；|B| = √(5² + 12²) = 13。", "步驟 3：利用內積公式求 cosθ。cosθ = (A · B) / (|A| · |B|) = 63 / (5 × 13) = 63 / 65 ≒ 0.969。" ], 
+          answer: '內積 A·B = 63，夾角餘弦值 cosθ = 63/65 (約 0.969)。'
         }
       ],
       illustrations: ['context.webp', 'mechanism.webp', 'comparison.webp', 'step-by-step.webp'],
@@ -314,10 +314,10 @@ export const mathCData: SubjectData = {
       covered_question_ids: [],
       worked_examples: [
         {
-          question: '【V5.1 新增步驟化例題】待補全，對應考點解析',
+          question: '【步驟化例題】二次函數與最大建築面積求解：某建築師欲用總長 40 公尺之圍籬圍成一矩形庭院。設矩形寬度為 x 公尺，求該庭院能圍成之「最大面積」為多少平方公尺？',
           difficulty: '基礎',
-          steps: ['步驟 1：建立模型', '步驟 2：代入公式', '步驟 3：求得解答'],
-          answer: '待補全'
+          steps: [ "步驟 1：建立長度與寬度關係。周長 2(長 + 寬) = 40 ⇒ 長度 = 20 - x。", "步驟 2：建立面積函數 A(x)。A(x) = x · (20 - x) = -x² + 20x。", "步驟 3：配方法求極值。A(x) = -(x² - 20x + 100) + 100 = -(x - 10)² + 100。", "步驟 4：當 x = 10 時，最大面積為 100 m²。" ], 
+          answer: '最大庭院面積為 100 平方公尺。'
         }
       ],
       illustrations: ['context.webp', 'mechanism.webp', 'comparison.webp', 'step-by-step.webp'],
@@ -476,10 +476,10 @@ export const mathCData: SubjectData = {
       covered_question_ids: [],
       worked_examples: [
         {
-          question: '【V5.1 新增步驟化例題】待補全，對應考點解析',
+          question: '【步驟化例題】解析幾何與平行直線方程式：在建築施工圖面座標系中，有一管道線路 L1 之方程式為 3x - 4y + 12 = 0。若要設計一平行管道 L2 且通過點 P(4, 1)，求 L2 之直線方程式？',
           difficulty: '基礎',
-          steps: ['步驟 1：建立模型', '步驟 2：代入公式', '步驟 3：求得解答'],
-          answer: '待補全'
+          steps: [ "步驟 1：設平行線方程式。兩直線平行故 x, y 係數相同，設 L2 為 3x - 4y + k = 0。", "步驟 2：代入點 P(4, 1) 求解 k。3(4) - 4(1) + k = 0 ⇒ 12 - 4 + k = 0 ⇒ 8 + k = 0 ⇒ k = -8。", "步驟 3：寫出方程式。3x - 4y - 8 = 0。" ], 
+          answer: 'L2 直線方程式為 3x - 4y - 8 = 0。'
         }
       ],
       illustrations: ['context.webp', 'mechanism.webp', 'comparison.webp', 'step-by-step.webp'],
@@ -626,10 +626,10 @@ export const mathCData: SubjectData = {
       covered_question_ids: [],
       worked_examples: [
         {
-          question: '【V5.1 新增步驟化例題】待補全，對應考點解析',
-          difficulty: '基礎',
-          steps: ['步驟 1：建立模型', '步驟 2：代入公式', '步驟 3：求得解答'],
-          answer: '待補全'
+          question: '【步驟化例題】工程品管檢驗機率計算：某批磁磚抽樣檢驗，10 片磁磚中含有 2 片瑕疵品。若品管人員隨機抽取 2 片進行檢驗（不放回），求抽到的 2 片「均為良品」的機率為何？',
+          difficulty: '中等',
+          steps: [ "步驟 1：確定良品與瑕疵品數量。良品 8 片，瑕疵品 2 片，總數 10 片。", "步驟 2：計算總組合數 C(10, 2)。C(10, 2) = (10 × 9) / (2 × 1) = 45。", "步驟 3：計算全取良品組合數 C(8, 2)。C(8, 2) = (8 × 7) / (2 × 1) = 28。", "步驟 4：計算機率 P = 28 / 45 ≒ 0.622 (62.2%)。" ], 
+          answer: '均為良品之機率為 28/45 (約 62.2%)。'
         }
       ],
       illustrations: ['context.webp', 'mechanism.webp', 'comparison.webp', 'step-by-step.webp'],
@@ -771,10 +771,10 @@ export const mathCData: SubjectData = {
       covered_question_ids: [],
       worked_examples: [
         {
-          question: '【V5.1 新增步驟化例題】待補全，對應考點解析',
-          difficulty: '基礎',
-          steps: ['步驟 1：建立模型', '步驟 2：代入公式', '步驟 3：求得解答'],
-          answer: '待補全'
+          question: '【步驟化例題】微積分極值在樑彎矩分析之應用：一簡支梁長度 6m，受分佈載重作用其彎矩函數為 M(x) = 15x - 2.5x² (kN·m)。試利用微商（導數）求該梁之「最大彎矩值 M_max」位於何處？最大彎矩為多少？',
+          difficulty: '中等',
+          steps: [ "步驟 1：對 M(x) 求一階導數 dM/dx（即剪力 V(x)）。dM/dx = 15 - 5x。", "步驟 2：令導數等於 0 求解駐點。15 - 5x = 0 ⇒ 5x = 15 ⇒ x = 3m（即梁中央截面）。", "步驟 3：代入 x = 3 求 M_max。M(3) = 15(3) - 2.5(3)² = 45 - 22.5 = 22.5 kN·m。" ], 
+          answer: '最大彎矩位於 x = 3m 處，最大彎矩值 M_max = 22.5 kN·m。'
         }
       ],
       illustrations: ['context.webp', 'mechanism.webp', 'comparison.webp', 'step-by-step.webp'],

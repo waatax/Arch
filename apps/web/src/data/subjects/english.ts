@@ -14,10 +14,10 @@ export const englishData: SubjectData = {
       covered_question_ids: [],
       worked_examples: [
         {
-          question: '【V5.1 新增步驟化例題】待補全，對應考點解析',
+          question: '【步驟化例題】建築英文專有名詞辨析：Read the sentence: "The architect specified \"reinforced concrete\" for the structural frame to withstand seismic forces." What does the term "reinforced concrete" mean in Chinese?',
           difficulty: '基礎',
-          steps: ['步驟 1：建立模型', '步驟 2：代入公式', '步驟 3：求得解答'],
-          answer: '待補全'
+          steps: [ "步驟 1：分析單字結構。concrete 意為「混凝土」，reinforced 為 reinforce（加強/強化）之過去分詞。", "步驟 2：結合工程上下文。withstand seismic forces (抵禦地震力)，內部加入鋼筋（rebar）抗拉之混凝土。", "步驟 3：確定專業中文譯名。即為「鋼筋混凝土 (RC)」。" ], 
+          answer: '「鋼筋混凝土 (Reinforced Concrete, RC)」'
         }
       ],
       illustrations: ['context.webp', 'mechanism.webp', 'comparison.webp', 'step-by-step.webp'],
@@ -224,10 +224,10 @@ export const englishData: SubjectData = {
       covered_question_ids: [],
       worked_examples: [
         {
-          question: '【V5.1 新增步驟化例題】待補全，對應考點解析',
-          difficulty: '基礎',
-          steps: ['步驟 1：建立模型', '步驟 2：代入公式', '步驟 3：求得解答'],
-          answer: '待補全'
+          question: '【步驟化例題】施工規範說明書被動語態句型：Convert the active sentence into a passive sentence used in technical specifications: "The contractor must compact the soil backfill in layers."',
+          difficulty: '中等',
+          steps: [ "步驟 1：找出主詞、動詞與受詞。Subject: The contractor, Verb: must compact, Object: the soil backfill.", "步驟 2：將受詞移至句首作為被動主詞。The soil backfill...", "步驟 3：動詞改為被動態 \"must be + p.p.\"。must be compacted in layers (by the contractor)." ], 
+          answer: '"The soil backfill must be compacted in layers by the contractor."'
         }
       ],
       illustrations: ['context.webp', 'mechanism.webp', 'comparison.webp', 'step-by-step.webp'],
@@ -395,10 +395,10 @@ export const englishData: SubjectData = {
       covered_question_ids: [],
       worked_examples: [
         {
-          question: '【V5.1 新增步驟化例題】待補全，對應考點解析',
+          question: '【步驟化例題】建築設計英文閱讀主旨擷取：Passage: "Biophilic design integrates natural elements—such as daylight, indoor plants, and natural ventilation—into built environments to improve human health and well-being." What is the main idea of biophilic design?',
           difficulty: '基礎',
-          steps: ['步驟 1：建立模型', '步驟 2：代入公式', '步驟 3：求得解答'],
-          answer: '待補全'
+          steps: [ "步驟 1：找出核心關鍵字。Biophilic design (親自然設計), natural elements (自然元素), built environments (建築環境).", "步驟 2：分析目的與作法。將採光、綠植、通風等自然元素融入建築，改善人體健康。", "步驟 3：歸納主旨。親自然設計旨在透過融入自然元素提升建築使用者的健康與福祉。" ], 
+          answer: 'Connecting humans with nature inside built environments to enhance health and well-being.'
         }
       ],
       illustrations: ['context.webp', 'mechanism.webp', 'comparison.webp', 'step-by-step.webp'],
@@ -568,10 +568,10 @@ export const englishData: SubjectData = {
       covered_question_ids: [],
       worked_examples: [
         {
-          question: '【V5.1 新增步驟化例題】待補全，對應考點解析',
+          question: '【步驟化例題】工地安全檢查情境對話：Complete the dialogue between a safety officer and a worker: \nOfficer: "You must wear a ________ before entering the construction zone."\nWorker: "Yes, sir. I have my hard hat right here."',
           difficulty: '基礎',
-          steps: ['步驟 1：建立模型', '步驟 2：代入公式', '步驟 3：求得解答'],
-          answer: '待補全'
+          steps: [ "步驟 1：解析上下文意。工人回答 \"I have my hard hat right here\"（我的安全帽就在這）。", "步驟 2：對應安全防護配備單字。hard hat / safety helmet 指的是施工安全帽。", "步驟 3：填入正確單字。hard hat 或 safety helmet。" ], 
+          answer: 'hard hat (或 safety helmet)'
         }
       ],
       illustrations: ['context.webp', 'mechanism.webp', 'comparison.webp', 'step-by-step.webp'],
@@ -721,10 +721,10 @@ export const englishData: SubjectData = {
       covered_question_ids: [],
       worked_examples: [
         {
-          question: '【V5.1 新增步驟化例題】待補全，對應考點解析',
+          question: '【步驟化例題】建築節能文章克漏字介詞選填：Choose the correct preposition: "Green buildings are designed to minimize their impact _____ the natural environment."',
           difficulty: '基礎',
-          steps: ['步驟 1：建立模型', '步驟 2：代入公式', '步驟 3：求得解答'],
-          answer: '待補全'
+          steps: [ "步驟 1：識別慣用搭配片語。have an impact / effect / influence + 介詞 + 對象。", "步驟 2：判定介詞用法。固定搭配介詞為 \"on\"（對……產生影響）。", "步驟 3：完成句子。impact on the natural environment。" ], 
+          answer: 'on'
         }
       ],
       illustrations: ['context.webp', 'mechanism.webp', 'comparison.webp', 'step-by-step.webp'],
@@ -881,10 +881,10 @@ export const englishData: SubjectData = {
       covered_question_ids: [],
       worked_examples: [
         {
-          question: '【V5.1 新增步驟化例題】待補全，對應考點解析',
-          difficulty: '基礎',
-          steps: ['步驟 1：建立模型', '步驟 2：代入公式', '步驟 3：求得解答'],
-          answer: '待補全'
+          question: '【步驟化例題】建築工程句子中譯英：請將下列句子翻譯成正確的英文工程說明：「這座博物館採用鋼骨結構以實現大跨距空間。」',
+          difficulty: '中等',
+          steps: [ "步驟 1：翻譯核心單字。博物館 (museum)、鋼骨結構 (steel structure)、大跨距空間 (large-span space / long-span space)。", "步驟 2：建構句型結構。The museum uses/adopts a steel structure to achieve a long-span space.", "步驟 3：檢查文法與專業度。This museum utilizes a steel structure to create long-span spaces." ], 
+          answer: '"This museum utilizes a steel structure to achieve a long-span space."'
         }
       ],
       illustrations: ['context.webp', 'mechanism.webp', 'comparison.webp', 'step-by-step.webp'],
