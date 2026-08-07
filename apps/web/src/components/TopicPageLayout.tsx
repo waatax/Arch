@@ -30,14 +30,17 @@ export default function TopicPageLayout({ subject, topic }: TopicPageLayoutProps
   const [showSolutionSteps, setShowSolutionSteps] = useState<Record<number, boolean>>({});
 
   useEffect(() => {
-    try {
-      const saved = localStorage.getItem(`progress_${subject.slug}_${topic.slug}`);
-      if (saved) {
-        setCompletedConcepts(JSON.parse(saved));
+    const timer = setTimeout(() => {
+      try {
+        const saved = localStorage.getItem(`progress_${subject.slug}_${topic.slug}`);
+        if (saved) {
+          setCompletedConcepts(JSON.parse(saved));
+        }
+      } catch {
+        // Ignore localStorage errors in SSR
       }
-    } catch {
-      // Ignore localStorage errors in SSR
-    }
+    }, 0);
+    return () => clearTimeout(timer);
   }, [subject.slug, topic.slug]);
 
   const toggleConceptProgress = (index: number) => {
