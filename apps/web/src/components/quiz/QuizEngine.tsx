@@ -3,26 +3,25 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { GlassCard } from '../ui/GlassCard';
-import { calculateNextDifficulty, needsScaffolding, StudentState } from '@/lib/algorithm/adaptive';
+import { calculateNextDifficulty, needsScaffolding } from '@/lib/algorithm/adaptive';
 import { CheckCircle2, XCircle, ArrowRight, Lightbulb } from 'lucide-react';
+import { useStudentStore } from '@/lib/store/studentStore';
 
 export function QuizEngine() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [selectedOption, setSelectedOption] = useState<number | null>(null);
   const [isSubmitted, setIsSubmitted] = useState(false);
   
-  // Adaptive State
-  const [studentState, setStudentState] = useState<StudentState>({
-    streak: 0,
-    recentAccuracy: [],
-    averageTimePerQuestionMs: 15000,
-  });
+  // Adaptive State from Global Store
+  const { streak, recentAccuracy, updateAccuracy, incrementStreak } = useStudentStore();
+  
+  const [localRecentAccuracy, setLocalRecentAccuracy] = useState<number[]>([]);
 
   const question = {
-    text: "若有一均勻矩形截面，寬為 b，高為 h，其對通過形心之水平軸的慣性矩 (Moment of Inertia) 為何？",
+    text: "對於一均勻矩形斷面，寬為 b，高為 h，其對通過形心之水平軸的慣性矩 (Moment of Inertia) 為何？",
     options: ["(b * h^2) / 12", "(b * h^3) / 12", "(b * h^3) / 3", "(b * h^2) / 3"],
     correctIndex: 1,
-    hint: "鷹架提示：回想慣性矩公式中，平行於旋轉軸的邊是一次方，垂直於旋轉軸的邊是三次方。"
+    hint: "鷹架提示：矩形慣性矩對中心平行的旋轉軸，高度是三次方，寬度平行於旋轉軸所以是一次方。"
   };
 
   const handleSelect = (index: number) => {
@@ -35,14 +34,13 @@ export function QuizEngine() {
     setIsSubmitted(true);
     
     const isCorrect = selectedOption === question.correctIndex;
-    setStudentState(prev => {
-      const newAccuracy = [...prev.recentAccuracy, isCorrect ? 1 : 0].slice(-5);
-      return {
-        ...prev,
-        streak: isCorrect ? prev.streak + 1 : 0,
-        recentAccuracy: newAccuracy,
-      };
-    });
+    
+    // Update global persistent store
+    updateAccuracy(isCorrect);
+    if (isCorrect) incrementStreak();
+    
+    // Update local state for scaffolding logic
+    setLocalRecentAccuracy(prev => [...prev, isCorrect ? 1 : 0].slice(-5));
   };
 
   const handleNext = () => {
@@ -68,17 +66,21 @@ export function QuizEngine() {
     return () => window.removeEventListener('keydown', handleKeyDown);
   }, [isSubmitted, selectedOption]);
 
-  const showScaffolding = needsScaffolding(studentState);
+  const showScaffolding = needsScaffolding({
+    streak,
+    recentAccuracy: localRecentAccuracy,
+    averageTimePerQuestionMs: 15000
+  });
 
   return (
     <div className="w-full max-w-3xl mx-auto py-12 px-4">
-      {studentState.streak > 2 && (
+      {streak > 2 && (
         <motion.div 
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           className="mb-4 text-center text-orange-500 font-bold flex items-center justify-center gap-2"
         >
-          🔥 {studentState.streak} Streak! You're on fire!
+          🔥 {streak} Streak! You're on fire!
         </motion.div>
       )}
 

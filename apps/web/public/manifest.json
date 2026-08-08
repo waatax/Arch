@@ -1,0 +1,21 @@
+{
+  "name": "Arch - 台灣高工建築科學習平台",
+  "short_name": "Arch",
+  "description": "統測考題與高職建築科學習系統",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#0ea5e9",
+  "icons": [
+    {
+      "src": "/learning-visuals/classical-literature-infographic.webp",
+      "sizes": "192x192",
+      "type": "image/webp"
+    },
+    {
+      "src": "/learning-visuals/classical-literature-infographic.webp",
+      "sizes": "512x512",
+      "type": "image/webp"
+    }
+  ]
+}
