@@ -7,6 +7,7 @@ import type { SubjectData, TopicContent } from '@/data/types';
 import MathText from '@/components/MathText';
 import InteractiveVisualizer from '@/components/visualizers/InteractiveVisualizer';
 import { getTopicRealLifeGuide } from '@/lib/pedagogy/realLifeHelpers';
+import { getTopicDeepKnowledge } from '@/lib/pedagogy/topicKnowledgeExpander';
 
 interface TopicPageLayoutProps {
   subject: SubjectData;
@@ -76,6 +77,7 @@ export default function TopicPageLayout({ subject, topic }: TopicPageLayoutProps
   };
 
   const realLifeGuide = getTopicRealLifeGuide(subject.slug, topic.slug);
+  const deepKnowledge = getTopicDeepKnowledge(subject.slug, topic.slug);
 
   return (
     <article className="mx-auto max-w-4xl space-y-8 px-4 py-8 sm:px-6 sm:py-12 pb-28">
@@ -298,6 +300,122 @@ export default function TopicPageLayout({ subject, topic }: TopicPageLayoutProps
       {/* Embedded Dynamic Interactive Visualizer Widget */}
       <section className="space-y-4" aria-label="互動式幾何與力學模擬器">
         <InteractiveVisualizer subjectSlug={subject.slug} topicSlug={topic.slug} />
+      </section>
+
+      {/* === [Iconic Landmark Engineering Case Study] === */}
+      <section className="rounded-2xl border border-sky-200 dark:border-sky-900/60 bg-sky-50/30 dark:bg-sky-950/20 p-5 sm:p-7 shadow-xs space-y-4">
+        <div className="flex items-center justify-between border-b border-sky-200/60 dark:border-sky-900/40 pb-3">
+          <div className="flex items-center gap-2">
+            <span className="flex size-7 items-center justify-center rounded-lg bg-sky-600 text-white text-xs font-mono font-bold">
+              🏛️
+            </span>
+            <div>
+              <span className="text-[11px] font-mono uppercase tracking-wider text-sky-700 dark:text-sky-300 font-bold block">
+                台灣經典建築實務工程案例
+              </span>
+              <h3 className="font-serif text-lg font-bold text-slate-900 dark:text-white">
+                {deepKnowledge.landmarkCase.name}
+              </h3>
+            </div>
+          </div>
+          <span className="rounded-full bg-sky-100 dark:bg-sky-900/60 px-2.5 py-0.5 text-xs font-mono font-bold text-sky-800 dark:text-sky-200 border border-sky-300 dark:border-sky-700">
+            📍 {deepKnowledge.landmarkCase.location}
+          </span>
+        </div>
+
+        <div className="grid gap-3 sm:grid-cols-2 text-xs leading-relaxed">
+          <div className="rounded-xl bg-white dark:bg-slate-900 p-4 border border-slate-200 dark:border-slate-800 space-y-1">
+            <span className="font-mono font-bold text-slate-500 block">結構與構造特色：</span>
+            <p className="text-slate-700 dark:text-slate-300">
+              {deepKnowledge.landmarkCase.structuralFeature}
+            </p>
+          </div>
+          <div className="rounded-xl bg-white dark:bg-slate-900 p-4 border border-slate-200 dark:border-slate-800 space-y-1">
+            <span className="font-mono font-bold text-sky-600 dark:text-sky-400 block">教學核心洞察：</span>
+            <p className="text-slate-700 dark:text-slate-300">
+              {deepKnowledge.landmarkCase.pedagogicalInsight}
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* === [Problem-Solving Decision Matrix & Exam Trend] === */}
+      <section className="rounded-2xl border border-amber-200 dark:border-amber-900/60 bg-amber-50/20 dark:bg-amber-950/20 p-5 sm:p-7 shadow-xs space-y-4">
+        <div className="flex flex-wrap items-center justify-between gap-2 border-b border-amber-200/60 dark:border-amber-900/40 pb-3">
+          <div className="flex items-center gap-2">
+            <span className="flex size-7 items-center justify-center rounded-lg bg-amber-600 text-white text-xs font-mono font-bold">
+              ⚡
+            </span>
+            <h3 className="font-serif text-lg font-bold text-slate-900 dark:text-white">
+              統測解題秒殺決策樹 (3-Step Decision Flow)
+            </h3>
+          </div>
+          <div className="flex items-center gap-2">
+            <span className="rounded-full bg-red-100 dark:bg-red-950/80 px-2.5 py-0.5 text-xs font-bold text-red-700 dark:text-red-300 border border-red-200 dark:border-red-800">
+              {deepKnowledge.examTrend.frequency}
+            </span>
+          </div>
+        </div>
+
+        <div className="grid gap-3 sm:grid-cols-3 text-xs leading-relaxed">
+          <div className="rounded-xl bg-white dark:bg-slate-900 p-4 border border-slate-200 dark:border-slate-800 space-y-1">
+            <span className="font-mono font-bold text-amber-700 dark:text-amber-300 block">步驟 1：題型識別</span>
+            <p className="text-slate-700 dark:text-slate-300">{deepKnowledge.decisionFlow.step1}</p>
+          </div>
+          <div className="rounded-xl bg-white dark:bg-slate-900 p-4 border border-slate-200 dark:border-slate-800 space-y-1">
+            <span className="font-mono font-bold text-blue-700 dark:text-blue-300 block">步驟 2：公式選定與展開</span>
+            <p className="text-slate-700 dark:text-slate-300">{deepKnowledge.decisionFlow.step2}</p>
+          </div>
+          <div className="rounded-xl bg-white dark:bg-slate-900 p-4 border border-slate-200 dark:border-slate-800 space-y-1">
+            <span className="font-mono font-bold text-emerald-700 dark:text-emerald-300 block">步驟 3：常識驗算與破題</span>
+            <p className="text-slate-700 dark:text-slate-300">{deepKnowledge.decisionFlow.step3}</p>
+          </div>
+        </div>
+
+        <div className="rounded-xl bg-amber-100/60 dark:bg-amber-950/60 p-3.5 text-xs text-amber-950 dark:text-amber-200 border border-amber-300/80 dark:border-amber-800">
+          🎯 <strong>秒殺破題口訣：</strong>
+          {deepKnowledge.examTrend.killerTrick}
+        </div>
+      </section>
+
+      {/* === [CNS Standards & Bilingual Technical Glossary Tabs] === */}
+      <section className="grid gap-4 sm:grid-cols-2">
+        {/* CNS Standard Card */}
+        <div className="rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 p-5 space-y-2 shadow-xs">
+          <div className="flex items-center gap-2 text-xs font-mono font-bold text-slate-500">
+            <span>📑</span>
+            <span>國家標準與建築法規條文</span>
+          </div>
+          <h4 className="font-serif text-sm font-bold text-blue-900 dark:text-blue-200">
+            {deepKnowledge.cnsAndCodes.code}：{deepKnowledge.cnsAndCodes.title}
+          </h4>
+          <p className="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">
+            {deepKnowledge.cnsAndCodes.description}
+          </p>
+        </div>
+
+        {/* Bilingual Glossary Card */}
+        <div className="rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 p-5 space-y-2.5 shadow-xs">
+          <div className="flex items-center justify-between text-xs font-mono font-bold text-slate-500">
+            <span className="flex items-center gap-1.5">
+              <span>🌐</span>
+              <span>國際營建雙語名詞庫</span>
+            </span>
+            <span className="text-[10px] text-slate-400">ASTM / ACI / ISO</span>
+          </div>
+          <div className="grid grid-cols-2 gap-2 text-xs">
+            {deepKnowledge.bilingualTerms.map((term, tIdx) => (
+              <div key={tIdx} className="rounded-lg bg-slate-50 dark:bg-slate-800/60 p-2 border border-slate-100 dark:border-slate-800">
+                <span className="font-bold text-slate-900 dark:text-white block font-mono text-[11px]">
+                  {term.en}
+                </span>
+                <span className="text-[11px] text-slate-600 dark:text-slate-300">
+                  {term.zh} {term.abbr && `(${term.abbr})`}
+                </span>
+              </div>
+            ))}
+          </div>
+        </div>
       </section>
 
       {/* === Core Concepts List === */}
