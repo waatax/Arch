@@ -6,7 +6,7 @@ export interface TopicRealLifeGuide {
   oneSentenceRecap: string;
 }
 
-export function getTopicRealLifeGuide(subjectSlug: string, topicSlug: string, topicTitle: string): TopicRealLifeGuide {
+export function getTopicRealLifeGuide(subjectSlug: string, topicSlug: string, _topicTitle?: string): TopicRealLifeGuide {
   // === 1. Mechanics (基礎工程力學) ===
   if (subjectSlug === 'mechanics') {
     if (topicSlug.includes('vector') || topicSlug.includes('force')) {
