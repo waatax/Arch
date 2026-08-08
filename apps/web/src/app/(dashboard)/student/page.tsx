@@ -11,7 +11,8 @@ export default function StudentDashboard() {
 
   useEffect(() => {
     resetDailyIfNewDay();
-    setMounted(true);
+    const timer = setTimeout(() => setMounted(true), 0);
+    return () => clearTimeout(timer);
   }, [resetDailyIfNewDay]);
 
   if (!mounted) return null; // Avoid hydration mismatch
@@ -57,7 +58,7 @@ export default function StudentDashboard() {
               Welcome back, Student
             </h1>
             <p className="text-slate-500 dark:text-slate-400 text-lg">
-              Let's crush today's vocational goals!
+              Let&apos;s crush today&apos;s vocational goals!
             </p>
           </div>
           

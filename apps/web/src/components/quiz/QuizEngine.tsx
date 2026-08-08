@@ -1,9 +1,9 @@
 'use client';
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { GlassCard } from '../ui/GlassCard';
-import { calculateNextDifficulty, needsScaffolding } from '@/lib/algorithm/adaptive';
+import { needsScaffolding } from '@/lib/algorithm/adaptive';
 import { CheckCircle2, XCircle, ArrowRight, Lightbulb } from 'lucide-react';
 import { useStudentStore } from '@/lib/store/studentStore';
 
@@ -13,7 +13,7 @@ export function QuizEngine() {
   const [isSubmitted, setIsSubmitted] = useState(false);
   
   // Adaptive State from Global Store
-  const { streak, recentAccuracy, updateAccuracy, incrementStreak } = useStudentStore();
+  const { streak, updateAccuracy, incrementStreak } = useStudentStore();
   
   const [localRecentAccuracy, setLocalRecentAccuracy] = useState<number[]>([]);
 
@@ -24,12 +24,12 @@ export function QuizEngine() {
     hint: "鷹架提示：矩形慣性矩對中心平行的旋轉軸，高度是三次方，寬度平行於旋轉軸所以是一次方。"
   };
 
-  const handleSelect = (index: number) => {
+  const handleSelect = useCallback((index: number) => {
     if (isSubmitted) return;
     setSelectedOption(index);
-  };
+  }, [isSubmitted]);
 
-  const handleSubmit = () => {
+  const handleSubmit = useCallback(() => {
     if (selectedOption === null || isSubmitted) return;
     setIsSubmitted(true);
     
@@ -41,13 +41,13 @@ export function QuizEngine() {
     
     // Update local state for scaffolding logic
     setLocalRecentAccuracy(prev => [...prev, isCorrect ? 1 : 0].slice(-5));
-  };
+  }, [selectedOption, isSubmitted, question.correctIndex, updateAccuracy, incrementStreak]);
 
-  const handleNext = () => {
+  const handleNext = useCallback(() => {
     setSelectedOption(null);
     setIsSubmitted(false);
     setCurrentIndex(c => c + 1);
-  };
+  }, []);
 
   // Keyboard shortcuts
   useEffect(() => {
@@ -64,7 +64,7 @@ export function QuizEngine() {
     };
     window.addEventListener('keydown', handleKeyDown);
     return () => window.removeEventListener('keydown', handleKeyDown);
-  }, [isSubmitted, selectedOption]);
+  }, [isSubmitted, handleSelect, handleSubmit, handleNext]);
 
   const showScaffolding = needsScaffolding({
     streak,
@@ -80,7 +80,7 @@ export function QuizEngine() {
           animate={{ opacity: 1, y: 0 }}
           className="mb-4 text-center text-orange-500 font-bold flex items-center justify-center gap-2"
         >
-          🔥 {streak} Streak! You're on fire!
+          🔥 {streak} Streak! You&apos;re on fire!
         </motion.div>
       )}
 

@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { GlassCard } from '@/components/ui/GlassCard';
-import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, AreaChart, Area } from 'recharts';
+import { Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, AreaChart, Area } from 'recharts';
 import { Activity, BookOpen, AlertCircle } from 'lucide-react';
 
 const accuracyData = [
