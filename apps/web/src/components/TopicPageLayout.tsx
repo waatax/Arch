@@ -6,6 +6,7 @@ import Link from 'next/link';
 import type { SubjectData, TopicContent } from '@/data/types';
 import MathText from '@/components/MathText';
 import InteractiveVisualizer from '@/components/visualizers/InteractiveVisualizer';
+import { getTopicRealLifeGuide } from '@/lib/pedagogy/realLifeHelpers';
 
 interface TopicPageLayoutProps {
   subject: SubjectData;
@@ -74,6 +75,8 @@ export default function TopicPageLayout({ subject, topic }: TopicPageLayoutProps
     setShowSolutionSteps((prev) => ({ ...prev, [index]: !prev[index] }));
   };
 
+  const realLifeGuide = getTopicRealLifeGuide(subject.slug, topic.slug, topic.title);
+
   return (
     <article className="mx-auto max-w-4xl space-y-8 px-4 py-8 sm:px-6 sm:py-12 pb-28">
       {/* Header Navigation & Breadcrumbs */}
@@ -99,6 +102,9 @@ export default function TopicPageLayout({ subject, topic }: TopicPageLayoutProps
             <span className="rounded-full bg-emerald-600/10 px-2.5 py-0.5 text-xs font-medium text-emerald-700 dark:text-emerald-300 border border-emerald-600/20">
               ⭐⭐⭐⭐⭐ 統測核心考點
             </span>
+            <span className="rounded-full bg-amber-500/10 px-2.5 py-0.5 text-xs font-mono font-bold text-amber-700 dark:text-amber-300 border border-amber-500/20">
+              🎒 國中程度無痛上手
+            </span>
             <span className="rounded-full bg-slate-100 dark:bg-slate-800 px-2.5 py-0.5 text-xs font-mono text-slate-600 dark:text-slate-400">
               ⏱️ 建議研讀 20-30 分鐘
             </span>
@@ -110,6 +116,49 @@ export default function TopicPageLayout({ subject, topic }: TopicPageLayoutProps
           <p className="max-w-3xl text-base leading-relaxed text-slate-600 dark:text-slate-400">
             {topic.desc}
           </p>
+        </div>
+
+        {/* 🌟 Real-Life Importance & Engineering Context Banner */}
+        <div className="rounded-2xl border border-blue-200 dark:border-blue-900/60 bg-gradient-to-br from-blue-50/70 via-white to-sky-50/50 dark:from-blue-950/40 dark:via-slate-900 dark:to-slate-900 p-5 sm:p-7 shadow-xs space-y-3">
+          <div className="flex items-center gap-2">
+            <span className="flex size-7 items-center justify-center rounded-lg bg-blue-600 text-white text-xs font-mono font-bold">
+              🌟
+            </span>
+            <h2 className="font-serif text-base sm:text-lg font-bold text-slate-900 dark:text-white">
+              為什麼要學這個？真實生活與建築工程的關鍵角色
+            </h2>
+          </div>
+          <p className="text-sm leading-relaxed text-slate-700 dark:text-slate-300 font-medium">
+            {realLifeGuide.realLifeImportance}
+          </p>
+
+          <div className="grid gap-3 pt-2 sm:grid-cols-2 text-xs">
+            <div className="rounded-xl bg-white dark:bg-slate-800/80 p-3.5 border border-slate-200 dark:border-slate-700/80 space-y-1">
+              <span className="font-mono font-bold text-blue-700 dark:text-blue-300 flex items-center gap-1">
+                🎒 國中先備知識銜接
+              </span>
+              <p className="text-slate-600 dark:text-slate-400 leading-relaxed">
+                {realLifeGuide.juniorHighBridge}
+              </p>
+            </div>
+
+            <div className="rounded-xl bg-white dark:bg-slate-800/80 p-3.5 border border-slate-200 dark:border-slate-700/80 space-y-1">
+              <span className="font-mono font-bold text-amber-700 dark:text-amber-300 flex items-center gap-1">
+                🍞 100% 國中生白話譬喻
+              </span>
+              <p className="text-slate-600 dark:text-slate-400 leading-relaxed">
+                {realLifeGuide.everydayAnalogy}
+              </p>
+            </div>
+          </div>
+
+          <div className="rounded-xl bg-emerald-50/80 dark:bg-emerald-950/40 border border-emerald-200 dark:border-emerald-800/60 p-3 text-xs text-emerald-900 dark:text-emerald-200 flex items-start gap-2">
+            <span className="shrink-0 mt-0.5">🔍</span>
+            <div>
+              <strong>生活觀察與動手微任務：</strong>
+              <span>{realLifeGuide.handsOnObservation}</span>
+            </div>
+          </div>
         </div>
 
         {/* Chapter Learning Progress Bar */}
@@ -518,6 +567,22 @@ export default function TopicPageLayout({ subject, topic }: TopicPageLayoutProps
           </div>
         </section>
       ) : null}
+
+      {/* === [One-Sentence Mastery Recap & Exit Check] === */}
+      <section className="rounded-2xl border border-indigo-200 dark:border-indigo-900/60 bg-gradient-to-r from-indigo-50/50 via-white to-sky-50/40 dark:from-indigo-950/30 dark:via-slate-900 dark:to-slate-900 p-6 sm:p-7 shadow-xs space-y-3">
+        <div className="flex items-center justify-between">
+          <span className="flex items-center gap-1.5 text-xs font-mono font-bold uppercase tracking-wider text-indigo-700 dark:text-indigo-300">
+            🏆 離開前一句話通關自評
+          </span>
+          <span className="text-xs font-mono text-slate-500">30 秒自我檢核</span>
+        </div>
+        <p className="font-serif text-base sm:text-lg font-bold text-slate-900 dark:text-white leading-relaxed">
+          「{realLifeGuide.oneSentenceRecap}」
+        </p>
+        <p className="text-xs text-slate-600 dark:text-slate-400">
+          如果你能用自己的話把這句話解釋給身邊的朋友或同學聽懂，代表你已經完全掌握本章的核心靈魂！
+        </p>
+      </section>
 
       {/* === Fixed Bottom Floating Navigation Bar === */}
       <footer className="fixed bottom-0 left-0 right-0 z-40 border-t border-slate-200 dark:border-slate-800 bg-white/95 dark:bg-slate-900/95 px-4 py-3 backdrop-blur-md shadow-lg">
