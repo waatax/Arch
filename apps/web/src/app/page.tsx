@@ -5,20 +5,20 @@ export default function Home() {
   return (
     <div className="space-y-14 sm:space-y-20 pb-14 sm:pb-20">
       {/* Hero Section */}
-      <section className="hero-gradient border-b border-(--color-concrete-300) py-12 sm:py-20 px-4 sm:px-6 lg:px-8">
+      <section className="hero-gradient border-b border-slate-200 dark:border-slate-800 py-12 sm:py-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-5xl mx-auto text-center sm:text-left">
-          <div className="animate-fade-in-up inline-block bg-(--color-teal-700) text-(--color-paper-50) text-xs px-3.5 py-1 rounded-full font-mono tracking-wider mb-6">
+          <div className="animate-fade-in-up inline-block bg-blue-600 dark:bg-blue-500 text-white text-xs px-3.5 py-1 rounded-full font-mono tracking-wider mb-6">
             台灣高工建築科學習平台 · 108 課綱
           </div>
           <h1
-            className="animate-fade-in-up text-[2.15rem] min-[390px]:text-4xl sm:text-5xl lg:text-6xl font-bold font-serif text-(--color-ink-900) tracking-tight mb-5 sm:mb-6 leading-[1.2]"
+            className="animate-fade-in-up text-[2.15rem] min-[390px]:text-4xl sm:text-5xl lg:text-6xl font-bold font-serif text-slate-900 dark:text-white tracking-tight mb-5 sm:mb-6 leading-[1.2]"
             style={{ animationDelay: '0.1s' } as React.CSSProperties}
           >
             看懂設計、學會概念、<br className="hidden sm:inline"/>
             動手做出屬於你的建築作品。
           </h1>
           <p
-            className="animate-fade-in-up text-base min-[390px]:text-lg sm:text-xl text-(--color-ink-650) max-w-3xl leading-relaxed mb-8 sm:mb-10"
+            className="animate-fade-in-up text-base min-[390px]:text-lg sm:text-xl text-slate-600 dark:text-slate-400 max-w-3xl leading-relaxed mb-8 sm:mb-10"
             style={{ animationDelay: '0.2s' } as React.CSSProperties}
           >
             免登入即可學習。從一棟真實台灣建築或一道統測考點開始，帶你由「我可能不會」走到「我能做出來，而且我想成為其中的一員」。
@@ -30,13 +30,13 @@ export default function Home() {
           >
             <Link
               href="/curriculum"
-              className="flex min-h-12 w-full sm:w-auto items-center justify-center px-5 sm:px-7 py-3.5 bg-(--color-teal-700) text-(--color-paper-50) text-center font-medium rounded-xl hover:shadow-lg hover:shadow-(--color-teal-700)/20 transition-all duration-300 shadow-sm"
+              className="flex min-h-12 w-full sm:w-auto items-center justify-center px-5 sm:px-7 py-3.5 bg-blue-600 dark:bg-blue-500 text-white text-center font-medium rounded-xl hover:shadow-lg hover:shadow-blue-500/20 transition-all duration-300 shadow-sm"
             >
               瀏覽完整課程地圖
             </Link>
             <Link
               href="/cases/taichung-national-theater"
-              className="flex min-h-12 w-full sm:w-auto items-center justify-center px-5 sm:px-7 py-3.5 bg-(--color-paper-50) text-(--color-ink-900) border border-(--color-concrete-300) text-center font-medium rounded-xl hover:border-(--color-teal-700) hover:shadow-md transition-all duration-300"
+              className="flex min-h-12 w-full sm:w-auto items-center justify-center px-5 sm:px-7 py-3.5 bg-slate-50 dark:bg-slate-900 text-slate-900 dark:text-white border border-slate-200 dark:border-slate-800 text-center font-medium rounded-xl hover:border-blue-500 hover:shadow-md transition-all duration-300"
             >
               探索首發案例：臺中國家歌劇院
             </Link>
@@ -51,7 +51,7 @@ export default function Home() {
             <span className="text-xs font-mono text-(--color-teal-700) uppercase tracking-widest block mb-1">
               Taiwan Architecture Case Lab
             </span>
-            <h2 className="text-2xl sm:text-3xl font-bold font-serif text-(--color-ink-900)">
+            <h2 className="text-2xl sm:text-3xl font-bold font-serif text-slate-900 dark:text-white">
               台灣建築案例實驗室
             </h2>
           </div>
@@ -83,17 +83,17 @@ export default function Home() {
           ].map((c, i) => (
             <div
               key={c.href}
-              className="card-lift bg-(--color-paper-100) border border-(--color-concrete-300) rounded-xl p-6 flex flex-col justify-between animate-fade-in-up"
+              className="card-lift bg-(--color-paper-100) border border-slate-200 dark:border-slate-800 rounded-xl p-6 flex flex-col justify-between animate-fade-in-up"
               style={{ animationDelay: `${0.1 * i}s` } as React.CSSProperties}
             >
               <div>
-                <span className="text-[11px] font-mono bg-(--color-paper-50) px-2.5 py-1 border border-(--color-concrete-300) rounded-full text-(--color-ink-650)">
+                <span className="text-[11px] font-mono bg-slate-50 dark:bg-slate-900 px-2.5 py-1 border border-slate-200 dark:border-slate-800 rounded-full text-slate-600 dark:text-slate-400">
                   {c.location}
                 </span>
-                <h3 className="text-xl font-bold font-serif text-(--color-ink-900) mt-3 mb-2">
+                <h3 className="text-xl font-bold font-serif text-slate-900 dark:text-white mt-3 mb-2">
                   {c.title}
                 </h3>
-                <p className="text-sm text-(--color-ink-650) mb-4 leading-relaxed">{c.desc}</p>
+                <p className="text-sm text-slate-600 dark:text-slate-400 mb-4 leading-relaxed">{c.desc}</p>
               </div>
               <Link
                 href={c.href}
@@ -119,7 +119,7 @@ export default function Home() {
           <span className="text-xs font-mono text-(--color-teal-700) uppercase tracking-widest block mb-1">
             108 課綱 · 統測專業科目
           </span>
-          <h2 className="text-2xl sm:text-3xl font-bold font-serif text-(--color-ink-900)">
+          <h2 className="text-2xl sm:text-3xl font-bold font-serif text-slate-900 dark:text-white">
             專業科目與實習模組
           </h2>
         </div>
@@ -173,10 +173,10 @@ export default function Home() {
           <span className="text-xs font-mono text-(--color-brick-700) uppercase tracking-widest block mb-1">
             108 課綱 · 統測共同 / 一般科目
           </span>
-          <h2 className="text-2xl sm:text-3xl font-bold font-serif text-(--color-ink-900)">
+          <h2 className="text-2xl sm:text-3xl font-bold font-serif text-slate-900 dark:text-white">
             一般科目
           </h2>
-          <p className="text-sm text-(--color-ink-650) mt-2 max-w-2xl">
+          <p className="text-sm text-slate-600 dark:text-slate-400 mt-2 max-w-2xl">
             統測共同科目（國、英、數）與部定必修一般科目（自然、社會領域），每科都與建築設計實務連結。
           </p>
         </div>

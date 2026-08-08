@@ -80,9 +80,6 @@ export default function StudentDashboard() {
 
         </div>
       </div>
-      
-      {/* Global Pomodoro Widget */}
-      <PomodoroTimer />
     </div>
   );
 }

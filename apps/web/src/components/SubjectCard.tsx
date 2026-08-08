@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import { GlassCard } from '@/components/ui/GlassCard';
 
 interface SubjectCardProps {
   title: string;
@@ -11,32 +12,31 @@ interface SubjectCardProps {
 
 export default function SubjectCard({ title, category, description, href, topicsCount, tag }: SubjectCardProps) {
   return (
-    <Link
-      href={href}
-      className="group card-lift block p-5 sm:p-6 bg-(--color-paper-100) border border-(--color-concrete-300) rounded-xl hover:border-(--color-teal-700)/60 transition-all duration-300"
-    >
-      <div className="flex flex-wrap justify-between items-start gap-2 mb-3">
-        <span className="text-[11px] font-mono text-(--color-ink-650) uppercase tracking-widest">
-          {category}
-        </span>
-        {tag && (
-          <span className="text-[11px] bg-(--color-brick-700) text-(--color-paper-50) px-2.5 py-0.5 rounded-full font-sans font-medium">
-            {tag}
+    <Link href={href} className="group block">
+      <GlassCard hoverEffect className="p-5 sm:p-6 h-full flex flex-col">
+        <div className="flex flex-wrap justify-between items-start gap-2 mb-3">
+          <span className="text-[11px] font-mono text-slate-500 dark:text-slate-400 uppercase tracking-widest">
+            {category}
           </span>
-        )}
-      </div>
-      <h3 className="text-xl font-bold text-(--color-ink-900) group-hover:text-(--color-teal-700) transition-colors duration-200 mb-2 font-serif">
-        {title}
-      </h3>
-      <p className="text-sm text-(--color-ink-650) mb-4 sm:line-clamp-2 leading-relaxed">
-        {description}
-      </p>
-      <div className="text-xs font-mono text-(--color-teal-700) font-medium flex items-center justify-between pt-3 border-t border-(--color-concrete-300)/50">
-        <span>{topicsCount} 個核心主題</span>
-        <span className="group-hover:translate-x-1.5 transition-transform duration-200">
-          探索 →
-        </span>
-      </div>
+          {tag && (
+            <span className="text-[11px] bg-emerald-500 text-white px-2.5 py-0.5 rounded-full font-sans font-medium shadow-sm shadow-emerald-500/20">
+              {tag}
+            </span>
+          )}
+        </div>
+        <h3 className="text-xl font-bold text-slate-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors duration-200 mb-2 font-serif">
+          {title}
+        </h3>
+        <p className="text-sm text-slate-600 dark:text-slate-300 mb-4 sm:line-clamp-2 leading-relaxed flex-grow">
+          {description}
+        </p>
+        <div className="text-xs font-mono text-blue-600 dark:text-blue-400 font-medium flex items-center justify-between pt-3 border-t border-slate-200 dark:border-slate-800/50 mt-auto">
+          <span>{topicsCount} 核心主題</span>
+          <span className="group-hover:translate-x-1.5 transition-transform duration-200 flex items-center gap-1">
+            探索 &rarr;
+          </span>
+        </div>
+      </GlassCard>
     </Link>
   );
 }
