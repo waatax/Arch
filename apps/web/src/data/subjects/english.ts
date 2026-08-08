@@ -9,7 +9,7 @@ export const englishData: SubjectData = {
     {
       slug: 'vocabulary-phrases',
       title: '1. 字彙與片語',
-      desc: '深入掌握構詞法、建築與工程專業字彙 (Architectural Terminology)、高頻動詞片語與空間位置介系詞。',
+      desc: '深入掌握構詞法、建築與工程專業字彙 (Architectural Terminology)、高頻動詞片語與空間位置介系詞。\n\n🔥 V6.0 考前秒殺秘訣：此核心概念統測出題率極高，建議善用圖解與鷹架提示反覆練習！',
       status: 'done',
       covered_question_ids: [],
       worked_examples: [
@@ -20,7 +20,7 @@ export const englishData: SubjectData = {
           answer: '「鋼筋混凝土 (Reinforced Concrete, RC)」'
         }
       ],
-      "illustrations": [ 'context.webp', 'mechanism.webp', 'comparison.webp', 'step-by-step.webp', 'english-real-world.webp' ],
+      "illustrations": [ 'context.webp', 'mechanism.webp', 'comparison.webp', 'step-by-step.webp', 'english-real-world.webp' , 'english-infographic.webp' ],
       concepts: [
         {
           heading: '字首、字根與字尾構詞分析 (Etymology & Morphology in Technical English)',
@@ -219,7 +219,7 @@ export const englishData: SubjectData = {
     {
       slug: 'grammar-patterns',
       title: '2. 文法句型',
-      desc: '五大基本句型、時態與被動語態、關係子句、分詞構句與假設語氣。',
+      desc: '五大基本句型、時態與被動語態、關係子句、分詞構句與假設語氣。\n\n🔥 V6.0 考前秒殺秘訣：此核心概念統測出題率極高，建議善用圖解與鷹架提示反覆練習！',
       status: 'done',
       covered_question_ids: [],
       worked_examples: [
@@ -230,7 +230,7 @@ export const englishData: SubjectData = {
           answer: '"The soil backfill must be compacted in layers by the contractor."'
         }
       ],
-      "illustrations": [ 'context.webp', 'mechanism.webp', 'comparison.webp', 'step-by-step.webp', 'english-real-world.webp' ],
+      "illustrations": [ 'context.webp', 'mechanism.webp', 'comparison.webp', 'step-by-step.webp', 'english-real-world.webp' , 'grammar-patterns-infographic.webp' ],
       concepts: [
         {
           heading: '英文五大基本句型與施工語境應用 (Five Basic Sentence Structures)',
@@ -390,7 +390,7 @@ export const englishData: SubjectData = {
     {
       slug: 'reading-comprehension',
       title: '3. 閱讀測驗',
-      desc: '略讀與掃讀技巧、綠建築與建築結構技術短文閱讀、上下文推論與文章主旨分析。',
+      desc: '略讀與掃讀技巧、綠建築與建築結構技術短文閱讀、上下文推論與文章主旨分析。\n\n🔥 V6.0 考前秒殺秘訣：此核心概念統測出題率極高，建議善用圖解與鷹架提示反覆練習！',
       status: 'done',
       covered_question_ids: [],
       worked_examples: [
@@ -401,7 +401,7 @@ export const englishData: SubjectData = {
           answer: 'Connecting humans with nature inside built environments to enhance health and well-being.'
         }
       ],
-      "illustrations": [ 'context.webp', 'mechanism.webp', 'comparison.webp', 'step-by-step.webp', 'english-real-world.webp' ],
+      "illustrations": [ 'context.webp', 'mechanism.webp', 'comparison.webp', 'step-by-step.webp', 'english-real-world.webp' , 'reading-comprehension-infographic.webp' ],
       concepts: [
         {
           heading: '高效雙速閱讀法 (Skimming vs. Scanning Methodology)',
@@ -563,7 +563,7 @@ export const englishData: SubjectData = {
     {
       slug: 'conversation-daily-use',
       title: '4. 對話與日常應用',
-      desc: '建築工地溝通、事務所設計會議、社交與生活英語、職場對話習慣用語。',
+      desc: '建築工地溝通、事務所設計會議、社交與生活英語、職場對話習慣用語。\n\n🔥 V6.0 考前秒殺秘訣：此核心概念統測出題率極高，建議善用圖解與鷹架提示反覆練習！',
       status: 'done',
       covered_question_ids: [],
       worked_examples: [
@@ -574,7 +574,7 @@ export const englishData: SubjectData = {
           answer: 'hard hat (或 safety helmet)'
         }
       ],
-      "illustrations": [ 'context.webp', 'mechanism.webp', 'comparison.webp', 'step-by-step.webp', 'english-real-world.webp' ],
+      "illustrations": [ 'context.webp', 'mechanism.webp', 'comparison.webp', 'step-by-step.webp', 'english-real-world.webp' , 'conversation-daily-use-infographic.webp' ],
       concepts: [
         {
           heading: '施工現場指令、安全通報與進度對話 (Jobsite Communication)',
@@ -716,7 +716,7 @@ export const englishData: SubjectData = {
     {
       slug: 'cloze-passage-structure',
       title: '5. 克漏字與篇章結構',
-      desc: '篇章銜接、轉折語與邏輯連接詞、克漏字實戰解題策略與篇章結構重建。',
+      desc: '篇章銜接、轉折語與邏輯連接詞、克漏字實戰解題策略與篇章結構重建。\n\n🔥 V6.0 考前秒殺秘訣：此核心概念統測出題率極高，建議善用圖解與鷹架提示反覆練習！',
       status: 'done',
       covered_question_ids: [],
       worked_examples: [
@@ -727,7 +727,7 @@ export const englishData: SubjectData = {
           answer: 'on'
         }
       ],
-      "illustrations": [ 'context.webp', 'mechanism.webp', 'comparison.webp', 'step-by-step.webp', 'english-real-world.webp' ],
+      "illustrations": [ 'context.webp', 'mechanism.webp', 'comparison.webp', 'step-by-step.webp', 'english-real-world.webp' , 'cloze-passage-structure-infographic.webp' ],
       concepts: [
         {
           heading: '克漏字三大突破步驟 (Comprehensive Cloze Test Methodology)',
@@ -876,7 +876,7 @@ export const englishData: SubjectData = {
     {
       slug: 'translation-writing',
       title: '6. 翻譯與寫作基礎',
-      desc: '中譯英技巧、句型結構重組、建築與技術段落寫作結構、標點符號與寫作修辭。',
+      desc: '中譯英技巧、句型結構重組、建築與技術段落寫作結構、標點符號與寫作修辭。\n\n🔥 V6.0 考前秒殺秘訣：此核心概念統測出題率極高，建議善用圖解與鷹架提示反覆練習！',
       status: 'done',
       covered_question_ids: [],
       worked_examples: [
@@ -887,7 +887,7 @@ export const englishData: SubjectData = {
           answer: '"This museum utilizes a steel structure to achieve a long-span space."'
         }
       ],
-      "illustrations": [ 'context.webp', 'mechanism.webp', 'comparison.webp', 'step-by-step.webp', 'english-real-world.webp' ],
+      "illustrations": [ 'context.webp', 'mechanism.webp', 'comparison.webp', 'step-by-step.webp', 'english-real-world.webp' , 'translation-writing-infographic.webp' ],
       concepts: [
         {
           heading: '中譯英語序轉換與動詞核心化 (Chinese-to-English Translation Principles)',

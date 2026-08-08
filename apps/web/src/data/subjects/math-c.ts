@@ -9,7 +9,7 @@ export const mathCData: SubjectData = {
     {
       slug: 'trigonometry',
       title: '1. 三角函數與建築應用',
-      desc: '深入掌握正弦定理、餘弦定理、無障礙坡道切線、和差角公式推導與極座標系統，應用於建築基地測量、屋頂斜率與聲學週期變化。',
+      desc: '深入掌握正弦定理、餘弦定理、無障礙坡道切線、和差角公式推導與極座標系統，應用於建築基地測量、屋頂斜率與聲學週期變化。\n\n🔥 V6.0 考前秒殺秘訣：此核心概念統測出題率極高，建議善用圖解與鷹架提示反覆練習！',
       status: 'done',
       covered_question_ids: [],
       worked_examples: [
@@ -20,7 +20,7 @@ export const mathCData: SubjectData = {
           answer: '大樓高度為 50√3 公尺 (約 86.6 m)。'
         }
       ],
-      "illustrations": [ 'context.webp', 'mechanism.webp', 'comparison.webp', 'step-by-step.webp', 'math-c-real-world.webp' ],
+      "illustrations": [ 'context.webp', 'mechanism.webp', 'comparison.webp', 'step-by-step.webp', 'math-c-real-world.webp' , 'math-c-infographic.webp' ],
       concepts: [
         {
           heading: '正弦定理與餘弦定理在建築測量中的證明與應用',
@@ -160,7 +160,7 @@ export const mathCData: SubjectData = {
     {
       slug: 'vectors',
       title: '2. 平面向量與力學分解',
-      desc: '深入掌握向量正交分解、內積證明與夾角、外積與行列式面積、拉米定理靜力平衡及正交投影，應用於結構受力分析與樑柱接頭幾何。',
+      desc: '深入掌握向量正交分解、內積證明與夾角、外積與行列式面積、拉米定理靜力平衡及正交投影，應用於結構受力分析與樑柱接頭幾何。\n\n🔥 V6.0 考前秒殺秘訣：此核心概念統測出題率極高，建議善用圖解與鷹架提示反覆練習！',
       status: 'done',
       covered_question_ids: [],
       worked_examples: [
@@ -171,7 +171,7 @@ export const mathCData: SubjectData = {
           answer: '內積 A·B = 63，夾角餘弦值 cosθ = 63/65 (約 0.969)。'
         }
       ],
-      "illustrations": [ 'context.webp', 'mechanism.webp', 'comparison.webp', 'step-by-step.webp', 'math-c-real-world.webp' ],
+      "illustrations": [ 'context.webp', 'mechanism.webp', 'comparison.webp', 'step-by-step.webp', 'math-c-real-world.webp' , 'vectors-infographic.webp' ],
       concepts: [
         {
           heading: '平面向量的正交分解與坐標運算',
@@ -309,7 +309,7 @@ export const mathCData: SubjectData = {
     {
       slug: 'algebra',
       title: '3. 代數與多項式',
-      desc: '深入掌握二次多項式配方法頂點式推導、餘式與因式定理證明、克拉瑪公式、線性規劃可行域極值及對數尺度，應用於拱門幾何與材料預算最佳化。',
+      desc: '深入掌握二次多項式配方法頂點式推導、餘式與因式定理證明、克拉瑪公式、線性規劃可行域極值及對數尺度，應用於拱門幾何與材料預算最佳化。\n\n🔥 V6.0 考前秒殺秘訣：此核心概念統測出題率極高，建議善用圖解與鷹架提示反覆練習！',
       status: 'done',
       covered_question_ids: [],
       worked_examples: [
@@ -320,7 +320,7 @@ export const mathCData: SubjectData = {
           answer: '最大庭院面積為 100 平方公尺。'
         }
       ],
-      "illustrations": [ 'context.webp', 'mechanism.webp', 'comparison.webp', 'step-by-step.webp', 'math-c-real-world.webp' ],
+      "illustrations": [ 'context.webp', 'mechanism.webp', 'comparison.webp', 'step-by-step.webp', 'math-c-real-world.webp' , 'algebra-infographic.webp' ],
       concepts: [
         {
           heading: '二次函數配方法、頂點式推導與拱門造型設計',
@@ -471,7 +471,7 @@ export const mathCData: SubjectData = {
     {
       slug: 'geometry',
       title: '4. 函數與幾何圖形',
-      desc: '深入掌握橢圓標準式證明與聲學畫廊焦跡、雙曲線與雙曲拋物面薄殼、拋物線反射光學證明、3D 空間平面方程式及點到平面距離公式。',
+      desc: '深入掌握橢圓標準式證明與聲學畫廊焦跡、雙曲線與雙曲拋物面薄殼、拋物線反射光學證明、3D 空間平面方程式及點到平面距離公式。\n\n🔥 V6.0 考前秒殺秘訣：此核心概念統測出題率極高，建議善用圖解與鷹架提示反覆練習！',
       status: 'done',
       covered_question_ids: [],
       worked_examples: [
@@ -482,7 +482,7 @@ export const mathCData: SubjectData = {
           answer: 'L2 直線方程式為 3x - 4y - 8 = 0。'
         }
       ],
-      "illustrations": [ 'context.webp', 'mechanism.webp', 'comparison.webp', 'step-by-step.webp', 'math-c-real-world.webp' ],
+      "illustrations": [ 'context.webp', 'mechanism.webp', 'comparison.webp', 'step-by-step.webp', 'math-c-real-world.webp' , 'geometry-infographic.webp' ],
       concepts: [
         {
           heading: '橢圓標準式推導與聲學焦跡反射原理',
@@ -621,7 +621,7 @@ export const mathCData: SubjectData = {
     {
       slug: 'probability',
       title: '5. 機率與統計',
-      desc: '深入掌握排列組合原理證明、貝氏定理與風險評估、隨機變數期望值與變異數、常態分佈品質管制及 PERT 三點估算法工期評估。',
+      desc: '深入掌握排列組合原理證明、貝氏定理與風險評估、隨機變數期望值與變異數、常態分佈品質管制及 PERT 三點估算法工期評估。\n\n🔥 V6.0 考前秒殺秘訣：此核心概念統測出題率極高，建議善用圖解與鷹架提示反覆練習！',
       status: 'done',
       covered_question_ids: [],
       worked_examples: [
@@ -632,7 +632,7 @@ export const mathCData: SubjectData = {
           answer: '均為良品之機率為 28/45 (約 62.2%)。'
         }
       ],
-      "illustrations": [ 'context.webp', 'mechanism.webp', 'comparison.webp', 'step-by-step.webp', 'math-c-real-world.webp' ],
+      "illustrations": [ 'context.webp', 'mechanism.webp', 'comparison.webp', 'step-by-step.webp', 'math-c-real-world.webp' , 'probability-infographic.webp' ],
       concepts: [
         {
           heading: '排列組合原理與建築空間模組配置',
@@ -766,7 +766,7 @@ export const mathCData: SubjectData = {
     {
       slug: 'calculus',
       title: '6. 微積分基礎',
-      desc: '深入掌握微商極限定義與微分公式推導、一二階導數極值最佳化、微積分基本定理 (FTC) 證明、定積分計算地形面積土方及樑剪力彎矩積分導引。',
+      desc: '深入掌握微商極限定義與微分公式推導、一二階導數極值最佳化、微積分基本定理 (FTC) 證明、定積分計算地形面積土方及樑剪力彎矩積分導引。\n\n🔥 V6.0 考前秒殺秘訣：此核心概念統測出題率極高，建議善用圖解與鷹架提示反覆練習！',
       status: 'done',
       covered_question_ids: [],
       worked_examples: [
@@ -777,7 +777,7 @@ export const mathCData: SubjectData = {
           answer: '最大彎矩位於 x = 3m 處，最大彎矩值 M_max = 22.5 kN·m。'
         }
       ],
-      "illustrations": [ 'context.webp', 'mechanism.webp', 'comparison.webp', 'step-by-step.webp', 'math-c-real-world.webp' ],
+      "illustrations": [ 'context.webp', 'mechanism.webp', 'comparison.webp', 'step-by-step.webp', 'math-c-real-world.webp' , 'calculus-infographic.webp' ],
       concepts: [
         {
           heading: '微商極限定義與多項式/三角函數微分公式推導',

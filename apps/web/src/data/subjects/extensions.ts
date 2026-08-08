@@ -9,7 +9,7 @@ export const extensionsData: SubjectData = {
     {
       slug: 'spatial-design',
       title: '1. 空間設計與觀察',
-      desc: '人體工學與空間尺度、空間機能與動線規劃、基地微氣候觀察分析、無障礙通用設計規範與空間型態學。',
+      desc: '人體工學與空間尺度、空間機能與動線規劃、基地微氣候觀察分析、無障礙通用設計規範與空間型態學。\n\n🔥 V6.0 考前秒殺秘訣：此核心概念統測出題率極高，建議善用圖解與鷹架提示反覆練習！',
       status: 'done',
       covered_question_ids: [],
       worked_examples: [
@@ -20,7 +20,7 @@ export const extensionsData: SubjectData = {
           answer: '最小淨寬度應規劃為 120 公分 (cm)。'
         }
       ],
-      "illustrations": [ 'context.webp', 'mechanism.webp', 'comparison.webp', 'step-by-step.webp', 'extensions-real-world.webp' ],
+      "illustrations": [ 'context.webp', 'mechanism.webp', 'comparison.webp', 'step-by-step.webp', 'extensions-real-world.webp' , 'extensions-infographic.webp' ],
       concepts: [
         {
           heading: '一、人體工學與空間尺度 (Ergonomics & Dimensions)',
@@ -183,7 +183,7 @@ export const extensionsData: SubjectData = {
     {
       slug: 'construction-methods',
       title: '2. 營造工法與建築構造細部',
-      desc: '詳細剖析鋼筋混凝土 (RC)、鋼骨 (SC) 與鋼骨鋼筋混凝土 (SRC) 構造體系比較，開挖與基礎工法、軀體防水隔熱、門窗帷幕牆細部與裝配式預製工法。',
+      desc: '詳細剖析鋼筋混凝土 (RC)、鋼骨 (SC) 與鋼骨鋼筋混凝土 (SRC) 構造體系比較，開挖與基礎工法、軀體防水隔熱、門窗帷幕牆細部與裝配式預製工法。\n\n🔥 V6.0 考前秒殺秘訣：此核心概念統測出題率極高，建議善用圖解與鷹架提示反覆練習！',
       status: 'done',
       covered_question_ids: [],
       worked_examples: [
@@ -194,7 +194,7 @@ export const extensionsData: SubjectData = {
           answer: '自重輕、韌性佳（抗震能力強），且構件斷面小、施工速度快。'
         }
       ],
-      "illustrations": [ 'context.webp', 'mechanism.webp', 'comparison.webp', 'step-by-step.webp', 'extensions-real-world.webp' ],
+      "illustrations": [ 'context.webp', 'mechanism.webp', 'comparison.webp', 'step-by-step.webp', 'extensions-real-world.webp' , 'construction-methods-infographic.webp' ],
       concepts: [
         {
           heading: '一、RC、SC 與 SRC 三大主體結構體系比較',
@@ -370,7 +370,7 @@ export const extensionsData: SubjectData = {
     {
       slug: 'cad-bim',
       title: '3. 電腦輔助設計與 BIM 應用',
-      desc: '掌握 AutoCAD 2D 製圖圖層與 CNS 標準、Revit BIM 建築資訊模型建立、3D 視覺化渲染、BIM 4D/5D 專案管理與參數化設計。',
+      desc: '掌握 AutoCAD 2D 製圖圖層與 CNS 標準、Revit BIM 建築資訊模型建立、3D 視覺化渲染、BIM 4D/5D 專案管理與參數化設計。\n\n🔥 V6.0 考前秒殺秘訣：此核心概念統測出題率極高，建議善用圖解與鷹架提示反覆練習！',
       status: 'done',
       covered_question_ids: [],
       worked_examples: [
@@ -381,7 +381,7 @@ export const extensionsData: SubjectData = {
           answer: '4D 加入了「時間（施工進度）」，5D 加入了「成本（工程造價）」。'
         }
       ],
-      "illustrations": [ 'context.webp', 'mechanism.webp', 'comparison.webp', 'step-by-step.webp', 'extensions-real-world.webp' ],
+      "illustrations": [ 'context.webp', 'mechanism.webp', 'comparison.webp', 'step-by-step.webp', 'extensions-real-world.webp' , 'cad-bim-infographic.webp' ],
       concepts: [
         {
           heading: '一、AutoCAD 2D 建築繪製標準與 CNS 出圖規範',
@@ -555,7 +555,7 @@ export const extensionsData: SubjectData = {
     {
       slug: 'portfolio-models',
       title: '4. 作品集製作與模型表達',
-      desc: '作品集視覺排版與敘事邏輯、建築實體模型製作技巧與材料運用、圖表 Diagramming 視覺表達、透視圖攝影與簡報評圖術。',
+      desc: '作品集視覺排版與敘事邏輯、建築實體模型製作技巧與材料運用、圖表 Diagramming 視覺表達、透視圖攝影與簡報評圖術。\n\n🔥 V6.0 考前秒殺秘訣：此核心概念統測出題率極高，建議善用圖解與鷹架提示反覆練習！',
       status: 'done',
       covered_question_ids: [],
       worked_examples: [
@@ -566,7 +566,7 @@ export const extensionsData: SubjectData = {
           answer: '模型切削高度為 15 公分；採用透明壓克力板或透明賽璐珞片表現玻璃帷幕。'
         }
       ],
-      "illustrations": [ 'context.webp', 'mechanism.webp', 'comparison.webp', 'step-by-step.webp', 'extensions-real-world.webp' ],
+      "illustrations": [ 'context.webp', 'mechanism.webp', 'comparison.webp', 'step-by-step.webp', 'extensions-real-world.webp' , 'portfolio-models-infographic.webp' ],
       concepts: [
         {
           heading: '一、作品集視覺排版、Grid System 與設計敘事邏輯',
@@ -741,7 +741,7 @@ export const extensionsData: SubjectData = {
     {
       slug: 'certification',
       title: '5. 建築科升學與證照檢定',
-      desc: '建築製圖應用丙/乙級檢定攻防、統測專一專二備考策略、科大/大學建築系選填與面試作品集輔導、建築師國考與技師職涯規劃。',
+      desc: '建築製圖應用丙/乙級檢定攻防、統測專一專二備考策略、科大/大學建築系選填與面試作品集輔導、建築師國考與技師職涯規劃。\n\n🔥 V6.0 考前秒殺秘訣：此核心概念統測出題率極高，建議善用圖解與鷹架提示反覆練習！',
       status: 'done',
       covered_question_ids: [],
       worked_examples: [
@@ -752,7 +752,7 @@ export const extensionsData: SubjectData = {
           answer: '可能為「長方體」或「水平放置之圓柱體」（需檢視右側視圖確定）。'
         }
       ],
-      "illustrations": [ 'context.webp', 'mechanism.webp', 'comparison.webp', 'step-by-step.webp', 'extensions-real-world.webp' ],
+      "illustrations": [ 'context.webp', 'mechanism.webp', 'comparison.webp', 'step-by-step.webp', 'extensions-real-world.webp' , 'certification-infographic.webp' ],
       concepts: [
         {
           heading: '一、建築製圖應用技能檢定 (丙級與乙級) 規範與技巧',

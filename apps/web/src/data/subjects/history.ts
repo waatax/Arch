@@ -9,7 +9,7 @@ export const historyData: SubjectData = {
     {
       slug: 'taiwan-history',
       title: '1. 台灣史：建築環境演變與本土樣式',
-      desc: '深入探索台灣歷史發展脈絡、南島語族聚落、荷西明鄭堡壘、清領漢人傳統合院與寺廟、日治近代西洋歷史式樣與市區改正，以及戰後地域現代主義轉型。',
+      desc: '深入探索台灣歷史發展脈絡、南島語族聚落、荷西明鄭堡壘、清領漢人傳統合院與寺廟、日治近代西洋歷史式樣與市區改正，以及戰後地域現代主義轉型。\n\n🔥 V6.0 考前秒殺秘訣：此核心概念統測出題率極高，建議善用圖解與鷹架提示反覆練習！',
       status: 'done',
       covered_question_ids: [],
       worked_examples: [
@@ -20,7 +20,7 @@ export const historyData: SubjectData = {
           answer: '稱為「銃眼 (槍孔)」，主要功能為防禦敵襲與內向外射擊。'
         }
       ],
-      "illustrations": [ 'context.webp', 'mechanism.webp', 'comparison.webp', 'step-by-step.webp', 'history-real-world.webp' ],
+      "illustrations": [ 'context.webp', 'mechanism.webp', 'comparison.webp', 'step-by-step.webp', 'history-real-world.webp' , 'history-infographic.webp' ],
       concepts: [
         {
           heading: '一、荷西與明鄭時期的築城技術與空間佈局 (1624–1683)',
@@ -197,7 +197,7 @@ export const historyData: SubjectData = {
     {
       slug: 'chinese-history',
       title: '2. 中國史：古代建築形制、工藝與《營造法式》',
-      desc: '詳細剖析中國古代建築發展脈絡，從先秦夯土高台、唐代大木作氣魄、北宋《營造法式》材分制模組化，到明清紫禁城宮殿禮制與江南文人園林造景哲學。',
+      desc: '詳細剖析中國古代建築發展脈絡，從先秦夯土高台、唐代大木作氣魄、北宋《營造法式》材分制模組化，到明清紫禁城宮殿禮制與江南文人園林造景哲學。\n\n🔥 V6.0 考前秒殺秘訣：此核心概念統測出題率極高，建議善用圖解與鷹架提示反覆練習！',
       status: 'done',
       covered_question_ids: [],
       worked_examples: [
@@ -208,7 +208,7 @@ export const historyData: SubjectData = {
           answer: '建立以「材」為模數的標準化制度，使建築構件具備預製化、比例嚴謹與等級規範。'
         }
       ],
-      "illustrations": [ 'context.webp', 'mechanism.webp', 'comparison.webp', 'step-by-step.webp', 'history-real-world.webp' ],
+      "illustrations": [ 'context.webp', 'mechanism.webp', 'comparison.webp', 'step-by-step.webp', 'history-real-world.webp' , 'chinese-history-infographic.webp' ],
       concepts: [
         {
           heading: '一、先秦至漢唐建築發展與高台木構演變',
@@ -388,7 +388,7 @@ export const historyData: SubjectData = {
     {
       slug: 'world-history',
       title: '3. 西洋史：從古典、哥德、文藝復興到現代主義與當代建築',
-      desc: '縱覽西洋建築史發展脈絡，從古希臘羅馬柱式與拱券突破、中世紀哥德飛扶壁與光影神聖空間、文藝復興人文主義理性、巴洛克動態戲劇張力、十九世紀工業革命新材料，到現代主義四位大師與當代數位參數化建築。',
+      desc: '縱覽西洋建築史發展脈絡，從古希臘羅馬柱式與拱券突破、中世紀哥德飛扶壁與光影神聖空間、文藝復興人文主義理性、巴洛克動態戲劇張力、十九世紀工業革命新材料，到現代主義四位大師與當代數位參數化建築。\n\n🔥 V6.0 考前秒殺秘訣：此核心概念統測出題率極高，建議善用圖解與鷹架提示反覆練習！',
       status: 'done',
       covered_question_ids: [],
       worked_examples: [
@@ -399,7 +399,7 @@ export const historyData: SubjectData = {
           answer: '「尖拱 (Pointed Arch)」與「飛扶壁 (Flying Buttress)」。'
         }
       ],
-      "illustrations": [ 'context.webp', 'mechanism.webp', 'comparison.webp', 'step-by-step.webp', 'history-real-world.webp' ],
+      "illustrations": [ 'context.webp', 'mechanism.webp', 'comparison.webp', 'step-by-step.webp', 'history-real-world.webp' , 'world-history-infographic.webp' ],
       concepts: [
         {
           heading: '一、古希臘與古羅馬建築：古典柱式禮制與拱券結構突破',
@@ -580,7 +580,7 @@ export const historyData: SubjectData = {
     {
       slug: 'architectural-history',
       title: '4. 建築思潮與歷史理論演變',
-      desc: '深入剖析歷史主義與復古思潮、機能主義「形隨機能」、有機建築與自然融和、結構主義與解構主義哲學，以及當代批判地域主義與現象學場所精神。',
+      desc: '深入剖析歷史主義與復古思潮、機能主義「形隨機能」、有機建築與自然融和、結構主義與解構主義哲學，以及當代批判地域主義與現象學場所精神。\n\n🔥 V6.0 考前秒殺秘訣：此核心概念統測出題率極高，建議善用圖解與鷹架提示反覆練習！',
       status: 'done',
       covered_question_ids: [],
       worked_examples: [
@@ -591,7 +591,7 @@ export const historyData: SubjectData = {
           answer: '「橫向帶狀長窗 (Horizontal Ribbon Window)」。'
         }
       ],
-      "illustrations": [ 'context.webp', 'mechanism.webp', 'comparison.webp', 'step-by-step.webp', 'history-real-world.webp' ],
+      "illustrations": [ 'context.webp', 'mechanism.webp', 'comparison.webp', 'step-by-step.webp', 'history-real-world.webp' , 'architectural-history-infographic.webp' ],
       concepts: [
         {
           heading: '一、歷史主義與十九世紀復古思潮 (Historicism & Revivals)',
@@ -764,7 +764,7 @@ export const historyData: SubjectData = {
     {
       slug: 'cultural-heritage',
       title: '5. 文化資產保存與古蹟修復工程',
-      desc: '深入研析文化資產保存法規體系、《威尼斯憲章》國際保存原則、古蹟調查研究與非破壞檢測、傳統木構與磚石修復工法、舊建築再利用以及古蹟防災加固工程。',
+      desc: '深入研析文化資產保存法規體系、《威尼斯憲章》國際保存原則、古蹟調查研究與非破壞檢測、傳統木構與磚石修復工法、舊建築再利用以及古蹟防災加固工程。\n\n🔥 V6.0 考前秒殺秘訣：此核心概念統測出題率極高，建議善用圖解與鷹架提示反覆練習！',
       status: 'done',
       covered_question_ids: [],
       worked_examples: [
@@ -775,7 +775,7 @@ export const historyData: SubjectData = {
           answer: '遵循「真實性、可識別性（新舊可辨）與可逆性（未來可拆卸且不傷原物）」原則。'
         }
       ],
-      "illustrations": [ 'context.webp', 'mechanism.webp', 'comparison.webp', 'step-by-step.webp', 'history-real-world.webp' ],
+      "illustrations": [ 'context.webp', 'mechanism.webp', 'comparison.webp', 'step-by-step.webp', 'history-real-world.webp' , 'cultural-heritage-infographic.webp' ],
       concepts: [
         {
           heading: '一、文化資產保存法規體系與法定等級劃定',
@@ -952,7 +952,7 @@ export const historyData: SubjectData = {
     {
       slug: 'social-change',
       title: '6. 社會變遷與都市形貌變革',
-      desc: '探討工業革命與都市化潮、19世紀巴黎奧斯曼大改造、霍華德花園城市運動、台灣日治市區改正至戰後都市更新、權利變換、社區權益以及高齡化與智慧韌性都市。',
+      desc: '探討工業革命與都市化潮、19世紀巴黎奧斯曼大改造、霍華德花園城市運動、台灣日治市區改正至戰後都市更新、權利變換、社區權益以及高齡化與智慧韌性都市。\n\n🔥 V6.0 考前秒殺秘訣：此核心概念統測出題率極高，建議善用圖解與鷹架提示反覆練習！',
       status: 'done',
       covered_question_ids: [],
       worked_examples: [
@@ -963,7 +963,7 @@ export const historyData: SubjectData = {
           answer: '採用「預製鐵骨構件與玻璃」於現場快速裝配，開啟建築預製化與工業化生產之先河。'
         }
       ],
-      "illustrations": [ 'context.webp', 'mechanism.webp', 'comparison.webp', 'step-by-step.webp', 'history-real-world.webp' ],
+      "illustrations": [ 'context.webp', 'mechanism.webp', 'comparison.webp', 'step-by-step.webp', 'history-real-world.webp' , 'social-change-infographic.webp' ],
       concepts: [
         {
           heading: '一、工業革命、都市化潮與十九世紀奧斯曼巴黎大改造',

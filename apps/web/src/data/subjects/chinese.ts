@@ -9,7 +9,7 @@ export const chineseData: SubjectData = {
     {
       slug: 'classical-literature',
       title: '1. 古典文學選讀與建築空間散文',
-      desc: '深入賞析先秦諸子、唐宋八大家古典散文、漢賦駢文及建築論述經典（如〈嶽陽樓記〉、〈醉翁亭記〉、〈阿房宮賦〉），掌握體裁流變與古典建築空間意象。',
+      desc: '深入賞析先秦諸子、唐宋八大家古典散文、漢賦駢文及建築論述經典（如〈嶽陽樓記〉、〈醉翁亭記〉、〈阿房宮賦〉），掌握體裁流變與古典建築空間意象。\n\n🔥 V6.0 考前秒殺秘訣：此核心概念統測出題率極高，建議善用圖解與鷹架提示反覆練習！',
       status: 'done',
       covered_question_ids: [],
       worked_examples: [
@@ -24,7 +24,7 @@ export const chineseData: SubjectData = {
           answer: '呈現出建築群依據地形錯落分布，且屋頂與結構精密交錯、立體感強烈的空間特徵。'
         }
       ],
-      "illustrations": [ 'context.webp', 'mechanism.webp', 'comparison.webp', 'step-by-step.webp', 'chinese-real-world.webp' ],
+      "illustrations": [ 'context.webp', 'mechanism.webp', 'comparison.webp', 'step-by-step.webp', 'chinese-real-world.webp' , 'chinese-infographic.webp' ],
       concepts: [
         {
           heading: '古典文學體裁演變與韻文格律對比',
@@ -165,7 +165,7 @@ export const chineseData: SubjectData = {
     {
       slug: 'modern-literature',
       title: '2. 現代文學與應用文實務',
-      desc: '研析現代詩、散文、小說之美學風格與空間意象，並精通公文（函）、書信、題辭、柬帖及建築工程應用文規範。',
+      desc: '研析現代詩、散文、小說之美學風格與空間意象，並精通公文（函）、書信、題辭、柬帖及建築工程應用文規範。\n\n🔥 V6.0 考前秒殺秘訣：此核心概念統測出題率極高，建議善用圖解與鷹架提示反覆練習！',
       status: 'done',
       covered_question_ids: [],
       worked_examples: [
@@ -180,7 +180,7 @@ export const chineseData: SubjectData = {
           answer: '不適當。因為發文對象為上級機關，應將「請 查照」修改為「請 核示」或「請 鑒核」。'
         }
       ],
-      "illustrations": [ 'context.webp', 'mechanism.webp', 'comparison.webp', 'step-by-step.webp', 'chinese-real-world.webp' ],
+      "illustrations": [ 'context.webp', 'mechanism.webp', 'comparison.webp', 'step-by-step.webp', 'chinese-real-world.webp' , 'modern-literature-infographic.webp' ],
       concepts: [
         {
           heading: '現代文學體裁與空間詩學',
@@ -303,7 +303,7 @@ export const chineseData: SubjectData = {
     {
       slug: 'linguistics',
       title: '3. 語文知識與修辭應用',
-      desc: '系統化掌握字音字形辨正、成語典故來源、修辭法（譬喻、轉化、借代、層遞、映襯等）及其於建築與文學文本中之表現技巧。',
+      desc: '系統化掌握字音字形辨正、成語典故來源、修辭法（譬喻、轉化、借代、層遞、映襯等）及其於建築與文學文本中之表現技巧。\n\n🔥 V6.0 考前秒殺秘訣：此核心概念統測出題率極高，建議善用圖解與鷹架提示反覆練習！',
       status: 'done',
       covered_question_ids: [],
       worked_examples: [
@@ -318,7 +318,7 @@ export const chineseData: SubjectData = {
           answer: '主要運用了「通感（感官移覺）」修辭。'
         }
       ],
-      "illustrations": [ 'context.webp', 'mechanism.webp', 'comparison.webp', 'step-by-step.webp', 'chinese-real-world.webp' ],
+      "illustrations": [ 'context.webp', 'mechanism.webp', 'comparison.webp', 'step-by-step.webp', 'chinese-real-world.webp' , 'linguistics-infographic.webp' ],
       concepts: [
         {
           heading: '常見修辭法深度解析與建築語境對比',
@@ -433,7 +433,7 @@ export const chineseData: SubjectData = {
     {
       slug: 'reading-comprehension',
       title: '4. 閱讀理解與建築論述判讀',
-      desc: '培養長篇文本快速略讀、主題句擷取、跨文本對比、非連續性文本（圖表與空間邏輯圖）判讀及現代建築思想論述之分析能力。',
+      desc: '培養長篇文本快速略讀、主題句擷取、跨文本對比、非連續性文本（圖表與空間邏輯圖）判讀及現代建築思想論述之分析能力。\n\n🔥 V6.0 考前秒殺秘訣：此核心概念統測出題率極高，建議善用圖解與鷹架提示反覆練習！',
       status: 'done',
       covered_question_ids: [],
       worked_examples: [
@@ -448,7 +448,7 @@ export const chineseData: SubjectData = {
           answer: '核心觀點是「當代綠建築更關注建築與環境的共生」，作者透過轉折詞將論述重心放在後半句。'
         }
       ],
-      "illustrations": [ 'context.webp', 'mechanism.webp', 'comparison.webp', 'step-by-step.webp', 'chinese-real-world.webp' ],
+      "illustrations": [ 'context.webp', 'mechanism.webp', 'comparison.webp', 'step-by-step.webp', 'chinese-real-world.webp' , 'reading-comprehension-infographic.webp' ],
       concepts: [
         {
           heading: '長篇閱讀與學術論述脈絡分析法',
@@ -572,7 +572,7 @@ export const chineseData: SubjectData = {
     {
       slug: 'writing-expression',
       title: '5. 作文與表達（含建築空間論述）',
-      desc: '精通論說文與抒情文之構思、起承轉合篇章架構、修辭造句、空間意象融入及建築空間評析作文實戰技巧。',
+      desc: '精通論說文與抒情文之構思、起承轉合篇章架構、修辭造句、空間意象融入及建築空間評析作文實戰技巧。\n\n🔥 V6.0 考前秒殺秘訣：此核心概念統測出題率極高，建議善用圖解與鷹架提示反覆練習！',
       status: 'done',
       covered_question_ids: [],
       worked_examples: [
@@ -587,7 +587,7 @@ export const chineseData: SubjectData = {
           answer: '發揮了「轉折與深化反思」的作用，透過對比過去的美好與現實的殘酷，將文章從單純的懷舊抒情，提升到對社會現代化與文化保留衝突的深刻反思。'
         }
       ],
-      "illustrations": [ 'context.webp', 'mechanism.webp', 'comparison.webp', 'step-by-step.webp', 'chinese-real-world.webp' ],
+      "illustrations": [ 'context.webp', 'mechanism.webp', 'comparison.webp', 'step-by-step.webp', 'chinese-real-world.webp' , 'writing-expression-infographic.webp' ],
       concepts: [
         {
           heading: '起承轉合與現代論說文篇章邏輯架構',
@@ -705,7 +705,7 @@ export const chineseData: SubjectData = {
     {
       slug: 'cultural-knowledge',
       title: '6. 文化常識與園林建築思潮',
-      desc: '涵蓋國學常識、年齡代稱、天干地支與時辰、傳統節慶民俗、古代度量衡與中國傳統園林美學思潮（計成《園冶》與文人造園觀）。',
+      desc: '涵蓋國學常識、年齡代稱、天干地支與時辰、傳統節慶民俗、古代度量衡與中國傳統園林美學思潮（計成《園冶》與文人造園觀）。\n\n🔥 V6.0 考前秒殺秘訣：此核心概念統測出題率極高，建議善用圖解與鷹架提示反覆練習！',
       status: 'done',
       covered_question_ids: [],
       worked_examples: [
@@ -720,7 +720,7 @@ export const chineseData: SubjectData = {
           answer: '體現了「天人合一」與「師法自然」的核心精神，強調人工造園必須順應自然，不露斧鑿之痕。'
         }
       ],
-      "illustrations": [ 'context.webp', 'mechanism.webp', 'comparison.webp', 'step-by-step.webp', 'chinese-real-world.webp' ],
+      "illustrations": [ 'context.webp', 'mechanism.webp', 'comparison.webp', 'step-by-step.webp', 'chinese-real-world.webp' , 'cultural-knowledge-infographic.webp' ],
       concepts: [
         {
           heading: '古代年齡代稱、稱謂與天干地支紀時',
