@@ -75,7 +75,7 @@ export default function TopicPageLayout({ subject, topic }: TopicPageLayoutProps
     setShowSolutionSteps((prev) => ({ ...prev, [index]: !prev[index] }));
   };
 
-  const realLifeGuide = getTopicRealLifeGuide(subject.slug, topic.slug, topic.title);
+  const realLifeGuide = getTopicRealLifeGuide(subject.slug, topic.slug);
 
   return (
     <article className="mx-auto max-w-4xl space-y-8 px-4 py-8 sm:px-6 sm:py-12 pb-28">
