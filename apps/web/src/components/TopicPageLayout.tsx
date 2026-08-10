@@ -49,9 +49,6 @@ export default function TopicPageLayout({ subject, topic }: TopicPageLayoutProps
     return [...prof, ...comm];
   }, [subject.slug, topic.slug]);
 
-  // Active section tab
-  const [activeTab, setActiveTab] = useState<'concepts' | 'visualizer' | 'traps' | 'worked' | 'practice' | 'examQs'>('concepts');
-
   // Exam Questions Interactive Answer State
   const [selectedExamAnswers, setSelectedExamAnswers] = useState<Record<string, string>>({});
 
@@ -105,6 +102,10 @@ export default function TopicPageLayout({ subject, topic }: TopicPageLayoutProps
     setShowSolutionSteps((prev) => ({ ...prev, [index]: !prev[index] }));
   };
 
+  const jumpTo = (id: string) => {
+    document.getElementById(id)?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  };
+
   const realLifeGuide = getTopicRealLifeGuide(subject.slug, topic.slug);
   const deepKnowledge = getTopicDeepKnowledge(subject.slug, topic.slug);
 
@@ -150,7 +151,7 @@ export default function TopicPageLayout({ subject, topic }: TopicPageLayoutProps
         </div>
 
         {/* 🌟 Real-Life Importance & Engineering Context Banner */}
-        <div className="rounded-2xl border border-blue-200 dark:border-blue-900/60 bg-gradient-to-br from-blue-50/70 via-white to-sky-50/50 dark:from-blue-950/40 dark:via-slate-900 dark:to-slate-900 p-5 sm:p-7 shadow-xs space-y-3">
+        <div id="exam-focus" className="scroll-mt-24 rounded-2xl border border-blue-200 dark:border-blue-900/60 bg-gradient-to-br from-blue-50/70 via-white to-sky-50/50 dark:from-blue-950/40 dark:via-slate-900 dark:to-slate-900 p-5 sm:p-7 shadow-xs space-y-3">
           <div className="flex items-center gap-2">
             <span className="flex size-7 items-center justify-center rounded-lg bg-blue-600 text-white text-xs font-mono font-bold">
               🌟
@@ -241,45 +242,21 @@ export default function TopicPageLayout({ subject, topic }: TopicPageLayoutProps
           </div>
         </aside>
 
-        {/* Quick Section Navigation Tabs */}
-        <div className="flex items-center gap-1 overflow-x-auto pb-1 border-b border-slate-200 dark:border-slate-800 text-xs font-mono">
-          <button
-            onClick={() => setActiveTab('concepts')}
-            className={`px-3.5 py-2 rounded-t-lg font-bold transition-colors ${activeTab === 'concepts' ? 'bg-blue-600 text-white shadow-xs' : 'text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800'}`}
-          >
-            📖 核心概念精講 ({topic.concepts.length})
-          </button>
-          <button
-            onClick={() => setActiveTab('visualizer')}
-            className={`px-3.5 py-2 rounded-t-lg font-bold transition-colors ${activeTab === 'visualizer' ? 'bg-blue-600 text-white shadow-xs' : 'text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800'}`}
-          >
-            📐 互動圖解模擬器
-          </button>
-          <button
-            onClick={() => setActiveTab('worked')}
-            className={`px-3.5 py-2 rounded-t-lg font-bold transition-colors ${activeTab === 'worked' ? 'bg-blue-600 text-white shadow-xs' : 'text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800'}`}
-          >
-            💡 步驟化經典例題 ({topic.worked_examples?.length ?? 0})
-          </button>
-          <button
-            onClick={() => setActiveTab('practice')}
-            className={`px-3.5 py-2 rounded-t-lg font-bold transition-colors ${activeTab === 'practice' ? 'bg-blue-600 text-white shadow-xs' : 'text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800'}`}
-          >
-            ✍️ 自我檢測 ({practices.length})
-          </button>
-          {mappedExamQuestions.length > 0 && (
-            <button
-              onClick={() => setActiveTab('examQs')}
-              className={`px-3.5 py-2 rounded-t-lg font-bold transition-colors ${activeTab === 'examQs' ? 'bg-indigo-600 text-white shadow-xs' : 'text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800'}`}
-            >
-              🎯 歷屆統測真題 ({mappedExamQuestions.length})
+        {/* Seven-part lesson path: every control navigates to real content. */}
+        <div className="flex items-center gap-1 overflow-x-auto pb-1 border-b border-slate-200 dark:border-slate-800 text-xs font-mono" aria-label="七段教學快速導覽">
+          {[
+            ['exam-focus', '1 這在考什麼'], ['observable', '2 看得到的東西'], ['principles', '3 原理推導'],
+            ['worked', '4 示範題'], ['practice', '5 自己做'], ['traps', '6 最容易錯'], ['sources', '7 來源版本'],
+          ].map(([id, label]) => (
+            <button key={id} onClick={() => jumpTo(id)} className="shrink-0 rounded-t-lg px-3.5 py-2 font-bold text-slate-600 transition-colors hover:bg-blue-600 hover:text-white dark:text-slate-400">
+              {label}
             </button>
-          )}
+          ))}
         </div>
       </header>
 
       {/* Interactive Visual Figure with Lightbox Zoom */}
-      <figure className="group relative overflow-hidden rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 shadow-sm">
+      <figure id="observable" className="group relative scroll-mt-24 overflow-hidden rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 shadow-sm">
         <div
           className="relative aspect-[4/3] bg-slate-50 dark:bg-slate-950 sm:aspect-[16/9] cursor-zoom-in flex items-center justify-center"
           onClick={() => setIsLightboxOpen(true)}
@@ -447,7 +424,7 @@ export default function TopicPageLayout({ subject, topic }: TopicPageLayoutProps
       </section>
 
       {/* === [Problem-Solving Decision Matrix & Exam Trend] === */}
-      <section className="rounded-2xl border border-amber-200 dark:border-amber-900/60 bg-amber-50/20 dark:bg-amber-950/20 p-5 sm:p-7 shadow-xs space-y-4">
+      <section id="traps" className="scroll-mt-24 rounded-2xl border border-amber-200 dark:border-amber-900/60 bg-amber-50/20 dark:bg-amber-950/20 p-5 sm:p-7 shadow-xs space-y-4">
         <div className="flex flex-wrap items-center justify-between gap-2 border-b border-amber-200/60 dark:border-amber-900/40 pb-3">
           <div className="flex items-center gap-2">
             <span className="flex size-7 items-center justify-center rounded-lg bg-amber-600 text-white text-xs font-mono font-bold">
@@ -526,7 +503,7 @@ export default function TopicPageLayout({ subject, topic }: TopicPageLayoutProps
       </section>
 
       {/* === Core Concepts List === */}
-      <div className="space-y-6">
+      <div id="principles" className="scroll-mt-24 space-y-6">
         <div className="flex items-center justify-between">
           <h2 className="font-serif text-2xl font-bold text-slate-900 dark:text-white flex items-center gap-2">
             <span>核心觀念與名詞精講</span>
@@ -677,7 +654,7 @@ export default function TopicPageLayout({ subject, topic }: TopicPageLayoutProps
 
       {/* === Worked Examples Section === */}
       {topic.worked_examples?.length ? (
-        <section className="space-y-4 pt-4" aria-labelledby="worked-title">
+        <section id="worked" className="scroll-mt-24 space-y-4 pt-4" aria-labelledby="worked-title">
           <div className="flex items-center justify-between gap-2">
             <div>
               <span className="text-xs font-mono uppercase tracking-widest text-blue-600 dark:text-blue-400 font-bold">
@@ -746,7 +723,7 @@ export default function TopicPageLayout({ subject, topic }: TopicPageLayoutProps
 
       {/* === Self Practice Section === */}
       {practices.length ? (
-        <section className="space-y-4 pt-4" aria-labelledby="practice-title">
+        <section id="practice" className="scroll-mt-24 space-y-4 pt-4" aria-labelledby="practice-title">
           <div>
             <span className="text-xs font-mono uppercase tracking-widest text-emerald-600 dark:text-emerald-400 font-bold">
               Progressive Self-Assessment
@@ -904,7 +881,7 @@ export default function TopicPageLayout({ subject, topic }: TopicPageLayoutProps
       ) : null}
 
       {/* === [One-Sentence Mastery Recap & Exit Check] === */}
-      <section className="rounded-2xl border border-indigo-200 dark:border-indigo-900/60 bg-gradient-to-r from-indigo-50/50 via-white to-sky-50/40 dark:from-indigo-950/30 dark:via-slate-900 dark:to-slate-900 p-6 sm:p-7 shadow-xs space-y-3">
+      <section id="sources" className="scroll-mt-24 rounded-2xl border border-indigo-200 dark:border-indigo-900/60 bg-gradient-to-r from-indigo-50/50 via-white to-sky-50/40 dark:from-indigo-950/30 dark:via-slate-900 dark:to-slate-900 p-6 sm:p-7 shadow-xs space-y-3">
         <div className="flex items-center justify-between">
           <span className="flex items-center gap-1.5 text-xs font-mono font-bold uppercase tracking-wider text-indigo-700 dark:text-indigo-300">
             🏆 離開前一句話通關自評
@@ -916,6 +893,9 @@ export default function TopicPageLayout({ subject, topic }: TopicPageLayoutProps
         </p>
         <p className="text-xs text-slate-600 dark:text-slate-400">
           如果你能用自己的話把這句話解釋給身邊的朋友或同學聽懂，代表你已經完全掌握本章的核心靈魂！
+        </p>
+        <p className="border-t border-indigo-200 pt-3 text-xs leading-6 text-slate-500 dark:border-indigo-900 dark:text-slate-400">
+          來源與版本：課程依 108 課綱與平台已登錄之統測題目覆蓋表整理；真題以題卡所連結的官方題本為準。法規、CNS 與招生採計可能更新，使用前請核對頁面標示年度及官方最新公告。
         </p>
       </section>
 

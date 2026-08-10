@@ -13,7 +13,7 @@ export function QuizEngine() {
   const [isSubmitted, setIsSubmitted] = useState(false);
   
   // Adaptive State from Global Store
-  const { streak, updateAccuracy, incrementStreak } = useStudentStore();
+  const { updateAccuracy, addMistakeCard } = useStudentStore();
   
   const [localRecentAccuracy, setLocalRecentAccuracy] = useState<number[]>([]);
 
@@ -37,11 +37,18 @@ export function QuizEngine() {
     
     // Update global persistent store
     updateAccuracy(isCorrect);
-    if (isCorrect) incrementStreak();
+    if (!isCorrect) {
+      addMistakeCard({
+        id: `quiz-inertia-${selectedOption}`,
+        prompt: question.text,
+        correction: `${question.options[question.correctIndex]}。矩形對形心水平軸的慣性矩為 b·h³/12。`,
+        reason: 'F',
+      });
+    }
     
     // Update local state for scaffolding logic
     setLocalRecentAccuracy(prev => [...prev, isCorrect ? 1 : 0].slice(-5));
-  }, [selectedOption, isSubmitted, question.correctIndex, updateAccuracy, incrementStreak]);
+  }, [selectedOption, isSubmitted, question.correctIndex, question.options, question.text, updateAccuracy, addMistakeCard]);
 
   const handleNext = useCallback(() => {
     setSelectedOption(null);
@@ -67,23 +74,13 @@ export function QuizEngine() {
   }, [isSubmitted, handleSelect, handleSubmit, handleNext]);
 
   const showScaffolding = needsScaffolding({
-    streak,
+    streak: localRecentAccuracy.reduceRight((count, value) => value === 1 ? count + 1 : count, 0),
     recentAccuracy: localRecentAccuracy,
     averageTimePerQuestionMs: 15000
   });
 
   return (
     <div className="w-full max-w-3xl mx-auto py-12 px-4">
-      {streak > 2 && (
-        <motion.div 
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
-          className="mb-4 text-center text-orange-500 font-bold flex items-center justify-center gap-2"
-        >
-          🔥 {streak} Streak! You&apos;re on fire!
-        </motion.div>
-      )}
-
       <AnimatePresence mode="wait">
         <motion.div
           key={currentIndex}

@@ -1,138 +1,97 @@
 'use client';
 
-import React, { useEffect, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
+import Link from 'next/link';
+import { BookOpen, CheckCircle2, Clock3, Download, RefreshCcw } from 'lucide-react';
 import { GlassCard } from '@/components/ui/GlassCard';
-import { Flame, Target, BookOpen, Trophy, Download } from 'lucide-react';
 import { useStudentStore } from '@/lib/store/studentStore';
 
+const cycle = [
+  ['暖身回收', '3 分鐘', '先回想 2 張到期錯題卡'],
+  ['觀念建模', '8 分鐘', '看圖、找變因、說出核心規則'],
+  ['主動練習', '6 分鐘', '不看解答完成 3 題'],
+  ['錯題轉化', '5 分鐘', '只把真正卡住的地方做成錯題卡'],
+  ['離開檢核', '3 分鐘', '用自己的話說明並驗證答案'],
+];
+
 export default function StudentDashboard() {
-  const { streak, eloRank, questionsCompleted, dailyGoal, resetDailyIfNewDay } = useStudentStore();
+  const { questionsCompleted, dailyGoal, completedCycles, mistakeCards, resetDailyIfNewDay, completeCycle } = useStudentStore();
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
     resetDailyIfNewDay();
-    const timer = setTimeout(() => setMounted(true), 0);
-    return () => clearTimeout(timer);
+    const timer = window.setTimeout(() => setMounted(true), 0);
+    return () => window.clearTimeout(timer);
   }, [resetDailyIfNewDay]);
 
-  if (!mounted) return null; // Avoid hydration mismatch
+  const dueCards = useMemo(
+    () => mistakeCards.filter((card) => new Date(card.nextReviewAt) <= new Date()).length,
+    [mistakeCards],
+  );
+  if (!mounted) return null;
 
-  const progressPercent = Math.min(100, Math.round((questionsCompleted / dailyGoal) * 100));
-
-  const handleExportPDF = async () => {
-    try {
-      const html2canvas = (await import('html2canvas')).default;
-      const { jsPDF } = await import('jspdf');
-      
-      // Target the bento box container for export
-      const element = document.getElementById('bento-dashboard');
-      if (!element) return;
-      
-      const canvas = await html2canvas(element, { scale: 2 });
-      const imgData = canvas.toDataURL('image/png');
-      
-      const pdf = new jsPDF({
-        orientation: 'landscape',
-        unit: 'px',
-        format: [canvas.width, canvas.height]
-      });
-      
-      pdf.addImage(imgData, 'PNG', 0, 0, canvas.width, canvas.height);
-      pdf.save('我的學習歷程-Arch.pdf');
-    } catch (e) {
-      console.error('Failed to export PDF', e);
-      alert('匯出失敗，請稍後再試。');
-    }
-  };
+  const progress = Math.min(100, Math.round((questionsCompleted / dailyGoal) * 100));
+  const handleExportPDF = () => window.print();
 
   return (
-    <div className="min-h-screen bg-slate-50 dark:bg-slate-950 p-6 md:p-12 relative overflow-hidden">
-      {/* Background ambient glowing blobs */}
-      <div className="absolute top-0 left-0 w-[500px] h-[500px] bg-blue-500/10 rounded-full blur-3xl mix-blend-multiply opacity-50 dark:opacity-20 animate-blob pointer-events-none"></div>
-      <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-emerald-500/10 rounded-full blur-3xl mix-blend-multiply opacity-50 dark:opacity-20 animate-blob animation-delay-2000 pointer-events-none"></div>
-      
-      <div className="max-w-6xl mx-auto relative z-10">
-        <header className="mb-10 flex flex-col md:flex-row md:items-end justify-between gap-4">
+    <main className="min-h-screen bg-slate-50 p-6 dark:bg-slate-950 md:p-12">
+      <div className="mx-auto max-w-6xl space-y-8">
+        <header className="flex flex-col justify-between gap-4 md:flex-row md:items-end">
           <div>
-            <h1 className="text-4xl font-extrabold text-slate-900 dark:text-white tracking-tight mb-2">
-              Welcome back, Student
-            </h1>
-            <p className="text-slate-500 dark:text-slate-400 text-lg">
-              Let&apos;s crush today&apos;s vocational goals!
-            </p>
+            <p className="font-mono text-xs font-bold uppercase tracking-widest text-blue-600">Today&apos;s learning loop</p>
+            <h1 className="mt-2 text-4xl font-extrabold tracking-tight text-slate-900 dark:text-white">今天只完成一個 25 分鐘迴圈</h1>
+            <p className="mt-2 text-slate-600 dark:text-slate-400">不排名、不追連勝；把一個知識點學會、練過、訂正，就是有效進步。</p>
           </div>
-          
-          <button 
-            onClick={handleExportPDF}
-            className="flex items-center gap-2 px-4 py-2 bg-blue-600 hover:bg-blue-500 text-white rounded-lg font-medium transition-colors shadow-lg shadow-blue-500/20"
-          >
-            <Download size={18} />
-            匯出學習歷程 (PDF)
+          <button onClick={handleExportPDF} className="flex items-center gap-2 self-start rounded-lg bg-blue-600 px-4 py-2 font-medium text-white hover:bg-blue-500">
+            <Download size={18} />列印／匯出學習歷程
           </button>
         </header>
 
-        {/* Bento Box Layout */}
-        <div id="bento-dashboard" className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6 p-4 rounded-xl bg-white/50 dark:bg-slate-900/50 backdrop-blur-sm border border-slate-200/50 dark:border-slate-800/50">
-          
-          {/* Streak Widget */}
-          <GlassCard hoverEffect className="col-span-1 md:col-span-2 p-6 flex flex-col justify-between bg-gradient-to-br from-orange-500/10 to-red-500/10 border-orange-500/20">
-            <div className="flex justify-between items-start">
+        <section className="grid gap-4 md:grid-cols-5" aria-label="25 分鐘微迴圈">
+          {cycle.map(([title, time, detail], index) => (
+            <GlassCard key={title} className="p-5">
+              <span className="font-mono text-xs font-bold text-blue-600">{index + 1} · {time}</span>
+              <h2 className="mt-2 font-bold text-slate-900 dark:text-white">{title}</h2>
+              <p className="mt-2 text-sm leading-6 text-slate-600 dark:text-slate-400">{detail}</p>
+            </GlassCard>
+          ))}
+        </section>
+
+        <section className="grid gap-6 md:grid-cols-3">
+          <GlassCard className="p-6 md:col-span-2">
+            <div className="flex items-start justify-between gap-4">
               <div>
-                <h2 className="text-xl font-bold text-slate-800 dark:text-white">Daily Streak</h2>
-                <p className="text-sm text-slate-500 dark:text-slate-400">{streak > 0 ? "You're on fire!" : "Start a new streak today!"}</p>
+                <h2 className="text-xl font-bold text-slate-900 dark:text-white">今日主動練習</h2>
+                <p className="mt-1 text-sm text-slate-500">{questionsCompleted} / {dailyGoal} 題；正確與否都算完成學習證據。</p>
               </div>
-              <div className="p-3 bg-orange-100 dark:bg-orange-900/50 rounded-full">
-                <Flame className={`w-8 h-8 ${streak > 0 ? 'text-orange-500 animate-pulse' : 'text-slate-400'}`} />
-              </div>
+              <Clock3 className="text-blue-500" />
             </div>
-            <div className="mt-8">
-              <div className="text-5xl font-black text-slate-900 dark:text-white">{streak} <span className="text-2xl text-slate-500 font-medium">days</span></div>
-            </div>
+            <div className="mt-5 h-3 overflow-hidden rounded-full bg-slate-200 dark:bg-slate-800"><div className="h-full bg-blue-600" style={{ width: `${progress}%` }} /></div>
+            <button onClick={completeCycle} className="mt-5 inline-flex items-center gap-2 rounded-lg bg-emerald-600 px-4 py-2 text-sm font-bold text-white hover:bg-emerald-500">
+              <CheckCircle2 size={17} />完成本次微迴圈
+            </button>
           </GlassCard>
 
-          {/* Daily Goal */}
-          <GlassCard hoverEffect className="col-span-1 md:col-span-2 p-6">
-            <div className="flex justify-between items-start mb-6">
-              <h2 className="text-xl font-bold text-slate-800 dark:text-white">Daily Goal</h2>
-              <Target className="w-6 h-6 text-blue-500" />
-            </div>
-            <div className="space-y-4">
-              <div>
-                <div className="flex justify-between text-sm mb-1">
-                  <span className="font-medium text-slate-700 dark:text-slate-300">Questions Completed</span>
-                  <span className="text-blue-500 font-bold">{questionsCompleted} / {dailyGoal}</span>
-                </div>
-                <div className="w-full bg-slate-100 dark:bg-slate-800 rounded-full h-2.5">
-                  <div className="bg-blue-500 h-2.5 rounded-full transition-all duration-1000" style={{ width: `${progressPercent}%` }}></div>
-                </div>
-              </div>
-            </div>
+          <GlassCard className="p-6">
+            <RefreshCcw className="text-amber-500" />
+            <h2 className="mt-4 text-xl font-bold text-slate-900 dark:text-white">錯題回收</h2>
+            <p className="mt-2 text-3xl font-black text-slate-900 dark:text-white">{dueCards} <span className="text-base font-medium text-slate-500">張今日到期</span></p>
+            <p className="mt-2 text-sm text-slate-500">依 1／7／21 天間隔回收。答錯是找到可以補的洞。</p>
           </GlassCard>
+        </section>
 
-          {/* Next Recommended Topic */}
-          <GlassCard hoverEffect className="col-span-1 md:col-span-2 lg:col-span-3 p-6 flex items-center gap-6 cursor-pointer">
-            <div className="w-24 h-24 rounded-xl bg-emerald-100 dark:bg-emerald-900/50 flex flex-shrink-0 items-center justify-center">
-              <BookOpen className="w-10 h-10 text-emerald-500" />
-            </div>
-            <div>
-              <span className="text-xs font-bold uppercase tracking-wider text-emerald-500 mb-1 block">Up Next</span>
-              <h3 className="text-2xl font-bold text-slate-900 dark:text-white mb-2">基礎工程力學: 單位與向量</h3>
-              <p className="text-slate-600 dark:text-slate-400">Continue from where you left off. Review your error book first.</p>
-            </div>
-          </GlassCard>
+        <GlassCard className="flex flex-col gap-5 p-6 sm:flex-row sm:items-center">
+          <div className="flex size-20 shrink-0 items-center justify-center rounded-2xl bg-emerald-100 dark:bg-emerald-950"><BookOpen className="text-emerald-600" size={34} /></div>
+          <div className="flex-1">
+            <p className="text-xs font-bold uppercase tracking-widest text-emerald-600">全科全備 · 自主排序</p>
+            <h2 className="mt-1 text-2xl font-bold text-slate-900 dark:text-white">從完整課程選擇今天的一章</h2>
+            <p className="mt-2 text-slate-600 dark:text-slate-400">共同科目、專業科目與建築素養都保留；依目標校系與目前弱點調整順序，不替你押單一組合。</p>
+          </div>
+          <Link href="/curriculum" className="rounded-lg border border-slate-300 px-4 py-2 text-sm font-bold text-slate-800 hover:bg-slate-100 dark:border-slate-700 dark:text-white dark:hover:bg-slate-800">選擇課程 →</Link>
+        </GlassCard>
 
-          {/* ELO / Rank */}
-          <GlassCard hoverEffect className="col-span-1 p-6 flex flex-col items-center justify-center text-center">
-            <Trophy className="w-12 h-12 text-yellow-500 mb-4" />
-            <h3 className="text-lg font-bold text-slate-800 dark:text-white mb-1">Rank ELO</h3>
-            <div className="text-3xl font-black text-slate-900 dark:text-white">{eloRank}</div>
-            <span className="text-xs font-medium text-yellow-600 bg-yellow-100 dark:bg-yellow-900/30 px-2 py-1 rounded-full mt-2">
-              {eloRank > 1400 ? 'Top 15%' : eloRank > 1200 ? 'Top 50%' : 'Keep Going!'}
-            </span>
-          </GlassCard>
-
-        </div>
+        <p className="text-center text-xs text-slate-500">累計完成 {completedCycles} 個 25 分鐘迴圈</p>
       </div>
-    </div>
+    </main>
   );
 }

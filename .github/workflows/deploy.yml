@@ -41,6 +41,7 @@ jobs:
       - name: Build with Next.js
         run: |
           pnpm validate:content
+          pnpm validate:v6
           pnpm lint
           pnpm build
           pnpm validate:built-links

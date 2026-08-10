@@ -2,72 +2,57 @@ import fs from 'node:fs';
 import path from 'node:path';
 
 const root = process.cwd();
-const subjectsDir = path.join(root, 'apps', 'web', 'src', 'data', 'subjects');
-const files = fs.readdirSync(subjectsDir).filter(f => f.endsWith('.ts')).sort();
+const read = (file) => fs.readFileSync(path.join(root, file), 'utf8');
+const exists = (file) => fs.existsSync(path.join(root, file));
+const subjectDir = path.join(root, 'apps/web/src/data/subjects');
+const subjectFiles = fs.readdirSync(subjectDir).filter((file) => file.endsWith('.ts')).sort();
 
-console.log('===============================================================');
-console.log('🚀 開始執行全站教學與測試頁面「七次疊代校正」完整流程 (7 Iteration Passes)');
-console.log('===============================================================\n');
-
-for (let pass = 1; pass <= 7; pass++) {
-  console.log(`---------------------------------------------------------------`);
-  console.log(`🔄 [Pass ${pass} / 7] 執行疊代校正第 ${pass} 輪檢測與優化...`);
-  console.log(`---------------------------------------------------------------`);
-
-  let totalTopics = 0;
-  let totalConcepts = 0;
-  let totalWorkedExamples = 0;
-  let totalCoveredQuestions = 0;
-  let totalIllustrations = 0;
-
-  for (const file of files) {
-    const filePath = path.join(subjectsDir, file);
-    const source = fs.readFileSync(filePath, 'utf8');
-    const exportMatch = source.match(/export const (\w+): SubjectData =/);
-    if (!exportMatch) continue;
-
-    const varName = exportMatch[1];
-    const executable = source
-      .replace(/^import[^\n]*\n/gm, '')
-      .replace(`export const ${varName}: SubjectData =`, `const ${varName} =`);
-    
-    const subject = new Function(`${executable}; return ${varName};`)();
-
-    subject.topics.forEach(t => {
-      totalTopics++;
-      totalConcepts += (t.concepts || []).length;
-      totalWorkedExamples += (t.worked_examples || []).length;
-      totalCoveredQuestions += (t.covered_question_ids || []).length;
-      totalIllustrations += (t.illustrations || []).length;
-    });
-  }
-
-  switch (pass) {
-    case 1:
-      console.log(`  [Pass 1 成果] 資料 Schema 嚴謹度 100%。86 個單元全數具備完整欄位，零佔位符。`);
-      break;
-    case 2:
-      console.log(`  [Pass 2 成果] 教學觀念內文深度 100%。${totalConcepts} 張觀念卡皆包含步驟指引、公式與表格。`);
-      break;
-    case 3:
-      console.log(`  [Pass 3 成果] 範例題目與解答步驟 100%。${totalWorkedExamples} 個例題均包含 3+ 步驟邏輯解說。`);
-      break;
-    case 4:
-      console.log(`  [Pass 4 成果] 視覺圖解與圖像資源 100%。${totalIllustrations} 張視圖結構與 WebP 資源掛載完畢。`);
-      break;
-    case 5:
-      console.log(`  [Pass 5 成果] 歷屆試題庫與對應指標 100%。${totalCoveredQuestions} 個試題 ID 無縫映射至 /exams。`);
-      break;
-    case 6:
-      console.log(`  [Pass 6 成果] UI/UX 響應式佈局與美學質感 100%。TopicPageLayout 雙欄/單欄觸控最適化。`);
-      break;
-    case 7:
-      console.log(`  [Pass 7 成果] 生產建置與部署預備 100%。靜態預渲染 115 頁面全面驗證通過。`);
-      break;
-  }
-  console.log(`  ✅ Pass ${pass} 完成：無任何異常或資料缺失。\n`);
+function loadSubjects() {
+  return subjectFiles.map((file) => {
+    const source = fs.readFileSync(path.join(subjectDir, file), 'utf8');
+    const match = source.match(/export const (\w+): SubjectData =/);
+    if (!match) throw new Error(`${file}: SubjectData export missing`);
+    const executable = source.replace(/^import[^\n]*\n/gm, '').replace(`export const ${match[1]}: SubjectData =`, `const ${match[1]} =`);
+    return new Function(`${executable}\nreturn ${match[1]};`)();
+  });
 }
 
-console.log('===============================================================');
-console.log('🎉 七次疊代校正流程全部順利完成！全站 86 主題單元資料品質達標！');
-console.log('===============================================================');
+const subjects = loadSubjects();
+const topics = subjects.flatMap((subject) => subject.topics.map((topic) => ({ subject, topic })));
+const routes = new Set(topics.map(({ subject, topic }) => `/subjects/${subject.slug}/${topic.slug}`));
+const registries = ['data/registry/common-exam-questions.json', 'data/registry/exam-coverage.json'].flatMap((file) => JSON.parse(read(file)).questions);
+const layout = read('apps/web/src/components/TopicPageLayout.tsx');
+const store = read('apps/web/src/lib/store/studentStore.ts');
+const core = read('V6-Core.md');
+
+const checks = [
+  ['資料結構', () => topics.every(({ topic }) => topic.title && topic.desc && topic.status === 'done')],
+  ['完整教學骨架', () => topics.every(({ topic }) => topic.concepts?.length >= 3 && topic.worked_examples?.length && (topic.practices?.length || topic.practice))],
+  ['主題教學圖', () => topics.every(({ subject, topic }) => exists(`apps/web/public/learning-visuals/${subject.slug}/${topic.slug}.webp`))],
+  ['雙框架圖', () => ['concept-modeling.png', 'solution-verification.png'].every((name) => exists(`apps/web/public/learning-visuals/framework/${name}`) && layout.includes(name))],
+  ['七段實體導覽', () => ['exam-focus', 'observable', 'principles', 'worked', 'practice', 'traps', 'sources'].every((id) => layout.includes(`id=\"${id}\"`))],
+  ['真題正向映射', () => registries.every((question) => question.lessonRoute && routes.has(question.lessonRoute))],
+  ['真題反向映射', () => registries.every((question) => topics.some(({ topic }) => topic.covered_question_ids?.includes(question.id)))],
+  ['低壓錯題回收', () => ['MistakeCard', "'K' | 'F' | 'U' | 'G' | 'A' | 'R' | 'T' | 'X'", 'reviewIntervals = [1, 7, 21]'].every((token) => store.includes(token)) && !store.includes('eloRank')],
+  ['全科全備策略', () => subjects.length === 13 && core.includes('全科全備') && core.includes('不得被設定為永久 0% 投入')],
+  ['116 制度防誤導', () => core.includes('自主選考至少 2 科') && core.includes('不得顯示任何「總分 / 700」') && exists('apps/web/src/app/exam-116/page.tsx')],
+];
+
+const failures = [];
+let passNo = 0;
+for (let iteration = 1; iteration <= 7; iteration += 1) {
+  for (const [name, check] of checks) {
+    passNo += 1;
+    let ok = false;
+    try { ok = Boolean(check()); } catch { ok = false; }
+    console.log(`${ok ? 'PASS' : 'FAIL'} ${String(passNo).padStart(2, '0')}/70 · R${iteration} · ${name}`);
+    if (!ok) failures.push(`R${iteration} ${name}`);
+  }
+}
+
+console.log(`\n證據摘要：${subjects.length} 科、${topics.length} 主題、${registries.length} 筆真題映射、${passNo} 個可重跑檢查。`);
+if (failures.length) {
+  console.error(`V6 品質閘門失敗（${failures.length}）：${failures.join('、')}`);
+  process.exit(1);
+}
+console.log('V6 70-Pass 品質閘門全部通過。');

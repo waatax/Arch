@@ -8,6 +8,7 @@ import { allSubjects } from '@/data/subjects';
 
 const navLinks = [
   { href: '/', label: '首頁' },
+  { href: '/exam-116', label: '116 選考指南' },
   { href: '/curriculum', label: '課程地圖' },
   { href: '/practice', label: '歷屆模擬' },
   { href: '/cases', label: '建築案例' },

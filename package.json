@@ -8,6 +8,7 @@
     "build:exam-coverage": "node scripts/build-exam-coverage.mjs",
     "build:full-exams": "python scripts/build-full-exam-assets.py",
     "validate:built-links": "node scripts/validate-built-learning-links.mjs",
+    "validate:v6": "node scripts/run-7-iteration-passes.mjs",
     "dev": "pnpm --filter web dev",
     "lint": "pnpm --filter web lint",
     "start": "pnpm --filter web start"
