@@ -23,6 +23,8 @@ const routes = new Set(topics.map(({ subject, topic }) => `/subjects/${subject.s
 const registries = ['data/registry/common-exam-questions.json', 'data/registry/exam-coverage.json'].flatMap((file) => JSON.parse(read(file)).questions);
 const layout = read('apps/web/src/components/TopicPageLayout.tsx');
 const store = read('apps/web/src/lib/store/studentStore.ts');
+const examSimulator = read('apps/web/src/components/ExamSimulator.tsx');
+const answerLogic = read('apps/web/src/lib/examAnswers.ts');
 const core = read('V6-Core.md');
 
 const checks = [
@@ -35,7 +37,7 @@ const checks = [
   ['真題反向映射', () => registries.every((question) => topics.some(({ topic }) => topic.covered_question_ids?.includes(question.id)))],
   ['低壓錯題回收', () => ['MistakeCard', "'K' | 'F' | 'U' | 'G' | 'A' | 'R' | 'T' | 'X'", 'reviewIntervals = [1, 7, 21]'].every((token) => store.includes(token)) && !store.includes('eloRank')],
   ['全科全備策略', () => subjects.length === 13 && core.includes('全科全備') && core.includes('不得被設定為永久 0% 投入')],
-  ['116 制度防誤導', () => core.includes('自主選考至少 2 科') && core.includes('不得顯示任何「總分 / 700」') && exists('apps/web/src/app/exam-116/page.tsx')],
+  ['116 制度與判分防誤導', () => core.includes('自主選考至少 2 科') && core.includes('不得顯示任何「總分 / 700」') && exists('apps/web/src/app/exam-116/page.tsx') && answerLogic.includes('normalizedChoices(selected) === normalizedChoices(answer)') && examSimulator.includes("type={multiple ? 'checkbox' : 'radio'}") && !layout.includes('answer.includes(userChoice)') && !examSimulator.includes('answer.includes(selected)')],
 ];
 
 const failures = [];

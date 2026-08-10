@@ -8,6 +8,7 @@ import MathText from '@/components/MathText';
 import InteractiveVisualizer from '@/components/visualizers/InteractiveVisualizer';
 import { getTopicRealLifeGuide } from '@/lib/pedagogy/realLifeHelpers';
 import { getTopicDeepKnowledge } from '@/lib/pedagogy/topicKnowledgeExpander';
+import { isAnswerChoiceCorrect, isAnswerCorrect, isMultipleChoiceAnswer, toggleSelectedChoice } from '@/lib/examAnswers';
 import coverageRegistry from '../../../../data/registry/exam-coverage.json';
 import commonRegistry from '../../../../data/registry/common-exam-questions.json';
 
@@ -791,7 +792,8 @@ export default function TopicPageLayout({ subject, topic }: TopicPageLayoutProps
             {mappedExamQuestions.map((q, idx: number) => {
               const userChoice = selectedExamAnswers[q.id];
               const isAnswered = Boolean(userChoice);
-              const isCorrect = isAnswered && (q.answer === '送分' || q.answer.includes(userChoice));
+              const isCorrect = isAnswered && isAnswerCorrect(q.answer, userChoice);
+              const isMultiple = isMultipleChoiceAnswer(q.answer);
 
               return (
                 <div
@@ -837,12 +839,16 @@ export default function TopicPageLayout({ subject, topic }: TopicPageLayoutProps
 
                   <div className="grid gap-2 sm:grid-cols-2 text-xs">
                     {(['A', 'B', 'C', 'D'] as const).map((choice) => {
-                      const isSelected = userChoice === choice;
-                      const isRightChoice = isAnswered && (q.answer === choice || q.answer === '送分');
+                      const isSelected = userChoice?.includes(choice) ?? false;
+                      const isRightChoice = isAnswered && isAnswerChoiceCorrect(q.answer, choice);
                       return (
                         <button
                           key={choice}
-                          onClick={() => setSelectedExamAnswers((prev) => ({ ...prev, [q.id]: choice }))}
+                          onClick={() => setSelectedExamAnswers((prev) => ({
+                            ...prev,
+                            [q.id]: isMultiple ? toggleSelectedChoice(prev[q.id], choice) : choice,
+                          }))}
+                          aria-pressed={isSelected}
                           className={`flex items-start gap-2.5 p-3 rounded-xl border text-left transition-all cursor-pointer ${
                             isSelected
                               ? isRightChoice

@@ -1,6 +1,6 @@
 {
   "name": "arch",
-  "version": "5.0.0",
+  "version": "6.17.0",
   "private": true,
   "scripts": {
     "build": "pnpm --filter web build",
