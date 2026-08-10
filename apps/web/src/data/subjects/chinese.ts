@@ -11,7 +11,7 @@ export const chineseData: SubjectData = {
       title: '1. 古典文學選讀與建築空間散文',
       desc: '深入賞析先秦諸子、唐宋八大家古典散文、漢賦駢文及建築論述經典（如〈嶽陽樓記〉、〈醉翁亭記〉、〈阿房宮賦〉），掌握體裁流變與古典建築空間意象。\n\n🔥 V6.0 考前秒殺秘訣：此核心概念統測出題率極高，建議善用圖解與鷹架提示反覆練習！',
       status: 'done',
-      covered_question_ids: [],
+      covered_question_ids: ['111-chinese-2', '111-chinese-7', '111-chinese-8', '112-chinese-2', '112-chinese-3', '112-chinese-5', '112-chinese-6', '113-chinese-2', '113-chinese-5', '113-chinese-10', '113-chinese-37', '114-chinese-3', '114-chinese-4', '114-chinese-5', '114-chinese-6', '114-chinese-9', '114-chinese-10', '115-chinese-2', '115-chinese-4', '115-chinese-6', '115-chinese-7', '115-chinese-8', '110-chinese-6', '110-chinese-12', '110-chinese-18', '110-chinese-24', '110-chinese-30', '110-chinese-36'],
       worked_examples: [
         {
           question: '【範例題】「各抱地勢，鉤心鬥角」是杜牧在《阿房宮賦》中描寫建築物結構的經典名句。請問在此句中，作者主要想表達建築物的何種空間特徵？',
@@ -167,7 +167,7 @@ export const chineseData: SubjectData = {
       title: '2. 現代文學與應用文實務',
       desc: '研析現代詩、散文、小說之美學風格與空間意象，並精通公文（函）、書信、題辭、柬帖及建築工程應用文規範。\n\n🔥 V6.0 考前秒殺秘訣：此核心概念統測出題率極高，建議善用圖解與鷹架提示反覆練習！',
       status: 'done',
-      covered_question_ids: [],
+      covered_question_ids: ['113-chinese-38', '110-chinese-1', '110-chinese-7', '110-chinese-13', '110-chinese-19', '110-chinese-25', '110-chinese-31', '110-chinese-37'],
       worked_examples: [
         {
           question: '【範例題】在一份給市政府的「古蹟修復工程變更設計」公文中，承辦人將結尾用語寫為「請 查照」。請問此用法是否適當？如果不適當，應如何修改？',
@@ -305,7 +305,7 @@ export const chineseData: SubjectData = {
       title: '3. 語文知識與修辭應用',
       desc: '系統化掌握字音字形辨正、成語典故來源、修辭法（譬喻、轉化、借代、層遞、映襯等）及其於建築與文學文本中之表現技巧。\n\n🔥 V6.0 考前秒殺秘訣：此核心概念統測出題率極高，建議善用圖解與鷹架提示反覆練習！',
       status: 'done',
-      covered_question_ids: [],
+      covered_question_ids: ['111-chinese-1', '112-chinese-1', '113-chinese-1', '113-chinese-6', '114-chinese-1', '115-chinese-1', '110-chinese-2', '110-chinese-8', '110-chinese-14', '110-chinese-20', '110-chinese-26', '110-chinese-32', '110-chinese-38'],
       worked_examples: [
         {
           question: '【範例題】「冷冽的清水模牆面，散發出一種低沉而安詳的視覺音符。」請問這句話主要運用了哪一種修辭法？',
@@ -435,7 +435,7 @@ export const chineseData: SubjectData = {
       title: '4. 閱讀理解與建築論述判讀',
       desc: '培養長篇文本快速略讀、主題句擷取、跨文本對比、非連續性文本（圖表與空間邏輯圖）判讀及現代建築思想論述之分析能力。\n\n🔥 V6.0 考前秒殺秘訣：此核心概念統測出題率極高，建議善用圖解與鷹架提示反覆練習！',
       status: 'done',
-      covered_question_ids: [],
+      covered_question_ids: ['111-chinese-4', '111-chinese-11', '111-chinese-12', '111-chinese-13', '111-chinese-14', '111-chinese-15', '111-chinese-16', '111-chinese-17', '111-chinese-18', '111-chinese-19', '111-chinese-20', '111-chinese-21', '111-chinese-22', '111-chinese-23', '111-chinese-24', '111-chinese-25', '111-chinese-26', '111-chinese-27', '111-chinese-28', '111-chinese-29', '111-chinese-30', '111-chinese-31', '111-chinese-32', '111-chinese-33', '111-chinese-34', '111-chinese-35', '111-chinese-36', '111-chinese-37', '111-chinese-38', '112-chinese-9', '112-chinese-11', '112-chinese-12', '112-chinese-13', '112-chinese-14', '112-chinese-15', '112-chinese-16', '112-chinese-17', '112-chinese-18', '112-chinese-19', '112-chinese-20', '112-chinese-21', '112-chinese-22', '112-chinese-23', '112-chinese-24', '112-chinese-25', '112-chinese-26', '112-chinese-27', '112-chinese-28', '112-chinese-29', '112-chinese-30', '112-chinese-31', '112-chinese-32', '112-chinese-33', '112-chinese-34', '112-chinese-35', '112-chinese-36', '112-chinese-37', '112-chinese-38', '113-chinese-7', '113-chinese-9', '113-chinese-11', '113-chinese-12', '113-chinese-13', '113-chinese-14', '113-chinese-15', '113-chinese-16', '113-chinese-17', '113-chinese-18', '113-chinese-19', '113-chinese-20', '113-chinese-21', '113-chinese-22', '113-chinese-23', '113-chinese-24', '113-chinese-25', '113-chinese-26', '113-chinese-27', '113-chinese-28', '113-chinese-29', '113-chinese-30', '113-chinese-31', '113-chinese-32', '113-chinese-33', '113-chinese-34', '113-chinese-35', '113-chinese-36', '114-chinese-11', '114-chinese-12', '114-chinese-13', '114-chinese-14', '114-chinese-15', '114-chinese-16', '114-chinese-17', '114-chinese-18', '114-chinese-19', '114-chinese-20', '114-chinese-21', '114-chinese-22', '114-chinese-23', '114-chinese-24', '114-chinese-25', '114-chinese-26', '114-chinese-27', '114-chinese-28', '114-chinese-29', '114-chinese-30', '114-chinese-31', '114-chinese-32', '114-chinese-33', '114-chinese-34', '114-chinese-35', '114-chinese-36', '114-chinese-37', '114-chinese-38', '115-chinese-9', '115-chinese-11', '115-chinese-12', '115-chinese-13', '115-chinese-14', '115-chinese-15', '115-chinese-16', '115-chinese-17', '115-chinese-18', '115-chinese-19', '115-chinese-20', '115-chinese-21', '115-chinese-22', '115-chinese-23', '115-chinese-24', '115-chinese-25', '115-chinese-26', '115-chinese-27', '115-chinese-28', '115-chinese-29', '115-chinese-30', '115-chinese-31', '115-chinese-32', '115-chinese-33', '115-chinese-34', '115-chinese-35', '115-chinese-36', '115-chinese-37', '115-chinese-38', '110-chinese-3', '110-chinese-9', '110-chinese-15', '110-chinese-21', '110-chinese-27', '110-chinese-33'],
       worked_examples: [
         {
           question: '【範例題】在閱讀一篇關於「現代建築史」的長篇論述時，作者在第二段開頭寫道：「固然包浩斯學派強調形隨機能，但是當代綠建築更關注的是建築與環境的共生。」請問這段話的核心觀點是什麼？',
@@ -574,7 +574,7 @@ export const chineseData: SubjectData = {
       title: '5. 作文與表達（含建築空間論述）',
       desc: '精通論說文與抒情文之構思、起承轉合篇章架構、修辭造句、空間意象融入及建築空間評析作文實戰技巧。\n\n🔥 V6.0 考前秒殺秘訣：此核心概念統測出題率極高，建議善用圖解與鷹架提示反覆練習！',
       status: 'done',
-      covered_question_ids: [],
+      covered_question_ids: ['111-chinese-10', '110-chinese-4', '110-chinese-10', '110-chinese-16', '110-chinese-22', '110-chinese-28', '110-chinese-34'],
       worked_examples: [
         {
           question: '【範例題】在一篇以「老屋的記憶」為題的抒情散文中，作者在第三段（轉折段）寫道：「然而，在怪手無情的摧毀下，那些曾經承載著家族歡笑與淚水的紅磚瓦，終究化為一縷塵煙。我們是否在追求現代化的同時，也不知不覺地丟失了靈魂的根基？」請問這段文字在篇章結構中發揮了什麼作用？',
@@ -707,7 +707,7 @@ export const chineseData: SubjectData = {
       title: '6. 文化常識與園林建築思潮',
       desc: '涵蓋國學常識、年齡代稱、天干地支與時辰、傳統節慶民俗、古代度量衡與中國傳統園林美學思潮（計成《園冶》與文人造園觀）。\n\n🔥 V6.0 考前秒殺秘訣：此核心概念統測出題率極高，建議善用圖解與鷹架提示反覆練習！',
       status: 'done',
-      covered_question_ids: [],
+      covered_question_ids: ['111-chinese-3', '111-chinese-5', '111-chinese-6', '111-chinese-9', '112-chinese-4', '112-chinese-7', '112-chinese-8', '112-chinese-10', '113-chinese-3', '113-chinese-4', '113-chinese-8', '114-chinese-2', '114-chinese-7', '114-chinese-8', '115-chinese-3', '115-chinese-5', '115-chinese-10', '110-chinese-5', '110-chinese-11', '110-chinese-17', '110-chinese-23', '110-chinese-29', '110-chinese-35'],
       worked_examples: [
         {
           question: '【範例題】明代計成在《園冶》中提出了「雖由人作，宛自天開」的造園最高境界。請問這句話最能體現中國傳統園林美學的哪一種核心精神？',

@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useMemo } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import type { SubjectData, TopicContent } from '@/data/types';
@@ -8,10 +8,27 @@ import MathText from '@/components/MathText';
 import InteractiveVisualizer from '@/components/visualizers/InteractiveVisualizer';
 import { getTopicRealLifeGuide } from '@/lib/pedagogy/realLifeHelpers';
 import { getTopicDeepKnowledge } from '@/lib/pedagogy/topicKnowledgeExpander';
+import coverageRegistry from '../../../../data/registry/exam-coverage.json';
+import commonRegistry from '../../../../data/registry/common-exam-questions.json';
 
 interface TopicPageLayoutProps {
   subject: SubjectData;
   topic: TopicContent;
+}
+
+interface MappedExamQuestion {
+  id: string;
+  subject?: string;
+  topic?: string;
+  lessonRoute?: string | null;
+  sourceLabel?: string;
+  sourceUrl?: string;
+  year?: number;
+  questionNo?: number;
+  excerpt: string;
+  figureImage?: string | null;
+  answer: string;
+  options?: Partial<Record<'A' | 'B' | 'C' | 'D', string>>;
 }
 
 export default function TopicPageLayout({ subject, topic }: TopicPageLayoutProps) {
@@ -20,11 +37,23 @@ export default function TopicPageLayout({ subject, topic }: TopicPageLayoutProps
   const nextTopic = currentIndex < subject.topics.length - 1 ? subject.topics[currentIndex + 1] : null;
   const visualConcept = topic.concepts.find((concept) => concept.formula) ?? topic.concepts[0];
   const visualSrc = `${process.env.NEXT_PUBLIC_BASE_PATH ?? ''}/learning-visuals/${subject.slug}/${topic.slug}.webp`;
+  const conceptModelingSrc = `${process.env.NEXT_PUBLIC_BASE_PATH ?? ''}/learning-visuals/framework/concept-modeling.png`;
+  const solutionVerificationSrc = `${process.env.NEXT_PUBLIC_BASE_PATH ?? ''}/learning-visuals/framework/solution-verification.png`;
   const practices = topic.practices?.length ? topic.practices : topic.practice ? [topic.practice] : [];
   const isExamSubject = ['mechanics', 'materials', 'surveying', 'drafting', 'chinese', 'english', 'math-c'].includes(subject.slug);
 
+  const mappedExamQuestions = useMemo(() => {
+    const route = `/subjects/${subject.slug}/${topic.slug}`;
+    const prof = (coverageRegistry.questions as MappedExamQuestion[]).filter((q) => q.subject === subject.slug && q.topic === topic.slug);
+    const comm = (commonRegistry.questions as MappedExamQuestion[]).filter((q) => q.lessonRoute === route);
+    return [...prof, ...comm];
+  }, [subject.slug, topic.slug]);
+
   // Active section tab
-  const [activeTab, setActiveTab] = useState<'concepts' | 'visualizer' | 'traps' | 'worked' | 'practice'>('concepts');
+  const [activeTab, setActiveTab] = useState<'concepts' | 'visualizer' | 'traps' | 'worked' | 'practice' | 'examQs'>('concepts');
+
+  // Exam Questions Interactive Answer State
+  const [selectedExamAnswers, setSelectedExamAnswers] = useState<Record<string, string>>({});
 
   // Concept Progress Checkbox State
   const [completedConcepts, setCompletedConcepts] = useState<Record<number, boolean>>({});
@@ -238,6 +267,14 @@ export default function TopicPageLayout({ subject, topic }: TopicPageLayoutProps
           >
             ✍️ 自我檢測 ({practices.length})
           </button>
+          {mappedExamQuestions.length > 0 && (
+            <button
+              onClick={() => setActiveTab('examQs')}
+              className={`px-3.5 py-2 rounded-t-lg font-bold transition-colors ${activeTab === 'examQs' ? 'bg-indigo-600 text-white shadow-xs' : 'text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800'}`}
+            >
+              🎯 歷屆統測真題 ({mappedExamQuestions.length})
+            </button>
+          )}
         </div>
       </header>
 
@@ -272,6 +309,76 @@ export default function TopicPageLayout({ subject, topic }: TopicPageLayoutProps
           </p>
         </figcaption>
       </figure>
+
+      {/* Every lesson gets two additional OpenAI-generated visual explanations. */}
+      <section className="space-y-4" aria-labelledby="visual-learning-title">
+        <div className="space-y-1">
+          <p className="text-xs font-mono font-bold uppercase tracking-widest text-blue-600 dark:text-blue-400">
+            Visual learning path
+          </p>
+          <h2 id="visual-learning-title" className="font-serif text-2xl font-bold text-slate-900 dark:text-white">
+            看懂觀念，再驗證答案
+          </h2>
+          <p className="text-sm leading-7 text-slate-600 dark:text-slate-400">
+            兩張圖分別回答「知識怎麼建立」與「答案怎麼確認」。閱讀時，請把圖中的流程套用到本章的
+            <strong className="text-slate-900 dark:text-white"> {visualConcept.heading}</strong>。
+          </p>
+        </div>
+
+        <div className="grid gap-5 lg:grid-cols-2">
+          <figure className="overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm dark:border-slate-800 dark:bg-slate-900">
+            <div className="relative aspect-video bg-stone-50 dark:bg-slate-950">
+              <Image
+                src={conceptModelingSrc}
+                alt={`${topic.title}觀念建模流程：從情境觀察、篩選變因、建立模型到回到現實檢核`}
+                fill
+                sizes="(min-width: 1024px) 416px, 100vw"
+                className="object-cover"
+              />
+            </div>
+            <figcaption className="space-y-2 p-5">
+              <h3 className="font-bold text-slate-900 dark:text-white">圖一｜把現象轉成可用的觀念</h3>
+              <p className="text-sm leading-7 text-slate-600 dark:text-slate-400">
+                先觀察真實情境，再辨認關鍵條件與變因，最後用圖、表或關係式建立模型。本章可先抓住
+                「{visualConcept.heading}」，並用章節案例檢查模型是否合理。
+              </p>
+              <ol className="grid grid-cols-2 gap-2 text-xs font-medium text-slate-700 dark:text-slate-300">
+                {['觀察情境', '篩選條件', '建立模型', '回到現實'].map((label, index) => (
+                  <li key={label} className="rounded-lg bg-slate-50 px-3 py-2 dark:bg-slate-800">
+                    {index + 1}. {label}
+                  </li>
+                ))}
+              </ol>
+            </figcaption>
+          </figure>
+
+          <figure className="overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm dark:border-slate-800 dark:bg-slate-900">
+            <div className="relative aspect-video bg-stone-50 dark:bg-slate-950">
+              <Image
+                src={solutionVerificationSrc}
+                alt={`${topic.title}解題驗證流程：讀題、選擇方法、執行、檢核與修正`}
+                fill
+                sizes="(min-width: 1024px) 416px, 100vw"
+                className="object-cover"
+              />
+            </div>
+            <figcaption className="space-y-2 p-5">
+              <h3 className="font-bold text-slate-900 dark:text-white">圖二｜用驗證迴圈避免只背答案</h3>
+              <p className="text-sm leading-7 text-slate-600 dark:text-slate-400">
+                解題後不要立刻停筆：把結果放回原情境，檢查單位、方向、尺度、語意或因果是否一致；若不合理，
+                回到假設與方法修正。這個迴圈同樣適用於本章例題與統測題。
+              </p>
+              <ol className="grid grid-cols-2 gap-2 text-xs font-medium text-slate-700 dark:text-slate-300 sm:grid-cols-4 lg:grid-cols-2 xl:grid-cols-4">
+                {['讀懂問題', '選擇方法', '執行求解', '檢核修正'].map((label, index) => (
+                  <li key={label} className="rounded-lg bg-slate-50 px-3 py-2 dark:bg-slate-800">
+                    {index + 1}. {label}
+                  </li>
+                ))}
+              </ol>
+            </figcaption>
+          </figure>
+        </div>
+      </section>
 
       {/* Lightbox Modal */}
       {isLightboxOpen && (
@@ -682,6 +789,116 @@ export default function TopicPageLayout({ subject, topic }: TopicPageLayoutProps
                 </div>
               </details>
             ))}
+          </div>
+        </section>
+      ) : null}
+
+      {/* === [Mapped Past Exam Questions: Active Retrieval Section] === */}
+      {mappedExamQuestions.length > 0 ? (
+        <section id="exam-questions-section" className="space-y-4 pt-4" aria-labelledby="exam-qs-title">
+          <div className="flex items-center justify-between gap-2">
+            <div>
+              <span className="text-xs font-mono uppercase tracking-widest text-indigo-600 dark:text-indigo-400 font-bold">
+                Official TCTE Exam Questions Retrieval
+              </span>
+              <h2 id="exam-qs-title" className="font-serif text-2xl font-bold text-slate-900 dark:text-white">
+                🎯 本章對應近六年統測真題實戰 ({mappedExamQuestions.length} 題)
+              </h2>
+            </div>
+            <Link href="/practice" className="text-xs font-bold text-blue-600 dark:text-blue-400 hover:underline">
+              進入全科目模擬器 →
+            </Link>
+          </div>
+
+          <div className="space-y-4">
+            {mappedExamQuestions.map((q, idx: number) => {
+              const userChoice = selectedExamAnswers[q.id];
+              const isAnswered = Boolean(userChoice);
+              const isCorrect = isAnswered && (q.answer === '送分' || q.answer.includes(userChoice));
+
+              return (
+                <div
+                  key={q.id || idx}
+                  className={`rounded-2xl border p-5 sm:p-6 space-y-4 shadow-xs transition-all ${
+                    isAnswered
+                      ? isCorrect
+                        ? 'border-emerald-300 bg-emerald-50/20 dark:border-emerald-800 dark:bg-emerald-950/20'
+                        : 'border-rose-300 bg-rose-50/20 dark:border-rose-800 dark:bg-rose-950/20'
+                      : 'border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900'
+                  }`}
+                >
+                  <div className="flex flex-wrap items-center justify-between gap-2">
+                    <span className="rounded-lg bg-indigo-600 px-2.5 py-1 text-xs font-bold text-white font-mono shadow-2xs">
+                      {q.sourceLabel || `${q.year} 年統測`} · 第 {q.questionNo || idx + 1} 題
+                    </span>
+                    {q.sourceUrl ? (
+                      <a
+                        href={q.sourceUrl}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="text-[11px] font-mono text-slate-500 hover:text-blue-600 dark:hover:text-blue-400"
+                      >
+                        官方題本 ↗
+                      </a>
+                    ) : null}
+                  </div>
+
+                  <div className="font-bold leading-relaxed text-slate-900 dark:text-white text-base">
+                    <MathText content={q.excerpt} />
+                  </div>
+
+                  {q.figureImage && (
+                    <figure className="overflow-hidden rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-950 p-2">
+                      {/* eslint-disable-next-line @next/next/no-img-element */}
+                      <img
+                        src={`${process.env.NEXT_PUBLIC_BASE_PATH ?? ''}${q.figureImage}`}
+                        alt={`第 ${q.questionNo} 題圖面`}
+                        className="mx-auto max-h-80 w-auto object-contain"
+                      />
+                    </figure>
+                  )}
+
+                  <div className="grid gap-2 sm:grid-cols-2 text-xs">
+                    {(['A', 'B', 'C', 'D'] as const).map((choice) => {
+                      const isSelected = userChoice === choice;
+                      const isRightChoice = isAnswered && (q.answer === choice || q.answer === '送分');
+                      return (
+                        <button
+                          key={choice}
+                          onClick={() => setSelectedExamAnswers((prev) => ({ ...prev, [q.id]: choice }))}
+                          className={`flex items-start gap-2.5 p-3 rounded-xl border text-left transition-all cursor-pointer ${
+                            isSelected
+                              ? isRightChoice
+                                ? 'border-emerald-600 bg-emerald-100/70 text-emerald-950 dark:bg-emerald-900/60 dark:text-emerald-100 font-bold'
+                                : 'border-rose-600 bg-rose-100/70 text-rose-950 dark:bg-rose-900/60 dark:text-rose-100 font-bold'
+                              : isRightChoice
+                              ? 'border-emerald-500 bg-emerald-50 text-emerald-900 dark:bg-emerald-950/80 dark:text-emerald-200 font-bold'
+                              : 'border-slate-200 dark:border-slate-800 bg-slate-50/60 dark:bg-slate-800/40 text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800'
+                          }`}
+                        >
+                          <span className="font-mono font-bold shrink-0">{choice}.</span>
+                          <span>
+                            <MathText content={q.options?.[choice] || `選項 ${choice}`} />
+                          </span>
+                        </button>
+                      );
+                    })}
+                  </div>
+
+                  {isAnswered && (
+                    <div className="rounded-xl bg-slate-100 dark:bg-slate-800 p-3.5 text-xs text-slate-800 dark:text-slate-200 font-medium space-y-1">
+                      <p>
+                        {isCorrect ? '✅ 答對了！' : `❌ 答錯了。你的選擇：${userChoice}，`}{' '}
+                        <strong>官方標準答案：{q.answer}</strong>
+                      </p>
+                      <p className="text-slate-500 dark:text-slate-400">
+                        💡 本題考點：{subject.title} · {topic.title}。解題關鍵知識點請參閱本頁上方的「核心概念精講」與「解題秒殺決策樹」。
+                      </p>
+                    </div>
+                  )}
+                </div>
+              );
+            })}
           </div>
         </section>
       ) : null}

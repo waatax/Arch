@@ -11,7 +11,7 @@ export const englishData: SubjectData = {
       title: '1. 字彙與片語',
       desc: '深入掌握構詞法、建築與工程專業字彙 (Architectural Terminology)、高頻動詞片語與空間位置介系詞。\n\n🔥 V6.0 考前秒殺秘訣：此核心概念統測出題率極高，建議善用圖解與鷹架提示反覆練習！',
       status: 'done',
-      covered_question_ids: [],
+      covered_question_ids: ['111-english-1', '111-english-2', '111-english-3', '111-english-4', '111-english-5', '111-english-6', '111-english-7', '111-english-8', '112-english-1', '112-english-2', '112-english-3', '112-english-4', '112-english-5', '112-english-6', '112-english-7', '112-english-8', '113-english-1', '113-english-2', '113-english-3', '113-english-4', '113-english-5', '113-english-6', '113-english-7', '113-english-8', '114-english-1', '114-english-2', '114-english-3', '114-english-4', '114-english-5', '114-english-6', '114-english-7', '114-english-8', '115-english-1', '115-english-2', '115-english-3', '115-english-4', '115-english-5', '115-english-6', '115-english-7', '115-english-8', '110-english-1', '110-english-2', '110-english-3', '110-english-4', '110-english-5', '110-english-6', '110-english-7', '110-english-8'],
       worked_examples: [
         {
           question: '【步驟化例題】建築英文專有名詞辨析：Read the sentence: "The architect specified \"reinforced concrete\" for the structural frame to withstand seismic forces." What does the term "reinforced concrete" mean in Chinese?',
@@ -221,7 +221,7 @@ export const englishData: SubjectData = {
       title: '2. 文法句型',
       desc: '五大基本句型、時態與被動語態、關係子句、分詞構句與假設語氣。\n\n🔥 V6.0 考前秒殺秘訣：此核心概念統測出題率極高，建議善用圖解與鷹架提示反覆練習！',
       status: 'done',
-      covered_question_ids: [],
+      covered_question_ids: ['111-english-9', '111-english-10', '112-english-9', '112-english-10', '113-english-9', '113-english-10', '114-english-9', '114-english-10', '115-english-9', '115-english-10', '110-english-9', '110-english-10'],
       worked_examples: [
         {
           question: '【步驟化例題】施工規範說明書被動語態句型：Convert the active sentence into a passive sentence used in technical specifications: "The contractor must compact the soil backfill in layers."',
@@ -392,7 +392,7 @@ export const englishData: SubjectData = {
       title: '3. 閱讀測驗',
       desc: '略讀與掃讀技巧、綠建築與建築結構技術短文閱讀、上下文推論與文章主旨分析。\n\n🔥 V6.0 考前秒殺秘訣：此核心概念統測出題率極高，建議善用圖解與鷹架提示反覆練習！',
       status: 'done',
-      covered_question_ids: [],
+      covered_question_ids: ['111-english-29', '111-english-30', '111-english-31', '111-english-32', '111-english-33', '111-english-34', '111-english-35', '111-english-36', '111-english-37', '111-english-38', '111-english-39', '111-english-40', '111-english-41', '111-english-42', '112-english-29', '112-english-30', '112-english-31', '112-english-32', '112-english-33', '112-english-34', '112-english-35', '112-english-36', '112-english-37', '112-english-38', '112-english-39', '112-english-40', '112-english-41', '112-english-42', '113-english-29', '113-english-30', '113-english-31', '113-english-32', '113-english-33', '113-english-34', '113-english-35', '113-english-36', '113-english-37', '113-english-38', '113-english-39', '113-english-40', '113-english-41', '113-english-42', '114-english-29', '114-english-30', '114-english-31', '114-english-32', '114-english-33', '114-english-34', '114-english-35', '114-english-36', '114-english-37', '114-english-38', '114-english-39', '114-english-40', '114-english-41', '114-english-42', '115-english-29', '115-english-30', '115-english-31', '115-english-32', '115-english-33', '115-english-34', '115-english-35', '115-english-36', '115-english-37', '115-english-38', '115-english-39', '115-english-40', '115-english-41', '115-english-42', '110-english-29', '110-english-30', '110-english-31', '110-english-32', '110-english-33', '110-english-34', '110-english-35', '110-english-36', '110-english-37', '110-english-38', '110-english-39', '110-english-40', '110-english-41', '110-english-42'],
       worked_examples: [
         {
           question: '【步驟化例題】建築設計英文閱讀主旨擷取：Passage: "Biophilic design integrates natural elements—such as daylight, indoor plants, and natural ventilation—into built environments to improve human health and well-being." What is the main idea of biophilic design?',
@@ -565,7 +565,7 @@ export const englishData: SubjectData = {
       title: '4. 對話與日常應用',
       desc: '建築工地溝通、事務所設計會議、社交與生活英語、職場對話習慣用語。\n\n🔥 V6.0 考前秒殺秘訣：此核心概念統測出題率極高，建議善用圖解與鷹架提示反覆練習！',
       status: 'done',
-      covered_question_ids: [],
+      covered_question_ids: ['111-english-11', '111-english-12', '111-english-13', '111-english-14', '111-english-15', '111-english-16', '111-english-17', '111-english-18', '111-english-19', '111-english-20', '112-english-11', '112-english-12', '112-english-13', '112-english-14', '112-english-15', '112-english-16', '112-english-17', '112-english-18', '112-english-19', '112-english-20', '113-english-11', '113-english-12', '113-english-13', '113-english-14', '113-english-15', '113-english-16', '113-english-17', '113-english-18', '113-english-19', '113-english-20', '114-english-11', '114-english-12', '114-english-13', '114-english-14', '114-english-15', '114-english-16', '114-english-17', '114-english-18', '114-english-19', '114-english-20', '115-english-11', '115-english-12', '115-english-13', '115-english-14', '115-english-15', '115-english-16', '115-english-17', '115-english-18', '115-english-19', '115-english-20', '110-english-11', '110-english-12', '110-english-13', '110-english-14', '110-english-15', '110-english-16', '110-english-17', '110-english-18', '110-english-19', '110-english-20'],
       worked_examples: [
         {
           question: '【步驟化例題】工地安全檢查情境對話：Complete the dialogue between a safety officer and a worker: \nOfficer: "You must wear a ________ before entering the construction zone."\nWorker: "Yes, sir. I have my hard hat right here."',
@@ -718,7 +718,7 @@ export const englishData: SubjectData = {
       title: '5. 克漏字與篇章結構',
       desc: '篇章銜接、轉折語與邏輯連接詞、克漏字實戰解題策略與篇章結構重建。\n\n🔥 V6.0 考前秒殺秘訣：此核心概念統測出題率極高，建議善用圖解與鷹架提示反覆練習！',
       status: 'done',
-      covered_question_ids: [],
+      covered_question_ids: ['111-english-21', '111-english-22', '111-english-23', '111-english-24', '111-english-25', '111-english-26', '111-english-27', '111-english-28', '112-english-21', '112-english-22', '112-english-23', '112-english-24', '112-english-25', '112-english-26', '112-english-27', '112-english-28', '113-english-21', '113-english-22', '113-english-23', '113-english-24', '113-english-25', '113-english-26', '113-english-27', '113-english-28', '114-english-21', '114-english-22', '114-english-23', '114-english-24', '114-english-25', '114-english-26', '114-english-27', '114-english-28', '115-english-21', '115-english-22', '115-english-23', '115-english-24', '115-english-25', '115-english-26', '115-english-27', '115-english-28', '110-english-21', '110-english-22', '110-english-23', '110-english-24', '110-english-25', '110-english-26', '110-english-27', '110-english-28'],
       worked_examples: [
         {
           question: '【步驟化例題】建築節能文章克漏字介詞選填：Choose the correct preposition: "Green buildings are designed to minimize their impact _____ the natural environment."',

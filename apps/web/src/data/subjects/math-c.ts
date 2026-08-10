@@ -11,7 +11,7 @@ export const mathCData: SubjectData = {
       title: '1. 三角函數與建築應用',
       desc: '深入掌握正弦定理、餘弦定理、無障礙坡道切線、和差角公式推導與極座標系統，應用於建築基地測量、屋頂斜率與聲學週期變化。\n\n🔥 V6.0 考前秒殺秘訣：此核心概念統測出題率極高，建議善用圖解與鷹架提示反覆練習！',
       status: 'done',
-      covered_question_ids: [],
+      covered_question_ids: ['111-math-c-4', '111-math-c-13', '112-math-c-3', '112-math-c-18', '113-math-c-3', '113-math-c-6', '113-math-c-18', '113-math-c-20', '113-math-c-22', '114-math-c-4', '114-math-c-8', '114-math-c-17', '115-math-c-15', '115-math-c-21', '115-math-c-25', '110-math-c-1', '110-math-c-7', '110-math-c-13', '110-math-c-19', '110-math-c-25'],
       worked_examples: [
         {
           question: '【步驟化例題】三角函數與建築測高：從平地 A 點觀測大樓頂端仰角為 30°；朝大樓方向水平前進 100 公尺到達 B 點，測得仰角變為 60°。求大樓之高度 h 為多少公尺？',
@@ -162,7 +162,7 @@ export const mathCData: SubjectData = {
       title: '2. 平面向量與力學分解',
       desc: '深入掌握向量正交分解、內積證明與夾角、外積與行列式面積、拉米定理靜力平衡及正交投影，應用於結構受力分析與樑柱接頭幾何。\n\n🔥 V6.0 考前秒殺秘訣：此核心概念統測出題率極高，建議善用圖解與鷹架提示反覆練習！',
       status: 'done',
-      covered_question_ids: [],
+      covered_question_ids: ['111-math-c-16', '112-math-c-4', '113-math-c-19', '115-math-c-23', '110-math-c-3', '110-math-c-9', '110-math-c-15', '110-math-c-21'],
       worked_examples: [
         {
           question: '【步驟化例題】平面向量內積與夾角計算：已知作用於結構節點之兩力向量向量 A = (3, 4) 與 向量 B = (5, 12)。試求兩向量之「內積 A·B」及兩向量夾角之餘弦值 cosθ？',
@@ -311,7 +311,7 @@ export const mathCData: SubjectData = {
       title: '3. 代數與多項式',
       desc: '深入掌握二次多項式配方法頂點式推導、餘式與因式定理證明、克拉瑪公式、線性規劃可行域極值及對數尺度，應用於拱門幾何與材料預算最佳化。\n\n🔥 V6.0 考前秒殺秘訣：此核心概念統測出題率極高，建議善用圖解與鷹架提示反覆練習！',
       status: 'done',
-      covered_question_ids: [],
+      covered_question_ids: ['111-math-c-1', '111-math-c-2', '111-math-c-3', '111-math-c-5', '111-math-c-8', '111-math-c-10', '111-math-c-11', '111-math-c-12', '111-math-c-15', '111-math-c-17', '111-math-c-20', '111-math-c-21', '111-math-c-22', '111-math-c-23', '111-math-c-25', '112-math-c-1', '112-math-c-2', '112-math-c-5', '112-math-c-6', '112-math-c-7', '112-math-c-8', '112-math-c-10', '112-math-c-11', '112-math-c-12', '112-math-c-13', '112-math-c-15', '112-math-c-17', '112-math-c-19', '112-math-c-20', '112-math-c-23', '112-math-c-24', '113-math-c-1', '113-math-c-5', '113-math-c-8', '113-math-c-9', '113-math-c-10', '113-math-c-11', '113-math-c-12', '113-math-c-15', '113-math-c-16', '113-math-c-25', '114-math-c-1', '114-math-c-2', '114-math-c-3', '114-math-c-5', '114-math-c-6', '114-math-c-7', '114-math-c-9', '114-math-c-12', '114-math-c-13', '114-math-c-14', '114-math-c-15', '114-math-c-16', '114-math-c-18', '114-math-c-19', '114-math-c-25', '115-math-c-1', '115-math-c-2', '115-math-c-4', '115-math-c-5', '115-math-c-9', '115-math-c-10', '115-math-c-11', '115-math-c-12', '115-math-c-13', '115-math-c-14', '115-math-c-16', '115-math-c-20', '115-math-c-24', '110-math-c-6', '110-math-c-12', '110-math-c-18', '110-math-c-24'],
       worked_examples: [
         {
           question: '【步驟化例題】二次函數與最大建築面積求解：某建築師欲用總長 40 公尺之圍籬圍成一矩形庭院。設矩形寬度為 x 公尺，求該庭院能圍成之「最大面積」為多少平方公尺？',
@@ -473,7 +473,7 @@ export const mathCData: SubjectData = {
       title: '4. 函數與幾何圖形',
       desc: '深入掌握橢圓標準式證明與聲學畫廊焦跡、雙曲線與雙曲拋物面薄殼、拋物線反射光學證明、3D 空間平面方程式及點到平面距離公式。\n\n🔥 V6.0 考前秒殺秘訣：此核心概念統測出題率極高，建議善用圖解與鷹架提示反覆練習！',
       status: 'done',
-      covered_question_ids: [],
+      covered_question_ids: ['111-math-c-6', '111-math-c-7', '111-math-c-9', '111-math-c-14', '111-math-c-24', '112-math-c-14', '112-math-c-21', '112-math-c-22', '112-math-c-25', '113-math-c-2', '113-math-c-4', '113-math-c-13', '113-math-c-17', '113-math-c-21', '113-math-c-24', '114-math-c-10', '114-math-c-11', '114-math-c-20', '114-math-c-21', '114-math-c-22', '114-math-c-23', '114-math-c-24', '115-math-c-3', '115-math-c-8', '115-math-c-17', '110-math-c-2', '110-math-c-8', '110-math-c-14', '110-math-c-20'],
       worked_examples: [
         {
           question: '【步驟化例題】解析幾何與平行直線方程式：在建築施工圖面座標系中，有一管道線路 L1 之方程式為 3x - 4y + 12 = 0。若要設計一平行管道 L2 且通過點 P(4, 1)，求 L2 之直線方程式？',
@@ -623,7 +623,7 @@ export const mathCData: SubjectData = {
       title: '5. 機率與統計',
       desc: '深入掌握排列組合原理證明、貝氏定理與風險評估、隨機變數期望值與變異數、常態分佈品質管制及 PERT 三點估算法工期評估。\n\n🔥 V6.0 考前秒殺秘訣：此核心概念統測出題率極高，建議善用圖解與鷹架提示反覆練習！',
       status: 'done',
-      covered_question_ids: [],
+      covered_question_ids: ['112-math-c-9', '112-math-c-16', '113-math-c-7', '110-math-c-4', '110-math-c-10', '110-math-c-16', '110-math-c-22'],
       worked_examples: [
         {
           question: '【步驟化例題】工程品管檢驗機率計算：某批磁磚抽樣檢驗，10 片磁磚中含有 2 片瑕疵品。若品管人員隨機抽取 2 片進行檢驗（不放回），求抽到的 2 片「均為良品」的機率為何？',
@@ -768,7 +768,7 @@ export const mathCData: SubjectData = {
       title: '6. 微積分基礎',
       desc: '深入掌握微商極限定義與微分公式推導、一二階導數極值最佳化、微積分基本定理 (FTC) 證明、定積分計算地形面積土方及樑剪力彎矩積分導引。\n\n🔥 V6.0 考前秒殺秘訣：此核心概念統測出題率極高，建議善用圖解與鷹架提示反覆練習！',
       status: 'done',
-      covered_question_ids: [],
+      covered_question_ids: ['111-math-c-18', '111-math-c-19', '113-math-c-14', '113-math-c-23', '115-math-c-6', '115-math-c-7', '115-math-c-18', '115-math-c-19', '115-math-c-22', '110-math-c-5', '110-math-c-11', '110-math-c-17', '110-math-c-23'],
       worked_examples: [
         {
           question: '【步驟化例題】微積分極值在樑彎矩分析之應用：一簡支梁長度 6m，受分佈載重作用其彎矩函數為 M(x) = 15x - 2.5x² (kN·m)。試利用微商（導數）求該梁之「最大彎矩值 M_max」位於何處？最大彎矩為多少？',

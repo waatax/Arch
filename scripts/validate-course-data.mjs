@@ -23,7 +23,16 @@ const expectedCategories = new Map([
 const subjects = [];
 const errors = [];
 const seenRoutes = new Set();
+const topicsByRoute = new Map();
 const visualsDir = path.join(root, 'apps', 'web', 'public', 'learning-visuals');
+const sharedLessonVisuals = [
+  path.join(visualsDir, 'framework', 'concept-modeling.png'),
+  path.join(visualsDir, 'framework', 'solution-verification.png'),
+];
+
+for (const visual of sharedLessonVisuals) {
+  if (!fs.existsSync(visual)) errors.push(`缺少全課程共用 OpenAI 教學圖：${path.relative(root, visual)}`);
+}
 
 for (const file of files) {
   const filename = path.join(subjectsDir, file);
@@ -56,6 +65,7 @@ for (const file of files) {
     const route = `/subjects/${subject.slug}/${topic.slug}`;
     if (seenRoutes.has(route)) errors.push(`${route}: 重複路由`);
     seenRoutes.add(route);
+    topicsByRoute.set(route, topic);
     if (!topic.title?.trim() || !topic.desc?.trim()) errors.push(`${route}: 缺少標題或摘要`);
     if (topic.status !== 'done') errors.push(`${route}: 尚未完成（${topic.status}）`);
     if (!Array.isArray(topic.concepts) || topic.concepts.length < 3) errors.push(`${route}: 概念卡少於 3 張`);
@@ -78,6 +88,38 @@ for (const file of files) {
     if (!topic.illustrations || topic.illustrations.length < 3) {
       errors.push(`${route}: 缺少 3 張以上之 Nanobanana 圖解`);
     }
+  }
+}
+
+// 以終為始：每一道歷屆統測題都必須正向連到已發布教學頁，教學頁也必須
+// 反向登錄該題，且具備核心知識點、步驟化例題與練習。
+const examRegistries = [
+  JSON.parse(fs.readFileSync(path.join(root, 'data', 'registry', 'common-exam-questions.json'), 'utf8')),
+  JSON.parse(fs.readFileSync(path.join(root, 'data', 'registry', 'exam-coverage.json'), 'utf8')),
+];
+const allExamQuestions = examRegistries.flatMap((registry) => registry.questions);
+for (const question of allExamQuestions) {
+  const topic = topicsByRoute.get(question.lessonRoute);
+  if (!topic) {
+    errors.push(`${question.id}: 無對應的完整教學頁 ${question.lessonRoute ?? '(missing route)'}`);
+    continue;
+  }
+  if (!topic.covered_question_ids?.includes(question.id)) {
+    errors.push(`${question.id}: 教學頁 ${question.lessonRoute} 未反向登錄此題`);
+  }
+  const practices = topic.practices?.length ? topic.practices : topic.practice ? [topic.practice] : [];
+  if (topic.concepts.length < 3 || !topic.worked_examples?.length || !practices.length) {
+    errors.push(`${question.id}: 對應教學頁缺少核心知識點、步驟化例題或練習`);
+  }
+}
+
+const topicLayout = fs.readFileSync(
+  path.join(root, 'apps', 'web', 'src', 'components', 'TopicPageLayout.tsx'),
+  'utf8',
+);
+for (const requiredVisual of ['concept-modeling.png', 'solution-verification.png']) {
+  if (!topicLayout.includes(requiredVisual)) {
+    errors.push(`所有學習頁必須實際呈現 OpenAI 教學圖：${requiredVisual}`);
   }
 }
 
