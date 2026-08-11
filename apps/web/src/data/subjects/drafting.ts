@@ -1,4 +1,5 @@
 import { SubjectData } from '../types';
+import { draftingGapTopics } from './professional-gap-topics';
 
 export const draftingData: SubjectData = {
   slug: 'drafting',
@@ -6,6 +7,7 @@ export const draftingData: SubjectData = {
   category: '專業科目（二）',
   color: 'blue-600',
   topics: [
+    ...draftingGapTopics,
     {
       slug: 'lines-and-lettering',
       title: '1. 線條種類與字法',

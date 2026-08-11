@@ -3,7 +3,14 @@ import path from 'node:path';
 
 const root = process.cwd();
 const subjectsDir = path.join(root, 'apps', 'web', 'src', 'data', 'subjects');
-const files = fs.readdirSync(subjectsDir).filter((file) => file.endsWith('.ts')).sort();
+const files = fs.readdirSync(subjectsDir).filter((file) => file.endsWith('.ts') && file !== 'professional-gap-topics.ts').sort();
+const gapSource = fs.readFileSync(path.join(subjectsDir, 'professional-gap-topics.ts'), 'utf8')
+  .replace(/^import[^\n]*\n/gm, '')
+  .replace(/: string\[\]/g, '')
+  .replace(/: string/g, '')
+  .replace(/: TopicContent\[\]/g, '')
+  .replace(/export const /g, 'const ');
+const gapTopics = new Function(`${gapSource}\nreturn { mechanicsGapTopics, surveyingGapTopics, draftingGapTopics };`)();
 const expectedCategories = new Map([
   ['mechanics', '專業科目（一）'],
   ['materials', '專業科目（一）'],
@@ -68,7 +75,7 @@ for (const file of files) {
   const executable = source
     .replace(/^import[^\n]*\n/gm, '')
     .replace(`export const ${exportMatch[1]}: SubjectData =`, `const ${exportMatch[1]} =`);
-  const subject = new Function(`${executable}\nreturn ${exportMatch[1]};`)();
+  const subject = new Function('mechanicsGapTopics', 'surveyingGapTopics', 'draftingGapTopics', `${executable}\nreturn ${exportMatch[1]};`)(gapTopics.mechanicsGapTopics, gapTopics.surveyingGapTopics, gapTopics.draftingGapTopics);
 
   if (!subject) {
     errors.push(`${file}: 找不到 SubjectData export`);

@@ -9,6 +9,13 @@ export interface TopicSearchItem {
 // Deliberately metadata-only: importing this in the global Navbar must never pull
 // concepts, worked examples, practices or exam content into every page bundle.
 export const topicSearchIndex = [
+  { "subjectSlug": "mechanics", "subjectTitle": "基礎工程力學", "topicSlug": "parallel-force-systems", "topicTitle": "2A. 平面平行力系", "desc": "分布載重、等值合力、作用線與支承反力。" },
+  { "subjectSlug": "mechanics", "subjectTitle": "基礎工程力學", "topicSlug": "nonconcurrent-force-systems", "topicTitle": "2B. 共面非共點非平行力系", "desc": "力、力偶與平面剛體三式平衡。" },
+  { "subjectSlug": "mechanics", "subjectTitle": "基礎工程力學", "topicSlug": "shear-properties", "topicTitle": "7A. 剪力與剪應力", "desc": "直接剪力、梁剪應力與剪力圖。" },
+  { "subjectSlug": "surveying", "subjectTitle": "測量實習", "topicSlug": "surveying-fundamentals", "topicTitle": "0. 測量總論與誤差基礎", "desc": "基準、單位、精度、誤差與有效數字。" },
+  { "subjectSlug": "surveying", "subjectTitle": "測量實習", "topicSlug": "indirect-distance-elevation", "topicTitle": "4A. 間接距離與高程測量", "desc": "視距、三角高程與不可達距離。" },
+  { "subjectSlug": "drafting", "subjectTitle": "製圖實習", "topicSlug": "drafting-fundamentals", "topicTitle": "0. 製圖基本觀念與圖紙管理", "desc": "圖紙規格、標題欄、折疊與版本管理。" },
+  { "subjectSlug": "drafting", "subjectTitle": "製圖實習", "topicSlug": "civil-architectural-drawings", "topicTitle": "12. 土木與建築製圖整合判讀", "desc": "平面、立面、剖面、結構與詳圖交叉查核。" },
   {
     "subjectSlug": "chemistry",
     "subjectTitle": "化學",

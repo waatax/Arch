@@ -5,7 +5,14 @@ const root = process.cwd();
 const read = (file) => fs.readFileSync(path.join(root, file), 'utf8');
 const exists = (file) => fs.existsSync(path.join(root, file));
 const subjectDir = path.join(root, 'apps/web/src/data/subjects');
-const subjectFiles = fs.readdirSync(subjectDir).filter((file) => file.endsWith('.ts')).sort();
+const subjectFiles = fs.readdirSync(subjectDir).filter((file) => file.endsWith('.ts') && file !== 'professional-gap-topics.ts').sort();
+const gapSource = fs.readFileSync(path.join(subjectDir, 'professional-gap-topics.ts'), 'utf8')
+  .replace(/^import[^\n]*\n/gm, '')
+  .replace(/: string\[\]/g, '')
+  .replace(/: string/g, '')
+  .replace(/: TopicContent\[\]/g, '')
+  .replace(/export const /g, 'const ');
+const gapTopics = new Function(`${gapSource}\nreturn { mechanicsGapTopics, surveyingGapTopics, draftingGapTopics };`)();
 
 function loadSubjects() {
   return subjectFiles.map((file) => {
@@ -13,7 +20,7 @@ function loadSubjects() {
     const match = source.match(/export const (\w+): SubjectData =/);
     if (!match) throw new Error(`${file}: SubjectData export missing`);
     const executable = source.replace(/^import[^\n]*\n/gm, '').replace(`export const ${match[1]}: SubjectData =`, `const ${match[1]} =`);
-    return new Function(`${executable}\nreturn ${match[1]};`)();
+    return new Function('mechanicsGapTopics', 'surveyingGapTopics', 'draftingGapTopics', `${executable}\nreturn ${match[1]};`)(gapTopics.mechanicsGapTopics, gapTopics.surveyingGapTopics, gapTopics.draftingGapTopics);
   });
 }
 

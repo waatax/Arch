@@ -1,4 +1,5 @@
 import { SubjectData } from '../types';
+import { surveyingGapTopics } from './professional-gap-topics';
 
 export const surveyingData: SubjectData = {
   slug: 'surveying',
@@ -6,6 +7,7 @@ export const surveyingData: SubjectData = {
   category: '專業科目（二）',
   color: 'emerald-700',
   topics: [
+    ...surveyingGapTopics,
     {
       slug: 'distance-and-angle',
       title: '1. 距離與角度測量',

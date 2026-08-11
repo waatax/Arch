@@ -1,4 +1,5 @@
 import { SubjectData } from '../types';
+import { mechanicsGapTopics } from './professional-gap-topics';
 
 export const mechanicsData: SubjectData = {
   slug: 'mechanics',
@@ -6,6 +7,7 @@ export const mechanicsData: SubjectData = {
   category: '專業科目（一）',
   color: 'teal-700',
   topics: [
+    ...mechanicsGapTopics,
     {
       slug: 'units-vectors',
       title: '1. 單位與向量',

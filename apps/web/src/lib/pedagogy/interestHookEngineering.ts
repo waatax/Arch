@@ -1,4 +1,39 @@
 export const engineeringInterestDetails = {
+  'mechanics/parallel-force-systems': {
+    importance: '橋面、樓板與屋頂載重經常不是一個點力，而是沿長度分布；能否正確換成等值合力，直接決定支承反力與內力是否可信。',
+    application: '梁設計、吊裝重心、擋土壓力與水壓合力都使用載重圖面積和形心位置。',
+    hook: '同樣 24 kN 的載重，集中在跨中與平均鋪滿整支梁，為什麼梁內最大彎矩不同？',
+  },
+  'mechanics/nonconcurrent-force-systems': {
+    importance: '真實剛體常同時受不同方向、不同作用線的力，只有把力與力矩一起平衡，才不會漏掉轉動效應。',
+    application: '雨遮、招牌支架、起重臂與固定端構件都要以三個平面平衡方程求反力。',
+    hook: '推門時同樣用力，靠近鉸鏈幾乎推不動，握住門把卻很容易；差別就在力矩臂。',
+  },
+  'mechanics/shear-properties': {
+    importance: '螺栓可能先被剪斷，梁腹板的剪應力也不是截面處處相同；把剪力 V 和剪應力 τ 分清楚是安全計算的基本功。',
+    application: '螺栓接合、沖孔、木梁、鋼梁腹板與剪力圖判讀都會使用剪應力觀念。',
+    hook: '同一支螺栓承受相同外力，接頭由單剪改成雙剪後，為什麼平均剪應力會立刻減半，而直徑完全不必改變？',
+  },
+  'surveying/surveying-fundamentals': {
+    importance: '沒有基準、單位與誤差觀念，再精密的儀器也只會產生看似漂亮但不可用的數字。',
+    application: '控制點建立、工程放樣、地形測量與成果驗收都需交代坐標、高程基準和精度。',
+    hook: '連續三次量到幾乎相同的值，是否就代表一定接近真值？精密不必然準確。',
+  },
+  'surveying/indirect-distance-elevation': {
+    importance: '河流、峭壁或禁入工區無法直接拉尺時，必須把角度、視距與高程關係轉成可驗算的幾何模型。',
+    application: '跨河距離、塔高、邊坡高差、視距測量與全站儀作業都依賴間接量測。',
+    hook: '不走到建築物旁邊，只量一段水平距離和一個仰角，如何求出屋頂高度？',
+  },
+  'drafting/drafting-fundamentals': {
+    importance: '工程圖首先是契約與施工溝通文件；圖紙規格、標題欄和版次錯誤，可能讓正確內容被用錯。',
+    application: '圖紙歸檔、送審、發包、施工與竣工移交都依靠一致的圖號、版次及標題欄。',
+    hook: '一張 A1 圖折成 A4 後，為什麼標題欄一定要留在正面右下角？',
+  },
+  'drafting/civil-architectural-drawings': {
+    importance: '單張圖看得懂還不夠；施工判讀必須讓平面、立面、剖面、結構與詳圖彼此一致。',
+    application: '圖說會審、施工放樣、數量估算與現場疑義處理都需要跨圖索引能力。',
+    hook: '平面圖有 D03 門，但門窗表找不到 D03；現場能不能自行挑一扇尺寸相近的門施工？',
+  },
   'mechanics/units-vectors': {
     importance: '單位與向量是工程力學的共同語言，若大小、方向或單位有一項弄錯，後續再漂亮的平衡式也只是在精準地算錯答案。',
     application: '結構技師會把斜拉索張力分成水平與垂直分力，也會統一牛頓、千牛頓與百萬帕，才能正確檢核橋梁和屋架。',

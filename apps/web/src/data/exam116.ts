@@ -198,13 +198,13 @@ export const EXAM_SCOPE: ScopePaper[] = [
         no: '二',
         title: '平面共點力系',
         items: ['力之分解', '共線力系之合成', '共點力系之合成與分解', '自由體圖', '二力與三力之平衡', '共點力系平衡之分析'],
-        archTopics: [{ subject: 'mechanics', slug: 'force-equilibrium', title: '2. 力系與共點力平衡' }]
+        archTopics: [{ subject: 'mechanics', slug: 'parallel-force-systems', title: '2A. 平面平行力系' }]
       },
       {
         no: '三',
         title: '平面平行力系',
         items: ['力矩與力矩原理', '力偶及其特性', '力之平移', '平行力系之合成與分解', '平行力系平衡之分析'],
-        archTopics: [{ subject: 'mechanics', slug: 'force-equilibrium', title: '2. 力系與共點力平衡' }]
+        archTopics: [{ subject: 'mechanics', slug: 'nonconcurrent-force-systems', title: '2B. 共面非共點非平行力系' }]
       },
       {
         no: '四',
@@ -248,7 +248,7 @@ export const EXAM_SCOPE: ScopePaper[] = [
         no: '九',
         title: '應力與應變',
         items: ['應力與應變的認識', '虎克定律', '楊氏係數', '應力應變圖', '蒲松比', '多向應力之應變相互影響', '體積應變與體積模數'],
-        archTopics: [{ subject: 'mechanics', slug: 'stress-strain', title: '7. 應力與應變' }]
+        archTopics: [{ subject: 'mechanics', slug: 'shear-properties', title: '7A. 剪力與剪應力' }]
       },
       {
         no: '十',
@@ -380,13 +380,13 @@ export const EXAM_SCOPE: ScopePaper[] = [
           '基本測量數學（三角幾何、三角函數、直角坐標、極坐標）',
           '基本計算工具使用（計算器、試算表）'
         ],
-        archTopics: [{ subject: 'surveying', slug: 'area-and-error', title: '6. 面積計算與誤差處理' }]
+        archTopics: [{ subject: 'surveying', slug: 'surveying-fundamentals', title: '0. 測量總論與誤差基礎' }]
       },
       {
         no: '二',
         title: '距離測量',
         items: ['距離測量之認識', '分類及量距工具', '捲尺距離測量', '電子測距', '應用距離測量測算角度'],
-        archTopics: [{ subject: 'surveying', slug: 'distance-and-angle', title: '1. 距離與角度測量' }]
+        archTopics: [{ subject: 'surveying', slug: 'indirect-distance-elevation', title: '4A. 間接距離與高程測量' }]
       },
       {
         no: '三',
@@ -451,7 +451,7 @@ export const EXAM_SCOPE: ScopePaper[] = [
         no: '一',
         title: '製圖基本觀念',
         items: ['工程圖學之意義', '工程圖之種類', '圖紙規格及折摺法', '工程圖之比例大小', '圖框、標題欄之規格'],
-        archTopics: [{ subject: 'drafting', slug: 'scale', title: '2. 比例與尺度' }]
+        archTopics: [{ subject: 'drafting', slug: 'drafting-fundamentals', title: '0. 製圖基本觀念與圖紙管理' }]
       },
       {
         no: '二',
@@ -548,6 +548,7 @@ export const EXAM_SCOPE: ScopePaper[] = [
         title: '土木與建築製圖繪製',
         items: ['土木與建築圖各種相關符號之意義', '三視圖應用於平面圖', '三視圖應用於立面圖', '三視圖應用於剖面繪製應用'],
         archTopics: [
+          { subject: 'drafting', slug: 'civil-architectural-drawings', title: '12. 土木與建築製圖整合判讀' },
           { subject: 'drafting', slug: 'architectural-plan', title: '5. 建築平面圖' },
           { subject: 'drafting', slug: 'architectural-elevation', title: '6. 建築立面圖' }
         ]
