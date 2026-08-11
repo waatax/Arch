@@ -6,16 +6,16 @@
    LIGHT MODE (default) — Warm Paper + Dark Ink
    ══════════════════════════════════════════════════════ */
 :root {
-  --color-paper-50: #F7F3E8;
-  --color-paper-100: #EFE9DC;
-  --color-ink-900: #182722;
-  --color-ink-650: #56655F;
-  --color-teal-700: #08766C;
-  --color-brick-700: #B34D35;
-  --color-blueprint-700: #1F6484;
-  --color-moss-700: #557552;
-  --color-sun-500: #D9A126;
-  --color-concrete-300: #D8D1C4;
+  --color-paper-50: #F7FAFC;
+  --color-paper-100: #EDF4F7;
+  --color-ink-900: #102A43;
+  --color-ink-650: #526879;
+  --color-teal-700: #087E8B;
+  --color-brick-700: #A84A4A;
+  --color-blueprint-700: #256F91;
+  --color-moss-700: #3D7B78;
+  --color-sun-500: #B88A35;
+  --color-concrete-300: #CFDCE3;
   --color-danger-750: #983B3B;
 
   --background: var(--color-paper-50);
@@ -26,16 +26,16 @@
    DARK MODE — Deep Blueprint / Slate  
    ══════════════════════════════════════════════════════ */
 :root.dark {
-  --color-paper-50: #0F1923;
-  --color-paper-100: #162230;
-  --color-ink-900: #E8ECF0;
-  --color-ink-650: #9DAAB5;
-  --color-teal-700: #2DD4BF;
-  --color-brick-700: #F87171;
-  --color-blueprint-700: #60A5FA;
-  --color-moss-700: #86EFAC;
-  --color-sun-500: #FCD34D;
-  --color-concrete-300: #2A3A4C;
+  --color-paper-50: #071B2B;
+  --color-paper-100: #0D2639;
+  --color-ink-900: #EDF7FA;
+  --color-ink-650: #A6BBC7;
+  --color-teal-700: #42C6C8;
+  --color-brick-700: #E18080;
+  --color-blueprint-700: #77C9ED;
+  --color-moss-700: #6FC5BA;
+  --color-sun-500: #E6C06A;
+  --color-concrete-300: #244257;
   --color-danger-750: #FB7185;
 
   --background: var(--color-paper-50);
@@ -69,6 +69,50 @@
   --color-sun-500: var(--color-sun-500);
   --color-concrete-300: var(--color-concrete-300);
   --color-danger-750: var(--color-danger-750);
+  --color-slate-50: #F7FAFC;
+  --color-slate-100: #EDF4F7;
+  --color-slate-200: #D8E4EA;
+  --color-slate-300: #B7CAD5;
+  --color-slate-400: #8099A8;
+  --color-slate-500: #61798A;
+  --color-slate-600: #465F72;
+  --color-slate-700: #304A60;
+  --color-slate-800: #18364C;
+  --color-slate-900: #0D2639;
+  --color-slate-950: #071B2B;
+  --color-blue-50: #EEF8FC;
+  --color-blue-100: #D9EFF8;
+  --color-blue-200: #B9E1F2;
+  --color-blue-300: #8CCFEA;
+  --color-blue-400: #63B9DD;
+  --color-blue-500: #3A9BC4;
+  --color-blue-600: #237DA8;
+  --color-blue-700: #1F668A;
+  --color-blue-800: #1E536F;
+  --color-blue-900: #1D465D;
+  --color-blue-950: #0C2C40;
+  --color-teal-50: #ECFAF9;
+  --color-teal-100: #D1F3F1;
+  --color-teal-200: #A8E7E5;
+  --color-teal-300: #72D5D4;
+  --color-teal-400: #42C6C8;
+  --color-teal-500: #20A7AD;
+  --color-teal-600: #118993;
+  --color-teal-700: #087E8B;
+  --color-teal-800: #155963;
+  --color-teal-900: #164B53;
+  --color-teal-950: #082D34;
+  --color-emerald-50: #EFFAF9;
+  --color-emerald-100: #D8F2EF;
+  --color-emerald-200: #B4E4DF;
+  --color-emerald-300: #82CEC6;
+  --color-emerald-400: #55B5AD;
+  --color-emerald-500: #359991;
+  --color-emerald-600: #287C77;
+  --color-emerald-700: #27645F;
+  --color-emerald-800: #25514F;
+  --color-emerald-900: #224442;
+  --color-emerald-950: #0D2928;
 }
 
 body {
@@ -87,8 +131,8 @@ body::before {
   z-index: -1;
   pointer-events: none;
   background:
-    radial-gradient(circle at 8% 12%, color-mix(in srgb, var(--color-sun-500) 10%, transparent) 0 8rem, transparent 8.1rem),
-    radial-gradient(circle at 92% 30%, color-mix(in srgb, var(--color-blueprint-700) 7%, transparent) 0 11rem, transparent 11.1rem);
+    radial-gradient(circle at 8% 12%, color-mix(in srgb, var(--color-teal-700) 5%, transparent) 0 8rem, transparent 8.1rem),
+    radial-gradient(circle at 92% 30%, color-mix(in srgb, var(--color-blueprint-700) 5%, transparent) 0 11rem, transparent 11.1rem);
 }
 
 main {
@@ -161,7 +205,7 @@ html {
 
 /* ── Selection colour ── */
 ::selection {
-  background-color: rgba(11, 98, 91, 0.18);
+  background-color: color-mix(in srgb, var(--color-blueprint-700) 24%, transparent);
   color: var(--color-ink-900);
 }
 
@@ -202,7 +246,7 @@ html {
     160deg,
     var(--color-paper-100) 0%,
     var(--color-paper-50) 40%,
-    rgba(11, 98, 91, 0.04) 100%
+    color-mix(in srgb, var(--color-blueprint-700) 7%, var(--color-paper-50)) 100%
   );
 }
 
@@ -230,7 +274,7 @@ html {
   position: absolute;
   inset: 0;
   pointer-events: none;
-  background: linear-gradient(145deg, color-mix(in srgb, var(--color-sun-500) 10%, transparent), color-mix(in srgb, var(--color-blueprint-700) 9%, transparent));
+  background: linear-gradient(145deg, color-mix(in srgb, var(--color-teal-700) 7%, transparent), color-mix(in srgb, var(--color-blueprint-700) 10%, transparent));
   mix-blend-mode: multiply;
 }
 
@@ -244,7 +288,7 @@ html {
     160deg,
     var(--color-paper-100) 0%,
     var(--color-paper-50) 40%,
-    rgba(45, 212, 191, 0.06) 100%
+    color-mix(in srgb, var(--color-blueprint-700) 7%, var(--color-paper-50)) 100%
   );
 }
 
@@ -256,8 +300,8 @@ html {
 .card-lift:hover {
   transform: translateY(-3px);
   box-shadow:
-    0 8px 24px -8px rgba(30, 41, 38, 0.08),
-    0 2px 6px -2px rgba(30, 41, 38, 0.04);
+    0 16px 34px -22px rgba(15, 42, 67, 0.3),
+    0 2px 8px -4px rgba(15, 42, 67, 0.12);
 }
 
 @media (hover: none) {
