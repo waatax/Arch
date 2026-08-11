@@ -3,7 +3,7 @@ import coverage from '../../../../../data/registry/exam-coverage.json';
 import common from '../../../../../data/registry/common-exam-questions.json';
 
 export const metadata = {
-  title: '近五年統測全科目題庫｜Arch V6.18',
+  title: '近五年統測全科目題庫｜Arch V6.20',
   description: '111 至 115 學年度國文、英文、數學(C)及土木與建築群專業科目，共 925 題官方試題與答案。',
 };
 
@@ -23,7 +23,7 @@ export default function ExamsPage() {
 
   return <main className="mx-auto max-w-6xl space-y-12 px-4 py-10 sm:px-6 sm:py-14">
     <header className="grid gap-8 lg:grid-cols-[1fr_23rem] lg:items-end">
-      <div><p className="text-xs font-mono uppercase tracking-[0.2em] text-blue-600 dark:text-blue-400">Arch V6.18 · 2022–2026</p><h1 className="mt-2 font-serif text-3xl font-bold leading-tight text-slate-900 dark:text-white sm:text-5xl">近五年建築群統測<br />全科目題庫</h1><p className="mt-5 max-w-3xl text-base leading-8 text-slate-600 dark:text-slate-400">完整收錄國文、英文、數學(C)、專業科目（一）與（二）。共同科目提供官方原題與答案；400 題專業科目另連到 Arch 對應教學章節。</p><Link href="/practice" className="mt-6 inline-flex min-h-12 items-center rounded-xl bg-blue-600 dark:bg-blue-500 px-6 font-bold text-white">開始全科目模擬測試 →</Link></div>
+      <div><p className="text-xs font-mono uppercase tracking-[0.2em] text-blue-600 dark:text-blue-400">Arch V6.20 · 2022–2026</p><h1 className="mt-2 font-serif text-3xl font-bold leading-tight text-slate-900 dark:text-white sm:text-5xl">近五年建築群統測<br />全科目題庫</h1><p className="mt-5 max-w-3xl text-base leading-8 text-slate-600 dark:text-slate-400">完整收錄國文、英文、數學(C)、專業科目（一）與（二）。共同科目提供官方原題與答案；400 題專業科目另連到 Arch 對應教學章節。</p><Link href="/practice" className="mt-6 inline-flex min-h-12 items-center rounded-xl bg-blue-600 dark:bg-blue-500 px-6 font-bold text-white">開始全科目模擬測試 →</Link></div>
       <aside className="grid grid-cols-3 gap-2 rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-900 p-4 text-center"><div><strong className="block font-serif text-2xl text-slate-900 dark:text-white">5</strong><span className="text-xs text-slate-600 dark:text-slate-400">學年度</span></div><div><strong className="block font-serif text-2xl text-slate-900 dark:text-white">5</strong><span className="text-xs text-slate-600 dark:text-slate-400">完整考科</span></div><div><strong className="block font-serif text-2xl text-blue-600 dark:text-blue-400">925</strong><span className="text-xs text-slate-600 dark:text-slate-400">選擇題</span></div></aside>
     </header>
 

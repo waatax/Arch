@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: '統測學習資源導航｜Arch V6.18',
+  title: '統測學習資源導航｜Arch V6.20',
   description: '整理四技二專統測官方制度、歷屆題、06 土木與建築群考綱、學校公開詳解與補充題型分析。',
 };
 
@@ -196,8 +196,8 @@ export default function ResourcesPage() {
         </div>
       </header>
 
-      <nav aria-label="資源分類" className="my-8 flex flex-wrap gap-2">
-        {groups.map((group) => <a key={group.id} href={`#${group.id}`} className="rounded-full border border-slate-300 bg-white px-4 py-2 text-sm font-bold text-slate-700 hover:border-blue-500 hover:text-blue-700 dark:border-slate-700 dark:bg-slate-900 dark:text-slate-200">{group.title}</a>)}
+      <nav aria-label="資源分類" className="sticky top-16 z-30 -mx-4 my-8 flex gap-2 overflow-x-auto border-y border-slate-200 bg-slate-50/95 px-4 py-3 shadow-sm backdrop-blur dark:border-slate-800 dark:bg-slate-950/95 sm:mx-0 sm:rounded-2xl sm:border sm:px-3">
+        {groups.map((group) => <a key={group.id} href={`#${group.id}`} className="shrink-0 rounded-full border border-slate-300 bg-white px-4 py-2 text-sm font-bold text-slate-700 hover:border-blue-500 hover:text-blue-700 dark:border-slate-700 dark:bg-slate-900 dark:text-slate-200">{group.title}</a>)}
       </nav>
 
       <aside className="mb-10 rounded-2xl border border-amber-300 bg-amber-50 p-5 text-sm leading-7 text-amber-950 dark:border-amber-800 dark:bg-amber-950/30 dark:text-amber-100">

@@ -937,36 +937,37 @@ export default function TopicPageLayout({ subject, topic }: TopicPageLayoutProps
       </section>
 
       {/* === Fixed Bottom Floating Navigation Bar === */}
-      <footer className="fixed bottom-0 left-0 right-0 z-40 border-t border-slate-200 dark:border-slate-800 bg-white/95 dark:bg-slate-900/95 px-4 py-3 backdrop-blur-md shadow-lg">
-        <div className="mx-auto flex max-w-4xl items-center justify-between text-xs font-bold text-slate-900 dark:text-white">
+      <footer className="fixed bottom-0 left-0 right-0 z-40 border-t border-slate-200 dark:border-slate-800 bg-white/95 dark:bg-slate-900/95 px-3 py-2 pb-[max(0.5rem,env(safe-area-inset-bottom))] backdrop-blur-md shadow-lg sm:px-4 sm:py-3">
+        <div className="mx-auto grid max-w-4xl grid-cols-[1fr_auto_1fr] items-center gap-2 text-xs font-bold text-slate-900 dark:text-white">
           {prevTopic ? (
             <Link
               href={`/subjects/${subject.slug}/${prevTopic.slug}`}
-              className="flex items-center gap-1 text-slate-700 dark:text-slate-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
+              aria-label={`上一章：${prevTopic.title}`}
+              className="flex min-h-10 min-w-0 items-center gap-1 rounded-lg px-2 text-slate-700 hover:bg-slate-100 hover:text-blue-600 dark:text-slate-300 dark:hover:bg-slate-800 dark:hover:text-blue-400 transition-colors"
             >
-              ‹ 上一章：{prevTopic.title}
+              <span className="text-lg">‹</span><span className="hidden truncate sm:inline">上一章：{prevTopic.title}</span><span className="sm:hidden">上一章</span>
             </Link>
           ) : (
-            <span className="opacity-40">已是第一章</span>
+            <span className="px-2 text-left opacity-40">第一章</span>
           )}
 
           <div className="flex items-center gap-2">
             <button
               onClick={() => setIsFormulaDrawerOpen(true)}
-              className="rounded-lg bg-amber-50 dark:bg-amber-950/60 border border-amber-300 dark:border-amber-700 px-2.5 py-1.5 text-amber-800 dark:text-amber-200 hover:bg-amber-100 transition-colors cursor-pointer"
+              className="min-h-10 rounded-lg bg-amber-50 dark:bg-amber-950/60 border border-amber-300 dark:border-amber-700 px-3 py-1.5 text-amber-800 dark:text-amber-200 hover:bg-amber-100 transition-colors cursor-pointer"
               title="本章公式速查卡"
             >
-              📋 公式卡
+              📋 <span className="hidden sm:inline">公式卡</span>
             </button>
             <Link
               href={`/subjects/${subject.slug}`}
-              className="rounded-lg bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 px-3 py-1.5 text-slate-700 dark:text-slate-300 hover:bg-blue-50 dark:hover:bg-slate-700 transition-colors"
+              className="flex min-h-10 items-center rounded-lg bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 px-3 py-1.5 text-slate-700 dark:text-slate-300 hover:bg-blue-50 dark:hover:bg-slate-700 transition-colors"
             >
-              {subject.title}目錄
+              目錄
             </Link>
             <Link
               href="/curriculum"
-              className="rounded-lg bg-blue-600 text-white px-3 py-1.5 hover:bg-blue-700 transition-colors shadow-2xs"
+              className="hidden min-h-10 items-center rounded-lg bg-blue-600 text-white px-3 py-1.5 hover:bg-blue-700 transition-colors shadow-2xs sm:flex"
             >
               課程地圖
             </Link>
@@ -975,12 +976,13 @@ export default function TopicPageLayout({ subject, topic }: TopicPageLayoutProps
           {nextTopic ? (
             <Link
               href={`/subjects/${subject.slug}/${nextTopic.slug}`}
-              className="flex items-center gap-1 text-slate-700 dark:text-slate-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
+              aria-label={`下一章：${nextTopic.title}`}
+              className="flex min-h-10 min-w-0 items-center justify-end gap-1 rounded-lg px-2 text-right text-slate-700 hover:bg-slate-100 hover:text-blue-600 dark:text-slate-300 dark:hover:bg-slate-800 dark:hover:text-blue-400 transition-colors"
             >
-              下一章：{nextTopic.title} ›
+              <span className="hidden truncate sm:inline">下一章：{nextTopic.title}</span><span className="sm:hidden">下一章</span><span className="text-lg">›</span>
             </Link>
           ) : (
-            <span className="opacity-40">已是最後一章</span>
+            <span className="px-2 text-right opacity-40">末章</span>
           )}
         </div>
       </footer>

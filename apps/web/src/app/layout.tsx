@@ -20,13 +20,14 @@ export default function RootLayout({
   return (
     <html lang="zh-TW" className="h-full antialiased" suppressHydrationWarning>
       <body className="min-h-full flex flex-col bg-slate-50 text-slate-900 dark:bg-slate-950 dark:text-slate-50 transition-colors duration-300 relative overflow-x-hidden">
+        <a href="#main-content" className="fixed left-3 top-3 z-[100] -translate-y-20 rounded-lg bg-blue-700 px-4 py-2 text-sm font-bold text-white shadow-lg transition-transform focus:translate-y-0">跳到主要內容</a>
         {/* Global Ambient Glows */}
-        <div className="absolute top-0 left-0 w-[500px] h-[500px] bg-blue-500/10 rounded-full blur-3xl mix-blend-multiply pointer-events-none opacity-50 dark:opacity-20 animate-blob"></div>
-        <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-emerald-500/10 rounded-full blur-3xl mix-blend-multiply pointer-events-none opacity-50 dark:opacity-20 animate-blob animation-delay-2000"></div>
+        <div className="absolute top-0 left-0 h-[500px] w-[min(500px,100vw)] bg-blue-500/10 rounded-full blur-3xl mix-blend-multiply pointer-events-none opacity-50 dark:opacity-20 animate-blob"></div>
+        <div className="absolute top-0 right-0 h-[500px] w-[min(500px,100vw)] bg-emerald-500/10 rounded-full blur-3xl mix-blend-multiply pointer-events-none opacity-50 dark:opacity-20 animate-blob animation-delay-2000"></div>
         
         <ThemeProvider>
           <Navbar />
-          <main className="flex-1 relative z-10">{children}</main>
+          <main id="main-content" className="flex-1 relative z-10" tabIndex={-1}>{children}</main>
           <PomodoroTimer />
           <Footer />
         </ThemeProvider>

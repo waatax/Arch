@@ -13,7 +13,7 @@ export default function Home() {
               108 課綱技術型高中 · 建築科自主學習平台
             </span>
             <span className="rounded-full bg-emerald-600/10 px-3 py-1 text-xs font-mono font-bold text-emerald-700 dark:text-emerald-300 border border-emerald-600/20">
-              V6.18 正式版全上線
+              V6.20 正式版全上線
             </span>
           </div>
 
@@ -44,6 +44,12 @@ export default function Home() {
               className="flex min-h-12 w-full sm:w-auto items-center justify-center px-6 py-3.5 bg-slate-100 dark:bg-slate-800/60 text-slate-700 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white font-medium rounded-xl transition-all duration-200"
             >
               🏛️ 首發案例：臺中國家歌劇院
+            </Link>
+            <Link
+              href="/resources"
+              className="flex min-h-12 w-full sm:w-auto items-center justify-center px-6 py-3.5 bg-emerald-50 dark:bg-emerald-950/40 text-emerald-800 dark:text-emerald-200 border border-emerald-200 dark:border-emerald-800 hover:border-emerald-500 font-bold rounded-xl transition-all duration-200"
+            >
+              🔗 優質統測學習網站
             </Link>
           </div>
 

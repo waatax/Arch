@@ -4,7 +4,7 @@ import coverage from '../../../../../data/registry/exam-coverage.json';
 import common from '../../../../../data/registry/common-exam-questions.json';
 import pageMapData from '../../../../../data/registry/exam-page-map.json';
 
-export const metadata = { title: '全科目歷屆統測模擬練習｜Arch V6.18', description: '使用 111–115 年國文、英文、數學(C)與建築群專業科目共 925 題進行整份模擬練習。' };
+export const metadata = { title: '全科目歷屆統測模擬練習｜Arch V6.20', description: '使用 111–115 年國文、英文、數學(C)與建築群專業科目共 925 題進行整份模擬練習。' };
 
 const professionalNames: Record<number, string> = { 1: '專業科目（一）', 2: '專業科目（二）' };
 const pageMap = pageMapData as Record<string, { figureImage: string; originalPage: number }>;

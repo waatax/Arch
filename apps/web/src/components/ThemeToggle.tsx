@@ -14,7 +14,7 @@ export default function ThemeToggle() {
   return (
     <div className="flex shrink-0 items-center gap-1 min-[360px]:gap-1.5">
       {/* Font Size Controls */}
-      <div className="flex items-center border border-(--color-concrete-300) dark:border-[#3a4a5c] rounded-lg overflow-hidden">
+      <div className="hidden sm:flex items-center border border-(--color-concrete-300) dark:border-[#3a4a5c] rounded-lg overflow-hidden">
         {fontSizes.map((fs) => (
           <button
             key={fs.key}

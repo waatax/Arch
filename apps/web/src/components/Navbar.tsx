@@ -73,7 +73,7 @@ export default function Navbar() {
       >
         <div className="mx-auto flex h-16 max-w-7xl items-center justify-between gap-3 px-4 sm:px-6 lg:px-8">
           {/* Logo & Brand */}
-          <div className="flex items-center gap-3">
+          <div className="flex shrink-0 items-center gap-3">
             <Link href="/" className="flex items-center gap-2.5 group" aria-label="Arch 學習平台首頁">
               <span className="flex size-9 items-center justify-center rounded-xl bg-blue-600 dark:bg-blue-500 text-white font-mono text-base font-bold shadow-sm transition-transform duration-200 group-hover:scale-105">
                 ◺
@@ -84,7 +84,7 @@ export default function Navbar() {
                     Arch
                   </span>
                   <span className="rounded-full bg-blue-600/10 dark:bg-blue-400/10 px-2 py-0.5 text-[10px] font-mono font-bold text-blue-700 dark:text-blue-300 border border-blue-600/20">
-                    V6.18
+                    V6.20
                   </span>
                 </div>
                 <span className="text-[10px] font-mono text-slate-500 dark:text-slate-400 -mt-1 hidden sm:inline">
@@ -95,14 +95,14 @@ export default function Navbar() {
           </div>
 
           {/* Desktop Navigation Links */}
-          <div className="hidden md:flex items-center gap-1">
+          <div className="hidden xl:flex items-center gap-0.5">
             {navLinks.map((link) => {
               const isActive = pathname === link.href || (link.href !== '/' && pathname.startsWith(link.href));
               return (
                 <Link
                   key={link.href}
                   href={link.href}
-                  className={`relative rounded-lg px-3.5 py-2 text-sm font-medium transition-all ${
+                  className={`relative rounded-lg px-2.5 2xl:px-3.5 py-2 text-sm font-medium transition-all ${
                     isActive
                       ? 'text-blue-600 dark:text-blue-400 bg-blue-50/80 dark:bg-blue-950/50 font-bold'
                       : 'text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white hover:bg-slate-100/70 dark:hover:bg-slate-800/60'
@@ -122,11 +122,11 @@ export default function Navbar() {
             {/* Quick Search Button */}
             <button
               onClick={() => setSearchOpen(true)}
-              className="flex items-center gap-2 rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-800/80 px-3 py-1.5 text-xs text-slate-500 dark:text-slate-400 hover:border-blue-400 dark:hover:border-blue-500 hover:text-slate-900 dark:hover:text-white transition-all cursor-pointer shadow-2xs"
+              className="flex size-10 shrink-0 items-center justify-center gap-2 rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-800/80 text-xs text-slate-500 dark:text-slate-400 hover:border-blue-400 dark:hover:border-blue-500 hover:text-slate-900 dark:hover:text-white transition-all cursor-pointer shadow-2xs lg:w-auto lg:px-3"
               aria-label="搜尋章節與考點"
             >
-              <span>🔍 搜尋考點</span>
-              <kbd className="hidden lg:inline-block rounded bg-white dark:bg-slate-900 px-1.5 py-0.5 text-[10px] font-mono border border-slate-200 dark:border-slate-700">
+              <span aria-hidden="true">🔍</span><span className="hidden lg:inline">搜尋考點</span>
+              <kbd className="hidden 2xl:inline-block rounded bg-white dark:bg-slate-900 px-1.5 py-0.5 text-[10px] font-mono border border-slate-200 dark:border-slate-700">
                 ⌘K
               </kbd>
             </button>
@@ -144,7 +144,7 @@ export default function Navbar() {
             {/* Mobile Menu Button */}
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="flex size-10 items-center justify-center rounded-xl border border-slate-200 dark:border-slate-800 text-lg text-slate-900 dark:text-white md:hidden hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors"
+              className="flex size-10 shrink-0 items-center justify-center rounded-xl border border-slate-200 dark:border-slate-800 text-lg text-slate-900 dark:text-white xl:hidden hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors"
               aria-label={mobileMenuOpen ? '關閉選單' : '開啟選單'}
               aria-expanded={mobileMenuOpen}
             >
@@ -155,7 +155,7 @@ export default function Navbar() {
 
         {/* Mobile Dropdown Menu */}
         {mobileMenuOpen && (
-          <div className="border-t border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 px-4 py-4 md:hidden shadow-lg space-y-2">
+          <div className="border-t border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 px-4 py-4 xl:hidden shadow-lg space-y-2">
             {navLinks.map((link) => (
               <Link
                 key={link.href}
