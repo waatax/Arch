@@ -223,9 +223,8 @@ export const EXAM_SCOPE: ScopePaper[] = [
           '平行力系之平衡分析',
           '非共點非平行力系的認識'
         ],
-        archTopics: [{ subject: 'mechanics', slug: 'units-vectors', title: '1. 單位與向量' }],
-        coverageStatus: 'partial',
-        coverageNote: '現有章節含空間向量與方向餘弦，但尚未逐項涵蓋官方列出的空間力系合成、分解與平衡分析。'
+        archTopics: [{ subject: 'mechanics', slug: 'spatial-force-systems', title: '8. 空間力系與空間平衡' }],
+        coverageStatus: 'mapped'
       },
       {
         no: '六',
@@ -273,9 +272,8 @@ export const EXAM_SCOPE: ScopePaper[] = [
         no: '十三',
         title: '平面應力',
         items: ['平面應力的認識', '剪應力與正交應力', '主平面、主應力', '合成應力', '莫爾圓圖解法'],
-        archTopics: [{ subject: 'mechanics', slug: 'stress-strain', title: '7. 應力與應變' }],
-        coverageStatus: 'partial',
-        coverageNote: '現有章節已有主應力與莫耳圓公式，但缺獨立官方章級路由、完整例題與逐細目驗收。'
+        archTopics: [{ subject: 'mechanics', slug: 'plane-stress', title: '9. 平面應力與莫耳圓圖解' }],
+        coverageStatus: 'mapped'
       }
     ]
   },
@@ -466,7 +464,8 @@ export const EXAM_SCOPE: ScopePaper[] = [
           '比例尺及模板之使用方法',
           '儀器使用時應注意事項'
         ],
-        archTopics: []
+        archTopics: [{ subject: 'drafting', slug: 'drafting-instruments', title: '8. 製圖儀器之使用與維護' }],
+        coverageStatus: 'mapped'
       },
       {
         no: '三',
@@ -488,7 +487,8 @@ export const EXAM_SCOPE: ScopePaper[] = [
           '與圓弧等長之線段',
           '土木與建築常用曲線幾何之畫法'
         ],
-        archTopics: []
+        archTopics: [{ subject: 'drafting', slug: 'geometric-constructions', title: '9. 幾何畫法與平面幾何應用' }],
+        coverageStatus: 'mapped'
       },
       {
         no: '五',
@@ -533,15 +533,15 @@ export const EXAM_SCOPE: ScopePaper[] = [
           '複斜面之法線視圖與旋轉視圖',
           '複斜面之法線視圖與旋轉視圖之實物求法'
         ],
-        archTopics: [{ subject: 'drafting', slug: 'orthographic-projection', title: '3. 正投影視圖' }],
-        coverageStatus: 'partial',
-        coverageNote: '現有正投影章含斜面與輔助視圖，但尚未逐項驗證單斜面、複斜面法線視圖與實物求法。'
+        archTopics: [{ subject: 'drafting', slug: 'auxiliary-views', title: '10. 輔助視圖與斜面真形圖法' }],
+        coverageStatus: 'mapped'
       },
       {
         no: '十',
         title: '透視圖投影',
         items: ['透視投影之意涵', '透視投影之名詞及種類', '透視原理', '透視圖法', '光源之性質', '透視陰影求法'],
-        archTopics: []
+        archTopics: [{ subject: 'drafting', slug: 'perspective-projection', title: '11. 透視圖投影與陰影求法' }],
+        coverageStatus: 'mapped'
       },
       {
         no: '十一',

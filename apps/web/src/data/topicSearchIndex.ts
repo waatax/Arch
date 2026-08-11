@@ -187,6 +187,34 @@ export const topicSearchIndex = [
   {
     "subjectSlug": "drafting",
     "subjectTitle": "製圖實習",
+    "topicSlug": "drafting-instruments",
+    "topicTitle": "8. 製圖儀器之使用與維護",
+    "desc": "熟練掌握工程製圖板、鉛筆與筆芯硬度階級、平行尺、三角板、圓規、分規與比例尺之正確使用技巧與儀器維護注意事項。"
+  },
+  {
+    "subjectSlug": "drafting",
+    "subjectTitle": "製圖實習",
+    "topicSlug": "geometric-constructions",
+    "topicTitle": "9. 幾何畫法與平面幾何應用",
+    "desc": "深入掌握平面幾何基本圖形繪製、垂直線與平行線作圖、切線與切點求法、線段與角度等分法、正多邊形畫法及建築常用幾何曲線。"
+  },
+  {
+    "subjectSlug": "drafting",
+    "subjectTitle": "製圖實習",
+    "topicSlug": "auxiliary-views",
+    "topicTitle": "10. 輔助視圖與斜面真形圖法",
+    "desc": "掌握單斜面與複斜面之輔助視圖繪製原理、輔助基準線 (Reference Line/Fold Line) 畫法、斜面實大形與線段實長 (True Length and True Shape) 求法。"
+  },
+  {
+    "subjectSlug": "drafting",
+    "subjectTitle": "製圖實習",
+    "topicSlug": "perspective-projection",
+    "topicTitle": "11. 透視圖投影與陰影求法",
+    "desc": "深入研習透視圖投影原理、畫面 PP、視點 EP、消失點 VP 幾何關係、一點/兩點/三點透視作圖法及透視陰影繪製技巧。"
+  },
+  {
+    "subjectSlug": "drafting",
+    "subjectTitle": "製圖實習",
     "topicSlug": "cad-basics",
     "topicTitle": "8. CAD 繪圖基礎",
     "desc": "掌握 AutoCAD 座標系統、圖層管理 (ByLayer)、狀態列關鍵功能鍵 (OSNAP, ORTHO)、常用 20 大快捷鍵指令及 Viewport 出圖設定。"
@@ -526,6 +554,20 @@ export const topicSearchIndex = [
     "topicSlug": "stress-strain",
     "topicTitle": "7. 應力與應變",
     "desc": "正應力 (σ) 與剪應力 (τ)、正應變 (ε) 與剪應變 (γ)、虎克定律 (Hooke's Law)、彈性模數 (E/G/ν) 及軸向桿件變形量 (δ = PL/AE)。"
+  },
+  {
+    "subjectSlug": "mechanics",
+    "subjectTitle": "基礎工程力學",
+    "topicSlug": "spatial-force-systems",
+    "topicTitle": "8. 空間力系與空間平衡",
+    "desc": "掌握三維空間力之笛卡兒向量表示法、方向餘弦、空間共點與平行力系之合成分解，以及空間三維六個靜力平衡方程之應用。"
+  },
+  {
+    "subjectSlug": "mechanics",
+    "subjectTitle": "基礎工程力學",
+    "topicSlug": "plane-stress",
+    "topicTitle": "9. 平面應力與莫耳圓圖解",
+    "desc": "深入解析平面應力狀態、斜面正交應力與剪應力轉換公式、主平面與主應力求法，以及莫耳圓 (Mohr's Circle) 圖解幾何法。"
   },
   {
     "subjectSlug": "physics",

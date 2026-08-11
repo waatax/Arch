@@ -795,6 +795,182 @@ export const mechanicsData: SubjectData = {
           answer: 'σ_T = 120 MPa (壓應力)'
         }
       ]
+    },
+    {
+      slug: 'spatial-force-systems',
+      title: '8. 空間力系與空間平衡',
+      desc: '掌握三維空間力之笛卡兒向量表示法、方向餘弦、空間共點與平行力系之合成分解，以及空間三維六個靜力平衡方程之應用。\n\n🔥 V6.0 考前秒殺秘訣：此核心概念統測出題率極高，建議善用圖解與鷹架提示反覆練習！',
+      status: 'done',
+      covered_question_ids: ['110-1-5', '111-1-5', '112-1-5', '113-1-5', '114-1-5', '115-1-5'],
+      worked_examples: [
+        {
+          question: '【步驟化例題】空間分力與方向餘弦：一空間張力 F = 700 N，由原點 O(0,0,0) 指向點 A(2, 3, 6) m。試求：(1) 力向量的直角坐標分力 Fx, Fy, Fz；(2) 該力與 X 軸之夾角 α 的方向餘弦 cos α。',
+          difficulty: '基礎',
+          steps: [
+            '步驟 1：計算點 O 到 A 之位置向量大小 d。\n- d = √(2² + 3² + 6²) = √(4 + 9 + 36) = √49 = 7 m。',
+            '步驟 2：求各軸分力 Fx, Fy, Fz。\n- Fx = F × (x / d) = 700 × (2 / 7) = 200 N。\n- Fy = F × (y / d) = 700 × (3 / 7) = 300 N。\n- Fz = F × (z / d) = 700 × (6 / 7) = 600 N。',
+            '步驟 3：求方向餘弦 cos α。\n- cos α = Fx / F = 200 / 700 = 2/7 ≒ 0.2857（或由 x / d = 2/7 直接得出）。'
+          ],
+          answer: '(1) Fx = 200 N, Fy = 300 N, Fz = 600 N；(2) cos α = 2/7 ≒ 0.2857'
+        }
+      ],
+      illustrations: ['units-vectors-context.webp', 'units-vectors-mechanism.webp', 'units-vectors-comparison.webp', 'units-vectors-step.webp', 'mechanics-real-world.webp', 'spatial-force-systems-infographic.webp'],
+      concepts: [
+        {
+          heading: '空間力向量與方向餘弦 (Spatial Vector & Direction Cosines)',
+          body: '在三維笛卡兒坐標系中，一空間單力向量可表示為 $\vec{F} = F_x \vec{i} + F_y \vec{j} + F_z \vec{k}$。其中 $\vec{i}, \vec{j}, \vec{k}$ 為 X, Y, Z 軸之單位向量。方向餘弦 $\cos\alpha, \cos\beta, \cos\gamma$ 為力向量與 X, Y, Z 三坐標軸夾角之餘弦值。',
+          steps: [
+            '向量大小：$F = |\vec{F}| = \sqrt{F_x^2 + F_y^2 + F_z^2}$。',
+            '方向餘弦關係：$\cos\alpha = F_x / F, \cos\beta = F_y / F, \cos\gamma = F_z / F$。',
+            '恆等式：$\cos^2\alpha + \cos^2\beta + \cos^2\gamma = 1$。'
+          ]
+        },
+        {
+          heading: '空間共點與平行力系之合成與平衡 (Spatial Concurrent & Parallel Systems)',
+          body: '當多個空間力作用於同一點時稱為空間共點力系；當所有作用力相互平行（如各構件自重均沿 -Z 方向）時稱為空間平行力系。兩者之獨立平衡方程式數量不同。',
+          table: {
+            headers: ['力系類型', '定義特徵', '獨立靜力平衡方程式數量', '平衡方程式組'],
+            rows: [
+              ['空間共點力系', '所有作用力交於同一空間點', '3 個方程', '$\sum F_x = 0, \sum F_y = 0, \sum F_z = 0$'],
+              ['空間平行力系', '所有作用力均平行於某特定軸 (如 Z 軸)', '3 個方程', '$\sum F_z = 0, \sum M_x = 0, \sum M_y = 0$'],
+              ['空間非共點非平行力系', '作用力在空間隨意分佈', '6 個方程', '$\sum F_x = 0, \sum F_y = 0, \sum F_z = 0, \sum M_x = 0, \sum M_y = 0, \sum M_z = 0$']
+            ]
+          }
+        },
+        {
+          heading: '空間剛體六個平衡方程與三維支承 (Spatial Rigid Body Equilibrium & Supports)',
+          body: '三維剛體不受拘束時具備 6 個自由度（3 個平移 + 3 個旋轉）。剛體完全靜力平衡之充要條件為合力向量 $\vec{R}=0$ 且對任意點之合力矩向量 $\vec{M}=0$。',
+          steps: [
+            '球窩關節 (Ball-and-Socket Joint)：提供 3 個方向之約束力反力 (Rx, Ry, Rz)，但不限制轉動 (Moment = 0)。',
+            '無摩擦滾子/球底支承：僅提供垂直於接觸面之 1 個法向約束力反力。',
+            '固定支承 (Fixed Support)：提供 3 個約束力 (Rx, Ry, Rz) 與 3 個約束力矩 (Mx, My, Mz)，共 6 個未知反力。'
+          ]
+        }
+      ],
+      practices: [
+        {
+          difficulty: '基礎',
+          question: '一空間力與 X, Y 軸之夾角餘弦分別為 cos α = 0.6, cos β = 0.8。求該力與 Z 軸夾角之方向餘弦 cos γ 之可能數值。',
+          steps: [
+            '代入方向餘弦恆等式：cos² α + cos² β + cos² γ = 1。',
+            '(0.6)² + (0.8)² + cos² γ = 1 => 0.36 + 0.64 + cos² γ = 1 => 1.0 + cos² γ = 1。',
+            '故 cos² γ = 0 => cos γ = 0（代表該力完全落在 X-Y 平面上，與 Z 軸垂直 90°）。'
+          ],
+          answer: 'cos γ = 0'
+        },
+        {
+          difficulty: '高頻統測題',
+          question: '對於一個不受約束之「空間剛體」，欲保持完全靜力平衡，最多可建立多少個獨立的靜力平衡方程式？ (A) 3 個 (B) 4 個 (C) 6 個 (D) 8 個。',
+          steps: [
+            '空間剛體具備 3 個平移與 3 個旋轉自由度，必須滿足 ∑Fx=0, ∑Fy=0, ∑Fz=0 及 ∑Mx=0, ∑My=0, ∑Mz=0 共 6 個獨立平衡方程。故選 (C)。'
+          ],
+          answer: '(C) 6 個'
+        },
+        {
+          difficulty: '進階',
+          question: '一空間平行力系所有作用力均平行於 Z 軸。下列何者「非」此力系之獨立靜力平衡方程式？ (A) ∑Fz = 0 (B) ∑Mx = 0 (C) ∑My = 0 (D) ∑Mz = 0。',
+          steps: [
+            '因為所有力均平行於 Z 軸，力對 Z 軸產生的力矩恆為 0 (M_z ≡ 0)，因此 ∑Mz = 0 為自然滿足之恆等式，而非獨立靜力方程。獨立方程為 ∑Fz=0, ∑Mx=0, ∑My=0。故選 (D)。'
+          ],
+          answer: '(D) ∑Mz = 0'
+        },
+        {
+          difficulty: '高頻統測題',
+          question: '在空間結構中，「球窩關節 (Ball-and-Socket Joint)」支承能提供多少個獨立的反力分量？ (A) 1 個 (B) 2 個 (C) 3 個 (D) 6 個。',
+          steps: [
+            '球窩關節阻止物體在 X, Y, Z 三個方向之平移，但允許球體隨意轉動（無力矩反力），故提供 3 個力反力分量 (Rx, Ry, Rz)。故選 (C)。'
+          ],
+          answer: '(C) 3 個'
+        }
+      ]
+    },
+    {
+      slug: 'plane-stress',
+      title: '9. 平面應力與莫耳圓圖解',
+      desc: '深入解析平面應力狀態、斜面正交應力與剪應力轉換公式、主平面與主應力求法，以及莫耳圓 (Mohr\'s Circle) 圖解幾何法。\n\n🔥 V6.0 考前秒殺秘訣：此核心概念統測出題率極高，建議善用圖解與鷹架提示反覆練習！',
+      status: 'done',
+      covered_question_ids: ['110-1-15', '111-1-15', '112-1-15', '113-1-15', '114-1-15', '115-1-15'],
+      worked_examples: [
+        {
+          question: '【步驟化例題】主應力與莫耳圓半徑計算：一二維微元元素承受正交應力 σx = 80 MPa (拉), σy = 20 MPa (拉)，剪應力 τxy = 40 MPa。試求：(1) 莫耳圓之圓心位置 C 與圓半徑 R；(2) 最大與最小主應力 σ1, σ2；(3) 平面最大剪應力 τmax。',
+          difficulty: '基礎',
+          steps: [
+            '步驟 1：求莫耳圓圓心 C。\n- σ_avg = (σx + σy) / 2 = (80 + 20) / 2 = 50 MPa。圓心座標 C(50, 0)。',
+            '步驟 2：求莫耳圓半徑 R（兼最大剪應力 τmax）。\n- R = √[((σx - σy) / 2)² + τxy²] = √[((80 - 20) / 2)² + 40²] = √[30² + 40²] = √[900 + 1600] = √2500 = 50 MPa。',
+            '步驟 3：計算主應力 σ1, σ2。\n- σ1 = σ_avg + R = 50 + 50 = 100 MPa (拉)。\n- σ2 = σ_avg - R = 50 - 50 = 0 MPa。\n- 平面最大剪應力 τmax = R = 50 MPa。'
+          ],
+          answer: '(1) 圓心 C(50, 0), 半徑 R = 50 MPa；(2) σ1 = 100 MPa, σ2 = 0 MPa；(3) τmax = 50 MPa'
+        }
+      ],
+      illustrations: ['units-vectors-context.webp', 'units-vectors-mechanism.webp', 'units-vectors-comparison.webp', 'units-vectors-step.webp', 'mechanics-real-world.webp', 'plane-stress-infographic.webp'],
+      concepts: [
+        {
+          heading: '平面應力與斜面應力轉換公式 (Plane Stress & Stress Transformation)',
+          body: '平面應力 (Plane Stress) 指三維物體中與某一平面垂直之應力分量全為零（即 σz = 0, τxz = 0, τyz = 0）。當沿與 X 軸夾角為 θ 之斜面剖開時，斜面上的正交應力 σθ 與剪應力 τθ 隨角度改變。',
+          steps: [
+            '正交應力轉換：$\sigma_\theta = \frac{\sigma_x + \sigma_y}{2} + \frac{\sigma_x - \sigma_y}{2}\cos 2\theta + \tau_{xy}\sin 2\theta$。',
+            '剪應力轉換：$\tau_\theta = -\frac{\sigma_x - \sigma_y}{2}\sin 2\theta + \tau_{xy}\cos 2\theta$。',
+            '正交應力不變量：在任何互相垂直之斜面上，正交應力之和恆為常數（$\sigma_\theta + \sigma_{\theta+90^\circ} = \sigma_x + \sigma_y$）。'
+          ]
+        },
+        {
+          heading: '主平面、主應力與最大剪應力 (Principal Planes & Stresses)',
+          body: '主平面 (Principal Planes) 指剪應力為零 (τ = 0) 之特定斜面。作用於主平面上之正交應力稱為主應力 ($\sigma_1, \sigma_2$)，代表該點正交應力之極大值與極小值。',
+          table: {
+            headers: ['應力物理量', '計算公式', '角度關係 (對應實體元素)', '剪應力數值'],
+            rows: [
+              ['平均正應力 $\sigma_{avg}$', '$\sigma_{avg} = (\sigma_x + \sigma_y) / 2$', '莫耳圓圓心 X 座標', '無特別要求'],
+              ['主應力極值 $\sigma_{1,2}$', '$\sigma_{avg} \pm \sqrt{((\sigma_x - \sigma_y)/2)^2 + \tau_{xy}^2}$', '主平面夾角 $\tan 2\theta_p = \frac{2\tau_{xy}}{\sigma_x - \sigma_y}$', '剪應力精確等於 0'],
+              ['最大剪應力 $\tau_{max}$', '$\tau_{max} = R = \frac{\sigma_1 - \sigma_2}{2}$', '最大剪應力平面與主平面相差 $45^\circ$', '對應正交應力等於 $\sigma_{avg}$']
+            ]
+          }
+        },
+        {
+          heading: '莫耳圓 (Mohr\'s Circle) 圖解幾何法',
+          body: '莫耳圓是將二維應力轉換公式幾何化之極佳工具。以正交應力 σ 為橫軸（向右為拉 +）、剪應力 τ 為縱軸（向下為正或順時針 +）。莫耳圓上任意點之座標代表某一傾斜角度剖面之應力狀態。',
+          steps: [
+            '作圖步驟 1：標定點 X(σx, -τxy) 與點 Y(σy, τxy)。',
+            '作圖步驟 2：連線 XY 交 σ 軸於圓心 C(σ_avg, 0)，以 CX 長度為半徑 R 畫圓。',
+            '角度對應：莫耳圓上圓心角轉過 $2\theta$，對應實體元素斜面實際旋轉角度 $\theta$（方向一致）。'
+          ]
+        }
+      ],
+      practices: [
+        {
+          difficulty: '基礎',
+          question: '在平面應力狀態下，主平面 (Principal Plane) 上的剪應力 (Shear Stress) 數值為何？ (A) 等於最大正應力 (B) 等於零 (C) 等於平均正應力 (D) 無法確定。',
+          steps: [
+            '主平面定義即為「剪應力等於零」之平面。在此平面上正交應力達到極值（主應力）。故選 (B)。'
+          ],
+          answer: '(B) 等於零'
+        },
+        {
+          difficulty: '高頻統測題',
+          question: '已知某構件受二維應力作用，莫耳圓之圓心位於 (40 MPa, 0)，圓半徑 R = 30 MPa。則該點之最大主應力 σ1 與最小主應力 σ2 分別為何？ (A) 70 MPa, 10 MPa (B) 40 MPa, 30 MPa (C) 80 MPa, 20 MPa (D) 60 MPa, 10 MPa。',
+          steps: [
+            'σ1 = σ_avg + R = 40 + 30 = 70 MPa。',
+            'σ2 = σ_avg - R = 40 - 30 = 10 MPa。故選 (A)。'
+          ],
+          answer: '(A) 70 MPa, 10 MPa'
+        },
+        {
+          difficulty: '進階',
+          question: '在平面應力狀態下，作用於最大剪應力平面 (Maximum Shear Stress Plane) 上之正交應力數值為何？ (A) 0 (B) 等於最大主應力 σ1 (C) 等於平均正應力 σ_avg (D) 等於 2σ1。',
+          steps: [
+            '在莫耳圓中，最大剪應力點位於圓周最高點與最低點，其 X 軸座標精確等於圓心 X 座標，即平均正應力 σ_avg = (σx + σy) / 2。故選 (C)。'
+          ],
+          answer: '(C) 等於平均正應力 σ_avg'
+        },
+        {
+          difficulty: '高頻統測題',
+          question: '在莫耳圓圖解法中，若莫耳圓上兩點連線相對於圓心轉過了 90° 的圓心角，則對應於實體微元元素上，兩斜面之間的法線夾角為多少度？ (A) 90° (B) 45° (C) 30° (D) 180°。',
+          steps: [
+            '莫耳圓上之轉角為 2θ，故圓心角 2θ = 90° 時，實體微元元素斜面之實際轉角 θ = 90° / 2 = 45°。故選 (B)。'
+          ],
+          answer: '(B) 45°'
+        }
+      ]
     }
   ]
 };
+
