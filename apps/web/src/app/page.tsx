@@ -13,7 +13,7 @@ export default function Home() {
               108 課綱技術型高中 · 建築科自主學習平台
             </span>
             <span className="rounded-full bg-emerald-600/10 px-3 py-1 text-xs font-mono font-bold text-emerald-700 dark:text-emerald-300 border border-emerald-600/20">
-              V6.20 正式版全上線
+              V6.21 正式版全上線
             </span>
           </div>
 

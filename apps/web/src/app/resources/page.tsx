@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: '統測學習資源導航｜Arch V6.20',
+  title: '統測學習資源導航｜Arch V6.21',
   description: '整理四技二專統測官方制度、歷屆題、06 土木與建築群考綱、學校公開詳解與補充題型分析。',
 };
 

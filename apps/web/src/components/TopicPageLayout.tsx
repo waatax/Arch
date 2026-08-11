@@ -1,12 +1,13 @@
 'use client';
 
-import { useState, useEffect, useMemo } from 'react';
+import { useState, useEffect, useMemo, useRef } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import type { SubjectData, TopicContent } from '@/data/types';
 import MathText from '@/components/MathText';
 import InteractiveVisualizer from '@/components/visualizers/InteractiveVisualizer';
 import { getTopicRealLifeGuide } from '@/lib/pedagogy/realLifeHelpers';
+import { getTopicInterestHook } from '@/lib/pedagogy/interestHooks';
 import { getTopicDeepKnowledge } from '@/lib/pedagogy/topicKnowledgeExpander';
 import { buildDetailedSolution } from '@/lib/pedagogy/solutionSteps';
 import { getLearningSources } from '@/lib/pedagogy/learningSources';
@@ -66,6 +67,8 @@ export default function TopicPageLayout({ subject, topic }: TopicPageLayoutProps
 
   // High-Res Image Lightbox State
   const [isLightboxOpen, setIsLightboxOpen] = useState(false);
+  const interestImageButtonRef = useRef<HTMLButtonElement>(null);
+  const lightboxCloseButtonRef = useRef<HTMLButtonElement>(null);
 
   // Quick Formula Drawer State
   const [isFormulaDrawerOpen, setIsFormulaDrawerOpen] = useState(false);
@@ -86,6 +89,32 @@ export default function TopicPageLayout({ subject, topic }: TopicPageLayoutProps
     }, 0);
     return () => clearTimeout(timer);
   }, [subject.slug, topic.slug]);
+
+  useEffect(() => {
+    if (!isLightboxOpen) return;
+
+    const previousBodyOverflow = document.body.style.overflow;
+    const focusTimer = window.setTimeout(() => lightboxCloseButtonRef.current?.focus(), 0);
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') {
+        setIsLightboxOpen(false);
+      }
+      if (event.key === 'Tab') {
+        event.preventDefault();
+        lightboxCloseButtonRef.current?.focus();
+      }
+    };
+
+    document.body.style.overflow = 'hidden';
+    document.addEventListener('keydown', handleKeyDown);
+
+    return () => {
+      window.clearTimeout(focusTimer);
+      document.body.style.overflow = previousBodyOverflow;
+      document.removeEventListener('keydown', handleKeyDown);
+      interestImageButtonRef.current?.focus();
+    };
+  }, [isLightboxOpen]);
 
   const toggleConceptProgress = (index: number) => {
     const next = { ...completedConcepts, [index]: !completedConcepts[index] };
@@ -115,6 +144,14 @@ export default function TopicPageLayout({ subject, topic }: TopicPageLayoutProps
   };
 
   const realLifeGuide = getTopicRealLifeGuide(subject.slug, topic.slug);
+  const interestHook = getTopicInterestHook({
+    subjectSlug: subject.slug,
+    topicSlug: topic.slug,
+    topicTitle: topic.title,
+    topicDescription: topic.desc,
+    visualConceptHeading: visualConcept.heading,
+    realLifeGuide,
+  });
   const deepKnowledge = getTopicDeepKnowledge(subject.slug, topic.slug);
 
   return (
@@ -154,52 +191,111 @@ export default function TopicPageLayout({ subject, topic }: TopicPageLayoutProps
             {topic.title}
           </h1>
           <p className="max-w-3xl text-base leading-relaxed text-slate-600 dark:text-slate-400">
-            {topic.desc}
+            {interestHook.topicSummary}
           </p>
         </div>
 
-        {/* 🌟 Real-Life Importance & Engineering Context Banner */}
-        <div id="exam-focus" className="scroll-mt-24 rounded-2xl border border-blue-200 dark:border-blue-900/60 bg-gradient-to-br from-blue-50/70 via-white to-sky-50/50 dark:from-blue-950/40 dark:via-slate-900 dark:to-slate-900 p-5 sm:p-7 shadow-xs space-y-3">
-          <div className="flex items-center gap-2">
-            <span className="flex size-7 items-center justify-center rounded-lg bg-blue-600 text-white text-xs font-mono font-bold">
-              🌟
-            </span>
-            <h2 className="font-serif text-base sm:text-lg font-bold text-slate-900 dark:text-white">
-              為什麼要學這個？真實生活與建築工程的關鍵角色
-            </h2>
-          </div>
-          <p className="text-sm leading-relaxed text-slate-700 dark:text-slate-300 font-medium">
-            {realLifeGuide.realLifeImportance}
-          </p>
+        {/* Every lesson opens with a route-specific interest hook and its own illustration. */}
+        <section
+          id="interest-hook"
+          data-topic-interest-hook={`${subject.slug}/${topic.slug}`}
+          className="scroll-mt-24 overflow-hidden rounded-3xl border border-blue-200 bg-gradient-to-br from-blue-50 via-white to-amber-50/70 shadow-sm dark:border-blue-900/60 dark:from-blue-950/45 dark:via-slate-900 dark:to-amber-950/20"
+          aria-labelledby="interest-hook-title"
+        >
+          <div className="grid lg:grid-cols-[1.12fr_0.88fr]">
+            <div className="space-y-5 p-5 pb-4 sm:p-7 sm:pb-5 lg:col-start-1 lg:row-start-1 lg:p-8 lg:pb-3">
+              <div className="flex flex-wrap items-center gap-2">
+                <span className="rounded-full bg-blue-600 px-3 py-1 text-[11px] font-bold tracking-wide text-white shadow-sm">
+                  先別急著背
+                </span>
+                <span className="rounded-full border border-blue-200 bg-white/85 px-3 py-1 text-[11px] font-bold text-blue-800 dark:border-blue-800 dark:bg-slate-900/75 dark:text-blue-200">
+                  {interestHook.badge}
+                </span>
+              </div>
 
-          <div className="grid gap-3 pt-2 sm:grid-cols-2 text-xs">
-            <div className="rounded-xl bg-white dark:bg-slate-800/80 p-3.5 border border-slate-200 dark:border-slate-700/80 space-y-1">
-              <span className="font-mono font-bold text-blue-700 dark:text-blue-300 flex items-center gap-1">
-                🎒 國中先備知識銜接
-              </span>
-              <p className="text-slate-600 dark:text-slate-400 leading-relaxed">
-                {realLifeGuide.juniorHighBridge}
-              </p>
+              <div className="space-y-3">
+                <h2 id="interest-hook-title" className="font-serif text-2xl font-bold leading-tight text-slate-950 dark:text-white sm:text-3xl">
+                  {interestHook.headline}
+                </h2>
+                <p data-interest-lead className="text-sm font-medium leading-7 text-slate-700 dark:text-slate-300 sm:text-base">
+                  {interestHook.lead}
+                </p>
+              </div>
             </div>
 
-            <div className="rounded-xl bg-white dark:bg-slate-800/80 p-3.5 border border-slate-200 dark:border-slate-700/80 space-y-1">
-              <span className="font-mono font-bold text-amber-700 dark:text-amber-300 flex items-center gap-1">
-                🍞 100% 國中生白話譬喻
-              </span>
-              <p className="text-slate-600 dark:text-slate-400 leading-relaxed">
-                {realLifeGuide.everydayAnalogy}
-              </p>
+            <figure id="observable" className="group flex scroll-mt-24 flex-col border-y border-blue-100 bg-white/80 dark:border-blue-950 dark:bg-slate-950/70 lg:col-start-2 lg:row-span-2 lg:row-start-1 lg:border-b-0 lg:border-l lg:border-r-0 lg:border-t-0">
+              <button
+                ref={interestImageButtonRef}
+                type="button"
+                className="relative block aspect-[4/3] w-full flex-1 cursor-zoom-in overflow-hidden bg-slate-50 focus-visible:outline-2 focus-visible:outline-offset-[-4px] focus-visible:outline-blue-600 dark:bg-slate-950 lg:min-h-[31rem]"
+                onClick={() => setIsLightboxOpen(true)}
+                aria-label={`放大檢視${topic.title}的知識點插圖`}
+                aria-describedby="interest-hook-figure-caption"
+              >
+                <Image
+                  src={visualSrc}
+                  alt={interestHook.imageAlt}
+                  className="h-full w-full object-contain transition-transform duration-300 group-hover:scale-[1.025]"
+                  width={960}
+                  height={720}
+                  priority
+                />
+                <span className="absolute bottom-3 right-3 rounded-full bg-slate-950/80 px-3 py-1.5 text-xs font-bold text-white shadow-lg backdrop-blur-md">
+                  🔍 點圖放大
+                </span>
+              </button>
+              <figcaption id="interest-hook-figure-caption" className="border-t border-slate-200 bg-white/90 px-5 py-4 dark:border-slate-800 dark:bg-slate-900/90">
+                <p className="text-[11px] font-bold uppercase tracking-widest text-blue-700 dark:text-blue-300">
+                  先看圖，再碰公式
+                </p>
+                <p className="mt-1 text-xs leading-6 text-slate-600 dark:text-slate-400">
+                  {interestHook.imageCaption}
+                </p>
+              </figcaption>
+            </figure>
+
+            <div className="space-y-5 px-5 pb-5 sm:px-7 sm:pb-7 lg:col-start-1 lg:row-start-2 lg:px-8 lg:pb-8">
+
+              <div id="exam-focus" className="grid scroll-mt-24 gap-3 sm:grid-cols-2">
+                <article className="rounded-2xl border border-blue-200/80 bg-white/90 p-4 dark:border-blue-900/70 dark:bg-slate-900/80">
+                  <h3 className="flex items-center gap-2 text-sm font-bold text-blue-800 dark:text-blue-200">
+                    <span aria-hidden="true">🎯</span> 這個知識點為什麼重要？
+                  </h3>
+                  <p className="mt-2 text-sm leading-6 text-slate-700 dark:text-slate-300">
+                    {interestHook.importance}
+                  </p>
+                </article>
+
+                <article className="rounded-2xl border border-emerald-200/80 bg-white/90 p-4 dark:border-emerald-900/70 dark:bg-slate-900/80">
+                  <h3 className="flex items-center gap-2 text-sm font-bold text-emerald-800 dark:text-emerald-200">
+                    <span aria-hidden="true">🏙️</span> 離開考卷，會在哪裡用到？
+                  </h3>
+                  <p className="mt-2 text-sm leading-6 text-slate-700 dark:text-slate-300">
+                    {interestHook.application}
+                  </p>
+                </article>
+              </div>
+
+              <aside className="rounded-2xl border border-amber-200 bg-amber-100/70 p-4 dark:border-amber-900/70 dark:bg-amber-950/35" aria-label="本章輕鬆記憶梗">
+                <p className="text-xs font-bold uppercase tracking-wider text-amber-800 dark:text-amber-300">
+                  😄 腦內小劇場，幫你記牢
+                </p>
+                <p className="mt-2 text-sm leading-6 text-amber-950 dark:text-amber-100">
+                  {interestHook.hook}
+                </p>
+              </aside>
             </div>
+
           </div>
 
-          <div className="rounded-xl bg-emerald-50/80 dark:bg-emerald-950/40 border border-emerald-200 dark:border-emerald-800/60 p-3 text-xs text-emerald-900 dark:text-emerald-200 flex items-start gap-2">
-            <span className="shrink-0 mt-0.5">🔍</span>
-            <div>
-              <strong>生活觀察與動手微任務：</strong>
-              <span>{realLifeGuide.handsOnObservation}</span>
-            </div>
+          <div className="flex items-start gap-3 border-t border-blue-100 bg-blue-50/65 px-5 py-4 text-sm leading-6 text-slate-700 dark:border-blue-950 dark:bg-blue-950/20 dark:text-slate-300 sm:px-7 lg:px-8">
+            <span className="mt-0.5 shrink-0" aria-hidden="true">🧩</span>
+            <p>
+              <strong className="text-slate-900 dark:text-white">其實你不是從零開始：</strong>{' '}
+              {interestHook.bridge}
+            </p>
           </div>
-        </div>
+        </section>
 
         {/* Chapter Learning Progress Bar */}
         <div className="rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 p-4 space-y-2 shadow-xs">
@@ -262,38 +358,6 @@ export default function TopicPageLayout({ subject, topic }: TopicPageLayoutProps
           ))}
         </div>
       </header>
-
-      {/* Interactive Visual Figure with Lightbox Zoom */}
-      <figure id="observable" className="group relative scroll-mt-24 overflow-hidden rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 shadow-sm">
-        <div
-          className="relative aspect-[4/3] bg-slate-50 dark:bg-slate-950 sm:aspect-[16/9] cursor-zoom-in flex items-center justify-center"
-          onClick={() => setIsLightboxOpen(true)}
-          role="button"
-          tabIndex={0}
-          aria-label="放大檢視高清觀念圖解"
-        >
-          <Image
-            src={visualSrc}
-            alt={`${topic.title}：${visualConcept.heading}概念圖`}
-            className="h-full w-full object-contain transition-transform duration-300 group-hover:scale-[1.02]"
-            width={960}
-            height={720}
-            priority
-          />
-          <span className="absolute bottom-3 right-3 rounded-lg bg-black/70 px-3 py-1.5 text-xs text-white backdrop-blur-md flex items-center gap-1.5 opacity-90 group-hover:opacity-100 shadow-md">
-            🔍 點擊放大高清圖解
-          </span>
-        </div>
-        <figcaption className="border-t border-slate-200 dark:border-slate-800 px-5 py-4 bg-slate-50/50 dark:bg-slate-900/50">
-          <span className="text-[11px] font-mono uppercase tracking-widest text-blue-600 dark:text-blue-400 font-bold">
-            建築圖面與工程直覺
-          </span>
-          <p className="mt-1 text-sm font-bold text-slate-900 dark:text-white">{visualConcept.heading}</p>
-          <p className="mt-1 text-xs leading-relaxed text-slate-600 dark:text-slate-400">
-            先觀察圖中受力箭頭、尺寸標註、基準線與材料剖面；再搭配下方白話名詞與公式推導，不需死記硬背。
-          </p>
-        </figcaption>
-      </figure>
 
       {/* Every lesson gets two additional OpenAI-generated visual explanations. */}
       <section className="space-y-4" aria-labelledby="visual-learning-title">
@@ -371,8 +435,20 @@ export default function TopicPageLayout({ subject, topic }: TopicPageLayoutProps
           className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 p-4 backdrop-blur-md"
           onClick={() => setIsLightboxOpen(false)}
         >
-          <div className="relative max-h-[90vh] max-w-[90vw] overflow-hidden rounded-2xl bg-white dark:bg-slate-900 p-3 shadow-2xl">
+          <div
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="interest-lightbox-title"
+            className="relative max-h-[90vh] max-w-[90vw] overflow-hidden rounded-2xl bg-white p-3 shadow-2xl dark:bg-slate-900"
+            onClick={(event) => event.stopPropagation()}
+          >
+            <h2 id="interest-lightbox-title" className="sr-only">
+              {topic.title}知識點插圖放大檢視
+            </h2>
             <button
+              ref={lightboxCloseButtonRef}
+              type="button"
+              aria-label={`關閉${topic.title}插圖放大檢視`}
               className="absolute top-4 right-4 z-10 rounded-full bg-black/70 px-3.5 py-1.5 text-xs font-bold text-white hover:bg-black/90 transition-colors"
               onClick={() => setIsLightboxOpen(false)}
             >
@@ -380,7 +456,7 @@ export default function TopicPageLayout({ subject, topic }: TopicPageLayoutProps
             </button>
             <Image
               src={visualSrc}
-              alt={`${topic.title} 高清放大圖`}
+              alt={`${interestHook.imageAlt}（高清放大）`}
               className="max-h-[85vh] w-auto object-contain rounded-lg"
               width={1200}
               height={900}
