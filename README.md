@@ -2,7 +2,7 @@
 
 Arch 是面向台灣高工建築科學生的開放學習平台，將四技二專統測準備、建築專業實作、台灣建築案例與本機優先的個人學習教練整合在同一條學習路徑。
 
-目前版本是 **V6.21**。產品、教學、統測覆蓋與技術的唯一總規格見 [`V6-Core.md`](./V6-Core.md)，可重跑的驗收計畫見 [`docs/v6-implementation-plan.md`](./docs/v6-implementation-plan.md)，86 頁五題深度解析紀錄見 [`docs/v6-deep-teaching-iteration.md`](./docs/v6-deep-teaching-iteration.md)；[`Arch-v5.md`](./Arch-v5.md) 與 [`Arch-v4.md`](./Arch-v4.md) 僅保留為歷史規格。
+目前版本是 **V6.22**（Android 1.1.0／versionCode 3）。產品、教學、統測覆蓋與技術的唯一總規格見 [`V6-Core.md`](./V6-Core.md)，可重跑的驗收計畫見 [`docs/v6-implementation-plan.md`](./docs/v6-implementation-plan.md)，86 頁五題深度解析紀錄見 [`docs/v6-deep-teaching-iteration.md`](./docs/v6-deep-teaching-iteration.md)；Android 發版、簽章與低記憶體驗收見 [`android/README.md`](./android/README.md)。[`Arch-v5.md`](./Arch-v5.md) 與 [`Arch-v4.md`](./Arch-v4.md) 僅保留為歷史規格。
 
 ## 目前已有
 
@@ -11,6 +11,7 @@ Arch 是面向台灣高工建築科學生的開放學習平台，將四技二專
 - 臺中國家歌劇院、路思義教堂、921 地震教育園區案例頁。
 - Architectural Editorial 視覺 token、深色模式與響應式版面。
 - 來源與學校 overlay registry 的初始資料。
+- Android 16 WebView App：renderer 終止復原、低 RAM 精簡模式、R8 與 Play AAB 發版鏈。
 
 ## 開發
 
@@ -19,6 +20,7 @@ Arch 是面向台灣高工建築科學生的開放學習平台，將四技二專
 ```bash
 pnpm install
 pnpm validate:content
+pnpm validate:android
 pnpm dev
 pnpm lint
 pnpm build

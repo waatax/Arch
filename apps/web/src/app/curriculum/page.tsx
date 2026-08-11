@@ -56,7 +56,7 @@ export default function CurriculumPage() {
         <div className="flex flex-col sm:flex-row sm:justify-between sm:items-end gap-4">
           <div>
             <span className="text-xs font-mono text-blue-600 dark:text-blue-400 uppercase tracking-widest block font-bold">
-              Arch V6.21 Curriculum Map
+              Arch V6.22 Curriculum Map
             </span>
             <h1 className="text-3xl sm:text-5xl font-bold font-serif text-slate-900 dark:text-white mt-1">
               台灣高工建築科 · 全科學習地圖

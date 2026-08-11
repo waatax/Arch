@@ -6,6 +6,9 @@ const isGithubActions = process.env.GITHUB_ACTIONS || false;
 const withPWA = withPWAInit({
   dest: "public",
   disable: process.env.NODE_ENV === "development",
+  // Question shards are fetched only after a learner starts a session. Keeping
+  // them out of the precache avoids downloading the entire bank on first visit.
+  publicExcludes: ["!practice-data/shards/**/*.json"],
 });
 
 const nextConfig: NextConfig = {

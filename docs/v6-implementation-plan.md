@@ -21,6 +21,14 @@
 
 ## 完成定義
 
-- `pnpm validate:content`、`pnpm validate:v6`、`pnpm lint`、`pnpm build`、`pnpm validate:built-links` 全數通過。
+- `pnpm validate:content`、`pnpm validate:v6`、`pnpm validate:android`、`pnpm lint`、`pnpm build`、`pnpm validate:built-links` 全數通過。
 - GitHub Actions Pages 工作流程成功，公開網址可讀取新教材、116 指南與學生儀表板。
 - 未通過的檢查必須以非零結束碼阻止發布，不得用預寫成功字串取代驗證。
+
+## V6.22 Android／低資源驗收
+
+- `validate:android`：API 36、renderer recovery、低 RAM、HTTPS、R8、簽章隔離與 wrapper 完整性全部通過。
+- Gradle 8.13 重跑 JUnit、Release lint、debug／release APK 與 Play AAB；GitHub Actions 在乾淨 Linux runner 使用同一份校驗 wrapper。
+- Android Go／低 RAM 情境必測 renderer 被回收、背景回前景、連續章節切換、離線／重連與檔案選擇取消；renderer 真正 crash 不得自動重載同一頁形成循環。
+- 教學頁代表 production assets 需維持在 1.3 MB 以下、初始真題 DOM 限 5 題，完整教材與至少五題解析不得因精簡模式刪除。
+- `/practice` 靜態 HTML 必須小於 160 KiB、不得序列化題目紀錄，25 個題庫分片必須完整匯出且不得加入 service-worker precache。

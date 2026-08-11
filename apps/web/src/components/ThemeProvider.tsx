@@ -19,6 +19,22 @@ const ThemeContext = createContext<ThemeContextType>({
   setFontSize: () => {},
 });
 
+function readStorage(key: string) {
+  try {
+    return window.localStorage.getItem(key);
+  } catch {
+    return null;
+  }
+}
+
+function writeStorage(key: string, value: string) {
+  try {
+    window.localStorage.setItem(key, value);
+  } catch {
+    // A disabled, full or corrupted WebView storage must never blank the app.
+  }
+}
+
 export function useTheme() {
   return useContext(ThemeContext);
 }
@@ -26,13 +42,13 @@ export function useTheme() {
 export default function ThemeProvider({ children }: { children: ReactNode }) {
   const [theme, setTheme] = useState<Theme>(() => {
     if (typeof window === 'undefined') return 'light';
-    const savedTheme = localStorage.getItem('arch-theme');
+    const savedTheme = readStorage('arch-theme');
     if (savedTheme === 'light' || savedTheme === 'dark') return savedTheme;
     return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
   });
   const [fontSize, setFontSizeState] = useState<FontSize>(() => {
     if (typeof window === 'undefined') return 'base';
-    const savedFontSize = localStorage.getItem('arch-font-size');
+    const savedFontSize = readStorage('arch-font-size');
     return savedFontSize === 'sm' || savedFontSize === 'lg' ? savedFontSize : 'base';
   });
 
@@ -45,12 +61,12 @@ export default function ThemeProvider({ children }: { children: ReactNode }) {
     } else {
       root.classList.remove('dark');
     }
-    localStorage.setItem('arch-theme', theme);
+    writeStorage('arch-theme', theme);
 
     // Font size
     root.classList.remove('text-size-sm', 'text-size-base', 'text-size-lg');
     root.classList.add(`text-size-${fontSize}`);
-    localStorage.setItem('arch-font-size', fontSize);
+    writeStorage('arch-font-size', fontSize);
   }, [theme, fontSize]);
 
   const toggleTheme = () => {

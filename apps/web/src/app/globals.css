@@ -189,6 +189,46 @@ html {
   scroll-behavior: smooth;
 }
 
+/* Skip layout/paint work for the long lesson sections until they approach view. */
+.lesson-deferred-section {
+  content-visibility: auto;
+  contain-intrinsic-size: auto 720px;
+}
+
+/* Android low-RAM WebViews opt in through the ArchLowRam/1 or ArchLite UA token. */
+html.arch-lite {
+  scroll-behavior: auto !important;
+}
+
+html.arch-lite body {
+  transition: none !important;
+}
+
+html.arch-lite body::before,
+html.arch-lite .arch-ambient {
+  display: none !important;
+}
+
+html.arch-lite *,
+html.arch-lite *::before,
+html.arch-lite *::after {
+  animation: none !important;
+  transition-duration: 0.01ms !important;
+}
+
+html.arch-lite [class*="backdrop-blur"] {
+  -webkit-backdrop-filter: none !important;
+  backdrop-filter: none !important;
+}
+
+html.arch-lite [class*="mix-blend"] {
+  mix-blend-mode: normal !important;
+}
+
+html.arch-lite [class*="blur-"] {
+  filter: none !important;
+}
+
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;

@@ -1,0 +1,125 @@
+plugins {
+    id 'com.android.application'
+}
+
+def setting = { String name, String defaultValue = null ->
+    def value = providers.gradleProperty(name)
+            .orElse(providers.environmentVariable(name))
+            .orNull
+    value == null || value.trim().isEmpty() ? defaultValue : value.trim()
+}
+
+// Passwords are opaque values. Only an actually empty value is absent; never
+// trim or otherwise normalize because whitespace may be part of the password.
+def secretSetting = { String name ->
+    def value = providers.gradleProperty(name)
+            .orElse(providers.environmentVariable(name))
+            .orNull
+    value == null || value.isEmpty() ? null : value
+}
+
+def releaseVersionCodeText = setting('ARCH_VERSION_CODE', '3')
+def releaseVersionCode
+try {
+    releaseVersionCode = Integer.parseInt(releaseVersionCodeText)
+} catch (NumberFormatException ignored) {
+    throw new GradleException('ARCH_VERSION_CODE must be a positive integer.')
+}
+if (releaseVersionCode < 1 || releaseVersionCode > 2100000000) {
+    throw new GradleException('ARCH_VERSION_CODE must be between 1 and 2100000000.')
+}
+
+def releaseVersionName = setting('ARCH_VERSION_NAME', '1.1.0')
+def releaseStoreFile = setting('ARCH_KEYSTORE_FILE')
+def releaseStorePassword = secretSetting('ARCH_KEYSTORE_PASSWORD')
+def releaseKeyAlias = setting('ARCH_KEY_ALIAS')
+def releaseKeyPassword = secretSetting('ARCH_KEY_PASSWORD')
+def signingValues = [releaseStoreFile, releaseStorePassword, releaseKeyAlias, releaseKeyPassword]
+def hasAnySigningValue = signingValues.any { it != null }
+def hasReleaseSigning = signingValues.every { it != null }
+
+if (hasAnySigningValue && !hasReleaseSigning) {
+    throw new GradleException(
+            'Release signing is only enabled when ARCH_KEYSTORE_FILE, ' +
+                    'ARCH_KEYSTORE_PASSWORD, ARCH_KEY_ALIAS, and ARCH_KEY_PASSWORD are all set.')
+}
+if (hasReleaseSigning && !rootProject.file(releaseStoreFile).isFile()) {
+    throw new GradleException("ARCH_KEYSTORE_FILE does not exist: ${releaseStoreFile}")
+}
+
+android {
+    namespace = 'arch.learn.tw'
+    compileSdk = 36
+
+    defaultConfig {
+        applicationId = "arch.learn.tw"
+        minSdk = 24
+        targetSdk = 36
+        versionCode = releaseVersionCode // Default: 3; override with ARCH_VERSION_CODE.
+        versionName = releaseVersionName // Default: 1.1.0; override with ARCH_VERSION_NAME.
+
+        testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    if (hasReleaseSigning) {
+        signingConfigs {
+            release {
+                storeFile = rootProject.file(releaseStoreFile)
+                storePassword = releaseStorePassword
+                keyAlias = releaseKeyAlias
+                keyPassword = releaseKeyPassword
+            }
+        }
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled = true
+            shrinkResources = true
+            if (hasReleaseSigning) {
+                signingConfig = signingConfigs.release
+            }
+            proguardFiles = [getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro']
+        }
+        debug {
+            applicationIdSuffix = ".debug"
+            debuggable = true
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility = JavaVersion.VERSION_17
+        targetCompatibility = JavaVersion.VERSION_17
+    }
+
+    buildFeatures {
+        buildConfig = false
+    }
+
+    lint {
+        abortOnError = true
+        checkReleaseBuilds = true
+        htmlReport = true
+        textReport = true
+    }
+
+    packaging {
+        resources {
+            excludes += [
+                    'META-INF/AL2.0',
+                    'META-INF/LGPL2.1',
+                    'META-INF/LICENSE.md',
+                    'META-INF/LICENSE-notice.md'
+            ]
+        }
+    }
+}
+
+dependencies {
+    implementation 'androidx.appcompat:appcompat:1.7.1'
+    implementation 'androidx.swiperefreshlayout:swiperefreshlayout:1.2.0'
+    implementation 'androidx.webkit:webkit:1.16.0'
+    implementation 'androidx.core:core-splashscreen:1.2.0'
+
+    testImplementation 'junit:junit:4.13.2'
+}

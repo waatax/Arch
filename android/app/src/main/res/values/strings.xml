@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Arch 統測建築學習</string>
+    <string name="offline_title">目前無法連上學習平台</string>
+    <string name="offline_message">請檢查網路連線後再試一次；已閱讀的內容仍可能保留在快取中。</string>
+    <string name="server_error_title">學習平台暫時忙碌</string>
+    <string name="server_error_message">伺服器沒有正常回應，請稍後重新載入。</string>
+    <string name="ssl_error_title">安全連線驗證失敗</string>
+    <string name="ssl_error_message">為保護你的資料，App 已停止載入這個連線。請確認系統日期與 Android System WebView 都是最新版本。</string>
+    <string name="renderer_reclaimed_title">已釋放記憶體，正在恢復</string>
+    <string name="renderer_reclaimed_message">手機剛剛需要更多記憶體，因此暫停了網頁。App 會有限次自動恢復，也可以手動重新載入。</string>
+    <string name="renderer_crashed_title">頁面發生問題，但 App 仍安全</string>
+    <string name="renderer_crashed_message">這個頁面的顯示程序已停止。為避免重複閃退，請點擊下方按鈕重新建立頁面。</string>
+    <string name="webview_unavailable_title">需要更新系統網頁元件</string>
+    <string name="webview_unavailable_message">無法啟動 Android System WebView。請到 Google Play 更新或啟用 Android System WebView／Chrome 後再試。</string>
+    <string name="retry_button">重新載入</string>
+    <string name="file_chooser_unavailable">目前無法開啟檔案選擇器</string>
+    <string name="file_selection_rejected">基於安全考量，這個檔案無法使用</string>
+    <string name="external_app_unavailable">找不到可開啟此連結的 App</string>
+    <string name="download_unavailable">目前無法安全下載這個檔案</string>
+    <string name="blocked_link">已封鎖不安全的連結</string>
+    <string name="recovery_illustration_description">Arch 學習平台連線與復原提示</string>
+</resources>

@@ -4,7 +4,7 @@ import { useState, useMemo, useEffect } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import ThemeToggle from './ThemeToggle';
-import { allSubjects } from '@/data/subjects';
+import { topicSearchIndex } from '@/data/topicSearchIndex';
 
 const navLinks = [
   { href: '/', label: '首頁' },
@@ -43,24 +43,15 @@ export default function Navbar() {
     const q = searchQuery.toLowerCase().trim();
     const results: Array<{ subjectSlug: string; subjectTitle: string; topicSlug: string; topicTitle: string; desc: string }> = [];
 
-    for (const sub of allSubjects) {
-      for (const t of sub.topics) {
-        if (
-          t.title.toLowerCase().includes(q) ||
-          t.desc.toLowerCase().includes(q) ||
-          sub.title.toLowerCase().includes(q)
-        ) {
-          results.push({
-            subjectSlug: sub.slug,
-            subjectTitle: sub.title,
-            topicSlug: t.slug,
-            topicTitle: t.title,
-            desc: t.desc
-          });
-          if (results.length >= 12) break;
-        }
+    for (const topic of topicSearchIndex) {
+      if (
+        topic.topicTitle.toLowerCase().includes(q) ||
+        topic.desc.toLowerCase().includes(q) ||
+        topic.subjectTitle.toLowerCase().includes(q)
+      ) {
+        results.push(topic);
+        if (results.length >= 12) break;
       }
-      if (results.length >= 12) break;
     }
     return results;
   }, [searchQuery]);
@@ -84,7 +75,7 @@ export default function Navbar() {
                     Arch
                   </span>
                   <span className="rounded-full bg-blue-600/10 dark:bg-blue-400/10 px-2 py-0.5 text-[10px] font-mono font-bold text-blue-700 dark:text-blue-300 border border-blue-600/20">
-                    V6.21
+                    V6.22
                   </span>
                 </div>
                 <span className="text-[10px] font-mono text-slate-500 dark:text-slate-400 -mt-1 hidden sm:inline">

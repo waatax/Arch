@@ -131,6 +131,26 @@ for (const file of files) {
   }
 }
 
+const topicSearchIndexFile = path.join(root, 'apps', 'web', 'src', 'data', 'topicSearchIndex.ts');
+if (!fs.existsSync(topicSearchIndexFile)) {
+  errors.push('缺少 Navbar 輕量主題搜尋索引');
+} else {
+  const searchIndexSource = fs.readFileSync(topicSearchIndexFile, 'utf8');
+  const searchIndexMatch = searchIndexSource.match(/export const topicSearchIndex = (\[[\s\S]*\]) as const/);
+  if (!searchIndexMatch) {
+    errors.push('無法解析 Navbar 輕量主題搜尋索引');
+  } else {
+    const searchIndex = JSON.parse(searchIndexMatch[1]);
+    const indexedRoutes = new Set(searchIndex.map((item) => `/subjects/${item.subjectSlug}/${item.topicSlug}`));
+    if (searchIndex.length !== seenRoutes.size || indexedRoutes.size !== seenRoutes.size) {
+      errors.push(`Navbar 搜尋索引應有 ${seenRoutes.size} 個唯一主題，目前為 ${searchIndex.length} 筆／${indexedRoutes.size} 路由`);
+    }
+    for (const route of seenRoutes) {
+      if (!indexedRoutes.has(route)) errors.push(`${route}: 未列入 Navbar 輕量搜尋索引`);
+    }
+  }
+}
+
 // 每一頁都必須有「重要性／應用／幽默記憶梗」三段精確文案，禁止泛用 fallback。
 const interestDetails = Object.assign(
   {},
@@ -181,6 +201,61 @@ const examRegistries = [
   JSON.parse(fs.readFileSync(path.join(root, 'data', 'registry', 'exam-coverage.json'), 'utf8')),
 ];
 const allExamQuestions = examRegistries.flatMap((registry) => registry.questions);
+
+// /practice must ship only a tiny catalog in its initial RSC payload. The 925
+// selectable questions live in year-by-subject public shards and load on start.
+const practiceCatalogPath = path.join(root, 'apps', 'web', 'public', 'practice-data', 'index.json');
+if (!fs.existsSync(practiceCatalogPath)) {
+  errors.push('/practice 缺少輕量題庫索引 public/practice-data/index.json');
+} else {
+  const practiceCatalog = JSON.parse(fs.readFileSync(practiceCatalogPath, 'utf8'));
+  const expectedPracticeQuestions = allExamQuestions.filter(
+    (question) => question.year >= 111 && question.year <= 115,
+  );
+  const expectedPracticeIds = new Set(expectedPracticeQuestions.map((question) => question.id));
+  const loadedPracticeQuestions = [];
+  const shardDescriptors = practiceCatalog.years?.flatMap((entry) => entry.shards ?? []) ?? [];
+
+  if (practiceCatalog.total !== 925 || practiceCatalog.years?.length !== 5) {
+    errors.push(`/practice 輕量索引應涵蓋 111–115 年共 925 題，目前為 ${practiceCatalog.total ?? 0} 題`);
+  }
+  if (Buffer.byteLength(JSON.stringify(practiceCatalog)) > 12 * 1024) {
+    errors.push('/practice 首屏索引超過 12 KiB，不可夾帶完整題目');
+  }
+  if (shardDescriptors.length !== 25) {
+    errors.push(`/practice 應有 25 個年度×科目分片，目前為 ${shardDescriptors.length}`);
+  }
+
+  for (const yearEntry of practiceCatalog.years ?? []) {
+    for (const shard of yearEntry.shards ?? []) {
+      const relativeShard = shard.href?.replace(/^\//, '');
+      const shardPath = relativeShard
+        ? path.join(root, 'apps', 'web', 'public', ...relativeShard.split('/'))
+        : '';
+      if (!shardPath || !fs.existsSync(shardPath)) {
+        errors.push(`/practice 分片不存在：${shard.href ?? '(missing href)'}`);
+        continue;
+      }
+      const payload = JSON.parse(fs.readFileSync(shardPath, 'utf8'));
+      if (payload.year !== yearEntry.year || payload.exam !== shard.exam) {
+        errors.push(`${shard.href}: 年度或科目與索引不一致`);
+      }
+      if (payload.questions?.length !== shard.count) {
+        errors.push(`${shard.href}: 題數與索引不一致`);
+      }
+      loadedPracticeQuestions.push(...(payload.questions ?? []));
+    }
+  }
+
+  const loadedPracticeIds = new Set(loadedPracticeQuestions.map((question) => question.id));
+  if (loadedPracticeQuestions.length !== 925 || loadedPracticeIds.size !== 925) {
+    errors.push(`/practice 分片應有 925 題且不得重複，目前為 ${loadedPracticeQuestions.length} 題／${loadedPracticeIds.size} 個 ID`);
+  }
+  for (const questionId of expectedPracticeIds) {
+    if (!loadedPracticeIds.has(questionId)) errors.push(`/practice 分片遺漏 ${questionId}`);
+  }
+}
+
 for (const question of allExamQuestions) {
   const topic = topicsByRoute.get(question.lessonRoute);
   if (!topic) {
@@ -214,6 +289,34 @@ const interestHooks = fs.readFileSync(
 );
 const resourcesPage = fs.readFileSync(
   path.join(root, 'apps', 'web', 'src', 'app', 'resources', 'page.tsx'),
+  'utf8',
+);
+const navbar = fs.readFileSync(
+  path.join(root, 'apps', 'web', 'src', 'components', 'Navbar.tsx'),
+  'utf8',
+);
+const rootLayout = fs.readFileSync(
+  path.join(root, 'apps', 'web', 'src', 'app', 'layout.tsx'),
+  'utf8',
+);
+const deferredPomodoro = fs.readFileSync(
+  path.join(root, 'apps', 'web', 'src', 'components', 'DeferredPomodoro.tsx'),
+  'utf8',
+);
+const globalStyles = fs.readFileSync(
+  path.join(root, 'apps', 'web', 'src', 'app', 'globals.css'),
+  'utf8',
+);
+const practicePage = fs.readFileSync(
+  path.join(root, 'apps', 'web', 'src', 'app', 'practice', 'page.tsx'),
+  'utf8',
+);
+const examSimulator = fs.readFileSync(
+  path.join(root, 'apps', 'web', 'src', 'components', 'ExamSimulator.tsx'),
+  'utf8',
+);
+const nextConfig = fs.readFileSync(
+  path.join(root, 'apps', 'web', 'next.config.ts'),
   'utf8',
 );
 if (!topicLayout.includes('buildDetailedSolution(we)') || !topicLayout.includes('buildDetailedSolution(practice)')) {
@@ -273,6 +376,46 @@ for (const subjectSlug of expectedCategories.keys()) {
 }
 if (!interestHooks.includes('throw new Error(`Missing topic interest hook for ${routeKey}`)')) {
   errors.push('逐頁引趣文案不可使用未揭露的泛用 fallback');
+}
+if (navbar.includes("from '@/data/subjects'") || !navbar.includes("from '@/data/topicSearchIndex'")) {
+  errors.push('Navbar 不可載入 13 科完整教學資料，必須使用輕量主題索引');
+}
+if (
+  topicLayout.includes('exam-coverage.json')
+  || topicLayout.includes('common-exam-questions.json')
+  || !topicLayout.includes('mappedExamQuestions.slice(0, visibleExamQuestionCount)')
+  || !topicLayout.includes('useState(5)')
+) {
+  errors.push('教學頁 client 不可載入完整題庫，且歷屆題必須每次最多增量顯示 5 題');
+}
+if (
+  !topicLayout.includes('loading="lazy"')
+  || !topicLayout.includes('decoding="async"')
+  || !topicLayout.includes('lesson-deferred-section')
+  || !topicLayout.includes('navigator.clipboard?.writeText')
+) {
+  errors.push('教學長頁缺少題圖延遲解碼、後半內容延遲繪製或安全剪貼簿降級');
+}
+if (
+  !rootLayout.includes('ArchLowRam')
+  || !rootLayout.includes('<DeferredPomodoro />')
+  || globalStyles.includes('html.arch-lite') === false
+  || !deferredPomodoro.includes("import('@/components/quiz/PomodoroTimer')")
+  || !deferredPomodoro.includes('.catch(() =>')
+) {
+  errors.push('全站缺少 Android 低記憶體模式，或 Pomodoro 延遲載入未安全處理 chunk 失敗');
+}
+if (
+  practicePage.includes('exam-coverage.json')
+  || practicePage.includes('common-exam-questions.json')
+  || practicePage.includes('questions={')
+  || !practicePage.includes('catalog={catalogData as PracticeCatalog}')
+  || !examSimulator.includes('fetch(`${basePath}${shard.href}?v=${encodeURIComponent(catalog.version)}`')
+  || !examSimulator.includes('payload.version !== catalog.version')
+  || !examSimulator.includes("const [loading, setLoading] = useState(false)")
+  || !nextConfig.includes('publicExcludes: ["!practice-data/shards/**/*.json"]')
+) {
+  errors.push('/practice 首屏不可序列化完整題庫，必須按開始後以 basePath 安全路徑載入分片並排除預快取');
 }
 for (const requiredInterestField of ['topicSummary', 'imageAlt', 'imageCaption', 'cleanTopicDescription(topicDescription)']) {
   if (!interestHooks.includes(requiredInterestField)) {

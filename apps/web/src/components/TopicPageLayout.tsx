@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect, useMemo, useRef } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import type { SubjectData, TopicContent } from '@/data/types';
@@ -12,15 +12,14 @@ import { getTopicDeepKnowledge } from '@/lib/pedagogy/topicKnowledgeExpander';
 import { buildDetailedSolution } from '@/lib/pedagogy/solutionSteps';
 import { getLearningSources } from '@/lib/pedagogy/learningSources';
 import { isAnswerChoiceCorrect, isAnswerCorrect, isMultipleChoiceAnswer, toggleSelectedChoice } from '@/lib/examAnswers';
-import coverageRegistry from '../../../../data/registry/exam-coverage.json';
-import commonRegistry from '../../../../data/registry/common-exam-questions.json';
 
 interface TopicPageLayoutProps {
   subject: SubjectData;
   topic: TopicContent;
+  mappedExamQuestions: MappedExamQuestion[];
 }
 
-interface MappedExamQuestion {
+export interface MappedExamQuestion {
   id: string;
   subject?: string;
   topic?: string;
@@ -35,7 +34,7 @@ interface MappedExamQuestion {
   options?: Partial<Record<'A' | 'B' | 'C' | 'D', string>>;
 }
 
-export default function TopicPageLayout({ subject, topic }: TopicPageLayoutProps) {
+export default function TopicPageLayout({ subject, topic, mappedExamQuestions }: TopicPageLayoutProps) {
   const currentIndex = subject.topics.findIndex((item) => item.slug === topic.slug);
   const prevTopic = currentIndex > 0 ? subject.topics[currentIndex - 1] : null;
   const nextTopic = currentIndex < subject.topics.length - 1 ? subject.topics[currentIndex + 1] : null;
@@ -51,15 +50,9 @@ export default function TopicPageLayout({ subject, topic }: TopicPageLayoutProps
   const learningSources = getLearningSources(subject.slug);
   const isExamSubject = ['mechanics', 'materials', 'surveying', 'drafting', 'chinese', 'english', 'math-c'].includes(subject.slug);
 
-  const mappedExamQuestions = useMemo(() => {
-    const route = `/subjects/${subject.slug}/${topic.slug}`;
-    const prof = (coverageRegistry.questions as MappedExamQuestion[]).filter((q) => q.subject === subject.slug && q.topic === topic.slug);
-    const comm = (commonRegistry.questions as MappedExamQuestion[]).filter((q) => q.lessonRoute === route);
-    return [...prof, ...comm];
-  }, [subject.slug, topic.slug]);
-
   // Exam Questions Interactive Answer State
   const [selectedExamAnswers, setSelectedExamAnswers] = useState<Record<string, string>>({});
+  const [visibleExamQuestionCount, setVisibleExamQuestionCount] = useState(5);
 
   // Concept Progress Checkbox State
   const [completedConcepts, setCompletedConcepts] = useState<Record<number, boolean>>({});
@@ -94,6 +87,7 @@ export default function TopicPageLayout({ subject, topic }: TopicPageLayoutProps
     if (!isLightboxOpen) return;
 
     const previousBodyOverflow = document.body.style.overflow;
+    const interestImageButton = interestImageButtonRef.current;
     const focusTimer = window.setTimeout(() => lightboxCloseButtonRef.current?.focus(), 0);
     const handleKeyDown = (event: KeyboardEvent) => {
       if (event.key === 'Escape') {
@@ -112,7 +106,7 @@ export default function TopicPageLayout({ subject, topic }: TopicPageLayoutProps
       window.clearTimeout(focusTimer);
       document.body.style.overflow = previousBodyOverflow;
       document.removeEventListener('keydown', handleKeyDown);
-      interestImageButtonRef.current?.focus();
+      interestImageButton?.focus();
     };
   }, [isLightboxOpen]);
 
@@ -129,10 +123,27 @@ export default function TopicPageLayout({ subject, topic }: TopicPageLayoutProps
   const completedCount = Object.values(completedConcepts).filter(Boolean).length;
   const progressPercent = topic.concepts.length > 0 ? Math.round((completedCount / topic.concepts.length) * 100) : 0;
 
-  const handleCopyFormula = (formulaText: string, index: number) => {
-    navigator.clipboard.writeText(formulaText);
-    setCopiedFormulaIndex(index);
-    setTimeout(() => setCopiedFormulaIndex(null), 2000);
+  const handleCopyFormula = async (formulaText: string, index: number) => {
+    try {
+      if (navigator.clipboard?.writeText) {
+        await navigator.clipboard.writeText(formulaText);
+      } else {
+        const textarea = document.createElement('textarea');
+        textarea.value = formulaText;
+        textarea.setAttribute('readonly', '');
+        textarea.style.position = 'fixed';
+        textarea.style.opacity = '0';
+        document.body.appendChild(textarea);
+        textarea.select();
+        const copied = document.execCommand('copy');
+        textarea.remove();
+        if (!copied) throw new Error('copy command failed');
+      }
+      setCopiedFormulaIndex(index);
+      window.setTimeout(() => setCopiedFormulaIndex(null), 2000);
+    } catch {
+      setCopiedFormulaIndex(null);
+    }
   };
 
   const toggleSteps = (index: number) => {
@@ -466,12 +477,12 @@ export default function TopicPageLayout({ subject, topic }: TopicPageLayoutProps
       )}
 
       {/* Embedded Dynamic Interactive Visualizer Widget */}
-      <section className="space-y-4" aria-label="互動式幾何與力學模擬器">
+      <section className="lesson-deferred-section space-y-4" aria-label="互動式幾何與力學模擬器">
         <InteractiveVisualizer subjectSlug={subject.slug} topicSlug={topic.slug} />
       </section>
 
       {/* === [Iconic Landmark Engineering Case Study] === */}
-      <section className="rounded-2xl border border-sky-200 dark:border-sky-900/60 bg-sky-50/30 dark:bg-sky-950/20 p-5 sm:p-7 shadow-xs space-y-4">
+      <section className="lesson-deferred-section rounded-2xl border border-sky-200 dark:border-sky-900/60 bg-sky-50/30 dark:bg-sky-950/20 p-5 sm:p-7 shadow-xs space-y-4">
         <div className="flex items-center justify-between border-b border-sky-200/60 dark:border-sky-900/40 pb-3">
           <div className="flex items-center gap-2">
             <span className="flex size-7 items-center justify-center rounded-lg bg-sky-600 text-white text-xs font-mono font-bold">
@@ -508,7 +519,7 @@ export default function TopicPageLayout({ subject, topic }: TopicPageLayoutProps
       </section>
 
       {/* === [Problem-Solving Decision Matrix & Exam Trend] === */}
-      <section id="traps" className="scroll-mt-24 rounded-2xl border border-amber-200 dark:border-amber-900/60 bg-amber-50/20 dark:bg-amber-950/20 p-5 sm:p-7 shadow-xs space-y-4">
+      <section id="traps" className="lesson-deferred-section scroll-mt-24 rounded-2xl border border-amber-200 dark:border-amber-900/60 bg-amber-50/20 dark:bg-amber-950/20 p-5 sm:p-7 shadow-xs space-y-4">
         <div className="flex flex-wrap items-center justify-between gap-2 border-b border-amber-200/60 dark:border-amber-900/40 pb-3">
           <div className="flex items-center gap-2">
             <span className="flex size-7 items-center justify-center rounded-lg bg-amber-600 text-white text-xs font-mono font-bold">
@@ -547,7 +558,7 @@ export default function TopicPageLayout({ subject, topic }: TopicPageLayoutProps
       </section>
 
       {/* === [CNS Standards & Bilingual Technical Glossary Tabs] === */}
-      <section className="grid gap-4 sm:grid-cols-2">
+      <section className="lesson-deferred-section grid gap-4 sm:grid-cols-2">
         {/* CNS Standard Card */}
         <div className="rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 p-5 space-y-2 shadow-xs">
           <div className="flex items-center gap-2 text-xs font-mono font-bold text-slate-500">
@@ -587,7 +598,7 @@ export default function TopicPageLayout({ subject, topic }: TopicPageLayoutProps
       </section>
 
       {/* === Core Concepts List === */}
-      <div id="principles" className="scroll-mt-24 space-y-6">
+      <div id="principles" className="lesson-deferred-section scroll-mt-24 space-y-6">
         <div className="flex items-center justify-between">
           <h2 className="font-serif text-2xl font-bold text-slate-900 dark:text-white flex items-center gap-2">
             <span>核心觀念與名詞精講</span>
@@ -738,7 +749,7 @@ export default function TopicPageLayout({ subject, topic }: TopicPageLayoutProps
 
       {/* === Worked Examples Section === */}
       {topic.worked_examples?.length ? (
-        <section id="worked" className="scroll-mt-24 space-y-4 pt-4" aria-labelledby="worked-title">
+        <section id="worked" className="lesson-deferred-section scroll-mt-24 space-y-4 pt-4" aria-labelledby="worked-title">
           <div className="flex items-center justify-between gap-2">
             <div>
               <span className="text-xs font-mono uppercase tracking-widest text-blue-600 dark:text-blue-400 font-bold">
@@ -808,7 +819,7 @@ export default function TopicPageLayout({ subject, topic }: TopicPageLayoutProps
 
       {/* === Self Practice Section === */}
       {practices.length ? (
-        <section id="practice" className="scroll-mt-24 space-y-4 pt-4" aria-labelledby="practice-title">
+        <section id="practice" className="lesson-deferred-section scroll-mt-24 space-y-4 pt-4" aria-labelledby="practice-title">
           <div>
             <span className="text-xs font-mono uppercase tracking-widest text-emerald-600 dark:text-emerald-400 font-bold">
               Progressive Self-Assessment
@@ -857,7 +868,7 @@ export default function TopicPageLayout({ subject, topic }: TopicPageLayoutProps
 
       {/* === [Mapped Past Exam Questions: Active Retrieval Section] === */}
       {mappedExamQuestions.length > 0 ? (
-        <section id="exam-questions-section" className="space-y-4 pt-4" aria-labelledby="exam-qs-title">
+        <section id="exam-questions-section" className="lesson-deferred-section space-y-4 pt-4" aria-labelledby="exam-qs-title">
           <div className="flex items-center justify-between gap-2">
             <div>
               <span className="text-xs font-mono uppercase tracking-widest text-indigo-600 dark:text-indigo-400 font-bold">
@@ -873,7 +884,7 @@ export default function TopicPageLayout({ subject, topic }: TopicPageLayoutProps
           </div>
 
           <div className="space-y-4">
-            {mappedExamQuestions.map((q, idx: number) => {
+            {mappedExamQuestions.slice(0, visibleExamQuestionCount).map((q, idx: number) => {
               const userChoice = selectedExamAnswers[q.id];
               const isAnswered = Boolean(userChoice);
               const isCorrect = isAnswered && isAnswerCorrect(q.answer, userChoice);
@@ -916,6 +927,8 @@ export default function TopicPageLayout({ subject, topic }: TopicPageLayoutProps
                       <img
                         src={`${process.env.NEXT_PUBLIC_BASE_PATH ?? ''}${q.figureImage}`}
                         alt={`第 ${q.questionNo} 題圖面`}
+                        loading="lazy"
+                        decoding="async"
                         className="mx-auto max-h-80 w-auto object-contain"
                       />
                     </figure>
@@ -973,16 +986,25 @@ export default function TopicPageLayout({ subject, topic }: TopicPageLayoutProps
               );
             })}
           </div>
+          {visibleExamQuestionCount < mappedExamQuestions.length ? (
+            <button
+              type="button"
+              onClick={() => setVisibleExamQuestionCount((count) => Math.min(count + 5, mappedExamQuestions.length))}
+              className="min-h-11 w-full rounded-xl border border-indigo-300 bg-indigo-50 px-4 text-sm font-bold text-indigo-800 hover:bg-indigo-100 dark:border-indigo-800 dark:bg-indigo-950/40 dark:text-indigo-200"
+            >
+              再載入 {Math.min(5, mappedExamQuestions.length - visibleExamQuestionCount)} 題
+            </button>
+          ) : null}
         </section>
       ) : isExamSubject ? (
-        <section id="exam-questions-section" className="rounded-2xl border border-amber-300 bg-amber-50 p-5 text-sm leading-7 text-amber-950 dark:border-amber-800 dark:bg-amber-950/30 dark:text-amber-100">
+        <section id="exam-questions-section" className="lesson-deferred-section rounded-2xl border border-amber-300 bg-amber-50 p-5 text-sm leading-7 text-amber-950 dark:border-amber-800 dark:bg-amber-950/30 dark:text-amber-100">
           <p className="font-bold">本章目前沒有可誠實連入的 111–115 官方真題。</p>
           <p className="mt-1">教材與五題詳解仍依官方考綱持續建設；在逐題確認題幹確實考查本知識點之前，不以關鍵字硬掛真題，也不把合成題冒充歷屆題。</p>
         </section>
       ) : null}
 
       {/* === [One-Sentence Mastery Recap & Exit Check] === */}
-      <section id="sources" className="scroll-mt-24 rounded-2xl border border-indigo-200 dark:border-indigo-900/60 bg-gradient-to-r from-indigo-50/50 via-white to-sky-50/40 dark:from-indigo-950/30 dark:via-slate-900 dark:to-slate-900 p-6 sm:p-7 shadow-xs space-y-3">
+      <section id="sources" className="lesson-deferred-section scroll-mt-24 rounded-2xl border border-indigo-200 dark:border-indigo-900/60 bg-gradient-to-r from-indigo-50/50 via-white to-sky-50/40 dark:from-indigo-950/30 dark:via-slate-900 dark:to-slate-900 p-6 sm:p-7 shadow-xs space-y-3">
         <div className="flex items-center justify-between">
           <span className="flex items-center gap-1.5 text-xs font-mono font-bold uppercase tracking-wider text-indigo-700 dark:text-indigo-300">
             🏆 離開前一句話通關自評

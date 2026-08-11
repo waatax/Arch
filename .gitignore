@@ -8,3 +8,28 @@ dist
 tmp/
 scratch/
 
+# Android local state and build outputs
+android/.gradle/
+android/**/build/
+android/local.properties
+android/keystore.properties
+android/captures/
+android/.idea/
+android/.cxx/
+android/**/.externalNativeBuild/
+
+# Signing material must never be committed. Release signing is supplied via
+# Gradle properties or environment variables documented in android/README.md.
+*.jks
+*.keystore
+*.p12
+*.pfx
+key.properties
+
+# Android packages belong in CI/Play artifacts, not Git history.
+*.apk
+*.aab
+*.apks
+*.idsig
+arch.learn.tw-mapping.txt
+
