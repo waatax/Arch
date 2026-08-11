@@ -13,6 +13,7 @@ const navLinks = [
   { href: '/practice', label: '歷屆模擬' },
   { href: '/cases', label: '建築案例' },
   { href: '/exams', label: '統測題庫' },
+  { href: '/resources', label: '學習資源' },
 ];
 
 export default function Navbar() {

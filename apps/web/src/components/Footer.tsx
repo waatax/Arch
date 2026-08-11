@@ -60,6 +60,11 @@ export default function Footer() {
                   • 台灣建築案例實驗室
                 </Link>
               </li>
+              <li>
+                <Link href="/resources" className="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
+                  • 統測優質學習網站導航
+                </Link>
+              </li>
             </ul>
           </div>
 

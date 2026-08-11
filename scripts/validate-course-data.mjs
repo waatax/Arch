@@ -135,6 +135,10 @@ const learningSources = fs.readFileSync(
   path.join(root, 'apps', 'web', 'src', 'lib', 'pedagogy', 'learningSources.ts'),
   'utf8',
 );
+const resourcesPage = fs.readFileSync(
+  path.join(root, 'apps', 'web', 'src', 'app', 'resources', 'page.tsx'),
+  'utf8',
+);
 if (!topicLayout.includes('buildDetailedSolution(we)') || !topicLayout.includes('buildDetailedSolution(practice)')) {
   errors.push('所有例題與練習必須套用五段式詳細解析');
 }
@@ -143,6 +147,9 @@ if (!solutionSteps.includes('while (unique.length < 5)')) {
 }
 if (!topicLayout.includes('getLearningSources(subject.slug)') || !learningSources.includes('官方命題依據')) {
   errors.push('所有教學頁必須呈現官方命題依據與研究來源');
+}
+if (!resourcesPage.includes('官方一級來源') || !resourcesPage.includes('補充解題研究') || !resourcesPage.includes('最後查核 2026-08-11')) {
+  errors.push('統測學習資源專區缺少來源分級、補充解析或查核日期');
 }
 for (const requiredVisual of ['concept-modeling.png', 'solution-verification.png']) {
   if (!topicLayout.includes(requiredVisual)) {
