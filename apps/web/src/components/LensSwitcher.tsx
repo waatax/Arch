@@ -22,7 +22,7 @@ export default function LensSwitcher({ lenses }: LensSwitcherProps) {
   return (
     <div className="w-full bg-(--color-paper-50) border border-(--color-concrete-300) rounded-xl p-4 sm:p-6 my-6 sm:my-8">
       <h3 className="text-xl font-bold font-serif text-(--color-ink-900) mb-2">
-        六鏡頭建築閱讀法
+        多鏡頭建築閱讀法
       </h3>
       <p className="text-sm text-(--color-ink-650) mb-6">
         切換不同觀察鏡頭，從多元視角拆解建築設計與工程細節：

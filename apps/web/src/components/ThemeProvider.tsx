@@ -40,17 +40,21 @@ export function useTheme() {
 }
 
 export default function ThemeProvider({ children }: { children: ReactNode }) {
-  const [theme, setTheme] = useState<Theme>(() => {
-    if (typeof window === 'undefined') return 'light';
-    const savedTheme = readStorage('arch-theme');
-    if (savedTheme === 'light' || savedTheme === 'dark') return savedTheme;
-    return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-  });
-  const [fontSize, setFontSizeState] = useState<FontSize>(() => {
-    if (typeof window === 'undefined') return 'base';
-    const savedFontSize = readStorage('arch-font-size');
-    return savedFontSize === 'sm' || savedFontSize === 'lg' ? savedFontSize : 'base';
-  });
+  // Keep the first client render identical to SSR, then restore preferences.
+  const [theme, setTheme] = useState<Theme>('light');
+  const [fontSize, setFontSizeState] = useState<FontSize>('base');
+
+  useEffect(() => {
+    const restorePreferences = window.setTimeout(() => {
+      const savedTheme = readStorage('arch-theme');
+      setTheme(savedTheme === 'light' || savedTheme === 'dark'
+        ? savedTheme
+        : window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+      const savedFontSize = readStorage('arch-font-size');
+      setFontSizeState(savedFontSize === 'sm' || savedFontSize === 'lg' ? savedFontSize : 'base');
+    }, 0);
+    return () => window.clearTimeout(restorePreferences);
+  }, []);
 
   useEffect(() => {
     const root = document.documentElement;

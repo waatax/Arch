@@ -10,9 +10,10 @@ interface CaseHeroProps {
   category: string;
   imageSrc?: string;
   imageAlt?: string;
+  imageCaption?: string;
 }
 
-export default function CaseHero({ title, location, architect, year, question, description, category, imageSrc, imageAlt }: CaseHeroProps) {
+export default function CaseHero({ title, location, architect, year, question, description, category, imageSrc, imageAlt, imageCaption = 'AI Generated Visualization' }: CaseHeroProps) {
   return (
     <section className="w-full bg-(--color-paper-100) border-b border-(--color-concrete-300) py-8 sm:py-12 px-4 sm:px-6 lg:px-8">
       <div className="max-w-4xl mx-auto">
@@ -54,7 +55,7 @@ export default function CaseHero({ title, location, architect, year, question, d
               />
             </div>
             <figcaption className="px-4 py-2 text-xs font-mono text-(--color-ink-650) border-t border-(--color-concrete-300) text-right">
-              AI Generated Visualization
+              {imageCaption}
             </figcaption>
           </figure>
         )}
