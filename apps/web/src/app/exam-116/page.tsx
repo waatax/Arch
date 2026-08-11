@@ -40,7 +40,7 @@ export default function Exam116Page() {
   const partialChapters = allChapters.filter((c) => c.coverageStatus === 'partial');
 
   return (
-    <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 space-y-12">
+    <div className="mx-auto w-full min-w-0 max-w-6xl space-y-10 px-3 py-6 sm:space-y-12 sm:px-6 sm:py-12 lg:px-8">
       {/* ── Header ─────────────────────────────── */}
       <header className="space-y-4">
         <span className="text-xs font-mono text-blue-600 dark:text-blue-400 uppercase tracking-widest block font-bold">
@@ -114,7 +114,39 @@ export default function Exam116Page() {
         <h2 id="changes-heading" className="font-serif text-2xl sm:text-3xl font-bold text-slate-900 dark:text-white">
           新制到底改了什麼
         </h2>
-        <div className="overflow-x-auto rounded-2xl border border-slate-200 dark:border-slate-800">
+        <div className="grid gap-3 sm:hidden">
+          {CHANGES.map((c) => (
+            <article
+              key={c.id}
+              className="min-w-0 rounded-2xl border border-slate-200 bg-white p-4 dark:border-slate-800 dark:bg-slate-900"
+            >
+              <div className="flex min-w-0 flex-wrap items-start justify-between gap-2 border-b border-slate-200 pb-3 dark:border-slate-800">
+                <h3 className="min-w-0 flex-1 font-bold text-slate-900 dark:text-white">
+                  {c.scope} <SourceTag id={c.sourceId} />
+                </h3>
+                <span className="shrink-0 rounded-full bg-blue-600/10 px-2.5 py-1 text-xs font-mono font-bold text-blue-700 dark:text-blue-300">
+                  {c.effectiveFrom}
+                </span>
+              </div>
+              <dl className="mt-3 space-y-3 text-sm">
+                <div>
+                  <dt className="text-xs font-bold text-slate-500 dark:text-slate-400">原制度</dt>
+                  <dd className="mt-1 text-slate-500 line-through decoration-slate-400/60 dark:text-slate-400">{c.before}</dd>
+                </div>
+                <div>
+                  <dt className="text-xs font-bold text-slate-500 dark:text-slate-400">新制度</dt>
+                  <dd className="mt-1 text-slate-800 dark:text-slate-100">{c.after}</dd>
+                </div>
+              </dl>
+              {c.principle && (
+                <p className="mt-3 rounded-lg border border-amber-200 bg-amber-50 px-2.5 py-2 text-xs text-amber-800 dark:border-amber-900 dark:bg-amber-950/40 dark:text-amber-200">
+                  原則：{c.principle}
+                </p>
+              )}
+            </article>
+          ))}
+        </div>
+        <div className="hidden overflow-x-auto rounded-2xl border border-slate-200 dark:border-slate-800 sm:block">
           <table className="w-full min-w-[720px] text-sm">
             <caption className="sr-only">116 及 117 學年度四技二專入學考招制度調整對照表</caption>
             <thead className="bg-slate-100 dark:bg-slate-800/80">
@@ -170,8 +202,8 @@ export default function Exam116Page() {
                   : 'border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900'
               }`}
             >
-              <div className="flex items-center justify-between gap-2">
-                <h3 className="font-serif text-lg font-bold text-slate-900 dark:text-white">{s.name}</h3>
+              <div className="flex flex-wrap items-start justify-between gap-2">
+                <h3 className="min-w-0 flex-1 font-serif text-lg font-bold text-slate-900 dark:text-white">{s.name}</h3>
                 <span
                   className={`rounded-full px-2.5 py-0.5 text-[10px] font-mono font-bold ${
                     s.kind === 'professional'
@@ -213,12 +245,12 @@ export default function Exam116Page() {
           {DECISION_STEPS.map((d) => (
             <li
               key={d.step}
-              className="flex gap-4 rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 p-5"
+              className="flex min-w-0 gap-3 rounded-2xl border border-slate-200 bg-white p-4 dark:border-slate-800 dark:bg-slate-900 sm:gap-4 sm:p-5"
             >
               <span className="flex size-9 shrink-0 items-center justify-center rounded-xl bg-blue-600 font-mono text-base font-bold text-white">
                 {d.step}
               </span>
-              <div className="space-y-1">
+              <div className="min-w-0 space-y-1">
                 <h3 className="font-bold text-slate-900 dark:text-white">{d.title}</h3>
                 <p className="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">{d.body}</p>
               </div>
@@ -281,8 +313,8 @@ export default function Exam116Page() {
                         : 'border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900'
                     }`}
                   >
-                    <div className="flex items-start justify-between gap-2">
-                      <h4 className="font-bold text-slate-900 dark:text-white">
+                    <div className="flex flex-wrap items-start justify-between gap-2">
+                      <h4 className="min-w-0 flex-1 font-bold text-slate-900 dark:text-white">
                         <span className="font-mono text-slate-400 mr-1.5">{ch.no}</span>
                         {ch.title}
                       </h4>
