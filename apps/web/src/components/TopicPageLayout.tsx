@@ -202,8 +202,8 @@ export default function TopicPageLayout({ subject, topic }: TopicPageLayoutProps
           className="scroll-mt-24 overflow-hidden rounded-3xl border border-blue-200 bg-gradient-to-br from-blue-50 via-white to-amber-50/70 shadow-sm dark:border-blue-900/60 dark:from-blue-950/45 dark:via-slate-900 dark:to-amber-950/20"
           aria-labelledby="interest-hook-title"
         >
-          <div className="grid lg:grid-cols-[1.12fr_0.88fr]">
-            <div className="space-y-5 p-5 pb-4 sm:p-7 sm:pb-5 lg:col-start-1 lg:row-start-1 lg:p-8 lg:pb-3">
+          <div className="grid lg:grid-cols-2">
+            <div className="min-w-0 space-y-5 p-5 pb-4 sm:p-7 sm:pb-5 lg:col-start-1 lg:row-start-1 lg:p-8 lg:pb-3">
               <div className="flex flex-wrap items-center gap-2">
                 <span className="rounded-full bg-blue-600 px-3 py-1 text-[11px] font-bold tracking-wide text-white shadow-sm">
                   先別急著背
@@ -223,7 +223,7 @@ export default function TopicPageLayout({ subject, topic }: TopicPageLayoutProps
               </div>
             </div>
 
-            <figure id="observable" className="group flex scroll-mt-24 flex-col border-y border-blue-100 bg-white/80 dark:border-blue-950 dark:bg-slate-950/70 lg:col-start-2 lg:row-span-2 lg:row-start-1 lg:border-b-0 lg:border-l lg:border-r-0 lg:border-t-0">
+            <figure id="observable" className="group flex min-w-0 scroll-mt-24 flex-col border-y border-blue-100 bg-white/80 dark:border-blue-950 dark:bg-slate-950/70 lg:col-start-2 lg:row-span-2 lg:row-start-1 lg:border-b-0 lg:border-l lg:border-r-0 lg:border-t-0">
               <button
                 ref={interestImageButtonRef}
                 type="button"
@@ -254,7 +254,7 @@ export default function TopicPageLayout({ subject, topic }: TopicPageLayoutProps
               </figcaption>
             </figure>
 
-            <div className="space-y-5 px-5 pb-5 sm:px-7 sm:pb-7 lg:col-start-1 lg:row-start-2 lg:px-8 lg:pb-8">
+            <div className="min-w-0 space-y-5 px-5 pb-5 sm:px-7 sm:pb-7 lg:col-start-1 lg:row-start-2 lg:px-8 lg:pb-8">
 
               <div id="exam-focus" className="grid scroll-mt-24 gap-3 sm:grid-cols-2">
                 <article className="rounded-2xl border border-blue-200/80 bg-white/90 p-4 dark:border-blue-900/70 dark:bg-slate-900/80">
