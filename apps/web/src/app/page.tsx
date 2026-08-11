@@ -18,8 +18,7 @@ export default function Home() {
           </div>
 
           <h1 className="text-3xl min-[390px]:text-4xl sm:text-5xl lg:text-6xl font-bold font-serif text-slate-900 dark:text-white tracking-tight leading-[1.15]">
-            看懂設計、學會力學與測量、<br className="hidden sm:inline" />
-            動手做出屬於你的建築作品。
+            懂設計、會量測、動手產出建築作品
           </h1>
 
           <p className="text-base sm:text-xl text-slate-600 dark:text-slate-400 max-w-3xl leading-relaxed">

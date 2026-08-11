@@ -8,11 +8,10 @@ import { topicSearchIndex } from '@/data/topicSearchIndex';
 
 const navLinks = [
   { href: '/', label: '首頁' },
-  { href: '/exam-116', label: '116 選考指南' },
+  { href: '/exam-116', label: '入學指南' },
   { href: '/curriculum', label: '課程地圖' },
   { href: '/practice', label: '歷屆模擬' },
   { href: '/cases', label: '建築案例' },
-  { href: '/exams', label: '統測題庫' },
   { href: '/resources', label: '學習資源' },
 ];
 
@@ -108,7 +107,7 @@ export default function Navbar() {
             })}
           </div>
 
-          {/* Search Trigger, Exam Badge & Theme Controls */}
+          {/* Search Trigger & Theme Controls */}
           <div className="flex items-center gap-2">
             {/* Quick Search Button */}
             <button
@@ -121,12 +120,6 @@ export default function Navbar() {
                 ⌘K
               </kbd>
             </button>
-
-            {/* TVET Countdown Badge */}
-            <div className="hidden xl:flex items-center gap-1 px-2.5 py-1 rounded-full bg-emerald-50 dark:bg-emerald-950/60 border border-emerald-200 dark:border-emerald-800/80 text-[11px] font-mono text-emerald-700 dark:text-emerald-300">
-              <span className="size-2 rounded-full bg-emerald-500 animate-pulse" />
-              <span>115 統測衝刺</span>
-            </div>
 
             <div className="hidden sm:block h-5 w-px bg-slate-200 dark:bg-slate-800" />
 

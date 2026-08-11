@@ -16,14 +16,15 @@ const subjectNames: Record<string, string> = {
   mechanics: '工程力學', materials: '材料與試驗', surveying: '測量實習', drafting: '製圖實習',
 };
 
-export default function ExamsPage() {
+export function ExamsContent({ embedded = false }: { embedded?: boolean }) {
   const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? '';
   const learningHref = (route: string) => `${basePath}${route.replace(/\/$/, '')}/`;
   const topicCount = new Set(coverage.questions.map((question) => question.lessonRoute)).size;
+  const Wrapper = embedded ? 'section' : 'main';
 
-  return <main className="mx-auto max-w-6xl space-y-12 px-4 py-10 sm:px-6 sm:py-14">
+  return <Wrapper id={embedded ? 'question-bank' : undefined} className={embedded ? 'space-y-12 border-t border-slate-200 pt-12 dark:border-slate-800' : 'mx-auto max-w-6xl space-y-12 px-4 py-10 sm:px-6 sm:py-14'}>
     <header className="grid gap-8 lg:grid-cols-[1fr_23rem] lg:items-end">
-      <div><p className="text-xs font-mono uppercase tracking-[0.2em] text-blue-600 dark:text-blue-400">Arch V6.22 · 2022–2026</p><h1 className="mt-2 font-serif text-3xl font-bold leading-tight text-slate-900 dark:text-white sm:text-5xl">近五年建築群統測<br />全科目題庫</h1><p className="mt-5 max-w-3xl text-base leading-8 text-slate-600 dark:text-slate-400">完整收錄國文、英文、數學(C)、專業科目（一）與（二）。共同科目提供官方原題與答案；400 題專業科目另連到 Arch 對應教學章節。</p><Link href="/practice" className="mt-6 inline-flex min-h-12 items-center rounded-xl bg-blue-600 dark:bg-blue-500 px-6 font-bold text-white">開始全科目模擬測試 →</Link></div>
+      <div><p className="text-xs font-mono uppercase tracking-[0.2em] text-blue-600 dark:text-blue-400">Arch V6.22 · 2022–2026</p><h1 className="mt-2 font-serif text-3xl font-bold leading-tight text-slate-900 dark:text-white sm:text-5xl">近五年建築群統測<br />全科目題庫</h1><p className="mt-5 max-w-3xl text-base leading-8 text-slate-600 dark:text-slate-400">完整收錄國文、英文、數學(C)、專業科目（一）與（二）。共同科目提供官方原題與答案；400 題專業科目另連到 Arch 對應教學章節。</p>{!embedded && <Link href="/practice" className="mt-6 inline-flex min-h-12 items-center rounded-xl bg-blue-600 dark:bg-blue-500 px-6 font-bold text-white">開始全科目模擬測試 →</Link>}</div>
       <aside className="grid grid-cols-3 gap-2 rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-900 p-4 text-center"><div><strong className="block font-serif text-2xl text-slate-900 dark:text-white">5</strong><span className="text-xs text-slate-600 dark:text-slate-400">學年度</span></div><div><strong className="block font-serif text-2xl text-slate-900 dark:text-white">5</strong><span className="text-xs text-slate-600 dark:text-slate-400">完整考科</span></div><div><strong className="block font-serif text-2xl text-blue-600 dark:text-blue-400">925</strong><span className="text-xs text-slate-600 dark:text-slate-400">選擇題</span></div></aside>
     </header>
 
@@ -37,5 +38,9 @@ export default function ExamsPage() {
         </div>
       </article>)}
     </section>
-  </main>;
+  </Wrapper>;
+}
+
+export default function ExamsPage() {
+  return <ExamsContent />;
 }
