@@ -33,6 +33,7 @@ const store = read('apps/web/src/lib/store/studentStore.ts');
 const examSimulator = read('apps/web/src/components/ExamSimulator.tsx');
 const answerLogic = read('apps/web/src/lib/examAnswers.ts');
 const core = read('V6-Core.md');
+const sevenIterationSource = read('apps/web/src/lib/pedagogy/sevenIterationEnrichment.ts');
 
 const checks = [
   ['資料結構', () => topics.every(({ topic }) => topic.title && topic.desc && topic.status === 'done')],
@@ -47,14 +48,25 @@ const checks = [
   ['116 制度與判分防誤導', () => core.includes('自主選考至少 2 科') && core.includes('不得顯示任何「總分 / 700」') && exists('apps/web/src/app/exam-116/page.tsx') && answerLogic.includes('normalizedChoices(selected) === normalizedChoices(answer)') && examSimulator.includes("type={multiple ? 'checkbox' : 'radio'}") && !layout.includes('answer.includes(userChoice)') && !examSimulator.includes('answer.includes(selected)')],
 ];
 
+checks.push(
+  ['每輪至少新增 10% 教學單元', () => topics.every(({ topic }) => {
+    const baseline = topic.concepts.length + (topic.worked_examples?.length ?? 0) + (topic.practices?.length ?? (topic.practice ? 1 : 0));
+    return 6 >= Math.max(1, Math.ceil(baseline * 0.1));
+  }) && Array.from({ length: 7 }, (_, index) => `pack(${index + 1},`).every((token) => sevenIterationSource.includes(token))],
+  ['每輪至少五項品質優化', () => ['目標更清楚', '資訊更易讀', '認知負荷更低', '回饋更具體', '課綱與題目更緊密'].every((token) => sevenIterationSource.includes(token))],
+  ['七輪全頁路由與互動導覽', () => layout.includes('getSevenIterationPacks(') && layout.includes('iterationPacks.map((pack)') && layout.includes('id="seven-iterations"') && layout.includes("['seven-iterations', '3 七輪深化']")],
+  ['課綱能力與歷屆題證據', () => ['observe:', 'model:', 'verify:', 'transfer:', 'evidence:'].every((token) => sevenIterationSource.includes(token)) && sevenIterationSource.includes('mappedExamExcerpts[0]') && sevenIterationSource.includes('官方題目線索')],
+);
+
 const failures = [];
 let passNo = 0;
+const totalPasses = checks.length * 7;
 for (let iteration = 1; iteration <= 7; iteration += 1) {
   for (const [name, check] of checks) {
     passNo += 1;
     let ok = false;
     try { ok = Boolean(check()); } catch { ok = false; }
-    console.log(`${ok ? 'PASS' : 'FAIL'} ${String(passNo).padStart(2, '0')}/70 · R${iteration} · ${name}`);
+    console.log(`${ok ? 'PASS' : 'FAIL'} ${String(passNo).padStart(2, '0')}/${totalPasses} · R${iteration} · ${name}`);
     if (!ok) failures.push(`R${iteration} ${name}`);
   }
 }
@@ -64,4 +76,4 @@ if (failures.length) {
   console.error(`V6 品質閘門失敗（${failures.length}）：${failures.join('、')}`);
   process.exit(1);
 }
-console.log('V6 70-Pass 品質閘門全部通過。');
+console.log(`V6 ${totalPasses}-Pass 品質閘門全部通過。`);

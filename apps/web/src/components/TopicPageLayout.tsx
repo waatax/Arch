@@ -9,6 +9,7 @@ import InteractiveVisualizer from '@/components/visualizers/InteractiveVisualize
 import { getTopicRealLifeGuide } from '@/lib/pedagogy/realLifeHelpers';
 import { getTopicInterestHook } from '@/lib/pedagogy/interestHooks';
 import { getTopicDeepKnowledge } from '@/lib/pedagogy/topicKnowledgeExpander';
+import { getSevenIterationPacks } from '@/lib/pedagogy/sevenIterationEnrichment';
 import { buildDetailedSolution } from '@/lib/pedagogy/solutionSteps';
 import { getLearningSources } from '@/lib/pedagogy/learningSources';
 import { isAnswerChoiceCorrect, isAnswerCorrect, isMultipleChoiceAnswer, toggleSelectedChoice } from '@/lib/examAnswers';
@@ -164,6 +165,11 @@ export default function TopicPageLayout({ subject, topic, mappedExamQuestions }:
     realLifeGuide,
   });
   const deepKnowledge = getTopicDeepKnowledge(subject.slug, topic.slug);
+  const iterationPacks = getSevenIterationPacks(
+    subject.slug,
+    topic,
+    mappedExamQuestions.map((question) => question.excerpt),
+  );
 
   return (
     <article className="mx-auto max-w-4xl space-y-8 px-4 py-8 sm:px-6 sm:py-12 pb-28">
@@ -360,8 +366,8 @@ export default function TopicPageLayout({ subject, topic, mappedExamQuestions }:
         {/* Seven-part lesson path: every control navigates to real content. */}
         <div className="flex items-center gap-1 overflow-x-auto pb-1 border-b border-slate-200 dark:border-slate-800 text-xs font-mono" aria-label="七段教學快速導覽">
           {[
-            ['exam-focus', '1 這在考什麼'], ['observable', '2 看得到的東西'], ['principles', '3 原理推導'],
-            ['worked', '4 示範題'], ['practice', '5 自己做'], ['traps', '6 最容易錯'], ['sources', '7 來源版本'],
+            ['exam-focus', '1 這在考什麼'], ['observable', '2 看得到的東西'], ['seven-iterations', '3 七輪深化'], ['principles', '4 原理推導'],
+            ['worked', '5 示範題'], ['practice', '6 自己做'], ['traps', '7 最容易錯'], ['sources', '8 來源版本'],
           ].map(([id, label]) => (
             <button key={id} onClick={() => jumpTo(id)} className="shrink-0 rounded-t-lg px-3.5 py-2 font-bold text-slate-600 transition-colors hover:bg-blue-600 hover:text-white dark:text-slate-400">
               {label}
@@ -594,6 +600,55 @@ export default function TopicPageLayout({ subject, topic, mappedExamQuestions }:
               </div>
             ))}
           </div>
+        </div>
+      </section>
+
+      <section id="seven-iterations" className="lesson-deferred-section scroll-mt-24 space-y-5" aria-labelledby="seven-iterations-title">
+        <div className="space-y-2">
+          <div className="flex flex-wrap items-center gap-2">
+            <span className="rounded-full bg-violet-600 px-3 py-1 text-xs font-bold text-white">七輪深度精熟</span>
+            <span className="rounded-full border border-emerald-300 bg-emerald-50 px-3 py-1 text-xs font-bold text-emerald-800 dark:border-emerald-800 dark:bg-emerald-950/50 dark:text-emerald-200">每輪新增教學單元 ≥ 10%</span>
+            <span className="rounded-full border border-blue-300 bg-blue-50 px-3 py-1 text-xs font-bold text-blue-800 dark:border-blue-800 dark:bg-blue-950/50 dark:text-blue-200">每輪 5 項品質優化</span>
+          </div>
+          <h2 id="seven-iterations-title" className="font-serif text-2xl font-bold text-slate-900 dark:text-white">從看懂到能遷移：七次有證據的深化</h2>
+          <p className="max-w-3xl text-sm leading-7 text-slate-600 dark:text-slate-400">
+            七輪不是重複複習：依序補先備知識、概念網、推導、多重表徵、錯誤診斷、歷屆題變式與長期精熟。每輪皆有新增知識、引導問題及五項品質檢核。
+          </p>
+        </div>
+        <div className="space-y-3">
+          {iterationPacks.map((pack) => (
+            <details key={pack.iteration} className="group rounded-2xl border border-violet-200 bg-white shadow-xs open:border-violet-400 dark:border-violet-900 dark:bg-slate-900">
+              <summary className="flex min-h-14 cursor-pointer list-none items-center gap-3 p-4 sm:p-5">
+                <span className="flex size-9 shrink-0 items-center justify-center rounded-xl bg-violet-600 font-mono text-sm font-bold text-white">R{pack.iteration}</span>
+                <span className="min-w-0 flex-1">
+                  <span className="block font-bold text-slate-900 dark:text-white">{pack.title}</span>
+                  <span className="mt-0.5 block text-xs leading-5 text-slate-500 dark:text-slate-400">{pack.purpose}</span>
+                </span>
+                <span className="hidden rounded-full bg-emerald-100 px-2.5 py-1 text-[11px] font-bold text-emerald-800 dark:bg-emerald-950 dark:text-emerald-200 sm:inline">新增 {pack.addedUnits} 單元／門檻 {pack.requiredUnits}</span>
+                <span className="text-violet-600 transition-transform group-open:rotate-180" aria-hidden="true">⌄</span>
+              </summary>
+              <div className="grid gap-4 border-t border-violet-100 p-4 sm:p-5 lg:grid-cols-[1.2fr_0.8fr] dark:border-violet-950">
+                <div className="space-y-3">
+                  <h3 className="text-sm font-bold text-violet-800 dark:text-violet-200">本輪新增知識</h3>
+                  <ol className="space-y-2 text-sm leading-7 text-slate-700 dark:text-slate-300">
+                    {pack.knowledgePoints.map((point, index) => <li key={point} className="flex gap-2"><span className="font-mono font-bold text-violet-600">{index + 1}.</span><span>{point}</span></li>)}
+                  </ol>
+                  <div className="rounded-xl bg-amber-50 p-4 dark:bg-amber-950/30">
+                    <h3 className="mb-2 text-xs font-bold text-amber-900 dark:text-amber-200">引導問題</h3>
+                    <ul className="space-y-2 text-sm leading-6 text-amber-950 dark:text-amber-100">
+                      {pack.guidedQuestions.map((question) => <li key={question}>• {question}</li>)}
+                    </ul>
+                  </div>
+                </div>
+                <aside className="rounded-xl border border-blue-200 bg-blue-50/60 p-4 dark:border-blue-900 dark:bg-blue-950/30">
+                  <h3 className="mb-2 text-xs font-bold text-blue-900 dark:text-blue-200">本輪 5%＋品質校正</h3>
+                  <ul className="space-y-2 text-xs leading-6 text-blue-950 dark:text-blue-100">
+                    {pack.qualityUpgrades.map((upgrade) => <li key={upgrade} className="flex gap-2"><span aria-hidden="true">✓</span><span>{upgrade}</span></li>)}
+                  </ul>
+                </aside>
+              </div>
+            </details>
+          ))}
         </div>
       </section>
 

@@ -326,6 +326,10 @@ const nextConfig = fs.readFileSync(
   path.join(root, 'apps', 'web', 'next.config.ts'),
   'utf8',
 );
+const sevenIterationSource = fs.readFileSync(
+  path.join(root, 'apps', 'web', 'src', 'lib', 'pedagogy', 'sevenIterationEnrichment.ts'),
+  'utf8',
+);
 if (!topicLayout.includes('buildDetailedSolution(we)') || !topicLayout.includes('buildDetailedSolution(practice)')) {
   errors.push('所有例題與練習必須套用五段式詳細解析');
 }
@@ -428,6 +432,31 @@ for (const requiredInterestField of ['topicSummary', 'imageAlt', 'imageCaption',
   if (!interestHooks.includes(requiredInterestField)) {
     errors.push(`逐頁引趣生成器缺少 ${requiredInterestField}`);
   }
+}
+
+if (
+  !topicLayout.includes('getSevenIterationPacks(')
+  || !topicLayout.includes('iterationPacks.map((pack)')
+  || !topicLayout.includes('id="seven-iterations"')
+) {
+  errors.push('所有教學頁必須呈現七輪深化內容與可操作導覽');
+}
+for (let iteration = 1; iteration <= 7; iteration += 1) {
+  if (!sevenIterationSource.includes(`pack(${iteration},`)) errors.push(`七輪深化缺少第 ${iteration} 輪內容`);
+}
+for (const subject of subjects) {
+  for (const topic of subject.topics) {
+    const baselineUnits = topic.concepts.length
+      + (topic.worked_examples?.length ?? 0)
+      + (topic.practices?.length ?? (topic.practice ? 1 : 0));
+    const requiredAddedUnits = Math.max(1, Math.ceil(baselineUnits * 0.1));
+    if (requiredAddedUnits > 6) {
+      errors.push(`/subjects/${subject.slug}/${topic.slug}: 每輪 6 個新增教學單元未達基線 10%（門檻 ${requiredAddedUnits}）`);
+    }
+  }
+}
+for (const qualityToken of ['目標更清楚', '資訊更易讀', '認知負荷更低', '回饋更具體', '課綱與題目更緊密']) {
+  if (!sevenIterationSource.includes(qualityToken)) errors.push(`七輪深化缺少品質校正：${qualityToken}`);
 }
 
 if (subjects.length !== expectedCategories.size) {
