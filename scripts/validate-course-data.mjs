@@ -70,6 +70,11 @@ for (const file of files) {
     if (topic.status !== 'done') errors.push(`${route}: 尚未完成（${topic.status}）`);
     if (!Array.isArray(topic.concepts) || topic.concepts.length < 3) errors.push(`${route}: 概念卡少於 3 張`);
     const practices = topic.practices?.length ? topic.practices : topic.practice ? [topic.practice] : [];
+    const teachingQuestions = [...(topic.worked_examples ?? []), ...practices];
+    const uniqueTeachingQuestions = new Map(teachingQuestions.map((item) => [item.question?.trim(), item]));
+    if (uniqueTeachingQuestions.size < 5) {
+      errors.push(`${route}: 完整教學題少於 5 題（目前 ${uniqueTeachingQuestions.size} 題）`);
+    }
     if (practices.length === 0) errors.push(`${route}: 沒有練習題`);
     if (!fs.existsSync(path.join(visualsDir, subject.slug, `${topic.slug}.webp`))) {
       errors.push(`${route}: 缺少 OpenAI 教學圖解`);
@@ -77,6 +82,11 @@ for (const file of files) {
     for (const [index, practice] of practices.entries()) {
       if (!practice.question?.trim() || !practice.answer?.trim() || !practice.steps?.length) {
         errors.push(`${route}: 第 ${index + 1} 題缺少題幹、步驟或答案`);
+      }
+    }
+    for (const [question, item] of uniqueTeachingQuestions) {
+      if (!question || !item.answer?.trim() || !item.steps?.length) {
+        errors.push(`${route}: 教學題缺少題幹、原始推導或答案`);
       }
     }
     if (!topic.covered_question_ids || !Array.isArray(topic.covered_question_ids)) {
@@ -117,6 +127,23 @@ const topicLayout = fs.readFileSync(
   path.join(root, 'apps', 'web', 'src', 'components', 'TopicPageLayout.tsx'),
   'utf8',
 );
+const solutionSteps = fs.readFileSync(
+  path.join(root, 'apps', 'web', 'src', 'lib', 'pedagogy', 'solutionSteps.ts'),
+  'utf8',
+);
+const learningSources = fs.readFileSync(
+  path.join(root, 'apps', 'web', 'src', 'lib', 'pedagogy', 'learningSources.ts'),
+  'utf8',
+);
+if (!topicLayout.includes('buildDetailedSolution(we)') || !topicLayout.includes('buildDetailedSolution(practice)')) {
+  errors.push('所有例題與練習必須套用五段式詳細解析');
+}
+if (!solutionSteps.includes('while (unique.length < 5)')) {
+  errors.push('詳細解析器未保證每題至少 5 個可重現步驟');
+}
+if (!topicLayout.includes('getLearningSources(subject.slug)') || !learningSources.includes('官方命題依據')) {
+  errors.push('所有教學頁必須呈現官方命題依據與研究來源');
+}
 for (const requiredVisual of ['concept-modeling.png', 'solution-verification.png']) {
   if (!topicLayout.includes(requiredVisual)) {
     errors.push(`所有學習頁必須實際呈現 OpenAI 教學圖：${requiredVisual}`);
@@ -134,4 +161,4 @@ if (errors.length) {
   process.exit(1);
 }
 
-console.log(`課程資料驗證通過：${subjects.length} 科、${topicCount} 個主題、${seenRoutes.size} 條學習路由。`);
+console.log(`課程資料驗證通過：${subjects.length} 科、${topicCount} 個主題、每頁至少 5 題五段式詳解、${seenRoutes.size} 條學習路由。`);

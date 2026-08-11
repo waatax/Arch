@@ -8,6 +8,8 @@ import MathText from '@/components/MathText';
 import InteractiveVisualizer from '@/components/visualizers/InteractiveVisualizer';
 import { getTopicRealLifeGuide } from '@/lib/pedagogy/realLifeHelpers';
 import { getTopicDeepKnowledge } from '@/lib/pedagogy/topicKnowledgeExpander';
+import { buildDetailedSolution } from '@/lib/pedagogy/solutionSteps';
+import { getLearningSources } from '@/lib/pedagogy/learningSources';
 import { isAnswerChoiceCorrect, isAnswerCorrect, isMultipleChoiceAnswer, toggleSelectedChoice } from '@/lib/examAnswers';
 import coverageRegistry from '../../../../data/registry/exam-coverage.json';
 import commonRegistry from '../../../../data/registry/common-exam-questions.json';
@@ -41,6 +43,11 @@ export default function TopicPageLayout({ subject, topic }: TopicPageLayoutProps
   const conceptModelingSrc = `${process.env.NEXT_PUBLIC_BASE_PATH ?? ''}/learning-visuals/framework/concept-modeling.png`;
   const solutionVerificationSrc = `${process.env.NEXT_PUBLIC_BASE_PATH ?? ''}/learning-visuals/framework/solution-verification.png`;
   const practices = topic.practices?.length ? topic.practices : topic.practice ? [topic.practice] : [];
+  const masteryQuestionCount = new Set([
+    ...(topic.worked_examples ?? []).map((item) => item.question),
+    ...practices.map((item) => item.question),
+  ]).size;
+  const learningSources = getLearningSources(subject.slug);
   const isExamSubject = ['mechanics', 'materials', 'surveying', 'drafting', 'chinese', 'english', 'math-c'].includes(subject.slug);
 
   const mappedExamQuestions = useMemo(() => {
@@ -664,6 +671,7 @@ export default function TopicPageLayout({ subject, topic }: TopicPageLayoutProps
               <h2 id="worked-title" className="font-serif text-2xl font-bold text-slate-900 dark:text-white">
                 精選考點步驟化經典例題
               </h2>
+              <p className="mt-1 text-xs font-bold text-emerald-700 dark:text-emerald-300">本頁共 {masteryQuestionCount} 題完整練習；每題至少五段推導與檢核。</p>
             </div>
             {isExamSubject ? (
               <Link href={`/exams#${subject.slug}`} className="text-xs font-bold text-blue-600 dark:text-blue-400 hover:underline">
@@ -703,7 +711,7 @@ export default function TopicPageLayout({ subject, topic }: TopicPageLayoutProps
                         步驟化推導流程 (Derivation SOP)
                       </span>
                       <ol className="space-y-2 pl-4 text-sm leading-relaxed text-slate-700 dark:text-slate-300">
-                        {we.steps.map((step) => (
+                        {buildDetailedSolution(we).map((step) => (
                           <li key={step} className="list-decimal">
                             <MathText content={step} />
                           </li>
@@ -754,7 +762,7 @@ export default function TopicPageLayout({ subject, topic }: TopicPageLayoutProps
                 <div className="mt-5 space-y-4 border-t border-slate-200 dark:border-slate-800 pt-5">
                   <p className="text-xs font-mono text-slate-500">難度評級：{practice.difficulty}</p>
                   <ol className="space-y-2 pl-4 text-sm leading-relaxed text-slate-700 dark:text-slate-300">
-                    {practice.steps.map((step) => (
+                    {buildDetailedSolution(practice).map((step) => (
                       <li key={step} className="list-decimal">
                         <MathText content={step} />
                       </li>
@@ -877,12 +885,23 @@ export default function TopicPageLayout({ subject, topic }: TopicPageLayoutProps
                       <p className="text-slate-500 dark:text-slate-400">
                         💡 本題考點：{subject.title} · {topic.title}。解題關鍵知識點請參閱本頁上方的「核心概念精講」與「解題秒殺決策樹」。
                       </p>
+                      <nav aria-label={`${q.sourceLabel || q.year} 第 ${q.questionNo} 題知識回鏈`} className="flex flex-wrap gap-2 pt-1">
+                        <a href="#exam-focus" className="rounded-md border border-slate-300 px-2 py-1 text-[11px] font-bold text-blue-700 hover:bg-white dark:border-slate-700 dark:text-blue-300">① 回考點定位</a>
+                        <a href="#principles" className="rounded-md border border-slate-300 px-2 py-1 text-[11px] font-bold text-blue-700 hover:bg-white dark:border-slate-700 dark:text-blue-300">② 回核心原理</a>
+                        <a href="#worked" className="rounded-md border border-slate-300 px-2 py-1 text-[11px] font-bold text-blue-700 hover:bg-white dark:border-slate-700 dark:text-blue-300">③ 看同型例題</a>
+                        <a href="#practice" className="rounded-md border border-slate-300 px-2 py-1 text-[11px] font-bold text-blue-700 hover:bg-white dark:border-slate-700 dark:text-blue-300">④ 做五題精熟</a>
+                      </nav>
                     </div>
                   )}
                 </div>
               );
             })}
           </div>
+        </section>
+      ) : isExamSubject ? (
+        <section id="exam-questions-section" className="rounded-2xl border border-amber-300 bg-amber-50 p-5 text-sm leading-7 text-amber-950 dark:border-amber-800 dark:bg-amber-950/30 dark:text-amber-100">
+          <p className="font-bold">本章目前沒有可誠實連入的 111–115 官方真題。</p>
+          <p className="mt-1">教材與五題詳解仍依官方考綱持續建設；在逐題確認題幹確實考查本知識點之前，不以關鍵字硬掛真題，也不把合成題冒充歷屆題。</p>
         </section>
       ) : null}
 
@@ -903,6 +922,18 @@ export default function TopicPageLayout({ subject, topic }: TopicPageLayoutProps
         <p className="border-t border-indigo-200 pt-3 text-xs leading-6 text-slate-500 dark:border-indigo-900 dark:text-slate-400">
           來源與版本：課程依 108 課綱與平台已登錄之統測題目覆蓋表整理；真題以題卡所連結的官方題本為準。法規、CNS 與招生採計可能更新，使用前請核對頁面標示年度及官方最新公告。
         </p>
+        <div className="border-t border-indigo-200 pt-3 dark:border-indigo-900">
+          <p className="mb-2 text-xs font-bold text-slate-700 dark:text-slate-300">本頁研究與交叉核對來源（最後檢查：2026-08-11）</p>
+          <ul className="space-y-1.5 text-xs leading-5">
+            {learningSources.map((source) => (
+              <li key={source.url} className="flex items-start gap-2">
+                <span className="shrink-0 rounded bg-indigo-100 px-1.5 py-0.5 font-mono text-[10px] text-indigo-800 dark:bg-indigo-950 dark:text-indigo-200">{source.kind}</span>
+                <a href={source.url} target="_blank" rel="noreferrer" className="text-blue-700 underline-offset-2 hover:underline dark:text-blue-300">{source.label} ↗</a>
+              </li>
+            ))}
+          </ul>
+          <p className="mt-2 text-[11px] leading-5 text-slate-500">補教與公開解析僅用於比對題型、常見錯法與解題順序；答案及命題範圍一律以官方資料為準。</p>
+        </div>
       </section>
 
       {/* === Fixed Bottom Floating Navigation Bar === */}
