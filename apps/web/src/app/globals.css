@@ -6,10 +6,11 @@
    LIGHT MODE (default) — Warm Paper + Dark Ink
    ══════════════════════════════════════════════════════ */
 :root {
-  --color-paper-50: #F7FAFC;
-  --color-paper-100: #EDF4F7;
-  --color-ink-900: #102A43;
-  --color-ink-650: #526879;
+  color-scheme: light;
+  --color-paper-50: #FAF9F6;
+  --color-paper-100: #F1EFE9;
+  --color-ink-900: #172B3A;
+  --color-ink-650: #526571;
   --color-teal-700: #087E8B;
   --color-brick-700: #A84A4A;
   --color-blueprint-700: #256F91;
@@ -26,10 +27,11 @@
    DARK MODE — Deep Blueprint / Slate  
    ══════════════════════════════════════════════════════ */
 :root.dark {
-  --color-paper-50: #071B2B;
-  --color-paper-100: #0D2639;
-  --color-ink-900: #EDF7FA;
-  --color-ink-650: #A6BBC7;
+  color-scheme: dark;
+  --color-paper-50: #071720;
+  --color-paper-100: #102630;
+  --color-ink-900: #F1F5F3;
+  --color-ink-650: #B4C5CA;
   --color-teal-700: #42C6C8;
   --color-brick-700: #E18080;
   --color-blueprint-700: #77C9ED;
@@ -377,19 +379,27 @@ html.arch-lite [class*="blur-"] {
 
 /* V7 — editorial blueprint system */
 .v7-hero {
-  background: radial-gradient(circle at 78% 18%, rgba(58,155,196,.16), transparent 32%), linear-gradient(145deg, #f8fbfc 0%, #eef5f8 100%);
+  background: radial-gradient(circle at 78% 18%, rgba(58,155,196,.12), transparent 32%), linear-gradient(145deg, #fdfcf9 0%, #f3f0e9 100%);
 }
-.dark .v7-hero { background: radial-gradient(circle at 78% 18%, rgba(66,198,200,.13), transparent 32%), linear-gradient(145deg, #071b2b, #0d2639); }
+.v7-home { background:#faf9f6; color:#172b3a; }
+.dark .v7-home { background:#071720; color:#f1f5f3; }
+.dark .v7-hero { background: radial-gradient(circle at 78% 18%, rgba(66,198,200,.10), transparent 32%), linear-gradient(145deg, #071720, #102630); }
 .v7-measure { position:absolute; inset:0; pointer-events:none; opacity:.38; background-image:linear-gradient(90deg, transparent calc(100% - 1px), rgba(37,111,145,.11) 1px); background-size:8.333% 100%; }
+.dark .v7-measure { opacity:.25; background-image:linear-gradient(90deg,transparent calc(100% - 1px),rgba(140,207,234,.13) 1px); }
 .v7-outline-text { color:transparent; -webkit-text-stroke:1.5px #1f668a; }
-.dark .v7-outline-text { -webkit-text-stroke-color:#8ccfea; }
+.dark .v7-outline-text { -webkit-text-stroke-color:#9bd5ed; }
 .v7-blueprint-grid { background-image:linear-gradient(rgba(255,255,255,.08) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.08) 1px,transparent 1px); background-size:24px 24px; }
 .v7-blueprint-card::after { content:"A-07"; position:absolute; right:-.05em; bottom:-.22em; font:700 7rem/1 monospace; color:rgba(255,255,255,.045); }
 .v7-kicker { font:700 .68rem/1.2 monospace; letter-spacing:.2em; color:var(--color-blueprint-700); }
-.v7-route { box-shadow:0 1px 0 rgba(13,38,57,.04); }
+.dark .v7-kicker { color:#8ccfea; }
+.v7-route { box-shadow:0 1px 0 rgba(13,38,57,.04); background:#fffdfa; }
+.dark .v7-route { background:#102630; border-color:#24424d; box-shadow:inset 0 1px rgba(255,255,255,.025); }
 .v7-route:hover { box-shadow:0 24px 50px -32px rgba(13,38,57,.45); }
+.dark .v7-route:hover { box-shadow:0 22px 46px -30px rgba(0,0,0,.85); }
 .v7-route-blue:hover { border-color:#63b9dd; }
-.v7-route-coral:hover { border-color:#e85d45; }
+.v7-route-coral:hover { border-color:#b93f2f; }
 .v7-route-teal:hover { border-color:#20a7ad; }
+.v7-cta { background:#b93f2f; }
+.dark .v7-cta { background:#8f3128; }
 @media (max-width:639px) { .v7-outline-text { -webkit-text-stroke-width:1px; } .v7-measure { background-size:25% 100%; } }
 html.arch-lite .v7-hero { background:var(--color-paper-50); }

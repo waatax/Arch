@@ -100,7 +100,7 @@ export default function Home() {
       </section>
 
       <section className="mx-auto max-w-7xl px-4 py-16 sm:px-6 sm:py-24 lg:px-8">
-        <div className="relative overflow-hidden rounded-[2rem] bg-[#e85d45] px-6 py-12 text-white sm:px-12 sm:py-16 lg:flex lg:items-center lg:justify-between">
+        <div className="v7-cta relative overflow-hidden rounded-[2rem] px-6 py-12 text-white sm:px-12 sm:py-16 lg:flex lg:items-center lg:justify-between">
           <div className="absolute -right-12 -top-12 size-52 rounded-full border-[32px] border-white/10" />
           <div className="relative max-w-2xl"><p className="text-xs font-bold tracking-[.2em] text-white/75">NEXT ACTION</p><h2 className="mt-3 font-serif text-3xl font-bold sm:text-5xl">別等準備好，先做五題。</h2><p className="mt-4 max-w-xl text-sm leading-7 text-white/85">系統會依你的作答調整難度；錯題只存於裝置，不需帳號，也不追蹤你。</p></div>
           <Link href="/practice" className="relative mt-8 inline-flex min-h-14 items-center gap-3 rounded-full bg-white px-7 font-bold text-slate-950 transition hover:scale-[1.02] lg:mt-0">開始診斷 <ArrowRight className="size-4" /></Link>
