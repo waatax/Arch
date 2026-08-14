@@ -374,3 +374,22 @@ html.arch-lite [class*="blur-"] {
 ::-webkit-scrollbar-thumb:hover {
   background: var(--color-ink-650);
 }
+
+/* V7 — editorial blueprint system */
+.v7-hero {
+  background: radial-gradient(circle at 78% 18%, rgba(58,155,196,.16), transparent 32%), linear-gradient(145deg, #f8fbfc 0%, #eef5f8 100%);
+}
+.dark .v7-hero { background: radial-gradient(circle at 78% 18%, rgba(66,198,200,.13), transparent 32%), linear-gradient(145deg, #071b2b, #0d2639); }
+.v7-measure { position:absolute; inset:0; pointer-events:none; opacity:.38; background-image:linear-gradient(90deg, transparent calc(100% - 1px), rgba(37,111,145,.11) 1px); background-size:8.333% 100%; }
+.v7-outline-text { color:transparent; -webkit-text-stroke:1.5px #1f668a; }
+.dark .v7-outline-text { -webkit-text-stroke-color:#8ccfea; }
+.v7-blueprint-grid { background-image:linear-gradient(rgba(255,255,255,.08) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.08) 1px,transparent 1px); background-size:24px 24px; }
+.v7-blueprint-card::after { content:"A-07"; position:absolute; right:-.05em; bottom:-.22em; font:700 7rem/1 monospace; color:rgba(255,255,255,.045); }
+.v7-kicker { font:700 .68rem/1.2 monospace; letter-spacing:.2em; color:var(--color-blueprint-700); }
+.v7-route { box-shadow:0 1px 0 rgba(13,38,57,.04); }
+.v7-route:hover { box-shadow:0 24px 50px -32px rgba(13,38,57,.45); }
+.v7-route-blue:hover { border-color:#63b9dd; }
+.v7-route-coral:hover { border-color:#e85d45; }
+.v7-route-teal:hover { border-color:#20a7ad; }
+@media (max-width:639px) { .v7-outline-text { -webkit-text-stroke-width:1px; } .v7-measure { background-size:25% 100%; } }
+html.arch-lite .v7-hero { background:var(--color-paper-50); }

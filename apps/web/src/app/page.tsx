@@ -1,294 +1,109 @@
 import Link from 'next/link';
-import SubjectCard from '@/components/SubjectCard';
+import { ArrowRight, Building2, CheckCircle2, Compass, DraftingCompass, Play, Target } from 'lucide-react';
+
+const paths = [
+  { icon: Compass, eyebrow: '從零開始', title: '沿著課程地圖學', copy: '86 個章節依先備知識排列，從生活直覺一路走到統測題型。', href: '/curriculum', cta: '打開課程地圖', tone: 'blue' },
+  { icon: Target, eyebrow: '考前衝刺', title: '用歷屆題找弱點', copy: '111–115 年五科共 925 題，練習、解析與錯題複習在同一條流程。', href: '/practice', cta: '開始今日練習', tone: 'coral' },
+  { icon: Building2, eyebrow: '建立建築感', title: '從真實案例理解', copy: '把結構、材料、構造與空間，放回你看得見的台灣建築。', href: '/cases', cta: '進入案例實驗室', tone: 'teal' },
+];
+
+const subjects = [
+  { no: '01', title: '工程力學', meta: '7 章 · 專業（一）', href: '/subjects/mechanics' },
+  { no: '02', title: '材料與試驗', meta: '12 章 · 專業（一）', href: '/subjects/materials' },
+  { no: '03', title: '測量實習', meta: '6 章 · 專業（二）', href: '/subjects/surveying' },
+  { no: '04', title: '製圖實習', meta: '8 章 · 專業（二）', href: '/subjects/drafting' },
+];
 
 export default function Home() {
   return (
-    <div className="space-y-16 sm:space-y-24 pb-16 sm:pb-24">
-      {/* Hero Section */}
-      <section className="relative overflow-hidden border-b border-slate-200 dark:border-slate-800 bg-gradient-to-b from-slate-50 via-white to-slate-50 dark:from-slate-900 dark:via-slate-900/90 dark:to-slate-950 py-14 sm:py-24 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-5xl mx-auto space-y-6">
-          <div className="flex flex-wrap items-center gap-2">
-            <span className="inline-flex items-center gap-1.5 rounded-full bg-blue-600 dark:bg-blue-500 text-white text-xs font-mono px-3.5 py-1 font-bold shadow-xs">
-              <span className="size-2 rounded-full bg-white animate-pulse" />
-              108 課綱技術型高中 · 建築科自主學習平台
-            </span>
-            <span className="rounded-full bg-emerald-600/10 px-3 py-1 text-xs font-mono font-bold text-emerald-700 dark:text-emerald-300 border border-emerald-600/20">
-              V6.22 正式版全上線
-            </span>
-          </div>
-
-          <h1 className="text-3xl min-[390px]:text-4xl sm:text-5xl lg:text-6xl font-bold font-serif text-slate-900 dark:text-white tracking-tight leading-[1.15]">
-            懂設計、會量測、動手產出建築作品
-          </h1>
-
-          <p className="text-base sm:text-xl text-slate-600 dark:text-slate-400 max-w-3xl leading-relaxed">
-            免登入、無廣告、本機優先。從一棟真實台灣建築或一道統測考點出發，以「生活直覺 → 概念圖解 → 白話定義 → 步驟化例題 → 統測驗證」六步架構，帶你從初學者穩步走到專業高分。
-          </p>
-
-          <div className="flex flex-col sm:flex-row sm:flex-wrap gap-3 sm:gap-4 pt-2">
-            <Link
-              href="/curriculum"
-              className="flex min-h-12 w-full sm:w-auto items-center justify-center px-6 py-3.5 bg-blue-600 dark:bg-blue-500 hover:bg-blue-700 dark:hover:bg-blue-600 text-white font-bold rounded-xl shadow-md transition-all duration-200"
-            >
-              🗺️ 探索完整 86 章課程地圖
-            </Link>
-            <Link
-              href="/practice"
-              className="flex min-h-12 w-full sm:w-auto items-center justify-center px-6 py-3.5 bg-white dark:bg-slate-800 text-slate-900 dark:text-white border border-slate-200 dark:border-slate-700 hover:border-blue-500 font-bold rounded-xl transition-all duration-200 shadow-2xs"
-            >
-              🎯 歷屆統測模擬練習 (925題)
-            </Link>
-            <Link
-              href="/cases/taichung-national-theater"
-              className="flex min-h-12 w-full sm:w-auto items-center justify-center px-6 py-3.5 bg-slate-100 dark:bg-slate-800/60 text-slate-700 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white font-medium rounded-xl transition-all duration-200"
-            >
-              🏛️ 首發案例：臺中國家歌劇院
-            </Link>
-            <Link
-              href="/resources"
-              className="flex min-h-12 w-full sm:w-auto items-center justify-center px-6 py-3.5 bg-emerald-50 dark:bg-emerald-950/40 text-emerald-800 dark:text-emerald-200 border border-emerald-200 dark:border-emerald-800 hover:border-emerald-500 font-bold rounded-xl transition-all duration-200"
-            >
-              🔗 優質統測學習網站
-            </Link>
-          </div>
-
-          {/* Quick Metrics */}
-          <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 pt-6 border-t border-slate-200 dark:border-slate-800/80 font-mono text-xs">
-            <div className="rounded-xl bg-white dark:bg-slate-800/50 p-3 border border-slate-200 dark:border-slate-800">
-              <span className="text-slate-500 block text-[10px]">統測考科</span>
-              <span className="text-base font-bold text-slate-900 dark:text-white">專一·專二·共同</span>
+    <div className="v7-home pb-20 sm:pb-28">
+      <section className="v7-hero relative overflow-hidden border-b border-slate-200 dark:border-slate-800">
+        <div className="v7-measure" aria-hidden="true" />
+        <div className="mx-auto grid max-w-7xl gap-10 px-4 pb-16 pt-12 sm:px-6 sm:pb-24 sm:pt-20 lg:grid-cols-[1.15fr_.85fr] lg:items-center lg:px-8">
+          <div className="relative z-10">
+            <div className="mb-6 flex flex-wrap items-center gap-2 text-[11px] font-bold tracking-[.16em]">
+              <span className="rounded-full bg-blue-700 px-3 py-1.5 text-white">ARCH V7</span>
+              <span className="text-slate-500 dark:text-slate-400">台灣高工建築科學習基地</span>
             </div>
-            <div className="rounded-xl bg-white dark:bg-slate-800/50 p-3 border border-slate-200 dark:border-slate-800">
-              <span className="text-slate-500 block text-[10px]">全站教學節點</span>
-              <span className="text-base font-bold text-blue-600 dark:text-blue-400">86 章正式課程</span>
-            </div>
-            <div className="rounded-xl bg-white dark:bg-slate-800/50 p-3 border border-slate-200 dark:border-slate-800">
-              <span className="text-slate-500 block text-[10px]">歷屆試題對照</span>
-              <span className="text-base font-bold text-emerald-600 dark:text-emerald-400">111–115 五年 925 題</span>
-            </div>
-            <div className="rounded-xl bg-white dark:bg-slate-800/50 p-3 border border-slate-200 dark:border-slate-800">
-              <span className="text-slate-500 block text-[10px]">互動模擬器</span>
-              <span className="text-base font-bold text-amber-600 dark:text-amber-400">向量·梁·水準·投影</span>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* ── 6-Step Pedagogical Methodology Showcase ── */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center max-w-3xl mx-auto mb-10">
-          <span className="text-xs font-mono text-blue-600 dark:text-blue-400 uppercase tracking-widest block mb-1 font-bold">
-            Pedagogical Standard
-          </span>
-          <h2 className="text-2xl sm:text-3xl font-bold font-serif text-slate-900 dark:text-white">
-            專為初學者設計的六步學習法
-          </h2>
-          <p className="text-sm text-slate-600 dark:text-slate-400 mt-2">
-            打破「背公式」與「抽象符號」的學習挫折，讓每個建築與結構考點都能看得懂、做得出。
-          </p>
-        </div>
-
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-          {[
-            { step: '01', title: '生活情境與直覺提問', desc: '以 101 阻尼器、歌劇院曲牆或工地現場提出問題，激發真實好奇心。', color: 'blue' },
-            { step: '02', title: '先看圖解與儀器視圖', desc: '觀察力向量箭頭、水準標尺或正投影圖面，建立直觀空間幾何概念。', color: 'teal' },
-            { step: '03', title: '白話觀念與名詞精講', desc: '用生活日常語言完整解釋，首次出現的新術語立即給予清晰定義。', color: 'emerald' },
-            { step: '04', title: '符號小卡與公式速查', desc: '每個符號標明定義、標準 SI 單位、正負號慣例與 1 鍵複製功能。', color: 'amber' },
-            { step: '05', title: '步驟化示範題 (SOP)', desc: '已知 → 求解 → 單位統一 → 選公式 → 代入運算 → 物理常識檢核。', color: 'sky' },
-            { step: '06', title: '統測對應與避坑指南', desc: '近五年統測考題實戰演練，對比常見易錯盲點，確保考場不失分。', color: 'indigo' },
-          ].map((item) => (
-            <div
-              key={item.step}
-              className="rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 p-5 space-y-2 shadow-xs"
-            >
-              <div className="flex items-center justify-between">
-                <span className="font-mono text-xs font-bold text-blue-600 dark:text-blue-400">
-                  STEP {item.step}
-                </span>
-                <span className="size-2 rounded-full bg-blue-500" />
-              </div>
-              <h3 className="font-serif text-base font-bold text-slate-900 dark:text-white">
-                {item.title}
-              </h3>
-              <p className="text-xs leading-relaxed text-slate-600 dark:text-slate-400">
-                {item.desc}
-              </p>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      {/* Featured Architecture Case Lab */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-end justify-between mb-8">
-          <div>
-            <span className="text-xs font-mono text-teal-600 dark:text-teal-400 uppercase tracking-widest block mb-1 font-bold">
-              Taiwan Architecture Case Lab
-            </span>
-            <h2 className="text-2xl sm:text-3xl font-bold font-serif text-slate-900 dark:text-white">
-              台灣建築案例實驗室
-            </h2>
-          </div>
-          <Link
-            href="/cases"
-            className="hidden sm:inline-flex items-center gap-1 text-sm font-mono text-teal-600 dark:text-teal-400 hover:underline font-bold"
-          >
-            查看全部 8 棟案例 →
-          </Link>
-        </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          {[
-            {
-              location: '台中 · 形與建造',
-              title: '臺中國家歌劇院',
-              desc: '沒有平牆的建築，58 面曲牆如何作為結構主體？曲面鋼筋網架如何灌漿？',
-              href: '/cases/taichung-national-theater',
-            },
-            {
-              location: '台中 · 結構與光',
-              title: '東海路思義教堂',
-              desc: '四片雙曲薄殼如何兼具屋頂與結構受力？一線天頂光如何雕塑神聖空間？',
-              href: '/cases/luce-memorial-chapel',
-            },
-            {
-              location: '台中 · 安全與記憶',
-              title: '921 地震教育園區',
-              desc: '地層錯動隆起如何完整保留？斜拉鋼索膜結構如何保護斷層傷痕？',
-              href: '/cases/921-earthquake-museum',
-            },
-          ].map((c) => (
-            <div
-              key={c.href}
-              className="card-lift bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl p-6 flex flex-col justify-between shadow-xs hover:border-teal-500 transition-all"
-            >
-              <div>
-                <span className="text-[11px] font-mono bg-slate-100 dark:bg-slate-800 px-2.5 py-1 rounded-full text-slate-600 dark:text-slate-400">
-                  {c.location}
-                </span>
-                <h3 className="text-xl font-bold font-serif text-slate-900 dark:text-white mt-3 mb-2">
-                  {c.title}
-                </h3>
-                <p className="text-xs text-slate-600 dark:text-slate-400 mb-4 leading-relaxed">
-                  {c.desc}
-                </p>
-              </div>
-              <Link
-                href={c.href}
-                className="text-xs font-mono text-teal-600 dark:text-teal-400 font-bold hover:underline inline-flex items-center gap-1 group"
-              >
-                進入案例閱讀
-                <span className="group-hover:translate-x-1 transition-transform duration-200">→</span>
+            <h1 className="max-w-3xl font-serif text-[clamp(2.8rem,7vw,5.9rem)] font-bold leading-[.98] tracking-[-.055em] text-slate-950 dark:text-white">
+              把建築學懂，<br /><span className="v7-outline-text">也把分數蓋起來。</span>
+            </h1>
+            <p className="mt-7 max-w-2xl text-base leading-8 text-slate-600 dark:text-slate-300 sm:text-lg">
+              不只背公式。從真實建築、圖解與步驟化例題開始，銜接 86 章課程與 925 道歷屆題，讓每次學習都有明確下一步。
+            </p>
+            <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+              <Link href="/curriculum" className="v7-primary group inline-flex min-h-14 items-center justify-center gap-3 rounded-full bg-blue-700 px-7 font-bold text-white shadow-lg shadow-blue-900/15 transition hover:bg-blue-800">
+                <Play className="size-4 fill-current" /> 從第一章開始
+                <ArrowRight className="size-4 transition-transform group-hover:translate-x-1" />
+              </Link>
+              <Link href="/practice" className="inline-flex min-h-14 items-center justify-center gap-2 rounded-full border border-slate-300 bg-white/70 px-7 font-bold text-slate-900 transition hover:border-blue-600 dark:border-slate-700 dark:bg-slate-900/70 dark:text-white">
+                先做 5 題診斷
               </Link>
             </div>
+            <div className="mt-8 flex flex-wrap gap-x-6 gap-y-2 text-xs text-slate-500 dark:text-slate-400">
+              {['免登入', '無廣告', '進度留在裝置內'].map((item) => <span key={item} className="inline-flex items-center gap-1.5"><CheckCircle2 className="size-4 text-teal-600" />{item}</span>)}
+            </div>
+          </div>
+
+          <div className="relative mx-auto w-full max-w-lg lg:max-w-none" aria-label="Arch 學習流程示意">
+            <div className="v7-blueprint-card relative aspect-[4/4.35] overflow-hidden rounded-[2rem] border border-blue-200 bg-blue-950 p-6 text-white shadow-2xl shadow-blue-950/20 sm:p-9">
+              <div className="absolute inset-0 v7-blueprint-grid opacity-50" />
+              <div className="relative flex h-full flex-col">
+                <div className="flex items-start justify-between border-b border-white/20 pb-5">
+                  <div><p className="font-mono text-[10px] tracking-[.2em] text-blue-200">TODAY / STUDY PLAN</p><h2 className="mt-2 font-serif text-2xl font-bold">今天，先完成一小步</h2></div>
+                  <DraftingCompass className="size-8 text-cyan-300" />
+                </div>
+                <div className="my-auto space-y-3">
+                  {[['01', '看懂簡支梁受力', '概念 · 8 min'], ['02', '跟著例題畫 FBD', '示範 · 12 min'], ['03', '用 5 題確認理解', '練習 · 10 min']].map(([n,t,m], i) => (
+                    <div key={n} className={`flex items-center gap-4 rounded-2xl border p-4 ${i === 0 ? 'border-cyan-300/60 bg-cyan-300/10' : 'border-white/15 bg-white/5'}`}>
+                      <span className="font-mono text-xs text-cyan-300">{n}</span><div className="min-w-0 flex-1"><p className="font-bold">{t}</p><p className="mt-1 text-xs text-blue-200">{m}</p></div>{i === 0 && <span className="size-2 rounded-full bg-cyan-300 shadow-[0_0_14px_#67e8f9]" />}
+                    </div>
+                  ))}
+                </div>
+                <div className="grid grid-cols-3 border-t border-white/20 pt-5 text-center">
+                  <div><strong className="block text-xl">86</strong><span className="text-[10px] text-blue-200">完整章節</span></div>
+                  <div className="border-x border-white/15"><strong className="block text-xl">925</strong><span className="text-[10px] text-blue-200">歷屆試題</span></div>
+                  <div><strong className="block text-xl">8</strong><span className="text-[10px] text-blue-200">建築案例</span></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="mx-auto max-w-7xl px-4 py-16 sm:px-6 sm:py-24 lg:px-8">
+        <div className="mb-10 max-w-2xl">
+          <p className="v7-kicker">CHOOSE YOUR ROUTE</p>
+          <h2 className="mt-3 font-serif text-3xl font-bold tracking-tight text-slate-950 dark:text-white sm:text-5xl">你現在需要哪一條路？</h2>
+          <p className="mt-4 text-slate-600 dark:text-slate-400">不用先理解整個平台。選一個最接近你此刻目標的入口。</p>
+        </div>
+        <div className="grid gap-4 lg:grid-cols-3">
+          {paths.map(({ icon: Icon, ...path }, index) => (
+            <Link key={path.title} href={path.href} className={`v7-route v7-route-${path.tone} group flex min-h-72 flex-col rounded-[1.75rem] border border-slate-200 bg-white p-6 transition duration-300 hover:-translate-y-1 dark:border-slate-800 dark:bg-slate-900 sm:p-8`}>
+              <div className="flex items-start justify-between"><span className="rounded-full bg-slate-100 px-3 py-1 text-[10px] font-bold tracking-widest text-slate-600 dark:bg-slate-800 dark:text-slate-300">{path.eyebrow}</span><span className="font-mono text-xs text-slate-400">0{index + 1}</span></div>
+              <Icon className="mt-8 size-10 text-blue-700 dark:text-blue-300" strokeWidth={1.5} />
+              <h3 className="mt-5 font-serif text-2xl font-bold text-slate-950 dark:text-white">{path.title}</h3>
+              <p className="mt-3 flex-1 text-sm leading-7 text-slate-600 dark:text-slate-400">{path.copy}</p>
+              <span className="mt-6 inline-flex items-center gap-2 text-sm font-bold text-slate-900 dark:text-white">{path.cta}<ArrowRight className="size-4 transition-transform group-hover:translate-x-1" /></span>
+            </Link>
           ))}
         </div>
       </section>
 
-      {/* ── 統測專業科目 ── */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="mb-8">
-          <span className="text-xs font-mono text-blue-600 dark:text-blue-400 uppercase tracking-widest block mb-1 font-bold">
-            108 課綱 · 統測專業核心考科
-          </span>
-          <h2 className="text-2xl sm:text-3xl font-bold font-serif text-slate-900 dark:text-white">
-            專業科目（一）與專業科目（二）
-          </h2>
-        </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
-          <SubjectCard
-            title="基礎工程力學"
-            category="專業科目（一）"
-            description="力系平衡、自由體圖、桁架分析、簡支梁剪力與彎矩圖 (SFD/BMD) 與應力應變。"
-            href="/subjects/mechanics"
-            topicsCount={7}
-            tag="統測必考"
-          />
-          <SubjectCard
-            title="材料與試驗"
-            category="專業科目（一）"
-            description="水泥水化反應、骨材篩分析、混凝土坍度與抗壓強度試驗 (CNS/ASTM) 及鋼材拉伸。"
-            href="/subjects/materials"
-            topicsCount={12}
-            tag="統測必考"
-          />
-          <SubjectCard
-            title="測量實習"
-            category="專業科目（二）"
-            description="水準儀前後視高程計算 (HI法/高差法)、經緯儀測角消差、全測站 EDM 坐標正反算。"
-            href="/subjects/surveying"
-            topicsCount={6}
-            tag="實作/計算"
-          />
-          <SubjectCard
-            title="製圖實習"
-            category="專業科目（二）"
-            description="第三角投影法三視圖展開、剖面圖判讀、CNS 建築材料圖例、尺寸標註與 CAD 圖層規範。"
-            href="/subjects/drafting"
-            topicsCount={8}
-            tag="術科/讀圖"
-          />
+      <section className="border-y border-slate-200 bg-slate-100/70 dark:border-slate-800 dark:bg-slate-900/40">
+        <div className="mx-auto grid max-w-7xl gap-12 px-4 py-16 sm:px-6 sm:py-24 lg:grid-cols-[.8fr_1.2fr] lg:px-8">
+          <div><p className="v7-kicker">CORE SUBJECTS</p><h2 className="mt-3 font-serif text-3xl font-bold text-slate-950 dark:text-white sm:text-4xl">四門專業核心，<br />連成一張建築圖。</h2><p className="mt-5 max-w-md text-sm leading-7 text-slate-600 dark:text-slate-400">力學回答「為什麼站得住」，材料回答「用什麼蓋」，測量與製圖則把想法準確放到現場。</p><Link href="/curriculum" className="mt-7 inline-flex items-center gap-2 text-sm font-bold text-blue-700 dark:text-blue-300">瀏覽全部共同與專業科目 <ArrowRight className="size-4" /></Link></div>
+          <div className="divide-y divide-slate-300 border-y border-slate-300 dark:divide-slate-700 dark:border-slate-700">
+            {subjects.map((subject) => <Link href={subject.href} key={subject.no} className="group grid grid-cols-[2.5rem_1fr_auto] items-center gap-3 py-5 sm:grid-cols-[4rem_1fr_auto] sm:py-6"><span className="font-mono text-xs text-slate-400">{subject.no}</span><div><h3 className="font-serif text-xl font-bold text-slate-900 group-hover:text-blue-700 dark:text-white dark:group-hover:text-blue-300 sm:text-2xl">{subject.title}</h3><p className="mt-1 text-xs text-slate-500">{subject.meta}</p></div><ArrowRight className="size-5 transition-transform group-hover:translate-x-1" /></Link>)}
+          </div>
         </div>
       </section>
 
-      {/* ── 統測共同與基礎科目 ── */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="mb-8">
-          <span className="text-xs font-mono text-brick-700 uppercase tracking-widest block mb-1 font-bold">
-            108 課綱 · 統測共同與基礎領域
-          </span>
-          <h2 className="text-2xl sm:text-3xl font-bold font-serif text-slate-900 dark:text-white">
-            共同科目與自然、社會領域
-          </h2>
-        </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
-          <SubjectCard
-            title="國語文"
-            category="統測共同科目"
-            description="古典與現代文學選讀、語文知識修辭、空間論述判讀與寫作表達。"
-            href="/subjects/chinese"
-            topicsCount={6}
-            tag="統測必考"
-          />
-          <SubjectCard
-            title="英語文"
-            category="統測共同科目"
-            description="建築與工程專業字彙片語、文法句型、閱讀測驗與篇章結構。"
-            href="/subjects/english"
-            topicsCount={6}
-            tag="統測必考"
-          />
-          <SubjectCard
-            title="數學 C"
-            category="統測共同科目"
-            description="三角函數、向量幾何、空間力學數學模型與微積分基礎。"
-            href="/subjects/math-c"
-            topicsCount={6}
-            tag="統測必考"
-          />
-          <SubjectCard
-            title="物理"
-            category="自然科學"
-            description="結構運動力學、熱學隔熱傳導、光學自然採光與聲學吸音。"
-            href="/subjects/physics"
-            topicsCount={6}
-          />
-          <SubjectCard
-            title="化學"
-            category="自然科學"
-            description="混凝土水化化學反應、鋼材防蝕電化學、聚合物塗料與綠建材。"
-            href="/subjects/chemistry"
-            topicsCount={6}
-          />
-          <SubjectCard
-            title="建築科延伸與作品集"
-            category="實務與升學"
-            description="空間觀察、建築構造法規、BIM 電腦繪圖、模型製作與升學作品集指導。"
-            href="/subjects/extensions"
-            topicsCount={5}
-          />
+      <section className="mx-auto max-w-7xl px-4 py-16 sm:px-6 sm:py-24 lg:px-8">
+        <div className="relative overflow-hidden rounded-[2rem] bg-[#e85d45] px-6 py-12 text-white sm:px-12 sm:py-16 lg:flex lg:items-center lg:justify-between">
+          <div className="absolute -right-12 -top-12 size-52 rounded-full border-[32px] border-white/10" />
+          <div className="relative max-w-2xl"><p className="text-xs font-bold tracking-[.2em] text-white/75">NEXT ACTION</p><h2 className="mt-3 font-serif text-3xl font-bold sm:text-5xl">別等準備好，先做五題。</h2><p className="mt-4 max-w-xl text-sm leading-7 text-white/85">系統會依你的作答調整難度；錯題只存於裝置，不需帳號，也不追蹤你。</p></div>
+          <Link href="/practice" className="relative mt-8 inline-flex min-h-14 items-center gap-3 rounded-full bg-white px-7 font-bold text-slate-950 transition hover:scale-[1.02] lg:mt-0">開始診斷 <ArrowRight className="size-4" /></Link>
         </div>
       </section>
     </div>
