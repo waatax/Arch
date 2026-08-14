@@ -15,7 +15,7 @@ export default function Footer() {
                 Arch
               </span>
               <span className="rounded-full bg-blue-600/10 dark:bg-blue-400/10 px-2 py-0.5 text-[10px] font-mono font-bold text-blue-700 dark:text-blue-300 border border-blue-600/20">
-                V7.1
+                V7.2
               </span>
             </div>
             <p className="text-sm leading-relaxed text-slate-600 dark:text-slate-400 max-w-md">
@@ -43,6 +43,11 @@ export default function Footer() {
               <li>
                 <Link href="/curriculum" className="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
                   • 完整 86 章課程地圖
+                </Link>
+              </li>
+              <li>
+                <Link href="/goals" className="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
+                  • 終極目標：三大專業證照
                 </Link>
               </li>
               <li>

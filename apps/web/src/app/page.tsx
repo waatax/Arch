@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { ArrowRight, Building2, CheckCircle2, Compass, DraftingCompass, Play, Target } from 'lucide-react';
+import { ArrowRight, Building2, CheckCircle2, Compass, DraftingCompass, HardHat, Play, ShieldCheck, Target } from 'lucide-react';
 
 const paths = [
   { icon: Compass, eyebrow: '從零開始', title: '沿著課程地圖學', copy: '86 個章節依先備知識排列，從生活直覺一路走到統測題型。', href: '/curriculum', cta: '打開課程地圖', tone: 'blue' },
@@ -100,6 +100,24 @@ export default function Home() {
       </section>
 
       <section className="mx-auto max-w-7xl px-4 py-16 sm:px-6 sm:py-24 lg:px-8">
+        <div className="grid gap-10 lg:grid-cols-[.72fr_1.28fr] lg:items-end">
+          <div>
+            <p className="v7-kicker">終極目標 · ULTIMATE GOAL</p>
+            <h2 className="mt-3 font-serif text-3xl font-bold tracking-tight text-slate-950 dark:text-white sm:text-5xl">現在學的，<br />會通往哪裡？</h2>
+            <p className="mt-5 max-w-lg text-sm leading-7 text-slate-600 dark:text-slate-300">從高工建築科一路看見建築師、結構工程技師與土木工程技師。一次讀懂資格、考科、領證、執業與三者真正的工作差異。</p>
+            <Link href="/goals" className="mt-7 inline-flex min-h-12 items-center gap-2 rounded-full bg-slate-950 px-6 text-sm font-bold text-white transition hover:bg-blue-800 dark:bg-white dark:text-slate-950 dark:hover:bg-blue-100">打開完整證照地圖 <ArrowRight className="size-4" /></Link>
+          </div>
+          <div className="grid gap-3 sm:grid-cols-3">
+            {[
+              { icon: DraftingCompass, title: '建築師', copy: '空間、法規、構造與環境的整合者', tone: 'text-blue-700 dark:text-blue-300' },
+              { icon: ShieldCheck, title: '結構技師', copy: '結構安全、耐震與力流的守門人', tone: 'text-teal-700 dark:text-teal-300' },
+              { icon: HardHat, title: '土木技師', copy: '工程、地盤、施工與城市基礎的實踐者', tone: 'text-amber-700 dark:text-amber-300' },
+            ].map(({ icon: Icon, title, copy, tone }) => <Link key={title} href="/goals" className="group rounded-2xl border border-slate-200 bg-white p-5 transition hover:-translate-y-1 hover:border-blue-300 dark:border-slate-700 dark:bg-slate-900 dark:hover:border-blue-600"><Icon className={`size-7 ${tone}`} /><h3 className="mt-5 font-serif text-xl font-bold text-slate-950 dark:text-white">{title}</h3><p className="mt-2 text-xs leading-6 text-slate-600 dark:text-slate-400">{copy}</p><ArrowRight className="mt-5 size-4 text-slate-400 transition-transform group-hover:translate-x-1" /></Link>)}
+          </div>
+        </div>
+      </section>
+
+      <section className="border-t border-slate-200 px-4 py-16 dark:border-slate-800 sm:px-6 sm:py-24 lg:px-8">
         <div className="v7-cta relative overflow-hidden rounded-[2rem] px-6 py-12 text-white sm:px-12 sm:py-16 lg:flex lg:items-center lg:justify-between">
           <div className="absolute -right-12 -top-12 size-52 rounded-full border-[32px] border-white/10" />
           <div className="relative max-w-2xl"><p className="text-xs font-bold tracking-[.2em] text-white/75">NEXT ACTION</p><h2 className="mt-3 font-serif text-3xl font-bold sm:text-5xl">別等準備好，先做五題。</h2><p className="mt-4 max-w-xl text-sm leading-7 text-white/85">系統會依你的作答調整難度；錯題只存於裝置，不需帳號，也不追蹤你。</p></div>

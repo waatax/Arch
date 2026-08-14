@@ -43,6 +43,7 @@ jobs:
           pnpm validate:content
           pnpm validate:v6
           pnpm validate:v7-teaching
+          pnpm validate:v7-goals
           pnpm lint
           pnpm build
           pnpm validate:built-links
