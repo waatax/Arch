@@ -2,6 +2,11 @@
 @import "tailwindcss";
 @import 'katex/dist/katex.min.css';
 
+/* Tailwind v4 defaults `dark:` to the operating-system media query. Arch has
+   an explicit theme switch, so every dark utility must follow the same root
+   class. This prevents light surfaces from receiving dark-mode white text. */
+@custom-variant dark (&:where(.dark, .dark *));
+
 /* ══════════════════════════════════════════════════════
    LIGHT MODE (default) — Warm Paper + Dark Ink
    ══════════════════════════════════════════════════════ */

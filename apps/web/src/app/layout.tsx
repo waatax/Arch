@@ -5,7 +5,7 @@ import ThemeProvider from "@/components/ThemeProvider";
 import DeferredPomodoro from "@/components/DeferredPomodoro";
 import "./globals.css";
 
-const lowResourceBootstrap = `(function(){try{var ua=navigator.userAgent||'';if(/(?:ArchLowRam\\/1|ArchLite)/i.test(ua)){document.documentElement.classList.add('arch-lite');}}catch(e){}})();`;
+const displayBootstrap = `(function(){try{var r=document.documentElement;var ua=navigator.userAgent||'';if(/(?:ArchLowRam\\/1|ArchLite)/i.test(ua)){r.classList.add('arch-lite');}var saved=localStorage.getItem('arch-theme');var dark=saved==='dark'||(saved!=='light'&&matchMedia('(prefers-color-scheme: dark)').matches);r.classList.toggle('dark',dark);r.style.colorScheme=dark?'dark':'light';}catch(e){}})();`;
 
 export const metadata: Metadata = {
   title: "Arch - 台灣高工建築科學習、建築素養與志工培養平台",
@@ -21,7 +21,7 @@ export default function RootLayout({
   return (
     <html lang="zh-TW" className="h-full antialiased" suppressHydrationWarning>
       <head>
-        <script dangerouslySetInnerHTML={{ __html: lowResourceBootstrap }} />
+        <script dangerouslySetInnerHTML={{ __html: displayBootstrap }} />
       </head>
       <body className="min-h-full flex flex-col bg-slate-50 text-slate-900 dark:bg-slate-950 dark:text-slate-50 transition-colors duration-300 relative overflow-x-hidden">
         <a href="#main-content" className="fixed left-3 top-3 z-[100] -translate-y-20 rounded-lg bg-blue-700 px-4 py-2 text-sm font-bold text-white shadow-lg transition-transform focus:translate-y-0">跳到主要內容</a>

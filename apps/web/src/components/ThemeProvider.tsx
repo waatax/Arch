@@ -43,6 +43,7 @@ export default function ThemeProvider({ children }: { children: ReactNode }) {
   // Keep the first client render identical to SSR, then restore preferences.
   const [theme, setTheme] = useState<Theme>('light');
   const [fontSize, setFontSizeState] = useState<FontSize>('base');
+  const [preferencesReady, setPreferencesReady] = useState(false);
 
   useEffect(() => {
     const restorePreferences = window.setTimeout(() => {
@@ -52,11 +53,13 @@ export default function ThemeProvider({ children }: { children: ReactNode }) {
         : window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
       const savedFontSize = readStorage('arch-font-size');
       setFontSizeState(savedFontSize === 'sm' || savedFontSize === 'lg' ? savedFontSize : 'base');
+      setPreferencesReady(true);
     }, 0);
     return () => window.clearTimeout(restorePreferences);
   }, []);
 
   useEffect(() => {
+    if (!preferencesReady) return;
     const root = document.documentElement;
 
     // Theme
@@ -71,7 +74,7 @@ export default function ThemeProvider({ children }: { children: ReactNode }) {
     root.classList.remove('text-size-sm', 'text-size-base', 'text-size-lg');
     root.classList.add(`text-size-${fontSize}`);
     writeStorage('arch-font-size', fontSize);
-  }, [theme, fontSize]);
+  }, [theme, fontSize, preferencesReady]);
 
   const toggleTheme = () => {
     setTheme(prev => prev === 'light' ? 'dark' : 'light');
