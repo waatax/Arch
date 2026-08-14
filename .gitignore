@@ -32,4 +32,5 @@ key.properties
 *.apks
 *.idsig
 arch.learn.tw-mapping.txt
-
+# Editor metadata
+.claude/

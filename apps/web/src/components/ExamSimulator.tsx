@@ -119,6 +119,7 @@ export default function ExamSimulator({ catalog }: { catalog: PracticeCatalog })
   const [session, setSession] = useState<SimulationQuestion[]>([]);
   const [answers, setAnswers] = useState<Record<string, string>>({});
   const [submitted, setSubmitted] = useState(false);
+  const [filterResult, setFilterResult] = useState<'all' | 'wrong' | 'correct'>('all');
   const [loading, setLoading] = useState(false);
   const [loadError, setLoadError] = useState<string | null>(null);
   const [sessionSnapshot, setSessionSnapshot] = useState<SessionSnapshot | null>(null);
@@ -138,6 +139,14 @@ export default function ExamSimulator({ catalog }: { catalog: PracticeCatalog })
   const answeredCount = Object.keys(answers).filter((id) => session.some((question) => question.id === id)).length;
   const allAnswered = session.length > 0 && answeredCount === session.length;
   const score = useMemo(() => session.filter((question) => answers[question.id] && isAnswerCorrect(question.answer, answers[question.id])).length, [session, answers]);
+
+  const displayedSession = useMemo(() => {
+    if (!submitted || filterResult === 'all') return session;
+    if (filterResult === 'wrong') {
+      return session.filter((q) => !isAnswerCorrect(q.answer, answers[q.id]));
+    }
+    return session.filter((q) => isAnswerCorrect(q.answer, answers[q.id]));
+  }, [session, submitted, filterResult, answers]);
 
   const scrollToTop = () => {
     const lowMemoryMode = document.documentElement.classList.contains('arch-lite');
@@ -191,6 +200,7 @@ export default function ExamSimulator({ catalog }: { catalog: PracticeCatalog })
       setSessionSnapshot({ year: requestedYear, exam: requestedExam });
       setAnswers({});
       setSubmitted(false);
+      setFilterResult('all');
       scrollToTop();
     } catch (error) {
       if (
@@ -212,6 +222,7 @@ export default function ExamSimulator({ catalog }: { catalog: PracticeCatalog })
     setSessionSnapshot(null);
     setAnswers({});
     setSubmitted(false);
+    setFilterResult('all');
     scrollToTop();
   };
 
@@ -228,11 +239,55 @@ export default function ExamSimulator({ catalog }: { catalog: PracticeCatalog })
   </section>;
 
   return <div className="space-y-6">
-    <aside className="sticky top-16 z-40 flex flex-wrap items-center justify-between gap-3 rounded-xl border border-(--color-concrete-300) bg-(--color-paper-100)/95 px-4 py-3 shadow-sm backdrop-blur" aria-live="polite"><div><p className="text-xs font-mono text-(--color-teal-700)">{sessionSnapshot?.year ?? year} 年統測 · {examLabel(sessionSnapshot?.exam ?? exam)}</p><p className="text-sm font-bold text-(--color-ink-900)">{submitted ? `作答結果：${score} / ${session.length}` : `作答進度：${answeredCount} / ${session.length}`}</p></div><button type="button" onClick={reset} className="min-h-10 rounded-lg border border-(--color-concrete-300) px-4 text-xs font-bold text-(--color-ink-650)">結束本回</button></aside>
+    <aside className="sticky top-16 z-40 flex flex-wrap items-center justify-between gap-3 rounded-xl border border-(--color-concrete-300) bg-(--color-paper-100)/95 px-4 py-3 shadow-sm backdrop-blur" aria-live="polite">
+      <div>
+        <p className="text-xs font-mono text-(--color-teal-700)">{sessionSnapshot?.year ?? year} 年統測 · {examLabel(sessionSnapshot?.exam ?? exam)}</p>
+        <p className="text-sm font-bold text-(--color-ink-900)">{submitted ? `作答結果：${score} / ${session.length}` : `作答進度：${answeredCount} / ${session.length}`}</p>
+      </div>
+      <div className="flex items-center gap-2">
+        <a href={`${basePath}/cheatsheets`} target="_blank" rel="noreferrer" className="hidden sm:inline-flex rounded-lg bg-amber-50 dark:bg-amber-950/50 border border-amber-300 dark:border-amber-700 px-3 py-1.5 text-xs font-mono font-bold text-amber-800 dark:text-amber-200 hover:bg-amber-100 transition-colors">
+          ⚡ 考點速查卡 ↗
+        </a>
+        <button type="button" onClick={reset} className="min-h-10 rounded-lg border border-(--color-concrete-300) px-4 text-xs font-bold text-(--color-ink-650) hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors">結束本回</button>
+      </div>
+    </aside>
 
-    {submitted ? <section className="rounded-2xl border border-(--color-teal-700) bg-(--color-teal-700)/10 p-6 sm:p-8" aria-labelledby="result-title"><p className="text-xs font-mono uppercase tracking-widest text-(--color-teal-700)">Complete analysis</p><h2 id="result-title" className="mt-1 font-serif text-3xl font-bold text-(--color-ink-900)">整份解析：{score} / {session.length}</h2><p className="mt-3 text-sm leading-7 text-(--color-ink-650)">答對率 {Math.round(score / session.length * 100)}%。下方已一次展開全部題目的正誤與官方答案；專業科目並附對應教學。</p></section> : null}
+    {submitted ? (
+      <section className="rounded-2xl border border-(--color-teal-700) bg-(--color-teal-700)/10 p-6 sm:p-8 space-y-4" aria-labelledby="result-title">
+        <div className="flex flex-wrap items-center justify-between gap-3">
+          <div>
+            <p className="text-xs font-mono uppercase tracking-widest text-(--color-teal-700)">Complete analysis</p>
+            <h2 id="result-title" className="mt-1 font-serif text-3xl font-bold text-(--color-ink-900)">整份解析：{score} / {session.length}</h2>
+            <p className="mt-2 text-sm leading-7 text-(--color-ink-650)">答對率 {Math.round(score / session.length * 100)}%。下方已一次展開全部題目的正誤與官方答案；專業科目並附對應教學。</p>
+          </div>
+          <div className="flex items-center gap-1.5 rounded-xl border border-slate-300 bg-white p-1 text-xs font-mono font-bold dark:border-slate-700 dark:bg-slate-900">
+            <button
+              type="button"
+              onClick={() => setFilterResult('all')}
+              className={`rounded-lg px-3 py-1.5 transition-colors ${filterResult === 'all' ? 'bg-(--color-teal-700) text-white' : 'text-slate-600 dark:text-slate-400'}`}
+            >
+              全部 ({session.length})
+            </button>
+            <button
+              type="button"
+              onClick={() => setFilterResult('wrong')}
+              className={`rounded-lg px-3 py-1.5 transition-colors ${filterResult === 'wrong' ? 'bg-rose-600 text-white' : 'text-slate-600 dark:text-slate-400'}`}
+            >
+              僅看錯題 ({session.length - score})
+            </button>
+            <button
+              type="button"
+              onClick={() => setFilterResult('correct')}
+              className={`rounded-lg px-3 py-1.5 transition-colors ${filterResult === 'correct' ? 'bg-emerald-600 text-white' : 'text-slate-600 dark:text-slate-400'}`}
+            >
+              僅看答對 ({score})
+            </button>
+          </div>
+        </div>
+      </section>
+    ) : null}
 
-    <ol className="space-y-6">{session.map((question, index) => { const selected = answers[question.id]; const correct = submitted && isAnswerCorrect(question.answer, selected); const multiple = isMultipleChoiceAnswer(question.answer); const startsGroup = Boolean(question.groupId && session[index - 1]?.groupId !== question.groupId); return <Fragment key={question.id}>{startsGroup ? <li className="lesson-deferred-section rounded-2xl border border-(--color-blueprint-700)/30 bg-(--color-paper-50) p-5 sm:p-8"><p className="text-xs font-mono uppercase tracking-widest text-(--color-teal-700)">Passage · 題組 {question.groupId?.split('-g').at(-1)}</p><h2 className="mt-2 font-serif text-xl font-bold leading-8 text-(--color-ink-900)"><MathText content={question.groupTitle} /></h2><div className="mt-5 whitespace-pre-line rounded-xl border-l-4 border-(--color-teal-700) bg-white p-5 text-[15px] leading-8 text-(--color-ink-900) sm:p-7"><MathText content={question.passage} /></div><p className="mt-4 text-xs leading-6 text-(--color-ink-650)">請閱讀上方文章，再依序完成下列所有對應題目。</p></li> : null}<li id={`question-${index + 1}`} className={`lesson-deferred-section scroll-mt-36 rounded-2xl border bg-(--color-paper-100) p-5 sm:p-7 ${submitted ? correct ? 'border-(--color-teal-700)' : 'border-(--color-brick-700)' : 'border-(--color-concrete-300)'}`}>
+    <ol className="space-y-6">{displayedSession.map((question, index) => { const selected = answers[question.id]; const correct = submitted && isAnswerCorrect(question.answer, selected); const multiple = isMultipleChoiceAnswer(question.answer); const startsGroup = Boolean(question.groupId && displayedSession[index - 1]?.groupId !== question.groupId); return <Fragment key={question.id}>{startsGroup ? <li className="lesson-deferred-section rounded-2xl border border-(--color-blueprint-700)/30 bg-(--color-paper-50) p-5 sm:p-8"><p className="text-xs font-mono uppercase tracking-widest text-(--color-teal-700)">Passage · 題組 {question.groupId?.split('-g').at(-1)}</p><h2 className="mt-2 font-serif text-xl font-bold leading-8 text-(--color-ink-900)"><MathText content={question.groupTitle} /></h2><div className="mt-5 whitespace-pre-line rounded-xl border-l-4 border-(--color-teal-700) bg-white p-5 text-[15px] leading-8 text-(--color-ink-900) sm:p-7"><MathText content={question.passage} /></div><p className="mt-4 text-xs leading-6 text-(--color-ink-650)">請閱讀上方文章，再依序完成下列所有對應題目。</p></li> : null}<li id={`question-${index + 1}`} className={`lesson-deferred-section scroll-mt-36 rounded-2xl border bg-(--color-paper-100) p-5 sm:p-7 ${submitted ? correct ? 'border-(--color-teal-700)' : 'border-(--color-brick-700)' : 'border-(--color-concrete-300)'}`}>
       <div className="mb-4 flex flex-wrap items-center justify-between gap-2"><span className="text-xs font-mono font-bold text-(--color-teal-700)">模擬第 {index + 1} 題 · {question.subjectName}原題第 {question.questionNo} 題</span>{question.sourceUrl ? <a href={question.sourceUrl} target="_blank" rel="noreferrer" className="rounded-full bg-(--color-paper-50) border border-(--color-concrete-300) px-3 py-1 text-[11px] font-mono text-(--color-ink-650) hover:bg-(--color-teal-700) hover:text-white transition-colors" title="開啟官方 PDF 原卷">{question.sourceLabel} ↗</a> : <span className="rounded-full bg-(--color-paper-50) border border-(--color-concrete-300) px-3 py-1 text-[11px] font-mono text-(--color-ink-650)">{question.sourceLabel}</span>}</div>
       {!question.corruptedOcr && (
         <h2 className="whitespace-pre-line text-base font-bold leading-8 text-(--color-ink-900)"><MathText content={question.excerpt} /></h2>

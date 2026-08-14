@@ -32,7 +32,7 @@ const checks = [
   ['home entry', home.includes('href="/goals"') && home.includes('終極目標')],
   ['navigation entry', nav.includes("href: '/goals'") && nav.includes("label: '終極目標'")],
   ['footer entry', footer.includes('href="/goals"')],
-  ['version 7.2', goals.includes('版本 V7.2') && nav.includes('V7.2') && footer.includes('V7.2')],
+  ['version 7.3', goals.includes('版本 V7.3') && nav.includes('V7.3') && footer.includes('V7.3')],
   ['light and dark text pairing', goals.includes('text-slate-950 dark:text-white') && goals.includes('text-slate-600 dark:text-slate-300')],
 ];
 
@@ -42,5 +42,5 @@ for (const [name, passed] of checks) {
   if (!passed) failures += 1;
 }
 
-console.log(`\nV7.2 goals: ${checks.length - failures}/${checks.length} checks passed.`);
+console.log(`\nV7.3 goals: ${checks.length - failures}/${checks.length} checks passed.`);
 if (failures > 0) process.exit(1);

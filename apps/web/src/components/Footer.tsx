@@ -15,7 +15,7 @@ export default function Footer() {
                 Arch
               </span>
               <span className="rounded-full bg-blue-600/10 dark:bg-blue-400/10 px-2 py-0.5 text-[10px] font-mono font-bold text-blue-700 dark:text-blue-300 border border-blue-600/20">
-                V7.2
+                V7.3
               </span>
             </div>
             <p className="text-sm leading-relaxed text-slate-600 dark:text-slate-400 max-w-md">
@@ -37,9 +37,24 @@ export default function Footer() {
           {/* Quick Links */}
           <div className="space-y-3">
             <h4 className="font-serif font-bold text-sm text-slate-900 dark:text-white uppercase tracking-wider">
-              學習與題庫資源
+              學習與實務核心專區
             </h4>
             <ul className="space-y-2 text-xs text-slate-600 dark:text-slate-400 font-mono">
+              <li>
+                <Link href="/visualizers" className="hover:text-blue-600 dark:hover:text-blue-400 transition-colors text-blue-600 dark:text-blue-400 font-bold">
+                  • 🔬 互動圖解實驗室
+                </Link>
+              </li>
+              <li>
+                <Link href="/field-guide" className="hover:text-teal-600 dark:hover:text-teal-400 transition-colors text-teal-600 dark:text-teal-400 font-bold">
+                  • 🏗️ 建築工程現場手冊
+                </Link>
+              </li>
+              <li>
+                <Link href="/cheatsheets" className="hover:text-amber-600 dark:hover:text-amber-400 transition-colors text-amber-600 dark:text-amber-400 font-bold">
+                  • ⚡ 統測考點速查指南
+                </Link>
+              </li>
               <li>
                 <Link href="/curriculum" className="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
                   • 完整 86 章課程地圖
@@ -56,18 +71,8 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href="/exams" className="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
-                  • 111–115 五年統測題庫解析
-                </Link>
-              </li>
-              <li>
                 <Link href="/cases" className="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
                   • 台灣建築案例實驗室
-                </Link>
-              </li>
-              <li>
-                <Link href="/resources" className="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
-                  • 統測優質學習網站導航
                 </Link>
               </li>
             </ul>

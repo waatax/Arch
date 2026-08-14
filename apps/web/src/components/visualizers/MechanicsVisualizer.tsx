@@ -63,7 +63,7 @@ export default function MechanicsVisualizer({ topicSlug }: MechanicsVisualizerPr
       </div>
 
       {/* Simulator Selector or Sub-views based on topic */}
-      {topicSlug === 'units-vectors' || topicSlug === 'coplanar-forces' || topicSlug === 'concurrent-forces' ? (
+      {topicSlug.includes('vector') || topicSlug.includes('force') || topicSlug.includes('equilibrium') || topicSlug.includes('parallel') || topicSlug.includes('nonconcurrent') || topicSlug.includes('spatial') ? (
         // Vector Resolution Simulator
         <div className="grid gap-6 lg:grid-cols-2 items-center">
           {/* SVG Canvas */}
@@ -72,10 +72,7 @@ export default function MechanicsVisualizer({ topicSlug }: MechanicsVisualizerPr
               {/* Grid axes */}
               <line x1="-130" y1="0" x2="130" y2="0" stroke="currentColor" strokeWidth="1" className="text-slate-300 dark:text-slate-700" />
               <line x1="0" y1="-130" x2="0" y2="130" stroke="currentColor" strokeWidth="1" className="text-slate-300 dark:text-slate-700" />
-              <text x="125" y="-6" fontSize="10" className="fill-slate-400 font-mono">+X</text>
-              <text x="6" y="-120" fontSize="10" className="fill-slate-400 font-mono">+Y</text>
-
-              {/* Force Components Projections */}
+              
               {/* Fx (Horizontal projection) */}
               <line
                 x1="0"
@@ -83,35 +80,19 @@ export default function MechanicsVisualizer({ topicSlug }: MechanicsVisualizerPr
                 x2={(fx / 150) * 120}
                 y2="0"
                 stroke="#0284C7"
-                strokeWidth="3"
+                strokeWidth="2.5"
                 strokeDasharray="4 2"
               />
               {/* Fy (Vertical projection) */}
               <line
-                x1={(fx / 150) * 120}
+                x1="0"
                 y1="0"
-                x2={(fx / 150) * 120}
+                x2="0"
                 y2={-(fy / 150) * 120}
-                stroke="#EA580C"
-                strokeWidth="3"
+                stroke="#0D9488"
+                strokeWidth="2.5"
                 strokeDasharray="4 2"
               />
-
-              {/* Angle Arc */}
-              <path
-                d={`M 30 0 A 30 30 0 0 0 ${30 * Math.cos(rad)} ${-30 * Math.sin(rad)}`}
-                fill="none"
-                stroke="#D97706"
-                strokeWidth="1.5"
-              />
-              <text
-                x={40 * Math.cos(rad / 2)}
-                y={-40 * Math.sin(rad / 2)}
-                fontSize="10"
-                className="fill-amber-600 font-mono font-bold"
-              >
-                {forceAngle}°
-              </text>
 
               {/* Main Force Vector */}
               <line
@@ -119,27 +100,40 @@ export default function MechanicsVisualizer({ topicSlug }: MechanicsVisualizerPr
                 y1="0"
                 x2={(fx / 150) * 120}
                 y2={-(fy / 150) * 120}
-                stroke="#0D9488"
-                strokeWidth="4"
+                stroke="#EA580C"
+                strokeWidth="3.5"
+                markerEnd="url(#arrowhead)"
               />
-              <circle
-                cx={(fx / 150) * 120}
-                cy={-(fy / 150) * 120}
-                r="4"
-                fill="#0D9488"
+
+              {/* Angle Arc Indicator */}
+              <path
+                d={`M 35 0 A 35 35 0 0 0 ${35 * Math.cos(rad)} ${-35 * Math.sin(rad)}`}
+                fill="none"
+                stroke="#EA580C"
+                strokeWidth="1.5"
               />
               <text
-                x={(fx / 150) * 120 + 8}
-                y={-(fy / 150) * 120 - 4}
-                fontSize="11"
-                className="fill-teal-700 dark:fill-teal-300 font-bold font-mono"
+                x={45 * Math.cos(rad / 2)}
+                y={-45 * Math.sin(rad / 2)}
+                fontSize="10"
+                className="fill-orange-600 font-mono font-bold"
               >
-                F = {forceMag} kN
+                {forceAngle}°
               </text>
 
-              {/* Origin O */}
-              <circle cx="0" cy="0" r="3" fill="#1E293B" />
-              <text x="-12" y="14" fontSize="10" className="fill-slate-500 font-mono">O</text>
+              {/* Markers */}
+              <defs>
+                <marker
+                  id="arrowhead"
+                  markerWidth="8"
+                  markerHeight="6"
+                  refX="6"
+                  refY="3"
+                  orient="auto"
+                >
+                  <polygon points="0 0, 8 3, 0 6" fill="#EA580C" />
+                </marker>
+              </defs>
             </svg>
           </div>
 
@@ -147,8 +141,8 @@ export default function MechanicsVisualizer({ topicSlug }: MechanicsVisualizerPr
           <div className="space-y-4">
             <div className="space-y-2">
               <div className="flex justify-between text-xs font-mono font-bold">
-                <span className="text-slate-700 dark:text-slate-300">作用力大小 (F):</span>
-                <span className="text-teal-700 dark:text-teal-300">{forceMag} kN</span>
+                <span className="text-slate-700 dark:text-slate-300">合力大小 |F|:</span>
+                <span className="text-orange-600 dark:text-orange-400">{forceMag} N</span>
               </div>
               <input
                 type="range"
@@ -156,14 +150,14 @@ export default function MechanicsVisualizer({ topicSlug }: MechanicsVisualizerPr
                 max="150"
                 value={forceMag}
                 onChange={(e) => setForceMag(Number(e.target.value))}
-                className="w-full accent-teal-600 cursor-pointer"
+                className="w-full accent-orange-600"
               />
             </div>
 
             <div className="space-y-2">
               <div className="flex justify-between text-xs font-mono font-bold">
-                <span className="text-slate-700 dark:text-slate-300">夾角 (θ, 與水平X軸):</span>
-                <span className="text-amber-600 dark:text-amber-400">{forceAngle}°</span>
+                <span className="text-slate-700 dark:text-slate-300">夾角 θ:</span>
+                <span className="text-orange-600 dark:text-orange-400">{forceAngle}°</span>
               </div>
               <input
                 type="range"
@@ -171,36 +165,34 @@ export default function MechanicsVisualizer({ topicSlug }: MechanicsVisualizerPr
                 max="90"
                 value={forceAngle}
                 onChange={(e) => setForceAngle(Number(e.target.value))}
-                className="w-full accent-amber-600 cursor-pointer"
+                className="w-full accent-orange-600"
               />
             </div>
 
-            {/* Computation Result Cards */}
+            {/* Computation Output Badges */}
             <div className="grid grid-cols-2 gap-2 pt-2">
-              <div className="rounded-lg bg-sky-50 dark:bg-sky-950/40 border border-sky-200 dark:border-sky-800/60 p-3">
-                <span className="text-[10px] font-mono uppercase text-sky-700 dark:text-sky-300 block">
-                  水平分力 Fx = F · cos(θ)
-                </span>
-                <span className="text-lg font-bold font-mono text-sky-900 dark:text-sky-100">
-                  {fx.toFixed(2)} <span className="text-xs font-normal">kN</span>
-                </span>
+              <div className="rounded-lg bg-sky-50 dark:bg-sky-950/40 p-2.5 border border-sky-200 dark:border-sky-800/60">
+                <div className="text-[10px] font-mono text-sky-700 dark:text-sky-300 font-bold uppercase">水平分力 Fx</div>
+                <div className="font-mono text-sm font-bold text-sky-900 dark:text-sky-100">
+                  {fx.toFixed(1)} N
+                </div>
+                <div className="text-[10px] text-slate-500 font-mono">F · cos({forceAngle}°)</div>
               </div>
-              <div className="rounded-lg bg-orange-50 dark:bg-orange-950/40 border border-orange-200 dark:border-orange-800/60 p-3">
-                <span className="text-[10px] font-mono uppercase text-orange-700 dark:text-orange-300 block">
-                  垂直分力 Fy = F · sin(θ)
-                </span>
-                <span className="text-lg font-bold font-mono text-orange-900 dark:text-orange-100">
-                  {fy.toFixed(2)} <span className="text-xs font-normal">kN</span>
-                </span>
+              <div className="rounded-lg bg-teal-50 dark:bg-teal-950/40 p-2.5 border border-teal-200 dark:border-teal-800/60">
+                <div className="text-[10px] font-mono text-teal-700 dark:text-teal-300 font-bold uppercase">垂直分力 Fy</div>
+                <div className="font-mono text-sm font-bold text-teal-900 dark:text-teal-100">
+                  {fy.toFixed(1)} N
+                </div>
+                <div className="text-[10px] text-slate-500 font-mono">F · sin({forceAngle}°)</div>
               </div>
             </div>
 
-            <p className="text-xs text-slate-600 dark:text-slate-400 leading-relaxed bg-white dark:bg-slate-900 p-3 rounded-lg border border-slate-200 dark:border-slate-800">
-              💡 <strong>幾何驗證：</strong> √(Fx² + Fy²) = √({fx.toFixed(1)}² + {fy.toFixed(1)}²) = {Math.sqrt(fx * fx + fy * fy).toFixed(1)} kN，完全符合畢氏定理與平行四邊形向量法則。
+            <p className="text-[11px] text-slate-500 dark:text-slate-400 italic">
+              💡 核心定理：合力平方和等於分力平方和 (Fx² + Fy² = F²)。
             </p>
           </div>
         </div>
-      ) : topicSlug === 'beam-stress' || topicSlug === 'statically-determinate-beams' || topicSlug === 'beam-internal-forces' ? (
+      ) : topicSlug.includes('beam') || topicSlug.includes('shear') || topicSlug.includes('bending') || topicSlug.includes('truss') ? (
         // Simple Beam SFD/BMD Visualizer
         <div className="space-y-5">
           {/* Controls */}

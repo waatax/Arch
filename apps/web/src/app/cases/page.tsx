@@ -116,6 +116,20 @@ export default function CasesPage() {
         <p className="text-base text-(--color-ink-650) leading-relaxed">
           從台灣出發，延伸至日本、中國與世界經典，用真實建築反覆練習可遷移的閱讀方法。從好奇提問、實景觀察、工程圖解到學科連結，看懂建築背後的科學與取捨。
         </p>
+        <div className="mt-4 flex flex-wrap gap-2 pt-2">
+          <Link
+            href="/visualizers"
+            className="inline-flex items-center gap-1.5 rounded-lg bg-blue-50 dark:bg-blue-950/40 border border-blue-200 dark:border-blue-800 px-3 py-1.5 text-xs font-mono font-bold text-blue-700 dark:text-blue-300 hover:bg-blue-100 transition-colors"
+          >
+            🔬 結構與外殼圖解模擬器 →
+          </Link>
+          <Link
+            href="/field-guide"
+            className="inline-flex items-center gap-1.5 rounded-lg bg-teal-50 dark:bg-teal-950/40 border border-teal-200 dark:border-teal-800 px-3 py-1.5 text-xs font-mono font-bold text-teal-700 dark:text-teal-300 hover:bg-teal-100 transition-colors"
+          >
+            🏗️ 營造現場工程手冊 →
+          </Link>
+        </div>
       </div>
 
       <div className="space-y-14">

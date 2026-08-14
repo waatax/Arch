@@ -56,7 +56,7 @@ export default function SurveyingVisualizer({ topicSlug }: SurveyingVisualizerPr
         </span>
       </div>
 
-      {topicSlug === 'leveling' || topicSlug === 'leveling-errors' || topicSlug === 'contour-lines' ? (
+      {topicSlug.includes('elevation') || topicSlug.includes('leveling') || topicSlug.includes('distance') || topicSlug === 'surveying-fundamentals' ? (
         // Leveling Simulation
         <div className="grid gap-6 lg:grid-cols-2 items-center">
           {/* Leveling Visual Schematic */}

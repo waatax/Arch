@@ -528,7 +528,7 @@ export default function TopicPageLayout({ subject, topic, mappedExamQuestions }:
         <InteractiveVisualizer subjectSlug={subject.slug} topicSlug={topic.slug} />
       </section>
 
-      {/* === [Iconic Landmark Engineering Case Study] === */}
+      {/* === [Iconic Landmark Engineering Case Study & Field Insight] === */}
       <section className="lesson-deferred-section rounded-2xl border border-sky-200 dark:border-sky-900/60 bg-sky-50/30 dark:bg-sky-950/20 p-5 sm:p-7 shadow-xs space-y-4">
         <div className="flex items-center justify-between border-b border-sky-200/60 dark:border-sky-900/40 pb-3">
           <div className="flex items-center gap-2">
@@ -562,6 +562,24 @@ export default function TopicPageLayout({ subject, topic, mappedExamQuestions }:
               {deepKnowledge.landmarkCase.pedagogicalInsight}
             </p>
           </div>
+        </div>
+
+        {/* Construction Site Practical Insight */}
+        <div className="rounded-xl bg-white dark:bg-slate-900 p-4 border border-sky-200 dark:border-sky-800/80 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 text-xs">
+          <div className="space-y-0.5">
+            <span className="font-bold text-slate-900 dark:text-white flex items-center gap-1.5 font-mono">
+              <span>🏗️</span> 營造現場工程師實務對照：
+            </span>
+            <p className="text-slate-600 dark:text-slate-400">
+              本章理論對應公共工程施工規範與現場抽樣查核，深入了解施工安全、材料驗收與圖說檢討細節。
+            </p>
+          </div>
+          <Link
+            href="/field-guide"
+            className="shrink-0 rounded-lg bg-sky-600 hover:bg-sky-700 text-white px-3 py-1.5 font-mono font-bold transition-colors"
+          >
+            查閱現場手冊 →
+          </Link>
         </div>
       </section>
 
@@ -598,9 +616,17 @@ export default function TopicPageLayout({ subject, topic, mappedExamQuestions }:
           </div>
         </div>
 
-        <div className="rounded-xl bg-amber-100/60 dark:bg-amber-950/60 p-3.5 text-xs text-amber-950 dark:text-amber-200 border border-amber-300/80 dark:border-amber-800">
-          🎯 <strong>秒殺破題口訣：</strong>
-          {deepKnowledge.examTrend.killerTrick}
+        <div className="rounded-xl bg-amber-100/60 dark:bg-amber-950/60 p-3.5 text-xs text-amber-950 dark:text-amber-200 border border-amber-300/80 dark:border-amber-800 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
+          <div>
+            🎯 <strong>秒殺破題口訣：</strong>
+            {deepKnowledge.examTrend.killerTrick}
+          </div>
+          <Link
+            href="/cheatsheets"
+            className="shrink-0 font-mono text-[11px] font-bold text-amber-900 dark:text-amber-300 underline hover:text-amber-700"
+          >
+            考點公式速查卡 →
+          </Link>
         </div>
       </section>
 

@@ -4,6 +4,9 @@ import { ArrowRight, Building2, CheckCircle2, Compass, DraftingCompass, HardHat,
 const paths = [
   { icon: Compass, eyebrow: '從零開始', title: '沿著課程地圖學', copy: '86 個章節依先備知識排列，從生活直覺一路走到統測題型。', href: '/curriculum', cta: '打開課程地圖', tone: 'blue' },
   { icon: Target, eyebrow: '考前衝刺', title: '用歷屆題找弱點', copy: '111–115 年五科共 925 題，練習、解析與錯題複習在同一條流程。', href: '/practice', cta: '開始今日練習', tone: 'coral' },
+  { icon: DraftingCompass, eyebrow: '動態圖解', title: '互動圖解實驗室', copy: '簡支梁受力、莫爾圓主應力、第三角投影展開與水灰比強度模擬。', href: '/visualizers', cta: '進入圖解實驗室', tone: 'blue' },
+  { icon: HardHat, eyebrow: '現場實務', title: '營造現場檢驗手冊', copy: '連結施工規範綱要、CNS 坍度氯離子試驗、高張力螺栓與梁穿孔防錯。', href: '/field-guide', cta: '查閱現場手冊', tone: 'teal' },
+  { icon: ShieldCheck, eyebrow: '高頻速查', title: '全科考點速查指南', copy: '專一專二高頻公式卡、物理量綱、記憶口訣與一鍵複製 LaTeX 算式。', href: '/cheatsheets', cta: '開啟考點速查卡', tone: 'coral' },
   { icon: Building2, eyebrow: '建立建築感', title: '從真實案例理解', copy: '把結構、材料、構造與空間，放回你看得見的台灣建築。', href: '/cases', cta: '進入案例實驗室', tone: 'teal' },
 ];
 
@@ -22,22 +25,22 @@ export default function Home() {
         <div className="mx-auto grid max-w-7xl gap-10 px-4 pb-16 pt-12 sm:px-6 sm:pb-24 sm:pt-20 lg:grid-cols-[1.15fr_.85fr] lg:items-center lg:px-8">
           <div className="relative z-10">
             <div className="mb-6 flex flex-wrap items-center gap-2 text-[11px] font-bold tracking-[.16em]">
-              <span className="rounded-full bg-blue-700 px-3 py-1.5 text-white">ARCH V7</span>
+              <span className="rounded-full bg-blue-700 px-3 py-1.5 text-white">ARCH V7.3</span>
               <span className="text-slate-500 dark:text-slate-400">台灣高工建築科學習基地</span>
             </div>
             <h1 className="max-w-3xl font-serif text-[clamp(2.8rem,7vw,5.9rem)] font-bold leading-[.98] tracking-[-.055em] text-slate-950 dark:text-white">
               把建築學懂，<br /><span className="v7-outline-text">也把分數蓋起來。</span>
             </h1>
             <p className="mt-7 max-w-2xl text-base leading-8 text-slate-600 dark:text-slate-300 sm:text-lg">
-              不只背公式。從真實建築、圖解與步驟化例題開始，銜接 86 章課程與 925 道歷屆題，讓每次學習都有明確下一步。
+              不只背公式。從真實建築、圖解與步驟化例題開始，銜接 86 章課程、動態圖解實驗室、現場實務手冊與 925 道歷屆題，讓每次學習都有明確下一步。
             </p>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               <Link href="/curriculum" className="v7-primary group inline-flex min-h-14 items-center justify-center gap-3 rounded-full bg-blue-700 px-7 font-bold text-white shadow-lg shadow-blue-900/15 transition hover:bg-blue-800">
                 <Play className="size-4 fill-current" /> 從第一章開始
                 <ArrowRight className="size-4 transition-transform group-hover:translate-x-1" />
               </Link>
-              <Link href="/practice" className="inline-flex min-h-14 items-center justify-center gap-2 rounded-full border border-slate-300 bg-white/70 px-7 font-bold text-slate-900 transition hover:border-blue-600 dark:border-slate-700 dark:bg-slate-900/70 dark:text-white">
-                先做 5 題診斷
+              <Link href="/visualizers" className="inline-flex min-h-14 items-center justify-center gap-2 rounded-full border border-slate-300 bg-white/70 px-7 font-bold text-slate-900 transition hover:border-blue-600 dark:border-slate-700 dark:bg-slate-900/70 dark:text-white">
+                🔬 進入圖解實驗室
               </Link>
             </div>
             <div className="mt-8 flex flex-wrap gap-x-6 gap-y-2 text-xs text-slate-500 dark:text-slate-400">
@@ -77,7 +80,7 @@ export default function Home() {
           <h2 className="mt-3 font-serif text-3xl font-bold tracking-tight text-slate-950 dark:text-white sm:text-5xl">你現在需要哪一條路？</h2>
           <p className="mt-4 text-slate-600 dark:text-slate-400">不用先理解整個平台。選一個最接近你此刻目標的入口。</p>
         </div>
-        <div className="grid gap-4 lg:grid-cols-3">
+        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {paths.map(({ icon: Icon, ...path }, index) => (
             <Link key={path.title} href={path.href} className={`v7-route v7-route-${path.tone} group flex min-h-72 flex-col rounded-[1.75rem] border border-slate-200 bg-white p-6 transition duration-300 hover:-translate-y-1 dark:border-slate-800 dark:bg-slate-900 sm:p-8`}>
               <div className="flex items-start justify-between"><span className="rounded-full bg-slate-100 px-3 py-1 text-[10px] font-bold tracking-widest text-slate-600 dark:bg-slate-800 dark:text-slate-300">{path.eyebrow}</span><span className="font-mono text-xs text-slate-400">0{index + 1}</span></div>
