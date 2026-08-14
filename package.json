@@ -11,6 +11,7 @@
     "validate:v6": "node scripts/run-7-iteration-passes.mjs",
     "validate:v7-teaching": "node scripts/validate-v7-teaching-quality.mjs",
     "validate:v7-goals": "node scripts/validate-v7-goals.mjs",
+    "validate:70x7": "node scripts/validate-70x7-mastery.mjs",
     "validate:android": "node scripts/validate-android-release.mjs",
     "dev": "pnpm --filter web dev",
     "lint": "pnpm --filter web lint",

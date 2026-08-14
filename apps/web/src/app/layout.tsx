@@ -7,6 +7,29 @@ import "./globals.css";
 
 const displayBootstrap = `(function(){try{var r=document.documentElement;var ua=navigator.userAgent||'';if(/(?:ArchLowRam\\/1|ArchLite)/i.test(ua)){r.classList.add('arch-lite');}var saved=localStorage.getItem('arch-theme');var dark=saved==='dark'||(saved!=='light'&&matchMedia('(prefers-color-scheme: dark)').matches);r.classList.toggle('dark',dark);r.style.colorScheme=dark?'dark':'light';}catch(e){}})();`;
 
+const jsonLdData = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": "https://waatax.github.io/Arch/#website",
+      "url": "https://waatax.github.io/Arch/",
+      "name": "Arch · 台灣高工建築科學習基地",
+      "description": "面向全台高工建築科學生與教師的開放共學基地。收錄 13 科 99 章節教學、動態圖解實驗室、營造現場手冊、考點速查卡、925 題統測詳解與建築師/技師證照地圖。",
+      "inLanguage": "zh-TW"
+    },
+    {
+      "@type": "EducationalOccupationalCredential",
+      "name": "建築師與工程技師專業認證銜接地圖",
+      "credentialCategory": "Professional License",
+      "recognizedBy": {
+        "@type": "GovernmentOrganization",
+        "name": "中華民國考選部 · 內政部國土管理署 · 行政院公共工程委員會"
+      }
+    }
+  ]
+};
+
 export const viewport: Viewport = {
   themeColor: [
     { media: "(prefers-color-scheme: light)", color: "#FAF8F5" },
@@ -22,16 +45,16 @@ export const metadata: Metadata = {
     default: "Arch · 台灣高工建築科學習基地 · 信達雅建築素養與統測備考",
     template: "%s · Arch 台灣高工建築科",
   },
-  description: "面向全台高工建築科學生與教師的開放共學基地。收錄 86+ 章節教學、動態圖解實驗室、營造現場手冊、考點速查卡、925 題統測詳解與建築師/技師證照地圖。",
+  description: "面向全台高工建築科學生與教師的開放共學基地。收錄 13 科 99 章節教學、動態圖解實驗室、營造現場手冊、考點速查卡、925 題統測詳解與建築師/技師證照地圖。",
   keywords: ["台灣高工建築科", "統測建築類", "工程力學", "建築材料", "測量實習", "建築製圖", "建築師考試", "結構技師", "土木技師", "SFD BMD", "莫爾圓", "CNS 建築製圖"],
   authors: [{ name: "Arch 開放教育社群" }],
-  manifest: "/manifest.json",
+  manifest: "/manifest.webmanifest",
   icons: {
     icon: "/favicon.ico",
   },
   openGraph: {
     title: "Arch · 台灣高工建築科學習基地",
-    description: "把建築學懂，也把分數蓋起來。86 章完整課程、五大動態圖解實驗室、營造現場手冊與 925 道統測五科全詳解。",
+    description: "把建築學懂，也把分數蓋起來。13 科 99 章完整課程、五大動態圖解實驗室、營造現場手冊與 925 道統測五科全詳解。",
     type: "website",
     locale: "zh_TW",
     siteName: "Arch",
@@ -47,6 +70,10 @@ export default function RootLayout({
     <html lang="zh-TW" className="h-full antialiased" suppressHydrationWarning>
       <head>
         <script dangerouslySetInnerHTML={{ __html: displayBootstrap }} />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdData) }}
+        />
       </head>
       <body className="min-h-full flex flex-col bg-slate-50 text-slate-900 dark:bg-slate-950 dark:text-slate-50 transition-colors duration-300 relative overflow-x-hidden selection:bg-blue-600/20 selection:text-slate-950 dark:selection:bg-teal-400/20 dark:selection:text-white">
         <a

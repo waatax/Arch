@@ -9,11 +9,28 @@ import {
   Activity, 
   Sun, 
   BookOpen, 
-  Sparkles
+  Sparkles,
+  Copy,
+  Check,
+  Zap
 } from 'lucide-react';
+
+const materialProps = {
+  a36: { name: 'CNS A36 低碳鋼', E: 200, fy: 250, desc: 'E = 200 GPa, fy = 250 MPa' },
+  'high-strength': { name: '預力高強鋼絞線', E: 205, fy: 1600, desc: 'E = 205 GPa, fy = 1600 MPa' },
+  aluminum: { name: '6061-T6 結構鋁合金', E: 70, fy: 240, desc: 'E = 70 GPa, fy = 240 MPa' },
+  timber: { name: '針葉樹結構木材 (順紋)', E: 11, fy: 30, desc: 'E = 11 GPa, fy = 30 MPa' },
+};
 
 export default function VisualizersPage() {
   const [activeTab, setActiveTab] = useState<'mechanics' | 'drafting' | 'surveying' | 'materials' | 'physics'>('mechanics');
+  const [copiedKey, setCopiedKey] = useState<string | null>(null);
+
+  const copyToClipboard = (key: string, text: string) => {
+    navigator.clipboard.writeText(text);
+    setCopiedKey(key);
+    setTimeout(() => setCopiedKey(null), 2000);
+  };
 
   // --- 1. Mechanics Beam Simulator State ---
   const [beamLength, setBeamLength] = useState<number>(6); // meters
@@ -21,10 +38,7 @@ export default function VisualizersPage() {
   const [loadPos, setLoadPos] = useState<number>(2); // meters from left support
   const [distLoad, setDistLoad] = useState<number>(10); // kN/m
 
-  // Beam Calculations (Simply supported with a point load and uniform distributed load)
-  // Reactions:
-  // ΣM_A = 0 => R_B * L = P * a + w * L * (L/2) => R_B = (P*a + w*L^2/2) / L
-  // R_A = P + w*L - R_B
+  // Beam Calculations
   const { ra, rb, maxMoment, zeroShearPos } = useMemo(() => {
     const L = beamLength;
     const P = pointLoad;
@@ -34,17 +48,13 @@ export default function VisualizersPage() {
     const rbVal = (P * a + (w * L * L) / 2) / L;
     const raVal = P + w * L - rbVal;
 
-    // Shear: V(x) = ra - w*x (for x < a), V(x) = ra - w*x - P (for x >= a)
-    // Finding max moment where V(x) = 0:
-    let xZero = raVal / w;
+    let xZero = raVal / (w || 0.0001);
     if (xZero > a) {
-      xZero = (raVal - P) / w;
+      xZero = (raVal - P) / (w || 0.0001);
     }
     xZero = Math.max(0, Math.min(L, xZero));
 
-    // Moment at point load a:
     const ma = raVal * a - (w * a * a) / 2;
-    // Moment at xZero:
     let mm = 0;
     if (xZero <= a) {
       mm = raVal * xZero - (w * xZero * xZero) / 2;
@@ -73,10 +83,9 @@ export default function VisualizersPage() {
     const sigma1 = center + radius;
     const sigma2 = center - radius;
     const tauMax = radius;
-    const twoThetaP = (Math.atan2(2 * tauXY, sigmaX - sigmaY) * 180) / Math.PI;
+    const twoThetaP = (Math.atan2(2 * tauXY, sigmaX - sigmaY || 0.0001) * 180) / Math.PI;
     const thetaP = twoThetaP / 2;
 
-    // Stresses at angle theta:
     const rad2 = (2 * theta * Math.PI) / 180;
     const sigmaTheta = center + ((sigmaX - sigmaY) / 2) * Math.cos(rad2) + tauXY * Math.sin(rad2);
     const tauTheta = -((sigmaX - sigmaY) / 2) * Math.sin(rad2) + tauXY * Math.cos(rad2);
@@ -93,6 +102,34 @@ export default function VisualizersPage() {
     };
   }, [sigmaX, sigmaY, tauXY, theta]);
 
+  // --- Hooke's Law & Axial Bar Deformation State ---
+  const [axialP, setAxialP] = useState<number>(60); // kN
+  const [barL, setBarL] = useState<number>(3.0); // meters
+  const [barArea, setBarArea] = useState<number>(10); // cm^2
+  const [barMaterial, setBarMaterial] = useState<'a36' | 'high-strength' | 'aluminum' | 'timber'>('a36');
+
+  const hookeResults = useMemo(() => {
+    const mat = materialProps[barMaterial];
+    const A_mm2 = barArea * 100;
+    const P_N = axialP * 1000;
+    const sigma = P_N / Math.max(1, A_mm2);
+    const E_MPa = mat.E * 1000;
+    const strain = sigma / E_MPa;
+    const deltaL_mm = (P_N * (barL * 1000)) / (A_mm2 * E_MPa);
+    const k = (A_mm2 * E_MPa) / (barL * 1000 * 1000);
+    const isYielded = sigma > mat.fy;
+
+    return {
+      sigma: Number(sigma.toFixed(2)),
+      strain: Number(strain.toFixed(6)),
+      deltaL_mm: Number(deltaL_mm.toFixed(3)),
+      k: Number(k.toFixed(2)),
+      isYielded,
+      fy: mat.fy,
+      matName: mat.name,
+    };
+  }, [axialP, barL, barArea, barMaterial]);
+
   // --- 2. Drafting Visualizer State ---
   const [orthoView, setOrthoView] = useState<'3d' | 'unfold' | 'cns-symbols'>('unfold');
   const [selectedSymbol, setSelectedSymbol] = useState<'rc' | 'steel' | 'wood' | 'brick' | 'insulation' | 'glass'>('rc');
@@ -103,9 +140,9 @@ export default function VisualizersPage() {
   const [foreSight, setForeSight] = useState<number>(0.842); // m
 
   const levelingResults = useMemo(() => {
-    const hi = bmElevation + backSight; // Instrument height
-    const tpElevation = hi - foreSight; // TP1 Elevation
-    const diff = backSight - foreSight; // ΔH
+    const hi = bmElevation + backSight;
+    const tpElevation = hi - foreSight;
+    const diff = backSight - foreSight;
     return {
       hi: Number(hi.toFixed(3)),
       tpElevation: Number(tpElevation.toFixed(3)),
@@ -116,14 +153,10 @@ export default function VisualizersPage() {
   // --- 4. Materials Concrete & Rebar State ---
   const [waterWeight, setWaterWeight] = useState<number>(180); // kg/m3
   const [cementWeight, setCementWeight] = useState<number>(360); // kg/m3
-  const [airContent, setAirContent] = useState<number>(1.5); // %
 
   const concreteResults = useMemo(() => {
     const wc = waterWeight / Math.max(1, cementWeight);
-    // Abram's law empirical estimate for 28-day compressive strength: fc = A / B^(w/c)
-    // Approximate: fc' ≈ 96 / (8.2^(w/c)) in MPa
     const fc = Math.max(10, Math.min(60, 96 / Math.pow(8.2, wc)));
-    // Slump estimate based on water and paste content (cm)
     const slump = Math.max(3, Math.min(25, (waterWeight - 140) * 0.25 + 10));
 
     return {
@@ -139,8 +172,6 @@ export default function VisualizersPage() {
   const [glassType, setGlassType] = useState<'single' | 'double' | 'low-e'>('double');
 
   const physicsResults = useMemo(() => {
-    // Conductivity k (W/m·K): RC=1.7, XPS=0.034, plaster=0.8
-    // Surface resistances: Rsi=0.13, Rse=0.04
     const rRc = (wallThickness / 100) / 1.7;
     const rIns = (insulationThickness / 100) / 0.034;
     const rPlaster = 0.02 / 0.8;
@@ -164,19 +195,19 @@ export default function VisualizersPage() {
       <header className="space-y-4 text-center max-w-3xl mx-auto">
         <div className="inline-flex items-center gap-2 rounded-full border border-blue-200 dark:border-blue-900/80 bg-blue-50/80 dark:bg-blue-950/40 px-3.5 py-1 text-xs font-mono font-bold text-blue-700 dark:text-blue-300">
           <Sparkles className="size-3.5 text-blue-600 dark:text-blue-400" />
-          Arch V7.3 互動圖解實驗室
+          Arch V7.3 互動圖解實驗室 (Interactive Engineering Lab)
         </div>
         <h1 className="font-serif text-3xl font-bold tracking-tight text-slate-950 dark:text-white sm:text-5xl">
-          把抽象公式，變成看得見的動態模型。
+          把抽象公式，變成看得見的動態工程模型。
         </h1>
         <p className="text-base leading-relaxed text-slate-600 dark:text-slate-400 sm:text-lg">
-          動手滑動載重、旋轉應力元素、展開正投影三視圖、模擬水準平差與調整混凝土配比。
+          動手滑動載重、旋轉應力元素、展開正投影三視圖、模擬水準平差、觀察虎克定律拉壓與調整混凝土配比。
           透視建築工程背後的物理規律與 CNS 規範。
         </p>
       </header>
 
       {/* Module Selector Tabs */}
-      <nav className="flex items-center justify-start sm:justify-center gap-2 overflow-x-auto pb-2 border-b border-slate-200 dark:border-slate-800 text-xs sm:text-sm font-mono" aria-label="實驗室模組切換">
+      <nav className="flex items-center justify-start sm:justify-center gap-2 overflow-x-auto pb-2 border-b border-slate-200 dark:border-slate-800 text-xs sm:text-sm font-mono mobile-scroll" aria-label="實驗室模組切換">
         {[
           { id: 'mechanics', label: '🛠️ 結構力學實驗台', icon: Activity },
           { id: 'drafting', label: '📐 建築製圖實驗台', icon: DraftingCompass },
@@ -190,7 +221,7 @@ export default function VisualizersPage() {
             <button
               key={tab.id}
               onClick={() => setActiveTab(tab.id as typeof activeTab)}
-              className={`flex shrink-0 items-center gap-2 rounded-xl px-4 py-2.5 font-bold transition-all ${
+              className={`flex shrink-0 items-center gap-2 rounded-xl px-4 py-2.5 font-bold transition-all cursor-pointer ${
                 isActive
                   ? 'bg-blue-700 text-white shadow-md shadow-blue-900/20'
                   : 'bg-slate-100 dark:bg-slate-800/80 text-slate-700 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700'
@@ -205,12 +236,12 @@ export default function VisualizersPage() {
 
       {/* --- Tab 1: Structural Mechanics Simulator --- */}
       {activeTab === 'mechanics' && (
-        <div className="space-y-8 animate-fadeIn">
+        <div className="space-y-10 animate-fadeIn">
           {/* Section 1: Beam Shear & Moment */}
           <div className="rounded-3xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 p-6 sm:p-8 shadow-sm space-y-6">
             <div className="flex flex-wrap items-center justify-between gap-3 border-b border-slate-100 dark:border-slate-800 pb-4">
               <div>
-                <span className="text-xs font-mono font-bold uppercase tracking-widest text-blue-600 dark:text-blue-400">
+                <span className="text-xs font-mono font-bold uppercase tracking-widest text-blue-700 dark:text-blue-400">
                   Simulation 01 · Beam Shear & Moment Diagrams
                 </span>
                 <h2 className="font-serif text-2xl font-bold text-slate-900 dark:text-white mt-1">
@@ -227,12 +258,35 @@ export default function VisualizersPage() {
               </div>
             </div>
 
+            {/* Quick Engineering Presets */}
+            <div className="flex items-center gap-2 overflow-x-auto text-xs font-mono text-slate-500 pb-1">
+              <span className="shrink-0 flex items-center gap-1 font-bold"><Zap className="size-3.5 text-amber-500" /> 工程預設：</span>
+              <button
+                onClick={() => { setBeamLength(6); setPointLoad(30); setLoadPos(3); setDistLoad(10); }}
+                className="px-2.5 py-1 rounded-lg bg-slate-100 dark:bg-slate-800 hover:bg-blue-100 dark:hover:bg-blue-950/60 text-slate-700 dark:text-slate-300 transition-colors shrink-0 cursor-pointer"
+              >
+                標準對稱載重 (L=6m, P=30kN, w=10)
+              </button>
+              <button
+                onClick={() => { setBeamLength(8); setPointLoad(0); setDistLoad(15); }}
+                className="px-2.5 py-1 rounded-lg bg-slate-100 dark:bg-slate-800 hover:bg-blue-100 dark:hover:bg-blue-950/60 text-slate-700 dark:text-slate-300 transition-colors shrink-0 cursor-pointer"
+              >
+                純均布載重 (w=15kN/m)
+              </button>
+              <button
+                onClick={() => { setBeamLength(6); setPointLoad(60); setLoadPos(2); setDistLoad(0); }}
+                className="px-2.5 py-1 rounded-lg bg-slate-100 dark:bg-slate-800 hover:bg-blue-100 dark:hover:bg-blue-950/60 text-slate-700 dark:text-slate-300 transition-colors shrink-0 cursor-pointer"
+              >
+                偏心集中載重 (P=60kN, a=2m)
+              </button>
+            </div>
+
             {/* Controls Grid */}
             <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4 rounded-2xl bg-slate-50 dark:bg-slate-950/60 p-5 border border-slate-200/80 dark:border-slate-800">
               <div className="space-y-2">
                 <div className="flex justify-between text-xs font-mono font-bold text-slate-700 dark:text-slate-300">
                   <span>梁長跨度 L</span>
-                  <span className="text-blue-600 dark:text-blue-400">{beamLength} m</span>
+                  <span className="text-blue-700 dark:text-blue-400">{beamLength} m</span>
                 </div>
                 <input
                   type="range"
@@ -245,7 +299,7 @@ export default function VisualizersPage() {
                     setBeamLength(l);
                     if (loadPos > l) setLoadPos(l);
                   }}
-                  className="w-full accent-blue-600"
+                  className="w-full accent-blue-700"
                 />
               </div>
 
@@ -308,12 +362,10 @@ export default function VisualizersPage() {
                   <rect x="100" y="70" width="600" height="16" rx="4" fill="#64748b" />
                   
                   {/* Supports */}
-                  {/* Left Pin Support */}
-                  <polygon points="90,105 110,105 100,86" fill="#3b82f6" />
-                  <line x1="80" y1="106" x2="120" y2="106" stroke="#3b82f6" strokeWidth="3" />
-                  <text x="100" y="125" textAnchor="middle" fontSize="12" fontWeight="bold" fill="#3b82f6">A (Pin)</text>
+                  <polygon points="90,105 110,105 100,86" fill="#1F567A" />
+                  <line x1="80" y1="106" x2="120" y2="106" stroke="#1F567A" strokeWidth="3" />
+                  <text x="100" y="125" textAnchor="middle" fontSize="12" fontWeight="bold" fill="#1F567A">A (Pin)</text>
 
-                  {/* Right Roller Support */}
                   <polygon points="690,105 710,105 700,86" fill="#0d9488" />
                   <circle cx="695" cy="110" r="4" fill="#0d9488" />
                   <circle cx="705" cy="110" r="4" fill="#0d9488" />
@@ -348,8 +400,8 @@ export default function VisualizersPage() {
                           <>
                             <line x1={px} y1="15" x2={px} y2="68" stroke="#d97706" strokeWidth="3" />
                             <polygon points={`${px-5},60 ${px+5},60 ${px},68`} fill="#d97706" />
-                            <text x={px} y="10" textAnchor="middle" fontSize="12" fontWeight="bold" fill="#d97706">
-                              P = {pointLoad} kN (a={loadPos}m)
+                            <text x={px} y="10" textAnchor="middle" fontSize="11" fontWeight="bold" fill="#d97706">
+                              P = {pointLoad} kN (a = {loadPos}m)
                             </text>
                           </>
                         );
@@ -359,139 +411,85 @@ export default function VisualizersPage() {
                 </svg>
               </div>
 
-              {/* 2. Shear Force Diagram (SFD) & 3. Bending Moment Diagram (BMD) */}
-              <div className="grid gap-6 lg:grid-cols-2">
-                {/* SFD */}
-                <div className="rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-950 p-4 space-y-2">
-                  <div className="flex justify-between items-center text-xs font-mono font-bold">
-                    <span className="text-blue-600 dark:text-blue-400">2. 剪力圖 (SFD · V)</span>
-                    <span className="text-slate-500">零剪力點 x = {zeroShearPos} m</span>
-                  </div>
-                  <svg viewBox="0 0 400 120" className="w-full h-28 select-none">
-                    {/* Baseline */}
-                    <line x1="40" y1="60" x2="360" y2="60" stroke="#94a3b8" strokeWidth="1.5" strokeDasharray="3 3" />
-                    <text x="25" y="64" fontSize="10" fill="#94a3b8">0</text>
-
-                    {/* SFD Shape */}
-                    {(() => {
-                      const xLoad = 40 + (loadPos / beamLength) * 320;
-                      const maxV = Math.max(Math.abs(ra), Math.abs(rb), 1);
-                      const scaleY = 45 / maxV;
-
-                      const yRa = 60 - ra * scaleY;
-                      const yBeforeP = 60 - (ra - distLoad * loadPos) * scaleY;
-                      const yAfterP = 60 - (ra - distLoad * loadPos - pointLoad) * scaleY;
-                      const yRb = 60 + rb * scaleY;
-
-                      const points = `40,60 40,${yRa} ${xLoad},${yBeforeP} ${xLoad},${yAfterP} 360,${yRb} 360,60`;
-
-                      return (
-                        <>
-                          <polygon points={points} fill="rgba(59, 130, 246, 0.15)" stroke="#3b82f6" strokeWidth="2" />
-                          <circle cx="40" cy={yRa} r="3" fill="#3b82f6" />
-                          <text x="45" y={yRa - 4} fontSize="10" fontWeight="bold" fill="#3b82f6">+{ra}</text>
-                          <circle cx="360" cy={yRb} r="3" fill="#3b82f6" />
-                          <text x="340" y={yRb + 12} fontSize="10" fontWeight="bold" fill="#3b82f6">-{rb}</text>
-                        </>
-                      );
-                    })()}
-                  </svg>
+              {/* Summary Stats & Formula */}
+              <div className="grid gap-4 sm:grid-cols-3">
+                <div className="p-4 rounded-2xl bg-slate-50 dark:bg-slate-950/60 border border-slate-200 dark:border-slate-800 font-mono text-xs space-y-1">
+                  <span className="text-slate-500">最大彎矩 M_max</span>
+                  <strong className="text-xl text-blue-700 dark:text-blue-400 block">{maxMoment} kN·m</strong>
+                  <span className="text-[11px] text-slate-400">發生於 x = {zeroShearPos} m 處 (剪力過零點)</span>
                 </div>
-
-                {/* BMD */}
-                <div className="rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-950 p-4 space-y-2">
-                  <div className="flex justify-between items-center text-xs font-mono font-bold">
-                    <span className="text-emerald-600 dark:text-emerald-400">3. 彎矩圖 (BMD · M)</span>
-                    <span className="text-emerald-700 dark:text-emerald-300">最大彎矩 M_max = {maxMoment} kN·m</span>
-                  </div>
-                  <svg viewBox="0 0 400 120" className="w-full h-28 select-none">
-                    {/* Baseline */}
-                    <line x1="40" y1="25" x2="360" y2="25" stroke="#94a3b8" strokeWidth="1.5" strokeDasharray="3 3" />
-                    <text x="25" y="29" fontSize="10" fill="#94a3b8">0</text>
-
-                    {/* BMD Curve */}
-                    {(() => {
-                      const maxM = Math.max(maxMoment, 1);
-                      const scaleM = 75 / maxM;
-                      
-                      const pathPoints: string[] = ['M 40 25'];
-                      for (let step = 0; step <= 20; step++) {
-                        const xRatio = step / 20;
-                        const x = xRatio * beamLength;
-                        let mx = ra * x - (distLoad * x * x) / 2;
-                        if (x > loadPos) {
-                          mx -= pointLoad * (x - loadPos);
-                        }
-                        const px = 40 + xRatio * 320;
-                        const py = 25 + Math.max(0, mx) * scaleM;
-                        pathPoints.push(`L ${px} ${py}`);
-                      }
-                      pathPoints.push('L 360 25 Z');
-
-                      return (
-                        <>
-                          <path d={pathPoints.join(' ')} fill="rgba(16, 185, 129, 0.15)" stroke="#10b981" strokeWidth="2" />
-                          <text x="200" y="115" textAnchor="middle" fontSize="11" fontWeight="bold" fill="#047857">
-                            M_max = +{maxMoment} kN·m (剪力為零處彎矩極大)
-                          </text>
-                        </>
-                      );
-                    })()}
-                  </svg>
+                <div className="p-4 rounded-2xl bg-slate-50 dark:bg-slate-950/60 border border-slate-200 dark:border-slate-800 font-mono text-xs space-y-1">
+                  <span className="text-slate-500">力平衡檢算 ΣF_y</span>
+                  <strong className="text-xl text-emerald-600 block">{Number((ra + rb).toFixed(2))} kN</strong>
+                  <span className="text-[11px] text-slate-400">總載重 P + wL = {Number((pointLoad + distLoad * beamLength).toFixed(2))} kN (平衡)</span>
                 </div>
-              </div>
-            </div>
-
-            {/* Key Engineering Takeaways */}
-            <div className="grid gap-3 sm:grid-cols-3 text-xs font-mono pt-2">
-              <div className="rounded-xl bg-blue-50/60 dark:bg-blue-950/30 p-3.5 border border-blue-200 dark:border-blue-900/50">
-                <strong className="text-blue-800 dark:text-blue-300 block mb-1">💡 剪力微積分關係</strong>
-                <p className="text-slate-600 dark:text-slate-400 font-sans">
-                  V(x) = dM/dx：剪力為彎矩斜率。剪力 V=0 之處即為彎矩極值 M_max 所在位置。
-                </p>
-              </div>
-              <div className="rounded-xl bg-emerald-50/60 dark:bg-emerald-950/30 p-3.5 border border-emerald-200 dark:border-emerald-900/50">
-                <strong className="text-emerald-800 dark:text-emerald-300 block mb-1">🏗️ 鋼筋配置現場對照</strong>
-                <p className="text-slate-600 dark:text-slate-400 font-sans">
-                  簡支梁跨中承受正彎矩（下緣受拉），主拉力鋼筋配置於梁底；支承端剪力最大，密配閉合箍筋以抗剪裂。
-                </p>
-              </div>
-              <div className="rounded-xl bg-amber-50/60 dark:bg-amber-950/30 p-3.5 border border-amber-200 dark:border-amber-900/50">
-                <strong className="text-amber-800 dark:text-amber-300 block mb-1">🎯 統測解題口訣</strong>
-                <p className="text-slate-600 dark:text-slate-400 font-sans">
-                  「無載重為水平線、均布載重為一次斜直線、彎矩圖為二次拋物線、集中力處剪力突變」。
-                </p>
+                <div className="p-4 rounded-2xl bg-slate-50 dark:bg-slate-950/60 border border-slate-200 dark:border-slate-800 flex items-center justify-between">
+                  <div>
+                    <span className="text-xs font-mono text-slate-500 block">複製計算結果</span>
+                    <span className="text-xs font-bold text-slate-900 dark:text-white">Ra={ra}kN, Rb={rb}kN, Mmax={maxMoment}kN·m</span>
+                  </div>
+                  <button
+                    onClick={() => copyToClipboard('beam', `簡支梁長度 L=${beamLength}m, P=${pointLoad}kN(a=${loadPos}m), w=${distLoad}kN/m => Ra=${ra}kN, Rb=${rb}kN, Mmax=${maxMoment}kN·m`)}
+                    className="p-2 rounded-xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 hover:border-blue-500 transition-colors cursor-pointer text-slate-600 dark:text-slate-300"
+                    title="複製算式"
+                  >
+                    {copiedKey === 'beam' ? <Check className="size-4 text-emerald-600" /> : <Copy className="size-4" />}
+                  </button>
+                </div>
               </div>
             </div>
           </div>
 
-          {/* Section 2: Mohr's Circle Principal Stresses */}
+          {/* Section 2: Mohr's Circle Simulator */}
           <div className="rounded-3xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 p-6 sm:p-8 shadow-sm space-y-6">
             <div className="flex flex-wrap items-center justify-between gap-3 border-b border-slate-100 dark:border-slate-800 pb-4">
               <div>
-                <span className="text-xs font-mono font-bold uppercase tracking-widest text-teal-600 dark:text-teal-400">
-                  Simulation 02 · Mohr&apos;s Stress Circle & Principal Angles
+                <span className="text-xs font-mono font-bold uppercase tracking-widest text-teal-700 dark:text-teal-400">
+                  Simulation 02 · Mohr&apos;s Circle for Plane Stress
                 </span>
                 <h2 className="font-serif text-2xl font-bold text-slate-900 dark:text-white mt-1">
-                  莫爾圓 · 平面應力轉換與主應力 (σ₁, σ₂, τ_max) 解析器
+                  莫爾圓應力轉換 · 主應力 σ₁/σ₂ 與最大剪應力 τ_max 幾何可視化
                 </h2>
               </div>
               <div className="flex items-center gap-2 font-mono text-xs">
-                <span className="rounded-lg bg-teal-50 dark:bg-teal-950/60 px-3 py-1 text-teal-700 dark:text-teal-300 font-bold border border-teal-200 dark:border-teal-900/50">
-                  最大主應力 σ₁ = {mohrResults.sigma1} MPa
+                <span className="rounded-lg bg-blue-50 dark:bg-blue-950/60 px-3 py-1 text-blue-700 dark:text-blue-300 font-bold border border-blue-200 dark:border-blue-900/50">
+                  第一主應力 σ₁ = {mohrResults.sigma1} MPa
                 </span>
-                <span className="rounded-lg bg-purple-50 dark:bg-purple-950/60 px-3 py-1 text-purple-700 dark:text-purple-300 font-bold border border-purple-200 dark:border-purple-900/50">
+                <span className="rounded-lg bg-teal-50 dark:bg-teal-950/60 px-3 py-1 text-teal-700 dark:text-teal-300 font-bold border border-teal-200 dark:border-teal-900/50">
                   最大剪應力 τ_max = {mohrResults.tauMax} MPa
                 </span>
               </div>
             </div>
 
-            {/* Mohr Controls */}
+            {/* Presets */}
+            <div className="flex items-center gap-2 overflow-x-auto text-xs font-mono text-slate-500 pb-1">
+              <span className="shrink-0 flex items-center gap-1 font-bold"><Zap className="size-3.5 text-teal-500" /> 應力狀態預設：</span>
+              <button
+                onClick={() => { setSigmaX(0); setSigmaY(0); setTauXY(40); setTheta(0); }}
+                className="px-2.5 py-1 rounded-lg bg-slate-100 dark:bg-slate-800 hover:bg-teal-100 dark:hover:bg-teal-950/60 text-slate-700 dark:text-slate-300 transition-colors shrink-0 cursor-pointer"
+              >
+                純剪力狀態 (Pure Shear)
+              </button>
+              <button
+                onClick={() => { setSigmaX(80); setSigmaY(0); setTauXY(0); setTheta(0); }}
+                className="px-2.5 py-1 rounded-lg bg-slate-100 dark:bg-slate-800 hover:bg-teal-100 dark:hover:bg-teal-950/60 text-slate-700 dark:text-slate-300 transition-colors shrink-0 cursor-pointer"
+              >
+                單軸拉伸 (Uniaxial Tension)
+              </button>
+              <button
+                onClick={() => { setSigmaX(60); setSigmaY(20); setTauXY(30); setTheta(mohrResults.thetaP); }}
+                className="px-2.5 py-1 rounded-lg bg-slate-100 dark:bg-slate-800 hover:bg-teal-100 dark:hover:bg-teal-950/60 text-slate-700 dark:text-slate-300 transition-colors shrink-0 cursor-pointer"
+              >
+                主應力旋轉面 (θ = θp)
+              </button>
+            </div>
+
+            {/* Controls */}
             <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4 rounded-2xl bg-slate-50 dark:bg-slate-950/60 p-5 border border-slate-200/80 dark:border-slate-800">
               <div className="space-y-2">
                 <div className="flex justify-between text-xs font-mono font-bold text-slate-700 dark:text-slate-300">
                   <span>水平正應力 σ_x</span>
-                  <span className="text-blue-600 dark:text-blue-400">{sigmaX} MPa</span>
+                  <span className="text-blue-700 dark:text-blue-400">{sigmaX} MPa</span>
                 </div>
                 <input
                   type="range"
@@ -500,14 +498,14 @@ export default function VisualizersPage() {
                   step="5"
                   value={sigmaX}
                   onChange={(e) => setSigmaX(Number(e.target.value))}
-                  className="w-full accent-blue-600"
+                  className="w-full accent-blue-700"
                 />
               </div>
 
               <div className="space-y-2">
                 <div className="flex justify-between text-xs font-mono font-bold text-slate-700 dark:text-slate-300">
                   <span>垂直正應力 σ_y</span>
-                  <span className="text-teal-600 dark:text-teal-400">{sigmaY} MPa</span>
+                  <span className="text-teal-700 dark:text-teal-400">{sigmaY} MPa</span>
                 </div>
                 <input
                   type="range"
@@ -516,7 +514,7 @@ export default function VisualizersPage() {
                   step="5"
                   value={sigmaY}
                   onChange={(e) => setSigmaY(Number(e.target.value))}
-                  className="w-full accent-teal-600"
+                  className="w-full accent-teal-700"
                 />
               </div>
 
@@ -553,17 +551,15 @@ export default function VisualizersPage() {
               </div>
             </div>
 
-            {/* Mohr Circle Display */}
+            {/* Mohr Circle Visualizer */}
             <div className="grid gap-6 lg:grid-cols-2 items-center">
               <div className="rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-950 p-4">
                 <svg viewBox="0 0 400 300" className="w-full h-64 select-none">
-                  {/* Grid Lines */}
                   <line x1="20" y1="150" x2="380" y2="150" stroke="#94a3b8" strokeWidth="1.5" />
                   <line x1="200" y1="20" x2="200" y2="280" stroke="#94a3b8" strokeWidth="1.5" />
                   <text x="375" y="145" fontSize="10" fontWeight="bold" fill="#64748b">σ</text>
                   <text x="205" y="30" fontSize="10" fontWeight="bold" fill="#64748b">τ</text>
 
-                  {/* Mohr Circle */}
                   {(() => {
                     const cx = 200 + mohrResults.center * 1.2;
                     const cy = 150;
@@ -572,7 +568,6 @@ export default function VisualizersPage() {
                     const px1 = 200 + mohrResults.sigma1 * 1.2;
                     const px2 = 200 + mohrResults.sigma2 * 1.2;
 
-                    // Rotated stress point
                     const rotX = 200 + mohrResults.sigmaTheta * 1.2;
                     const rotY = 150 - mohrResults.tauTheta * 1.2;
 
@@ -581,14 +576,12 @@ export default function VisualizersPage() {
                         <circle cx={cx} cy={cy} r={r} fill="rgba(13, 148, 136, 0.1)" stroke="#0d9488" strokeWidth="2" />
                         <circle cx={cx} cy={cy} r="4" fill="#0d9488" />
                         
-                        {/* Principal Stresses */}
-                        <circle cx={px1} cy={cy} r="4" fill="#3b82f6" />
-                        <text x={px1 + 5} y={cy - 8} fontSize="11" fontWeight="bold" fill="#3b82f6">σ1={mohrResults.sigma1}</text>
+                        <circle cx={px1} cy={cy} r="4" fill="#1F567A" />
+                        <text x={px1 + 5} y={cy - 8} fontSize="11" fontWeight="bold" fill="#1F567A">σ1={mohrResults.sigma1}</text>
 
-                        <circle cx={px2} cy={cy} r="4" fill="#3b82f6" />
-                        <text x={px2 - 45} y={cy - 8} fontSize="11" fontWeight="bold" fill="#3b82f6">σ2={mohrResults.sigma2}</text>
+                        <circle cx={px2} cy={cy} r="4" fill="#1F567A" />
+                        <text x={px2 - 45} y={cy - 8} fontSize="11" fontWeight="bold" fill="#1F567A">σ2={mohrResults.sigma2}</text>
 
-                        {/* Current angle point */}
                         <line x1={cx} y1={cy} x2={rotX} y2={rotY} stroke="#f59e0b" strokeWidth="2" strokeDasharray="3 3" />
                         <circle cx={rotX} cy={rotY} r="5" fill="#f59e0b" />
                         <text x={rotX + 8} y={rotY - 6} fontSize="10" fontWeight="bold" fill="#d97706">
@@ -628,6 +621,153 @@ export default function VisualizersPage() {
               </div>
             </div>
           </div>
+
+          {/* Section 3: Hooke's Law & Axial Bar Deformation Simulator */}
+          <div className="rounded-3xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 p-6 sm:p-8 shadow-sm space-y-6">
+            <div className="flex flex-wrap items-center justify-between gap-3 border-b border-slate-100 dark:border-slate-800 pb-4">
+              <div>
+                <span className="text-xs font-mono font-bold uppercase tracking-widest text-indigo-600 dark:text-indigo-400">
+                  Simulation 03 · Hooke&apos;s Law &amp; Axial Bar Deformation
+                </span>
+                <h2 className="font-serif text-2xl font-bold text-slate-900 dark:text-white mt-1">
+                  桿件軸向拉壓變形 · 虎克定律與應力應變關係 (ΔL = PL/AE)
+                </h2>
+              </div>
+              <div className="flex items-center gap-2 font-mono text-xs">
+                <span className="rounded-lg bg-indigo-50 dark:bg-indigo-950/60 px-3 py-1 text-indigo-700 dark:text-indigo-300 font-bold border border-indigo-200 dark:border-indigo-900/50">
+                  軸向正應力 σ = {hookeResults.sigma} MPa
+                </span>
+                <span className="rounded-lg bg-amber-50 dark:bg-amber-950/60 px-3 py-1 text-amber-700 dark:text-amber-300 font-bold border border-amber-200 dark:border-amber-900/50">
+                  軸向伸長量 ΔL = {hookeResults.deltaL_mm} mm
+                </span>
+              </div>
+            </div>
+
+            {/* Material selector */}
+            <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4 rounded-2xl bg-slate-50 dark:bg-slate-950/60 p-5 border border-slate-200/80 dark:border-slate-800">
+              <div className="space-y-2">
+                <span className="text-xs font-mono font-bold text-slate-700 dark:text-slate-300 block">選用工程材料</span>
+                <select
+                  value={barMaterial}
+                  onChange={(e) => setBarMaterial(e.target.value as typeof barMaterial)}
+                  className="w-full rounded-xl border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-900 p-2 text-xs font-mono font-bold text-slate-900 dark:text-white"
+                >
+                  {Object.entries(materialProps).map(([id, m]) => (
+                    <option key={id} value={id}>{m.name}</option>
+                  ))}
+                </select>
+                <span className="text-[11px] font-mono text-slate-400 block">{materialProps[barMaterial].desc}</span>
+              </div>
+
+              <div className="space-y-2">
+                <div className="flex justify-between text-xs font-mono font-bold text-slate-700 dark:text-slate-300">
+                  <span>軸向拉力 P</span>
+                  <span className="text-indigo-600 dark:text-indigo-400">{axialP} kN</span>
+                </div>
+                <input
+                  type="range"
+                  min="5"
+                  max="300"
+                  step="5"
+                  value={axialP}
+                  onChange={(e) => setAxialP(Number(e.target.value))}
+                  className="w-full accent-indigo-600"
+                />
+              </div>
+
+              <div className="space-y-2">
+                <div className="flex justify-between text-xs font-mono font-bold text-slate-700 dark:text-slate-300">
+                  <span>桿件原長 L</span>
+                  <span className="text-blue-600 dark:text-blue-400">{barL} m</span>
+                </div>
+                <input
+                  type="range"
+                  min="1"
+                  max="10"
+                  step="0.5"
+                  value={barL}
+                  onChange={(e) => setBarL(Number(e.target.value))}
+                  className="w-full accent-blue-600"
+                />
+              </div>
+
+              <div className="space-y-2">
+                <div className="flex justify-between text-xs font-mono font-bold text-slate-700 dark:text-slate-300">
+                  <span>斷面積 A</span>
+                  <span className="text-emerald-600 dark:text-emerald-400">{barArea} cm² ({barArea * 100} mm²)</span>
+                </div>
+                <input
+                  type="range"
+                  min="2"
+                  max="50"
+                  step="1"
+                  value={barArea}
+                  onChange={(e) => setBarArea(Number(e.target.value))}
+                  className="w-full accent-emerald-600"
+                />
+              </div>
+            </div>
+
+            {/* Hooke's Law Graphic */}
+            <div className="grid gap-6 lg:grid-cols-2 items-center">
+              <div className="rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-950 p-5 space-y-4">
+                <span className="text-xs font-mono font-bold text-slate-500 block">桿件軸向伸長視覺化模型</span>
+                <svg viewBox="0 0 400 120" className="w-full h-28 select-none">
+                  {/* Fixed wall support */}
+                  <rect x="20" y="20" width="16" height="80" fill="#64748b" />
+                  {Array.from({ length: 5 }).map((_, i) => (
+                    <line key={i} x1="12" y1={30 + i * 14} x2="20" y2={22 + i * 14} stroke="#475569" strokeWidth="2" />
+                  ))}
+
+                  {/* Deformed bar */}
+                  {(() => {
+                    const baseWidth = 240;
+                    const deformWidth = Math.min(80, hookeResults.deltaL_mm * 8);
+                    return (
+                      <>
+                        <rect x="36" y="45" width={baseWidth + deformWidth} height="30" rx="3" fill="#3b82f6" opacity="0.85" />
+                        <line x1={36 + baseWidth} y1="35" x2={36 + baseWidth} y2="85" stroke="#94a3b8" strokeWidth="1.5" strokeDasharray="3 3" />
+                        
+                        {/* Axial pull arrow */}
+                        <line x1={36 + baseWidth + deformWidth} y1="60" x2={36 + baseWidth + deformWidth + 40} y2="60" stroke="#ef4444" strokeWidth="3" />
+                        <polygon points={`${36 + baseWidth + deformWidth + 40},60 ${36 + baseWidth + deformWidth + 32},55 ${36 + baseWidth + deformWidth + 32},65`} fill="#ef4444" />
+                        <text x={36 + baseWidth + deformWidth + 45} y="64" fontSize="11" fontWeight="bold" fill="#ef4444">P={axialP}kN</text>
+                      </>
+                    );
+                  })()}
+                </svg>
+              </div>
+
+              <div className="rounded-2xl bg-slate-50 dark:bg-slate-950/60 p-5 border border-slate-200 dark:border-slate-800 space-y-3 font-mono text-xs">
+                <div className="flex justify-between items-center">
+                  <h3 className="font-bold text-slate-900 dark:text-white text-sm">虎克定律計算結果</h3>
+                  {hookeResults.isYielded ? (
+                    <span className="px-2 py-0.5 rounded bg-red-100 dark:bg-red-950 text-red-700 dark:text-red-300 font-bold">⚠️ 超出降伏強度 (進入塑性區)</span>
+                  ) : (
+                    <span className="px-2 py-0.5 rounded bg-emerald-100 dark:bg-emerald-950 text-emerald-700 dark:text-emerald-300 font-bold">✓ 處於彈性範圍內</span>
+                  )}
+                </div>
+                <div className="grid grid-cols-2 gap-2">
+                  <div className="p-2.5 rounded-lg bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800">
+                    <span className="text-slate-500 block">正應力 σ = P / A</span>
+                    <strong className="text-indigo-600 dark:text-indigo-400 text-sm">{hookeResults.sigma} MPa</strong>
+                  </div>
+                  <div className="p-2.5 rounded-lg bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800">
+                    <span className="text-slate-500 block">應變 ε = σ / E</span>
+                    <strong className="text-slate-900 dark:text-white text-sm">{hookeResults.strain}</strong>
+                  </div>
+                  <div className="p-2.5 rounded-lg bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800">
+                    <span className="text-slate-500 block">伸長量 ΔL = PL / AE</span>
+                    <strong className="text-amber-600 dark:text-amber-400 text-sm">{hookeResults.deltaL_mm} mm</strong>
+                  </div>
+                  <div className="p-2.5 rounded-lg bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800">
+                    <span className="text-slate-500 block">軸向勁度 k = AE / L</span>
+                    <strong className="text-emerald-600 dark:text-emerald-400 text-sm">{hookeResults.k} kN/mm</strong>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       )}
 
@@ -647,13 +787,13 @@ export default function VisualizersPage() {
               <div className="flex items-center gap-1 rounded-xl bg-slate-100 dark:bg-slate-800 p-1 text-xs font-mono">
                 <button
                   onClick={() => setOrthoView('unfold')}
-                  className={`px-3 py-1.5 rounded-lg font-bold transition-colors ${orthoView === 'unfold' ? 'bg-sky-600 text-white' : 'text-slate-600 dark:text-slate-400'}`}
+                  className={`px-3 py-1.5 rounded-lg font-bold transition-colors cursor-pointer ${orthoView === 'unfold' ? 'bg-sky-600 text-white' : 'text-slate-600 dark:text-slate-400'}`}
                 >
                   三視圖展開對正
                 </button>
                 <button
                   onClick={() => setOrthoView('cns-symbols')}
-                  className={`px-3 py-1.5 rounded-lg font-bold transition-colors ${orthoView === 'cns-symbols' ? 'bg-sky-600 text-white' : 'text-slate-600 dark:text-slate-400'}`}
+                  className={`px-3 py-1.5 rounded-lg font-bold transition-colors cursor-pointer ${orthoView === 'cns-symbols' ? 'bg-sky-600 text-white' : 'text-slate-600 dark:text-slate-400'}`}
                 >
                   CNS 材料圖例字典
                 </button>
@@ -662,7 +802,6 @@ export default function VisualizersPage() {
 
             {orthoView === 'unfold' ? (
               <div className="grid gap-6 lg:grid-cols-3">
-                {/* Visual Projection Box */}
                 <div className="lg:col-span-2 rounded-2xl bg-slate-50 dark:bg-slate-950 p-6 border border-slate-200 dark:border-slate-800">
                   <div className="grid grid-cols-2 gap-4 max-w-lg mx-auto">
                     {/* Top View */}
@@ -677,7 +816,7 @@ export default function VisualizersPage() {
                       </svg>
                     </div>
 
-                    {/* Empty / 45-degree projection reflection line */}
+                    {/* 45-degree projection reflection line */}
                     <div className="border border-dashed border-slate-300 dark:border-slate-700 rounded-xl p-4 flex items-center justify-center bg-slate-100/50 dark:bg-slate-900/40">
                       <div className="text-center font-mono text-xs text-slate-400">
                         <span>45° 輔助投影轉折線</span>
@@ -759,7 +898,7 @@ export default function VisualizersPage() {
                     <button
                       key={sym.id}
                       onClick={() => setSelectedSymbol(sym.id as typeof selectedSymbol)}
-                      className={`w-full text-left p-3 rounded-xl border transition-all ${
+                      className={`w-full text-left p-3 rounded-xl border transition-all cursor-pointer ${
                         selectedSymbol === sym.id
                           ? 'border-sky-500 bg-sky-50/70 dark:bg-sky-950/50 shadow-xs'
                           : 'border-slate-200 dark:border-slate-800 hover:bg-slate-50 dark:hover:bg-slate-800/60'
@@ -847,7 +986,7 @@ export default function VisualizersPage() {
         </div>
       )}
 
-      {/* --- Tab 3: Surveying Leveling & Traverse Simulator --- */}
+      {/* --- Tab 3: Surveying Leveling Simulator --- */}
       {activeTab === 'surveying' && (
         <div className="space-y-8 animate-fadeIn">
           <div className="rounded-3xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 p-6 sm:p-8 shadow-sm space-y-6">
@@ -924,86 +1063,54 @@ export default function VisualizersPage() {
             {/* Leveling Visualizer Diagram */}
             <div className="rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-950 p-4">
               <svg viewBox="0 0 600 200" className="w-full h-44 select-none">
-                {/* Terrain Line */}
                 <path d="M 40 160 Q 200 170, 300 150 T 560 120" fill="none" stroke="#78716c" strokeWidth="2" />
 
-                {/* BM Point */}
                 <line x1="80" y1="162" x2="80" y2="70" stroke="#059669" strokeWidth="4" />
                 <polygon points="76,162 84,162 80,168" fill="#059669" />
                 <text x="80" y="185" textAnchor="middle" fontSize="11" fontWeight="bold" fill="#059669">BM ({bmElevation}m)</text>
 
-                {/* TP Point */}
                 <line x1="520" y1="124" x2="520" y2="35" stroke="#d97706" strokeWidth="4" />
                 <polygon points="516,124 524,124 520,130" fill="#d97706" />
                 <text x="520" y="145" textAnchor="middle" fontSize="11" fontWeight="bold" fill="#d97706">TP1 ({levelingResults.tpElevation}m)</text>
 
-                {/* Level Instrument */}
                 <polygon points="280,150 320,150 300,105" fill="#3b82f6" opacity="0.8" />
                 <rect x="275" y="95" width="50" height="12" rx="3" fill="#2563eb" />
                 <text x="300" y="170" textAnchor="middle" fontSize="10" fontWeight="bold" fill="#2563eb">水準儀測站</text>
 
-                {/* Line of Collimation (Horizontal Sighting Line) */}
                 <line x1="75" y1="100" x2="525" y2="100" stroke="#ef4444" strokeWidth="1.5" strokeDasharray="4 4" />
                 <text x="300" y="90" textAnchor="middle" fontSize="10" fontWeight="bold" fill="#ef4444">
                   視準軸 HI = {levelingResults.hi} m
                 </text>
-
-                {/* BS Arrow */}
-                <line x1="60" y1="162" x2="60" y2="100" stroke="#059669" strokeWidth="1.5" />
-                <text x="50" y="135" textAnchor="end" fontSize="10" fontWeight="bold" fill="#059669">BS={backSight}m</text>
-
-                {/* FS Arrow */}
-                <line x1="540" y1="124" x2="540" y2="100" stroke="#d97706" strokeWidth="1.5" />
-                <text x="550" y="115" textAnchor="start" fontSize="10" fontWeight="bold" fill="#d97706">FS={foreSight}m</text>
               </svg>
-            </div>
-
-            {/* Leveling formulas card */}
-            <div className="grid gap-3 sm:grid-cols-2 text-xs font-mono">
-              <div className="rounded-xl bg-slate-50 dark:bg-slate-900 p-4 border border-slate-200 dark:border-slate-800 space-y-1">
-                <strong className="text-slate-900 dark:text-white block">公式一：儀高法 (Height of Instrument Method)</strong>
-                <p className="text-slate-600 dark:text-slate-400 font-sans">
-                  HI = Elev_BM + BS（視線高 = 基準點高程 + 後視讀數）<br />
-                  Elev_TP = HI - FS（待測點高程 = 視線高 - 前視讀數）
-                </p>
-              </div>
-              <div className="rounded-xl bg-slate-50 dark:bg-slate-900 p-4 border border-slate-200 dark:border-slate-800 space-y-1">
-                <strong className="text-slate-900 dark:text-white block">公式二：高差法 (Rise and Fall Method)</strong>
-                <p className="text-slate-600 dark:text-slate-400 font-sans">
-                  ΔH = BS - FS = {levelingResults.diff} m<br />
-                  Elev_TP = Elev_BM + ΔH（若 ΔH &gt; 0 為升 Rise，ΔH &lt; 0 為降 Fall）
-                </p>
-              </div>
             </div>
           </div>
         </div>
       )}
 
-      {/* --- Tab 4: Materials Concrete Mix & Rebar Simulator --- */}
+      {/* --- Tab 4: Concrete Materials & Slump --- */}
       {activeTab === 'materials' && (
         <div className="space-y-8 animate-fadeIn">
           <div className="rounded-3xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 p-6 sm:p-8 shadow-sm space-y-6">
             <div className="flex flex-wrap items-center justify-between gap-3 border-b border-slate-100 dark:border-slate-800 pb-4">
               <div>
                 <span className="text-xs font-mono font-bold uppercase tracking-widest text-amber-600 dark:text-amber-400">
-                  Simulation · Concrete Mix W/C Ratio & 28-day Compressive Strength
+                  Simulation · Concrete Mix & Compressive Strength
                 </span>
                 <h2 className="font-serif text-2xl font-bold text-slate-900 dark:text-white mt-1">
-                  混凝土配比 · 水灰比 (W/C) 與 28 天抗壓強度 f&apos;c / 坍度試驗曲線
+                  混凝土配比 · 水灰比 (W/C) 與 28 天抗壓強度 (fc&apos;) 經驗公式模擬
                 </h2>
               </div>
               <div className="flex items-center gap-2 font-mono text-xs">
-                <span className="rounded-lg bg-blue-50 dark:bg-blue-950/60 px-3 py-1 text-blue-700 dark:text-blue-300 font-bold border border-blue-200 dark:border-blue-900/50">
+                <span className="rounded-lg bg-amber-50 dark:bg-amber-950/60 px-3 py-1 text-amber-700 dark:text-amber-300 font-bold border border-amber-200 dark:border-amber-900/50">
                   水灰比 W/C = {concreteResults.wcRatio}
                 </span>
                 <span className="rounded-lg bg-emerald-50 dark:bg-emerald-950/60 px-3 py-1 text-emerald-700 dark:text-emerald-300 font-bold border border-emerald-200 dark:border-emerald-900/50">
-                  預估 28 天強度 f&apos;c ≈ {concreteResults.fc28} MPa
+                  預估強度 fc&apos; = {concreteResults.fc28} MPa
                 </span>
               </div>
             </div>
 
-            {/* Mix Controls */}
-            <div className="grid gap-6 sm:grid-cols-3 rounded-2xl bg-slate-50 dark:bg-slate-950/60 p-5 border border-slate-200/80 dark:border-slate-800">
+            <div className="grid gap-6 sm:grid-cols-2 rounded-2xl bg-slate-50 dark:bg-slate-950/60 p-5 border border-slate-200/80 dark:border-slate-800">
               <div className="space-y-2">
                 <div className="flex justify-between text-xs font-mono font-bold text-slate-700 dark:text-slate-300">
                   <span>單位用水量 W</span>
@@ -1023,7 +1130,7 @@ export default function VisualizersPage() {
               <div className="space-y-2">
                 <div className="flex justify-between text-xs font-mono font-bold text-slate-700 dark:text-slate-300">
                   <span>單位水泥量 C</span>
-                  <span className="text-amber-600 dark:text-amber-400">{cementWeight} kg/m³</span>
+                  <span className="text-slate-700 dark:text-slate-300">{cementWeight} kg/m³</span>
                 </div>
                 <input
                   type="range"
@@ -1032,147 +1139,62 @@ export default function VisualizersPage() {
                   step="10"
                   value={cementWeight}
                   onChange={(e) => setCementWeight(Number(e.target.value))}
-                  className="w-full accent-amber-600"
-                />
-              </div>
-
-              <div className="space-y-2">
-                <div className="flex justify-between text-xs font-mono font-bold text-slate-700 dark:text-slate-300">
-                  <span>含氣量 (Air Content)</span>
-                  <span className="text-teal-600 dark:text-teal-400">{airContent} %</span>
-                </div>
-                <input
-                  type="range"
-                  min="1.0"
-                  max="6.0"
-                  step="0.5"
-                  value={airContent}
-                  onChange={(e) => setAirContent(Number(e.target.value))}
-                  className="w-full accent-teal-600"
+                  className="w-full accent-slate-600"
                 />
               </div>
             </div>
 
-            {/* Strength vs W/C Curve & Slump Cone Diagram */}
-            <div className="grid gap-6 lg:grid-cols-2">
-              <div className="rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-950 p-5 space-y-2">
-                <span className="text-xs font-mono font-bold text-slate-700 dark:text-slate-300">
-                  1. 水灰比與抗壓強度曲線 (Abram&apos;s Water-Cement Ratio Law)
-                </span>
-                <svg viewBox="0 0 360 200" className="w-full h-44 select-none">
-                  {/* Grid */}
-                  <line x1="40" y1="170" x2="340" y2="170" stroke="#94a3b8" strokeWidth="1.5" />
-                  <line x1="40" y1="20" x2="40" y2="170" stroke="#94a3b8" strokeWidth="1.5" />
-                  <text x="330" y="165" fontSize="10" fill="#64748b">W/C</text>
-                  <text x="45" y="30" fontSize="10" fill="#64748b">f&apos;c (MPa)</text>
-
-                  {/* Curve */}
-                  <path d="M 50 40 Q 120 70, 200 130 T 320 160" fill="none" stroke="#3b82f6" strokeWidth="2.5" />
-
-                  {/* Current Point */}
-                  {(() => {
-                    const px = 40 + ((concreteResults.wcRatio - 0.3) / 0.6) * 280;
-                    const py = 170 - ((concreteResults.fc28 - 10) / 50) * 140;
-                    return (
-                      <>
-                        <line x1={px} y1="170" x2={px} y2={py} stroke="#f59e0b" strokeWidth="1.5" strokeDasharray="3 3" />
-                        <line x1="40" y1={py} x2={px} y2={py} stroke="#f59e0b" strokeWidth="1.5" strokeDasharray="3 3" />
-                        <circle cx={px} cy={py} r="5" fill="#f59e0b" />
-                        <text x={px + 8} y={py - 6} fontSize="11" fontWeight="bold" fill="#d97706">
-                          ({concreteResults.wcRatio}, {concreteResults.fc28}MPa)
-                        </text>
-                      </>
-                    );
-                  })()}
-                </svg>
+            <div className="grid gap-4 sm:grid-cols-3">
+              <div className="p-4 rounded-2xl bg-slate-50 dark:bg-slate-950/60 border border-slate-200 dark:border-slate-800 font-mono text-xs space-y-1">
+                <span className="text-slate-500">水灰比 (W/C)</span>
+                <strong className="text-xl text-amber-600 block">{concreteResults.wcRatio}</strong>
+                <span className="text-[11px] text-slate-400">CNS 規範：一般 RC 結構上限通常 ≤ 0.55</span>
               </div>
-
-              <div className="rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-950 p-5 space-y-2">
-                <span className="text-xs font-mono font-bold text-slate-700 dark:text-slate-300">
-                  2. 現場坍度試驗模擬 (Slump Test · CNS 1176)
-                </span>
-                <svg viewBox="0 0 360 200" className="w-full h-44 select-none">
-                  {/* Base Plate */}
-                  <line x1="80" y1="170" x2="280" y2="170" stroke="#475569" strokeWidth="4" />
-                  
-                  {/* Slump Cone Outline (Dotted, 30cm high) */}
-                  <polygon points="150,50 210,50 230,170 130,170" fill="none" stroke="#94a3b8" strokeWidth="1.5" strokeDasharray="3 3" />
-                  <text x="180" y="42" textAnchor="middle" fontSize="10" fill="#94a3b8">標準坍度模 (30cm)</text>
-
-                  {/* Slumped Concrete Body */}
-                  {(() => {
-                    const slumpCm = concreteResults.slump;
-                    const topY = 50 + (slumpCm / 30) * 100;
-                    return (
-                      <>
-                        <path d={`M 140 170 Q 120 120, 160 ${topY} Q 180 ${topY-5}, 200 ${topY} Q 240 120, 220 170 Z`} fill="rgba(100, 116, 139, 0.4)" stroke="#475569" strokeWidth="2" />
-                        {/* Measure height */}
-                        <line x1="245" y1="50" x2="245" y2={topY} stroke="#ef4444" strokeWidth="2" />
-                        <polygon points="242,50 248,50 245,45" fill="#ef4444" />
-                        <polygon points={`242,${topY} 248,${topY} 245,${topY+5}`} fill="#ef4444" />
-                        <text x="255" y={50 + (topY - 50)/2 + 4} fontSize="11" fontWeight="bold" fill="#ef4444">
-                          坍度 = {slumpCm} cm
-                        </text>
-                      </>
-                    );
-                  })()}
-                </svg>
+              <div className="p-4 rounded-2xl bg-slate-50 dark:bg-slate-950/60 border border-slate-200 dark:border-slate-800 font-mono text-xs space-y-1">
+                <span className="text-slate-500">預估 28 天抗壓強度</span>
+                <strong className="text-xl text-emerald-600 block">{concreteResults.fc28} MPa</strong>
+                <span className="text-[11px] text-slate-400">約合 {Number((concreteResults.fc28 * 10.197).toFixed(0))} kgf/cm²</span>
               </div>
-            </div>
-
-            {/* Slump & Quality Advice */}
-            <div className="grid gap-3 sm:grid-cols-3 text-xs font-mono">
-              <div className="p-3.5 rounded-xl bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800">
-                <strong className="text-slate-900 dark:text-white block mb-1">一般結構柱梁坍度</strong>
-                <span className="text-slate-600 dark:text-slate-400">CNS 規範建議 15~18 cm（配合泵送澆置，兼顧流動性與抗粒料析離）。</span>
-              </div>
-              <div className="p-3.5 rounded-xl bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800">
-                <strong className="text-slate-900 dark:text-white block mb-1">自充填混凝土 (SCC)</strong>
-                <span className="text-slate-600 dark:text-slate-400">坍流度 50~70 cm，無須振動棒即能靠自重密實充填複雜鋼筋間隙。</span>
-              </div>
-              <div className="p-3.5 rounded-xl bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800">
-                <strong className="text-slate-900 dark:text-white block mb-1">工地加水大忌</strong>
-                <span className="text-slate-600 dark:text-slate-400">現場任意加水雖增加工作性，但會直線拉高水灰比，導致 28 天抗壓強度劇烈崩跌並產生乾縮裂縫。</span>
+              <div className="p-4 rounded-2xl bg-slate-50 dark:bg-slate-950/60 border border-slate-200 dark:border-slate-800 font-mono text-xs space-y-1">
+                <span className="text-slate-500">預估坍度 (Slump)</span>
+                <strong className="text-xl text-blue-600 block">{concreteResults.slump} cm</strong>
+                <span className="text-[11px] text-slate-400">工作性良好範圍：15 ± 3.8 cm</span>
               </div>
             </div>
           </div>
         </div>
       )}
 
-      {/* --- Tab 5: Building Physics & Green Building --- */}
+      {/* --- Tab 5: Building Physics --- */}
       {activeTab === 'physics' && (
         <div className="space-y-8 animate-fadeIn">
           <div className="rounded-3xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 p-6 sm:p-8 shadow-sm space-y-6">
             <div className="flex flex-wrap items-center justify-between gap-3 border-b border-slate-100 dark:border-slate-800 pb-4">
               <div>
-                <span className="text-xs font-mono font-bold uppercase tracking-widest text-teal-600 dark:text-teal-400">
-                  Simulation · Thermal Transmittance U-value & EEWH Building Envelope
+                <span className="text-xs font-mono font-bold uppercase tracking-widest text-emerald-600 dark:text-emerald-400">
+                  Simulation · Thermal Transmittance (U-Value) & Envelope
                 </span>
                 <h2 className="font-serif text-2xl font-bold text-slate-900 dark:text-white mt-1">
-                  建築外殼隔熱 · 熱傳透率 (U-Value) 與綠建築節能計算器
+                  外殼節能 · 外牆熱傳透率 U-Value 與節能玻璃熱阻計算
                 </h2>
               </div>
               <div className="flex items-center gap-2 font-mono text-xs">
-                <span className="rounded-lg bg-teal-50 dark:bg-teal-950/60 px-3 py-1 text-teal-700 dark:text-teal-300 font-bold border border-teal-200 dark:border-teal-900/50">
-                  外牆 U = {physicsResults.uValue} W/(m²·K)
-                </span>
-                <span className="rounded-lg bg-blue-50 dark:bg-blue-950/60 px-3 py-1 text-blue-700 dark:text-blue-300 font-bold border border-blue-200 dark:border-blue-900/50">
-                  總熱阻 R = {physicsResults.totalR} m²·K/W
+                <span className="rounded-lg bg-emerald-50 dark:bg-emerald-950/60 px-3 py-1 text-emerald-700 dark:text-emerald-300 font-bold border border-emerald-200 dark:border-emerald-900/50">
+                  外牆熱傳透率 U = {physicsResults.uValue} W/(m²·K)
                 </span>
               </div>
             </div>
 
-            {/* Envelope Controls */}
             <div className="grid gap-6 sm:grid-cols-3 rounded-2xl bg-slate-50 dark:bg-slate-950/60 p-5 border border-slate-200/80 dark:border-slate-800">
               <div className="space-y-2">
                 <div className="flex justify-between text-xs font-mono font-bold text-slate-700 dark:text-slate-300">
-                  <span>RC 結構厚度</span>
-                  <span className="text-slate-900 dark:text-white">{wallThickness} cm</span>
+                  <span>RC 牆體厚度</span>
+                  <span className="text-slate-700 dark:text-slate-300">{wallThickness} cm</span>
                 </div>
                 <input
                   type="range"
                   min="12"
-                  max="30"
+                  max="35"
                   step="1"
                   value={wallThickness}
                   onChange={(e) => setWallThickness(Number(e.target.value))}
@@ -1182,7 +1204,7 @@ export default function VisualizersPage() {
 
               <div className="space-y-2">
                 <div className="flex justify-between text-xs font-mono font-bold text-slate-700 dark:text-slate-300">
-                  <span>XPS 擠塑板隔熱厚度</span>
+                  <span>XPS 隔熱保溫層</span>
                   <span className="text-emerald-600 dark:text-emerald-400">{insulationThickness} cm</span>
                 </div>
                 <input
@@ -1204,7 +1226,7 @@ export default function VisualizersPage() {
                 <select
                   value={glassType}
                   onChange={(e) => setGlassType(e.target.value as typeof glassType)}
-                  className="w-full rounded-lg border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-900 p-2 text-xs font-mono"
+                  className="w-full rounded-lg border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-900 p-2 text-xs font-mono font-bold text-slate-900 dark:text-white"
                 >
                   <option value="single">單層透明玻璃 (6mm)</option>
                   <option value="double">雙層中空玻璃 (6+12A+6mm)</option>
@@ -1213,7 +1235,7 @@ export default function VisualizersPage() {
               </div>
             </div>
 
-            {/* Envelope Results Breakdown */}
+            {/* Results */}
             <div className="grid gap-6 lg:grid-cols-3">
               <div className="rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-950 p-5 space-y-3 font-mono text-xs">
                 <span className="font-bold text-slate-900 dark:text-white block">外牆構造分層熱阻明細</span>
@@ -1257,7 +1279,7 @@ export default function VisualizersPage() {
         <div className="space-y-2 text-center sm:text-left">
           <h3 className="font-serif text-2xl font-bold">準備好進入更多專業章節了嗎？</h3>
           <p className="text-slate-400 text-sm max-w-lg">
-            將互動實驗室的直觀體會，帶回 86 個完整課程章節與 925 道統測歷屆解析。
+            將互動實驗室的直觀體會，帶回 13 科 99 個完整課程章節與 925 道統測歷屆解析。
           </p>
         </div>
         <div className="flex flex-wrap gap-3">
@@ -1265,7 +1287,7 @@ export default function VisualizersPage() {
             href="/field-guide"
             className="inline-flex items-center gap-2 rounded-xl bg-teal-600 hover:bg-teal-500 px-5 py-3 font-mono text-xs font-bold text-white transition-colors"
           >
-            <BookOpen className="size-4" /> 探索建築現場手冊 →
+            <BookOpen className="size-4" /> 探索營造現場手冊 →
           </Link>
           <Link
             href="/curriculum"

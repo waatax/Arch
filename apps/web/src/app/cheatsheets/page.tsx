@@ -55,8 +55,8 @@ const cheatsheetData: FormulaCard[] = [
       { symbol: 'A', meaning: '桿件橫截面面積', unit: 'mm²' },
     ],
     examFrequency: 5,
-    examTips: '統測常考「複合斷面鋼桿」或「串聯不同直徑桿件」之總變形量（逐段疊加 $\Delta L_{\text{total}} = \sum \frac{P_i L_i}{E_i A_i}$）。',
-    caution: '單位統一為標準大坑：必須全部轉為 N 與 mm，方可直接與 MPa ($1\text{ MPa} = 1\text{ N/mm}^2$) 運算。',
+    examTips: '統測常考「複合斷面鋼桿」或「串聯不同直徑桿件」之總變形量（逐段疊加 ΔL = ∑ (Pi·Li / Ei·Ai)）。',
+    caution: '單位統一為標準大坑：必須全部轉為 N 與 mm，方可直接與 MPa (1 MPa = 1 N/mm²) 運算。',
     latexCopy: '\\Delta L = \\frac{P \\cdot L}{E \\cdot A}',
   },
   {
@@ -73,8 +73,8 @@ const cheatsheetData: FormulaCard[] = [
       { symbol: 'S', meaning: '斷面模數 (Section Modulus, S = I / c)', unit: 'mm³' },
     ],
     examFrequency: 5,
-    examTips: '矩形截面 $b \times h$ 之斷面模數 $S = \frac{bh^2}{6}$；最大應力發生於距中性軸最遠之頂底外緣。',
-    caution: '彎矩 $M$ 題目通常給 $\text{kN}\cdot\text{m}$，運算時代入公式前務必乘上 $10^6$ 轉為 $\text{N}\cdot\text{mm}$。',
+    examTips: '矩形截面 b × h 之斷面模數 S = bh²/6；最大應力發生於距中性軸最遠之頂底外緣。',
+    caution: '彎矩 M 題目通常給 kN·m，運算時代入公式前務必乘上 10⁶ 轉為 N·mm。',
     latexCopy: '\\sigma_{\\max} = \\frac{M \\cdot y_{\\max}}{I} = \\frac{M}{S}',
   },
   {
@@ -82,15 +82,15 @@ const cheatsheetData: FormulaCard[] = [
     category: 'mechanics',
     subjectName: '專業（一）工程力學',
     title: '矩形梁之最大橫向剪應力 (Beam Shear Stress)',
-    formula: 'τ_max = 1.5 · (V / A)',
+    formula: 'τ_max = 1.5 · (V / A) = 3V / 2bh',
     variables: [
       { symbol: 'τ_max', meaning: '矩形斷面中性軸處之最大剪應力', unit: 'MPa' },
       { symbol: 'V', meaning: '該截面承受之總剪力', unit: 'N' },
       { symbol: 'A', meaning: '橫截面總面積 (b × h)', unit: 'mm²' },
       { symbol: 'V/A', meaning: '平均剪應力 τ_avg', unit: 'MPa' },
     ],
-    examFrequency: 4,
-    examTips: '矩形截面剪應力為拋物線分佈：上下外緣 $\tau = 0$，中性軸處最大且恰為平均剪應力的 1.5 倍 (3/2)。圓形截面則為 $4/3 \approx 1.33$ 倍。',
+    examFrequency: 5,
+    examTips: '矩形截面剪應力為拋物線分佈：上下外緣 τ = 0，中性軸處最大且恰為平均剪應力的 1.5 倍 (3/2)。圓形截面則為 4/3 ≈ 1.33 倍。',
     caution: '切勿將彎曲正應力（外緣最大、中性軸為零）與剪應力（中性軸最大、外緣為零）混淆。',
     latexCopy: '\\tau_{\\max} = 1.5 \\cdot \\frac{V}{A} = \\frac{3V}{2bh}',
   },
@@ -98,18 +98,19 @@ const cheatsheetData: FormulaCard[] = [
     id: 'm5',
     category: 'mechanics',
     subjectName: '專業（一）工程力學',
-    title: '尤拉長柱臨界挫屈載重 (Euler Buckling Load)',
-    formula: 'P_cr = (π² · E · I) / Le²',
+    title: '尤拉長柱挫屈臨界載重 (Euler Column Buckling)',
+    formula: 'P_cr = (π² · E · I) / (K · L)²',
     variables: [
-      { symbol: 'P_cr', meaning: '細長受壓柱發生側向挫屈之臨界軸向載重', unit: 'N 或 kN' },
-      { symbol: 'E', meaning: '柱材料彈性模數', unit: 'MPa' },
-      { symbol: 'I', meaning: '柱截面之弱軸慣性矩 (取較小者 I_min)', unit: 'mm⁴' },
-      { symbol: 'Le', meaning: '有效長度 (Effective Length, Le = k · L)', unit: 'mm' },
+      { symbol: 'P_cr', meaning: '長柱受壓發生挫屈的臨界軸力', unit: 'N' },
+      { symbol: 'E', meaning: '材料彈性模數', unit: 'MPa' },
+      { symbol: 'I', meaning: '截面弱軸之最小斷面二次矩 (I_min)', unit: 'mm⁴' },
+      { symbol: 'K', meaning: '有效長度係數 (依兩端支承條件而定)', unit: '無單位' },
+      { symbol: 'L', meaning: '柱未受支撐之實際長度', unit: 'mm' },
     ],
     examFrequency: 4,
-    examTips: '支承條件係數 $k$：兩端鉸接 $k=1.0$；一端固定一端自由 $k=2.0$；一端固定一端鉸接 $k=0.7$；兩端固定 $k=0.5$。',
-    caution: '挫屈永遠沿著「弱軸（慣性矩 $I$ 較小之方向）」發生，計算時必須代入 $I_{\min}$。',
-    latexCopy: 'P_{cr} = \\frac{\\pi^2 E I}{L_e^2}',
+    examTips: '有效長度係數 K：兩端鉸接 K=1.0；兩端固定 K=0.5；一端固定一端鉸接 K=0.7；一端固定一端自由 K=2.0。',
+    caution: '挫屈永遠沿「慣性矩最小的弱軸」方向發生，計算必須取 I_min。',
+    latexCopy: 'P_{cr} = \\frac{\\pi^2 E I}{(K L)^2}',
   },
 
   // --- Materials ---
@@ -117,48 +118,31 @@ const cheatsheetData: FormulaCard[] = [
     id: 'mat1',
     category: 'materials',
     subjectName: '專業（一）材料與試驗',
-    title: '水灰比與強度法則 (Abram\'s Law)',
-    formula: 'W/C 比值越小，混凝土 28 天抗壓強度越高',
+    title: '混凝土水灰比與強度法則 (Abrams Water-Cement Ratio)',
+    formula: 'W/C = 水重量 / 水泥重量, fc\' ∝ 1 / (W/C)',
     variables: [
-      { symbol: 'W', meaning: '單位體積混凝土用水量', unit: 'kg/m³' },
-      { symbol: 'C', meaning: '單位體積水泥用量', unit: 'kg/m³' },
-      { symbol: 'f\'c', meaning: '28 天標準圓柱抗壓強度', unit: 'kgf/cm² 或 MPa' },
+      { symbol: 'W/C', meaning: '水灰比（水膠比）', unit: '重量比 (無單位)' },
+      { symbol: 'fc\'', meaning: '混凝土 28 天標準圓柱試體抗壓強度', unit: 'kgf/cm² 或 MPa' },
     ],
     examFrequency: 5,
-    examTips: '在完全密實與標準養護前提下，水灰比是決定硬化混凝土強度與耐久水密性的最關鍵因素。',
-    caution: '水灰比過低（如 $<0.35$）雖強度潛力高，但工作性差易蜂窩；需搭配強塑劑（流化劑）使用。',
-    latexCopy: '\\frac{W}{C} \\downarrow \\implies f\'_c \\uparrow',
+    examTips: '水灰比是決定混凝土抗壓強度、緻密度與抗滲耐久性的第一主因。水灰比越低，硬化後強度越高。',
+    caution: '現場施工為提升流動性若任意加水，水灰比飆高將造成強度劇降與乾縮龜裂。',
+    latexCopy: '\\text{W/C} = \\frac{W_{\\text{water}}}{W_{\\text{cement}}}, \\quad f\'_c = \\frac{A}{B^{\\text{W/C}}}',
   },
   {
     id: 'mat2',
     category: 'materials',
     subjectName: '專業（一）材料與試驗',
     title: '骨材細度模數 (Fineness Modulus, FM)',
-    formula: 'FM = ∑(標準篩累積保留百分比) / 100',
+    formula: 'FM = ∑(各號標準篩累積留存百分率) / 100',
     variables: [
-      { symbol: 'FM', meaning: '骨材粗細程度之無因次指標', unit: '無單位' },
-      { symbol: '標準篩', meaning: '細骨材 7 號篩：4.75mm (No.4) 至 0.15mm (No.100)', unit: 'mm' },
+      { symbol: 'FM', meaning: '細度模數 (指數越大代表顆粒平均越粗)', unit: '無單位' },
+      { symbol: '累積留存 %', meaning: '由大孔徑至小孔徑各標準篩殘留重量總和百分比', unit: '%' },
     ],
     examFrequency: 4,
-    examTips: 'CNS 規範混凝土用細骨材 (砂) 之 FM 標準範圍為 2.3 ~ 3.1。FM 數值越大代表骨材平均顆粒越粗。',
-    caution: '計算時使用「累積保留百分比 (Cumulative % Retained)」，而非「各篩單獨保留百分比」。',
-    latexCopy: 'FM = \\frac{\\sum (\\text{Cumulative } \\% \\text{ Retained})}{100}',
-  },
-  {
-    id: 'mat3',
-    category: 'materials',
-    subjectName: '專業（一）材料與試驗',
-    title: '木材含水率公式 (Moisture Content)',
-    formula: 'MC = [(W_w - W_d) / W_d] · 100%',
-    variables: [
-      { symbol: 'MC', meaning: '木材含水率 (Moisture Content)', unit: '%' },
-      { symbol: 'W_w', meaning: '木材濕重 (試驗前質量)', unit: 'g' },
-      { symbol: 'W_d', meaning: '木材烘乾後絕對乾重 (103±2°C 恆重)', unit: 'g' },
-    ],
-    examFrequency: 4,
-    examTips: '纖維飽和點 (FSP, Fiber Saturation Point) 約為 25~30%。當含水率由 FSP 以下繼續降低時，木材方開始發生乾縮變形與強度提升。',
-    caution: '分母是「絕對乾重 $W_d$」，絕非濕重 $W_w$。',
-    latexCopy: 'MC = \\frac{W_w - W_d}{W_d} \\times 100\\%',
+    examTips: '標準細骨材（砂）之 FM 值規範通常介於 2.3 ~ 3.1 之間；粗骨材 FM 通常在 6.0 ~ 8.0 之間。',
+    caution: '計算時包含 7 個標準篩（不含底盤），務必注意是「累積留存」而非各篩單獨留存。',
+    latexCopy: '\\text{FM} = \\frac{\\sum (\\text{Cumulative Retained \\%})}{100}',
   },
 
   // --- Surveying ---
@@ -166,36 +150,21 @@ const cheatsheetData: FormulaCard[] = [
     id: 's1',
     category: 'surveying',
     subjectName: '專業（二）測量實習',
-    title: '水準測量儀高法與高差法 (Leveling Computations)',
+    title: '水準測量儀高法與高差法 (Leveling HI & Rise/Fall)',
     formula: 'HI = Elev_A + BS, Elev_B = HI - FS, ΔH = BS - FS',
     variables: [
       { symbol: 'HI', meaning: '視線高 (Height of Instrument)', unit: 'm' },
-      { symbol: 'BS', meaning: '後視讀數 (Back Sight，已知點讀數)', unit: 'm' },
-      { symbol: 'FS', meaning: '前視讀數 (Fore Sight，未知點讀數)', unit: 'm' },
-      { symbol: 'ΔH', meaning: '兩點間之高程差 (升降高差)', unit: 'm' },
+      { symbol: 'BS', meaning: '後視讀數 (Back Sight，加至前點高程)', unit: 'm' },
+      { symbol: 'FS', meaning: '前視讀數 (Fore Sight，自視線高減去)', unit: 'm' },
+      { symbol: 'ΔH', meaning: '兩測點間高程差 (前高後低或後高前低)', unit: 'm' },
     ],
     examFrequency: 5,
-    examTips: '計算檢核鐵律：$\sum BS - \sum FS = \text{末點高程} - \text{起點高程}$。',
-    caution: '視準軸誤差可透過「前後視距等長 ($S_{BS} = S_{FS}$)」在計算高差時完全自動消除。',
-    latexCopy: 'HI = Elev_A + BS, \\quad Elev_B = HI - FS, \\quad \\Delta H = BS - FS',
+    examTips: '野外計算口訣：「後視加、前視減」。連續水準檢核：∑BS - ∑FS = 終點高程 - 起點高程。',
+    caution: '水準尺氣泡未居中、水準儀視準軸未校正或前後視距不相等將導致累積誤差。',
+    latexCopy: '\\text{HI} = \\text{Elev}_A + \\text{BS}, \\quad \\text{Elev}_B = \\text{HI} - \\text{FS}',
   },
   {
     id: 's2',
-    category: 'surveying',
-    subjectName: '專業（二）測量實習',
-    title: '閉合多邊形導線內角和公式 (Polygon Angles Sum)',
-    formula: '∑內角 = (n - 2) · 180°',
-    variables: [
-      { symbol: 'n', meaning: '閉合多邊形之邊數 (或頂點測站數)', unit: '邊' },
-      { symbol: '∑外角', meaning: '閉合多邊形外角總和 = (n + 2) · 180°', unit: '度' },
-    ],
-    examFrequency: 4,
-    examTips: '角度閉合差 $f_\beta = \sum \beta_{\text{實測}} - (n-2)\times 180^\circ$。配賦原則：將誤差反號平均分配至各內角。',
-    caution: '注意題幹為「內角」或「外角」；若測量外角應使用 $(n+2)\times 180^\circ$。',
-    latexCopy: '\\sum \\text{Interior Angles} = (n - 2) \\times 180^\\circ',
-  },
-  {
-    id: 's3',
     category: 'surveying',
     subjectName: '專業（二）測量實習',
     title: '羅盤儀平差法 (Bowditch Compass Rule)',
@@ -207,7 +176,7 @@ const cheatsheetData: FormulaCard[] = [
     ],
     examFrequency: 4,
     examTips: '羅盤儀法則假設「測角與量距之精度相當」，各邊之坐標改正量與「該邊邊長佔總周長之比例」成正比。',
-    caution: '改正數正負號永遠與閉合差符號相反（即 $- W$）。',
+    caution: '改正數正負號永遠與閉合差符號相反（即 - W）。',
     latexCopy: 'C_{\\Delta x_i} = - \\frac{L_i}{\\sum L} W_x, \\quad C_{\\Delta y_i} = - \\frac{L_i}{\\sum L} W_y',
   },
 
@@ -239,10 +208,44 @@ const cheatsheetData: FormulaCard[] = [
       { symbol: 'A0 面積', meaning: '標準正一平方公尺 (1.0 m²)', unit: 'm²' },
       { symbol: '長寬比', meaning: '長邊比短邊恆為 √2 : 1 (約 1.414 : 1)', unit: '無單位' },
     ],
-    examFrequency: 4,
+    examFrequency: 5,
     examTips: '由 A0 至 A4，每次沿長邊對折即可得到下一級尺寸，長寬比例保持不變。施工圖最常採用 A1 與 A3。',
     caution: '長度尺寸記牢：A0 (841×1189) → A1 (594×841) → A2 (420×594) → A3 (297×420) → A4 (210×297)。',
     latexCopy: 'A_n : \\text{Aspect Ratio } \\sqrt{2} : 1, \\quad A_0 = 841 \\times 1189\\text{ mm}',
+  },
+
+  // --- Mathematics C ---
+  {
+    id: 'math1',
+    category: 'math',
+    subjectName: '統測共同科目 數學（C）',
+    title: '平面向量內積與夾角 (Vector Dot Product)',
+    formula: 'u · v = |u| |v| cos θ = ux·vx + uy·vy',
+    variables: [
+      { symbol: 'u · v', meaning: '兩向量之純量積 (內積)', unit: '純量' },
+      { symbol: 'θ', meaning: '兩向量之夾角 (0° ≤ θ ≤ 180°)', unit: '度或弧度' },
+      { symbol: '垂直條件', meaning: 'u ⊥ v ⇔ u · v = 0', unit: '充要條件' },
+    ],
+    examFrequency: 5,
+    examTips: '統測每年必考：利用內積求兩直線夾角或判定正交（力學力的分解與投影完全相通）。',
+    caution: '內積計算結果為「數值 (純量)」，不是向量。',
+    latexCopy: '\\vec{u} \\cdot \\vec{v} = |\\vec{u}||\\vec{v}| \\cos\\theta = u_x v_x + u_y v_y',
+  },
+  {
+    id: 'math2',
+    category: 'math',
+    subjectName: '統測共同科目 數學（C）',
+    title: '二次曲線標準式與頂點焦距 (Conic Sections)',
+    formula: '拋物線: (y-k)² = 4c(x-h), 橢圓: (x-h)²/a² + (y-k)²/b² = 1',
+    variables: [
+      { symbol: '(h,k)', meaning: '中心點或頂點坐標', unit: '坐標' },
+      { symbol: 'c', meaning: '頂點至焦點之焦距 (4c 為正焦弦長)', unit: '長度' },
+      { symbol: 'a, b, c', meaning: '橢圓關係式: a² = b² + c² (長軸 2a, 焦點 2c)', unit: '長度' },
+    ],
+    examFrequency: 4,
+    examTips: '建築拱圈、懸臂曲面最常用幾何模型。統測重點在於由方程式快速讀出對稱軸與頂點。',
+    caution: '雙曲線與橢圓焦距關係式勿混淆：橢圓 a² = b² + c²，雙曲線 c² = a² + b²。',
+    latexCopy: '\\frac{(x-h)^2}{a^2} + \\frac{(y-k)^2}{b^2} = 1, \\quad a^2 = b^2 + c^2',
   },
 ];
 
@@ -252,7 +255,13 @@ export default function CheatsheetsPage() {
   const [copiedId, setCopiedId] = useState<string | null>(null);
 
   const filteredCards = cheatsheetData.filter((item) => {
-    const matchesCat = activeCategory === 'all' || item.category === activeCategory;
+    let matchesCat = true;
+    if (activeCategory === 'five-star') {
+      matchesCat = item.examFrequency === 5;
+    } else if (activeCategory !== 'all') {
+      matchesCat = item.category === activeCategory;
+    }
+
     const q = searchQuery.toLowerCase().trim();
     const matchesSearch = 
       !q || 
@@ -281,7 +290,7 @@ export default function CheatsheetsPage() {
       <header className="space-y-4 text-center max-w-3xl mx-auto">
         <div className="inline-flex items-center gap-2 rounded-full border border-amber-200 dark:border-amber-900/80 bg-amber-50/80 dark:bg-amber-950/40 px-3.5 py-1 text-xs font-mono font-bold text-amber-700 dark:text-amber-300">
           <Zap className="size-3.5 text-amber-600 dark:text-amber-400" />
-          Arch V7.3 統測高頻考點與速查指南
+          Arch V7.3 統測考點高頻速查指南 (Cheatsheets)
         </div>
         <h1 className="font-serif text-3xl font-bold tracking-tight text-slate-950 dark:text-white sm:text-5xl">
           考前衝刺必備：全科目高頻公式卡與圖例大全
@@ -296,20 +305,24 @@ export default function CheatsheetsPage() {
       <div className="space-y-4">
         <div className="flex flex-col sm:flex-row gap-3 items-center justify-between">
           {/* Categories */}
-          <div className="flex items-center gap-1.5 overflow-x-auto w-full sm:w-auto pb-1 text-xs font-mono">
+          <div className="flex items-center gap-1.5 overflow-x-auto w-full sm:w-auto pb-1 text-xs font-mono mobile-scroll">
             {[
               { id: 'all', label: '全部公式卡' },
+              { id: 'five-star', label: '🔥 考前10分鐘必背 (5星)', highlight: true },
               { id: 'mechanics', label: '專業（一）力學' },
               { id: 'materials', label: '專業（一）材料' },
               { id: 'surveying', label: '專業（二）測量' },
               { id: 'drafting', label: '專業（二）製圖' },
+              { id: 'math', label: '數學（C）' },
             ].map((cat) => (
               <button
                 key={cat.id}
                 onClick={() => setActiveCategory(cat.id)}
-                className={`px-3.5 py-2 rounded-xl font-bold transition-all shrink-0 ${
+                className={`px-3.5 py-2 rounded-xl font-bold transition-all shrink-0 cursor-pointer ${
                   activeCategory === cat.id
-                    ? 'bg-amber-600 text-white shadow-sm'
+                    ? cat.id === 'five-star'
+                      ? 'bg-red-600 text-white shadow-sm'
+                      : 'bg-amber-600 text-white shadow-sm'
                     : 'bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700'
                 }`}
               >
@@ -358,12 +371,12 @@ export default function CheatsheetsPage() {
                   {card.title}
                 </h3>
                 <div className="mt-3 rounded-2xl bg-amber-50/60 dark:bg-amber-950/30 p-4 border border-amber-200/80 dark:border-amber-900/50 flex items-center justify-between gap-3">
-                  <code className="font-mono text-sm sm:text-base font-bold text-amber-950 dark:text-amber-200 tracking-wide">
+                  <code className="font-mono text-sm sm:text-base font-bold text-amber-950 dark:text-amber-200 tracking-wide overflow-x-auto">
                     {card.formula}
                   </code>
                   <button
                     onClick={() => handleCopyLatex(card.latexCopy, card.id)}
-                    className="shrink-0 p-2 rounded-lg bg-white/80 dark:bg-slate-900/80 hover:bg-white text-slate-700 dark:text-slate-300 border border-amber-300 dark:border-amber-800 transition-colors"
+                    className="shrink-0 p-2 rounded-lg bg-white/80 dark:bg-slate-900/80 hover:bg-white text-slate-700 dark:text-slate-300 border border-amber-300 dark:border-amber-800 transition-colors cursor-pointer"
                     title="複製 LaTeX 算式"
                     aria-label={`複製 ${card.title} 的 LaTeX 算式`}
                   >
@@ -407,7 +420,7 @@ export default function CheatsheetsPage() {
             <div className="pt-2 border-t border-slate-100 dark:border-slate-800 flex justify-between items-center text-xs font-mono">
               <span className="text-slate-400">完整章節推導詳解</span>
               <Link
-                href={`/subjects/${card.category === 'mechanics' ? 'mechanics' : card.category === 'materials' ? 'materials' : card.category === 'surveying' ? 'surveying' : 'drafting'}`}
+                href={`/subjects/${card.category === 'mechanics' ? 'mechanics' : card.category === 'materials' ? 'materials' : card.category === 'surveying' ? 'surveying' : card.category === 'math' ? 'math-c' : 'drafting'}`}
                 className="text-blue-600 dark:text-blue-400 font-bold hover:underline inline-flex items-center gap-1"
               >
                 進入章節學習 →

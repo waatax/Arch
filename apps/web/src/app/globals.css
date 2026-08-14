@@ -418,3 +418,31 @@ html.arch-lite [class*="blur-"] {
 .dark .v7-cta { background: #A63628; }
 @media (max-width: 639px) { .v7-outline-text { -webkit-text-stroke-width: 1px; } .v7-measure { background-size: 25% 100%; } }
 html.arch-lite .v7-hero { background: var(--color-paper-50); }
+
+/* ── Interactive tactile micro-feedback ── */
+.btn-tactile {
+  transition: transform 0.15s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.15s ease, background-color 0.2s ease;
+}
+.btn-tactile:active {
+  transform: scale(0.97);
+}
+
+/* ── Subtle glowing border accents ── */
+.border-subtle-glow {
+  box-shadow: 0 0 0 1px rgba(31, 86, 122, 0.08), 0 2px 8px rgba(31, 86, 122, 0.04);
+}
+.dark .border-subtle-glow {
+  box-shadow: 0 0 0 1px rgba(106, 193, 232, 0.12), 0 2px 12px rgba(0, 0, 0, 0.4);
+}
+
+/* ── Japanese Wabi-Sabi Paper Grain Accent ── */
+.washi-paper {
+  background-color: var(--color-paper-50);
+  background-image: radial-gradient(color-mix(in srgb, var(--color-ink-900) 2.5%, transparent) 1px, transparent 1px);
+  background-size: 16px 16px;
+}
+.dark .washi-paper {
+  background-color: var(--color-paper-50);
+  background-image: radial-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+  background-size: 16px 16px;
+}
