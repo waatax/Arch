@@ -34,6 +34,9 @@ const examSimulator = read('apps/web/src/components/ExamSimulator.tsx');
 const answerLogic = read('apps/web/src/lib/examAnswers.ts');
 const core = read('V6-Core.md');
 const sevenIterationSource = read('apps/web/src/lib/pedagogy/sevenIterationEnrichment.ts');
+const masterySource = read('apps/web/src/lib/pedagogy/masteryLesson.ts');
+const solutionSource = read('apps/web/src/lib/pedagogy/solutionSteps.ts');
+const learningSource = read('apps/web/src/lib/pedagogy/learningSources.ts');
 
 const checks = [
   ['資料結構', () => topics.every(({ topic }) => topic.title && topic.desc && topic.status === 'done')],
@@ -54,8 +57,13 @@ checks.push(
     return 6 >= Math.max(1, Math.ceil(baseline * 0.1));
   }) && Array.from({ length: 7 }, (_, index) => `pack(${index + 1},`).every((token) => sevenIterationSource.includes(token))],
   ['每輪至少五項品質優化', () => ['目標更清楚', '資訊更易讀', '認知負荷更低', '回饋更具體', '課綱與題目更緊密'].every((token) => sevenIterationSource.includes(token))],
-  ['七輪全頁路由與互動導覽', () => layout.includes('getSevenIterationPacks(') && layout.includes('iterationPacks.map((pack)') && layout.includes('id="seven-iterations"') && layout.includes("['seven-iterations', '3 七輪深化']")],
+  ['七輪全頁路由與互動導覽', () => layout.includes('getSevenIterationPacks(') && layout.includes('iterationPacks.map((pack)') && layout.includes('id="seven-iterations"') && layout.includes("['seven-iterations'") && layout.includes('七輪深化')],
   ['課綱能力與歷屆題證據', () => ['observe:', 'model:', 'verify:', 'transfer:', 'evidence:'].every((token) => sevenIterationSource.includes(token)) && sevenIterationSource.includes('mappedExamExcerpts[0]') && sevenIterationSource.includes('官方題目線索')],
+  ['深入淺出單一教學路徑', () => ['plainStart', 'conceptBridge', 'curriculumAnchor', 'masteryEvidence'].every((token) => masterySource.includes(token)) && !/小學生版|國中生版/.test(layout + masterySource)],
+  ['三個應用面與向量圖示', () => ['身邊', '現場', '決策'].every((token) => masterySource.includes(token)) && layout.includes('masteryLesson.applications.map') && ['Binoculars', 'Building2', 'Lightbulb', 'School'].every((token) => layout.includes(token))],
+  ['示範題逐步解釋原因', () => ['explainWhy', '先用白話重述', '畫出思考地圖', '｜為什麼：'].every((token) => solutionSource.includes(token))],
+  ['真題六段深度解析', () => ['restate', 'clues', 'rule', 'correct', 'distractors', 'transfer'].every((token) => masterySource.includes(token) && layout.includes(`walkthrough.${token}`))],
+  ['官方與教學研究來源', () => ['國家教育研究院', '技專校院入學測驗中心', 'Education Endowment Foundation', 'CAST UDL Guidelines'].every((token) => learningSource.includes(token))],
 );
 
 const failures = [];
@@ -73,7 +81,7 @@ for (let iteration = 1; iteration <= 7; iteration += 1) {
 
 console.log(`\n證據摘要：${subjects.length} 科、${topics.length} 主題、${registries.length} 筆真題映射、${passNo} 個可重跑檢查。`);
 if (failures.length) {
-  console.error(`V6 品質閘門失敗（${failures.length}）：${failures.join('、')}`);
+  console.error(`V7 品質閘門失敗（${failures.length}）：${failures.join('、')}`);
   process.exit(1);
 }
-console.log(`V6 ${totalPasses}-Pass 品質閘門全部通過。`);
+console.log(`V7 ${totalPasses}-Pass 七輪逐頁品質閘門全部通過。`);

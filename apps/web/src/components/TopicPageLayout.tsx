@@ -3,6 +3,7 @@
 import { useState, useEffect, useRef } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
+import { Binoculars, BookOpenCheck, Building2, CircleCheckBig, Lightbulb, Route, School, SearchCheck } from 'lucide-react';
 import type { SubjectData, TopicContent } from '@/data/types';
 import MathText from '@/components/MathText';
 import InteractiveVisualizer from '@/components/visualizers/InteractiveVisualizer';
@@ -12,6 +13,7 @@ import { getTopicDeepKnowledge } from '@/lib/pedagogy/topicKnowledgeExpander';
 import { getSevenIterationPacks } from '@/lib/pedagogy/sevenIterationEnrichment';
 import { buildDetailedSolution } from '@/lib/pedagogy/solutionSteps';
 import { getLearningSources } from '@/lib/pedagogy/learningSources';
+import { buildExamWalkthrough, getMasteryLesson } from '@/lib/pedagogy/masteryLesson';
 import { isAnswerChoiceCorrect, isAnswerCorrect, isMultipleChoiceAnswer, toggleSelectedChoice } from '@/lib/examAnswers';
 
 interface TopicPageLayoutProps {
@@ -170,6 +172,7 @@ export default function TopicPageLayout({ subject, topic, mappedExamQuestions }:
     topic,
     mappedExamQuestions.map((question) => question.excerpt),
   );
+  const masteryLesson = getMasteryLesson(subject.slug, topic, realLifeGuide);
 
   return (
     <article className="mx-auto max-w-4xl space-y-8 px-4 py-8 sm:px-6 sm:py-12 pb-28">
@@ -366,8 +369,8 @@ export default function TopicPageLayout({ subject, topic, mappedExamQuestions }:
         {/* Seven-part lesson path: every control navigates to real content. */}
         <div className="flex items-center gap-1 overflow-x-auto pb-1 border-b border-slate-200 dark:border-slate-800 text-xs font-mono" aria-label="七段教學快速導覽">
           {[
-            ['exam-focus', '1 這在考什麼'], ['observable', '2 看得到的東西'], ['seven-iterations', '3 七輪深化'], ['principles', '4 原理推導'],
-            ['worked', '5 示範題'], ['practice', '6 自己做'], ['traps', '7 最容易錯'], ['sources', '8 來源版本'],
+            ['exam-focus', '1 這在考什麼'], ['observable', '2 看得到的東西'], ['application-mastery', '3 應用與課綱'], ['seven-iterations', '4 七輪深化'], ['principles', '5 原理推導'],
+            ['worked', '6 示範題'], ['practice', '7 自己做'], ['traps', '8 最容易錯'], ['sources', '9 來源版本'],
           ].map(([id, label]) => (
             <button key={id} onClick={() => jumpTo(id)} className="shrink-0 rounded-t-lg px-3.5 py-2 font-bold text-slate-600 transition-colors hover:bg-blue-600 hover:text-white dark:text-slate-400">
               {label}
@@ -443,6 +446,44 @@ export default function TopicPageLayout({ subject, topic, mappedExamQuestions }:
               </ol>
             </figcaption>
           </figure>
+        </div>
+      </section>
+
+      {/* One continuous scaffold: intuition → application → curriculum → mastery. */}
+      <section id="application-mastery" className="lesson-deferred-section scroll-mt-24 space-y-5" aria-labelledby="application-mastery-title">
+        <div className="rounded-3xl border border-teal-200 bg-teal-50/55 p-5 dark:border-teal-900 dark:bg-teal-950/25 sm:p-7">
+          <div className="flex items-start gap-4">
+            <span className="flex size-11 shrink-0 items-center justify-center rounded-2xl bg-teal-700 text-white"><Lightbulb className="size-5" aria-hidden="true" /></span>
+            <div>
+              <p className="text-[11px] font-bold uppercase tracking-[.18em] text-teal-800 dark:text-teal-200">Plain idea first</p>
+              <h2 id="application-mastery-title" className="mt-1 font-serif text-2xl font-bold text-slate-950 dark:text-white">先用一句白話抓住，再一路走到課綱深度</h2>
+              <p className="mt-3 text-sm leading-7 text-slate-700 dark:text-slate-300">{masteryLesson.plainStart}</p>
+            </div>
+          </div>
+        </div>
+
+        <div className="grid gap-3 sm:grid-cols-2">
+          {masteryLesson.conceptBridge.map((step, index) => {
+            const icons = [Binoculars, Route, SearchCheck, BookOpenCheck];
+            const Icon = icons[index];
+            return <div key={step} className="flex gap-3 rounded-2xl border border-slate-200 bg-white p-4 dark:border-slate-800 dark:bg-slate-900"><span className="flex size-8 shrink-0 items-center justify-center rounded-xl bg-blue-100 text-blue-800 dark:bg-blue-950 dark:text-blue-200"><Icon className="size-4" aria-hidden="true" /></span><p className="text-sm leading-7 text-slate-700 dark:text-slate-300">{step}</p></div>;
+          })}
+        </div>
+
+        <div>
+          <div className="mb-3 flex items-center gap-2"><Building2 className="size-5 text-blue-700 dark:text-blue-300" aria-hidden="true" /><h3 className="font-serif text-xl font-bold text-slate-950 dark:text-white">三個應用面範例：看見、使用、改條件</h3></div>
+          <div className="grid gap-4 lg:grid-cols-3">
+            {masteryLesson.applications.map((application, index) => {
+              const icons = [School, Building2, SearchCheck];
+              const Icon = icons[index];
+              return <article key={application.title} className="rounded-2xl border border-slate-200 bg-white p-5 dark:border-slate-800 dark:bg-slate-900"><div className="flex items-center justify-between"><span className="flex size-9 items-center justify-center rounded-xl bg-amber-100 text-amber-800 dark:bg-amber-950 dark:text-amber-200"><Icon className="size-4" aria-hidden="true" /></span><span className="rounded-full bg-slate-100 px-2.5 py-1 text-[10px] font-bold text-slate-600 dark:bg-slate-800 dark:text-slate-300">{application.place}</span></div><h4 className="mt-4 font-bold text-slate-950 dark:text-white">{application.title}</h4><p className="mt-2 text-sm leading-6 text-slate-600 dark:text-slate-400">{application.explanation}</p><p className="mt-4 border-t border-slate-200 pt-3 text-xs font-medium leading-6 text-blue-800 dark:border-slate-800 dark:text-blue-200"><strong>動手做：</strong>{application.action}</p></article>;
+            })}
+          </div>
+        </div>
+
+        <div className="grid gap-4 lg:grid-cols-[1.1fr_.9fr]">
+          <aside className="rounded-2xl border border-indigo-200 bg-indigo-50/60 p-5 dark:border-indigo-900 dark:bg-indigo-950/25"><div className="flex items-center gap-2"><BookOpenCheck className="size-5 text-indigo-700 dark:text-indigo-300" /><h3 className="font-bold text-indigo-950 dark:text-indigo-100">對齊 108 課綱與正式能力</h3></div><p className="mt-3 text-sm leading-7 text-indigo-950/80 dark:text-indigo-100/85">{masteryLesson.curriculumAnchor}</p></aside>
+          <aside className="rounded-2xl border border-emerald-200 bg-emerald-50/60 p-5 dark:border-emerald-900 dark:bg-emerald-950/25"><div className="flex items-center gap-2"><CircleCheckBig className="size-5 text-emerald-700 dark:text-emerald-300" /><h3 className="font-bold text-emerald-950 dark:text-emerald-100">真正掌握的五項證據</h3></div><ul className="mt-3 space-y-2 text-xs leading-6 text-emerald-950/80 dark:text-emerald-100/85">{masteryLesson.masteryEvidence.map((item) => <li key={item} className="flex gap-2"><span aria-hidden="true">✓</span><span>{item}</span></li>)}</ul></aside>
         </div>
       </section>
 
@@ -944,6 +985,7 @@ export default function TopicPageLayout({ subject, topic, mappedExamQuestions }:
               const isAnswered = Boolean(userChoice);
               const isCorrect = isAnswered && isAnswerCorrect(q.answer, userChoice);
               const isMultiple = isMultipleChoiceAnswer(q.answer);
+              const walkthrough = buildExamWalkthrough(q, topic);
 
               return (
                 <div
@@ -1021,14 +1063,22 @@ export default function TopicPageLayout({ subject, topic, mappedExamQuestions }:
                   </div>
 
                   {isAnswered && (
-                    <div className="rounded-xl bg-slate-100 dark:bg-slate-800 p-3.5 text-xs text-slate-800 dark:text-slate-200 font-medium space-y-1">
+                    <div className="rounded-xl bg-slate-100 dark:bg-slate-800 p-4 text-xs text-slate-800 dark:text-slate-200 font-medium space-y-3">
                       <p>
                         {isCorrect ? '✅ 答對了！' : `❌ 答錯了。你的選擇：${userChoice}，`}{' '}
                         <strong>官方標準答案：{q.answer}</strong>
                       </p>
-                      <p className="text-slate-500 dark:text-slate-400">
-                        💡 本題考點：{subject.title} · {topic.title}。解題關鍵知識點請參閱本頁上方的「核心概念精講」與「解題秒殺決策樹」。
-                      </p>
+                      <div className="space-y-3 rounded-xl border border-slate-200 bg-white p-4 dark:border-slate-700 dark:bg-slate-900">
+                        <h3 className="flex items-center gap-2 text-sm font-bold text-slate-950 dark:text-white"><Lightbulb className="size-4 text-amber-600" />老師邊想邊說：一步一步拆開這題</h3>
+                        <ol className="space-y-2 text-sm leading-7 text-slate-700 dark:text-slate-300">
+                          <li><strong className="text-blue-800 dark:text-blue-200">1. 題目在問什麼：</strong>{walkthrough.restate}</li>
+                          <li><strong className="text-blue-800 dark:text-blue-200">2. 圈出破題線索：</strong>{walkthrough.clues}</li>
+                          <li><strong className="text-blue-800 dark:text-blue-200">3. 回到核心規則：</strong><MathText content={walkthrough.rule} /></li>
+                          <li><strong className="text-blue-800 dark:text-blue-200">4. 為什麼答案成立：</strong><MathText content={walkthrough.correct} /></li>
+                        </ol>
+                        {walkthrough.distractors.length ? <div className="rounded-lg bg-rose-50 p-3 dark:bg-rose-950/25"><p className="font-bold text-rose-900 dark:text-rose-200">其他選項要錯在哪裡？</p><ul className="mt-2 space-y-1.5 leading-6 text-rose-950/80 dark:text-rose-100/85">{walkthrough.distractors.map((item) => <li key={item}>• <MathText content={item} /></li>)}</ul></div> : null}
+                        <p className="rounded-lg bg-emerald-50 p-3 leading-6 text-emerald-950 dark:bg-emerald-950/30 dark:text-emerald-100"><strong>換個情境還會做：</strong>{walkthrough.transfer}</p>
+                      </div>
                       <nav aria-label={`${q.sourceLabel || q.year} 第 ${q.questionNo} 題知識回鏈`} className="flex flex-wrap gap-2 pt-1">
                         <a href="#exam-focus" className="rounded-md border border-slate-300 px-2 py-1 text-[11px] font-bold text-blue-700 hover:bg-white dark:border-slate-700 dark:text-blue-300">① 回考點定位</a>
                         <a href="#principles" className="rounded-md border border-slate-300 px-2 py-1 text-[11px] font-bold text-blue-700 hover:bg-white dark:border-slate-700 dark:text-blue-300">② 回核心原理</a>
@@ -1076,7 +1126,7 @@ export default function TopicPageLayout({ subject, topic, mappedExamQuestions }:
           來源與版本：課程依 108 課綱與平台已登錄之統測題目覆蓋表整理；真題以題卡所連結的官方題本為準。法規、CNS 與招生採計可能更新，使用前請核對頁面標示年度及官方最新公告。
         </p>
         <div className="border-t border-indigo-200 pt-3 dark:border-indigo-900">
-          <p className="mb-2 text-xs font-bold text-slate-700 dark:text-slate-300">本頁研究與交叉核對來源（最後檢查：2026-08-11）</p>
+          <p className="mb-2 text-xs font-bold text-slate-700 dark:text-slate-300">本頁研究與交叉核對來源（最後檢查：2026-08-14）</p>
           <ul className="space-y-1.5 text-xs leading-5">
             {learningSources.map((source) => (
               <li key={source.url} className="flex items-start gap-2">

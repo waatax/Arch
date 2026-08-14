@@ -74,7 +74,7 @@ export default function Navbar() {
                     Arch
                   </span>
                   <span className="rounded-full bg-blue-600/10 dark:bg-blue-400/10 px-2 py-0.5 text-[10px] font-mono font-bold text-blue-700 dark:text-blue-300 border border-blue-600/20">
-                    V7
+                    V7.1
                   </span>
                 </div>
                 <span className="text-[10px] font-mono text-slate-500 dark:text-slate-400 -mt-1 hidden sm:inline">
