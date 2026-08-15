@@ -2,7 +2,7 @@ import Link from 'next/link';
 import { ArrowRight, Building2, CheckCircle2, Compass, DraftingCompass, HardHat, Play, ShieldCheck, Target } from 'lucide-react';
 
 const paths = [
-  { icon: Compass, eyebrow: '從零開始', title: '沿著課程地圖學', copy: '86 個章節依先備知識排列，從生活直覺一路走到統測題型。', href: '/curriculum', cta: '打開課程地圖', tone: 'blue' },
+  { icon: Compass, eyebrow: '從零開始', title: '沿著課程地圖學', copy: '99 個章節依先備知識排列，從生活直覺一路走到統測題型。', href: '/curriculum', cta: '打開課程地圖', tone: 'blue' },
   { icon: Target, eyebrow: '考前衝刺', title: '用歷屆題找弱點', copy: '111–115 年五科共 925 題，練習、解析與錯題複習在同一條流程。', href: '/practice', cta: '開始今日練習', tone: 'coral' },
   { icon: DraftingCompass, eyebrow: '動態圖解', title: '互動圖解實驗室', copy: '簡支梁受力、莫爾圓主應力、第三角投影展開與水灰比強度模擬。', href: '/visualizers', cta: '進入圖解實驗室', tone: 'blue' },
   { icon: HardHat, eyebrow: '現場實務', title: '營造現場檢驗手冊', copy: '連結施工規範綱要、CNS 坍度氯離子試驗、高張力螺栓與梁穿孔防錯。', href: '/field-guide', cta: '查閱現場手冊', tone: 'teal' },
@@ -32,7 +32,7 @@ export default function Home() {
               把建築學懂，<br /><span className="v7-outline-text">也把分數蓋起來。</span>
             </h1>
             <p className="mt-7 max-w-2xl text-base leading-8 text-slate-600 dark:text-slate-300 sm:text-lg">
-              不只背公式。從真實建築、圖解與步驟化例題開始，銜接 86 章課程、動態圖解實驗室、現場實務手冊與 925 道歷屆題，讓每次學習都有明確下一步。
+              不只背公式。從真實建築、圖解與步驟化例題開始，銜接 13 科 99 章課程、動態圖解實驗室、現場實務手冊與 925 道歷屆題，讓每次學習都有明確下一步。
             </p>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               <Link href="/curriculum" className="v7-primary group inline-flex min-h-14 items-center justify-center gap-3 rounded-full bg-blue-700 px-7 font-bold text-white shadow-lg shadow-blue-900/15 transition hover:bg-blue-800">
@@ -64,7 +64,7 @@ export default function Home() {
                   ))}
                 </div>
                 <div className="grid grid-cols-3 border-t border-white/20 pt-5 text-center">
-                  <div><strong className="block text-xl">86</strong><span className="text-[10px] text-blue-200">完整章節</span></div>
+                  <div><strong className="block text-xl">99</strong><span className="text-[10px] text-blue-200">完整章節</span></div>
                   <div className="border-x border-white/15"><strong className="block text-xl">925</strong><span className="text-[10px] text-blue-200">歷屆試題</span></div>
                   <div><strong className="block text-xl">8</strong><span className="text-[10px] text-blue-200">建築案例</span></div>
                 </div>

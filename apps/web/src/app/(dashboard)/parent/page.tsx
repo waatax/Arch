@@ -48,7 +48,7 @@ export default function ParentDashboard() {
               </div>
               <div>
                 <p className="text-sm text-slate-500 font-medium">Topics Completed</p>
-                <h3 className="text-2xl font-bold text-slate-900 dark:text-white">8 / 86</h3>
+                <h3 className="text-2xl font-bold text-slate-900 dark:text-white">8 / 99</h3>
               </div>
             </div>
           </GlassCard>
