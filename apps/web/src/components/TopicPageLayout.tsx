@@ -197,7 +197,7 @@ export default function TopicPageLayout({ subject, topic, mappedExamQuestions }:
         {isZenMode ? '👁️' : '🧘'}
       </button>
 
-      <article className="mx-auto max-w-4xl space-y-8 px-4 py-8 sm:px-6 sm:py-12 pb-28">
+      <article className="mx-auto max-w-3xl space-y-16 px-4 py-8 sm:px-6 sm:py-16 text-lg leading-[1.8] text-slate-800 dark:text-slate-200 tracking-wide">
         {/* Header Navigation & Breadcrumbs */}
         <header className={`space-y-6 zen-mode-transition ${isZenMode ? 'zen-hidden h-0 overflow-hidden !my-0' : ''}`}>
         <nav className="mobile-scroll flex items-center gap-2 overflow-x-auto whitespace-nowrap text-xs font-mono text-slate-500 dark:text-slate-400" aria-label="麵包屑導覽">
@@ -1157,31 +1157,39 @@ export default function TopicPageLayout({ subject, topic, mappedExamQuestions }:
                   </div>
 
                   {isAnswered && (
-                    <div className="rounded-xl bg-slate-100 dark:bg-slate-800 p-4 text-xs text-slate-800 dark:text-slate-200 font-medium space-y-3">
-                      <p className="text-sm">
+                    <div className="rounded-2xl bg-slate-50 dark:bg-slate-800/80 p-5 text-sm text-slate-800 dark:text-slate-200 font-medium space-y-4 shadow-sm border border-slate-100 dark:border-slate-700/50">
+                      <p className="text-base">
                         {isCorrect ? (
-                          <span className="text-emerald-700 dark:text-emerald-300 font-bold">✅ 完美命中！精準掌握核心概念！</span>
+                          <span className="text-emerald-600 dark:text-emerald-400 font-bold flex items-center gap-2 animate-[pulse_1.5s_ease-in-out]">
+                            <span className="text-xl">🎉</span> 答對了！你抓到這個題目的靈魂了！
+                          </span>
                         ) : (
-                          <span className="text-amber-800 dark:text-amber-300 font-bold">💡 差一點點！你的選擇：{userChoice}，別氣餒，先看下方拆解：</span>
+                          <span className="text-amber-700 dark:text-amber-400 font-bold flex flex-col gap-1">
+                            <span className="flex items-center gap-2"><span className="text-xl">☕</span> 沒關係，統測本來就有陷阱！</span>
+                            <span className="text-sm font-normal text-amber-900/80 dark:text-amber-200/80">你的選擇是 {userChoice}。先喝口水，我們一起來看看老師是怎麼拆解這題的：</span>
+                          </span>
                         )}{' '}
-                        <strong className="text-slate-900 dark:text-white">官方標準答案：{q.answer}</strong>
                       </p>
-                      <div className="space-y-3 rounded-xl border border-slate-200 bg-white p-4 dark:border-slate-700 dark:bg-slate-900">
-                        <h3 className="flex items-center gap-2 text-sm font-bold text-slate-950 dark:text-white"><Lightbulb className="size-4 text-amber-600" />老師邊想邊說：一步一步拆開這題</h3>
-                        <ol className="space-y-2 text-sm leading-7 text-slate-700 dark:text-slate-300">
-                          <li><strong className="text-blue-800 dark:text-blue-200">1. 題目在問什麼：</strong>{walkthrough.restate}</li>
-                          <li><strong className="text-blue-800 dark:text-blue-200">2. 圈出破題線索：</strong>{walkthrough.clues}</li>
-                          <li><strong className="text-blue-800 dark:text-blue-200">3. 回到核心規則：</strong><MathText content={walkthrough.rule} /></li>
-                          <li><strong className="text-blue-800 dark:text-blue-200">4. 為什麼答案成立：</strong><MathText content={walkthrough.correct} /></li>
+                      <p className="text-sm border-b border-slate-200 dark:border-slate-700 pb-3">
+                        <strong className="text-slate-700 dark:text-slate-300">官方標準答案：{q.answer}</strong>
+                      </p>
+                      <div className="space-y-4 rounded-2xl border border-blue-100 bg-blue-50/50 p-5 dark:border-blue-900/40 dark:bg-blue-950/20">
+                        <h3 className="flex items-center gap-2 text-base font-bold text-blue-900 dark:text-blue-100"><Lightbulb className="size-5 text-amber-500" />老師邊想邊說：我們一步一步來</h3>
+                        <ol className="space-y-3 text-sm leading-relaxed text-slate-700 dark:text-slate-300">
+                          <li><strong className="text-blue-700 dark:text-blue-300">1. 題目到底在問什麼？</strong><br/><span className="text-slate-600 dark:text-slate-400">{walkthrough.restate}</span></li>
+                          <li><strong className="text-blue-700 dark:text-blue-300">2. 哪裡是破題關鍵線索？</strong><br/><span className="text-slate-600 dark:text-slate-400">{walkthrough.clues}</span></li>
+                          <li><strong className="text-blue-700 dark:text-blue-300">3. 想想我們學過的規則：</strong><br/><MathText content={walkthrough.rule} /></li>
+                          <li><strong className="text-blue-700 dark:text-blue-300">4. 為什麼這個答案是對的？</strong><br/><MathText content={walkthrough.correct} /></li>
                         </ol>
-                        {walkthrough.distractors.length ? <div className="rounded-lg bg-rose-50 p-3 dark:bg-rose-950/25"><p className="font-bold text-rose-900 dark:text-rose-200">其他選項要錯在哪裡？</p><ul className="mt-2 space-y-1.5 leading-6 text-rose-950/80 dark:text-rose-100/85">{walkthrough.distractors.map((item) => <li key={item}>• <MathText content={item} /></li>)}</ul></div> : null}
-                        <p className="rounded-lg bg-emerald-50 p-3 leading-6 text-emerald-950 dark:bg-emerald-950/30 dark:text-emerald-100"><strong>換個情境還會做：</strong>{walkthrough.transfer}</p>
+                        {walkthrough.distractors.length ? <div className="mt-4 rounded-xl bg-amber-50/80 p-4 border border-amber-100 dark:bg-amber-950/20 dark:border-amber-900/30"><p className="font-bold text-amber-900 dark:text-amber-200">👀 注意！其他選項錯在哪裡？</p><ul className="mt-2 space-y-2 leading-relaxed text-amber-900/80 dark:text-amber-100/80">{walkthrough.distractors.map((item) => <li key={item}>• <MathText content={item} /></li>)}</ul></div> : null}
+                        <div className="mt-2 rounded-xl bg-emerald-50/80 p-4 border border-emerald-100 dark:bg-emerald-950/20 dark:border-emerald-900/30">
+                          <p className="font-bold text-emerald-900 dark:text-emerald-200">🔄 換個情境也能得分：</p>
+                          <p className="mt-1 leading-relaxed text-emerald-800 dark:text-emerald-100/80">{walkthrough.transfer}</p>
+                        </div>
                       </div>
-                      <nav aria-label={`${q.sourceLabel || q.year} 第 ${q.questionNo} 題知識回鏈`} className="flex flex-wrap gap-2 pt-1">
-                        <a href="#exam-focus" className="rounded-md border border-slate-300 px-2 py-1 text-[11px] font-bold text-blue-700 hover:bg-white dark:border-slate-700 dark:text-blue-300">① 回考點定位</a>
-                        <a href="#principles" className="rounded-md border border-slate-300 px-2 py-1 text-[11px] font-bold text-blue-700 hover:bg-white dark:border-slate-700 dark:text-blue-300">② 回核心原理</a>
-                        <a href="#worked" className="rounded-md border border-slate-300 px-2 py-1 text-[11px] font-bold text-blue-700 hover:bg-white dark:border-slate-700 dark:text-blue-300">③ 看同型例題</a>
-                        <a href="#practice" className="rounded-md border border-slate-300 px-2 py-1 text-[11px] font-bold text-blue-700 hover:bg-white dark:border-slate-700 dark:text-blue-300">④ 做五題精熟</a>
+                      <nav aria-label={`${q.sourceLabel || q.year} 第 ${q.questionNo} 題知識回鏈`} className="flex flex-wrap gap-2 pt-2">
+                        <a href="#exam-focus" className="rounded-lg border border-slate-200 px-3 py-1.5 text-xs font-bold text-slate-600 hover:bg-white hover:text-blue-600 dark:border-slate-700 dark:text-slate-400 dark:hover:bg-slate-800 dark:hover:text-blue-400 transition-colors">回上面看重點</a>
+                        <a href="#principles" className="rounded-lg border border-slate-200 px-3 py-1.5 text-xs font-bold text-slate-600 hover:bg-white hover:text-blue-600 dark:border-slate-700 dark:text-slate-400 dark:hover:bg-slate-800 dark:hover:text-blue-400 transition-colors">複習核心原理</a>
                       </nav>
                     </div>
                   )}
@@ -1234,6 +1242,28 @@ export default function TopicPageLayout({ subject, topic, mappedExamQuestions }:
             ))}
           </ul>
           <p className="mt-2 text-[11px] leading-5 text-slate-500">補教與公開解析僅用於比對題型、常見錯法與解題順序；答案及命題範圍一律以官方資料為準。</p>
+        </div>
+      </section>
+
+      {/* === [Scaffolding: Clear Next Steps] === */}
+      <section className="lesson-deferred-section mt-12 mb-8 space-y-4 rounded-3xl bg-white p-6 shadow-sm border border-slate-200/60 dark:bg-slate-900/50 dark:border-slate-800/60">
+        <h3 className="font-bold text-lg text-slate-800 dark:text-slate-200 flex items-center gap-2">
+          <span>🎯</span> 接下來，你想做什麼？
+        </h3>
+        <p className="text-sm text-slate-500 dark:text-slate-400">不要勉強自己，選一個現在覺得最舒服的下一步：</p>
+        <div className="grid gap-3 sm:grid-cols-3 mt-4">
+          <Link href={nextTopic ? `/subjects/${subject.slug}/${nextTopic.slug}` : "/curriculum"} className="group flex flex-col gap-1 rounded-2xl bg-blue-50/50 p-4 border border-blue-100 hover:bg-blue-100/50 transition-colors dark:bg-blue-900/10 dark:border-blue-900/30">
+            <span className="font-bold text-blue-700 dark:text-blue-300">繼續往下學</span>
+            <span className="text-xs text-slate-500">趁著記憶猶新，看看下一個觀念。</span>
+          </Link>
+          <Link href="/practice" className="group flex flex-col gap-1 rounded-2xl bg-emerald-50/50 p-4 border border-emerald-100 hover:bg-emerald-100/50 transition-colors dark:bg-emerald-900/10 dark:border-emerald-900/30">
+            <span className="font-bold text-emerald-700 dark:text-emerald-300">去寫一點題目</span>
+            <span className="text-xs text-slate-500">測試一下剛才學到的東西，寫錯也無妨。</span>
+          </Link>
+          <Link href="/curriculum" className="group flex flex-col gap-1 rounded-2xl bg-amber-50/50 p-4 border border-amber-100 hover:bg-amber-100/50 transition-colors dark:bg-amber-900/10 dark:border-amber-900/30">
+            <span className="font-bold text-amber-700 dark:text-amber-300">先休息一下</span>
+            <span className="text-xs text-slate-500">回到首頁或課程地圖，今天已經很棒了！</span>
+          </Link>
         </div>
       </section>
 

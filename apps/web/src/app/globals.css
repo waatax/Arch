@@ -22,7 +22,7 @@
   --color-moss-700: #2D938E;       /* 苔綠 */
   --color-sun-500: #B8863A;        /* 枯草・山吹金 */
   --color-concrete-300: #DCE5EA;   /* 白磁・利休鼠細線 */
-  --color-danger-750: #A63628;     /* 丹紅警示 */
+  --color-danger-750: #C96653;     /* 溫暖玫瑰土 (Softer, less aggressive error state) */
 
   --background: var(--color-paper-50);
   --foreground: var(--color-ink-900);
