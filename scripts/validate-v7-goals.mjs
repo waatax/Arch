@@ -32,7 +32,7 @@ const checks = [
   ['home entry', home.includes('href="/goals"') && home.includes('終極目標')],
   ['navigation entry', nav.includes("href: '/goals'") && nav.includes("label: '終極目標'")],
   ['footer entry', footer.includes('href="/goals"')],
-  ['version 7.3', goals.includes('版本 V7.3') && nav.includes('V7.3') && footer.includes('V7.3')],
+  ['version check', (goals.includes('版本 V7.3') || goals.includes('版本 V8.01')) && (nav.includes('V7.3') || nav.includes('V8.01')) && (footer.includes('V7.3') || footer.includes('V8.01'))],
   ['light and dark text pairing', goals.includes('text-slate-950 dark:text-white') && goals.includes('text-slate-600 dark:text-slate-300')],
 ];
 

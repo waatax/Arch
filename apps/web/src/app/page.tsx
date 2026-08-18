@@ -1,5 +1,7 @@
 import Link from 'next/link';
 import { ArrowRight, Building2, CheckCircle2, Compass, DraftingCompass, HardHat, Play, ShieldCheck, Target } from 'lucide-react';
+import ExpertCouncilBanner from '@/components/pedagogy/ExpertCouncilBanner';
+import AdaptiveDailyLoop from '@/components/pedagogy/AdaptiveDailyLoop';
 
 const paths = [
   { icon: Compass, eyebrow: '從零開始', title: '沿著課程地圖學', copy: '99 個章節依先備知識排列，從生活直覺一路走到統測題型。', href: '/curriculum', cta: '打開課程地圖', tone: 'blue' },
@@ -25,9 +27,10 @@ export default function Home() {
         <div className="mx-auto grid max-w-7xl gap-10 px-4 pb-16 pt-12 sm:px-6 sm:pb-24 sm:pt-20 lg:grid-cols-[1.15fr_.85fr] lg:items-center lg:px-8">
           <div className="relative z-10">
             <div className="mb-6 flex flex-wrap items-center gap-2 text-[11px] font-bold tracking-[.16em]">
-              <span className="rounded-full bg-blue-700 px-3 py-1.5 text-white">ARCH V7.3</span>
+              <span className="rounded-full bg-blue-700 px-3 py-1.5 text-white">ARCH V8.01</span>
               <span className="text-slate-500 dark:text-slate-400">台灣高工建築科學習基地</span>
             </div>
+            <ExpertCouncilBanner compact className="mb-6" />
             <h1 className="max-w-3xl font-serif text-[clamp(2.8rem,7vw,5.9rem)] font-bold leading-[.98] tracking-[-.055em] text-slate-950 dark:text-white">
               把建築學懂，<br /><span className="v7-outline-text">也把分數蓋起來。</span>
             </h1>
@@ -74,7 +77,11 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="mx-auto max-w-7xl px-4 py-16 sm:px-6 sm:py-24 lg:px-8">
+      <section className="mx-auto max-w-7xl px-4 pt-10 sm:px-6 lg:px-8">
+        <AdaptiveDailyLoop />
+      </section>
+
+      <section className="mx-auto max-w-7xl px-4 py-8 sm:px-6 sm:py-16 lg:px-8">
         <div className="mb-10 max-w-2xl">
           <p className="v7-kicker">CHOOSE YOUR ROUTE</p>
           <h2 className="mt-3 font-serif text-3xl font-bold tracking-tight text-slate-950 dark:text-white sm:text-5xl">你現在需要哪一條路？</h2>

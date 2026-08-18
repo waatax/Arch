@@ -97,6 +97,7 @@ for (const file of files) {
     seenRoutes.add(route);
     topicsByRoute.set(route, topic);
     if (!topic.title?.trim() || !topic.desc?.trim()) errors.push(`${route}: 缺少標題或摘要`);
+    if (![10, 11, 12].includes(topic.gradeLevel)) errors.push(`${route}: 必須設定正確的 gradeLevel (10/11/12)，目前為 ${topic.gradeLevel}`);
     if (topic.status !== 'done') errors.push(`${route}: 尚未完成（${topic.status}）`);
     if (!Array.isArray(topic.concepts) || topic.concepts.length < 3) errors.push(`${route}: 概念卡少於 3 張`);
     const practices = topic.practices?.length ? topic.practices : topic.practice ? [topic.practice] : [];
@@ -134,6 +135,31 @@ for (const file of files) {
     }
     if (!topic.illustrations || topic.illustrations.length < 3) {
       errors.push(`${route}: 缺少 3 張以上之 Nanobanana 圖解`);
+    }
+    if (topic.examHitRate !== undefined && ![1, 2, 3, 4, 5].includes(topic.examHitRate)) {
+      errors.push(`${route}: examHitRate 必須為 1~5 整數，目前為 ${topic.examHitRate}`);
+    }
+    if (topic.fatalTraps) {
+      if (!Array.isArray(topic.fatalTraps)) {
+        errors.push(`${route}: fatalTraps 必須為陣列`);
+      } else {
+        for (const [ti, trap] of topic.fatalTraps.entries()) {
+          if (!trap.wrongThinking?.trim() || !trap.correctThinking?.trim() || !trap.trapDescription?.trim()) {
+            errors.push(`${route}: 第 ${ti + 1} 個致命陷阱缺少必要欄位 (wrongThinking/correctThinking/trapDescription)`);
+          }
+        }
+      }
+    }
+    if (topic.eliteMentalModels) {
+      if (!Array.isArray(topic.eliteMentalModels)) {
+        errors.push(`${route}: eliteMentalModels 必須為陣列`);
+      } else {
+        for (const [mi, model] of topic.eliteMentalModels.entries()) {
+          if (!model.technique?.trim() || !model.explanation?.trim()) {
+            errors.push(`${route}: 第 ${mi + 1} 個學霸心智模型缺少必要欄位 (technique/explanation)`);
+          }
+        }
+      }
     }
   }
 }

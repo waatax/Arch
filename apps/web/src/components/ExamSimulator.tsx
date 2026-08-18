@@ -6,7 +6,8 @@ import ChartRenderer from './ChartRenderer';
 import TableRenderer from './TableRenderer';
 import MathText from './MathText';
 import { isAnswerChoiceCorrect, isAnswerCorrect, isMultipleChoiceAnswer, toggleSelectedChoice } from '../lib/examAnswers';
-import { Flag, Play, Pause, RotateCcw, Clock, CheckCircle, AlertCircle, BookOpen } from 'lucide-react';
+import { Flag, Play, Pause, RotateCcw, Clock, CheckCircle, AlertCircle, BookOpen, PenTool } from 'lucide-react';
+import ScratchpadCanvas from './pedagogy/ScratchpadCanvas';
 
 export interface SimulationQuestion {
   id: string;
@@ -135,6 +136,9 @@ export default function ExamSimulator({ catalog }: { catalog: PracticeCatalog })
   // Timer state
   const [elapsedSeconds, setElapsedSeconds] = useState(0);
   const [timerRunning, setTimerRunning] = useState(false);
+  
+  // Scratchpad state
+  const [isCanvasOpen, setIsCanvasOpen] = useState(false);
 
   const requestGenerationRef = useRef(0);
   const abortControllerRef = useRef<AbortController | null>(null);
@@ -408,6 +412,14 @@ export default function ExamSimulator({ catalog }: { catalog: PracticeCatalog })
             ⚡ 考點速查卡 ↗
           </a>
           
+          <button 
+            type="button" 
+            onClick={() => setIsCanvasOpen(true)} 
+            className="rounded-lg border border-slate-200 dark:border-slate-700 px-3.5 py-1.5 text-xs font-bold text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors cursor-pointer inline-flex items-center gap-1"
+          >
+            <PenTool className="size-3" />
+            工程草稿紙
+          </button>
           <button 
             type="button" 
             onClick={reset} 
@@ -717,6 +729,7 @@ export default function ExamSimulator({ catalog }: { catalog: PracticeCatalog })
           開始下一回全真模擬練習
         </button>
       )}
+      <ScratchpadCanvas isOpen={isCanvasOpen} onClose={() => setIsCanvasOpen(false)} />
     </div>
   );
 }

@@ -12,7 +12,7 @@ export async function generateMetadata({ params }: { params: Promise<{ subject: 
   const subject = allSubjects.find((item) => item.slug === slug);
   if (!subject) return { title: 'Not Found' };
   return {
-    title: `${subject.title} 完整課程與考點導覽 | Arch V7.3`,
+    title: `${subject.title} 完整課程與考點導覽 | Arch V8.01`,
     description: `從生活直覺、圖像拆解到統測解題，深入掌握 108 課綱技術型高中建築科 ${subject.title} 核心觀念。`,
   };
 }

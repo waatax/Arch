@@ -446,3 +446,141 @@ html.arch-lite .v7-hero { background: var(--color-paper-50); }
   background-image: radial-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px);
   background-size: 16px 16px;
 }
+
+/* ── Architectural Editorial: Fluid Typography ── */
+.text-fluid-h1 {
+  font-size: clamp(2.5rem, 5vw + 1rem, 4.5rem);
+  line-height: 1.1;
+  letter-spacing: -0.04em;
+}
+
+.text-fluid-h2 {
+  font-size: clamp(2rem, 3.5vw + 0.5rem, 3rem);
+  line-height: 1.2;
+  letter-spacing: -0.03em;
+}
+
+/* ── Architectural Editorial: Shimmer Skeleton Screen ── */
+@keyframes shimmer {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
+.skeleton-box {
+  position: relative;
+  overflow: hidden;
+  background-color: var(--color-paper-100);
+  border-radius: 4px;
+}
+.dark .skeleton-box {
+  background-color: var(--color-slate-900);
+}
+
+.skeleton-box::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  transform: translateX(-100%);
+  background-image: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0) 0,
+    rgba(255, 255, 255, 0.4) 20%,
+    rgba(255, 255, 255, 0.5) 60%,
+    rgba(255, 255, 255, 0)
+  );
+  animation: shimmer 1.5s infinite;
+}
+.dark .skeleton-box::after {
+  background-image: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0) 0,
+    rgba(255, 255, 255, 0.05) 20%,
+    rgba(255, 255, 255, 0.08) 60%,
+    rgba(255, 255, 255, 0)
+  );
+}
+
+/* ── Zen Mode Transitions ── */
+.zen-mode-transition {
+  transition: opacity 0.4s cubic-bezier(0.16, 1, 0.3, 1), transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.zen-hidden {
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(-10px);
+}
+
+/* ── Breathing Pomodoro (番茄鐘呼吸燈) ── */
+@keyframes breathingLight {
+  0% { box-shadow: 0 0 0 0 rgba(31, 86, 122, 0.4); }
+  50% { box-shadow: 0 0 0 8px rgba(31, 86, 122, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(31, 86, 122, 0); }
+}
+@keyframes breathingDark {
+  0% { box-shadow: 0 0 0 0 rgba(106, 193, 232, 0.4); }
+  50% { box-shadow: 0 0 0 8px rgba(106, 193, 232, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(106, 193, 232, 0); }
+}
+.animate-breathing {
+  animation: breathingLight 3s infinite cubic-bezier(0.16, 1, 0.3, 1);
+}
+.dark .animate-breathing {
+  animation: breathingDark 3s infinite cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* ── V8 Architectural Editorial 2.0 Design System ── */
+
+/* 藍圖網格浮水印背景 (Architectural Blueprint Grid) */
+.bg-blueprint-subtle {
+  background-image:
+    linear-gradient(to right, color-mix(in oklch, var(--color-concrete-300) 40%, transparent) 1px, transparent 1px),
+    linear-gradient(to bottom, color-mix(in oklch, var(--color-concrete-300) 40%, transparent) 1px, transparent 1px);
+  background-size: 32px 32px;
+}
+
+html.arch-lite .bg-blueprint-subtle {
+  background-image: none;
+}
+
+/* X 光致命陷阱比對器專用樣式 */
+.xray-danger {
+  background-color: color-mix(in oklch, var(--color-danger-750) 6%, var(--color-paper-50));
+  border-color: color-mix(in oklch, var(--color-danger-750) 40%, transparent);
+}
+.xray-safe {
+  background-color: color-mix(in oklch, var(--color-teal-700) 6%, var(--color-paper-50));
+  border-color: color-mix(in oklch, var(--color-teal-700) 40%, transparent);
+}
+
+/* 學霸思維降維面板 (黑金主題) */
+.elite-panel {
+  background: linear-gradient(135deg, rgba(15, 23, 42, 0.96) 0%, rgba(30, 41, 59, 0.98) 100%);
+  color: var(--color-paper-50);
+  border: 1px solid color-mix(in oklch, var(--color-sun-500) 35%, transparent);
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3), 0 8px 10px -6px rgba(0, 0, 0, 0.2);
+}
+
+/* 先備知識微膠囊底線標記 */
+.step0-underline {
+  text-decoration: underline;
+  text-decoration-color: var(--color-sun-500);
+  text-decoration-thickness: 1.5px;
+  text-underline-offset: 3px;
+  cursor: help;
+  transition: all 0.2s ease;
+}
+.step0-underline:hover {
+  background-color: color-mix(in oklch, var(--color-sun-500) 15%, transparent);
+  border-radius: 2px;
+}
+
+/* 考點命中率星級與指標 */
+.hit-rate-star {
+  color: var(--color-sun-500);
+  letter-spacing: 2px;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+

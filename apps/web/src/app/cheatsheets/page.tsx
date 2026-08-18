@@ -290,7 +290,7 @@ export default function CheatsheetsPage() {
       <header className="space-y-4 text-center max-w-3xl mx-auto">
         <div className="inline-flex items-center gap-2 rounded-full border border-amber-200 dark:border-amber-900/80 bg-amber-50/80 dark:bg-amber-950/40 px-3.5 py-1 text-xs font-mono font-bold text-amber-700 dark:text-amber-300">
           <Zap className="size-3.5 text-amber-600 dark:text-amber-400" />
-          Arch V7.3 統測考點高頻速查指南 (Cheatsheets)
+          Arch V8.01 統測考點高頻速查指南 (Cheatsheets)
         </div>
         <h1 className="font-serif text-3xl font-bold tracking-tight text-slate-950 dark:text-white sm:text-5xl">
           考前衝刺必備：全科目高頻公式卡與圖例大全

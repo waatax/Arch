@@ -195,7 +195,7 @@ export default function VisualizersPage() {
       <header className="space-y-4 text-center max-w-3xl mx-auto">
         <div className="inline-flex items-center gap-2 rounded-full border border-blue-200 dark:border-blue-900/80 bg-blue-50/80 dark:bg-blue-950/40 px-3.5 py-1 text-xs font-mono font-bold text-blue-700 dark:text-blue-300">
           <Sparkles className="size-3.5 text-blue-600 dark:text-blue-400" />
-          Arch V7.3 互動圖解實驗室 (Interactive Engineering Lab)
+          Arch V8.01 互動圖解實驗室 (Interactive Engineering Lab)
         </div>
         <h1 className="font-serif text-3xl font-bold tracking-tight text-slate-950 dark:text-white sm:text-5xl">
           把抽象公式，變成看得見的動態工程模型。

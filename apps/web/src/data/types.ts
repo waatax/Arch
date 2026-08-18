@@ -10,6 +10,9 @@ export interface PracticeItem {
   difficulty: string; 
   steps: string[];
   answer: string;
+  hints?: string[];
+  commonMistake?: string;
+  eliteShortcut?: string;
 }
 
 export interface ChartData {
@@ -40,6 +43,16 @@ export interface VisualFigureData {
   markdown?: string;
 }
 
+export interface FatalTrapItem {
+  wrongThinking: string;
+  correctThinking: string;
+  trapDescription: string;
+}
+
+export interface EliteMentalModelItem {
+  technique: string;
+  explanation: string;
+}
 
 export interface TopicContent {
   slug: string;
@@ -58,6 +71,19 @@ export interface TopicContent {
   worked_examples?: PracticeItem[];
   illustrations?: string[];
   status: 'done' | 'draft' | 'stub';
+  gradeLevel?: 10 | 11 | 12;
+  semester?: 1 | 2;
+  curriculumCode?: string;
+  estimatedMinutes?: number;
+  examHitRate?: 1 | 2 | 3 | 4 | 5;
+  step0Prerequisites?: string[];
+  fatalTraps?: FatalTrapItem[];
+  eliteMentalModels?: EliteMentalModelItem[];
+  schoolOverlay?: {
+    tcivsWeek?: number;
+    laboratory?: string;
+    certificationLink?: string;
+  };
 }
 
 export interface SubjectData {

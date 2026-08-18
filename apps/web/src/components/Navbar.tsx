@@ -252,7 +252,7 @@ export default function Navbar() {
                     Arch
                   </span>
                   <span className="rounded-full bg-blue-700/10 dark:bg-blue-400/10 px-2 py-0.5 text-[10px] font-mono font-bold text-blue-700 dark:text-blue-300 border border-blue-700/20">
-                    V7.3
+                    V8.01
                   </span>
                 </div>
                 <span className="text-[10px] font-mono text-slate-500 dark:text-slate-400 -mt-1 hidden sm:inline">
@@ -359,8 +359,13 @@ export default function Navbar() {
             <div className="flex items-center border-b border-slate-200 dark:border-slate-800 px-4 py-3.5 bg-slate-50/50 dark:bg-slate-800/30">
               <span className="text-xl text-slate-400 mr-3">🔍</span>
               <input
+                id="search-input"
                 ref={searchInputRef}
                 type="text"
+                role="combobox"
+                aria-expanded="true"
+                aria-controls="search-listbox"
+                aria-activedescendant={flatSearchResults.length > 0 ? `search-result-${selectedIndex}` : undefined}
                 value={searchQuery}
                 onChange={(e) => {
                   setSearchQuery(e.target.value);
@@ -411,7 +416,7 @@ export default function Navbar() {
             </div>
 
             {/* Content Area */}
-            <div className="overflow-y-auto p-3 space-y-3 flex-1">
+            <div id="search-listbox" role="listbox" className="overflow-y-auto p-3 space-y-3 flex-1">
               {/* Special Hubs Section */}
               {filteredHubs.length > 0 && (
                 <div className="space-y-1">
@@ -423,6 +428,9 @@ export default function Navbar() {
                     const isSelected = itemIndex === selectedIndex;
                     return (
                       <div
+                        id={`search-result-${itemIndex}`}
+                        role="option"
+                        aria-selected={isSelected}
                         key={hub.href}
                         onClick={() => handleSelectNav(hub.href, hub.title)}
                         className={`flex flex-col gap-0.5 rounded-xl p-3 cursor-pointer transition-all border ${
@@ -463,6 +471,9 @@ export default function Navbar() {
                     const isSelected = itemIndex === selectedIndex;
                     return (
                       <div
+                        id={`search-result-${itemIndex}`}
+                        role="option"
+                        aria-selected={isSelected}
                         key={`${item.subjectSlug}-${item.topicSlug}`}
                         onClick={() => handleSelectNav(targetHref, `${item.subjectTitle} · ${item.topicTitle}`)}
                         className={`flex flex-col gap-0.5 rounded-xl p-3 cursor-pointer transition-all border ${
@@ -584,7 +595,7 @@ export default function Navbar() {
                 <span><kbd className="rounded bg-white dark:bg-slate-800 border px-1">↵</kbd> 選取前往</span>
                 <span><kbd className="rounded bg-white dark:bg-slate-800 border px-1">ESC</kbd> 關閉</span>
               </div>
-              <span className="hidden sm:inline">Arch V7.3 Omnibar</span>
+              <span className="hidden sm:inline">Arch V8.01 Omnibar</span>
             </div>
           </div>
         </div>

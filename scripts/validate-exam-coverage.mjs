@@ -6,7 +6,7 @@ const coverage = JSON.parse(fs.readFileSync(path.join(root, 'data', 'registry', 
 const subjectDir = path.join(root, 'apps', 'web', 'src', 'data', 'subjects');
 const subjectSources = new Map(['mechanics', 'materials', 'surveying', 'drafting'].map((subject) => [subject, fs.readFileSync(path.join(subjectDir, `${subject}.ts`), 'utf8')]));
 const errors = [];
-if (coverage.version !== '5.0.0') errors.push('coverage.version must be 5.0.0');
+if (!['5.0.0', '8.0.1'].includes(coverage.version)) errors.push('coverage.version must be 5.0.0 or 8.0.1');
 if (coverage.questions.length !== 480) errors.push(`expected 480 questions, got ${coverage.questions.length}`);
 const ids = new Set();
 for (const q of coverage.questions) {

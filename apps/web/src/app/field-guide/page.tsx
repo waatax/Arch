@@ -267,7 +267,7 @@ export default function FieldGuidePage() {
       <header className="space-y-4 text-center max-w-3xl mx-auto">
         <div className="inline-flex items-center gap-2 rounded-full border border-teal-200 dark:border-teal-900/80 bg-teal-50/80 dark:bg-teal-950/40 px-3.5 py-1 text-xs font-mono font-bold text-teal-700 dark:text-teal-300">
           <HardHat className="size-3.5 text-teal-600 dark:text-teal-400" />
-          Arch V7.3 建築工程現場實務百科 (Field Inspection Guide)
+          Arch V8.01 建築工程現場實務百科 (Field Inspection Guide)
         </div>
         <h1 className="font-serif text-3xl font-bold tracking-tight text-slate-950 dark:text-white sm:text-5xl">
           走進工地現場：營造工程品管與施工檢驗全手冊

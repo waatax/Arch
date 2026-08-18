@@ -7,6 +7,11 @@ import { Binoculars, BookOpenCheck, Building2, CircleCheckBig, Lightbulb, Route,
 import type { SubjectData, TopicContent } from '@/data/types';
 import MathText from '@/components/MathText';
 import InteractiveVisualizer from '@/components/visualizers/InteractiveVisualizer';
+import HitRateRadar from '@/components/pedagogy/HitRateRadar';
+import FatalTrapXRay from '@/components/pedagogy/FatalTrapXRay';
+import EliteMentalModel from '@/components/pedagogy/EliteMentalModel';
+import Step0Tooltip from '@/components/pedagogy/Step0Tooltip';
+import ExpertCouncilBanner from '@/components/pedagogy/ExpertCouncilBanner';
 import { getTopicRealLifeGuide } from '@/lib/pedagogy/realLifeHelpers';
 import { getTopicInterestHook } from '@/lib/pedagogy/interestHooks';
 import { getTopicDeepKnowledge } from '@/lib/pedagogy/topicKnowledgeExpander';
@@ -71,6 +76,12 @@ export default function TopicPageLayout({ subject, topic, mappedExamQuestions }:
 
   // Worked Example Steps Toggle State
   const [showSolutionSteps, setShowSolutionSteps] = useState<Record<number, boolean>>({});
+
+  // Practice Assessment Toggle State
+  const [showPracticeAnswers, setShowPracticeAnswers] = useState<Record<number, boolean>>({});
+
+  // Zen Mode (Distraction-free) State
+  const [isZenMode, setIsZenMode] = useState(false);
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -175,9 +186,20 @@ export default function TopicPageLayout({ subject, topic, mappedExamQuestions }:
   const masteryLesson = getMasteryLesson(subject.slug, topic, realLifeGuide);
 
   return (
-    <article className="mx-auto max-w-4xl space-y-8 px-4 py-8 sm:px-6 sm:py-12 pb-28">
-      {/* Header Navigation & Breadcrumbs */}
-      <header className="space-y-6">
+    <div className={`transition-colors duration-500 bg-blueprint-subtle min-h-screen ${isZenMode ? 'bg-paper-50 dark:bg-slate-950' : ''}`}>
+      {/* Floating Zen Mode Toggle */}
+      <button
+        onClick={() => setIsZenMode(!isZenMode)}
+        className="fixed bottom-6 right-6 z-50 flex h-12 w-12 items-center justify-center rounded-full bg-slate-900 text-white shadow-xl hover:bg-slate-800 focus:outline-none focus:ring-4 focus:ring-blue-500/30 dark:bg-slate-100 dark:text-slate-900 transition-transform hover:scale-105 active:scale-95"
+        aria-label={isZenMode ? '關閉禪意模式' : '開啟禪意全螢幕模式 (Zen Mode)'}
+        title={isZenMode ? '關閉禪意模式' : '開啟無干擾禪意模式 (Zen Mode)'}
+      >
+        {isZenMode ? '👁️' : '🧘'}
+      </button>
+
+      <article className="mx-auto max-w-4xl space-y-8 px-4 py-8 sm:px-6 sm:py-12 pb-28">
+        {/* Header Navigation & Breadcrumbs */}
+        <header className={`space-y-6 zen-mode-transition ${isZenMode ? 'zen-hidden h-0 overflow-hidden !my-0' : ''}`}>
         <nav className="mobile-scroll flex items-center gap-2 overflow-x-auto whitespace-nowrap text-xs font-mono text-slate-500 dark:text-slate-400" aria-label="麵包屑導覽">
           <Link href="/curriculum" className="hover:text-blue-600 dark:hover:text-blue-400 hover:underline">
             課程地圖
@@ -191,7 +213,8 @@ export default function TopicPageLayout({ subject, topic, mappedExamQuestions }:
         </nav>
 
         {/* Title & Metadata Badges */}
-        <div className="space-y-3">
+        <div className="space-y-4">
+          <ExpertCouncilBanner topicTitle={topic.title} />
           <div className="flex flex-wrap items-center gap-2">
             <span className="rounded-full bg-blue-600/10 px-3 py-0.5 text-xs font-mono font-bold text-blue-700 dark:text-blue-300 border border-blue-600/20">
               {subject.category}
@@ -213,6 +236,18 @@ export default function TopicPageLayout({ subject, topic, mappedExamQuestions }:
           <p className="max-w-3xl text-base leading-relaxed text-slate-600 dark:text-slate-400">
             {interestHook.topicSummary}
           </p>
+
+          {/* V8 Big Data Exam Hit Rate Radar */}
+          <HitRateRadar
+            hitRate={topic.examHitRate}
+            coveredCount={mappedExamQuestions.length}
+            gradeLevel={topic.gradeLevel}
+          />
+
+          {/* V8 Step-0 Prerequisite Knowledge Tooltip */}
+          {topic.step0Prerequisites && topic.step0Prerequisites.length > 0 && (
+            <Step0Tooltip prerequisites={topic.step0Prerequisites} />
+          )}
         </div>
 
         {/* Every lesson opens with a route-specific interest hook and its own illustration. */}
@@ -296,7 +331,7 @@ export default function TopicPageLayout({ subject, topic, mappedExamQuestions }:
                 </article>
               </div>
 
-              <aside className="rounded-2xl border border-amber-200 bg-amber-100/70 p-4 dark:border-amber-900/70 dark:bg-amber-950/35" aria-label="本章輕鬆記憶梗">
+              <aside className={`rounded-2xl border border-amber-200 bg-amber-100/70 p-4 dark:border-amber-900/70 dark:bg-amber-950/35 zen-mode-transition ${isZenMode ? 'zen-hidden h-0 overflow-hidden p-0 border-none' : ''}`} aria-label="本章輕鬆記憶梗">
                 <p className="text-xs font-bold uppercase tracking-wider text-amber-800 dark:text-amber-300">
                   😄 腦內小劇場，幫你記牢
                 </p>
@@ -630,6 +665,11 @@ export default function TopicPageLayout({ subject, topic, mappedExamQuestions }:
         </div>
       </section>
 
+      {/* V8 Fatal Trap X-Ray Dual-Column Comparison */}
+      {topic.fatalTraps && topic.fatalTraps.length > 0 && (
+        <FatalTrapXRay traps={topic.fatalTraps} />
+      )}
+
       {/* === [CNS Standards & Bilingual Technical Glossary Tabs] === */}
       <section className="lesson-deferred-section grid gap-4 sm:grid-cols-2">
         {/* CNS Standard Card */}
@@ -914,28 +954,41 @@ export default function TopicPageLayout({ subject, topic, mappedExamQuestions }:
                     {isStepsShown ? '🙈 隱藏推導與計算步驟' : '💡 查看標準解題 SOP 與詳細推導步驟'}
                   </button>
 
-                  {isStepsShown && (
-                    <div className="space-y-3 border-t border-blue-200/60 dark:border-blue-900/40 pt-4 transition-all">
-                      <span className="text-[11px] font-mono uppercase tracking-wider text-slate-500 block font-bold">
-                        步驟化推導流程 (Derivation SOP)
-                      </span>
-                      <ol className="space-y-2 pl-4 text-sm leading-relaxed text-slate-700 dark:text-slate-300">
-                        {buildDetailedSolution(we).map((step) => (
-                          <li key={step} className="list-decimal">
-                            <MathText content={step} />
-                          </li>
-                        ))}
-                      </ol>
-                      <div className="rounded-xl bg-blue-100/70 dark:bg-blue-900/40 p-4 text-sm font-bold text-blue-950 dark:text-blue-100 border border-blue-200 dark:border-blue-800">
-                        🎯 <strong>最終標準解答：</strong>
-                        <MathText content={we.answer} />
+                  <div
+                    className={`grid transition-[grid-template-rows] duration-300 ease-in-out ${
+                      isStepsShown ? 'grid-rows-[1fr]' : 'grid-rows-[0fr]'
+                    }`}
+                  >
+                    <div className="overflow-hidden">
+                      <div className="space-y-3 border-t border-blue-200/60 dark:border-blue-900/40 pt-4 mt-2">
+                        <span className="text-[11px] font-mono uppercase tracking-wider text-slate-500 block font-bold">
+                          步驟化推導流程 (Derivation SOP)
+                        </span>
+                        <ol className="space-y-2 pl-4 text-sm leading-relaxed text-slate-700 dark:text-slate-300">
+                          {buildDetailedSolution(we).map((step) => (
+                            <li key={step} className="list-decimal">
+                              <MathText content={step} />
+                            </li>
+                          ))}
+                        </ol>
+                        <div className="rounded-xl bg-blue-100/70 dark:bg-blue-900/40 p-4 text-sm font-bold text-blue-950 dark:text-blue-100 border border-blue-200 dark:border-blue-800">
+                          🎯 <strong>最終標準解答：</strong>
+                          <MathText content={we.answer} />
+                        </div>
                       </div>
                     </div>
-                  )}
+                  </div>
                 </div>
               );
             })}
           </div>
+
+          {/* V8 Elite Mental Model Panel (Dimensional Reduction) */}
+          {topic.eliteMentalModels && topic.eliteMentalModels.length > 0 && (
+            <div className="pt-2">
+              <EliteMentalModel models={topic.eliteMentalModels} topicTitle={topic.title} />
+            </div>
+          )}
         </section>
       ) : null}
 
@@ -952,38 +1005,53 @@ export default function TopicPageLayout({ subject, topic, mappedExamQuestions }:
           </div>
 
           <div className="space-y-3">
-            {practices.map((practice, index) => (
-              <details
-                key={index}
-                className="group rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 p-5 sm:p-6 shadow-xs"
-              >
-                <summary className="cursor-pointer list-none font-bold leading-relaxed text-slate-900 dark:text-white flex items-start gap-2.5">
-                  <span className="mt-0.5 shrink-0 rounded-md bg-emerald-600 px-2 py-0.5 text-xs text-white shadow-2xs font-mono">
-                    自我檢測 {index + 1}
-                  </span>
-                  <div className="flex-1">
-                    <MathText content={practice.question} />
-                    <span className="ml-2 text-xs font-normal text-slate-500 dark:text-slate-400 group-open:hidden">
-                      (點擊展開看解析與答案)
+            {practices.map((practice, index) => {
+              const isPracticeShown = !!showPracticeAnswers[index];
+              return (
+                <div
+                  key={index}
+                  className="group rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 p-5 sm:p-6 shadow-xs"
+                >
+                  <button
+                    type="button"
+                    onClick={() => setShowPracticeAnswers((prev) => ({ ...prev, [index]: !prev[index] }))}
+                    className="w-full text-left font-bold leading-relaxed text-slate-900 dark:text-white flex items-start gap-2.5 cursor-pointer focus:outline-hidden"
+                  >
+                    <span className="mt-0.5 shrink-0 rounded-md bg-emerald-600 px-2 py-0.5 text-xs text-white shadow-2xs font-mono">
+                      自我檢測 {index + 1}
                     </span>
-                  </div>
-                </summary>
-                <div className="mt-5 space-y-4 border-t border-slate-200 dark:border-slate-800 pt-5">
-                  <p className="text-xs font-mono text-slate-500">難度評級：{practice.difficulty}</p>
-                  <ol className="space-y-2 pl-4 text-sm leading-relaxed text-slate-700 dark:text-slate-300">
-                    {buildDetailedSolution(practice).map((step) => (
-                      <li key={step} className="list-decimal">
-                        <MathText content={step} />
-                      </li>
-                    ))}
-                  </ol>
-                  <div className="rounded-xl bg-slate-100 dark:bg-slate-800 p-4 text-sm font-bold text-slate-900 dark:text-white">
-                    <strong>標準答案：</strong>
-                    <MathText content={practice.answer} />
+                    <div className="flex-1">
+                      <MathText content={practice.question} />
+                      <span className={`ml-2 text-xs font-normal text-slate-500 dark:text-slate-400 ${isPracticeShown ? 'hidden' : ''}`}>
+                        (點擊展開看解析與答案)
+                      </span>
+                    </div>
+                  </button>
+                  <div
+                    className={`grid transition-[grid-template-rows] duration-300 ease-in-out ${
+                      isPracticeShown ? 'grid-rows-[1fr]' : 'grid-rows-[0fr]'
+                    }`}
+                  >
+                    <div className="overflow-hidden">
+                      <div className="mt-5 space-y-4 border-t border-slate-200 dark:border-slate-800 pt-5">
+                        <p className="text-xs font-mono text-slate-500">難度評級：{practice.difficulty}</p>
+                        <ol className="space-y-2 pl-4 text-sm leading-relaxed text-slate-700 dark:text-slate-300">
+                          {buildDetailedSolution(practice).map((step) => (
+                            <li key={step} className="list-decimal">
+                              <MathText content={step} />
+                            </li>
+                          ))}
+                        </ol>
+                        <div className="rounded-xl bg-slate-100 dark:bg-slate-800 p-4 text-sm font-bold text-slate-900 dark:text-white">
+                          <strong>標準答案：</strong>
+                          <MathText content={practice.answer} />
+                        </div>
+                      </div>
+                    </div>
                   </div>
                 </div>
-              </details>
-            ))}
+              );
+            })}
           </div>
         </section>
       ) : null}
@@ -1090,9 +1158,13 @@ export default function TopicPageLayout({ subject, topic, mappedExamQuestions }:
 
                   {isAnswered && (
                     <div className="rounded-xl bg-slate-100 dark:bg-slate-800 p-4 text-xs text-slate-800 dark:text-slate-200 font-medium space-y-3">
-                      <p>
-                        {isCorrect ? '✅ 答對了！' : `❌ 答錯了。你的選擇：${userChoice}，`}{' '}
-                        <strong>官方標準答案：{q.answer}</strong>
+                      <p className="text-sm">
+                        {isCorrect ? (
+                          <span className="text-emerald-700 dark:text-emerald-300 font-bold">✅ 完美命中！精準掌握核心概念！</span>
+                        ) : (
+                          <span className="text-amber-800 dark:text-amber-300 font-bold">💡 差一點點！你的選擇：{userChoice}，別氣餒，先看下方拆解：</span>
+                        )}{' '}
+                        <strong className="text-slate-900 dark:text-white">官方標準答案：{q.answer}</strong>
                       </p>
                       <div className="space-y-3 rounded-xl border border-slate-200 bg-white p-4 dark:border-slate-700 dark:bg-slate-900">
                         <h3 className="flex items-center gap-2 text-sm font-bold text-slate-950 dark:text-white"><Lightbulb className="size-4 text-amber-600" />老師邊想邊說：一步一步拆開這題</h3>
@@ -1265,6 +1337,7 @@ export default function TopicPageLayout({ subject, topic, mappedExamQuestions }:
           </div>
         </div>
       )}
-    </article>
+      </article>
+    </div>
   );
 }
