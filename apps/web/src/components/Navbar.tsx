@@ -8,15 +8,15 @@ import { topicSearchIndex } from '@/data/topicSearchIndex';
 
 const navLinks = [
   { href: '/', label: '首頁' },
-  { href: '/curriculum', label: '課程地圖' },
-  { href: '/visualizers', label: '圖解實驗室' },
-  { href: '/field-guide', label: '現場手冊' },
-  { href: '/cheatsheets', label: '速查指南' },
-  { href: '/practice', label: '歷屆模擬' },
-  { href: '/cases', label: '建築案例' },
-  { href: '/goals', label: '終極目標' },
-  { href: '/exam-116', label: '入學指南' },
-  { href: '/resources', label: '學習資源' },
+  { href: '/curriculum', label: '課程\n地圖' },
+  { href: '/visualizers', label: '圖解\n實驗' },
+  { href: '/field-guide', label: '現場\n手冊' },
+  { href: '/cheatsheets', label: '速查\n指南' },
+  { href: '/practice', label: '歷屆\n模擬' },
+  { href: '/cases', label: '建築\n案例' },
+  { href: '/goals', label: '終極\n目標' },
+  { href: '/exam-116', label: '入學\n指南' },
+  { href: '/resources', label: '學習\n資源' },
 ];
 
 const categoryFilters = [
@@ -270,7 +270,7 @@ export default function Navbar() {
                 <Link
                   key={link.href}
                   href={link.href}
-                  className={`rounded-lg px-2.5 py-1.5 text-xs font-mono font-bold transition-colors ${
+                  className={`flex flex-col items-center justify-center rounded-lg px-2 py-1.5 text-xs font-mono font-bold leading-tight whitespace-pre-line text-center transition-colors ${
                     isActive
                       ? 'bg-blue-50 text-blue-700 dark:bg-blue-950/60 dark:text-blue-300'
                       : 'text-slate-600 hover:bg-slate-100 hover:text-slate-900 dark:text-slate-300 dark:hover:bg-slate-800 dark:hover:text-white'
