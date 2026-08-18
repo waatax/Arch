@@ -30,9 +30,9 @@ export const englishData: SubjectData = {
           heading: '字首、字根與字尾構詞分析 (Etymology & Morphology in Technical English)',
           body: '掌握**拉丁**與**希臘**字根能大幅提升專業與學術單字之記憶效率，並能在閱讀測驗中快速推測生字字義。透過拆解詞彙，不再死記硬背，而是理解詞彙的<span className="text-rose-600 font-bold">核心邏輯</span>。',
           steps: [
-            '**分析字首 (Prefix)**：改變單字方向或語意 (如 <span className="text-indigo-600 font-bold">re-</span> 重複/再次, <span className="text-indigo-600 font-bold">sub-</span> 下/基礎, <span className="text-indigo-600 font-bold">anti-/counter-</span> 反對/抵抗)。',
-            '**分析字根 (Root)**：構成單字的核心概念 (如 <span className="text-indigo-600 font-bold">struct/tect</span> 建造, <span className="text-indigo-600 font-bold">ped/pod</span> 腳/基座, <span className="text-indigo-600 font-bold">meter</span> 測量)。',
-            '**分析字尾 (Suffix)**：決定單字詞性 (如 <span className="text-indigo-600 font-bold">-able/ible</span> 可…的, <span className="text-indigo-600 font-bold">-tion</span> 名詞, <span className="text-indigo-600 font-bold">-ize</span> 動詞)。'
+            '**分析字首 (Prefix)**：改變單字方向或語意 (如 <span className="text-indigo-600 font-bold">re-</span> 重複/再次, <span className="text-indigo-600 font-bold">sub-</span> 下/基礎, <span className="text-indigo-600 font-bold">anti-/counter-</span> 反對/抵抗)。**💡 專家提示**：在遇到冗長的專業單字時，先遮住字根與字尾，單看字首往往能猜出單字的正負面或方向性。',
+            '**分析字根 (Root)**：構成單字的核心概念 (如 <span className="text-indigo-600 font-bold">struct/tect</span> 建造, <span className="text-indigo-600 font-bold">ped/pod</span> 腳/基座, <span className="text-indigo-600 font-bold">meter</span> 測量)。**💡 深度解析**：例如字根 "struct" 來自拉丁文 "struere"，意思為建立；搭配字首 "in-" (向內) 變成 instruct (指導/建立觀念)；搭配 "de-" (向下) 變成 destruct (破壞)。',
+            '**分析字尾 (Suffix)**：決定單字詞性 (如 <span className="text-indigo-600 font-bold">-able/ible</span> 可…的, <span className="text-indigo-600 font-bold">-tion</span> 名詞, <span className="text-indigo-600 font-bold">-ize</span> 動詞)。**💡 實戰考點**：克漏字測驗中常考詞性判斷，看到 "-tion" 直接選名詞，看到 "-ize" 判斷為動詞，無需完全讀懂句意即可秒殺。'
           ],
           table: {
             headers: ['類型', '字首/字根/字尾', '核心涵義', '建築與工程英文範例', '中文說明'],
@@ -475,9 +475,9 @@ export const englishData: SubjectData = {
           heading: '文章段落架構與邏輯脈絡解析 (Paragraph Structure Analysis)',
           body: '學術與技術文章多採用<span className="text-rose-600 font-bold">「總-分-總」演繹結構 (Deductive Approach)</span>。掌握架構便能快速預測文章走向。',
           steps: [
-            'Topic Sentence (主題句): 通常位於段落前兩句，宣示該段核心概念。',
-            'Supporting Details (支持細節): 列舉數據、實驗成果、施工步驟。',
-            'Concluding / Transition Sentence (小結/轉折句): 總結本段並預告下一段主題。'
+            '**Topic Sentence (主題句)**: 通常位於段落前兩句，宣示該段核心概念。**💡 專家提示**：在主旨題中，若各段的主題句串聯起來，通常就是整篇文章的核心大意 (Main Idea)。',
+            '**Supporting Details (支持細節)**: 列舉數據、實驗成果、施工步驟。**💡 深度解析**：注意細節句中出現的年代、人名與轉折詞（例如 for instance, specifically），這些往往是對應細節題 (Fact & Detail) 的考點出處。',
+            '**Concluding / Transition Sentence (小結/轉折句)**: 總結本段並預告下一段主題。**💡 實戰考點**：如果文章考「接下來的段落最可能討論什麼？」，通常線索就藏在最後一段的結論或轉折句中。'
           ]
         },
         {

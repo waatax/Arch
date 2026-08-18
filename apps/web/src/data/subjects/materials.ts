@@ -67,7 +67,15 @@ export const materialsData: SubjectData = {
         },
         {
           heading: '材料韌性、硬度與疲勞 (Toughness & Fatigue)',
-          body: '韌性 (Toughness) 代表材料衝擊破壞前吸收能量的能力，常以夏比衝擊試驗 (Charpy Impact Test) 測量吸能焦耳值 (J)；硬度 (Hardness) 係指抗刮擦或壓痕侵入能力 (如勃氏 HB、洛氏 HR、維氏 HV)；疲勞 (Fatigue) 係指材料在反覆循環應力作用下發生的突然脆性破壞。'
+          body: '韌性 (Toughness) 代表材料衝擊破壞前吸收能量的能力，常以夏比衝擊試驗 (Charpy Impact Test) 測量吸能焦耳值 (J)；硬度 (Hardness) 係指抗刮擦或壓痕侵入能力 (如勃氏 HB、洛氏 HR、維氏 HV)；疲勞 (Fatigue) 係指材料在反覆循環應力作用下發生的突然脆性破壞。這些動態與表面力學性質對於承受反覆載重與磨耗的橋樑或路面工程至關重要。',
+          table: {
+            headers: ['力學性質', '定義與物理意義', '常用試驗方法與指標', '工程應用範例'],
+            rows: [
+              ['韌性 (Toughness)', '材料受外力至破壞前所能吸收的總能量', '夏比衝擊試驗 (吸收能量 J)、應力應變曲線下面積', '抗震結構鋼材、橋樑防撞護欄'],
+              ['硬度 (Hardness)', '材料表面抵抗局部塑性變形 (刮痕或壓痕) 的能力', '勃氏 (HB)、洛氏 (HR)、維氏 (HV)', '耐磨地坪表面、鋼結構連接構件'],
+              ['疲勞 (Fatigue)', '材料在低於降伏強度的反覆交變應力下發生的延遲性破壞', '疲勞試驗 (S-N 曲線，疲勞極限)', '高速公路橋梁鋼梁、鐵路軌道']
+            ]
+          }
         },
         {
           heading: '粒料含水狀態與表面含水率修正公式 (Moisture States & Water Correction)',
@@ -165,7 +173,13 @@ export const materialsData: SubjectData = {
         },
         {
           heading: '**水化熱**與體積變化控制',
-          body: '水泥在水化過程中會釋放大量熱能（稱為**水化熱**）。在巨積混凝土（Mass Concrete）中，若內部散熱不良，會導致內外溫差過大而產生嚴重裂縫。因此，控制**水化熱**是大型工程的關鍵：通常透過降低 <span className="text-rose-600 font-bold">C3S</span> 與 <span className="text-rose-600 font-bold">C3A</span> 比例，或使用卜特蘭低熱水泥 (Type IV)。'
+          body: '水泥在水化過程中會釋放大量熱能（稱為**水化熱**）。在巨積混凝土（Mass Concrete）中，若內部散熱不良，會導致內外溫差過大而產生嚴重裂縫。因此，控制**水化熱**是大型工程的關鍵：通常透過降低 <span className="text-rose-600 font-bold">C3S</span> 與 <span className="text-rose-600 font-bold">C3A</span> 比例，或使用卜特蘭低熱水泥 (Type IV)。',
+          steps: [
+            '【選用低熱水泥】：使用 Type IV 低熱卜特蘭水泥或 Type II 中熱水泥，從源頭降低發熱量。',
+            '【添加飛灰或爐石】：以卜索蘭材料取代部分水泥，可顯著延緩水化反應並降低溫度峰值。',
+            '【預冷拌合材料】：在拌合過程中使用冰水或液態氮預冷卻拌合水與粒料（如翡翠水庫施工法）。',
+            '【內部冷卻管線】：在巨積混凝土內部預埋冷卻水管，澆置後持續通水帶走內部熱量。'
+          ]
         },
         {
           heading: '成分、齡期與強度的判讀順序',

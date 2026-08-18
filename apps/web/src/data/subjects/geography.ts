@@ -2,13 +2,13 @@ import { SubjectData } from '../types';
 
 export const geographyData: SubjectData = {
   "slug": "geography",
-  "title": "地理與建築風土選址",
+  "title": "🌍 地理與建築風土選址",
   "category": "社會領域",
   "color": "emerald-600",
   "topics": [
     {
       "slug": "environment-terrain",
-      "title": "1. 地理環境與地形建築選址",
+      "title": "1. ✨ 地理環境與地形建築選址",
       "desc": "探討內外營力地形、<span className='text-rose-600 font-bold'>順向坡</span>、<span className='text-rose-600 font-bold'>土壤液化</span>、斷層退縮、喀斯特溶洞及山坡地開發之地質評估與建築安全選址策略。",
       "status": "done",
       gradeLevel: 10,
@@ -25,7 +25,7 @@ export const geographyData: SubjectData = {
       "concepts": [
         {
           "heading": "內營力與地質構造：建築選址的基石",
-          "body": "地球內部熱能驅動的**板塊運動**、**褶皺**與**斷層作用**，奠定了大地構造的基礎。在進行建築選址時，<span className=\"text-rose-600 font-bold\">活動斷層帶</span>（如台灣的車籠埔斷層及相關破碎帶）存在極高的**地表撕裂**與<span className=\"text-rose-600 font-bold\">強震風險</span>。因此，必須嚴格執行**法規退縮**，並落實地質敏感區的深度評估。",
+          "body": "地球內部熱能驅動的**板塊運動**、**褶皺**與**斷層作用**，奠定了大地構造的基礎。在進行建築選址時，<span className=\"text-rose-600 font-bold\">活動斷層帶</span>（如台灣的車籠埔斷層及相關破碎帶）存在極高的**地表撕裂**與<span className=\"text-rose-600 font-bold\">強震風險</span>。由於斷層錯動瞬間產生的剪切力極大，任何剛性結構都難以完全抵抗地表的直接撕裂，因此必須嚴格執行**法規退縮**，並落實地質敏感區的深度評估（例如槽溝開挖調查），確保建築基座跨出危險破碎帶。💡 **專家提示**：除了斷層退縮外，建築結構設計也可藉由加裝『隔震墊』與『阻尼器』來吸收強震能量，提升建築韌性。",
           "formula": "<span className=\"text-indigo-600 font-bold\">核心公式：</span> **斷層退縮安全距離: D_safe = D_base + k · (M_w - 6.0)**",
           "table": {
             "headers": [
@@ -60,10 +60,10 @@ export const geographyData: SubjectData = {
           "heading": "外營力作用與微地形演變：建築**承載力**評估",
           "body": "由**太陽能**與**重力**驅動的風化、侵蝕、搬運及堆積作用，形塑了河流沖積扇、三角洲、海崖及沙洲等多元微地形。建築選址時，必須深入分析<span className=\"text-rose-600 font-bold\">地表水文</span>與堆積層的**承載力**，以防範地層下陷與<span className='text-rose-600 font-bold'>土壤液化</span>。",
           "steps": [
-            "河流沖積扇頂部：顆粒粗大、排水良好但受洪水與土石沖刷風險高，建築應避開扇頂主幹道。",
-            "沖積扇扇端：地下水湧出帶，水位高，基礎開挖需特別注意湧水與<span className='text-rose-600 font-bold'>土壤液化</span>。",
-            "河口三角洲與河畔平原：細粒黏土與軟弱黏土層厚，**承載力**低且易發生差異沉陷，需打設深樁基至堅硬岩盤。",
-            "海崖與海岸沙洲：受波浪侵蝕與沿岸流影響，海崖易發生崩塌，沙洲地基鬆散易受暴潮侵襲。"
+            "河流沖積扇頂部：顆粒粗大、排水良好但受洪水與土石沖刷風險高，建築應避開扇頂主幹道或加強擋土護岸設施。",
+            "沖積扇扇端：地下水湧出帶，水位高，基礎開挖需特別注意湧水與<span className='text-rose-600 font-bold'>土壤液化</span>。若有液化潛勢，應進行土壤改良（如高壓灌漿或打設擠壓砂樁）。",
+            "河口三角洲與河畔平原：細軟黏土層厚，**承載力**低且易發生差異沉陷。實務上需打設深樁基礎，將樁尖穿透軟弱土層鎖入堅硬的岩盤，避免建築物不均勻傾斜。",
+            "海崖與海岸沙洲：受海浪與沿岸流侵蝕，海崖易大規模崩塌，需退縮建築線；沙洲地基鬆散且易受颱風暴潮侵襲，宜採高腳建築設計並將機電設備移至二樓以上。"
           ]
         },
         {
@@ -271,7 +271,7 @@ export const geographyData: SubjectData = {
     },
     {
       "slug": "climate-environment",
-      "title": "2. 氣候環境與氣候應答建築",
+      "title": "2. 💡 氣候環境與氣候應答建築",
       "desc": "分析氣候要素與控制因子、<span className='text-rose-600 font-bold'>被動式太陽能</span>、遮陽深寬比、微氣候通風、都市熱島減熱與太陽軌跡遮陽幾何。",
       "status": "done",
       gradeLevel: 10,
@@ -536,7 +536,7 @@ export const geographyData: SubjectData = {
     },
     {
       "slug": "population-urban",
-      "title": "3. 人口結構與都市空間結構",
+      "title": "3. 🔍 人口結構與都市空間結構",
       "desc": "探討人口轉型、<span className='text-rose-600 font-bold'>高齡化</span>通用設計、<span className='text-rose-600 font-bold'>中心地方理論</span>、都市內部空間結構模型、<span className='text-rose-600 font-bold'>TOD</span> <span className='text-rose-600 font-bold'>大眾運輸導向開發</span>與<span className='text-rose-600 font-bold'>土地競價</span>理論。",
       "status": "done",
       gradeLevel: 10,
@@ -795,7 +795,7 @@ export const geographyData: SubjectData = {
     },
     {
       "slug": "regional-development",
-      "title": "4. 區域發展與產業區位選址",
+      "title": "4. ⚙️ 區域發展與產業區位選址",
       "desc": "分析韋伯工業區位理論、<span className='text-rose-600 font-bold'>區位商數</span> LQ、<span className='text-rose-600 font-bold'>成長極</span>理論、<span className='text-rose-600 font-bold'>生態工業園區</span>與半導體科技廊帶選址。",
       "status": "done",
       gradeLevel: 10,
@@ -1046,7 +1046,7 @@ export const geographyData: SubjectData = {
     },
     {
       "slug": "environmental-issues",
-      "title": "5. 環境議題與災害防救工程",
+      "title": "5. 🏗️ 環境議題與災害防救工程",
       "desc": "探討全球氣候變遷、淹水高程計算、土石流防災退縮、<span className='text-rose-600 font-bold'>土壤液化</span>防護、海綿城市 LID 與環境影響評估 EIA。",
       "status": "done",
       gradeLevel: 10,
@@ -1297,7 +1297,7 @@ export const geographyData: SubjectData = {
     },
     {
       "slug": "gis",
-      "title": "6. 地理資訊系統與空間分析",
+      "title": "6. 📐 地理資訊系統與空間分析",
       "desc": "介紹向量/網格/BIM 整合、疊圖與環域選址演算、視域與日照權分析、網路路徑、IDW/Kriging 內插與數位雙生 3D GIS。",
       "status": "done",
       gradeLevel: 10,

@@ -28,7 +28,7 @@ export const civicsData: SubjectData = {
       concepts: [
         {
           heading: '一、公民權利發展與參政權在都市規劃之應用',
-          body: '<span className="text-indigo-600 font-bold">公民身分（Citizenship）</span>賦予個人在政治社群中的成員地位與基本權利。現代公民權利包含**自由權**（Civil Rights）、**政治權**（Political Rights）與**社會權**（Social Rights）。在都市規劃與建築領域，參政權由單純的投票擴展至**都市計畫展覽**、**公聽會**、**聽證會**及都市設計審議的公民參與機制。',
+          body: '<span className="text-indigo-600 font-bold">公民身分（Citizenship）</span>賦予個人在政治社群中的成員地位與基本權利。現代公民權利包含**自由權**（Civil Rights）、**政治權**（Political Rights）與**社會權**（Social Rights）。在都市規劃與建築領域，參政權已由單純的選舉投票，擴展至**都市計畫展覽**、**公聽會**、**聽證會**及都市設計審議的實質公民參與機制。例如，當政府欲劃定新的都市更新地區時，必須依法舉辦公聽會與聽證會，讓可能受迫遷或影響的居民能充分表達意見，保障其「居住權」與「財產權」。💡 **專家提示**：聽證會（Hearing）具有準司法性質，所做成的紀錄對行政機關具有法定的約束力，其層級與效力遠高於僅供參考的公聽會。',
           steps: [
             '法案與計畫公告展覽：依《**都市計畫法**》第19條，計畫草案應公開展覽 30 天，並舉辦說明會。',
             '公民陳情與意見表達：任何公民或團體得於公開展覽期間內，以書面載明姓名、地址及建議向主管機關提出陳情。',
@@ -39,7 +39,7 @@ export const civicsData: SubjectData = {
         },
         {
           heading: '二、社區營造、參與式設計與空間民主',
-          body: '社區營造 (Community Building) 強調「**由下而上** (Bottom-up)」的居民主導精神，打破傳統建築師「**由上而下** (Top-down)」的專家威權。建築師擔任促成者 (Facilitator)，透過<span className="text-rose-600 font-bold">參與式設計 (Participatory Design)</span> 與**參與式預算** (Participatory Budgeting)，將居民的真實需求轉化為實體空間設計，實踐<span className="text-indigo-600 font-bold">空間民主 (Spatial Democracy)</span>。',
+          body: '社區營造 (Community Building) 強調「**由下而上** (Bottom-up)」的居民主導精神，打破傳統建築師與政府官員「**由上而下** (Top-down)」的專家威權。建築師在其中不僅是設計者，更是溝通的促成者 (Facilitator)，透過<span className="text-rose-600 font-bold">參與式設計 (Participatory Design)</span> 與**參與式預算** (Participatory Budgeting)，讓不同背景、年齡層的居民共同決定公共空間的用途與經費分配。此過程將居民的真實生活需求轉化為實體空間設計，如荒廢空地轉型為社區農園或長者共餐空間，徹底實踐<span className="text-indigo-600 font-bold">空間民主 (Spatial Democracy)</span> 與地方創生。',
           steps: [
             '議題形成與社區發掘：調查社區歷史脈絡、公共空間痛點與居民人口結構。',
             '參與式工作坊 (Participatory Workshop)：利用模型、工作紙與空間願景地圖進行多方對話。',

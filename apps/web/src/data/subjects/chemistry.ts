@@ -2,13 +2,13 @@ import { SubjectData } from '../types';
 
 export const chemistryData: SubjectData = {
   "slug": "chemistry",
-  "title": "化學",
+  "title": "🧪 化學",
   "category": "自然科學",
   "color": "indigo-600",
   "topics": [
     {
       "slug": "matter-composition",
-      "title": "1. 物質的組成與分類",
+      "title": "1. 📚 物質的組成與分類",
       "desc": "**<span className='text-rose-600 font-bold'>純物質</span>**與**<span className='text-rose-600 font-bold'>混合物</span>**、原子結構與化學鍵結、塗料/樹脂高分子化學分類、**<span className='text-rose-600 font-bold'>VOCs</span>** 揮發機制與**<span className='text-rose-600 font-bold'>光觸媒</span>**空氣淨化。",
       "status": "done",
       gradeLevel: 10,
@@ -38,7 +38,7 @@ export const chemistryData: SubjectData = {
         },
         {
           "heading": "塗料、樹脂高分子與**<span className='text-indigo-600 font-bold'>揮發性有機化合物</span>** (**<span className='text-rose-600 font-bold'>VOCs</span>**) 基礎",
-          "body": "💡 **核心概念解析**：\n塗料與樹脂 (Paints & Resins) 為建築裝修與結構防蝕的重要化學材料。\n- 塗料組成：主要由基料 (Binder/Resin)、溶劑 (Solvent)、顏填料 (Pigment & Extender) 及添加劑 (Additives) 四大部分組成。\n- **<span className='text-rose-600 font-bold'>VOCs</span>** (Volatile Organic Compounds，**<span className='text-indigo-600 font-bold'>揮發性有機化合物</span>**)：指在常溫常壓下飽和蒸氣壓大於 133.32 Pa 的有機化合物 (如苯、甲苯、二甲苯、游離甲醛)。塗料施工與固化過程中，溶劑的揮發是室內 **<span className='text-rose-600 font-bold'>VOCs</span>** 污染的主要來源。"
+          "body": "💡 **核心概念解析**：\n塗料與樹脂 (Paints & Resins) 為建築裝修與結構防蝕的重要化學材料。\n- 塗料組成：主要由基料 (Binder/Resin)、溶劑 (Solvent)、顏填料 (Pigment & Extender) 及添加劑 (Additives) 四大部分組成。基料決定塗膜的物理及化學性質，溶劑則影響施工性與乾燥速度。\n- **<span className='text-rose-600 font-bold'>VOCs</span>** (Volatile Organic Compounds，**<span className='text-indigo-600 font-bold'>揮發性有機化合物</span>**)：指在常溫常壓下飽和蒸氣壓大於 133.32 Pa 的有機化合物 (如苯、甲苯、二甲苯、游離甲醛)。\n⚠️ **健康危害與實務考量**：\n塗料施工與固化過程中，溶劑的揮發是室內 **<span className='text-rose-600 font-bold'>VOCs</span>** 污染的主要來源。長期暴露於高濃度 **<span className='text-rose-600 font-bold'>VOCs</span>** 環境中可能引發「病態建築症候群」(SBS, Sick Building Syndrome)，造成頭痛、呼吸道刺激、甚至有致癌風險。因此，在室內裝修中，選擇水性塗料或低 **<span className='text-rose-600 font-bold'>VOC</span>** 綠建材，並配合施工後充分通風，是確保居住安全的關鍵。"
         },
         {
           "heading": "建築塗料與樹脂材料之化學分類比較",
@@ -92,7 +92,7 @@ export const chemistryData: SubjectData = {
         },
         {
           "heading": "綠色建材認證與 VOC 逸散控制化學",
-          "body": "💡 **核心概念解析**：\n為保障室內空氣品質 (IAQ) 與健康居住環境，現代建築法規對建材的 **<span className='text-indigo-600 font-bold'>TVOC</span>** (總**<span className='text-indigo-600 font-bold'>揮發性有機化合物</span>**) 與甲醛逸散率有嚴格限制。\n- 測試標準：常採用氣候箱法 (Chamber Method，CNS 16000 / ISO 16000)，測量塗料塗刷後 28 天內的揮發量。\n- 低 VOC 化學技術：以水性化 (Waterborne)、無溶劑高固含量 (High Solids)、UV 光固化 (UV-Curing) 以及無機矽酸鹽化學替代傳統有機溶劑。"
+          "body": "💡 **核心概念解析**：\n為保障室內空氣品質 (IAQ) 與健康居住環境，現代建築法規對建材的 **<span className='text-indigo-600 font-bold'>TVOC</span>** (總**<span className='text-indigo-600 font-bold'>揮發性有機化合物</span>**) 與甲醛逸散率有嚴格限制。\n- 測試標準：常採用氣候箱法 (Chamber Method，CNS 16000 / ISO 16000)，測量塗料塗刷後 28 天內的揮發量，確保建材在實際使用環境下的逸散濃度符合安全規範。\n- 低 VOC 化學技術：\n  1. **水性化 (Waterborne)**：利用水取代大部分有機溶劑，大幅降低施工與乾燥過程的有害揮發物。\n  2. **無溶劑高固含量 (High Solids)**：提高樹脂含量，減少揮發性溶劑比例，適用於重防腐與工業地坪。\n  3. **無機矽酸鹽化學**：完全無有機溶劑，利用化學矽化反應與基底結合，達到零 **<span className='text-rose-600 font-bold'>VOCs</span>** 的環保標準。\n🛠️ **工程實務應用**：\n在選擇「健康綠建材」時，不僅要關注產品包裝上的標章，還需確認其 **<span className='text-indigo-600 font-bold'>TVOC</span>** 與甲醛逸散率檢測報告，避免多種建材在密閉空間中產生「疊加效應」而導致總濃度超標。"
         },
         {
           "heading": "奈米**<span className='text-rose-600 font-bold'>二氧化鈦</span>** (TiO₂) **<span className='text-rose-600 font-bold'>光觸媒</span>**催化空氣淨化與自潔化學",
@@ -221,7 +221,7 @@ export const chemistryData: SubjectData = {
     },
     {
       "slug": "chemical-reactions",
-      "title": "2. 化學反應與混凝土水化化學",
+      "title": "2. 🔍 化學反應與混凝土水化化學",
       "desc": "化學反應式平衡、**<span className='text-rose-600 font-bold'>莫耳數</span>**與化學計量、**<span className='text-rose-600 font-bold'>波特蘭水泥</span>**水化反應 (Concrete Hydration)、**<span className='text-rose-600 font-bold'>波左蘭反應</span>**與**<span className='text-rose-600 font-bold'>絕熱溫升</span>**。",
       "status": "done",
       gradeLevel: 10,
@@ -399,7 +399,7 @@ export const chemistryData: SubjectData = {
     },
     {
       "slug": "acids-bases-salts",
-      "title": "3. 酸鹼化學與混凝土**<span className='text-rose-600 font-bold'>中性化</span>**",
+      "title": "3. ⚡ 酸鹼化學與混凝土**<span className='text-rose-600 font-bold'>中性化</span>**",
       "desc": "酸鹼理論與 **<span className='text-rose-600 font-bold'>pH 值</span>**計算、混凝土碳化/**<span className='text-rose-600 font-bold'>中性化</span>**機制、**<span className='text-rose-600 font-bold'>酸雨</span>**石材腐蝕、**<span className='text-rose-600 font-bold'>硫酸鹽侵蝕</span>**與鋼筋鈍化膜。",
       "status": "done",
       gradeLevel: 10,
@@ -586,7 +586,7 @@ export const chemistryData: SubjectData = {
     },
     {
       "slug": "redox",
-      "title": "4. **<span className='text-rose-600 font-bold'>氧化還原</span>**與金屬腐蝕防蝕",
+      "title": "4. 🌟 **<span className='text-rose-600 font-bold'>氧化還原</span>**與金屬腐蝕防蝕",
       "desc": "氧化數與電化學反應、鋼筋濕腐蝕化學機制、**<span className='text-rose-600 font-bold'>犧牲陽極</span>**防蝕、**<span className='text-rose-600 font-bold'>熱浸鍍鋅</span>**與電化學脫鹽 ECE 技術。",
       "status": "done",
       gradeLevel: 10,
@@ -789,7 +789,7 @@ export const chemistryData: SubjectData = {
     },
     {
       "slug": "organic-chemistry",
-      "title": "5. 有機化學與建築高分子樹脂塗料",
+      "title": "5. ⚡ 有機化學與建築高分子樹脂塗料",
       "desc": "有機化合物分類、高分子樹脂 (Epoxy, PU, Acrylic, Silicone) 化學、**<span className='text-rose-600 font-bold'>VOCs</span>** 逸散與高分子光降解/水解老化。",
       "status": "done",
       gradeLevel: 10,
@@ -992,7 +992,7 @@ export const chemistryData: SubjectData = {
     },
     {
       "slug": "environmental-chemistry",
-      "title": "6. 環境化學與建材**<span className='text-rose-600 font-bold'>碳足跡</span>**",
+      "title": "6. 📚 環境化學與建材**<span className='text-rose-600 font-bold'>碳足跡</span>**",
       "desc": "大氣與水體環境化學、**<span className='text-rose-600 font-bold'>溫室效應</span>**、建材**<span className='text-rose-600 font-bold'>碳足跡</span>** LCA、固碳混凝土、低碳水泥與室內空氣品質 IAQ。",
       "status": "done",
       gradeLevel: 10,

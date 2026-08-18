@@ -25,10 +25,11 @@ export const historyData: SubjectData = {
       concepts: [
         {
           heading: '一、荷西與明鄭時期的築城技術與空間佈局 (1624–1683)',
-          body: '17世紀**大航海時代**，西洋海權強國荷蘭與西班牙相繼於台灣建立防衛據點，引進了<span className="text-rose-600 font-bold">歐洲重商主義</span>與<span className="text-indigo-600 font-bold">稜堡（<span className="text-indigo-600 font-bold">Bastion Trace</span>）</span>軍事築城技術。荷蘭人在大員興建**熱蘭遮城**（Fort Zeelandia，今安平古堡），於台江內海東岸建立**普羅民遮城**（Fort Provintia，今赤崁樓）；西班牙人則於雞籠建造**聖多明哥城**（Fort San Domingo，淡水紅毛城前身）。明鄭時期引入漢人屯墾制度，設立承天府與天興、萬年二縣，引進傳統<span className="text-teal-600 font-bold">儒家文教空間</span>，興建全臺首學「<span className="text-rose-600 font-bold">**台南孔廟**</span>」，建立<span className="text-rose-600 font-bold">左學右廟</span>格局，奠定漢人傳統聚落與街屋雛形。',
+          body: '17世紀**大航海時代**，西洋海權強國荷蘭與西班牙相繼於台灣建立防衛據點，引進了<span className="text-rose-600 font-bold">歐洲重商主義</span>與<span className="text-indigo-600 font-bold">稜堡（<span className="text-indigo-600 font-bold">Bastion Trace</span>）</span>軍事築城技術。荷蘭人在大員興建**熱蘭遮城**（Fort Zeelandia，今安平古堡），此堡壘不僅是防禦核心也是國際貿易轉運站；於台江內海東岸建立**普羅民遮城**（Fort Provintia，今赤崁樓）以處理地方行政。西班牙人則於雞籠建造**聖多明哥城**（Fort San Domingo，淡水紅毛城前身），試圖掌控北部硫磺與鹿皮貿易。明鄭時期引入漢人屯墾制度，設立承天府與天興、萬年二縣，引進傳統<span className="text-teal-600 font-bold">儒家文教空間</span>，興建全臺首學「<span className="text-rose-600 font-bold">**台南孔廟**</span>」，建立<span className="text-rose-600 font-bold">左學右廟</span>（左側府學、右側文廟）格局，奠定漢人傳統聚落與街屋雛形。💡 **專家提示**：荷西時期的堡壘選址多靠近港口與海權控制點，而明鄭時期的空間佈局則反映了由「海權貿易」轉向「農業與文教定居」的社會轉型。',
           steps: [
-            '**荷西時期構造特徵**：採用熱帶紅磚、石灰、糯米汁、糖水與牡蠣殼灰（<span className="text-indigo-600 font-bold">三合土/糯米三合土</span>）作為膠結材料，築造外突**稜堡**以利交叉火網防禦。',
-            '**明鄭時期空間轉型**：推動軍屯制度，劃分文教與行政核心，將閩南傳統<span className="text-teal-600 font-bold">儒家空間禮制</span>（如左學右廟、中軸對稱）植入府城空間骨架。'
+            '**荷西時期構造特徵**：採用熱帶紅磚、石灰、糯米汁、糖水與牡蠣殼灰（<span className="text-indigo-600 font-bold">三合土/糯米三合土</span>）作為膠結材料，築造外突**稜堡**以消除城牆死角，形成無死角的交叉火網防禦。',
+            '**明鄭時期空間轉型**：推動軍屯與民屯制度，劃分文教與行政核心，將閩南傳統<span className="text-teal-600 font-bold">儒家空間禮制</span>（如左學右廟、中軸對稱）植入府城空間骨架，開啟了台灣漢人城鎮化發展。',
+            '**實務觀察考點**：實地考察安平古堡時，可注意殘存的紅磚牆面上厚實的三合土痕跡，這是大航海時代熱帶防禦工程適應在地材料的最佳例證。'
           ],
           table: {
             headers: ['歷史時期', '統治政權', '核心空間與建築類型', '構造與防禦技術', '代表建築案例'],
@@ -230,10 +231,11 @@ export const historyData: SubjectData = {
         },
         {
           heading: '二、北宋《營造法式》與材分制模組化設計',
-          body: '北宋崇寧二年（1103年），李誡編纂出版《營造法式》，為中國古代官方頒布規範建築設計、工料預算與施工標準之集大成專著。其核心創舉為確立「<span className="text-rose-600 font-bold"><span className="text-rose-600 font-bold">材分制度</span></span>」（模組化/Modularity）。將大木作木材斷面標準分為一等材至八等材，以「<span className="text-rose-600 font-bold">材</span>」之高度分為15「<span className="text-rose-600 font-bold">分</span>」，寬度為10「<span className="text-rose-600 font-bold">分</span>」（高寬比 **3:2**），所有建築構件之比例大小皆以「<span className="text-rose-600 font-bold">材分</span>」為基準進行級數放大或縮小。',
+          body: '北宋崇寧二年（1103年），李誡編纂出版《營造法式》，為中國古代官方頒布規範建築設計、工料預算與施工標準之集大成專著。其核心創舉為確立「<span className="text-rose-600 font-bold"><span className="text-rose-600 font-bold">材分制度</span></span>」（模組化/Modularity）。將大木作木材斷面標準分為一等材至八等材，以「<span className="text-rose-600 font-bold">材</span>」之高度分為15「<span className="text-rose-600 font-bold">分</span>」，寬度為10「<span className="text-rose-600 font-bold">分</span>」（高寬比 **3:2**），所有建築構件之比例大小皆以「<span className="text-rose-600 font-bold">材分</span>」為基準進行級數放大或縮小。這項創舉不僅解決了材料浪費問題，也讓複雜的木構件能大量預先製作。💡 **專家提示**：材分制的精神等同於現代建築的「BIM與預製工法」，是中國建築邁向工業化標準化管理的重要里程碑。',
           steps: [
-            '**一等材**：最高等級，用於九間以上宮殿或大殿。',
-            '**材分控制**：材高15分、材厚10分；以「<span className="text-indigo-600 font-bold">分</span>」作為無單位之比例模數，實現預製化與工料控管。'
+            '**一等材**：最高等級，用於九間以上宮殿或大殿（如皇家核心殿堂），耗材最多且結構最為雄偉。',
+            '**材分控制**：材高15分、材厚10分；以「<span className="text-indigo-600 font-bold">分</span>」作為無單位之比例模數，實現預製化與工料控管，有效杜絕了古代官吏貪污工程款的弊端。',
+            '**等級劃分意義**：從一等到八等材，嚴格對應不同階級的建築規模，體現了封建社會中建築作為「禮制符號」的不可逾越性。'
           ],
           table: {
             headers: ['材等 (Grade of Material)', '材高 (吋)', '材厚 (吋)', '適用建築規模與等級'],

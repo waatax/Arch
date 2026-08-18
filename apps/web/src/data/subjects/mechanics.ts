@@ -297,8 +297,14 @@ export const mechanicsData: SubjectData = {
         },
         {
           heading: '**平行軸定理 (Parallel Axis Theorem)**',
-          body: '當計算截面對於任意平行參考軸（如總形心軸 X_bar）之二次矩 (<span className="text-rose-600 font-bold"><span className="text-rose-600 font-bold">慣性矩</span> Moment of Inertia</span>) 時，可先計算各分割件對自身形心軸之<span className="text-rose-600 font-bold">慣性矩</span> Ix_c，再加上平行轉移項 A · d²（d 為分圖形形心至總形心軸的垂直距離）。',
-          formula: 'I_x = ∑ (I_xci + A_i · d_yi²)\nI_y = ∑ (I_yci + A_i · d_xi²)'
+          body: '當計算截面對於任意平行參考軸（如總形心軸 X_bar）之二次矩 (<span className="text-rose-600 font-bold">慣性矩 Moment of Inertia</span>) 時，可先計算各分割件對自身形心軸之<span className="text-rose-600 font-bold">慣性矩</span> Ix_c，再加上平行轉移項 A · d²（d 為分圖形形心至總形心軸的垂直距離）。平行軸定理是計算組合截面（如工字梁、T型梁）剛度的核心工具。',
+          formula: 'I_x = ∑ (I_xci + A_i · d_yi²)\nI_y = ∑ (I_yci + A_i · d_xi²)',
+          steps: [
+            '【拆解截面】：將複雜的組合截面拆解為簡單的幾何基元（矩形、三角形等）。',
+            '【求各形心與面積】：計算各個基元的面積 Ai 及其自身形心位置，並計算整體截面的總形心坐標。',
+            '【求位移量 d】：計算每個基元自身形心到整體截面總形心軸的垂直距離 di。',
+            '【帶入定理】：將各基元自身形心軸的慣性矩 Ix_c 加上 Ai · di²，最後加總即為總慣性矩。'
+          ]
         },
         {
           heading: '**帕普斯定理** (Pappus Theorems for Area & Volume)',
@@ -616,8 +622,14 @@ export const mechanicsData: SubjectData = {
         },
         {
           heading: '載重、剪力與彎矩之微積分與面積關係',
-          body: '分佈載重 w(x)、剪力 V(x) 與彎矩 M(x) 之間存在微積分關係：剪力圖的斜率等於載重集度的負值；彎矩圖的斜率等於剪力值。剪力圖之面積代表兩截面間之彎矩變化量。',
-          formula: 'dV / dx = -w(x)   ⇒ ΔV = - ∫ w(x) dx  (剪力差 = 載重圖面積)\ndM / dx = V(x)    ⇒ ΔM = ∫ V(x) dx   (彎矩差 = 剪力圖面積)\n最大/最小彎矩必發生於剪力 V(x) = 0 或剪力符號突變之處！'
+          body: '分佈載重 w(x)、剪力 V(x) 與彎矩 M(x) 之間存在微積分關係：剪力圖的斜率等於載重集度的負值；彎矩圖的斜率等於剪力值。剪力圖之面積代表兩截面間之彎矩變化量。這些關係讓我們能在不列算式的情況下，透過「面積法」快速精準地畫出剪力與彎矩圖。',
+          formula: 'dV / dx = -w(x)   ⇒ ΔV = - ∫ w(x) dx  (剪力差 = 載重圖面積)\ndM / dx = V(x)    ⇒ ΔM = ∫ V(x) dx   (彎矩差 = 剪力圖面積)\n最大/最小彎矩必發生於剪力 V(x) = 0 或剪力符號突變之處！',
+          steps: [
+            '【觀察載重特徵】：均佈載重會讓剪力圖呈一階斜直線，彎矩圖呈二次拋物線。',
+            '【面積累加法】：從樑的左端開始，下一個截面的剪力值等於前一個截面的剪力加上該區段的「載重圖面積」。',
+            '【尋找極值】：找出剪力圖中穿過零軸的位置 (即 V=0 處)，此處即為彎矩圖的頂點 (最大或最小彎矩)。',
+            '【彎矩面積累加】：下一個截面的彎矩值等於前一個彎矩加上該區段的「剪力圖面積」。'
+          ]
         },
         {
           heading: '剪力圖 (V-Diagram) 與彎矩圖 (M-Diagram) 繪製標準四步驟',

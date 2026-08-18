@@ -39,8 +39,13 @@ export const surveyingData: SubjectData = {
         },
         {
           heading: '光電測距儀 (EDM) & 全測站儀原理與加乘常數',
-          body: '光電測距 (EDM) 利用紅外線或雷射調幅波在兩點間往返傳播之<span className="text-indigo-600 font-bold">相位差</span>或<span className="text-indigo-600 font-bold">飛行時間 (Time-of-Flight)</span> 來計算距離。儀器內部存在光學中心與幾何中心不重合之**加常數 (K)** 以及頻率漂移產生之**乘常數 (S)**。',
+          body: '光電測距 (EDM) 利用紅外線或雷射調幅波在兩點間往返傳播之<span className="text-indigo-600 font-bold">相位差</span>或<span className="text-indigo-600 font-bold">飛行時間 (Time-of-Flight)</span> 來計算距離。儀器內部存在光學中心與幾何中心不重合之**加常數 (K)** 以及頻率漂移產生之**乘常數 (S)**。為了確保量測精度，定期在已知長度的基準線上進行檢定是必要的。',
           formula: 'D = K + S · D\' + D_phase\n(D為真實距離，D\'為儀器測量距離)',
+          steps: [
+            '【加常數檢定】：加常數 K 是固定的系統誤差（不受距離影響）。在已知短距離的基準線上測量，將已知真實距離減去儀器讀數即可求得 K。',
+            '【乘常數檢定】：乘常數 S 隨測量距離成正比增加（受頻率變化及大氣條件影響）。需在多段不同長度的基準線上測量，利用最小平方法解算 S。',
+            '【大氣修正】：輸入現場的溫度與氣壓，儀器會自動進行 PPM (Parts Per Million) 乘常數大氣修正。'
+          ],
           table: {
             headers: ['測量方法', '精度等級', '主要誤差來源', '適用場景與特點'],
             rows: [
@@ -196,7 +201,7 @@ export const surveyingData: SubjectData = {
         },
         {
           heading: '地球曲率 (Curvature) 與大氣折光 (Refraction) 聯合修正量',
-          body: '因地球表面為曲面使視線隨距離升高 (**曲率影響**)，大氣密度不均使光線向下彎曲 (**折光影響**)。兩者聯合修正量 h_cr 隨<span className="text-indigo-600 font-bold">視距 K 之平方遞增</span>。<span className="text-rose-600 font-bold">前後視距等長</span>可完全消除 C&R 影響，這是水準測量最重要的消差法則。',
+          body: '因地球表面為曲面使視線隨距離升高 (**曲率影響**)，大氣密度不均使光線向下彎曲 (**折光影響**)。兩者聯合修正量 h_cr 隨<span className="text-indigo-600 font-bold">視距 K 之平方遞增</span>。<span className="text-rose-600 font-bold">前後視距等長</span>可完全消除 C&R 影響，這是水準測量最重要的消差法則。實務上遇到無法等長的情況（如跨河測量），必須採用「對向觀測法」來消去此誤差。',
           formula: '地球曲率修正: hc = D² / (2R) = 0.0785 · K² (m)\n大氣折光修正: hr = 0.0110 · K² (m)\n聯合修正量: hcr = hc - hr = 0.0675 · K² (m)  (K 單位為 km)',
           steps: [
             '幾何原理：水準視線為切線，水平面為球面，切線與球面隨距離加大而分離。',

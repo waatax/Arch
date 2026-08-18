@@ -2,13 +2,13 @@ import { SubjectData } from '../types';
 
 export const physicsData: SubjectData = {
   "slug": "physics",
-  "title": "物理",
+  "title": "🍎 物理",
   "category": "自然科學",
   "color": "blue-600",
   "topics": [
     {
       "slug": "mechanics-motion",
-      "title": "1. 力學與運動 (Structural Kinematics & Static Equilibrium)",
+      "title": "1. ⚙️ 力學與運動 (Structural Kinematics & Static Equilibrium)",
       "desc": "建築運動學基礎、牛頓三大運動定律、<span className='text-rose-600 font-bold'>靜力平衡</span>條件、斜面摩擦、桁架與樑構件內力及高空落體防護。",
       "status": "done",
       gradeLevel: 10,
@@ -35,7 +35,7 @@ export const physicsData: SubjectData = {
         },
         {
           "heading": "剛體<span className='text-rose-600 font-bold'>靜力平衡</span>條件 (Static Equilibrium of Rigid Bodies)",
-          "body": "建築結構物（如樑、柱、桁架、板）於靜止狀態下必須滿足三維或二維<span className='text-rose-600 font-bold'>靜力平衡</span>。若合力或合力矩不為零，結構將發生剛體位移或旋轉倒塌。二維平面力系下，<span className='text-rose-600 font-bold'>靜力平衡</span>條件包含三個獨立代數方程式。",
+          "body": "建築結構物（如樑、柱、桁架、板）於靜止狀態下必須滿足三維或二維<span className='text-rose-600 font-bold'>靜力平衡</span>。若合力或合力矩不為零，結構將發生剛體位移或旋轉倒塌。二維平面力系下，<span className='text-rose-600 font-bold'>靜力平衡</span>條件包含三個獨立代數方程式。\n💡 **進階概念與實務**：\n- **靜定結構 (Statically Determinate)**：當未知支承反力的數量恰好等於平衡方程式數量 (二維為 3) 時，可直接解出所有反力，如簡支樑與懸臂樑。\n- **超靜定結構 (Statically Indeterminate)**：若支承反力數量超過方程式數量，需依賴材料變形協調條件才能求解，這類結構（如連續樑）在建築中更常見，因其具備多餘的冗餘度 (Redundancy)，遇局部破壞時不易產生連鎖崩塌。\n👷‍♂️ **專家提示**：在分析複雜構架時，善用「力矩平衡點選取法」能大幅簡化計算。將力矩中心選在最多未知力作用的節點，可直接消除這些未知力的力矩項，快速求得解答。",
           "formula": "<span className=\"text-indigo-600 font-bold\">ΣFx = 0 (水平合力為零)</span>\n<span className=\"text-indigo-600 font-bold\">ΣFy = 0 (垂直合力為零)</span>\n<span className=\"text-indigo-600 font-bold\">ΣM_O = 0 (對任意點 O 之合力矩為零)</span>",
           "steps": [
             "繪製結構體之<span className='text-rose-600 font-bold'>自由體圖</span> (Free Body Diagram, FBD)，明確標示所有外力、自重及<span className='text-rose-600 font-bold'>支承反力</span>。",
@@ -54,7 +54,7 @@ export const physicsData: SubjectData = {
         },
         {
           "heading": "摩擦力與建築斜面鋪面設計 (Friction Force & Ramp Safety)",
-          "body": "摩擦力為兩接觸面阻止相對滑動之阻力。建築無障礙斜坡、地下停車場車道鋪面以及樓梯踏階，必須滿足法規規定的<span className='text-rose-600 font-bold'>靜摩擦係數</span> (μs)，以防止行人滑倒或車輛煞車失靈下滑。",
+          "body": "摩擦力為兩接觸面阻止相對滑動之阻力。建築無障礙斜坡、地下停車場車道鋪面以及樓梯踏階，必須滿足法規規定的<span className='text-rose-600 font-bold'>靜摩擦係數</span> (μs)，以防止行人滑倒或車輛煞車失靈下滑。\n📐 **力學解析與臨界角**：\n當物體放置於傾角為 θ 的斜面上時，重力的下滑分力與靜摩擦力抗衡。當斜面傾角達到「臨界角」時，物體即將下滑，此時滿足關係式：tan(θ) = μs。這意味著坡道的最大安全坡度完全取決於材料表面的靜摩擦係數。\n🛠️ **防滑工程處理**：\n在實務上，為提升濕滑環境（如浴室、戶外車道）的安全性，常採用以下處理：\n1. **表面粗糙化**：洗石子、斬石子或拉毛處理。\n2. **防滑貼條與開槽**：在樓梯踏步前緣鑲嵌金屬或橡膠防滑條，或於車道表面切割橫向溝槽 (Grooving) 以增加咬合力並加速排水。",
           "formula": "<span className=\"text-indigo-600 font-bold\">f_s ≤ f_s,max = μ_s · N</span>\n<span className=\"text-indigo-600 font-bold\">f_k = μ_k · N</span>",
           "table": {
             "headers": [
@@ -284,7 +284,7 @@ export const physicsData: SubjectData = {
     },
     {
       "slug": "work-energy",
-      "title": "2. 功與能量 (Work, Energy & Green Building Thermodynamics)",
+      "title": "2. 📐 功與能量 (Work, Energy & Green Building Thermodynamics)",
       "desc": "功與功率、<span className='text-rose-600 font-bold'>動能</span>與<span className='text-rose-600 font-bold'>重力位能</span>、<span className='text-indigo-600 font-bold'>能量守恆定律</span>、綠建築<span className='text-indigo-600 font-bold'>熱功當量</span>、水泵/風機定律與蓄能技術。",
       "status": "done",
       gradeLevel: 10,
@@ -514,7 +514,7 @@ export const physicsData: SubjectData = {
     },
     {
       "slug": "thermodynamics",
-      "title": "3. 熱學與建築熱環境 (Building Thermodynamics & HVAC)",
+      "title": "3. 🌟 熱學與建築熱環境 (Building Thermodynamics & HVAC)",
       "desc": "熱傳導/對流/輻射、外牆<span className='text-rose-600 font-bold'>熱傳透率</span> U 值與<span className='text-rose-600 font-bold'>熱阻</span> R 值、<span className='text-rose-600 font-bold'>顯熱</span>與<span className='text-rose-600 font-bold'>潛熱</span>、<span className='text-rose-600 font-bold'>焓濕圖</span>與冰水主機 <span className='text-rose-600 font-bold'>COP</span> 性能係數。",
       "status": "done",
       gradeLevel: 10,
@@ -749,7 +749,7 @@ export const physicsData: SubjectData = {
     },
     {
       "slug": "waves-acoustics",
-      "title": "4. 波動與建築聲學 (Building Waves & Acoustics)",
+      "title": "4. 🏗️ 波動與建築聲學 (Building Waves & Acoustics)",
       "desc": "波動物理、聲速與<span className='text-rose-600 font-bold'>聲壓級</span> dB(A)、賽賓<span className='text-rose-600 font-bold'>殘響時間</span> RT60、隔音等級 <span className='text-rose-600 font-bold'>STC</span>、樓板衝擊音與交通噪音衰減。",
       "status": "done",
       gradeLevel: 10,
@@ -966,7 +966,7 @@ export const physicsData: SubjectData = {
     },
     {
       "slug": "optics",
-      "title": "5. 光學與建築照明設計 (Optics & Architectural Lighting)",
+      "title": "5. ✨ 光學與建築照明設計 (Optics & Architectural Lighting)",
       "desc": "光的折射與反射、照度距離平方反比定律、利用係數法燈具規劃、採光係數 DF 與防眩光 UGR。",
       "status": "done",
       gradeLevel: 10,
@@ -1182,7 +1182,7 @@ export const physicsData: SubjectData = {
     },
     {
       "slug": "electricity",
-      "title": "6. 電學基礎與建築配電系統 (Building Electrical & Circuits)",
+      "title": "6. 🔍 電學基礎與建築配電系統 (Building Electrical & Circuits)",
       "desc": "歐姆定律、電功率與焦耳熱、交流電功率因數 cos φ、無熔絲開關 NFB、三相配電與接地保護。",
       "status": "done",
       gradeLevel: 10,
