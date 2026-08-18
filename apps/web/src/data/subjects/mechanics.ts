@@ -54,7 +54,7 @@ export const mechanicsData: SubjectData = {
         },
         {
           heading: '純量與向量的物理意義 (Scalars vs. Vectors)',
-          body: '**純量**僅具備<span className="text-rose-600 font-bold">大小</span>（如質量、溫度、面積、應變能）；**向量**則同時兼具<span className="text-rose-600 font-bold">大小與方向</span>（如位移、速度、力、力矩、加速度）。在結構力學中，力的完整定義包含三要素：<span className="text-indigo-600 font-bold">大小 (Magnitude)</span>、<span className="text-indigo-600 font-bold">方向 (Direction)</span> 與<span className="text-indigo-600 font-bold">作用點 (Point of Application)</span>。',
+          body: '**純量**僅具備<span className="text-rose-600 font-bold">大小</span>（如質量、溫度、面積、應變能）；**向量**則同時兼具<span className="text-rose-600 font-bold">大小與方向</span>（如位移、速度、力、力矩、加速度）。在結構力學中，力的完整定義包含三要素：<span className="text-indigo-600 font-bold">大小 (Magnitude)</span>、<span className="text-indigo-600 font-bold">方向 (Direction)</span> 與<span className="text-indigo-600 font-bold">作用點 (Point of Application)</span>。\n\n### 🔗 跨學科連結\n在《材料與試驗》中，材料的密度與孔隙率屬於「純量」，不具方向性；而材料受力變形時產生的「應力 (Stress)」與「應變 (Strain)」在進階力學中是以張量或向量形式處理，需考量作用面與方向。\n\n### 🚨 統測陷阱\n考生常誤將「重量 (W)」當作純量，實際上重量是重力加速度作用於質量產生的力，屬於「向量」，具有向下的方向性！',
           table: {
             headers: ['物理量類別', '定義特徵', '代表物理量', '運算規則'],
             rows: [
@@ -181,7 +181,7 @@ export const mechanicsData: SubjectData = {
         },
         {
           heading: '**二力構件**與**三力構件** (Two-Force & Three-Force Members)',
-          body: '若一構件僅在兩點受力且無外力矩，稱為**二力構件** (Two-Force Member)，其兩端作用力必等大、反向且共線（如桁架桿件）；若構件受三個不平行力作用而平衡，則此三力之作用線必會聚於同一交點（共點三力定理）。',
+          body: '若一構件僅在兩點受力且無外力矩，稱為**二力構件** (Two-Force Member)，其兩端作用力必等大、反向且共線（如桁架桿件）；若構件受三個不平行力作用而平衡，則此三力之作用線必會聚於同一交點（共點三力定理）。\n\n### 🚨 統測陷阱\n若桿件中間有受自身重量影響（非輕桿），則不能視為「二力構件」，因為此時受力點變為三個（兩端點及重心），需以一般剛體平衡處理！',
           table: {
             headers: ['構件類型', '受力點數量', '力的幾何特徵', '代表工程應用'],
             rows: [
@@ -273,7 +273,7 @@ export const mechanicsData: SubjectData = {
       concepts: [
         {
           heading: '**形心 (Centroid)** 與<span className="text-rose-600 font-bold">面積一次矩</span>理論',
-          body: '形心代表截面幾何形狀的中心位置。透過對參考軸計算<span className="text-rose-600 font-bold">面積一次矩</span> Qx = ∫ y dA 及 Qy = ∫ x dA，再除以總面積 A，即可求得形心座標 (X, Y)。在結構工程中，形心位置即為梁柱彎矩<span className="text-indigo-600 font-bold">中性軸 (Neutral Axis)</span> 所在。',
+          body: '形心代表截面幾何形狀的中心位置。透過對參考軸計算<span className="text-rose-600 font-bold">面積一次矩</span> Qx = ∫ y dA 及 Qy = ∫ x dA，再除以總面積 A，即可求得形心座標 (X, Y)。在結構工程中，形心位置即為梁柱彎矩<span className="text-indigo-600 font-bold">中性軸 (Neutral Axis)</span> 所在。\n\n### 🔗 跨學科連結\n《材料與試驗》中提到的「鋼筋混凝土梁」，其配筋設計必須依據梁截面的「形心」與「中性軸」來決定鋼筋的精確位置，以抵抗最大的拉應力。\n\n### 🚨 統測陷阱\n計算組合圖形形心時，遇到「挖空」的面積（如圓孔），其面積與面積一次矩必須帶「負號」代入公式，這是最多人計算錯誤的地方！\n\n| 概念 | 公式 | 物理意義 |\n|---|---|---|\n| 面積一次矩 | Q = A × y | 決定形心位置，與座標軸選取有關 |\n| 面積二次矩 | I = A × y² | 決定抗彎剛度 (慣性矩)，恆為正值 |',
           formula: 'X = Qy / A = (∑ Ai · xi) / ∑ Ai\nY = Qx / A = (∑ Ai · yi) / ∑ Ai',
           steps: [
             '將複雜組合圖形分割為數個已知簡單幾何基元（如矩形、三角形、半圓）。',

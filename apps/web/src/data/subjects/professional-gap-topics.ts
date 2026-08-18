@@ -138,7 +138,7 @@ export const draftingGapTopics: TopicContent[] = [
     illustrations: ['context.webp', 'concept-diagram.webp', 'drafting-standards.webp', 'step-by-step.webp'],
     covered_question_ids: [],
     concepts: [
-      { heading: '工程圖的溝通功能', body: '工程圖以標準化線條、符號、尺度與註記傳遞設計及施工資訊；<span className="text-indigo-600 font-bold">清晰、一致、可追溯</span>比藝術化表現更重要。' },
+      { heading: '工程圖的溝通功能', body: '工程圖以標準化線條、符號、尺度與註記傳遞設計及施工資訊；<span className="text-indigo-600 font-bold">清晰、一致、可追溯</span>比藝術化表現更重要。\n\n| 圖說種類 | 核心目的 | 精度與標註要求 |\n| :--- | :--- | :--- |\n| **草圖 (Sketch)** | 快速記錄設計構想 | 徒手繪製，無須精確比例 |\n| **設計圖 (Design)** | 空間與機能檢討 | 比例準確，標示主要尺寸 |\n| **施工圖 (Working)** | 提供現場施工依據 | 尺寸精確詳盡，含材料構造註記 |' },
       { heading: 'A 系列圖紙與折疊', body: 'A 系列長寬比為 <span className="text-rose-600 font-bold">√2:1</span>，對半裁切仍保持同一比例。折疊歸檔後應讓**標題欄位於正面右下**並可直接識別。', formula: '<span className="text-indigo-600 font-bold">A0 面積 = 1 m²</span>；長寬比 = √2 : 1' },
       { heading: '圖面階段與版本', body: '概念圖說明構想，設計圖確立方案，施工圖提供尺寸與做法，竣工圖反映完成現況；修訂需留下<span className="text-rose-600 font-bold">日期、版次與修訂內容</span>。' },
     ],
@@ -158,11 +158,11 @@ export const draftingGapTopics: TopicContent[] = [
     illustrations: ['context.webp', 'cross-reference-workflow.webp', 'architectural-structural.webp', 'step-by-step.webp'],
     covered_question_ids: [],
     concepts: [
-      { heading: '圖說之間如何互證', body: '平面圖確認水平位置，立面圖確認外觀與高度，剖面圖確認垂直構造，詳圖放大接合做法；同一構件的<span className="text-rose-600 font-bold">編號、尺寸與高程必須一致</span>。' },
+      { heading: '圖說之間如何互證', body: '平面圖確認水平位置，立面圖確認外觀與高度，剖面圖確認垂直構造，詳圖放大接合做法；同一構件的<span className="text-rose-600 font-bold">編號、尺寸與高程必須一致</span>。\n\n**🔄 跨科連結：** 這些圖說上的尺寸與高程，必須依賴《測量實習》的放樣技術才能在工地現場準確落實，測量與製圖是工程的一體兩面。' },
       { heading: '建築圖與結構圖', body: '建築圖重空間、門窗、裝修與法規；結構圖重柱梁版牆、配筋與基礎。判讀時先用<span className="text-indigo-600 font-bold">軸線與樓層定位</span>，再比對構件編號。' },
       { heading: '施工圖查核順序', body: '先讀圖名、比例、北向與版次，再查軸線及高程，接著追索<span className="text-rose-600 font-bold">剖面索引與詳圖索引</span>，最後檢查尺寸閉合及跨圖衝突。' },
     ],
-    worked_examples: [quiz('平面圖門編號 D03，但門窗表沒有 D03，應如何處理？', ['這是<span className="text-rose-600 font-bold">跨圖索引不一致</span>，不能自行猜測尺寸。', '先查最新版次與修訂雲線，再<span className="text-indigo-600 font-bold">提出圖說疑義 (RFI)</span>。'], '記錄衝突並依正式程序釐清，不可逕自施工')],
+    worked_examples: [quiz('平面圖門編號 D03，但門窗表沒有 D03，應如何處理？', ['⚠️ **統測陷阱 (Exam Trap)：** 考生常以為可以「依比例尺量測圖面推算尺寸」，但在正式工程中這是大忌！', '這是<span className="text-rose-600 font-bold">跨圖索引不一致</span>，不能自行猜測尺寸。', '先查最新版次與修訂雲線，再<span className="text-indigo-600 font-bold">提出圖說疑義 (RFI)</span>。'], '記錄衝突並依正式程序釐清，不可逕自施工')],
     practices: [
       quiz('要確認樓梯淨高，至少應交叉檢查哪些圖？', ['<span className="text-indigo-600 font-bold">平面圖</span>確認梯段與洞口位置。', '<span className="text-rose-600 font-bold">剖面圖</span>確認垂直高度；必要時再查樓梯詳圖。'], '平面圖、剖面圖及樓梯詳圖'),
       quiz('基地圖標高 +0.00 與剖面圖一樓完成面標高不一致，第一步為何？', ['先比較<span className="text-indigo-600 font-bold">圖號、版次與修訂日期</span>。', '以最新版圖說釐清，仍衝突則提出 RFI。'], '先做版本與修訂核對，再正式提出疑義', '進階'),

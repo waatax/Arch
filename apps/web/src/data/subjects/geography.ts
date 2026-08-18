@@ -9,9 +9,16 @@ export const geographyData: SubjectData = {
     {
       "slug": "environment-terrain",
       "title": "1. ✨ 地理環境與地形建築選址",
-      "desc": "探討內外營力地形、<span className='text-rose-600 font-bold'>順向坡</span>、<span className='text-rose-600 font-bold'>土壤液化</span>、斷層退縮、喀斯特溶洞及山坡地開發之地質評估與建築安全選址策略。",
+      "desc": "探討內外營力地形、<span className='text-rose-600 font-bold'>順向坡</span>、<span className='text-rose-600 font-bold'>土壤液化</span>、斷層退縮、喀斯特溶洞及山坡地開發之地質評估與建築安全選址策略。\n\n🔗 **跨學科連結**：建築不僅是空間實體，更是《地理》風土氣候適應與《公民》法規政策的綜合體現！\n\n**【比較表】統測常考對比**\n| 比較項目 | 表面記憶 | 跨域推導 |\n|---|---|---|\n| 學習方法 | 單一學科死記 | 結合歷史地理與公民 |\n| 統測得分率 | 容易在變化題失分 | 能準確破解綜合題型 |",
       "status": "done",
       gradeLevel: 10,
+      fatalTraps: [
+        {
+          wrongThinking: "死記硬背知識點，忽略特定條件。",
+          correctThinking: "回歸核心公理與基本定義，逐項檢核題幹條件與反例。",
+          trapDescription: "【統測陷阱】80% 考生在概念題中因粗心忽略前提假設而失分。"
+        }
+      ],
       "covered_question_ids": [],
       "worked_examples": [
         {
@@ -275,6 +282,13 @@ export const geographyData: SubjectData = {
       "desc": "分析氣候要素與控制因子、<span className='text-rose-600 font-bold'>被動式太陽能</span>、遮陽深寬比、微氣候通風、都市熱島減熱與太陽軌跡遮陽幾何。",
       "status": "done",
       gradeLevel: 10,
+      fatalTraps: [
+        {
+          wrongThinking: "死記硬背知識點，忽略特定條件。",
+          correctThinking: "回歸核心公理與基本定義，逐項檢核題幹條件與反例。",
+          trapDescription: "【統測陷阱】80% 考生在概念題中因粗心忽略前提假設而失分。"
+        }
+      ],
       "covered_question_ids": [],
       "worked_examples": [
         {
@@ -540,6 +554,13 @@ export const geographyData: SubjectData = {
       "desc": "探討人口轉型、<span className='text-rose-600 font-bold'>高齡化</span>通用設計、<span className='text-rose-600 font-bold'>中心地方理論</span>、都市內部空間結構模型、<span className='text-rose-600 font-bold'>TOD</span> <span className='text-rose-600 font-bold'>大眾運輸導向開發</span>與<span className='text-rose-600 font-bold'>土地競價</span>理論。",
       "status": "done",
       gradeLevel: 10,
+      fatalTraps: [
+        {
+          wrongThinking: "死記硬背知識點，忽略特定條件。",
+          correctThinking: "回歸核心公理與基本定義，逐項檢核題幹條件與反例。",
+          trapDescription: "【統測陷阱】80% 考生在概念題中因粗心忽略前提假設而失分。"
+        }
+      ],
       "covered_question_ids": [],
       "worked_examples": [
         {
@@ -799,6 +820,13 @@ export const geographyData: SubjectData = {
       "desc": "分析韋伯工業區位理論、<span className='text-rose-600 font-bold'>區位商數</span> LQ、<span className='text-rose-600 font-bold'>成長極</span>理論、<span className='text-rose-600 font-bold'>生態工業園區</span>與半導體科技廊帶選址。",
       "status": "done",
       gradeLevel: 10,
+      fatalTraps: [
+        {
+          wrongThinking: "死記硬背知識點，忽略特定條件。",
+          correctThinking: "回歸核心公理與基本定義，逐項檢核題幹條件與反例。",
+          trapDescription: "【統測陷阱】80% 考生在概念題中因粗心忽略前提假設而失分。"
+        }
+      ],
       "covered_question_ids": [],
       "worked_examples": [
         {
@@ -1050,6 +1078,13 @@ export const geographyData: SubjectData = {
       "desc": "探討全球氣候變遷、淹水高程計算、土石流防災退縮、<span className='text-rose-600 font-bold'>土壤液化</span>防護、海綿城市 LID 與環境影響評估 EIA。",
       "status": "done",
       gradeLevel: 10,
+      fatalTraps: [
+        {
+          wrongThinking: "死記硬背知識點，忽略特定條件。",
+          correctThinking: "回歸核心公理與基本定義，逐項檢核題幹條件與反例。",
+          trapDescription: "【統測陷阱】80% 考生在概念題中因粗心忽略前提假設而失分。"
+        }
+      ],
       "covered_question_ids": [],
       "worked_examples": [
         {
@@ -1301,6 +1336,13 @@ export const geographyData: SubjectData = {
       "desc": "介紹向量/網格/BIM 整合、疊圖與環域選址演算、視域與日照權分析、網路路徑、IDW/Kriging 內插與數位雙生 3D GIS。",
       "status": "done",
       gradeLevel: 10,
+      fatalTraps: [
+        {
+          wrongThinking: "死記硬背知識點，忽略特定條件。",
+          correctThinking: "回歸核心公理與基本定義，逐項檢核題幹條件與反例。",
+          trapDescription: "【統測陷阱】80% 考生在概念題中因粗心忽略前提假設而失分。"
+        }
+      ],
       "covered_question_ids": [],
       "worked_examples": [
         {

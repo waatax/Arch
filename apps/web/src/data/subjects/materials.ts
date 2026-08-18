@@ -51,7 +51,7 @@ export const materialsData: SubjectData = {
         },
         {
           heading: '力學性質與應力-應變關係 (Stress-Strain Diagram)',
-          body: '材料受外力作用時呈現應力與應變的變化關係。經典拉伸曲線包含比例限度 (Proportional Limit)、彈性限度 (Elastic Limit)、降伏點 (Yield Point)、抗拉極限強度 (Ultimate Tensile Strength, UTS) 與斷裂破壞點。',
+          body: '材料受外力作用時呈現應力與應變的變化關係。經典拉伸曲線包含比例限度 (Proportional Limit)、彈性限度 (Elastic Limit)、降伏點 (Yield Point)、抗拉極限強度 (Ultimate Tensile Strength, UTS) 與斷裂破壞點。\n\n### 🔗 跨學科連結\n應力與應變的計算，與《工程力學》中的「材料力學」單元息息相關。虎克定律 (σ = E × ε) 中的彈性模數 (E) 是決定結構構件變形量 (ΔL = PL/AE) 的核心參數。\n\n### 🚨 統測陷阱\n請務必區分「比例限度」與「彈性限度」！比例限度是「應力與應變成正比」的最高點（虎克定律適用上限）；彈性限度則是「卸載後能完全恢復原狀」的最高點。兩者非常接近，但定義不同。\n\n| 特徵點 | 意義 | 力學行為 |\n|---|---|---|\n| 比例限度 | 虎克定律適用上限 | 應力與應變成絕對直線正比 |\n| 彈性限度 | 彈性變形上限 | 卸載後無永久變形，但曲線不一定是直線 |\n| 降伏點 | 開始發生明顯塑性變形 | 應力未顯著增加，但應變大幅增加 |\n| 抗拉極限 | 材料能承受的最大應力 | 試體開始發生頸縮現象 |',
           formula: '正應力 σ = P / A₀\n正應變 ε = ΔL / L₀\n虎克定律 σ = E × ε (E為彈性模數)\n泊松比 ν = - (橫向應變 εy / 軸向應變 εx)'
         },
         {
@@ -160,7 +160,7 @@ export const materialsData: SubjectData = {
       concepts: [
         {
           heading: '卜特蘭水泥水化化學成分 (Mineral Compositions)',
-          body: '水泥熟料經高溫 1450°C 燒結而成，主要四大部分為：\n- 矽酸三鈣 (<span className="text-rose-600 font-bold">C3S</span>)：水化極快，提供混凝土早期強度。\n- 矽酸二鈣 (<span className="text-rose-600 font-bold">C2S</span>)：水化緩慢，提供後期強度。\n- 鋁酸三鈣 (<span className="text-rose-600 font-bold">C3A</span>)：水化最快，釋放極高**水化熱**。\n- 鐵鋁酸四鈣 (<span className="text-rose-600 font-bold">C4AF</span>)：主要影響水泥外觀與抗硫能力。\n\n*備註：石膏 (CaSO₄·2H₂O) 之添加旨在調節 <span className="text-rose-600 font-bold">C3A</span> 之反應，避免發生「<span className="text-rose-600 font-bold">閃凝</span> (Flash Set)」。',
+          body: '水泥熟料經高溫 1450°C 燒結而成，主要四大部分為：\n- 矽酸三鈣 (<span className="text-rose-600 font-bold">C3S</span>)：水化極快，提供混凝土早期強度。\n- 矽酸二鈣 (<span className="text-rose-600 font-bold">C2S</span>)：水化緩慢，提供後期強度。\n- 鋁酸三鈣 (<span className="text-rose-600 font-bold">C3A</span>)：水化最快，釋放極高**水化熱**。\n- 鐵鋁酸四鈣 (<span className="text-rose-600 font-bold">C4AF</span>)：主要影響水泥外觀與抗硫能力。\n\n*備註：石膏 (CaSO₄·2H₂O) 之添加旨在調節 <span className="text-rose-600 font-bold">C3A</span> 之反應，避免發生「<span className="text-rose-600 font-bold">閃凝</span> (Flash Set)」。\n\n### 🚨 統測陷阱\n考題常把「早期強度(C3S)」與「快凝發熱(C3A)」搞混！請記住，C3A 對強度幾乎沒有貢獻，它最大的特徵是「反應最快、最熱、容易導致閃凝」。',
           table: {
             headers: ['化合物名稱', '簡寫代號', '水化反應速率', '水化熱釋放量', '對強度的貢獻'],
             rows: [

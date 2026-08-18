@@ -25,7 +25,7 @@ export const physicsData: SubjectData = {
       "concepts": [
         {
           "heading": "牛頓三大運動定律與建築地震<span className='text-rose-600 font-bold'>慣性力</span> (Newton's Laws & Seismic Inertia)",
-          "body": "物體運動狀態的改變源於外力作用。在建築結構工程中，<span className='text-indigo-600 font-bold'>牛頓第二定律</span> F = m·a 是地震工程學的基礎：當地面發生地震加速度 a 時，建築物自重質量 m 會產生相對應的水平<span className='text-rose-600 font-bold'>慣性力</span> (Inertia Force)。台北101大樓頂層擺設的 660 公噸風阻尼器 (TMD)，即是利用慣性反向運動來吸收強風與地震造成的結構擺<span className='text-rose-600 font-bold'>動能</span>量。",
+          "body": "物體運動狀態的改變源於外力作用。在建築結構工程中，<span className='text-indigo-600 font-bold'>牛頓第二定律</span> F = m·a 是地震工程學的基礎：當地面發生地震加速度 a 時，建築物自重質量 m 會產生相對應的水平<span className='text-rose-600 font-bold'>慣性力</span> (Inertia Force)。台北101大樓頂層擺設的 660 公噸風阻尼器 (TMD)，即是利用慣性反向運動來吸收強風與地震造成的結構擺<span className='text-rose-600 font-bold'>動能</span>量。\n\n⚠️ **統測陷阱**：計算 F=ma 時，務必注意「質量」與「重量」的差別！質量 m 單位為 kg，重量 W = mg 單位為 N。題目給公噸(t)必須先換算為 kg。\n\n🔗 **跨領域連結**：與【數學 C：平面向量】連結，地震力與風力往往需要拆解為 X 與 Y 方向的向量正交分量，以分析結構柱的受力。\n\n| 定律 | 核心精神 | 建築應用範例 |\n| :--- | :--- | :--- |\n| 第一定律 (慣性) | 合力為零，靜者恆靜 | 建築結構靜力平衡，靜止不動 |\n| 第二定律 (F=ma) | 力產生加速度 | 地震水平慣性力計算 (基底剪力) |\n| 第三定律 (作用與反作用) | 力成對出現，大小相等方向相反 | 柱底傳遞至基礎的承載力與地盤反力 |",
           "formula": "<span className=\"text-indigo-600 font-bold\">F = m · a</span>\n<span className=\"text-indigo-600 font-bold\">F_inertia = - m · a_ground</span>",
           "steps": [
             "牛頓第一定律 (慣性定律)：若物體不受外力或受合力為零，靜者恆靜，動者恆作等速度直線運動。",

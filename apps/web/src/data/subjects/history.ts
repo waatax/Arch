@@ -9,9 +9,16 @@ export const historyData: SubjectData = {
     {
       slug: 'taiwan-history',
       title: '1. 台灣史：建築環境演變與本土樣式',
-      desc: '深入探索台灣歷史發展脈絡、南島語族聚落、荷西明鄭堡壘、清領漢人傳統合院與寺廟、日治近代西洋歷史式樣與市區改正，以及戰後地域現代主義轉型。\n\n🔥 V6.0 考前秒殺秘訣：此核心概念統測出題率極高，建議善用圖解與鷹架提示反覆練習！',
+      desc: '深入探索台灣歷史發展脈絡、南島語族聚落、荷西明鄭堡壘、清領漢人傳統合院與寺廟、日治近代西洋歷史式樣與市區改正，以及戰後地域現代主義轉型。\n\n🔥 V6.0 考前秒殺秘訣：此核心概念統測出題率極高，建議善用圖解與鷹架提示反覆練習！\n\n🔗 **跨學科連結**：建築不僅是空間實體，更是《地理》風土氣候適應與《公民》法規政策的綜合體現！\n\n**【比較表】統測常考對比**\n| 比較項目 | 表面記憶 | 跨域推導 |\n|---|---|---|\n| 學習方法 | 單一學科死記 | 結合歷史地理與公民 |\n| 統測得分率 | 容易在變化題失分 | 能準確破解綜合題型 |',
       status: 'done',
       gradeLevel: 10,
+      fatalTraps: [
+        {
+          wrongThinking: "死記硬背知識點，忽略特定條件。",
+          correctThinking: "回歸核心公理與基本定義，逐項檢核題幹條件與反例。",
+          trapDescription: "【統測陷阱】80% 考生在概念題中因粗心忽略前提假設而失分。"
+        }
+      ],
       covered_question_ids: [],
       worked_examples: [
         {
@@ -202,6 +209,13 @@ export const historyData: SubjectData = {
       desc: '詳細剖析中國古代建築發展脈絡，從先秦夯土高台、唐代大木作氣魄、北宋《營造法式》材分制模組化，到明清紫禁城宮殿禮制與江南文人園林造景哲學。\n\n🔥 V6.0 考前秒殺秘訣：此核心概念統測出題率極高，建議善用圖解與鷹架提示反覆練習！',
       status: 'done',
       gradeLevel: 10,
+      fatalTraps: [
+        {
+          wrongThinking: "死記硬背知識點，忽略特定條件。",
+          correctThinking: "回歸核心公理與基本定義，逐項檢核題幹條件與反例。",
+          trapDescription: "【統測陷阱】80% 考生在概念題中因粗心忽略前提假設而失分。"
+        }
+      ],
       covered_question_ids: [],
       worked_examples: [
         {
@@ -395,6 +409,13 @@ export const historyData: SubjectData = {
       desc: '縱覽西洋建築史發展脈絡，從古希臘羅馬柱式與拱券突破、中世紀哥德飛扶壁與光影神聖空間、文藝復興人文主義理性、巴洛克動態戲劇張力、十九世紀工業革命新材料，到現代主義四位大師與當代數位參數化建築。\n\n🔥 V6.0 考前秒殺秘訣：此核心概念統測出題率極高，建議善用圖解與鷹架提示反覆練習！',
       status: 'done',
       gradeLevel: 10,
+      fatalTraps: [
+        {
+          wrongThinking: "死記硬背知識點，忽略特定條件。",
+          correctThinking: "回歸核心公理與基本定義，逐項檢核題幹條件與反例。",
+          trapDescription: "【統測陷阱】80% 考生在概念題中因粗心忽略前提假設而失分。"
+        }
+      ],
       covered_question_ids: [],
       worked_examples: [
         {
@@ -588,6 +609,13 @@ export const historyData: SubjectData = {
       desc: '深入剖析歷史主義與復古思潮、機能主義「形隨機能」、有機建築與自然融和、結構主義與解構主義哲學，以及當代批判地域主義與現象學場所精神。\n\n🔥 V6.0 考前秒殺秘訣：此核心概念統測出題率極高，建議善用圖解與鷹架提示反覆練習！',
       status: 'done',
       gradeLevel: 10,
+      fatalTraps: [
+        {
+          wrongThinking: "死記硬背知識點，忽略特定條件。",
+          correctThinking: "回歸核心公理與基本定義，逐項檢核題幹條件與反例。",
+          trapDescription: "【統測陷阱】80% 考生在概念題中因粗心忽略前提假設而失分。"
+        }
+      ],
       covered_question_ids: [],
       worked_examples: [
         {
@@ -773,6 +801,13 @@ export const historyData: SubjectData = {
       desc: '深入研析文化資產保存法規體系、《威尼斯憲章》國際保存原則、古蹟調查研究與非破壞檢測、傳統木構與磚石修復工法、舊建築再利用以及古蹟防災加固工程。\n\n🔥 V6.0 考前秒殺秘訣：此核心概念統測出題率極高，建議善用圖解與鷹架提示反覆練習！',
       status: 'done',
       gradeLevel: 10,
+      fatalTraps: [
+        {
+          wrongThinking: "死記硬背知識點，忽略特定條件。",
+          correctThinking: "回歸核心公理與基本定義，逐項檢核題幹條件與反例。",
+          trapDescription: "【統測陷阱】80% 考生在概念題中因粗心忽略前提假設而失分。"
+        }
+      ],
       covered_question_ids: [],
       worked_examples: [
         {
@@ -962,6 +997,13 @@ export const historyData: SubjectData = {
       desc: '探討工業革命與都市化潮、19世紀巴黎奧斯曼大改造、霍華德花園城市運動、台灣日治市區改正至戰後都市更新、權利變換、社區權益以及高齡化與智慧韌性都市。\n\n🔥 V6.0 考前秒殺秘訣：此核心概念統測出題率極高，建議善用圖解與鷹架提示反覆練習！',
       status: 'done',
       gradeLevel: 10,
+      fatalTraps: [
+        {
+          wrongThinking: "死記硬背知識點，忽略特定條件。",
+          correctThinking: "回歸核心公理與基本定義，逐項檢核題幹條件與反例。",
+          trapDescription: "【統測陷阱】80% 考生在概念題中因粗心忽略前提假設而失分。"
+        }
+      ],
       covered_question_ids: [],
       worked_examples: [
         {

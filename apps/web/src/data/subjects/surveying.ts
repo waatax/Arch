@@ -27,14 +27,15 @@ export const surveyingData: SubjectData = {
       concepts: [
         {
           heading: '距離測量方法與鋼卷尺五大修正公式',
-          body: '距離測量為測量學中**最基本的要素之一**。鋼卷尺直接量距受到<span className="text-rose-600 font-bold">溫度、拉力、垂降、斜率及海平面投影</span>等物理因素影響，必須施加**五大系統誤差修正**，才能求得標準水平距離。掌握這五個公式的物理意義是統測必考關鍵。',
+          body: '距離測量為測量學中**最基本的要素之一**。鋼卷尺直接量距受到<span className="text-rose-600 font-bold">溫度、拉力、垂降、斜率及海平面投影</span>等物理因素影響，必須施加**五大系統誤差修正**，才能求得標準水平距離。掌握這五個公式的物理意義是統測必考關鍵。\n\n**🔄 跨科連結：** 此處求得的精確水平距離，將直接應用於《製圖實習》中建築平面圖放樣（如 1:100 比例尺縮放），製圖的精準度完全依賴測量數據的可靠性。',
           formula: '溫度修正: Ct = α · L · (T - T0)\n拉力修正: Cp = (P - P0) · L / (A · E)\n垂降修正: Cs = - (w² · L³) / (24 · P²)\n斜率修正: Ch = - h² / (2 · L)\n海平面修正: Cg = - L · H / R',
           steps: [
             '<span className="text-indigo-600 font-bold">溫度修正 (Ct)</span>：α 為鋼熱膨脹係數，T 為實測溫度，T0 為標準溫度。**熱脹冷縮**，實測溫度高於標準時修正量為正。',
             '<span className="text-indigo-600 font-bold">拉力修正 (Cp)</span>：P 為實測拉力，P0 為標準拉力。拉力大於標準時，鋼尺被拉長，讀數變小，修正量為正。',
             '<span className="text-indigo-600 font-bold">垂降修正 (Cs)</span>：w 為單位長度重，P 為拉力。懸空量距時鋼尺因自重下垂呈懸鏈線，使讀數偏大，**修正量恆為負**。',
             '<span className="text-indigo-600 font-bold">斜率修正 (Ch)</span>：h 為高差，L 為斜距。將斜面距離換算為水平距離，**修正量恆為負**。',
-            '<span className="text-indigo-600 font-bold">海平面修正 (Cg)</span>：H 為平均高程，R 為地球半徑。將地面距離投影至平均海平面 (MSL)，**高於海平面時修正量恆為負**。'
+            '<span className="text-indigo-600 font-bold">海平面修正 (Cg)</span>：H 為平均高程，R 為地球半徑。將地面距離投影至平均海平面 (MSL)，**高於海平面時修正量恆為負**。',
+            '⚠️ **統測陷阱 (Exam Trap)：** 考生常死背公式而忽略物理意義。請牢記：垂降、斜率、海平面這三項的修正量**恆為負值**！若計算出正值必為代入錯誤。'
           ]
         },
         {
@@ -80,7 +81,7 @@ export const surveyingData: SubjectData = {
         },
         {
           heading: '角度與距離測量之系統誤差與偶然誤差綜合分析',
-          body: '測量作業中之誤差按其性質可分為<span className="text-indigo-600 font-bold">系統誤差 (Systematic Errors)</span> 與<span className="text-rose-600 font-bold">偶然誤差 (Random Errors)</span>。系統誤差具備固定物理規律可公式消去；偶然誤差符合常態分布，需透過統計平差。',
+          body: '測量作業中之誤差按其性質可分為<span className="text-indigo-600 font-bold">系統誤差 (Systematic Errors)</span> 與<span className="text-rose-600 font-bold">偶然誤差 (Random Errors)</span>。系統誤差具備固定物理規律可公式消去；偶然誤差符合常態分布，需透過統計平差。\n\n| 誤差特性 | 系統誤差 (Systematic Error) | 偶然誤差 (Random Error) |\n| :--- | :--- | :--- |\n| **發生規律** | 具備一定大小與方向的物理規律 | 大小與符號隨機，正負機率相等 |\n| **累積性質** | 隨測量次數成正比累積 | 隨測量次數的平方根 (√n) 累積 |\n| **消除方法** | 公式修正、正倒鏡觀測對消 | 增加觀測次數、最小平方法 |\n| **常見範例** | 鋼尺熱脹冷縮、儀器指標差 | 估讀尾數誤差、微風吹動 |',
           table: {
             headers: ['誤差類別', '誤差名稱', '來源分類', '控制與消差對策'],
             rows: [
