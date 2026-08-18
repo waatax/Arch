@@ -15,10 +15,10 @@ export const chemistryData: SubjectData = {
       "covered_question_ids": [],
       "worked_examples": [
         {
-          question: '【步驟化例題】塗料高分子與 **<span className='text-rose-600 font-bold'>VOCs</span>** 揮發機制：某水性乳膠漆標示總**<span className='text-indigo-600 font-bold'>揮發性有機化合物</span>** (**<span className='text-indigo-600 font-bold'>TVOC</span>**) 含量為 20 g/L。若一室內牆面塗刷 50 公升該乳膠漆，求施工過程可能散發之最大 **<span className='text-indigo-600 font-bold'>TVOC</span>** 重量（克 g）為多少？',
+          question: '【步驟化例題】塗料高分子與 **<span className="text-rose-600 font-bold">VOCs</span>** 揮發機制：某水性乳膠漆標示總**<span className="text-indigo-600 font-bold">揮發性有機化合物</span>** (**<span className="text-indigo-600 font-bold">TVOC</span>**) 含量為 20 g/L。若一室內牆面塗刷 50 公升該乳膠漆，求施工過程可能散發之最大 **<span className="text-indigo-600 font-bold">TVOC</span>** 重量（克 g）為多少？',
           difficulty: '基礎',
           steps: [ "步驟 1：分析 **<span className='text-indigo-600 font-bold'>TVOC</span>** 單位定義。20 g/L 表示每公升塗料含 20 克 **<span className='text-rose-600 font-bold'>VOCs</span>**。", "步驟 2：列計算式。總 **<span className='text-rose-600 font-bold'>VOCs</span>** 重量 = 塗料體積 × 單位 **<span className='text-indigo-600 font-bold'>TVOC</span>** 含量 = 50 L × 20 g/L。", "步驟 3：計算解答。50 × 20 = 1000 g (或 1.0 kg)。" ], 
-          answer: '最大散發 **<span className='text-indigo-600 font-bold'>TVOC</span>** 重量為 1000 公克 (1.0 kg)。'
+          answer: '最大散發 **<span className="text-indigo-600 font-bold">TVOC</span>** 重量為 1000 公克 (1.0 kg)。'
         }
       ],
       "illustrations": ['chemistry-context.webp', 'chemistry-mechanism.webp', 'chemistry-comparison.webp', 'chemistry-step.webp', 'chemistry-real-world.webp', 'concept-diagram.webp', 'formula-visual.webp'],
@@ -406,7 +406,7 @@ export const chemistryData: SubjectData = {
       "covered_question_ids": [],
       "worked_examples": [
         {
-          question: '【步驟化例題】**<span className='text-rose-600 font-bold'>酸雨</span>**侵蝕大理石化學計算：大理石主成分為碳酸鈣 (CaCO3)。若**<span className='text-rose-600 font-bold'>酸雨</span>**中含有 0.05 M 之稀硫酸 (H2SO4)，反應式為 CaCO3 + H2SO4 → CaSO4 + H2O + CO2。10 公升該**<span className='text-rose-600 font-bold'>酸雨</span>**最多可溶解多少公克碳酸鈣？(Ca=40, C=12, O=16)',
+          question: '【步驟化例題】**<span className="text-rose-600 font-bold">酸雨</span>**侵蝕大理石化學計算：大理石主成分為碳酸鈣 (CaCO3)。若**<span className="text-rose-600 font-bold">酸雨</span>**中含有 0.05 M 之稀硫酸 (H2SO4)，反應式為 CaCO3 + H2SO4 → CaSO4 + H2O + CO2。10 公升該**<span className="text-rose-600 font-bold">酸雨</span>**最多可溶解多少公克碳酸鈣？(Ca=40, C=12, O=16)',
           difficulty: '中等',
           steps: [ "步驟 1：計算 H2SO4 **<span className='text-rose-600 font-bold'>莫耳數</span>**。n = M × V = 0.05 mol/L × 10 L = 0.5 mol。", "步驟 2：由**<span className='text-rose-600 font-bold'>莫耳數</span>**比 (1:1) 求溶解之 CaCO3 **<span className='text-rose-600 font-bold'>莫耳數</span>** = 0.5 mol。", "步驟 3：**<span className='text-rose-600 font-bold'>莫耳數</span>**換算質量。CaCO3 分子量 100。m = 0.5 mol × 100 g/mol = 50 g。" ], 
           answer: '最多可溶解 50 公克碳酸鈣。'
@@ -799,7 +799,7 @@ export const chemistryData: SubjectData = {
           question: '【步驟化例題】高分子建材環氧樹脂 (Epoxy) 固化化學：環氧樹脂由環氧單體與胺類固化劑 (Amine Hardener) 混合，其分子間形成網狀交聯結構之反應類型屬於何者？固化後是否可再次加熱熔融？',
           difficulty: '基礎',
           steps: [ "步驟 1：辨析高分子固化類型。環氧官能基與胺基發生交聯**<span className='text-rose-600 font-bold'>加成聚合</span>**反應。", "步驟 2：區分**<span className='text-rose-600 font-bold'>熱塑性</span>**與**<span className='text-rose-600 font-bold'>熱固性</span>**。網狀交聯高分子屬於「**<span className='text-rose-600 font-bold'>熱固性</span>**高分子 (Thermosetting Polymer)」。", "步驟 3：判定受熱行為。**<span className='text-rose-600 font-bold'>熱固性</span>**高分子受熱不熔融只會在高溫下炭化分解。" ], 
-          answer: '屬於交聯**<span className='text-rose-600 font-bold'>加成聚合</span>**反應；固化後屬於「**<span className='text-rose-600 font-bold'>熱固性</span>**高分子」，無法再次加熱熔融。'
+          answer: '屬於交聯**<span className="text-rose-600 font-bold">加成聚合</span>**反應；固化後屬於「**<span className="text-rose-600 font-bold">熱固性</span>**高分子」，無法再次加熱熔融。'
         }
       ],
       "illustrations": ['chemistry-context.webp', 'chemistry-mechanism.webp', 'chemistry-comparison.webp', 'chemistry-step.webp', 'chemistry-real-world.webp', 'concept-diagram.webp', 'formula-visual.webp'],
@@ -999,7 +999,7 @@ export const chemistryData: SubjectData = {
       "covered_question_ids": [],
       "worked_examples": [
         {
-          question: '【步驟化例題】**<span className='text-rose-600 font-bold'>光觸媒</span>** TiO2 降解室內甲醛化學：奈米**<span className='text-rose-600 font-bold'>二氧化鈦</span>** (TiO2) **<span className='text-rose-600 font-bold'>光觸媒</span>**在紫外光照射下產生羥基自由基 (·OH)，將室內**<span className='text-indigo-600 font-bold'>甲醛 (HCHO)</span>** 催化氧化為無害產物。請寫出甲醛完全催化氧化的化學反應產物。',
+          question: '【步驟化例題】**<span className="text-rose-600 font-bold">光觸媒</span>** TiO2 降解室內甲醛化學：奈米**<span className="text-rose-600 font-bold">二氧化鈦</span>** (TiO2) **<span className="text-rose-600 font-bold">光觸媒</span>**在紫外光照射下產生羥基自由基 (·OH)，將室內**<span className="text-indigo-600 font-bold">甲醛 (HCHO)</span>** 催化氧化為無害產物。請寫出甲醛完全催化氧化的化學反應產物。',
           difficulty: '基礎',
           steps: [ "步驟 1：分析甲醛化學元素成分。甲醛分子式為 HCHO (含 C, H, O)。", "步驟 2：了解強氧化劑 ·OH 作用。將碳水化合物完全氧化。", "步驟 3：確定完全氧化產物。最終轉化為水 (H2O) 與二氧化碳 (CO2)。" ], 
           answer: '完全氧化產物為「二氧化碳 (CO2)」與「水 (H2O)」。'

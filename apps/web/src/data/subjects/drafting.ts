@@ -31,14 +31,14 @@ export const draftingData: SubjectData = {
       concepts: [
         {
           heading: 'CNS 建築與工程圖線條分類與粗細規範 (CNS 11567 / CNS 3)',
-          body: '在工程圖學中，不同線型與線寬代表明確的幾何意義與施工指示。**CNS** 規範將工程圖面線條分為粗線、中線、細線三種級距，比例通常為 <span className='text-rose-600 font-bold'>4:2:1</span> (如 0.5mm / 0.35mm / 0.25mm)。當多種線條在同一位置重疊時，必須嚴格遵守相交與繪製優先順序。',
+          body: '在工程圖學中，不同線型與線寬代表明確的幾何意義與施工指示。**CNS** 規範將工程圖面線條分為粗線、中線、細線三種級距，比例通常為 <span className="text-rose-600 font-bold">4:2:1</span> (如 0.5mm / 0.35mm / 0.25mm)。當多種線條在同一位置重疊時，必須嚴格遵守相交與繪製優先順序。',
           steps: [
-            '<span className='text-rose-600 font-bold'>輪廓線</span>/實線 (**Visible Outline**) 優先級最高，不可被其他線條覆蓋。',
-            '<span className='text-indigo-600 font-bold'>隱藏線</span>/虛線 (**Hidden Line**) 優先級第二，表示被遮擋之構造。',
-            '<span className='text-rose-600 font-bold'>割面線</span>/切面線 (**Cutting Plane Line**) 優先級第三，指明剖切位置。',
+            '<span className="text-rose-600 font-bold">輪廓線</span>/實線 (**Visible Outline**) 優先級最高，不可被其他線條覆蓋。',
+            '<span className="text-indigo-600 font-bold">隱藏線</span>/虛線 (**Hidden Line**) 優先級第二，表示被遮擋之構造。',
+            '<span className="text-rose-600 font-bold">割面線</span>/切面線 (**Cutting Plane Line**) 優先級第三，指明剖切位置。',
             '中心線/軸線 (**Center Line**) 優先級第四，表示圓心或結構軸線。',
             '假想線 (**Phantom Line**) 優先級第五，表示移動極限或鄰接構件。',
-            '<span className='text-rose-600 font-bold'>尺寸線</span>與延伸線 (**Dimension Line**) 優先級最低。'
+            '<span className="text-rose-600 font-bold">尺寸線</span>與延伸線 (**Dimension Line**) 優先級最低。'
           ],
           table: {
             headers: ['線型名稱', 'CNS 規範線型', '建議線寬 (mm)', '主要用途與說明'],
@@ -96,7 +96,7 @@ export const draftingData: SubjectData = {
             '虛線與實線垂直或相交時，虛線的劃線部分應與實線相接（不可留有間隙）。',
             '虛線為實線之直續延長線時，兩線相接處應留有約 1mm 之間隙以示區隔。',
             '兩虛線相交時，應在實線段處相交（形成十或丁字形），不可交叉在間隙處。',
-            '中心線超越物件<span className='text-rose-600 font-bold'>輪廓線</span>之長度應為 2 ~ 5 mm，且不得終止於<span className='text-rose-600 font-bold'>輪廓線</span>上。'
+            '中心線超越物件<span className="text-rose-600 font-bold">輪廓線</span>之長度應為 2 ~ 5 mm，且不得終止於<span className="text-rose-600 font-bold">輪廓線</span>上。'
           ]
         }
       ],
@@ -105,7 +105,7 @@ export const draftingData: SubjectData = {
           difficulty: '基礎',
           question: '在 CNS 建築製圖規範中，當實線（輪廓線）、虛線（隱藏線）與中心線在圖面同一位置重疊時，應優先繪製哪一種線條？',
           steps: [
-            '根據 CNS 線條重疊優先順序：實線 (可見輪廓線) > 虛線 (隱藏線) > 割面線 > 中心線 > 假想線 > <span className='text-rose-600 font-bold'>尺寸線</span>。',
+            '根據 CNS 線條重疊優先順序：實線 (可見輪廓線) > 虛線 (隱藏線) > 割面線 > 中心線 > 假想線 > <span className="text-rose-600 font-bold">尺寸線</span>。',
             '因此當三者重疊時，應優先繪製實線。'
           ],
           answer: '實線 (可見輪廓線)'
@@ -290,7 +290,7 @@ export const draftingData: SubjectData = {
         },
         {
           heading: '第一角法與第三角法嚴格比較',
-          body: '依據物體在空間四個象限中的放置位置，分為<span className='text-rose-600 font-bold'>第一角法</span>（歐洲常用）與<span className='text-rose-600 font-bold'>第三角法</span>（台灣 **CNS**、美國、日本常用）。兩者投影視圖之相對排列位置截然不同。',
+          body: '依據物體在空間四個象限中的放置位置，分為<span className="text-rose-600 font-bold">第一角法</span>（歐洲常用）與<span className="text-rose-600 font-bold">第三角法</span>（台灣 **CNS**、美國、日本常用）。兩者投影視圖之相對排列位置截然不同。',
           table: {
             headers: ['比較項目', '第一角法 (First-angle)', '第三角法 (Third-angle)', '記憶與辨識技巧'],
             rows: [
@@ -336,9 +336,9 @@ export const draftingData: SubjectData = {
           difficulty: '基礎',
           question: '在第三角法正投影中，若一物體前視圖的高為 40 mm、長為 60 mm，右側視圖的寬為 30 mm，求解俯視圖的「長度」與「寬度」，並說明俯視圖相對於前視圖之繪製位置。',
           steps: [
-            '<span className='text-rose-600 font-bold'>長對正</span>：俯視圖長度 = 前視圖長度 = 60 mm。',
-            '<span className='text-rose-600 font-bold'>寬相等</span>：俯視圖寬度 = 右側視圖寬度 = 30 mm。',
-            '<span className='text-rose-600 font-bold'>第三角法</span>相對位置：俯視圖繪製於前視圖的正上方。'
+            '<span className="text-rose-600 font-bold">長對正</span>：俯視圖長度 = 前視圖長度 = 60 mm。',
+            '<span className="text-rose-600 font-bold">寬相等</span>：俯視圖寬度 = 右側視圖寬度 = 30 mm。',
+            '<span className="text-rose-600 font-bold">第三角法</span>相對位置：俯視圖繪製於前視圖的正上方。'
           ],
           answer: '俯視圖長 60 mm, 寬 30 mm，繪製於前視圖正上方。'
         },
@@ -356,9 +356,9 @@ export const draftingData: SubjectData = {
           difficulty: '進階',
           question: '詳細說明「第一角法」與「第三角法」在右側視圖與俯視圖之排列位置差異。中華民國國家標準 CNS 建築製圖規定採用何種投影法？',
           steps: [
-            '<span className='text-rose-600 font-bold'>第一角法</span>：俯視圖畫在 前視圖下方；右側視圖畫在 前視圖左側。',
-            '<span className='text-rose-600 font-bold'>第三角法</span>：俯視圖畫在 前視圖上方；右側視圖畫在 前視圖右側。',
-            '**CNS** 規範：**CNS** 規範規定台灣工程與建築製圖統一採用「<span className='text-rose-600 font-bold'>第三角法</span>」。'
+            '<span className="text-rose-600 font-bold">第一角法</span>：俯視圖畫在 前視圖下方；右側視圖畫在 前視圖左側。',
+            '<span className="text-rose-600 font-bold">第三角法</span>：俯視圖畫在 前視圖上方；右側視圖畫在 前視圖右側。',
+            '**CNS** 規範：**CNS** 規範規定台灣工程與建築製圖統一採用「<span className="text-rose-600 font-bold">第三角法</span>」。'
           ],
           answer: '第一角法俯視在下方/右側視在左側；第三角法俯視在上/右側視在右。CNS 規定採用第三角法。'
         },
@@ -366,7 +366,7 @@ export const draftingData: SubjectData = {
           difficulty: '高頻統測題',
           question: '正投影三視圖繪製時，前視圖與側視圖之間必須符合下列哪一幾何對齊原則？ (A) 長對正 (B) 高平齊 (C) 寬相等 (D) 角度相等。',
           steps: [
-            '前視圖與側視圖均包含 Z 軸高度，故符合「<span className='text-rose-600 font-bold'>高平齊</span>」原則。故 (**B**) 正確。'
+            '前視圖與側視圖均包含 Z 軸高度，故符合「<span className="text-rose-600 font-bold">高平齊</span>」原則。故 (**B**) 正確。'
           ],
           answer: '(B) 高平齊'
         }
@@ -395,16 +395,16 @@ export const draftingData: SubjectData = {
       concepts: [
         {
           heading: '剖面圖目的與割面線 (Cutting Plane Line) 符號',
-          body: '為表達物體內部複雜構造，假想以割面將物體切開，移去靠近觀察者的部分後繪製視圖。<span className='text-rose-600 font-bold'>割面線</span>用以指示切割位置與觀察方向。',
+          body: '為表達物體內部複雜構造，假想以割面將物體切開，移去靠近觀察者的部分後繪製視圖。<span className="text-rose-600 font-bold">割面線</span>用以指示切割位置與觀察方向。',
           steps: [
-            '<span className='text-rose-600 font-bold'>割面線</span>線型：採用粗長雙短劃線或兩端加粗之長單點劃線。',
-            '箭號方向：<span className='text-rose-600 font-bold'>割面線</span>兩端繪製垂直箭號，箭號指向觀察者觀看的方向（即留下的部分）。',
-            '割面命名：箭號旁標註大寫英文字母（如 A-A, B-B），圖名相應寫為「A-A <span className='text-indigo-600 font-bold'>剖面圖</span>」。'
+            '<span className="text-rose-600 font-bold">割面線</span>線型：採用粗長雙短劃線或兩端加粗之長單點劃線。',
+            '箭號方向：<span className="text-rose-600 font-bold">割面線</span>兩端繪製垂直箭號，箭號指向觀察者觀看的方向（即留下的部分）。',
+            '割面命名：箭號旁標註大寫英文字母（如 A-A, B-B），圖名相應寫為「A-A <span className="text-indigo-600 font-bold">剖面圖</span>」。'
           ]
         },
         {
           heading: '五大剖面視圖類型與適用時機',
-          body: '根據切割範圍與方式的不同，<span className='text-indigo-600 font-bold'>剖面圖</span>分為全剖、半剖、局部剖、旋轉剖與移轉剖，用以應對不同幾何零件。',
+          body: '根據切割範圍與方式的不同，<span className="text-indigo-600 font-bold">剖面圖</span>分為全剖、半剖、局部剖、旋轉剖與移轉剖，用以應對不同幾何零件。',
           table: {
             headers: ['剖面類型', '割面切割範圍', '表示法與輪廓特徵', '最佳適用場合'],
             rows: [
@@ -418,17 +418,17 @@ export const draftingData: SubjectData = {
         },
         {
           heading: 'CNS 剖面線 (Hatching) 畫法規範',
-          body: '被割面切到之實體材質部分必須繪製<span className='text-indigo-600 font-bold'>剖面線</span>，其線型、角度與間距必須嚴格遵守 **CNS** 規定。',
-          formula: '<span className='text-indigo-600 font-bold'>剖面線</span>角度：與主要<span className='text-rose-600 font-bold'>輪廓線</span>或圖紙基線成 45° 角\n<span className='text-indigo-600 font-bold'>剖面線</span>線型：細實線 (0.18 ~ 0.25mm)\n間距：均勻一致，通常為 1.5mm ~ 3.0mm (依圖形大小調整)',
+          body: '被割面切到之實體材質部分必須繪製<span className="text-indigo-600 font-bold">剖面線</span>，其線型、角度與間距必須嚴格遵守 **CNS** 規定。',
+          formula: '<span className="text-indigo-600 font-bold">剖面線</span>角度：與主要<span className="text-rose-600 font-bold">輪廓線</span>或圖紙基線成 45° 角\n<span className="text-indigo-600 font-bold">剖面線</span>線型：細實線 (0.18 ~ 0.25mm)\n間距：均勻一致，通常為 1.5mm ~ 3.0mm (依圖形大小調整)',
           steps: [
-            '同一零件在不同視圖中的<span className='text-indigo-600 font-bold'>剖面線</span>，其方向與間距必須完全一致。',
-            '相鄰之不同零件，<span className='text-indigo-600 font-bold'>剖面線</span>方向應互成 90°（如一為 +45°，一為 -45°）或改變間距以示區別。',
-            '<span className='text-indigo-600 font-bold'>剖面線</span>內若有文字或尺寸數字，<span className='text-indigo-600 font-bold'>剖面線</span>必須中斷，不可穿過數字。'
+            '同一零件在不同視圖中的<span className="text-indigo-600 font-bold">剖面線</span>，其方向與間距必須完全一致。',
+            '相鄰之不同零件，<span className="text-indigo-600 font-bold">剖面線</span>方向應互成 90°（如一為 +45°，一為 -45°）或改變間距以示區別。',
+            '<span className="text-indigo-600 font-bold">剖面線</span>內若有文字或尺寸數字，<span className="text-indigo-600 font-bold">剖面線</span>必須中斷，不可穿過數字。'
           ]
         },
         {
           heading: '剖切時「不剖 (Not Sectioned)」之標準物件規定',
-          body: '**CNS** 規範中，某些實心零件或薄板構造若沿其軸向/縱向剖切時，習慣上「不畫<span className='text-indigo-600 font-bold'>剖面線</span>」（保持實心外觀），以維護圖面清晰。',
+          body: '**CNS** 規範中，某些實心零件或薄板構造若沿其軸向/縱向剖切時，習慣上「不畫<span className="text-indigo-600 font-bold">剖面線</span>」（保持實心外觀），以維護圖面清晰。',
           table: {
             headers: ['不剖零件分類', '代表性物件', '不剖原因與原則'],
             rows: [
@@ -440,7 +440,7 @@ export const draftingData: SubjectData = {
         },
         {
           heading: 'AutoCAD 剖面填充 (HATCH) 指令管理表',
-          body: '在 CAD 中利用 HATCH 指令填充<span className='text-indigo-600 font-bold'>剖面圖</span>案，並管理邊界與圖案縮放比例。',
+          body: '在 CAD 中利用 HATCH 指令填充<span className="text-indigo-600 font-bold">剖面圖</span>案，並管理邊界與圖案縮放比例。',
           table: {
             headers: ['指令 / 快捷鍵', '重要選項與參數', 'CNS 繪圖設定建議'],
             rows: [
@@ -457,7 +457,7 @@ export const draftingData: SubjectData = {
           difficulty: '基礎',
           question: '繪製機械或建築構件剖面圖時，下列哪一組零件在沿其「軸線方向 (縱向)」被割面切開時，依據 CNS 規範「不需要」繪製剖面線？ (A) 鋼管、空心圓筒 (B) 實心軸、螺栓、銷 (C) 引擎氣缸、水箱 (D) 管道接頭、法蘭。',
           steps: [
-            '依據 **CNS** 規範，實心標準件（如實心軸、螺栓、螺帽、銷、鉚釘、鋼珠）沿軸向剖切時不畫<span className='text-indigo-600 font-bold'>剖面線</span>。故 (**B**) 正確。'
+            '依據 **CNS** 規範，實心標準件（如實心軸、螺栓、螺帽、銷、鉚釘、鋼珠）沿軸向剖切時不畫<span className="text-indigo-600 font-bold">剖面線</span>。故 (**B**) 正確。'
           ],
           answer: '(B) 實心軸、螺栓、銷'
         },
@@ -474,8 +474,8 @@ export const draftingData: SubjectData = {
           difficulty: '進階',
           question: '在一由螺栓鎖固的兩相鄰鋼板組合體全剖面圖中，試說明：(1) 兩相鄰鋼板之剖面線應如何畫以示區別？ (2) 穿過鋼板之螺栓本體是否繪製剖面線？ (3) 若其中包含極薄之鋼鈑切面，CNS 規範有何特殊替代畫法？',
           steps: [
-            '(1) 兩相鄰零件之<span className='text-indigo-600 font-bold'>剖面線</span>方向應互成 90° (一為 +45°，一為 -45°/135°)，或改變斜線間距。',
-            '(2) 螺栓為實心標準件，沿軸線剖切時不畫<span className='text-indigo-600 font-bold'>剖面線</span>。',
+            '(1) 兩相鄰零件之<span className="text-indigo-600 font-bold">剖面線</span>方向應互成 90° (一為 +45°，一為 -45°/135°)，或改變斜線間距。',
+            '(2) 螺栓為實心標準件，沿軸線剖切時不畫<span className="text-indigo-600 font-bold">剖面線</span>。',
             '(3) 極薄斷面 (如薄鋼鈑) 可直接塗黑 (**Solid Block**) 表示，相鄰薄件之間留白不小於 0.7mm 間隙。'
           ],
           answer: '(1) 剖面線方向互成 90°；(2) 螺栓不畫剖面線；(3) 可塗黑表示並留白間隙。'
@@ -513,7 +513,7 @@ export const draftingData: SubjectData = {
       concepts: [
         {
           heading: '建築平面圖定義與水平切面高',
-          body: '建築**平面圖** (**Architectural Floor Plan**) 實質上為「水平<span className='text-indigo-600 font-bold'>剖面圖</span>」。係假想以一水平割面將建築物切開，移去上方部分後向下**正投影**所獲得之俯視圖。',
+          body: '建築**平面圖** (**Architectural Floor Plan**) 實質上為「水平<span className="text-indigo-600 font-bold">剖面圖</span>」。係假想以一水平割面將建築物切開，移去上方部分後向下**正投影**所獲得之俯視圖。',
           steps: [
             '假想割面位置：設定於當層地板面 (**FL**) 上方約 1.2 m ~ 1.5 m 處（即高於窗台高度）。',
             '投影方向：將割面下方之建物結構與設備向下進行**正投影**。',
@@ -675,7 +675,7 @@ export const draftingData: SubjectData = {
           body: '**立面圖**為 2D 投影圖，為表達建築物體塊的前後進退深度，必須善用「線寬階級」與「45° 陰影線」。',
           steps: [
             '最前景線條（如最靠近觀察者的陽台、柱）：採用最粗實線 (0.5 ~ 0.7mm)。',
-            '主牆面<span className='text-rose-600 font-bold'>輪廓線</span>：採用中粗實線 (0.35 ~ 0.5mm)。',
+            '主牆面<span className="text-rose-600 font-bold">輪廓線</span>：採用中粗實線 (0.35 ~ 0.5mm)。',
             '背景與遠景線條（後退之牆面）：採用細實線 (0.18 ~ 0.25mm)。',
             '陰影繪製：假想太陽光由左上方 45° 角照射，於陽台底面、雨遮下方繪製 45° 細斜線陰影，大幅增強立體感。'
           ]
@@ -761,10 +761,10 @@ export const draftingData: SubjectData = {
           heading: 'CNS 11567 尺寸標註四大要素',
           body: '任何工程圖面之尺寸標註必須完整且無歧義。一個完整的尺寸標註包含四個主要幾何要素。',
           steps: [
-            '<span className='text-rose-600 font-bold'>尺寸界線</span> (**Extension Line**)：由圖形特徵點引出之細實線，需垂直於被標註線段，超出<span className='text-rose-600 font-bold'>尺寸線</span>約 2 ~ 3 mm。',
-            '<span className='text-rose-600 font-bold'>尺寸線</span> (**Dimension Line**)：平行於被標註線段之細實線，兩端終止於<span className='text-rose-600 font-bold'>尺寸界線</span>。',
+            '<span className="text-rose-600 font-bold">尺寸界線</span> (**Extension Line**)：由圖形特徵點引出之細實線，需垂直於被標註線段，超出<span className="text-rose-600 font-bold">尺寸線</span>約 2 ~ 3 mm。',
+            '<span className="text-rose-600 font-bold">尺寸線</span> (**Dimension Line**)：平行於被標註線段之細實線，兩端終止於<span className="text-rose-600 font-bold">尺寸界線</span>。',
             '尺寸終點符號 (**Terminator**)：建築圖常用 45° 粗短斜線或滿心箭號/圓點；機械圖常用 3:1 滿心箭號。',
-            '尺寸數字 (**Dimension Text**)：標示實物實際尺寸，通常位於水平<span className='text-rose-600 font-bold'>尺寸線</span>上置中上方 1mm 處，或垂直<span className='text-rose-600 font-bold'>尺寸線</span>左側向左旋轉 90° 閱讀。'
+            '尺寸數字 (**Dimension Text**)：標示實物實際尺寸，通常位於水平<span className="text-rose-600 font-bold">尺寸線</span>上置中上方 1mm 處，或垂直<span className="text-rose-600 font-bold">尺寸線</span>左側向左旋轉 90° 閱讀。'
           ]
         },
         {

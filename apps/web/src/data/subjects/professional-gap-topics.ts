@@ -10,8 +10,8 @@ const quiz = (question: string, steps: string[], answer: string, difficulty = '�
 const checks = (topic: string, invariant: string, unit: string) => [
   quiz(`${topic}解題時，第一個必須確認的模型條件是什麼？`, [`辨識題目屬於**${topic}**，先畫出<span className='text-indigo-600 font-bold'>自由體圖 (FBD)</span> 或整理已知量。`, `確認 <span className='text-rose-600 font-bold'>${invariant}</span> 成立後再代入公式。`], invariant, '觀念'),
   quiz(`${topic}計算完成後，最直接的量綱檢核為何？`, [`逐項檢查輸入單位是否一致。`, `結果應以 **${unit}** 表達；不符時不可只改單位符號，須回推計算過程。`], unit, '觀念'),
-  quiz(`${topic}結果出現負號時，正確處理方式為何？`, ['回到原先設定的<span className='text-indigo-600 font-bold'>正方向</span>或轉向。', '負號僅表示<span className='text-rose-600 font-bold'>實際方向與假設相反</span>，不代表答案必然錯誤。'], '保留大小並依符號修正實際方向', '易錯題'),
-  quiz(`${topic}最可靠的最後驗算策略為何？`, ['使用<span className='text-indigo-600 font-bold'>未參與主要求解的獨立關係</span>重新計算。', '同時檢查極端情況、方向與<span className='text-rose-600 font-bold'>有效數字</span>合理性。'], '以獨立關係複核並檢查方向、量綱與合理性', '進階'),
+  quiz(`${topic}結果出現負號時，正確處理方式為何？`, ['回到原先設定的<span className="text-indigo-600 font-bold">正方向</span>或轉向。', '負號僅表示<span className="text-rose-600 font-bold">實際方向與假設相反</span>，不代表答案必然錯誤。'], '保留大小並依符號修正實際方向', '易錯題'),
+  quiz(`${topic}最可靠的最後驗算策略為何？`, ['使用<span className="text-indigo-600 font-bold">未參與主要求解的獨立關係</span>重新計算。', '同時檢查極端情況、方向與<span className="text-rose-600 font-bold">有效數字</span>合理性。'], '以獨立關係複核並檢查方向、量綱與合理性', '進階'),
 ];
 
 export const mechanicsGapTopics: TopicContent[] = [
@@ -28,14 +28,14 @@ export const mechanicsGapTopics: TopicContent[] = [
     illustrations: ['context.webp', 'mechanism.webp', 'parallel-forces-diagram.webp', 'formula-visual.webp'],
     covered_question_ids: [],
     concepts: [
-      { heading: '等值合力與作用點', body: '同向平行力的合力為<span className='text-indigo-600 font-bold'>各力代數和</span>；作用線位置由「<span className='text-rose-600 font-bold'>對任一點的總力矩相等</span>」決定。分布載重的合力等於**載重圖面積**，作用於**載重圖形心**。', formula: '<span className='text-rose-600 font-bold'>R = ΣF</span>；<span className='text-indigo-600 font-bold'>x_R = Σ(F_i x_i) / ΣF</span>；R = ∫w(x)dx' },
-      { heading: '均布與三角形載重', body: '均布載重 w 作用長度 L，等值力為 <span className='text-indigo-600 font-bold'>wL</span>，作用於**中點**。由零線性增加到 w₀ 的三角形載重，等值力為 <span className='text-rose-600 font-bold'>w₀L/2</span>，作用於**大端起算 L/3** (距尖端 2L/3)。' },
-      { heading: '平衡與驗算', body: '先畫<span className='text-indigo-600 font-bold'>自由體圖 (FBD)</span>，再列 <span className='text-rose-600 font-bold'>ΣF_y=0</span> 與 <span className='text-rose-600 font-bold'>ΣM=0</span>。最後用另一取矩點複核；反力為負表示**實際方向與假設相反**。' },
+      { heading: '等值合力與作用點', body: '同向平行力的合力為<span className="text-indigo-600 font-bold">各力代數和</span>；作用線位置由「<span className="text-rose-600 font-bold">對任一點的總力矩相等</span>」決定。分布載重的合力等於**載重圖面積**，作用於**載重圖形心**。', formula: '<span className="text-rose-600 font-bold">R = ΣF</span>；<span className="text-indigo-600 font-bold">x_R = Σ(F_i x_i) / ΣF</span>；R = ∫w(x)dx' },
+      { heading: '均布與三角形載重', body: '均布載重 w 作用長度 L，等值力為 <span className="text-indigo-600 font-bold">wL</span>，作用於**中點**。由零線性增加到 w₀ 的三角形載重，等值力為 <span className="text-rose-600 font-bold">w₀L/2</span>，作用於**大端起算 L/3** (距尖端 2L/3)。' },
+      { heading: '平衡與驗算', body: '先畫<span className="text-indigo-600 font-bold">自由體圖 (FBD)</span>，再列 <span className="text-rose-600 font-bold">ΣF_y=0</span> 與 <span className="text-rose-600 font-bold">ΣM=0</span>。最後用另一取矩點複核；反力為負表示**實際方向與假設相反**。' },
     ],
-    worked_examples: [quiz('簡支梁跨距 6 m，全跨受 4 kN/m 均布載重，兩端反力各為多少？', ['等值集中力 <span className='text-rose-600 font-bold'>W = 4 × 6 = 24 kN</span>，作用於跨中。', '系統左右對稱，所以 <span className='text-indigo-600 font-bold'>R_A = R_B</span>。', 'R_A + R_B = 24 kN。'], 'R_A = R_B = 12 kN')],
+    worked_examples: [quiz('簡支梁跨距 6 m，全跨受 4 kN/m 均布載重，兩端反力各為多少？', ['等值集中力 <span className="text-rose-600 font-bold">W = 4 × 6 = 24 kN</span>，作用於跨中。', '系統左右對稱，所以 <span className="text-indigo-600 font-bold">R_A = R_B</span>。', 'R_A + R_B = 24 kN。'], 'R_A = R_B = 12 kN')],
     practices: [
-      quiz('長 3 m 的三角形載重由左端 0 線性增至右端 12 kN/m。等值力與作用位置為何？', ['載重圖面積 <span className='text-rose-600 font-bold'>R = 12 × 3 / 2 = 18 kN</span>。', '三角形形心距大端 <span className='text-indigo-600 font-bold'>L/3</span>。'], '18 kN，距右端 1 m（距左端 2 m）'),
-      quiz('兩向下平行力 10 kN、20 kN 分別位於 x=1 m、x=4 m，合力位置為何？', ['<span className='text-rose-600 font-bold'>R = 10 + 20 = 30 kN</span>。', '位置公式：<span className='text-indigo-600 font-bold'>x_R = (10×1 + 20×4) / 30 = 3 m</span>。'], 'x = 3 m', '進階'),
+      quiz('長 3 m 的三角形載重由左端 0 線性增至右端 12 kN/m。等值力與作用位置為何？', ['載重圖面積 <span className="text-rose-600 font-bold">R = 12 × 3 / 2 = 18 kN</span>。', '三角形形心距大端 <span className="text-indigo-600 font-bold">L/3</span>。'], '18 kN，距右端 1 m（距左端 2 m）'),
+      quiz('兩向下平行力 10 kN、20 kN 分別位於 x=1 m、x=4 m，合力位置為何？', ['<span className="text-rose-600 font-bold">R = 10 + 20 = 30 kN</span>。', '位置公式：<span className="text-indigo-600 font-bold">x_R = (10×1 + 20×4) / 30 = 3 m</span>。'], 'x = 3 m', '進階'),
       ...checks('平面平行力系', '合力與原力系的總力及總力矩等值', '力用 kN、位置用 m、力矩用 kN·m'),
     ],
   },
@@ -52,12 +52,12 @@ export const mechanicsGapTopics: TopicContent[] = [
     illustrations: ['context.webp', 'mechanism.webp', 'equilibrium-equations.webp', 'step-by-step.webp'],
     covered_question_ids: [],
     concepts: [
-      { heading: '三個獨立平衡條件', body: '平面剛體平衡必須同時滿足<span className='text-indigo-600 font-bold'>水平力</span>、<span className='text-indigo-600 font-bold'>垂直力</span>及任一點<span className='text-rose-600 font-bold'>總力矩為零</span>。取矩點宜穿過**最多未知力作用線**以簡化計算。', formula: '<span className='text-rose-600 font-bold'>ΣF_x=0</span>；<span className='text-rose-600 font-bold'>ΣF_y=0</span>；<span className='text-rose-600 font-bold'>ΣM_O=0</span>' },
-      { heading: '力的移轉與力偶', body: '把力平移到另一點時，必須附加 <span className='text-rose-600 font-bold'>M = Fd</span> 的力偶。力偶矩與取矩點無關，**只具有轉向**。', formula: '<span className='text-indigo-600 font-bold'>M = F d_⊥</span>' },
-      { heading: '支承反力辨識', body: '滾支承一個法向反力、鉸支承兩個分力、固定端有兩個分力與一個**反力矩**；未知數超過獨立方程即屬<span className='text-rose-600 font-bold'>靜不定</span>。' },
+      { heading: '三個獨立平衡條件', body: '平面剛體平衡必須同時滿足<span className="text-indigo-600 font-bold">水平力</span>、<span className="text-indigo-600 font-bold">垂直力</span>及任一點<span className="text-rose-600 font-bold">總力矩為零</span>。取矩點宜穿過**最多未知力作用線**以簡化計算。', formula: '<span className="text-rose-600 font-bold">ΣF_x=0</span>；<span className="text-rose-600 font-bold">ΣF_y=0</span>；<span className="text-rose-600 font-bold">ΣM_O=0</span>' },
+      { heading: '力的移轉與力偶', body: '把力平移到另一點時，必須附加 <span className="text-rose-600 font-bold">M = Fd</span> 的力偶。力偶矩與取矩點無關，**只具有轉向**。', formula: '<span className="text-indigo-600 font-bold">M = F d_⊥</span>' },
+      { heading: '支承反力辨識', body: '滾支承一個法向反力、鉸支承兩個分力、固定端有兩個分力與一個**反力矩**；未知數超過獨立方程即屬<span className="text-rose-600 font-bold">靜不定</span>。' },
     ],
-    worked_examples: [quiz('鉸支承 A 與滾支承 B 相距 4 m，跨中受向下 8 kN，求反力。', ['<span className='text-indigo-600 font-bold'>ΣM_A=0</span>：4B_y - 8×2 = 0，得 <span className='text-rose-600 font-bold'>B_y = 4 kN</span>。', '<span className='text-indigo-600 font-bold'>ΣF_y=0</span>：A_y + B_y - 8 = 0。', '無水平外力，<span className='text-rose-600 font-bold'>A_x = 0</span>。'], 'A_x=0，A_y=4 kN，B_y=4 kN')],
-    practices: [quiz('一剛體受向右 6 kN、向上 8 kN，兩力交於同點。合力大小與方向為何？', ['合力大小 <span className='text-rose-600 font-bold'>R = √(6² + 8²) = 10 kN</span>。', '方向角 <span className='text-indigo-600 font-bold'>θ = tan⁻¹(8/6) = 53.13°</span>。'], '10 kN，向右上 53.13°'), ...checks('非共點非平行力系', 'ΣF_x、ΣF_y、ΣM 三式同時成立', '力用 kN、力矩用 kN·m')],
+    worked_examples: [quiz('鉸支承 A 與滾支承 B 相距 4 m，跨中受向下 8 kN，求反力。', ['<span className="text-indigo-600 font-bold">ΣM_A=0</span>：4B_y - 8×2 = 0，得 <span className="text-rose-600 font-bold">B_y = 4 kN</span>。', '<span className="text-indigo-600 font-bold">ΣF_y=0</span>：A_y + B_y - 8 = 0。', '無水平外力，<span className="text-rose-600 font-bold">A_x = 0</span>。'], 'A_x=0，A_y=4 kN，B_y=4 kN')],
+    practices: [quiz('一剛體受向右 6 kN、向上 8 kN，兩力交於同點。合力大小與方向為何？', ['合力大小 <span className="text-rose-600 font-bold">R = √(6² + 8²) = 10 kN</span>。', '方向角 <span className="text-indigo-600 font-bold">θ = tan⁻¹(8/6) = 53.13°</span>。'], '10 kN，向右上 53.13°'), ...checks('非共點非平行力系', 'ΣF_x、ΣF_y、ΣM 三式同時成立', '力用 kN、力矩用 kN·m')],
   },
   {
     slug: 'shear-properties',
@@ -72,12 +72,12 @@ export const mechanicsGapTopics: TopicContent[] = [
     illustrations: ['context.webp', 'concept-diagram.webp', 'shear-stress-distribution.webp', 'formula-visual.webp'],
     covered_question_ids: [],
     concepts: [
-      { heading: '直接剪應力', body: '鉚釘、螺栓或沖孔面常先以<span className='text-indigo-600 font-bold'>平均剪應力</span>計算。**雙剪**有兩個剪切面，有效面積是單剪的兩倍。', formula: '<span className='text-rose-600 font-bold'>τ_avg = V / A_s</span>；A_s = n(πd²/4)' },
-      { heading: '梁的橫向剪應力', body: '梁截面剪應力由自由表面零值增至<span className='text-rose-600 font-bold'>中性軸附近最大</span>；矩形截面最大值為平均值 <span className='text-indigo-600 font-bold'>1.5 倍</span>。', formula: 'τ = VQ/(It)；矩形：<span className='text-rose-600 font-bold'>τ_max = 3V/(2A)</span>' },
-      { heading: '剪力圖符號與跳躍', body: '集中力使剪力圖<span className='text-rose-600 font-bold'>瞬間跳躍</span>；分布載重是剪力圖斜率，剪力則是彎矩圖斜率。', formula: '<span className='text-indigo-600 font-bold'>dV/dx = -w</span>；<span className='text-indigo-600 font-bold'>dM/dx = V</span>' },
+      { heading: '直接剪應力', body: '鉚釘、螺栓或沖孔面常先以<span className="text-indigo-600 font-bold">平均剪應力</span>計算。**雙剪**有兩個剪切面，有效面積是單剪的兩倍。', formula: '<span className="text-rose-600 font-bold">τ_avg = V / A_s</span>；A_s = n(πd²/4)' },
+      { heading: '梁的橫向剪應力', body: '梁截面剪應力由自由表面零值增至<span className="text-rose-600 font-bold">中性軸附近最大</span>；矩形截面最大值為平均值 <span className="text-indigo-600 font-bold">1.5 倍</span>。', formula: 'τ = VQ/(It)；矩形：<span className="text-rose-600 font-bold">τ_max = 3V/(2A)</span>' },
+      { heading: '剪力圖符號與跳躍', body: '集中力使剪力圖<span className="text-rose-600 font-bold">瞬間跳躍</span>；分布載重是剪力圖斜率，剪力則是彎矩圖斜率。', formula: '<span className="text-indigo-600 font-bold">dV/dx = -w</span>；<span className="text-indigo-600 font-bold">dM/dx = V</span>' },
     ],
-    worked_examples: [quiz('直徑 10 mm 鉚釘承受 12 kN 單剪，平均剪應力為何？', ['剪切面積 <span className='text-rose-600 font-bold'>A = π(10²)/4 = 78.54 mm²</span>。', '剪應力 <span className='text-indigo-600 font-bold'>τ = 12000 / 78.54 = 152.8 N/mm²</span>。'], '約 153 MPa')],
-    practices: [quiz('同一支直徑 10 mm 鉚釘改為雙剪並承受 12 kN，平均剪應力為何？', ['雙剪有效面積為 <span className='text-rose-600 font-bold'>2A</span>。', '剪應力 <span className='text-indigo-600 font-bold'>τ = 12000 / (2 × 78.54)</span>。'], '約 76.4 MPa'), ...checks('剪力與剪應力', '先分辨剪力 V、剪切面數與有效面積', '剪力用 N 或 kN、剪應力用 MPa')],
+    worked_examples: [quiz('直徑 10 mm 鉚釘承受 12 kN 單剪，平均剪應力為何？', ['剪切面積 <span className="text-rose-600 font-bold">A = π(10²)/4 = 78.54 mm²</span>。', '剪應力 <span className="text-indigo-600 font-bold">τ = 12000 / 78.54 = 152.8 N/mm²</span>。'], '約 153 MPa')],
+    practices: [quiz('同一支直徑 10 mm 鉚釘改為雙剪並承受 12 kN，平均剪應力為何？', ['雙剪有效面積為 <span className="text-rose-600 font-bold">2A</span>。', '剪應力 <span className="text-indigo-600 font-bold">τ = 12000 / (2 × 78.54)</span>。'], '約 76.4 MPa'), ...checks('剪力與剪應力', '先分辨剪力 V、剪切面數與有效面積', '剪力用 N 或 kN、剪應力用 MPa')],
   },
 ];
 
@@ -95,12 +95,12 @@ export const surveyingGapTopics: TopicContent[] = [
     illustrations: ['context.webp', 'concept-diagram.webp', 'error-distribution.webp', 'step-by-step.webp'],
     covered_question_ids: [],
     concepts: [
-      { heading: '測量工作與基準', body: '測量以距離、角度與高差觀測建立點位。小區域可採<span className='text-indigo-600 font-bold'>平面測量假設</span>；範圍擴大時必須考慮地球曲率、坐標系與高程基準。' },
-      { heading: '誤差、錯誤與精度', body: '**錯誤**應查明剔除；**系統誤差**依規律改正；**偶然誤差**以重複觀測及統計降低。<span className='text-rose-600 font-bold'>精密度</span>描述彼此接近，<span className='text-rose-600 font-bold'>準確度</span>描述接近真值。' },
-      { heading: '有效數字與單位', body: '中間計算保留至少一位<span className='text-indigo-600 font-bold'>保護位</span>，最後依觀測精度修約；角度的度分秒與十進位度不可直接混算。', formula: '1°=60′=3600″；<span className='text-rose-600 font-bold'>相對精度 = |誤差|/測線長</span>' },
+      { heading: '測量工作與基準', body: '測量以距離、角度與高差觀測建立點位。小區域可採<span className="text-indigo-600 font-bold">平面測量假設</span>；範圍擴大時必須考慮地球曲率、坐標系與高程基準。' },
+      { heading: '誤差、錯誤與精度', body: '**錯誤**應查明剔除；**系統誤差**依規律改正；**偶然誤差**以重複觀測及統計降低。<span className="text-rose-600 font-bold">精密度</span>描述彼此接近，<span className="text-rose-600 font-bold">準確度</span>描述接近真值。' },
+      { heading: '有效數字與單位', body: '中間計算保留至少一位<span className="text-indigo-600 font-bold">保護位</span>，最後依觀測精度修約；角度的度分秒與十進位度不可直接混算。', formula: '1°=60′=3600″；<span className="text-rose-600 font-bold">相對精度 = |誤差|/測線長</span>' },
     ],
-    worked_examples: [quiz('距離量得 100.02、99.98、100.00 m，最或是值為何？', ['等精度觀測以<span className='text-indigo-600 font-bold'>算術平均</span>作最或是值。', '<span className='text-rose-600 font-bold'>(100.02 + 99.98 + 100.00) / 3 = 100.00 m</span>。'], '100.00 m')],
-    practices: [quiz('閉合差 0.020 m、測線總長 200 m，相對閉合精度為何？', ['相對誤差 = <span className='text-rose-600 font-bold'>0.020 / 200 = 1 / 10000</span>。'], '1/10,000'), ...checks('測量總論', '基準、單位、精度與觀測條件已交代', '依觀測量使用 m、度分秒或無因次比值')],
+    worked_examples: [quiz('距離量得 100.02、99.98、100.00 m，最或是值為何？', ['等精度觀測以<span className="text-indigo-600 font-bold">算術平均</span>作最或是值。', '<span className="text-rose-600 font-bold">(100.02 + 99.98 + 100.00) / 3 = 100.00 m</span>。'], '100.00 m')],
+    practices: [quiz('閉合差 0.020 m、測線總長 200 m，相對閉合精度為何？', ['相對誤差 = <span className="text-rose-600 font-bold">0.020 / 200 = 1 / 10000</span>。'], '1/10,000'), ...checks('測量總論', '基準、單位、精度與觀測條件已交代', '依觀測量使用 m、度分秒或無因次比值')],
   },
   {
     slug: 'indirect-distance-elevation',
@@ -115,12 +115,12 @@ export const surveyingGapTopics: TopicContent[] = [
     illustrations: ['context.webp', 'mechanism.webp', 'indirect-measurement.webp', 'formula-visual.webp'],
     covered_question_ids: [],
     concepts: [
-      { heading: '視距測量', body: '標尺垂直且視線有垂直角 α 時，水平距離包含<span className='text-indigo-600 font-bold'>乘常數項</span>與<span className='text-indigo-600 font-bold'>加常數項</span>；題目若只給上下絲讀數，視距間隔 s 為**兩者之差**。', formula: '<span className='text-rose-600 font-bold'>H = K s cos²α + C cosα</span>' },
-      { heading: '三角高程', body: '由已知點儀器高、垂直角與水平距離推求未知點高程；必須把**目標高**納入，並統一<span className='text-rose-600 font-bold'>仰角正、俯角負</span>。', formula: '<span className='text-indigo-600 font-bold'>H_B = H_A + i + D tanα - v</span>' },
-      { heading: '不可達距離策略', body: '先建立可量基線，再觀測角度形成三角形，以<span className='text-rose-600 font-bold'>正弦定理</span>求不可直接丈量的邊；先畫幾何圖可避免角與對邊錯配。', formula: '<span className='text-indigo-600 font-bold'>a/sin A = b/sin B = c/sin C</span>' },
+      { heading: '視距測量', body: '標尺垂直且視線有垂直角 α 時，水平距離包含<span className="text-indigo-600 font-bold">乘常數項</span>與<span className="text-indigo-600 font-bold">加常數項</span>；題目若只給上下絲讀數，視距間隔 s 為**兩者之差**。', formula: '<span className="text-rose-600 font-bold">H = K s cos²α + C cosα</span>' },
+      { heading: '三角高程', body: '由已知點儀器高、垂直角與水平距離推求未知點高程；必須把**目標高**納入，並統一<span className="text-rose-600 font-bold">仰角正、俯角負</span>。', formula: '<span className="text-indigo-600 font-bold">H_B = H_A + i + D tanα - v</span>' },
+      { heading: '不可達距離策略', body: '先建立可量基線，再觀測角度形成三角形，以<span className="text-rose-600 font-bold">正弦定理</span>求不可直接丈量的邊；先畫幾何圖可避免角與對邊錯配。', formula: '<span className="text-indigo-600 font-bold">a/sin A = b/sin B = c/sin C</span>' },
     ],
-    worked_examples: [quiz('K=100、C=0，視距間隔 s=1.50 m、α=30°，水平距離為何？', ['<span className='text-indigo-600 font-bold'>cos²30° = 0.75</span>。', '<span className='text-rose-600 font-bold'>H = 100 × 1.50 × 0.75 = 112.5 m</span>。'], '112.5 m')],
-    practices: [quiz('A 點高程 20.000 m，儀器高 1.500 m；至 B 的水平距離 40 m、仰角 5°，目標高 1.800 m。B 高程約為何？', ['高差項 = <span className='text-indigo-600 font-bold'>40 tan 5° ≈ 3.500 m</span>。', '<span className='text-rose-600 font-bold'>H_B = 20 + 1.5 + 3.5 - 1.8</span>。'], '約 23.200 m', '進階'), ...checks('間接距離與高程', '斜距、水平距離、垂直角與儀器高定義一致', '距離與高程用 m、角度用度分秒或度')],
+    worked_examples: [quiz('K=100、C=0，視距間隔 s=1.50 m、α=30°，水平距離為何？', ['<span className="text-indigo-600 font-bold">cos²30° = 0.75</span>。', '<span className="text-rose-600 font-bold">H = 100 × 1.50 × 0.75 = 112.5 m</span>。'], '112.5 m')],
+    practices: [quiz('A 點高程 20.000 m，儀器高 1.500 m；至 B 的水平距離 40 m、仰角 5°，目標高 1.800 m。B 高程約為何？', ['高差項 = <span className="text-indigo-600 font-bold">40 tan 5° ≈ 3.500 m</span>。', '<span className="text-rose-600 font-bold">H_B = 20 + 1.5 + 3.5 - 1.8</span>。'], '約 23.200 m', '進階'), ...checks('間接距離與高程', '斜距、水平距離、垂直角與儀器高定義一致', '距離與高程用 m、角度用度分秒或度')],
   },
 ];
 
@@ -138,11 +138,11 @@ export const draftingGapTopics: TopicContent[] = [
     illustrations: ['context.webp', 'concept-diagram.webp', 'drafting-standards.webp', 'step-by-step.webp'],
     covered_question_ids: [],
     concepts: [
-      { heading: '工程圖的溝通功能', body: '工程圖以標準化線條、符號、尺度與註記傳遞設計及施工資訊；<span className='text-indigo-600 font-bold'>清晰、一致、可追溯</span>比藝術化表現更重要。' },
-      { heading: 'A 系列圖紙與折疊', body: 'A 系列長寬比為 <span className='text-rose-600 font-bold'>√2:1</span>，對半裁切仍保持同一比例。折疊歸檔後應讓**標題欄位於正面右下**並可直接識別。', formula: '<span className='text-indigo-600 font-bold'>A0 面積 = 1 m²</span>；長寬比 = √2 : 1' },
-      { heading: '圖面階段與版本', body: '概念圖說明構想，設計圖確立方案，施工圖提供尺寸與做法，竣工圖反映完成現況；修訂需留下<span className='text-rose-600 font-bold'>日期、版次與修訂內容</span>。' },
+      { heading: '工程圖的溝通功能', body: '工程圖以標準化線條、符號、尺度與註記傳遞設計及施工資訊；<span className="text-indigo-600 font-bold">清晰、一致、可追溯</span>比藝術化表現更重要。' },
+      { heading: 'A 系列圖紙與折疊', body: 'A 系列長寬比為 <span className="text-rose-600 font-bold">√2:1</span>，對半裁切仍保持同一比例。折疊歸檔後應讓**標題欄位於正面右下**並可直接識別。', formula: '<span className="text-indigo-600 font-bold">A0 面積 = 1 m²</span>；長寬比 = √2 : 1' },
+      { heading: '圖面階段與版本', body: '概念圖說明構想，設計圖確立方案，施工圖提供尺寸與做法，竣工圖反映完成現況；修訂需留下<span className="text-rose-600 font-bold">日期、版次與修訂內容</span>。' },
     ],
-    worked_examples: [quiz('A1 圖紙折成 A4 歸檔時，標題欄應呈現在哪裡？', ['折疊目的之一是<span className='text-indigo-600 font-bold'>免展開即可辨識</span>圖名與版次。', '標題欄原位於圖紙<span className='text-rose-600 font-bold'>右下角</span>。'], '折後正面右下方')],
+    worked_examples: [quiz('A1 圖紙折成 A4 歸檔時，標題欄應呈現在哪裡？', ['折疊目的之一是<span className="text-indigo-600 font-bold">免展開即可辨識</span>圖名與版次。', '標題欄原位於圖紙<span className="text-rose-600 font-bold">右下角</span>。'], '折後正面右下方')],
     practices: [quiz('需要表達鋼筋型號、數量、位置與接頭細部，應使用哪類圖？', ['資訊直接供施工與查核使用，精度高於概念圖或草圖。'], '詳圖或施工圖'), ...checks('製圖基本觀念', '圖名、圖號、比例與版次可追溯', '圖紙尺寸用 mm、比例為無因次')],
   },
   {
@@ -158,14 +158,14 @@ export const draftingGapTopics: TopicContent[] = [
     illustrations: ['context.webp', 'cross-reference-workflow.webp', 'architectural-structural.webp', 'step-by-step.webp'],
     covered_question_ids: [],
     concepts: [
-      { heading: '圖說之間如何互證', body: '平面圖確認水平位置，立面圖確認外觀與高度，剖面圖確認垂直構造，詳圖放大接合做法；同一構件的<span className='text-rose-600 font-bold'>編號、尺寸與高程必須一致</span>。' },
-      { heading: '建築圖與結構圖', body: '建築圖重空間、門窗、裝修與法規；結構圖重柱梁版牆、配筋與基礎。判讀時先用<span className='text-indigo-600 font-bold'>軸線與樓層定位</span>，再比對構件編號。' },
-      { heading: '施工圖查核順序', body: '先讀圖名、比例、北向與版次，再查軸線及高程，接著追索<span className='text-rose-600 font-bold'>剖面索引與詳圖索引</span>，最後檢查尺寸閉合及跨圖衝突。' },
+      { heading: '圖說之間如何互證', body: '平面圖確認水平位置，立面圖確認外觀與高度，剖面圖確認垂直構造，詳圖放大接合做法；同一構件的<span className="text-rose-600 font-bold">編號、尺寸與高程必須一致</span>。' },
+      { heading: '建築圖與結構圖', body: '建築圖重空間、門窗、裝修與法規；結構圖重柱梁版牆、配筋與基礎。判讀時先用<span className="text-indigo-600 font-bold">軸線與樓層定位</span>，再比對構件編號。' },
+      { heading: '施工圖查核順序', body: '先讀圖名、比例、北向與版次，再查軸線及高程，接著追索<span className="text-rose-600 font-bold">剖面索引與詳圖索引</span>，最後檢查尺寸閉合及跨圖衝突。' },
     ],
-    worked_examples: [quiz('平面圖門編號 D03，但門窗表沒有 D03，應如何處理？', ['這是<span className='text-rose-600 font-bold'>跨圖索引不一致</span>，不能自行猜測尺寸。', '先查最新版次與修訂雲線，再<span className='text-indigo-600 font-bold'>提出圖說疑義 (RFI)</span>。'], '記錄衝突並依正式程序釐清，不可逕自施工')],
+    worked_examples: [quiz('平面圖門編號 D03，但門窗表沒有 D03，應如何處理？', ['這是<span className="text-rose-600 font-bold">跨圖索引不一致</span>，不能自行猜測尺寸。', '先查最新版次與修訂雲線，再<span className="text-indigo-600 font-bold">提出圖說疑義 (RFI)</span>。'], '記錄衝突並依正式程序釐清，不可逕自施工')],
     practices: [
-      quiz('要確認樓梯淨高，至少應交叉檢查哪些圖？', ['<span className='text-indigo-600 font-bold'>平面圖</span>確認梯段與洞口位置。', '<span className='text-rose-600 font-bold'>剖面圖</span>確認垂直高度；必要時再查樓梯詳圖。'], '平面圖、剖面圖及樓梯詳圖'),
-      quiz('基地圖標高 +0.00 與剖面圖一樓完成面標高不一致，第一步為何？', ['先比較<span className='text-indigo-600 font-bold'>圖號、版次與修訂日期</span>。', '以最新版圖說釐清，仍衝突則提出 RFI。'], '先做版本與修訂核對，再正式提出疑義', '進階'),
+      quiz('要確認樓梯淨高，至少應交叉檢查哪些圖？', ['<span className="text-indigo-600 font-bold">平面圖</span>確認梯段與洞口位置。', '<span className="text-rose-600 font-bold">剖面圖</span>確認垂直高度；必要時再查樓梯詳圖。'], '平面圖、剖面圖及樓梯詳圖'),
+      quiz('基地圖標高 +0.00 與剖面圖一樓完成面標高不一致，第一步為何？', ['先比較<span className="text-indigo-600 font-bold">圖號、版次與修訂日期</span>。', '以最新版圖說釐清，仍衝突則提出 RFI。'], '先做版本與修訂核對，再正式提出疑義', '進階'),
       ...checks('土木與建築製圖整合判讀', '平面、立面、剖面與詳圖的索引及版次一致', '圖面長度依標註用 mm 或 cm、高程用 m'),
     ],
   },

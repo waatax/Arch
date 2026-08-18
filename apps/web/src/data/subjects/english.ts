@@ -28,11 +28,11 @@ export const englishData: SubjectData = {
       concepts: [
         {
           heading: '字首、字根與字尾構詞分析 (Etymology & Morphology in Technical English)',
-          body: '掌握**拉丁**與**希臘**字根能大幅提升專業與學術單字之記憶效率，並能在閱讀測驗中快速推測生字字義。透過拆解詞彙，不再死記硬背，而是理解詞彙的<span className='text-rose-600 font-bold'>核心邏輯</span>。',
+          body: '掌握**拉丁**與**希臘**字根能大幅提升專業與學術單字之記憶效率，並能在閱讀測驗中快速推測生字字義。透過拆解詞彙，不再死記硬背，而是理解詞彙的<span className="text-rose-600 font-bold">核心邏輯</span>。',
           steps: [
-            '**分析字首 (Prefix)**：改變單字方向或語意 (如 <span className='text-indigo-600 font-bold'>re-</span> 重複/再次, <span className='text-indigo-600 font-bold'>sub-</span> 下/基礎, <span className='text-indigo-600 font-bold'>anti-/counter-</span> 反對/抵抗)。',
-            '**分析字根 (Root)**：構成單字的核心概念 (如 <span className='text-indigo-600 font-bold'>struct/tect</span> 建造, <span className='text-indigo-600 font-bold'>ped/pod</span> 腳/基座, <span className='text-indigo-600 font-bold'>meter</span> 測量)。',
-            '**分析字尾 (Suffix)**：決定單字詞性 (如 <span className='text-indigo-600 font-bold'>-able/ible</span> 可…的, <span className='text-indigo-600 font-bold'>-tion</span> 名詞, <span className='text-indigo-600 font-bold'>-ize</span> 動詞)。'
+            '**分析字首 (Prefix)**：改變單字方向或語意 (如 <span className="text-indigo-600 font-bold">re-</span> 重複/再次, <span className="text-indigo-600 font-bold">sub-</span> 下/基礎, <span className="text-indigo-600 font-bold">anti-/counter-</span> 反對/抵抗)。',
+            '**分析字根 (Root)**：構成單字的核心概念 (如 <span className="text-indigo-600 font-bold">struct/tect</span> 建造, <span className="text-indigo-600 font-bold">ped/pod</span> 腳/基座, <span className="text-indigo-600 font-bold">meter</span> 測量)。',
+            '**分析字尾 (Suffix)**：決定單字詞性 (如 <span className="text-indigo-600 font-bold">-able/ible</span> 可…的, <span className="text-indigo-600 font-bold">-tion</span> 名詞, <span className="text-indigo-600 font-bold">-ize</span> 動詞)。'
           ],
           table: {
             headers: ['類型', '字首/字根/字尾', '核心涵義', '建築與工程英文範例', '中文說明'],
@@ -48,7 +48,7 @@ export const englishData: SubjectData = {
         },
         {
           heading: '建築與設計核心專業字彙表 (Core Architectural Terminology Table)',
-          body: '統測與專業英文 (ESP) 常考之建築圖面、構造材料與空間設計關鍵名詞。熟記這些**專業術語**能讓你在此類<span className='text-rose-600 font-bold'>情境考題</span>中秒殺得分。',
+          body: '統測與專業英文 (ESP) 常考之建築圖面、構造材料與空間設計關鍵名詞。熟記這些**專業術語**能讓你在此類<span className="text-rose-600 font-bold">情境考題</span>中秒殺得分。',
           table: {
             headers: ['英文單字/詞組', '詞性', '中文翻譯', '專業情境應用與例句'],
             rows: [
@@ -65,10 +65,10 @@ export const englishData: SubjectData = {
         },
         {
           heading: '施工與工程高頻動詞片語 (Phrasal Verbs in Engineering & Construction)',
-          body: '動詞加上介系詞或副詞形成的片語，在語意與文法上需特別留意<span className='text-rose-600 font-bold'>代名詞受詞位置</span>與**固定介系詞搭配**。',
+          body: '動詞加上介系詞或副詞形成的片語，在語意與文法上需特別留意<span className="text-rose-600 font-bold">代名詞受詞位置</span>與**固定介系詞搭配**。',
           steps: [
-            '**可拆分片語 (Separable Phrasal Verbs)**：若受詞為代名詞，必須放在動詞與介系詞之間 (如 <span className='text-indigo-600 font-bold'>tear it down</span>, <span className='text-indigo-600 font-bold'>set it up</span>)。',
-            '**固定介系詞搭配**：工程規範中常見 <span className='text-indigo-600 font-bold'>comply with</span> (遵守), <span className='text-indigo-600 font-bold'>consist of</span> (由…組成), <span className='text-indigo-600 font-bold'>adapt to</span> (適應)。'
+            '**可拆分片語 (Separable Phrasal Verbs)**：若受詞為代名詞，必須放在動詞與介系詞之間 (如 <span className="text-indigo-600 font-bold">tear it down</span>, <span className="text-indigo-600 font-bold">set it up</span>)。',
+            '**固定介系詞搭配**：工程規範中常見 <span className="text-indigo-600 font-bold">comply with</span> (遵守), <span className="text-indigo-600 font-bold">consist of</span> (由…組成), <span className="text-indigo-600 font-bold">adapt to</span> (適應)。'
           ],
           table: {
             headers: ['動詞片語', '中文涵義', '常用工程與施工情境範例'],
@@ -84,7 +84,7 @@ export const englishData: SubjectData = {
         },
         {
           heading: '精準用字與近義詞辨析 (Nuances in Technical Synonyms)',
-          body: '在工程技術報告中，相近字彙常有明確的<span className='text-rose-600 font-bold'>專業差異</span> (如 **construct** vs. **fabricate**)。精準用字展現專業素養！',
+          body: '在工程技術報告中，相近字彙常有明確的<span className="text-rose-600 font-bold">專業差異</span> (如 **construct** vs. **fabricate**)。精準用字展現專業素養！',
           table: {
             headers: ['字組', '差異辨析與專業區分', '正確用法與範例'],
             rows: [
@@ -97,18 +97,18 @@ export const englishData: SubjectData = {
         },
         {
           heading: '空間方位與幾何關係介系詞 (Spatial Prepositions in Architecture)',
-          body: '精準描述建築體、空間單元與結構構件之相對<span className='text-rose-600 font-bold'>幾何關係</span>，在閱讀測驗中是重要的**空間解讀**依據。',
+          body: '精準描述建築體、空間單元與結構構件之相對<span className="text-rose-600 font-bold">幾何關係</span>，在閱讀測驗中是重要的**空間解讀**依據。',
           steps: [
-            '**adjacent to** (緊鄰/相鄰): The secondary exit is <span className='text-indigo-600 font-bold'>adjacent to</span> the main elevator shaft.',
-            '**parallel to** (平行於): The main corridor runs <span className='text-indigo-600 font-bold'>parallel to</span> the exterior curtain wall.',
-            '**perpendicular to** (垂直於): Structural cross-beams must be <span className='text-indigo-600 font-bold'>perpendicular to</span> the main joists.',
-            '**beneath / underneath** (在…正下方): High-voltage cables are embedded <span className='text-indigo-600 font-bold'>beneath</span> the sub-floor.',
-            '**opposite to / facing** (面對/正對): The entrance gate is directly <span className='text-indigo-600 font-bold'>facing</span> the central plaza.'
+            '**adjacent to** (緊鄰/相鄰): The secondary exit is <span className="text-indigo-600 font-bold">adjacent to</span> the main elevator shaft.',
+            '**parallel to** (平行於): The main corridor runs <span className="text-indigo-600 font-bold">parallel to</span> the exterior curtain wall.',
+            '**perpendicular to** (垂直於): Structural cross-beams must be <span className="text-indigo-600 font-bold">perpendicular to</span> the main joists.',
+            '**beneath / underneath** (在…正下方): High-voltage cables are embedded <span className="text-indigo-600 font-bold">beneath</span> the sub-floor.',
+            '**opposite to / facing** (面對/正對): The entrance gate is directly <span className="text-indigo-600 font-bold">facing</span> the central plaza.'
           ]
         },
         {
           heading: '綠建築與永續材料專有名詞彙編 (Green Building & Eco-Material Vocabulary)',
-          body: '最新能源規範與 **LEED 認證**高頻評估名詞。<span className='text-rose-600 font-bold'>綠建築</span>是近年統測的超級熱門考點！',
+          body: '最新能源規範與 **LEED 認證**高頻評估名詞。<span className="text-rose-600 font-bold">綠建築</span>是近年統測的超級熱門考點！',
           table: {
             headers: ['術語名詞', '中文名稱', '技術涵義與應用'],
             rows: [
@@ -121,7 +121,7 @@ export const englishData: SubjectData = {
         },
         {
           heading: '統測高頻必考動詞片語與介系詞搭配總整理 (High-Frequency Phrasal Verbs & Collocations)',
-          body: '統測英文單字片語題與克漏字中，動詞介系詞**固定搭配 (Collocations)** 為<span className='text-rose-600 font-bold'>得分核心</span>，需重點熟記介系詞與接續動詞型態。',
+          body: '統測英文單字片語題與克漏字中，動詞介系詞**固定搭配 (Collocations)** 為<span className="text-rose-600 font-bold">得分核心</span>，需重點熟記介系詞與接續動詞型態。',
           table: {
             headers: ['動詞片語 / 搭配詞', '介系詞用法規範', '中文涵義解析', '典型統測考題句型範例'],
             rows: [
@@ -242,7 +242,7 @@ export const englishData: SubjectData = {
       concepts: [
         {
           heading: '英文五大基本句型與施工語境應用 (Five Basic Sentence Structures)',
-          body: '解析長難句時，先找出**主詞 (S)** 與**主要動詞 (V)** 是關鍵。所有複雜的技術句型皆衍生自<span className='text-rose-600 font-bold'>五大基本結構</span>。',
+          body: '解析長難句時，先找出**主詞 (S)** 與**主要動詞 (V)** 是關鍵。所有複雜的技術句型皆衍生自<span className="text-rose-600 font-bold">五大基本結構</span>。',
           table: {
             headers: ['句型符號', '結構說明', '建築與工程文意範例', '主謂賓結構剖析'],
             rows: [
@@ -256,16 +256,16 @@ export const englishData: SubjectData = {
         },
         {
           heading: '工程與科學英文常見時態與被動語態 (Tenses & Passive Voice in Technical Writing)',
-          body: '科技與工程報告強調**客觀性**與**去個人化 (Impersonal tone)**，廣泛採用<span className='text-rose-600 font-bold'>被動語態</span> (S + be + p.p.) 與<span className='text-rose-600 font-bold'>完成時態</span>。',
+          body: '科技與工程報告強調**客觀性**與**去個人化 (Impersonal tone)**，廣泛採用<span className="text-rose-600 font-bold">被動語態</span> (S + be + p.p.) 與<span className="text-rose-600 font-bold">完成時態</span>。',
           steps: [
             '主動轉被動：將主動句受詞變為被動句主詞，動詞轉為 be + p.p.。(例: "Workers poured concrete." -> "Concrete was poured.")',
-            '**現在完成式 (Present Perfect)**：`<span className='text-indigo-600 font-bold'>have/has + p.p.</span>` 強調過去完成之工程行為對當前仍具重要影響。(例: "The safety inspection has been completed.")',
+            '**現在完成式 (Present Perfect)**：`<span className="text-indigo-600 font-bold">have/has + p.p.</span>` 強調過去完成之工程行為對當前仍具重要影響。(例: "The safety inspection has been completed.")',
             '**客觀陳述優勢**：被動語態能將焦點放在受測物件 (Subject of study) 而非施工人員。'
           ]
         },
         {
           heading: '關係代名詞與關係子句 (Relative Clauses & Relative Pronouns)',
-          body: '關係子句用於精準修飾**先行詞**名詞，並分為<span className='text-rose-600 font-bold'>限定 (Restricted)</span> 與<span className='text-rose-600 font-bold'>非限定 (Non-restricted)</span> 用法。',
+          body: '關係子句用於精準修飾**先行詞**名詞，並分為<span className="text-rose-600 font-bold">限定 (Restricted)</span> 與<span className="text-rose-600 font-bold">非限定 (Non-restricted)</span> 用法。',
           table: {
             headers: ['關係代名詞', '先行詞類別', '在子句中功能', '例句與說明'],
             rows: [
@@ -278,7 +278,7 @@ export const englishData: SubjectData = {
         },
         {
           heading: '統測高頻易混淆句型：used to vs. be used to Ving vs. be used to V',
-          body: '統測英文常考 **used to** 之三大文法變體，必須依據主詞是否為人、動詞形式 (原形 V vs. 動名詞 V-ing) 與文意精準辨析，這是<span className='text-rose-600 font-bold'>最容易失分的陷阱區</span>！',
+          body: '統測英文常考 **used to** 之三大文法變體，必須依據主詞是否為人、動詞形式 (原形 V vs. 動名詞 V-ing) 與文意精準辨析，這是<span className="text-rose-600 font-bold">最容易失分的陷阱區</span>！',
           table: {
             headers: ['句型結構', '主詞屬性', '接續動詞形式', '中文翻譯與文意物理意義', '例句說明'],
             rows: [
@@ -290,7 +290,7 @@ export const englishData: SubjectData = {
         },
         {
           heading: '分詞構句簡化法則與懸垂分詞避錯 (Participle Construction)',
-          body: '當主句與從屬子句主詞相同時，可省略連接詞與主詞，將動詞轉為<span className='text-rose-600 font-bold'>現在分詞 (V-ing, 主動)</span> 或<span className='text-rose-600 font-bold'>過去分詞 (p.p., 被動)</span>。',
+          body: '當主句與從屬子句主詞相同時，可省略連接詞與主詞，將動詞轉為<span className="text-rose-600 font-bold">現在分詞 (V-ing, 主動)</span> 或<span className="text-rose-600 font-bold">過去分詞 (p.p., 被動)</span>。',
           steps: [
             '主動分詞：Because the architect recognized the risk, he altered the floor plan. -> Recognizing the risk, the architect altered the floor plan.',
             '被動分詞：After it was reinforced with steel plates, the girder withstood the earthquake. -> Reinforced with steel plates, the girder withstood the earthquake.',
@@ -300,11 +300,11 @@ export const englishData: SubjectData = {
         {
           heading: '假設語氣與工程風險預測句型 (Subjunctive Mood & Inversion)',
           body: '用於評估未發生情境、施工風險與結構設計假設。注意**與過去事實相反**的公式搭配！',
-          formula: '與過去事實相反：<span className='text-indigo-600 font-bold'>If + S + had + p.p., S + would/could + have + p.p.</span>\n倒裝句型：<span className='text-indigo-600 font-bold'>Had + S + p.p., S + would/could + have + p.p.</span>'
+          formula: '與過去事實相反：<span className="text-indigo-600 font-bold">If + S + had + p.p., S + would/could + have + p.p.</span>\n倒裝句型：<span className="text-indigo-600 font-bold">Had + S + p.p., S + would/could + have + p.p.</span>'
         },
         {
           heading: '使役動詞與感官動詞句型 (Causative Verbs in Engineering Guidelines)',
-          body: '工程指示中常使用 **make, have, let, get** 引導受詞完成指定工項，需注意<span className='text-rose-600 font-bold'>後面接續的動詞形態</span>。',
+          body: '工程指示中常使用 **make, have, let, get** 引導受詞完成指定工項，需注意<span className="text-rose-600 font-bold">後面接續的動詞形態</span>。',
           steps: [
             'Make / Have + 受詞 + 原形動詞 (V)：The site supervisor made the contractor rebuild the wall.',
             'Get + 受詞 + to V / p.p.：We got the technician to recalibrate the total station. / We got the beam inspected.',
@@ -417,16 +417,16 @@ export const englishData: SubjectData = {
       concepts: [
         {
           heading: '高效雙速閱讀法 (Skimming vs. Scanning Methodology)',
-          body: '面對長篇閱讀或技術文章時，靈活切換 **Skimming (略讀宏觀架構)** 與 **Scanning (掃讀關鍵字)** 能<span className='text-rose-600 font-bold'>節省 50% 以上的時間</span>。',
+          body: '面對長篇閱讀或技術文章時，靈活切換 **Skimming (略讀宏觀架構)** 與 **Scanning (掃讀關鍵字)** 能<span className="text-rose-600 font-bold">節省 50% 以上的時間</span>。',
           steps: [
-            '**略讀 (Skimming)**：快速瀏覽文章標題、第一段、各段主題句 (Topic Sentence) 與結論段，掌握 <span className='text-indigo-600 font-bold'>Central Thesis (核心論點)</span>。',
+            '**略讀 (Skimming)**：快速瀏覽文章標題、第一段、各段主題句 (Topic Sentence) 與結論段，掌握 <span className="text-indigo-600 font-bold">Central Thesis (核心論點)</span>。',
             '**題目分析 (Question Analysis)**：劃出題目關鍵字 (專有名詞、年代數據、因果邏輯關係)。',
-            '**掃讀 (Scanning)**：以關鍵字為錨點，垂直掃描文章相應段落，<span className='text-indigo-600 font-bold'>精確比對選項細節</span>。'
+            '**掃讀 (Scanning)**：以關鍵字為錨點，垂直掃描文章相應段落，<span className="text-indigo-600 font-bold">精確比對選項細節</span>。'
           ]
         },
         {
           heading: '統測英文閱讀四大常考題型破題密碼 (Reading Question Types & Strategies)',
-          body: '統測閱讀測驗長篇題組固定包含**四類題型**，掌握對應題目提問語式與文章<span className='text-rose-600 font-bold'>定點定位技巧</span>可達到 100% 解題精準度。',
+          body: '統測閱讀測驗長篇題組固定包含**四類題型**，掌握對應題目提問語式與文章<span className="text-rose-600 font-bold">定點定位技巧</span>可達到 100% 解題精準度。',
           table: {
             headers: ['題型類別', '典型英文提問語式 (Question Stems)', '定位與破題技巧說明'],
             rows: [
@@ -465,15 +465,15 @@ export const englishData: SubjectData = {
         },
         {
           heading: '上下文細節推論與題目選項重組 (Inference & Paraphrasing Skills)',
-          body: '閱讀測驗的正確答案很少直接複製原文，通常會採用 **Paraphrasing (同義替換與句型重組)**。這是<span className='text-rose-600 font-bold'>最常見的考點</span>。',
+          body: '閱讀測驗的正確答案很少直接複製原文，通常會採用 **Paraphrasing (同義替換與句型重組)**。這是<span className="text-rose-600 font-bold">最常見的考點</span>。',
           steps: [
-            '留意**轉折詞與邏輯對比** (<span className='text-indigo-600 font-bold'>however, despite, in contrast</span>) 揭示的真實隱含語意。',
-            '比對選項與原文：尋找**名詞替換** (如 <span className='text-indigo-600 font-bold'>mechanical devices -> electrical equipment</span>) 或**主被動翻轉**。'
+            '留意**轉折詞與邏輯對比** (<span className="text-indigo-600 font-bold">however, despite, in contrast</span>) 揭示的真實隱含語意。',
+            '比對選項與原文：尋找**名詞替換** (如 <span className="text-indigo-600 font-bold">mechanical devices -> electrical equipment</span>) 或**主被動翻轉**。'
           ]
         },
         {
           heading: '文章段落架構與邏輯脈絡解析 (Paragraph Structure Analysis)',
-          body: '學術與技術文章多採用<span className='text-rose-600 font-bold'>「總-分-總」演繹結構 (Deductive Approach)</span>。掌握架構便能快速預測文章走向。',
+          body: '學術與技術文章多採用<span className="text-rose-600 font-bold">「總-分-總」演繹結構 (Deductive Approach)</span>。掌握架構便能快速預測文章走向。',
           steps: [
             'Topic Sentence (主題句): 通常位於段落前兩句，宣示該段核心概念。',
             'Supporting Details (支持細節): 列舉數據、實驗成果、施工步驟。',
@@ -482,7 +482,7 @@ export const englishData: SubjectData = {
         },
         {
           heading: '綠建築評估系統 LEED 閱讀考題常考知識彙整',
-          body: '理解 **Leadership in Energy and Environmental Design (LEED)** 四大評估面向：水資源效率、能耗、材料選擇與室內環境品質，建立<span className='text-rose-600 font-bold'>綠建築背景知識</span>。',
+          body: '理解 **Leadership in Energy and Environmental Design (LEED)** 四大評估面向：水資源效率、能耗、材料選擇與室內環境品質，建立<span className="text-rose-600 font-bold">綠建築背景知識</span>。',
           steps: [
             'Water Efficiency (WE): Rainwater harvesting and low-flow fixtures.',
             'Energy & Atmosphere (EA): Renewable energy adoption and zero-carbon envelope.',

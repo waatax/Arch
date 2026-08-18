@@ -17,11 +17,11 @@ export const physicsData: SubjectData = {
         {
           question: '【步驟化例題】牛頓第二運動定律與施工電梯張力：一總質量 1200 kg 之施工電梯載人升降機，以 2.0 m/s² 之加速度向上加速起動。求懸掛電梯之鋼纜張力 T 為多少牛頓？ (g = 9.8 m/s²)',
           difficulty: '中等',
-          steps: [ \"**步驟 1**：進行力學受力分析（<span className='text-rose-600 font-bold'>自由體圖</span>）。電梯受向下重力 W = mg，向上鋼纜拉力 T。", \"**步驟 2**：列牛頓第二運動定律 ∑F = m·a。T - mg = m·a ⇒ T = m(g + a)。", \"**步驟 3**：代入數值求解。T = 1200 kg × (9.8 + 2.0) m/s² = 1200 × 11.8 = 14160 N。" ], 
+          steps: [ "**步驟 1**：進行力學受力分析（<span className='text-rose-600 font-bold'>自由體圖</span>）。電梯受向下重力 W = mg，向上鋼纜拉力 T。", "**步驟 2**：列牛頓第二運動定律 ∑F = m·a。T - mg = m·a ⇒ T = m(g + a)。", "**步驟 3**：代入數值求解。T = 1200 kg × (9.8 + 2.0) m/s² = 1200 × 11.8 = 14160 N。" ], 
           answer: '鋼纜張力 T 為 14160 牛頓 (N)。'
         }
       ],
-      \"illustrations\": [\'physics-context.webp\', \'physics-mechanism.webp\', \'physics-comparison.webp\', \'physics-step.webp\', \'physics-real-world.webp\', \'physics-concept-diagram.webp\', \'physics-formula-visual.webp\'],
+      "illustrations": ['physics-context.webp', 'physics-mechanism.webp', 'physics-comparison.webp', 'physics-step.webp', 'physics-real-world.webp', 'physics-concept-diagram.webp', 'physics-formula-visual.webp'],
       "concepts": [
         {
           "heading": "牛頓三大運動定律與建築地震<span className='text-rose-600 font-bold'>慣性力</span> (Newton's Laws & Seismic Inertia)",
@@ -140,9 +140,9 @@ export const physicsData: SubjectData = {
           "body": "建築結構受外力作用時，構件內部會產生<span className='text-rose-600 font-bold'>剪力</span> V (Shear Force) 與<span className='text-rose-600 font-bold'>彎矩</span> M (Bending Moment)。微分關係方程 dV/dx = -w(x) 及 dM/dx = V(x) 是繪製<span className='text-rose-600 font-bold'>剪力</span>圖與<span className='text-rose-600 font-bold'>彎矩</span>圖的力學基礎。在平面桁架中，利用節點法 (Method of Joints) 與剖面法 (Method of Sections) 可快速求解各桿件軸力 (拉力與壓力)。",
           "formula": "<span className=\"text-indigo-600 font-bold\">dV / dx = - w(x)</span>\n<span className=\"text-indigo-600 font-bold\">dM / dx = V(x)</span>\n<span className=\"text-indigo-600 font-bold\">Σ F_x,joint = 0, Σ F_y,joint = 0</span>",
           "steps": [
-            \"**第一步（求解整體<span className='text-rose-600 font-bold'>支承反力</span>）**：選定整體結構作為<span className='text-rose-600 font-bold'>自由體圖</span>，運用 ΣFx=0, ΣFy=0, ΣM=0 解出各<span className='text-rose-600 font-bold'>支承反力</span>。",
-            \"**第二步（斷面法求構件內力）**：在構件任意位置 x 截開，繪製左端或右端<span className='text-rose-600 font-bold'>自由體圖</span>，寫出<span className='text-rose-600 font-bold'>剪力</span> V(x) 與<span className='text-rose-600 font-bold'>彎矩</span> M(x) 方程式。",
-            \"**第三步（繪製 V-M 圖）**：尋找<span className='text-rose-600 font-bold'>剪力</span>為零處 (V=0)，該處往往對應最大<span className='text-rose-600 font-bold'>彎矩</span> M_max，為樑斷面尺寸設計的最關鍵位置。"
+            "**第一步（求解整體<span className='text-rose-600 font-bold'>支承反力</span>）**：選定整體結構作為<span className='text-rose-600 font-bold'>自由體圖</span>，運用 ΣFx=0, ΣFy=0, ΣM=0 解出各<span className='text-rose-600 font-bold'>支承反力</span>。",
+            "**第二步（斷面法求構件內力）**：在構件任意位置 x 截開，繪製左端或右端<span className='text-rose-600 font-bold'>自由體圖</span>，寫出<span className='text-rose-600 font-bold'>剪力</span> V(x) 與<span className='text-rose-600 font-bold'>彎矩</span> M(x) 方程式。",
+            "**第三步（繪製 V-M 圖）**：尋找<span className='text-rose-600 font-bold'>剪力</span>為零處 (V=0)，該處往往對應最大<span className='text-rose-600 font-bold'>彎矩</span> M_max，為樑斷面尺寸設計的最關鍵位置。"
           ]
         },
         {
@@ -194,9 +194,9 @@ export const physicsData: SubjectData = {
           "body": "樑與柱構件抗彎與抗挫屈的能力不僅取決於材料強弱，更取決於斷面幾何形狀。斷面二次矩 / <span className='text-rose-600 font-bold'>轉動慣量</span> I (Moment of Inertia) 描述斷面面積對於中立軸的分布狀況。<span className='text-rose-600 font-bold'>斷面模數</span> Z = I / y_max 直接決定樑斷面彎曲<span className='text-rose-600 font-bold'>應力</span> σ_max = M / Z。",
           "formula": "<span className=\"text-indigo-600 font-bold\">I_x = ∫ y² dA</span>\n<span className=\"text-indigo-600 font-bold\">I_rectangle = (b · h³) / 12</span>\n<span className=\"text-indigo-600 font-bold\">Z = I / (h / 2) = (b · h²) / 6</span>\n<span className=\"text-indigo-600 font-bold\">σ_max = M / Z ≤ f_allowable</span>",
           "steps": [
-            \"**第一步（確定形心軸）**：計算複雜截面（如 H 型鋼、箱型鋼）的中立軸 (Neutral Axis) 位置。",
-            \"**第二步（平行軸定理）**：若次圖形形心軸不與整體形心軸重合，採用平行軸定理 I = I_g + A · d² 疊加總<span className='text-rose-600 font-bold'>轉動慣量</span>。",
-            \"**第三步（驗算彎曲<span className='text-rose-600 font-bold'>應力</span>）**：將最大<span className='text-rose-600 font-bold'>彎矩</span> M 代入 σ = M / Z，確保最大邊緣<span className='text-rose-600 font-bold'>應力</span>不超過材料允許抗彎<span className='text-rose-600 font-bold'>應力</span>。"
+            "**第一步（確定形心軸）**：計算複雜截面（如 H 型鋼、箱型鋼）的中立軸 (Neutral Axis) 位置。",
+            "**第二步（平行軸定理）**：若次圖形形心軸不與整體形心軸重合，採用平行軸定理 I = I_g + A · d² 疊加總<span className='text-rose-600 font-bold'>轉動慣量</span>。",
+            "**第三步（驗算彎曲<span className='text-rose-600 font-bold'>應力</span>）**：將最大<span className='text-rose-600 font-bold'>彎矩</span> M 代入 σ = M / Z，確保最大邊緣<span className='text-rose-600 font-bold'>應力</span>不超過材料允許抗彎<span className='text-rose-600 font-bold'>應力</span>。"
           ]
         }
       ],
@@ -291,13 +291,13 @@ export const physicsData: SubjectData = {
       "covered_question_ids": [],
       "worked_examples": [
         {
-          question: '【步驟化例題】<span className='text-rose-600 font-bold'>重力位能</span>與<span className='text-rose-600 font-bold'>動能</span>轉換：一重 50 kg 之落錘打樁機錘頭，自距離地面 10 公尺高處自由落下打擊樁頭。若不計空氣阻力，求錘頭剛接觸樁頭瞬間之「<span className='text-rose-600 font-bold'>動能</span> Ek」與「速度 v」？ (g = 9.8 m/s²)',
+          question: '【步驟化例題】<span className="text-rose-600 font-bold">重力位能</span>與<span className="text-rose-600 font-bold">動能</span>轉換：一重 50 kg 之落錘打樁機錘頭，自距離地面 10 公尺高處自由落下打擊樁頭。若不計空氣阻力，求錘頭剛接觸樁頭瞬間之「<span className="text-rose-600 font-bold">動能</span> Ek」與「速度 v」？ (g = 9.8 m/s²)',
           difficulty: '基礎',
-          steps: [ \"**步驟 1**：依據<span className='text-indigo-600 font-bold'>能量守恆定律</span>。最高點<span className='text-rose-600 font-bold'>重力位能</span> Ep = mgh 轉換為最低點<span className='text-rose-600 font-bold'>動能</span> Ek。", \"**步驟 2**：計算<span className='text-rose-600 font-bold'>動能</span> Ek。Ek = mgh = 50 kg × 9.8 m/s² × 10 m = 4900 焦耳 (J)。", \"**步驟 3**：計算速度 v。Ek = 1/2 m v² ⇒ 4900 = 1/2 (50) v² ⇒ 25 v² = 4900 ⇒ v² = 196 ⇒ v = 14 m/s。" ], 
-          answer: '接觸瞬間<span className='text-rose-600 font-bold'>動能</span> Ek = 4900 J，速度 v = 14 m/s。'
+          steps: [ "**步驟 1**：依據<span className='text-indigo-600 font-bold'>能量守恆定律</span>。最高點<span className='text-rose-600 font-bold'>重力位能</span> Ep = mgh 轉換為最低點<span className='text-rose-600 font-bold'>動能</span> Ek。", "**步驟 2**：計算<span className='text-rose-600 font-bold'>動能</span> Ek。Ek = mgh = 50 kg × 9.8 m/s² × 10 m = 4900 焦耳 (J)。", "**步驟 3**：計算速度 v。Ek = 1/2 m v² ⇒ 4900 = 1/2 (50) v² ⇒ 25 v² = 4900 ⇒ v² = 196 ⇒ v = 14 m/s。" ], 
+          answer: '接觸瞬間<span className="text-rose-600 font-bold">動能</span> Ek = 4900 J，速度 v = 14 m/s。'
         }
       ],
-      \"illustrations\": [\'physics-context.webp\', \'physics-mechanism.webp\', \'physics-comparison.webp\', \'physics-step.webp\', \'physics-real-world.webp\', \'physics-concept-diagram.webp\', \'physics-formula-visual.webp\'],
+      "illustrations": ['physics-context.webp', 'physics-mechanism.webp', 'physics-comparison.webp', 'physics-step.webp', 'physics-real-world.webp', 'physics-concept-diagram.webp', 'physics-formula-visual.webp'],
       "concepts": [
         {
           "heading": "功與電力功率定義 (Work & Electric Power)",
@@ -379,9 +379,9 @@ export const physicsData: SubjectData = {
           "body": "在 HVAC 空調冰水與冰膽系統中，水泵與風機是主要耗能設備。水泵水功率 P_water = Q · ΔP (流量乘以壓差)。當調整馬達轉速 N 時，遵循<span className='text-indigo-600 font-bold'>風機水泵比例定律</span> (Affinity Laws)：流量與轉速成正比，揚程與轉速平方成正比，而消耗功率與轉速立方成正比 (P ∝ N³)。變頻控制 (VFD) 因此具有極高的節能效益。",
           "formula": "<span className=\"text-indigo-600 font-bold\">Q₂ / Q₁ = N₂ / N₁</span>\n<span className=\"text-indigo-600 font-bold\">H₂ / H₁ = (N₂ / N₁)²</span>\n<span className=\"text-indigo-600 font-bold\">P₂ / P₁ = (N₂ / N₁)³</span>",
           "steps": [
-            \"**第一步（轉速調降）**：當空調負載降低時，將水泵轉速降至額定的 80% (N₂/N₁ = 0.8)。",
-            \"**第二步（流量響應）**：水流量降至 80% (Q₂/Q₁ = 0.8)。",
-            \"**第三步（功率驟降）**：水泵耗電功率降至 0.8³ = 0.512 (約原本的 51.2%)，節省近 49% 電能。"
+            "**第一步（轉速調降）**：當空調負載降低時，將水泵轉速降至額定的 80% (N₂/N₁ = 0.8)。",
+            "**第二步（流量響應）**：水流量降至 80% (Q₂/Q₁ = 0.8)。",
+            "**第三步（功率驟降）**：水泵耗電功率降至 0.8³ = 0.512 (約原本的 51.2%)，節省近 49% 電能。"
           ]
         },
         {
@@ -521,13 +521,13 @@ export const physicsData: SubjectData = {
       "covered_question_ids": [],
       "worked_examples": [
         {
-          question: '【步驟化例題】建築牆體<span className='text-rose-600 font-bold'>熱傳導</span>率計算：一單層混凝土外牆厚度 d = 0.2 m，面積 A = 20 m²，混凝土<span className='text-rose-600 font-bold'>熱傳導</span>係數 k = 1.5 W/(m·K)。若室外氣溫 35°C，室內冷氣維持 25°C，求每小時透過該外牆傳入室內之熱量 Q（焦耳 J）？',
+          question: '【步驟化例題】建築牆體<span className="text-rose-600 font-bold">熱傳導</span>率計算：一單層混凝土外牆厚度 d = 0.2 m，面積 A = 20 m²，混凝土<span className="text-rose-600 font-bold">熱傳導</span>係數 k = 1.5 W/(m·K)。若室外氣溫 35°C，室內冷氣維持 25°C，求每小時透過該外牆傳入室內之熱量 Q（焦耳 J）？',
           difficulty: '中等',
-          steps: [ \"**步驟 1**：利用傅立葉<span className='text-rose-600 font-bold'>熱傳導</span>定律。傳熱功率 P = k · A · (T1 - T2) / d。", \"**步驟 2**：代入數值求功率 P。P = 1.5 × 20 × (35 - 25) / 0.2 = 300 / 0.2 = 1500 W (J/s)。", \"**步驟 3**：計算一小時 (3600秒) 總熱量 Q。Q = P × t = 1500 J/s × 3600 s = 5.4 × 10⁶ 焦耳 = 5.4 MJ。" ], 
+          steps: [ "**步驟 1**：利用傅立葉<span className='text-rose-600 font-bold'>熱傳導</span>定律。傳熱功率 P = k · A · (T1 - T2) / d。", "**步驟 2**：代入數值求功率 P。P = 1.5 × 20 × (35 - 25) / 0.2 = 300 / 0.2 = 1500 W (J/s)。", "**步驟 3**：計算一小時 (3600秒) 總熱量 Q。Q = P × t = 1500 J/s × 3600 s = 5.4 × 10⁶ 焦耳 = 5.4 MJ。" ], 
           answer: '每小時傳入熱量 Q 為 5.4 × 10⁶ 焦耳 (5.4 MJ)。'
         }
       ],
-      \"illustrations\": [\'physics-context.webp\', \'physics-mechanism.webp\', \'physics-comparison.webp\', \'physics-step.webp\', \'physics-real-world.webp\', \'physics-concept-diagram.webp\', \'physics-formula-visual.webp\'],
+      "illustrations": ['physics-context.webp', 'physics-mechanism.webp', 'physics-comparison.webp', 'physics-step.webp', 'physics-real-world.webp', 'physics-concept-diagram.webp', 'physics-formula-visual.webp'],
       "concepts": [
         {
           "heading": "熱傳遞三大機制 (Mechanisms of Heat Transfer)",
@@ -602,9 +602,9 @@ export const physicsData: SubjectData = {
           "body": "建築空調工程的核心在於濕空氣的狀態調節。空氣由乾空氣與水蒸氣組成。乾球溫度 (DBT)、濕球溫度 (WBT)、露點溫度 (DPT)、相對濕度 (RH%) 及含濕量 (Absolute Humidity x) 在<span className='text-rose-600 font-bold'>焓濕圖</span> (Psychrometric Chart) 上唯一確定空氣狀態。當空氣降溫至露點以下時，水蒸氣凝結成水滴，此即空調除濕原理。",
           "formula": "<span className=\"text-indigo-600 font-bold\">RH% = (P_v / P_vsat) × 100%</span>\n<span className=\"text-indigo-600 font-bold\">h = 1.006 · t + x · (2501 + 1.86 · t) (kJ/kg)</span>",
           "steps": [
-            \"**第一步（狀態定位）**：根據乾球溫度與相對濕度在<span className='text-rose-600 font-bold'>焓濕圖</span>查出空氣比焓 h (kJ/kg) 與含濕量 x (g/kg)。",
-            \"**第二步（冷卻除濕過程）**：空氣流經冰水盤管，乾球溫度降低，達露點後沿飽和線 (100% RH) 下降析出冷凝水。",
-            \"**第三步（送風焓差計算）**：冷房負荷 Q_total = m_air · (h_room - h_supply)。"
+            "**第一步（狀態定位）**：根據乾球溫度與相對濕度在<span className='text-rose-600 font-bold'>焓濕圖</span>查出空氣比焓 h (kJ/kg) 與含濕量 x (g/kg)。",
+            "**第二步（冷卻除濕過程）**：空氣流經冰水盤管，乾球溫度降低，達露點後沿飽和線 (100% RH) 下降析出冷凝水。",
+            "**第三步（送風焓差計算）**：冷房負荷 Q_total = m_air · (h_room - h_supply)。"
           ]
         },
         {
@@ -656,8 +656,8 @@ export const physicsData: SubjectData = {
           "body": "高層建築管道間、中庭 (Atrium) 與採光井中，室內外溫差會導致空氣密度差異。熱空氣密度低而上升，由頂部排氣窗逸出，底部引進室外涼爽空氣，此現象稱為熱壓通風或<span className='text-rose-600 font-bold'>煙囪效應</span> (Stack Effect)。",
           "formula": "<span className=\"text-indigo-600 font-bold\">ΔP_stack = ρ₀ · g · h · (1/T_out - 1/T_in) · T₀</span>\n<span className=\"text-indigo-600 font-bold\">Q_stack = C_d · A · √( 2 · g · h · ΔT / T_in )</span>",
           "steps": [
-            \"**第一步（求取熱壓差 ΔP）**：根據中庭開窗高度差 h 與室內外絕對溫度 (T_in, T_out, K) 計算驅動壓差。",
-            \"**第二步（計算通風量 Q）**：代入開窗有效面積 A 與流量係數 Cd (通常取 0.6~0.65) 求出自然換氣量 m³/s。"
+            "**第一步（求取熱壓差 ΔP）**：根據中庭開窗高度差 h 與室內外絕對溫度 (T_in, T_out, K) 計算驅動壓差。",
+            "**第二步（計算通風量 Q）**：代入開窗有效面積 A 與流量係數 Cd (通常取 0.6~0.65) 求出自然換氣量 m³/s。"
           ]
         }
       ],
@@ -756,13 +756,13 @@ export const physicsData: SubjectData = {
       "covered_question_ids": [],
       "worked_examples": [
         {
-          question: '【步驟化例題】建築聲學與分貝（dB）加總：施工現場兩台發電機同時運作，若單獨運作第一台時在量測點產生的<span className='text-rose-600 font-bold'>聲壓級</span>為 70 dB，第二台單獨運作時亦為 70 dB。求兩台同時運作時之總<span className='text-rose-600 font-bold'>聲壓級</span>為多少 dB？',
+          question: '【步驟化例題】建築聲學與分貝（dB）加總：施工現場兩台發電機同時運作，若單獨運作第一台時在量測點產生的<span className="text-rose-600 font-bold">聲壓級</span>為 70 dB，第二台單獨運作時亦為 70 dB。求兩台同時運作時之總<span className="text-rose-600 font-bold">聲壓級</span>為多少 dB？',
           difficulty: '中等',
-          steps: [ \"**步驟 1**：理解對數分貝加總規則。兩相同分貝能量相加，總分貝增加 3 dB（10 · log10(2) ≒ 3）。", \"**步驟 2**：列分貝能量疊加公式。L_total = 10 · log10(10^(70/10) + 10^(70/10)) = 10 · log10(2 × 10^7)。", \"**步驟 3**：計算結果。L_total = 70 + 10 · log10(2) = 70 + 3.01 ≒ 73 dB。" ], 
-          answer: '兩台同時運作之總<span className='text-rose-600 font-bold'>聲壓級</span>為 73 dB。'
+          steps: [ "**步驟 1**：理解對數分貝加總規則。兩相同分貝能量相加，總分貝增加 3 dB（10 · log10(2) ≒ 3）。", "**步驟 2**：列分貝能量疊加公式。L_total = 10 · log10(10^(70/10) + 10^(70/10)) = 10 · log10(2 × 10^7)。", "**步驟 3**：計算結果。L_total = 70 + 10 · log10(2) = 70 + 3.01 ≒ 73 dB。" ], 
+          answer: '兩台同時運作之總<span className="text-rose-600 font-bold">聲壓級</span>為 73 dB。'
         }
       ],
-      \"illustrations\": [\'physics-context.webp\', \'physics-mechanism.webp\', \'physics-comparison.webp\', \'physics-step.webp\', \'physics-real-world.webp\', \'physics-concept-diagram.webp\', \'physics-formula-visual.webp\'],
+      "illustrations": ['physics-context.webp', 'physics-mechanism.webp', 'physics-comparison.webp', 'physics-step.webp', 'physics-real-world.webp', 'physics-concept-diagram.webp', 'physics-formula-visual.webp'],
       "concepts": [
         {
           "heading": "聲波性質與空氣中聲速 (Sound Wave Speed & Frequency)",
@@ -843,9 +843,9 @@ export const physicsData: SubjectData = {
           "body": "樓板衝擊音源於腳步聲、物品墜落等直接撞擊結構引致的固體傳播聲 (Structure-borne Noise)。台灣建築法規規定分戶樓板連同鋪面衝擊音降低量需達 17 dB 以上 (或 L'n,w ≤ 58 dB)。浮動地板 (Floating Floor) 透過在結構樓板與水泥砂漿壓造型層之間鋪設高彈性防音墊 (如 EVA、橡膠防音墊)，阻斷振<span className='text-rose-600 font-bold'>動能</span>量傳遞。",
           "formula": "<span className=\"text-indigo-600 font-bold\">ΔL_w = L'n,w,bare - L'n,w,floating ≥ 17 dB</span>",
           "steps": [
-            \"**第一步（結構基底）**：RC 鋼筋混凝土樓板 (15 cm ~ 18 cm)。",
-            \"**第二步（隔音緩衝）**：全鋪設 8mm ~ 12mm 彈性隔音墊，並沿牆邊向上折起 5cm 形成防音杯底 (隔離側向傳聲)。",
-            \"**第三步（壓造型層）**：澆置 5cm 加勁水泥砂漿，上鋪木地板或地磚。"
+            "**第一步（結構基底）**：RC 鋼筋混凝土樓板 (15 cm ~ 18 cm)。",
+            "**第二步（隔音緩衝）**：全鋪設 8mm ~ 12mm 彈性隔音墊，並沿牆邊向上折起 5cm 形成防音杯底 (隔離側向傳聲)。",
+            "**第三步（壓造型層）**：澆置 5cm 加勁水泥砂漿，上鋪木地板或地磚。"
           ]
         },
         {
@@ -886,8 +886,8 @@ export const physicsData: SubjectData = {
           "body": "當聲波波長與房間尺寸相當（低頻音）時，反射波與入射波重疊會在平行牆面間形成駐波 (Standing Waves)，產生特定的房間簡正頻率 (Room Modes / Axials Modes)。這會導致室內某些位置低音異常過強（聲壓極大值），某些位置則幾乎聽不到低音（聲壓極小值）。",
           "formula": "<span className=\"text-indigo-600 font-bold\">f_mode = (v / 2) · √[ (n_x / L)² + (n_y / W)² + (n_z / H)² ]</span>",
           "steps": [
-            \"**第一步（頻率計算）**：對矩形房間求出一階軸向模態頻率 f = v / (2L)。",
-            \"**第二步（防範措施）**：避免房間長寬高呈簡單整數比 (如 1:1:1 或 1:2:4)。採用黃金比例 (如 1 : 1.14 : 1.39) 或設置低頻陷阱 (Bass Trap) 吸收低頻駐波能量。"
+            "**第一步（頻率計算）**：對矩形房間求出一階軸向模態頻率 f = v / (2L)。",
+            "**第二步（防範措施）**：避免房間長寬高呈簡單整數比 (如 1:1:1 或 1:2:4)。採用黃金比例 (如 1 : 1.14 : 1.39) 或設置低頻陷阱 (Bass Trap) 吸收低頻駐波能量。"
           ]
         }
       ],
@@ -975,11 +975,11 @@ export const physicsData: SubjectData = {
         {
           question: '【步驟化例題】建築照明照度計算：一正上方點光源發光強度為 I = 1600 燭光 (cd)，垂直照射下方距離 2 公尺處之書桌檯面。求該檯面上的「點照度 E」為多少勒克斯 (Lux)？',
           difficulty: '基礎',
-          steps: [ \"**步驟 1**：利用平方反比定律照度公式。E = I / r²（當垂直照射 θ = 0° 時）。", \"**步驟 2**：代入強度 I = 1600 cd 與距離 r = 2 m。", \"**步驟 3**：計算照度。E = 1600 / (2)² = 1600 / 4 = 400 Lux。" ], 
+          steps: [ "**步驟 1**：利用平方反比定律照度公式。E = I / r²（當垂直照射 θ = 0° 時）。", "**步驟 2**：代入強度 I = 1600 cd 與距離 r = 2 m。", "**步驟 3**：計算照度。E = 1600 / (2)² = 1600 / 4 = 400 Lux。" ], 
           answer: '檯面點照度 E 為 400 Lux。'
         }
       ],
-      \"illustrations\": [\'physics-context.webp\', \'physics-mechanism.webp\', \'physics-comparison.webp\', \'physics-step.webp\', \'physics-real-world.webp\', \'physics-concept-diagram.webp\', \'physics-formula-visual.webp\'],
+      "illustrations": ['physics-context.webp', 'physics-mechanism.webp', 'physics-comparison.webp', 'physics-step.webp', 'physics-real-world.webp', 'physics-concept-diagram.webp', 'physics-formula-visual.webp'],
       "concepts": [
         {
           "heading": "光的反射、折射與全反射 (Reflection, Refraction & Snell's Law)",
@@ -1191,11 +1191,11 @@ export const physicsData: SubjectData = {
         {
           question: '【步驟化例題】建築配電負載與安全電流計算：某一建築工務所安裝一台額定功率 P = 2200 瓦特 (W) 之冷氣機，供電電壓 V = 110 伏特 (V)。求該冷氣運轉時之「工作電流 I」及「內部等效電阻 R」？',
           difficulty: '基礎',
-          steps: [ \"**步驟 1**：利用電功率公式 P = V · I。求解電流 I = P / V = 2200 W / 110 V = 20 安培 (A)。", \"**步驟 2**：利用歐姆定律 V = I · R。求解電阻 R = V / I = 110 V / 20 A = 5.5 歐姆 (Ω)。", \"**步驟 3**：確認結果。電流 20 A，電阻 5.5 Ω。" ], 
+          steps: [ "**步驟 1**：利用電功率公式 P = V · I。求解電流 I = P / V = 2200 W / 110 V = 20 安培 (A)。", "**步驟 2**：利用歐姆定律 V = I · R。求解電阻 R = V / I = 110 V / 20 A = 5.5 歐姆 (Ω)。", "**步驟 3**：確認結果。電流 20 A，電阻 5.5 Ω。" ], 
           answer: '工作電流 I = 20 安培 (A)，等效電阻 R = 5.5 歐姆 (Ω)。'
         }
       ],
-      \"illustrations\": [\'physics-context.webp\', \'physics-mechanism.webp\', \'physics-comparison.webp\', \'physics-step.webp\', \'physics-real-world.webp\', \'physics-concept-diagram.webp\', \'physics-formula-visual.webp\'],
+      "illustrations": ['physics-context.webp', 'physics-mechanism.webp', 'physics-comparison.webp', 'physics-step.webp', 'physics-real-world.webp', 'physics-concept-diagram.webp', 'physics-formula-visual.webp'],
       "concepts": [
         {
           "heading": "歐姆定律與串並聯電路分析 (Ohm's Law & Series-Parallel Circuits)",
@@ -1279,8 +1279,8 @@ export const physicsData: SubjectData = {
           "body": "變壓器利用法拉第電磁感應定律 (Faraday's Law) 將高壓電降壓至建築使用電壓。變壓器一、二次側電壓比與線圈匝數成正比，電流比與匝數成反比。變壓器鐵心損耗 (鐵損) 與銅線電阻發熱 (銅損) 決定其總效率 (通常達 97%~99%)。",
           "formula": "<span className=\"text-indigo-600 font-bold\">V₁ / V₂ = N₁ / N₂ = I₂ / I₁</span>\n<span className=\"text-indigo-600 font-bold\">P_in = P_out + P_iron + P_copper</span>",
           "steps": [
-            \"**第一步（高壓進戶）**：台電 22.8 kV 高壓電力引入大樓配電室。",
-            \"**第二步（乾式變壓器）**：變壓器將 22.8 kV 降壓為 380V/220V 三相四線系統。"
+            "**第一步（高壓進戶）**：台電 22.8 kV 高壓電力引入大樓配電室。",
+            "**第二步（乾式變壓器）**：變壓器將 22.8 kV 降壓為 380V/220V 三相四線系統。"
           ]
         },
         {

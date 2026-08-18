@@ -4,7 +4,8 @@
   "private": true,
   "scripts": {
     "build": "pnpm --filter web build",
-    "validate:content": "node scripts/validate-course-data.mjs && node scripts/validate-exam-coverage.mjs && node scripts/validate-full-exam-data.mjs",
+    "validate:data-syntax": "node scripts/validate-data-syntax.mjs",
+    "validate:content": "node scripts/validate-data-syntax.mjs && node scripts/validate-course-data.mjs && node scripts/validate-exam-coverage.mjs && node scripts/validate-full-exam-data.mjs",
     "build:exam-coverage": "node scripts/build-exam-coverage.mjs",
     "build:full-exams": "python scripts/build-full-exam-assets.py",
     "validate:built-links": "node scripts/validate-built-learning-links.mjs",

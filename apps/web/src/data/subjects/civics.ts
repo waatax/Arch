@@ -28,7 +28,7 @@ export const civicsData: SubjectData = {
       concepts: [
         {
           heading: '一、公民權利發展與參政權在都市規劃之應用',
-          body: '<span className='text-indigo-600 font-bold'>公民身分（Citizenship）</span>賦予個人在政治社群中的成員地位與基本權利。現代公民權利包含**自由權**（Civil Rights）、**政治權**（Political Rights）與**社會權**（Social Rights）。在都市規劃與建築領域，參政權由單純的投票擴展至**都市計畫展覽**、**公聽會**、**聽證會**及都市設計審議的公民參與機制。',
+          body: '<span className="text-indigo-600 font-bold">公民身分（Citizenship）</span>賦予個人在政治社群中的成員地位與基本權利。現代公民權利包含**自由權**（Civil Rights）、**政治權**（Political Rights）與**社會權**（Social Rights）。在都市規劃與建築領域，參政權由單純的投票擴展至**都市計畫展覽**、**公聽會**、**聽證會**及都市設計審議的公民參與機制。',
           steps: [
             '法案與計畫公告展覽：依《**都市計畫法**》第19條，計畫草案應公開展覽 30 天，並舉辦說明會。',
             '公民陳情與意見表達：任何公民或團體得於公開展覽期間內，以書面載明姓名、地址及建議向主管機關提出陳情。',
@@ -39,7 +39,7 @@ export const civicsData: SubjectData = {
         },
         {
           heading: '二、社區營造、參與式設計與空間民主',
-          body: '社區營造 (Community Building) 強調「**由下而上** (Bottom-up)」的居民主導精神，打破傳統建築師「**由上而下** (Top-down)」的專家威權。建築師擔任促成者 (Facilitator)，透過<span className='text-rose-600 font-bold'>參與式設計 (Participatory Design)</span> 與**參與式預算** (Participatory Budgeting)，將居民的真實需求轉化為實體空間設計，實踐<span className='text-indigo-600 font-bold'>空間民主 (Spatial Democracy)</span>。',
+          body: '社區營造 (Community Building) 強調「**由下而上** (Bottom-up)」的居民主導精神，打破傳統建築師「**由上而下** (Top-down)」的專家威權。建築師擔任促成者 (Facilitator)，透過<span className="text-rose-600 font-bold">參與式設計 (Participatory Design)</span> 與**參與式預算** (Participatory Budgeting)，將居民的真實需求轉化為實體空間設計，實踐<span className="text-indigo-600 font-bold">空間民主 (Spatial Democracy)</span>。',
           steps: [
             '議題形成與社區發掘：調查社區歷史脈絡、公共空間痛點與居民人口結構。',
             '參與式工作坊 (Participatory Workshop)：利用模型、工作紙與空間願景地圖進行多方對話。',
@@ -63,7 +63,7 @@ export const civicsData: SubjectData = {
         },
         {
           heading: '四、公共建設、NIMBY與YIMBY效應及**公民訴訟**',
-          body: '建築與都市開發常引發<span className='text-rose-600 font-bold'>鄰避效應 (NIMBY, Not In My Backyard)</span> 與<span className='text-indigo-600 font-bold'>迎避效應 (YIMBY, Yes In My Backyard)</span>。當公共工程涉及環境破壞或違法審查時，公民可依據《**環境基本法**》與《**行政訴訟法**》提起**公民訴訟** (Citizen Suits)，要求主管機關依法執行職務。',
+          body: '建築與都市開發常引發<span className="text-rose-600 font-bold">鄰避效應 (NIMBY, Not In My Backyard)</span> 與<span className="text-indigo-600 font-bold">迎避效應 (YIMBY, Yes In My Backyard)</span>。當公共工程涉及環境破壞或違法審查時，公民可依據《**環境基本法**》與《**行政訴訟法**》提起**公民訴訟** (Citizen Suits)，要求主管機關依法執行職務。',
           steps: [
             '辨識鄰避設施：如垃圾焚化廠、變電所、殯儀館、社會住宅等。',
             '分析居民訴求：環境污染疑慮、房價下跌風險、治安與交通衝擊。',
@@ -89,7 +89,7 @@ export const civicsData: SubjectData = {
         },
         {
           heading: '六、空間正義、居住權與社會住宅政策',
-          body: '依據聯合國《經濟社會文化權利國際公約》，居住權為基本人權。政府推動<span className='text-indigo-600 font-bold'>社會住宅（Social Housing）</span>政策，透過包租代管、公有土地撥用與都更容積獎勵回饋，落實<span className='text-rose-600 font-bold'>居住正義（Housing Justice）</span>，保障弱勢族群在城市中取得負擔得起之安居空間。',
+          body: '依據聯合國《經濟社會文化權利國際公約》，居住權為基本人權。政府推動<span className="text-indigo-600 font-bold">社會住宅（Social Housing）</span>政策，透過包租代管、公有土地撥用與都更容積獎勵回饋，落實<span className="text-rose-600 font-bold">居住正義（Housing Justice）</span>，保障弱勢族群在城市中取得負擔得起之安居空間。',
           steps: [
             '社會住宅目標：提供至少 30% 以上之住宅單元予經濟或社會弱勢者。',
             '多元取得管道：政府自建、都市更新獎勵回饋、包租代管。'
@@ -220,7 +220,7 @@ export const civicsData: SubjectData = {
         },
         {
           heading: '二、建蔽率、容積率與免計容積精確計算原理',
-          body: '<span className='text-indigo-600 font-bold'>建蔽率（Building Coverage Ratio, BCR）</span>控制建築投影面積占基地面積之比例，確保地表保留空地；<span className='text-rose-600 font-bold'>容積率（Floor Area Ratio, FAR）</span>控制總建築樓地板面積占基地面積之比例，控制都市人口與總開發強度。**免計容積項目**包括機電設備空間、梯廳、陽台（每層小於該層樓地板面積10%）與無障礙避難空間。',
+          body: '<span className="text-indigo-600 font-bold">建蔽率（Building Coverage Ratio, BCR）</span>控制建築投影面積占基地面積之比例，確保地表保留空地；<span className="text-rose-600 font-bold">容積率（Floor Area Ratio, FAR）</span>控制總建築樓地板面積占基地面積之比例，控制都市人口與總開發強度。**免計容積項目**包括機電設備空間、梯廳、陽台（每層小於該層樓地板面積10%）與無障礙避難空間。',
           steps: [
             '建蔽率公式：BCR (%) = (建築面積 A_building / 基地面積 A_site) × 100%',
             '基準容積公式：V_base = A_site × FAR (%)',
@@ -390,7 +390,7 @@ export const civicsData: SubjectData = {
       "illustrations": [ 'context.webp', 'mechanism.webp', 'comparison.webp', 'step-by-step.webp', 'civics-real-world.webp' , 'economy-sustainability-infographic.webp' ],
       concepts: [
         {
-          heading: '一、<span className='text-indigo-600 font-bold'>台灣綠建築評估體系 (EEWH)</span> 與九大指標',
+          heading: '一、<span className="text-indigo-600 font-bold">台灣綠建築評估體系 (EEWH)</span> 與九大指標',
           body: '台灣 EEWH 綠建築評估體系為全球第四個、亞熱帶第一個成立的綠建築認證。分為四大領域九大指標：**生態** (Ecological: 生物多樣性、綠化量、基地保水)、**節能** (Energy Saving: 日常**節能**)、**減廢** (Waste Reduction: 二氧化碳減量、廢棄物減量)、**健康**詳細 (Health: 室內環境、水資源、污水垃圾改善)。評定等級分為鑽石級、黃金級、銀級、銅級與合格級。',
           steps: [
             '日常**節能**指標（核心門檻）：包含外牆遮陽 ENVLOAD、空調效率與照明功率密度 (LPD)。',
@@ -408,7 +408,7 @@ export const civicsData: SubjectData = {
         },
         {
           heading: '二、循環經濟與綠色建材標章制度 (Green Building Materials)',
-          body: '<span className='text-rose-600 font-bold'>循環經濟（Circular Economy）</span>主張建築材料自設計即考量「搖籃到搖籃（C2C, Cradle to Cradle）」與解構設計（Design for Deconstruction, DfD）。台灣「**綠建材標章**」分為四大類：**生態**綠建材、**健康**綠建材（低 VOC/甲醛）、高性能綠建材（隔音/透水/防熱）與再生綠建材（回收廢棄物利用率達標）。',
+          body: '<span className="text-rose-600 font-bold">循環經濟（Circular Economy）</span>主張建築材料自設計即考量「搖籃到搖籃（C2C, Cradle to Cradle）」與解構設計（Design for Deconstruction, DfD）。台灣「**綠建材標章**」分為四大類：**生態**綠建材、**健康**綠建材（低 VOC/甲醛）、高性能綠建材（隔音/透水/防熱）與再生綠建材（回收廢棄物利用率達標）。',
           steps: [
             '建築綠建材使用率：依《**建築技術規則**》，室內裝修綠建材使用率應達 60% 以上，戶外地面綠建材使用率應達 50% 以上。',
             '解構設計 (DfD)：採用乾式構造與螺栓連接，使建築拆除時建材能 100% 分解回收。'
@@ -424,7 +424,7 @@ export const civicsData: SubjectData = {
         },
         {
           heading: '三、建築全生命週期碳足跡與 CBAM 碳邊境機制',
-          body: '建築碳足跡包含「<span className='text-indigo-600 font-bold'>蘊含碳（Embodied Carbon，建材生產與施工）</span>」與「<span className='text-rose-600 font-bold'>營運碳（Operational Carbon，日常耗電）</span>」。隨著歐盟 CBAM（碳邊境調整機制）與台灣《氣候變遷因應法》開徵碳費，建築業推行低碳水泥、循環鋼材與淨零建築（Net Zero Building）轉型。',
+          body: '建築碳足跡包含「<span className="text-indigo-600 font-bold">蘊含碳（Embodied Carbon，建材生產與施工）</span>」與「<span className="text-rose-600 font-bold">營運碳（Operational Carbon，日常耗電）</span>」。隨著歐盟 CBAM（碳邊境調整機制）與台灣《氣候變遷因應法》開徵碳費，建築業推行低碳水泥、循環鋼材與淨零建築（Net Zero Building）轉型。',
           steps: [
             '建築能效標章 (BERS)：分為 1 至 7 級，最高等級為 1+ 級 (近零碳建築 NZB)。',
             '蘊含碳減量：使用高爐石替代水泥（可減碳 30-50%）、木造構造 (CLT) 碳封存。'
@@ -578,7 +578,7 @@ export const civicsData: SubjectData = {
       concepts: [
         {
           heading: '一、超高齡社會來臨與通用設計 (Universal Design) 七大原則',
-          body: '台灣已邁入超高齡社會（65歲以上人口超過 20%）。<span className='text-indigo-600 font-bold'>通用設計（Universal Design, UD）</span>由 Ronald Mace 提出，主張空間與產品設計無須經過改裝，即可適合所有人（包含高齡者、幼童、身心障礙者與孕婦）使用。通用設計七大原則包含：公平使用、彈性使用、簡單易懂、明顯資訊、容錯性、省力、適宜之尺寸與空間。',
+          body: '台灣已邁入超高齡社會（65歲以上人口超過 20%）。<span className="text-indigo-600 font-bold">通用設計（Universal Design, UD）</span>由 Ronald Mace 提出，主張空間與產品設計無須經過改裝，即可適合所有人（包含高齡者、幼童、身心障礙者與孕婦）使用。通用設計七大原則包含：公平使用、彈性使用、簡單易懂、明顯資訊、容錯性、省力、適宜之尺寸與空間。',
           steps: [
             '原則一（公平使用）：提供所有人相同的空間使用方式，避免隔離特定族群。',
             '原則六（省力）：操作力道需求極小，如採用槓桿式門把或感應門取代傳統圓形旋轉門鎖。'
@@ -614,7 +614,7 @@ export const civicsData: SubjectData = {
         },
         {
           heading: '三、多元族群文化與原住民族風土空間尊重',
-          body: '<span className='text-rose-600 font-bold'>多元文化主義（Multiculturalism）</span>要求建築設計尊重不同族群之文化歷史與風土傳統。例如台灣原住民族傳統建築（泰雅族木穴居、排灣族石板屋、達悟族地下屋）蘊含深刻之風土氣候回應與部落社會組織秩序，當代公共建築應透過文化符號轉化與部落共商達成文化包容。',
+          body: '<span className="text-rose-600 font-bold">多元文化主義（Multiculturalism）</span>要求建築設計尊重不同族群之文化歷史與風土傳統。例如台灣原住民族傳統建築（泰雅族木穴居、排灣族石板屋、達悟族地下屋）蘊含深刻之風土氣候回應與部落社會組織秩序，當代公共建築應透過文化符號轉化與部落共商達成文化包容。',
           steps: [
             '排灣族石板屋：選用當地頁岩疊砌，低矮量體抵禦颱風，內部設祖靈柱。',
             '達悟族地下屋：主屋深埋地穴，迎風面平緩，適應蘭嶼強烈颱風與炎熱氣候。'
@@ -646,7 +646,7 @@ export const civicsData: SubjectData = {
         },
         {
           heading: '五、心靈友善與神經多元性空間設計 (Neurodiversity in Architecture)',
-          body: '當代包容性設計擴展至<span className='text-indigo-600 font-bold'>神經多元性（Neurodiversity）</span>，關懷自閉症（ASD）、過動症（ADHD）與失智症患者。空間設計避免過度強烈的色彩與噪音刺激，提供「低刺激感官寧靜室（Sensory De-escalation Room）」、直覺式記憶路標與防止迷路之環狀迴廊。',
+          body: '當代包容性設計擴展至<span className="text-indigo-600 font-bold">神經多元性（Neurodiversity）</span>，關懷自閉症（ASD）、過動症（ADHD）與失智症患者。空間設計避免過度強烈的色彩與噪音刺激，提供「低刺激感官寧靜室（Sensory De-escalation Room）」、直覺式記憶路標與防止迷路之環狀迴廊。',
           steps: [
             '失智症空間：採用環狀無死角走廊，避免死巷引發焦慮；房間門採用熟悉之色彩與標誌辨識。',
             '感官寧靜室：可調光柔和照明、聲學吸音牆面與無壓力包覆傢俱。'
@@ -662,7 +662,7 @@ export const civicsData: SubjectData = {
         },
         {
           heading: '六、無障礙住宅改裝與高齡在地老化 (Aging in Place)',
-          body: '「<span className='text-rose-600 font-bold'>在地老化（Aging in Place）</span>」主張讓高齡者在熟悉的自宅與社區中尊嚴度過晚年。老舊住宅進行無障礙改裝為 key 政策，項目包含：浴室拆除浴缸改為門檻零高低差淋浴間、加裝防滑地磚、安裝防滑扶手、擴大門淨寬（> 80cm）及公寓加裝裝附壁式電梯。',
+          body: '「<span className="text-rose-600 font-bold">在地老化（Aging in Place）</span>」主張讓高齡者在熟悉的自宅與社區中尊嚴度過晚年。老舊住宅進行無障礙改裝為 key 政策，項目包含：浴室拆除浴缸改為門檻零高低差淋浴間、加裝防滑地磚、安裝防滑扶手、擴大門淨寬（> 80cm）及公寓加裝裝附壁式電梯。',
           steps: [
             '浴室無障礙改裝：消除門檻門檻高低差、採用防滑係數 C.S.R > 0.65 之地磚、馬桶旁安裝 L 型與翻轉扶手。',
             '樓梯改裝：加裝樓梯升降椅或於外牆附掛無障礙電梯。'
