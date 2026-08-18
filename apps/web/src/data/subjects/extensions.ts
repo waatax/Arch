@@ -28,11 +28,11 @@ export const extensionsData: SubjectData = {
       concepts: [
         {
           heading: '一、人體工學與空間尺度 (Ergonomics & Dimensions)',
-          body: '建築空間設計的核心在於符合<span className="text-rose-600 font-bold">人體活動的自然尺度</span>與生理行為需求。常見的**人體工學數據**包含立姿通廓、坐姿作業空間、雙人交會淨寬，以及階梯與家具的標準工程學維度。掌握這些數據是進行合理空間配置的先決條件。',
+          body: '建築空間設計的核心在於符合<span className='text-rose-600 font-bold'>人體活動的自然尺度</span>與生理行為需求。常見的**人體工學數據**包含立姿通廓、坐姿作業空間、雙人交會淨寬，以及階梯與家具的標準工程學維度。掌握這些數據是進行合理空間配置的先決條件。',
           steps: [
             '**單人走道**：淨寬 ≥ 90 cm，確保單人通行無礙。',
             '**雙人交會走道**：淨寬 120 - 150 cm，符合兩人交錯與避讓安全距離。',
-            '**階梯舒適公式**：滿足 <span className="text-indigo-600 font-bold">2H + B = 60~65 cm</span>（H 為級高 15-18cm，B 為級深 26-30cm）。'
+            '**階梯舒適公式**：滿足 <span className='text-indigo-600 font-bold'>2H + B = 60~65 cm</span>（H 為級高 15-18cm，B 為級深 26-30cm）。'
           ],
           table: {
             headers: ['空間單元 / 家具類型', '標準尺寸 / 參考數據', '設計與使用注意事項'],
@@ -47,7 +47,7 @@ export const extensionsData: SubjectData = {
         },
         {
           heading: '二、空間機能與動線規劃 (Space Function & Circulation)',
-          body: '<span className="text-rose-600 font-bold">動線 (Circulation)</span> 是指使用者在空間中移動的軌跡與時間流動路徑。設計時應貫徹 Louis Kahn 的<span className="text-indigo-600 font-bold">「服務空間」與「被服務空間」</span>分區理論，實現短捷、順暢、無干擾的空間體系。',
+          body: '<span className='text-rose-600 font-bold'>動線 (Circulation)</span> 是指使用者在空間中移動的軌跡與時間流動路徑。設計時應貫徹 Louis Kahn 的<span className='text-indigo-600 font-bold'>「服務空間」與「被服務空間」</span>分區理論，實現短捷、順暢、無干擾的空間體系。',
           steps: [
             '**使用者行為分析**：調研不同使用者（訪客、住戶、後勤維護員）的活動時序與需求。',
             '**空間機能分區**：劃分**公共區** (Public Zone)、**半公共區** (Semi-public) 與**私密區** (Private Zone)。',
@@ -71,8 +71,8 @@ export const extensionsData: SubjectData = {
         },
         {
           heading: '四、無障礙通用設計規範 (Universal Design & Accessibility)',
-          body: '依據台灣《建築物無障礙設施設計規範》，<span className="text-rose-600 font-bold">無障礙設計 (Universal Design)</span> 旨在確保高齡者、身心障礙者與幼童皆能獨立安全使用建築。關鍵項目包含坡道坡度、無障礙通路淨寬與廁所空間規格。',
-          formula: '<span className="text-indigo-600 font-bold">坡道坡度公式</span>：坡度 S = 高差 H / 水平長度 L (**標準需 ≤ 1:12**，當高差 H ≤ 20cm 時得放寬至 ≤ 1:10)',
+          body: '依據台灣《建築物無障礙設施設計規範》，<span className='text-rose-600 font-bold'>無障礙設計 (Universal Design)</span> 旨在確保高齡者、身心障礙者與幼童皆能獨立安全使用建築。關鍵項目包含坡道坡度、無障礙通路淨寬與廁所空間規格。',
+          formula: '<span className='text-indigo-600 font-bold'>坡道坡度公式</span>：坡度 S = 高差 H / 水平長度 L (**標準需 ≤ 1:12**，當高差 H ≤ 20cm 時得放寬至 ≤ 1:10)',
           steps: [
             '**無障礙通路**：全區通路避開高低差階梯，坡道與出入口有效淨寬**不得小於 90 cm**。',
             '**無障礙坡道設置**：坡道兩側需設置雙階扶手（高度 75cm 與 85cm），每垂直爬升 75cm 需設 150cm 平台。',
@@ -206,7 +206,7 @@ export const extensionsData: SubjectData = {
       concepts: [
         {
           heading: '一、RC、SC 與 SRC 三大主體結構體系比較',
-          body: '建築結構依材料分為：<span className="text-rose-600 font-bold">鋼筋混凝土 (RC)</span>、<span className="text-rose-600 font-bold">純鋼骨構造 (SC)</span> 與<span className="text-rose-600 font-bold">鋼骨鋼筋混凝土 (SRC)</span>。RC 剛度大但自重大；SC 自重輕、韌性極佳但需噴覆防火漆，適用超高層；SRC 結合兩者優點，具備極高的抗震與耐火性能。',
+          body: '建築結構依材料分為：<span className='text-rose-600 font-bold'>鋼筋混凝土 (RC)</span>、<span className='text-rose-600 font-bold'>純鋼骨構造 (SC)</span> 與<span className='text-rose-600 font-bold'>鋼骨鋼筋混凝土 (SRC)</span>。RC 剛度大但自重大；SC 自重輕、韌性極佳但需噴覆防火漆，適用超高層；SRC 結合兩者優點，具備極高的抗震與耐火性能。',
           steps: [
             '**RC 構造**：混凝土抗壓 + 鋼筋抗拉，**剛度高，自重大**。',
             '**SC 構造**：型鋼焊接與高強螺栓連接，**韌性大**，需噴塗耐火被覆。',
@@ -239,7 +239,7 @@ export const extensionsData: SubjectData = {
         },
         {
           heading: '三、建築外牆、屋頂防水與隔熱軀體細部',
-          body: '建築滲漏水與<span className="text-rose-600 font-bold">熱橋效應 (Thermal Bridge)</span> 是構造失效的主因。屋頂防水包含塗膜防水與瀝青防水毯。屋頂隔熱採用高密度聚苯乙烯 (XPS) 隔熱板。外牆開口處需設置**滴水線 (Drip Groove)** 與止水帶，防止雨水沿牆面逆流。',
+          body: '建築滲漏水與<span className='text-rose-600 font-bold'>熱橋效應 (Thermal Bridge)</span> 是構造失效的主因。屋頂防水包含塗膜防水與瀝青防水毯。屋頂隔熱採用高密度聚苯乙烯 (XPS) 隔熱板。外牆開口處需設置**滴水線 (Drip Groove)** 與止水帶，防止雨水沿牆面逆流。',
           steps: [
             '**屋頂防水層順序**：結構層 -> 水泥砂漿找平層 -> 防水層 -> 隔熱層 (XPS) -> 保護層 (磨石子磚)。',
             '**滴水線 (Drip Edge)**：於陽台簷口或窗台下緣刻設 1cm 溝槽，中斷雨水表面張力逆流。'
@@ -414,7 +414,7 @@ export const extensionsData: SubjectData = {
         },
         {
           heading: '二、BIM (Building Information Modeling) 參數化物件模型',
-          body: '<span className="text-rose-600 font-bold">BIM (建築資訊模型)</span> 超越傳統 2D 線條繪圖，採用<span className="text-indigo-600 font-bold">「參數化 3D 元件」</span>。元件不僅具備三維幾何形體，更蘊含材料、成本等屬性資訊。修改 3D 模型時，所有圖面與明細表會自動即時同步更新。',
+          body: '<span className='text-rose-600 font-bold'>BIM (建築資訊模型)</span> 超越傳統 2D 線條繪圖，採用<span className='text-indigo-600 font-bold'>「參數化 3D 元件」</span>。元件不僅具備三維幾何形體，更蘊含材料、成本等屬性資訊。修改 3D 模型時，所有圖面與明細表會自動即時同步更新。',
           steps: [
             '**單一資訊源 (Single Source of Truth)**：所有圖面與明細表均擷取自同一 3D 參數化模型庫。',
             '**族群 (Family) 建立**：建立可透過參數 (Parameters) 控制寬度、高度與材料之動態元件。'
@@ -464,7 +464,7 @@ export const extensionsData: SubjectData = {
         },
         {
           heading: '五、參數化設計 (Parametric Design) 與演算法組構',
-          body: '<span className="text-rose-600 font-bold">參數化設計</span>將幾何圖形轉化為演算法邏輯（Node-based Visual Programming）。透過改變數值輸入，演算法能自動生成極度複雜的流體曲面、幾何遮陽外牆與最佳化結構骨架。',
+          body: '<span className='text-rose-600 font-bold'>參數化設計</span>將幾何圖形轉化為演算法邏輯（Node-based Visual Programming）。透過改變數值輸入，演算法能自動生成極度複雜的流體曲面、幾何遮陽外牆與最佳化結構骨架。',
           steps: [
             '**邏輯鏈建立**：點 -> 線 -> 向量 -> 演算法面板 -> 3D 實體。',
             '**日光反應外牆**：設定參數使外牆遮陽板開口孔徑隨太陽角度**自動動態調整**。'
@@ -586,7 +586,7 @@ export const extensionsData: SubjectData = {
       concepts: [
         {
           heading: '一、作品集視覺排版、Grid System 與設計敘事邏輯',
-          body: '建築作品集 (Portfolio) 是展現設計能力與個人風格的關鍵。排版應採用<span className="text-rose-600 font-bold">網格系統 (Grid System)</span>，控制邊界版口與視覺層級。內容敘事應遵從<span className="text-indigo-600 font-bold">「設計故事線 (Storyline)」</span>。',
+          body: '建築作品集 (Portfolio) 是展現設計能力與個人風格的關鍵。排版應採用<span className='text-rose-600 font-bold'>網格系統 (Grid System)</span>，控制邊界版口與視覺層級。內容敘事應遵從<span className='text-indigo-600 font-bold'>「設計故事線 (Storyline)」</span>。',
           steps: [
             '**網格系統 (Grid)**：使用 InDesign 設定網格，確保跨頁 (Spread) 視覺秩序一致。',
             '**視覺層級 (Visual Hierarchy)**：主題字型大而強烈，保留適度留白 (White Space)。'
@@ -791,7 +791,7 @@ export const extensionsData: SubjectData = {
         },
         {
           heading: '二、四技二專統測 (專一與專二) 備考策略',
-          body: '考取科技大學主要依賴統測。**專業科目一 (專一)** 包含工程力學與建築構造；**專業科目二 (專二)** 包含建築製圖實習與空間設計手繪繪圖。備考需兼顧<span className="text-rose-600 font-bold">力學計算</span>與<span className="text-indigo-600 font-bold">手繪速寫</span>能力。',
+          body: '考取科技大學主要依賴統測。**專業科目一 (專一)** 包含工程力學與建築構造；**專業科目二 (專二)** 包含建築製圖實習與空間設計手繪繪圖。備考需兼顧<span className='text-rose-600 font-bold'>力學計算</span>與<span className='text-indigo-600 font-bold'>手繪速寫</span>能力。',
           steps: [
             '**專一備考**：精通靜力學（桁架受力、彎矩圖 SFD/BMD）與建築構造材料題庫。',
             '**專二備考**：練就 3 小時內完成基地分析、平立剖與透視圖速寫之手繪功力。'

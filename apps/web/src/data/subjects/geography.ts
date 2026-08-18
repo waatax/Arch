@@ -9,7 +9,7 @@ export const geographyData: SubjectData = {
     {
       "slug": "environment-terrain",
       "title": "1. 地理環境與地形建築選址",
-      "desc": "探討內外營力地形、<span className="text-rose-600 font-bold">順向坡</span>、<span className="text-rose-600 font-bold">土壤液化</span>、斷層退縮、喀斯特溶洞及山坡地開發之地質評估與建築安全選址策略。",
+      "desc": "探討內外營力地形、<span className='text-rose-600 font-bold'>順向坡</span>、<span className='text-rose-600 font-bold'>土壤液化</span>、斷層退縮、喀斯特溶洞及山坡地開發之地質評估與建築安全選址策略。",
       "status": "done",
       gradeLevel: 10,
       "covered_question_ids": [],
@@ -58,16 +58,16 @@ export const geographyData: SubjectData = {
         },
         {
           "heading": "外營力作用與微地形演變：建築**承載力**評估",
-          "body": "由**太陽能**與**重力**驅動的風化、侵蝕、搬運及堆積作用，形塑了河流沖積扇、三角洲、海崖及沙洲等多元微地形。建築選址時，必須深入分析<span className=\"text-rose-600 font-bold\">地表水文</span>與堆積層的**承載力**，以防範地層下陷與<span className="text-rose-600 font-bold">土壤液化</span>。",
+          "body": "由**太陽能**與**重力**驅動的風化、侵蝕、搬運及堆積作用，形塑了河流沖積扇、三角洲、海崖及沙洲等多元微地形。建築選址時，必須深入分析<span className=\"text-rose-600 font-bold\">地表水文</span>與堆積層的**承載力**，以防範地層下陷與<span className='text-rose-600 font-bold'>土壤液化</span>。",
           "steps": [
             "河流沖積扇頂部：顆粒粗大、排水良好但受洪水與土石沖刷風險高，建築應避開扇頂主幹道。",
-            "沖積扇扇端：地下水湧出帶，水位高，基礎開挖需特別注意湧水與<span className="text-rose-600 font-bold">土壤液化</span>。",
+            "沖積扇扇端：地下水湧出帶，水位高，基礎開挖需特別注意湧水與<span className='text-rose-600 font-bold'>土壤液化</span>。",
             "河口三角洲與河畔平原：細粒黏土與軟弱黏土層厚，**承載力**低且易發生差異沉陷，需打設深樁基至堅硬岩盤。",
             "海崖與海岸沙洲：受波浪侵蝕與沿岸流影響，海崖易發生崩塌，沙洲地基鬆散易受暴潮侵襲。"
           ]
         },
         {
-          "heading": "山坡地開發限制與<span className="text-rose-600 font-bold">順向坡</span>建築防護",
+          "heading": "山坡地開發限制與<span className='text-rose-600 font-bold'>順向坡</span>建築防護",
           "body": "山坡地開發受到**坡度**與**地層構造**的嚴格法規限制。特別是在<span className=\"text-rose-600 font-bold\">順向坡 (Dip Slope)</span> 區域，當坡腳因工程開挖被切斷（即**坡腳切割**）且缺乏有效支撐時，極易沿地層層面引發大規模的<span className=\"text-rose-600 font-bold\">順向坡滑移</span>（地滑），造成毀滅性災難。",
           "formula": "<span className=\"text-indigo-600 font-bold\">核心公式：</span> **坡度百分比: Slope (%) = (高差 h / 水平距離 L) × 100%**",
           "table": {
@@ -104,7 +104,7 @@ export const geographyData: SubjectData = {
           "body": "在河畔與沿海等**水文地形變化劇烈**的地區，氾濫平原與古河道沖積區被列為<span className=\"text-rose-600 font-bold\">水患高風險區</span>。建築設計必須採取**防洪高程抬高**或**高床式**（高腳屋/架高基座）等避災策略，以確保居住安全。",
           "steps": [
             "**第一步（水文史調查）：** 調閱百年重現期洪水位紀錄與古河道疊圖分析。",
-            "**第二步（地質鑽探）：** 檢測地下水位高度、軟弱土層深度及<span className="text-rose-600 font-bold">土壤液化</span>潛勢。",
+            "**第二步（地質鑽探）：** 檢測地下水位高度、軟弱土層深度及<span className='text-rose-600 font-bold'>土壤液化</span>潛勢。",
             "**第三步（高程設計）：** 計畫建築首層地面高度必須高於計畫洪水位 (Plan Flood Level) 加安全高程 (至少 0.5~1.0m)。",
             "**第四步（結構防護）：** 採用筏式基礎或深樁基礎，並將地下室防水層提高至地表以上。"
           ]
@@ -157,8 +157,8 @@ export const geographyData: SubjectData = {
           ]
         },
         {
-          "heading": "石灰岩<span className="text-rose-600 font-bold">喀斯特地形</span> (Karst Topology) 與地下溶洞地基安全",
-          "body": "<span className="text-rose-600 font-bold">喀斯特地形</span> (Karst) 源於地下水對可溶性碳酸鹽岩 (如石灰石 CaCO₃) 的長期化學溶蝕作用，形成地下溶洞 (Caves) 與伏流。若建築基地下方隱藏未探明之溶洞，在上方建築載重作用下易發生突然坍塌陷落 (Sinkhole)。",
+          "heading": "石灰岩<span className='text-rose-600 font-bold'>喀斯特地形</span> (Karst Topology) 與地下溶洞地基安全",
+          "body": "<span className='text-rose-600 font-bold'>喀斯特地形</span> (Karst) 源於地下水對可溶性碳酸鹽岩 (如石灰石 CaCO₃) 的長期化學溶蝕作用，形成地下溶洞 (Caves) 與伏流。若建築基地下方隱藏未探明之溶洞，在上方建築載重作用下易發生突然坍塌陷落 (Sinkhole)。",
           "table": {
             "headers": [
               "地質勘查技術",
@@ -203,26 +203,26 @@ export const geographyData: SubjectData = {
         },
         {
           "difficulty": "基礎",
-          "question": "河流沖積扇地形從扇頂、扇央至扇端，沉積物顆粒大小與地下水水文特徵截然不同。(1) 哪一個區域顆粒最適合作為優良建築骨材且排水最佳？ (2) 哪一個區域為地下水湧出帶，開挖地下室需特別防範湧水與<span className="text-rose-600 font-bold">土壤液化</span>？",
+          "question": "河流沖積扇地形從扇頂、扇央至扇端，沉積物顆粒大小與地下水水文特徵截然不同。(1) 哪一個區域顆粒最適合作為優良建築骨材且排水最佳？ (2) 哪一個區域為地下水湧出帶，開挖地下室需特別防範湧水與<span className='text-rose-600 font-bold'>土壤液化</span>？",
           "steps": [
             "河流出谷口形成沖積扇，流速驟減，粗大顆粒率先堆積於扇頂，細小黏土顆粒帶至扇端。",
             "扇頂 (Fan Apex)：沉積顆粒最粗 (礫石、卵石)，透水性極佳，排水良好。",
-            "扇端 (Fan Margin)：地形平緩，沉積細砂與黏土，地下水受上游壓頭驅動在此湧出形成泉水帶，地下水位高，開挖易湧水且砂土易發生<span className="text-rose-600 font-bold">土壤液化</span>。"
+            "扇端 (Fan Margin)：地形平緩，沉積細砂與黏土，地下水受上游壓頭驅動在此湧出形成泉水帶，地下水位高，開挖易湧水且砂土易發生<span className='text-rose-600 font-bold'>土壤液化</span>。"
           ],
           "answer": "(1) 扇頂區域 (顆粒最粗、排水最佳)；(2) 扇端區域 (地下水湧出帶，水位高易液化)"
         },
         {
           "difficulty": "進階",
-          "question": "在<span className="text-rose-600 font-bold">順向坡</span>（Dip Slope）地形進行建築基地開挖時，若地層傾角為 28 度，山坡自然坡角為 35 度，開挖坡腳後極易引發何種地質災害？建築師應採取何種結構工程防衛對策？",
+          "question": "在<span className='text-rose-600 font-bold'>順向坡</span>（Dip Slope）地形進行建築基地開挖時，若地層傾角為 28 度，山坡自然坡角為 35 度，開挖坡腳後極易引發何種地質災害？建築師應採取何種結構工程防衛對策？",
           "steps": [
             "**步驟 1：** 分析地質幾何關係：山坡自然坡角 (35°) 大於地層傾角 (28°)，代表地層層面在坡腳處已被切割出露（坡腳出露）。",
-            "**步驟 2：** 判斷地質災害機制：雨水滲入層面形成潤滑作用與超額孔隙水壓，使上覆岩土體順著傾斜之地層滑面下滑，引發大規模「<span className="text-rose-600 font-bold">順向坡</span>滑移（地滑）」。",
+            "**步驟 2：** 判斷地質災害機制：雨水滲入層面形成潤滑作用與超額孔隙水壓，使上覆岩土體順著傾斜之地層滑面下滑，引發大規模「<span className='text-rose-600 font-bold'>順向坡</span>滑移（地滑）」。",
             "**步驟 3：** 制定建築與結構防衛工程對策：",
-            "  (1) 禁止在<span className="text-rose-600 font-bold">順向坡</span>坡腳進行無支撐之大規模切割開挖。",
+            "  (1) 禁止在<span className='text-rose-600 font-bold'>順向坡</span>坡腳進行無支撐之大規模切割開挖。",
             "  (2) 打設深層預力地錨 (Ground Anchor) 與抗滑樁 (Anti-slide Piles) 穿透滑移面鎖入基岩。",
             "  (3) 設置坡面截水溝與深層排水孔（仰斜式排水管），降低滑移面之地下水壓力。"
           ],
-          "answer": "極易引發大規模<span className="text-rose-600 font-bold">順向坡</span>滑移（山崩/地滑）。對策包括打設深層預力地錨與抗滑樁，並配置深層地下水排水系統以降低孔隙水壓。"
+          "answer": "極易引發大規模<span className='text-rose-600 font-bold'>順向坡</span>滑移（山崩/地滑）。對策包括打設深層預力地錨與抗滑樁，並配置深層地下水排水系統以降低孔隙水壓。"
         },
         {
           "difficulty": "進階",
@@ -272,7 +272,7 @@ export const geographyData: SubjectData = {
     {
       "slug": "climate-environment",
       "title": "2. 氣候環境與氣候應答建築",
-      "desc": "分析氣候要素與控制因子、<span className="text-rose-600 font-bold">被動式太陽能</span>、遮陽深寬比、微氣候通風、都市熱島減熱與太陽軌跡遮陽幾何。",
+      "desc": "分析氣候要素與控制因子、<span className='text-rose-600 font-bold'>被動式太陽能</span>、遮陽深寬比、微氣候通風、都市熱島減熱與太陽軌跡遮陽幾何。",
       "status": "done",
       gradeLevel: 10,
       "covered_question_ids": [],
@@ -325,7 +325,7 @@ export const geographyData: SubjectData = {
           }
         },
         {
-          "heading": "氣候應答建築與<span className="text-rose-600 font-bold">被動式太陽能</span>設計",
+          "heading": "氣候應答建築與<span className='text-rose-600 font-bold'>被動式太陽能</span>設計",
           "body": "<span className=\"text-rose-600 font-bold\">被動式太陽能設計 (Passive Solar Design)</span> 巧妙利用建築方位、開窗率、**熱質量 (Thermal Mass)** 與遮陽構件，在不消耗額外機械能的前提下，實現**冬暖夏涼**的低碳舒適環境。",
           "formula": "<span className=\"text-indigo-600 font-bold\">核心公式：</span> **正南向開窗遮陽出簷深度: L = H · cot(α_summer)**",
           "steps": [
@@ -369,7 +369,7 @@ export const geographyData: SubjectData = {
           }
         },
         {
-          "heading": "<span className="text-rose-600 font-bold">都市熱島效應</span> (UHI) 與綠建築降溫對策",
+          "heading": "<span className='text-rose-600 font-bold'>都市熱島效應</span> (UHI) 與綠建築降溫對策",
           "body": "都市密集的混凝土與瀝青鋪面具有高蓄熱與高吸收率，加上人工排熱與建築阻風，導致都市中心氣溫顯著高於郊區。綠建築透過綠化與高反射鋪面予以緩解。",
           "formula": "<span className=\"text-indigo-600 font-bold\">核心公式：</span> **反射率 (Albedo) 減熱效應: ΔT_surface ∝ (1 - Albedo) · I_solar**",
           "steps": [
@@ -473,7 +473,7 @@ export const geographyData: SubjectData = {
             "計算冬至正午太陽高度角 α_winter = 90° - 25° - 23.5° = 41.5°。",
             "日光透入室內深度 D_sun = H × cot(α_winter) = 3.0 m × cot(41.5°)。",
             "代入數值：D_sun = 3.0 m × 1.130 ≈ 3.39 公尺。",
-            "結論：冬季低角度陽光可深入室內 3.39m，提供優良的天然<span className="text-rose-600 font-bold">被動式太陽能</span>日照採暖。"
+            "結論：冬季低角度陽光可深入室內 3.39m，提供優良的天然<span className='text-rose-600 font-bold'>被動式太陽能</span>日照採暖。"
           ],
           "answer": "(1) 冬至正午太陽高度角 α = 41.5°；(2) 陽光深入室內深度 D_sun ≈ 3.39 公尺"
         },
@@ -537,7 +537,7 @@ export const geographyData: SubjectData = {
     {
       "slug": "population-urban",
       "title": "3. 人口結構與都市空間結構",
-      "desc": "探討人口轉型、<span className="text-rose-600 font-bold">高齡化</span>通用設計、<span className="text-rose-600 font-bold">中心地方理論</span>、都市內部空間結構模型、<span className="text-rose-600 font-bold">TOD</span> <span className="text-rose-600 font-bold">大眾運輸導向開發</span>與<span className="text-rose-600 font-bold">土地競價</span>理論。",
+      "desc": "探討人口轉型、<span className='text-rose-600 font-bold'>高齡化</span>通用設計、<span className='text-rose-600 font-bold'>中心地方理論</span>、都市內部空間結構模型、<span className='text-rose-600 font-bold'>TOD</span> <span className='text-rose-600 font-bold'>大眾運輸導向開發</span>與<span className='text-rose-600 font-bold'>土地競價</span>理論。",
       "status": "done",
       gradeLevel: 10,
       "covered_question_ids": [],
@@ -552,8 +552,8 @@ export const geographyData: SubjectData = {
       "illustrations": ['geography-context.webp', 'geography-mechanism.webp', 'geography-comparison.webp', 'geography-step.webp', 'geography-real-world.webp', \'concept-diagram.webp\', \'formula-visual.webp\'],
       "concepts": [
         {
-          "heading": "人口轉型理論與<span className="text-rose-600 font-bold">高齡化</span>社會之空間衝擊",
-          "body": "人口轉型理論描述區域由「高出生高死亡」轉變為「低出生低死亡」之歷程。台灣現已進入<span className="text-rose-600 font-bold">高齡化</span>與少子化階段，引發扶養比劇變，建築與都市空間急需無障礙通用設計 (Universal Design) 與公共設施機能轉型。",
+          "heading": "人口轉型理論與<span className='text-rose-600 font-bold'>高齡化</span>社會之空間衝擊",
+          "body": "人口轉型理論描述區域由「高出生高死亡」轉變為「低出生低死亡」之歷程。台灣現已進入<span className='text-rose-600 font-bold'>高齡化</span>與少子化階段，引發扶養比劇變，建築與都市空間急需無障礙通用設計 (Universal Design) 與公共設施機能轉型。",
           "formula": "<span className=\"text-indigo-600 font-bold\">核心公式：</span> **總扶養比 = ((幼年人口 0-14歲 + 高齡人口 65歲以上) / 壯年人口 15-64歲) × 100%**",
           "table": {
             "headers": [
@@ -585,8 +585,8 @@ export const geographyData: SubjectData = {
           }
         },
         {
-          "heading": "<span className="text-rose-600 font-bold">中心地方理論</span>與都市階層體系",
-          "body": "克里斯塔勒 (Christaller) <span className="text-rose-600 font-bold">中心地方理論</span> (Central Place Theory) 以商品圈 (Range) 與門檻值 (Threshold) 解釋都市階層與商業機能分布。高階都市數量少、距離遠、服務範圍廣；低階都市則相反。",
+          "heading": "<span className='text-rose-600 font-bold'>中心地方理論</span>與都市階層體系",
+          "body": "克里斯塔勒 (Christaller) <span className='text-rose-600 font-bold'>中心地方理論</span> (Central Place Theory) 以商品圈 (Range) 與門檻值 (Threshold) 解釋都市階層與商業機能分布。高階都市數量少、距離遠、服務範圍廣；低階都市則相反。",
           "formula": "<span className=\"text-indigo-600 font-bold\">核心公式：</span> **中心地方營運可行條件: 商品圈 Range ≥ 門檻值 Threshold**",
           "steps": [
             "商品圈 (Range of Goods)：消費者願意為購買特定商品或服務所行進的最大地理距離。",
@@ -597,7 +597,7 @@ export const geographyData: SubjectData = {
         },
         {
           "heading": "都市內部空間結構模型演變",
-          "body": "都市土地利用受地價、交通可達性與<span className="text-rose-600 font-bold">土地競價</span> (Bid-Rent) 驅動。經典空間模型展現了都市由單核心向多核心與軸向發展之演化。",
+          "body": "都市土地利用受地價、交通可達性與<span className='text-rose-600 font-bold'>土地競價</span> (Bid-Rent) 驅動。經典空間模型展現了都市由單核心向多核心與軸向發展之演化。",
           "table": {
             "headers": [
               "都市空間模型",
@@ -628,32 +628,32 @@ export const geographyData: SubjectData = {
           }
         },
         {
-          "heading": "<span className="text-rose-600 font-bold">大眾運輸導向開發</span> (<span className="text-rose-600 font-bold">TOD</span>) 與**都市蔓延**應對",
-          "body": "<span className="text-rose-600 font-bold">大眾運輸導向開發</span> (Transit-Oriented Development, <span className="text-rose-600 font-bold">TOD</span>) 透過在捷運/鐵路站點周邊 500~800 公尺（步行 5~10 分鐘）範圍內實施高密度、混合機能開發，有效遏止汽車導向之**都市蔓延** (Urban Sprawl)。",
+          "heading": "<span className='text-rose-600 font-bold'>大眾運輸導向開發</span> (<span className='text-rose-600 font-bold'>TOD</span>) 與**都市蔓延**應對",
+          "body": "<span className='text-rose-600 font-bold'>大眾運輸導向開發</span> (Transit-Oriented Development, <span className='text-rose-600 font-bold'>TOD</span>) 透過在捷運/鐵路站點周邊 500~800 公尺（步行 5~10 分鐘）範圍內實施高密度、混合機能開發，有效遏止汽車導向之**都市蔓延** (Urban Sprawl)。",
           "formula": "<span className=\"text-indigo-600 font-bold\">核心公式：</span> **站點周邊開發強度: **容積率** FAR ∝ 1 / (距軌道站點距離 D)**",
           "steps": [
             "**第一步（核心場站區）：** 0~200m 為轉乘樞紐與高強度商業辦公大樓，實施立體地下/空中步行系統。",
             "**第二步（混合機能區）：** 200~500m 為高密度住宅與複合零售，注重人行道寬度與沿街面開放。",
             "**第三步（外圍過渡區）：** 500~800m 為中低密度住宅與社區公園，提供慢行微循環（自行車、共享載具）。",
-            "**第四步（政策配套）：** 給予 <span className="text-rose-600 font-bold">TOD</span> 站點周邊增額容積獎勵 (TIF/FAR Bonus)，補貼公共開放空間。"
+            "**第四步（政策配套）：** 給予 <span className='text-rose-600 font-bold'>TOD</span> 站點周邊增額容積獎勵 (TIF/FAR Bonus)，補貼公共開放空間。"
           ]
         },
         {
-          "heading": "都市更新、<span className="text-rose-600 font-bold">紳士化</span>與<span className="text-rose-600 font-bold">空間正義</span>",
-          "body": "都市老舊核心區面臨設施老舊與人口流失，透過都市更新（重建、整建、維護）活化土地。但資本注入常引發地價房價上漲，使原中低收入居民迫離，此現象稱為<span className="text-rose-600 font-bold">紳士化</span> (Gentrification)。",
+          "heading": "都市更新、<span className='text-rose-600 font-bold'>紳士化</span>與<span className='text-rose-600 font-bold'>空間正義</span>",
+          "body": "都市老舊核心區面臨設施老舊與人口流失，透過都市更新（重建、整建、維護）活化土地。但資本注入常引發地價房價上漲，使原中低收入居民迫離，此現象稱為<span className='text-rose-600 font-bold'>紳士化</span> (Gentrification)。",
           "table": {
             "headers": [
               "都市更新範疇",
               "執行手段與強度",
               "優勢與效益",
-              "<span className="text-rose-600 font-bold">空間正義</span>考量與社會對策"
+              "<span className='text-rose-600 font-bold'>空間正義</span>考量與社會對策"
             ],
             "rows": [
               [
                 "重建 (Reconstruction)",
                 "拆除舊建物重新規劃興建高樓",
                 "大幅提升容積效益與耐震防災安全",
-                "預防高地價導致<span className="text-rose-600 font-bold">紳士化</span>，劃設一定比例社會住宅 (Social Housing)"
+                "預防高地價導致<span className='text-rose-600 font-bold'>紳士化</span>，劃設一定比例社會住宅 (Social Housing)"
               ],
               [
                 "整建 (Renovation)",
@@ -671,8 +671,8 @@ export const geographyData: SubjectData = {
           }
         },
         {
-          "heading": "<span className="text-rose-600 font-bold">土地競價</span>理論 (Bid-Rent Theory) 與**容積率**梯度變化",
-          "body": "杜能與阿隆索 (Alonso) <span className="text-rose-600 font-bold">土地競價</span>理論指出，不同產業與土地利用對都市中心 (CBD) 的可達性出價能力不同。商業出價斜率最陡，住宅次之，工業與農業最平緩。地價與建築**容積率**由 CBD 向外呈現指數衰減梯度。",
+          "heading": "<span className='text-rose-600 font-bold'>土地競價</span>理論 (Bid-Rent Theory) 與**容積率**梯度變化",
+          "body": "杜能與阿隆索 (Alonso) <span className='text-rose-600 font-bold'>土地競價</span>理論指出，不同產業與土地利用對都市中心 (CBD) 的可達性出價能力不同。商業出價斜率最陡，住宅次之，工業與農業最平緩。地價與建築**容積率**由 CBD 向外呈現指數衰減梯度。",
           "formula": "<span className=\"text-indigo-600 font-bold\">核心公式：</span> **R(d) = N · [ P - C - t · d ]**",
           "steps": [
             "**第一步（商業區位 0 ~ d1）：** 中心地價高昂，商業高樓大廈密集，**容積率**最高 (如 800%~1000%)。",
@@ -738,18 +738,18 @@ export const geographyData: SubjectData = {
         },
         {
           "difficulty": "進階",
-          "question": "都市計畫師欲在捷運站周邊推動 <span className="text-rose-600 font-bold">TOD</span> 大眾運輸導向整體開發。原始法定基準**容積率**為 300%。法規規定：距捷運站出口 200 公尺內可獲得 50% 增額容積獎勵；200 至 500 公尺間可獲得 20% 容積獎勵。若某建築基地面積為 2,000 平方公尺，部位於距捷運站 150 公尺處，請計算該基地獲得獎勵後之最大總允許建築樓地板面積（不計免計容積項目）為多少平方公尺？並說明 <span className="text-rose-600 font-bold">TOD</span> 設計對降低汽車依賴之機制。",
+          "question": "都市計畫師欲在捷運站周邊推動 <span className='text-rose-600 font-bold'>TOD</span> 大眾運輸導向整體開發。原始法定基準**容積率**為 300%。法規規定：距捷運站出口 200 公尺內可獲得 50% 增額容積獎勵；200 至 500 公尺間可獲得 20% 容積獎勵。若某建築基地面積為 2,000 平方公尺，部位於距捷運站 150 公尺處，請計算該基地獲得獎勵後之最大總允許建築樓地板面積（不計免計容積項目）為多少平方公尺？並說明 <span className='text-rose-600 font-bold'>TOD</span> 設計對降低汽車依賴之機制。",
           "steps": [
             "**步驟 1：** 確定基地位置與獎勵比例：距捷運站 150m < 200m，可享 50% 容積獎勵。",
             "**步驟 2：** 計算獎勵後總**容積率**：獎勵後 FAR = 基準 FAR × (1 + 0.50) = 300% × 1.50 = 450%。",
             "**步驟 3：** 計算最大允許樓地板面積：總樓地板面積 = 基地面積 × 獎勵後 FAR = 2,000 m² × 4.50 = 9,000 平方公尺。",
-            "**步驟 4：** 分析 <span className="text-rose-600 font-bold">TOD</span> 降低汽車依賴機制：高強度容積獎勵促成高密度複合開發，結合站點步道網，使居民在步行 5 分鐘內滿足通勤、購物與休閒，顯著降低私人汽車持有與行駛里程。"
+            "**步驟 4：** 分析 <span className='text-rose-600 font-bold'>TOD</span> 降低汽車依賴機制：高強度容積獎勵促成高密度複合開發，結合站點步道網，使居民在步行 5 分鐘內滿足通勤、購物與休閒，顯著降低私人汽車持有與行駛里程。"
           ],
-          "answer": "最大總允許樓地板面積為 9,000 平方公尺。<span className="text-rose-600 font-bold">TOD</span> 透過高密度混合機能與優良步行環境將交通需求移轉至軌道運具。"
+          "answer": "最大總允許樓地板面積為 9,000 平方公尺。<span className='text-rose-600 font-bold'>TOD</span> 透過高密度混合機能與優良步行環境將交通需求移轉至軌道運具。"
         },
         {
           "difficulty": "進階",
-          "question": "依據阿隆索 (Alonso) <span className="text-rose-600 font-bold">土地競價</span>理論，都市中心 (CBD, d=0) 處商業競價租金為 1000 元/m²，隨距離衰減斜率為 -100 元/m²·km (即 R_com = 1000 - 100d)；住宅競價租金為 600 元/m²，衰減斜率為 -40 元/m²·km (R_res = 600 - 40d)。(1) 求解商業與住宅土地利用的地價交界距離 d₁ (km)；(2) 說明為何商業<span className="text-rose-600 font-bold">土地競價</span>斜率顯著較住宅陡峭。",
+          "question": "依據阿隆索 (Alonso) <span className='text-rose-600 font-bold'>土地競價</span>理論，都市中心 (CBD, d=0) 處商業競價租金為 1000 元/m²，隨距離衰減斜率為 -100 元/m²·km (即 R_com = 1000 - 100d)；住宅競價租金為 600 元/m²，衰減斜率為 -40 元/m²·km (R_res = 600 - 40d)。(1) 求解商業與住宅土地利用的地價交界距離 d₁ (km)；(2) 說明為何商業<span className='text-rose-600 font-bold'>土地競價</span>斜率顯著較住宅陡峭。",
           "steps": [
             "求解競價曲線交點 R_com = R_res：",
             "1000 - 100d₁ = 600 - 40d₁ => 400 = 60d₁ => d₁ = 400 / 60 ≈ 6.67 公里。",
@@ -796,7 +796,7 @@ export const geographyData: SubjectData = {
     {
       "slug": "regional-development",
       "title": "4. 區域發展與產業區位選址",
-      "desc": "分析韋伯工業區位理論、<span className="text-rose-600 font-bold">區位商數</span> LQ、<span className="text-rose-600 font-bold">成長極</span>理論、<span className="text-rose-600 font-bold">生態工業園區</span>與半導體科技廊帶選址。",
+      "desc": "分析韋伯工業區位理論、<span className='text-rose-600 font-bold'>區位商數</span> LQ、<span className='text-rose-600 font-bold'>成長極</span>理論、<span className='text-rose-600 font-bold'>生態工業園區</span>與半導體科技廊帶選址。",
       "status": "done",
       gradeLevel: 10,
       "covered_question_ids": [],
@@ -854,8 +854,8 @@ export const geographyData: SubjectData = {
           ]
         },
         {
-          "heading": "區域發展不對等與<span className="text-rose-600 font-bold">成長極</span>理論",
-          "body": "佩魯 (Perroux) <span className="text-rose-600 font-bold">成長極</span>理論指出，經濟成長並非同時出現在所有地方，而是先在主導產業集中的「<span className="text-rose-600 font-bold">成長極</span>」發生，再透過擴散效應 (Spread Effect) 或回流效應 (Backwash Effect) 影響周邊。",
+          "heading": "區域發展不對等與<span className='text-rose-600 font-bold'>成長極</span>理論",
+          "body": "佩魯 (Perroux) <span className='text-rose-600 font-bold'>成長極</span>理論指出，經濟成長並非同時出現在所有地方，而是先在主導產業集中的「<span className='text-rose-600 font-bold'>成長極</span>」發生，再透過擴散效應 (Spread Effect) 或回流效應 (Backwash Effect) 影響周邊。",
           "table": {
             "headers": [
               "區域互動效應",
@@ -866,7 +866,7 @@ export const geographyData: SubjectData = {
             "rows": [
               [
                 "回流效應 (Backwash Effect)",
-                "資金、高素質勞力與資源由周邊向<span className="text-rose-600 font-bold">成長極</span>核心單向集中",
+                "資金、高素質勞力與資源由周邊向<span className='text-rose-600 font-bold'>成長極</span>核心單向集中",
                 "周邊邊陲地區邊緣化、人口老齡化與停滯",
                 "加強基礎設施轉移支付與交通連結"
               ],
@@ -880,8 +880,8 @@ export const geographyData: SubjectData = {
           }
         },
         {
-          "heading": "綠色供應鏈與永續<span className="text-rose-600 font-bold">生態工業園區</span>",
-          "body": "現代產業園區規劃超越傳統單向生產，強調工業生態學 (Industrial Ecology)。<span className="text-rose-600 font-bold">生態工業園區</span> (Eco-Industrial Park) 將一工廠之廢棄物或餘熱作為另一工廠之原料與能源。",
+          "heading": "綠色供應鏈與永續<span className='text-rose-600 font-bold'>生態工業園區</span>",
+          "body": "現代產業園區規劃超越傳統單向生產，強調工業生態學 (Industrial Ecology)。<span className='text-rose-600 font-bold'>生態工業園區</span> (Eco-Industrial Park) 將一工廠之廢棄物或餘熱作為另一工廠之原料與能源。",
           "formula": "<span className=\"text-indigo-600 font-bold\">核心公式：</span> **資源循環利用率 = (循環再生原料總量 / 總投入原料總量) × 100%**",
           "steps": [
             "廢棄物資源化網格：建立物質流與能量流（如煉鋼廠餘熱供給鄰近化工廠蒸氣）。",
@@ -891,7 +891,7 @@ export const geographyData: SubjectData = {
         },
         {
           "heading": "地理條件對物流、水資源與能源基建之影響",
-          "body": "大型工業與科技園區選址高度依賴天然環境條件。強震帶、<span className="text-rose-600 font-bold">土壤液化</span>區、缺乏穩定水源或高壓電網缺口皆為園區選址之致命限制。",
+          "body": "大型工業與科技園區選址高度依賴天然環境條件。強震帶、<span className='text-rose-600 font-bold'>土壤液化</span>區、缺乏穩定水源或高壓電網缺口皆為園區選址之致命限制。",
           "table": {
             "headers": [
               "地理條件要素",
@@ -922,8 +922,8 @@ export const geographyData: SubjectData = {
           }
         },
         {
-          "heading": "<span className="text-rose-600 font-bold">區位商數</span> (Location Quotient, LQ) 與地方特色產業鑑定",
-          "body": "<span className="text-rose-600 font-bold">區位商數</span> (Location Quotient, LQ) 為區域經濟學評估特定地區某產業集聚與專業化程度的指標。若 LQ > 1.0，代表該產業在該地區具備相對優勢，屬於外銷導向主導產業。",
+          "heading": "<span className='text-rose-600 font-bold'>區位商數</span> (Location Quotient, LQ) 與地方特色產業鑑定",
+          "body": "<span className='text-rose-600 font-bold'>區位商數</span> (Location Quotient, LQ) 為區域經濟學評估特定地區某產業集聚與專業化程度的指標。若 LQ > 1.0，代表該產業在該地區具備相對優勢，屬於外銷導向主導產業。",
           "formula": "<span className=\"text-indigo-600 font-bold\">核心公式：</span> **LQ = (e_i / e_total) / (E_i / E_total)**",
           "steps": [
             "e_i：地方特定產業就業人數；e_total：地方總就業人數。",
@@ -979,18 +979,18 @@ export const geographyData: SubjectData = {
         },
         {
           "difficulty": "基礎",
-          "question": "某縣市電子零組件製造業就業人數為 15,000 人，該縣市總就業人數為 100,000 人。已知全國電子零組件就業人數為 300,000 人，全國總就業人數為 10,000,000 人。(1) 計算該縣市電子零組件產業的<span className="text-rose-600 font-bold">區位商數</span> LQ；(2) 判斷該產業是否為該縣市的外銷優勢集聚產業？",
+          "question": "某縣市電子零組件製造業就業人數為 15,000 人，該縣市總就業人數為 100,000 人。已知全國電子零組件就業人數為 300,000 人，全國總就業人數為 10,000,000 人。(1) 計算該縣市電子零組件產業的<span className='text-rose-600 font-bold'>區位商數</span> LQ；(2) 判斷該產業是否為該縣市的外銷優勢集聚產業？",
           "steps": [
             "計算地方特定產業就業比例 e_i / e_total = 15,000 / 100,000 = 0.15 (15%)。",
             "計算全國特定產業就業比例 E_i / E_total = 300,000 / 10,000,000 = 0.03 (3%)。",
-            "計算<span className="text-rose-600 font-bold">區位商數</span> LQ = 0.15 / 0.03 = 5.0。",
+            "計算<span className='text-rose-600 font-bold'>區位商數</span> LQ = 0.15 / 0.03 = 5.0。",
             "結論分析：因為 LQ = 5.0 遠大於 1.0，代表該產業在該縣市具備高度專業化集聚優勢，屬於極強的外銷主導產業。"
           ],
-          "answer": "(1) <span className="text-rose-600 font-bold">區位商數</span> LQ = 5.0；(2) 屬於該縣市高度專業化集聚的外銷優勢產業"
+          "answer": "(1) <span className='text-rose-600 font-bold'>區位商數</span> LQ = 5.0；(2) 屬於該縣市高度專業化集聚的外銷優勢產業"
         },
         {
           "difficulty": "進階",
-          "question": "新竹科學園區（竹科）開發初期作為台灣半導體產業之<span className="text-rose-600 font-bold">成長極</span>，吸引大量資本與工程人才入駐。試從<span className="text-rose-600 font-bold">成長極</span>理論分析其對周邊地區（如竹東、寶山、竹北）產生的「回流效應」與「擴散效應」變化，並說明政府如何透過新設竹南與銅鑼園區進行區域調和。",
+          "question": "新竹科學園區（竹科）開發初期作為台灣半導體產業之<span className='text-rose-600 font-bold'>成長極</span>，吸引大量資本與工程人才入駐。試從<span className='text-rose-600 font-bold'>成長極</span>理論分析其對周邊地區（如竹東、寶山、竹北）產生的「回流效應」與「擴散效應」變化，並說明政府如何透過新設竹南與銅鑼園區進行區域調和。",
           "steps": [
             "**步驟 1：** 發展初期（回流效應）：竹科憑藉租稅優惠與完善設施，將周邊城鎮之優秀青年、資本與土地資源單向吸引至園區核心，致使周邊老舊社區相對邊緣化。",
             "**步驟 2：** 發展成熟期（擴散效應）：當竹科內部土地飽和、地價高昂、交通壅塞（集聚不經濟）時，溢出效應顯現。高薪工程師帶動竹北高鐵特區與竹東房市，產業供應鏈與上下游封測廠擴散至鄰近地區。",
@@ -1011,7 +1011,7 @@ export const geographyData: SubjectData = {
         },
         {
           "difficulty": "實務應用",
-          "question": "一<span className="text-rose-600 font-bold">生態工業園區</span>由一汽電共生廠與一鄰近紙漿廠組成。汽電共生廠發電過程產生廢蒸氣熱能 100,000 GJ/年。紙漿廠每年需要 80,000 GJ 熱能用於烘乾紙漿。(1) 若紙漿廠原本自行燒煤產生熱能 (排放係數 0.09 ton CO₂/GJ)，經廢熱循環鏈結後每年可減碳多少公噸 CO₂？ (2) 說明此資源循環網絡對<span className="text-rose-600 font-bold">生態工業園區</span>效益。",
+          "question": "一<span className='text-rose-600 font-bold'>生態工業園區</span>由一汽電共生廠與一鄰近紙漿廠組成。汽電共生廠發電過程產生廢蒸氣熱能 100,000 GJ/年。紙漿廠每年需要 80,000 GJ 熱能用於烘乾紙漿。(1) 若紙漿廠原本自行燒煤產生熱能 (排放係數 0.09 ton CO₂/GJ)，經廢熱循環鏈結後每年可減碳多少公噸 CO₂？ (2) 說明此資源循環網絡對<span className='text-rose-600 font-bold'>生態工業園區</span>效益。",
           "steps": [
             "減碳計算：紙漿廠直接使用汽電共生廠之餘熱蒸氣，節省自行燒煤量 80,000 GJ/年。",
             "年減碳量 = 80,000 GJ × 0.09 ton CO₂/GJ = 7,200 公噸 (ton) CO₂/年。",
@@ -1047,13 +1047,13 @@ export const geographyData: SubjectData = {
     {
       "slug": "environmental-issues",
       "title": "5. 環境議題與災害防救工程",
-      "desc": "探討全球氣候變遷、淹水高程計算、土石流防災退縮、<span className="text-rose-600 font-bold">土壤液化</span>防護、海綿城市 LID 與環境影響評估 EIA。",
+      "desc": "探討全球氣候變遷、淹水高程計算、土石流防災退縮、<span className='text-rose-600 font-bold'>土壤液化</span>防護、海綿城市 LID 與環境影響評估 EIA。",
       "status": "done",
       gradeLevel: 10,
       "covered_question_ids": [],
       "worked_examples": [
         {
-          question: '【步驟化例題】<span className="text-rose-600 font-bold">都市熱島效應</span>成因與減緩對策：下列何者非造成現代都市「熱島效應 (Urban Heat Island)」的主要原因？\n(A) 人工不透水鋪面比熱小吸收大量輻射\n(B) 冷氣與汽機車排放大量人為廢熱\n(C) 都市中建築物高密度密集阻擋通風\n(D) 綠地與公園水體大量蒸發帶走熱量',
+          question: '【步驟化例題】<span className='text-rose-600 font-bold'>都市熱島效應</span>成因與減緩對策：下列何者非造成現代都市「熱島效應 (Urban Heat Island)」的主要原因？\n(A) 人工不透水鋪面比熱小吸收大量輻射\n(B) 冷氣與汽機車排放大量人為廢熱\n(C) 都市中建築物高密度密集阻擋通風\n(D) 綠地與公園水體大量蒸發帶走熱量',
           difficulty: '基礎',
           steps: [ "**步驟 1：** 分析熱島效應成因。(A)、(B)、(C) 均會導致都市氣溫顯著高於周圍郊區。", "**步驟 2：** 檢視選項 (D)。綠地與水體具有高比熱及蒸發散熱作用，是「減緩」熱島效應的對策，而非成因。", "**步驟 3：** 確定答案為 (D)。" ], 
           answer: '(D) 綠地與公園水體大量蒸發帶走熱量（此為減緩熱島之對策，非成因）。'
@@ -1105,7 +1105,7 @@ export const geographyData: SubjectData = {
           ]
         },
         {
-          "heading": "<span className="text-rose-600 font-bold">土壤液化</span>與地層下陷地質防護",
+          "heading": "<span className='text-rose-600 font-bold'>土壤液化</span>與地層下陷地質防護",
           "body": "飽和鬆散砂質土壤在強烈地震搖晃下，超額孔隙水壓迅速上升使有效應力歸零，土壤失去**承載力**呈液態化，致使建築傾斜或沉陷；地層下陷則源自過度抽取地下水。",
           "table": {
             "headers": [
@@ -1116,7 +1116,7 @@ export const geographyData: SubjectData = {
             ],
             "rows": [
               [
-                "<span className="text-rose-600 font-bold">土壤液化</span> (Liquefaction)",
+                "<span className='text-rose-600 font-bold'>土壤液化</span> (Liquefaction)",
                 "地下水位高 + 鬆散飽和砂土層 + 強震",
                 "建築下沉、傾斜、地下結構浮起",
                 "打設深樁打入堅硬黏土/岩盤、灌漿地盤改良、筏式基礎"
@@ -1237,16 +1237,16 @@ export const geographyData: SubjectData = {
         },
         {
           "difficulty": "進階",
-          "question": "在海岸低窪地區進行建築選址時，已知天文大潮水位 H_tide 為 2.1 公尺，颱風暴潮位升降 H_surge 為 0.8 公尺。預測至 2050 年全球海平面上升 ΔH_sea 為 0.5 公尺。若法規要求防洪安全高程 h_safety 至少為 0.6 公尺，請計算該建築首層地坪的最小安全計畫防洪高程 H_flood？並說明若基地位於<span className="text-rose-600 font-bold">土壤液化</span>高潛勢區，基礎應如何設計？",
+          "question": "在海岸低窪地區進行建築選址時，已知天文大潮水位 H_tide 為 2.1 公尺，颱風暴潮位升降 H_surge 為 0.8 公尺。預測至 2050 年全球海平面上升 ΔH_sea 為 0.5 公尺。若法規要求防洪安全高程 h_safety 至少為 0.6 公尺，請計算該建築首層地坪的最小安全計畫防洪高程 H_flood？並說明若基地位於<span className='text-rose-600 font-bold'>土壤液化</span>高潛勢區，基礎應如何設計？",
           "steps": [
             "**步驟 1：** 明確計畫防洪高程公式：H_flood = H_tide + H_surge + ΔH_sea + h_safety。",
             "**步驟 2：** 代入數值計算：H_flood = 2.1 + 0.8 + 0.5 + 0.6 = 4.0 公尺（高於平均海平面）。",
-            "**步驟 3：** 分析<span className="text-rose-600 font-bold">土壤液化</span>高潛勢區基礎設計：",
+            "**步驟 3：** 分析<span className='text-rose-600 font-bold'>土壤液化</span>高潛勢區基礎設計：",
             "  (1) 採用深樁基礎 (Piled Foundation)：將基樁打入地下深處之非液化堅硬岩盤或密實黏土層。",
             "  (2) 採用剛性筏式基礎 (Raft Foundation)：增加基礎整體剛度，防範液化引發之差異沉陷。",
             "  (3) 地盤灌漿改良 (Soil Improvement)：透過深層攪拌樁或壓密灌漿提高砂土密度與抗剪強度。"
           ],
-          "answer": "最小計畫防洪高程 H_flood 為 4.0 公尺。<span className="text-rose-600 font-bold">土壤液化</span>區基礎應採用深樁打入堅硬岩盤、配合剛性筏基與地盤灌漿改良。"
+          "answer": "最小計畫防洪高程 H_flood 為 4.0 公尺。<span className='text-rose-600 font-bold'>土壤液化</span>區基礎應採用深樁打入堅硬岩盤、配合剛性筏基與地盤灌漿改良。"
         },
         {
           "difficulty": "進階",
@@ -1261,7 +1261,7 @@ export const geographyData: SubjectData = {
         },
         {
           "difficulty": "實務應用",
-          "question": "一地下室 2 層的集合住宅建案位於海邊平原，地下水位離地表僅 1.0 公尺，底下為 15 公尺厚的鬆散飽和砂土層。地震區評估顯示強震時該砂土層會發生嚴重<span className="text-rose-600 font-bold">土壤液化</span>。(1) 說明<span className="text-rose-600 font-bold">土壤液化</span>對該地下室產生的浮力浮起與沉陷危害；(2) 提出二項防範地下室浮起與差異沉陷的結構工法。",
+          "question": "一地下室 2 層的集合住宅建案位於海邊平原，地下水位離地表僅 1.0 公尺，底下為 15 公尺厚的鬆散飽和砂土層。地震區評估顯示強震時該砂土層會發生嚴重<span className='text-rose-600 font-bold'>土壤液化</span>。(1) 說明<span className='text-rose-600 font-bold'>土壤液化</span>對該地下室產生的浮力浮起與沉陷危害；(2) 提出二項防範地下室浮起與差異沉陷的結構工法。",
           "steps": [
             "危害分析：強震使鬆散砂土孔隙水壓暴升，砂土呈現流體狀態。密閉的大型地下室像沉箱一樣受到巨大的液態水浮力 (Archimedes Floatation)，導致地下室結構被往上向上頂推抬升爆裂；地震過後孔隙水壓消散，又引發地基不均勻嚴重沉陷。",
             "防範結構工法：",
@@ -1348,7 +1348,7 @@ export const geographyData: SubjectData = {
           "heading": "經典 GIS 空間分析與建築選址演算",
           "body": "GIS 透過多條件疊圖 (Overlay) 與環域分析 (Buffer) 進行複雜之空間決策支援 (MCDA)。",
           "steps": [
-            "環域分析 (Buffer)：以點、線、面為中心向外擴展指定距離（如：斷層線外擴 50m 作為禁建區；捷運站外擴 500m 為 <span className="text-rose-600 font-bold">TOD</span> 區）。",
+            "環域分析 (Buffer)：以點、線、面為中心向外擴展指定距離（如：斷層線外擴 50m 作為禁建區；捷運站外擴 500m 為 <span className='text-rose-600 font-bold'>TOD</span> 區）。",
             "交集分析 (Intersect)：求取多個圖層同時滿足條件之重疊區域（如：位於工業區 且 坡度 < 5%）。",
             "擦除/聯集分析 (Erase/Union)：排除不符條件之區域（如：擦除淹水潛勢區與保護區）。",
             "最適基地產出：透過多條件交集演算，自動輸出符合所有法規與環境要求之候選建築基地。"

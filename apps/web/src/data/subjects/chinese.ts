@@ -14,7 +14,7 @@ export const chineseData: SubjectData = {
       gradeLevel: 10,
       examHitRate: 3,
       fatalTraps: [{"wrongThinking":"直覺選擇字面相近選項，未仔細檢驗題幹之特定限制條件。","correctThinking":"回歸核心公理與基本定義，逐項檢核題幹條件與反例。","trapDescription":"80% 考生在概念題中因粗心忽略前提假設而失分。"}],
-      eliteMentalModels: [{"technique":"<span className="text-rose-600 font-bold">第一性原理</span>拆解法 (First Principles Breakdown)","explanation":"不依賴死記死背，由最底層的定義與公理邏輯推導出解題路徑，降維打擊各類統測變形題。"}],
+      eliteMentalModels: [{"technique":"<span className='text-rose-600 font-bold'>第一性原理</span>拆解法 (First Principles Breakdown)","explanation":"不依賴死記死背，由最底層的定義與公理邏輯推導出解題路徑，降維打擊各類統測變形題。"}],
       covered_question_ids: ['111-chinese-2', '111-chinese-7', '111-chinese-8', '112-chinese-2', '112-chinese-3', '112-chinese-5', '112-chinese-6', '113-chinese-2', '113-chinese-5', '113-chinese-10', '113-chinese-37', '114-chinese-3', '114-chinese-4', '114-chinese-5', '114-chinese-6', '114-chinese-9', '114-chinese-10', '115-chinese-2', '115-chinese-4', '115-chinese-6', '115-chinese-7', '115-chinese-8', '110-chinese-6', '110-chinese-12', '110-chinese-18', '110-chinese-24', '110-chinese-30', '110-chinese-36'],
       worked_examples: [
         {
@@ -31,8 +31,8 @@ export const chineseData: SubjectData = {
       "illustrations": [ 'context.webp', 'mechanism.webp', 'comparison.webp', 'step-by-step.webp', 'chinese-real-world.webp' , 'chinese-infographic.webp' , 'concept-diagram.webp', 'formula-visual.webp'],
       concepts: [
         {
-          heading: '<span className="text-indigo-600 font-bold">古典文學體裁演變</span>與**韻文格律**對比',
-          body: '中國**古典韻文與散文**從《詩經》、《楚辭》發展至漢賦、唐詩、宋詞、元曲及明清小說，其<span className="text-rose-600 font-bold">形式格律</span>、對仗押韻與美學表現隨時代演進而變化。在空間描寫與建築意象上，賦體強調<span className="text-indigo-600 font-bold">鋪張揚厲</span>，詩詞強調<span className="text-indigo-600 font-bold">意境交融</span>，而古典散文則重在<span className="text-indigo-600 font-bold">寄情與理趣</span>。',
+          heading: '<span className='text-indigo-600 font-bold'>古典文學體裁演變</span>與**韻文格律**對比',
+          body: '中國**古典韻文與散文**從《詩經》、《楚辭》發展至漢賦、唐詩、宋詞、元曲及明清小說，其<span className='text-rose-600 font-bold'>形式格律</span>、對仗押韻與美學表現隨時代演進而變化。在空間描寫與建築意象上，賦體強調<span className='text-indigo-600 font-bold'>鋪張揚厲</span>，詩詞強調<span className='text-indigo-600 font-bold'>意境交融</span>，而古典散文則重在<span className='text-indigo-600 font-bold'>寄情與理趣</span>。',
           table: {
             headers: ['體裁', '發展代表時代', '句型結構', '押韻與平仄規範', '空間與美學表現重點'],
             rows: [
@@ -46,7 +46,7 @@ export const chineseData: SubjectData = {
         },
         {
           heading: '古典建築與空間名篇經典選讀解析',
-          body: '古典散文中以「樓閣亭臺」為核心之著作，往往將建築實體提升至**精神哲學與國家興亡**之高度。探討經典名篇之<span className="text-indigo-600 font-bold">空間佈局</span>與**核心思想**：',
+          body: '古典散文中以「樓閣亭臺」為核心之著作，往往將建築實體提升至**精神哲學與國家興亡**之高度。探討經典名篇之<span className='text-indigo-600 font-bold'>空間佈局</span>與**核心思想**：',
           steps: [
             '范仲淹〈嶽陽樓記〉：以「洞庭天下水，嶽陽天下樓」切入，經由「霪雨霏霏」之陰慘與「春和景明」之喜洋洋兩種空間氛圍對比，導出「不以物喜，不以己悲」與「先天下之憂而憂，後天下之樂而樂」之儒家智者抱負。',
             '歐陽修〈醉翁亭記〉：運用「由遠及近、層層剝筍」之鏡頭移步換景法，從滁州四面皆山，寫到釀泉、醉翁亭，最後落腳於「山水之樂，得之心而寓之酒也」與「與民同樂」之政治理想。',
@@ -66,7 +66,7 @@ export const chineseData: SubjectData = {
         },
         {
           heading: '園林建築與魏晉唐宋審美哲學',
-          body: '中國<span className="text-indigo-600 font-bold">傳統園林</span>建築強調「<span className="text-rose-600 font-bold">師法自然</span>」、「**寄情山水**」，將文人畫意融入<span className="text-indigo-600 font-bold">空間規劃</span>。從魏晉陶淵明《桃花源記》的隱逸空間，到宋代文人園林散文，展現出獨特的**哲學思想**。',
+          body: '中國<span className='text-indigo-600 font-bold'>傳統園林</span>建築強調「<span className='text-rose-600 font-bold'>師法自然</span>」、「**寄情山水**」，將文人畫意融入<span className='text-indigo-600 font-bold'>空間規劃</span>。從魏晉陶淵明《桃花源記》的隱逸空間，到宋代文人園林散文，展現出獨特的**哲學思想**。',
           table: {
             headers: ['時期', '園林/空間代表作品', '建築與景觀哲學', '經典文本與空間特徵摘錄'],
             rows: [
@@ -174,7 +174,7 @@ export const chineseData: SubjectData = {
       gradeLevel: 10,
       examHitRate: 3,
       fatalTraps: [{"wrongThinking":"直覺選擇字面相近選項，未仔細檢驗題幹之特定限制條件。","correctThinking":"回歸核心公理與基本定義，逐項檢核題幹條件與反例。","trapDescription":"80% 考生在概念題中因粗心忽略前提假設而失分。"}],
-      eliteMentalModels: [{"technique":"<span className="text-rose-600 font-bold">第一性原理</span>拆解法 (First Principles Breakdown)","explanation":"不依賴死記死背，由最底層的定義與公理邏輯推導出解題路徑，降維打擊各類統測變形題。"}],
+      eliteMentalModels: [{"technique":"<span className='text-rose-600 font-bold'>第一性原理</span>拆解法 (First Principles Breakdown)","explanation":"不依賴死記死背，由最底層的定義與公理邏輯推導出解題路徑，降維打擊各類統測變形題。"}],
       covered_question_ids: ['113-chinese-38', '110-chinese-1', '110-chinese-7', '110-chinese-13', '110-chinese-19', '110-chinese-25', '110-chinese-31', '110-chinese-37'],
       worked_examples: [
         {
@@ -191,7 +191,7 @@ export const chineseData: SubjectData = {
       "illustrations": [ 'context.webp', 'mechanism.webp', 'comparison.webp', 'step-by-step.webp', 'chinese-real-world.webp' , 'modern-literature-infographic.webp' , 'concept-diagram.webp', 'formula-visual.webp'],
       concepts: [
         {
-          heading: '<span className="text-indigo-600 font-bold">現代文學體裁</span>與空間詩學',
+          heading: '<span className='text-indigo-600 font-bold'>現代文學體裁</span>與空間詩學',
           body: '現代文學打破古典格律限制，發展出新詩、都市抒情散文與空間小說。現代作家常以城市建築、街道記憶與室內空間為載體，探討現代人之疏離、記憶與文化認同。',
           table: {
             headers: ['文學體裁', '代表作家與作品', '核心美學特色', '空間與建築意象表現重點'],
@@ -276,7 +276,7 @@ export const chineseData: SubjectData = {
           answer: 'B. 提稱語：道鑒；啟用詞：道啟'
         },
         {
-          question: '<span className="text-indigo-600 font-bold">【基礎題 2】下列題辭與其適用場景之搭配，何者完全正確？\nA. 「華堂煥彩」——用於祝賀醫院開幕\nB. 「駿業宏開」——用於祝賀新居落成\nC. 「肯堂肯構」——用於祝賀子承父業或新居落成\nD. 「哲人其萎」</span>——用於祝賀朋友結婚',
+          question: '<span className='text-indigo-600 font-bold'>【基礎題 2】下列題辭與其適用場景之搭配，何者完全正確？\nA. 「華堂煥彩」——用於祝賀醫院開幕\nB. 「駿業宏開」——用於祝賀新居落成\nC. 「肯堂肯構」——用於祝賀子承父業或新居落成\nD. 「哲人其萎」</span>——用於祝賀朋友結婚',
           difficulty: '基礎',
           steps: [
             '**Step 1:** 分析選項 A——「華堂煥彩」適用於新居落成，非醫院開幕（醫院宜用「仁心仁術」）。',
@@ -284,7 +284,7 @@ export const chineseData: SubjectData = {
             '**Step 3:** 分析選項 C——「肯堂肯構」源自《尚書》，比喻子承父業或新居竣工立堂蓋屋，搭配正確。',
             '**Step 4:** 分析選項 D——「哲人其萎」用於男喪輓聯，非結婚賀詞。'
           ],
-          answer: '<span className="text-indigo-600 font-bold">C. 「肯堂肯構」</span>——用於祝賀子承父業或新居落成'
+          answer: '<span className='text-indigo-600 font-bold'>C. 「肯堂肯構」</span>——用於祝賀子承父業或新居落成'
         },
         {
           question: '【進階題 1】請分析以下公文片段之語病與格式缺失，並予以更正：\n「主旨：關於本市古蹟建築修復工程，擬請 貴局核示辦理變更設計，請 查照。」\n請指出該「主旨」段落中之兩處語法與公文用語不當之處。',
@@ -311,20 +311,20 @@ export const chineseData: SubjectData = {
     {
       slug: 'linguistics',
       title: '3. 語文知識與修辭應用',
-      desc: '系統化掌握字音字形辨正、成語典故來源、<span className="text-rose-600 font-bold">修辭法</span>（譬喻、轉化、借代、層遞、映襯等）及其於建築與文學文本中之表現技巧。\n\n🔥 V6.0 考前秒殺秘訣：此核心概念統測出題率極高，建議善用圖解與鷹架提示反覆練習！',
+      desc: '系統化掌握字音字形辨正、成語典故來源、<span className='text-rose-600 font-bold'>修辭法</span>（譬喻、轉化、借代、層遞、映襯等）及其於建築與文學文本中之表現技巧。\n\n🔥 V6.0 考前秒殺秘訣：此核心概念統測出題率極高，建議善用圖解與鷹架提示反覆練習！',
       status: 'done',
       gradeLevel: 10,
       examHitRate: 3,
       fatalTraps: [{"wrongThinking":"直覺選擇字面相近選項，未仔細檢驗題幹之特定限制條件。","correctThinking":"回歸核心公理與基本定義，逐項檢核題幹條件與反例。","trapDescription":"80% 考生在概念題中因粗心忽略前提假設而失分。"}],
-      eliteMentalModels: [{"technique":"<span className="text-rose-600 font-bold">第一性原理</span>拆解法 (First Principles Breakdown)","explanation":"不依賴死記死背，由最底層的定義與公理邏輯推導出解題路徑，降維打擊各類統測變形題。"}],
+      eliteMentalModels: [{"technique":"<span className='text-rose-600 font-bold'>第一性原理</span>拆解法 (First Principles Breakdown)","explanation":"不依賴死記死背，由最底層的定義與公理邏輯推導出解題路徑，降維打擊各類統測變形題。"}],
       covered_question_ids: ['111-chinese-1', '112-chinese-1', '113-chinese-1', '113-chinese-6', '114-chinese-1', '115-chinese-1', '110-chinese-2', '110-chinese-8', '110-chinese-14', '110-chinese-20', '110-chinese-26', '110-chinese-32', '110-chinese-38'],
       worked_examples: [
         {
-          question: '【範例題】「冷冽的清水模牆面，散發出一種低沉而安詳的視覺音符。」請問這句話主要運用了哪一種<span className="text-rose-600 font-bold">修辭法</span>？',
+          question: '【範例題】「冷冽的清水模牆面，散發出一種低沉而安詳的視覺音符。」請問這句話主要運用了哪一種<span className='text-rose-600 font-bold'>修辭法</span>？',
           difficulty: '進階',
           steps: [
             '**步驟 1：**分析句子中的感官描寫——「冷冽」是觸覺，「清水模牆面」是視覺，「低沉而安詳的視覺音符」則結合了聽覺（音符）與視覺。',
-            '**步驟 2：**辨識<span className="text-rose-600 font-bold">修辭法</span>特徵——當一段文字將一種感官（如視覺、觸覺）的體驗轉化為另一種感官（如聽覺）來形容時，屬於「通感（感官移覺）」。',
+            '**步驟 2：**辨識<span className='text-rose-600 font-bold'>修辭法</span>特徵——當一段文字將一種感官（如視覺、觸覺）的體驗轉化為另一種感官（如聽覺）來形容時，屬於「通感（感官移覺）」。',
             '**步驟 3：**總結應用——作者將清水模的視覺與觸覺特質，轉化為具備旋律感的聽覺意象，強化了空間的靜謐氛圍。'
           ],
           answer: '主要運用了「通感（感官移覺）」修辭。'
@@ -333,7 +333,7 @@ export const chineseData: SubjectData = {
       "illustrations": [ 'context.webp', 'mechanism.webp', 'comparison.webp', 'step-by-step.webp', 'chinese-real-world.webp' , 'linguistics-infographic.webp' , 'concept-diagram.webp', 'formula-visual.webp'],
       concepts: [
         {
-          heading: '常見<span className="text-rose-600 font-bold">修辭法</span>深度解析與建築語境對比',
+          heading: '常見<span className='text-rose-600 font-bold'>修辭法</span>深度解析與建築語境對比',
           body: '修辭是語言藝術化的核心手段，廣泛應用於文學創作與建築設計理念闡述中。掌握各種修辭格之定義、分類與實際句式表現：',
           table: {
             headers: ['修辭名稱', '定義與分類', '經典文學例句', '建築/空間語意應用例句'],
@@ -450,7 +450,7 @@ export const chineseData: SubjectData = {
       gradeLevel: 10,
       examHitRate: 3,
       fatalTraps: [{"wrongThinking":"直覺選擇字面相近選項，未仔細檢驗題幹之特定限制條件。","correctThinking":"回歸核心公理與基本定義，逐項檢核題幹條件與反例。","trapDescription":"80% 考生在概念題中因粗心忽略前提假設而失分。"}],
-      eliteMentalModels: [{"technique":"<span className="text-rose-600 font-bold">第一性原理</span>拆解法 (First Principles Breakdown)","explanation":"不依賴死記死背，由最底層的定義與公理邏輯推導出解題路徑，降維打擊各類統測變形題。"}],
+      eliteMentalModels: [{"technique":"<span className='text-rose-600 font-bold'>第一性原理</span>拆解法 (First Principles Breakdown)","explanation":"不依賴死記死背，由最底層的定義與公理邏輯推導出解題路徑，降維打擊各類統測變形題。"}],
       covered_question_ids: ['111-chinese-4', '111-chinese-11', '111-chinese-12', '111-chinese-13', '111-chinese-14', '111-chinese-15', '111-chinese-16', '111-chinese-17', '111-chinese-18', '111-chinese-19', '111-chinese-20', '111-chinese-21', '111-chinese-22', '111-chinese-23', '111-chinese-24', '111-chinese-25', '111-chinese-26', '111-chinese-27', '111-chinese-28', '111-chinese-29', '111-chinese-30', '111-chinese-31', '111-chinese-32', '111-chinese-33', '111-chinese-34', '111-chinese-35', '111-chinese-36', '111-chinese-37', '111-chinese-38', '112-chinese-9', '112-chinese-11', '112-chinese-12', '112-chinese-13', '112-chinese-14', '112-chinese-15', '112-chinese-16', '112-chinese-17', '112-chinese-18', '112-chinese-19', '112-chinese-20', '112-chinese-21', '112-chinese-22', '112-chinese-23', '112-chinese-24', '112-chinese-25', '112-chinese-26', '112-chinese-27', '112-chinese-28', '112-chinese-29', '112-chinese-30', '112-chinese-31', '112-chinese-32', '112-chinese-33', '112-chinese-34', '112-chinese-35', '112-chinese-36', '112-chinese-37', '112-chinese-38', '113-chinese-7', '113-chinese-9', '113-chinese-11', '113-chinese-12', '113-chinese-13', '113-chinese-14', '113-chinese-15', '113-chinese-16', '113-chinese-17', '113-chinese-18', '113-chinese-19', '113-chinese-20', '113-chinese-21', '113-chinese-22', '113-chinese-23', '113-chinese-24', '113-chinese-25', '113-chinese-26', '113-chinese-27', '113-chinese-28', '113-chinese-29', '113-chinese-30', '113-chinese-31', '113-chinese-32', '113-chinese-33', '113-chinese-34', '113-chinese-35', '113-chinese-36', '114-chinese-11', '114-chinese-12', '114-chinese-13', '114-chinese-14', '114-chinese-15', '114-chinese-16', '114-chinese-17', '114-chinese-18', '114-chinese-19', '114-chinese-20', '114-chinese-21', '114-chinese-22', '114-chinese-23', '114-chinese-24', '114-chinese-25', '114-chinese-26', '114-chinese-27', '114-chinese-28', '114-chinese-29', '114-chinese-30', '114-chinese-31', '114-chinese-32', '114-chinese-33', '114-chinese-34', '114-chinese-35', '114-chinese-36', '114-chinese-37', '114-chinese-38', '115-chinese-9', '115-chinese-11', '115-chinese-12', '115-chinese-13', '115-chinese-14', '115-chinese-15', '115-chinese-16', '115-chinese-17', '115-chinese-18', '115-chinese-19', '115-chinese-20', '115-chinese-21', '115-chinese-22', '115-chinese-23', '115-chinese-24', '115-chinese-25', '115-chinese-26', '115-chinese-27', '115-chinese-28', '115-chinese-29', '115-chinese-30', '115-chinese-31', '115-chinese-32', '115-chinese-33', '115-chinese-34', '115-chinese-35', '115-chinese-36', '115-chinese-37', '115-chinese-38', '110-chinese-3', '110-chinese-9', '110-chinese-15', '110-chinese-21', '110-chinese-27', '110-chinese-33'],
       worked_examples: [
         {
@@ -467,8 +467,8 @@ export const chineseData: SubjectData = {
       "illustrations": [ 'context.webp', 'mechanism.webp', 'comparison.webp', 'step-by-step.webp', 'chinese-real-world.webp' , 'reading-comprehension-infographic.webp' , 'concept-diagram.webp', 'formula-visual.webp'],
       concepts: [
         {
-          heading: '<span className="text-indigo-600 font-bold">長篇閱讀</span>與**學術論述**脈絡分析法',
-          body: '面對高難度的<span className="text-indigo-600 font-bold">長篇閱讀</span>與**學術論述**（如建築史、藝術史、哲學美學論文），掌握結構化閱讀法能精準抓取邏輯主軸與作者的核心主張。',
+          heading: '<span className='text-indigo-600 font-bold'>長篇閱讀</span>與**學術論述**脈絡分析法',
+          body: '面對高難度的<span className='text-indigo-600 font-bold'>長篇閱讀</span>與**學術論述**（如建築史、藝術史、哲學美學論文），掌握結構化閱讀法能精準抓取邏輯主軸與作者的核心主張。',
           steps: [
             '快速掃描 (Skimming)：先讀首段、末段及每一段落的第一句（主題句 Topic Sentence），建立全篇文章的總體骨架。',
             '標記轉折與邏輯連接詞：密切注意「然而」、「固然……但是」、「相對而言」、「因此」等詞，轉折詞後方通常承載作者真正的核心觀點。',
@@ -512,7 +512,7 @@ export const chineseData: SubjectData = {
         },
         {
           heading: '建築空間文本之情境還原與脈絡化思考',
-          body: '將文學作品中之空間描寫（如《紅樓夢》大觀園<span className="text-indigo-600 font-bold">空間佈局</span>、魯迅《朝花夕拾》百草園與三味書屋）置於歷史與文化脈絡中還原。',
+          body: '將文學作品中之空間描寫（如《紅樓夢》大觀園<span className='text-indigo-600 font-bold'>空間佈局</span>、魯迅《朝花夕拾》百草園與三味書屋）置於歷史與文化脈絡中還原。',
           steps: [
             '重建文本空間地圖：依據文本提示之方位（「進大門，過穿堂，轉入西脊……」），在腦海中重建空間層次。',
             '分析空間階級與禮制意涵：辨識主房、廂房、門房等空間分配背後之家族階級與權力結構。',
@@ -530,7 +530,7 @@ export const chineseData: SubjectData = {
         },
         {
           heading: '108 課綱閱讀素養與非連續性文本 (Non-continuous Texts) 破題三步驟 (108 Core Literacy Strategies)',
-          body: '統測國文<span className="text-indigo-600 font-bold">長篇閱讀</span>題組與素養題型高度重視「跨領域議題（如生態永續、AI科技、智慧城市）」與「非連續性文本（結合圖表、數據、對話簡報）」。掌握三大素養層次可輕鬆破題。',
+          body: '統測國文<span className='text-indigo-600 font-bold'>長篇閱讀</span>題組與素養題型高度重視「跨領域議題（如生態永續、AI科技、智慧城市）」與「非連續性文本（結合圖表、數據、對話簡報）」。掌握三大素養層次可輕鬆破題。',
           table: {
             headers: ['素養層次', '能力指標與題目類型', '解題關鍵技巧與閱讀策略', '統測考題實例方向'],
             rows: [
@@ -588,12 +588,12 @@ export const chineseData: SubjectData = {
     {
       slug: 'writing-expression',
       title: '5. 作文與表達（含建築空間論述）',
-      desc: '精通論說文與抒情文之構思、<span className="text-rose-600 font-bold">起承轉合</span>篇章架構、修辭造句、空間意象融入及建築空間評析作文實戰技巧。\n\n🔥 V6.0 考前秒殺秘訣：此核心概念統測出題率極高，建議善用圖解與鷹架提示反覆練習！',
+      desc: '精通論說文與抒情文之構思、<span className='text-rose-600 font-bold'>起承轉合</span>篇章架構、修辭造句、空間意象融入及建築空間評析作文實戰技巧。\n\n🔥 V6.0 考前秒殺秘訣：此核心概念統測出題率極高，建議善用圖解與鷹架提示反覆練習！',
       status: 'done',
       gradeLevel: 10,
       examHitRate: 3,
       fatalTraps: [{"wrongThinking":"直覺選擇字面相近選項，未仔細檢驗題幹之特定限制條件。","correctThinking":"回歸核心公理與基本定義，逐項檢核題幹條件與反例。","trapDescription":"80% 考生在概念題中因粗心忽略前提假設而失分。"}],
-      eliteMentalModels: [{"technique":"<span className="text-rose-600 font-bold">第一性原理</span>拆解法 (First Principles Breakdown)","explanation":"不依賴死記死背，由最底層的定義與公理邏輯推導出解題路徑，降維打擊各類統測變形題。"}],
+      eliteMentalModels: [{"technique":"<span className='text-rose-600 font-bold'>第一性原理</span>拆解法 (First Principles Breakdown)","explanation":"不依賴死記死背，由最底層的定義與公理邏輯推導出解題路徑，降維打擊各類統測變形題。"}],
       covered_question_ids: ['111-chinese-10', '110-chinese-4', '110-chinese-10', '110-chinese-16', '110-chinese-22', '110-chinese-28', '110-chinese-34'],
       worked_examples: [
         {
@@ -610,8 +610,8 @@ export const chineseData: SubjectData = {
       "illustrations": [ 'context.webp', 'mechanism.webp', 'comparison.webp', 'step-by-step.webp', 'chinese-real-world.webp' , 'writing-expression-infographic.webp' , 'concept-diagram.webp', 'formula-visual.webp'],
       concepts: [
         {
-          heading: '<span className="text-rose-600 font-bold">起承轉合</span>與現代論說文篇章邏輯架構',
-          body: '寫作是思想的結構化呈現。高分作文與專業論述必須具備清晰的段落分工與層次遞進。掌握「<span className="text-rose-600 font-bold">起承轉合</span>」在現代作文中的具體佈局：',
+          heading: '<span className='text-rose-600 font-bold'>起承轉合</span>與現代論說文篇章邏輯架構',
+          body: '寫作是思想的結構化呈現。高分作文與專業論述必須具備清晰的段落分工與層次遞進。掌握「<span className='text-rose-600 font-bold'>起承轉合</span>」在現代作文中的具體佈局：',
           table: {
             headers: ['段落名稱', '核心任務', '內容佈局策略', '寫作技巧與句型引導'],
             rows: [
@@ -681,11 +681,11 @@ export const chineseData: SubjectData = {
       ],
       practices: [
         {
-          question: '【基礎題 1】若作文題目為「空間的記憶」，欲採用「<span className="text-rose-600 font-bold">起承轉合</span>」四段式結構撰寫抒情散文，下列段落規劃何者最適當？\nA. 起：列舉全球摩天大樓高度數據；承：說明鋼筋混凝土施工技術；轉：批判施工預算超支；合：總結施工安全規範\nB. 起：由老家舊宅之木門聲破題引出空間記憶；承：描繪童年在庭院與穿廊間之感官記憶；轉：描繪都市更新後老屋拆除之失落與反思；合：昇華至空間雖逝但記憶永存之情感結語\nC. 起：定義什麼是空間；承：定義什麼是記憶；轉：證明空間與記憶無關；合：結論寫作文太難\nD. 全篇皆寫論文抄襲與智財權法條',
+          question: '【基礎題 1】若作文題目為「空間的記憶」，欲採用「<span className='text-rose-600 font-bold'>起承轉合</span>」四段式結構撰寫抒情散文，下列段落規劃何者最適當？\nA. 起：列舉全球摩天大樓高度數據；承：說明鋼筋混凝土施工技術；轉：批判施工預算超支；合：總結施工安全規範\nB. 起：由老家舊宅之木門聲破題引出空間記憶；承：描繪童年在庭院與穿廊間之感官記憶；轉：描繪都市更新後老屋拆除之失落與反思；合：昇華至空間雖逝但記憶永存之情感結語\nC. 起：定義什麼是空間；承：定義什麼是記憶；轉：證明空間與記憶無關；合：結論寫作文太難\nD. 全篇皆寫論文抄襲與智財權法條',
           difficulty: '基礎',
           steps: [
             '**Step 1:** 分析題目「空間的記憶」屬抒情/感悟類散文。',
-            '**Step 2:** 對照選項 B，起段開門見山以老家木門聲破題，承段感官記憶，轉段都市更新反思，合段情感昇華，完全符合<span className="text-rose-600 font-bold">起承轉合</span>與抒情散文要求。',
+            '**Step 2:** 對照選項 B，起段開門見山以老家木門聲破題，承段感官記憶，轉段都市更新反思，合段情感昇華，完全符合<span className='text-rose-600 font-bold'>起承轉合</span>與抒情散文要求。',
             '**Step 3:** 選項 A、C、D 皆偏離題目抒情核心或文不對題。'
           ],
           answer: 'B. 起：由老家舊宅之木門聲破題引出空間記憶；承：描繪童年在庭院與穿廊間之感官記憶；轉：描繪都市更新後老屋拆除之失落與反思；合：昇華至空間雖逝但記憶永存之情感結語'
@@ -725,23 +725,23 @@ export const chineseData: SubjectData = {
     {
       slug: 'cultural-knowledge',
       title: '6. 文化常識與園林建築思潮',
-      desc: '涵蓋國學常識、年齡代稱、**天干地支**與時辰、傳統節慶民俗、古代度量衡與中國<span className="text-indigo-600 font-bold">傳統園林</span>美學思潮（計成《園冶》與文人造園觀）。\n\n🔥 V6.0 考前秒殺秘訣：此核心概念統測出題率極高，建議善用圖解與鷹架提示反覆練習！',
+      desc: '涵蓋國學常識、年齡代稱、**天干地支**與時辰、傳統節慶民俗、古代度量衡與中國<span className='text-indigo-600 font-bold'>傳統園林</span>美學思潮（計成《園冶》與文人造園觀）。\n\n🔥 V6.0 考前秒殺秘訣：此核心概念統測出題率極高，建議善用圖解與鷹架提示反覆練習！',
       status: 'done',
       gradeLevel: 10,
       examHitRate: 3,
       fatalTraps: [{"wrongThinking":"直覺選擇字面相近選項，未仔細檢驗題幹之特定限制條件。","correctThinking":"回歸核心公理與基本定義，逐項檢核題幹條件與反例。","trapDescription":"80% 考生在概念題中因粗心忽略前提假設而失分。"}],
-      eliteMentalModels: [{"technique":"<span className="text-rose-600 font-bold">第一性原理</span>拆解法 (First Principles Breakdown)","explanation":"不依賴死記死背，由最底層的定義與公理邏輯推導出解題路徑，降維打擊各類統測變形題。"}],
+      eliteMentalModels: [{"technique":"<span className='text-rose-600 font-bold'>第一性原理</span>拆解法 (First Principles Breakdown)","explanation":"不依賴死記死背，由最底層的定義與公理邏輯推導出解題路徑，降維打擊各類統測變形題。"}],
       covered_question_ids: ['111-chinese-3', '111-chinese-5', '111-chinese-6', '111-chinese-9', '112-chinese-4', '112-chinese-7', '112-chinese-8', '112-chinese-10', '113-chinese-3', '113-chinese-4', '113-chinese-8', '114-chinese-2', '114-chinese-7', '114-chinese-8', '115-chinese-3', '115-chinese-5', '115-chinese-10', '110-chinese-5', '110-chinese-11', '110-chinese-17', '110-chinese-23', '110-chinese-29', '110-chinese-35'],
       worked_examples: [
         {
-          question: '【範例題】明代計成在《園冶》中提出了「雖由人作，宛自天開」的造園最高境界。請問這句話最能體現中國<span className="text-indigo-600 font-bold">傳統園林</span>美學的哪一種核心精神？',
+          question: '【範例題】明代計成在《園冶》中提出了「雖由人作，宛自天開」的造園最高境界。請問這句話最能體現中國<span className='text-indigo-600 font-bold'>傳統園林</span>美學的哪一種核心精神？',
           difficulty: '進階',
           steps: [
             '**步驟 1：**字義解析——「由人作」代表人工的建造與雕琢；「宛自天開」表示彷彿是大自然天然生成的。',
-            '**步驟 2：****哲學思想**連結——這反映了中國傳統「天人合一」與「<span className="text-rose-600 font-bold">師法自然</span>」的**哲學思想**。',
+            '**步驟 2：****哲學思想**連結——這反映了中國傳統「天人合一」與「<span className='text-rose-600 font-bold'>師法自然</span>」的**哲學思想**。',
             '**步驟 3：**總結精神——造園雖然依賴人工技藝，但最終的追求是消除人工雕琢的痕跡，使其完美融入自然，達到和諧統一。'
           ],
-          answer: '體現了「天人合一」與「<span className="text-rose-600 font-bold">師法自然</span>」的核心精神，強調人工造園必須順應自然，不露斧鑿之痕。'
+          answer: '體現了「天人合一」與「<span className='text-rose-600 font-bold'>師法自然</span>」的核心精神，強調人工造園必須順應自然，不露斧鑿之痕。'
         }
       ],
       "illustrations": [ 'context.webp', 'mechanism.webp', 'comparison.webp', 'step-by-step.webp', 'chinese-real-world.webp' , 'cultural-knowledge-infographic.webp' , 'concept-diagram.webp', 'formula-visual.webp'],
@@ -774,7 +774,7 @@ export const chineseData: SubjectData = {
           }
         },
         {
-          heading: '中國<span className="text-indigo-600 font-bold">傳統園林</span>美學與《園冶》造園思潮',
+          heading: '中國<span className='text-indigo-600 font-bold'>傳統園林</span>美學與《園冶》造園思潮',
           body: '明代計成所著《園冶》為中國第一部園林專著，提出了「雖由人作，宛自天開」之最高造園境界，並詳述了各種造園藝術手法。',
           steps: [
             '「雖由人作，宛自天開」：園林雖為人工規劃興建，但應達到順應自然、看不出人工斧鑿痕跡之最高審美美學。',
@@ -860,7 +860,7 @@ export const chineseData: SubjectData = {
           answer: '「借景」包含遠借、鄰借、仰借、俯借與應時而借五法，能打破有限的物理牆界，將廣袤的自然與季節光影納入園中；「雖由人作，宛自天開」則強調人工建造應順應自然法規，達到看不出人工鑿痕、天人合一之最高造園藝術境界。'
         },
         {
-          question: '【進階題 2】《周禮·考工記》載：「匠人營國，方九里，旁三門。國中九經九緯，經塗九軌。左祖右社，面朝後市。」請解析此段文字所呈現的中國古代都城<span className="text-indigo-600 font-bold">空間規劃</span>特徵與禮制思想。',
+          question: '【進階題 2】《周禮·考工記》載：「匠人營國，方九里，旁三門。國中九經九緯，經塗九軌。左祖右社，面朝後市。」請解析此段文字所呈現的中國古代都城<span className='text-indigo-600 font-bold'>空間規劃</span>特徵與禮制思想。',
           difficulty: '進階',
           steps: [
             '**Step 1:** 空間幾何與平面佈局解析——都城呈方正幾何形狀（方九里），四面設門，內部道路呈現「九經九緯」的棋盤式正交網格。',

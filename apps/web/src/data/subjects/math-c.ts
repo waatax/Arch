@@ -9,7 +9,7 @@ export const mathCData: SubjectData = {
     {
       slug: 'trigonometry',
       title: '👉 1. 三角函數與建築應用',
-      desc: '深入掌握**正弦定理**、**餘弦定理**、<span className="text-rose-600 font-bold">無障礙坡道</span>切線、和差角公式推導與<span className="text-rose-600 font-bold">極座標</span>系統，應用於建築基地測量、屋頂斜率與聲學週期變化。\n\n🔥 V6.0 考前秒殺秘訣：此核心概念統測出題率極高，建議善用圖解與鷹架提示反覆練習！',
+      desc: '深入掌握**正弦定理**、**餘弦定理**、<span className='text-rose-600 font-bold'>無障礙坡道</span>切線、和差角公式推導與<span className='text-rose-600 font-bold'>極座標</span>系統，應用於建築基地測量、屋頂斜率與聲學週期變化。\n\n🔥 V6.0 考前秒殺秘訣：此核心概念統測出題率極高，建議善用圖解與鷹架提示反覆練習！',
       status: 'done',
       covered_question_ids: ['111-math-c-4', '111-math-c-13', '112-math-c-3', '112-math-c-18', '113-math-c-3', '113-math-c-6', '113-math-c-18', '113-math-c-20', '113-math-c-22', '114-math-c-4', '114-math-c-8', '114-math-c-17', '115-math-c-15', '115-math-c-21', '115-math-c-25', '110-math-c-1', '110-math-c-7', '110-math-c-13', '110-math-c-19', '110-math-c-25'],
       worked_examples: [
@@ -45,8 +45,8 @@ export const mathCData: SubjectData = {
           }
         },
         {
-          heading: '<span className="text-rose-600 font-bold">無障礙坡道</span>、<span className="text-rose-600 font-bold">斜屋頂坡度</span>與切線函數 (Tangent)',
-          body: '✨ 【核心精華】 坡度（Slope）定義為垂直上升高度（Rise）與水平前進距離（Run）的比值，數學上等於傾斜角的正切函數 tan(θ)。建築物<span className="text-rose-600 font-bold">無障礙坡道</span>（通常規定 ≤ 1:12 或 1:8）與屋頂排水斜坡均需透過正切與反正切函數 arctan(m) 進行精確計算。 \n\n💡 **實務思考**：在真實的工程與設計場景中，這個概念能幫助我們降維打擊複雜問題，提升設計的精確度與安全性。',
+          heading: '<span className='text-rose-600 font-bold'>無障礙坡道</span>、<span className='text-rose-600 font-bold'>斜屋頂坡度</span>與切線函數 (Tangent)',
+          body: '✨ 【核心精華】 坡度（Slope）定義為垂直上升高度（Rise）與水平前進距離（Run）的比值，數學上等於傾斜角的正切函數 tan(θ)。建築物<span className='text-rose-600 font-bold'>無障礙坡道</span>（通常規定 ≤ 1:12 或 1:8）與屋頂排水斜坡均需透過正切與反正切函數 arctan(m) 進行精確計算。 \n\n💡 **實務思考**：在真實的工程與設計場景中，這個概念能幫助我們降維打擊複雜問題，提升設計的精確度與安全性。',
           formula: '📌 關鍵公式：\n坡度比 m = 垂直上升高 (y) / 水平前進長 (x) = tan(θ)\n傾斜角度 θ = arctan(m)',
           steps: [
             '確定垂直高差 y 與預期最大允許坡度比 m_max。',
@@ -88,8 +88,8 @@ export const mathCData: SubjectData = {
           ]
         },
         {
-          heading: '笛卡兒座標與<span className="text-rose-600 font-bold">極座標</span>轉換（環形與圓頂建築）',
-          body: '✨ 【核心精華】 圓形體育館、羅馬穹頂或環形辦公大樓的柱位佈設，使用<span className="text-rose-600 font-bold">極座標</span> (r, θ) 比直角座標 (x, y) 更為直觀且精確。 \n\n💡 **實務思考**：在真實的工程與設計場景中，這個概念能幫助我們降維打擊複雜問題，提升設計的精確度與安全性。',
+          heading: '笛卡兒座標與<span className='text-rose-600 font-bold'>極座標</span>轉換（環形與圓頂建築）',
+          body: '✨ 【核心精華】 圓形體育館、羅馬穹頂或環形辦公大樓的柱位佈設，使用<span className='text-rose-600 font-bold'>極座標</span> (r, θ) 比直角座標 (x, y) 更為直觀且精確。 \n\n💡 **實務思考**：在真實的工程與設計場景中，這個概念能幫助我們降維打擊複雜問題，提升設計的精確度與安全性。',
           formula: '📌 關鍵公式：\nx = r cos θ, y = r sin θ\nr = √(x² + y²), θ = arctan(y / x)',
           steps: [
             '已知環形建築半徑 r 與各柱位之分開角度 θ_i = 360° / N。',
@@ -142,7 +142,7 @@ export const mathCData: SubjectData = {
         },
         {
           difficulty: '進階',
-          question: '建築無障礙規範規定一般坡道最大坡度為 1:12（tan θ1 = 1/12）。若某一建築入口與地面高差為 2.4 公尺，依規定每升高 75 公分（0.75 公尺）必須設置一座長度至少 1.5 公尺的平坦休息平台。試求：（1）該<span className="text-rose-600 font-bold">無障礙坡道</span>至少需要多少座休息平台？（2）該坡道系統整體所需的最小總水平投影長度為多少公尺？（3）若設計師欲將斜坡傾角縮小至 3° 以提升舒適度，此時斜坡段（不含平台）的水平投影長度約為多少公尺？（已知 tan 3° ≈ 0.0524）',
+          question: '建築無障礙規範規定一般坡道最大坡度為 1:12（tan θ1 = 1/12）。若某一建築入口與地面高差為 2.4 公尺，依規定每升高 75 公分（0.75 公尺）必須設置一座長度至少 1.5 公尺的平坦休息平台。試求：（1）該<span className='text-rose-600 font-bold'>無障礙坡道</span>至少需要多少座休息平台？（2）該坡道系統整體所需的最小總水平投影長度為多少公尺？（3）若設計師欲將斜坡傾角縮小至 3° 以提升舒適度，此時斜坡段（不含平台）的水平投影長度約為多少公尺？（已知 tan 3° ≈ 0.0524）',
           steps: [
             '（1）平台座數計算：總高差 H = 2.4 公尺。最高升高 0.75m 需設一平台。',
             '分段數 = 2.4 / 0.75 = 3.2，取整數需 4 段斜坡，故中間需要 3 座休息平台。',
@@ -160,7 +160,7 @@ export const mathCData: SubjectData = {
     {
       slug: 'vectors',
       title: '👉 2. 平面向量與力學分解',
-      desc: '深入掌握向量正交分解、內積證明與夾角、外積與行列式面積、**拉米定理**<span className="text-rose-600 font-bold">靜力平衡</span>及正交投影，應用於結構受力分析與樑柱接頭幾何。\n\n🔥 V6.0 考前秒殺秘訣：此核心概念統測出題率極高，建議善用圖解與鷹架提示反覆練習！',
+      desc: '深入掌握向量正交分解、內積證明與夾角、外積與行列式面積、**拉米定理**<span className='text-rose-600 font-bold'>靜力平衡</span>及正交投影，應用於結構受力分析與樑柱接頭幾何。\n\n🔥 V6.0 考前秒殺秘訣：此核心概念統測出題率極高，建議善用圖解與鷹架提示反覆練習！',
       status: 'done',
       covered_question_ids: ['111-math-c-16', '112-math-c-4', '113-math-c-19', '115-math-c-23', '110-math-c-3', '110-math-c-9', '110-math-c-15', '110-math-c-21'],
       worked_examples: [
@@ -175,7 +175,7 @@ export const mathCData: SubjectData = {
       concepts: [
         {
           heading: '平面向量的正交分解與坐標運算',
-          body: '✨ 【核心精華】 在建築結構力學中，外力（如風力、地震力、屋頂自重）常以傾斜角度作用於節點。將向量分解為水平 (x) 與垂直 (y) 正交分量，是建立<span className="text-rose-600 font-bold">靜力平衡</span>方程式 ΣFx = 0, ΣFy = 0 的首要步驟。 \n\n💡 **實務思考**：在真實的工程與設計場景中，這個概念能幫助我們降維打擊複雜問題，提升設計的精確度與安全性。',
+          body: '✨ 【核心精華】 在建築結構力學中，外力（如風力、地震力、屋頂自重）常以傾斜角度作用於節點。將向量分解為水平 (x) 與垂直 (y) 正交分量，是建立<span className='text-rose-600 font-bold'>靜力平衡</span>方程式 ΣFx = 0, ΣFy = 0 的首要步驟。 \n\n💡 **實務思考**：在真實的工程與設計場景中，這個概念能幫助我們降維打擊複雜問題，提升設計的精確度與安全性。',
           formula: '📌 關鍵公式：\n向量 F = (Fx, Fy) = (|F| cos θ, |F| sin θ)\n模長 |F| = √(Fx² + Fy²), 方向角 θ = arctan(Fy / Fx)',
           steps: [
             '確認外力大小 |F| 與對水平軸之傾角 θ。',
@@ -223,11 +223,11 @@ export const mathCData: SubjectData = {
           ]
         },
         {
-          heading: '共點力系<span className="text-rose-600 font-bold">靜力平衡</span>與**拉米定理**證明',
-          body: '✨ 【核心精華】 當三共點力作用於桁架某一節點且處於<span className="text-rose-600 font-bold">靜力平衡</span>狀態（ΣF = 0）時，各力的大小與其對角的正弦值成正比，此即**拉米定理**（Lami\'s Theorem）。 \n\n💡 **實務思考**：在真實的工程與設計場景中，這個概念能幫助我們降維打擊複雜問題，提升設計的精確度與安全性。',
-          formula: '📌 關鍵公式：\n<span className="text-rose-600 font-bold">靜力平衡</span>：Σ F = F1 + F2 + F3 = 0\n**拉米定理**：F1 / sin(α) = F2 / sin(β) = F3 / sin(γ)',
+          heading: '共點力系<span className='text-rose-600 font-bold'>靜力平衡</span>與**拉米定理**證明',
+          body: '✨ 【核心精華】 當三共點力作用於桁架某一節點且處於<span className='text-rose-600 font-bold'>靜力平衡</span>狀態（ΣF = 0）時，各力的大小與其對角的正弦值成正比，此即**拉米定理**（Lami\'s Theorem）。 \n\n💡 **實務思考**：在真實的工程與設計場景中，這個概念能幫助我們降維打擊複雜問題，提升設計的精確度與安全性。',
+          formula: '📌 關鍵公式：\n<span className='text-rose-600 font-bold'>靜力平衡</span>：Σ F = F1 + F2 + F3 = 0\n**拉米定理**：F1 / sin(α) = F2 / sin(β) = F3 / sin(γ)',
           steps: [
-            '證明**拉米定理**：當三共點力 F1, F2, F3 達<span className="text-rose-600 font-bold">靜力平衡</span>時，其向量首尾相接形成閉合三角形。',
+            '證明**拉米定理**：當三共點力 F1, F2, F3 達<span className='text-rose-600 font-bold'>靜力平衡</span>時，其向量首尾相接形成閉合三角形。',
             '三角形三內角分別為 (180° - α), (180° - β), (180° - γ)。',
             '由**正弦定理**：|F1| / sin(180° - α) = |F2| / sin(180° - β) = |F3| / sin(180° - γ)。',
             '利用三角恆等式 sin(180° - θ) = sin(θ)，代入即得：F1 / sin α = F2 / sin β = F3 / sin γ。證畢。'
@@ -309,7 +309,7 @@ export const mathCData: SubjectData = {
     {
       slug: 'algebra',
       title: '👉 3. 代數與多項式',
-      desc: '深入掌握二次多項式配方法頂點式推導、餘式與**因式定理**證明、<span className="text-indigo-600 font-bold">克拉瑪公式</span>、<span className="text-indigo-600 font-bold">線性規劃</span>可行域極值及<span className="text-indigo-600 font-bold">對數尺度</span>，應用於拱門幾何與材料預算最佳化。\n\n🔥 V6.0 考前秒殺秘訣：此核心概念統測出題率極高，建議善用圖解與鷹架提示反覆練習！',
+      desc: '深入掌握二次多項式配方法頂點式推導、餘式與**因式定理**證明、<span className='text-indigo-600 font-bold'>克拉瑪公式</span>、<span className='text-indigo-600 font-bold'>線性規劃</span>可行域極值及<span className='text-indigo-600 font-bold'>對數尺度</span>，應用於拱門幾何與材料預算最佳化。\n\n🔥 V6.0 考前秒殺秘訣：此核心概念統測出題率極高，建議善用圖解與鷹架提示反覆練習！',
       status: 'done',
       covered_question_ids: ['111-math-c-1', '111-math-c-2', '111-math-c-3', '111-math-c-5', '111-math-c-8', '111-math-c-10', '111-math-c-11', '111-math-c-12', '111-math-c-15', '111-math-c-17', '111-math-c-20', '111-math-c-21', '111-math-c-22', '111-math-c-23', '111-math-c-25', '112-math-c-1', '112-math-c-2', '112-math-c-5', '112-math-c-6', '112-math-c-7', '112-math-c-8', '112-math-c-10', '112-math-c-11', '112-math-c-12', '112-math-c-13', '112-math-c-15', '112-math-c-17', '112-math-c-19', '112-math-c-20', '112-math-c-23', '112-math-c-24', '113-math-c-1', '113-math-c-5', '113-math-c-8', '113-math-c-9', '113-math-c-10', '113-math-c-11', '113-math-c-12', '113-math-c-15', '113-math-c-16', '113-math-c-25', '114-math-c-1', '114-math-c-2', '114-math-c-3', '114-math-c-5', '114-math-c-6', '114-math-c-7', '114-math-c-9', '114-math-c-12', '114-math-c-13', '114-math-c-14', '114-math-c-15', '114-math-c-16', '114-math-c-18', '114-math-c-19', '114-math-c-25', '115-math-c-1', '115-math-c-2', '115-math-c-4', '115-math-c-5', '115-math-c-9', '115-math-c-10', '115-math-c-11', '115-math-c-12', '115-math-c-13', '115-math-c-14', '115-math-c-16', '115-math-c-20', '115-math-c-24', '110-math-c-6', '110-math-c-12', '110-math-c-18', '110-math-c-24'],
       worked_examples: [
@@ -353,8 +353,8 @@ export const mathCData: SubjectData = {
           ]
         },
         {
-          heading: '<span className="text-indigo-600 font-bold">克拉瑪公式</span>推導與建材成本採購方程組',
-          body: '✨ 【核心精華】 當專案中包含多種建材（如水泥、鋼筋、骨材）且受限於總預算與總重量時，可建立二元或三元一次聯立方程組，並利用<span className="text-indigo-600 font-bold">克拉瑪公式</span>（Cramer\'s Rule）求解。 \n\n💡 **實務思考**：在真實的工程與設計場景中，這個概念能幫助我們降維打擊複雜問題，提升設計的精確度與安全性。',
+          heading: '<span className='text-indigo-600 font-bold'>克拉瑪公式</span>推導與建材成本採購方程組',
+          body: '✨ 【核心精華】 當專案中包含多種建材（如水泥、鋼筋、骨材）且受限於總預算與總重量時，可建立二元或三元一次聯立方程組，並利用<span className='text-indigo-600 font-bold'>克拉瑪公式</span>（Cramer\'s Rule）求解。 \n\n💡 **實務思考**：在真實的工程與設計場景中，這個概念能幫助我們降維打擊複雜問題，提升設計的精確度與安全性。',
           formula: '📌 關鍵公式：\n二階行列式: Δ = |a1 b1; a2 b2| = a1 b2 - a2 b1\nx = Δx / Δ, y = Δy / Δ',
           steps: [
             '方程組：a1 x + b1 y = c1 及 a2 x + b2 y = c2。',
@@ -372,7 +372,7 @@ export const mathCData: SubjectData = {
           }
         },
         {
-          heading: '<span className="text-indigo-600 font-bold">線性規劃</span>頂點法 (Corner Point Method) 與資源最適化',
+          heading: '<span className='text-indigo-600 font-bold'>線性規劃</span>頂點法 (Corner Point Method) 與資源最適化',
           body: '✨ 【核心精華】 在建築工地管理與綠建築材料選配中，資源（預算、工時、碳排放量）受到多重不等式限制。目標函數 Z = ax + by 的極值必定出現在可行域（Feasible Region）的頂點上。 \n\n💡 **實務思考**：在真實的工程與設計場景中，這個概念能幫助我們降維打擊複雜問題，提升設計的精確度與安全性。',
           formula: '📌 關鍵公式：\n目標函數 Z = ax + by\n可行域 (Feasible Region): 不等式組之交集區域',
           steps: [
@@ -383,7 +383,7 @@ export const mathCData: SubjectData = {
           ]
         },
         {
-          heading: '<span className="text-indigo-600 font-bold">對數尺度</span>與建築聲學分貝 (dB)、震級公式',
+          heading: '<span className='text-indigo-600 font-bold'>對數尺度</span>與建築聲學分貝 (dB)、震級公式',
           body: '✨ 【核心精華】 人類對聲音響度與地震能量的感知呈對數關係。建築隔音設計（ Sound Transmission Class, STC）與防震設計均需熟練運用對數運算法則。 \n\n💡 **實務思考**：在真實的工程與設計場景中，這個概念能幫助我們降維打擊複雜問題，提升設計的精確度與安全性。',
           formula: '📌 關鍵公式：\n聲壓級 (dB): L = 10 log₁₀(I / I₀)\n芮氏地震規模: M = (2/3) log₁₀(E) - 2.9 (E 為能量，焦耳)',
           steps: [
@@ -430,7 +430,7 @@ export const mathCData: SubjectData = {
         },
         {
           difficulty: '中等',
-          question: '已知某工程採購鋼筋 x 噸與水泥 y 噸，滿足方程組：\n2x + 3y = 31\n5x + 4y = 49\n試利用<span className="text-indigo-600 font-bold">克拉瑪公式</span>求解 x 與 y。',
+          question: '已知某工程採購鋼筋 x 噸與水泥 y 噸，滿足方程組：\n2x + 3y = 31\n5x + 4y = 49\n試利用<span className='text-indigo-600 font-bold'>克拉瑪公式</span>求解 x 與 y。',
           steps: [
             '👉 1. 計算主行列式 Δ = |2 3; 5 4| = (2)(4) - (3)(5) = 8 - 15 = -7。',
             '👉 2. 計算 Δx = |31 3; 49 4| = (31)(4) - (3)(49) = 124 - 147 = -23？等一下，124 - 147 = -23 不是整數？重新檢查：',
@@ -444,7 +444,7 @@ export const mathCData: SubjectData = {
         },
         {
           difficulty: '進階',
-          question: '某營造公司承攬一項綠建築工程，需採購 A、B 兩種保溫隔熱材料。A 材料每立方公尺成本 3000 元，可減少碳排放 40 kg；B 材料每立方公尺成本 5000 元，可減少碳排放 80 kg。受限於施工現場儲存空間，兩種材料總體積不得超過 100 立方公尺，且專案總預算上限為 400,000 元。求：（1）列出約束條件與減碳目標函數；（2）利用<span className="text-indigo-600 font-bold">線性規劃</span>可行域頂點法，求出能達到最大減碳量的採購組合及最大減碳量。',
+          question: '某營造公司承攬一項綠建築工程，需採購 A、B 兩種保溫隔熱材料。A 材料每立方公尺成本 3000 元，可減少碳排放 40 kg；B 材料每立方公尺成本 5000 元，可減少碳排放 80 kg。受限於施工現場儲存空間，兩種材料總體積不得超過 100 立方公尺，且專案總預算上限為 400,000 元。求：（1）列出約束條件與減碳目標函數；（2）利用<span className='text-indigo-600 font-bold'>線性規劃</span>可行域頂點法，求出能達到最大減碳量的採購組合及最大減碳量。',
           steps: [
             '（1）設定變數與約束條件：',
             '設 x 為採購 A 材料體積 (m³)，y 為採購 B 材料體積 (m³)。',
@@ -471,7 +471,7 @@ export const mathCData: SubjectData = {
     {
       slug: 'geometry',
       title: '👉 4. 函數與幾何圖形',
-      desc: '深入掌握橢圓標準式證明與聲學畫廊焦跡、雙曲線與<span className="text-rose-600 font-bold">雙曲拋物面</span>薄殼、拋物線反射光學證明、3D 空間平面方程式及點到平面距離公式。\n\n🔥 V6.0 考前秒殺秘訣：此核心概念統測出題率極高，建議善用圖解與鷹架提示反覆練習！',
+      desc: '深入掌握橢圓標準式證明與聲學畫廊焦跡、雙曲線與<span className='text-rose-600 font-bold'>雙曲拋物面</span>薄殼、拋物線反射光學證明、3D 空間平面方程式及點到平面距離公式。\n\n🔥 V6.0 考前秒殺秘訣：此核心概念統測出題率極高，建議善用圖解與鷹架提示反覆練習！',
       status: 'done',
       covered_question_ids: ['111-math-c-6', '111-math-c-7', '111-math-c-9', '111-math-c-14', '111-math-c-24', '112-math-c-14', '112-math-c-21', '112-math-c-22', '112-math-c-25', '113-math-c-2', '113-math-c-4', '113-math-c-13', '113-math-c-17', '113-math-c-21', '113-math-c-24', '114-math-c-10', '114-math-c-11', '114-math-c-20', '114-math-c-21', '114-math-c-22', '114-math-c-23', '114-math-c-24', '115-math-c-3', '115-math-c-8', '115-math-c-17', '110-math-c-2', '110-math-c-8', '110-math-c-14', '110-math-c-20'],
       worked_examples: [
@@ -502,19 +502,19 @@ export const mathCData: SubjectData = {
             headers: ['圓錐曲線', '標準方程式', '焦點與長短軸關係', '建築與結構幾何應用'],
             rows: [
               ['橢圓 (Ellipse)', 'x²/a² + y²/b² = 1', 'a² = b² + c², 焦點 (±c, 0)', '歌劇院/體育館橢圓平面、聲學焦點匯聚設計'],
-              ['雙曲線 (Hyperbola)', 'x²/a² - y²/b² = 1', 'c² = a² + b², 漸近線 y = ±(b/a)x', '<span className="text-rose-600 font-bold">雙曲拋物面</span>薄殼屋頂、冷卻塔結構直紋面施工'],
+              ['雙曲線 (Hyperbola)', 'x²/a² - y²/b² = 1', 'c² = a² + b², 漸近線 y = ±(b/a)x', '<span className='text-rose-600 font-bold'>雙曲拋物面</span>薄殼屋頂、冷卻塔結構直紋面施工'],
               ['拋物線 (Parabola)', 'y² = 4cx 或 x² = 4cy', '焦距 c, 準線 x = -c 或 y = -c', '太陽能集熱板、採光罩罩面、懸索橋主纜幾何']
             ]
           }
         },
         {
-          heading: '雙曲線標準式與<span className="text-rose-600 font-bold">雙曲拋物面</span>薄殼幾何',
-          body: '✨ 【核心精華】 雙曲線是平面上到兩焦點距離之差絕對值為定值 2a 的點軌跡。在建築工程中，<span className="text-rose-600 font-bold">雙曲拋物面</span>（Hypar Shell）是一種雙重直紋面（Ruled Surface），能以直線模板搭建出強度極高且造型優美的薄殼屋頂。 \n\n💡 **實務思考**：在真實的工程與設計場景中，這個概念能幫助我們降維打擊複雜問題，提升設計的精確度與安全性。',
-          formula: '📌 關鍵公式：\n雙曲線標準式: x² / a² - y² / b² = 1\n漸近線方程式: y = ± (b / a) x\n<span className="text-rose-600 font-bold">雙曲拋物面</span>方程式: z = x² / a² - y² / b²',
+          heading: '雙曲線標準式與<span className='text-rose-600 font-bold'>雙曲拋物面</span>薄殼幾何',
+          body: '✨ 【核心精華】 雙曲線是平面上到兩焦點距離之差絕對值為定值 2a 的點軌跡。在建築工程中，<span className='text-rose-600 font-bold'>雙曲拋物面</span>（Hypar Shell）是一種雙重直紋面（Ruled Surface），能以直線模板搭建出強度極高且造型優美的薄殼屋頂。 \n\n💡 **實務思考**：在真實的工程與設計場景中，這個概念能幫助我們降維打擊複雜問題，提升設計的精確度與安全性。',
+          formula: '📌 關鍵公式：\n雙曲線標準式: x² / a² - y² / b² = 1\n漸近線方程式: y = ± (b / a) x\n<span className='text-rose-600 font-bold'>雙曲拋物面</span>方程式: z = x² / a² - y² / b²',
           steps: [
             '分析雙曲線漸近線：當 x 趨近於無窮大時，x² / a² - y² / b² = 1 中 1 可忽略。',
             '得 x² / a² ≈ y² / b² ⇒ y ≈ ± (b / a) x。',
-            '<span className="text-rose-600 font-bold">雙曲拋物面</span>切面特性：與 z=k 平行之截面為雙曲線，與 x=k 或 y=k 平行之截面為拋物線。'
+            '<span className='text-rose-600 font-bold'>雙曲拋物面</span>切面特性：與 z=k 平行之截面為雙曲線，與 x=k 或 y=k 平行之截面為拋物線。'
           ]
         },
         {
@@ -766,7 +766,7 @@ export const mathCData: SubjectData = {
     {
       slug: 'calculus',
       title: '👉 6. 微積分基礎',
-      desc: '深入掌握<span className="text-rose-600 font-bold">微商極限定義</span>與微分公式推導、一二階導數極值最佳化、**微積分基本定理** (FTC) 證明、定積分計算地形面積土方及樑剪力彎矩積分導引。\n\n🔥 V6.0 考前秒殺秘訣：此核心概念統測出題率極高，建議善用圖解與鷹架提示反覆練習！',
+      desc: '深入掌握<span className='text-rose-600 font-bold'>微商極限定義</span>與微分公式推導、一二階導數極值最佳化、**微積分基本定理** (FTC) 證明、定積分計算地形面積土方及樑剪力彎矩積分導引。\n\n🔥 V6.0 考前秒殺秘訣：此核心概念統測出題率極高，建議善用圖解與鷹架提示反覆練習！',
       status: 'done',
       covered_question_ids: ['111-math-c-18', '111-math-c-19', '113-math-c-14', '113-math-c-23', '115-math-c-6', '115-math-c-7', '115-math-c-18', '115-math-c-19', '115-math-c-22', '110-math-c-5', '110-math-c-11', '110-math-c-17', '110-math-c-23'],
       worked_examples: [
@@ -780,7 +780,7 @@ export const mathCData: SubjectData = {
       "illustrations": [ 'context.webp', 'mechanism.webp', 'comparison.webp', 'step-by-step.webp', 'math-c-real-world.webp' , 'calculus-infographic.webp' , 'concept-diagram.webp', 'formula-visual.webp'],
       concepts: [
         {
-          heading: '<span className="text-rose-600 font-bold">微商極限定義</span>與多項式/三角函數微分公式推導',
+          heading: '<span className='text-rose-600 font-bold'>微商極限定義</span>與多項式/三角函數微分公式推導',
           body: '✨ 【核心精華】 微分（Differentiation）的核心是求函數在某一點的瞬時變化率，幾何意義為切線斜率。導函數 f\'(x) 由極限 Lim_{h->0} [f(x+h) - f(x)] / h 定義。 \n\n💡 **實務思考**：在真實的工程與設計場景中，這個概念能幫助我們降維打擊複雜問題，提升設計的精確度與安全性。',
           formula: '📌 關鍵公式：\n極限定義: f\'(x) = lim_{h → 0} [ f(x + h) - f(x) ] / h\n冪函數微分: d/dx (xⁿ) = n xⁿ⁻¹\n三角函數微分: d/dx (sin x) = cos x, d/dx (cos x) = -sin x',
           steps: [
@@ -850,19 +850,19 @@ export const mathCData: SubjectData = {
           ]
         },
         {
-          heading: '簡支樑<span className="text-indigo-600 font-bold">剪力圖</span> (SFD) 與<span className="text-indigo-600 font-bold">彎矩圖</span> (BMD) 之微積分關係',
+          heading: '簡支樑<span className='text-indigo-600 font-bold'>剪力圖</span> (SFD) 與<span className='text-indigo-600 font-bold'>彎矩圖</span> (BMD) 之微積分關係',
           body: '✨ 【核心精華】 在結構力學中，分佈載重 q(x)、剪力 V(x) 與彎矩 M(x) 三者之間具備嚴密的微積分導數與積分關係。 \n\n💡 **實務思考**：在真實的工程與設計場景中，這個概念能幫助我們降維打擊複雜問題，提升設計的精確度與安全性。',
           formula: '📌 關鍵公式：\ndV(x) / dx = -q(x) ⇒ V(x) = -∫ q(x) dx\ndM(x) / dx = V(x) ⇒ M(x) = ∫ V(x) dx',
           steps: [
             '剪力等於彎矩的微分（斜率）：彎矩 M(x) 的極大值必定出現在剪力 V(x) = 0 的斷面位置。',
-            '兩點間彎矩差等於<span className="text-indigo-600 font-bold">剪力圖</span>在該區間之定積分面積：M(x₂) - M(x₁) = ∫ₓ₁ˣ₂ V(x) dx。'
+            '兩點間彎矩差等於<span className='text-indigo-600 font-bold'>剪力圖</span>在該區間之定積分面積：M(x₂) - M(x₁) = ∫ₓ₁ˣ₂ V(x) dx。'
           ],
           table: {
             headers: ['力學物理量', '符號表示', '微分關係式', '幾何與圖形關係說明'],
             rows: [
-              ['均佈載重', 'q(x)', '- dV/dx', '均佈載重大小等於<span className="text-indigo-600 font-bold">剪力圖</span>之斜率負值'],
-              ['剪力', 'V(x)', 'dM/dx', '剪力大小等於<span className="text-indigo-600 font-bold">彎矩圖</span>之斜率 (V=0 處 M 有極值)'],
-              ['彎矩', 'M(x)', '∫ V(x) dx', '彎矩數值等於<span className="text-indigo-600 font-bold">剪力圖</span>之定積分累積面積']
+              ['均佈載重', 'q(x)', '- dV/dx', '均佈載重大小等於<span className='text-indigo-600 font-bold'>剪力圖</span>之斜率負值'],
+              ['剪力', 'V(x)', 'dM/dx', '剪力大小等於<span className='text-indigo-600 font-bold'>彎矩圖</span>之斜率 (V=0 處 M 有極值)'],
+              ['彎矩', 'M(x)', '∫ V(x) dx', '彎矩數值等於<span className='text-indigo-600 font-bold'>剪力圖</span>之定積分累積面積']
             ]
           }
         },

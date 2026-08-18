@@ -53,7 +53,7 @@ export default function Home() {
               <div className="absolute inset-0 bg-[url('/grid-pattern.svg')] opacity-5" />
               <div className="relative flex h-full flex-col">
                 <div className="flex items-start justify-between border-b border-slate-100 dark:border-slate-800 pb-5">
-                  <div><p className="font-mono text-[10px] tracking-[.2em] text-slate-400">TODAY'S GENTLE PLAN</p><h2 className="mt-2 font-serif text-2xl font-bold text-slate-800 dark:text-slate-200">今天，只完成一小步就好</h2></div>
+                  <div><p className="font-mono text-[10px] tracking-[.2em] text-slate-400">TODAY&apos;S GENTLE PLAN</p><h2 className="mt-2 font-serif text-2xl font-bold text-slate-800 dark:text-slate-200">今天，只完成一小步就好</h2></div>
                   <DraftingCompass className="size-8 text-blue-500/80" />
                 </div>
                 <div className="my-auto space-y-3">
