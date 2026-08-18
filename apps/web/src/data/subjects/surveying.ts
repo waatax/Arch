@@ -22,24 +22,24 @@ export const surveyingData: SubjectData = {
           answer: '正確距離為 90.0162 公尺 (90.016 m)。'
         }
       ],
-      "illustrations": [ 'context.webp', 'mechanism.webp', 'comparison.webp', 'step-by-step.webp', 'surveying-real-world.webp' , 'surveying-infographic.webp' ],
+      "illustrations": [ 'context.webp', 'mechanism.webp', 'comparison.webp', 'step-by-step.webp', 'surveying-real-world.webp' , 'surveying-infographic.webp', 'distance-measuring-principles.webp', 'theodolite-errors-correction.webp' ],
       concepts: [
         {
           heading: '距離測量方法與鋼卷尺五大修正公式',
-          body: '距離測量為測量學中最基本的要素之一。鋼卷尺直接量距受到溫度、拉力、垂線、斜率及海平面投影等物理因素影響，須施加五大系統誤差修正以求得標準水平距離。',
+          body: '距離測量為測量學中**最基本的要素之一**。鋼卷尺直接量距受到<span className="text-rose-600 font-bold">溫度、拉力、垂降、斜率及海平面投影</span>等物理因素影響，必須施加**五大系統誤差修正**，才能求得標準水平距離。掌握這五個公式的物理意義是統測必考關鍵。',
           formula: '溫度修正: Ct = α · L · (T - T0)\n拉力修正: Cp = (P - P0) · L / (A · E)\n垂降修正: Cs = - (w² · L³) / (24 · P²)\n斜率修正: Ch = - h² / (2 · L)\n海平面修正: Cg = - L · H / R',
           steps: [
-            '溫度修正 (Ct)：α 為鋼熱膨脹係數 (約 1.15×10⁻⁵ /°C)，T 為實測溫度，T0 為標準溫度 (通常 20°C)。',
-            '拉力修正 (Cp)：P 為實測拉力，P0 為標準拉力，A 為鋼尺截面積，E 為鋼材彈性模數。',
-            '垂降修正 (Cs)：w 為單位長度鋼尺重，P 為施加拉力。懸空量距時鋼尺因自重下垂呈懸鏈線，使讀數偏大，修正量恆為負。',
-            '斜率修正 (Ch)：h 為兩端點高差，L 為沿斜面量得之斜距。將斜距換算為水平距離。',
-            '海平面修正 (Cg)：H 為測線平均高程，R 為地球平均半徑 (約 6371 km)。將地面距離化算至平均海平面 (MSL)。'
+            '<span className="text-indigo-600 font-bold">溫度修正 (Ct)</span>：α 為鋼熱膨脹係數，T 為實測溫度，T0 為標準溫度。**熱脹冷縮**，實測溫度高於標準時修正量為正。',
+            '<span className="text-indigo-600 font-bold">拉力修正 (Cp)</span>：P 為實測拉力，P0 為標準拉力。拉力大於標準時，鋼尺被拉長，讀數變小，修正量為正。',
+            '<span className="text-indigo-600 font-bold">垂降修正 (Cs)</span>：w 為單位長度重，P 為拉力。懸空量距時鋼尺因自重下垂呈懸鏈線，使讀數偏大，**修正量恆為負**。',
+            '<span className="text-indigo-600 font-bold">斜率修正 (Ch)</span>：h 為高差，L 為斜距。將斜面距離換算為水平距離，**修正量恆為負**。',
+            '<span className="text-indigo-600 font-bold">海平面修正 (Cg)</span>：H 為平均高程，R 為地球半徑。將地面距離投影至平均海平面 (MSL)，**高於海平面時修正量恆為負**。'
           ]
         },
         {
           heading: '光電測距儀 (EDM) & 全測站儀原理與加乘常數',
-          body: '光電測距 (EDM) 利用紅外線或雷射調幅波在兩點間往返傳播之相位差或飛時間 (Time-of-Flight) 來計算距離。儀器內部存在光學中心與幾何中心不重合之加常數 (Additive Constant, K) 以及頻率漂移產生之乘常數 (Scale Factor, S)。',
-          formula: 'D = K + S · D\' + D_phase',
+          body: '光電測距 (EDM) 利用紅外線或雷射調幅波在兩點間往返傳播之<span className="text-indigo-600 font-bold">相位差</span>或<span className="text-indigo-600 font-bold">飛行時間 (Time-of-Flight)</span> 來計算距離。儀器內部存在光學中心與幾何中心不重合之**加常數 (K)** 以及頻率漂移產生之**乘常數 (S)**。',
+          formula: 'D = K + S · D\' + D_phase\n(D為真實距離，D\'為儀器測量距離)',
           table: {
             headers: ['測量方法', '精度等級', '主要誤差來源', '適用場景與特點'],
             rows: [
@@ -51,30 +51,30 @@ export const surveyingData: SubjectData = {
         },
         {
           heading: '經緯儀角度測量原理與觀測方法 SOP',
-          body: '水平角為空間兩方向線在水平面上投影線之夾角。觀測方法主要有單角法、方向法 (Direction Method) 與複測法 (Repetition Method)。',
+          body: '水平角為空間兩方向線在水平面上<span className="text-rose-600 font-bold">投影線之夾角</span>。觀測方法主要有**單角法**、**方向法 (Direction Method)** 與**複測法 (Repetition Method)**，其中方向法最常用於多目標測量。',
           steps: [
-            '方向法 SOP Step 1：將經緯儀在測站 O 嚴格定心與定平。',
-            '方向法 SOP Step 2 (盤左 FL)：以盤左照準起始目標 A，將水平度盤歸零 (或設定初角)，讀取讀數 A_FL；順時針旋轉照準部依次照準 B、C、D 目標並讀數。',
-            '方向法 SOP Step 3 (盤右 FR)：縱轉望遠鏡變為盤右，逆時針依次照準 D、C、B、A 目標並讀數。',
-            '方向法 SOP Step 4：計算各目標之盤左與盤右平均讀數，消除視準軸與橫軸誤差。'
+            '**方向法 SOP Step 1**：將經緯儀在測站 O 嚴格<span className="text-indigo-600 font-bold">定心與定平</span>。',
+            '**方向法 SOP Step 2 (盤左 FL)**：以盤左照準起始目標 A，將水平度盤歸零，讀取讀數 A_FL；**順時針**旋轉照準部依次照準 B、C、D 目標並讀數。',
+            '**方向法 SOP Step 3 (盤右 FR)**：**縱轉望遠鏡變為盤右**，**逆時針**依次照準 D、C、B、A 目標並讀數。',
+            '**方向法 SOP Step 4**：計算各目標之<span className="text-rose-600 font-bold">盤左與盤右平均讀數</span>，消除視準軸與橫軸誤差。'
           ]
         },
         {
           heading: '正鏡與倒鏡觀測消差原理 (儀器誤差消除機制)',
-          body: '經緯儀內部存在三條主要幾何軸線：豎軸 (VV\')、橫軸 (HH\')、視準軸 (ZZ\')。正鏡 (Face Left) 與倒鏡 (Face Right) 觀測取平均可完全消除多項儀器系統誤差。',
+          body: '經緯儀內部存在三條主要幾何軸線：**豎軸 (VV\')**、**橫軸 (HH\')**、**視準軸 (ZZ\')**。透過<span className="text-rose-600 font-bold">正鏡 (Face Left) 與倒鏡 (Face Right) 觀測取平均</span>，可完全消除多項儀器系統誤差，這是測量學極為核心的消差手段。',
           table: {
             headers: ['儀器誤差項目', '幾何條件要求', '正倒鏡取平均能否消除', '備註與消差原理'],
             rows: [
-              ['視準軸誤差 (c)', '視準軸 ZZ\' 垂直於 橫軸 HH\'', '能消除', '正倒鏡時視準軸偏角方向相反，取平均可互相抵消'],
-              ['橫軸誤差 (i)', '橫軸 HH\' 垂直於 豎軸 VV\'', '能消除', '正倒鏡時橫軸傾斜對水平角之影響符號相反'],
-              ['垂直度盤指標差', '垂直度盤指標在豎軸鉛垂時歸零', '能消除', '盤左讀數與盤右讀數和為 360° (或 180°)，取半差可求解指標差'],
-              ['豎軸不鉛垂誤差', '豎軸 VV\' 垂直於 管水準軸 LL\'', '不能消除', '豎軸傾斜改變了觀測水平面，正倒鏡觀測無法抵消，須靠精平或雙軸補償']
+              ['視準軸誤差 (c)', '視準軸 ZZ\' ⊥ 橫軸 HH\'', '<span className="text-indigo-600 font-bold">能消除</span>', '正倒鏡時視準軸偏角方向相反，取平均可互相抵消'],
+              ['橫軸誤差 (i)', '橫軸 HH\' ⊥ 豎軸 VV\'', '<span className="text-indigo-600 font-bold">能消除</span>', '正倒鏡時橫軸傾斜對水平角之影響符號相反'],
+              ['垂直度盤指標差', '垂直度盤指標在豎軸鉛垂時歸零', '<span className="text-indigo-600 font-bold">能消除</span>', '盤左讀數與盤右讀數和為 360°，取半差可求解指標差'],
+              ['豎軸不鉛垂誤差', '豎軸 VV\' ⊥ 管水準軸 LL\'', '<span className="text-rose-600 font-bold">不能消除</span>', '豎軸傾斜改變了觀測水平面，必須靠**精平**或雙軸補償']
             ]
           }
         },
         {
           heading: '角度與距離測量之系統誤差與偶然誤差綜合分析',
-          body: '測量作業中之誤差按其性質可分為系統誤差 (Systematic Errors) 與偶然誤差 (Random Errors)。系統誤差具備固定物理規律且可透過校正或公式消去；偶然誤差符合常態分布。',
+          body: '測量作業中之誤差按其性質可分為<span className="text-indigo-600 font-bold">系統誤差 (Systematic Errors)</span> 與<span className="text-rose-600 font-bold">偶然誤差 (Random Errors)</span>。系統誤差具備固定物理規律可公式消去；偶然誤差符合常態分布，需透過統計平差。',
           table: {
             headers: ['誤差類別', '誤差名稱', '來源分類', '控制與消差對策'],
             rows: [
@@ -148,15 +148,15 @@ export const surveyingData: SubjectData = {
           answer: '視線高程 HI = 122.120 m，B 點高程 HB = 121.000 m。'
         }
       ],
-      "illustrations": [ 'context.webp', 'mechanism.webp', 'comparison.webp', 'step-by-step.webp', 'surveying-real-world.webp' , 'elevation-and-leveling-infographic.webp' ],
+      "illustrations": [ 'context.webp', 'mechanism.webp', 'comparison.webp', 'step-by-step.webp', 'surveying-real-world.webp' , 'elevation-and-leveling-infographic.webp', 'leveling-principles.webp', 'curvature-refraction-correction.webp' ],
       concepts: [
         {
           heading: '水準測量基本幾何原理與水準尺讀數',
-          body: '水準測量利用水準儀提供一條水平視線，透過放置在已知高程水準點 (BM) 或待測點上的水準尺，讀取後視 (BS) 與前視 (FS) 讀數，推算兩點間高差與待測點高程。',
+          body: '水準測量利用水準儀提供一條**絕對水平視線**，透過放置在已知高程水準點 (BM) 或待測點上的水準尺，讀取<span className="text-indigo-600 font-bold">後視 (BS)</span> 與<span className="text-rose-600 font-bold">前視 (FS)</span> 讀數，推算兩點間高差與待測點高程。',
           formula: '高差 Δh_AB = 後視讀數 (BS_A) - 前視讀數 (FS_B)\n未知點高程 Elev_B = 已知點高程 Elev_A + Δh_AB',
           steps: [
-            '水準點 (Bench Mark, BM)：已知精確高程之永久性控制點。',
-            '轉點 (Turning Point, TP)：水準路線中，儀器搬站時作為前視與後視共用之臨時傳遞高程點。',
+            '**水準點 (Bench Mark, BM)**：已知精確高程之永久性控制點。',
+            '**轉點 (Turning Point, TP)**：水準路線中，儀器搬站時作為前視與後視共用之臨時傳遞高程點，具備**傳遞高程**的關鍵樞紐作用。',
             '後視 (Backsight, BS)：在已知高程點上所立水準尺之讀數。',
             '前視 (Foresight, FS)：在未知高程點或轉點上所立水準尺之讀數。',
             '中間視 (Intermediate Foresight, IFS)：在不作轉點之待測地形點上所立水準尺讀數。'
@@ -194,7 +194,7 @@ export const surveyingData: SubjectData = {
         },
         {
           heading: '地球曲率 (Curvature) 與大氣折光 (Refraction) 聯合修正量',
-          body: '因地球表面為曲面使視線隨距離升高 (曲率影響)，大氣密度不均使光線向下彎曲 (折光影響)。兩者聯合修正量 h_cr 隨視距 K 之平方遞增。前後視距等長可完全消除 C&R 影響。',
+          body: '因地球表面為曲面使視線隨距離升高 (**曲率影響**)，大氣密度不均使光線向下彎曲 (**折光影響**)。兩者聯合修正量 h_cr 隨<span className="text-indigo-600 font-bold">視距 K 之平方遞增</span>。<span className="text-rose-600 font-bold">前後視距等長</span>可完全消除 C&R 影響，這是水準測量最重要的消差法則。',
           formula: '地球曲率修正: hc = D² / (2R) = 0.0785 · K² (m)\n大氣折光修正: hr = 0.0110 · K² (m)\n聯合修正量: hcr = hc - hr = 0.0675 · K² (m)  (K 單位為 km)',
           steps: [
             '幾何原理：水準視線為切線，水平面為球面，切線與球面隨距離加大而分離。',
@@ -204,7 +204,7 @@ export const surveyingData: SubjectData = {
         },
         {
           heading: '水準儀 i 角誤差 (視準軸不平行水準管軸) 兩點法 (Peg Test) 檢驗與校正',
-          body: '當水準儀之水準管氣泡居中時，若視準軸不垂直於豎軸，會與水準管軸產生夾角 i (i 角誤差)。兩點法 (Peg Test) 透過在中點與近端兩次觀測求解 i 角。',
+          body: '當水準儀之水準管氣泡居中時，若視準軸不平行於水準管軸，會產生夾角 i (**i 角誤差**)。**兩點法 (Peg Test)** 透過在中點與近端兩次觀測，利用幾何關係精確求解並校正 i 角。',
           steps: [
             'Step 1 中點觀測：在相距 D (如 60 m) 之 A、B 兩點正中央 C 架設水準儀。因前後視距相等 (D/2)，i 角誤差完全消去，求得真實高差 Δh_true = a1 - b1。',
             'Step 2 近端觀測：將儀器移至靠近 A 點 (如 離 A 點 d = 6 m, 離 B 點 D + d = 66 m) 之 D 點，讀取 A 尺讀數 a2 與 B 尺讀數 b2。',
@@ -275,11 +275,11 @@ export const surveyingData: SubjectData = {
           answer: '遵循「雙拇指同時向內或向外」相對轉動原則，氣泡移動方向與左手大拇指旋轉方向一致。'
         }
       ],
-      "illustrations": [ 'context.webp', 'mechanism.webp', 'comparison.webp', 'step-by-step.webp', 'surveying-real-world.webp' , 'instrument-setup-infographic.webp' ],
+      "illustrations": [ 'context.webp', 'mechanism.webp', 'comparison.webp', 'step-by-step.webp', 'surveying-real-world.webp' , 'instrument-setup-infographic.webp', 'instrument-leveling-screws.webp', 'theodolite-axes-conditions.webp' ],
       concepts: [
         {
           heading: '儀器整置三大核心步驟 (對中、粗平、精平) SOP',
-          body: '測量儀器在進行角度或距離觀測前，必須嚴格進行「整置」作業。整置包含「定心 (對中)」與「定平」兩大核心步驟，確保儀器垂直軸鉛垂且確切通過地面測站點。',
+          body: '測量儀器在進行角度或距離觀測前，必須嚴格進行**「整置」**作業。整置包含<span className="text-indigo-600 font-bold">「定心 (對中)」</span>與<span className="text-indigo-600 font-bold">「定平」</span>兩大核心步驟，確保儀器**豎軸完全鉛垂**且確切通過地面測站點標誌。',
           steps: [
             'Step 1 架設腳架：張開三腳架至胸口高度，踩實腳架腳尖，使腳架頂面大致水平，中心孔對準地面測點標誌。',
             'Step 2 光學/雷射對中 (粗定心)：將儀器固定於腳架上，觀察光學對中器 (或開啟雷射對中紅點)，調整腳架整體移動使對中點落在地面測點上方 1 cm 範圍內。',
@@ -290,7 +290,7 @@ export const surveyingData: SubjectData = {
         },
         {
           heading: '雙腳螺絲「左手大拇指法則」與三螺絲精平操作邏輯',
-          body: '精平利用正交幾何原理進行。旋轉腳螺絲時，氣泡移動之方向永遠與「左手大拇指旋轉方向」一致。',
+          body: '精平利用正交幾何原理進行。旋轉腳螺絲時，氣泡移動之方向永遠與<span className="text-rose-600 font-bold">「左手大拇指旋轉方向」</span>一致。這是實務操作中最直覺的記憶口訣。',
           steps: [
             '階段一 (平行雙螺絲)：旋轉照準部使長管水準器長軸平行於腳螺絲 A、B 之連線。雙手同時相向 (同時向內) 或相背 (同時向外) 旋轉 A、B 腳螺絲，使氣泡精確居中。',
             '階段二 (垂直第三螺絲)：將照準部順時針旋轉 90°，使長管水準器長軸垂直於 A-B 連線 (指向第三腳螺絲 C)。單獨旋轉腳螺絲 C，使氣泡精確居中。',
@@ -299,7 +299,7 @@ export const surveyingData: SubjectData = {
         },
         {
           heading: '經緯儀與全測站儀幾何三軸關係與檢驗條件',
-          body: '經緯儀內部包含四條幾何軸線：豎軸 (VV\')、橫軸 (HH\')、視準軸 (ZZ\') 及管水準軸 (LL\')。四軸間必須符合嚴格之垂直正交關係。',
+          body: '經緯儀內部包含四條幾何軸線：**豎軸 (VV\')**、**橫軸 (HH\')**、**視準軸 (ZZ\')** 及**管水準軸 (LL\')**。四軸間必須符合嚴格之<span className="text-indigo-600 font-bold">垂直正交關係</span>，否則將產生系統誤差。',
           table: {
             headers: ['幾何軸線關係要求', '幾何條件名稱', '不滿足時產生之誤差項目', '消除或校正方法'],
             rows: [
@@ -312,7 +312,7 @@ export const surveyingData: SubjectData = {
         },
         {
           heading: '全測站儀 (Total Station) 雙軸自動補償器 (Dual-Axis Compensator) 技術',
-          body: '現代全測站儀內建電子光電雙軸傾斜傳感器 (Dual-Axis Tilt Sensor)。當儀器豎軸未能完全鉛垂時，傳感器自動感測出 X 軸與 Y 軸之傾角值，並在微電腦中即時對水平角與垂直角進行數位化數值修偏。',
+          body: '現代全測站儀內建電子光電**雙軸傾斜傳感器 (Dual-Axis Tilt Sensor)**。當儀器豎軸未能完全鉛垂時，傳感器自動感測出 X 軸與 Y 軸之傾角值，並在微電腦中<span className="text-rose-600 font-bold">即時對水平角與垂直角進行數位化數值修偏</span>。',
           formula: '修正後水平角: β_corr = β_raw + Y_tilt · tan(α) · sin(β)\n修正後天頂角: Z_corr = Z_raw + X_tilt',
           steps: [
             'X 軸補償：感測視準軸方向之豎軸傾角，即時修正垂直角讀數。',
@@ -380,11 +380,11 @@ export const surveyingData: SubjectData = {
           answer: '理論內角和為 540°00\'00"；角度閉合差 W_θ 為 +1\'30" (或 +90")。'
         }
       ],
-      "illustrations": [ 'context.webp', 'mechanism.webp', 'comparison.webp', 'step-by-step.webp', 'surveying-real-world.webp' , 'traverse-surveying-infographic.webp' ],
+      "illustrations": [ 'context.webp', 'mechanism.webp', 'comparison.webp', 'step-by-step.webp', 'surveying-real-world.webp' , 'traverse-surveying-infographic.webp', 'traverse-types.webp', 'azimuth-calculation.webp' ],
       concepts: [
         {
           heading: '導線佈設型式與幾何檢核條件比較',
-          body: '導線測量 (Traverse Surveying) 為將一系列測點以折線連接，並觀測各邊邊長及相交角度，以求解各點平面座標之方法。依幾何結構可分為三大類型。',
+          body: '導線測量 (Traverse Surveying) 為將一系列測點以折線連接，並觀測各邊邊長及相交角度，以求解各點平面座標之方法。依幾何結構可分為<span className="text-indigo-600 font-bold">閉合導線</span>、<span className="text-indigo-600 font-bold">附合導線</span>與<span className="text-indigo-600 font-bold">展開導線</span>三大類型。',
           table: {
             headers: ['導線型式', '幾何佈設特點', '角度檢核條件', '位置檢核條件', '適用場景'],
             rows: [
@@ -406,7 +406,7 @@ export const surveyingData: SubjectData = {
         },
         {
           heading: '正方位角 (Forward Azimuth) 與反方位角 (Back Azimuth) 關係',
-          body: '方位角 (Azimuth, φ) 為自正北方向線起順時針旋轉至目標線之夾角 (範圍 0° ~ 360°)。直線 AB 之正方位角 φ_AB 與反方位角 φ_BA 差值恰為 180°。',
+          body: '**方位角 (Azimuth, φ)** 為自<span className="text-rose-600 font-bold">正北方向線</span>起**順時針**旋轉至目標線之夾角 (範圍 0° ~ 360°)。直線 AB 之正方位角 φ_AB 與反方位角 φ_BA 差值<span className="text-rose-600 font-bold">恰為 180°</span>。',
           formula: 'φ_BA = φ_AB + 180°  (當 φ_AB < 180° 時)\nφ_BA = φ_AB - 180°  (當 φ_AB ≥ 180° 時)',
           steps: [
             '定義：正方位角為在 A 點觀察 B 點方向線與北方向之夾角。',
@@ -496,11 +496,11 @@ export const surveyingData: SubjectData = {
           answer: 'B 點座標為 (150.00 m, 286.60 m)。'
         }
       ],
-      "illustrations": [ 'context.webp', 'mechanism.webp', 'comparison.webp', 'step-by-step.webp', 'surveying-real-world.webp' , 'coordinate-computation-infographic.webp' ],
+      "illustrations": [ 'context.webp', 'mechanism.webp', 'comparison.webp', 'step-by-step.webp', 'surveying-real-world.webp' , 'coordinate-computation-infographic.webp', 'coordinate-increment.webp', 'traverse-adjustment-rules.webp' ],
       concepts: [
         {
           heading: '緯距 (ΔN) 與經距 (ΔE) 正反算公式',
-          body: '已知導線邊長 L 與方位角 φ，可正算求解縱距 (緯距 ΔN 或 ΔY) 與橫距 (經距 ΔE 或 ΔX)；反之已知兩點座標，可反算距離 L 與方位角 φ。',
+          body: '已知導線邊長 L 與方位角 φ，可正算求解**縱距 (緯距 ΔN 或 ΔY)** 與**橫距 (經距 ΔE 或 ΔX)**；反之已知兩點座標，可反算距離 L 與方位角 φ。這牽涉到測量座標系與數學座標系的轉換。',
           formula: '正算公式: 緯距 ΔN = L · cos(φ) , 經距 ΔE = L · sin(φ)\n反算公式: 距離 L = √(ΔN² + ΔE²) , 方位角 φ = tan⁻¹(|ΔE / ΔN|)',
           steps: [
             '正負號判定：第 I 象限 (0°~90°) ΔN>0, ΔE>0；第 II 象限 (90°~180°) ΔN<0, ΔE>0；第 III 象限 (180°~270°) ΔN<0, ΔE<0；第 IV 象限 (270°~360°) ΔN>0, ΔE<0。',
@@ -509,7 +509,7 @@ export const surveyingData: SubjectData = {
         },
         {
           heading: '閉合導線位置閉合差 (Closure Error) 與相對閉合差',
-          body: '由於量距與測角誤差，閉合導線繞行一圈後，理論緯距和與經距和應為 0。實際積累偏差稱為緯距閉合差 Wy 與經距閉合差 Wx。',
+          body: '由於量距與測角誤差，閉合導線繞行一圈後，理論緯距和與經距和應為 0。實際積累之不閉合偏差稱為<span className="text-indigo-600 font-bold">緯距閉合差 Wy</span> 與<span className="text-indigo-600 font-bold">經距閉合差 Wx</span>。',
           formula: '緯距閉合差: Wy = ∑ ΔN\n經距閉合差: Wx = ∑ ΔE\n位置閉合差: EK = √(Wx² + Wy²)\n相對閉合差: Ratio = EK / ∑ L = 1 / K  (K = ∑ L / EK)',
           steps: [
             '位置閉合差 EK 代表終點偏離起點之絕對直線距離。',
@@ -518,7 +518,7 @@ export const surveyingData: SubjectData = {
         },
         {
           heading: '羅盤儀法則 (Bowditch / Compass Rule) 嚴謹平差計算',
-          body: '羅盤儀法則假設距離測量誤差與角度測量誤差對位置之影響相等 (各邊誤差與邊長平方根 √L 成正比)。各邊縱橫距之改正數按該邊邊長占總邊長之比例分配。',
+          body: '**羅盤儀法則 (Bowditch Rule)** 假設<span className="text-rose-600 font-bold">距離測量誤差與角度測量誤差對位置之影響相等</span>。各邊縱橫距之改正數按該邊**邊長占總邊長之比例**進行分配。',
           formula: '經距改正數: Cx_i = - Wx · (L_i / ∑ L)\n緯距改正數: Cy_i = - Wy · (L_i / ∑ L)\n修正後經距: ΔE\'_i = ΔE_i + Cx_i\n修正後緯距: ΔN\'_i = ΔN_i + Cy_i',
           steps: [
             '符號注意：改正數 Cx, Cy 之符號必須與閉合差 Wx, Wy 相反，使修正後 ∑ Cx = -Wx, ∑ Cy = -Wy。',
@@ -527,7 +527,7 @@ export const surveyingData: SubjectData = {
         },
         {
           heading: '經緯儀法則 (Transit Rule) 與羅盤儀法則比較',
-          body: '經緯儀法則假設角度測量精度高於距離測量精度。各邊縱橫距之改正數分別按「該邊經距或緯距之絕對值」比例進行分配。',
+          body: '**經緯儀法則 (Transit Rule)** 假設<span className="text-rose-600 font-bold">角度測量精度高於距離測量精度</span>。各邊縱橫距之改正數分別按「該邊**經距或緯距之絕對值**」比例進行獨立分配。',
           formula: '經緯儀法則經距改正數: Cx_i = - Wx · ( |ΔE_i| / ∑|ΔE| )\n經緯儀法則緯距改正數: Cy_i = - Wy · ( |ΔN_i| / ∑|ΔN| )',
           table: {
             headers: ['比較項目', '羅盤儀法則 (Bowditch Rule)', '經緯儀法則 (Transit Rule)'],
@@ -619,11 +619,11 @@ export const surveyingData: SubjectData = {
           answer: '基地面積為 300 平方公尺 (m²)。'
         }
       ],
-      "illustrations": [ 'context.webp', 'mechanism.webp', 'comparison.webp', 'step-by-step.webp', 'surveying-real-world.webp' , 'area-and-error-infographic.webp' ],
+      "illustrations": [ 'context.webp', 'mechanism.webp', 'comparison.webp', 'step-by-step.webp', 'surveying-real-world.webp' , 'area-and-error-infographic.webp', 'shoelace-formula-area.webp', 'error-propagation.webp' ],
       concepts: [
         {
           heading: '座標法 (Shoelace Formula / 鞋帶公式) 幾何原理與推導',
-          body: '已知任意多邊形各頂點之平面座標 (E_i, N_i)，將各點依順時針或逆時針方向依次排列並閉合，利用矩陣行列式交叉斜乘相減計算封閉區域總面積 A。',
+          body: '已知任意多邊形各頂點之平面座標 (E_i, N_i)，將各點依順時針或逆時針方向依次排列並閉合，利用<span className="text-indigo-600 font-bold">矩陣行列式交叉斜乘相減</span>計算封閉區域總面積 A，此法稱為**鞋帶公式 (Shoelace Formula)**。',
           formula: 'A = 0.5 · | ∑ (E_i · N_{i+1} - E_{i+1} · N_i) |\n2A = | (E1·N2 + E2·N3 + ... + En·N1) - (N1·E2 + N2·E3 + ... + Nn·E1) |',
           table: {
             headers: ['頂點 Vertex', '東向座標 E (m)', '北向座標 N (m)', '正斜乘積 (+) E_i · N_{i+1}', '反斜乘積 (-) N_i · E_{i+1}'],
@@ -638,7 +638,7 @@ export const surveyingData: SubjectData = {
         },
         {
           heading: '倍經距法 (Double Meridian Distance, DMD Method) 面積計算',
-          body: '倍經距法為導線平差後計算閉合區域面積的傳統經典方法。定義任一邊之倍經距 (DMD) 為該邊兩端點至參考子午線 (Meridian) 距離之和。',
+          body: '**倍經距法 (DMD Method)** 為導線平差後計算閉合區域面積的經典方法。定義任一邊之倍經距 (DMD) 為該邊兩端點至<span className="text-rose-600 font-bold">參考子午線 (Meridian)</span> 距離之和。',
           formula: 'DMD_1 = ΔE_1\nDMD_i = DMD_{i-1} + ΔE_{i-1} + ΔE_i\n雙倍面積 2A = ∑ (DMD_i · ΔN_i)\n面積 A = 0.5 · |2A|',
           steps: [
             'Step 1：取最西點 (E 座標最小者) 之子午線為參考子午線。',
@@ -684,7 +684,7 @@ export const surveyingData: SubjectData = {
         },
         {
           heading: '誤差傳播定律 (Law of Error Propagation) 通式與常見應用',
-          body: '當待求物理量 Z 為多個獨立觀測量 x, y, z 之函數 Z = f(x, y, z) 時，各觀測量之中誤差對 Z 之綜合影響由誤差傳播定律決定。',
+          body: '當待求物理量 Z 為多個獨立觀測量 x, y, z 之函數 Z = f(x, y, z) 時，各觀測量之中誤差對 Z 之綜合影響由<span className="text-indigo-600 font-bold">誤差傳播定律 (Law of Error Propagation)</span> 決定。其核心概念為偏導數平方之和的平方根。',
           formula: '通用公式: σZ = √[ (∂f/∂x)² · σx² + (∂f/∂y)² · σy² + (∂f/∂z)² · σz² ]\n加減法 Z = X ± Y  =>  σZ = √(σx² + σy²)\n倍數法 Z = a · X  =>  σZ = a · σx\n矩形面積 A = X · Y  =>  σA = √(Y² · σx² + X² · σy²)',
           steps: [
             '步驟 1：建立待求物理量 Z 與觀測量 x, y, z 之全微分函數關係式。',

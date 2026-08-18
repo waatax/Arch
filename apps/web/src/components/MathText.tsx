@@ -17,16 +17,14 @@ export default function MathText({ content, className }: { content?: string | nu
         if (part.startsWith('$') && part.endsWith('$')) {
           return <InlineMath key={index} math={part.slice(1, -1)} />;
         }
-        // Return regular text with newline support
+        
+        // Replace **bold** with <strong>bold</strong> and \n with <br />
+        // Then render via dangerouslySetInnerHTML to support colored spans
+        let htmlContent = part.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
+        htmlContent = htmlContent.replace(/\n/g, '<br />');
+
         return (
-          <Fragment key={index}>
-            {part.split('\n').map((line, i, arr) => (
-              <Fragment key={i}>
-                {line}
-                {i < arr.length - 1 && <br />}
-              </Fragment>
-            ))}
-          </Fragment>
+          <span key={index} dangerouslySetInnerHTML={{ __html: htmlContent }} />
         );
       })}
     </span>

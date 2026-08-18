@@ -13,7 +13,12 @@ export const mechanicsData: SubjectData = {
       title: '1. 單位與向量',
       desc: '力學 SI 單位制、因次同性原理、純量與向量性質、向量拉密與三角分解、平面與空間分力合成法。',
       status: 'done',
-      covered_question_ids: ['111-1-2', '111-1-3', '111-1-16', '112-1-9', '112-1-11', '112-1-16', '115-1-17', '110-1-1', '110-1-9', '110-1-17', '110-1-25', '110-1-33'],
+      gradeLevel: 10,
+      examHitRate: 4,
+      step0Prerequisites: ["本章核心基礎：mechanics之關鍵定義與物理幾何直覺","解題前置檢核：確認題型情境、已知條件量與求解目標"],
+      fatalTraps: [{"wrongThinking":"直覺選擇字面相近選項，未仔細檢驗題幹之特定限制條件。","correctThinking":"回歸核心公理與基本定義，逐項檢核題幹條件與反例。","trapDescription":"80% 考生在概念題中因粗心忽略前提假設而失分。"}],
+      eliteMentalModels: [{"technique":"第一性原理拆解法 (First Principles Breakdown)","explanation":"不依賴死記死背，由最底層的定義與公理邏輯推導出解題路徑，降維打擊各類統測變形題。"}],
+      covered_question_ids: ['111-1-16', '112-1-9', '112-1-11', '112-1-16', '115-1-17', '110-1-1', '110-1-9', '110-1-17', '110-1-25', '110-1-33'],
       worked_examples: [
         {
           question: '【步驟化例題】鋼索力量分解：某建築斜拉索張力 T = 200 kN，與水平夾角為 30°。試求此張力之水平分力與垂直分力。',
@@ -26,11 +31,11 @@ export const mechanicsData: SubjectData = {
           answer: '水平分力為 173.2 kN，垂直分力為 100 kN'
         }
       ],
-      "illustrations": [ 'units-vectors-context.webp', 'units-vectors-mechanism.webp', 'units-vectors-comparison.webp', 'units-vectors-step.webp', 'mechanics-real-world.webp' ],
+      "illustrations": [ 'units-vectors-context.webp', 'units-vectors-mechanism.webp', 'units-vectors-comparison.webp', 'units-vectors-step.webp', 'mechanics-real-world.webp', 'concept-diagram.webp', 'formula-visual.webp' ],
       concepts: [
         {
           heading: 'SI 單位制與工程單位換算 (SI Units & Engineering System)',
-          body: '在國際單位制 (SI) 中，力學的基礎物理量包含長度 (m)、質量 (kg) 與時間 (s)。其餘如力、應力與力矩均為導出單位。在土木與建築結構工程中，常用的衍生單位包含 kN (千牛頓)、MPa (百萬帕斯卡, N/mm²) 與 GPa (吉帕斯卡)，解題前必須先熟練單位制轉換。',
+          body: '在**國際單位制 (SI)** 中，力學的基礎物理量包含長度 (<span className="text-rose-600 font-bold">m</span>)、質量 (<span className="text-rose-600 font-bold">kg</span>) 與時間 (<span className="text-rose-600 font-bold">s</span>)。其餘如力、應力與力矩均為**導出單位**。在土木與建築結構工程中，常用的衍生單位包含 <span className="text-indigo-600 font-bold">kN (千牛頓)</span>、<span className="text-indigo-600 font-bold">MPa (百萬帕斯卡, N/mm²)</span> 與 <span className="text-indigo-600 font-bold">GPa (吉帕斯卡)</span>，解題前必須先熟練單位制轉換。',
           steps: [
             '質量 m (kg) 與重量 W (N) 之轉換：W = m · g (標準重力加速度 g ≒ 9.81 m/s²，工程計算常用 9.8 或 10 m/s²)。',
             '應力與壓力單位換算：1 Pa = 1 N/m²；1 MPa = 10⁶ N/m² = 1 N/mm²（此為結構工程計算截面應力最核心之單位）。',
@@ -49,7 +54,7 @@ export const mechanicsData: SubjectData = {
         },
         {
           heading: '純量與向量的物理意義 (Scalars vs. Vectors)',
-          body: '純量僅具備大小（如質量、溫度、面積、應變能）；向量則同時兼具大小與方向（如位移、速度、力、力矩、加速度）。在結構力學中，力的完整定義包含三要素：大小 (Magnitude)、方向 (Direction) 與作用點 (Point of Application)。',
+          body: '**純量**僅具備<span className="text-rose-600 font-bold">大小</span>（如質量、溫度、面積、應變能）；**向量**則同時兼具<span className="text-rose-600 font-bold">大小與方向</span>（如位移、速度、力、力矩、加速度）。在結構力學中，力的完整定義包含三要素：<span className="text-indigo-600 font-bold">大小 (Magnitude)</span>、<span className="text-indigo-600 font-bold">方向 (Direction)</span> 與<span className="text-indigo-600 font-bold">作用點 (Point of Application)</span>。',
           table: {
             headers: ['物理量類別', '定義特徵', '代表物理量', '運算規則'],
             rows: [
@@ -71,7 +76,7 @@ export const mechanicsData: SubjectData = {
         },
         {
           heading: '三維空間向量與單位向量 (3D Vectors & Unit Vector)',
-          body: '對於複雜建築結構（如臺中國家歌劇院曲牆或大跨距空間鋼骨網架），作用力常屬於三維空間力系。空間向量可透過空間位移與單位向量 λ 表示，並藉由方向餘弦 (Direction Cosines) 確定其空間方向。',
+          body: '對於複雜建築結構（如臺中國家歌劇院曲牆或大跨距空間鋼骨網架），作用力常屬於三維**空間力系**。空間向量可透過空間位移與單位向量 λ 表示，並藉由<span className="text-indigo-600 font-bold">方向餘弦 (Direction Cosines)</span> 確定其空間方向。',
           formula: 'F_vec = F · λ_vec = F · (dx i + dy j + dz k) / L\nL = √(dx² + dy² + dz²)\ncos(α) = dx / L,  cos(β) = dy / L,  cos(γ) = dz / L'
         },
         {
@@ -97,9 +102,9 @@ export const mechanicsData: SubjectData = {
           steps: [
             '計算水平分力和 ∑Fx：∑Fx = 100·cos(0°) + 100·cos(120°) + 100·cos(240°) = 100 + 100(-0.5) + 100(-0.5) = 100 - 50 - 50 = 0 N。',
             '計算垂直分力和 ∑Fy：∑Fy = 100·sin(0°) + 100·sin(120°) + 100·sin(240°) = 0 + 100(√3/2) + 100(-√3/2) = 0 N。',
-            '合成合力大小：F_R = √(0² + 0²) = 0 N。（此為三力夾角各 120° 且大小相等之對稱靜力平衡）。'
+            '合成合力大小：F_R = √(0² + 0²) = 0 N。（此為三力夾角各 120° 且大小相等之對稱<span className="text-rose-600 font-bold">靜力平衡</span>）。'
           ],
-          answer: 'F_R = 0 N (靜力平衡)'
+          answer: 'F_R = 0 N (<span className="text-rose-600 font-bold">靜力平衡</span>)'
         },
         {
           difficulty: '進階',
@@ -129,22 +134,27 @@ export const mechanicsData: SubjectData = {
     {
       slug: 'force-equilibrium',
       title: '2. 力系與共點力平衡',
-      desc: '自由體圖 (FBD) 畫法、二力構件與三力平衡、拉密定理 (Lami\'s Theorem)、平面一般力系平衡條件。',
+      desc: '**自由體圖 (FBD)** 畫法、**二力構件**與三力平衡、拉密定理 (Lami\'s Theorem)、平面一般力系平衡條件。',
       status: 'done',
+      gradeLevel: 10,
+      examHitRate: 4,
+      step0Prerequisites: ["本章核心基礎：force-equilibrium之關鍵定義與物理幾何直覺","解題前置檢核：確認題型情境、已知條件量與求解目標"],
+      fatalTraps: [{"wrongThinking":"直覺選擇字面相近選項，未仔細檢驗題幹之特定限制條件。","correctThinking":"回歸核心公理與基本定義，逐項檢核題幹條件與反例。","trapDescription":"80% 考生在概念題中因粗心忽略前提假設而失分。"}],
+      eliteMentalModels: [{"technique":"第一性原理拆解法 (First Principles Breakdown)","explanation":"不依賴死記死背，由最底層的定義與公理邏輯推導出解題路徑，降維打擊各類統測變形題。"}],
       covered_question_ids: ['111-1-15', '112-1-3', '113-1-1', '113-1-4', '113-1-5', '114-1-4', '114-1-6', '114-1-13', '114-1-20', '115-1-1', '115-1-2', '110-1-2', '110-1-10', '110-1-18', '110-1-26', '110-1-34'],
       worked_examples: [
         {
           question: '【步驟化例題】招牌吊掛平衡：一重 300 N 之懸臂招牌，由兩根傾斜角分別為 30° 與 60° 的鋼索支撐於牆面，求兩鋼索張力。',
           difficulty: '基礎',
           steps: [
-            '步驟 1：畫出招牌懸掛點之自由體圖 (FBD)，標示向下重力 300N，以及兩未知張力 Ta, Tb。',
+            '步驟 1：畫出招牌懸掛點之**自由體圖 (FBD)**，標示向下重力 300N，以及兩未知張力 Ta, Tb。',
             '步驟 2：建立 x-y 平衡方程式。∑Fx = 0: -Ta·cos(30°) + Tb·cos(60°) = 0。',
             '步驟 3：建立 y 平衡方程式。∑Fy = 0: Ta·sin(30°) + Tb·sin(60°) - 300 = 0。解聯立方程式求得 Ta 與 Tb。'
           ],
           answer: 'Ta = 150 N, Tb = 259.8 N'
         }
       ],
-      "illustrations": [ 'force-equilibrium-context.webp', 'force-equilibrium-mechanism.webp', 'force-equilibrium-comparison.webp', 'force-equilibrium-step.webp', 'mechanics-real-world.webp' ],
+      "illustrations": [ 'force-equilibrium-context.webp', 'force-equilibrium-mechanism.webp', 'force-equilibrium-comparison.webp', 'force-equilibrium-step.webp', 'mechanics-real-world.webp', 'concept-diagram.webp', 'formula-visual.webp' ],
       concepts: [
         {
           heading: '自由體圖 (Free Body Diagram, FBD) 畫法標準流程',
@@ -158,7 +168,7 @@ export const mechanicsData: SubjectData = {
         },
         {
           heading: '共點力系與拉密定理 (Lami\'s Theorem)',
-          body: '當三個共面非平行力作用於同一點且處於靜力平衡時，各力之大小與其對角之正弦值成正比。此即拉密定理，常用於快速求解三力懸掛與張力索系統。',
+          body: '當三個共面非平行力作用於同一點且處於<span className="text-rose-600 font-bold">靜力平衡</span>時，各力之大小與其對角之正弦值成正比。此即拉密定理，常用於快速求解三力懸掛與張力索系統。',
           formula: 'F1 / sin(α) = F2 / sin(β) = F3 / sin(γ)\n(其中 α, β, γ 分別為 F1, F2, F3 所對應之夾角)',
           table: {
             headers: ['方法名稱', '適用條件', '方程式數量', '優點與特徵'],
@@ -170,20 +180,20 @@ export const mechanicsData: SubjectData = {
           }
         },
         {
-          heading: '二力構件與三力構件 (Two-Force & Three-Force Members)',
-          body: '若一構件僅在兩點受力且無外力矩，稱為二力構件 (Two-Force Member)，其兩端作用力必等大、反向且共線（如桁架桿件）；若構件受三個不平行力作用而平衡，則此三力之作用線必會聚於同一交點（共點三力定理）。',
+          heading: '**二力構件**與**三力構件** (Two-Force & Three-Force Members)',
+          body: '若一構件僅在兩點受力且無外力矩，稱為**二力構件** (Two-Force Member)，其兩端作用力必等大、反向且共線（如桁架桿件）；若構件受三個不平行力作用而平衡，則此三力之作用線必會聚於同一交點（共點三力定理）。',
           table: {
             headers: ['構件類型', '受力點數量', '力的幾何特徵', '代表工程應用'],
             rows: [
-              ['二力構件', '僅兩點受力', '兩力必等大、反向、共線 (僅受軸力)', '桁架桿件、斜撐、斜拉索'],
-              ['三力構件', '三點受力/三力作用', '三力作用線必會聚於同一點', '拱橋拱圈節點、吊車吊臂、斜樑支撐']
+              ['**二力構件**', '僅兩點受力', '兩力必等大、反向、共線 (僅受軸力)', '桁架桿件、斜撐、斜拉索'],
+              ['**三力構件**', '三點受力/三力作用', '三力作用線必會聚於同一點', '拱橋拱圈節點、吊車吊臂、斜樑支撐']
             ]
           }
         },
         {
           heading: '平面一般力系平衡方程式',
-          body: '對非共點的平面一般力系（兼具移動與旋轉趨勢），物體達到靜力平衡之充要條件為水平合力、垂直合力以及對平面內任意點之合力矩均為零。',
-          formula: '∑ Fx = 0  （水平方向合力等於零）\n∑ Fy = 0  （垂直方向合力等於零）\n∑ M_O = 0 （對任意點 O 之合力矩等於零）'
+          body: '對非共點的平面一般力系（兼具移動與旋轉趨勢），物體達到<span className="text-rose-600 font-bold">靜力平衡</span>之<span className="text-indigo-600 font-bold">充要條件</span>為水平合力、垂直合力以及對平面內任意點之合力矩均為零。',
+          formula: '<span className="text-rose-600 font-bold">∑ Fx = 0</span>  （水平方向合力等於零）\n<span className="text-rose-600 font-bold">∑ Fy = 0</span>  （垂直方向合力等於零）\n<span className="text-rose-600 font-bold">∑ M_O = 0</span> （對任意點 O 之合力矩等於零）'
         },
         {
           heading: '工程實例：臺中國家歌劇院 (Taichung Metropolitan Opera House) 曲牆結構節點平衡',
@@ -195,7 +205,7 @@ export const mechanicsData: SubjectData = {
           difficulty: '基礎',
           question: '一重物 W = 200 N 懸掛於 C 點，由 AC 與 BC 兩鋼索繫於天花板。鋼索 AC 與水平面成 45° 角，鋼索 BC 與水平面成 45° 角。試利用拉密定理求解鋼索 AC 之張力 T_AC 與鋼索 BC 之張力 T_BC。',
           steps: [
-            '對懸掛點 C 繪製自由體圖 (FBD)，受到三個力：向下重力 W = 200 N、斜向上左之 T_AC、斜向上右之 T_BC。',
+            '對懸掛點 C 繪製**自由體圖 (FBD)**，受到三個力：向下重力 W = 200 N、斜向上左之 T_AC、斜向上右之 T_BC。',
             '計算三力之間的夾角：\n- T_AC 與 T_BC 的夾角 γ = 180° - 45° - 45° = 90°。\n- W 與 T_AC 的夾角 β = 90° + 45° = 135°。\n- W 與 T_BC 的夾角 α = 90° + 45° = 135°。',
             '套用拉密定理公式：T_AC / sin(135°) = T_BC / sin(135°) = W / sin(90°)。',
             '代入 W = 200 N 與三角函數值 (sin 90° = 1, sin 135° = √2 / 2)：\nT_AC = 200 × sin(135°) = 200 × (√2 / 2) = 100√2 N ≒ 141.42 N。\n同理 T_BC = 100√2 N ≒ 141.42 N。'
@@ -217,10 +227,10 @@ export const mechanicsData: SubjectData = {
           difficulty: '進階',
           question: '（臺中歌劇院曲牆施工簡化算例）一長度 L = 6 m 的剛性斜鋼樑 AB，底端 A 點為鉸支承 (Pin)，頂端 B 點靠於光滑垂直牆面上（光滑面僅產生垂直於牆面之水平反力 N_B）。鋼樑自重 W = 600 N 集中作用於樑中點，且鋼樑與水平地面夾角 θ = 60°。試求：(1) B 點處之牆面反力 N_B；(2) A 點處鉸支承之水平反力 R_Ax 與垂直反力 R_Ay。',
           steps: [
-            '對斜鋼樑 AB 繪製自由體圖 (FBD)：\n- A 點：水平反力 R_Ax (假設向右)，垂直反力 R_Ay (假設向上)。\n- 中點 (距 A 點 3m 處)：向下自重 W = 600 N。\n- B 點 (距 A 點 6m 處)：向左之光滑牆面水平反力 N_B。',
-            '由垂直方向力平衡 ∑ Fy = 0：\nR_Ay - W = 0 ⇒ R_Ay = 600 N (向上)。',
+            '對斜鋼樑 AB 繪製**自由體圖 (FBD)**：\n- A 點：水平反力 R_Ax (假設向右)，垂直反力 R_Ay (假設向上)。\n- 中點 (距 A 點 3m 處)：向下自重 W = 600 N。\n- B 點 (距 A 點 6m 處)：向左之光滑牆面水平反力 N_B。',
+            '由垂直方向力平衡 <span className="text-rose-600 font-bold">∑ Fy = 0</span>：\nR_Ay - W = 0 ⇒ R_Ay = 600 N (向上)。',
             '對 A 點取力矩平衡 ∑ M_A = 0 (逆時針為正 +)：\n- 自重 W 產生順時針力矩，力臂為 (L/2) · cos(60°) = 3 × 0.5 = 1.5 m。\n- 牆面反力 N_B 產生逆時針力矩，力臂為 L · sin(60°) = 6 × (√3 / 2) = 3√3 m ≒ 5.196 m。\n- ∑ M_A = N_B × (3√3) - 600 × 1.5 = 0 ⇒ 3√3 N_B = 900 ⇒ N_B = 300 / √3 = 100√3 N ≒ 173.2 N。',
-            '由水平方向力平衡 ∑ Fx = 0：\nR_Ax - N_B = 0 ⇒ R_Ax = N_B = 100√3 N ≒ 173.2 N (向右)。'
+            '由水平方向力平衡 <span className="text-rose-600 font-bold">∑ Fx = 0</span>：\nR_Ax - N_B = 0 ⇒ R_Ax = N_B = 100√3 N ≒ 173.2 N (向右)。'
           ],
           answer: 'N_B = 173.2 N (向左), R_Ax = 173.2 N (向右), R_Ay = 600 N (向上)'
         },
@@ -241,6 +251,11 @@ export const mechanicsData: SubjectData = {
       title: '3. 重心與形心',
       desc: '一次矩 (First Moment of Area)、組合圖形形心計算、二次矩 (Moment of Inertia)、平行軸定理與帕普斯 (Pappus) 定理。',
       status: 'done',
+      gradeLevel: 10,
+      examHitRate: 4,
+      step0Prerequisites: ["本章核心基礎：centroid之關鍵定義與物理幾何直覺","解題前置檢核：確認題型情境、已知條件量與求解目標"],
+      fatalTraps: [{"wrongThinking":"直覺選擇字面相近選項，未仔細檢驗題幹之特定限制條件。","correctThinking":"回歸核心公理與基本定義，逐項檢核題幹條件與反例。","trapDescription":"80% 考生在概念題中因粗心忽略前提假設而失分。"}],
+      eliteMentalModels: [{"technique":"第一性原理拆解法 (First Principles Breakdown)","explanation":"不依賴死記死背，由最底層的定義與公理邏輯推導出解題路徑，降維打擊各類統測變形題。"}],
       covered_question_ids: ['111-1-14', '111-1-17', '112-1-1', '113-1-7', '113-1-8', '114-1-17', '115-1-13', '115-1-16', '110-1-3', '110-1-11', '110-1-19', '110-1-27', '110-1-35'],
       worked_examples: [
         {
@@ -249,29 +264,29 @@ export const mechanicsData: SubjectData = {
           steps: [
             '步驟 1：將 T 型截面分解為上部矩形 (A1) 與下部矩形 (A2)。',
             '步驟 2：計算個別面積與形心。A1 = 2000 mm², y1 = 90 mm (距底邊)；A2 = 1600 mm², y2 = 40 mm (距底邊)。',
-            '步驟 3：利用面積一次矩公式 Y = (A1·y1 + A2·y2) / (A1 + A2) 求解。'
+            '步驟 3：利用<span className="text-rose-600 font-bold">面積一次矩</span>公式 Y = (A1·y1 + A2·y2) / (A1 + A2) 求解。'
           ],
           answer: 'Y = 67.78 mm'
         }
       ],
-      "illustrations": [ 'centroid-context.webp', 'centroid-mechanism.webp', 'centroid-comparison.webp', 'centroid-step.webp', 'mechanics-real-world.webp' ],
+      "illustrations": [ 'centroid-context.webp', 'centroid-mechanism.webp', 'centroid-comparison.webp', 'centroid-step.webp', 'mechanics-real-world.webp', 'concept-diagram.webp', 'formula-visual.webp' ],
       concepts: [
         {
-          heading: '形心 (Centroid) 與面積一次矩理論',
-          body: '形心代表截面幾何形狀的中心位置。透過對參考軸計算面積一次矩 Qx = ∫ y dA 及 Qy = ∫ x dA，再除以總面積 A，即可求得形心座標 (X, Y)。在結構工程中，形心位置即為梁柱彎矩中性軸 (Neutral Axis) 所在。',
+          heading: '**形心 (Centroid)** 與<span className="text-rose-600 font-bold">面積一次矩</span>理論',
+          body: '形心代表截面幾何形狀的中心位置。透過對參考軸計算<span className="text-rose-600 font-bold">面積一次矩</span> Qx = ∫ y dA 及 Qy = ∫ x dA，再除以總面積 A，即可求得形心座標 (X, Y)。在結構工程中，形心位置即為梁柱彎矩<span className="text-indigo-600 font-bold">中性軸 (Neutral Axis)</span> 所在。',
           formula: 'X = Qy / A = (∑ Ai · xi) / ∑ Ai\nY = Qx / A = (∑ Ai · yi) / ∑ Ai',
           steps: [
             '將複雜組合圖形分割為數個已知簡單幾何基元（如矩形、三角形、半圓）。',
             '建立基準參考座標系 (基底 y = 0 與左緣 x = 0)。',
             '分別計算各分割基元之面積 Ai 與其自身形心座標 (xi, yi)。',
-            '求總面積 A = ∑ Ai 及面積一次矩 ∑(Ai · xi) 與 ∑(Ai · yi)，相除求得總形心。'
+            '求總面積 A = ∑ Ai 及<span className="text-rose-600 font-bold">面積一次矩</span> ∑(Ai · xi) 與 ∑(Ai · yi)，相除求得總形心。'
           ]
         },
         {
-          heading: '常見基本幾何圖形之形心與慣性矩對照表',
-          body: '計算結構斷面慣性矩與形心時，熟記基本幾何幾何圖形之面積與形心軸慣性矩 Ix_c 為必備基礎。',
+          heading: '常見基本幾何圖形之形心與<span className="text-rose-600 font-bold">慣性矩</span>對照表',
+          body: '計算結構斷面<span className="text-rose-600 font-bold">慣性矩</span>與形心時，熟記基本幾何幾何圖形之面積與形心軸<span className="text-rose-600 font-bold">慣性矩</span> Ix_c 為必備基礎。',
           table: {
-            headers: ['圖形名稱', '面積 (A)', '形心位置 (對底邊/中心)', '形心軸慣性矩 (Ix_c)'],
+            headers: ['圖形名稱', '面積 (A)', '形心位置 (對底邊/中心)', '形心軸<span className="text-rose-600 font-bold">慣性矩</span> (Ix_c)'],
             rows: [
               ['矩形 (寬 b, 高 h)', 'b · h', 'y = h / 2', '(b · h³) / 12'],
               ['直角三角形 (底 b, 高 h)', '(b · h) / 2', 'y = h / 3, x = b / 3', '(b · h³) / 36'],
@@ -281,16 +296,16 @@ export const mechanicsData: SubjectData = {
           }
         },
         {
-          heading: '平行軸定理 (Parallel Axis Theorem)',
-          body: '當計算截面對於任意平行參考軸（如總形心軸 X_bar）之二次矩 (慣性矩 Moment of Inertia) 時，可先計算各分割件對自身形心軸之慣性矩 Ix_c，再加上平行轉移項 A · d²（d 為分圖形形心至總形心軸的垂直距離）。',
+          heading: '**平行軸定理 (Parallel Axis Theorem)**',
+          body: '當計算截面對於任意平行參考軸（如總形心軸 X_bar）之二次矩 (<span className="text-rose-600 font-bold"><span className="text-rose-600 font-bold">慣性矩</span> Moment of Inertia</span>) 時，可先計算各分割件對自身形心軸之<span className="text-rose-600 font-bold">慣性矩</span> Ix_c，再加上平行轉移項 A · d²（d 為分圖形形心至總形心軸的垂直距離）。',
           formula: 'I_x = ∑ (I_xci + A_i · d_yi²)\nI_y = ∑ (I_yci + A_i · d_xi²)'
         },
         {
-          heading: '帕普斯定理 (Pappus Theorems for Area & Volume)',
+          heading: '**帕普斯定理** (Pappus Theorems for Area & Volume)',
           body: '帕普斯第一定理：一平面曲線繞同平面非交會軸旋轉所得之旋轉曲面面積等於曲線長乘以其形心旋轉移動之距離 (S = L · 2π y_bar)。第二定理：一平面面積繞軸旋轉所得之旋轉體體積等於面積乘以其形心移動距離 (V = A · 2π y_bar)。此定理廣泛應用於土木水壩、穹頂與儲油槽體積之快速算量。'
         },
         {
-          heading: '工程實例：臺北101大樓 (Taipei 101) 巨型箱型鋼柱截面形心與慣性矩',
+          heading: '工程實例：臺北101大樓 (Taipei 101) 巨型箱型鋼柱截面形心與<span className="text-rose-600 font-bold">慣性矩</span>',
           body: '臺北101大樓外圍的 8 支巨型鋼柱 (Mega Columns)，採用內灌 10,000 psi 高強混凝土的鋼鈑箱型柱 (Box Section)。透過計算鋼鈑與混凝土組合截面的總形心與二次矩 (Ix, Iy)，結構技師大幅提升巨柱的抗彎剛度 (EI)，配合 660 公噸風阻尼器球體 (TMD) 的懸掛形心精準定位，有效抵抗強颱與大地震引起的側向擺動。'
         }
       ],
@@ -301,7 +316,7 @@ export const mechanicsData: SubjectData = {
           steps: [
             '將圖形分割為三個矩形基元：\n- 1. 頂翼板 (上)：A1 = 200 × 20 = 4000 mm²，形心 y1 = 20 + 160 + (20/2) = 190 mm。\n- 2. 腹板 (中)：A2 = 20 × 160 = 3200 mm²，形心 y2 = 20 + (160/2) = 100 mm。\n- 3. 底翼板 (下)：A3 = 200 × 20 = 4000 mm²，形心 y3 = 20 / 2 = 10 mm。',
             '計算總截面積 A：A = A1 + A2 + A3 = 4000 + 3200 + 4000 = 11,200 mm²。',
-            '計算面積一次矩 ∑(Ai · yi)：\n∑(Ai · yi) = (4000 × 190) + (3200 × 100) + (4000 × 10) = 760,000 + 320,000 + 40,000 = 1,120,000 mm³。',
+            '計算<span className="text-rose-600 font-bold">面積一次矩</span> ∑(Ai · yi)：\n∑(Ai · yi) = (4000 × 190) + (3200 × 100) + (4000 × 10) = 760,000 + 320,000 + 40,000 = 1,120,000 mm³。',
             '求解 Y 形心：Y = ∑(Ai · yi) / A = 1,120,000 / 11,200 = 100 mm。（亦可直接由幾何上下對稱性判定 Y = 200 / 2 = 100 mm）。'
           ],
           answer: 'Y = 100 mm (距底邊)，總截面積 A = 11,200 mm²'
@@ -313,30 +328,30 @@ export const mechanicsData: SubjectData = {
             '頂部翼板 A1 = 100 × 20 = 2000 mm²，形心 y1 = 80 + (20/2) = 90 mm。',
             '腹板 A2 = 20 × 80 = 1600 mm²，形心 y2 = 80 / 2 = 40 mm。',
             '總面積 A_total = 2000 + 1600 = 3600 mm²。',
-            '面積一次矩 ∑(Ay) = (2000 × 90) + (1600 × 40) = 180,000 + 64,000 = 244,000 mm³。',
+            '<span className="text-rose-600 font-bold">面積一次矩</span> ∑(Ay) = (2000 × 90) + (1600 × 40) = 180,000 + 64,000 = 244,000 mm³。',
             'Y 形心 = 244,000 / 3600 ≒ 67.78 mm。'
           ],
           answer: 'Y = 67.78 mm (距底邊)'
         },
         {
           difficulty: '進階',
-          question: '（臺北101巨柱算例簡化）承第一題之對稱工字型截面 (翼板 200×20 mm，腹板 20×160 mm)，試利用平行軸定理求此截面對其中性軸 (過總形心 Y = 100 mm 之水平軸 X_bar) 的總慣性矩 Ix。',
+          question: '（臺北101巨柱算例簡化）承第一題之對稱工字型截面 (翼板 200×20 mm，腹板 20×160 mm)，試利用平行軸定理求此截面對其中性軸 (過總形心 Y = 100 mm 之水平軸 X_bar) 的總<span className="text-rose-600 font-bold">慣性矩</span> Ix。',
           steps: [
-            '總形心位置 Y_bar = 100 mm。對各基元分別求解對形心軸之慣性矩：',
+            '總形心位置 Y_bar = 100 mm。對各基元分別求解對形心軸之<span className="text-rose-600 font-bold">慣性矩</span>：',
             '【腹板 (中)】：自身 Ix2 = (b · h³) / 12 = (20 × 160³) / 12 = 6,826,666.67 mm⁴。距離 d2 = 0。',
             '【頂翼板 (上)】：自身 Ix1 = (200 × 20³) / 12 = 133,333.33 mm⁴。距總形心距離 d1 = |190 - 100| = 90 mm。\n- 依平行軸定理：Ix1_total = Ix1 + A1 · d1² = 133,333.33 + 4000 × (90)² = 32,533,333.33 mm⁴。',
             '【底翼板 (下)】：與頂翼板對稱，Ix3_total = 32,533,333.33 mm⁴。',
-            '【總慣性矩 Ix】：Ix = 32,533,333.33 + 6,826,666.67 + 32,533,333.33 = 71,893,333.33 mm⁴ ≒ 7.189 × 10⁷ mm⁴。'
+            '【總<span className="text-rose-600 font-bold">慣性矩</span> Ix】：Ix = 32,533,333.33 + 6,826,666.67 + 32,533,333.33 = 71,893,333.33 mm⁴ ≒ 7.189 × 10⁷ mm⁴。'
           ],
           answer: 'Ix = 7.189 × 10⁷ mm⁴ (即 71.89 × 10⁶ mm⁴)'
         },
         {
           difficulty: '高頻統測題',
-          question: '一底寬 b = 6 cm、高 h = 9 cm 之直角三角形，求其形心距底邊之高度 y_c 以及對底邊 b 之慣性矩 I_base。',
+          question: '一底寬 b = 6 cm、高 h = 9 cm 之直角三角形，求其形心距底邊之高度 y_c 以及對底邊 b 之<span className="text-rose-600 font-bold">慣性矩</span> I_base。',
           steps: [
             '直角三角形形心高度：y_c = h / 3 = 9 / 3 = 3 cm。',
-            '對底邊之慣性矩公式：I_base = (b · h³) / 12 = (6 × 9³) / 12 = (6 × 729) / 12 = 364.5 cm⁴。',
-            '（對形心軸之慣性矩 Ix_c = b h³ / 36 = 121.5 cm⁴，驗證平行軸定理：I_base = 121.5 + (27)×(3)² = 121.5 + 243 = 364.5 cm⁴）。'
+            '對底邊之<span className="text-rose-600 font-bold">慣性矩</span>公式：I_base = (b · h³) / 12 = (6 × 9³) / 12 = (6 × 729) / 12 = 364.5 cm⁴。',
+            '（對形心軸之<span className="text-rose-600 font-bold">慣性矩</span> Ix_c = b h³ / 36 = 121.5 cm⁴，驗證平行軸定理：I_base = 121.5 + (27)×(3)² = 121.5 + 243 = 364.5 cm⁴）。'
           ],
           answer: 'y_c = 3 cm, I_base = 364.5 cm⁴'
         }
@@ -345,8 +360,13 @@ export const mechanicsData: SubjectData = {
     {
       slug: 'friction',
       title: '4. 摩擦力',
-      desc: '靜摩擦與動摩擦機制、最大靜摩擦力 (fs_max = μs N)、摩擦角與自鎖條件、塊體滑動與翻覆傾倒臨界競爭判斷。',
+      desc: '靜摩擦與動摩擦機制、最大**靜摩擦力** (fs_max = μs N)、摩擦角與自鎖條件、塊體滑動與<span className="text-indigo-600 font-bold">翻覆傾倒</span>臨界競爭判斷。',
       status: 'done',
+      gradeLevel: 10,
+      examHitRate: 4,
+      step0Prerequisites: ["最大**靜摩擦力**：Fmax = μs · N","正向力 N 必須由自由體圖 ΣFy=0 求出，不一定等於重量 W"],
+      fatalTraps: [{"wrongThinking":"不論物體是否運動，一律帶入摩擦力 F = μ · N 計算。","correctThinking":"物體靜止未達臨界時，摩擦力由<span className="text-rose-600 font-bold">靜力平衡</span>決定 (F = 外力)；只有在「即將滑動」臨界狀態下才達到最大**靜摩擦力** Fmax = μs · N。","trapDescription":"混淆**靜摩擦力**與最大**靜摩擦力**，題目問物體受力時直接代入公式算錯。"}],
+      eliteMentalModels: [{"technique":"滑動與傾倒雙重檢驗 (Slide vs. Tip Dual Check)","explanation":"剛體置於粗糙面受推力時，先檢驗滑動臨界推力 F_slide = μW，再檢驗繞角點傾倒推力 F_tip = W(b/2h)，兩者取較小值即為破壞機制。"}],
       covered_question_ids: ['111-1-7', '111-1-18', '111-1-19', '112-1-8', '113-1-14', '114-1-2', '114-1-15', '115-1-14'],
       worked_examples: [
         {
@@ -354,27 +374,27 @@ export const mechanicsData: SubjectData = {
           difficulty: '基礎',
           steps: [
             '步驟 1：畫出牆體 FBD。垂直力僅有自重 W = 500 kN，故地表正向力 N = 500 kN。',
-            '步驟 2：計算最大靜摩擦力。fs_max = μs · N = 0.5 × 500 = 250 kN。',
+            '步驟 2：計算最大**靜摩擦力**。fs_max = μs · N = 0.5 × 500 = 250 kN。',
             '步驟 3：比較側向推力與抗滑力。P = 200 kN < fs_max = 250 kN，故擋土牆不會滑動。'
           ],
           answer: '不會滑動 (抗滑安全係數 = 1.25)'
         }
       ],
-      "illustrations": [ 'friction-context.webp', 'friction-mechanism.webp', 'friction-comparison.webp', 'friction-step.webp', 'mechanics-real-world.webp' ],
+      "illustrations": [ 'friction-context.webp', 'friction-mechanism.webp', 'friction-comparison.webp', 'friction-step.webp', 'mechanics-real-world.webp', 'concept-diagram.webp', 'formula-visual.webp' ],
       concepts: [
         {
           heading: '庫侖乾摩擦定律 (Coulomb\'s Law of Dry Friction)',
-          body: '當兩接觸表面具有相對運動趨勢時，接觸面切線方向會產生阻礙滑動的靜摩擦力 fs。靜摩擦力隨外推力增加而增大，直到達到即將滑動的臨界狀態最大靜摩擦力 fs_max = μs · N。一旦開始滑動，摩擦力降為動摩擦力 fk = μk · N（通常動摩擦係數 μk < 靜摩擦係數 μs）。',
-          formula: '最大靜摩擦力：fs_max = μs · N\n動摩擦力：fk = μk · N\n(N 為法向正向力，μs 與 μk 分別為靜/動摩擦係數)'
+          body: '當兩接觸表面具有相對運動趨勢時，接觸面切線方向會產生阻礙滑動的**靜摩擦力** fs。**靜摩擦力**隨外推力增加而增大，直到達到即將滑動的臨界狀態最大**靜摩擦力** fs_max = μs · N。一旦開始滑動，摩擦力降為**動摩擦力** fk = μk · N（通常動摩擦係數 μk < 靜摩擦係數 μs）。',
+          formula: '最大**靜摩擦力**：fs_max = μs · N\n**動摩擦力**：fk = μk · N\n(N 為法向正向力，μs 與 μk 分別為靜/動摩擦係數)'
         },
         {
-          heading: '摩擦角 (Friction Angle) 與自鎖原理 (Self-Locking)',
-          body: '在臨界滑動狀態下，正向力 N 與最大靜摩擦力 fs_max 之合力 R 與法線之間的夾角稱為摩擦角 φs。當斜面傾角 θ ≤ φs 時，物體不論重量多大均能穩定靜止於斜面上，此現象稱為自鎖 (Self-Locking)，廣泛應用於土木擋土牆設計與結構楔形銷接。',
+          heading: '**摩擦角 (Friction Angle)** 與自鎖原理 (Self-Locking)',
+          body: '在臨界滑動狀態下，正向力 N 與最大**靜摩擦力** fs_max 之合力 R 與法線之間的夾角稱為摩擦角 φs。當斜面傾角 θ ≤ φs 時，物體不論重量多大均能穩定靜止於斜面上，此現象稱為<span className="text-indigo-600 font-bold">自鎖 (Self-Locking)</span>，廣泛應用於土木擋土牆設計與結構楔形銷接。',
           formula: 'tan(φs) = fs_max / N = μs\n自鎖臨界條件：傾角 θ ≤ φs = tan⁻¹(μs)'
         },
         {
-          heading: '滑動 (Sliding) 與傾倒 (Tipping) 臨界競爭判斷機制',
-          body: '高寬比較大或承受高位外力的結構體（如高樓結構、擋土牆牆體、施工高架支撐塔），施加水平外力 P 時，可能先發生整體「水平滑動」或先發生「翻覆傾倒」。工程設計必須同時進行兩者臨界力算式比較。',
+          heading: '<span className="text-rose-600 font-bold">滑動 (Sliding)</span> 與<span className="text-indigo-600 font-bold">傾倒 (Tipping)</span> 臨界競爭判斷機制',
+          body: '高寬比較大或承受高位外力的結構體（如高樓結構、擋土牆牆體、施工高架支撐塔），施加水平外力 P 時，可能先發生整體「水平滑動」或先發生「<span className="text-indigo-600 font-bold">翻覆傾倒</span>」。工程設計必須同時進行兩者臨界力算式比較。',
           steps: [
             '【滑動模式】：假設發生臨界滑動，令 P_slide = fs_max = μs · N (其中由 ∑Fy=0 求正向力 N)。',
             '【傾倒模式】：假設繞底緣轉軸角點 (如右下角 A 點) 發生臨界翻覆，此時正向力 N 集中於 A 點。對 A 點取力矩平衡 ∑ M_A = 0 算出 P_tip。',
@@ -383,8 +403,8 @@ export const mechanicsData: SubjectData = {
           table: {
             headers: ['破壞模式', '臨界狀態特徵', '臨界推力公式', '影響主要幾何/物理因子'],
             rows: [
-              ['水平滑動 (Sliding)', '接觸面全區即將發生相對滑移', 'P_slide = μs · W', '摩擦係數 μs、總重 W'],
-              ['翻覆傾倒 (Tipping)', '正向力 N 移至邊緣角點，另一側脫離', 'P_tip = W · (B / 2H)', '寬高比 B/H、總重 W']
+              ['水平<span className="text-rose-600 font-bold">滑動 (Sliding)</span>', '接觸面全區即將發生相對滑移', 'P_slide = μs · W', '摩擦係數 μs、總重 W'],
+              ['<span className="text-indigo-600 font-bold">翻覆傾倒</span> (Tipping)', '正向力 N 移至邊緣角點，另一側脫離', 'P_tip = W · (B / 2H)', '寬高比 B/H、總重 W']
             ]
           }
         },
@@ -404,7 +424,7 @@ export const mechanicsData: SubjectData = {
           question: '一質量 m = 50 kg 的混凝土塊放置於混凝土斜面上，已知混凝土間的靜摩擦係數 μs = 0.6。試問當斜面傾角 θ 至少達到多少度時，混凝土塊才會開始沿斜面下滑？ (取 g = 9.8 m/s²)',
           steps: [
             '對斜面上之混凝土塊繪製 FBD：\n- 沿斜面向下分力：W_parallel = m · g · sin(θ)。\n- 垂直斜面正向力：N = m · g · cos(θ)。',
-            '最大靜摩擦力：fs_max = μs · N = μs · m · g · cos(θ)。',
+            '最大**靜摩擦力**：fs_max = μs · N = μs · m · g · cos(θ)。',
             '臨界下滑平衡條件：W_parallel = fs_max ⇒ m · g · sin(θ) = μs · m · g · cos(θ)。',
             '兩邊同除以 m · g · cos(θ)：tan(θ) = μs = 0.6。',
             '計算角度 θ：θ = tan⁻¹(0.6) ≒ 30.96°。'
@@ -426,9 +446,9 @@ export const mechanicsData: SubjectData = {
           difficulty: '進階',
           question: '（衛武營施工高架支撐塔安全檢驗簡化題）一高 H = 4 m、寬 B = 2 m、總重 W = 100 kN 的直立式矩形施工支撐塔，放置於水平地面上。支撐塔底座與地面間的靜摩擦係數 μs = 0.35。現於塔頂 H = 4 m 處施加一水平推力 P。試分析：(1) 該支撐塔會先發生「滑動」還是「傾倒」？(2) 臨界推力 P_crit 為何？',
           steps: [
-            '【分析一：臨界滑動推力 P_slide】：\n- 由垂直平衡 ∑ Fy = 0 可得地面正向力 N = W = 100 kN。\n- 最大靜摩擦力 fs_max = μs · N = 0.35 × 100 = 35 kN。\n- 發生滑動所需最小推力 P_slide = 35 kN。',
+            '【分析一：臨界滑動推力 P_slide】：\n- 由垂直平衡 <span className="text-rose-600 font-bold">∑ Fy = 0</span> 可得地面正向力 N = W = 100 kN。\n- 最大**靜摩擦力** fs_max = μs · N = 0.35 × 100 = 35 kN。\n- 發生滑動所需最小推力 P_slide = 35 kN。',
             '【分析二：臨界傾倒推力 P_tip】：\n- 若發生傾倒，支撐塔將繞右下角底點 A 翻轉，正向力 N 移至 A 點。\n- 對 A 點取力矩平衡 ∑ M_A = 0 (逆時針為正 +)：\n  P · H - W · (B / 2) = 0\n  P × 4 - 100 × (2 / 2) = 0 ⇒ 4 P = 100 ⇒ P_tip = 25 kN。',
-            '【比較與結論】：\n- 比較兩推力：P_tip (25 kN) < P_slide (35 kN)。\n- 當水平推力 P 增加至 25 kN 時，支撐塔即已發生翻覆傾倒破壞，此時推力尚未達到發生整體滑動所需的 35 kN。\n- 故該結構體會先發生「傾倒」，臨界推力 P_crit = 25 kN。'
+            '【比較與結論】：\n- 比較兩推力：P_tip (25 kN) < P_slide (35 kN)。\n- 當水平推力 P 增加至 25 kN 時，支撐塔即已發生<span className="text-indigo-600 font-bold">翻覆傾倒</span>破壞，此時推力尚未達到發生整體滑動所需的 35 kN。\n- 故該結構體會先發生「傾倒」，臨界推力 P_crit = 25 kN。'
           ],
           answer: '先發生「傾倒」，臨界推力 P_crit = 25 kN'
         },
@@ -449,8 +469,13 @@ export const mechanicsData: SubjectData = {
     {
       slug: 'truss',
       title: '5. 平面桁架分析',
-      desc: '桁架靜定性判別 (m + r vs. 2j)、零桿判別法則 (Zero-Force Members)、節點法 (Method of Joints) 與剖面法 (Method of Sections) 求解桿件軸力。',
+      desc: '桁架靜定性判別 (m + r vs. 2j)、零桿判別法則 (Zero-Force Members)、**節點法 (Method of Joints)** 與**剖面法 (Method of Sections)** 求解桿件軸力。',
       status: 'done',
+      gradeLevel: 10,
+      examHitRate: 4,
+      step0Prerequisites: ["本章核心基礎：truss之關鍵定義與物理幾何直覺","解題前置檢核：確認題型情境、已知條件量與求解目標"],
+      fatalTraps: [{"wrongThinking":"直覺選擇字面相近選項，未仔細檢驗題幹之特定限制條件。","correctThinking":"回歸核心公理與基本定義，逐項檢核題幹條件與反例。","trapDescription":"80% 考生在概念題中因粗心忽略前提假設而失分。"}],
+      eliteMentalModels: [{"technique":"第一性原理拆解法 (First Principles Breakdown)","explanation":"不依賴死記死背，由最底層的定義與公理邏輯推導出解題路徑，降維打擊各類統測變形題。"}],
       covered_question_ids: ['111-1-8', '111-1-9', '111-1-10', '113-1-18', '113-1-19', '114-1-1', '115-1-7', '115-1-12', '115-1-15'],
       worked_examples: [
         {
@@ -464,15 +489,15 @@ export const mechanicsData: SubjectData = {
           answer: 'CD 桿為零桿 (F_CD = 0)'
         }
       ],
-      "illustrations": [ 'truss-context.webp', 'truss-mechanism.webp', 'truss-comparison.webp', 'truss-step.webp', 'mechanics-real-world.webp' ],
+      "illustrations": [ 'truss-context.webp', 'truss-mechanism.webp', 'truss-comparison.webp', 'truss-step.webp', 'mechanics-real-world.webp', 'concept-diagram.webp', 'formula-visual.webp' ],
       concepts: [
         {
           heading: '桁架基本假設與平面靜定判別式',
-          body: '理想桁架建立在三個主要假設上：(1) 所有桿件兩端皆為無摩擦鉸接；(2) 外載重與支承反力僅作用於節點上；(3) 忽略桿件自重。因此所有桁架桿件均為二力構件，僅承受軸向拉力 (T, Tension) 或壓力 (C, Compression)。',
-          formula: '平面桁架靜定判別方程式：\nm + r = 2j  ⇒ 靜定桁架 (Statically Determinate)\nm + r > 2j  ⇒ 超靜定桁架 (Indeterminate, 不定度 i = m + r - 2j)\nm + r < 2j  ⇒ 不穩定桁架 (Unstable)\n(其中 m: 桿件總數, r: 支承反力總數, j: 節點總數)'
+          body: '理想桁架建立在三個主要假設上：(1) 所有桿件兩端皆為無摩擦鉸接；(2) 外載重與支承反力僅作用於節點上；(3) 忽略桿件自重。因此所有桁架桿件均為**二力構件**，僅承受軸向拉力 (T, Tension) 或壓力 (C, Compression)。',
+          formula: '平面桁架靜定判別方程式：\n<span className="text-rose-600 font-bold">m + r = 2j</span>  ⇒ <span className="text-rose-600 font-bold">靜定桁架 (Statically Determinate)</span>\n<span className="text-indigo-600 font-bold">m + r > 2j</span>  ⇒ <span className="text-indigo-600 font-bold">超靜定桁架 (Indeterminate, 不定度 i = m + r - 2j)</span>\n<span className="text-indigo-600 font-bold">m + r < 2j</span>  ⇒ <span className="text-indigo-600 font-bold">不穩定桁架 (Unstable)</span>\n(其中 m: 桿件總數, r: 支承反力總數, j: 節點總數)'
         },
         {
-          heading: '零桿 (Zero-Force Members) 的兩大快速判別定理',
+          heading: '**零桿 (Zero-Force Members)** 的兩大快速判別定理',
           body: '在進行詳細力學計算前，快速找出不受力的零桿可大幅簡化計算流程。',
           table: {
             headers: ['節點幾何特徵', '外力/反力狀況', '判別結論', '代表示意'],
@@ -483,7 +508,7 @@ export const mechanicsData: SubjectData = {
           }
         },
         {
-          heading: '節點法 (Method of Joints) 計算步驟',
+          heading: '**節點法 (Method of Joints)** 計算步驟',
           body: '節點法適用於求解桁架所有桿件之軸力。利用每個節點在 2D 平面上的 ∑Fx = 0 與 ∑Fy = 0 連續建立獨立代數方程組。',
           steps: [
             '求全桁架之整體支承反力 (由整體 FBD 之 ∑Fx=0, ∑Fy=0, ∑M=0 求解)。',
@@ -493,12 +518,12 @@ export const mechanicsData: SubjectData = {
           ]
         },
         {
-          heading: '剖面法 (Method of Sections) 計算步驟',
+          heading: '**剖面法 (Method of Sections)** 計算步驟',
           body: '當僅需求解桁架內部某 1~3 根指定桿件之軸力時，剖面法是最快速有效的方法。利用假想剖面切開桁架，並對切開的一側取力矩平衡方程。',
           steps: [
             '通過待求桿件切割一假想剖面 (通常切割不超過 3 根未知桿件)。',
-            '選取切開後結構較簡單的一側（左側或右側）繪製自由體圖 (FBD)。',
-            '找尋另外兩根未知桿件作用線的交點 O，對該點取力矩平衡 ∑ M_O = 0，即可一步直接解出待求桿件之軸力！'
+            '選取切開後結構較簡單的一側（左側或右側）繪製**自由體圖 (FBD)**。',
+            '找尋另外兩根未知桿件作用線的交點 O，對該點取力矩平衡 <span className="text-rose-600 font-bold">∑ M_O = 0</span>，即可一步直接解出待求桿件之軸力！'
           ]
         },
         {
@@ -513,7 +538,7 @@ export const mechanicsData: SubjectData = {
           steps: [
             '觀察節點 K 處之幾何與受力特徵：AK 與 KB 兩桿在水平方向共線，KC 桿在垂直方向不共線。',
             '對節點 K 建立正交座標系，指定 x 軸沿 AK-KB 水平方向，y 軸沿 KC 垂直方向。',
-            '列出 y 方向力平衡方程式：∑ Fy = 0。',
+            '列出 y 方向力平衡方程式：<span className="text-rose-600 font-bold">∑ Fy = 0</span>。',
             '由於垂直方向僅有 KC 桿之軸力 F_KC，且節點 K 無任何外力：F_KC = 0。',
             '符合「三桿接頭兩桿共線且無外力時，第三桿為零桿」之判別定理。'
           ],
@@ -526,9 +551,9 @@ export const mechanicsData: SubjectData = {
             '算式比較：m + r 與 2j。',
             '左式：m + r = 9 + (2 + 1) = 12。',
             '右式：2 j = 2 × 6 = 12。',
-            '因為 m + r = 2 j = 12，且支承反力未平行或共點，故該桁架為「靜定桁架 (Statically Determinate)」。'
+            '因為 m + r = 2 j = 12，且支承反力未平行或共點，故該桁架為「<span className="text-rose-600 font-bold">靜定桁架 (Statically Determinate)</span>」。'
           ],
-          answer: '靜定桁架 (m + r = 2j = 12)'
+          answer: '靜定桁架 (<span className="text-rose-600 font-bold">m + r = 2j</span> = 12)'
         },
         {
           difficulty: '進階',
@@ -557,7 +582,12 @@ export const mechanicsData: SubjectData = {
       title: '6. 靜定樑之受力',
       desc: '支承反力類型、載重集度 w(x)、剪力 V(x) 與彎矩 M(x) 微積分關係、剪力圖與彎矩圖繪製及最大彎矩 M_max 位置判斷。',
       status: 'done',
-      covered_question_ids: ['111-1-1', '112-1-2', '112-1-7', '112-1-12', '112-1-13', '112-1-15', '112-1-20', '113-1-2', '113-1-3', '113-1-9', '113-1-11', '114-1-3', '114-1-5', '114-1-8', '114-1-10', '114-1-16', '115-1-3', '115-1-4', '115-1-5', '115-1-10', '115-1-18', '115-1-20'],
+      gradeLevel: 10,
+      examHitRate: 4,
+      step0Prerequisites: ["本章核心基礎：beam之關鍵定義與物理幾何直覺","解題前置檢核：確認題型情境、已知條件量與求解目標"],
+      fatalTraps: [{"wrongThinking":"直覺選擇字面相近選項，未仔細檢驗題幹之特定限制條件。","correctThinking":"回歸核心公理與基本定義，逐項檢核題幹條件與反例。","trapDescription":"80% 考生在概念題中因粗心忽略前提假設而失分。"}],
+      eliteMentalModels: [{"technique":"第一性原理拆解法 (First Principles Breakdown)","explanation":"不依賴死記死背，由最底層的定義與公理邏輯推導出解題路徑，降維打擊各類統測變形題。"}],
+      covered_question_ids: ['111-1-1', '111-1-2', '111-1-3', '112-1-2', '112-1-7', '112-1-12', '112-1-13', '112-1-15', '112-1-20', '113-1-2', '113-1-3', '113-1-9', '113-1-11', '114-1-3', '114-1-5', '114-1-8', '114-1-10', '114-1-16', '115-1-3', '115-1-4', '115-1-5', '115-1-10', '115-1-18', '115-1-20'],
       worked_examples: [
         {
           question: '【步驟化例題】簡支梁最大彎矩：跨距 L = 10m 的簡支梁，承受中央集中載重 P = 40 kN，求最大彎矩。',
@@ -570,11 +600,11 @@ export const mechanicsData: SubjectData = {
           answer: '最大彎矩為 100 kN·m'
         }
       ],
-      "illustrations": [ 'beam-context.webp', 'beam-mechanism.webp', 'beam-comparison.webp', 'beam-step.webp', 'mechanics-real-world.webp' ],
+      "illustrations": [ 'beam-context.webp', 'beam-mechanism.webp', 'beam-comparison.webp', 'beam-step.webp', 'mechanics-real-world.webp', 'concept-diagram.webp', 'formula-visual.webp' ],
       concepts: [
         {
           heading: '靜定樑種類與支承約束條件',
-          body: '樑是主要承受橫向載重與彎矩的桿件。當未知反力個數 r = 3 時，稱為靜定樑 (Statically Determinate Beam)，可直接利用 2D 平面三個靜力平衡方程式求解。',
+          body: '樑是主要承受橫向載重與彎矩的桿件。當未知反力個數 r = 3 時，稱為靜定樑 (Statically Determinate Beam)，可直接利用 2D 平面三個<span className="text-rose-600 font-bold">靜力平衡</span>方程式求解。',
           table: {
             headers: ['樑結構類型', '支承配置特徵', '未知反力數', '彎矩幾何分佈'],
             rows: [
@@ -640,7 +670,7 @@ export const mechanicsData: SubjectData = {
           difficulty: '進階',
           question: '（高鐵高架樑實務簡化算例）外伸樑全長 L = 8 m。A 點 (x=0) 為鉸支承，B 點 (x=6m) 為滾支承，BC 段 (x=6m 至 8m) 為 2m 長之外伸懸臂段。在 C 點外伸端 (x=8m) 施加一集中向下載重 P = 40 kN，且 AB 段 (x=0 至 6m) 受一均佈載重 w = 10 kN/m。試求解：(1) 支承反力 R_A 與 R_B；(2) AB 跨內之最大正彎矩 M_pos 及其發生位置 x_crit；(3) B 點處之負彎矩 M_B。',
           steps: [
-            '【步驟一：求解支承反力 R_A 與 R_B】：\n- 對 A 點取力矩平衡 ∑ M_A = 0 (逆時針為正 +)：\n  (w · 6) × (6 / 2) + P × 8 - R_B × 6 = 0\n  (10 × 6) × 3 + 40 × 8 - 6 R_B = 0 ⇒ 180 + 320 - 6 R_B = 0 ⇒ 6 R_B = 500 ⇒ R_B = 83.33 kN (向上)。\n- 由垂直平衡 ∑ Fy = 0：\n  R_A + R_B - (10 × 6) - 40 = 0 ⇒ R_A + 83.33 - 100 = 0 ⇒ R_A = 16.67 kN (向上)。',
+            '【步驟一：求解支承反力 R_A 與 R_B】：\n- 對 A 點取力矩平衡 ∑ M_A = 0 (逆時針為正 +)：\n  (w · 6) × (6 / 2) + P × 8 - R_B × 6 = 0\n  (10 × 6) × 3 + 40 × 8 - 6 R_B = 0 ⇒ 180 + 320 - 6 R_B = 0 ⇒ 6 R_B = 500 ⇒ R_B = 83.33 kN (向上)。\n- 由垂直平衡 <span className="text-rose-600 font-bold">∑ Fy = 0</span>：\n  R_A + R_B - (10 × 6) - 40 = 0 ⇒ R_A + 83.33 - 100 = 0 ⇒ R_A = 16.67 kN (向上)。',
             '【步驟二：求解 AB 跨內剪力零點與最大正彎矩 M_pos】：\n- AB 跨內剪力方程式：V(x) = R_A - w · x = 16.67 - 10 x。\n- 令 V(x) = 0 ⇒ 16.67 - 10 x = 0 ⇒ x_crit = 1.667 m。\n- 最大正彎矩 M_pos 即為 x = 0 至 1.667m 之剪力圖三角形面積：\n  M_pos = (1/2) × 1.667 × 16.67 ≒ 13.89 kN·m。',
             '【步驟三：求解 B 點負彎矩 M_B】：\n- 從自由端 C (x=8m) 向左分析懸臂段 BC (長 2m)：\n  M_B = - P × 2 = - 40 × 2 = - 80 kN·m。'
           ],
@@ -662,6 +692,11 @@ export const mechanicsData: SubjectData = {
       title: '7. 應力與應變',
       desc: '正應力 (σ) 與剪應力 (τ)、正應變 (ε) 與剪應變 (γ)、虎克定律 (Hooke\'s Law)、彈性模數 (E/G/ν) 及軸向桿件變形量 (δ = PL/AE)。',
       status: 'done',
+      gradeLevel: 10,
+      examHitRate: 5,
+      step0Prerequisites: ["正應力與正應變：σ = P/A, ε = δ/L","虎克定律：σ = E·ε 故變形量 δ = PL/(AE)","剪應力與剪應變：τ = V/As, γ = τ/G"],
+      fatalTraps: [{"wrongThinking":"算變形量 δ = PL/(AE) 時，L 用公尺 m，A 用 mm²，E 用 GPa，數值直接相乘除未換算。","correctThinking":"全數統一為 N 與 mm：P(N), L(mm), A(mm²), E(MPa = N/mm²)，算出的變形量 δ 單位即為標準 mm。","trapDescription":"長度與彈性模數單位未統一，導致變形量結果小數點差 10³ 或 10⁶ 倍。"}],
+      eliteMentalModels: [{"technique":"剛度法比值秒殺 (Stiffness Proportionality)","explanation":"階梯軸或並聯桿受力，內力與剛度 (AE/L) 成正比分配，變形量與柔度 (L/AE) 成正比，直接用比值心算免解聯立方程。"}],
       covered_question_ids: ['111-1-4', '111-1-5', '111-1-6', '111-1-11', '111-1-12', '111-1-13', '111-1-20', '112-1-4', '112-1-5', '112-1-6', '112-1-10', '112-1-14', '112-1-17', '112-1-18', '112-1-19', '113-1-6', '113-1-10', '113-1-12', '113-1-13', '113-1-15', '113-1-16', '113-1-17', '113-1-20', '114-1-7', '114-1-9', '114-1-11', '114-1-12', '114-1-14', '114-1-18', '114-1-19', '115-1-6', '115-1-8', '115-1-9', '115-1-11', '115-1-19', '110-1-4', '110-1-12', '110-1-20', '110-1-28', '110-1-36'],
       worked_examples: [
         {
@@ -675,7 +710,7 @@ export const mechanicsData: SubjectData = {
           answer: '正應力 ≒ 248.7 MPa'
         }
       ],
-      "illustrations": [ 'stress-strain-context.webp', 'stress-strain-mechanism.webp', 'stress-strain-comparison.webp', 'stress-strain-step.webp', 'mechanics-real-world.webp' ],
+      "illustrations": [ 'stress-strain-context.webp', 'stress-strain-mechanism.webp', 'stress-strain-comparison.webp', 'stress-strain-step.webp', 'mechanics-real-world.webp', 'concept-diagram.webp', 'formula-visual.webp' ],
       concepts: [
         {
           heading: '應力 (Stress) 與應變 (Strain) 的物理定義',
@@ -741,7 +776,7 @@ export const mechanicsData: SubjectData = {
         },
         {
           heading: '梁之彎曲應力與橫向剪應力 (Bending & Transverse Shear Stress in Beams)',
-          body: '樑受彎矩 M 作用時產生彎曲正應力 σ = (M · y) / I；受剪力 V 作用時產生橫向剪應力 τ = (V · Q) / (I · b)。矩形斷面與圓形斷面的最大剪應力發生於中性軸 (Neutral Axis)。',
+          body: '樑受彎矩 M 作用時產生彎曲正應力 σ = (M · y) / I；受剪力 V 作用時產生橫向剪應力 τ = (V · Q) / (I · b)。矩形斷面與圓形斷面的最大剪應力發生於<span className="text-indigo-600 font-bold">中性軸 (Neutral Axis)</span>。',
           formula: '彎曲正應力：σ = (M · y) / I = M / S   (其中 S = I / y_max 為截面模數 Section Modulus)\n梁橫向剪應力：τ = (V · Q) / (I · b)\n矩形斷面最大剪應力：τ_max = 1.5 · (V / A)   (發生於中性軸 y = 0 處)\n圓形斷面最大剪應力：τ_max = (4 / 3) · (V / A)   (發生於圓心軸處)'
         },
         {
@@ -800,9 +835,14 @@ export const mechanicsData: SubjectData = {
     },
     {
       slug: 'spatial-force-systems',
-      title: '8. 空間力系與空間平衡',
-      desc: '掌握三維空間力之笛卡兒向量表示法、方向餘弦、空間共點與平行力系之合成分解，以及空間三維六個靜力平衡方程之應用。\n\n🔥 V6.0 考前秒殺秘訣：此核心概念統測出題率極高，建議善用圖解與鷹架提示反覆練習！',
+      title: '8. **空間力系**與空間平衡',
+      desc: '掌握三維空間力之笛卡兒向量表示法、方向餘弦、空間共點與平行力系之合成分解，以及空間三維六個<span className="text-rose-600 font-bold">靜力平衡</span>方程之應用。\n\n🔥 V6.0 考前秒殺秘訣：此核心概念統測出題率極高，建議善用圖解與鷹架提示反覆練習！',
       status: 'done',
+      gradeLevel: 10,
+      examHitRate: 4,
+      step0Prerequisites: ["本章核心基礎：spatial-force-systems之關鍵定義與物理幾何直覺","解題前置檢核：確認題型情境、已知條件量與求解目標"],
+      fatalTraps: [{"wrongThinking":"直覺選擇字面相近選項，未仔細檢驗題幹之特定限制條件。","correctThinking":"回歸核心公理與基本定義，逐項檢核題幹條件與反例。","trapDescription":"80% 考生在概念題中因粗心忽略前提假設而失分。"}],
+      eliteMentalModels: [{"technique":"第一性原理拆解法 (First Principles Breakdown)","explanation":"不依賴死記死背，由最底層的定義與公理邏輯推導出解題路徑，降維打擊各類統測變形題。"}],
       covered_question_ids: ['110-1-5', '111-1-5', '112-1-5', '113-1-5', '114-1-5', '115-1-5'],
       worked_examples: [
         {
@@ -816,7 +856,7 @@ export const mechanicsData: SubjectData = {
           answer: '(1) Fx = 200 N, Fy = 300 N, Fz = 600 N；(2) cos α = 2/7 ≒ 0.2857'
         }
       ],
-      illustrations: ['units-vectors-context.webp', 'units-vectors-mechanism.webp', 'units-vectors-comparison.webp', 'units-vectors-step.webp', 'mechanics-real-world.webp', 'spatial-force-systems-infographic.webp'],
+      illustrations: ['units-vectors-context.webp', 'units-vectors-mechanism.webp', 'units-vectors-comparison.webp', 'units-vectors-step.webp', 'mechanics-real-world.webp', 'spatial-force-systems-infographic.webp', 'concept-diagram.webp', 'formula-visual.webp'],
       concepts: [
         {
           heading: '空間力向量與方向餘弦 (Spatial Vector & Direction Cosines)',
@@ -831,7 +871,7 @@ export const mechanicsData: SubjectData = {
           heading: '空間共點與平行力系之合成與平衡 (Spatial Concurrent & Parallel Systems)',
           body: '當多個空間力作用於同一點時稱為空間共點力系；當所有作用力相互平行（如各構件自重均沿 -Z 方向）時稱為空間平行力系。兩者之獨立平衡方程式數量不同。',
           table: {
-            headers: ['力系類型', '定義特徵', '獨立靜力平衡方程式數量', '平衡方程式組'],
+            headers: ['力系類型', '定義特徵', '獨立<span className="text-rose-600 font-bold">靜力平衡</span>方程式數量', '平衡方程式組'],
             rows: [
               ['空間共點力系', '所有作用力交於同一空間點', '3 個方程', '$\sum F_x = 0, \sum F_y = 0, \sum F_z = 0$'],
               ['空間平行力系', '所有作用力均平行於某特定軸 (如 Z 軸)', '3 個方程', '$\sum F_z = 0, \sum M_x = 0, \sum M_y = 0$'],
@@ -841,7 +881,7 @@ export const mechanicsData: SubjectData = {
         },
         {
           heading: '空間剛體六個平衡方程與三維支承 (Spatial Rigid Body Equilibrium & Supports)',
-          body: '三維剛體不受拘束時具備 6 個自由度（3 個平移 + 3 個旋轉）。剛體完全靜力平衡之充要條件為合力向量 $\vec{R}=0$ 且對任意點之合力矩向量 $\vec{M}=0$。',
+          body: '三維剛體不受拘束時具備 6 個自由度（3 個平移 + 3 個旋轉）。剛體完全<span className="text-rose-600 font-bold">靜力平衡</span>之<span className="text-indigo-600 font-bold">充要條件</span>為合力向量 $\vec{R}=0$ 且對任意點之合力矩向量 $\vec{M}=0$。',
           steps: [
             '球窩關節 (Ball-and-Socket Joint)：提供 3 個方向之約束力反力 (Rx, Ry, Rz)，但不限制轉動 (Moment = 0)。',
             '無摩擦滾子/球底支承：僅提供垂直於接觸面之 1 個法向約束力反力。',
@@ -862,7 +902,7 @@ export const mechanicsData: SubjectData = {
         },
         {
           difficulty: '高頻統測題',
-          question: '對於一個不受約束之「空間剛體」，欲保持完全靜力平衡，最多可建立多少個獨立的靜力平衡方程式？ (A) 3 個 (B) 4 個 (C) 6 個 (D) 8 個。',
+          question: '對於一個不受約束之「空間剛體」，欲保持完全<span className="text-rose-600 font-bold">靜力平衡</span>，最多可建立多少個獨立的<span className="text-rose-600 font-bold">靜力平衡</span>方程式？ (A) 3 個 (B) 4 個 (C) 6 個 (D) 8 個。',
           steps: [
             '空間剛體具備 3 個平移與 3 個旋轉自由度，必須滿足 ∑Fx=0, ∑Fy=0, ∑Fz=0 及 ∑Mx=0, ∑My=0, ∑Mz=0 共 6 個獨立平衡方程。故選 (C)。'
           ],
@@ -870,7 +910,7 @@ export const mechanicsData: SubjectData = {
         },
         {
           difficulty: '進階',
-          question: '一空間平行力系所有作用力均平行於 Z 軸。下列何者「非」此力系之獨立靜力平衡方程式？ (A) ∑Fz = 0 (B) ∑Mx = 0 (C) ∑My = 0 (D) ∑Mz = 0。',
+          question: '一空間平行力系所有作用力均平行於 Z 軸。下列何者「非」此力系之獨立<span className="text-rose-600 font-bold">靜力平衡</span>方程式？ (A) ∑Fz = 0 (B) ∑Mx = 0 (C) ∑My = 0 (D) ∑Mz = 0。',
           steps: [
             '因為所有力均平行於 Z 軸，力對 Z 軸產生的力矩恆為 0 (M_z ≡ 0)，因此 ∑Mz = 0 為自然滿足之恆等式，而非獨立靜力方程。獨立方程為 ∑Fz=0, ∑Mx=0, ∑My=0。故選 (D)。'
           ],
@@ -891,6 +931,11 @@ export const mechanicsData: SubjectData = {
       title: '9. 平面應力與莫耳圓圖解',
       desc: '深入解析平面應力狀態、斜面正交應力與剪應力轉換公式、主平面與主應力求法，以及莫耳圓 (Mohr\'s Circle) 圖解幾何法。\n\n🔥 V6.0 考前秒殺秘訣：此核心概念統測出題率極高，建議善用圖解與鷹架提示反覆練習！',
       status: 'done',
+      gradeLevel: 10,
+      examHitRate: 4,
+      step0Prerequisites: ["本章核心基礎：plane-stress之關鍵定義與物理幾何直覺","解題前置檢核：確認題型情境、已知條件量與求解目標"],
+      fatalTraps: [{"wrongThinking":"直覺選擇字面相近選項，未仔細檢驗題幹之特定限制條件。","correctThinking":"回歸核心公理與基本定義，逐項檢核題幹條件與反例。","trapDescription":"80% 考生在概念題中因粗心忽略前提假設而失分。"}],
+      eliteMentalModels: [{"technique":"第一性原理拆解法 (First Principles Breakdown)","explanation":"不依賴死記死背，由最底層的定義與公理邏輯推導出解題路徑，降維打擊各類統測變形題。"}],
       covered_question_ids: ['110-1-15', '111-1-15', '112-1-15', '113-1-15', '114-1-15', '115-1-15'],
       worked_examples: [
         {
@@ -904,7 +949,7 @@ export const mechanicsData: SubjectData = {
           answer: '(1) 圓心 C(50, 0), 半徑 R = 50 MPa；(2) σ1 = 100 MPa, σ2 = 0 MPa；(3) τmax = 50 MPa'
         }
       ],
-      illustrations: ['units-vectors-context.webp', 'units-vectors-mechanism.webp', 'units-vectors-comparison.webp', 'units-vectors-step.webp', 'mechanics-real-world.webp', 'plane-stress-infographic.webp'],
+      illustrations: ['units-vectors-context.webp', 'units-vectors-mechanism.webp', 'units-vectors-comparison.webp', 'units-vectors-step.webp', 'mechanics-real-world.webp', 'plane-stress-infographic.webp', 'concept-diagram.webp', 'formula-visual.webp'],
       concepts: [
         {
           heading: '平面應力與斜面應力轉換公式 (Plane Stress & Stress Transformation)',
