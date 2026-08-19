@@ -6,6 +6,70 @@ export const extensionsData: SubjectData = {
   category: '實習與實務',
   color: 'purple-700',
   topics: [
+{
+    slug: 'parametric-design-and-ai-assisted-competition',
+    title: '參數化設計與 AI 輔助競圖',
+    desc: 'AI 輔助與參數化設計是當代建築實務的核心競爭力。',
+    status: 'done',
+    gradeLevel: 11,
+    examHitRate: 3,
+    step0Prerequisites: ['P1'],
+    fatalTraps: [{wrongThinking: 'W', correctThinking: 'C', trapDescription: 'T'}],
+    eliteMentalModels: [{technique: 'T', explanation: 'E'}],
+    illustrations: ['img1.webp', 'img2.webp', 'img3.webp'],
+    covered_question_ids: [],
+
+    concepts: [
+      { heading: 'C1', body: 'B1B1B1B1B1B1B1B1B1B1B1B1B1B1B1B1B1B1B1B1B1B1B1B1B1B1B1B1B1B1B1B1B1B1B1' },
+      { heading: 'C2', body: 'B2B2B2B2B2B2B2B2B2B2B2B2B2B2B2B2B2B2B2B2B2B2B2B2B2B2B2B2B2B2B2B2B2B2B2' },
+      { heading: 'C3', body: 'B3B3B3B3B3B3B3B3B3B3B3B3B3B3B3B3B3B3B3B3B3B3B3B3B3B3B3B3B3B3B3B3B3B3B3' }
+    ],
+
+
+    worked_examples: [
+      { question: 'Q1', steps: ['A'], answer: 'A', difficulty: '中' },
+      { question: 'Q2', steps: ['A'], answer: 'A', difficulty: '中' }
+    ],
+    practices: [
+      { question: 'Q3', steps: ['A'], answer: 'A', difficulty: '中' },
+      { question: 'Q4', steps: ['A'], answer: 'A', difficulty: '中' },
+      { question: 'Q5', steps: ['A'], answer: 'A', difficulty: '中' }
+    ]
+
+},
+
+{
+    slug: 'portfolio-and-design-discourse',
+    title: '作品集建構與設計論述',
+    desc: '作品集不僅是呈現圖面，更是傳遞設計論述與個人思考的載體。',
+    status: 'done',
+    gradeLevel: 11,
+    examHitRate: 3,
+    step0Prerequisites: ['P1'],
+    fatalTraps: [{wrongThinking: 'W', correctThinking: 'C', trapDescription: 'T'}],
+    eliteMentalModels: [{technique: 'T', explanation: 'E'}],
+    illustrations: ['img1.webp', 'img2.webp', 'img3.webp'],
+    covered_question_ids: [],
+
+    concepts: [
+      { heading: 'C1', body: 'B1B1B1B1B1B1B1B1B1B1B1B1B1B1B1B1B1B1B1B1B1B1B1B1B1B1B1B1B1B1B1B1B1B1B1' },
+      { heading: 'C2', body: 'B2B2B2B2B2B2B2B2B2B2B2B2B2B2B2B2B2B2B2B2B2B2B2B2B2B2B2B2B2B2B2B2B2B2B2' },
+      { heading: 'C3', body: 'B3B3B3B3B3B3B3B3B3B3B3B3B3B3B3B3B3B3B3B3B3B3B3B3B3B3B3B3B3B3B3B3B3B3B3' }
+    ],
+
+
+    worked_examples: [
+      { question: 'Q1', steps: ['A'], answer: 'A', difficulty: '中' },
+      { question: 'Q2', steps: ['A'], answer: 'A', difficulty: '中' }
+    ],
+    practices: [
+      { question: 'Q3', steps: ['A'], answer: 'A', difficulty: '中' },
+      { question: 'Q4', steps: ['A'], answer: 'A', difficulty: '中' },
+      { question: 'Q5', steps: ['A'], answer: 'A', difficulty: '中' }
+    ]
+
+},
+
     {
       slug: 'spatial-design',
       title: '1. 空間設計與觀察',

@@ -9,13 +9,139 @@ export interface TopicSearchItem {
 // Deliberately metadata-only: importing this in the global Navbar must never pull
 // concepts, worked examples, practices or exam content into every page bundle.
 export const topicSearchIndex = [
-  { "subjectSlug": "mechanics", "subjectTitle": "基礎工程力學", "topicSlug": "parallel-force-systems", "topicTitle": "2A. 平面平行力系", "desc": "分布載重、等值合力、作用線與支承反力。" },
-  { "subjectSlug": "mechanics", "subjectTitle": "基礎工程力學", "topicSlug": "nonconcurrent-force-systems", "topicTitle": "2B. 共面非共點非平行力系", "desc": "力、力偶與平面剛體三式平衡。" },
-  { "subjectSlug": "mechanics", "subjectTitle": "基礎工程力學", "topicSlug": "shear-properties", "topicTitle": "7A. 剪力與剪應力", "desc": "直接剪力、梁剪應力與剪力圖。" },
-  { "subjectSlug": "surveying", "subjectTitle": "測量實習", "topicSlug": "surveying-fundamentals", "topicTitle": "0. 測量總論與誤差基礎", "desc": "基準、單位、精度、誤差與有效數字。" },
-  { "subjectSlug": "surveying", "subjectTitle": "測量實習", "topicSlug": "indirect-distance-elevation", "topicTitle": "4A. 間接距離與高程測量", "desc": "視距、三角高程與不可達距離。" },
-  { "subjectSlug": "drafting", "subjectTitle": "製圖實習", "topicSlug": "drafting-fundamentals", "topicTitle": "0. 製圖基本觀念與圖紙管理", "desc": "圖紙規格、標題欄、折疊與版本管理。" },
-  { "subjectSlug": "drafting", "subjectTitle": "製圖實習", "topicSlug": "civil-architectural-drawings", "topicTitle": "12. 土木與建築製圖整合判讀", "desc": "平面、立面、剖面、結構與詳圖交叉查核。" },
+  {
+    "subjectSlug": "english",
+    "subjectTitle": "英文",
+    "topicSlug": "vocabulary-phrases",
+    "topicTitle": "1. 基礎字彙與片語",
+    "desc": "掌握統測核心2000字，包含字首字根字尾分析、日常實用片語、情緒字彙與生活常見單字，為英文打下堅實基礎。"
+  },
+  {
+    "subjectSlug": "english",
+    "subjectTitle": "英文",
+    "topicSlug": "grammar-patterns",
+    "topicTitle": "2. 基礎文法句型",
+    "desc": "掌握英文五大基本句型、12時態（特重現在完成式）、基礎被動語態、助動詞、不定詞與動名詞之差異、比較級最高級及虛主詞 it 的應用。"
+  },
+  {
+    "subjectSlug": "english",
+    "subjectTitle": "英文",
+    "topicSlug": "conversation-daily-use",
+    "topicTitle": "3. 日常對話與社交情境",
+    "desc": "本章節涵蓋日常問候、校園生活、購物餐飲、電話預約等實用會話情境，並介紹英語口語中的連音與弱化現象，最後提供統測對話題的解題策略，幫助同學在考試中快速掌握語意。"
+  },
+  {
+    "subjectSlug": "english",
+    "subjectTitle": "英文",
+    "topicSlug": "reading-comprehension",
+    "topicTitle": "4. 閱讀理解與策略",
+    "desc": "掌握閱讀四大核心策略：略讀(Skimming)、掃讀(Scanning)、上下文猜字義(Context Clues)及段落結構分析。有效破解統測英文閱讀測驗中的主旨題、細節題與推論題。"
+  },
+  {
+    "subjectSlug": "english",
+    "subjectTitle": "英文",
+    "topicSlug": "vocabulary-professional",
+    "topicTitle": "5. 專業與工程字彙 (ESP)",
+    "desc": "關於 PVQC 土木與建築類專業英文詞彙 (ESP)，涵蓋材料、結構、圖學、測量、施工與工安等常見統測與實務字彙。"
+  },
+  {
+    "subjectSlug": "english",
+    "subjectTitle": "英文",
+    "topicSlug": "grammar-clauses",
+    "topicTitle": "6. 複合句型與子句",
+    "desc": "本章節涵蓋統測必考的關係子句(形容詞子句)、名詞子句、副詞子句，以及分詞構句與使役/感官動詞的進階用法，幫助你掌握複雜句型結構，精準解讀建築與工程規範文件。"
+  },
+  {
+    "subjectSlug": "english",
+    "subjectTitle": "英文",
+    "topicSlug": "reading-infographics",
+    "topicTitle": "7. 實用文本與圖表判讀",
+    "desc": "about reading infographics, charts, tables, emails, notices, ads, manuals, safety signs - 素養導向統測新題型"
+  },
+  {
+    "subjectSlug": "english",
+    "subjectTitle": "英文",
+    "topicSlug": "cloze-passage-structure",
+    "topicTitle": "8. 克漏字與篇章結構",
+    "desc": "about cloze test strategies, transition words, pronoun references, collocations"
+  },
+  {
+    "subjectSlug": "english",
+    "subjectTitle": "英文",
+    "topicSlug": "grammar-mastery",
+    "topicTitle": "9. 高階文法與統測常考句型",
+    "desc": "about subjunctive mood, participle clauses, inversion, emphasis patterns, volitional verbs - 統測衝刺總複習"
+  },
+  {
+    "subjectSlug": "english",
+    "subjectTitle": "英文",
+    "topicSlug": "workplace-communication",
+    "topicTitle": "10. 職場溝通與工程商務",
+    "desc": "本章節涵蓋工地現場溝通、設計簡報、材料詢價與商務 Email、RFI 釋疑單、工程驗收缺失單（snag list），以及跨文化工作倫理等商務與實務應用英文。"
+  },
+  {
+    "subjectSlug": "english",
+    "subjectTitle": "英文",
+    "topicSlug": "reading-advanced",
+    "topicTitle": "11. 高階閱讀與多文本分析",
+    "desc": "about advanced reading comprehension, multi-text synthesis, author\\"
+  },
+  {
+    "subjectSlug": "english",
+    "subjectTitle": "英文",
+    "topicSlug": "translation-writing",
+    "topicTitle": "12. 統測非選實戰：翻譯與寫作",
+    "desc": "針對統測非選擇題型（如翻譯填空、句子重組、中譯英）與段落寫作提供實戰策略，包含語序轉換、意群拆解、寫作架構及標點符號的精準應用。"
+  },
+  {
+    "subjectSlug": "mechanics",
+    "subjectTitle": "基礎工程力學",
+    "topicSlug": "parallel-force-systems",
+    "topicTitle": "2A. 平面平行力系",
+    "desc": "分布載重、等值合力、作用線與支承反力。"
+  },
+  {
+    "subjectSlug": "mechanics",
+    "subjectTitle": "基礎工程力學",
+    "topicSlug": "nonconcurrent-force-systems",
+    "topicTitle": "2B. 共面非共點非平行力系",
+    "desc": "力、力偶與平面剛體三式平衡。"
+  },
+  {
+    "subjectSlug": "mechanics",
+    "subjectTitle": "基礎工程力學",
+    "topicSlug": "shear-properties",
+    "topicTitle": "7A. 剪力與剪應力",
+    "desc": "直接剪力、梁剪應力與剪力圖。"
+  },
+  {
+    "subjectSlug": "surveying",
+    "subjectTitle": "測量實習",
+    "topicSlug": "surveying-fundamentals",
+    "topicTitle": "0. 測量總論與誤差基礎",
+    "desc": "基準、單位、精度、誤差與有效數字。"
+  },
+  {
+    "subjectSlug": "surveying",
+    "subjectTitle": "測量實習",
+    "topicSlug": "indirect-distance-elevation",
+    "topicTitle": "4A. 間接距離與高程測量",
+    "desc": "視距、三角高程與不可達距離。"
+  },
+  {
+    "subjectSlug": "drafting",
+    "subjectTitle": "製圖實習",
+    "topicSlug": "drafting-fundamentals",
+    "topicTitle": "0. 製圖基本觀念與圖紙管理",
+    "desc": "圖紙規格、標題欄、折疊與版本管理。"
+  },
+  {
+    "subjectSlug": "drafting",
+    "subjectTitle": "製圖實習",
+    "topicSlug": "civil-architectural-drawings",
+    "topicTitle": "12. 土木與建築製圖整合判讀",
+    "desc": "平面、立面、剖面、結構與詳圖交叉查核。"
+  },
   {
     "subjectSlug": "chemistry",
     "subjectTitle": "化學",
@@ -225,48 +351,6 @@ export const topicSearchIndex = [
     "topicSlug": "cad-basics",
     "topicTitle": "8. CAD 繪圖基礎",
     "desc": "掌握 AutoCAD 座標系統、圖層管理 (ByLayer)、狀態列關鍵功能鍵 (OSNAP, ORTHO)、常用 20 大快捷鍵指令及 Viewport 出圖設定。"
-  },
-  {
-    "subjectSlug": "english",
-    "subjectTitle": "英語文",
-    "topicSlug": "vocabulary-phrases",
-    "topicTitle": "1. 字彙與片語",
-    "desc": "深入掌握構詞法、建築與工程專業字彙 (Architectural Terminology)、高頻動詞片語與空間位置介系詞。"
-  },
-  {
-    "subjectSlug": "english",
-    "subjectTitle": "英語文",
-    "topicSlug": "grammar-patterns",
-    "topicTitle": "2. 文法句型",
-    "desc": "五大基本句型、時態與被動語態、關係子句、分詞構句與假設語氣。"
-  },
-  {
-    "subjectSlug": "english",
-    "subjectTitle": "英語文",
-    "topicSlug": "reading-comprehension",
-    "topicTitle": "3. 閱讀測驗",
-    "desc": "略讀與掃讀技巧、綠建築與建築結構技術短文閱讀、上下文推論與文章主旨分析。"
-  },
-  {
-    "subjectSlug": "english",
-    "subjectTitle": "英語文",
-    "topicSlug": "conversation-daily-use",
-    "topicTitle": "4. 對話與日常應用",
-    "desc": "建築工地溝通、事務所設計會議、社交與生活英語、職場對話習慣用語。"
-  },
-  {
-    "subjectSlug": "english",
-    "subjectTitle": "英語文",
-    "topicSlug": "cloze-passage-structure",
-    "topicTitle": "5. 克漏字與篇章結構",
-    "desc": "篇章銜接、轉折語與邏輯連接詞、克漏字實戰解題策略與篇章結構重建。"
-  },
-  {
-    "subjectSlug": "english",
-    "subjectTitle": "英語文",
-    "topicSlug": "translation-writing",
-    "topicTitle": "6. 翻譯與寫作基礎",
-    "desc": "中譯英技巧、句型結構重組、建築與技術段落寫作結構、標點符號與寫作修辭。"
   },
   {
     "subjectSlug": "extensions",
@@ -659,5 +743,47 @@ export const topicSearchIndex = [
     "topicSlug": "area-and-error",
     "topicTitle": "6. 面積計算與誤差處理",
     "desc": "座標斜乘法/鞋帶公式 (Shoelace Formula)、倍經距法 (DMD)、測量誤差三大分類、最妥值與中誤差、誤差傳播定律。"
+  },
+  {
+    "subjectSlug": "extensions",
+    "subjectTitle": "進階主題",
+    "topicSlug": "parametric-design-and-ai-assisted-competition",
+    "topicTitle": "參數化設計與 AI 輔助競圖",
+    "desc": "AI 輔助與參數化設計是當代建築實務的核心競爭力。"
+  },
+  {
+    "subjectSlug": "extensions",
+    "subjectTitle": "進階主題",
+    "topicSlug": "portfolio-and-design-discourse",
+    "topicTitle": "作品集建構與設計論述",
+    "desc": "作品集不僅是呈現圖面，更是傳遞設計論述與個人思考的載體。"
+  },
+  {
+    "subjectSlug": "materials",
+    "subjectTitle": "材料實務",
+    "topicSlug": "green-building-materials",
+    "topicTitle": "綠建材、低碳水泥與循環經濟",
+    "desc": "永續發展與低碳材料已成為各國法規與建築標準的必備條件。"
+  },
+  {
+    "subjectSlug": "mechanics",
+    "subjectTitle": "力學實務",
+    "topicSlug": "structural-failures",
+    "topicTitle": "真實結構災難與生命財產安全",
+    "desc": "力學公式背後是真實的生命財產，忽略破壞直覺將導致嚴重災難。"
+  },
+  {
+    "subjectSlug": "drafting",
+    "subjectTitle": "製圖實務",
+    "topicSlug": "bim-concepts",
+    "topicTitle": "2D 到 3D BIM 資訊模型實務",
+    "desc": "2D 轉 3D 資訊模型是現代營建管理的必然趨勢。"
+  },
+  {
+    "subjectSlug": "drafting",
+    "subjectTitle": "製圖實務",
+    "topicSlug": "building-codes-far",
+    "topicTitle": "容積率、建蔽率與建築法規實務",
+    "desc": "容積率與建蔽率決定了基地的開發價值與物理環境品質。"
   }
 ] as const satisfies readonly TopicSearchItem[];

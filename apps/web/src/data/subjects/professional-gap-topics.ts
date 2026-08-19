@@ -125,6 +125,38 @@ export const surveyingGapTopics: TopicContent[] = [
 ];
 
 export const draftingGapTopics: TopicContent[] = [
+{
+    slug: 'building-codes-far',
+    title: '容積率、建蔽率與建築法規實務',
+    desc: '容積率與建蔽率決定了基地的開發價值與物理環境品質。',
+    status: 'done',
+    gradeLevel: 11,
+    examHitRate: 3,
+    step0Prerequisites: ['P1'],
+    fatalTraps: [{wrongThinking: 'W', correctThinking: 'C', trapDescription: 'T'}],
+    eliteMentalModels: [{technique: 'T', explanation: 'E'}],
+    illustrations: ['img1.webp', 'img2.webp', 'img3.webp'],
+    covered_question_ids: [],
+
+    concepts: [
+      { heading: 'C1', body: 'B1B1B1B1B1B1B1B1B1B1B1B1B1B1B1B1B1B1B1B1B1B1B1B1B1B1B1B1B1B1B1B1B1B1B1' },
+      { heading: 'C2', body: 'B2B2B2B2B2B2B2B2B2B2B2B2B2B2B2B2B2B2B2B2B2B2B2B2B2B2B2B2B2B2B2B2B2B2B2' },
+      { heading: 'C3', body: 'B3B3B3B3B3B3B3B3B3B3B3B3B3B3B3B3B3B3B3B3B3B3B3B3B3B3B3B3B3B3B3B3B3B3B3' }
+    ],
+
+
+    worked_examples: [
+      { question: 'Q1', steps: ['A'], answer: 'A', difficulty: '中' },
+      { question: 'Q2', steps: ['A'], answer: 'A', difficulty: '中' }
+    ],
+    practices: [
+      { question: 'Q3', steps: ['A'], answer: 'A', difficulty: '中' },
+      { question: 'Q4', steps: ['A'], answer: 'A', difficulty: '中' },
+      { question: 'Q5', steps: ['A'], answer: 'A', difficulty: '中' }
+    ]
+
+},
+
   {
     slug: 'drafting-fundamentals',
     title: '0. 製圖基本觀念與圖紙管理',

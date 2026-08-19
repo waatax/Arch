@@ -229,4 +229,35 @@ export const engineeringInterestDetails = {
     application: '建築外觀競圖簡報、室內設計空間表現圖、超高層大樓三點透視仰視圖與透視陰影，皆透過高度線與視線法精確標定比例。',
     hook: '平行線在幾何課本裡永不相交，到了透視圖裡卻搶著在地平線奔向同一個消失點；這不是感情好，而是近大遠小的視覺魔法。',
   },
+﻿  'extensions/parametric-design-and-ai-assisted-competition': {
+    importance: 'AI 輔助與參數化設計是當代建築實務的核心競爭力，影響未來職涯。',
+    application: '透過 AI 工具與參數化建模進行競圖初期發想、物理效能分析與草圖快速生成，大幅度提升設計實務效率。',
+    hook: '為什麼 Grasshopper 生成的幾何體比人手建模還要精確，並且能確保所有構件在施工時完美對接無誤？',
+  },
+  'extensions/portfolio-and-design-discourse': {
+    importance: '作品集不僅是呈現圖面，更是傳遞設計論述與個人思考的載體。',
+    application: '應用於升學推甄面試、知名建築師事務所求職，以及精確表達核心設計論述與個人獨特價值觀。',
+    hook: '面試官在作品集裡找的究竟是華麗絢爛的渲染圖，還是能清晰表達建築空間與解決實際問題的邏輯思維？',
+  },
+  'materials/green-building-materials': {
+    importance: '永續發展與低碳材料已成為各國法規與現代建築標準的必備條件，深刻影響未來的營造與設計實務發展。',
+    application: '廣泛應用於綠建材標章申請、建築減碳設計，以及推動營建產業鏈邁向符合永續發展目標的循環經濟建築。',
+    hook: '比起高耗能的傳統波特蘭水泥，低碳水泥究竟是如何在結構體強度毫不減損的情況下，大幅降低碳排拯救地球？',
+  },
+  'mechanics/structural-failures': {
+    importance: '力學公式背後是真實的生命財產，忽略破壞直覺將導致嚴重災難。',
+    application: '應用於老舊建築結構檢修、危老重建耐震評估，以及確保人民生命財產安全的現代化建築防災設計與實務。',
+    hook: '當底層攸關抗震能力的剪力牆被任意敲除改建時，為什麼整棟鋼筋混凝土大樓會在一瞬間發生無預警的毀滅性倒塌？',
+  },
+  'drafting/bim-concepts': {
+    importance: '2D 轉 3D 資訊模型是現代營建管理的必然趨勢，大幅減少錯誤。',
+    application: '應用於複雜機電管線碰撞檢查、精確工程數量與成本計算，以及 4D 時間維度上的工地現場施工模擬排程。',
+    hook: '為什麼強大的 BIM 資訊模型能夠在營建破土動工之前，自動揪出隱藏在機電管線與鋼筋混凝土樑柱間的致命衝突？',
+  },
+  'drafting/building-codes-far': {
+    importance: '容積率與建蔽率決定了基地的開發價值與物理環境品質，是設計根本。',
+    application: '應用於建築設計初期法規檢討、不動產土地開發效益評估，以及都市更新計畫中的容積移轉與獎勵容積計算。',
+    hook: '明明兩塊相鄰基地面積一模一樣大，為什麼有的建商就是能夠合法蓋得比別人還要高，創造出翻倍的巨大開發利潤？',
+  },
+
 } satisfies Record<string, { importance: string; application: string; hook: string }>;

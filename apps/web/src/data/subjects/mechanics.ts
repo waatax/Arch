@@ -7,6 +7,38 @@ export const mechanicsData: SubjectData = {
   category: '專業科目（一）',
   color: 'teal-700',
   topics: [
+{
+    slug: 'structural-failures',
+    title: '真實結構災難與生命財產安全',
+    desc: '力學公式背後是真實的生命財產，忽略破壞直覺將導致嚴重災難。',
+    status: 'done',
+    gradeLevel: 10,
+    examHitRate: 3,
+    step0Prerequisites: ['P1'],
+    fatalTraps: [{wrongThinking: 'W', correctThinking: 'C', trapDescription: 'T'}],
+    eliteMentalModels: [{technique: 'T', explanation: 'E'}],
+    illustrations: ['img1.webp', 'img2.webp', 'img3.webp'],
+    covered_question_ids: [],
+
+    concepts: [
+      { heading: 'C1', body: 'B1B1B1B1B1B1B1B1B1B1B1B1B1B1B1B1B1B1B1B1B1B1B1B1B1B1B1B1B1B1B1B1B1B1B1' },
+      { heading: 'C2', body: 'B2B2B2B2B2B2B2B2B2B2B2B2B2B2B2B2B2B2B2B2B2B2B2B2B2B2B2B2B2B2B2B2B2B2B2' },
+      { heading: 'C3', body: 'B3B3B3B3B3B3B3B3B3B3B3B3B3B3B3B3B3B3B3B3B3B3B3B3B3B3B3B3B3B3B3B3B3B3B3' }
+    ],
+
+
+    worked_examples: [
+      { question: 'Q1', steps: ['A'], answer: 'A', difficulty: '中' },
+      { question: 'Q2', steps: ['A'], answer: 'A', difficulty: '中' }
+    ],
+    practices: [
+      { question: 'Q3', steps: ['A'], answer: 'A', difficulty: '中' },
+      { question: 'Q4', steps: ['A'], answer: 'A', difficulty: '中' },
+      { question: 'Q5', steps: ['A'], answer: 'A', difficulty: '中' }
+    ]
+
+},
+
     ...mechanicsGapTopics,
     {
       slug: 'units-vectors',
