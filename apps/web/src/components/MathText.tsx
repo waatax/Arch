@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import { InlineMath, BlockMath } from 'react-katex';
 
 export default function MathText({ content, className }: { content?: string | null; className?: string }) {

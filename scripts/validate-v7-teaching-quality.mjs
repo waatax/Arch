@@ -30,7 +30,7 @@ const check = (label, result) => {
   if (!result) failures.push(label);
 };
 
-check('13 科與 105 個逐頁主題', subjects.length === 13 && topics.length === 105);
+check('13 科與 111 個逐頁主題', subjects.length === 13 && topics.length === 111);
 const conceptDepth = (concept) => [
   concept.body,
   ...(concept.steps ?? []),
