@@ -34,7 +34,7 @@ const checks = [
   ['home entry', home.includes('href="/goals"') && home.includes('終極目標')],
   ['navigation entry', navFlat.includes("href: '/goals'") && navFlat.includes("label: '終極目標'")],
   ['footer entry', footer.includes('href="/goals"')],
-  ['version check', (goals.includes('版本 V7.3') || goals.includes('版本 V8.01')) && (nav.includes('V7.3') || nav.includes('V8.01')) && (footer.includes('V7.3') || footer.includes('V8.01'))],
+  ['version check', (goals.includes('版本 V7.3') || goals.includes('版本 V8.01') || goals.includes('版本 V8.02')) && (nav.includes('V7.3') || nav.includes('V8.01') || nav.includes('V8.02')) && (footer.includes('V7.3') || footer.includes('V8.01') || footer.includes('V8.02'))],
   ['light and dark text pairing', goals.includes('text-slate-950 dark:text-white') && goals.includes('text-slate-600 dark:text-slate-300')],
 ];
 

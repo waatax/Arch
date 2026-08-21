@@ -15,7 +15,7 @@ export default function Footer() {
                 Arch
               </span>
               <span className="rounded-full bg-blue-700/10 dark:bg-blue-400/10 px-2 py-0.5 text-[10px] font-mono font-bold text-blue-700 dark:text-blue-300 border border-blue-700/20">
-                V8.01
+                V8.02
               </span>
             </div>
             <p className="text-sm leading-relaxed text-slate-600 dark:text-slate-400 max-w-md">
@@ -123,7 +123,7 @@ export default function Footer() {
               </li>
               <li>
                 <Link href="/resources" className="hover:text-blue-600 transition-colors">
-                  • 官方課綱與學習資源庫
+                  • 資格考試與官方資源庫
                 </Link>
               </li>
             </ul>
@@ -138,7 +138,7 @@ export default function Footer() {
           <div className="flex items-center gap-4">
             <Link href="/goals" className="hover:text-slate-800 dark:hover:text-slate-200 transition-colors">證照地圖</Link>
             <span>·</span>
-            <Link href="/resources" className="hover:text-slate-800 dark:hover:text-slate-200 transition-colors">官方來源</Link>
+            <Link href="/resources" className="hover:text-slate-800 dark:hover:text-slate-200 transition-colors">資格考試資源</Link>
             <span>·</span>
             <span>開放教育資源 (OER)</span>
           </div>

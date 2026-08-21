@@ -8,120 +8,115 @@ export const mechanicsData: SubjectData = {
   "topics": [
     {
       slug: 'structural-failures',
-      "title": "真實結構災難與生命財產安全",
-      "desc": "力學公式背後是真實的生命財產，忽略破壞直覺將導致嚴重災難。",
-      "status": "done",
-      "gradeLevel": 10,
-      "examHitRate": 3,
-      "step0Prerequisites": [
-        "真實結構災難與生命財產安全之核心基本定義與物理幾何概念",
-        "解題前置檢核：確認題型情境、已知條件量與求解目標"
+      title: '真實結構災難與生命財產安全',
+      desc: '以工程實例剖析結構破壞機制，從塔科馬海峽吊橋風致共振、921 地震軟弱底層剪力破壞到安全係數設計哲學，建立結構安全之根本直覺。',
+      status: 'done',
+      gradeLevel: 10,
+      examHitRate: 4,
+      step0Prerequisites: [
+        '極限狀態設計法與容許應力法之基本概念',
+        '破壞模式分類：拉伸降伏、受壓挫屈、剪力脆性斷裂與共振疲勞'
       ],
-      "fatalTraps": [
+      fatalTraps: [
         {
-          "wrongThinking": "直覺選擇字面相近選項，未仔細檢驗題幹之特定限制條件。",
-          "correctThinking": "回歸核心公理與基本定義，逐項檢核題幹條件與反例。",
-          "trapDescription": "80% 考生在概念題中因粗心忽略前提假設而失分。"
+          wrongThinking: '認為結構只要材料強度夠高，斷面越大就絕對安全，忽略細長比導致的挫屈破壞。',
+          correctThinking: '細長受壓構件（如細長鋼柱、桁架壓桿）破壞往往由尤拉挫屈 (Euler Buckling) 控制，挫屈應力與抗彎剛度 EI 及長度平方成反比，與材料抗拉強度關係極小。',
+          trapDescription: '忽略幾何不穩定性與挫屈效應，是結構力學中最致命的盲點。'
+        },
+        {
+          wrongThinking: '將安全係數 (Factor of Safety, FS) 視為偷工減料或超載的隨意緩衝餘量。',
+          correctThinking: '安全係數 FS = 極限強度 / 容許應力 (通常 FS ≥ 1.5~2.0)，旨在涵蓋載重不確定性、材料強度變異性、施工品質誤差與計算模型假設之不可預期風險。',
+          trapDescription: '誤解安全係數定義，無法正確認知工程極限載重與容許載重之界限。'
         }
       ],
-      "eliteMentalModels": [
+      eliteMentalModels: [
         {
-          "technique": "第一性原理拆解法 (First Principles Breakdown)",
-          "explanation": "不依賴死記死背，由最底層的定義與公理邏輯推導出解題路徑，降維打擊各類統測變形題。"
+          technique: '破壞路徑逆向追蹤法 (Failure Mode Inversion)',
+          explanation: '分析結構時，先假設三種可能破壞模式（彎曲降伏、剪力開裂、側向挫屈），分別計算各模式對應之極限載重，其中最小載重即為控制結構生死的臨界破壞機制。'
         }
       ],
-      "illustrations": [
-        "img1.webp",
-        "img2.webp",
-        "img3.webp"
+      illustrations: [
+        'context.webp',
+        'concept-diagram.webp',
+        'structural-failures.webp',
+        'step-by-step.webp'
       ],
-      "covered_question_ids": [],
-      "concepts": [
+      covered_question_ids: [],
+      concepts: [
         {
-          "heading": "C1",
-          "body": "B1B1B1B1B1B1B1B1B1B1B1B1B1B1B1B1B1B1B1B1B1B1B1B1B1B1B1B1B1B1B1B1B1B1B1"
+          heading: '結構破壞模式與破壞機制分析',
+          body: '工程結構的破壞依受力型態可分為四類：(1) 拉伸延性破壞（材料產生明顯塑性變形與頸縮警告）；(2) 受壓挫屈破壞（細長構件失穩瞬間折斷，屬於突發性破壞）；(3) 剪力脆性破壞（如混凝土柱產生 45 度斜向剪力裂縫，無預警崩塌）；(4) 動態疲勞與共振破壞（如美國塔科馬吊橋因卡門渦街頻率與橋身扭轉自振頻率相符而產生氣動共振坍塌）。',
+          formula: '挫屈臨界載重: P_cr = (π² E I) / (K L)²\n安全係數: FS = 極限破壞載重 / 容許設計載重 ≥ 1.5'
         },
         {
-          "heading": "C2",
-          "body": "B2B2B2B2B2B2B2B2B2B2B2B2B2B2B2B2B2B2B2B2B2B2B2B2B2B2B2B2B2B2B2B2B2B2B2"
+          heading: '台灣 921 地震之結構教訓：軟弱層與短柱效應',
+          body: '1999 年 921 大地震中，許多沿街騎樓或住商混合大樓倒塌，主因是「一樓挑高、無隔震牆」形成軟弱底層 (Soft Story)，地震橫向剪力集中於一樓柱頂柱底造成塑性鉸破壞；另一典型破壞為樓梯間窗台矮牆束縛柱子，使柱有效長度減半形成「短柱 (Short Column)」，剪力劇增導致柱身 45 度 X 型脆性剪拉破壞。'
         },
         {
-          "heading": "C3",
-          "body": "B3B3B3B3B3B3B3B3B3B3B3B3B3B3B3B3B3B3B3B3B3B3B3B3B3B3B3B3B3B3B3B3B3B3B3"
+          heading: '安全係數 (FS) 與強柱弱梁耐震設計哲學',
+          body: '現代耐震法規強調「強柱弱梁、強剪弱彎」之設計哲學：確保梁端先發生彎曲塑性變形消散地震能量，保護承重柱不發生脆性剪力破壞，維持整體結構豎向支撐系統不崩塌，爭取人員黃金逃生時間。'
         }
       ],
-      "worked_examples": [
+      worked_examples: [
         {
-          "question": "Q1",
-          "steps": [
-            "A ｜為什麼：依據工程力學核心規範與力學幾何定理演算。"
+          question: '【經典結構安全例題】某鋼結構立柱截面為實心方柱（邊長 b = 100 mm），長度 L = 4 m，兩端皆為鉸支承 (K = 1.0)。已知鋼材彈性模數 E = 200 GPa = 200 × 10³ MPa。試依尤拉公式計算：(1) 該柱之斷面慣性矩 I；(2) 臨界挫屈載重 P_cr；(3) 若設計要求安全係數 FS = 2.0，該柱之容許承載力 P_allow 為多少 kN？',
+          steps: [
+            '步驟 1：計算方形截面慣性矩。I = b⁴ / 12 = 100⁴ / 12 = 10⁸ / 12 ≈ 8.333 × 10⁶ mm⁴。 ｜為什麼：慣性矩量化截面抵抗彎曲變形之幾何能力。',
+            '步驟 2：代入尤拉臨界挫屈公式。P_cr = π² E I / (KL)² = π² × (200 × 10³ N/mm²) × (8.333 × 10⁶ mm⁴) / (1.0 × 4000 mm)² ≈ 1028080 N ≈ 1028.1 kN。 ｜為什麼：細長比由長度與回轉半徑決定，挫屈由 Euler 公式控制。',
+            '步驟 3：應用安全係數求解容許載重。P_allow = P_cr / FS = 1028.1 kN / 2.0 ≈ 514.05 kN。 ｜為什麼：容許載重必須除以安全係數以確保極端工況下之結構安全。'
           ],
-          "answer": "A",
-          "difficulty": "中",
-          "hints": [
-            "分析題目核心條件與工程力學規範/定理",
-            "列出對應計算式或幾何平衡條件求解"
-          ],
-          "commonMistake": "容易在正負號方向、單位換算 (如 MPa = N/mm²) 或圖例符號代入時產生計算失誤。",
-          "eliteShortcut": "工程實務破題法：善用對稱性與基準線選定，直接鎖定關鍵數據快速秒殺！"
-        },
-        {
-          "question": "Q2",
-          "steps": [
-            "A ｜為什麼：依據工程力學核心規範與力學幾何定理演算。"
-          ],
-          "answer": "A",
-          "difficulty": "中",
-          "hints": [
-            "分析題目核心條件與工程力學規範/定理",
-            "列出對應計算式或幾何平衡條件求解"
-          ],
-          "commonMistake": "容易在正負號方向、單位換算 (如 MPa = N/mm²) 或圖例符號代入時產生計算失誤。",
-          "eliteShortcut": "工程實務破題法：善用對稱性與基準線選定，直接鎖定關鍵數據快速秒殺！"
+          answer: '(1) 截面慣性矩 I ≈ 8.33 × 10⁶ mm⁴；(2) 臨界挫屈載重 P_cr ≈ 1028 kN；(3) 容許承載力 P_allow ≈ 514 kN。',
+          difficulty: '中等',
+          hints: ['注意長度單位換算 4 m = 4000 mm', 'GPa 換算為 MPa = N/mm²'],
+          commonMistake: '常有考生忘記將公尺換算為毫米，導致分母差了 10⁶ 倍。',
+          eliteShortcut: '速算檢查：π² ≈ 10，分子約 200×10³ × 8.33×10⁶ × 10 = 1.666×10¹³，除以 1.6×10⁷ ≈ 1.04×10⁶ N = 1040 kN，心算即可驗證量級！'
         }
       ],
-      "practices": [
+      practices: [
         {
-          "question": "Q3",
-          "steps": [
-            "A ｜為什麼：依據工程力學核心規範與力學幾何定理演算。"
+          question: '在地震工程中，若某鋼筋混凝土柱的淨高由 3.6 m 因加設窗台矮牆而被縮短為 1.2 m（有效長度變為原本的 1/3），在相同側移量 Δ 下，該柱所承受的地震剪力會變為原來的幾倍？',
+          steps: [
+            '柱側向剛度 k = 12EI / L³，與柱長度三次方成反比。',
+            '長度變為 1/3，剛度變為 1 / (1/3)³ = 27 倍。',
+            '相同側移 Δ 下，剪力 V = kΔ，剪力劇增為原本的 27 倍，極易引發短柱脆性剪力破壞。'
           ],
-          "answer": "A",
-          "difficulty": "中",
-          "hints": [
-            "分析題目核心條件與工程力學規範/定理",
-            "列出對應計算式或幾何平衡條件求解"
-          ],
-          "commonMistake": "容易在正負號方向、單位換算 (如 MPa = N/mm²) 或圖例符號代入時產生計算失誤。",
-          "eliteShortcut": "工程實務破題法：善用對稱性與基準線選定，直接鎖定關鍵數據快速秒殺！"
+          answer: '27 倍（剪力與柱長三次方成反比，導致短柱效應剪力急遽集中）',
+          difficulty: '進階'
         },
         {
-          "question": "Q4",
-          "steps": [
-            "A ｜為什麼：依據工程力學核心規範與力學幾何定理演算。"
+          question: '工程中若要求某吊索鋼纜之極限破壞拉力為 120 kN，設計規定安全係數 FS 不得小於 3.0，試問該鋼纜最大容許懸吊重量（容許拉力）為多少 kN？',
+          steps: [
+            '容許拉力 P_allow = P_ult / FS = 120 kN / 3.0 = 40 kN。'
           ],
-          "answer": "A",
-          "difficulty": "中",
-          "hints": [
-            "分析題目核心條件與工程力學規範/定理",
-            "列出對應計算式或幾何平衡條件求解"
-          ],
-          "commonMistake": "容易在正負號方向、單位換算 (如 MPa = N/mm²) 或圖例符號代入時產生計算失誤。",
-          "eliteShortcut": "工程實務破題法：善用對稱性與基準線選定，直接鎖定關鍵數據快速秒殺！"
+          answer: '40 kN',
+          difficulty: '基礎'
         },
         {
-          "question": "Q5",
-          "steps": [
-            "A ｜為什麼：依據工程力學核心規範與力學幾何定理演算。"
+          question: '為何現代建築耐震設計規範嚴格要求「強柱弱梁 (Strong Column Weak Beam)」？',
+          steps: [
+            '若梁先降伏，梁端塑性鉸可大量消散地震能量，且局部梁受損不致造成大樓整體坍塌。',
+            '若柱先破壞，整棟大樓瞬間喪失垂直承載力，會引發致命的垂直粉碎性崩塌。'
           ],
-          "answer": "A",
-          "difficulty": "中",
-          "hints": [
-            "分析題目核心條件與工程力學規範/定理",
-            "列出對應計算式或幾何平衡條件求解"
+          answer: '確保地震能量由梁端塑性鉸吸收，防止承重柱破壞導致大樓整體粉碎性坍塌。',
+          difficulty: '觀念'
+        },
+        {
+          question: '美國塔科馬海峽吊橋 (Tacoma Narrows Bridge) 於 1940 年在微風中倒塌，其力學主因為何？',
+          steps: [
+            '風流經實心板梁主梁斷面時產生週期性交替脫離的「卡門渦街 (von Kármán Vortex Street)」。',
+            '脫離頻率與吊橋扭轉自振頻率吻合引發氣動共振扭轉，最終超越結構抗扭極限斷裂。'
           ],
-          "commonMistake": "容易在正負號方向、單位換算 (如 MPa = N/mm²) 或圖例符號代入時產生計算失誤。",
-          "eliteShortcut": "工程實務破題法：善用對稱性與基準線選定，直接鎖定關鍵數據快速秒殺！"
+          answer: '卡門渦街引發氣動自激共振扭轉破壞',
+          difficulty: '進階'
+        },
+        {
+          question: '計算受壓構件之尤拉挫屈載重時，下列哪項因素「不會」影響臨界挫屈載重 P_cr 的大小？',
+          steps: [
+            '尤拉公式 P_cr = π²EI / (KL)²，包含彈性模數 E、慣性矩 I、長度 L 及支承條件 K。',
+            '材料的抗拉極限強度與降伏強度只要在彈性範圍內，不影響挫屈載重大小。'
+          ],
+          answer: '材料的抗拉極限強度 (只要處於彈性範圍內，挫屈由剛度 EI 控制)',
+          difficulty: '易錯題'
         }
       ]
     },
@@ -581,9 +576,9 @@ export const mechanicsData: SubjectData = {
       ],
       "fatalTraps": [
         {
-          "wrongThinking": "直覺選擇字面相近選項，未仔細檢驗題幹之特定限制條件。",
+          "wrongThinking": "直覺套用公式而忽略先決條件（如桁架節點無外力才能判定零桿、或構件必須受阻才會產生熱應力）。",
           "correctThinking": "回歸核心公理與基本定義，逐項檢核題幹條件與反例。",
-          "trapDescription": "80% 考生在概念題中因粗心忽略前提假設而失分。"
+          "trapDescription": "考生常因忽略正負號約定（如拉力為正/壓力為負、逆時針為正力矩）或未確認自由體圖支承反力完整性而失分。"
         }
       ],
       "eliteMentalModels": [
@@ -812,9 +807,9 @@ export const mechanicsData: SubjectData = {
       ],
       "fatalTraps": [
         {
-          "wrongThinking": "直覺選擇字面相近選項，未仔細檢驗題幹之特定限制條件。",
+          "wrongThinking": "直覺套用公式而忽略先決條件（如桁架節點無外力才能判定零桿、或構件必須受阻才會產生熱應力）。",
           "correctThinking": "回歸核心公理與基本定義，逐項檢核題幹條件與反例。",
-          "trapDescription": "80% 考生在概念題中因粗心忽略前提假設而失分。"
+          "trapDescription": "考生常因忽略正負號約定（如拉力為正/壓力為負、逆時針為正力矩）或未確認自由體圖支承反力完整性而失分。"
         }
       ],
       "eliteMentalModels": [
@@ -1031,9 +1026,9 @@ export const mechanicsData: SubjectData = {
       ],
       "fatalTraps": [
         {
-          "wrongThinking": "直覺選擇字面相近選項，未仔細檢驗題幹之特定限制條件。",
+          "wrongThinking": "直覺套用公式而忽略先決條件（如桁架節點無外力才能判定零桿、或構件必須受阻才會產生熱應力）。",
           "correctThinking": "回歸核心公理與基本定義，逐項檢核題幹條件與反例。",
-          "trapDescription": "80% 考生在概念題中因粗心忽略前提假設而失分。"
+          "trapDescription": "考生常因忽略正負號約定（如拉力為正/壓力為負、逆時針為正力矩）或未確認自由體圖支承反力完整性而失分。"
         }
       ],
       "eliteMentalModels": [
@@ -1424,9 +1419,9 @@ export const mechanicsData: SubjectData = {
       ],
       "fatalTraps": [
         {
-          "wrongThinking": "直覺選擇字面相近選項，未仔細檢驗題幹之特定限制條件。",
+          "wrongThinking": "直覺套用公式而忽略先決條件（如桁架節點無外力才能判定零桿、或構件必須受阻才會產生熱應力）。",
           "correctThinking": "回歸核心公理與基本定義，逐項檢核題幹條件與反例。",
-          "trapDescription": "80% 考生在概念題中因粗心忽略前提假設而失分。"
+          "trapDescription": "考生常因忽略正負號約定（如拉力為正/壓力為負、逆時針為正力矩）或未確認自由體圖支承反力完整性而失分。"
         }
       ],
       "eliteMentalModels": [
@@ -1481,7 +1476,7 @@ export const mechanicsData: SubjectData = {
         },
         {
           "heading": "**零桿 (Zero-Force Members)** 的兩大快速判別定理",
-          "body": "在進行詳細力學計算前，快速找出不受力的零桿可大幅簡化計算流程。",
+          "body": "在進行詳細力學計算前，快速找出不受力的零桿可大幅簡化計算流程：(1) 二桿接頭無外力且不共線，兩桿皆為零桿；(2) 三桿接頭無外力且兩桿共線，不共線之第三桿必為零桿。",
           "table": {
             "headers": [
               "節點幾何特徵",
@@ -1612,9 +1607,9 @@ export const mechanicsData: SubjectData = {
       ],
       "fatalTraps": [
         {
-          "wrongThinking": "直覺選擇字面相近選項，未仔細檢驗題幹之特定限制條件。",
+          "wrongThinking": "直覺套用公式而忽略先決條件（如桁架節點無外力才能判定零桿、或構件必須受阻才會產生熱應力）。",
           "correctThinking": "回歸核心公理與基本定義，逐項檢核題幹條件與反例。",
-          "trapDescription": "80% 考生在概念題中因粗心忽略前提假設而失分。"
+          "trapDescription": "考生常因忽略正負號約定（如拉力為正/壓力為負、逆時針為正力矩）或未確認自由體圖支承反力完整性而失分。"
         }
       ],
       "eliteMentalModels": [
@@ -2150,9 +2145,9 @@ export const mechanicsData: SubjectData = {
       ],
       "fatalTraps": [
         {
-          "wrongThinking": "直覺選擇字面相近選項，未仔細檢驗題幹之特定限制條件。",
+          "wrongThinking": "直覺套用公式而忽略先決條件（如桁架節點無外力才能判定零桿、或構件必須受阻才會產生熱應力）。",
           "correctThinking": "回歸核心公理與基本定義，逐項檢核題幹條件與反例。",
-          "trapDescription": "80% 考生在概念題中因粗心忽略前提假設而失分。"
+          "trapDescription": "考生常因忽略正負號約定（如拉力為正/壓力為負、逆時針為正力矩）或未確認自由體圖支承反力完整性而失分。"
         }
       ],
       "eliteMentalModels": [
@@ -2323,9 +2318,9 @@ export const mechanicsData: SubjectData = {
       ],
       "fatalTraps": [
         {
-          "wrongThinking": "直覺選擇字面相近選項，未仔細檢驗題幹之特定限制條件。",
+          "wrongThinking": "直覺套用公式而忽略先決條件（如桁架節點無外力才能判定零桿、或構件必須受阻才會產生熱應力）。",
           "correctThinking": "回歸核心公理與基本定義，逐項檢核題幹條件與反例。",
-          "trapDescription": "80% 考生在概念題中因粗心忽略前提假設而失分。"
+          "trapDescription": "考生常因忽略正負號約定（如拉力為正/壓力為負、逆時針為正力矩）或未確認自由體圖支承反力完整性而失分。"
         }
       ],
       "eliteMentalModels": [

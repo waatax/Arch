@@ -532,7 +532,7 @@ export const topicSearchIndex = [
     "subjectTitle": "材料與試驗",
     "topicSlug": "wood",
     "topicTitle": "5. 木材構造與品質試驗",
-    "desc": "木材年輪構造、纖維飽和點 (FSP)、含水率與強度關係、集成材 (Glulam) 與 CLT 技術規格、木材防腐防蟻壓力注入法與抗灣試驗。"
+    "desc": "木材年輪構造、纖維飽和點 (FSP)、含水率與強度關係、集成材 (Glulam) 與 CLT 技術規格、木材防腐防蟻壓力注入法與抗彎試驗。"
   },
   {
     "subjectSlug": "materials",

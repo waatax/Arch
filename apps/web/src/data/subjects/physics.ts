@@ -1601,7 +1601,7 @@ export const physicsData: SubjectData = {
         },
         {
           "heading": "電學單位與建築纜線規格對照表 (Electrical Parameters & Gauge)",
-          "body": "電學常用單位、導線截面積與安全載流量規範表。",
+          "body": "建築電氣基礎與安全配線規範：電壓 V (伏特)、電流 I (安培)、電阻 R (歐姆)，歐姆定律 V = I·R；單相交流電功率 P = V·I·cosφ (W)；三相交流電功率 P = √3·V·I·cosφ；依據《用戶用電設備裝置規則》，1.6 mm 實心銅線安全載流量為 15 A，2.0 mm 為 19 A，5.5 mm² 絞線為 25 A，需嚴格搭配無熔線斷路器 (NFB) 防止過載走火。",
           "table": {
             "headers": [
               "電學物理量 / 設備",

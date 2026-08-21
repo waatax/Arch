@@ -8,239 +8,219 @@ export const extensionsData: SubjectData = {
   "topics": [
     {
       slug: 'parametric-design-and-ai-assisted-competition',
-      "title": "參數化設計與 AI 輔助競圖",
-      "desc": "AI 輔助與參數化設計是當代建築實務的核心競爭力。",
-      "status": "done",
-      "gradeLevel": 11,
-      "examHitRate": 3,
-      "step0Prerequisites": [
-        "建築工程綜合知識",
-        "綠建築與智慧建築概念"
+      title: '參數化設計與 AI 輔助競圖',
+      desc: '掌握 Rhino / Grasshopper 演算法幾何生成、BIM 參數化族群、多目標空間最佳化與 AI 輔助建築競圖之全流程工作坊。',
+      status: 'done',
+      gradeLevel: 11,
+      examHitRate: 4,
+      step0Prerequisites: [
+        '二維向量與三維空間座標轉換 (X, Y, Z)',
+        'NURBS 非均勻有理 B 樣條曲線與曲面幾何原理',
+        '演算法邏輯：輸入參數 (Input) → 邏輯運算 (Algorithm) → 幾何生成 (Output)'
       ],
-      "fatalTraps": [
+      fatalTraps: [
         {
-          "wrongThinking": "前瞻建築科技原理與指標規範混淆。",
-          "correctThinking": "依據綠建築與智慧建築官方最新法規手冊評定。",
-          "trapDescription": "永續前瞻建築指標評定。"
+          wrongThinking: '認為參數化設計只是用演算法生成吸睛奇特的外觀曲面，忽視結構力學限制與施工可行性。',
+          correctThinking: '真正的參數化設計是「性能驅動 (Performance-Driven Design)」：將日照分析、風場模擬、結構受力與材料標準模矩作為參數約束條件，尋求空間綜合最佳解。',
+          trapDescription: '脫離工程與物理限制的參數化流於純視覺形式，無法在競圖與實務落地。'
+        },
+        {
+          wrongThinking: '使用 AI 算圖直接取代建築平立剖面與結構施工邏輯。',
+          correctThinking: 'AI 生成工具（如 Midjourney / ControlNet）用於概念發想與氛圍渲染，必須搭配 CAD / BIM 嚴謹之空間尺度與人體工學檢討。',
+          trapDescription: '誤將未經尺度檢驗的 AI 渲染圖當成完整建築設計方案。'
         }
       ],
-      "eliteMentalModels": [
+      eliteMentalModels: [
         {
-          "technique": "永續前瞻科技整合評估模型",
-          "explanation": "整合 BIM 數位孿生、智慧綠建築指標與全生命週期減碳評估。"
+          technique: '演算法雙向反饋架構 (Parametric Feedback Loop)',
+          explanation: '建立「環境參數（太陽軌跡/風向） + 空間機能需求 → 演算法幾何 → 性能模擬檢驗 (Ladybug / Karamba) → 自動修正參數」之閉環設計流程。'
         }
       ],
-      "illustrations": [
-        "img1.webp",
-        "img2.webp",
-        "img3.webp"
+      illustrations: [
+        'context.webp',
+        'concept-diagram.webp',
+        'parametric-design.webp',
+        'step-by-step.webp'
       ],
-      "covered_question_ids": [],
-      "concepts": [
+      covered_question_ids: [],
+      concepts: [
         {
-          "heading": "C1",
-          "body": "B1B1B1B1B1B1B1B1B1B1B1B1B1B1B1B1B1B1B1B1B1B1B1B1B1B1B1B1B1B1B1B1B1B1B1"
+          heading: '參數化設計核心概念與 Grasshopper 節點式運算',
+          body: '參數化設計 (Parametric Design) 將傳統靜態的幾何形體轉化為「參數與演算法關係鏈」。在 Rhino / Grasshopper 中，設計師定義點、線、面、向量、數列 (Series) 及區間 (Domain)，當改變滑桿數值（如遮陽板角度或跨度高度比）時，所有幾何形體與結構構件將自動即時重構。',
+          formula: 'NURBS 曲線: C(u) = Σ [N_{i,p}(u) · w_i · P_i] / Σ [N_{i,p}(u) · w_i]\n遮陽最佳化: min(Solar Heat Gain) while max(Daylight Factor)'
         },
         {
-          "heading": "C2",
-          "body": "B2B2B2B2B2B2B2B2B2B2B2B2B2B2B2B2B2B2B2B2B2B2B2B2B2B2B2B2B2B2B2B2B2B2B2"
+          heading: '性能驅動設計與遺傳演算法 (Galapagos) 空間最佳化',
+          body: '透過將建築形體連結至環境模擬外掛（如 Ladybug 日照輻射、Butterfly CFD 風場、Karamba 結構應力），利用遺傳演算法 (Genetic Algorithm, 如 Galapagos 求解器)，在數千組可能之曲面或遮陽形體中，自動搜尋滿足「全年空調耗能最低」與「採光係數最高」的最佳幾何配置。'
         },
         {
-          "heading": "C3",
-          "body": "B3B3B3B3B3B3B3B3B3B3B3B3B3B3B3B3B3B3B3B3B3B3B3B3B3B3B3B3B3B3B3B3B3B3B3"
+          heading: 'AI 輔助建築競圖工作流 (AI-Assisted Competition Workflow)',
+          body: '現代建築競圖工作流結合「3D 空間白模 (Massing Model) → ControlNet 深度圖/線稿約束 → 生成式 AI 質感生成 → Photoshop 局部細修 (Inpainting) → 結合平面圖/剖面圖圖面排版」，兼顧前瞻視覺震撼力與實體空間尺度合理性。'
         }
       ],
-      "worked_examples": [
+      worked_examples: [
         {
-          "question": "Q1",
-          "steps": [
-            "A ｜為什麼：依據前瞻建築科技國家標準與幾何計算公式嚴密推導。"
+          question: '【參數化立面遮陽設計例題】某南向辦公大樓欲利用 Grasshopper 設計參數化垂直遮陽板。已知立面共有 20 樘垂直遮陽板，間距 d = 1.2 m，板寬 w = 0.6 m。若夏至正午太陽入射仰角為 60°，若欲使直射日光在正午時完全無法射入室內，試問：(1) 參數化遮陽設計中，控制遮陽板旋轉的主要環境輸入變數為何？(2) 若遮陽板有效遮擋長度需達 0.6 m，遮陽板旋轉角度之幾何判定原則為何？',
+          steps: [
+            '步驟 1：識別參數化輸入變數。主要環境輸入變數包含：太陽仰角 (Altitude Angle)、太陽方位角 (Azimuth Angle)、日照輻射量 (Solar Radiation) 及室內採光眩光指數。 ｜為什麼：環境參數作為演算法驅動幾何旋轉的即時依據。',
+            '步驟 2：建立幾何旋轉判定。設遮陽板旋轉角為 θ，板寬為 w。有效遮蔽寬度 w_eff = w · sin(θ)。當光線入射且有效投影滿足開口遮蔽要求時，即可達成 100% 遮陽。 ｜為什麼：利用三角幾何函數將旋轉角度與遮陽效能建立函數關係。'
           ],
-          "answer": "A",
-          "difficulty": "中",
-          "hints": [
-            "分析題目測量幾何條件或前瞻建築科技規範要求",
-            "列出計算式或正投影三視圖/CNS 製圖規則進行推導"
-          ],
-          "commonMistake": "容易在正負號閉合差分配、視圖虛線對齊或比例尺換算時產生失誤。",
-          "eliteShortcut": "工程圖表秒殺法：抓住幾何基準線與規範關鍵字，直接鎖定正確數值或投影特徵！"
-        },
-        {
-          "question": "Q2",
-          "steps": [
-            "A ｜為什麼：依據前瞻建築科技國家標準與幾何計算公式嚴密推導。"
-          ],
-          "answer": "A",
-          "difficulty": "中",
-          "hints": [
-            "分析題目測量幾何條件或前瞻建築科技規範要求",
-            "列出計算式或正投影三視圖/CNS 製圖規則進行推導"
-          ],
-          "commonMistake": "容易在正負號閉合差分配、視圖虛線對齊或比例尺換算時產生失誤。",
-          "eliteShortcut": "工程圖表秒殺法：抓住幾何基準線與規範關鍵字，直接鎖定正確數值或投影特徵！"
+          answer: '(1) 輸入變數為太陽仰角、方位角與即時日射量；(2) 幾何判定為遮陽板法線旋轉角需配合太陽入射角使有效投影寬度大於開口臨界值。',
+          difficulty: '中等',
+          hints: ['參數化設計核心為將環境數據作為驅動函數', '遮蔽效果與旋轉角度呈三角函數關係'],
+          commonMistake: '常有學生只顧遮陽美觀而忽略冬季採光與夏季遮陽之動態角度需求。',
+          eliteShortcut: '環境驅動原則：夏季仰角高 (60°~80°) 重水平遮陽；冬春秋晨昏仰角低重垂直遮陽！'
         }
       ],
-      "practices": [
+      practices: [
         {
-          "question": "Q3",
-          "steps": [
-            "A ｜為什麼：依據前瞻建築科技國家標準與幾何計算公式嚴密推導。"
+          question: '在 Grasshopper 參數化建模中，「數列 (Series)」與「區間 (Domain)」運算組件的主要功能差異為何？',
+          steps: [
+            'Series 產生固定步長之數值清單（如從 0 開始每次加 10 產生 5 個數字：0, 10, 20, 30, 40）。',
+            'Domain 定義數值的範圍區間（如 0 到 100），常搭配 Remap 進行數值重新映射。'
           ],
-          "answer": "A",
-          "difficulty": "中",
-          "hints": [
-            "分析題目測量幾何條件或前瞻建築科技規範要求",
-            "列出計算式或正投影三視圖/CNS 製圖規則進行推導"
-          ],
-          "commonMistake": "容易在正負號閉合差分配、視圖虛線對齊或比例尺換算時產生失誤。",
-          "eliteShortcut": "工程圖表秒殺法：抓住幾何基準線與規範關鍵字，直接鎖定正確數值或投影特徵！"
+          answer: 'Series 用於生成等差數列數值群，Domain 用於界定數值上下邊界範圍與映射',
+          difficulty: '基礎'
         },
         {
-          "question": "Q4",
-          "steps": [
-            "A ｜為什麼：依據前瞻建築科技國家標準與幾何計算公式嚴密推導。"
+          question: '在利用 AI 工具（如 ControlNet）輔助建築立面渲染時，何種前置輸入最能確保生成圖符合原本 3D 模型之精確空間幾何與透視關係？\n(A) 純文字提示詞 (Text Prompt)\n(B) 3D 模型導出之深度圖 (Depth Map) 或邊緣線稿圖 (Canny Line)\n(C) 隨機雜訊底圖\n(D) 手機拍攝之實景照片。',
+          steps: [
+            'Depth Map 或 Canny Line 提供了確定的空間距離與邊緣幾何約束，能防止 AI 自由發揮導致空間扭曲變形。'
           ],
-          "answer": "A",
-          "difficulty": "中",
-          "hints": [
-            "分析題目測量幾何條件或前瞻建築科技規範要求",
-            "列出計算式或正投影三視圖/CNS 製圖規則進行推導"
-          ],
-          "commonMistake": "容易在正負號閉合差分配、視圖虛線對齊或比例尺換算時產生失誤。",
-          "eliteShortcut": "工程圖表秒殺法：抓住幾何基準線與規範關鍵字，直接鎖定正確數值或投影特徵！"
+          answer: '(B) 3D 模型導出之深度圖 (Depth Map) 或邊緣線稿圖 (Canny Line)',
+          difficulty: '中等'
         },
         {
-          "question": "Q5",
-          "steps": [
-            "A ｜為什麼：依據前瞻建築科技國家標準與幾何計算公式嚴密推導。"
+          question: '何謂建築參數化設計中的「遺傳演算法 (Genetic Algorithm)」？',
+          steps: [
+            '模擬生物進化論之基因突變、交叉與適者生存機制，在多變數解空間中自動疊代搜尋滿足結構強度與節能目標的最佳化形體。'
           ],
-          "answer": "A",
-          "difficulty": "中",
-          "hints": [
-            "分析題目測量幾何條件或前瞻建築科技規範要求",
-            "列出計算式或正投影三視圖/CNS 製圖規則進行推導"
+          answer: '模擬生物演化機制，自動搜尋多目標約束條件下之最佳建築幾何形態',
+          difficulty: '進階'
+        },
+        {
+          question: '在 BIM 參數化模型建立中，LOD (Level of Development) 300 代表何種精細度？',
+          steps: [
+            'LOD 100 為概念量體、LOD 200 為大致尺寸、LOD 300 為具體幾何形狀/尺寸/精準位置之施工圖等級模型。'
           ],
-          "commonMistake": "容易在正負號閉合差分配、視圖虛線對齊或比例尺換算時產生失誤。",
-          "eliteShortcut": "工程圖表秒殺法：抓住幾何基準線與規範關鍵字，直接鎖定正確數值或投影特徵！"
+          answer: '模型構件具備精確的幾何形狀、尺寸、數量、空間位置與構造方向',
+          difficulty: '中等'
+        },
+        {
+          question: '在參數化曲面設計中，NURBS 曲面的階數 (Degree) 通常建議設定為多少以兼顧曲面平滑度與計算效率？',
+          steps: [
+            'Degree 3（三次曲線/曲面）是工程與 CAD 軟體中最通用的標準，具備連續且平滑之曲率 (C2 連續性)。'
+          ],
+          answer: 'Degree 3 (三次曲面，具備優良之曲率連續性)',
+          difficulty: '進階'
         }
       ]
     },
     {
       slug: 'portfolio-and-design-discourse',
-      "title": "作品集建構與設計論述",
-      "desc": "作品集不僅是呈現圖面，更是傳遞設計論述與個人思考的載體。",
-      "status": "done",
-      "gradeLevel": 11,
-      "examHitRate": 3,
-      "step0Prerequisites": [
-        "建築工程綜合知識",
-        "綠建築與智慧建築概念"
+      title: '作品集建構與設計論述',
+      desc: '解析建築與室內設計作品集 (Portfolio) 編排邏輯、空間設計論述寫作、視覺階層傳達與競圖排版 SOP。',
+      status: 'done',
+      gradeLevel: 11,
+      examHitRate: 4,
+      step0Prerequisites: [
+        '平面圖、立面圖、剖面圖、透視圖與軸測圖之閱讀與表現技巧',
+        '設計思考 (Design Thinking) 五步驟：同理、定義、發想、原型、測試'
       ],
-      "fatalTraps": [
+      fatalTraps: [
         {
-          "wrongThinking": "前瞻建築科技原理與指標規範混淆。",
-          "correctThinking": "依據綠建築與智慧建築官方最新法規手冊評定。",
-          "trapDescription": "永續前瞻建築指標評定。"
+          wrongThinking: '作品集只堆疊最終完稿美圖，省略前期的基地分析、概念草圖與模型推敲過程。',
+          correctThinking: '評審與教授最看重「設計邏輯與推導過程 (Design Process)」：從問題意識、基地微氣候分析、空間機能泡泡圖到實體模型照片，呈現完整的思考鏈。',
+          trapDescription: '缺乏推導過程的作品集會被判定為純美工拼貼，缺乏建築學術論述深度。'
+        },
+        {
+          wrongThinking: '每一頁都塞滿圖文，缺乏版面呼吸空間 (Negative Space) 與視覺焦點。',
+          correctThinking: '排版必須嚴格遵循「網格系統 (Grid System)」與「主次階層 (Visual Hierarchy)」：大圖定主題、小圖補細節、文字精簡點題。',
+          trapDescription: '版面雜亂使閱讀者難以在 30 秒內抓住專案核心亮點。'
         }
       ],
-      "eliteMentalModels": [
+      eliteMentalModels: [
         {
-          "technique": "永續前瞻科技整合評估模型",
-          "explanation": "整合 BIM 數位孿生、智慧綠建築指標與全生命週期減碳評估。"
+          technique: '黃金五段式建築論述架構 (5-Stage Architectural Discourse)',
+          explanation: '每一件作品遵循「1. 社會/環境議題 (Issue) → 2. 基地脈絡 (Site Context) → 3. 空間概念轉化 (Concept Mapping) → 4. 構造與系統 (Tectonics & Structure) → 5. 人文生活體驗 (Spatial Experience)」之標準敘事線。'
         }
       ],
-      "illustrations": [
-        "img1.webp",
-        "img2.webp",
-        "img3.webp"
+      illustrations: [
+        'context.webp',
+        'concept-diagram.webp',
+        'portfolio-layout.webp',
+        'step-by-step.webp'
       ],
-      "covered_question_ids": [],
-      "concepts": [
+      covered_question_ids: [],
+      concepts: [
         {
-          "heading": "C1",
-          "body": "B1B1B1B1B1B1B1B1B1B1B1B1B1B1B1B1B1B1B1B1B1B1B1B1B1B1B1B1B1B1B1B1B1B1B1"
+          heading: '建築作品集核心架構與頁面節奏規劃',
+          body: '一份專業建築作品集通常包含 3~5 個精選專案。結構安排為：(1) 封面與目錄（風格定調）；(2) 履歷與個人簡介（掌握技能與軟體）；(3) 旗艦代表作（最完整、包含詳細平立剖與施工大樣，佔 6~8 頁）；(4) 次要專案（突顯特殊能力如參數化、永續低碳或都市研究，各佔 2~4 頁）；(5) 實體手繪與模型攝影（展示立體造形與動手實作能力）。',
+          formula: '視覺版面比例: 主圖 50% + 概念分析圖 30% + 精簡論述文字 20%\n網格系統: 12 欄 (12-Column Grid) 或 3x3 模矩排版'
         },
         {
-          "heading": "C2",
-          "body": "B2B2B2B2B2B2B2B2B2B2B2B2B2B2B2B2B2B2B2B2B2B2B2B2B2B2B2B2B2B2B2B2B2B2B2"
+          heading: '設計論述 (Design Discourse) 寫作與圖文連動',
+          body: '設計論述不是抒情散文，而是「以空間解決問題的邏輯論證」。開篇以一句話提煉「設計宣言 (Design Statement)」；內文分段說明基地限制（如狹長形基地、日照不足）、設計對策（如天井採光、錯層配置）與最終效益。圖面文字標註需指涉具體空間與材料。'
         },
         {
-          "heading": "C3",
-          "body": "B3B3B3B3B3B3B3B3B3B3B3B3B3B3B3B3B3B3B3B3B3B3B3B3B3B3B3B3B3B3B3B3B3B3B3"
+          heading: '圖面編排視覺階層與色彩計劃',
+          body: '避免全書色彩過度雜亂。建議全書設定 1~2 種主色調（如工程藍或石墨灰），搭配單一強調色標示動線或概念分析。線條粗細需分明（剖面地盤線最粗、牆體中粗、尺寸與引線最細），確保列印與螢幕瀏覽皆清晰銳利。'
         }
       ],
-      "worked_examples": [
+      worked_examples: [
         {
-          "question": "Q1",
-          "steps": [
-            "A ｜為什麼：依據前瞻建築科技國家標準與幾何計算公式嚴密推導。"
+          question: '【作品集版面規劃示範】若準備一份申請建築系之 20 頁作品集 (A4 橫式)，預計收錄 3 個主要建築設計專案（專案 A 為社區活動中心、專案 B 為微型住宅、專案 C 為參數化公共涼亭）及手繪模型附錄。試規劃：(1) 各專案頁數配置與全書節奏；(2) 專案 A 跨頁展開之標準視覺圖面配置 SOP。',
+          steps: [
+            '步驟 1：全書頁數分配。封面 (p.1) + 目錄/履歷 (p.2-3) + 旗艦專案 A (p.4-9，共 6 頁) + 專案 B (p.10-13，共 4 頁) + 專案 C (p.14-17，共 4 頁) + 模型與手繪表現 (p.18-19) + 封底 (p.20)。 ｜為什麼：黃金比例分配，重點突出且節奏明快。',
+            '步驟 2：專案 A 跨頁展開配置。第 1 跨頁（概念與基地）：左頁為主透視氛圍圖，右頁為基地日照通風分析圖與概念模型演變；第 2 跨頁（平面與機能）：左頁為配置圖與 1 樓平面圖，右頁為動線分析與空間泡泡圖；第 3 跨頁（剖面與構造）：大比例透視剖面圖 (Perspective Section) 結合材料構造詳圖。 ｜為什麼：由宏觀概念逐步深入至微觀構造，展現紮實設計深度。'
           ],
-          "answer": "A",
-          "difficulty": "中",
-          "hints": [
-            "分析題目測量幾何條件或前瞻建築科技規範要求",
-            "列出計算式或正投影三視圖/CNS 製圖規則進行推導"
-          ],
-          "commonMistake": "容易在正負號閉合差分配、視圖虛線對齊或比例尺換算時產生失誤。",
-          "eliteShortcut": "工程圖表秒殺法：抓住幾何基準線與規範關鍵字，直接鎖定正確數值或投影特徵！"
-        },
-        {
-          "question": "Q2",
-          "steps": [
-            "A ｜為什麼：依據前瞻建築科技國家標準與幾何計算公式嚴密推導。"
-          ],
-          "answer": "A",
-          "difficulty": "中",
-          "hints": [
-            "分析題目測量幾何條件或前瞻建築科技規範要求",
-            "列出計算式或正投影三視圖/CNS 製圖規則進行推導"
-          ],
-          "commonMistake": "容易在正負號閉合差分配、視圖虛線對齊或比例尺換算時產生失誤。",
-          "eliteShortcut": "工程圖表秒殺法：抓住幾何基準線與規範關鍵字，直接鎖定正確數值或投影特徵！"
+          answer: '(1) 頁數分配：專案 A 佔 6 頁、專案 B 佔 4 頁、專案 C 佔 4 頁、模型手繪 2 頁、首尾 4 頁；(2) 跨頁配置：概念基地 → 平面機能 → 剖面構造三階段深入展開。',
+          difficulty: '中等',
+          hints: ['作品集重在邏輯連貫與層次分明', '大圖與分析圖搭配網格系統'],
+          commonMistake: '常有考生將所有平面圖塞在第一頁，缺乏概念引導與剖面空間體驗。',
+          eliteShortcut: '審查第一眼心法：大透視抓住眼球，剖面圖展現實力，模型照證明真實動手能力！'
         }
       ],
-      "practices": [
+      practices: [
         {
-          "question": "Q3",
-          "steps": [
-            "A ｜為什麼：依據前瞻建築科技國家標準與幾何計算公式嚴密推導。"
+          question: '在建築作品集排版中，為什麼建議採用「透視剖面圖 (Perspective Section)」而非一般純二維工程剖面圖？',
+          steps: [
+            '透視剖面圖結合了剖面的垂直構造層次與透視圖的空間縱深與人體尺度體驗，能更生動展示建築內部空間關係。'
           ],
-          "answer": "A",
-          "difficulty": "中",
-          "hints": [
-            "分析題目測量幾何條件或前瞻建築科技規範要求",
-            "列出計算式或正投影三視圖/CNS 製圖規則進行推導"
-          ],
-          "commonMistake": "容易在正負號閉合差分配、視圖虛線對齊或比例尺換算時產生失誤。",
-          "eliteShortcut": "工程圖表秒殺法：抓住幾何基準線與規範關鍵字，直接鎖定正確數值或投影特徵！"
+          answer: '同時呈現垂直構造層次與室內空間深度感，使評審更容易直觀理解空間體驗',
+          difficulty: '觀念'
         },
         {
-          "question": "Q4",
-          "steps": [
-            "A ｜為什麼：依據前瞻建築科技國家標準與幾何計算公式嚴密推導。"
+          question: '下列哪一種圖面在建築作品集中最能有效證明設計構想是由基地環境分析推導而來？\n(A) 高畫質夜間渲染圖\n(B) 基地微氣候與風向日照泡泡圖\n(C) 施工鋼筋綁紮詳圖\n(D) AutoCAD 圖層列表。',
+          steps: [
+            '基地環境與微氣候分析圖直接說明了建築方位、通風採光與動線開口的設計原因。'
           ],
-          "answer": "A",
-          "difficulty": "中",
-          "hints": [
-            "分析題目測量幾何條件或前瞻建築科技規範要求",
-            "列出計算式或正投影三視圖/CNS 製圖規則進行推導"
-          ],
-          "commonMistake": "容易在正負號閉合差分配、視圖虛線對齊或比例尺換算時產生失誤。",
-          "eliteShortcut": "工程圖表秒殺法：抓住幾何基準線與規範關鍵字，直接鎖定正確數值或投影特徵！"
+          answer: '(B) 基地微氣候與風向日照泡泡圖',
+          difficulty: '易'
         },
         {
-          "question": "Q5",
-          "steps": [
-            "A ｜為什麼：依據前瞻建築科技國家標準與幾何計算公式嚴密推導。"
+          question: '作品集色彩計劃中，為何通常建議背景採用白色或淺灰底色，並限制全書主色不超過兩種？',
+          steps: [
+            '中性色背景能讓建築圖面與模型照片的色彩成為焦點，避免花俏背景干擾圖面判讀。'
           ],
-          "answer": "A",
-          "difficulty": "中",
-          "hints": [
-            "分析題目測量幾何條件或前瞻建築科技規範要求",
-            "列出計算式或正投影三視圖/CNS 製圖規則進行推導"
+          answer: '保持版面乾淨聚焦，避免背景干擾建築圖面與照片之專業細節表現',
+          difficulty: '基礎'
+        },
+        {
+          question: '在作品集中展示實體建築模型照片時，最佳的拍攝角度與光影策略為何？',
+          steps: [
+            '採用人眼視角 (Eye-level) 或 45 度鳥瞰，搭配單一主光源（模擬真實陽光射角與陰影效果），背景使用純色無縫背板。'
           ],
-          "commonMistake": "容易在正負號閉合差分配、視圖虛線對齊或比例尺換算時產生失誤。",
-          "eliteShortcut": "工程圖表秒殺法：抓住幾何基準線與規範關鍵字，直接鎖定正確數值或投影特徵！"
+          answer: '人眼視角平拍、單一主光源模擬自然光影、乾淨純色背景',
+          difficulty: '中等'
+        },
+        {
+          question: '設計論述中的「設計宣言 (Design Statement)」通常應控制在多少字數內最為理想？',
+          steps: [
+            '精簡有力的 1~2 句話（約 50~100 字），直接點出核心議題與空間解答。'
+          ],
+          answer: '50~100 字（精準提煉問題核心與空間對策）',
+          difficulty: '觀念'
         }
       ]
     },

@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { ArrowRight, Building2, CheckCircle2, Compass, DraftingCompass, HardHat, Play, ShieldCheck, Target } from 'lucide-react';
+import { ArrowRight, Building2, CheckCircle2, Compass, DraftingCompass, HardHat, Landmark, Play, ShieldCheck, Target } from 'lucide-react';
 import ExpertCouncilBanner from '@/components/pedagogy/ExpertCouncilBanner';
 import AdaptiveDailyLoop from '@/components/pedagogy/AdaptiveDailyLoop';
 
@@ -10,6 +10,7 @@ const paths = [
   { icon: HardHat, eyebrow: '現場實務', title: '營造現場檢驗手冊', copy: '連結施工規範綱要、CNS 坍度氯離子試驗、高張力螺栓與梁穿孔防錯。', href: '/field-guide', cta: '查閱現場手冊', tone: 'slate' },
   { icon: ShieldCheck, eyebrow: '高頻速查', title: '全科考點速查指南', copy: '專一專二高頻公式卡、物理量綱、記憶口訣與一鍵複製 LaTeX 算式。', href: '/cheatsheets', cta: '開啟考點速查卡', tone: 'slate' },
   { icon: Building2, eyebrow: '建立建築感', title: '從真實案例理解', copy: '把結構、材料、構造與空間，放回你看得見的台灣建築。', href: '/cases', cta: '進入案例實驗室', tone: 'slate' },
+  { icon: Landmark, eyebrow: '官方彙整', title: '資格考試資源彙整', copy: '考選部高考建築師、結構技師、土木技師大綱、公會權威與歷屆試題庫。', href: '/resources', cta: '查閱資格考試資源', tone: 'slate' },
 ];
 
 const subjects = [
@@ -27,7 +28,7 @@ export default function Home() {
         <div className="mx-auto grid max-w-7xl gap-10 px-4 pb-16 pt-12 sm:px-6 sm:pb-24 sm:pt-20 lg:grid-cols-[1.15fr_.85fr] lg:items-center lg:px-8">
           <div className="relative z-10">
             <div className="mb-6 flex flex-wrap items-center gap-2 text-[11px] font-bold tracking-[.16em]">
-              <span className="rounded-full bg-blue-600/90 px-3 py-1.5 text-white">ARCH V8.01</span>
+              <span className="rounded-full bg-blue-600/90 px-3 py-1.5 text-white">ARCH V8.02</span>
               <span className="text-slate-500 dark:text-slate-400">台灣高工建築科學習基地</span>
             </div>
             <ExpertCouncilBanner compact className="mb-6" />

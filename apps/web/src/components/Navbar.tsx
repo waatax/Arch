@@ -16,7 +16,7 @@ const navLinks = [
   { href: '/cases', label: '建築\n案例' },
   { href: '/goals', label: '終極\n目標' },
   { href: '/exam-116', label: '入學\n指南' },
-  { href: '/resources', label: '學習\n資源' },
+  { href: '/resources', label: '資格\n考試' },
 ];
 
 const categoryFilters = [
@@ -77,6 +77,22 @@ const specialHubs = [
     badge: '入學指南',
     category: 'goals',
     tags: ['116', '入學', '統測', '落點', '志願', '土木建築群', '高職'],
+  },
+  {
+    title: '📑 資格考試資源彙整 (Qualifications & Exam Directory)',
+    desc: '考選部專技高考（建築師、結構技師、土木技師）、考試院、工程會、公會權威與統測官方考綱一站式彙整',
+    href: '/resources',
+    badge: '資格考試',
+    category: 'goals',
+    tags: ['資格考試', '資源', '考選部', '考試院', '歷屆試題', '命題大綱', '建築師', '結構技師', '土木技師', '技師報', '技術士'],
+  },
+  {
+    title: '📝 近五年統測全科目題庫與全真模擬',
+    desc: '111–115 年國文、英文、數學(C)、專一、專二共 925 題全題庫逐題解析與線上測驗',
+    href: '/practice',
+    badge: '歷屆模擬',
+    category: 'hubs',
+    tags: ['題庫', '歷屆', '模擬', '測驗', '925題', '統測', '刷題', '解析'],
   },
 ];
 
@@ -252,7 +268,7 @@ export default function Navbar() {
                     Arch
                   </span>
                   <span className="rounded-full bg-blue-700/10 dark:bg-blue-400/10 px-2 py-0.5 text-[10px] font-mono font-bold text-blue-700 dark:text-blue-300 border border-blue-700/20">
-                    V8.01
+                    V8.02
                   </span>
                 </div>
                 <span className="text-[10px] font-mono text-slate-500 dark:text-slate-400 -mt-1 hidden sm:inline">
@@ -595,7 +611,7 @@ export default function Navbar() {
                 <span><kbd className="rounded bg-white dark:bg-slate-800 border px-1">↵</kbd> 選取前往</span>
                 <span><kbd className="rounded bg-white dark:bg-slate-800 border px-1">ESC</kbd> 關閉</span>
               </div>
-              <span className="hidden sm:inline">Arch V8.01 Omnibar</span>
+              <span className="hidden sm:inline">Arch V8.02 Omnibar</span>
             </div>
           </div>
         </div>

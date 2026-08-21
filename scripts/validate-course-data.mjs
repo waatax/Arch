@@ -365,7 +365,7 @@ if (!solutionSteps.includes('while (unique.length < 5)')) {
 if (!topicLayout.includes('getLearningSources(subject.slug)') || !learningSources.includes('官方命題依據')) {
   errors.push('所有教學頁必須呈現官方命題依據與研究來源');
 }
-if (!resourcesPage.includes('官方一級來源') || !resourcesPage.includes('補充解題研究') || !resourcesPage.includes('最後查核 2026-08-11')) {
+if (!resourcesPage.includes('補充解題研究') || !(resourcesPage.includes('官方一級來源') || resourcesPage.includes('國家考試一級來源')) || !(resourcesPage.includes('最後查核 2026-08-11') || resourcesPage.includes('最後查核 2026-08-21'))) {
   errors.push('統測學習資源專區缺少來源分級、補充解析或查核日期');
 }
 for (const requiredVisual of ['concept-modeling.png', 'solution-verification.png']) {
