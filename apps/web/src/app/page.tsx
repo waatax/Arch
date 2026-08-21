@@ -87,7 +87,7 @@ export default function Home() {
         
         {/* Primary Paths (Cognitive Load Reduction) */}
         <div className="grid gap-6 sm:grid-cols-2 mb-12">
-          {paths.filter(p => p.primary).map(({ icon: Icon, ...path }, index) => (
+          {paths.filter(p => p.primary).map(({ icon: Icon, ...path }) => (
             <Link key={path.title} href={path.href} className="group relative flex flex-col rounded-[2rem] border border-blue-100 bg-white p-8 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-blue-900/5 dark:border-slate-800 dark:bg-slate-900 sm:p-10">
               <div className="flex items-center gap-3 mb-6">
                 <div className={`p-3 rounded-2xl ${path.tone === 'blue' ? 'bg-blue-50 text-blue-600 dark:bg-blue-900/30 dark:text-blue-400' : 'bg-rose-50 text-rose-600 dark:bg-rose-900/30 dark:text-rose-400'}`}>

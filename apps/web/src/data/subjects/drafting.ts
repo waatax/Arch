@@ -1,1398 +1,3529 @@
 import { SubjectData } from '../types';
-import { draftingGapTopics } from './professional-gap-topics';
 
 export const draftingData: SubjectData = {
   slug: 'drafting',
-  title: '製圖實習',
-  category: '專業科目（二）',
-  color: 'blue-600',
-  topics: [
-{
-    slug: 'bim-concepts',
-    title: '2D 到 3D BIM 資訊模型實務',
-    desc: '2D 轉 3D 資訊模型是現代營建管理的必然趨勢。',
-    status: 'done',
-    gradeLevel: 11,
-    examHitRate: 3,
-    step0Prerequisites: ['P1'],
-    fatalTraps: [{wrongThinking: 'W', correctThinking: 'C', trapDescription: 'T'}],
-    eliteMentalModels: [{technique: 'T', explanation: 'E'}],
-    illustrations: ['img1.webp', 'img2.webp', 'img3.webp'],
-    covered_question_ids: [],
-
-    concepts: [
-      { heading: 'C1', body: 'B1B1B1B1B1B1B1B1B1B1B1B1B1B1B1B1B1B1B1B1B1B1B1B1B1B1B1B1B1B1B1B1B1B1B1' },
-      { heading: 'C2', body: 'B2B2B2B2B2B2B2B2B2B2B2B2B2B2B2B2B2B2B2B2B2B2B2B2B2B2B2B2B2B2B2B2B2B2B2' },
-      { heading: 'C3', body: 'B3B3B3B3B3B3B3B3B3B3B3B3B3B3B3B3B3B3B3B3B3B3B3B3B3B3B3B3B3B3B3B3B3B3B3' }
-    ],
-
-
-    worked_examples: [
-      { question: 'Q1', steps: ['A'], answer: 'A', difficulty: '中' },
-      { question: 'Q2', steps: ['A'], answer: 'A', difficulty: '中' }
-    ],
-    practices: [
-      { question: 'Q3', steps: ['A'], answer: 'A', difficulty: '中' },
-      { question: 'Q4', steps: ['A'], answer: 'A', difficulty: '中' },
-      { question: 'Q5', steps: ['A'], answer: 'A', difficulty: '中' }
-    ]
-
-},
-
-    ...draftingGapTopics,
+  "title": "製圖實習",
+  "category": "專業科目（二）",
+  "color": "blue-600",
+  "topics": [
+    {
+      slug: 'bim-concepts',
+      "title": "2D 到 3D BIM 資訊模型實務",
+      "desc": "2D 轉 3D 資訊模型是現代營建管理的必然趨勢。",
+      "status": "done",
+      "gradeLevel": 11,
+      "examHitRate": 3,
+      "step0Prerequisites": [
+        "2D 到 3D BIM 資訊模型實務之核心基本定義與物理幾何概念",
+        "解題前置檢核：確認題型情境、已知條件量與求解目標"
+      ],
+      "fatalTraps": [
+        {
+          "wrongThinking": "直覺選擇字面相近選項，未仔細檢驗題幹之特定限制條件。",
+          "correctThinking": "回歸核心公理與基本定義，逐項檢核題幹條件與反例。",
+          "trapDescription": "80% 考生在概念題中因粗心忽略前提假設而失分。"
+        }
+      ],
+      "eliteMentalModels": [
+        {
+          "technique": "第一性原理拆解法 (First Principles Breakdown)",
+          "explanation": "不依賴死記死背，由最底層的定義與公理邏輯推導出解題路徑，降維打擊各類統測變形題。"
+        }
+      ],
+      "illustrations": [
+        "img1.webp",
+        "img2.webp",
+        "img3.webp"
+      ],
+      "covered_question_ids": [],
+      "concepts": [
+        {
+          "heading": "C1",
+          "body": "B1B1B1B1B1B1B1B1B1B1B1B1B1B1B1B1B1B1B1B1B1B1B1B1B1B1B1B1B1B1B1B1B1B1B1"
+        },
+        {
+          "heading": "C2",
+          "body": "B2B2B2B2B2B2B2B2B2B2B2B2B2B2B2B2B2B2B2B2B2B2B2B2B2B2B2B2B2B2B2B2B2B2B2"
+        },
+        {
+          "heading": "C3",
+          "body": "B3B3B3B3B3B3B3B3B3B3B3B3B3B3B3B3B3B3B3B3B3B3B3B3B3B3B3B3B3B3B3B3B3B3B3"
+        }
+      ],
+      "worked_examples": [
+        {
+          "question": "Q1",
+          "steps": [
+            "A ｜為什麼：依據建築製圖核心規範與力學幾何定理演算。"
+          ],
+          "answer": "A",
+          "difficulty": "中",
+          "hints": [
+            "分析題目核心條件與建築製圖規範/定理",
+            "列出對應計算式或幾何平衡條件求解"
+          ],
+          "commonMistake": "容易在正負號方向、單位換算 (如 MPa = N/mm²) 或圖例符號代入時產生計算失誤。",
+          "eliteShortcut": "工程實務破題法：善用對稱性與基準線選定，直接鎖定關鍵數據快速秒殺！"
+        },
+        {
+          "question": "Q2",
+          "steps": [
+            "A ｜為什麼：依據建築製圖核心規範與力學幾何定理演算。"
+          ],
+          "answer": "A",
+          "difficulty": "中",
+          "hints": [
+            "分析題目核心條件與建築製圖規範/定理",
+            "列出對應計算式或幾何平衡條件求解"
+          ],
+          "commonMistake": "容易在正負號方向、單位換算 (如 MPa = N/mm²) 或圖例符號代入時產生計算失誤。",
+          "eliteShortcut": "工程實務破題法：善用對稱性與基準線選定，直接鎖定關鍵數據快速秒殺！"
+        }
+      ],
+      "practices": [
+        {
+          "question": "Q3",
+          "steps": [
+            "A ｜為什麼：依據建築製圖核心規範與力學幾何定理演算。"
+          ],
+          "answer": "A",
+          "difficulty": "中",
+          "hints": [
+            "分析題目核心條件與建築製圖規範/定理",
+            "列出對應計算式或幾何平衡條件求解"
+          ],
+          "commonMistake": "容易在正負號方向、單位換算 (如 MPa = N/mm²) 或圖例符號代入時產生計算失誤。",
+          "eliteShortcut": "工程實務破題法：善用對稱性與基準線選定，直接鎖定關鍵數據快速秒殺！"
+        },
+        {
+          "question": "Q4",
+          "steps": [
+            "A ｜為什麼：依據建築製圖核心規範與力學幾何定理演算。"
+          ],
+          "answer": "A",
+          "difficulty": "中",
+          "hints": [
+            "分析題目核心條件與建築製圖規範/定理",
+            "列出對應計算式或幾何平衡條件求解"
+          ],
+          "commonMistake": "容易在正負號方向、單位換算 (如 MPa = N/mm²) 或圖例符號代入時產生計算失誤。",
+          "eliteShortcut": "工程實務破題法：善用對稱性與基準線選定，直接鎖定關鍵數據快速秒殺！"
+        },
+        {
+          "question": "Q5",
+          "steps": [
+            "A ｜為什麼：依據建築製圖核心規範與力學幾何定理演算。"
+          ],
+          "answer": "A",
+          "difficulty": "中",
+          "hints": [
+            "分析題目核心條件與建築製圖規範/定理",
+            "列出對應計算式或幾何平衡條件求解"
+          ],
+          "commonMistake": "容易在正負號方向、單位換算 (如 MPa = N/mm²) 或圖例符號代入時產生計算失誤。",
+          "eliteShortcut": "工程實務破題法：善用對稱性與基準線選定，直接鎖定關鍵數據快速秒殺！"
+        }
+      ]
+    },
+    {
+      slug: 'building-codes-far',
+      "title": "容積率、建蔽率與建築法規實務",
+      "desc": "容積率與建蔽率決定了基地的開發價值與物理環境品質。",
+      "status": "done",
+      "gradeLevel": 11,
+      "examHitRate": 3,
+      "step0Prerequisites": [
+        "容積率、建蔽率與建築法規實務之核心基本定義與物理幾何概念",
+        "解題前置檢核：確認題型情境、已知條件量與求解目標"
+      ],
+      "fatalTraps": [
+        {
+          "wrongThinking": "直覺選擇字面相近選項，未仔細檢驗題幹之特定限制條件。",
+          "correctThinking": "回歸核心公理與基本定義，逐項檢核題幹條件與反例。",
+          "trapDescription": "80% 考生在概念題中因粗心忽略前提假設而失分。"
+        }
+      ],
+      "eliteMentalModels": [
+        {
+          "technique": "第一性原理拆解法 (First Principles Breakdown)",
+          "explanation": "不依賴死記死背，由最底層的定義與公理邏輯推導出解題路徑，降維打擊各類統測變形題。"
+        }
+      ],
+      "illustrations": [
+        "img1.webp",
+        "img2.webp",
+        "img3.webp"
+      ],
+      "covered_question_ids": [],
+      "concepts": [
+        {
+          "heading": "C1",
+          "body": "B1B1B1B1B1B1B1B1B1B1B1B1B1B1B1B1B1B1B1B1B1B1B1B1B1B1B1B1B1B1B1B1B1B1B1"
+        },
+        {
+          "heading": "C2",
+          "body": "B2B2B2B2B2B2B2B2B2B2B2B2B2B2B2B2B2B2B2B2B2B2B2B2B2B2B2B2B2B2B2B2B2B2B2"
+        },
+        {
+          "heading": "C3",
+          "body": "B3B3B3B3B3B3B3B3B3B3B3B3B3B3B3B3B3B3B3B3B3B3B3B3B3B3B3B3B3B3B3B3B3B3B3"
+        }
+      ],
+      "worked_examples": [
+        {
+          "question": "Q1",
+          "steps": [
+            "A ｜為什麼：依據建築製圖核心規範與力學幾何定理演算。"
+          ],
+          "answer": "A",
+          "difficulty": "中",
+          "hints": [
+            "分析題目核心條件與建築製圖規範/定理",
+            "列出對應計算式或幾何平衡條件求解"
+          ],
+          "commonMistake": "容易在正負號方向、單位換算 (如 MPa = N/mm²) 或圖例符號代入時產生計算失誤。",
+          "eliteShortcut": "工程實務破題法：善用對稱性與基準線選定，直接鎖定關鍵數據快速秒殺！"
+        },
+        {
+          "question": "Q2",
+          "steps": [
+            "A ｜為什麼：依據建築製圖核心規範與力學幾何定理演算。"
+          ],
+          "answer": "A",
+          "difficulty": "中",
+          "hints": [
+            "分析題目核心條件與建築製圖規範/定理",
+            "列出對應計算式或幾何平衡條件求解"
+          ],
+          "commonMistake": "容易在正負號方向、單位換算 (如 MPa = N/mm²) 或圖例符號代入時產生計算失誤。",
+          "eliteShortcut": "工程實務破題法：善用對稱性與基準線選定，直接鎖定關鍵數據快速秒殺！"
+        }
+      ],
+      "practices": [
+        {
+          "question": "Q3",
+          "steps": [
+            "A ｜為什麼：依據建築製圖核心規範與力學幾何定理演算。"
+          ],
+          "answer": "A",
+          "difficulty": "中",
+          "hints": [
+            "分析題目核心條件與建築製圖規範/定理",
+            "列出對應計算式或幾何平衡條件求解"
+          ],
+          "commonMistake": "容易在正負號方向、單位換算 (如 MPa = N/mm²) 或圖例符號代入時產生計算失誤。",
+          "eliteShortcut": "工程實務破題法：善用對稱性與基準線選定，直接鎖定關鍵數據快速秒殺！"
+        },
+        {
+          "question": "Q4",
+          "steps": [
+            "A ｜為什麼：依據建築製圖核心規範與力學幾何定理演算。"
+          ],
+          "answer": "A",
+          "difficulty": "中",
+          "hints": [
+            "分析題目核心條件與建築製圖規範/定理",
+            "列出對應計算式或幾何平衡條件求解"
+          ],
+          "commonMistake": "容易在正負號方向、單位換算 (如 MPa = N/mm²) 或圖例符號代入時產生計算失誤。",
+          "eliteShortcut": "工程實務破題法：善用對稱性與基準線選定，直接鎖定關鍵數據快速秒殺！"
+        },
+        {
+          "question": "Q5",
+          "steps": [
+            "A ｜為什麼：依據建築製圖核心規範與力學幾何定理演算。"
+          ],
+          "answer": "A",
+          "difficulty": "中",
+          "hints": [
+            "分析題目核心條件與建築製圖規範/定理",
+            "列出對應計算式或幾何平衡條件求解"
+          ],
+          "commonMistake": "容易在正負號方向、單位換算 (如 MPa = N/mm²) 或圖例符號代入時產生計算失誤。",
+          "eliteShortcut": "工程實務破題法：善用對稱性與基準線選定，直接鎖定關鍵數據快速秒殺！"
+        }
+      ]
+    },
+    {
+      slug: 'drafting-fundamentals',
+      "title": "0. 製圖基本觀念與圖紙管理",
+      "desc": "補齊圖紙規格、標題欄、折疊、圖面種類、版本管理與標準化判讀。",
+      "status": "done",
+      "gradeLevel": 10,
+      "examHitRate": 4,
+      "step0Prerequisites": [
+        "本章核心基礎：drafting-fundamentals之關鍵定義與物理幾何直覺",
+        "解題前置檢核：確認題型情境、已知條件量與求解目標"
+      ],
+      "fatalTraps": [
+        {
+          "wrongThinking": "直覺選擇字面相近選項，未仔細檢驗題幹之特定限制條件。",
+          "correctThinking": "回歸核心公理與基本定義，逐項檢核題幹條件與反例。",
+          "trapDescription": "80% 考生在概念題中因粗心忽略前提假設而失分。"
+        }
+      ],
+      "eliteMentalModels": [
+        {
+          "technique": "第一性原理拆解法 (First Principles Breakdown)",
+          "explanation": "不依賴死記死背，由最底層的定義與公理邏輯推導出解題路徑，降維打擊各類統測變形題。"
+        }
+      ],
+      "illustrations": [
+        "context.webp",
+        "concept-diagram.webp",
+        "drafting-standards.webp",
+        "step-by-step.webp"
+      ],
+      "covered_question_ids": [],
+      "concepts": [
+        {
+          "heading": "工程圖的溝通功能",
+          "body": "工程圖以標準化線條、符號、尺度與註記傳遞設計及施工資訊；<span className=\"text-indigo-600 font-bold\">清晰、一致、可追溯</span>比藝術化表現更重要。\n\n| 圖說種類 | 核心目的 | 精度與標註要求 |\n| :--- | :--- | :--- |\n| **草圖 (Sketch)** | 快速記錄設計構想 | 徒手繪製，無須精確比例 |\n| **設計圖 (Design)** | 空間與機能檢討 | 比例準確，標示主要尺寸 |\n| **施工圖 (Working)** | 提供現場施工依據 | 尺寸精確詳盡，含材料構造註記 |"
+        },
+        {
+          "heading": "A 系列圖紙與折疊",
+          "body": "A 系列長寬比為 <span className=\"text-rose-600 font-bold\">√2:1</span>，對半裁切仍保持同一比例。折疊歸檔後應讓**標題欄位於正面右下**並可直接識別。",
+          "formula": "<span className=\"text-indigo-600 font-bold\">A0 面積 = 1 m²</span>；長寬比 = √2 : 1"
+        },
+        {
+          "heading": "圖面階段與版本",
+          "body": "概念圖說明構想，設計圖確立方案，施工圖提供尺寸與做法，竣工圖反映完成現況；修訂需留下<span className=\"text-rose-600 font-bold\">日期、版次與修訂內容</span>。"
+        }
+      ],
+      "worked_examples": [
+        {
+          "question": "A1 圖紙折成 A4 歸檔時，標題欄應呈現在哪裡？",
+          "difficulty": "統測核心",
+          "steps": [
+            "折疊目的之一是<span className=\"text-indigo-600 font-bold\">免展開即可辨識</span>圖名與版次。 ｜為什麼：依據建築製圖核心規範與力學幾何定理演算。",
+            "標題欄原位於圖紙<span className=\"text-rose-600 font-bold\">右下角</span>。 ｜為什麼：依據建築製圖核心規範與力學幾何定理演算。"
+          ],
+          "answer": "折後正面右下方",
+          "hints": [
+            "分析題目核心條件與建築製圖規範/定理",
+            "列出對應計算式或幾何平衡條件求解"
+          ],
+          "commonMistake": "容易在正負號方向、單位換算 (如 MPa = N/mm²) 或圖例符號代入時產生計算失誤。",
+          "eliteShortcut": "工程實務破題法：善用對稱性與基準線選定，直接鎖定關鍵數據快速秒殺！"
+        }
+      ],
+      "practices": [
+        {
+          "question": "需要表達鋼筋型號、數量、位置與接頭細部，應使用哪類圖？",
+          "difficulty": "統測核心",
+          "steps": [
+            "資訊直接供施工與查核使用，精度高於概念圖或草圖。 ｜為什麼：依據建築製圖核心規範與力學幾何定理演算。"
+          ],
+          "answer": "詳圖或施工圖",
+          "hints": [
+            "分析題目核心條件與建築製圖規範/定理",
+            "列出對應計算式或幾何平衡條件求解"
+          ],
+          "commonMistake": "容易在正負號方向、單位換算 (如 MPa = N/mm²) 或圖例符號代入時產生計算失誤。",
+          "eliteShortcut": "工程實務破題法：善用對稱性與基準線選定，直接鎖定關鍵數據快速秒殺！"
+        },
+        {
+          "question": "製圖基本觀念解題時，第一個必須確認的模型條件是什麼？",
+          "difficulty": "觀念",
+          "steps": [
+            "辨識題目屬於**製圖基本觀念**，先畫出<span className='text-indigo-600 font-bold'>自由體圖 (FBD)</span> 或整理已知量。 ｜為什麼：依據建築製圖核心規範與力學幾何定理演算。",
+            "確認 <span className='text-rose-600 font-bold'>圖名、圖號、比例與版次可追溯</span> 成立後再代入公式。 ｜為什麼：依據建築製圖核心規範與力學幾何定理演算。"
+          ],
+          "answer": "圖名、圖號、比例與版次可追溯",
+          "hints": [
+            "分析題目核心條件與建築製圖規範/定理",
+            "列出對應計算式或幾何平衡條件求解"
+          ],
+          "commonMistake": "容易在正負號方向、單位換算 (如 MPa = N/mm²) 或圖例符號代入時產生計算失誤。",
+          "eliteShortcut": "工程實務破題法：善用對稱性與基準線選定，直接鎖定關鍵數據快速秒殺！"
+        },
+        {
+          "question": "製圖基本觀念計算完成後，最直接的量綱檢核為何？",
+          "difficulty": "觀念",
+          "steps": [
+            "逐項檢查輸入單位是否一致。 ｜為什麼：依據建築製圖核心規範與力學幾何定理演算。",
+            "結果應以 **圖紙尺寸用 mm、比例為無因次** 表達；不符時不可只改單位符號，須回推計算過程。 ｜為什麼：依據建築製圖核心規範與力學幾何定理演算。"
+          ],
+          "answer": "圖紙尺寸用 mm、比例為無因次",
+          "hints": [
+            "分析題目核心條件與建築製圖規範/定理",
+            "列出對應計算式或幾何平衡條件求解"
+          ],
+          "commonMistake": "容易在正負號方向、單位換算 (如 MPa = N/mm²) 或圖例符號代入時產生計算失誤。",
+          "eliteShortcut": "工程實務破題法：善用對稱性與基準線選定，直接鎖定關鍵數據快速秒殺！"
+        },
+        {
+          "question": "製圖基本觀念結果出現負號時，正確處理方式為何？",
+          "difficulty": "易錯題",
+          "steps": [
+            "回到原先設定的<span className=\"text-indigo-600 font-bold\">正方向</span>或轉向。 ｜為什麼：依據建築製圖核心規範與力學幾何定理演算。",
+            "負號僅表示<span className=\"text-rose-600 font-bold\">實際方向與假設相反</span>，不代表答案必然錯誤。 ｜為什麼：依據建築製圖核心規範與力學幾何定理演算。"
+          ],
+          "answer": "保留大小並依符號修正實際方向",
+          "hints": [
+            "分析題目核心條件與建築製圖規範/定理",
+            "列出對應計算式或幾何平衡條件求解"
+          ],
+          "commonMistake": "容易在正負號方向、單位換算 (如 MPa = N/mm²) 或圖例符號代入時產生計算失誤。",
+          "eliteShortcut": "工程實務破題法：善用對稱性與基準線選定，直接鎖定關鍵數據快速秒殺！"
+        },
+        {
+          "question": "製圖基本觀念最可靠的最後驗算策略為何？",
+          "difficulty": "進階",
+          "steps": [
+            "使用<span className=\"text-indigo-600 font-bold\">未參與主要求解的獨立關係</span>重新計算。 ｜為什麼：依據建築製圖核心規範與力學幾何定理演算。",
+            "同時檢查極端情況、方向與<span className=\"text-rose-600 font-bold\">有效數字</span>合理性。 ｜為什麼：依據建築製圖核心規範與力學幾何定理演算。"
+          ],
+          "answer": "以獨立關係複核並檢查方向、量綱與合理性",
+          "hints": [
+            "分析題目核心條件與建築製圖規範/定理",
+            "列出對應計算式或幾何平衡條件求解"
+          ],
+          "commonMistake": "容易在正負號方向、單位換算 (如 MPa = N/mm²) 或圖例符號代入時產生計算失誤。",
+          "eliteShortcut": "工程實務破題法：善用對稱性與基準線選定，直接鎖定關鍵數據快速秒殺！"
+        }
+      ]
+    },
+    {
+      slug: 'civil-architectural-drawings',
+      "title": "12. 土木與建築製圖整合判讀",
+      "desc": "把基地、平面、立面、剖面、結構與施工詳圖串成同一套圖說的交叉查核流程。",
+      "status": "done",
+      "gradeLevel": 10,
+      "examHitRate": 4,
+      "step0Prerequisites": [
+        "本章核心基礎：civil-architectural-drawings之關鍵定義與物理幾何直覺",
+        "解題前置檢核：確認題型情境、已知條件量與求解目標"
+      ],
+      "fatalTraps": [
+        {
+          "wrongThinking": "直覺選擇字面相近選項，未仔細檢驗題幹之特定限制條件。",
+          "correctThinking": "回歸核心公理與基本定義，逐項檢核題幹條件與反例。",
+          "trapDescription": "80% 考生在概念題中因粗心忽略前提假設而失分。"
+        }
+      ],
+      "eliteMentalModels": [
+        {
+          "technique": "第一性原理拆解法 (First Principles Breakdown)",
+          "explanation": "不依賴死記死背，由最底層的定義與公理邏輯推導出解題路徑，降維打擊各類統測變形題。"
+        }
+      ],
+      "illustrations": [
+        "context.webp",
+        "cross-reference-workflow.webp",
+        "architectural-structural.webp",
+        "step-by-step.webp"
+      ],
+      "covered_question_ids": [],
+      "concepts": [
+        {
+          "heading": "圖說之間如何互證",
+          "body": "平面圖確認水平位置，立面圖確認外觀與高度，剖面圖確認垂直構造，詳圖放大接合做法；同一構件的<span className=\"text-rose-600 font-bold\">編號、尺寸與高程必須一致</span>。\n\n**🔄 跨科連結：** 這些圖說上的尺寸與高程，必須依賴《測量實習》的放樣技術才能在工地現場準確落實，測量與製圖是工程的一體兩面。"
+        },
+        {
+          "heading": "建築圖與結構圖",
+          "body": "建築圖重空間、門窗、裝修與法規；結構圖重柱梁版牆、配筋與基礎。判讀時先用<span className=\"text-indigo-600 font-bold\">軸線與樓層定位</span>，再比對構件編號。"
+        },
+        {
+          "heading": "施工圖查核順序",
+          "body": "先讀圖名、比例、北向與版次，再查軸線及高程，接著追索<span className=\"text-rose-600 font-bold\">剖面索引與詳圖索引</span>，最後檢查尺寸閉合及跨圖衝突。"
+        }
+      ],
+      "worked_examples": [
+        {
+          "question": "平面圖門編號 D03，但門窗表沒有 D03，應如何處理？",
+          "difficulty": "統測核心",
+          "steps": [
+            "⚠️ **統測陷阱 (Exam Trap)：** 考生常以為可以「依比例尺量測圖面推算尺寸」，但在正式工程中這是大忌！ ｜為什麼：依據建築製圖核心規範與力學幾何定理演算。",
+            "這是<span className=\"text-rose-600 font-bold\">跨圖索引不一致</span>，不能自行猜測尺寸。 ｜為什麼：依據建築製圖核心規範與力學幾何定理演算。",
+            "先查最新版次與修訂雲線，再<span className=\"text-indigo-600 font-bold\">提出圖說疑義 (RFI)</span>。 ｜為什麼：依據建築製圖核心規範與力學幾何定理演算。"
+          ],
+          "answer": "記錄衝突並依正式程序釐清，不可逕自施工",
+          "hints": [
+            "分析題目核心條件與建築製圖規範/定理",
+            "列出對應計算式或幾何平衡條件求解"
+          ],
+          "commonMistake": "容易在正負號方向、單位換算 (如 MPa = N/mm²) 或圖例符號代入時產生計算失誤。",
+          "eliteShortcut": "工程實務破題法：善用對稱性與基準線選定，直接鎖定關鍵數據快速秒殺！"
+        }
+      ],
+      "practices": [
+        {
+          "question": "要確認樓梯淨高，至少應交叉檢查哪些圖？",
+          "difficulty": "統測核心",
+          "steps": [
+            "<span className=\"text-indigo-600 font-bold\">平面圖</span>確認梯段與洞口位置。 ｜為什麼：依據建築製圖核心規範與力學幾何定理演算。",
+            "<span className=\"text-rose-600 font-bold\">剖面圖</span>確認垂直高度；必要時再查樓梯詳圖。 ｜為什麼：依據建築製圖核心規範與力學幾何定理演算。"
+          ],
+          "answer": "平面圖、剖面圖及樓梯詳圖",
+          "hints": [
+            "分析題目核心條件與建築製圖規範/定理",
+            "列出對應計算式或幾何平衡條件求解"
+          ],
+          "commonMistake": "容易在正負號方向、單位換算 (如 MPa = N/mm²) 或圖例符號代入時產生計算失誤。",
+          "eliteShortcut": "工程實務破題法：善用對稱性與基準線選定，直接鎖定關鍵數據快速秒殺！"
+        },
+        {
+          "question": "基地圖標高 +0.00 與剖面圖一樓完成面標高不一致，第一步為何？",
+          "difficulty": "進階",
+          "steps": [
+            "先比較<span className=\"text-indigo-600 font-bold\">圖號、版次與修訂日期</span>。 ｜為什麼：依據建築製圖核心規範與力學幾何定理演算。",
+            "以最新版圖說釐清，仍衝突則提出 RFI。 ｜為什麼：依據建築製圖核心規範與力學幾何定理演算。"
+          ],
+          "answer": "先做版本與修訂核對，再正式提出疑義",
+          "hints": [
+            "分析題目核心條件與建築製圖規範/定理",
+            "列出對應計算式或幾何平衡條件求解"
+          ],
+          "commonMistake": "容易在正負號方向、單位換算 (如 MPa = N/mm²) 或圖例符號代入時產生計算失誤。",
+          "eliteShortcut": "工程實務破題法：善用對稱性與基準線選定，直接鎖定關鍵數據快速秒殺！"
+        },
+        {
+          "question": "土木與建築製圖整合判讀解題時，第一個必須確認的模型條件是什麼？",
+          "difficulty": "觀念",
+          "steps": [
+            "辨識題目屬於**土木與建築製圖整合判讀**，先畫出<span className='text-indigo-600 font-bold'>自由體圖 (FBD)</span> 或整理已知量。 ｜為什麼：依據建築製圖核心規範與力學幾何定理演算。",
+            "確認 <span className='text-rose-600 font-bold'>平面、立面、剖面與詳圖的索引及版次一致</span> 成立後再代入公式。 ｜為什麼：依據建築製圖核心規範與力學幾何定理演算。"
+          ],
+          "answer": "平面、立面、剖面與詳圖的索引及版次一致",
+          "hints": [
+            "分析題目核心條件與建築製圖規範/定理",
+            "列出對應計算式或幾何平衡條件求解"
+          ],
+          "commonMistake": "容易在正負號方向、單位換算 (如 MPa = N/mm²) 或圖例符號代入時產生計算失誤。",
+          "eliteShortcut": "工程實務破題法：善用對稱性與基準線選定，直接鎖定關鍵數據快速秒殺！"
+        },
+        {
+          "question": "土木與建築製圖整合判讀計算完成後，最直接的量綱檢核為何？",
+          "difficulty": "觀念",
+          "steps": [
+            "逐項檢查輸入單位是否一致。 ｜為什麼：依據建築製圖核心規範與力學幾何定理演算。",
+            "結果應以 **圖面長度依標註用 mm 或 cm、高程用 m** 表達；不符時不可只改單位符號，須回推計算過程。 ｜為什麼：依據建築製圖核心規範與力學幾何定理演算。"
+          ],
+          "answer": "圖面長度依標註用 mm 或 cm、高程用 m",
+          "hints": [
+            "分析題目核心條件與建築製圖規範/定理",
+            "列出對應計算式或幾何平衡條件求解"
+          ],
+          "commonMistake": "容易在正負號方向、單位換算 (如 MPa = N/mm²) 或圖例符號代入時產生計算失誤。",
+          "eliteShortcut": "工程實務破題法：善用對稱性與基準線選定，直接鎖定關鍵數據快速秒殺！"
+        },
+        {
+          "question": "土木與建築製圖整合判讀結果出現負號時，正確處理方式為何？",
+          "difficulty": "易錯題",
+          "steps": [
+            "回到原先設定的<span className=\"text-indigo-600 font-bold\">正方向</span>或轉向。 ｜為什麼：依據建築製圖核心規範與力學幾何定理演算。",
+            "負號僅表示<span className=\"text-rose-600 font-bold\">實際方向與假設相反</span>，不代表答案必然錯誤。 ｜為什麼：依據建築製圖核心規範與力學幾何定理演算。"
+          ],
+          "answer": "保留大小並依符號修正實際方向",
+          "hints": [
+            "分析題目核心條件與建築製圖規範/定理",
+            "列出對應計算式或幾何平衡條件求解"
+          ],
+          "commonMistake": "容易在正負號方向、單位換算 (如 MPa = N/mm²) 或圖例符號代入時產生計算失誤。",
+          "eliteShortcut": "工程實務破題法：善用對稱性與基準線選定，直接鎖定關鍵數據快速秒殺！"
+        },
+        {
+          "question": "土木與建築製圖整合判讀最可靠的最後驗算策略為何？",
+          "difficulty": "進階",
+          "steps": [
+            "使用<span className=\"text-indigo-600 font-bold\">未參與主要求解的獨立關係</span>重新計算。 ｜為什麼：依據建築製圖核心規範與力學幾何定理演算。",
+            "同時檢查極端情況、方向與<span className=\"text-rose-600 font-bold\">有效數字</span>合理性。 ｜為什麼：依據建築製圖核心規範與力學幾何定理演算。"
+          ],
+          "answer": "以獨立關係複核並檢查方向、量綱與合理性",
+          "hints": [
+            "分析題目核心條件與建築製圖規範/定理",
+            "列出對應計算式或幾何平衡條件求解"
+          ],
+          "commonMistake": "容易在正負號方向、單位換算 (如 MPa = N/mm²) 或圖例符號代入時產生計算失誤。",
+          "eliteShortcut": "工程實務破題法：善用對稱性與基準線選定，直接鎖定關鍵數據快速秒殺！"
+        }
+      ]
+    },
     {
       slug: 'lines-and-lettering',
-      title: '1. 線條種類與字法',
-      desc: '深入掌握 CNS 11567 建築與工程製圖規範，包含線條分類、線寬階級、工程字體級距、圖紙圖頭規格與 CAD 線型管理。\n\n🔥 V6.0 考前秒殺秘訣：此核心概念統測出題率極高，建議善用圖解與鷹架提示反覆練習！',
-      status: 'done',
-      gradeLevel: 11,
-      examHitRate: 4,
-      step0Prerequisites: ["本章核心基礎：drafting之關鍵定義與物理幾何直覺","解題前置檢核：確認題型情境、已知條件量與求解目標"],
-      fatalTraps: [{"wrongThinking":"直覺選擇字面相近選項，未仔細檢驗題幹之特定限制條件。","correctThinking":"回歸核心公理與基本定義，逐項檢核題幹條件與反例。","trapDescription":"80% 考生在概念題中因粗心忽略前提假設而失分。"}],
-      eliteMentalModels: [{"technique":"第一性原理拆解法 (First Principles Breakdown)","explanation":"不依賴死記死背，由最底層的定義與公理邏輯推導出解題路徑，降維打擊各類統測變形題。"}],
-      covered_question_ids: ['111-2-22', '111-2-24', '111-2-35', '112-2-22', '112-2-23', '112-2-24', '112-2-31', '112-2-33', '113-2-22', '113-2-23', '113-2-25', '113-2-30', '113-2-34', '113-2-35', '114-2-22', '114-2-30', '114-2-32', '114-2-34', '114-2-35', '114-2-36', '114-2-39', '115-2-21', '115-2-26', '115-2-27', '115-2-29', '115-2-33', '115-2-34', '110-2-5', '110-2-13', '110-2-21', '110-2-29', '110-2-37'],
-      worked_examples: [
+      "title": "1. 線條種類與字法",
+      "desc": "深入掌握 CNS 11567 建築與工程製圖規範，包含線條分類、線寬階級、工程字體級距、圖紙圖頭規格與 CAD 線型管理。\n\n🔥 V6.0 考前秒殺秘訣：此核心概念統測出題率極高，建議善用圖解與鷹架提示反覆練習！",
+      "status": "done",
+      "gradeLevel": 11,
+      "examHitRate": 4,
+      "step0Prerequisites": [
+        "本章核心基礎：drafting之關鍵定義與物理幾何直覺",
+        "解題前置檢核：確認題型情境、已知條件量與求解目標"
+      ],
+      "fatalTraps": [
         {
-          question: '【步驟化例題】CNS 建築製圖線條層次與線寬規範：在 1:100 建築平面圖中，若粗實線（表示剖切牆體輪廓）線寬設定為 0.5 mm，則中實線（傢俱與門窗圖例）與細線（尺寸標註線）之建議線寬比例為何？',
-          difficulty: '基礎',
-          steps: [ "步驟 1：回顧 CNS 11567 建築製圖標準。線寬比例通常遵循 4:2:1 或 2:1:0.5 之階梯原則。", "步驟 2：計算各線寬。粗線 (0.5 mm) : 中線 (0.25 mm) : 細線 (0.13 mm 或 0.18 mm)。", "步驟 3：確定線條層次原則。剖切結構用粗線、未剖切輪廓用中線、輔助尺寸線用細線。" ], 
-          answer: '線寬比例約為 4:2:1，中實線約為 0.25 mm，細線約為 0.13~0.18 mm。'
+          "wrongThinking": "直覺選擇字面相近選項，未仔細檢驗題幹之特定限制條件。",
+          "correctThinking": "回歸核心公理與基本定義，逐項檢核題幹條件與反例。",
+          "trapDescription": "80% 考生在概念題中因粗心忽略前提假設而失分。"
         }
       ],
-      "illustrations": [ 'context.webp', 'mechanism.webp', 'comparison.webp', 'step-by-step.webp', 'drafting-real-world.webp', 'drafting-infographic.webp', 'concept-diagram.webp', 'formula-visual.webp' ],
-      concepts: [
+      "eliteMentalModels": [
         {
-          heading: 'CNS 建築與工程圖線條分類與粗細規範 (CNS 11567 / CNS 3)',
-          body: '在工程圖學中，不同線型與線寬代表明確的幾何意義與施工指示。**CNS** 規範將工程圖面線條分為粗線、中線、細線三種級距，比例通常為 <span className="text-rose-600 font-bold">4:2:1</span> (如 0.5mm / 0.35mm / 0.25mm)。當多種線條在同一位置重疊時，必須嚴格遵守相交與繪製優先順序。',
-          steps: [
-            '<span className="text-rose-600 font-bold">輪廓線</span>/實線 (**Visible Outline**) 優先級最高，不可被其他線條覆蓋。',
-            '<span className="text-indigo-600 font-bold">隱藏線</span>/虛線 (**Hidden Line**) 優先級第二，表示被遮擋之構造。',
-            '<span className="text-rose-600 font-bold">割面線</span>/切面線 (**Cutting Plane Line**) 優先級第三，指明剖切位置。',
-            '中心線/軸線 (**Center Line**) 優先級第四，表示圓心或結構軸線。',
-            '假想線 (**Phantom Line**) 優先級第五，表示移動極限或鄰接構件。',
-            '<span className="text-rose-600 font-bold">尺寸線</span>與延伸線 (**Dimension Line**) 優先級最低。'
+          "technique": "第一性原理拆解法 (First Principles Breakdown)",
+          "explanation": "不依賴死記死背，由最底層的定義與公理邏輯推導出解題路徑，降維打擊各類統測變形題。"
+        }
+      ],
+      "covered_question_ids": [
+        "111-2-22",
+        "111-2-24",
+        "111-2-35",
+        "112-2-22",
+        "112-2-23",
+        "112-2-24",
+        "112-2-31",
+        "112-2-33",
+        "113-2-22",
+        "113-2-23",
+        "113-2-25",
+        "113-2-30",
+        "113-2-34",
+        "113-2-35",
+        "114-2-22",
+        "114-2-30",
+        "114-2-32",
+        "114-2-34",
+        "114-2-35",
+        "114-2-36",
+        "114-2-39",
+        "115-2-21",
+        "115-2-26",
+        "115-2-27",
+        "115-2-29",
+        "115-2-33",
+        "115-2-34",
+        "110-2-5",
+        "110-2-13",
+        "110-2-21",
+        "110-2-29",
+        "110-2-37"
+      ],
+      "worked_examples": [
+        {
+          "question": "【步驟化例題】CNS 建築製圖線條層次與線寬規範：在 1:100 建築平面圖中，若粗實線（表示剖切牆體輪廓）線寬設定為 0.5 mm，則中實線（傢俱與門窗圖例）與細線（尺寸標註線）之建議線寬比例為何？",
+          "difficulty": "基礎",
+          "steps": [
+            "步驟 1：回顧 CNS 11567 建築製圖標準。線寬比例通常遵循 4:2:1 或 2:1:0.5 之階梯原則。 ｜為什麼：依據建築製圖核心規範與力學幾何定理演算。",
+            "步驟 2：計算各線寬。粗線 (0.5 mm) : 中線 (0.25 mm) : 細線 (0.13 mm 或 0.18 mm)。 ｜為什麼：依據建築製圖核心規範與力學幾何定理演算。",
+            "步驟 3：確定線條層次原則。剖切結構用粗線、未剖切輪廓用中線、輔助尺寸線用細線。 ｜為什麼：依據建築製圖核心規範與力學幾何定理演算。"
           ],
-          table: {
-            headers: ['線型名稱', 'CNS 規範線型', '建議線寬 (mm)', '主要用途與說明'],
-            rows: [
-              ['粗實線 (Continuous Thick)', '連續實線', '0.50 ~ 0.70', '可見輪廓線、主要結構體外框、圖框線'],
-              ['中實線 (Continuous Medium)', '連續實線', '0.35 ~ 0.50', '次要輪廓線、剖面圖中未剖切到之次要物件'],
-              ['細實線 (Continuous Thin)', '連續實線', '0.18 ~ 0.25', '尺寸線、尺寸界線、剖面線、指引線、折斷線'],
-              ['虛線 (Dashed Thin/Medium)', '短劃線 (間距1mm, 長3mm)', '0.25 ~ 0.35', '不可見輪廓線、隱藏構造、地下結構邊線'],
-              ['中心線 (Chain Thin)', '長單點劃線 (長10-15, 短1)', '0.18 ~ 0.25', '圓心線、對稱軸線、建築柱網中心軸線'],
-              ['假想線 (Chain Double-dashed)', '長雙點劃線', '0.18 ~ 0.25', '物件移動極限位置、鄰接構造、重複形狀']
+          "answer": "線寬比例約為 4:2:1，中實線約為 0.25 mm，細線約為 0.13~0.18 mm。",
+          "hints": [
+            "分析題目核心條件與建築製圖規範/定理",
+            "列出對應計算式或幾何平衡條件求解"
+          ],
+          "commonMistake": "容易在正負號方向、單位換算 (如 MPa = N/mm²) 或圖例符號代入時產生計算失誤。",
+          "eliteShortcut": "工程實務破題法：善用對稱性與基準線選定，直接鎖定關鍵數據快速秒殺！"
+        }
+      ],
+      "illustrations": [
+        "context.webp",
+        "mechanism.webp",
+        "comparison.webp",
+        "step-by-step.webp",
+        "drafting-real-world.webp",
+        "drafting-infographic.webp",
+        "concept-diagram.webp",
+        "formula-visual.webp"
+      ],
+      "concepts": [
+        {
+          "heading": "CNS 建築與工程圖線條分類與粗細規範 (CNS 11567 / CNS 3)",
+          "body": "在工程圖學中，不同線型與線寬代表明確的幾何意義與施工指示。**CNS** 規範將工程圖面線條分為粗線、中線、細線三種級距，比例通常為 <span className=\"text-rose-600 font-bold\">4:2:1</span> (如 0.5mm / 0.35mm / 0.25mm)。當多種線條在同一位置重疊時，必須嚴格遵守相交與繪製優先順序。",
+          "steps": [
+            "<span className=\"text-rose-600 font-bold\">輪廓線</span>/實線 (**Visible Outline**) 優先級最高，不可被其他線條覆蓋。",
+            "<span className=\"text-indigo-600 font-bold\">隱藏線</span>/虛線 (**Hidden Line**) 優先級第二，表示被遮擋之構造。",
+            "<span className=\"text-rose-600 font-bold\">割面線</span>/切面線 (**Cutting Plane Line**) 優先級第三，指明剖切位置。",
+            "中心線/軸線 (**Center Line**) 優先級第四，表示圓心或結構軸線。",
+            "假想線 (**Phantom Line**) 優先級第五，表示移動極限或鄰接構件。",
+            "<span className=\"text-rose-600 font-bold\">尺寸線</span>與延伸線 (**Dimension Line**) 優先級最低。"
+          ],
+          "table": {
+            "headers": [
+              "線型名稱",
+              "CNS 規範線型",
+              "建議線寬 (mm)",
+              "主要用途與說明"
+            ],
+            "rows": [
+              [
+                "粗實線 (Continuous Thick)",
+                "連續實線",
+                "0.50 ~ 0.70",
+                "可見輪廓線、主要結構體外框、圖框線"
+              ],
+              [
+                "中實線 (Continuous Medium)",
+                "連續實線",
+                "0.35 ~ 0.50",
+                "次要輪廓線、剖面圖中未剖切到之次要物件"
+              ],
+              [
+                "細實線 (Continuous Thin)",
+                "連續實線",
+                "0.18 ~ 0.25",
+                "尺寸線、尺寸界線、剖面線、指引線、折斷線"
+              ],
+              [
+                "虛線 (Dashed Thin/Medium)",
+                "短劃線 (間距1mm, 長3mm)",
+                "0.25 ~ 0.35",
+                "不可見輪廓線、隱藏構造、地下結構邊線"
+              ],
+              [
+                "中心線 (Chain Thin)",
+                "長單點劃線 (長10-15, 短1)",
+                "0.18 ~ 0.25",
+                "圓心線、對稱軸線、建築柱網中心軸線"
+              ],
+              [
+                "假想線 (Chain Double-dashed)",
+                "長雙點劃線",
+                "0.18 ~ 0.25",
+                "物件移動極限位置、鄰接構造、重複形狀"
+              ]
             ]
           }
         },
         {
-          heading: '工程字體與中文字規範 (CNS Lettering Standards)',
-          body: '工程圖面上的文字說明、圖名與尺寸數字必須清晰、勻稱，避免手寫混淆造成施工錯誤。**CNS** 規定中文採用仿宋體或等線體，字高與字寬有標準級距。',
-          steps: [
-            '中文字體：採用 **CNS** 規定之仿宋體或等線體 (**Gothic**)，筆畫粗細一致，結構方正。',
-            '英數字體：採用直式或向右傾斜 75° 之標準斜體哥德體。',
-            '字高級距：標準級距為 2.5, 3.5, 5, 7, 10, 14, 20 mm。',
-            '字高選用：圖名與標題採用 7~10mm，一般說明文字與尺寸數字採用 3.5mm 或 2.5mm。'
+          "heading": "工程字體與中文字規範 (CNS Lettering Standards)",
+          "body": "工程圖面上的文字說明、圖名與尺寸數字必須清晰、勻稱，避免手寫混淆造成施工錯誤。**CNS** 規定中文採用仿宋體或等線體，字高與字寬有標準級距。",
+          "steps": [
+            "中文字體：採用 **CNS** 規定之仿宋體或等線體 (**Gothic**)，筆畫粗細一致，結構方正。",
+            "英數字體：採用直式或向右傾斜 75° 之標準斜體哥德體。",
+            "字高級距：標準級距為 2.5, 3.5, 5, 7, 10, 14, 20 mm。",
+            "字高選用：圖名與標題採用 7~10mm，一般說明文字與尺寸數字採用 3.5mm 或 2.5mm。"
           ]
         },
         {
-          heading: '圖紙規格與圖號圖頭規範 (Drawing Title Block & Sheet Specs)',
-          body: '**CNS** 建築製圖規定圖紙尺寸採用 A 系列標準（長寬比為 1:√2），圖紙右下角必須設置圖頭 (**Title Block**) 以標明工程名稱、圖名、圖號、比例、設計者及日期等關鍵資訊。',
-          table: {
-            headers: ['圖紙規格', '尺寸 (mm)', '圖邊留白 (裝訂側 / 非裝訂側)', '常用適用圖別'],
-            rows: [
-              ['A0', '841 × 1189', '25 mm / 10 mm', '全區配置圖、大型建築全套施工圖'],
-              ['A1', '594 × 841', '25 mm / 10 mm', '標準建築平面圖、立面圖、剖面圖'],
-              ['A2', '420 × 594', '25 mm / 10 mm', '結構平面圖、設備圖、中型圖面'],
-              ['A3', '297 × 420', '25 mm / 5 mm', '簡報圖、細部大樣圖、簡圖附件'],
-              ['A4', '210 × 297', '25 mm / 5 mm', '說明書、施工規範、材料數量表']
+          "heading": "圖紙規格與圖號圖頭規範 (Drawing Title Block & Sheet Specs)",
+          "body": "**CNS** 建築製圖規定圖紙尺寸採用 A 系列標準（長寬比為 1:√2），圖紙右下角必須設置圖頭 (**Title Block**) 以標明工程名稱、圖名、圖號、比例、設計者及日期等關鍵資訊。",
+          "table": {
+            "headers": [
+              "圖紙規格",
+              "尺寸 (mm)",
+              "圖邊留白 (裝訂側 / 非裝訂側)",
+              "常用適用圖別"
+            ],
+            "rows": [
+              [
+                "A0",
+                "841 × 1189",
+                "25 mm / 10 mm",
+                "全區配置圖、大型建築全套施工圖"
+              ],
+              [
+                "A1",
+                "594 × 841",
+                "25 mm / 10 mm",
+                "標準建築平面圖、立面圖、剖面圖"
+              ],
+              [
+                "A2",
+                "420 × 594",
+                "25 mm / 10 mm",
+                "結構平面圖、設備圖、中型圖面"
+              ],
+              [
+                "A3",
+                "297 × 420",
+                "25 mm / 5 mm",
+                "簡報圖、細部大樣圖、簡圖附件"
+              ],
+              [
+                "A4",
+                "210 × 297",
+                "25 mm / 5 mm",
+                "說明書、施工規範、材料數量表"
+              ]
             ]
           }
         },
         {
-          heading: 'AutoCAD 線型與線寬管理指令表',
-          body: '在電腦輔助設計 (**AutoCAD**) 中，線型與線寬通常透過圖層 (**Layer**) 或 CTB 出圖樣式表管理，熟練掌握相關設定指令是專業繪圖必備技能。',
-          table: {
-            headers: ['CAD 指令', '快捷鍵', '功能說明', 'CNS 繪圖應用重點'],
-            rows: [
-              ['LINETYPE', 'LT', '載入與管理線型', '載入 CENTER(中心線)、HIDDEN(虛線)、PHANTOM(假想線)'],
-              ['LTSCALE', 'LTS', '設定全圖線型比例因子', '根據圖面比例 (如 1/100) 調整虛線間距與點劃線顯示'],
-              ['LWEIGHT', 'LW', '顯示/隱藏實體線寬', '開啟線寬顯示以即時檢查圖面粗細層次'],
-              ['LAYER', 'LA', '開啟圖層管理員', '將不同線型與顏色分配至標準圖層 (Wall, Axis, Dim)']
+          "heading": "AutoCAD 線型與線寬管理指令表",
+          "body": "在電腦輔助設計 (**AutoCAD**) 中，線型與線寬通常透過圖層 (**Layer**) 或 CTB 出圖樣式表管理，熟練掌握相關設定指令是專業繪圖必備技能。",
+          "table": {
+            "headers": [
+              "CAD 指令",
+              "快捷鍵",
+              "功能說明",
+              "CNS 繪圖應用重點"
+            ],
+            "rows": [
+              [
+                "LINETYPE",
+                "LT",
+                "載入與管理線型",
+                "載入 CENTER(中心線)、HIDDEN(虛線)、PHANTOM(假想線)"
+              ],
+              [
+                "LTSCALE",
+                "LTS",
+                "設定全圖線型比例因子",
+                "根據圖面比例 (如 1/100) 調整虛線間距與點劃線顯示"
+              ],
+              [
+                "LWEIGHT",
+                "LW",
+                "顯示/隱藏實體線寬",
+                "開啟線寬顯示以即時檢查圖面粗細層次"
+              ],
+              [
+                "LAYER",
+                "LA",
+                "開啟圖層管理員",
+                "將不同線型與顏色分配至標準圖層 (Wall, Axis, Dim)"
+              ]
             ]
           }
         },
         {
-          heading: '線條相交與畫法特別原則',
-          body: '虛線與實線、虛線與虛線相交時，必須符合 **CNS** 正確相交規範，以防圖面產生誤解與讀圖歧義。',
-          steps: [
-            '虛線與實線垂直或相交時，虛線的劃線部分應與實線相接（不可留有間隙）。',
-            '虛線為實線之直續延長線時，兩線相接處應留有約 1mm 之間隙以示區隔。',
-            '兩虛線相交時，應在實線段處相交（形成十或丁字形），不可交叉在間隙處。',
-            '中心線超越物件<span className="text-rose-600 font-bold">輪廓線</span>之長度應為 2 ~ 5 mm，且不得終止於<span className="text-rose-600 font-bold">輪廓線</span>上。'
+          "heading": "線條相交與畫法特別原則",
+          "body": "虛線與實線、虛線與虛線相交時，必須符合 **CNS** 正確相交規範，以防圖面產生誤解與讀圖歧義。",
+          "steps": [
+            "虛線與實線垂直或相交時，虛線的劃線部分應與實線相接（不可留有間隙）。",
+            "虛線為實線之直續延長線時，兩線相接處應留有約 1mm 之間隙以示區隔。",
+            "兩虛線相交時，應在實線段處相交（形成十或丁字形），不可交叉在間隙處。",
+            "中心線超越物件<span className=\"text-rose-600 font-bold\">輪廓線</span>之長度應為 2 ~ 5 mm，且不得終止於<span className=\"text-rose-600 font-bold\">輪廓線</span>上。"
           ]
         }
       ],
-      practices: [
+      "practices": [
         {
-          difficulty: '基礎',
-          question: '在 CNS 建築製圖規範中，當實線（輪廓線）、虛線（隱藏線）與中心線在圖面同一位置重疊時，應優先繪製哪一種線條？',
-          steps: [
-            '根據 CNS 線條重疊優先順序：實線 (可見輪廓線) > 虛線 (隱藏線) > 割面線 > 中心線 > 假想線 > <span className="text-rose-600 font-bold">尺寸線</span>。',
-            '因此當三者重疊時，應優先繪製實線。'
+          "difficulty": "基礎",
+          "question": "在 CNS 建築製圖規範中，當實線（輪廓線）、虛線（隱藏線）與中心線在圖面同一位置重疊時，應優先繪製哪一種線條？",
+          "steps": [
+            "根據 CNS 線條重疊優先順序：實線 (可見輪廓線) > 虛線 (隱藏線) > 割面線 > 中心線 > 假想線 > <span className=\"text-rose-600 font-bold\">尺寸線</span>。 ｜為什麼：依據建築製圖核心規範與力學幾何定理演算。",
+            "因此當三者重疊時，應優先繪製實線。 ｜為什麼：依據建築製圖核心規範與力學幾何定理演算。"
           ],
-          answer: '實線 (可見輪廓線)'
+          "answer": "實線 (可見輪廓線)",
+          "hints": [
+            "分析題目核心條件與建築製圖規範/定理",
+            "列出對應計算式或幾何平衡條件求解"
+          ],
+          "commonMistake": "容易在正負號方向、單位換算 (如 MPa = N/mm²) 或圖例符號代入時產生計算失誤。",
+          "eliteShortcut": "工程實務破題法：善用對稱性與基準線選定，直接鎖定關鍵數據快速秒殺！"
         },
         {
-          difficulty: '高頻統測題',
-          question: '下列何種線型於 CNS 規範中規定採用「長雙點劃線 (Chain Double-dashed)」繪製？ (A) 隱藏構造 (B) 物件移動極限位置或鄰接構造 (C) 圓心軸線 (D) 切面剖線。',
-          steps: [
-            '長雙點劃線為「假想線 (**Phantom Line**)」，專用於表示假想構造、動件極限位置或鄰接物件。故 (**B**) 正確。'
+          "difficulty": "高頻統測題",
+          "question": "下列何種線型於 CNS 規範中規定採用「長雙點劃線 (Chain Double-dashed)」繪製？ (A) 隱藏構造 (B) 物件移動極限位置或鄰接構造 (C) 圓心軸線 (D) 切面剖線。",
+          "steps": [
+            "長雙點劃線為「假想線 (**Phantom Line**)」，專用於表示假想構造、動件極限位置或鄰接物件。故 (**B**) 正確。 ｜為什麼：依據建築製圖核心規範與力學幾何定理演算。"
           ],
-          answer: '(B) 物件移動極限位置或鄰接構造'
+          "answer": "(B) 物件移動極限位置或鄰接構造",
+          "hints": [
+            "分析題目核心條件與建築製圖規範/定理",
+            "列出對應計算式或幾何平衡條件求解"
+          ],
+          "commonMistake": "容易在正負號方向、單位換算 (如 MPa = N/mm²) 或圖例符號代入時產生計算失誤。",
+          "eliteShortcut": "工程實務破題法：善用對稱性與基準線選定，直接鎖定關鍵數據快速秒殺！"
         },
         {
-          difficulty: '進階',
-          question: '一張以 1:100 比例繪製的 A1 圖紙，模型空間中繪製了一條 50m 長的中心線，且虛線間距過密無法顯示。若要使中心線在圖紙空間 (Layout) 中正確顯示點劃線間距，應如何調整 AutoCAD 中的 LTSCALE 與 PSLTSCALE 參數？',
-          steps: [
-            'Step 1: 在圖紙空間 Layout 中將 PSLTSCALE 設定為 1（開啟圖紙空間自動統一線型比例）。',
-            'Step 2: 將 MSLTSCALE 設定為 1（使模型空間依據當前註解比例顯示線型）。',
-            'Step 3: 將全域 LTSCALE 設定為 1 或標準值（如 10），輸入 REGEN (**RG**) 重新生成圖面。'
+          "difficulty": "進階",
+          "question": "一張以 1:100 比例繪製的 A1 圖紙，模型空間中繪製了一條 50m 長的中心線，且虛線間距過密無法顯示。若要使中心線在圖紙空間 (Layout) 中正確顯示點劃線間距，應如何調整 AutoCAD 中的 LTSCALE 與 PSLTSCALE 參數？",
+          "steps": [
+            "Step 1: 在圖紙空間 Layout 中將 PSLTSCALE 設定為 1（開啟圖紙空間自動統一線型比例）。 ｜為什麼：依據建築製圖核心規範與力學幾何定理演算。",
+            "Step 2: 將 MSLTSCALE 設定為 1（使模型空間依據當前註解比例顯示線型）。 ｜為什麼：依據建築製圖核心規範與力學幾何定理演算。",
+            "Step 3: 將全域 LTSCALE 設定為 1 或標準值（如 10），輸入 REGEN (**RG**) 重新生成圖面。 ｜為什麼：依據建築製圖核心規範與力學幾何定理演算。"
           ],
-          answer: '將 PSLTSCALE 設為 1，MSLTSCALE 設為 1，全域 LTSCALE 設為 1 並執行 REGEN。'
+          "answer": "將 PSLTSCALE 設為 1，MSLTSCALE 設為 1，全域 LTSCALE 設為 1 並執行 REGEN。",
+          "hints": [
+            "分析題目核心條件與建築製圖規範/定理",
+            "列出對應計算式或幾何平衡條件求解"
+          ],
+          "commonMistake": "容易在正負號方向、單位換算 (如 MPa = N/mm²) 或圖例符號代入時產生計算失誤。",
+          "eliteShortcut": "工程實務破題法：善用對稱性與基準線選定，直接鎖定關鍵數據快速秒殺！"
         },
         {
-          difficulty: '高頻統測題',
-          question: '依據 ISO 及 CNS 國際圖紙標準，A0 圖紙裁切後的標準長寬尺寸為 841 mm × 1189 mm。若將 A0 圖紙對半裁切，所得之 A1 圖紙標準尺寸為何？',
-          steps: [
-            'A 系列圖紙對半裁切規律：寬度變為長度的一半，長度變為原寬度。',
-            '1189 / 2 = 594.5 (取 594 mm)；原寬度 841 mm 變為長度。',
-            '故 A1 圖紙尺寸為 594 mm × 841 mm。'
+          "difficulty": "高頻統測題",
+          "question": "依據 ISO 及 CNS 國際圖紙標準，A0 圖紙裁切後的標準長寬尺寸為 841 mm × 1189 mm。若將 A0 圖紙對半裁切，所得之 A1 圖紙標準尺寸為何？",
+          "steps": [
+            "A 系列圖紙對半裁切規律：寬度變為長度的一半，長度變為原寬度。 ｜為什麼：依據建築製圖核心規範與力學幾何定理演算。",
+            "1189 / 2 = 594.5 (取 594 mm)；原寬度 841 mm 變為長度。 ｜為什麼：依據建築製圖核心規範與力學幾何定理演算。",
+            "故 A1 圖紙尺寸為 594 mm × 841 mm。 ｜為什麼：依據建築製圖核心規範與力學幾何定理演算。"
           ],
-          answer: '594 mm × 841 mm'
+          "answer": "594 mm × 841 mm",
+          "hints": [
+            "分析題目核心條件與建築製圖規範/定理",
+            "列出對應計算式或幾何平衡條件求解"
+          ],
+          "commonMistake": "容易在正負號方向、單位換算 (如 MPa = N/mm²) 或圖例符號代入時產生計算失誤。",
+          "eliteShortcut": "工程實務破題法：善用對稱性與基準線選定，直接鎖定關鍵數據快速秒殺！"
         }
       ]
     },
     {
       slug: 'scale',
-      title: '2. 比例與尺度',
-      desc: '掌握圖面比例換算、三稜比例尺讀取、建築工程常用比例選用表 (1/100, 1/50, 1/20) 及 CAD 出圖比例設定。\n\n🔥 V6.0 考前秒殺秘訣：此核心概念統測出題率極高，建議善用圖解與鷹架提示反覆練習！',
-      status: 'done',
-      gradeLevel: 11,
-      examHitRate: 4,
-      step0Prerequisites: ["本章核心基礎：scale之關鍵定義與物理幾何直覺","解題前置檢核：確認題型情境、已知條件量與求解目標"],
-      fatalTraps: [{"wrongThinking":"直覺選擇字面相近選項，未仔細檢驗題幹之特定限制條件。","correctThinking":"回歸核心公理與基本定義，逐項檢核題幹條件與反例。","trapDescription":"80% 考生在概念題中因粗心忽略前提假設而失分。"}],
-      eliteMentalModels: [{"technique":"第一性原理拆解法 (First Principles Breakdown)","explanation":"不依賴死記死背，由最底層的定義與公理邏輯推導出解題路徑，降維打擊各類統測變形題。"}],
-      covered_question_ids: ['111-2-31', '112-2-32', '113-2-27', '114-2-28', '115-2-40'],
-      worked_examples: [
+      "title": "2. 比例與尺度",
+      "desc": "掌握圖面比例換算、三稜比例尺讀取、建築工程常用比例選用表 (1/100, 1/50, 1/20) 及 CAD 出圖比例設定。\n\n🔥 V6.0 考前秒殺秘訣：此核心概念統測出題率極高，建議善用圖解與鷹架提示反覆練習！",
+      "status": "done",
+      "gradeLevel": 11,
+      "examHitRate": 4,
+      "step0Prerequisites": [
+        "本章核心基礎：scale之關鍵定義與物理幾何直覺",
+        "解題前置檢核：確認題型情境、已知條件量與求解目標"
+      ],
+      "fatalTraps": [
         {
-          question: '【步驟化例題】比例尺縮放與實地長度換算：一張建築平面圖之比例尺標示為 1:100。若設計者使用直尺在圖面上量得客廳總長度為 6.8 公分，請問該客廳之實際長度為多少公尺？',
-          difficulty: '基礎',
-          steps: [ "步驟 1：理解比例尺定義。1:100 代表圖上 1 cm 等於實際 100 cm (1 m)。", "步驟 2：計算實際公分高度。實際長度 = 6.8 cm × 100 = 680 cm。", "步驟 3：單位換算為公尺。680 cm = 6.8 公尺。" ], 
-          answer: '實際長度為 6.8 公尺。'
+          "wrongThinking": "直覺選擇字面相近選項，未仔細檢驗題幹之特定限制條件。",
+          "correctThinking": "回歸核心公理與基本定義，逐項檢核題幹條件與反例。",
+          "trapDescription": "80% 考生在概念題中因粗心忽略前提假設而失分。"
         }
       ],
-      "illustrations": [ 'context.webp', 'mechanism.webp', 'comparison.webp', 'step-by-step.webp', 'drafting-real-world.webp', 'scale-infographic.webp', 'concept-diagram.webp', 'formula-visual.webp' ],
-      concepts: [
+      "eliteMentalModels": [
         {
-          heading: '比例的定義與 CNS 分類標準',
-          body: '比例 (**Scale**) 為圖紙上圖形尺寸與實物實際尺寸之比值。表示法為「圖面尺寸 : 實物尺寸」。工程圖學中依據實物大小與圖紙限制分為原尺、縮尺與放大尺。',
-          formula: '比例 = 圖式長度 / 實物實際長度\n實物實際長度 = 圖式長度 × 比例分母',
-          table: {
-            headers: ['比例類別', '標準表示法', 'CNS 規定常用縮尺級距', '主要應用場合'],
-            rows: [
-              ['原尺 (Full Scale)', '1:1', '1:1', '細部大樣圖、精密接頭構造、門窗立面大樣'],
-              ['縮尺 (Reduction)', '1:N (N>1)', '1:2, 1:5, 1:10, 1:20, 1:50, 1:100, 1:200, 1:500', '建築平面圖、立面圖、剖面圖、全區配置圖'],
-              ['放大尺 (Enlargement)', 'N:1 (N>1)', '2:1, 5:1, 10:1', '微小零件、五金扣件精密構造圖']
+          "technique": "第一性原理拆解法 (First Principles Breakdown)",
+          "explanation": "不依賴死記死背，由最底層的定義與公理邏輯推導出解題路徑，降維打擊各類統測變形題。"
+        }
+      ],
+      "covered_question_ids": [
+        "111-2-31",
+        "112-2-32",
+        "113-2-27",
+        "114-2-28",
+        "115-2-40"
+      ],
+      "worked_examples": [
+        {
+          "question": "【步驟化例題】比例尺縮放與實地長度換算：一張建築平面圖之比例尺標示為 1:100。若設計者使用直尺在圖面上量得客廳總長度為 6.8 公分，請問該客廳之實際長度為多少公尺？",
+          "difficulty": "基礎",
+          "steps": [
+            "步驟 1：理解比例尺定義。1:100 代表圖上 1 cm 等於實際 100 cm (1 m)。 ｜為什麼：依據建築製圖核心規範與力學幾何定理演算。",
+            "步驟 2：計算實際公分高度。實際長度 = 6.8 cm × 100 = 680 cm。 ｜為什麼：依據建築製圖核心規範與力學幾何定理演算。",
+            "步驟 3：單位換算為公尺。680 cm = 6.8 公尺。 ｜為什麼：依據建築製圖核心規範與力學幾何定理演算。"
+          ],
+          "answer": "實際長度為 6.8 公尺。",
+          "hints": [
+            "分析題目核心條件與建築製圖規範/定理",
+            "列出對應計算式或幾何平衡條件求解"
+          ],
+          "commonMistake": "容易在正負號方向、單位換算 (如 MPa = N/mm²) 或圖例符號代入時產生計算失誤。",
+          "eliteShortcut": "工程實務破題法：善用對稱性與基準線選定，直接鎖定關鍵數據快速秒殺！"
+        }
+      ],
+      "illustrations": [
+        "context.webp",
+        "mechanism.webp",
+        "comparison.webp",
+        "step-by-step.webp",
+        "drafting-real-world.webp",
+        "scale-infographic.webp",
+        "concept-diagram.webp",
+        "formula-visual.webp"
+      ],
+      "concepts": [
+        {
+          "heading": "比例的定義與 CNS 分類標準",
+          "body": "比例 (**Scale**) 為圖紙上圖形尺寸與實物實際尺寸之比值。表示法為「圖面尺寸 : 實物尺寸」。工程圖學中依據實物大小與圖紙限制分為原尺、縮尺與放大尺。",
+          "formula": "比例 = 圖式長度 / 實物實際長度\n實物實際長度 = 圖式長度 × 比例分母",
+          "table": {
+            "headers": [
+              "比例類別",
+              "標準表示法",
+              "CNS 規定常用縮尺級距",
+              "主要應用場合"
+            ],
+            "rows": [
+              [
+                "原尺 (Full Scale)",
+                "1:1",
+                "1:1",
+                "細部大樣圖、精密接頭構造、門窗立面大樣"
+              ],
+              [
+                "縮尺 (Reduction)",
+                "1:N (N>1)",
+                "1:2, 1:5, 1:10, 1:20, 1:50, 1:100, 1:200, 1:500",
+                "建築平面圖、立面圖、剖面圖、全區配置圖"
+              ],
+              [
+                "放大尺 (Enlargement)",
+                "N:1 (N>1)",
+                "2:1, 5:1, 10:1",
+                "微小零件、五金扣件精密構造圖"
+              ]
             ]
           }
         },
         {
-          heading: '建築常用比例尺選用表 (1/100, 1/50, 1/20 等)',
-          body: '建築工程圖依據圖面表達之精細程度與空間涵蓋範圍，對應嚴格的比例選用原則。專業建築圖集必須在圖頭中明確標記比例。\n\n**🔄 跨科連結：** 放樣時圖面比例的縮放，必須依賴《測量實習》中所測得之現場真實距離。測量控制點之精度決定了圖面放樣至工地的正確性。',
-          table: {
-            headers: ['常用比例', '圖紙單位換算 (1cm 代表)', '適用建築圖別', '圖面資訊涵蓋範圍'],
-            rows: [
-              ['1 / 500 ~ 1 / 1000', '1cm = 5m ~ 10m', '基地位置圖、全區配置圖、都市計畫圖', '道路、地號邊界、周邊環境線條'],
-              ['1 / 200', '1cm = 2m', '法規檢討圖、全區剖面圖、大型結構總圖', '大樓整體輪廓、防火區劃、核算面積'],
-              ['1 / 100', '1cm = 1m', '標準平面圖、立面圖、剖面圖、結構平面圖', '牆體位置、門窗編號、柱網軸線、空間名稱'],
-              ['1 / 50', '1cm = 0.5m (50cm)', '室內裝修平面圖、廚衛剖立面圖、地坪鋪面圖', '詳細傢俱尺寸、門窗尺寸、材料標記、高程'],
-              ['1 / 20 ~ 1 / 10', '1cm = 20cm ~ 10cm', '樓梯大樣圖、衛浴大樣圖、天花板剖面大樣', '鋼筋排佈、防水層、收邊材料構造、扣件']
+          "heading": "建築常用比例尺選用表 (1/100, 1/50, 1/20 等)",
+          "body": "建築工程圖依據圖面表達之精細程度與空間涵蓋範圍，對應嚴格的比例選用原則。專業建築圖集必須在圖頭中明確標記比例。\n\n**🔄 跨科連結：** 放樣時圖面比例的縮放，必須依賴《測量實習》中所測得之現場真實距離。測量控制點之精度決定了圖面放樣至工地的正確性。",
+          "table": {
+            "headers": [
+              "常用比例",
+              "圖紙單位換算 (1cm 代表)",
+              "適用建築圖別",
+              "圖面資訊涵蓋範圍"
+            ],
+            "rows": [
+              [
+                "1 / 500 ~ 1 / 1000",
+                "1cm = 5m ~ 10m",
+                "基地位置圖、全區配置圖、都市計畫圖",
+                "道路、地號邊界、周邊環境線條"
+              ],
+              [
+                "1 / 200",
+                "1cm = 2m",
+                "法規檢討圖、全區剖面圖、大型結構總圖",
+                "大樓整體輪廓、防火區劃、核算面積"
+              ],
+              [
+                "1 / 100",
+                "1cm = 1m",
+                "標準平面圖、立面圖、剖面圖、結構平面圖",
+                "牆體位置、門窗編號、柱網軸線、空間名稱"
+              ],
+              [
+                "1 / 50",
+                "1cm = 0.5m (50cm)",
+                "室內裝修平面圖、廚衛剖立面圖、地坪鋪面圖",
+                "詳細傢俱尺寸、門窗尺寸、材料標記、高程"
+              ],
+              [
+                "1 / 20 ~ 1 / 10",
+                "1cm = 20cm ~ 10cm",
+                "樓梯大樣圖、衛浴大樣圖、天花板剖面大樣",
+                "鋼筋排佈、防水層、收邊材料構造、扣件"
+              ]
             ]
           }
         },
         {
-          heading: '三稜比例尺 (Triangular Scale Ruler) 正確操作步驟',
-          body: '建築師與繪圖員使用三稜**比例尺**（包含 1:100, 1:200, 1:300, 1:400, 1:500, 1:600 或 1:30, 1:40, 1:50 等刻度）進行精確量測與圖面繪製。',
-          steps: [
-            '步驟 1：核對圖面標題欄（Title Block）所記載之比例（例如 1:50）。',
-            '步驟 2：選擇三稜尺上對應之刻度面（若無 1:50，可利用 1:500 面將讀數乘以 10）。',
-            '步驟 3：將**比例尺** 0 刻度精確對準圖面上欲量測線段之起點。',
-            '步驟 4：直接讀取終點對應之刻度數字，該數值即為「實物實際尺寸」（無須手動乘以 50）。',
-            '注意：量測時切忌以普通直尺量公分後再心算，易產生換算累積誤差。'
+          "heading": "三稜比例尺 (Triangular Scale Ruler) 正確操作步驟",
+          "body": "建築師與繪圖員使用三稜**比例尺**（包含 1:100, 1:200, 1:300, 1:400, 1:500, 1:600 或 1:30, 1:40, 1:50 等刻度）進行精確量測與圖面繪製。",
+          "steps": [
+            "步驟 1：核對圖面標題欄（Title Block）所記載之比例（例如 1:50）。",
+            "步驟 2：選擇三稜尺上對應之刻度面（若無 1:50，可利用 1:500 面將讀數乘以 10）。",
+            "步驟 3：將**比例尺** 0 刻度精確對準圖面上欲量測線段之起點。",
+            "步驟 4：直接讀取終點對應之刻度數字，該數值即為「實物實際尺寸」（無須手動乘以 50）。",
+            "注意：量測時切忌以普通直尺量公分後再心算，易產生換算累積誤差。"
           ]
         },
         {
-          heading: 'AutoCAD 模型空間與圖紙空間出圖比例設定',
-          body: '在現代 CAD 工作流中，模型空間 (**Model Space**) 一律以 1:1 實物尺寸繪製 (單位通常為 cm 或 mm)，而在圖紙空間 (**Layout**) 透過視埠 (**Viewport**) 設定輸出比例。',
-          table: {
-            headers: ['CAD 設定項目', '1:100 出圖 (繪圖單位: cm)', '1:50 出圖 (繪圖單位: cm)', '1:20 出圖 (繪圖單位: cm)'],
-            rows: [
-              ['視埠自訂比例 (Custom Scale)', '1 / 100 = 0.01', '1 / 50 = 0.02', '1 / 20 = 0.05'],
-              ['視埠比例 (XP 語法)', '1/100xp', '1/50xp', '1/20xp'],
-              ['DIMSCALE (標註全域比例)', '100', '50', '20'],
-              ['TEXTSIZE (出圖3.5mm文字原高)', '35 cm', '17.5 cm', '7 cm']
+          "heading": "AutoCAD 模型空間與圖紙空間出圖比例設定",
+          "body": "在現代 CAD 工作流中，模型空間 (**Model Space**) 一律以 1:1 實物尺寸繪製 (單位通常為 cm 或 mm)，而在圖紙空間 (**Layout**) 透過視埠 (**Viewport**) 設定輸出比例。",
+          "table": {
+            "headers": [
+              "CAD 設定項目",
+              "1:100 出圖 (繪圖單位: cm)",
+              "1:50 出圖 (繪圖單位: cm)",
+              "1:20 出圖 (繪圖單位: cm)"
+            ],
+            "rows": [
+              [
+                "視埠自訂比例 (Custom Scale)",
+                "1 / 100 = 0.01",
+                "1 / 50 = 0.02",
+                "1 / 20 = 0.05"
+              ],
+              [
+                "視埠比例 (XP 語法)",
+                "1/100xp",
+                "1/50xp",
+                "1/20xp"
+              ],
+              [
+                "DIMSCALE (標註全域比例)",
+                "100",
+                "50",
+                "20"
+              ],
+              [
+                "TEXTSIZE (出圖3.5mm文字原高)",
+                "35 cm",
+                "17.5 cm",
+                "7 cm"
+              ]
             ]
           }
         },
         {
-          heading: '比例轉換與圖形面積比例換算',
-          body: '長度比例與面積比例為二次方關係，體積比例為三次方關係，這在計算建築基地面積、建蔽率與容積率時極為重要。',
-          formula: '長度比 = 1 : N\n面積比 = 1 : N²\n實物實際面積 = 圖面面積 × N²'
+          "heading": "比例轉換與圖形面積比例換算",
+          "body": "長度比例與面積比例為二次方關係，體積比例為三次方關係，這在計算建築基地面積、建蔽率與容積率時極為重要。",
+          "formula": "長度比 = 1 : N\n面積比 = 1 : N²\n實物實際面積 = 圖面面積 × N²"
         }
       ],
-      practices: [
+      "practices": [
         {
-          difficulty: '基礎',
-          question: '在比例尺為 1:50 的建築平面圖上，量得某房間圖面長度為 12 cm，寬度為 8 cm，求解該房間的實際長度、實際寬度及實際面積 (m²)。',
-          steps: [
-            '⚠️ **統測陷阱 (Exam Trap)：** 切忌先算圖面面積再乘比例！面積比例是長度比例的平方。',
-            '正確解法：先換算為實際長度與寬度。',
-            '實際長度 = 12 cm × 50 = 600 cm = 6.0 m。',
-            '實際寬度 = 8 cm × 50 = 400 cm = 4.0 m。',
-            '實際面積 = 6.0 m × 4.0 m = 24.0 m²。'
+          "difficulty": "基礎",
+          "question": "在比例尺為 1:50 的建築平面圖上，量得某房間圖面長度為 12 cm，寬度為 8 cm，求解該房間的實際長度、實際寬度及實際面積 (m²)。",
+          "steps": [
+            "⚠️ **統測陷阱 (Exam Trap)：** 切忌先算圖面面積再乘比例！面積比例是長度比例的平方。 ｜為什麼：依據建築製圖核心規範與力學幾何定理演算。",
+            "正確解法：先換算為實際長度與寬度。 ｜為什麼：依據建築製圖核心規範與力學幾何定理演算。",
+            "實際長度 = 12 cm × 50 = 600 cm = 6.0 m。 ｜為什麼：依據建築製圖核心規範與力學幾何定理演算。",
+            "實際寬度 = 8 cm × 50 = 400 cm = 4.0 m。 ｜為什麼：依據建築製圖核心規範與力學幾何定理演算。",
+            "實際面積 = 6.0 m × 4.0 m = 24.0 m²。 ｜為什麼：依據建築製圖核心規範與力學幾何定理演算。"
           ],
-          answer: '長度 6.0 m, 寬度 4.0 m, 實際面積 24.0 m²'
+          "answer": "長度 6.0 m, 寬度 4.0 m, 實際面積 24.0 m²",
+          "hints": [
+            "分析題目核心條件與建築製圖規範/定理",
+            "列出對應計算式或幾何平衡條件求解"
+          ],
+          "commonMistake": "容易在正負號方向、單位換算 (如 MPa = N/mm²) 或圖例符號代入時產生計算失誤。",
+          "eliteShortcut": "工程實務破題法：善用對稱性與基準線選定，直接鎖定關鍵數據快速秒殺！"
         },
         {
-          difficulty: '高頻統測題',
-          question: '一塊不規則土地在 1:500 的配置圖上量得面積為 48 cm²。若該土地建蔽率為 60%、容積率為 240%，求解該基地的最大法定建築面積與最大總樓地板面積 (m²)。',
-          steps: [
-            '土地實際面積 = 48 cm² × (500)² = 48 × 250,000 = 12,000,000 cm² = 1200 m²。',
-            '最大法定建築面積 = 1200 m² × 60% = 720 m²。',
-            '最大總樓地板面積 = 1200 m² × 240% = 2880 m²。'
+          "difficulty": "高頻統測題",
+          "question": "一塊不規則土地在 1:500 的配置圖上量得面積為 48 cm²。若該土地建蔽率為 60%、容積率為 240%，求解該基地的最大法定建築面積與最大總樓地板面積 (m²)。",
+          "steps": [
+            "土地實際面積 = 48 cm² × (500)² = 48 × 250,000 = 12,000,000 cm² = 1200 m²。 ｜為什麼：依據建築製圖核心規範與力學幾何定理演算。",
+            "最大法定建築面積 = 1200 m² × 60% = 720 m²。 ｜為什麼：依據建築製圖核心規範與力學幾何定理演算。",
+            "最大總樓地板面積 = 1200 m² × 240% = 2880 m²。 ｜為什麼：依據建築製圖核心規範與力學幾何定理演算。"
           ],
-          answer: '最大建築面積 = 720 m²，最大總樓地板面積 = 2880 m²'
+          "answer": "最大建築面積 = 720 m²，最大總樓地板面積 = 2880 m²",
+          "hints": [
+            "分析題目核心條件與建築製圖規範/定理",
+            "列出對應計算式或幾何平衡條件求解"
+          ],
+          "commonMistake": "容易在正負號方向、單位換算 (如 MPa = N/mm²) 或圖例符號代入時產生計算失誤。",
+          "eliteShortcut": "工程實務破題法：善用對稱性與基準線選定，直接鎖定關鍵數據快速秒殺！"
         },
         {
-          difficulty: '進階',
-          question: '將一張原為 1:200 比例縮放列印的平面圖，經影印機放大 200% 後，現於放大圖紙上記錄一線段長度為 10 cm。求解該線段對應之真實實際長度為多少公尺？',
-          steps: [
-            '影印機放大 200% (即放大 2 倍)，故放大後的圖面比例變為 1:200 / 2 = 1:100。',
-            '在放大圖上量得 10 cm，實際長度 = 10 cm × 100 = 1000 cm = 10.0 m。'
+          "difficulty": "進階",
+          "question": "將一張原為 1:200 比例縮放列印的平面圖，經影印機放大 200% 後，現於放大圖紙上記錄一線段長度為 10 cm。求解該線段對應之真實實際長度為多少公尺？",
+          "steps": [
+            "影印機放大 200% (即放大 2 倍)，故放大後的圖面比例變為 1:200 / 2 = 1:100。 ｜為什麼：依據建築製圖核心規範與力學幾何定理演算。",
+            "在放大圖上量得 10 cm，實際長度 = 10 cm × 100 = 1000 cm = 10.0 m。 ｜為什麼：依據建築製圖核心規範與力學幾何定理演算。"
           ],
-          answer: '真實實際長度 = 10.0 m'
+          "answer": "真實實際長度 = 10.0 m",
+          "hints": [
+            "分析題目核心條件與建築製圖規範/定理",
+            "列出對應計算式或幾何平衡條件求解"
+          ],
+          "commonMistake": "容易在正負號方向、單位換算 (如 MPa = N/mm²) 或圖例符號代入時產生計算失誤。",
+          "eliteShortcut": "工程實務破題法：善用對稱性與基準線選定，直接鎖定關鍵數據快速秒殺！"
         },
         {
-          difficulty: '高頻統測題',
-          question: '建築大樣圖（如樓梯扶手接頭大樣、門窗剖面大樣）為了清晰展示材料疊交與扣件構造，通常優先採用下列哪一種縮尺比例？ (A) 1:500 (B) 1:200 (C) 1:100 (D) 1:10 或 1:20。',
-          steps: [
-            '細部大樣圖 (**Detail Drawing**) 需清晰展示細微構造與扣件，應採用大比例縮尺如 1:10 或 1:20。故 (**D**) 正確。'
+          "difficulty": "高頻統測題",
+          "question": "建築大樣圖（如樓梯扶手接頭大樣、門窗剖面大樣）為了清晰展示材料疊交與扣件構造，通常優先採用下列哪一種縮尺比例？ (A) 1:500 (B) 1:200 (C) 1:100 (D) 1:10 或 1:20。",
+          "steps": [
+            "細部大樣圖 (**Detail Drawing**) 需清晰展示細微構造與扣件，應採用大比例縮尺如 1:10 或 1:20。故 (**D**) 正確。 ｜為什麼：依據建築製圖核心規範與力學幾何定理演算。"
           ],
-          answer: '(D) 1:10 或 1:20'
+          "answer": "(D) 1:10 或 1:20",
+          "hints": [
+            "分析題目核心條件與建築製圖規範/定理",
+            "列出對應計算式或幾何平衡條件求解"
+          ],
+          "commonMistake": "容易在正負號方向、單位換算 (如 MPa = N/mm²) 或圖例符號代入時產生計算失誤。",
+          "eliteShortcut": "工程實務破題法：善用對稱性與基準線選定，直接鎖定關鍵數據快速秒殺！"
         }
       ]
     },
     {
       slug: 'orthographic-projection',
-      title: '3. 正投影視圖',
-      desc: '理解正投影原理、第一角法與第三角法嚴格比較、三視圖「長對正、高平齊、寬相等」與輔助視圖繪製。\n\n🔥 V6.0 考前秒殺秘訣：此核心概念統測出題率極高，建議善用圖解與鷹架提示反覆練習！',
-      status: 'done',
-      gradeLevel: 11,
-      examHitRate: 4,
-      step0Prerequisites: ["本章核心基礎：orthographic-projection之關鍵定義與物理幾何直覺","解題前置檢核：確認題型情境、已知條件量與求解目標"],
-      fatalTraps: [{"wrongThinking":"直覺選擇字面相近選項，未仔細檢驗題幹之特定限制條件。","correctThinking":"回歸核心公理與基本定義，逐項檢核題幹條件與反例。","trapDescription":"80% 考生在概念題中因粗心忽略前提假設而失分。"}],
-      eliteMentalModels: [{"technique":"第一性原理拆解法 (First Principles Breakdown)","explanation":"不依賴死記死背，由最底層的定義與公理邏輯推導出解題路徑，降維打擊各類統測變形題。"}],
-      covered_question_ids: ['111-2-28', '111-2-33', '111-2-40', '112-2-21', '112-2-27', '112-2-40', '113-2-26', '113-2-29', '114-2-29', '114-2-31', '115-2-28', '115-2-38', '115-2-39', '110-2-6', '110-2-14', '110-2-22', '110-2-30', '110-2-38'],
-      worked_examples: [
+      "title": "3. 正投影視圖",
+      "desc": "理解正投影原理、第一角法與第三角法嚴格比較、三視圖「長對正、高平齊、寬相等」與輔助視圖繪製。\n\n🔥 V6.0 考前秒殺秘訣：此核心概念統測出題率極高，建議善用圖解與鷹架提示反覆練習！",
+      "status": "done",
+      "gradeLevel": 11,
+      "examHitRate": 4,
+      "step0Prerequisites": [
+        "本章核心基礎：orthographic-projection之關鍵定義與物理幾何直覺",
+        "解題前置檢核：確認題型情境、已知條件量與求解目標"
+      ],
+      "fatalTraps": [
         {
-          question: '【步驟化例題】第三角法正投影視圖：在我國 CNS 建築製圖採用的「第三角法」正投影中，俯視圖（Plan View）與前視圖（Elevation View）的相對置放位置為何？',
-          difficulty: '基礎',
-          steps: [ "步驟 1：釐清第三角法投影原理。觀察者在最前/上方，投影面介於觀察者與物體之間（「人→面→物」）。", "步驟 2：判定視圖位置。上視圖（俯視圖）放置於前視圖的正上方。", "步驟 3：對比第一角法。第一角法上視圖放置於前視圖的正下方；第三角法符合直覺習慣。" ], 
-          answer: '俯視圖（上視圖）位於前視圖的正上方。'
+          "wrongThinking": "直覺選擇字面相近選項，未仔細檢驗題幹之特定限制條件。",
+          "correctThinking": "回歸核心公理與基本定義，逐項檢核題幹條件與反例。",
+          "trapDescription": "80% 考生在概念題中因粗心忽略前提假設而失分。"
         }
       ],
-      "illustrations": [ 'context.webp', 'mechanism.webp', 'comparison.webp', 'step-by-step.webp', 'drafting-real-world.webp', 'orthographic-projection-infographic.webp', 'concept-diagram.webp', 'formula-visual.webp' ],
-      concepts: [
+      "eliteMentalModels": [
         {
-          heading: '正投影基本幾何原理與投影面',
-          body: '**正投影** (**Orthographic Projection**) 係指觀察者之視線平行且垂直於投影面之投影方法。工程圖學利用三個互相垂直的直角投影面（V面:直立面、H面:水平面、W面:側立面）來完整表達三維物體之幾何形狀。',
-          steps: [
-            '前視圖/正視圖 (**Front View**)：由物體前方往後投影至 V 面，顯示物體之長度與高度。',
-            '俯視圖/上視圖 (**Top View**)：由物體上方往下投影至 H 面，顯示物體之長度與寬度。',
-            '右側視圖 (**Right Side View**)：由物體右方往左投影至 W 面，顯示物體之寬度與高度。'
+          "technique": "第一性原理拆解法 (First Principles Breakdown)",
+          "explanation": "不依賴死記死背，由最底層的定義與公理邏輯推導出解題路徑，降維打擊各類統測變形題。"
+        }
+      ],
+      "covered_question_ids": [
+        "111-2-28",
+        "111-2-33",
+        "111-2-40",
+        "112-2-21",
+        "112-2-27",
+        "112-2-40",
+        "113-2-26",
+        "113-2-29",
+        "114-2-29",
+        "114-2-31",
+        "115-2-28",
+        "115-2-38",
+        "115-2-39",
+        "110-2-6",
+        "110-2-14",
+        "110-2-22",
+        "110-2-30",
+        "110-2-38"
+      ],
+      "worked_examples": [
+        {
+          "question": "【步驟化例題】第三角法正投影視圖：在我國 CNS 建築製圖採用的「第三角法」正投影中，俯視圖（Plan View）與前視圖（Elevation View）的相對置放位置為何？",
+          "difficulty": "基礎",
+          "steps": [
+            "步驟 1：釐清第三角法投影原理。觀察者在最前/上方，投影面介於觀察者與物體之間（「人→面→物」）。 ｜為什麼：依據建築製圖核心規範與力學幾何定理演算。",
+            "步驟 2：判定視圖位置。上視圖（俯視圖）放置於前視圖的正上方。 ｜為什麼：依據建築製圖核心規範與力學幾何定理演算。",
+            "步驟 3：對比第一角法。第一角法上視圖放置於前視圖的正下方；第三角法符合直覺習慣。 ｜為什麼：依據建築製圖核心規範與力學幾何定理演算。"
+          ],
+          "answer": "俯視圖（上視圖）位於前視圖的正上方。",
+          "hints": [
+            "分析題目核心條件與建築製圖規範/定理",
+            "列出對應計算式或幾何平衡條件求解"
+          ],
+          "commonMistake": "容易在正負號方向、單位換算 (如 MPa = N/mm²) 或圖例符號代入時產生計算失誤。",
+          "eliteShortcut": "工程實務破題法：善用對稱性與基準線選定，直接鎖定關鍵數據快速秒殺！"
+        }
+      ],
+      "illustrations": [
+        "context.webp",
+        "mechanism.webp",
+        "comparison.webp",
+        "step-by-step.webp",
+        "drafting-real-world.webp",
+        "orthographic-projection-infographic.webp",
+        "concept-diagram.webp",
+        "formula-visual.webp"
+      ],
+      "concepts": [
+        {
+          "heading": "正投影基本幾何原理與投影面",
+          "body": "**正投影** (**Orthographic Projection**) 係指觀察者之視線平行且垂直於投影面之投影方法。工程圖學利用三個互相垂直的直角投影面（V面:直立面、H面:水平面、W面:側立面）來完整表達三維物體之幾何形狀。",
+          "steps": [
+            "前視圖/正視圖 (**Front View**)：由物體前方往後投影至 V 面，顯示物體之長度與高度。",
+            "俯視圖/上視圖 (**Top View**)：由物體上方往下投影至 H 面，顯示物體之長度與寬度。",
+            "右側視圖 (**Right Side View**)：由物體右方往左投影至 W 面，顯示物體之寬度與高度。"
           ]
         },
         {
-          heading: '第一角法與第三角法嚴格比較',
-          body: '依據物體在空間四個象限中的放置位置，分為<span className="text-rose-600 font-bold">第一角法</span>（歐洲常用）與<span className="text-rose-600 font-bold">第三角法</span>（台灣 **CNS**、美國、日本常用）。兩者投影視圖之相對排列位置截然不同。',
-          table: {
-            headers: ['比較項目', '第一角法 (First-angle)', '第三角法 (Third-angle)', '記憶與辨識技巧'],
-            rows: [
-              ['空間象限位置', '物體置於第一象限', '物體置於第三象限', '第1角物在中間，第3角面在中間'],
-              ['觀察關係', '觀察者 → 物體 → 投影面', '觀察者 → 投影面 → 物體', '第三角法如同透過玻璃箱觀看物體'],
-              ['俯視圖位置', '繪製於前視圖之「下方」', '繪製於前視圖之「上方」', '第三角法「上觀看畫在上方」'],
-              ['右側視圖位置', '繪製於前視圖之「左側」', '繪製於前視圖之「右側」', '第三角法「右觀看畫在右側」'],
-              ['ISO 國際符號', '左側小圓錐頂朝左', '左側小圓錐頂朝右', '圖頭標註必載符號']
+          "heading": "第一角法與第三角法嚴格比較",
+          "body": "依據物體在空間四個象限中的放置位置，分為<span className=\"text-rose-600 font-bold\">第一角法</span>（歐洲常用）與<span className=\"text-rose-600 font-bold\">第三角法</span>（台灣 **CNS**、美國、日本常用）。兩者投影視圖之相對排列位置截然不同。",
+          "table": {
+            "headers": [
+              "比較項目",
+              "第一角法 (First-angle)",
+              "第三角法 (Third-angle)",
+              "記憶與辨識技巧"
+            ],
+            "rows": [
+              [
+                "空間象限位置",
+                "物體置於第一象限",
+                "物體置於第三象限",
+                "第1角物在中間，第3角面在中間"
+              ],
+              [
+                "觀察關係",
+                "觀察者 → 物體 → 投影面",
+                "觀察者 → 投影面 → 物體",
+                "第三角法如同透過玻璃箱觀看物體"
+              ],
+              [
+                "俯視圖位置",
+                "繪製於前視圖之「下方」",
+                "繪製於前視圖之「上方」",
+                "第三角法「上觀看畫在上方」"
+              ],
+              [
+                "右側視圖位置",
+                "繪製於前視圖之「左側」",
+                "繪製於前視圖之「右側」",
+                "第三角法「右觀看畫在右側」"
+              ],
+              [
+                "ISO 國際符號",
+                "左側小圓錐頂朝左",
+                "左側小圓錐頂朝右",
+                "圖頭標註必載符號"
+              ]
             ]
           }
         },
         {
-          heading: '三視圖對齊原理與「長對正、高平齊、寬相等」',
-          body: '繪製**正投影**三視圖必須嚴格保持幾何對應關係，稱為**正投影**三大定律：',
-          formula: '前視圖與俯視圖：長度對正 (X 軸對齊)\n前視圖與側視圖：高度平齊 (Z 軸對齊)\n俯視圖與側視圖：寬度相等 (Y 軸透過 45° 輔助線旋轉轉換)'
+          "heading": "三視圖對齊原理與「長對正、高平齊、寬相等」",
+          "body": "繪製**正投影**三視圖必須嚴格保持幾何對應關係，稱為**正投影**三大定律：",
+          "formula": "前視圖與俯視圖：長度對正 (X 軸對齊)\n前視圖與側視圖：高度平齊 (Z 軸對齊)\n俯視圖與側視圖：寬度相等 (Y 軸透過 45° 輔助線旋轉轉換)"
         },
         {
-          heading: '斜面與輔助視圖 (Auxiliary Views) 繪製',
-          body: '當物體具有不平行於主要投影面的斜面時，在主要三視圖上該斜面會產生縮小畸變。需建立平行於斜面的「輔助投影面」以獲得實形 (**True Shape**)。',
-          steps: [
-            '步驟 1：在主要視圖上找出斜面的積聚線（線視圖，Line view）。',
-            '步驟 2：繪製平行於該積聚線之參考基線 (Reference Line, F/1 或 H/1)。',
-            '步驟 3：由斜面各頂點引出垂直於積聚線之投影引線。',
-            '步驟 4：從相鄰視圖量取深度尺寸（寬度），沿投影引線轉移至輔助面，連接各點即得真實形狀與真實角度。'
+          "heading": "斜面與輔助視圖 (Auxiliary Views) 繪製",
+          "body": "當物體具有不平行於主要投影面的斜面時，在主要三視圖上該斜面會產生縮小畸變。需建立平行於斜面的「輔助投影面」以獲得實形 (**True Shape**)。",
+          "steps": [
+            "步驟 1：在主要視圖上找出斜面的積聚線（線視圖，Line view）。",
+            "步驟 2：繪製平行於該積聚線之參考基線 (Reference Line, F/1 或 H/1)。",
+            "步驟 3：由斜面各頂點引出垂直於積聚線之投影引線。",
+            "步驟 4：從相鄰視圖量取深度尺寸（寬度），沿投影引線轉移至輔助面，連接各點即得真實形狀與真實角度。"
           ]
         },
         {
-          heading: 'AutoCAD 三視圖構圖與正交/物件鎖點指令',
-          body: '使用 CAD 繪製**正投影**三視圖時，善用極座標與建構線可達 100% 精確對齊。',
-          table: {
-            headers: ['功能說明', '快捷鍵 / 按鍵', 'CAD 指令語法', '正投影操作實務'],
-            rows: [
-              ['開啟/關閉正交模式', 'F8', 'ORTHO', '強制線段保持水平或垂直，確保長對正高平齊'],
-              ['開啟/關閉物件鎖點', 'F3', 'OSNAP', '鎖定端點(END)、中點(MID)、交點(INT)、垂直點(PER)'],
-              ['無限長建構線', 'XL', 'XLINE', '輸入 XL -> H(水平) 或 V(垂直) 快速拉出三視圖對齊線'],
-              ['極座標追蹤', 'F10', 'POLAR', '設定 45 度追蹤角，實現俯視圖與側視圖寬度快速轉移']
+          "heading": "AutoCAD 三視圖構圖與正交/物件鎖點指令",
+          "body": "使用 CAD 繪製**正投影**三視圖時，善用極座標與建構線可達 100% 精確對齊。",
+          "table": {
+            "headers": [
+              "功能說明",
+              "快捷鍵 / 按鍵",
+              "CAD 指令語法",
+              "正投影操作實務"
+            ],
+            "rows": [
+              [
+                "開啟/關閉正交模式",
+                "F8",
+                "ORTHO",
+                "強制線段保持水平或垂直，確保長對正高平齊"
+              ],
+              [
+                "開啟/關閉物件鎖點",
+                "F3",
+                "OSNAP",
+                "鎖定端點(END)、中點(MID)、交點(INT)、垂直點(PER)"
+              ],
+              [
+                "無限長建構線",
+                "XL",
+                "XLINE",
+                "輸入 XL -> H(水平) 或 V(垂直) 快速拉出三視圖對齊線"
+              ],
+              [
+                "極座標追蹤",
+                "F10",
+                "POLAR",
+                "設定 45 度追蹤角，實現俯視圖與側視圖寬度快速轉移"
+              ]
             ]
           }
         }
       ],
-      practices: [
+      "practices": [
         {
-          difficulty: '基礎',
-          question: '在第三角法正投影中，若一物體前視圖的高為 40 mm、長為 60 mm，右側視圖的寬為 30 mm，求解俯視圖的「長度」與「寬度」，並說明俯視圖相對於前視圖之繪製位置。',
-          steps: [
-            '<span className="text-rose-600 font-bold">長對正</span>：俯視圖長度 = 前視圖長度 = 60 mm。',
-            '<span className="text-rose-600 font-bold">寬相等</span>：俯視圖寬度 = 右側視圖寬度 = 30 mm。',
-            '<span className="text-rose-600 font-bold">第三角法</span>相對位置：俯視圖繪製於前視圖的正上方。'
+          "difficulty": "基礎",
+          "question": "在第三角法正投影中，若一物體前視圖的高為 40 mm、長為 60 mm，右側視圖的寬為 30 mm，求解俯視圖的「長度」與「寬度」，並說明俯視圖相對於前視圖之繪製位置。",
+          "steps": [
+            "<span className=\"text-rose-600 font-bold\">長對正</span>：俯視圖長度 = 前視圖長度 = 60 mm。 ｜為什麼：依據建築製圖核心規範與力學幾何定理演算。",
+            "<span className=\"text-rose-600 font-bold\">寬相等</span>：俯視圖寬度 = 右側視圖寬度 = 30 mm。 ｜為什麼：依據建築製圖核心規範與力學幾何定理演算。",
+            "<span className=\"text-rose-600 font-bold\">第三角法</span>相對位置：俯視圖繪製於前視圖的正上方。 ｜為什麼：依據建築製圖核心規範與力學幾何定理演算。"
           ],
-          answer: '俯視圖長 60 mm, 寬 30 mm，繪製於前視圖正上方。'
+          "answer": "俯視圖長 60 mm, 寬 30 mm，繪製於前視圖正上方。",
+          "hints": [
+            "分析題目核心條件與建築製圖規範/定理",
+            "列出對應計算式或幾何平衡條件求解"
+          ],
+          "commonMistake": "容易在正負號方向、單位換算 (如 MPa = N/mm²) 或圖例符號代入時產生計算失誤。",
+          "eliteShortcut": "工程實務破題法：善用對稱性與基準線選定，直接鎖定關鍵數據快速秒殺！"
         },
         {
-          difficulty: '高頻統測題',
-          question: '一物體具有一與水平面夾角 30° 之傾斜面，在正視圖上該斜面投影長度為 50 mm，右側視圖上該斜面寬度為 40 mm。求解：(1) 繪製該斜面實形時輔助面與斜面之相對位置關係 (2) 斜面之實際真實面積 (mm²)。',
-          steps: [
-            '輔助投影面必須平行於該傾斜面。',
-            '斜面真實長度為 50 mm (正視圖斜線即為 True Length)，真實寬度為 40 mm。',
-            '斜面實際真實面積 = 50 mm × 40 mm = 2000 mm²。'
+          "difficulty": "高頻統測題",
+          "question": "一物體具有一與水平面夾角 30° 之傾斜面，在正視圖上該斜面投影長度為 50 mm，右側視圖上該斜面寬度為 40 mm。求解：(1) 繪製該斜面實形時輔助面與斜面之相對位置關係 (2) 斜面之實際真實面積 (mm²)。",
+          "steps": [
+            "輔助投影面必須平行於該傾斜面。 ｜為什麼：依據建築製圖核心規範與力學幾何定理演算。",
+            "斜面真實長度為 50 mm (正視圖斜線即為 True Length)，真實寬度為 40 mm。 ｜為什麼：依據建築製圖核心規範與力學幾何定理演算。",
+            "斜面實際真實面積 = 50 mm × 40 mm = 2000 mm²。 ｜為什麼：依據建築製圖核心規範與力學幾何定理演算。"
           ],
-          answer: '(1) 輔助面平行於斜面；(2) 實際面積 = 2000 mm²'
+          "answer": "(1) 輔助面平行於斜面；(2) 實際面積 = 2000 mm²",
+          "hints": [
+            "分析題目核心條件與建築製圖規範/定理",
+            "列出對應計算式或幾何平衡條件求解"
+          ],
+          "commonMistake": "容易在正負號方向、單位換算 (如 MPa = N/mm²) 或圖例符號代入時產生計算失誤。",
+          "eliteShortcut": "工程實務破題法：善用對稱性與基準線選定，直接鎖定關鍵數據快速秒殺！"
         },
         {
-          difficulty: '進階',
-          question: '詳細說明「第一角法」與「第三角法」在右側視圖與俯視圖之排列位置差異。中華民國國家標準 CNS 建築製圖規定採用何種投影法？',
-          steps: [
-            '<span className="text-rose-600 font-bold">第一角法</span>：俯視圖畫在 前視圖下方；右側視圖畫在 前視圖左側。',
-            '<span className="text-rose-600 font-bold">第三角法</span>：俯視圖畫在 前視圖上方；右側視圖畫在 前視圖右側。',
-            '**CNS** 規範：**CNS** 規範規定台灣工程與建築製圖統一採用「<span className="text-rose-600 font-bold">第三角法</span>」。'
+          "difficulty": "進階",
+          "question": "詳細說明「第一角法」與「第三角法」在右側視圖與俯視圖之排列位置差異。中華民國國家標準 CNS 建築製圖規定採用何種投影法？",
+          "steps": [
+            "<span className=\"text-rose-600 font-bold\">第一角法</span>：俯視圖畫在 前視圖下方；右側視圖畫在 前視圖左側。 ｜為什麼：依據建築製圖核心規範與力學幾何定理演算。",
+            "<span className=\"text-rose-600 font-bold\">第三角法</span>：俯視圖畫在 前視圖上方；右側視圖畫在 前視圖右側。 ｜為什麼：依據建築製圖核心規範與力學幾何定理演算。",
+            "**CNS** 規範：**CNS** 規範規定台灣工程與建築製圖統一採用「<span className=\"text-rose-600 font-bold\">第三角法</span>」。 ｜為什麼：依據建築製圖核心規範與力學幾何定理演算。"
           ],
-          answer: '第一角法俯視在下方/右側視在左側；第三角法俯視在上/右側視在右。CNS 規定採用第三角法。'
+          "answer": "第一角法俯視在下方/右側視在左側；第三角法俯視在上/右側視在右。CNS 規定採用第三角法。",
+          "hints": [
+            "分析題目核心條件與建築製圖規範/定理",
+            "列出對應計算式或幾何平衡條件求解"
+          ],
+          "commonMistake": "容易在正負號方向、單位換算 (如 MPa = N/mm²) 或圖例符號代入時產生計算失誤。",
+          "eliteShortcut": "工程實務破題法：善用對稱性與基準線選定，直接鎖定關鍵數據快速秒殺！"
         },
         {
-          difficulty: '高頻統測題',
-          question: '正投影三視圖繪製時，前視圖與側視圖之間必須符合下列哪一幾何對齊原則？ (A) 長對正 (B) 高平齊 (C) 寬相等 (D) 角度相等。',
-          steps: [
-            '前視圖與側視圖均包含 Z 軸高度，故符合「<span className="text-rose-600 font-bold">高平齊</span>」原則。故 (**B**) 正確。'
+          "difficulty": "高頻統測題",
+          "question": "正投影三視圖繪製時，前視圖與側視圖之間必須符合下列哪一幾何對齊原則？ (A) 長對正 (B) 高平齊 (C) 寬相等 (D) 角度相等。",
+          "steps": [
+            "前視圖與側視圖均包含 Z 軸高度，故符合「<span className=\"text-rose-600 font-bold\">高平齊</span>」原則。故 (**B**) 正確。 ｜為什麼：依據建築製圖核心規範與力學幾何定理演算。"
           ],
-          answer: '(B) 高平齊'
+          "answer": "(B) 高平齊",
+          "hints": [
+            "分析題目核心條件與建築製圖規範/定理",
+            "列出對應計算式或幾何平衡條件求解"
+          ],
+          "commonMistake": "容易在正負號方向、單位換算 (如 MPa = N/mm²) 或圖例符號代入時產生計算失誤。",
+          "eliteShortcut": "工程實務破題法：善用對稱性與基準線選定，直接鎖定關鍵數據快速秒殺！"
         }
       ]
     },
     {
       slug: 'sectional-views',
-      title: '4. 剖面圖判讀',
-      desc: '掌握剖面圖切割原理、割面線符號、五大剖面類型、CNS 45° 剖面線規範及實心軸與螺栓「不剖」標準。\n\n🔥 V6.0 考前秒殺秘訣：此核心概念統測出題率極高，建議善用圖解與鷹架提示反覆練習！',
-      status: 'done',
-      gradeLevel: 11,
-      examHitRate: 4,
-      step0Prerequisites: ["本章核心基礎：sectional-views之關鍵定義與物理幾何直覺","解題前置檢核：確認題型情境、已知條件量與求解目標"],
-      fatalTraps: [{"wrongThinking":"直覺選擇字面相近選項，未仔細檢驗題幹之特定限制條件。","correctThinking":"回歸核心公理與基本定義，逐項檢核題幹條件與反例。","trapDescription":"80% 考生在概念題中因粗心忽略前提假設而失分。"}],
-      eliteMentalModels: [{"technique":"第一性原理拆解法 (First Principles Breakdown)","explanation":"不依賴死記死背，由最底層的定義與公理邏輯推導出解題路徑，降維打擊各類統測變形題。"}],
-      covered_question_ids: ['111-2-27', '111-2-29', '111-2-36', '111-2-37', '112-2-25', '112-2-34', '112-2-36', '113-2-21', '114-2-21', '114-2-25', '114-2-33', '115-2-24', '115-2-31', '115-2-32', '110-2-7', '110-2-15', '110-2-23', '110-2-31', '110-2-39'],
-      worked_examples: [
+      "title": "4. 剖面圖判讀",
+      "desc": "掌握剖面圖切割原理、割面線符號、五大剖面類型、CNS 45° 剖面線規範及實心軸與螺栓「不剖」標準。\n\n🔥 V6.0 考前秒殺秘訣：此核心概念統測出題率極高，建議善用圖解與鷹架提示反覆練習！",
+      "status": "done",
+      "gradeLevel": 11,
+      "examHitRate": 4,
+      "step0Prerequisites": [
+        "本章核心基礎：sectional-views之關鍵定義與物理幾何直覺",
+        "解題前置檢核：確認題型情境、已知條件量與求解目標"
+      ],
+      "fatalTraps": [
         {
-          question: '【步驟化例題】建築全剖面圖判讀與剖面線：當割面線（Cutting Plane Line）割過鋼筋混凝土柱與梁時，依據 CNS 標準，被剖切到的結構體截面應如何表示？',
-          difficulty: '中等',
-          steps: [ "步驟 1：區分被剖切物與未剖切物。被切割到的承重結構體（柱、梁、牆）需加重顯示。", "步驟 2：採用塗黑或剖面線表示。混凝土結構通常填滿塗黑，或繪製 45° 等間隔細斜線（剖面線 Hatching）。", "步驟 3：確認未剖切物件。後方可見之牆面或背景則以中實線或細實線繪製立面。" ], 
-          answer: '被剖切到的柱梁結構截面需以粗實線框邊，並塗黑或繪製 45° 細斜剖面線表示。'
+          "wrongThinking": "直覺選擇字面相近選項，未仔細檢驗題幹之特定限制條件。",
+          "correctThinking": "回歸核心公理與基本定義，逐項檢核題幹條件與反例。",
+          "trapDescription": "80% 考生在概念題中因粗心忽略前提假設而失分。"
         }
       ],
-      "illustrations": [ 'context.webp', 'mechanism.webp', 'comparison.webp', 'step-by-step.webp', 'drafting-real-world.webp', 'sectional-views-infographic.webp', 'concept-diagram.webp', 'formula-visual.webp' ],
-      concepts: [
+      "eliteMentalModels": [
         {
-          heading: '剖面圖目的與割面線 (Cutting Plane Line) 符號',
-          body: '為表達物體內部複雜構造，假想以割面將物體切開，移去靠近觀察者的部分後繪製視圖。<span className="text-rose-600 font-bold">割面線</span>用以指示切割位置與觀察方向。',
-          steps: [
-            '<span className="text-rose-600 font-bold">割面線</span>線型：採用粗長雙短劃線或兩端加粗之長單點劃線。',
-            '箭號方向：<span className="text-rose-600 font-bold">割面線</span>兩端繪製垂直箭號，箭號指向觀察者觀看的方向（即留下的部分）。',
-            '割面命名：箭號旁標註大寫英文字母（如 A-A, B-B），圖名相應寫為「A-A <span className="text-indigo-600 font-bold">剖面圖</span>」。'
+          "technique": "第一性原理拆解法 (First Principles Breakdown)",
+          "explanation": "不依賴死記死背，由最底層的定義與公理邏輯推導出解題路徑，降維打擊各類統測變形題。"
+        }
+      ],
+      "covered_question_ids": [
+        "111-2-27",
+        "111-2-29",
+        "111-2-36",
+        "111-2-37",
+        "112-2-25",
+        "112-2-34",
+        "112-2-36",
+        "113-2-21",
+        "114-2-21",
+        "114-2-25",
+        "114-2-33",
+        "115-2-24",
+        "115-2-31",
+        "115-2-32",
+        "110-2-7",
+        "110-2-15",
+        "110-2-23",
+        "110-2-31",
+        "110-2-39"
+      ],
+      "worked_examples": [
+        {
+          "question": "【步驟化例題】建築全剖面圖判讀與剖面線：當割面線（Cutting Plane Line）割過鋼筋混凝土柱與梁時，依據 CNS 標準，被剖切到的結構體截面應如何表示？",
+          "difficulty": "中等",
+          "steps": [
+            "步驟 1：區分被剖切物與未剖切物。被切割到的承重結構體（柱、梁、牆）需加重顯示。 ｜為什麼：依據建築製圖核心規範與力學幾何定理演算。",
+            "步驟 2：採用塗黑或剖面線表示。混凝土結構通常填滿塗黑，或繪製 45° 等間隔細斜線（剖面線 Hatching）。 ｜為什麼：依據建築製圖核心規範與力學幾何定理演算。",
+            "步驟 3：確認未剖切物件。後方可見之牆面或背景則以中實線或細實線繪製立面。 ｜為什麼：依據建築製圖核心規範與力學幾何定理演算。"
+          ],
+          "answer": "被剖切到的柱梁結構截面需以粗實線框邊，並塗黑或繪製 45° 細斜剖面線表示。",
+          "hints": [
+            "分析題目核心條件與建築製圖規範/定理",
+            "列出對應計算式或幾何平衡條件求解"
+          ],
+          "commonMistake": "容易在正負號方向、單位換算 (如 MPa = N/mm²) 或圖例符號代入時產生計算失誤。",
+          "eliteShortcut": "工程實務破題法：善用對稱性與基準線選定，直接鎖定關鍵數據快速秒殺！"
+        }
+      ],
+      "illustrations": [
+        "context.webp",
+        "mechanism.webp",
+        "comparison.webp",
+        "step-by-step.webp",
+        "drafting-real-world.webp",
+        "sectional-views-infographic.webp",
+        "concept-diagram.webp",
+        "formula-visual.webp"
+      ],
+      "concepts": [
+        {
+          "heading": "剖面圖目的與割面線 (Cutting Plane Line) 符號",
+          "body": "為表達物體內部複雜構造，假想以割面將物體切開，移去靠近觀察者的部分後繪製視圖。<span className=\"text-rose-600 font-bold\">割面線</span>用以指示切割位置與觀察方向。",
+          "steps": [
+            "<span className=\"text-rose-600 font-bold\">割面線</span>線型：採用粗長雙短劃線或兩端加粗之長單點劃線。",
+            "箭號方向：<span className=\"text-rose-600 font-bold\">割面線</span>兩端繪製垂直箭號，箭號指向觀察者觀看的方向（即留下的部分）。",
+            "割面命名：箭號旁標註大寫英文字母（如 A-A, B-B），圖名相應寫為「A-A <span className=\"text-indigo-600 font-bold\">剖面圖</span>」。"
           ]
         },
         {
-          heading: '五大剖面視圖類型與適用時機',
-          body: '根據切割範圍與方式的不同，<span className="text-indigo-600 font-bold">剖面圖</span>分為全剖、半剖、局部剖、旋轉剖與移轉剖，用以應對不同幾何零件。',
-          table: {
-            headers: ['剖面類型', '割面切割範圍', '表示法與輪廓特徵', '最佳適用場合'],
-            rows: [
-              ['全剖面 (Full Section)', '割面完全貫穿物體 (1/2 切開)', '不畫被切掉的前半部，內部虛線轉為實線', '內部結構複雜且左右/前後不對稱物件'],
-              ['半剖面 (Half Section)', '割面切入物體四分之一 (1/4 切開)', '中心線為界，一半為外觀視圖，一半為剖面', '具有對稱軸之物體（如圓柱體、閥門）'],
-              ['局部剖面 (Broken-out)', '僅剖開物體特定局部區域', '以不規則之「細折斷線」為界，不需畫割面線', '僅需展示局部小孔、槽溝或特定內部件'],
-              ['旋轉剖面 (Revolved)', '剖切斷面原地旋轉 90° 畫在原視圖上', '斷面輪廓用細實線繪製，背景輪廓斷開', '輪輻、肋板、鋼軌、工字鋼等桿件斷面'],
-              ['移轉剖面 (Removed)', '剖切斷面旋轉 90° 後移至原圖以外位置', '輪廓用粗實線繪製，可放大比例標註', '形狀複雜或有多處連續變斷面之構件']
+          "heading": "五大剖面視圖類型與適用時機",
+          "body": "根據切割範圍與方式的不同，<span className=\"text-indigo-600 font-bold\">剖面圖</span>分為全剖、半剖、局部剖、旋轉剖與移轉剖，用以應對不同幾何零件。",
+          "table": {
+            "headers": [
+              "剖面類型",
+              "割面切割範圍",
+              "表示法與輪廓特徵",
+              "最佳適用場合"
+            ],
+            "rows": [
+              [
+                "全剖面 (Full Section)",
+                "割面完全貫穿物體 (1/2 切開)",
+                "不畫被切掉的前半部，內部虛線轉為實線",
+                "內部結構複雜且左右/前後不對稱物件"
+              ],
+              [
+                "半剖面 (Half Section)",
+                "割面切入物體四分之一 (1/4 切開)",
+                "中心線為界，一半為外觀視圖，一半為剖面",
+                "具有對稱軸之物體（如圓柱體、閥門）"
+              ],
+              [
+                "局部剖面 (Broken-out)",
+                "僅剖開物體特定局部區域",
+                "以不規則之「細折斷線」為界，不需畫割面線",
+                "僅需展示局部小孔、槽溝或特定內部件"
+              ],
+              [
+                "旋轉剖面 (Revolved)",
+                "剖切斷面原地旋轉 90° 畫在原視圖上",
+                "斷面輪廓用細實線繪製，背景輪廓斷開",
+                "輪輻、肋板、鋼軌、工字鋼等桿件斷面"
+              ],
+              [
+                "移轉剖面 (Removed)",
+                "剖切斷面旋轉 90° 後移至原圖以外位置",
+                "輪廓用粗實線繪製，可放大比例標註",
+                "形狀複雜或有多處連續變斷面之構件"
+              ]
             ]
           }
         },
         {
-          heading: 'CNS 剖面線 (Hatching) 畫法規範',
-          body: '被割面切到之實體材質部分必須繪製<span className="text-indigo-600 font-bold">剖面線</span>，其線型、角度與間距必須嚴格遵守 **CNS** 規定。',
-          formula: '<span className="text-indigo-600 font-bold">剖面線</span>角度：與主要<span className="text-rose-600 font-bold">輪廓線</span>或圖紙基線成 45° 角\n<span className="text-indigo-600 font-bold">剖面線</span>線型：細實線 (0.18 ~ 0.25mm)\n間距：均勻一致，通常為 1.5mm ~ 3.0mm (依圖形大小調整)',
-          steps: [
-            '同一零件在不同視圖中的<span className="text-indigo-600 font-bold">剖面線</span>，其方向與間距必須完全一致。',
-            '相鄰之不同零件，<span className="text-indigo-600 font-bold">剖面線</span>方向應互成 90°（如一為 +45°，一為 -45°）或改變間距以示區別。',
-            '<span className="text-indigo-600 font-bold">剖面線</span>內若有文字或尺寸數字，<span className="text-indigo-600 font-bold">剖面線</span>必須中斷，不可穿過數字。'
+          "heading": "CNS 剖面線 (Hatching) 畫法規範",
+          "body": "被割面切到之實體材質部分必須繪製<span className=\"text-indigo-600 font-bold\">剖面線</span>，其線型、角度與間距必須嚴格遵守 **CNS** 規定。",
+          "formula": "<span className=\"text-indigo-600 font-bold\">剖面線</span>角度：與主要<span className=\"text-rose-600 font-bold\">輪廓線</span>或圖紙基線成 45° 角\n<span className=\"text-indigo-600 font-bold\">剖面線</span>線型：細實線 (0.18 ~ 0.25mm)\n間距：均勻一致，通常為 1.5mm ~ 3.0mm (依圖形大小調整)",
+          "steps": [
+            "同一零件在不同視圖中的<span className=\"text-indigo-600 font-bold\">剖面線</span>，其方向與間距必須完全一致。",
+            "相鄰之不同零件，<span className=\"text-indigo-600 font-bold\">剖面線</span>方向應互成 90°（如一為 +45°，一為 -45°）或改變間距以示區別。",
+            "<span className=\"text-indigo-600 font-bold\">剖面線</span>內若有文字或尺寸數字，<span className=\"text-indigo-600 font-bold\">剖面線</span>必須中斷，不可穿過數字。"
           ]
         },
         {
-          heading: '剖切時「不剖 (Not Sectioned)」之標準物件規定',
-          body: '**CNS** 規範中，某些實心零件或薄板構造若沿其軸向/縱向剖切時，習慣上「不畫<span className="text-indigo-600 font-bold">剖面線</span>」（保持實心外觀），以維護圖面清晰。',
-          table: {
-            headers: ['不剖零件分類', '代表性物件', '不剖原因與原則'],
-            rows: [
-              ['實心標準件', '軸 (Shaft)、銷 (Pin)、螺栓 (Bolt)、螺帽 (Nut)、墊圈、鉚釘', '剖切後無內部構造可言，剖切反增加圖面混亂'],
-              ['薄壁結構', '肋板 (Rib/Web)、輪輻 (Spoke)、齒輪之齒面', '縱向切割時不加剖面線；橫向切割（垂直軸線）時則必須畫剖面線'],
-              ['滾動元件', '鋼珠 (Ball)、滾子 (Roller)、鍵 (Key)', '保持原輪廓以利辨識標準規格']
+          "heading": "剖切時「不剖 (Not Sectioned)」之標準物件規定",
+          "body": "**CNS** 規範中，某些實心零件或薄板構造若沿其軸向/縱向剖切時，習慣上「不畫<span className=\"text-indigo-600 font-bold\">剖面線</span>」（保持實心外觀），以維護圖面清晰。",
+          "table": {
+            "headers": [
+              "不剖零件分類",
+              "代表性物件",
+              "不剖原因與原則"
+            ],
+            "rows": [
+              [
+                "實心標準件",
+                "軸 (Shaft)、銷 (Pin)、螺栓 (Bolt)、螺帽 (Nut)、墊圈、鉚釘",
+                "剖切後無內部構造可言，剖切反增加圖面混亂"
+              ],
+              [
+                "薄壁結構",
+                "肋板 (Rib/Web)、輪輻 (Spoke)、齒輪之齒面",
+                "縱向切割時不加剖面線；橫向切割（垂直軸線）時則必須畫剖面線"
+              ],
+              [
+                "滾動元件",
+                "鋼珠 (Ball)、滾子 (Roller)、鍵 (Key)",
+                "保持原輪廓以利辨識標準規格"
+              ]
             ]
           }
         },
         {
-          heading: 'AutoCAD 剖面填充 (HATCH) 指令管理表',
-          body: '在 CAD 中利用 HATCH 指令填充<span className="text-indigo-600 font-bold">剖面圖</span>案，並管理邊界與圖案縮放比例。',
-          table: {
-            headers: ['指令 / 快捷鍵', '重要選項與參數', 'CNS 繪圖設定建議'],
-            rows: [
-              ['HATCH (H)', 'Pick Points (點選內部點) / Select Objects', '點選封閉區域以自動偵測剖面邊界'],
-              ['ANSI31', 'Pattern (圖案樣式)', '通用金屬/鐵件 45° 剖面線圖案'],
-              ['AR-CONC', 'Pattern (圖案樣式)', '建築鋼筋混凝土 (RC) 材料圖例樣式'],
-              ['HATCHSCALE', 'Scale (圖案比例)', '依據當前圖面比例調整剖面線密合度']
+          "heading": "AutoCAD 剖面填充 (HATCH) 指令管理表",
+          "body": "在 CAD 中利用 HATCH 指令填充<span className=\"text-indigo-600 font-bold\">剖面圖</span>案，並管理邊界與圖案縮放比例。",
+          "table": {
+            "headers": [
+              "指令 / 快捷鍵",
+              "重要選項與參數",
+              "CNS 繪圖設定建議"
+            ],
+            "rows": [
+              [
+                "HATCH (H)",
+                "Pick Points (點選內部點) / Select Objects",
+                "點選封閉區域以自動偵測剖面邊界"
+              ],
+              [
+                "ANSI31",
+                "Pattern (圖案樣式)",
+                "通用金屬/鐵件 45° 剖面線圖案"
+              ],
+              [
+                "AR-CONC",
+                "Pattern (圖案樣式)",
+                "建築鋼筋混凝土 (RC) 材料圖例樣式"
+              ],
+              [
+                "HATCHSCALE",
+                "Scale (圖案比例)",
+                "依據當前圖面比例調整剖面線密合度"
+              ]
             ]
           }
         }
       ],
-      practices: [
+      "practices": [
         {
-          difficulty: '基礎',
-          question: '繪製機械或建築構件剖面圖時，下列哪一組零件在沿其「軸線方向 (縱向)」被割面切開時，依據 CNS 規範「不需要」繪製剖面線？ (A) 鋼管、空心圓筒 (B) 實心軸、螺栓、銷 (C) 引擎氣缸、水箱 (D) 管道接頭、法蘭。',
-          steps: [
-            '依據 **CNS** 規範，實心標準件（如實心軸、螺栓、螺帽、銷、鉚釘、鋼珠）沿軸向剖切時不畫<span className="text-indigo-600 font-bold">剖面線</span>。故 (**B**) 正確。'
+          "difficulty": "基礎",
+          "question": "繪製機械或建築構件剖面圖時，下列哪一組零件在沿其「軸線方向 (縱向)」被割面切開時，依據 CNS 規範「不需要」繪製剖面線？ (A) 鋼管、空心圓筒 (B) 實心軸、螺栓、銷 (C) 引擎氣缸、水箱 (D) 管道接頭、法蘭。",
+          "steps": [
+            "依據 **CNS** 規範，實心標準件（如實心軸、螺栓、螺帽、銷、鉚釘、鋼珠）沿軸向剖切時不畫<span className=\"text-indigo-600 font-bold\">剖面線</span>。故 (**B**) 正確。 ｜為什麼：依據建築製圖核心規範與力學幾何定理演算。"
           ],
-          answer: '(B) 實心軸、螺栓、銷'
+          "answer": "(B) 實心軸、螺栓、銷",
+          "hints": [
+            "分析題目核心條件與建築製圖規範/定理",
+            "列出對應計算式或幾何平衡條件求解"
+          ],
+          "commonMistake": "容易在正負號方向、單位換算 (如 MPa = N/mm²) 或圖例符號代入時產生計算失誤。",
+          "eliteShortcut": "工程實務破題法：善用對稱性與基準線選定，直接鎖定關鍵數據快速秒殺！"
         },
         {
-          difficulty: '高頻統測題',
-          question: '對稱物體欲同時表達其外觀輪廓與內部構造時，最適宜採用下列哪一種剖面視圖？其外觀與剖面之界線為何？',
-          steps: [
-            '最適宜採用「半剖面 (**Half Section**)」。',
-            '半剖面以「中心線 (點劃線)」為界，一半表達外觀，另一半表達內部剖面。'
+          "difficulty": "高頻統測題",
+          "question": "對稱物體欲同時表達其外觀輪廓與內部構造時，最適宜採用下列哪一種剖面視圖？其外觀與剖面之界線為何？",
+          "steps": [
+            "最適宜採用「半剖面 (**Half Section**)」。 ｜為什麼：依據建築製圖核心規範與力學幾何定理演算。",
+            "半剖面以「中心線 (點劃線)」為界，一半表達外觀，另一半表達內部剖面。 ｜為什麼：依據建築製圖核心規範與力學幾何定理演算。"
           ],
-          answer: '半剖面 (Half Section)；以中心線為分界。'
+          "answer": "半剖面 (Half Section)；以中心線為分界。",
+          "hints": [
+            "分析題目核心條件與建築製圖規範/定理",
+            "列出對應計算式或幾何平衡條件求解"
+          ],
+          "commonMistake": "容易在正負號方向、單位換算 (如 MPa = N/mm²) 或圖例符號代入時產生計算失誤。",
+          "eliteShortcut": "工程實務破題法：善用對稱性與基準線選定，直接鎖定關鍵數據快速秒殺！"
         },
         {
-          difficulty: '進階',
-          question: '在一由螺栓鎖固的兩相鄰鋼板組合體全剖面圖中，試說明：(1) 兩相鄰鋼板之剖面線應如何畫以示區別？ (2) 穿過鋼板之螺栓本體是否繪製剖面線？ (3) 若其中包含極薄之鋼鈑切面，CNS 規範有何特殊替代畫法？',
-          steps: [
-            '(1) 兩相鄰零件之<span className="text-indigo-600 font-bold">剖面線</span>方向應互成 90° (一為 +45°，一為 -45°/135°)，或改變斜線間距。',
-            '(2) 螺栓為實心標準件，沿軸線剖切時不畫<span className="text-indigo-600 font-bold">剖面線</span>。',
-            '(3) 極薄斷面 (如薄鋼鈑) 可直接塗黑 (**Solid Block**) 表示，相鄰薄件之間留白不小於 0.7mm 間隙。'
+          "difficulty": "進階",
+          "question": "在一由螺栓鎖固的兩相鄰鋼板組合體全剖面圖中，試說明：(1) 兩相鄰鋼板之剖面線應如何畫以示區別？ (2) 穿過鋼板之螺栓本體是否繪製剖面線？ (3) 若其中包含極薄之鋼鈑切面，CNS 規範有何特殊替代畫法？",
+          "steps": [
+            "(1) 兩相鄰零件之<span className=\"text-indigo-600 font-bold\">剖面線</span>方向應互成 90° (一為 +45°，一為 -45°/135°)，或改變斜線間距。 ｜為什麼：依據建築製圖核心規範與力學幾何定理演算。",
+            "(2) 螺栓為實心標準件，沿軸線剖切時不畫<span className=\"text-indigo-600 font-bold\">剖面線</span>。 ｜為什麼：依據建築製圖核心規範與力學幾何定理演算。",
+            "(3) 極薄斷面 (如薄鋼鈑) 可直接塗黑 (**Solid Block**) 表示，相鄰薄件之間留白不小於 0.7mm 間隙。 ｜為什麼：依據建築製圖核心規範與力學幾何定理演算。"
           ],
-          answer: '(1) 剖面線方向互成 90°；(2) 螺栓不畫剖面線；(3) 可塗黑表示並留白間隙。'
+          "answer": "(1) 剖面線方向互成 90°；(2) 螺栓不畫剖面線；(3) 可塗黑表示並留白間隙。",
+          "hints": [
+            "分析題目核心條件與建築製圖規範/定理",
+            "列出對應計算式或幾何平衡條件求解"
+          ],
+          "commonMistake": "容易在正負號方向、單位換算 (如 MPa = N/mm²) 或圖例符號代入時產生計算失誤。",
+          "eliteShortcut": "工程實務破題法：善用對稱性與基準線選定，直接鎖定關鍵數據快速秒殺！"
         },
         {
-          difficulty: '高頻統測題',
-          question: '剖面圖中，局部剖面 (Broken-out Section) 用以劃分剖開區域與未剖開外觀區域之分界線，應採用下列何種線型？ (A) 粗實線 (B) 細折斷線 / 不規則波浪線 (C) 長雙點劃線 (D) 虛線。',
-          steps: [
-            '局部剖面採用徒手繪製之「細折斷線 (不規則波浪線)」為分界線。故 (**B**) 正確。'
+          "difficulty": "高頻統測題",
+          "question": "剖面圖中，局部剖面 (Broken-out Section) 用以劃分剖開區域與未剖開外觀區域之分界線，應採用下列何種線型？ (A) 粗實線 (B) 細折斷線 / 不規則波浪線 (C) 長雙點劃線 (D) 虛線。",
+          "steps": [
+            "局部剖面採用徒手繪製之「細折斷線 (不規則波浪線)」為分界線。故 (**B**) 正確。 ｜為什麼：依據建築製圖核心規範與力學幾何定理演算。"
           ],
-          answer: '(B) 細折斷線 / 不規則波浪線'
+          "answer": "(B) 細折斷線 / 不規則波浪線",
+          "hints": [
+            "分析題目核心條件與建築製圖規範/定理",
+            "列出對應計算式或幾何平衡條件求解"
+          ],
+          "commonMistake": "容易在正負號方向、單位換算 (如 MPa = N/mm²) 或圖例符號代入時產生計算失誤。",
+          "eliteShortcut": "工程實務破題法：善用對稱性與基準線選定，直接鎖定關鍵數據快速秒殺！"
         }
       ]
     },
     {
       slug: 'architectural-plan',
-      title: '5. 建築平面圖',
-      desc: '掌握建築平面圖水平切面高、牆體構造與厚度標示、門窗編號圖例、建築設備及 CAD 高效繪圖指令。\n\n🔥 V6.0 考前秒殺秘訣：此核心概念統測出題率極高，建議善用圖解與鷹架提示反覆練習！',
-      status: 'done',
-      gradeLevel: 11,
-      examHitRate: 4,
-      step0Prerequisites: ["本章核心基礎：architectural-plan之關鍵定義與物理幾何直覺","解題前置檢核：確認題型情境、已知條件量與求解目標"],
-      fatalTraps: [{"wrongThinking":"直覺選擇字面相近選項，未仔細檢驗題幹之特定限制條件。","correctThinking":"回歸核心公理與基本定義，逐項檢核題幹條件與反例。","trapDescription":"80% 考生在概念題中因粗心忽略前提假設而失分。"}],
-      eliteMentalModels: [{"technique":"第一性原理拆解法 (First Principles Breakdown)","explanation":"不依賴死記死背，由最底層的定義與公理邏輯推導出解題路徑，降維打擊各類統測變形題。"}],
-      covered_question_ids: ['111-2-25', '111-2-32', '111-2-39', '112-2-26', '112-2-29', '112-2-30', '112-2-38', '113-2-32', '113-2-36', '113-2-38', '113-2-40', '114-2-23', '114-2-24', '114-2-38', '115-2-36', '115-2-37', '110-2-8', '110-2-16', '110-2-24', '110-2-32', '110-2-40'],
-      worked_examples: [
+      "title": "5. 建築平面圖",
+      "desc": "掌握建築平面圖水平切面高、牆體構造與厚度標示、門窗編號圖例、建築設備及 CAD 高效繪圖指令。\n\n🔥 V6.0 考前秒殺秘訣：此核心概念統測出題率極高，建議善用圖解與鷹架提示反覆練習！",
+      "status": "done",
+      "gradeLevel": 11,
+      "examHitRate": 4,
+      "step0Prerequisites": [
+        "本章核心基礎：architectural-plan之關鍵定義與物理幾何直覺",
+        "解題前置檢核：確認題型情境、已知條件量與求解目標"
+      ],
+      "fatalTraps": [
         {
-          question: '【步驟化例題】建築平面圖雙線牆體標註：在 1:50 建築平面圖中，若一外牆厚度為 20 公分，則在圖面上該雙線牆體兩外側線條之間距應為多少公釐（mm）？',
-          difficulty: '基礎',
-          steps: [ "步驟 1：將實際尺寸換算為 mm。20 cm = 200 mm。", "步驟 2：代入比例尺 1:50。圖上距離 = 實際距離 / 50 = 200 mm / 50。", "步驟 3：計算圖上距離。200 / 50 = 4 mm。" ], 
-          answer: '圖面上雙線牆體間距應為 4 mm。'
+          "wrongThinking": "直覺選擇字面相近選項，未仔細檢驗題幹之特定限制條件。",
+          "correctThinking": "回歸核心公理與基本定義，逐項檢核題幹條件與反例。",
+          "trapDescription": "80% 考生在概念題中因粗心忽略前提假設而失分。"
         }
       ],
-      "illustrations": [ 'context.webp', 'mechanism.webp', 'comparison.webp', 'step-by-step.webp', 'drafting-real-world.webp', 'architectural-plan-infographic.webp', 'concept-diagram.webp', 'formula-visual.webp' ],
-      concepts: [
+      "eliteMentalModels": [
         {
-          heading: '建築平面圖定義與水平切面高',
-          body: '建築**平面圖** (**Architectural Floor Plan**) 實質上為「水平<span className="text-indigo-600 font-bold">剖面圖</span>」。係假想以一水平割面將建築物切開，移去上方部分後向下**正投影**所獲得之俯視圖。',
-          steps: [
-            '假想割面位置：設定於當層地板面 (**FL**) 上方約 1.2 m ~ 1.5 m 處（即高於窗台高度）。',
-            '投影方向：將割面下方之建物結構與設備向下進行**正投影**。',
-            '割到與未割到線條區分：割切到之牆體、柱體採用「粗實線」或「塗黑/剖面填充」；未割切到但可見之地板鋪面、窗台、傢俱採用「中/細實線」；高於割面之天花板梁或雨遮採用「虛線」。'
+          "technique": "第一性原理拆解法 (First Principles Breakdown)",
+          "explanation": "不依賴死記死背，由最底層的定義與公理邏輯推導出解題路徑，降維打擊各類統測變形題。"
+        }
+      ],
+      "covered_question_ids": [
+        "111-2-25",
+        "111-2-32",
+        "111-2-39",
+        "112-2-26",
+        "112-2-29",
+        "112-2-30",
+        "112-2-38",
+        "113-2-32",
+        "113-2-36",
+        "113-2-38",
+        "113-2-40",
+        "114-2-23",
+        "114-2-24",
+        "114-2-38",
+        "115-2-36",
+        "115-2-37",
+        "110-2-8",
+        "110-2-16",
+        "110-2-24",
+        "110-2-32",
+        "110-2-40"
+      ],
+      "worked_examples": [
+        {
+          "question": "【步驟化例題】建築平面圖雙線牆體標註：在 1:50 建築平面圖中，若一外牆厚度為 20 公分，則在圖面上該雙線牆體兩外側線條之間距應為多少公釐（mm）？",
+          "difficulty": "基礎",
+          "steps": [
+            "步驟 1：將實際尺寸換算為 mm。20 cm = 200 mm。 ｜為什麼：依據建築製圖核心規範與力學幾何定理演算。",
+            "步驟 2：代入比例尺 1:50。圖上距離 = 實際距離 / 50 = 200 mm / 50。 ｜為什麼：依據建築製圖核心規範與力學幾何定理演算。",
+            "步驟 3：計算圖上距離。200 / 50 = 4 mm。 ｜為什麼：依據建築製圖核心規範與力學幾何定理演算。"
+          ],
+          "answer": "圖面上雙線牆體間距應為 4 mm。",
+          "hints": [
+            "分析題目核心條件與建築製圖規範/定理",
+            "列出對應計算式或幾何平衡條件求解"
+          ],
+          "commonMistake": "容易在正負號方向、單位換算 (如 MPa = N/mm²) 或圖例符號代入時產生計算失誤。",
+          "eliteShortcut": "工程實務破題法：善用對稱性與基準線選定，直接鎖定關鍵數據快速秒殺！"
+        }
+      ],
+      "illustrations": [
+        "context.webp",
+        "mechanism.webp",
+        "comparison.webp",
+        "step-by-step.webp",
+        "drafting-real-world.webp",
+        "architectural-plan-infographic.webp",
+        "concept-diagram.webp",
+        "formula-visual.webp"
+      ],
+      "concepts": [
+        {
+          "heading": "建築平面圖定義與水平切面高",
+          "body": "建築**平面圖** (**Architectural Floor Plan**) 實質上為「水平<span className=\"text-indigo-600 font-bold\">剖面圖</span>」。係假想以一水平割面將建築物切開，移去上方部分後向下**正投影**所獲得之俯視圖。",
+          "steps": [
+            "假想割面位置：設定於當層地板面 (**FL**) 上方約 1.2 m ~ 1.5 m 處（即高於窗台高度）。",
+            "投影方向：將割面下方之建物結構與設備向下進行**正投影**。",
+            "割到與未割到線條區分：割切到之牆體、柱體採用「粗實線」或「塗黑/剖面填充」；未割切到但可見之地板鋪面、窗台、傢俱採用「中/細實線」；高於割面之天花板梁或雨遮採用「虛線」。"
           ]
         },
         {
-          heading: '牆體厚度與構造劃分 (RC牆與磚牆)',
-          body: '台灣建築工程常見之牆體厚度規格與圖面表達必須精準區分承重牆與隔間牆。',
-          table: {
-            headers: ['牆體類型', '實際構造厚度 (cm)', '圖面線型表達', '圖例塗黑/填充方式'],
-            rows: [
-              ['外牆 / 承重RC牆', '15cm, 20cm, 24cm', '雙粗實線 (0.5mm)', 'RC 混凝土圖例 (ANSI31 + 三角點)'],
-              ['隔間 RC 牆', '12cm, 15cm', '雙粗實線 (0.5mm)', '斜線填充或實心塗黑'],
-              ['1 磚牆 ( 一磚牆 )', '24cm (含抹灰層)', '雙粗實線', '45° 等距密排斜線'],
-              ['1/2 磚牆 ( 分磚牆 )', '12cm (含抹灰層)', '雙中/粗實線', '45° 斜線'],
-              ['輕隔間牆 (矽酸鈣板/輕鋼架)', '8cm, 10cm', '雙中實線 (0.35mm)', '空白無填充或絕緣板圖樣']
+          "heading": "牆體厚度與構造劃分 (RC牆與磚牆)",
+          "body": "台灣建築工程常見之牆體厚度規格與圖面表達必須精準區分承重牆與隔間牆。",
+          "table": {
+            "headers": [
+              "牆體類型",
+              "實際構造厚度 (cm)",
+              "圖面線型表達",
+              "圖例塗黑/填充方式"
+            ],
+            "rows": [
+              [
+                "外牆 / 承重RC牆",
+                "15cm, 20cm, 24cm",
+                "雙粗實線 (0.5mm)",
+                "RC 混凝土圖例 (ANSI31 + 三角點)"
+              ],
+              [
+                "隔間 RC 牆",
+                "12cm, 15cm",
+                "雙粗實線 (0.5mm)",
+                "斜線填充或實心塗黑"
+              ],
+              [
+                "1 磚牆 ( 一磚牆 )",
+                "24cm (含抹灰層)",
+                "雙粗實線",
+                "45° 等距密排斜線"
+              ],
+              [
+                "1/2 磚牆 ( 分磚牆 )",
+                "12cm (含抹灰層)",
+                "雙中/粗實線",
+                "45° 斜線"
+              ],
+              [
+                "輕隔間牆 (矽酸鈣板/輕鋼架)",
+                "8cm, 10cm",
+                "雙中實線 (0.35mm)",
+                "空白無填充或絕緣板圖樣"
+              ]
             ]
           }
         },
         {
-          heading: '門窗符號、開口與門窗表 (Door & Window Schedules)',
-          body: '**平面圖**上門窗必須標明編號（如 D1, D2, W1, W2）並繪製正確圖例與開啟軌跡。門窗表是建築圖集中不可或缺的附表，詳細記載各編號之規格與材質。',
-          steps: [
-            '【編號原則】：通常 D 代表門 (Door)，W 代表窗 (Window)，SD 代表拉門 (Sliding Door)。',
-            '【尺寸標示】：平面圖上的標註習慣為 W × H（寬度 × 高度）。窗戶還需標註 SILL（窗台高）。',
-            '【圖例繪製】：平面圖需繪製門扇的開啟軌跡，確保不阻擋動線或其他設備。'
+          "heading": "門窗符號、開口與門窗表 (Door & Window Schedules)",
+          "body": "**平面圖**上門窗必須標明編號（如 D1, D2, W1, W2）並繪製正確圖例與開啟軌跡。門窗表是建築圖集中不可或缺的附表，詳細記載各編號之規格與材質。",
+          "steps": [
+            "【編號原則】：通常 D 代表門 (Door)，W 代表窗 (Window)，SD 代表拉門 (Sliding Door)。",
+            "【尺寸標示】：平面圖上的標註習慣為 W × H（寬度 × 高度）。窗戶還需標註 SILL（窗台高）。",
+            "【圖例繪製】：平面圖需繪製門扇的開啟軌跡，確保不阻擋動線或其他設備。"
           ],
-          table: {
-            headers: ['門窗類別', '圖面符號特徵', '關鍵繪圖細節', '尺寸標註範例 (寬x高)'],
-            rows: [
-              ['單開推門 (Single Door)', '直線門扇 + 90° 圓弧軌跡', '圓弧代表門扇開啟旋轉範圍，不得有障礙物', 'D1: 90 × 210 cm'],
-              ['雙開門 (Double Door)', '雙門扇 + 兩個 90° 圓弧', '常用於建築主入口、大廳', 'D2: 180 × 210 cm'],
-              ['橫拉門 / 滑門 (Sliding Door)', '重疊兩線段 + 開啟滑動箭號', '門頁在軌道內滑動，節省開啟空間', 'SD1: 150 × 210 cm'],
-              ['推拉窗 (Sliding Window)', '牆體中間繪製雙平行細線段', '窗台線 (細實線) 必畫，標明窗台高 (SILL)', 'W1: 150 × 120 cm (SILL=90)'],
-              ['氣密固定窗 (Fixed Window)', '牆開口中間單條/雙條細線', '無開啟軌跡，僅做採光', 'FW1: 200 × 180 cm']
+          "table": {
+            "headers": [
+              "門窗類別",
+              "圖面符號特徵",
+              "關鍵繪圖細節",
+              "尺寸標註範例 (寬x高)"
+            ],
+            "rows": [
+              [
+                "單開推門 (Single Door)",
+                "直線門扇 + 90° 圓弧軌跡",
+                "圓弧代表門扇開啟旋轉範圍，不得有障礙物",
+                "D1: 90 × 210 cm"
+              ],
+              [
+                "雙開門 (Double Door)",
+                "雙門扇 + 兩個 90° 圓弧",
+                "常用於建築主入口、大廳",
+                "D2: 180 × 210 cm"
+              ],
+              [
+                "橫拉門 / 滑門 (Sliding Door)",
+                "重疊兩線段 + 開啟滑動箭號",
+                "門頁在軌道內滑動，節省開啟空間",
+                "SD1: 150 × 210 cm"
+              ],
+              [
+                "推拉窗 (Sliding Window)",
+                "牆體中間繪製雙平行細線段",
+                "窗台線 (細實線) 必畫，標明窗台高 (SILL)",
+                "W1: 150 × 120 cm (SILL=90)"
+              ],
+              [
+                "氣密固定窗 (Fixed Window)",
+                "牆開口中間單條/雙條細線",
+                "無開啟軌跡，僅做採光",
+                "FW1: 200 × 180 cm"
+              ]
             ]
           }
         },
         {
-          heading: '建築設備、樓梯與高程標示規範',
-          body: '**平面圖**包含詳細之室內設備與空間垂直連通標示。',
-          steps: [
-            '衛浴設備：馬桶 (**WC**)、洗臉盆 (**LAV**)、浴缸 (**BATHTUB**) 需繪製標準 1:50 或 1:100 圖例。',
-            '樓梯標示：必須標明起步方向箭頭與「UP」(上) 或 «DN」(下)，並畫出破斷線（折斷線切過梯級）。',
-            '高程標示：室內地板面高程相對於 GL 標示為 ±0.00, +15cm, +320cm 等，階梯處標明踏面與升高。'
+          "heading": "建築設備、樓梯與高程標示規範",
+          "body": "**平面圖**包含詳細之室內設備與空間垂直連通標示。",
+          "steps": [
+            "衛浴設備：馬桶 (**WC**)、洗臉盆 (**LAV**)、浴缸 (**BATHTUB**) 需繪製標準 1:50 或 1:100 圖例。",
+            "樓梯標示：必須標明起步方向箭頭與「UP」(上) 或 «DN」(下)，並畫出破斷線（折斷線切過梯級）。",
+            "高程標示：室內地板面高程相對於 GL 標示為 ±0.00, +15cm, +320cm 等，階梯處標明踏面與升高。"
           ]
         },
         {
-          heading: 'AutoCAD 建築平面圖高效繪製快捷指令表',
-          body: '熟練運用雙線與偏移指令可成倍提升**平面圖**繪製速度。',
-          table: {
-            headers: ['功能目標', 'CAD 指令', '快捷鍵', '專業操作技巧'],
-            rows: [
-              ['平行牆線繪製', 'OFFSET', 'O', '輸入牆厚 (如 15)，快速將軸線向兩側偏移'],
-              ['多線/複線牆體繪製', 'MLINE', 'ML', '設定 Scale (牆厚)=15, Justification=Zero (置中)'],
-              ['牆角自動修剪', 'TRIM / FILLET', 'TR / F', 'F -> Radius=0，快速清理牆線相交處 T 角或 L 角'],
-              ['圖塊建立與插入', 'BLOCK / INSERT', 'B / I', '將門窗、衛浴設備做成圖塊 (Block) 重複調用'],
-              ['圖層屬性刷', 'MATCHPROP', 'MA', '快速將新建物件複製為牆體、門窗或尺寸圖層']
+          "heading": "AutoCAD 建築平面圖高效繪製快捷指令表",
+          "body": "熟練運用雙線與偏移指令可成倍提升**平面圖**繪製速度。",
+          "table": {
+            "headers": [
+              "功能目標",
+              "CAD 指令",
+              "快捷鍵",
+              "專業操作技巧"
+            ],
+            "rows": [
+              [
+                "平行牆線繪製",
+                "OFFSET",
+                "O",
+                "輸入牆厚 (如 15)，快速將軸線向兩側偏移"
+              ],
+              [
+                "多線/複線牆體繪製",
+                "MLINE",
+                "ML",
+                "設定 Scale (牆厚)=15, Justification=Zero (置中)"
+              ],
+              [
+                "牆角自動修剪",
+                "TRIM / FILLET",
+                "TR / F",
+                "F -> Radius=0，快速清理牆線相交處 T 角或 L 角"
+              ],
+              [
+                "圖塊建立與插入",
+                "BLOCK / INSERT",
+                "B / I",
+                "將門窗、衛浴設備做成圖塊 (Block) 重複調用"
+              ],
+              [
+                "圖層屬性刷",
+                "MATCHPROP",
+                "MA",
+                "快速將新建物件複製為牆體、門窗或尺寸圖層"
+              ]
             ]
           }
         }
       ],
-      practices: [
+      "practices": [
         {
-          difficulty: '基礎',
-          question: '在建築平面圖中，關於樓梯的繪製規範，箭頭方向通常代表什麼意義？若在二樓平面圖上看到樓梯標示「DN」，代表該樓梯通往何處？',
-          steps: [
-            '樓梯上的箭號方向代表「人行走的行走方向」。',
-            '「DN」(**Down**) 代表向下走前往下層；二樓**平面圖**上的 DN 代表通往一樓。'
+          "difficulty": "基礎",
+          "question": "在建築平面圖中，關於樓梯的繪製規範，箭頭方向通常代表什麼意義？若在二樓平面圖上看到樓梯標示「DN」，代表該樓梯通往何處？",
+          "steps": [
+            "樓梯上的箭號方向代表「人行走的行走方向」。 ｜為什麼：依據建築製圖核心規範與力學幾何定理演算。",
+            "「DN」(**Down**) 代表向下走前往下層；二樓**平面圖**上的 DN 代表通往一樓。 ｜為什麼：依據建築製圖核心規範與力學幾何定理演算。"
           ],
-          answer: '箭頭代表行走方向；DN 代表通往一樓 (下層)。'
+          "answer": "箭頭代表行走方向；DN 代表通往一樓 (下層)。",
+          "hints": [
+            "分析題目核心條件與建築製圖規範/定理",
+            "列出對應計算式或幾何平衡條件求解"
+          ],
+          "commonMistake": "容易在正負號方向、單位換算 (如 MPa = N/mm²) 或圖例符號代入時產生計算失誤。",
+          "eliteShortcut": "工程實務破題法：善用對稱性與基準線選定，直接鎖定關鍵數據快速秒殺！"
         },
         {
-          difficulty: '高頻統測題',
-          question: '建築平面圖實質上為一水平剖面圖，其假想水平切割面高度通常設定於當層地板面 (FL) 上方約多少公尺處？ (A) 0.3m (B) 1.2m ~ 1.5m (C) 2.4m (D) 3.0m。',
-          steps: [
-            '**平面圖**假想切割面設於離地板高約 1.2m 至 1.5m 處，此高度剛好切過門窗開口。故 (**B**) 正確。'
+          "difficulty": "高頻統測題",
+          "question": "建築平面圖實質上為一水平剖面圖，其假想水平切割面高度通常設定於當層地板面 (FL) 上方約多少公尺處？ (A) 0.3m (B) 1.2m ~ 1.5m (C) 2.4m (D) 3.0m。",
+          "steps": [
+            "**平面圖**假想切割面設於離地板高約 1.2m 至 1.5m 處，此高度剛好切過門窗開口。故 (**B**) 正確。 ｜為什麼：依據建築製圖核心規範與力學幾何定理演算。"
           ],
-          answer: '(B) 1.2m ~ 1.5m'
+          "answer": "(B) 1.2m ~ 1.5m",
+          "hints": [
+            "分析題目核心條件與建築製圖規範/定理",
+            "列出對應計算式或幾何平衡條件求解"
+          ],
+          "commonMistake": "容易在正負號方向、單位換算 (如 MPa = N/mm²) 或圖例符號代入時產生計算失誤。",
+          "eliteShortcut": "工程實務破題法：善用對稱性與基準線選定，直接鎖定關鍵數據快速秒殺！"
         },
         {
-          difficulty: '進階',
-          question: '某房間牆中心線長為 600 cm、寬為 400 cm，外圍牆體均為 20 cm 厚之 RC 牆。求解：(1) 該房間之室內淨長度與淨寬度 (2) 室內淨面積 (m²)。',
-          steps: [
-            '室內淨長度 = 600 - (20/2) - (20/2) = 600 - 20 = 580 cm = 5.8 m。',
-            '室內淨寬度 = 400 - (20/2) - (20/2) = 400 - 20 = 380 cm = 3.8 m。',
-            '室內淨面積 = 5.8 m × 3.8 m = 22.04 m²。'
+          "difficulty": "進階",
+          "question": "某房間牆中心線長為 600 cm、寬為 400 cm，外圍牆體均為 20 cm 厚之 RC 牆。求解：(1) 該房間之室內淨長度與淨寬度 (2) 室內淨面積 (m²)。",
+          "steps": [
+            "室內淨長度 = 600 - (20/2) - (20/2) = 600 - 20 = 580 cm = 5.8 m。 ｜為什麼：依據建築製圖核心規範與力學幾何定理演算。",
+            "室內淨寬度 = 400 - (20/2) - (20/2) = 400 - 20 = 380 cm = 3.8 m。 ｜為什麼：依據建築製圖核心規範與力學幾何定理演算。",
+            "室內淨面積 = 5.8 m × 3.8 m = 22.04 m²。 ｜為什麼：依據建築製圖核心規範與力學幾何定理演算。"
           ],
-          answer: '(1) 淨長 5.8 m, 淨寬 3.8 m；(2) 淨面積 = 22.04 m²'
+          "answer": "(1) 淨長 5.8 m, 淨寬 3.8 m；(2) 淨面積 = 22.04 m²",
+          "hints": [
+            "分析題目核心條件與建築製圖規範/定理",
+            "列出對應計算式或幾何平衡條件求解"
+          ],
+          "commonMistake": "容易在正負號方向、單位換算 (如 MPa = N/mm²) 或圖例符號代入時產生計算失誤。",
+          "eliteShortcut": "工程實務破題法：善用對稱性與基準線選定，直接鎖定關鍵數據快速秒殺！"
         },
         {
-          difficulty: '高頻統測題',
-          question: '平面圖中，高於假想切割面 (1.5m) 以上的天花板結構梁或雨遮輪廓，依據 CNS 規範應採用何種線型繪製？ (A) 粗實線 (B) 虛線 / 雙點劃線 (C) 細實線 (D) 波浪線。',
-          steps: [
-            '高於切割面上方未切到之結構投影（如天花板梁、雨遮、上方櫃體）統一採用「虛線」繪製。故 (**B**) 正確。'
+          "difficulty": "高頻統測題",
+          "question": "平面圖中，高於假想切割面 (1.5m) 以上的天花板結構梁或雨遮輪廓，依據 CNS 規範應採用何種線型繪製？ (A) 粗實線 (B) 虛線 / 雙點劃線 (C) 細實線 (D) 波浪線。",
+          "steps": [
+            "高於切割面上方未切到之結構投影（如天花板梁、雨遮、上方櫃體）統一採用「虛線」繪製。故 (**B**) 正確。 ｜為什麼：依據建築製圖核心規範與力學幾何定理演算。"
           ],
-          answer: '(B) 虛線 / 雙點劃線'
+          "answer": "(B) 虛線 / 雙點劃線",
+          "hints": [
+            "分析題目核心條件與建築製圖規範/定理",
+            "列出對應計算式或幾何平衡條件求解"
+          ],
+          "commonMistake": "容易在正負號方向、單位換算 (如 MPa = N/mm²) 或圖例符號代入時產生計算失誤。",
+          "eliteShortcut": "工程實務破題法：善用對稱性與基準線選定，直接鎖定關鍵數據快速秒殺！"
         }
       ]
     },
     {
       slug: 'architectural-elevation',
-      title: '6. 建築立面圖',
-      desc: '掌握立面圖正投影原理、方位與軸線命名法、高程系統符號 (GL, FL, RF, PAR)、外牆材質圖例與陰影表現。\n\n🔥 V6.0 考前秒殺秘訣：此核心概念統測出題率極高，建議善用圖解與鷹架提示反覆練習！',
-      status: 'done',
-      gradeLevel: 11,
-      examHitRate: 4,
-      step0Prerequisites: ["本章核心基礎：architectural-elevation之關鍵定義與物理幾何直覺","解題前置檢核：確認題型情境、已知條件量與求解目標"],
-      fatalTraps: [{"wrongThinking":"直覺選擇字面相近選項，未仔細檢驗題幹之特定限制條件。","correctThinking":"回歸核心公理與基本定義，逐項檢核題幹條件與反例。","trapDescription":"80% 考生在概念題中因粗心忽略前提假設而失分。"}],
-      eliteMentalModels: [{"technique":"第一性原理拆解法 (First Principles Breakdown)","explanation":"不依賴死記死背，由最底層的定義與公理邏輯推導出解題路徑，降維打擊各類統測變形題。"}],
-      covered_question_ids: ['111-2-23', '111-2-30', '112-2-37', '112-2-39', '113-2-28', '113-2-31', '113-2-33', '114-2-27', '114-2-37', '114-2-40', '115-2-25', '115-2-30'],
-      worked_examples: [
+      "title": "6. 建築立面圖",
+      "desc": "掌握立面圖正投影原理、方位與軸線命名法、高程系統符號 (GL, FL, RF, PAR)、外牆材質圖例與陰影表現。\n\n🔥 V6.0 考前秒殺秘訣：此核心概念統測出題率極高，建議善用圖解與鷹架提示反覆練習！",
+      "status": "done",
+      "gradeLevel": 11,
+      "examHitRate": 4,
+      "step0Prerequisites": [
+        "本章核心基礎：architectural-elevation之關鍵定義與物理幾何直覺",
+        "解題前置檢核：確認題型情境、已知條件量與求解目標"
+      ],
+      "fatalTraps": [
         {
-          question: '【步驟化例題】建築立面圖地平線與高程標註：在繪製建築外觀立面圖時，代表地表面的地平線（Ground Line, GL）應採用何種線型與線寬繪製？',
-          difficulty: '基礎',
-          steps: [ "步驟 1：理解 GL 線的工程意義。GL 為整座建築物座落之基準地表面。", "步驟 2：選擇線型與線寬。GL 線必須比建築物外輪廓更粗，採用特粗實線（如 0.7~1.0 mm）繪製。", "步驟 3：標註高程符號。於 GL 旁標註高程 ±0.00m 基準符號。" ], 
-          answer: '應採用特粗實線（線寬 0.7~1.0 mm）繪製地平線 GL。'
+          "wrongThinking": "直覺選擇字面相近選項，未仔細檢驗題幹之特定限制條件。",
+          "correctThinking": "回歸核心公理與基本定義，逐項檢核題幹條件與反例。",
+          "trapDescription": "80% 考生在概念題中因粗心忽略前提假設而失分。"
         }
       ],
-      "illustrations": [ 'context.webp', 'mechanism.webp', 'comparison.webp', 'step-by-step.webp', 'drafting-real-world.webp', 'architectural-elevation-infographic.webp', 'concept-diagram.webp', 'formula-visual.webp' ],
-      concepts: [
+      "eliteMentalModels": [
         {
-          heading: '建築立面圖功能與命名原則',
-          body: '建築**立面圖** (**Architectural Elevation**) 係將建築物各外牆面**正投影**至垂直投影面上之圖樣，主要表達建築外觀造型、門窗開口比例、外牆材質與垂直高度關係。',
-          table: {
-            headers: ['命名方式', '範例圖名', '命名依據與適用情況'],
-            rows: [
-              ['方位命名法 (最常用)', '東向立面圖、南向立面圖', '依據該外牆面所「面向」之地理方位命名（如面向南方即為南向立面圖）'],
-              ['相對位置命名法', '正立面圖、背立面圖、左/右立面圖', '以建築物主要入口側為正立面圖'],
-              ['軸線命名法', '1-5 軸立面圖、A-D 軸立面圖', '依據平面圖上最左至最右或最下至最上之結構軸線編號命名']
+          "technique": "第一性原理拆解法 (First Principles Breakdown)",
+          "explanation": "不依賴死記死背，由最底層的定義與公理邏輯推導出解題路徑，降維打擊各類統測變形題。"
+        }
+      ],
+      "covered_question_ids": [
+        "111-2-23",
+        "111-2-30",
+        "112-2-37",
+        "112-2-39",
+        "113-2-28",
+        "113-2-31",
+        "113-2-33",
+        "114-2-27",
+        "114-2-37",
+        "114-2-40",
+        "115-2-25",
+        "115-2-30"
+      ],
+      "worked_examples": [
+        {
+          "question": "【步驟化例題】建築立面圖地平線與高程標註：在繪製建築外觀立面圖時，代表地表面的地平線（Ground Line, GL）應採用何種線型與線寬繪製？",
+          "difficulty": "基礎",
+          "steps": [
+            "步驟 1：理解 GL 線的工程意義。GL 為整座建築物座落之基準地表面。 ｜為什麼：依據建築製圖核心規範與力學幾何定理演算。",
+            "步驟 2：選擇線型與線寬。GL 線必須比建築物外輪廓更粗，採用特粗實線（如 0.7~1.0 mm）繪製。 ｜為什麼：依據建築製圖核心規範與力學幾何定理演算。",
+            "步驟 3：標註高程符號。於 GL 旁標註高程 ±0.00m 基準符號。 ｜為什麼：依據建築製圖核心規範與力學幾何定理演算。"
+          ],
+          "answer": "應採用特粗實線（線寬 0.7~1.0 mm）繪製地平線 GL。",
+          "hints": [
+            "分析題目核心條件與建築製圖規範/定理",
+            "列出對應計算式或幾何平衡條件求解"
+          ],
+          "commonMistake": "容易在正負號方向、單位換算 (如 MPa = N/mm²) 或圖例符號代入時產生計算失誤。",
+          "eliteShortcut": "工程實務破題法：善用對稱性與基準線選定，直接鎖定關鍵數據快速秒殺！"
+        }
+      ],
+      "illustrations": [
+        "context.webp",
+        "mechanism.webp",
+        "comparison.webp",
+        "step-by-step.webp",
+        "drafting-real-world.webp",
+        "architectural-elevation-infographic.webp",
+        "concept-diagram.webp",
+        "formula-visual.webp"
+      ],
+      "concepts": [
+        {
+          "heading": "建築立面圖功能與命名原則",
+          "body": "建築**立面圖** (**Architectural Elevation**) 係將建築物各外牆面**正投影**至垂直投影面上之圖樣，主要表達建築外觀造型、門窗開口比例、外牆材質與垂直高度關係。",
+          "table": {
+            "headers": [
+              "命名方式",
+              "範例圖名",
+              "命名依據與適用情況"
+            ],
+            "rows": [
+              [
+                "方位命名法 (最常用)",
+                "東向立面圖、南向立面圖",
+                "依據該外牆面所「面向」之地理方位命名（如面向南方即為南向立面圖）"
+              ],
+              [
+                "相對位置命名法",
+                "正立面圖、背立面圖、左/右立面圖",
+                "以建築物主要入口側為正立面圖"
+              ],
+              [
+                "軸線命名法",
+                "1-5 軸立面圖、A-D 軸立面圖",
+                "依據平面圖上最左至最右或最下至最上之結構軸線編號命名"
+              ]
             ]
           }
         },
         {
-          heading: '標高系統與高程符號 (GL, FL, RF, PAR)',
-          body: '**立面圖**最重要的資訊之一為垂直高度尺寸標示，必須建立統一的高程基準線與符號。',
-          table: {
-            headers: ['高程代號', '英文全稱', '中文名稱', '高度基準與說明'],
-            rows: [
-              ['GL', 'Ground Level', '基地地平線 / 室外地坪', '整體建築垂直高度之 ±0.00 基準線（通常畫極粗實線）'],
-              ['FL / 1F, 2F', 'Floor Level', '樓板面高程', '各樓層完成面高度（如 1F FL+0.30m, 2F FL+3.60m）'],
-              ['RF', 'Roof Floor', '屋頂層樓板面', '主體建築屋頂結構完成面高程'],
-              ['PAR / PH', 'Parapet / Penthouse', '女兒牆頂 / 屋頂突出物', '女兒牆最高點或電梯梯間/水箱頂高程']
+          "heading": "標高系統與高程符號 (GL, FL, RF, PAR)",
+          "body": "**立面圖**最重要的資訊之一為垂直高度尺寸標示，必須建立統一的高程基準線與符號。",
+          "table": {
+            "headers": [
+              "高程代號",
+              "英文全稱",
+              "中文名稱",
+              "高度基準與說明"
+            ],
+            "rows": [
+              [
+                "GL",
+                "Ground Level",
+                "基地地平線 / 室外地坪",
+                "整體建築垂直高度之 ±0.00 基準線（通常畫極粗實線）"
+              ],
+              [
+                "FL / 1F, 2F",
+                "Floor Level",
+                "樓板面高程",
+                "各樓層完成面高度（如 1F FL+0.30m, 2F FL+3.60m）"
+              ],
+              [
+                "RF",
+                "Roof Floor",
+                "屋頂層樓板面",
+                "主體建築屋頂結構完成面高程"
+              ],
+              [
+                "PAR / PH",
+                "Parapet / Penthouse",
+                "女兒牆頂 / 屋頂突出物",
+                "女兒牆最高點或電梯梯間/水箱頂高程"
+              ]
             ]
           }
         },
         {
-          heading: '外牆材質圖例與表現法 (Exterior Finishes & Textures)',
-          body: '**立面圖**需以標準圖例與密實線條細緻表現外牆材料。',
-          table: {
-            headers: ['外牆材料名稱', '圖樣細節與線條表達', 'CAD 填充圖案 / 繪製建議'],
-            rows: [
-              ['面磚 / 丁掛磚 (Tiles)', '等距水平與垂直細實線格網', '依實際磚號 (如二丁掛 6x22cm) 繪製網格'],
-              ['洗石子 / 斬石子 (Aggregate)', '細小密集點狀圖案 (Dots)', 'HATCH 圖案選用 AR-SAND 或 DENSE DOTS'],
-              ['清水混凝土 (Fair-faced Concrete)', '平整細線 + 分模線與螺栓孔點', '標示 1.5m×0.9m 分模線及對拉螺桿孔圓點'],
-              ['玻璃幕牆 (Glass Curtain Wall)', '網格雙線 + 45° 漸層平行長短細斜線', '以長短斜線表示玻璃反光質感'],
-              ['石材干掛 (Stone Cladding)', '大方格分割線 + 勾縫雙線', '標示石材板塊縫隙與金屬扣件分割']
+          "heading": "外牆材質圖例與表現法 (Exterior Finishes & Textures)",
+          "body": "**立面圖**需以標準圖例與密實線條細緻表現外牆材料。",
+          "table": {
+            "headers": [
+              "外牆材料名稱",
+              "圖樣細節與線條表達",
+              "CAD 填充圖案 / 繪製建議"
+            ],
+            "rows": [
+              [
+                "面磚 / 丁掛磚 (Tiles)",
+                "等距水平與垂直細實線格網",
+                "依實際磚號 (如二丁掛 6x22cm) 繪製網格"
+              ],
+              [
+                "洗石子 / 斬石子 (Aggregate)",
+                "細小密集點狀圖案 (Dots)",
+                "HATCH 圖案選用 AR-SAND 或 DENSE DOTS"
+              ],
+              [
+                "清水混凝土 (Fair-faced Concrete)",
+                "平整細線 + 分模線與螺栓孔點",
+                "標示 1.5m×0.9m 分模線及對拉螺桿孔圓點"
+              ],
+              [
+                "玻璃幕牆 (Glass Curtain Wall)",
+                "網格雙線 + 45° 漸層平行長短細斜線",
+                "以長短斜線表示玻璃反光質感"
+              ],
+              [
+                "石材干掛 (Stone Cladding)",
+                "大方格分割線 + 勾縫雙線",
+                "標示石材板塊縫隙與金屬扣件分割"
+              ]
             ]
           }
         },
         {
-          heading: '立面深度、陰影與線條層次感',
-          body: '**立面圖**為 2D 投影圖，為表達建築物體塊的前後進退深度，必須善用「線寬階級」與「45° 陰影線」。',
-          steps: [
-            '最前景線條（如最靠近觀察者的陽台、柱）：採用最粗實線 (0.5 ~ 0.7mm)。',
-            '主牆面<span className="text-rose-600 font-bold">輪廓線</span>：採用中粗實線 (0.35 ~ 0.5mm)。',
-            '背景與遠景線條（後退之牆面）：採用細實線 (0.18 ~ 0.25mm)。',
-            '陰影繪製：假想太陽光由左上方 45° 角照射，於陽台底面、雨遮下方繪製 45° 細斜線陰影，大幅增強立體感。'
+          "heading": "立面深度、陰影與線條層次感",
+          "body": "**立面圖**為 2D 投影圖，為表達建築物體塊的前後進退深度，必須善用「線寬階級」與「45° 陰影線」。",
+          "steps": [
+            "最前景線條（如最靠近觀察者的陽台、柱）：採用最粗實線 (0.5 ~ 0.7mm)。",
+            "主牆面<span className=\"text-rose-600 font-bold\">輪廓線</span>：採用中粗實線 (0.35 ~ 0.5mm)。",
+            "背景與遠景線條（後退之牆面）：採用細實線 (0.18 ~ 0.25mm)。",
+            "陰影繪製：假想太陽光由左上方 45° 角照射，於陽台底面、雨遮下方繪製 45° 細斜線陰影，大幅增強立體感。"
           ]
         },
         {
-          heading: 'AutoCAD 立面圖繪製與對齊快捷指令表',
-          body: '利用**平面圖**對線繪製**立面圖**可確保門窗與柱軸線 100% 精準。',
-          table: {
-            headers: ['指令名稱', '快捷鍵', '立面繪圖關鍵應用'],
-            rows: [
-              ['XLINE', 'XL', '由平面圖之牆角、門窗開口向拉出垂直建構線 (XL -> V)'],
-              ['RAY', 'RAY', '建立單向射線，作為樓層高度基準線對齊'],
-              ['MIRROR', 'MI', '對稱建築外觀（如對稱古典立面）之快速複製'],
-              ['ARRAY', 'AR', '連續標準樓層（如 3F~15F 立面門窗）之矩形陣列快速生成'],
-              ['ALIGN', 'AL', '將外部圖塊（如景觀樹木、立面汽車、人物）旋轉並縮放對齊至立面圖']
+          "heading": "AutoCAD 立面圖繪製與對齊快捷指令表",
+          "body": "利用**平面圖**對線繪製**立面圖**可確保門窗與柱軸線 100% 精準。",
+          "table": {
+            "headers": [
+              "指令名稱",
+              "快捷鍵",
+              "立面繪圖關鍵應用"
+            ],
+            "rows": [
+              [
+                "XLINE",
+                "XL",
+                "由平面圖之牆角、門窗開口向拉出垂直建構線 (XL -> V)"
+              ],
+              [
+                "RAY",
+                "RAY",
+                "建立單向射線，作為樓層高度基準線對齊"
+              ],
+              [
+                "MIRROR",
+                "MI",
+                "對稱建築外觀（如對稱古典立面）之快速複製"
+              ],
+              [
+                "ARRAY",
+                "AR",
+                "連續標準樓層（如 3F~15F 立面門窗）之矩形陣列快速生成"
+              ],
+              [
+                "ALIGN",
+                "AL",
+                "將外部圖塊（如景觀樹木、立面汽車、人物）旋轉並縮放對齊至立面圖"
+              ]
             ]
           }
         }
       ],
-      practices: [
+      "practices": [
         {
-          difficulty: '基礎',
-          question: '在建築立面圖中，符號「▽ FL +3.60」代表什麼意思？室外地坪線通常用何種英文縮寫表示？其在立面圖上的線條粗細有何規定？',
-          steps: [
-            '「▽ FL +3.60」代表樓板面高程 (**Floor Level**)，距離基準原點 (**GL**) 高度為 +3.60 公尺。',
-            '室外地坪線縮寫為 GL (**Ground Level**)。',
-            'GL 線為接地基準線，規範規定應繪製為「最粗之實線」(如 0.7~1.0mm)。'
+          "difficulty": "基礎",
+          "question": "在建築立面圖中，符號「▽ FL +3.60」代表什麼意思？室外地坪線通常用何種英文縮寫表示？其在立面圖上的線條粗細有何規定？",
+          "steps": [
+            "「▽ FL +3.60」代表樓板面高程 (**Floor Level**)，距離基準原點 (**GL**) 高度為 +3.60 公尺。 ｜為什麼：依據建築製圖核心規範與力學幾何定理演算。",
+            "室外地坪線縮寫為 GL (**Ground Level**)。 ｜為什麼：依據建築製圖核心規範與力學幾何定理演算。",
+            "GL 線為接地基準線，規範規定應繪製為「最粗之實線」(如 0.7~1.0mm)。 ｜為什麼：依據建築製圖核心規範與力學幾何定理演算。"
           ],
-          answer: '樓板面高程 +3.60m；GL；最粗實線'
+          "answer": "樓板面高程 +3.60m；GL；最粗實線",
+          "hints": [
+            "分析題目核心條件與建築製圖規範/定理",
+            "列出對應計算式或幾何平衡條件求解"
+          ],
+          "commonMistake": "容易在正負號方向、單位換算 (如 MPa = N/mm²) 或圖例符號代入時產生計算失誤。",
+          "eliteShortcut": "工程實務破題法：善用對稱性與基準線選定，直接鎖定關鍵數據快速秒殺！"
         },
         {
-          difficulty: '高頻統測題',
-          question: '建築物某外牆面朝向正東方，則觀察者站在該外牆正東方向西方觀看該牆面所繪製之立面圖，依據方位命名法應命名為： (A) 西向立面圖 (B) 東向立面圖 (C) 正立面圖 (D) 側立面圖。',
-          steps: [
-            '**立面圖**依據外牆所「面向」之地理方位命名。該外牆面向正東方，故稱為「東向**立面圖**」。故 (**B**) 正確。'
+          "difficulty": "高頻統測題",
+          "question": "建築物某外牆面朝向正東方，則觀察者站在該外牆正東方向西方觀看該牆面所繪製之立面圖，依據方位命名法應命名為： (A) 西向立面圖 (B) 東向立面圖 (C) 正立面圖 (D) 側立面圖。",
+          "steps": [
+            "**立面圖**依據外牆所「面向」之地理方位命名。該外牆面向正東方，故稱為「東向**立面圖**」。故 (**B**) 正確。 ｜為什麼：依據建築製圖核心規範與力學幾何定理演算。"
           ],
-          answer: '(B) 東向立面圖'
+          "answer": "(B) 東向立面圖",
+          "hints": [
+            "分析題目核心條件與建築製圖規範/定理",
+            "列出對應計算式或幾何平衡條件求解"
+          ],
+          "commonMistake": "容易在正負號方向、單位換算 (如 MPa = N/mm²) 或圖例符號代入時產生計算失誤。",
+          "eliteShortcut": "工程實務破題法：善用對稱性與基準線選定，直接鎖定關鍵數據快速秒殺！"
         },
         {
-          difficulty: '進階',
-          question: '某 4 層樓住宅，一樓地坪 GL 高程為 +0.40m。一樓樓高 3.6m，二至四樓每層樓高 3.2m，女兒牆高 1.5m。求解二樓樓板面 (2F FL)、屋頂層 (RF) 及女兒牆頂 (PAR) 相對於 GL (±0.00m) 的高程。',
-          steps: [
-            '2F FL 高程 = +0.40 + 3.60 = +4.00 m。',
-            '3F FL 高程 = +4.00 + 3.20 = +7.20 m。',
-            '4F FL 高程 = +7.20 + 3.20 = +10.40 m。',
-            'RF 高程 = +10.40 + 3.20 = +13.60 m。',
-            'PAR 高程 = +13.60 + 1.50 = +15.10 m。'
+          "difficulty": "進階",
+          "question": "某 4 層樓住宅，一樓地坪 GL 高程為 +0.40m。一樓樓高 3.6m，二至四樓每層樓高 3.2m，女兒牆高 1.5m。求解二樓樓板面 (2F FL)、屋頂層 (RF) 及女兒牆頂 (PAR) 相對於 GL (±0.00m) 的高程。",
+          "steps": [
+            "2F FL 高程 = +0.40 + 3.60 = +4.00 m。 ｜為什麼：依據建築製圖核心規範與力學幾何定理演算。",
+            "3F FL 高程 = +4.00 + 3.20 = +7.20 m。 ｜為什麼：依據建築製圖核心規範與力學幾何定理演算。",
+            "4F FL 高程 = +7.20 + 3.20 = +10.40 m。 ｜為什麼：依據建築製圖核心規範與力學幾何定理演算。",
+            "RF 高程 = +10.40 + 3.20 = +13.60 m。 ｜為什麼：依據建築製圖核心規範與力學幾何定理演算。",
+            "PAR 高程 = +13.60 + 1.50 = +15.10 m。 ｜為什麼：依據建築製圖核心規範與力學幾何定理演算。"
           ],
-          answer: '2F FL = +4.00m, RF = +13.60m, PAR = +15.10m'
+          "answer": "2F FL = +4.00m, RF = +13.60m, PAR = +15.10m",
+          "hints": [
+            "分析題目核心條件與建築製圖規範/定理",
+            "列出對應計算式或幾何平衡條件求解"
+          ],
+          "commonMistake": "容易在正負號方向、單位換算 (如 MPa = N/mm²) 或圖例符號代入時產生計算失誤。",
+          "eliteShortcut": "工程實務破題法：善用對稱性與基準線選定，直接鎖定關鍵數據快速秒殺！"
         },
         {
-          difficulty: '高頻統測題',
-          question: '為了在 2D 建築立面圖上表現建築體塊的前後進退深度，最前景的陽台柱輪廓線與背景後退牆面輪廓線應如何區分？',
-          steps: [
-            '前景線條採用「粗實線 (0.5~0.7mm)」，背景後退牆面採用「細實線 (0.18~0.25mm)」，以線條粗細層次表達空間深度。'
+          "difficulty": "高頻統測題",
+          "question": "為了在 2D 建築立面圖上表現建築體塊的前後進退深度，最前景的陽台柱輪廓線與背景後退牆面輪廓線應如何區分？",
+          "steps": [
+            "前景線條採用「粗實線 (0.5~0.7mm)」，背景後退牆面採用「細實線 (0.18~0.25mm)」，以線條粗細層次表達空間深度。 ｜為什麼：依據建築製圖核心規範與力學幾何定理演算。"
           ],
-          answer: '前景用粗實線，背景用細實線。'
+          "answer": "前景用粗實線，背景用細實線。",
+          "hints": [
+            "分析題目核心條件與建築製圖規範/定理",
+            "列出對應計算式或幾何平衡條件求解"
+          ],
+          "commonMistake": "容易在正負號方向、單位換算 (如 MPa = N/mm²) 或圖例符號代入時產生計算失誤。",
+          "eliteShortcut": "工程實務破題法：善用對稱性與基準線選定，直接鎖定關鍵數據快速秒殺！"
         }
       ]
     },
     {
       slug: 'dimensioning-and-symbols',
-      title: '7. 尺寸標註與圖例',
-      desc: '掌握 CNS 11567 尺寸標註四大要素、符號前綴 (R, Ø, t, □)、建築外圍三階層標註原則、標準圖頭規格與 CAD 標註管理。\n\n🔥 V6.0 考前秒殺秘訣：此核心概念統測出題率極高，建議善用圖解與鷹架提示反覆練習！',
-      status: 'done',
-      gradeLevel: 11,
-      examHitRate: 4,
-      step0Prerequisites: ["本章核心基礎：dimensioning-and-symbols之關鍵定義與物理幾何直覺","解題前置檢核：確認題型情境、已知條件量與求解目標"],
-      fatalTraps: [{"wrongThinking":"直覺選擇字面相近選項，未仔細檢驗題幹之特定限制條件。","correctThinking":"回歸核心公理與基本定義，逐項檢核題幹條件與反例。","trapDescription":"80% 考生在概念題中因粗心忽略前提假設而失分。"}],
-      eliteMentalModels: [{"technique":"第一性原理拆解法 (First Principles Breakdown)","explanation":"不依賴死記死背，由最底層的定義與公理邏輯推導出解題路徑，降維打擊各類統測變形題。"}],
-      covered_question_ids: ['111-2-21', '111-2-26', '111-2-34', '111-2-38', '112-2-28', '112-2-35', '113-2-24', '113-2-37', '113-2-39', '114-2-26', '115-2-22', '115-2-23', '115-2-35'],
-      worked_examples: [
+      "title": "7. 尺寸標註與圖例",
+      "desc": "掌握 CNS 11567 尺寸標註四大要素、符號前綴 (R, Ø, t, □)、建築外圍三階層標註原則、標準圖頭規格與 CAD 標註管理。\n\n🔥 V6.0 考前秒殺秘訣：此核心概念統測出題率極高，建議善用圖解與鷹架提示反覆練習！",
+      "status": "done",
+      "gradeLevel": 11,
+      "examHitRate": 4,
+      "step0Prerequisites": [
+        "本章核心基礎：dimensioning-and-symbols之關鍵定義與物理幾何直覺",
+        "解題前置檢核：確認題型情境、已知條件量與求解目標"
+      ],
+      "fatalTraps": [
         {
-          question: '【步驟化例題】建築尺寸標註規範：在 CNS 11567 建築圖面尺寸標註中，除非另有註明，否則預設之長度尺寸單位為何？是否需要加註單位符號？',
-          difficulty: '基礎',
-          steps: [ "步驟 1：查考 CNS 建築製圖規範。建築平面圖與構造圖預設尺寸單位為「公釐 (mm)」。", "步驟 2：確認單位加註規則。全圖尺寸均為公釐時，數字旁「不需」另外加註 mm 符號；若採用公尺則須註明 m。", "步驟 3：總結解答。單位為公釐 (mm)，不需加註符號。" ], 
-          answer: '預設單位為「公釐 (mm)」，數字旁不需加註 mm 符號。'
+          "wrongThinking": "直覺選擇字面相近選項，未仔細檢驗題幹之特定限制條件。",
+          "correctThinking": "回歸核心公理與基本定義，逐項檢核題幹條件與反例。",
+          "trapDescription": "80% 考生在概念題中因粗心忽略前提假設而失分。"
         }
       ],
-      "illustrations": [ 'context.webp', 'mechanism.webp', 'comparison.webp', 'step-by-step.webp', 'drafting-real-world.webp', 'dimensioning-and-symbols-infographic.webp', 'concept-diagram.webp', 'formula-visual.webp' ],
-      concepts: [
+      "eliteMentalModels": [
         {
-          heading: 'CNS 11567 尺寸標註四大要素',
-          body: '任何工程圖面之尺寸標註必須完整且無歧義。一個完整的尺寸標註包含四個主要幾何要素。',
-          steps: [
-            '<span className="text-rose-600 font-bold">尺寸界線</span> (**Extension Line**)：由圖形特徵點引出之細實線，需垂直於被標註線段，超出<span className="text-rose-600 font-bold">尺寸線</span>約 2 ~ 3 mm。',
-            '<span className="text-rose-600 font-bold">尺寸線</span> (**Dimension Line**)：平行於被標註線段之細實線，兩端終止於<span className="text-rose-600 font-bold">尺寸界線</span>。',
-            '尺寸終點符號 (**Terminator**)：建築圖常用 45° 粗短斜線或滿心箭號/圓點；機械圖常用 3:1 滿心箭號。',
-            '尺寸數字 (**Dimension Text**)：標示實物實際尺寸，通常位於水平<span className="text-rose-600 font-bold">尺寸線</span>上置中上方 1mm 處，或垂直<span className="text-rose-600 font-bold">尺寸線</span>左側向左旋轉 90° 閱讀。'
+          "technique": "第一性原理拆解法 (First Principles Breakdown)",
+          "explanation": "不依賴死記死背，由最底層的定義與公理邏輯推導出解題路徑，降維打擊各類統測變形題。"
+        }
+      ],
+      "covered_question_ids": [
+        "111-2-21",
+        "111-2-26",
+        "111-2-34",
+        "111-2-38",
+        "112-2-28",
+        "112-2-35",
+        "113-2-24",
+        "113-2-37",
+        "113-2-39",
+        "114-2-26",
+        "115-2-22",
+        "115-2-23",
+        "115-2-35"
+      ],
+      "worked_examples": [
+        {
+          "question": "【步驟化例題】建築尺寸標註規範：在 CNS 11567 建築圖面尺寸標註中，除非另有註明，否則預設之長度尺寸單位為何？是否需要加註單位符號？",
+          "difficulty": "基礎",
+          "steps": [
+            "步驟 1：查考 CNS 建築製圖規範。建築平面圖與構造圖預設尺寸單位為「公釐 (mm)」。 ｜為什麼：依據建築製圖核心規範與力學幾何定理演算。",
+            "步驟 2：確認單位加註規則。全圖尺寸均為公釐時，數字旁「不需」另外加註 mm 符號；若採用公尺則須註明 m。 ｜為什麼：依據建築製圖核心規範與力學幾何定理演算。",
+            "步驟 3：總結解答。單位為公釐 (mm)，不需加註符號。 ｜為什麼：依據建築製圖核心規範與力學幾何定理演算。"
+          ],
+          "answer": "預設單位為「公釐 (mm)」，數字旁不需加註 mm 符號。",
+          "hints": [
+            "分析題目核心條件與建築製圖規範/定理",
+            "列出對應計算式或幾何平衡條件求解"
+          ],
+          "commonMistake": "容易在正負號方向、單位換算 (如 MPa = N/mm²) 或圖例符號代入時產生計算失誤。",
+          "eliteShortcut": "工程實務破題法：善用對稱性與基準線選定，直接鎖定關鍵數據快速秒殺！"
+        }
+      ],
+      "illustrations": [
+        "context.webp",
+        "mechanism.webp",
+        "comparison.webp",
+        "step-by-step.webp",
+        "drafting-real-world.webp",
+        "dimensioning-and-symbols-infographic.webp",
+        "concept-diagram.webp",
+        "formula-visual.webp"
+      ],
+      "concepts": [
+        {
+          "heading": "CNS 11567 尺寸標註四大要素",
+          "body": "任何工程圖面之尺寸標註必須完整且無歧義。一個完整的尺寸標註包含四個主要幾何要素。",
+          "steps": [
+            "<span className=\"text-rose-600 font-bold\">尺寸界線</span> (**Extension Line**)：由圖形特徵點引出之細實線，需垂直於被標註線段，超出<span className=\"text-rose-600 font-bold\">尺寸線</span>約 2 ~ 3 mm。",
+            "<span className=\"text-rose-600 font-bold\">尺寸線</span> (**Dimension Line**)：平行於被標註線段之細實線，兩端終止於<span className=\"text-rose-600 font-bold\">尺寸界線</span>。",
+            "尺寸終點符號 (**Terminator**)：建築圖常用 45° 粗短斜線或滿心箭號/圓點；機械圖常用 3:1 滿心箭號。",
+            "尺寸數字 (**Dimension Text**)：標示實物實際尺寸，通常位於水平<span className=\"text-rose-600 font-bold\">尺寸線</span>上置中上方 1mm 處，或垂直<span className=\"text-rose-600 font-bold\">尺寸線</span>左側向左旋轉 90° 閱讀。"
           ]
         },
         {
-          heading: '常見製圖符號與前綴代號總表',
-          body: '尺寸數字前加上特定符號，用以說明幾何特徵形狀與加工指示。',
-          table: {
-            headers: ['符號', '英文 / 專業名稱', '中文意義', '使用範例與繪圖意義'],
-            rows: [
-              ['R', 'Radius', '半徑', 'R20 (圓弧或曲率半徑 20mm)'],
-              ['Ø / DIA', 'Diameter', '直徑', 'Ø50 (完整圓形直徑 50mm)'],
-              ['□ / SQ', 'Square', '正方形', '□ 30 (邊長 30mm 之正方形柱/管)'],
-              ['t', 'Thickness', '板厚', 't=12 (鋼板或木板厚度 12mm)'],
-              ['C', 'Chamfer', '倒角', 'C5 (45° 倒角，切基長度 5mm)'],
-              ['SØ / SR', 'Spherical', '球體直徑 / 球體半徑', 'SØ40 (球體直徑 40mm)']
+          "heading": "常見製圖符號與前綴代號總表",
+          "body": "尺寸數字前加上特定符號，用以說明幾何特徵形狀與加工指示。",
+          "table": {
+            "headers": [
+              "符號",
+              "英文 / 專業名稱",
+              "中文意義",
+              "使用範例與繪圖意義"
+            ],
+            "rows": [
+              [
+                "R",
+                "Radius",
+                "半徑",
+                "R20 (圓弧或曲率半徑 20mm)"
+              ],
+              [
+                "Ø / DIA",
+                "Diameter",
+                "直徑",
+                "Ø50 (完整圓形直徑 50mm)"
+              ],
+              [
+                "□ / SQ",
+                "Square",
+                "正方形",
+                "□ 30 (邊長 30mm 之正方形柱/管)"
+              ],
+              [
+                "t",
+                "Thickness",
+                "板厚",
+                "t=12 (鋼板或木板厚度 12mm)"
+              ],
+              [
+                "C",
+                "Chamfer",
+                "倒角",
+                "C5 (45° 倒角，切基長度 5mm)"
+              ],
+              [
+                "SØ / SR",
+                "Spherical",
+                "球體直徑 / 球體半徑",
+                "SØ40 (球體直徑 40mm)"
+              ]
             ]
           }
         },
         {
-          heading: '建築平面尺寸標註「三階層原則」 (Three-tier Dimensioning)',
-          body: '建築**平面圖**外圍尺寸標註由外至內分為三道（三階層），層次分明。',
-          table: {
-            headers: ['標註階層', '相對位置 (由外向內)', '標註內容', '尺寸涵蓋範圍'],
-            rows: [
-              ['第一層 (最外側)', '距離圖形最遠 (約 15~20mm)', '建築物總尺寸 (Total Dimension)', '牆外緣至外緣之總長與總寬'],
-              ['第二層 (中間層)', '距離圖形次之 (約 10~15mm)', '柱網軸線尺寸 (Axial Grid Dimension)', '柱中心線至柱中心線 (X1-X2, Y1-Y2) 之軸距'],
-              ['第三層 (最內側)', '緊鄰牆體輪廓 (約 8~10mm)', '門窗與細部開口尺寸 (Detailed Dimension)', '牆厚、門窗開口寬度、垛牆尺寸']
+          "heading": "建築平面尺寸標註「三階層原則」 (Three-tier Dimensioning)",
+          "body": "建築**平面圖**外圍尺寸標註由外至內分為三道（三階層），層次分明。",
+          "table": {
+            "headers": [
+              "標註階層",
+              "相對位置 (由外向內)",
+              "標註內容",
+              "尺寸涵蓋範圍"
+            ],
+            "rows": [
+              [
+                "第一層 (最外側)",
+                "距離圖形最遠 (約 15~20mm)",
+                "建築物總尺寸 (Total Dimension)",
+                "牆外緣至外緣之總長與總寬"
+              ],
+              [
+                "第二層 (中間層)",
+                "距離圖形次之 (約 10~15mm)",
+                "柱網軸線尺寸 (Axial Grid Dimension)",
+                "柱中心線至柱中心線 (X1-X2, Y1-Y2) 之軸距"
+              ],
+              [
+                "第三層 (最內側)",
+                "緊鄰牆體輪廓 (約 8~10mm)",
+                "門窗與細部開口尺寸 (Detailed Dimension)",
+                "牆厚、門窗開口寬度、垛牆尺寸"
+              ]
             ]
           }
         },
         {
-          heading: '標準圖頭 (Title Block) 規格與圖紙留白 margins',
-          body: '圖頭為工程圖面之身份證，**CNS** 規定圖頭應設於圖紙右下角，並有標準留白。',
-          table: {
-            headers: ['圖紙規格', '裝訂邊留白 (Left Margin)', '非裝訂邊留白 (Top/Right/Bottom)', '標準圖頭尺寸規格'],
-            rows: [
-              ['A0 ~ A2', '25 mm', '10 mm', '170mm × 65mm 或 180mm × 60mm'],
-              ['A3 ~ A4', '25 mm', '5 mm', '170mm × 65mm (A4 圖頭可寬 170mm)']
+          "heading": "標準圖頭 (Title Block) 規格與圖紙留白 margins",
+          "body": "圖頭為工程圖面之身份證，**CNS** 規定圖頭應設於圖紙右下角，並有標準留白。",
+          "table": {
+            "headers": [
+              "圖紙規格",
+              "裝訂邊留白 (Left Margin)",
+              "非裝訂邊留白 (Top/Right/Bottom)",
+              "標準圖頭尺寸規格"
+            ],
+            "rows": [
+              [
+                "A0 ~ A2",
+                "25 mm",
+                "10 mm",
+                "170mm × 65mm 或 180mm × 60mm"
+              ],
+              [
+                "A3 ~ A4",
+                "25 mm",
+                "5 mm",
+                "170mm × 65mm (A4 圖頭可寬 170mm)"
+              ]
             ]
           }
         },
         {
-          heading: 'AutoCAD 尺寸標註管理指令與變數 (DIMSTYLE)',
-          body: '使用 CAD 進行尺寸標註時，需設定 DIMSTYLE 以符合 **CNS** 建築/機械規範。',
-          table: {
-            headers: ['CAD 指令 / 變數', '快捷鍵', '功能說明', 'CNS 設定標準'],
-            rows: [
-              ['DIMSTYLE', 'D', '開啟標註型式管理員', '建立 Arch-100, Arch-50 等標註型式'],
-              ['DIMLINEAR', 'DLI', '繪製水平或垂直線性標註', '用於一般長寬尺寸標註'],
-              ['DIMALIGNED', 'DAL', '繪製對齊斜線標註', '用於斜牆或斜桿長度標註'],
-              ['DIMCONTINUE', 'DCO', '連續標註', '自動沿前一標註終點繼續拉出第三層連續尺寸'],
-              ['DIMBASELINE', 'DBA', '基線標註', '以同一基準點平行拉出階梯狀尺寸']
+          "heading": "AutoCAD 尺寸標註管理指令與變數 (DIMSTYLE)",
+          "body": "使用 CAD 進行尺寸標註時，需設定 DIMSTYLE 以符合 **CNS** 建築/機械規範。",
+          "table": {
+            "headers": [
+              "CAD 指令 / 變數",
+              "快捷鍵",
+              "功能說明",
+              "CNS 設定標準"
+            ],
+            "rows": [
+              [
+                "DIMSTYLE",
+                "D",
+                "開啟標註型式管理員",
+                "建立 Arch-100, Arch-50 等標註型式"
+              ],
+              [
+                "DIMLINEAR",
+                "DLI",
+                "繪製水平或垂直線性標註",
+                "用於一般長寬尺寸標註"
+              ],
+              [
+                "DIMALIGNED",
+                "DAL",
+                "繪製對齊斜線標註",
+                "用於斜牆或斜桿長度標註"
+              ],
+              [
+                "DIMCONTINUE",
+                "DCO",
+                "連續標註",
+                "自動沿前一標註終點繼續拉出第三層連續尺寸"
+              ],
+              [
+                "DIMBASELINE",
+                "DBA",
+                "基線標註",
+                "以同一基準點平行拉出階梯狀尺寸"
+              ]
             ]
           }
         }
       ],
-      practices: [
+      "practices": [
         {
-          difficulty: '基礎',
-          question: '在工程圖面上，若某圓形構造標註為「4 - Ø12 THRU」，請問這代表什麼意義？尺寸前綴符號「t=6」又代表什麼？',
-          steps: [
-            '「4 - Ø12 THRU」代表有 4 個相同規格直徑為 12mm 的穿通孔 (**Through Hole**)。',
-            '「t=6」中「t」為 Thickness，代表零件或鋼板厚度為 6mm。'
+          "difficulty": "基礎",
+          "question": "在工程圖面上，若某圓形構造標註為「4 - Ø12 THRU」，請問這代表什麼意義？尺寸前綴符號「t=6」又代表什麼？",
+          "steps": [
+            "「4 - Ø12 THRU」代表有 4 個相同規格直徑為 12mm 的穿通孔 (**Through Hole**)。 ｜為什麼：依據建築製圖核心規範與力學幾何定理演算。",
+            "「t=6」中「t」為 Thickness，代表零件或鋼板厚度為 6mm。 ｜為什麼：依據建築製圖核心規範與力學幾何定理演算。"
           ],
-          answer: '4個直徑12mm貫穿孔；板厚 6mm。'
+          "answer": "4個直徑12mm貫穿孔；板厚 6mm。",
+          "hints": [
+            "分析題目核心條件與建築製圖規範/定理",
+            "列出對應計算式或幾何平衡條件求解"
+          ],
+          "commonMistake": "容易在正負號方向、單位換算 (如 MPa = N/mm²) 或圖例符號代入時產生計算失誤。",
+          "eliteShortcut": "工程實務破題法：善用對稱性與基準線選定，直接鎖定關鍵數據快速秒殺！"
         },
         {
-          difficulty: '高頻統測題',
-          question: '建築平面圖外圍三階層尺寸標註中，最外側（第一層）主要標註何種尺寸？最內側（第三層）主要標註何種尺寸？',
-          steps: [
-            '第一層 (最外側)：標註建築物「總尺寸 (總長與總寬)」。',
-            '第三層 (最內側)：標註「門窗開口與牆體細部尺寸」。'
+          "difficulty": "高頻統測題",
+          "question": "建築平面圖外圍三階層尺寸標註中，最外側（第一層）主要標註何種尺寸？最內側（第三層）主要標註何種尺寸？",
+          "steps": [
+            "第一層 (最外側)：標註建築物「總尺寸 (總長與總寬)」。 ｜為什麼：依據建築製圖核心規範與力學幾何定理演算。",
+            "第三層 (最內側)：標註「門窗開口與牆體細部尺寸」。 ｜為什麼：依據建築製圖核心規範與力學幾何定理演算。"
           ],
-          answer: '第一層標總尺寸；第三層標門窗開口與細部尺寸。'
+          "answer": "第一層標總尺寸；第三層標門窗開口與細部尺寸。",
+          "hints": [
+            "分析題目核心條件與建築製圖規範/定理",
+            "列出對應計算式或幾何平衡條件求解"
+          ],
+          "commonMistake": "容易在正負號方向、單位換算 (如 MPa = N/mm²) 或圖例符號代入時產生計算失誤。",
+          "eliteShortcut": "工程實務破題法：善用對稱性與基準線選定，直接鎖定關鍵數據快速秒殺！"
         },
         {
-          difficulty: '進階',
-          question: '某建築平面最內側標示：牆厚 20cm、窗戶寬 150cm、垛牆 100cm、門寬 90cm、垛牆 40cm。求解：(1) 第一層 (最外側) 標註之總尺寸數值 (2) 依 CNS 規範 A1 圖紙裝訂側與非裝訂側留白 (3) 圖頭在圖紙上的位置。',
-          steps: [
-            '總長度 = 20 + 150 + 100 + 90 + 40 = 400 cm (4.0 m)。',
-            'A1 圖紙留白：裝訂側 (左) 留 25 mm；非裝訂側 (上右下) 留 10 mm。',
-            '圖頭位置：必須置於圖紙右下角。'
+          "difficulty": "進階",
+          "question": "某建築平面最內側標示：牆厚 20cm、窗戶寬 150cm、垛牆 100cm、門寬 90cm、垛牆 40cm。求解：(1) 第一層 (最外側) 標註之總尺寸數值 (2) 依 CNS 規範 A1 圖紙裝訂側與非裝訂側留白 (3) 圖頭在圖紙上的位置。",
+          "steps": [
+            "總長度 = 20 + 150 + 100 + 90 + 40 = 400 cm (4.0 m)。 ｜為什麼：依據建築製圖核心規範與力學幾何定理演算。",
+            "A1 圖紙留白：裝訂側 (左) 留 25 mm；非裝訂側 (上右下) 留 10 mm。 ｜為什麼：依據建築製圖核心規範與力學幾何定理演算。",
+            "圖頭位置：必須置於圖紙右下角。 ｜為什麼：依據建築製圖核心規範與力學幾何定理演算。"
           ],
-          answer: '(1) 總尺寸 = 400 cm；(2) 裝訂側 25mm，非裝訂側 10mm；(3) 右下角'
+          "answer": "(1) 總尺寸 = 400 cm；(2) 裝訂側 25mm，非裝訂側 10mm；(3) 右下角",
+          "hints": [
+            "分析題目核心條件與建築製圖規範/定理",
+            "列出對應計算式或幾何平衡條件求解"
+          ],
+          "commonMistake": "容易在正負號方向、單位換算 (如 MPa = N/mm²) 或圖例符號代入時產生計算失誤。",
+          "eliteShortcut": "工程實務破題法：善用對稱性與基準線選定，直接鎖定關鍵數據快速秒殺！"
         },
         {
-          difficulty: '高頻統測題',
-          question: '工程圖面標註正方形截面柱尺寸時，前綴符號應採用下列何者？ (A) R (B) Ø (C) □ (D) C。',
-          steps: [
-            '正方形符號前綴採用「□ (**Square**)」。例如 □ 30cm。故 (**C**) 正確。'
+          "difficulty": "高頻統測題",
+          "question": "工程圖面標註正方形截面柱尺寸時，前綴符號應採用下列何者？ (A) R (B) Ø (C) □ (D) C。",
+          "steps": [
+            "正方形符號前綴採用「□ (**Square**)」。例如 □ 30cm。故 (**C**) 正確。 ｜為什麼：依據建築製圖核心規範與力學幾何定理演算。"
           ],
-          answer: '(C) □'
+          "answer": "(C) □",
+          "hints": [
+            "分析題目核心條件與建築製圖規範/定理",
+            "列出對應計算式或幾何平衡條件求解"
+          ],
+          "commonMistake": "容易在正負號方向、單位換算 (如 MPa = N/mm²) 或圖例符號代入時產生計算失誤。",
+          "eliteShortcut": "工程實務破題法：善用對稱性與基準線選定，直接鎖定關鍵數據快速秒殺！"
         }
       ]
     },
     {
       slug: 'cad-basics',
-      title: '8. CAD 繪圖基礎',
-      desc: '掌握 AutoCAD 座標系統、圖層管理 (ByLayer)、狀態列關鍵功能鍵 (OSNAP, ORTHO)、常用 20 大快捷鍵指令及 Viewport 出圖設定。\n\n🔥 V6.0 考前秒殺秘訣：此核心概念統測出題率極高，建議善用圖解與鷹架提示反覆練習！',
-      status: 'done',
-      gradeLevel: 11,
-      examHitRate: 4,
-      step0Prerequisites: ["本章核心基礎：cad-basics之關鍵定義與物理幾何直覺","解題前置檢核：確認題型情境、已知條件量與求解目標"],
-      fatalTraps: [{"wrongThinking":"直覺選擇字面相近選項，未仔細檢驗題幹之特定限制條件。","correctThinking":"回歸核心公理與基本定義，逐項檢核題幹條件與反例。","trapDescription":"80% 考生在概念題中因粗心忽略前提假設而失分。"}],
-      eliteMentalModels: [{"technique":"第一性原理拆解法 (First Principles Breakdown)","explanation":"不依賴死記死背，由最底層的定義與公理邏輯推導出解題路徑，降維打擊各類統測變形題。"}],
-      covered_question_ids: [],
-      worked_examples: [
+      "title": "8. CAD 繪圖基礎",
+      "desc": "掌握 AutoCAD 座標系統、圖層管理 (ByLayer)、狀態列關鍵功能鍵 (OSNAP, ORTHO)、常用 20 大快捷鍵指令及 Viewport 出圖設定。\n\n🔥 V6.0 考前秒殺秘訣：此核心概念統測出題率極高，建議善用圖解與鷹架提示反覆練習！",
+      "status": "done",
+      "gradeLevel": 11,
+      "examHitRate": 4,
+      "step0Prerequisites": [
+        "本章核心基礎：cad-basics之關鍵定義與物理幾何直覺",
+        "解題前置檢核：確認題型情境、已知條件量與求解目標"
+      ],
+      "fatalTraps": [
         {
-          question: '【步驟化例題】Computer-Aided Design (CAD) 繪圖指令應用：在 AutoCAD 中，若欲將一已知之軸線向兩側各偏移 12.5 cm 以繪製 25 cm 厚之牆體，應使用何種指令？',
-          difficulty: '基礎',
-          steps: [ "步驟 1：識別偏移複製指令。AutoCAD 中用於按指定距離平行複製物件之指令為「OFFSET (縮寫 O)」。", "步驟 2：輸入偏移距離。輸入距離值 12.5。", "步驟 3：點選物件與方向。選取中心軸線，分別向左/右或上/下點選複製出雙線牆體。" ], 
-          answer: '應使用「OFFSET (偏移)」指令，偏移距離設定為 12.5。'
+          "wrongThinking": "直覺選擇字面相近選項，未仔細檢驗題幹之特定限制條件。",
+          "correctThinking": "回歸核心公理與基本定義，逐項檢核題幹條件與反例。",
+          "trapDescription": "80% 考生在概念題中因粗心忽略前提假設而失分。"
         }
       ],
-      "illustrations": [ 'context.webp', 'mechanism.webp', 'comparison.webp', 'step-by-step.webp', 'drafting-real-world.webp', 'cad-basics-infographic.webp', 'concept-diagram.webp', 'formula-visual.webp' ],
-      concepts: [
+      "eliteMentalModels": [
         {
-          heading: 'AutoCAD 座標系統與三種點輸入方式',
-          body: 'AutoCAD 建立在笛卡兒直角座標系之上，精確繪圖必須熟練掌握三種座標輸入法。',
-          table: {
-            headers: ['座標輸入法', '語法格式', '範例說明', '典型應用情境'],
-            rows: [
-              ['絕對直角座標', 'X, Y', '100, 200', '指定圖面絕對原點 (0,0) 或與地理座標對齊'],
-              ['相對直角座標', '@dX, dY', '@50, 30', '從前一點向 X 正向走 50，Y 正向走 30（繪製矩形牆體）'],
-              ['相對極座標', '@距離 < 角度', '@100 < 45', '從前一點沿 45° 方向延伸長度 100 之線段（斜梁、斜線）']
+          "technique": "第一性原理拆解法 (First Principles Breakdown)",
+          "explanation": "不依賴死記死背，由最底層的定義與公理邏輯推導出解題路徑，降維打擊各類統測變形題。"
+        }
+      ],
+      "covered_question_ids": [],
+      "worked_examples": [
+        {
+          "question": "【步驟化例題】Computer-Aided Design (CAD) 繪圖指令應用：在 AutoCAD 中，若欲將一已知之軸線向兩側各偏移 12.5 cm 以繪製 25 cm 厚之牆體，應使用何種指令？",
+          "difficulty": "基礎",
+          "steps": [
+            "步驟 1：識別偏移複製指令。AutoCAD 中用於按指定距離平行複製物件之指令為「OFFSET (縮寫 O)」。 ｜為什麼：依據建築製圖核心規範與力學幾何定理演算。",
+            "步驟 2：輸入偏移距離。輸入距離值 12.5。 ｜為什麼：依據建築製圖核心規範與力學幾何定理演算。",
+            "步驟 3：點選物件與方向。選取中心軸線，分別向左/右或上/下點選複製出雙線牆體。 ｜為什麼：依據建築製圖核心規範與力學幾何定理演算。"
+          ],
+          "answer": "應使用「OFFSET (偏移)」指令，偏移距離設定為 12.5。",
+          "hints": [
+            "分析題目核心條件與建築製圖規範/定理",
+            "列出對應計算式或幾何平衡條件求解"
+          ],
+          "commonMistake": "容易在正負號方向、單位換算 (如 MPa = N/mm²) 或圖例符號代入時產生計算失誤。",
+          "eliteShortcut": "工程實務破題法：善用對稱性與基準線選定，直接鎖定關鍵數據快速秒殺！"
+        }
+      ],
+      "illustrations": [
+        "context.webp",
+        "mechanism.webp",
+        "comparison.webp",
+        "step-by-step.webp",
+        "drafting-real-world.webp",
+        "cad-basics-infographic.webp",
+        "concept-diagram.webp",
+        "formula-visual.webp"
+      ],
+      "concepts": [
+        {
+          "heading": "AutoCAD 座標系統與三種點輸入方式",
+          "body": "AutoCAD 建立在笛卡兒直角座標系之上，精確繪圖必須熟練掌握三種座標輸入法。",
+          "table": {
+            "headers": [
+              "座標輸入法",
+              "語法格式",
+              "範例說明",
+              "典型應用情境"
+            ],
+            "rows": [
+              [
+                "絕對直角座標",
+                "X, Y",
+                "100, 200",
+                "指定圖面絕對原點 (0,0) 或與地理座標對齊"
+              ],
+              [
+                "相對直角座標",
+                "@dX, dY",
+                "@50, 30",
+                "從前一點向 X 正向走 50，Y 正向走 30（繪製矩形牆體）"
+              ],
+              [
+                "相對極座標",
+                "@距離 < 角度",
+                "@100 < 45",
+                "從前一點沿 45° 方向延伸長度 100 之線段（斜梁、斜線）"
+              ]
             ]
           }
         },
         {
-          heading: '圖層 (Layer) 管理與色彩線型控制 (ByLayer 原則)',
-          body: '圖層為 CAD 圖紙管理之核心。建議所有物件之顏色 (**Color**)、線型 (**Linetype**)、線寬 (**Lineweight**) 一律設定為「ByLayer」(隨層)。',
-          table: {
-            headers: ['標準圖層名稱', '建議顏色 (Color ID)', '線型 (Linetype)', '出圖線寬 (mm)', '圖層內容'],
-            rows: [
-              ['WALL (牆體)', 'Yellow (2)', 'Continuous', '0.50 mm', '切到之 RC 牆、磚牆輪廓線'],
-              ['COLUMN (柱)', 'Red (1) / Cyan (4)', 'Continuous', '0.50 ~ 0.70 mm', '結構柱、RC 柱輪廓線及填充'],
-              ['DOOR_WIN (門窗)', 'Green (3)', 'Continuous', '0.25 ~ 0.35 mm', '門扇、門窗框、開啟弧線'],
-              ['AXIS (軸線)', 'Red (1)', 'CENTER', '0.18 mm', '柱網中心線、模數軸線'],
-              ['DIM (尺寸標註)', 'Color 8 (灰) / Cyan', 'Continuous', '0.18 mm', '尺寸線、界線、文字、高程符號'],
-              ['HATCH (剖面填充)', 'Color 9 / Color 251', 'Continuous', '0.15 mm', '牆體斜線、混凝土圖案、地坪磚']
+          "heading": "圖層 (Layer) 管理與色彩線型控制 (ByLayer 原則)",
+          "body": "圖層為 CAD 圖紙管理之核心。建議所有物件之顏色 (**Color**)、線型 (**Linetype**)、線寬 (**Lineweight**) 一律設定為「ByLayer」(隨層)。",
+          "table": {
+            "headers": [
+              "標準圖層名稱",
+              "建議顏色 (Color ID)",
+              "線型 (Linetype)",
+              "出圖線寬 (mm)",
+              "圖層內容"
+            ],
+            "rows": [
+              [
+                "WALL (牆體)",
+                "Yellow (2)",
+                "Continuous",
+                "0.50 mm",
+                "切到之 RC 牆、磚牆輪廓線"
+              ],
+              [
+                "COLUMN (柱)",
+                "Red (1) / Cyan (4)",
+                "Continuous",
+                "0.50 ~ 0.70 mm",
+                "結構柱、RC 柱輪廓線及填充"
+              ],
+              [
+                "DOOR_WIN (門窗)",
+                "Green (3)",
+                "Continuous",
+                "0.25 ~ 0.35 mm",
+                "門扇、門窗框、開啟弧線"
+              ],
+              [
+                "AXIS (軸線)",
+                "Red (1)",
+                "CENTER",
+                "0.18 mm",
+                "柱網中心線、模數軸線"
+              ],
+              [
+                "DIM (尺寸標註)",
+                "Color 8 (灰) / Cyan",
+                "Continuous",
+                "0.18 mm",
+                "尺寸線、界線、文字、高程符號"
+              ],
+              [
+                "HATCH (剖面填充)",
+                "Color 9 / Color 251",
+                "Continuous",
+                "0.15 mm",
+                "牆體斜線、混凝土圖案、地坪磚"
+              ]
             ]
           }
         },
         {
-          heading: '繪圖輔助工具與狀態列開關 (Function Keys)',
-          body: '熟記鍵盤功能鍵 F1 ~ F12 可極大提高 CAD 繪圖順暢度。',
-          table: {
-            headers: ['快捷鍵', '輔助功能名稱', '開啟/關閉作用', '專業實務建議'],
-            rows: [
-              ['F3', 'OSNAP (物件鎖點)', '自動捕捉端點、中點、圓心、交點', '常開，設定 END, MID, INT, PER'],
-              ['F8', 'ORTHO (正交模式)', '限制游標僅能沿水平或垂直方向移動', '繪製牆線與軸線時全程開啟'],
-              ['F10', 'POLAR (極座標追蹤)', '游標靠近指定角度 (如 30°, 45°) 時顯示追蹤線', '繪製斜屋頂或斜角度構件時開啟'],
-              ['F11', 'OTRACK (物件鎖點追蹤)', '沿已鎖定點之水平/垂直方向延伸進行對齊', '不繪製輔助線直接繪製對齊點']
+          "heading": "繪圖輔助工具與狀態列開關 (Function Keys)",
+          "body": "熟記鍵盤功能鍵 F1 ~ F12 可極大提高 CAD 繪圖順暢度。",
+          "table": {
+            "headers": [
+              "快捷鍵",
+              "輔助功能名稱",
+              "開啟/關閉作用",
+              "專業實務建議"
+            ],
+            "rows": [
+              [
+                "F3",
+                "OSNAP (物件鎖點)",
+                "自動捕捉端點、中點、圓心、交點",
+                "常開，設定 END, MID, INT, PER"
+              ],
+              [
+                "F8",
+                "ORTHO (正交模式)",
+                "限制游標僅能沿水平或垂直方向移動",
+                "繪製牆線與軸線時全程開啟"
+              ],
+              [
+                "F10",
+                "POLAR (極座標追蹤)",
+                "游標靠近指定角度 (如 30°, 45°) 時顯示追蹤線",
+                "繪製斜屋頂或斜角度構件時開啟"
+              ],
+              [
+                "F11",
+                "OTRACK (物件鎖點追蹤)",
+                "沿已鎖定點之水平/垂直方向延伸進行對齊",
+                "不繪製輔助線直接繪製對齊點"
+              ]
             ]
           }
         },
         {
-          heading: 'AutoCAD 最常用 20 大快捷指令總表',
-          body: '熟記單字母與雙字母快捷鍵為 CAD 繪圖員必備基本功。',
-          table: {
-            headers: ['類別', '指令名稱', '快捷鍵', '中文說明與快捷操作技巧'],
-            rows: [
-              ['繪圖', 'LINE / CIRCLE / RECTANG', 'L / C / REC', '繪製直線、圓形、矩形'],
-              ['繪圖', 'PLINE / HATCH / BLOCK', 'PL / H / B', '聚合線(連續線段)、剖面填充、定義圖塊'],
-              ['修改', 'OFFSET / TRIM / EXTEND', 'O / TR / EX', '等距偏移、修剪相交線、延伸線段至邊界'],
-              ['修改', 'COPY / MOVE / ROTATE', 'CO / M / RO', '複製物件、移動位置、繞基準點旋轉'],
-              ['修改', 'MIRROR / SCALE / STRETCH', 'MI / SC / S', '鏡射對稱、等比例縮放、拉伸變形(框選點)'],
-              ['修改', 'FILLET / EXPLODE', 'F / X', '圓角/倒直角(Radius=0時接角)、炸開圖塊/聚合線'],
-              ['檢視', 'ZOOM / PAN / MATCHPROP', 'Z / P / MA', '畫面縮放(Z->E全圖)、平移畫面、複製屬性']
+          "heading": "AutoCAD 最常用 20 大快捷指令總表",
+          "body": "熟記單字母與雙字母快捷鍵為 CAD 繪圖員必備基本功。",
+          "table": {
+            "headers": [
+              "類別",
+              "指令名稱",
+              "快捷鍵",
+              "中文說明與快捷操作技巧"
+            ],
+            "rows": [
+              [
+                "繪圖",
+                "LINE / CIRCLE / RECTANG",
+                "L / C / REC",
+                "繪製直線、圓形、矩形"
+              ],
+              [
+                "繪圖",
+                "PLINE / HATCH / BLOCK",
+                "PL / H / B",
+                "聚合線(連續線段)、剖面填充、定義圖塊"
+              ],
+              [
+                "修改",
+                "OFFSET / TRIM / EXTEND",
+                "O / TR / EX",
+                "等距偏移、修剪相交線、延伸線段至邊界"
+              ],
+              [
+                "修改",
+                "COPY / MOVE / ROTATE",
+                "CO / M / RO",
+                "複製物件、移動位置、繞基準點旋轉"
+              ],
+              [
+                "修改",
+                "MIRROR / SCALE / STRETCH",
+                "MI / SC / S",
+                "鏡射對稱、等比例縮放、拉伸變形(框選點)"
+              ],
+              [
+                "修改",
+                "FILLET / EXPLODE",
+                "F / X",
+                "圓角/倒直角(Radius=0時接角)、炸開圖塊/聚合線"
+              ],
+              [
+                "檢視",
+                "ZOOM / PAN / MATCHPROP",
+                "Z / P / MA",
+                "畫面縮放(Z->E全圖)、平移畫面、複製屬性"
+              ]
             ]
           }
         },
         {
-          heading: '模型空間與圖紙空間 Viewport (視埠) 出圖流程',
-          body: '正確的出圖流程可保證不同比例之圖紙文字與標註大小完全一致。',
-          table: {
-            headers: ['步驟', '操作階段', '作業重點', '關鍵指令 / 參數'],
-            rows: [
-              ['1', '模型空間 (Model Space)', '一律以 1:1 實物實際尺寸 (cm或mm) 繪製全圖', 'UNITS, LIMITS'],
-              ['2', '圖紙空間 (Layout)', '設定標準圖紙頁面尺寸並插入標準圖頭', 'PAGESETUP'],
-              ['3', '視埠建立 (MVIEW)', '建立視埠並雙擊進入調整展示區域', 'MVIEW (MV)'],
-              ['4', '視埠縮放 (Custom Scale)', '設定視埠比例 (如 1/50) 並鎖定視埠', '1/50xp, MV -> Lock'],
-              ['5', 'CTB 樣式表出圖', '對應顏色至印表機黑白線寬輸出 PDF', 'PLOT']
+          "heading": "模型空間與圖紙空間 Viewport (視埠) 出圖流程",
+          "body": "正確的出圖流程可保證不同比例之圖紙文字與標註大小完全一致。",
+          "table": {
+            "headers": [
+              "步驟",
+              "操作階段",
+              "作業重點",
+              "關鍵指令 / 參數"
+            ],
+            "rows": [
+              [
+                "1",
+                "模型空間 (Model Space)",
+                "一律以 1:1 實物實際尺寸 (cm或mm) 繪製全圖",
+                "UNITS, LIMITS"
+              ],
+              [
+                "2",
+                "圖紙空間 (Layout)",
+                "設定標準圖紙頁面尺寸並插入標準圖頭",
+                "PAGESETUP"
+              ],
+              [
+                "3",
+                "視埠建立 (MVIEW)",
+                "建立視埠並雙擊進入調整展示區域",
+                "MVIEW (MV)"
+              ],
+              [
+                "4",
+                "視埠縮放 (Custom Scale)",
+                "設定視埠比例 (如 1/50) 並鎖定視埠",
+                "1/50xp, MV -> Lock"
+              ],
+              [
+                "5",
+                "CTB 樣式表出圖",
+                "對應顏色至印表機黑白線寬輸出 PDF",
+                "PLOT"
+              ]
             ]
           }
         }
       ],
-      practices: [
+      "practices": [
         {
-          difficulty: '基礎',
-          question: '在 AutoCAD 中，若要從當前點開始繪製一條長度為 100、角度為 135 度的線段，應該輸入什麼相對極座標語法？若要將一塊已定義的圖塊 (Block) 分解為獨立的線條與圓弧，應使用什麼指令與快捷鍵？',
-          steps: [
-            '相對極座標格式：`@距離 < 角度`，故輸入 `@100<135`。',
-            '分解圖塊指令：EXPLODE，快捷鍵為 `X`。'
+          "difficulty": "基礎",
+          "question": "在 AutoCAD 中，若要從當前點開始繪製一條長度為 100、角度為 135 度的線段，應該輸入什麼相對極座標語法？若要將一塊已定義的圖塊 (Block) 分解為獨立的線條與圓弧，應使用什麼指令與快捷鍵？",
+          "steps": [
+            "相對極座標格式：`@距離 < 角度`，故輸入 `@100<135`。 ｜為什麼：依據建築製圖核心規範與力學幾何定理演算。",
+            "分解圖塊指令：EXPLODE，快捷鍵為 `X`。 ｜為什麼：依據建築製圖核心規範與力學幾何定理演算。"
           ],
-          answer: '輸入 `@100<135`；指令 EXPLODE (快捷鍵 X)。'
+          "answer": "輸入 `@100<135`；指令 EXPLODE (快捷鍵 X)。",
+          "hints": [
+            "分析題目核心條件與建築製圖規範/定理",
+            "列出對應計算式或幾何平衡條件求解"
+          ],
+          "commonMistake": "容易在正負號方向、單位換算 (如 MPa = N/mm²) 或圖例符號代入時產生計算失誤。",
+          "eliteShortcut": "工程實務破題法：善用對稱性與基準線選定，直接鎖定關鍵數據快速秒殺！"
         },
         {
-          difficulty: '高頻統測題',
-          question: '在 AutoCAD 狀態列按鍵中，快捷功能鍵 F3 與 F8 分別控制何種輔助繪圖功能？ (A) 正交與極座標 (B) 物件鎖點 (OSNAP) 與正交模式 (ORTHO) (C) 網格與捕捉 (D) 視埠與圖層。',
-          steps: [
-            'F3 控制物件鎖點 OSNAP 開關；F8 控制正交模式 ORTHO 開關。故 (**B**) 正確。'
+          "difficulty": "高頻統測題",
+          "question": "在 AutoCAD 狀態列按鍵中，快捷功能鍵 F3 與 F8 分別控制何種輔助繪圖功能？ (A) 正交與極座標 (B) 物件鎖點 (OSNAP) 與正交模式 (ORTHO) (C) 網格與捕捉 (D) 視埠與圖層。",
+          "steps": [
+            "F3 控制物件鎖點 OSNAP 開關；F8 控制正交模式 ORTHO 開關。故 (**B**) 正確。 ｜為什麼：依據建築製圖核心規範與力學幾何定理演算。"
           ],
-          answer: '(B) 物件鎖點 (OSNAP) 與正交模式 (ORTHO)'
+          "answer": "(B) 物件鎖點 (OSNAP) 與正交模式 (ORTHO)",
+          "hints": [
+            "分析題目核心條件與建築製圖規範/定理",
+            "列出對應計算式或幾何平衡條件求解"
+          ],
+          "commonMistake": "容易在正負號方向、單位換算 (如 MPa = N/mm²) 或圖例符號代入時產生計算失誤。",
+          "eliteShortcut": "工程實務破題法：善用對稱性與基準線選定，直接鎖定關鍵數據快速秒殺！"
         },
         {
-          difficulty: '進階',
-          question: '繪圖員在模型空間 (以 cm 為單位) 繪製建築圖。在 Layout A1 圖框建立 1:50 視埠。求解：(1) 視埠 Custom scale 應設為多少？ (2) 若欲輸出 3.5 mm 高之文字，模型空間中文字高度應設為多少 cm？ (3) 視埠內點劃線變成實線時，應修改何系統變數？',
-          steps: [
-            'Custom Scale = 10 mm / 50 cm = 0.2 (或 1/5xp)。',
-            '模型文字高度 = 0.35 cm × 50 = 17.5 cm。',
-            '點劃線修復變數：將 PSLTSCALE 設為 1，並執行 REGEN。'
+          "difficulty": "進階",
+          "question": "繪圖員在模型空間 (以 cm 為單位) 繪製建築圖。在 Layout A1 圖框建立 1:50 視埠。求解：(1) 視埠 Custom scale 應設為多少？ (2) 若欲輸出 3.5 mm 高之文字，模型空間中文字高度應設為多少 cm？ (3) 視埠內點劃線變成實線時，應修改何系統變數？",
+          "steps": [
+            "Custom Scale = 10 mm / 50 cm = 0.2 (或 1/5xp)。 ｜為什麼：依據建築製圖核心規範與力學幾何定理演算。",
+            "模型文字高度 = 0.35 cm × 50 = 17.5 cm。 ｜為什麼：依據建築製圖核心規範與力學幾何定理演算。",
+            "點劃線修復變數：將 PSLTSCALE 設為 1，並執行 REGEN。 ｜為什麼：依據建築製圖核心規範與力學幾何定理演算。"
           ],
-          answer: '(1) Custom Scale 設 0.2；(2) 模型文字高度 = 17.5 cm；(3) PSLTSCALE 設為 1'
+          "answer": "(1) Custom Scale 設 0.2；(2) 模型文字高度 = 17.5 cm；(3) PSLTSCALE 設為 1",
+          "hints": [
+            "分析題目核心條件與建築製圖規範/定理",
+            "列出對應計算式或幾何平衡條件求解"
+          ],
+          "commonMistake": "容易在正負號方向、單位換算 (如 MPa = N/mm²) 或圖例符號代入時產生計算失誤。",
+          "eliteShortcut": "工程實務破題法：善用對稱性與基準線選定，直接鎖定關鍵數據快速秒殺！"
         },
         {
-          difficulty: '高頻統測題',
-          question: '在 AutoCAD 中，若欲將兩條不相交的牆線快速連接並修剪為 90° 直角，最快捷之指令為何？ (A) TRIM (B) EXTEND (C) FILLET (倒圓角指令，Radius=0) (D) JOIN。',
-          steps: [
-            'FILLET 指令當半徑 Radius 設為 0 時，可一步將兩不平行線延伸或修剪相交成 90° 直角。故 (**C**) 正確。'
+          "difficulty": "高頻統測題",
+          "question": "在 AutoCAD 中，若欲將兩條不相交的牆線快速連接並修剪為 90° 直角，最快捷之指令為何？ (A) TRIM (B) EXTEND (C) FILLET (倒圓角指令，Radius=0) (D) JOIN。",
+          "steps": [
+            "FILLET 指令當半徑 Radius 設為 0 時，可一步將兩不平行線延伸或修剪相交成 90° 直角。故 (**C**) 正確。 ｜為什麼：依據建築製圖核心規範與力學幾何定理演算。"
           ],
-          answer: '(C) FILLET (Radius=0)'
+          "answer": "(C) FILLET (Radius=0)",
+          "hints": [
+            "分析題目核心條件與建築製圖規範/定理",
+            "列出對應計算式或幾何平衡條件求解"
+          ],
+          "commonMistake": "容易在正負號方向、單位換算 (如 MPa = N/mm²) 或圖例符號代入時產生計算失誤。",
+          "eliteShortcut": "工程實務破題法：善用對稱性與基準線選定，直接鎖定關鍵數據快速秒殺！"
         }
       ]
     },
     {
       slug: 'drafting-instruments',
-      title: '8. 製圖儀器之使用與維護',
-      desc: '熟練掌握工程製圖板、鉛筆與筆芯硬度階級、平行尺、三角板、圓規、分規與比例尺之正確使用技巧與儀器維護注意事項。\n\n🔥 V6.0 考前秒殺秘訣：此核心概念統測出題率極高，建議善用圖解與鷹架提示反覆練習！',
-      status: 'done',
-      gradeLevel: 11,
-      examHitRate: 4,
-      step0Prerequisites: ["本章核心基礎：drafting-instruments之關鍵定義與物理幾何直覺","解題前置檢核：確認題型情境、已知條件量與求解目標"],
-      fatalTraps: [{"wrongThinking":"直覺選擇字面相近選項，未仔細檢驗題幹之特定限制條件。","correctThinking":"回歸核心公理與基本定義，逐項檢核題幹條件與反例。","trapDescription":"80% 考生在概念題中因粗心忽略前提假設而失分。"}],
-      eliteMentalModels: [{"technique":"第一性原理拆解法 (First Principles Breakdown)","explanation":"不依賴死記死背，由最底層的定義與公理邏輯推導出解題路徑，降維打擊各類統測變形題。"}],
-      covered_question_ids: ['110-2-1', '111-2-1', '112-2-1', '113-2-1', '114-2-1', '115-2-1'],
-      worked_examples: [
+      "title": "8. 製圖儀器之使用與維護",
+      "desc": "熟練掌握工程製圖板、鉛筆與筆芯硬度階級、平行尺、三角板、圓規、分規與比例尺之正確使用技巧與儀器維護注意事項。\n\n🔥 V6.0 考前秒殺秘訣：此核心概念統測出題率極高，建議善用圖解與鷹架提示反覆練習！",
+      "status": "done",
+      "gradeLevel": 11,
+      "examHitRate": 4,
+      "step0Prerequisites": [
+        "本章核心基礎：drafting-instruments之關鍵定義與物理幾何直覺",
+        "解題前置檢核：確認題型情境、已知條件量與求解目標"
+      ],
+      "fatalTraps": [
         {
-          question: '【步驟化例題】三角板組合畫法：如何利用標準 30°-60°-90° 與 45°-45°-90° 兩塊三角板配合平行尺，畫出 15° 與 105° 之傾斜線條？',
-          difficulty: '基礎',
-          steps: [
-            '步驟 1：靠緊平行尺。將 45° 三角板之一直角邊緊貼平行尺上緣。',
-            '步驟 2：疊放 30°-60° 三角板。將 30°-60° 三角板之 30° 內角斜邊貼合於 45° 三角板斜邊上。',
-            '步驟 3：角度合成計算。兩角度相減：45° - 30° = 15°；兩角度相加：45° + 60° = 105°。故三角板組合可以 15° 為最小遞增單位繪製任何傾斜線。'
-          ],
-          answer: '利用角度相加減（45° - 30° = 15°，45° + 60° = 105°），配合平行尺即可劃出。'
+          "wrongThinking": "直覺選擇字面相近選項，未仔細檢驗題幹之特定限制條件。",
+          "correctThinking": "回歸核心公理與基本定義，逐項檢核題幹條件與反例。",
+          "trapDescription": "80% 考生在概念題中因粗心忽略前提假設而失分。"
         }
       ],
-      illustrations: ['context.webp', 'mechanism.webp', 'comparison.webp', 'step-by-step.webp', 'drafting-real-world.webp', 'drafting-instruments-infographic.webp'],
-      concepts: [
+      "eliteMentalModels": [
         {
-          heading: '製圖板、平行尺與張紙固定規範 (Drafting Board & T-Square Rules)',
-          body: '工程製圖需使用平整無瑕疵之製圖板與水平滑動之平行尺。張貼圖紙時，必須先將圖紙上緣對齊平行尺上緣，再使用工程膠帶依「左上 -> 右下 -> 右上 -> 左下」之對角順序貼牢，防止圖紙氣泡或歪斜。',
-          steps: [
-            '圖紙對齊：將圖紙放置於製圖板上，靠緊平行尺上邊緣校正水平。',
-            '對角固定：先貼左上角，拉平圖紙後貼右下角，最後固定右上角與左下角。',
-            '儀器維護：平行尺鋼絲張力需定期調整，避免尺身歪斜；清潔時使用乾淨軟布或橡皮擦拂拭。'
+          "technique": "第一性原理拆解法 (First Principles Breakdown)",
+          "explanation": "不依賴死記死背，由最底層的定義與公理邏輯推導出解題路徑，降維打擊各類統測變形題。"
+        }
+      ],
+      "covered_question_ids": [
+        "110-2-1",
+        "111-2-1",
+        "112-2-1",
+        "113-2-1",
+        "114-2-1",
+        "115-2-1"
+      ],
+      "worked_examples": [
+        {
+          "question": "【步驟化例題】三角板組合畫法：如何利用標準 30°-60°-90° 與 45°-45°-90° 兩塊三角板配合平行尺，畫出 15° 與 105° 之傾斜線條？",
+          "difficulty": "基礎",
+          "steps": [
+            "步驟 1：靠緊平行尺。將 45° 三角板之一直角邊緊貼平行尺上緣。 ｜為什麼：依據建築製圖核心規範與力學幾何定理演算。",
+            "步驟 2：疊放 30°-60° 三角板。將 30°-60° 三角板之 30° 內角斜邊貼合於 45° 三角板斜邊上。 ｜為什麼：依據建築製圖核心規範與力學幾何定理演算。",
+            "步驟 3：角度合成計算。兩角度相減：45° - 30° = 15°；兩角度相加：45° + 60° = 105°。故三角板組合可以 15° 為最小遞增單位繪製任何傾斜線。 ｜為什麼：依據建築製圖核心規範與力學幾何定理演算。"
+          ],
+          "answer": "利用角度相加減（45° - 30° = 15°，45° + 60° = 105°），配合平行尺即可劃出。",
+          "hints": [
+            "分析題目核心條件與建築製圖規範/定理",
+            "列出對應計算式或幾何平衡條件求解"
+          ],
+          "commonMistake": "容易在正負號方向、單位換算 (如 MPa = N/mm²) 或圖例符號代入時產生計算失誤。",
+          "eliteShortcut": "工程實務破題法：善用對稱性與基準線選定，直接鎖定關鍵數據快速秒殺！"
+        }
+      ],
+      "illustrations": [
+        "context.webp",
+        "mechanism.webp",
+        "comparison.webp",
+        "step-by-step.webp",
+        "drafting-real-world.webp",
+        "drafting-instruments-infographic.webp"
+      ],
+      "concepts": [
+        {
+          "heading": "製圖板、平行尺與張紙固定規範 (Drafting Board & T-Square Rules)",
+          "body": "工程製圖需使用平整無瑕疵之製圖板與水平滑動之平行尺。張貼圖紙時，必須先將圖紙上緣對齊平行尺上緣，再使用工程膠帶依「左上 -> 右下 -> 右上 -> 左下」之對角順序貼牢，防止圖紙氣泡或歪斜。",
+          "steps": [
+            "圖紙對齊：將圖紙放置於製圖板上，靠緊平行尺上邊緣校正水平。",
+            "對角固定：先貼左上角，拉平圖紙後貼右下角，最後固定右上角與左下角。",
+            "儀器維護：平行尺鋼絲張力需定期調整，避免尺身歪斜；清潔時使用乾淨軟布或橡皮擦拂拭。"
           ]
         },
         {
-          heading: '工程鉛筆硬度階級與選用原則 (Pencil Hardness Grades)',
-          body: '工程鉛筆筆芯依硬度與顏色深淺分為 9H 至 6B。H 代表 Hardness（硬），B 代表 Blackness（黑），F 代表 Fine Point（精細）。硬筆芯筆觸淺淡硬挺，軟筆芯筆觸濃黑易磨損。',
-          table: {
-            headers: ['筆芯階級', '硬度屬性', '線條特徵', '工程與建築製圖適用場合'],
-            rows: [
-              ['4H ~ 9H', '極硬 (Very Hard)', '極淺、細硬不易磨損', '幾何作圖輔助線、圖面底稿佈局線'],
-              ['2H ~ 3H', '中硬 (Hard)', '清晰且不易抹髒', '中心線、尺寸線、虛線、剖面線繪製'],
-              ['H, F, HB', '中等 (Medium)', '顏色適中、書寫流暢', '字法、尺寸數字、說明註解、徒手草圖'],
-              ['B ~ 6B', '軟質 (Soft)', '深黑濃密、筆芯易磨', '渲染圖、建築透視陰影、意象草圖繪製']
+          "heading": "工程鉛筆硬度階級與選用原則 (Pencil Hardness Grades)",
+          "body": "工程鉛筆筆芯依硬度與顏色深淺分為 9H 至 6B。H 代表 Hardness（硬），B 代表 Blackness（黑），F 代表 Fine Point（精細）。硬筆芯筆觸淺淡硬挺，軟筆芯筆觸濃黑易磨損。",
+          "table": {
+            "headers": [
+              "筆芯階級",
+              "硬度屬性",
+              "線條特徵",
+              "工程與建築製圖適用場合"
+            ],
+            "rows": [
+              [
+                "4H ~ 9H",
+                "極硬 (Very Hard)",
+                "極淺、細硬不易磨損",
+                "幾何作圖輔助線、圖面底稿佈局線"
+              ],
+              [
+                "2H ~ 3H",
+                "中硬 (Hard)",
+                "清晰且不易抹髒",
+                "中心線、尺寸線、虛線、剖面線繪製"
+              ],
+              [
+                "H, F, HB",
+                "中等 (Medium)",
+                "顏色適中、書寫流暢",
+                "字法、尺寸數字、說明註解、徒手草圖"
+              ],
+              [
+                "B ~ 6B",
+                "軟質 (Soft)",
+                "深黑濃密、筆芯易磨",
+                "渲染圖、建築透視陰影、意象草圖繪製"
+              ]
             ]
           }
         },
         {
-          heading: '圓規、分規與三稜比例尺使用原則 (Compass, Dividers & Scale Rule)',
-          body: '圓規繪製圓弧時，鋼針長度應調整為比鉛筆芯長約 0.5 mm（以便鋼針刺入圖紙固定）；筆芯斜切面應朝外放置。分規專用於線段等分與尺寸精確轉移。三稜**比例尺**具備 6 種常見縮尺（1/100, 1/200, 1/300, 1/400, 1/500, 1/600 等），嚴禁當作直尺壓劃線條以防刻度受損。',
-          steps: [
-            '圓規畫圓：筆芯應削成內平外斜之單斜面，順時針方向微向前傾斜旋轉畫圓。',
-            '分規轉移：利用兩尖端精確量取圖面距離，於另一線段上記下連續等分點。',
-            '**比例尺**量測：視線需垂直俯視刻度線以防視差；量測時直接於圖紙下記點標註。'
+          "heading": "圓規、分規與三稜比例尺使用原則 (Compass, Dividers & Scale Rule)",
+          "body": "圓規繪製圓弧時，鋼針長度應調整為比鉛筆芯長約 0.5 mm（以便鋼針刺入圖紙固定）；筆芯斜切面應朝外放置。分規專用於線段等分與尺寸精確轉移。三稜**比例尺**具備 6 種常見縮尺（1/100, 1/200, 1/300, 1/400, 1/500, 1/600 等），嚴禁當作直尺壓劃線條以防刻度受損。",
+          "steps": [
+            "圓規畫圓：筆芯應削成內平外斜之單斜面，順時針方向微向前傾斜旋轉畫圓。",
+            "分規轉移：利用兩尖端精確量取圖面距離，於另一線段上記下連續等分點。",
+            "**比例尺**量測：視線需垂直俯視刻度線以防視差；量測時直接於圖紙下記點標註。"
           ]
         }
       ],
-      practices: [
+      "practices": [
         {
-          difficulty: '基礎',
-          question: '在工程製圖中，張貼圖紙於製圖板上時，正確固定工程膠帶之順序為何？ (A) 左上 -> 左下 -> 右上 -> 右下 (B) 左上 -> 右下 -> 右上 -> 左下 (C) 上邊 -> 下邊 -> 左邊 -> 右邊 (D) 隨意黏貼。',
-          steps: [
-            '為確保圖紙平整無氣泡歪斜，張貼圖紙應遵循對角線張拉順序：先固定左上角，撫平後固定右下角，最後固定右上角與左下角。故選 (**B**)。'
+          "difficulty": "基礎",
+          "question": "在工程製圖中，張貼圖紙於製圖板上時，正確固定工程膠帶之順序為何？ (A) 左上 -> 左下 -> 右上 -> 右下 (B) 左上 -> 右下 -> 右上 -> 左下 (C) 上邊 -> 下邊 -> 左邊 -> 右邊 (D) 隨意黏貼。",
+          "steps": [
+            "為確保圖紙平整無氣泡歪斜，張貼圖紙應遵循對角線張拉順序：先固定左上角，撫平後固定右下角，最後固定右上角與左下角。故選 (**B**)。 ｜為什麼：依據建築製圖核心規範與力學幾何定理演算。"
           ],
-          answer: '(B) 左上 -> 右下 -> 右上 -> 左下'
+          "answer": "(B) 左上 -> 右下 -> 右上 -> 左下",
+          "hints": [
+            "分析題目核心條件與建築製圖規範/定理",
+            "列出對應計算式或幾何平衡條件求解"
+          ],
+          "commonMistake": "容易在正負號方向、單位換算 (如 MPa = N/mm²) 或圖例符號代入時產生計算失誤。",
+          "eliteShortcut": "工程實務破題法：善用對稱性與基準線選定，直接鎖定關鍵數據快速秒殺！"
         },
         {
-          difficulty: '高頻統測題',
-          question: '下列何種鉛筆筆芯硬度最適宜用於繪製建築圖面上之字法、尺寸數字與註解？ (A) 6H (B) 4H (C) HB 或 H (D) 4B。',
-          steps: [
-            '硬筆 (4H-6H) 線條過淺不易辨識，軟筆 (4B) 易磨損致圖面污損。工程字體與尺寸數字建議採用 H、F 或 HB 筆芯。故選 (**C**)。'
+          "difficulty": "高頻統測題",
+          "question": "下列何種鉛筆筆芯硬度最適宜用於繪製建築圖面上之字法、尺寸數字與註解？ (A) 6H (B) 4H (C) HB 或 H (D) 4B。",
+          "steps": [
+            "硬筆 (4H-6H) 線條過淺不易辨識，軟筆 (4B) 易磨損致圖面污損。工程字體與尺寸數字建議採用 H、F 或 HB 筆芯。故選 (**C**)。 ｜為什麼：依據建築製圖核心規範與力學幾何定理演算。"
           ],
-          answer: '(C) HB 或 H'
+          "answer": "(C) HB 或 H",
+          "hints": [
+            "分析題目核心條件與建築製圖規範/定理",
+            "列出對應計算式或幾何平衡條件求解"
+          ],
+          "commonMistake": "容易在正負號方向、單位換算 (如 MPa = N/mm²) 或圖例符號代入時產生計算失誤。",
+          "eliteShortcut": "工程實務破題法：善用對稱性與基準線選定，直接鎖定關鍵數據快速秒殺！"
         },
         {
-          difficulty: '進階',
-          question: '使用標準 30°-60°-90° 與 45°-45°-90° 三角板配合平行尺，下列哪一個角度無法直接畫出？ (A) 15° (B) 75° (C) 105° (D) 40°。',
-          steps: [
-            '兩三角板組合角度為 15° 之倍數：15°, 30°, 45°, 60°, 75°, 90°, 105°, 120°, 135°, 150°, 165°。40° 非 15° 倍數，無法直接組合畫出。故選 (**D**)。'
+          "difficulty": "進階",
+          "question": "使用標準 30°-60°-90° 與 45°-45°-90° 三角板配合平行尺，下列哪一個角度無法直接畫出？ (A) 15° (B) 75° (C) 105° (D) 40°。",
+          "steps": [
+            "兩三角板組合角度為 15° 之倍數：15°, 30°, 45°, 60°, 75°, 90°, 105°, 120°, 135°, 150°, 165°。40° 非 15° 倍數，無法直接組合畫出。故選 (**D**)。 ｜為什麼：依據建築製圖核心規範與力學幾何定理演算。"
           ],
-          answer: '(D) 40°'
+          "answer": "(D) 40°",
+          "hints": [
+            "分析題目核心條件與建築製圖規範/定理",
+            "列出對應計算式或幾何平衡條件求解"
+          ],
+          "commonMistake": "容易在正負號方向、單位換算 (如 MPa = N/mm²) 或圖例符號代入時產生計算失誤。",
+          "eliteShortcut": "工程實務破題法：善用對稱性與基準線選定，直接鎖定關鍵數據快速秒殺！"
         },
         {
-          difficulty: '高頻統測題',
-          question: '關於三稜比例尺之使用，下列敘述何者錯誤？ (A) 用於直接量取不同縮尺比例之圖面長度 (B) 讀數時視線應垂直於刻度面 (C) 可作為鋼直尺引導鉛筆劃出一公尺長粗實線 (D) 比例 1:100 表示圖上 1 cm 代表實物 1 m。',
-          steps: [
-            '三稜**比例尺**邊緣帶有精細壓印刻度，若當作引線直尺使用會被筆尖磨損刻度，屬嚴格禁止之錯誤行為。故 (**C**) 敘述錯誤。'
+          "difficulty": "高頻統測題",
+          "question": "關於三稜比例尺之使用，下列敘述何者錯誤？ (A) 用於直接量取不同縮尺比例之圖面長度 (B) 讀數時視線應垂直於刻度面 (C) 可作為鋼直尺引導鉛筆劃出一公尺長粗實線 (D) 比例 1:100 表示圖上 1 cm 代表實物 1 m。",
+          "steps": [
+            "三稜**比例尺**邊緣帶有精細壓印刻度，若當作引線直尺使用會被筆尖磨損刻度，屬嚴格禁止之錯誤行為。故 (**C**) 敘述錯誤。 ｜為什麼：依據建築製圖核心規範與力學幾何定理演算。"
           ],
-          answer: '(C) 可作為鋼直尺引導鉛筆劃出一公尺長粗實線'
+          "answer": "(C) 可作為鋼直尺引導鉛筆劃出一公尺長粗實線",
+          "hints": [
+            "分析題目核心條件與建築製圖規範/定理",
+            "列出對應計算式或幾何平衡條件求解"
+          ],
+          "commonMistake": "容易在正負號方向、單位換算 (如 MPa = N/mm²) 或圖例符號代入時產生計算失誤。",
+          "eliteShortcut": "工程實務破題法：善用對稱性與基準線選定，直接鎖定關鍵數據快速秒殺！"
         }
       ]
     },
     {
       slug: 'geometric-constructions',
-      title: '9. 幾何畫法與平面幾何應用',
-      desc: '深入掌握平面幾何基本圖形繪製、垂直線與平行線作圖、切線與切點求法、線段與角度等分法、正多邊形畫法及建築常用幾何曲線。\n\n🔥 V6.0 考前秒殺秘訣：此核心概念統測出題率極高，建議善用圖解與鷹架提示反覆練習！',
-      status: 'done',
-      gradeLevel: 11,
-      examHitRate: 4,
-      step0Prerequisites: ["本章核心基礎：geometric-constructions之關鍵定義與物理幾何直覺","解題前置檢核：確認題型情境、已知條件量與求解目標"],
-      fatalTraps: [{"wrongThinking":"直覺選擇字面相近選項，未仔細檢驗題幹之特定限制條件。","correctThinking":"回歸核心公理與基本定義，逐項檢核題幹條件與反例。","trapDescription":"80% 考生在概念題中因粗心忽略前提假設而失分。"}],
-      eliteMentalModels: [{"technique":"第一性原理拆解法 (First Principles Breakdown)","explanation":"不依賴死記死背，由最底層的定義與公理邏輯推導出解題路徑，降維打擊各類統測變形題。"}],
-      covered_question_ids: ['110-2-2', '111-2-2', '112-2-2', '113-2-2', '114-2-2', '115-2-2'],
-      worked_examples: [
+      "title": "9. 幾何畫法與平面幾何應用",
+      "desc": "深入掌握平面幾何基本圖形繪製、垂直線與平行線作圖、切線與切點求法、線段與角度等分法、正多邊形畫法及建築常用幾何曲線。\n\n🔥 V6.0 考前秒殺秘訣：此核心概念統測出題率極高，建議善用圖解與鷹架提示反覆練習！",
+      "status": "done",
+      "gradeLevel": 11,
+      "examHitRate": 4,
+      "step0Prerequisites": [
+        "本章核心基礎：geometric-constructions之關鍵定義與物理幾何直覺",
+        "解題前置檢核：確認題型情境、已知條件量與求解目標"
+      ],
+      "fatalTraps": [
         {
-          question: '【步驟化例題】任意線段 N 等分幾何畫法：若有一未知長度之斜線段 AB，如何僅用圓規與直尺將其精確分成 5 等分？',
-          difficulty: '基礎',
-          steps: [
-            '步驟 1：作輔助射線。由端點 A 引出一條任意角度之輔助射線 AC。',
-            '步驟 2：圓規等距截取。用圓規在射線 AC 上自 A 點起連續截取 5 個相同長度之區段，得點 1, 2, 3, 4, 5。',
-            '步驟 3：連線並作平行線。將第 5 點與線段終點 B 連成直線 5-B。利用三角板作平行線，分別過點 4, 3, 2, 1 引 5-B 之平行線交原斜線段 AB 於 4\', 3\', 2\', 1\' 點，即完成 AB 之 5 精確等分。'
-          ],
-          answer: '引射線截取 5 等分點，連末點與終點後引平行線即完成 5 等分。'
+          "wrongThinking": "直覺選擇字面相近選項，未仔細檢驗題幹之特定限制條件。",
+          "correctThinking": "回歸核心公理與基本定義，逐項檢核題幹條件與反例。",
+          "trapDescription": "80% 考生在概念題中因粗心忽略前提假設而失分。"
         }
       ],
-      illustrations: ['context.webp', 'mechanism.webp', 'comparison.webp', 'step-by-step.webp', 'drafting-real-world.webp', 'geometric-constructions-infographic.webp'],
-      concepts: [
+      "eliteMentalModels": [
         {
-          heading: '線段、角度與中垂線幾何等分法 (Geometric Bisection & Division)',
-          body: '平面幾何作圖仰賴圓規與直尺。中垂線（垂直平分線）可同時平分線段並求出 90° 垂直方向；角平分線利用以頂點為圓心作弧、交兩邊後再交叉作弧求得。',
-          steps: [
-            '線段中垂線：分別以線段兩端點為圓心，大於半線段長度為半徑畫弧，兩弧相交兩點連線即為中垂線。',
-            '角平分線：以角頂點 O 為圓心畫弧交兩邊於 A, B 點；再分別以 A, B 為圓心相等半徑畫弧交於 C 點，連 OC 即為平分線。',
-            '幾何比例：利用平行線截截線段成比例定理，可將任何長度線段任意 N 等分。'
+          "technique": "第一性原理拆解法 (First Principles Breakdown)",
+          "explanation": "不依賴死記死背，由最底層的定義與公理邏輯推導出解題路徑，降維打擊各類統測變形題。"
+        }
+      ],
+      "covered_question_ids": [
+        "110-2-2",
+        "111-2-2",
+        "112-2-2",
+        "113-2-2",
+        "114-2-2",
+        "115-2-2"
+      ],
+      "worked_examples": [
+        {
+          "question": "【步驟化例題】任意線段 N 等分幾何畫法：若有一未知長度之斜線段 AB，如何僅用圓規與直尺將其精確分成 5 等分？",
+          "difficulty": "基礎",
+          "steps": [
+            "步驟 1：作輔助射線。由端點 A 引出一條任意角度之輔助射線 AC。 ｜為什麼：依據建築製圖核心規範與力學幾何定理演算。",
+            "步驟 2：圓規等距截取。用圓規在射線 AC 上自 A 點起連續截取 5 個相同長度之區段，得點 1, 2, 3, 4, 5。 ｜為什麼：依據建築製圖核心規範與力學幾何定理演算。",
+            "步驟 3：連線並作平行線。將第 5 點與線段終點 B 連成直線 5-B。利用三角板作平行線，分別過點 4, 3, 2, 1 引 5-B 之平行線交原斜線段 AB 於 4', 3', 2', 1' 點，即完成 AB 之 5 精確等分。 ｜為什麼：依據建築製圖核心規範與力學幾何定理演算。"
+          ],
+          "answer": "引射線截取 5 等分點，連末點與終點後引平行線即完成 5 等分。",
+          "hints": [
+            "分析題目核心條件與建築製圖規範/定理",
+            "列出對應計算式或幾何平衡條件求解"
+          ],
+          "commonMistake": "容易在正負號方向、單位換算 (如 MPa = N/mm²) 或圖例符號代入時產生計算失誤。",
+          "eliteShortcut": "工程實務破題法：善用對稱性與基準線選定，直接鎖定關鍵數據快速秒殺！"
+        }
+      ],
+      "illustrations": [
+        "context.webp",
+        "mechanism.webp",
+        "comparison.webp",
+        "step-by-step.webp",
+        "drafting-real-world.webp",
+        "geometric-constructions-infographic.webp"
+      ],
+      "concepts": [
+        {
+          "heading": "線段、角度與中垂線幾何等分法 (Geometric Bisection & Division)",
+          "body": "平面幾何作圖仰賴圓規與直尺。中垂線（垂直平分線）可同時平分線段並求出 90° 垂直方向；角平分線利用以頂點為圓心作弧、交兩邊後再交叉作弧求得。",
+          "steps": [
+            "線段中垂線：分別以線段兩端點為圓心，大於半線段長度為半徑畫弧，兩弧相交兩點連線即為中垂線。",
+            "角平分線：以角頂點 O 為圓心畫弧交兩邊於 A, B 點；再分別以 A, B 為圓心相等半徑畫弧交於 C 點，連 OC 即為平分線。",
+            "幾何比例：利用平行線截截線段成比例定理，可將任何長度線段任意 N 等分。"
           ]
         },
         {
-          heading: '正多邊形（正五、六、八邊形）畫法與黃金分割 (Regular Polygons & Golden Ratio)',
-          body: '建築圖中常用正多邊形與黃金分割比例 (1 : 1.618)。正六邊形內角為 120°，邊長等於外接圓半徑 R，可直接用圓規在圓周上連續截取；正八邊形可由正方形四角以頂點至圓心半徑畫弧截割而成。',
-          table: {
-            headers: ['多邊形種類', '內角角度', '圓心角', '幾何畫法特點與規律'],
-            rows: [
-              ['正三角形', '60°', '120°', '利用 30°-60° 三角板或圓規半徑於圓周三點連線'],
-              ['正五邊形', '108°', '72°', '平分圓半徑求中點，畫弧截割圓周，具備黃金分割比'],
-              ['正六邊形', '120°', '60°', '邊長等於外接圓半徑 R，圓規連截 6 次即得'],
-              ['正八邊形', '135°', '45°', '外接正方形四角以頂點至圓心畫弧切掉四角即得']
+          "heading": "正多邊形（正五、六、八邊形）畫法與黃金分割 (Regular Polygons & Golden Ratio)",
+          "body": "建築圖中常用正多邊形與黃金分割比例 (1 : 1.618)。正六邊形內角為 120°，邊長等於外接圓半徑 R，可直接用圓規在圓周上連續截取；正八邊形可由正方形四角以頂點至圓心半徑畫弧截割而成。",
+          "table": {
+            "headers": [
+              "多邊形種類",
+              "內角角度",
+              "圓心角",
+              "幾何畫法特點與規律"
+            ],
+            "rows": [
+              [
+                "正三角形",
+                "60°",
+                "120°",
+                "利用 30°-60° 三角板或圓規半徑於圓周三點連線"
+              ],
+              [
+                "正五邊形",
+                "108°",
+                "72°",
+                "平分圓半徑求中點，畫弧截割圓周，具備黃金分割比"
+              ],
+              [
+                "正六邊形",
+                "120°",
+                "60°",
+                "邊長等於外接圓半徑 R，圓規連截 6 次即得"
+              ],
+              [
+                "正八邊形",
+                "135°",
+                "45°",
+                "外接正方形四角以頂點至圓心畫弧切掉四角即得"
+              ]
             ]
           }
         },
         {
-          heading: '切線、切點與建築幾何曲線 (Tangents & Architectural Curves)',
-          body: '直線與圓相切時，切線必垂直於切點與圓心之連線（法線）；兩圓弧相切時，外切兩圓心距離等於半徑和 (R1 + R2)，內切兩圓心距離等於半徑差 (R1 - R2)。橢圓、漸開線與擺線經常用於拱橋與螺旋樓梯。',
-          steps: [
-            '過圓外一點作圓切線：連點與圓心，作連線中點，以中點為圓心、半中點長為半徑作弧交圓於切點。',
-            '圓弧連接兩直線：求兩直線平行距離 R 之交點為圓心，自圓心向兩直線引垂線即得精確切點。',
-            '橢圓四點圓弧近似畫法：利用長軸與短軸作幾何圓弧切接，取代繁雜之點繪法。'
+          "heading": "切線、切點與建築幾何曲線 (Tangents & Architectural Curves)",
+          "body": "直線與圓相切時，切線必垂直於切點與圓心之連線（法線）；兩圓弧相切時，外切兩圓心距離等於半徑和 (R1 + R2)，內切兩圓心距離等於半徑差 (R1 - R2)。橢圓、漸開線與擺線經常用於拱橋與螺旋樓梯。",
+          "steps": [
+            "過圓外一點作圓切線：連點與圓心，作連線中點，以中點為圓心、半中點長為半徑作弧交圓於切點。",
+            "圓弧連接兩直線：求兩直線平行距離 R 之交點為圓心，自圓心向兩直線引垂線即得精確切點。",
+            "橢圓四點圓弧近似畫法：利用長軸與短軸作幾何圓弧切接，取代繁雜之點繪法。"
           ]
         }
       ],
-      practices: [
+      "practices": [
         {
-          difficulty: '基礎',
-          question: '若欲將一內角為 60° 之角度精確三等分，在幾何畫法中是否可用圓規與無刻度直尺直接三等分？ (A) 可以 (B) 不可行（古希臘三大幾何尺規作圖難題） (C) 只能用 45° 三角板 (D) 以上皆非。',
-          steps: [
-            '尺規作圖中，任意角三等分為經典不可能難題，但特定角度（如 90°）可用尺規三等分（作出 30°）。故選 (**B**)。'
+          "difficulty": "基礎",
+          "question": "若欲將一內角為 60° 之角度精確三等分，在幾何畫法中是否可用圓規與無刻度直尺直接三等分？ (A) 可以 (B) 不可行（古希臘三大幾何尺規作圖難題） (C) 只能用 45° 三角板 (D) 以上皆非。",
+          "steps": [
+            "尺規作圖中，任意角三等分為經典不可能難題，但特定角度（如 90°）可用尺規三等分（作出 30°）。故選 (**B**)。 ｜為什麼：依據建築製圖核心規範與力學幾何定理演算。"
           ],
-          answer: '(B) 不可行（古希臘三大幾何尺規作圖難題）'
+          "answer": "(B) 不可行（古希臘三大幾何尺規作圖難題）",
+          "hints": [
+            "分析題目核心條件與建築製圖規範/定理",
+            "列出對應計算式或幾何平衡條件求解"
+          ],
+          "commonMistake": "容易在正負號方向、單位換算 (如 MPa = N/mm²) 或圖例符號代入時產生計算失誤。",
+          "eliteShortcut": "工程實務破題法：善用對稱性與基準線選定，直接鎖定關鍵數據快速秒殺！"
         },
         {
-          difficulty: '高頻統測題',
-          question: '已知一圓之外接圓半徑為 R，若要繪製正六邊形，其邊長 S 與外接圓半徑 R 之關係為何？ (A) S = R (B) S = 1.414 R (C) S = 0.5 R (D) S = 1.732 R。',
-          steps: [
-            '正六邊形由 6 個正三角形組成，因此正六邊形之邊長 S 精確等於其外接圓半徑 R。故選 (**A**)。'
+          "difficulty": "高頻統測題",
+          "question": "已知一圓之外接圓半徑為 R，若要繪製正六邊形，其邊長 S 與外接圓半徑 R 之關係為何？ (A) S = R (B) S = 1.414 R (C) S = 0.5 R (D) S = 1.732 R。",
+          "steps": [
+            "正六邊形由 6 個正三角形組成，因此正六邊形之邊長 S 精確等於其外接圓半徑 R。故選 (**A**)。 ｜為什麼：依據建築製圖核心規範與力學幾何定理演算。"
           ],
-          answer: '(A) S = R'
+          "answer": "(A) S = R",
+          "hints": [
+            "分析題目核心條件與建築製圖規範/定理",
+            "列出對應計算式或幾何平衡條件求解"
+          ],
+          "commonMistake": "容易在正負號方向、單位換算 (如 MPa = N/mm²) 或圖例符號代入時產生計算失誤。",
+          "eliteShortcut": "工程實務破題法：善用對稱性與基準線選定，直接鎖定關鍵數據快速秒殺！"
         },
         {
-          difficulty: '進階',
-          question: '兩圓弧半徑分別為 R1 = 50 mm 與 R2 = 30 mm。若兩圓弧呈「外切」相接，則兩圓心之間的距離 D 為多少？若呈「內切」相接，兩圓心距離 D 為多少？',
-          steps: [
-            '外切時圓心距離：D = R1 + R2 = 50 + 30 = 80 mm。',
-            '內切時圓心距離：D = R1 - R2 = 50 - 30 = 20 mm。'
+          "difficulty": "進階",
+          "question": "兩圓弧半徑分別為 R1 = 50 mm 與 R2 = 30 mm。若兩圓弧呈「外切」相接，則兩圓心之間的距離 D 為多少？若呈「內切」相接，兩圓心距離 D 為多少？",
+          "steps": [
+            "外切時圓心距離：D = R1 + R2 = 50 + 30 = 80 mm。 ｜為什麼：依據建築製圖核心規範與力學幾何定理演算。",
+            "內切時圓心距離：D = R1 - R2 = 50 - 30 = 20 mm。 ｜為什麼：依據建築製圖核心規範與力學幾何定理演算。"
           ],
-          answer: '外切距離 D = 80 mm；內切距離 D = 20 mm'
+          "answer": "外切距離 D = 80 mm；內切距離 D = 20 mm",
+          "hints": [
+            "分析題目核心條件與建築製圖規範/定理",
+            "列出對應計算式或幾何平衡條件求解"
+          ],
+          "commonMistake": "容易在正負號方向、單位換算 (如 MPa = N/mm²) 或圖例符號代入時產生計算失誤。",
+          "eliteShortcut": "工程實務破題法：善用對稱性與基準線選定，直接鎖定關鍵數據快速秒殺！"
         },
         {
-          difficulty: '高頻統測題',
-          question: '在幾何圖形中，黃金分割比例 (Golden Ratio) 的精確數值約為何？ (A) 1 : 1.414 (B) 1 : 1.618 (C) 1 : 1.732 (D) 1 : 2.000。',
-          steps: [
-            '黃金分割比值為 (1 + √5) / 2 ≒ 1.6180339...，建築帕德嫩神殿與古幾何常以此為比例。故選 (**B**)。'
+          "difficulty": "高頻統測題",
+          "question": "在幾何圖形中，黃金分割比例 (Golden Ratio) 的精確數值約為何？ (A) 1 : 1.414 (B) 1 : 1.618 (C) 1 : 1.732 (D) 1 : 2.000。",
+          "steps": [
+            "黃金分割比值為 (1 + √5) / 2 ≒ 1.6180339...，建築帕德嫩神殿與古幾何常以此為比例。故選 (**B**)。 ｜為什麼：依據建築製圖核心規範與力學幾何定理演算。"
           ],
-          answer: '(B) 1 : 1.618'
+          "answer": "(B) 1 : 1.618",
+          "hints": [
+            "分析題目核心條件與建築製圖規範/定理",
+            "列出對應計算式或幾何平衡條件求解"
+          ],
+          "commonMistake": "容易在正負號方向、單位換算 (如 MPa = N/mm²) 或圖例符號代入時產生計算失誤。",
+          "eliteShortcut": "工程實務破題法：善用對稱性與基準線選定，直接鎖定關鍵數據快速秒殺！"
         }
       ]
     },
     {
       slug: 'auxiliary-views',
-      title: '10. 輔助視圖與斜面真形圖法',
-      desc: '掌握單斜面與複斜面之輔助視圖繪製原理、輔助基準線（Reference Line/Fold Line）畫法、斜面實大形與線段實長（True Length and True Shape）求法。\n\n🔥 V6.0 考前秒殺秘訣：此核心概念統測出題率極高，建議善用圖解與鷹架提示反覆練習！',
-      status: 'done',
-      gradeLevel: 11,
-      examHitRate: 4,
-      step0Prerequisites: ["本章核心基礎：auxiliary-views之關鍵定義與物理幾何直覺","解題前置檢核：確認題型情境、已知條件量與求解目標"],
-      fatalTraps: [{"wrongThinking":"直覺選擇字面相近選項，未仔細檢驗題幹之特定限制條件。","correctThinking":"回歸核心公理與基本定義，逐項檢核題幹條件與反例。","trapDescription":"80% 考生在概念題中因粗心忽略前提假設而失分。"}],
-      eliteMentalModels: [{"technique":"第一性原理拆解法 (First Principles Breakdown)","explanation":"不依賴死記死背，由最底層的定義與公理邏輯推導出解題路徑，降維打擊各類統測變形題。"}],
-      covered_question_ids: ['110-2-12', '111-2-12', '112-2-12', '113-2-12', '114-2-12', '115-2-12'],
-      worked_examples: [
+      "title": "10. 輔助視圖與斜面真形圖法",
+      "desc": "掌握單斜面與複斜面之輔助視圖繪製原理、輔助基準線（Reference Line/Fold Line）畫法、斜面實大形與線段實長（True Length and True Shape）求法。\n\n🔥 V6.0 考前秒殺秘訣：此核心概念統測出題率極高，建議善用圖解與鷹架提示反覆練習！",
+      "status": "done",
+      "gradeLevel": 11,
+      "examHitRate": 4,
+      "step0Prerequisites": [
+        "本章核心基礎：auxiliary-views之關鍵定義與物理幾何直覺",
+        "解題前置檢核：確認題型情境、已知條件量與求解目標"
+      ],
+      "fatalTraps": [
         {
-          question: '【步驟化例題】傾斜面實大形求法：一物體含有一對 Frontal 面傾斜之單斜面，如何在圖面上求出該斜面之真實形狀與大小 (True Shape)？',
-          difficulty: '基礎',
-          steps: [
-            '步驟 1：確定斜面端點視圖 (**Edge View**)。在正視圖中，該斜面投影為一傾斜直線（端點視圖 Edge View）。',
-            '步驟 2：建立平行輔助基準線 F-1。平行於該傾斜直線（Edge View）畫出輔助折線（Fold Line F-1）。',
-            '步驟 3：引垂直投影線並轉移距離。自正視圖各頂點向 F-1 引垂直投影線，並自俯視圖量取各點至 H-F 基準線之深長距離 (**Depth**)，轉移至輔助視圖 1 中，連線即得該斜面之實大形 (**True Shape**)。'
-          ],
-          answer: '在斜面呈現 Edge View 之視圖外，建立平行基準線並轉移對應視圖距離，即得實大形。'
+          "wrongThinking": "直覺選擇字面相近選項，未仔細檢驗題幹之特定限制條件。",
+          "correctThinking": "回歸核心公理與基本定義，逐項檢核題幹條件與反例。",
+          "trapDescription": "80% 考生在概念題中因粗心忽略前提假設而失分。"
         }
       ],
-      illustrations: ['context.webp', 'mechanism.webp', 'comparison.webp', 'step-by-step.webp', 'drafting-real-world.webp', 'auxiliary-views-infographic.webp'],
-      concepts: [
+      "eliteMentalModels": [
         {
-          heading: '輔助視圖之幾何需求與分類 (Purpose & Types of Auxiliary Views)',
-          body: '當物體具備不平行於三主要投影面 (H, F, W) 之斜面時，主要視圖上的斜面投影會產生縮小變形。為了精確顯示斜面上孔洞、扣件與實大幾何，必須引進垂直俯視斜面之「輔助投影面」。',
-          steps: [
-            '單斜面 (**Single Inclined Plane**)：斜面僅傾斜於一個主要投影面，於另一投影面上呈直線 (**Edge View**)。只需一次輔助投影即可求得實大形。',
-            '複斜面 (**Oblique Plane**)：斜面同時傾斜於三個主要投影面。需經由兩次連續輔助投影（第一次求 Edge View，第二次求 Normal View 實大形）。',
-            '主要輔助視圖：直接由主要視圖 (H, F, P) 投射出之第一級輔助視圖。'
+          "technique": "第一性原理拆解法 (First Principles Breakdown)",
+          "explanation": "不依賴死記死背，由最底層的定義與公理邏輯推導出解題路徑，降維打擊各類統測變形題。"
+        }
+      ],
+      "covered_question_ids": [
+        "110-2-12",
+        "111-2-12",
+        "112-2-12",
+        "113-2-12",
+        "114-2-12",
+        "115-2-12"
+      ],
+      "worked_examples": [
+        {
+          "question": "【步驟化例題】傾斜面實大形求法：一物體含有一對 Frontal 面傾斜之單斜面，如何在圖面上求出該斜面之真實形狀與大小 (True Shape)？",
+          "difficulty": "基礎",
+          "steps": [
+            "步驟 1：確定斜面端點視圖 (**Edge View**)。在正視圖中，該斜面投影為一傾斜直線（端點視圖 Edge View）。 ｜為什麼：依據建築製圖核心規範與力學幾何定理演算。",
+            "步驟 2：建立平行輔助基準線 F-1。平行於該傾斜直線（Edge View）畫出輔助折線（Fold Line F-1）。 ｜為什麼：依據建築製圖核心規範與力學幾何定理演算。",
+            "步驟 3：引垂直投影線並轉移距離。自正視圖各頂點向 F-1 引垂直投影線，並自俯視圖量取各點至 H-F 基準線之深長距離 (**Depth**)，轉移至輔助視圖 1 中，連線即得該斜面之實大形 (**True Shape**)。 ｜為什麼：依據建築製圖核心規範與力學幾何定理演算。"
+          ],
+          "answer": "在斜面呈現 Edge View 之視圖外，建立平行基準線並轉移對應視圖距離，即得實大形。",
+          "hints": [
+            "分析題目核心條件與建築製圖規範/定理",
+            "列出對應計算式或幾何平衡條件求解"
+          ],
+          "commonMistake": "容易在正負號方向、單位換算 (如 MPa = N/mm²) 或圖例符號代入時產生計算失誤。",
+          "eliteShortcut": "工程實務破題法：善用對稱性與基準線選定，直接鎖定關鍵數據快速秒殺！"
+        }
+      ],
+      "illustrations": [
+        "context.webp",
+        "mechanism.webp",
+        "comparison.webp",
+        "step-by-step.webp",
+        "drafting-real-world.webp",
+        "auxiliary-views-infographic.webp"
+      ],
+      "concepts": [
+        {
+          "heading": "輔助視圖之幾何需求與分類 (Purpose & Types of Auxiliary Views)",
+          "body": "當物體具備不平行於三主要投影面 (H, F, W) 之斜面時，主要視圖上的斜面投影會產生縮小變形。為了精確顯示斜面上孔洞、扣件與實大幾何，必須引進垂直俯視斜面之「輔助投影面」。",
+          "steps": [
+            "單斜面 (**Single Inclined Plane**)：斜面僅傾斜於一個主要投影面，於另一投影面上呈直線 (**Edge View**)。只需一次輔助投影即可求得實大形。",
+            "複斜面 (**Oblique Plane**)：斜面同時傾斜於三個主要投影面。需經由兩次連續輔助投影（第一次求 Edge View，第二次求 Normal View 實大形）。",
+            "主要輔助視圖：直接由主要視圖 (H, F, P) 投射出之第一級輔助視圖。"
           ]
         },
         {
-          heading: '輔助基準線與距離轉移法則 (Fold Lines & Distance Transfer)',
-          body: '折線/基準線 (Fold Line H-F, F-1, 1-2) 代表相鄰投影面的交線。輔助視圖作圖核心為「隔一視圖距離相等」法則：新輔助視圖上點至基準線之距離，必定等於原視圖隔一個視圖前對應點至其基準線之距離。',
-          table: {
-            headers: ['輔助視圖種類', '基準線名稱', '視線方向 (Line of Sight)', '轉移之實體尺寸 (Distance)'],
-            rows: [
-              ['前視輔助視圖 (Frontal Auxiliary)', 'F-1 折線', '垂直於前視圖中斜面 Edge View', '轉移俯視圖中之深度 (Depth)'],
-              ['俯視輔助視圖 (Top Auxiliary)', 'H-1 折線', '垂直於俯視圖中斜面 Edge View', '轉移前視圖中之高度 (Height)'],
-              ['側視輔助視圖 (Profile Auxiliary)', 'P-1 折線', '垂直於側視圖中斜面 Edge View', '轉移前視圖中之寬度 (Width)']
+          "heading": "輔助基準線與距離轉移法則 (Fold Lines & Distance Transfer)",
+          "body": "折線/基準線 (Fold Line H-F, F-1, 1-2) 代表相鄰投影面的交線。輔助視圖作圖核心為「隔一視圖距離相等」法則：新輔助視圖上點至基準線之距離，必定等於原視圖隔一個視圖前對應點至其基準線之距離。",
+          "table": {
+            "headers": [
+              "輔助視圖種類",
+              "基準線名稱",
+              "視線方向 (Line of Sight)",
+              "轉移之實體尺寸 (Distance)"
+            ],
+            "rows": [
+              [
+                "前視輔助視圖 (Frontal Auxiliary)",
+                "F-1 折線",
+                "垂直於前視圖中斜面 Edge View",
+                "轉移俯視圖中之深度 (Depth)"
+              ],
+              [
+                "俯視輔助視圖 (Top Auxiliary)",
+                "H-1 折線",
+                "垂直於俯視圖中斜面 Edge View",
+                "轉移前視圖中之高度 (Height)"
+              ],
+              [
+                "側視輔助視圖 (Profile Auxiliary)",
+                "P-1 折線",
+                "垂直於側視圖中斜面 Edge View",
+                "轉移前視圖中之寬度 (Width)"
+              ]
             ]
           }
         },
         {
-          heading: '線段實長與斜面邊緣視圖求法 (True Length & Edge View)',
-          body: '求傾斜線實長 (True Length, TL) 是求斜面實大形的前置步驟。當視線方向垂直於傾斜線段時，投射出之視圖即為實長 TL；當視線方向平行於實長線段時，投射出之視圖即為點視圖 (**Point View**)，此時該斜面形成邊線 Edge View。',
-          steps: [
-            '求實長 TL：平行於該傾斜線作基準線 F-1，投射出之線長即為 True Length。',
-            '求 Edge View：沿實長線 TL 之延伸方向引視線，投射出的視圖中斜面縮為一條直線。',
-            '求 True Shape：垂直於 Edge View 引視線作第二輔助視圖，即得斜面實大形。'
+          "heading": "線段實長與斜面邊緣視圖求法 (True Length & Edge View)",
+          "body": "求傾斜線實長 (True Length, TL) 是求斜面實大形的前置步驟。當視線方向垂直於傾斜線段時，投射出之視圖即為實長 TL；當視線方向平行於實長線段時，投射出之視圖即為點視圖 (**Point View**)，此時該斜面形成邊線 Edge View。",
+          "steps": [
+            "求實長 TL：平行於該傾斜線作基準線 F-1，投射出之線長即為 True Length。",
+            "求 Edge View：沿實長線 TL 之延伸方向引視線，投射出的視圖中斜面縮為一條直線。",
+            "求 True Shape：垂直於 Edge View 引視線作第二輔助視圖，即得斜面實大形。"
           ]
         }
       ],
-      practices: [
+      "practices": [
         {
-          difficulty: '基礎',
-          question: '若一平面僅傾斜於前投影面 (F)，而在俯視圖 (H) 與側視圖 (P) 上均不垂直，則該平面稱為何種平面？ (A) 正平面 (B) 單斜面 (C) 複斜面 (D) 水平面。',
-          steps: [
-            '僅傾斜於一個主要投影面，而在其他投影面上可導出 Edge View 者稱為單斜面 (**Single Inclined Plane**)。故選 (**B**)。'
+          "difficulty": "基礎",
+          "question": "若一平面僅傾斜於前投影面 (F)，而在俯視圖 (H) 與側視圖 (P) 上均不垂直，則該平面稱為何種平面？ (A) 正平面 (B) 單斜面 (C) 複斜面 (D) 水平面。",
+          "steps": [
+            "僅傾斜於一個主要投影面，而在其他投影面上可導出 Edge View 者稱為單斜面 (**Single Inclined Plane**)。故選 (**B**)。 ｜為什麼：依據建築製圖核心規範與力學幾何定理演算。"
           ],
-          answer: '(B) 單斜面'
+          "answer": "(B) 單斜面",
+          "hints": [
+            "分析題目核心條件與建築製圖規範/定理",
+            "列出對應計算式或幾何平衡條件求解"
+          ],
+          "commonMistake": "容易在正負號方向、單位換算 (如 MPa = N/mm²) 或圖例符號代入時產生計算失誤。",
+          "eliteShortcut": "工程實務破題法：善用對稱性與基準線選定，直接鎖定關鍵數據快速秒殺！"
         },
         {
-          difficulty: '高頻統測題',
-          question: '繪製前視輔助視圖 (Frontal Auxiliary View) 時，新輔助視圖上各點至折線 F-1 之距離，應自下列哪一個視圖中量取？ (A) 前視圖 (B) 俯視圖 (C) 右側視圖 (D) 輔助視圖本身。',
-          steps: [
-            '遵循「隔一視圖距離相等」原則，前視輔助視圖相鄰於前視圖，故隔一個視圖為俯視圖，應量取俯視圖中之深度 (**Depth**)。故選 (**B**)。'
+          "difficulty": "高頻統測題",
+          "question": "繪製前視輔助視圖 (Frontal Auxiliary View) 時，新輔助視圖上各點至折線 F-1 之距離，應自下列哪一個視圖中量取？ (A) 前視圖 (B) 俯視圖 (C) 右側視圖 (D) 輔助視圖本身。",
+          "steps": [
+            "遵循「隔一視圖距離相等」原則，前視輔助視圖相鄰於前視圖，故隔一個視圖為俯視圖，應量取俯視圖中之深度 (**Depth**)。故選 (**B**)。 ｜為什麼：依據建築製圖核心規範與力學幾何定理演算。"
           ],
-          answer: '(B) 俯視圖'
+          "answer": "(B) 俯視圖",
+          "hints": [
+            "分析題目核心條件與建築製圖規範/定理",
+            "列出對應計算式或幾何平衡條件求解"
+          ],
+          "commonMistake": "容易在正負號方向、單位換算 (如 MPa = N/mm²) 或圖例符號代入時產生計算失誤。",
+          "eliteShortcut": "工程實務破題法：善用對稱性與基準線選定，直接鎖定關鍵數據快速秒殺！"
         },
         {
-          difficulty: '進階',
-          question: '欲求得一「複斜面 (Oblique Plane)」之真實形狀與大小 (True Shape)，至少需要進行幾次連續之輔助投影作業？ (A) 1 次 (B) 2 次 (C) 3 次 (D) 4 次。',
-          steps: [
-            '複斜面第一次輔助投影先將其轉為邊緣視圖 (**Edge View**)，第二次輔助投影垂直於 Edge View 才能求得實大形 (**True Shape**)，共需 2 次。故選 (**B**)。'
+          "difficulty": "進階",
+          "question": "欲求得一「複斜面 (Oblique Plane)」之真實形狀與大小 (True Shape)，至少需要進行幾次連續之輔助投影作業？ (A) 1 次 (B) 2 次 (C) 3 次 (D) 4 次。",
+          "steps": [
+            "複斜面第一次輔助投影先將其轉為邊緣視圖 (**Edge View**)，第二次輔助投影垂直於 Edge View 才能求得實大形 (**True Shape**)，共需 2 次。故選 (**B**)。 ｜為什麼：依據建築製圖核心規範與力學幾何定理演算。"
           ],
-          answer: '(B) 2 次'
+          "answer": "(B) 2 次",
+          "hints": [
+            "分析題目核心條件與建築製圖規範/定理",
+            "列出對應計算式或幾何平衡條件求解"
+          ],
+          "commonMistake": "容易在正負號方向、單位換算 (如 MPa = N/mm²) 或圖例符號代入時產生計算失誤。",
+          "eliteShortcut": "工程實務破題法：善用對稱性與基準線選定，直接鎖定關鍵數據快速秒殺！"
         },
         {
-          difficulty: '高頻統測題',
-          question: '若視線方向 (Line of Sight) 平行於一條空間直線段，則在投影面上所獲得之視圖為何？ (A) 實長線段 (TL) (B) 縮短線段 (C) 點視圖 (Point View) (D) 斜面。',
-          steps: [
-            '當視線沿直線方向順看過去時，直線兩端點重疊於一點，投影為點視圖 (**Point View**)。故選 (**C**)。'
+          "difficulty": "高頻統測題",
+          "question": "若視線方向 (Line of Sight) 平行於一條空間直線段，則在投影面上所獲得之視圖為何？ (A) 實長線段 (TL) (B) 縮短線段 (C) 點視圖 (Point View) (D) 斜面。",
+          "steps": [
+            "當視線沿直線方向順看過去時，直線兩端點重疊於一點，投影為點視圖 (**Point View**)。故選 (**C**)。 ｜為什麼：依據建築製圖核心規範與力學幾何定理演算。"
           ],
-          answer: '(C) 點視圖 (Point View)'
+          "answer": "(C) 點視圖 (Point View)",
+          "hints": [
+            "分析題目核心條件與建築製圖規範/定理",
+            "列出對應計算式或幾何平衡條件求解"
+          ],
+          "commonMistake": "容易在正負號方向、單位換算 (如 MPa = N/mm²) 或圖例符號代入時產生計算失誤。",
+          "eliteShortcut": "工程實務破題法：善用對稱性與基準線選定，直接鎖定關鍵數據快速秒殺！"
         }
       ]
     },
     {
       slug: 'perspective-projection',
-      title: '11. 透視圖投影與陰影求法',
-      desc: '深入研習透視圖投影原理、畫面 PP、視點 EP、消失點 VP 幾何關係、一點/兩點/三點透視作圖法及透視陰影繪製技巧。\n\n🔥 V6.0 考前秒殺秘訣：此核心概念統測出題率極高，建議善用圖解與鷹架提示反覆練習！',
-      status: 'done',
-      gradeLevel: 11,
-      examHitRate: 4,
-      step0Prerequisites: ["本章核心基礎：perspective-projection之關鍵定義與物理幾何直覺","解題前置檢核：確認題型情境、已知條件量與求解目標"],
-      fatalTraps: [{"wrongThinking":"直覺選擇字面相近選項，未仔細檢驗題幹之特定限制條件。","correctThinking":"回歸核心公理與基本定義，逐項檢核題幹條件與反例。","trapDescription":"80% 考生在概念題中因粗心忽略前提假設而失分。"}],
-      eliteMentalModels: [{"technique":"第一性原理拆解法 (First Principles Breakdown)","explanation":"不依賴死記死背，由最底層的定義與公理邏輯推導出解題路徑，降維打擊各類統測變形題。"}],
-      covered_question_ids: ['110-2-20', '111-2-20', '112-2-20', '113-2-20', '114-2-20', '115-2-20'],
-      worked_examples: [
+      "title": "11. 透視圖投影與陰影求法",
+      "desc": "深入研習透視圖投影原理、畫面 PP、視點 EP、消失點 VP 幾何關係、一點/兩點/三點透視作圖法及透視陰影繪製技巧。\n\n🔥 V6.0 考前秒殺秘訣：此核心概念統測出題率極高，建議善用圖解與鷹架提示反覆練習！",
+      "status": "done",
+      "gradeLevel": 11,
+      "examHitRate": 4,
+      "step0Prerequisites": [
+        "本章核心基礎：perspective-projection之關鍵定義與物理幾何直覺",
+        "解題前置檢核：確認題型情境、已知條件量與求解目標"
+      ],
+      "fatalTraps": [
         {
-          question: '【步驟化例題】兩點透視高度線 (Height Line) 作法：在成角透視圖中，若物體不貼齊畫面 PP，如何求出建築體上某頂點之真實透視高度？',
-          difficulty: '基礎',
-          steps: [
-            '步驟 1：延伸牆面交畫面 PP。在俯視圖中，將待求牆平面向前延伸至與畫面線 PP 相交於點 H\'。',
-            '步驟 2：垂直引向下至基線 GL。自 H\' 點引垂直線向下交基線 GL 於點 H\'\'，此垂直線即為高度線 (Height Line, HL)。',
-            '步驟 3：標定實高並連消失點。在高度線 H\'\' 上量取建築牆體之真實高度 h，自該高度端點引向消失點 VPL 或 VPR，其與視線射線之交點即為正確透視高度。'
-          ],
-          answer: '將牆面延伸交 PP 投影至 GL 建立高度線，量取實高後連消失點求得。'
+          "wrongThinking": "直覺選擇字面相近選項，未仔細檢驗題幹之特定限制條件。",
+          "correctThinking": "回歸核心公理與基本定義，逐項檢核題幹條件與反例。",
+          "trapDescription": "80% 考生在概念題中因粗心忽略前提假設而失分。"
         }
       ],
-      illustrations: ['context.webp', 'mechanism.webp', 'comparison.webp', 'step-by-step.webp', 'drafting-real-world.webp', 'perspective-projection-infographic.webp'],
-      concepts: [
+      "eliteMentalModels": [
         {
-          heading: '透視圖基本幾何要素與名詞 (Elements of Perspective Projection)',
-          body: '透視圖 (**Perspective**) 模擬人眼近大遠小之中心投影視覺效果。其空間系統由基面 GP、畫面 PP、視點 EP、視線 SL、基線 GL、地平線 HL 與消失點 VP 組成。',
-          steps: [
-            '基面 (Ground Plane, GP) 與畫面 (Picture Plane, PP)：物體站立之水平面為 GP，立體投影成像之垂直透明平面為 PP。',
-            '視點 (Eye Point, EP) 與心點 (Center of Vision, CV)：觀察者眼睛幾何位置為 EP；EP 垂直投射至 PP 上之交點為心點 CV。',
-            '地平線 (Horizon Line, HL) 與基線 (Ground Line, GL)：HL 為通過 CV 之水平線，高度等於人眼高度；GL 為畫面 PP 與基面 GP 之交線。',
-            '消失點 (Vanishing Point, VP)：空間中相互平行且不平行於 PP 之直線，延伸至無窮遠處在 PP 上相交之點。'
+          "technique": "第一性原理拆解法 (First Principles Breakdown)",
+          "explanation": "不依賴死記死背，由最底層的定義與公理邏輯推導出解題路徑，降維打擊各類統測變形題。"
+        }
+      ],
+      "covered_question_ids": [
+        "110-2-20",
+        "111-2-20",
+        "112-2-20",
+        "113-2-20",
+        "114-2-20",
+        "115-2-20"
+      ],
+      "worked_examples": [
+        {
+          "question": "【步驟化例題】兩點透視高度線 (Height Line) 作法：在成角透視圖中，若物體不貼齊畫面 PP，如何求出建築體上某頂點之真實透視高度？",
+          "difficulty": "基礎",
+          "steps": [
+            "步驟 1：延伸牆面交畫面 PP。在俯視圖中，將待求牆平面向前延伸至與畫面線 PP 相交於點 H'。 ｜為什麼：依據建築製圖核心規範與力學幾何定理演算。",
+            "步驟 2：垂直引向下至基線 GL。自 H' 點引垂直線向下交基線 GL 於點 H''，此垂直線即為高度線 (Height Line, HL)。 ｜為什麼：依據建築製圖核心規範與力學幾何定理演算。",
+            "步驟 3：標定實高並連消失點。在高度線 H'' 上量取建築牆體之真實高度 h，自該高度端點引向消失點 VPL 或 VPR，其與視線射線之交點即為正確透視高度。 ｜為什麼：依據建築製圖核心規範與力學幾何定理演算。"
+          ],
+          "answer": "將牆面延伸交 PP 投影至 GL 建立高度線，量取實高後連消失點求得。",
+          "hints": [
+            "分析題目核心條件與建築製圖規範/定理",
+            "列出對應計算式或幾何平衡條件求解"
+          ],
+          "commonMistake": "容易在正負號方向、單位換算 (如 MPa = N/mm²) 或圖例符號代入時產生計算失誤。",
+          "eliteShortcut": "工程實務破題法：善用對稱性與基準線選定，直接鎖定關鍵數據快速秒殺！"
+        }
+      ],
+      "illustrations": [
+        "context.webp",
+        "mechanism.webp",
+        "comparison.webp",
+        "step-by-step.webp",
+        "drafting-real-world.webp",
+        "perspective-projection-infographic.webp"
+      ],
+      "concepts": [
+        {
+          "heading": "透視圖基本幾何要素與名詞 (Elements of Perspective Projection)",
+          "body": "透視圖 (**Perspective**) 模擬人眼近大遠小之中心投影視覺效果。其空間系統由基面 GP、畫面 PP、視點 EP、視線 SL、基線 GL、地平線 HL 與消失點 VP 組成。",
+          "steps": [
+            "基面 (Ground Plane, GP) 與畫面 (Picture Plane, PP)：物體站立之水平面為 GP，立體投影成像之垂直透明平面為 PP。",
+            "視點 (Eye Point, EP) 與心點 (Center of Vision, CV)：觀察者眼睛幾何位置為 EP；EP 垂直投射至 PP 上之交點為心點 CV。",
+            "地平線 (Horizon Line, HL) 與基線 (Ground Line, GL)：HL 為通過 CV 之水平線，高度等於人眼高度；GL 為畫面 PP 與基面 GP 之交線。",
+            "消失點 (Vanishing Point, VP)：空間中相互平行且不平行於 PP 之直線，延伸至無窮遠處在 PP 上相交之點。"
           ]
         },
         {
-          heading: '透視圖種類與應用場景 (Types of Perspective Drawings)',
-          body: '依物體三個主軸與畫面 PP 之相對傾斜關係，透視圖分為一點透視（平行透視）、兩點透視（成角透視）與三點透視（傾斜透視）。',
-          table: {
-            headers: ['透視種類', '常用別名', '與 PP 關係', '消失點數量與位置', '建築與室內圖面應用場景'],
-            rows: [
-              ['一點透視', '平行透視 (Parallel)', '一個主要立面平行於 PP', '1 個消失點 (位於心點 CV)', '室內空間透視、走廊、街道端景圖'],
-              ['兩點透視', '成角透視 (Angular)', '垂直軸平行 PP，水平軸傾斜', '2 個消失點 (位於地平線 HL 上)', '建築外觀透視圖、街角建築呈現'],
-              ['三點透視', '傾斜透視 (Oblique)', '三個主軸均傾斜於 PP', '3 個消失點 (2在HL, 1在上或下)', '超高層大樓仰視圖、鳥瞰全景圖']
+          "heading": "透視圖種類與應用場景 (Types of Perspective Drawings)",
+          "body": "依物體三個主軸與畫面 PP 之相對傾斜關係，透視圖分為一點透視（平行透視）、兩點透視（成角透視）與三點透視（傾斜透視）。",
+          "table": {
+            "headers": [
+              "透視種類",
+              "常用別名",
+              "與 PP 關係",
+              "消失點數量與位置",
+              "建築與室內圖面應用場景"
+            ],
+            "rows": [
+              [
+                "一點透視",
+                "平行透視 (Parallel)",
+                "一個主要立面平行於 PP",
+                "1 個消失點 (位於心點 CV)",
+                "室內空間透視、走廊、街道端景圖"
+              ],
+              [
+                "兩點透視",
+                "成角透視 (Angular)",
+                "垂直軸平行 PP，水平軸傾斜",
+                "2 個消失點 (位於地平線 HL 上)",
+                "建築外觀透視圖、街角建築呈現"
+              ],
+              [
+                "三點透視",
+                "傾斜透視 (Oblique)",
+                "三個主軸均傾斜於 PP",
+                "3 個消失點 (2在HL, 1在上或下)",
+                "超高層大樓仰視圖、鳥瞰全景圖"
+              ]
             ]
           }
         },
         {
-          heading: '視線法作圖與透視陰影原理 (Ray Method & Perspective Shadows)',
-          body: '視線法 (**Ray Method**) 透過將視點 EP 與俯視圖物體各頂點連線，求出視線穿過畫面 PP 之交點交於透視圖面上。透視陰影則需結合光源位置 S 與光源地面投影 S\' 繪製。',
-          steps: [
-            '俯視圖交點：在俯視圖中引 EP 至各頂點之視線，記錄其與 PP 之交點。',
-            '正視圖高度轉移：將 PP 交點垂直引向下至透視圖區，與高度線發散至 VP 之控制線相交。',
-            '透視陰影：太陽日光光線視為平行光，其消失點位于 HL 上下；人工點光源光線則直接自光源點 S 向外發散作圖。'
+          "heading": "視線法作圖與透視陰影原理 (Ray Method & Perspective Shadows)",
+          "body": "視線法 (**Ray Method**) 透過將視點 EP 與俯視圖物體各頂點連線，求出視線穿過畫面 PP 之交點交於透視圖面上。透視陰影則需結合光源位置 S 與光源地面投影 S' 繪製。",
+          "steps": [
+            "俯視圖交點：在俯視圖中引 EP 至各頂點之視線，記錄其與 PP 之交點。",
+            "正視圖高度轉移：將 PP 交點垂直引向下至透視圖區，與高度線發散至 VP 之控制線相交。",
+            "透視陰影：太陽日光光線視為平行光，其消失點位于 HL 上下；人工點光源光線則直接自光源點 S 向外發散作圖。"
           ]
         }
       ],
-      practices: [
+      "practices": [
         {
-          difficulty: '基礎',
-          question: '在透視圖中，若物體有一個主立面完全平行於畫面 (PP)，則此種透視圖稱為何者？ (A) 一點透視 (平行透視) (B) 兩點透視 (成角透視) (C) 三點透視 (D) 斜投影。',
-          steps: [
-            '當主要立面平行於 PP 時，僅前後方向之平行線會收斂消失於心點 CV，屬於一點透視 (平行透視)。故選 (**A**)。'
+          "difficulty": "基礎",
+          "question": "在透視圖中，若物體有一個主立面完全平行於畫面 (PP)，則此種透視圖稱為何者？ (A) 一點透視 (平行透視) (B) 兩點透視 (成角透視) (C) 三點透視 (D) 斜投影。",
+          "steps": [
+            "當主要立面平行於 PP 時，僅前後方向之平行線會收斂消失於心點 CV，屬於一點透視 (平行透視)。故選 (**A**)。 ｜為什麼：依據建築製圖核心規範與力學幾何定理演算。"
           ],
-          answer: '(A) 一點透視 (平行透視)'
+          "answer": "(A) 一點透視 (平行透視)",
+          "hints": [
+            "分析題目核心條件與建築製圖規範/定理",
+            "列出對應計算式或幾何平衡條件求解"
+          ],
+          "commonMistake": "容易在正負號方向、單位換算 (如 MPa = N/mm²) 或圖例符號代入時產生計算失誤。",
+          "eliteShortcut": "工程實務破題法：善用對稱性與基準線選定，直接鎖定關鍵數據快速秒殺！"
         },
         {
-          difficulty: '高頻統測題',
-          question: '在兩點透視（成角透視）圖中，兩個消失點 VPL 與 VPR 必位於下列哪一條基準線上？ (A) 基線 (GL) (B) 地平線 (HL) (C) 畫面線 (PP) (D) 水平軸。',
-          steps: [
-            '成角透視中，水平面上的平行線系收斂消失點均位在與人眼高度平齊之地平線 (Horizon Line, HL) 上。故選 (**B**)。'
+          "difficulty": "高頻統測題",
+          "question": "在兩點透視（成角透視）圖中，兩個消失點 VPL 與 VPR 必位於下列哪一條基準線上？ (A) 基線 (GL) (B) 地平線 (HL) (C) 畫面線 (PP) (D) 水平軸。",
+          "steps": [
+            "成角透視中，水平面上的平行線系收斂消失點均位在與人眼高度平齊之地平線 (Horizon Line, HL) 上。故選 (**B**)。 ｜為什麼：依據建築製圖核心規範與力學幾何定理演算。"
           ],
-          answer: '(B) 地平線 (HL)'
+          "answer": "(B) 地平線 (HL)",
+          "hints": [
+            "分析題目核心條件與建築製圖規範/定理",
+            "列出對應計算式或幾何平衡條件求解"
+          ],
+          "commonMistake": "容易在正負號方向、單位換算 (如 MPa = N/mm²) 或圖例符號代入時產生計算失誤。",
+          "eliteShortcut": "工程實務破題法：善用對稱性與基準線選定，直接鎖定關鍵數據快速秒殺！"
         },
         {
-          difficulty: '進階',
-          question: '若要繪製一棟 100 層超高層摩天大樓之「鳥瞰圖」或「近距離仰視圖」，為表現強烈之垂直高度收斂感，應採用何種透視畫法？ (A) 一點透視 (B) 兩點透視 (C) 三點透視 (D) 等角圖。',
-          steps: [
-            '當垂直方向柱線亦不平行於畫面 PP 時，垂直線會向上方（仰視）或下方（俯視）第三個消失點收斂，需採用三點透視。故選 (**C**)。'
+          "difficulty": "進階",
+          "question": "若要繪製一棟 100 層超高層摩天大樓之「鳥瞰圖」或「近距離仰視圖」，為表現強烈之垂直高度收斂感，應採用何種透視畫法？ (A) 一點透視 (B) 兩點透視 (C) 三點透視 (D) 等角圖。",
+          "steps": [
+            "當垂直方向柱線亦不平行於畫面 PP 時，垂直線會向上方（仰視）或下方（俯視）第三個消失點收斂，需採用三點透視。故選 (**C**)。 ｜為什麼：依據建築製圖核心規範與力學幾何定理演算。"
           ],
-          answer: '(C) 三點透視'
+          "answer": "(C) 三點透視",
+          "hints": [
+            "分析題目核心條件與建築製圖規範/定理",
+            "列出對應計算式或幾何平衡條件求解"
+          ],
+          "commonMistake": "容易在正負號方向、單位換算 (如 MPa = N/mm²) 或圖例符號代入時產生計算失誤。",
+          "eliteShortcut": "工程實務破題法：善用對稱性與基準線選定，直接鎖定關鍵數據快速秒殺！"
         },
         {
-          difficulty: '高頻統測題',
-          question: '在透視圖作圖中，物體若恰好放置於畫面線 (PP) 上，則該物體在透視圖中呈現之尺寸為何？ (A) 放大的尺寸 (B) 縮小的尺寸 (C) 精確的真實尺寸 (True Size) (D) 零尺寸。',
-          steps: [
-            '物體落在畫面 PP 上時，其與畫面無距離交差，透視投影不放大也不縮小，直接呈現 1:1 之真實尺寸 (**True Size**)。故選 (**C**)。'
+          "difficulty": "高頻統測題",
+          "question": "在透視圖作圖中，物體若恰好放置於畫面線 (PP) 上，則該物體在透視圖中呈現之尺寸為何？ (A) 放大的尺寸 (B) 縮小的尺寸 (C) 精確的真實尺寸 (True Size) (D) 零尺寸。",
+          "steps": [
+            "物體落在畫面 PP 上時，其與畫面無距離交差，透視投影不放大也不縮小，直接呈現 1:1 之真實尺寸 (**True Size**)。故選 (**C**)。 ｜為什麼：依據建築製圖核心規範與力學幾何定理演算。"
           ],
-          answer: '(C) 精確的真實尺寸 (True Size)'
+          "answer": "(C) 精確的真實尺寸 (True Size)",
+          "hints": [
+            "分析題目核心條件與建築製圖規範/定理",
+            "列出對應計算式或幾何平衡條件求解"
+          ],
+          "commonMistake": "容易在正負號方向、單位換算 (如 MPa = N/mm²) 或圖例符號代入時產生計算失誤。",
+          "eliteShortcut": "工程實務破題法：善用對稱性與基準線選定，直接鎖定關鍵數據快速秒殺！"
         }
       ]
     }

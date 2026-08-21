@@ -1,27 +1,45 @@
 import { SubjectData } from '../types';
 
 export const physicsData: SubjectData = {
-  "slug": "physics",
+  slug: 'physics',
   "title": "🍎 物理",
   "category": "自然科學",
   "color": "blue-600",
   "topics": [
     {
-      "slug": "mechanics-motion",
+      slug: 'mechanics-motion',
       "title": "1. ⚙️ 力學與運動 (Structural Kinematics & Static Equilibrium)",
       "desc": "建築運動學基礎、牛頓三大運動定律、<span className='text-rose-600 font-bold'>靜力平衡</span>條件、斜面摩擦、桁架與樑構件內力及高空落體防護。",
       "status": "done",
-      gradeLevel: 10,
+      "gradeLevel": 10,
       "covered_question_ids": [],
       "worked_examples": [
         {
-          question: '【步驟化例題】牛頓第二運動定律與施工電梯張力：一總質量 1200 kg 之施工電梯載人升降機，以 2.0 m/s² 之加速度向上加速起動。求懸掛電梯之鋼纜張力 T 為多少牛頓？ (g = 9.8 m/s²)',
-          difficulty: '中等',
-          steps: [ "**步驟 1**：進行力學受力分析（<span className='text-rose-600 font-bold'>自由體圖</span>）。電梯受向下重力 W = mg，向上鋼纜拉力 T。", "**步驟 2**：列牛頓第二運動定律 ∑F = m·a。T - mg = m·a ⇒ T = m(g + a)。", "**步驟 3**：代入數值求解。T = 1200 kg × (9.8 + 2.0) m/s² = 1200 × 11.8 = 14160 N。" ], 
-          answer: '鋼纜張力 T 為 14160 牛頓 (N)。'
+          "question": "【步驟化例題】牛頓第二運動定律與施工電梯張力：一總質量 1200 kg 之施工電梯載人升降機，以 2.0 m/s² 之加速度向上加速起動。求懸掛電梯之鋼纜張力 T 為多少牛頓？ (g = 9.8 m/s²)",
+          "difficulty": "中等",
+          "steps": [
+            "**步驟 1**：進行力學受力分析（<span className='text-rose-600 font-bold'>自由體圖</span>）。電梯受向下重力 W = mg，向上鋼纜拉力 T。 ｜為什麼：依據物理學科核心定理與邏輯因果推導。",
+            "**步驟 2**：列牛頓第二運動定律 ∑F = m·a。T - mg = m·a ⇒ T = m(g + a)。 ｜為什麼：依據物理學科核心定理與邏輯因果推導。",
+            "**步驟 3**：代入數值求解。T = 1200 kg × (9.8 + 2.0) m/s² = 1200 × 11.8 = 14160 N。 ｜為什麼：依據物理學科核心定理與邏輯因果推導。"
+          ],
+          "answer": "鋼纜張力 T 為 14160 牛頓 (N)。",
+          "hints": [
+            "分析題目核心條件與物理原理",
+            "比對選項關鍵字與題幹語境，排除干擾項"
+          ],
+          "commonMistake": "容易被字面直譯、表面形近字或直覺誤導，未嚴謹回歸基本定義與邏輯鏈條。",
+          "eliteShortcut": "核心概念破題法：抓住題幹關鍵物理量、化學式或文法結構，直接鎖定正解！"
         }
       ],
-      "illustrations": ['physics-context.webp', 'physics-mechanism.webp', 'physics-comparison.webp', 'physics-step.webp', 'physics-real-world.webp', 'physics-concept-diagram.webp', 'physics-formula-visual.webp'],
+      "illustrations": [
+        "physics-context.webp",
+        "physics-mechanism.webp",
+        "physics-comparison.webp",
+        "physics-step.webp",
+        "physics-real-world.webp",
+        "physics-concept-diagram.webp",
+        "physics-formula-visual.webp"
+      ],
       "concepts": [
         {
           "heading": "牛頓三大運動定律與建築地震<span className='text-rose-600 font-bold'>慣性力</span> (Newton's Laws & Seismic Inertia)",
@@ -205,68 +223,104 @@ export const physicsData: SubjectData = {
           "difficulty": "基礎",
           "question": "一棟總質量 m = 12000 kg 的輕量鋼骨結構渡假小屋，在強烈地震中受地表加速度 a = 2.5 m/s² 的水平作用。請問該建築物基座所承受的水平基底<span className='text-rose-600 font-bold'>剪力</span> (Base Shear Force) 為多少 kN？",
           "steps": [
-            "找出物體質量 m = 12000 kg",
-            "找出加速度 a = 2.5 m/s²",
-            "代入牛頓第二運動定律公式 F = m · a 計算總水平地震力",
-            "F = 12000 kg × 2.5 m/s² = 30000 N",
-            "將單位 N 換算為 kN：30000 N / 1000 = 30 kN"
+            "找出物體質量 m = 12000 kg ｜為什麼：依據物理學科核心定理與邏輯因果推導。",
+            "找出加速度 a = 2.5 m/s² ｜為什麼：依據物理學科核心定理與邏輯因果推導。",
+            "代入牛頓第二運動定律公式 F = m · a 計算總水平地震力 ｜為什麼：依據物理學科核心定理與邏輯因果推導。",
+            "F = 12000 kg × 2.5 m/s² = 30000 N ｜為什麼：依據物理學科核心定理與邏輯因果推導。",
+            "將單位 N 換算為 kN：30000 N / 1000 = 30 kN ｜為什麼：依據物理學科核心定理與邏輯因果推導。"
           ],
-          "answer": "30 kN"
+          "answer": "30 kN",
+          "hints": [
+            "分析題目核心條件與物理原理",
+            "比對選項關鍵字與題幹語境，排除干擾項"
+          ],
+          "commonMistake": "容易被字面直譯、表面形近字或直覺誤導，未嚴謹回歸基本定義與邏輯鏈條。",
+          "eliteShortcut": "核心概念破題法：抓住題幹關鍵物理量、化學式或文法結構，直接鎖定正解！"
         },
         {
           "difficulty": "基礎",
           "question": "某一地下停車場坡道設計傾角為 15° (sin 15° ≈ 0.2588, cos 15° ≈ 0.9659)。一輛總重 1500 kg 的轎車停在斜坡上。若車輪與鋪面間的<span className='text-rose-600 font-bold'>靜摩擦係數</span> μs = 0.60，重力加速度 g = 9.8 m/s²。試計算：(1) 車輪受到的平行斜面向下重力分力；(2) 斜面能提供的最大靜摩擦力 f_s,max 為多少 N？車輛是否會沿斜坡下滑？",
           "steps": [
-            "計算正向力 N = m · g · cos(15°) = 1500 kg × 9.8 m/s² × 0.9659 ≈ 14198.7 N。",
-            "計算下滑重力分力 F_down = m · g · sin(15°) = 1500 kg × 9.8 m/s² × 0.2588 ≈ 3804.4 N。",
-            "計算最大靜摩擦力 f_s,max = μs · N = 0.60 × 14198.7 N ≈ 8519.2 N。",
-            "比較 F_down 與 f_s,max：因為 3804.4 N < 8519.2 N，下滑力遠小於最大靜摩擦力，車輛能安全停穩不下滑。"
+            "計算正向力 N = m · g · cos(15°) = 1500 kg × 9.8 m/s² × 0.9659 ≈ 14198.7 N。 ｜為什麼：依據物理學科核心定理與邏輯因果推導。",
+            "計算下滑重力分力 F_down = m · g · sin(15°) = 1500 kg × 9.8 m/s² × 0.2588 ≈ 3804.4 N。 ｜為什麼：依據物理學科核心定理與邏輯因果推導。",
+            "計算最大靜摩擦力 f_s,max = μs · N = 0.60 × 14198.7 N ≈ 8519.2 N。 ｜為什麼：依據物理學科核心定理與邏輯因果推導。",
+            "比較 F_down 與 f_s,max：因為 3804.4 N < 8519.2 N，下滑力遠小於最大靜摩擦力，車輛能安全停穩不下滑。 ｜為什麼：依據物理學科核心定理與邏輯因果推導。"
           ],
-          "answer": "(1) 下滑重力分力 ≈ 3804.4 N；(2) 最大靜摩擦力 ≈ 8519.2 N，車輛安全止滑不下滑"
+          "answer": "(1) 下滑重力分力 ≈ 3804.4 N；(2) 最大靜摩擦力 ≈ 8519.2 N，車輛安全止滑不下滑",
+          "hints": [
+            "分析題目核心條件與物理原理",
+            "比對選項關鍵字與題幹語境，排除干擾項"
+          ],
+          "commonMistake": "容易被字面直譯、表面形近字或直覺誤導，未嚴謹回歸基本定義與邏輯鏈條。",
+          "eliteShortcut": "核心概念破題法：抓住題幹關鍵物理量、化學式或文法結構，直接鎖定正解！"
         },
         {
           "difficulty": "進階",
           "question": "一長度 L = 6 m 的外挑雨庇懸臂樑，受到樑端集中載重 P = 20 kN 及樑自重均佈載重 w = 5 kN/m 作用。試求解該懸臂樑固定端 A 點所承受的垂直<span className='text-rose-600 font-bold'>支承反力</span> R_Ay 及抗<span className='text-rose-600 font-bold'>彎矩</span>反力 M_A。",
           "steps": [
-            "計算均佈載重 w 之等效集中力 W_eq = w × L = 5 kN/m × 6 m = 30 kN，作用點位於樑中點離 A 點 3 m 處。",
-            "根據垂直<span className='text-rose-600 font-bold'>靜力平衡</span>方程式 ΣFy = 0：R_Ay - W_eq - P = 0 => R_Ay = 30 + 20 = 50 kN。",
-            "根據對 A 點之矩平衡方程式 ΣM_A = 0 (設順時針方向為正)：M_A - (W_eq × 3m) - (P × 6m) = 0。",
-            "代入數值：M_A = (30 kN × 3 m) + (20 kN × 6 m) = 90 + 120 = 210 kN·m。"
+            "計算均佈載重 w 之等效集中力 W_eq = w × L = 5 kN/m × 6 m = 30 kN，作用點位於樑中點離 A 點 3 m 處。 ｜為什麼：依據物理學科核心定理與邏輯因果推導。",
+            "根據垂直<span className='text-rose-600 font-bold'>靜力平衡</span>方程式 ΣFy = 0：R_Ay - W_eq - P = 0 => R_Ay = 30 + 20 = 50 kN。 ｜為什麼：依據物理學科核心定理與邏輯因果推導。",
+            "根據對 A 點之矩平衡方程式 ΣM_A = 0 (設順時針方向為正)：M_A - (W_eq × 3m) - (P × 6m) = 0。 ｜為什麼：依據物理學科核心定理與邏輯因果推導。",
+            "代入數值：M_A = (30 kN × 3 m) + (20 kN × 6 m) = 90 + 120 = 210 kN·m。 ｜為什麼：依據物理學科核心定理與邏輯因果推導。"
           ],
-          "answer": "垂直反力 R_Ay = 50 kN (向上)，固定端<span className='text-rose-600 font-bold'>彎矩</span> M_A = 210 kN·m"
+          "answer": "垂直反力 R_Ay = 50 kN (向上)，固定端<span className='text-rose-600 font-bold'>彎矩</span> M_A = 210 kN·m",
+          "hints": [
+            "分析題目核心條件與物理原理",
+            "比對選項關鍵字與題幹語境，排除干擾項"
+          ],
+          "commonMistake": "容易被字面直譯、表面形近字或直覺誤導，未嚴謹回歸基本定義與邏輯鏈條。",
+          "eliteShortcut": "核心概念破題法：抓住題幹關鍵物理量、化學式或文法結構，直接鎖定正解！"
         },
         {
           "difficulty": "進階",
           "question": "一簡支樑跨度 L = 8 m，受一跨中集中載重 P = 40 kN。若樑斷面為矩形 (寬度 b = 200 mm，高度 h = 400 mm)。試求解：(1) 樑內最大<span className='text-rose-600 font-bold'>彎矩</span> M_max；(2) 樑斷面之中立軸<span className='text-rose-600 font-bold'>轉動慣量</span> I 及<span className='text-rose-600 font-bold'>斷面模數</span> Z；(3) 樑內最大邊緣彎曲<span className='text-rose-600 font-bold'>應力</span> σ_max 為多少 MPa？",
           "steps": [
-            "計算簡支樑跨中集中載重之最大<span className='text-rose-600 font-bold'>彎矩</span> M_max = (P · L) / 4 = (40 kN × 8 m) / 4 = 80 kN·m = 80 × 10⁶ N·mm。",
-            "計算矩形斷面<span className='text-rose-600 font-bold'>轉動慣量</span> I = (b · h³) / 12 = (200 × 400³) / 12 = 1.0667 × 10⁹ mm⁴。",
-            "計算<span className='text-rose-600 font-bold'>斷面模數</span> Z = (b · h²) / 6 = (200 × 400²) / 6 = 5.3333 × 10⁶ mm³。",
-            "代入彎曲<span className='text-rose-600 font-bold'>應力</span>公式 σ_max = M_max / Z = (80 × 10⁶ N·mm) / (5.3333 × 10⁶ mm³) ≈ 15.0 MPa。"
+            "計算簡支樑跨中集中載重之最大<span className='text-rose-600 font-bold'>彎矩</span> M_max = (P · L) / 4 = (40 kN × 8 m) / 4 = 80 kN·m = 80 × 10⁶ N·mm。 ｜為什麼：依據物理學科核心定理與邏輯因果推導。",
+            "計算矩形斷面<span className='text-rose-600 font-bold'>轉動慣量</span> I = (b · h³) / 12 = (200 × 400³) / 12 = 1.0667 × 10⁹ mm⁴。 ｜為什麼：依據物理學科核心定理與邏輯因果推導。",
+            "計算<span className='text-rose-600 font-bold'>斷面模數</span> Z = (b · h²) / 6 = (200 × 400²) / 6 = 5.3333 × 10⁶ mm³。 ｜為什麼：依據物理學科核心定理與邏輯因果推導。",
+            "代入彎曲<span className='text-rose-600 font-bold'>應力</span>公式 σ_max = M_max / Z = (80 × 10⁶ N·mm) / (5.3333 × 10⁶ mm³) ≈ 15.0 MPa。 ｜為什麼：依據物理學科核心定理與邏輯因果推導。"
           ],
-          "answer": "(1) M_max = 80 kN·m；(2) Z ≈ 5.33×10⁶ mm³；(3) 最大彎曲<span className='text-rose-600 font-bold'>應力</span> σ_max ≈ 15.0 MPa"
+          "answer": "(1) M_max = 80 kN·m；(2) Z ≈ 5.33×10⁶ mm³；(3) 最大彎曲<span className='text-rose-600 font-bold'>應力</span> σ_max ≈ 15.0 MPa",
+          "hints": [
+            "分析題目核心條件與物理原理",
+            "比對選項關鍵字與題幹語境，排除干擾項"
+          ],
+          "commonMistake": "容易被字面直譯、表面形近字或直覺誤導，未嚴謹回歸基本定義與邏輯鏈條。",
+          "eliteShortcut": "核心概念破題法：抓住題幹關鍵物理量、化學式或文法結構，直接鎖定正解！"
         },
         {
           "difficulty": "實務應用",
           "question": "一施工人員在 45 公尺高的高樓頂層不慎將一質量 2 kg 的工具箱自靜止自由落體墜落。若不計空氣阻力，重力加速度 g = 9.8 m/s²。(1) 工具箱落至地面需時多少秒？(2) 落地的瞬間速度為多少 m/s（及 km/h）？",
           "steps": [
-            "已知初速 v₀ = 0 m/s，高度 h = s = 45 m，加速度 a = g = 9.8 m/s²。",
-            "利用位移公式 s = ½ g t² 求解時間 t：45 = ½ × 9.8 × t² => 4.9 t² = 45 => t² ≒ 9.184 => t ≒ 3.03 秒。",
-            "利用速度公式 v = g t 計算落地速度：v = 9.8 × 3.03 ≒ 29.7 m/s。",
-            "將 m/s 換算為 km/h：29.7 × 3.6 ≒ 106.9 km/h。"
+            "已知初速 v₀ = 0 m/s，高度 h = s = 45 m，加速度 a = g = 9.8 m/s²。 ｜為什麼：依據物理學科核心定理與邏輯因果推導。",
+            "利用位移公式 s = ½ g t² 求解時間 t：45 = ½ × 9.8 × t² => 4.9 t² = 45 => t² ≒ 9.184 => t ≒ 3.03 秒。 ｜為什麼：依據物理學科核心定理與邏輯因果推導。",
+            "利用速度公式 v = g t 計算落地速度：v = 9.8 × 3.03 ≒ 29.7 m/s。 ｜為什麼：依據物理學科核心定理與邏輯因果推導。",
+            "將 m/s 換算為 km/h：29.7 × 3.6 ≒ 106.9 km/h。 ｜為什麼：依據物理學科核心定理與邏輯因果推導。"
           ],
-          "answer": "落地時間約 3.03 秒，落地速度約 29.7 m/s (106.9 km/h)"
+          "answer": "落地時間約 3.03 秒，落地速度約 29.7 m/s (106.9 km/h)",
+          "hints": [
+            "分析題目核心條件與物理原理",
+            "比對選項關鍵字與題幹語境，排除干擾項"
+          ],
+          "commonMistake": "容易被字面直譯、表面形近字或直覺誤導，未嚴謹回歸基本定義與邏輯鏈條。",
+          "eliteShortcut": "核心概念破題法：抓住題幹關鍵物理量、化學式或文法結構，直接鎖定正解！"
         },
         {
           "difficulty": "實務應用",
           "question": "一鋼結構大樓的柱構件高度 L₀ = 4.0 m，截面積 A = 80 cm² (8000 mm²)，材料為結構鋼 (<span className='text-rose-600 font-bold'>彈性模數</span> E = 200 GPa = 200,000 MPa)。在地震受壓時承受軸向壓力 P = 1600 kN (1.6 × 10⁶ N)。試計算：(1) 鋼柱內受到的平均壓<span className='text-rose-600 font-bold'>應力</span> σ；(2) 鋼柱之軸向<span className='text-rose-600 font-bold'>應變</span> ε 與彈性縮短量 ΔL 為多少 mm？",
           "steps": [
-            "計算平均壓<span className='text-rose-600 font-bold'>應力</span> σ = P / A = (1,600,000 N) / (8,000 mm²) = 200 N/mm² = 200 MPa。",
-            "計算軸向<span className='text-rose-600 font-bold'>應變</span> ε = σ / E = 200 MPa / 200,000 MPa = 0.001 (或 0.1%)。",
-            "計算軸向彈性縮短量 ΔL = ε · L₀ = 0.001 × 4,000 mm = 4.0 mm。",
-            "結論：在 1600 kN 壓重下，4m 高鋼柱彈性縮短 4.0 mm，<span className='text-rose-600 font-bold'>應力</span>未超過屈服強度 (325 MPa)，處於安全彈性範圍內。"
+            "計算平均壓<span className='text-rose-600 font-bold'>應力</span> σ = P / A = (1,600,000 N) / (8,000 mm²) = 200 N/mm² = 200 MPa。 ｜為什麼：依據物理學科核心定理與邏輯因果推導。",
+            "計算軸向<span className='text-rose-600 font-bold'>應變</span> ε = σ / E = 200 MPa / 200,000 MPa = 0.001 (或 0.1%)。 ｜為什麼：依據物理學科核心定理與邏輯因果推導。",
+            "計算軸向彈性縮短量 ΔL = ε · L₀ = 0.001 × 4,000 mm = 4.0 mm。 ｜為什麼：依據物理學科核心定理與邏輯因果推導。",
+            "結論：在 1600 kN 壓重下，4m 高鋼柱彈性縮短 4.0 mm，<span className='text-rose-600 font-bold'>應力</span>未超過屈服強度 (325 MPa)，處於安全彈性範圍內。 ｜為什麼：依據物理學科核心定理與邏輯因果推導。"
           ],
-          "answer": "(1) 平均壓<span className='text-rose-600 font-bold'>應力</span> σ = 200 MPa；(2) <span className='text-rose-600 font-bold'>應變</span> ε = 0.001，鋼柱縮短量 ΔL = 4.0 mm"
+          "answer": "(1) 平均壓<span className='text-rose-600 font-bold'>應力</span> σ = 200 MPa；(2) <span className='text-rose-600 font-bold'>應變</span> ε = 0.001，鋼柱縮短量 ΔL = 4.0 mm",
+          "hints": [
+            "分析題目核心條件與物理原理",
+            "比對選項關鍵字與題幹語境，排除干擾項"
+          ],
+          "commonMistake": "容易被字面直譯、表面形近字或直覺誤導，未嚴謹回歸基本定義與邏輯鏈條。",
+          "eliteShortcut": "核心概念破題法：抓住題幹關鍵物理量、化學式或文法結構，直接鎖定正解！"
         }
       ],
       "practice": {
@@ -280,24 +334,60 @@ export const physicsData: SubjectData = {
           "將單位 N 換算為 kN：30000 N / 1000 = 30 kN"
         ],
         "answer": "30 kN"
-      }
+      },
+      "step0Prerequisites": [
+        "牛頓三大運動定律 (慣性、F=ma、作用與反作用力)",
+        "向量合成與直角坐標正交分解",
+        "等加速度直線運動公式 (v=v₀+at, s=v₀t+½at²)"
+      ],
+      "fatalTraps": [
+        {
+          "wrongThinking": "物體運動速度越大，所受的合力必定越大。",
+          "correctThinking": "加速度才正比於合力 (F=ma)，等速度運動時合力恆為 0。",
+          "trapDescription": "混淆速度與加速度是力學概念最常見陷阱。"
+        }
+      ],
+      "eliteMentalModels": [
+        {
+          "technique": "隔離體受力圖分析法 (FBD)",
+          "explanation": "將結構或物體從環境中隔離，畫出所有接觸力與超距力，列 ΣFx=0, ΣFy=0 平衡方程。"
+        }
+      ]
     },
     {
-      "slug": "work-energy",
+      slug: 'work-energy',
       "title": "2. 📐 功與能量 (Work, Energy & Green Building Thermodynamics)",
       "desc": "功與功率、<span className='text-rose-600 font-bold'>動能</span>與<span className='text-rose-600 font-bold'>重力位能</span>、<span className='text-indigo-600 font-bold'>能量守恆定律</span>、綠建築<span className='text-indigo-600 font-bold'>熱功當量</span>、水泵/風機定律與蓄能技術。",
       "status": "done",
-      gradeLevel: 10,
+      "gradeLevel": 10,
       "covered_question_ids": [],
       "worked_examples": [
         {
-          question: '【步驟化例題】<span className="text-rose-600 font-bold">重力位能</span>與<span className="text-rose-600 font-bold">動能</span>轉換：一重 50 kg 之落錘打樁機錘頭，自距離地面 10 公尺高處自由落下打擊樁頭。若不計空氣阻力，求錘頭剛接觸樁頭瞬間之「<span className="text-rose-600 font-bold">動能</span> Ek」與「速度 v」？ (g = 9.8 m/s²)',
-          difficulty: '基礎',
-          steps: [ "**步驟 1**：依據<span className='text-indigo-600 font-bold'>能量守恆定律</span>。最高點<span className='text-rose-600 font-bold'>重力位能</span> Ep = mgh 轉換為最低點<span className='text-rose-600 font-bold'>動能</span> Ek。", "**步驟 2**：計算<span className='text-rose-600 font-bold'>動能</span> Ek。Ek = mgh = 50 kg × 9.8 m/s² × 10 m = 4900 焦耳 (J)。", "**步驟 3**：計算速度 v。Ek = 1/2 m v² ⇒ 4900 = 1/2 (50) v² ⇒ 25 v² = 4900 ⇒ v² = 196 ⇒ v = 14 m/s。" ], 
-          answer: '接觸瞬間<span className="text-rose-600 font-bold">動能</span> Ek = 4900 J，速度 v = 14 m/s。'
+          "question": "【步驟化例題】<span className=\"text-rose-600 font-bold\">重力位能</span>與<span className=\"text-rose-600 font-bold\">動能</span>轉換：一重 50 kg 之落錘打樁機錘頭，自距離地面 10 公尺高處自由落下打擊樁頭。若不計空氣阻力，求錘頭剛接觸樁頭瞬間之「<span className=\"text-rose-600 font-bold\">動能</span> Ek」與「速度 v」？ (g = 9.8 m/s²)",
+          "difficulty": "基礎",
+          "steps": [
+            "**步驟 1**：依據<span className='text-indigo-600 font-bold'>能量守恆定律</span>。最高點<span className='text-rose-600 font-bold'>重力位能</span> Ep = mgh 轉換為最低點<span className='text-rose-600 font-bold'>動能</span> Ek。 ｜為什麼：依據物理學科核心定理與邏輯因果推導。",
+            "**步驟 2**：計算<span className='text-rose-600 font-bold'>動能</span> Ek。Ek = mgh = 50 kg × 9.8 m/s² × 10 m = 4900 焦耳 (J)。 ｜為什麼：依據物理學科核心定理與邏輯因果推導。",
+            "**步驟 3**：計算速度 v。Ek = 1/2 m v² ⇒ 4900 = 1/2 (50) v² ⇒ 25 v² = 4900 ⇒ v² = 196 ⇒ v = 14 m/s。 ｜為什麼：依據物理學科核心定理與邏輯因果推導。"
+          ],
+          "answer": "接觸瞬間<span className=\"text-rose-600 font-bold\">動能</span> Ek = 4900 J，速度 v = 14 m/s。",
+          "hints": [
+            "分析題目核心條件與物理原理",
+            "比對選項關鍵字與題幹語境，排除干擾項"
+          ],
+          "commonMistake": "容易被字面直譯、表面形近字或直覺誤導，未嚴謹回歸基本定義與邏輯鏈條。",
+          "eliteShortcut": "核心概念破題法：抓住題幹關鍵物理量、化學式或文法結構，直接鎖定正解！"
         }
       ],
-      "illustrations": ['physics-context.webp', 'physics-mechanism.webp', 'physics-comparison.webp', 'physics-step.webp', 'physics-real-world.webp', 'physics-concept-diagram.webp', 'physics-formula-visual.webp'],
+      "illustrations": [
+        "physics-context.webp",
+        "physics-mechanism.webp",
+        "physics-comparison.webp",
+        "physics-step.webp",
+        "physics-real-world.webp",
+        "physics-concept-diagram.webp",
+        "physics-formula-visual.webp"
+      ],
       "concepts": [
         {
           "heading": "功與電力功率定義 (Work & Electric Power)",
@@ -439,66 +529,102 @@ export const physicsData: SubjectData = {
           "difficulty": "基礎",
           "question": "一住宅大樓抽水馬達需將質量 2000 kg 的水由地下蓄水池抽至高 30 公尺的屋頂水塔。假設重力加速度 g = 9.8 m/s²，馬達整體效率為 80%。(1) 馬達對水所作的有效功為多少 J（或 kJ）？(2) 若抽水過程需時 10 分鐘，則馬達所需的實際輸入電功率為多少 kW？",
           "steps": [
-            "計算增加的<span className='text-rose-600 font-bold'>重力位能</span> (即有效功 W_out)：W_out = m · g · h = 2000 kg × 9.8 m/s² × 30 m = 588,000 J = 588 kJ。",
-            "計算有效輸出功率 P_out：時間 t = 10 分鐘 = 600 秒。P_out = W_out / t = 588,000 J / 600 s = 980 W = 0.98 kW。",
-            "考量馬達效率 η = 80% = 0.8，計算實際輸入電功率 P_in：P_in = P_out / η = 0.98 kW / 0.8 = 1.225 kW。"
+            "計算增加的<span className='text-rose-600 font-bold'>重力位能</span> (即有效功 W_out)：W_out = m · g · h = 2000 kg × 9.8 m/s² × 30 m = 588,000 J = 588 kJ。 ｜為什麼：依據物理學科核心定理與邏輯因果推導。",
+            "計算有效輸出功率 P_out：時間 t = 10 分鐘 = 600 秒。P_out = W_out / t = 588,000 J / 600 s = 980 W = 0.98 kW。 ｜為什麼：依據物理學科核心定理與邏輯因果推導。",
+            "考量馬達效率 η = 80% = 0.8，計算實際輸入電功率 P_in：P_in = P_out / η = 0.98 kW / 0.8 = 1.225 kW。 ｜為什麼：依據物理學科核心定理與邏輯因果推導。"
           ],
-          "answer": "有效功 W = 588 kJ，馬達實際輸入電功率 P_in = 1.225 kW"
+          "answer": "有效功 W = 588 kJ，馬達實際輸入電功率 P_in = 1.225 kW",
+          "hints": [
+            "分析題目核心條件與物理原理",
+            "比對選項關鍵字與題幹語境，排除干擾項"
+          ],
+          "commonMistake": "容易被字面直譯、表面形近字或直覺誤導，未嚴謹回歸基本定義與邏輯鏈條。",
+          "eliteShortcut": "核心概念破題法：抓住題幹關鍵物理量、化學式或文法結構，直接鎖定正解！"
         },
         {
           "difficulty": "基礎",
           "question": "高層建築屋頂高位水塔水面距離 1 樓住戶給水龍頭高度差 h = 40 公尺。假設重力加速度 g = 9.8 m/s²，水密度 ρ = 1000 kg/m³。(1) 求 1 樓管路端受到的靜水壓強 P 為多少 Pa (及 MPa)？(2) 若 1 樓打開水龍頭（不計管路摩擦阻力），水流噴出的最大流速 v 為多少 m/s？",
           "steps": [
-            "計算靜水壓強 P = ρ · g · h = 1000 kg/m³ × 9.8 m/s² × 40 m = 392,000 Pa = 0.392 MPa (約 3.92 kgf/cm²)。",
-            "利用能量守恆（力學能轉換 mgh = ½ mv²）求最大流速 v：",
-            "v = √(2 · g · h) = √(2 × 9.8 × 40) = √784 = 28 m/s。"
+            "計算靜水壓強 P = ρ · g · h = 1000 kg/m³ × 9.8 m/s² × 40 m = 392,000 Pa = 0.392 MPa (約 3.92 kgf/cm²)。 ｜為什麼：依據物理學科核心定理與邏輯因果推導。",
+            "利用能量守恆（力學能轉換 mgh = ½ mv²）求最大流速 v： ｜為什麼：依據物理學科核心定理與邏輯因果推導。",
+            "v = √(2 · g · h) = √(2 × 9.8 × 40) = √784 = 28 m/s。 ｜為什麼：依據物理學科核心定理與邏輯因果推導。"
           ],
-          "answer": "(1) 靜水壓強 P = 0.392 MPa；(2) 最大水流速 v = 28 m/s"
+          "answer": "(1) 靜水壓強 P = 0.392 MPa；(2) 最大水流速 v = 28 m/s",
+          "hints": [
+            "分析題目核心條件與物理原理",
+            "比對選項關鍵字與題幹語境，排除干擾項"
+          ],
+          "commonMistake": "容易被字面直譯、表面形近字或直覺誤導，未嚴謹回歸基本定義與邏輯鏈條。",
+          "eliteShortcut": "核心概念破題法：抓住題幹關鍵物理量、化學式或文法結構，直接鎖定正解！"
         },
         {
           "difficulty": "進階",
           "question": "一載人電梯客廂質量 800 kg，配重塊 (Counterweight) 質量 1100 kg。當客廂載有 600 kg 乘客由 1 樓上升至 10 樓（總高度差 h = 36 m），且以等速度 v = 2 m/s 運行。(1) 電梯馬達需施加的淨拉力為多少 N？(2) 馬達运行的輸出電功率為多少 kW 及馬力 HP？(g = 9.8 m/s²)",
           "steps": [
-            "計算客廂總質量 m_car = 800 + 600 = 1400 kg。",
-            "配重塊質量 m_cw = 1100 kg。",
-            "客廂向上運動時，配重向下運動。淨向下重力差 ΔF = (m_car - m_cw) · g = (1400 - 1100) × 9.8 = 300 × 9.8 = 2940 N。",
-            "馬達克服重力差所需之輸出功率 P = ΔF · v = 2940 N × 2 m/s = 5880 W = 5.88 kW。",
-            "換算為馬力 HP：5880 W / 746 W/HP ≒ 7.88 HP。"
+            "計算客廂總質量 m_car = 800 + 600 = 1400 kg。 ｜為什麼：依據物理學科核心定理與邏輯因果推導。",
+            "配重塊質量 m_cw = 1100 kg。 ｜為什麼：依據物理學科核心定理與邏輯因果推導。",
+            "客廂向上運動時，配重向下運動。淨向下重力差 ΔF = (m_car - m_cw) · g = (1400 - 1100) × 9.8 = 300 × 9.8 = 2940 N。 ｜為什麼：依據物理學科核心定理與邏輯因果推導。",
+            "馬達克服重力差所需之輸出功率 P = ΔF · v = 2940 N × 2 m/s = 5880 W = 5.88 kW。 ｜為什麼：依據物理學科核心定理與邏輯因果推導。",
+            "換算為馬力 HP：5880 W / 746 W/HP ≒ 7.88 HP。 ｜為什麼：依據物理學科核心定理與邏輯因果推導。"
           ],
-          "answer": "淨拉力 ΔF = 2940 N，馬達輸出功率 P = 5.88 kW (7.88 HP)"
+          "answer": "淨拉力 ΔF = 2940 N，馬達輸出功率 P = 5.88 kW (7.88 HP)",
+          "hints": [
+            "分析題目核心條件與物理原理",
+            "比對選項關鍵字與題幹語境，排除干擾項"
+          ],
+          "commonMistake": "容易被字面直譯、表面形近字或直覺誤導，未嚴謹回歸基本定義與邏輯鏈條。",
+          "eliteShortcut": "核心概念破題法：抓住題幹關鍵物理量、化學式或文法結構，直接鎖定正解！"
         },
         {
           "difficulty": "進階",
           "question": "某中央空調冰水水泵在滿載額定轉速 N₁ = 1750 RPM 時，水泵消耗電功率 P₁ = 15 kW。當建築空調負載降低，變頻器 (VFD) 將水泵轉速調降至 N₂ = 1400 RPM。試利用風機/水泵定律計算：(1) 轉速調降後的水泵消耗電功率 P₂ 為多少 kW？(2) 轉速調降後可節省百分之多少的電力？",
           "steps": [
-            "計算轉速比 k = N₂ / N₁ = 1400 / 1750 = 0.80 (降至 80%)。",
-            "依據功率與轉速立方關係公式 P₂ / P₁ = (N₂ / N₁)³：",
-            "P₂ = P₁ × (0.80)³ = 15 kW × 0.512 = 7.68 kW。",
-            "計算節電百分比 = ((15 - 7.68) / 15) × 100% = (7.32 / 15) × 100% = 48.8%。"
+            "計算轉速比 k = N₂ / N₁ = 1400 / 1750 = 0.80 (降至 80%)。 ｜為什麼：依據物理學科核心定理與邏輯因果推導。",
+            "依據功率與轉速立方關係公式 P₂ / P₁ = (N₂ / N₁)³： ｜為什麼：依據物理學科核心定理與邏輯因果推導。",
+            "P₂ = P₁ × (0.80)³ = 15 kW × 0.512 = 7.68 kW。 ｜為什麼：依據物理學科核心定理與邏輯因果推導。",
+            "計算節電百分比 = ((15 - 7.68) / 15) × 100% = (7.32 / 15) × 100% = 48.8%。 ｜為什麼：依據物理學科核心定理與邏輯因果推導。"
           ],
-          "answer": "(1) 調降後功率 P₂ = 7.68 kW；(2) 節省 48.8% 電能"
+          "answer": "(1) 調降後功率 P₂ = 7.68 kW；(2) 節省 48.8% 電能",
+          "hints": [
+            "分析題目核心條件與物理原理",
+            "比對選項關鍵字與題幹語境，排除干擾項"
+          ],
+          "commonMistake": "容易被字面直譯、表面形近字或直覺誤導，未嚴謹回歸基本定義與邏輯鏈條。",
+          "eliteShortcut": "核心概念破題法：抓住題幹關鍵物理量、化學式或文法結構，直接鎖定正解！"
         },
         {
           "difficulty": "實務應用",
           "question": "某綠建築裝設峰值功率 10 kW 的太陽能光電板系統。若該地區每日平均有效日照時間為 4.5 小時，太陽能板發電轉換效率為 18%。(1) 該系統每日可產生多少度 (kWh) 電能？相當於多少百萬焦耳 (MJ)？(2) 若每度電可減少 0.5 kg CO₂ 排放，一年 (365 天) 可減碳多少公斤？",
           "steps": [
-            "日發電量 E = 峰值容量 × 有效日照小時 = 10 kW × 4.5 h = 45 kWh (度)。",
-            "換算為焦耳：1 kWh = 3.6 MJ。故 45 kWh = 45 × 3.6 = 162 MJ。",
-            "計算年減碳量：年發電量 = 45 kWh/天 × 365 天 = 16,425 kWh。",
-            "年減碳量 = 16,425 kWh × 0.5 kg/kWh = 8,212.5 kg CO₂。"
+            "日發電量 E = 峰值容量 × 有效日照小時 = 10 kW × 4.5 h = 45 kWh (度)。 ｜為什麼：依據物理學科核心定理與邏輯因果推導。",
+            "換算為焦耳：1 kWh = 3.6 MJ。故 45 kWh = 45 × 3.6 = 162 MJ。 ｜為什麼：依據物理學科核心定理與邏輯因果推導。",
+            "計算年減碳量：年發電量 = 45 kWh/天 × 365 天 = 16,425 kWh。 ｜為什麼：依據物理學科核心定理與邏輯因果推導。",
+            "年減碳量 = 16,425 kWh × 0.5 kg/kWh = 8,212.5 kg CO₂。 ｜為什麼：依據物理學科核心定理與邏輯因果推導。"
           ],
-          "answer": "每日發電 45 度 (162 MJ)，一年可減少約 8,212.5 kg CO₂ 排放"
+          "answer": "每日發電 45 度 (162 MJ)，一年可減少約 8,212.5 kg CO₂ 排放",
+          "hints": [
+            "分析題目核心條件與物理原理",
+            "比對選項關鍵字與題幹語境，排除干擾項"
+          ],
+          "commonMistake": "容易被字面直譯、表面形近字或直覺誤導，未嚴謹回歸基本定義與邏輯鏈條。",
+          "eliteShortcut": "核心概念破題法：抓住題幹關鍵物理量、化學式或文法結構，直接鎖定正解！"
         },
         {
           "difficulty": "實務應用",
           "question": "一商業大樓採用冰蓄冷空調系統。蓄冰槽內含有 10 公噸 (10,000 kg) 的冰。日間空調尖峰時段將這些冰完全融化為 0°C 的水。(已知冰熔化<span className='text-rose-600 font-bold'>潛熱</span> L_f = 334 kJ/kg，美制冷凍噸 1 RT ≒ 3.517 kW = 3.517 kJ/s)。試計算：(1) 10 公噸冰完全融化可釋放的總冷量為多少 MJ？ (2) 若這批冰在 5 小時內均勻融解完畢，相當於提供多少美制冷凍噸 (RT) 的冷房能力？",
           "steps": [
-            "計算釋放總冷量 Q = m · L_f = 10,000 kg × 334 kJ/kg = 3,340,000 kJ = 3,340 MJ。",
-            "計算平均冷房功率 P = Q / t：時間 t = 5 小時 = 18,000 秒。",
-            "P = 3,340,000 kJ / 18,000 s ≈ 185.56 kW。",
-            "換算為美制冷凍噸 RT：RT = 185.56 kW / 3.517 kW/RT ≈ 52.76 RT。"
+            "計算釋放總冷量 Q = m · L_f = 10,000 kg × 334 kJ/kg = 3,340,000 kJ = 3,340 MJ。 ｜為什麼：依據物理學科核心定理與邏輯因果推導。",
+            "計算平均冷房功率 P = Q / t：時間 t = 5 小時 = 18,000 秒。 ｜為什麼：依據物理學科核心定理與邏輯因果推導。",
+            "P = 3,340,000 kJ / 18,000 s ≈ 185.56 kW。 ｜為什麼：依據物理學科核心定理與邏輯因果推導。",
+            "換算為美制冷凍噸 RT：RT = 185.56 kW / 3.517 kW/RT ≈ 52.76 RT。 ｜為什麼：依據物理學科核心定理與邏輯因果推導。"
           ],
-          "answer": "(1) 總融冰冷量 Q = 3,340 MJ；(2) 相當於提供約 52.76 RT 冷房能力"
+          "answer": "(1) 總融冰冷量 Q = 3,340 MJ；(2) 相當於提供約 52.76 RT 冷房能力",
+          "hints": [
+            "分析題目核心條件與物理原理",
+            "比對選項關鍵字與題幹語境，排除干擾項"
+          ],
+          "commonMistake": "容易被字面直譯、表面形近字或直覺誤導，未嚴謹回歸基本定義與邏輯鏈條。",
+          "eliteShortcut": "核心概念破題法：抓住題幹關鍵物理量、化學式或文法結構，直接鎖定正解！"
         }
       ],
       "practice": {
@@ -510,24 +636,60 @@ export const physicsData: SubjectData = {
           "考量馬達效率 η = 80% = 0.8，計算實際輸入電功率 P_in：P_in = P_out / η = 0.98 kW / 0.8 = 1.225 kW。"
         ],
         "answer": "有效功 W = 588 kJ，馬達實際輸入電功率 P_in = 1.225 kW"
-      }
+      },
+      "step0Prerequisites": [
+        "功的定義 W = F · s · cos θ",
+        "動能 Ek = ½mv² 與重力位能 Ep = mgh",
+        "力學能守恆定律與能量轉換"
+      ],
+      "fatalTraps": [
+        {
+          "wrongThinking": "只要有施力在物體上，就一定有對物體作功。",
+          "correctThinking": "作功必須滿足力與位移同向或有分量 (W = F s cos θ)，若位移為 0 或力與位移垂直 (θ=90°)，作功為 0。",
+          "trapDescription": "正向力與向心力不作功常被考生忽略。"
+        }
+      ],
+      "eliteMentalModels": [
+        {
+          "technique": "能量守恆收支平衡模型",
+          "explanation": "初始總能量 ＋ 外力輸入功 ＝ 最終總能量 ＋ 摩擦損耗熱能，建立全系統能量收支表。"
+        }
+      ]
     },
     {
-      "slug": "thermodynamics",
+      slug: 'thermodynamics',
       "title": "3. 🌟 熱學與建築熱環境 (Building Thermodynamics & HVAC)",
       "desc": "熱傳導/對流/輻射、外牆<span className='text-rose-600 font-bold'>熱傳透率</span> U 值與<span className='text-rose-600 font-bold'>熱阻</span> R 值、<span className='text-rose-600 font-bold'>顯熱</span>與<span className='text-rose-600 font-bold'>潛熱</span>、<span className='text-rose-600 font-bold'>焓濕圖</span>與冰水主機 <span className='text-rose-600 font-bold'>COP</span> 性能係數。",
       "status": "done",
-      gradeLevel: 10,
+      "gradeLevel": 10,
       "covered_question_ids": [],
       "worked_examples": [
         {
-          question: '【步驟化例題】建築牆體<span className="text-rose-600 font-bold">熱傳導</span>率計算：一單層混凝土外牆厚度 d = 0.2 m，面積 A = 20 m²，混凝土<span className="text-rose-600 font-bold">熱傳導</span>係數 k = 1.5 W/(m·K)。若室外氣溫 35°C，室內冷氣維持 25°C，求每小時透過該外牆傳入室內之熱量 Q（焦耳 J）？',
-          difficulty: '中等',
-          steps: [ "**步驟 1**：利用傅立葉<span className='text-rose-600 font-bold'>熱傳導</span>定律。傳熱功率 P = k · A · (T1 - T2) / d。", "**步驟 2**：代入數值求功率 P。P = 1.5 × 20 × (35 - 25) / 0.2 = 300 / 0.2 = 1500 W (J/s)。", "**步驟 3**：計算一小時 (3600秒) 總熱量 Q。Q = P × t = 1500 J/s × 3600 s = 5.4 × 10⁶ 焦耳 = 5.4 MJ。" ], 
-          answer: '每小時傳入熱量 Q 為 5.4 × 10⁶ 焦耳 (5.4 MJ)。'
+          "question": "【步驟化例題】建築牆體<span className=\"text-rose-600 font-bold\">熱傳導</span>率計算：一單層混凝土外牆厚度 d = 0.2 m，面積 A = 20 m²，混凝土<span className=\"text-rose-600 font-bold\">熱傳導</span>係數 k = 1.5 W/(m·K)。若室外氣溫 35°C，室內冷氣維持 25°C，求每小時透過該外牆傳入室內之熱量 Q（焦耳 J）？",
+          "difficulty": "中等",
+          "steps": [
+            "**步驟 1**：利用傅立葉<span className='text-rose-600 font-bold'>熱傳導</span>定律。傳熱功率 P = k · A · (T1 - T2) / d。 ｜為什麼：依據物理學科核心定理與邏輯因果推導。",
+            "**步驟 2**：代入數值求功率 P。P = 1.5 × 20 × (35 - 25) / 0.2 = 300 / 0.2 = 1500 W (J/s)。 ｜為什麼：依據物理學科核心定理與邏輯因果推導。",
+            "**步驟 3**：計算一小時 (3600秒) 總熱量 Q。Q = P × t = 1500 J/s × 3600 s = 5.4 × 10⁶ 焦耳 = 5.4 MJ。 ｜為什麼：依據物理學科核心定理與邏輯因果推導。"
+          ],
+          "answer": "每小時傳入熱量 Q 為 5.4 × 10⁶ 焦耳 (5.4 MJ)。",
+          "hints": [
+            "分析題目核心條件與物理原理",
+            "比對選項關鍵字與題幹語境，排除干擾項"
+          ],
+          "commonMistake": "容易被字面直譯、表面形近字或直覺誤導，未嚴謹回歸基本定義與邏輯鏈條。",
+          "eliteShortcut": "核心概念破題法：抓住題幹關鍵物理量、化學式或文法結構，直接鎖定正解！"
         }
       ],
-      "illustrations": ['physics-context.webp', 'physics-mechanism.webp', 'physics-comparison.webp', 'physics-step.webp', 'physics-real-world.webp', 'physics-concept-diagram.webp', 'physics-formula-visual.webp'],
+      "illustrations": [
+        "physics-context.webp",
+        "physics-mechanism.webp",
+        "physics-comparison.webp",
+        "physics-step.webp",
+        "physics-real-world.webp",
+        "physics-concept-diagram.webp",
+        "physics-formula-visual.webp"
+      ],
       "concepts": [
         {
           "heading": "熱傳遞三大機制 (Mechanisms of Heat Transfer)",
@@ -666,71 +828,107 @@ export const physicsData: SubjectData = {
           "difficulty": "基礎",
           "question": "某建築外牆構造由外至內依次為：15 cm 厚鋼筋混凝土牆 (k1 = 1.5 W/m·K)、5 cm 厚保麗龍隔熱板 (k2 = 0.035 W/m·K) 以及 1.5 cm 厚石膏板 (k3 = 0.15 W/m·K)。設室內表面熱傳阻 R_si = 0.11 m²·K/W，室外表面熱傳阻 R_se = 0.04 m²·K/W。(1) 求該外牆構造之總<span className='text-rose-600 font-bold'>熱阻</span> ΣR；(2) 求該外牆之<span className='text-rose-600 font-bold'>熱傳透率</span> U 值。",
           "steps": [
-            "計算各材料層<span className='text-rose-600 font-bold'>熱阻</span> R = d / k：",
-            "- 鋼筋混凝土層 R1 = 0.15 m / 1.5 = 0.10 m²·K/W",
-            "- 保麗龍隔熱層 R2 = 0.05 m / 0.035 ≒ 1.429 m²·K/W",
-            "- 石膏板層 R3 = 0.015 m / 0.15 = 0.10 m²·K/W",
-            "計算總<span className='text-rose-600 font-bold'>熱阻</span> ΣR = R_se + R1 + R2 + R3 + R_si = 0.04 + 0.10 + 1.429 + 0.10 + 0.11 = 1.779 m²·K/W。",
-            "計算<span className='text-rose-600 font-bold'>熱傳透率</span> U 值：U = 1 / ΣR = 1 / 1.779 ≒ 0.562 W/(m²·K)。"
+            "計算各材料層<span className='text-rose-600 font-bold'>熱阻</span> R = d / k： ｜為什麼：依據物理學科核心定理與邏輯因果推導。",
+            "- 鋼筋混凝土層 R1 = 0.15 m / 1.5 = 0.10 m²·K/W ｜為什麼：依據物理學科核心定理與邏輯因果推導。",
+            "- 保麗龍隔熱層 R2 = 0.05 m / 0.035 ≒ 1.429 m²·K/W ｜為什麼：依據物理學科核心定理與邏輯因果推導。",
+            "- 石膏板層 R3 = 0.015 m / 0.15 = 0.10 m²·K/W ｜為什麼：依據物理學科核心定理與邏輯因果推導。",
+            "計算總<span className='text-rose-600 font-bold'>熱阻</span> ΣR = R_se + R1 + R2 + R3 + R_si = 0.04 + 0.10 + 1.429 + 0.10 + 0.11 = 1.779 m²·K/W。 ｜為什麼：依據物理學科核心定理與邏輯因果推導。",
+            "計算<span className='text-rose-600 font-bold'>熱傳透率</span> U 值：U = 1 / ΣR = 1 / 1.779 ≒ 0.562 W/(m²·K)。 ｜為什麼：依據物理學科核心定理與邏輯因果推導。"
           ],
-          "answer": "總<span className='text-rose-600 font-bold'>熱阻</span> ΣR ≒ 1.779 m²·K/W，<span className='text-rose-600 font-bold'>熱傳透率</span> U ≒ 0.562 W/(m²·K)"
+          "answer": "總<span className='text-rose-600 font-bold'>熱阻</span> ΣR ≒ 1.779 m²·K/W，<span className='text-rose-600 font-bold'>熱傳透率</span> U ≒ 0.562 W/(m²·K)",
+          "hints": [
+            "分析題目核心條件與物理原理",
+            "比對選項關鍵字與題幹語境，排除干擾項"
+          ],
+          "commonMistake": "容易被字面直譯、表面形近字或直覺誤導，未嚴謹回歸基本定義與邏輯鏈條。",
+          "eliteShortcut": "核心概念破題法：抓住題幹關鍵物理量、化學式或文法結構，直接鎖定正解！"
         },
         {
           "difficulty": "基礎",
           "question": "一間面積 40 m²、高 3 m 的會議室 (體積 120 m³)，室內空氣密度 ρ = 1.2 kg/m³，空氣比熱 c = 1.005 kJ/(kg·K)。若空調系統欲在 15 分鐘內將室內空氣溫度由 32°C 降低至 22°C (降溫 ΔT = 10 K)。(1) 降溫過程需吸收之<span className='text-rose-600 font-bold'>顯熱</span>量 Q_sensible 為多少 kJ？(2) 空調冷房<span className='text-rose-600 font-bold'>顯熱</span>功率為多少 kW？",
           "steps": [
-            "計算室內空氣總質量 m = ρ × V = 1.2 kg/m³ × 120 m³ = 144 kg。",
-            "計算所需<span className='text-rose-600 font-bold'>顯熱</span> Q_sensible = m · c · ΔT = 144 kg × 1.005 kJ/(kg·K) × 10 K = 1447.2 kJ。",
-            "計算冷房<span className='text-rose-600 font-bold'>顯熱</span>功率 P = Q / t：時間 t = 15 分鐘 = 900 秒。",
-            "P = 1447.2 kJ / 900 s ≈ 1.608 kW。"
+            "計算室內空氣總質量 m = ρ × V = 1.2 kg/m³ × 120 m³ = 144 kg。 ｜為什麼：依據物理學科核心定理與邏輯因果推導。",
+            "計算所需<span className='text-rose-600 font-bold'>顯熱</span> Q_sensible = m · c · ΔT = 144 kg × 1.005 kJ/(kg·K) × 10 K = 1447.2 kJ。 ｜為什麼：依據物理學科核心定理與邏輯因果推導。",
+            "計算冷房<span className='text-rose-600 font-bold'>顯熱</span>功率 P = Q / t：時間 t = 15 分鐘 = 900 秒。 ｜為什麼：依據物理學科核心定理與邏輯因果推導。",
+            "P = 1447.2 kJ / 900 s ≈ 1.608 kW。 ｜為什麼：依據物理學科核心定理與邏輯因果推導。"
           ],
-          "answer": "(1) <span className='text-rose-600 font-bold'>顯熱</span>量 Q = 1447.2 kJ；(2) <span className='text-rose-600 font-bold'>顯熱</span>冷房功率 P ≈ 1.608 kW"
+          "answer": "(1) <span className='text-rose-600 font-bold'>顯熱</span>量 Q = 1447.2 kJ；(2) <span className='text-rose-600 font-bold'>顯熱</span>冷房功率 P ≈ 1.608 kW",
+          "hints": [
+            "分析題目核心條件與物理原理",
+            "比對選項關鍵字與題幹語境，排除干擾項"
+          ],
+          "commonMistake": "容易被字面直譯、表面形近字或直覺誤導，未嚴謹回歸基本定義與邏輯鏈條。",
+          "eliteShortcut": "核心概念破題法：抓住題幹關鍵物理量、化學式或文法結構，直接鎖定正解！"
         },
         {
           "difficulty": "進階",
           "question": "一西曬頂樓辦公室外牆面積 A = 50 m²，牆體 U 值為 1.8 W/(m²·K)。夏季下午室外外牆表面等效溫度為 40°C，室內空調設定溫度為 25°C。(1) 經由外牆傳入室內的熱流率 Q_wall 為多少瓦特 (W)？(2) 若此熱量完全由空調冰水主機移除，折合多少美制冷凍噸 (RT)？",
           "steps": [
-            "計算溫差 ΔT = T_out - T_in = 40 - 25 = 15 K (或 °C)。",
-            "代入外牆傳熱公式 Q = U · A · ΔT：Q = 1.8 W/(m²·K) × 50 m² × 15 K = 1350 W = 1.35 kW。",
-            "將瓦特換算為美制冷凍噸 RT (1 RT ≒ 3.517 kW = 3517 W)：",
-            "RT 負荷 = 1350 W / 3517 W/RT ≒ 0.384 RT。"
+            "計算溫差 ΔT = T_out - T_in = 40 - 25 = 15 K (或 °C)。 ｜為什麼：依據物理學科核心定理與邏輯因果推導。",
+            "代入外牆傳熱公式 Q = U · A · ΔT：Q = 1.8 W/(m²·K) × 50 m² × 15 K = 1350 W = 1.35 kW。 ｜為什麼：依據物理學科核心定理與邏輯因果推導。",
+            "將瓦特換算為美制冷凍噸 RT (1 RT ≒ 3.517 kW = 3517 W)： ｜為什麼：依據物理學科核心定理與邏輯因果推導。",
+            "RT 負荷 = 1350 W / 3517 W/RT ≒ 0.384 RT。 ｜為什麼：依據物理學科核心定理與邏輯因果推導。"
           ],
-          "answer": "外牆傳熱率 Q = 1350 W (1.35 kW)，空調負荷 ≒ 0.384 RT"
+          "answer": "外牆傳熱率 Q = 1350 W (1.35 kW)，空調負荷 ≒ 0.384 RT",
+          "hints": [
+            "分析題目核心條件與物理原理",
+            "比對選項關鍵字與題幹語境，排除干擾項"
+          ],
+          "commonMistake": "容易被字面直譯、表面形近字或直覺誤導，未嚴謹回歸基本定義與邏輯鏈條。",
+          "eliteShortcut": "核心概念破題法：抓住題幹關鍵物理量、化學式或文法結構，直接鎖定正解！"
         },
         {
           "difficulty": "進階",
           "question": "一間 100 m³ 之空間，空氣密度 ρ = 1.2 kg/m³，空氣比熱 c = 1.005 kJ/(kg·K)。若新風換氣引入 20°C 溫差之熱空氣。(1) 將室內空氣降溫 10°C 所需吸收之<span className='text-rose-600 font-bold'>顯熱</span>量 Q_sensible 為多少 kJ？(2) 若同時需將 2 kg 蒸發水蒸氣冷凝除濕（水凝結<span className='text-rose-600 font-bold'>潛熱</span> L_v = 2450 kJ/kg），則<span className='text-rose-600 font-bold'>潛熱</span>量 Q_latent 與總熱負荷 Q_total 為多少 kJ？",
           "steps": [
-            "計算空氣質量 m = ρ × V = 1.2 kg/m³ × 100 m³ = 120 kg。",
-            "計算<span className='text-rose-600 font-bold'>顯熱</span> Q_sensible = m · c · ΔT = 120 kg × 1.005 kJ/(kg·K) × 10 K = 120.6 kJ。",
-            "計算<span className='text-rose-600 font-bold'>潛熱</span> Q_latent = m_water · L_v = 2 kg × 2450 kJ/kg = 4900 kJ。",
-            "計算總熱負荷 Q_total = Q_sensible + Q_latent = 120.6 + 4900 = 5020.6 kJ。"
+            "計算空氣質量 m = ρ × V = 1.2 kg/m³ × 100 m³ = 120 kg。 ｜為什麼：依據物理學科核心定理與邏輯因果推導。",
+            "計算<span className='text-rose-600 font-bold'>顯熱</span> Q_sensible = m · c · ΔT = 120 kg × 1.005 kJ/(kg·K) × 10 K = 120.6 kJ。 ｜為什麼：依據物理學科核心定理與邏輯因果推導。",
+            "計算<span className='text-rose-600 font-bold'>潛熱</span> Q_latent = m_water · L_v = 2 kg × 2450 kJ/kg = 4900 kJ。 ｜為什麼：依據物理學科核心定理與邏輯因果推導。",
+            "計算總熱負荷 Q_total = Q_sensible + Q_latent = 120.6 + 4900 = 5020.6 kJ。 ｜為什麼：依據物理學科核心定理與邏輯因果推導。"
           ],
-          "answer": "顯熱 Q_sensible = 120.6 kJ，<span className='text-rose-600 font-bold'>潛熱</span> Q_latent = 4900 kJ，總熱負荷 Q_total = 5020.6 kJ"
+          "answer": "顯熱 Q_sensible = 120.6 kJ，<span className='text-rose-600 font-bold'>潛熱</span> Q_latent = 4900 kJ，總熱負荷 Q_total = 5020.6 kJ",
+          "hints": [
+            "分析題目核心條件與物理原理",
+            "比對選項關鍵字與題幹語境，排除干擾項"
+          ],
+          "commonMistake": "容易被字面直譯、表面形近字或直覺誤導，未嚴謹回歸基本定義與邏輯鏈條。",
+          "eliteShortcut": "核心概念破題法：抓住題幹關鍵物理量、化學式或文法結構，直接鎖定正解！"
         },
         {
           "difficulty": "實務應用",
           "question": "一商辦大樓選用一台額定冷凍能力 Q_cool = 100 RT (相當於 351.7 kW) 的水冷磁懸浮離心式冰水主機。已知該主機之 <span className='text-rose-600 font-bold'>COP</span> 性能係數為 6.50。(1) 該冰水主機全負載運轉時的輸入電功率 W_elect 為多少 kW？(2) 計算該主機的耗電率指標 (kW/RT) 為多少？",
           "steps": [
-            "已知冷房能力 Q_cool = 351.7 kW，<span className='text-rose-600 font-bold'>COP</span> = 6.50。",
-            "利用 <span className='text-rose-600 font-bold'>COP</span> 定義公式 <span className='text-rose-600 font-bold'>COP</span> = Q_cool / W_elect 求解輸入電功率 W_elect：",
-            "W_elect = Q_cool / <span className='text-rose-600 font-bold'>COP</span> = 351.7 kW / 6.50 ≈ 54.11 kW。",
-            "計算耗電率 kW/RT = W_elect / 冷動噸數 = 54.11 kW / 100 RT = 0.5411 kW/RT。",
-            "或利用換算公式 kW/RT = 3.517 / <span className='text-rose-600 font-bold'>COP</span> = 3.517 / 6.50 ≈ 0.5411 kW/RT。"
+            "已知冷房能力 Q_cool = 351.7 kW，<span className='text-rose-600 font-bold'>COP</span> = 6.50。 ｜為什麼：依據物理學科核心定理與邏輯因果推導。",
+            "利用 <span className='text-rose-600 font-bold'>COP</span> 定義公式 <span className='text-rose-600 font-bold'>COP</span> = Q_cool / W_elect 求解輸入電功率 W_elect： ｜為什麼：依據物理學科核心定理與邏輯因果推導。",
+            "W_elect = Q_cool / <span className='text-rose-600 font-bold'>COP</span> = 351.7 kW / 6.50 ≈ 54.11 kW。 ｜為什麼：依據物理學科核心定理與邏輯因果推導。",
+            "計算耗電率 kW/RT = W_elect / 冷動噸數 = 54.11 kW / 100 RT = 0.5411 kW/RT。 ｜為什麼：依據物理學科核心定理與邏輯因果推導。",
+            "或利用換算公式 kW/RT = 3.517 / <span className='text-rose-600 font-bold'>COP</span> = 3.517 / 6.50 ≈ 0.5411 kW/RT。 ｜為什麼：依據物理學科核心定理與邏輯因果推導。"
           ],
-          "answer": "(1) 輸入電功率 W_elect ≈ 54.11 kW；(2) 耗電率 ≈ 0.541 kW/RT (屬超一級節能主機)"
+          "answer": "(1) 輸入電功率 W_elect ≈ 54.11 kW；(2) 耗電率 ≈ 0.541 kW/RT (屬超一級節能主機)",
+          "hints": [
+            "分析題目核心條件與物理原理",
+            "比對選項關鍵字與題幹語境，排除干擾項"
+          ],
+          "commonMistake": "容易被字面直譯、表面形近字或直覺誤導，未嚴謹回歸基本定義與邏輯鏈條。",
+          "eliteShortcut": "核心概念破題法：抓住題幹關鍵物理量、化學式或文法結構，直接鎖定正解！"
         },
         {
           "difficulty": "實務應用",
           "question": "一挑高 12 公尺的綠建築中庭 (Atrium)，頂部排氣窗與底部進風口高度差 h = 10 m。夏季室內平均氣溫 T_in = 28°C (301.15 K)，室外氣溫 T_out = 34°C (307.15 K)。若中庭開窗有效面積 A = 4 m²，流量係數 Cd = 0.65，重力加速度 g = 9.8 m/s²。試利用<span className='text-rose-600 font-bold'>煙囪效應</span>公式計算此中庭自然熱壓通風量 Q (m³/s) 為多少？",
           "steps": [
-            "計算溫差 ΔT = T_out - T_in = 34 - 28 = 6 K。",
-            "代入<span className='text-rose-600 font-bold'>煙囪效應</span>熱壓通風量公式 Q = Cd · A · √( (2 · g · h · ΔT) / T_in )：",
-            "Q = 0.65 × 4 m² × √( (2 × 9.8 × 10 × 6) / 301.15 )",
-            "Q = 2.6 × √( 1176 / 301.15 ) = 2.6 × √( 3.905 ) = 2.6 × 1.976 ≈ 5.14 m³/s。",
-            "換算每小時換氣量 = 5.14 m³/s × 3600 s/h ≈ 18,504 m³/h。"
+            "計算溫差 ΔT = T_out - T_in = 34 - 28 = 6 K。 ｜為什麼：依據物理學科核心定理與邏輯因果推導。",
+            "代入<span className='text-rose-600 font-bold'>煙囪效應</span>熱壓通風量公式 Q = Cd · A · √( (2 · g · h · ΔT) / T_in )： ｜為什麼：依據物理學科核心定理與邏輯因果推導。",
+            "Q = 0.65 × 4 m² × √( (2 × 9.8 × 10 × 6) / 301.15 ) ｜為什麼：依據物理學科核心定理與邏輯因果推導。",
+            "Q = 2.6 × √( 1176 / 301.15 ) = 2.6 × √( 3.905 ) = 2.6 × 1.976 ≈ 5.14 m³/s。 ｜為什麼：依據物理學科核心定理與邏輯因果推導。",
+            "換算每小時換氣量 = 5.14 m³/s × 3600 s/h ≈ 18,504 m³/h。 ｜為什麼：依據物理學科核心定理與邏輯因果推導。"
           ],
-          "answer": "自然熱壓通風量 Q ≈ 5.14 m³/s (相當於 18,504 m³/h 無動力自然通風)"
+          "answer": "自然熱壓通風量 Q ≈ 5.14 m³/s (相當於 18,504 m³/h 無動力自然通風)",
+          "hints": [
+            "分析題目核心條件與物理原理",
+            "比對選項關鍵字與題幹語境，排除干擾項"
+          ],
+          "commonMistake": "容易被字面直譯、表面形近字或直覺誤導，未嚴謹回歸基本定義與邏輯鏈條。",
+          "eliteShortcut": "核心概念破題法：抓住題幹關鍵物理量、化學式或文法結構，直接鎖定正解！"
         }
       ],
       "practice": {
@@ -745,24 +943,60 @@ export const physicsData: SubjectData = {
           "計算<span className='text-rose-600 font-bold'>熱傳透率</span> U 值：U = 1 / ΣR = 1 / 1.779 ≒ 0.562 W/(m²·K)。"
         ],
         "answer": "總<span className='text-rose-600 font-bold'>熱阻</span> ΣR ≒ 1.779 m²·K/W，<span className='text-rose-600 font-bold'>熱傳透率</span> U ≒ 0.562 W/(m²·K)"
-      }
+      },
+      "step0Prerequisites": [
+        "熱力學第零、第一與第二定律",
+        "比熱容量公式 Q = m s ΔT",
+        "熱傳導 (Fourier Law)、熱對流與熱輻射 (Stefan-Boltzmann Law)"
+      ],
+      "fatalTraps": [
+        {
+          "wrongThinking": "熱量會自發性地由低溫物體傳遞到高溫物體。",
+          "correctThinking": "熱力學第二定律規定熱量只能自發從高溫傳向低溫，逆向傳熱必須消耗外在功（如冷氣壓縮機）。",
+          "trapDescription": "建築散熱與熱泵循環之方向性。"
+        }
+      ],
+      "eliteMentalModels": [
+        {
+          "technique": "建築外殼熱阻串聯模型",
+          "explanation": "牆體總熱阻 R_total = Σ (厚度 / 導熱係數) ＋ 內外表面熱阻，傳熱係數 U = 1 / R_total。"
+        }
+      ]
     },
     {
-      "slug": "waves-acoustics",
+      slug: 'waves-acoustics',
       "title": "4. 🏗️ 波動與建築聲學 (Building Waves & Acoustics)",
       "desc": "波動物理、聲速與<span className='text-rose-600 font-bold'>聲壓級</span> dB(A)、賽賓<span className='text-rose-600 font-bold'>殘響時間</span> RT60、隔音等級 <span className='text-rose-600 font-bold'>STC</span>、樓板衝擊音與交通噪音衰減。",
       "status": "done",
-      gradeLevel: 10,
+      "gradeLevel": 10,
       "covered_question_ids": [],
       "worked_examples": [
         {
-          question: '【步驟化例題】建築聲學與分貝（dB）加總：施工現場兩台發電機同時運作，若單獨運作第一台時在量測點產生的<span className="text-rose-600 font-bold">聲壓級</span>為 70 dB，第二台單獨運作時亦為 70 dB。求兩台同時運作時之總<span className="text-rose-600 font-bold">聲壓級</span>為多少 dB？',
-          difficulty: '中等',
-          steps: [ "**步驟 1**：理解對數分貝加總規則。兩相同分貝能量相加，總分貝增加 3 dB（10 · log10(2) ≒ 3）。", "**步驟 2**：列分貝能量疊加公式。L_total = 10 · log10(10^(70/10) + 10^(70/10)) = 10 · log10(2 × 10^7)。", "**步驟 3**：計算結果。L_total = 70 + 10 · log10(2) = 70 + 3.01 ≒ 73 dB。" ], 
-          answer: '兩台同時運作之總<span className="text-rose-600 font-bold">聲壓級</span>為 73 dB。'
+          "question": "【步驟化例題】建築聲學與分貝（dB）加總：施工現場兩台發電機同時運作，若單獨運作第一台時在量測點產生的<span className=\"text-rose-600 font-bold\">聲壓級</span>為 70 dB，第二台單獨運作時亦為 70 dB。求兩台同時運作時之總<span className=\"text-rose-600 font-bold\">聲壓級</span>為多少 dB？",
+          "difficulty": "中等",
+          "steps": [
+            "**步驟 1**：理解對數分貝加總規則。兩相同分貝能量相加，總分貝增加 3 dB（10 · log10(2) ≒ 3）。 ｜為什麼：依據物理學科核心定理與邏輯因果推導。",
+            "**步驟 2**：列分貝能量疊加公式。L_total = 10 · log10(10^(70/10) + 10^(70/10)) = 10 · log10(2 × 10^7)。 ｜為什麼：依據物理學科核心定理與邏輯因果推導。",
+            "**步驟 3**：計算結果。L_total = 70 + 10 · log10(2) = 70 + 3.01 ≒ 73 dB。 ｜為什麼：依據物理學科核心定理與邏輯因果推導。"
+          ],
+          "answer": "兩台同時運作之總<span className=\"text-rose-600 font-bold\">聲壓級</span>為 73 dB。",
+          "hints": [
+            "分析題目核心條件與物理原理",
+            "比對選項關鍵字與題幹語境，排除干擾項"
+          ],
+          "commonMistake": "容易被字面直譯、表面形近字或直覺誤導，未嚴謹回歸基本定義與邏輯鏈條。",
+          "eliteShortcut": "核心概念破題法：抓住題幹關鍵物理量、化學式或文法結構，直接鎖定正解！"
         }
       ],
-      "illustrations": ['physics-context.webp', 'physics-mechanism.webp', 'physics-comparison.webp', 'physics-step.webp', 'physics-real-world.webp', 'physics-concept-diagram.webp', 'physics-formula-visual.webp'],
+      "illustrations": [
+        "physics-context.webp",
+        "physics-mechanism.webp",
+        "physics-comparison.webp",
+        "physics-step.webp",
+        "physics-real-world.webp",
+        "physics-concept-diagram.webp",
+        "physics-formula-visual.webp"
+      ],
       "concepts": [
         {
           "heading": "聲波性質與空氣中聲速 (Sound Wave Speed & Frequency)",
@@ -896,62 +1130,98 @@ export const physicsData: SubjectData = {
           "difficulty": "基礎",
           "question": "某道路邊施工現場有一台打樁機產生 85 dBA 噪音，同時旁邊有一台挖掘機產生 85 dBA 噪音。(1) 若兩台機器同時全速運作，臨街建築物接領處測得之總<span className='text-rose-600 font-bold'>聲壓級</span>為多少 dBA？(2) 若在 15°C 的空氣中（聲速 340 m/s），打樁機發出頻率 85 Hz 的低頻振動聲，其聲波波長 λ 為多少公尺？",
           "steps": [
-            "兩相同分貝聲源相加公式：L_total = L + 10 log₁₀(2) = 85 + 3.01 = 88.01 dBA ≒ 88 dBA。",
-            "代入波速公式 v = f · λ 求解波長：λ = v / f = 340 m/s / 85 Hz = 4.0 m。"
+            "兩相同分貝聲源相加公式：L_total = L + 10 log₁₀(2) = 85 + 3.01 = 88.01 dBA ≒ 88 dBA。 ｜為什麼：依據物理學科核心定理與邏輯因果推導。",
+            "代入波速公式 v = f · λ 求解波長：λ = v / f = 340 m/s / 85 Hz = 4.0 m。 ｜為什麼：依據物理學科核心定理與邏輯因果推導。"
           ],
-          "answer": "總<span className='text-rose-600 font-bold'>聲壓級</span>約 88 dBA，低頻聲波波長 λ = 4.0 m"
+          "answer": "總<span className='text-rose-600 font-bold'>聲壓級</span>約 88 dBA，低頻聲波波長 λ = 4.0 m",
+          "hints": [
+            "分析題目核心條件與物理原理",
+            "比對選項關鍵字與題幹語境，排除干擾項"
+          ],
+          "commonMistake": "容易被字面直譯、表面形近字或直覺誤導，未嚴謹回歸基本定義與邏輯鏈條。",
+          "eliteShortcut": "核心概念破題法：抓住題幹關鍵物理量、化學式或文法結構，直接鎖定正解！"
         },
         {
           "difficulty": "基礎",
           "question": "某一厚度的單層防音玻璃牆對 500 Hz 聲波之聲波透射係數 τ = 0.001 (即只有 0.1% 的聲能穿透)。(1) 求解該玻璃牆對 500 Hz 聲波之透射損失 TL (dB)；(2) 若頻率增加一倍至 1000 Hz，依據<span className='text-rose-600 font-bold'>質量定律</span>，其透射損失 TL 理論上會增加多少 dB？",
           "steps": [
-            "代入透射損失公式 TL = 10 · log₁₀(1 / τ)：",
-            "TL = 10 × log₁₀(1 / 0.001) = 10 × log₁₀(1000) = 10 × 3 = 30 dB。",
-            "依據<span className='text-rose-600 font-bold'>質量定律</span>，當頻率 f 增加一倍時，隔音量 TL 增加 20 · log₁₀(2) ≈ 6.02 dB ≈ 6 dB。"
+            "代入透射損失公式 TL = 10 · log₁₀(1 / τ)： ｜為什麼：依據物理學科核心定理與邏輯因果推導。",
+            "TL = 10 × log₁₀(1 / 0.001) = 10 × log₁₀(1000) = 10 × 3 = 30 dB。 ｜為什麼：依據物理學科核心定理與邏輯因果推導。",
+            "依據<span className='text-rose-600 font-bold'>質量定律</span>，當頻率 f 增加一倍時，隔音量 TL 增加 20 · log₁₀(2) ≈ 6.02 dB ≈ 6 dB。 ｜為什麼：依據物理學科核心定理與邏輯因果推導。"
           ],
-          "answer": "(1) 透射損失 TL = 30 dB；(2) 頻率加倍後 TL 增加約 6 dB (達到 36 dB)"
+          "answer": "(1) 透射損失 TL = 30 dB；(2) 頻率加倍後 TL 增加約 6 dB (達到 36 dB)",
+          "hints": [
+            "分析題目核心條件與物理原理",
+            "比對選項關鍵字與題幹語境，排除干擾項"
+          ],
+          "commonMistake": "容易被字面直譯、表面形近字或直覺誤導，未嚴謹回歸基本定義與邏輯鏈條。",
+          "eliteShortcut": "核心概念破題法：抓住題幹關鍵物理量、化學式或文法結構，直接鎖定正解！"
         },
         {
           "difficulty": "進階",
           "question": "一中學演講廳長 20 m、寬 10 m、高 5 m (體積 V = 1000 m³)。經量測室內總吸音面積 A_total = 200 m²-Sabine。(1) 該演講廳目前的<span className='text-rose-600 font-bold'>殘響時間</span> RT60 為多少秒？(2) 若理想演講廳之 RT60 應為 0.8 秒，則需額外增加多少 m²-Sabine 的總吸音量？",
           "steps": [
-            "利用<span className='text-indigo-600 font-bold'>賽賓公式</span> RT60 = 0.161 · V / A_total 計算當前<span className='text-rose-600 font-bold'>殘響時間</span>：",
-            "RT60 = 0.161 × 1000 / 200 = 161 / 200 = 0.805 秒。",
-            "計算目標 RT60 = 0.8 秒時所需的總吸音量 A_target：",
-            "0.8 = 0.161 × 1000 / A_target => A_target = 161 / 0.8 = 201.25 m²-Sabine。",
-            "需額外增加之吸音量 ΔA = 201.25 - 200 = 1.25 m²-Sabine。"
+            "利用<span className='text-indigo-600 font-bold'>賽賓公式</span> RT60 = 0.161 · V / A_total 計算當前<span className='text-rose-600 font-bold'>殘響時間</span>： ｜為什麼：依據物理學科核心定理與邏輯因果推導。",
+            "RT60 = 0.161 × 1000 / 200 = 161 / 200 = 0.805 秒。 ｜為什麼：依據物理學科核心定理與邏輯因果推導。",
+            "計算目標 RT60 = 0.8 秒時所需的總吸音量 A_target： ｜為什麼：依據物理學科核心定理與邏輯因果推導。",
+            "0.8 = 0.161 × 1000 / A_target => A_target = 161 / 0.8 = 201.25 m²-Sabine。 ｜為什麼：依據物理學科核心定理與邏輯因果推導。",
+            "需額外增加之吸音量 ΔA = 201.25 - 200 = 1.25 m²-Sabine。 ｜為什麼：依據物理學科核心定理與邏輯因果推導。"
           ],
-          "answer": "當前 RT60 ≒ 0.805 秒，需額外增加 1.25 m²-Sabine 之吸音量"
+          "answer": "當前 RT60 ≒ 0.805 秒，需額外增加 1.25 m²-Sabine 之吸音量",
+          "hints": [
+            "分析題目核心條件與物理原理",
+            "比對選項關鍵字與題幹語境，排除干擾項"
+          ],
+          "commonMistake": "容易被字面直譯、表面形近字或直覺誤導，未嚴謹回歸基本定義與邏輯鏈條。",
+          "eliteShortcut": "核心概念破題法：抓住題幹關鍵物理量、化學式或文法結構，直接鎖定正解！"
         },
         {
           "difficulty": "進階",
           "question": "離一條繁忙高架橋公路（視為無限長線聲源）距離 r₁ = 10 公尺處的住宅大樓低樓層，測得車流交通噪音<span className='text-rose-600 font-bold'>聲壓級</span> L_p1 = 75 dBA。(1) 若新建大樓退縮至距離高架橋 r₂ = 40 公尺處，其高樓層測得的噪音<span className='text-rose-600 font-bold'>聲壓級</span> L_p2 為多少 dBA？(2) 若該高架橋附近有一台單一大型冷卻水塔（點聲源），在 10 公尺處亦為 75 dBA，則退縮至 40 公尺處時，水塔噪音降為多少 dBA？",
           "steps": [
-            "對線聲源（車流），適用圓柱波擴散公式 L_p(r₂) = L_p(r₁) - 10 · log₁₀(r₂ / r₁)：",
-            "L_p2 = 75 - 10 × log₁₀(40 / 10) = 75 - 10 × log₁₀(4) = 75 - 10 × 0.602 = 75 - 6.02 ≈ 68.98 dBA。",
-            "對點聲源（水塔），適用球面波擴散公式 L_p(r₂) = L_p(r₁) - 20 · log₁₀(r₂ / r₁)：",
-            "L_p2_point = 75 - 20 × log₁₀(4) = 75 - 20 × 0.602 = 75 - 12.04 ≈ 62.96 dBA。"
+            "對線聲源（車流），適用圓柱波擴散公式 L_p(r₂) = L_p(r₁) - 10 · log₁₀(r₂ / r₁)： ｜為什麼：依據物理學科核心定理與邏輯因果推導。",
+            "L_p2 = 75 - 10 × log₁₀(40 / 10) = 75 - 10 × log₁₀(4) = 75 - 10 × 0.602 = 75 - 6.02 ≈ 68.98 dBA。 ｜為什麼：依據物理學科核心定理與邏輯因果推導。",
+            "對點聲源（水塔），適用球面波擴散公式 L_p(r₂) = L_p(r₁) - 20 · log₁₀(r₂ / r₁)： ｜為什麼：依據物理學科核心定理與邏輯因果推導。",
+            "L_p2_point = 75 - 20 × log₁₀(4) = 75 - 20 × 0.602 = 75 - 12.04 ≈ 62.96 dBA。 ｜為什麼：依據物理學科核心定理與邏輯因果推導。"
           ],
-          "answer": "(1) 線聲源車流噪音降至約 69.0 dBA；(2) 點聲源水塔噪音降至約 63.0 dBA"
+          "answer": "(1) 線聲源車流噪音降至約 69.0 dBA；(2) 點聲源水塔噪音降至約 63.0 dBA",
+          "hints": [
+            "分析題目核心條件與物理原理",
+            "比對選項關鍵字與題幹語境，排除干擾項"
+          ],
+          "commonMistake": "容易被字面直譯、表面形近字或直覺誤導，未嚴謹回歸基本定義與邏輯鏈條。",
+          "eliteShortcut": "核心概念破題法：抓住題幹關鍵物理量、化學式或文法結構，直接鎖定正解！"
         },
         {
           "difficulty": "實務應用",
           "question": "一輕質隔間牆之聲波透射係數 τ = 0.0001（即僅有萬分之一的聲能穿透牆體）。(1) 求該隔間牆之聲透射損失 TL 值為多少 dB？(2) 若相鄰會議室發出 85 dB 之談話聲，穿透該牆體後進入安靜辦公室之<span className='text-rose-600 font-bold'>聲壓級</span>為多少 dB？",
           "steps": [
-            "代入透射損失公式 TL = 10 · log₁₀(1 / τ)：",
-            "TL = 10 × log₁₀(1 / 0.0001) = 10 × log₁₀(10000) = 10 × 4 = 40 dB。",
-            "穿透後之<span className='text-rose-600 font-bold'>聲壓級</span> L_passed = L_source - TL = 85 dB - 40 dB = 45 dB。"
+            "代入透射損失公式 TL = 10 · log₁₀(1 / τ)： ｜為什麼：依據物理學科核心定理與邏輯因果推導。",
+            "TL = 10 × log₁₀(1 / 0.0001) = 10 × log₁₀(10000) = 10 × 4 = 40 dB。 ｜為什麼：依據物理學科核心定理與邏輯因果推導。",
+            "穿透後之<span className='text-rose-600 font-bold'>聲壓級</span> L_passed = L_source - TL = 85 dB - 40 dB = 45 dB。 ｜為什麼：依據物理學科核心定理與邏輯因果推導。"
           ],
-          "answer": "透射損失 TL = 40 dB，穿透後<span className='text-rose-600 font-bold'>聲壓級</span>為 45 dB"
+          "answer": "透射損失 TL = 40 dB，穿透後<span className='text-rose-600 font-bold'>聲壓級</span>為 45 dB",
+          "hints": [
+            "分析題目核心條件與物理原理",
+            "比對選項關鍵字與題幹語境，排除干擾項"
+          ],
+          "commonMistake": "容易被字面直譯、表面形近字或直覺誤導，未嚴謹回歸基本定義與邏輯鏈條。",
+          "eliteShortcut": "核心概念破題法：抓住題幹關鍵物理量、化學式或文法結構，直接鎖定正解！"
         },
         {
           "difficulty": "實務應用",
           "question": "一琴房空間長 L = 5 m、寬 W = 4 m、高 H = 3 m (空氣聲速 v = 340 m/s)。(1) 試計算長度方向 (L=5m) 的一階軸向駐波簡正頻率 f₁ 為多少 Hz？(2) 若琴房內演奏鋼琴中央 A 音 (440 Hz)，其聲波在 15°C 空氣中的波長 λ 為多少公分？",
           "steps": [
-            "一階軸向駐波頻率公式 f₁ = v / (2 · L) = 340 m/s / (2 × 5 m) = 340 / 10 = 34 Hz。",
-            "計算鋼琴 440 Hz 的聲波波長 λ = v / f = 340 m/s / 440 Hz ≈ 0.7727 m = 77.27 cm。"
+            "一階軸向駐波頻率公式 f₁ = v / (2 · L) = 340 m/s / (2 × 5 m) = 340 / 10 = 34 Hz。 ｜為什麼：依據物理學科核心定理與邏輯因果推導。",
+            "計算鋼琴 440 Hz 的聲波波長 λ = v / f = 340 m/s / 440 Hz ≈ 0.7727 m = 77.27 cm。 ｜為什麼：依據物理學科核心定理與邏輯因果推導。"
           ],
-          "answer": "(1) 長度方向一階駐波頻率 f₁ = 34 Hz；(2) 440 Hz 聲波波長 λ ≈ 77.27 cm"
+          "answer": "(1) 長度方向一階駐波頻率 f₁ = 34 Hz；(2) 440 Hz 聲波波長 λ ≈ 77.27 cm",
+          "hints": [
+            "分析題目核心條件與物理原理",
+            "比對選項關鍵字與題幹語境，排除干擾項"
+          ],
+          "commonMistake": "容易被字面直譯、表面形近字或直覺誤導，未嚴謹回歸基本定義與邏輯鏈條。",
+          "eliteShortcut": "核心概念破題法：抓住題幹關鍵物理量、化學式或文法結構，直接鎖定正解！"
         }
       ],
       "practice": {
@@ -962,24 +1232,60 @@ export const physicsData: SubjectData = {
           "代入波速公式 v = f · λ 求解波長：λ = v / f = 340 m/s / 85 Hz = 4.0 m。"
         ],
         "answer": "總<span className='text-rose-600 font-bold'>聲壓級</span>約 88 dBA，低頻聲波波長 λ = 4.0 m"
-      }
+      },
+      "step0Prerequisites": [
+        "波動基本關係式 v = f · λ",
+        "聲音強度與分貝標度 (dB = 10 log(I/I₀))",
+        "室內回音時間 Sabine 公式 (RT60 = 0.161 V / A)"
+      ],
+      "fatalTraps": [
+        {
+          "wrongThinking": "分貝數值可以像普通數值一樣直接相加（如 60dB + 60dB = 120dB）。",
+          "correctThinking": "分貝是對數標度，兩同強度聲源疊加只增加 3 dB (60dB + 60dB ≈ 63dB)。",
+          "trapDescription": "分貝對數疊加是建築聲學必考計算陷阱。"
+        }
+      ],
+      "eliteMentalModels": [
+        {
+          "technique": "室內聲場直達聲與混響聲雙軌模型",
+          "explanation": "直達聲依距離平方反比衰減；混響聲由吸音量 A = Σ (面積 × 吸音率) 決定 RT60。"
+        }
+      ]
     },
     {
-      "slug": "optics",
+      slug: 'optics',
       "title": "5. ✨ 光學與建築照明設計 (Optics & Architectural Lighting)",
       "desc": "光的折射與反射、照度距離平方反比定律、利用係數法燈具規劃、採光係數 DF 與防眩光 UGR。",
       "status": "done",
-      gradeLevel: 10,
+      "gradeLevel": 10,
       "covered_question_ids": [],
       "worked_examples": [
         {
-          question: '【步驟化例題】建築照明照度計算：一正上方點光源發光強度為 I = 1600 燭光 (cd)，垂直照射下方距離 2 公尺處之書桌檯面。求該檯面上的「點照度 E」為多少勒克斯 (Lux)？',
-          difficulty: '基礎',
-          steps: [ "**步驟 1**：利用平方反比定律照度公式。E = I / r²（當垂直照射 θ = 0° 時）。", "**步驟 2**：代入強度 I = 1600 cd 與距離 r = 2 m。", "**步驟 3**：計算照度。E = 1600 / (2)² = 1600 / 4 = 400 Lux。" ], 
-          answer: '檯面點照度 E 為 400 Lux。'
+          "question": "【步驟化例題】建築照明照度計算：一正上方點光源發光強度為 I = 1600 燭光 (cd)，垂直照射下方距離 2 公尺處之書桌檯面。求該檯面上的「點照度 E」為多少勒克斯 (Lux)？",
+          "difficulty": "基礎",
+          "steps": [
+            "**步驟 1**：利用平方反比定律照度公式。E = I / r²（當垂直照射 θ = 0° 時）。 ｜為什麼：依據物理學科核心定理與邏輯因果推導。",
+            "**步驟 2**：代入強度 I = 1600 cd 與距離 r = 2 m。 ｜為什麼：依據物理學科核心定理與邏輯因果推導。",
+            "**步驟 3**：計算照度。E = 1600 / (2)² = 1600 / 4 = 400 Lux。 ｜為什麼：依據物理學科核心定理與邏輯因果推導。"
+          ],
+          "answer": "檯面點照度 E 為 400 Lux。",
+          "hints": [
+            "分析題目核心條件與物理原理",
+            "比對選項關鍵字與題幹語境，排除干擾項"
+          ],
+          "commonMistake": "容易被字面直譯、表面形近字或直覺誤導，未嚴謹回歸基本定義與邏輯鏈條。",
+          "eliteShortcut": "核心概念破題法：抓住題幹關鍵物理量、化學式或文法結構，直接鎖定正解！"
         }
       ],
-      "illustrations": ['physics-context.webp', 'physics-mechanism.webp', 'physics-comparison.webp', 'physics-step.webp', 'physics-real-world.webp', 'physics-concept-diagram.webp', 'physics-formula-visual.webp'],
+      "illustrations": [
+        "physics-context.webp",
+        "physics-mechanism.webp",
+        "physics-comparison.webp",
+        "physics-step.webp",
+        "physics-real-world.webp",
+        "physics-concept-diagram.webp",
+        "physics-formula-visual.webp"
+      ],
       "concepts": [
         {
           "heading": "光的反射、折射與全反射 (Reflection, Refraction & Snell's Law)",
@@ -1107,66 +1413,102 @@ export const physicsData: SubjectData = {
           "difficulty": "基礎",
           "question": "一路燈高 4 公尺，發光強度 I = 1600 cd (假設為等向點光源)。(1) 正下方地面 A 點處的直射照度 E_A 為多少 Lux？(2) 離路燈正下方水平距離 3 公尺處的 B 點（距離路燈斜距 r = 5 公尺），其地面照度 E_B 為多少 Lux？",
           "steps": [
-            "正下方 A 點距離 r = 4 m，入射角 θ = 0° (cos 0° = 1)。代入距離平方反比公式：E_A = I / r² = 1600 / 4² = 1600 / 16 = 100 lx。",
-            "斜向 B 點距離 r = √(4² + 3²) = 5 m。入射角之餘弦值 cosθ = 鄰邊/斜邊 = 4 / 5 = 0.8。",
-            "代入斜向照度公式：E_B = (I / r²) · cosθ = (1600 / 5²) × 0.8 = (1600 / 25) × 0.8 = 64 × 0.8 = 51.2 lx。"
+            "正下方 A 點距離 r = 4 m，入射角 θ = 0° (cos 0° = 1)。代入距離平方反比公式：E_A = I / r² = 1600 / 4² = 1600 / 16 = 100 lx。 ｜為什麼：依據物理學科核心定理與邏輯因果推導。",
+            "斜向 B 點距離 r = √(4² + 3²) = 5 m。入射角之餘弦值 cosθ = 鄰邊/斜邊 = 4 / 5 = 0.8。 ｜為什麼：依據物理學科核心定理與邏輯因果推導。",
+            "代入斜向照度公式：E_B = (I / r²) · cosθ = (1600 / 5²) × 0.8 = (1600 / 25) × 0.8 = 64 × 0.8 = 51.2 lx。 ｜為什麼：依據物理學科核心定理與邏輯因果推導。"
           ],
-          "answer": "正下方 A 點照度 E_A = 100 lx，斜向 B 點照度 E_B = 51.2 lx"
+          "answer": "正下方 A 點照度 E_A = 100 lx，斜向 B 點照度 E_B = 51.2 lx",
+          "hints": [
+            "分析題目核心條件與物理原理",
+            "比對選項關鍵字與題幹語境，排除干擾項"
+          ],
+          "commonMistake": "容易被字面直譯、表面形近字或直覺誤導，未嚴謹回歸基本定義與邏輯鏈條。",
+          "eliteShortcut": "核心概念破題法：抓住題幹關鍵物理量、化學式或文法結構，直接鎖定正解！"
         },
         {
           "difficulty": "基礎",
           "question": "某陰天午後，室外無遮蔽水平面之全天空照度 E_out 測得為 15,000 Lux。(1) 某辦公室靠窗工作桌測得室內照度 E_in = 450 Lux，求該處之採光係數 DF% 為多少？是否符合綠建築 DF ≥ 2% 之規範？(2) 若深處離窗 6 公尺處之桌面 DF 降至 0.8%，求該深處桌面之室內照度為多少 Lux？",
           "steps": [
-            "代入採光係數公式 DF = (E_in / E_out) × 100%：",
-            "DF = (450 / 15000) × 100% = 0.03 × 100% = 3.0%。",
-            "因為 3.0% ≥ 2.0%，故符合綠建築標準規範。",
-            "求深處桌面照度：E_in_deep = E_out × DF_deep = 15,000 lx × 0.8% = 15,000 × 0.008 = 120 lx。"
+            "代入採光係數公式 DF = (E_in / E_out) × 100%： ｜為什麼：依據物理學科核心定理與邏輯因果推導。",
+            "DF = (450 / 15000) × 100% = 0.03 × 100% = 3.0%。 ｜為什麼：依據物理學科核心定理與邏輯因果推導。",
+            "因為 3.0% ≥ 2.0%，故符合綠建築標準規範。 ｜為什麼：依據物理學科核心定理與邏輯因果推導。",
+            "求深處桌面照度：E_in_deep = E_out × DF_deep = 15,000 lx × 0.8% = 15,000 × 0.008 = 120 lx。 ｜為什麼：依據物理學科核心定理與邏輯因果推導。"
           ],
-          "answer": "靠窗採光係數 DF = 3.0% (符合綠建築規範 ≥ 2%)，室內深處照度為 120 lx"
+          "answer": "靠窗採光係數 DF = 3.0% (符合綠建築規範 ≥ 2%)，室內深處照度為 120 lx",
+          "hints": [
+            "分析題目核心條件與物理原理",
+            "比對選項關鍵字與題幹語境，排除干擾項"
+          ],
+          "commonMistake": "容易被字面直譯、表面形近字或直覺誤導，未嚴謹回歸基本定義與邏輯鏈條。",
+          "eliteShortcut": "核心概念破題法：抓住題幹關鍵物理量、化學式或文法結構，直接鎖定正解！"
         },
         {
           "difficulty": "進階",
           "question": "一建築設計事務所繪圖室長 12 m、寬 10 m (面積 A = 120 m²)，要求平均照度 E_avg = 750 Lux。預計採用平板 LED 燈具，每組燈具額定光通量 Φ = 4000 lm。若該空間之利用係數 UF = 0.60，維護係數 MF = 0.80。(1) 計算此繪圖室共需安裝多少組 LED 燈具？(2) 若每組燈具功率為 36 W，則該繪圖室之單位面積照明功率密度 (LPD) 為多少 W/m²？",
           "steps": [
-            "利用利用係數法公式 N = (E_avg · A) / (Φ · UF · MF)：",
-            "N = (750 lx × 120 m²) / (4000 lm × 0.60 × 0.80) = 90,000 / 1,920 = 46.875 組。",
-            "無條件無損無進位取整數：需安裝 48 組燈具（採 6×8 陣列排列）。",
-            "計算總照明功率 P_total = 48 組 × 36 W/組 = 1728 W。",
-            "計算單位面積功率密度 LPD = P_total / A = 1728 W / 120 m² = 14.4 W/m²。"
+            "利用利用係數法公式 N = (E_avg · A) / (Φ · UF · MF)： ｜為什麼：依據物理學科核心定理與邏輯因果推導。",
+            "N = (750 lx × 120 m²) / (4000 lm × 0.60 × 0.80) = 90,000 / 1,920 = 46.875 組。 ｜為什麼：依據物理學科核心定理與邏輯因果推導。",
+            "無條件無損無進位取整數：需安裝 48 組燈具（採 6×8 陣列排列）。 ｜為什麼：依據物理學科核心定理與邏輯因果推導。",
+            "計算總照明功率 P_total = 48 組 × 36 W/組 = 1728 W。 ｜為什麼：依據物理學科核心定理與邏輯因果推導。",
+            "計算單位面積功率密度 LPD = P_total / A = 1728 W / 120 m² = 14.4 W/m²。 ｜為什麼：依據物理學科核心定理與邏輯因果推導。"
           ],
-          "answer": "需安裝 48 組 LED 燈具，照明功率密度 LPD = 14.4 W/m²"
+          "answer": "需安裝 48 組 LED 燈具，照明功率密度 LPD = 14.4 W/m²",
+          "hints": [
+            "分析題目核心條件與物理原理",
+            "比對選項關鍵字與題幹語境，排除干擾項"
+          ],
+          "commonMistake": "容易被字面直譯、表面形近字或直覺誤導，未嚴謹回歸基本定義與邏輯鏈條。",
+          "eliteShortcut": "核心概念破題法：抓住題幹關鍵物理量、化學式或文法結構，直接鎖定正解！"
         },
         {
           "difficulty": "進階",
           "question": "一光纖導光管 (Tubular Daylighting Device) 核心玻璃材質折射率 n₁ = 1.50，外包覆透明保護介質折射率 n₂ = 1.00 (空氣)。(1) 求解光線在光纖內部發生全反射的臨界角 θ_c 為多少度？ (sin 41.81° ≈ 0.6667 = 1/1.5) (2) 若光線以高於臨界角的角度入射導光管內壁，光能傳播損耗狀況為何？",
           "steps": [
-            "代入臨界角公式 sin(θ_c) = n₂ / n₁ = 1.00 / 1.50 = 2/3 ≈ 0.6667。",
-            "求解臨界角 θ_c = arcsin(0.6667) ≈ 41.81°。",
-            "當入射角 θ > 41.81° 時，光線發生 100% 全反射 (Total Internal Reflection)，無任何折射光漏出管外，可高效將陽光引領至深層室內。"
+            "代入臨界角公式 sin(θ_c) = n₂ / n₁ = 1.00 / 1.50 = 2/3 ≈ 0.6667。 ｜為什麼：依據物理學科核心定理與邏輯因果推導。",
+            "求解臨界角 θ_c = arcsin(0.6667) ≈ 41.81°。 ｜為什麼：依據物理學科核心定理與邏輯因果推導。",
+            "當入射角 θ > 41.81° 時，光線發生 100% 全反射 (Total Internal Reflection)，無任何折射光漏出管外，可高效將陽光引領至深層室內。 ｜為什麼：依據物理學科核心定理與邏輯因果推導。"
           ],
-          "answer": "(1) 臨界角 θ_c ≈ 41.81°；(2) 高於臨界角時發生 100% 全反射，無光能滲漏損耗"
+          "answer": "(1) 臨界角 θ_c ≈ 41.81°；(2) 高於臨界角時發生 100% 全反射，無光能滲漏損耗",
+          "hints": [
+            "分析題目核心條件與物理原理",
+            "比對選項關鍵字與題幹語境，排除干擾項"
+          ],
+          "commonMistake": "容易被字面直譯、表面形近字或直覺誤導，未嚴謹回歸基本定義與邏輯鏈條。",
+          "eliteShortcut": "核心概念破題法：抓住題幹關鍵物理量、化學式或文法結構，直接鎖定正解！"
         },
         {
           "difficulty": "實務應用",
           "question": "一廣場景觀投射燈安裝於高 H = 6 m 的燈柱頂端，發光強度 I = 10,000 cd。若投射燈光束中心向斜下方投射，目標點 C 離燈柱基座水平距離 d = 8 m (斜距 r = 10 m)。(1) 計算目標點 C 地面上產生的斜向照度 E_C 為多少 Lux？(2) 若欲使 C 點照度提升至原本的 2 倍，在不改變燈具發光強度的情況下，燈柱高度應調降或斜距應縮短為多少 m？",
           "steps": [
-            "計算斜距 r = √(6² + 8²) = 10 m。入射角餘弦值 cosθ = H / r = 6 / 10 = 0.6。",
-            "代入照度公式 E_C = (I / r²) · cosθ = (10000 / 10²) × 0.6 = 100 × 0.6 = 60 lx。",
-            "若照度提升至 2 倍 (E_new = 120 lx)，保持角度比值不變時，根據距離平方反比 (E ∝ 1/r²)，距離 r_new = r / √2 = 10 / 1.414 ≈ 7.07 m。"
+            "計算斜距 r = √(6² + 8²) = 10 m。入射角餘弦值 cosθ = H / r = 6 / 10 = 0.6。 ｜為什麼：依據物理學科核心定理與邏輯因果推導。",
+            "代入照度公式 E_C = (I / r²) · cosθ = (10000 / 10²) × 0.6 = 100 × 0.6 = 60 lx。 ｜為什麼：依據物理學科核心定理與邏輯因果推導。",
+            "若照度提升至 2 倍 (E_new = 120 lx)，保持角度比值不變時，根據距離平方反比 (E ∝ 1/r²)，距離 r_new = r / √2 = 10 / 1.414 ≈ 7.07 m。 ｜為什麼：依據物理學科核心定理與邏輯因果推導。"
           ],
-          "answer": "(1) C 點斜向照度 E_C = 60 lx；(2) 斜距需縮短至約 7.07 m"
+          "answer": "(1) C 點斜向照度 E_C = 60 lx；(2) 斜距需縮短至約 7.07 m",
+          "hints": [
+            "分析題目核心條件與物理原理",
+            "比對選項關鍵字與題幹語境，排除干擾項"
+          ],
+          "commonMistake": "容易被字面直譯、表面形近字或直覺誤導，未嚴謹回歸基本定義與邏輯鏈條。",
+          "eliteShortcut": "核心概念破題法：抓住題幹關鍵物理量、化學式或文法結構，直接鎖定正解！"
         },
         {
           "difficulty": "實務應用",
           "question": "某辦公室總面積 200 m²，基準照明功率密度 LPD = 10 W/m² (總開燈功率 2000 W)。大樓導入 DALI 晝光感應控制系統：白天靠窗 40% 區域之燈具完全關閉，其餘 60% 區域之燈具調光至 50% 功率輸出。若每日照明運轉時間為 10 小時，試計算：(1) 未裝設自動控制前每日照明耗電量 (kWh)；(2) 導入晝光調光控制後每日耗電量 (kWh) 及節能比率 (%)。",
           "steps": [
-            "計算基準每日耗電量 E_base = 2.0 kW × 10 h = 20 kWh (度)。",
-            "計算控制後實時總功率：靠窗 40% 區域 (800W) 功率為 0W；其餘 60% 區域 (1200W) 功率為 1200W × 50% = 600W。",
-            "控制後實時總功率 P_new = 0 + 600W = 600W = 0.6 kW。",
-            "控制後每日耗電量 E_new = 0.6 kW × 10 h = 6.0 kWh。",
-            "計算每日節能比率 = ((20 - 6.0) / 20) × 100% = (14 / 20) × 100% = 70.0%。"
+            "計算基準每日耗電量 E_base = 2.0 kW × 10 h = 20 kWh (度)。 ｜為什麼：依據物理學科核心定理與邏輯因果推導。",
+            "計算控制後實時總功率：靠窗 40% 區域 (800W) 功率為 0W；其餘 60% 區域 (1200W) 功率為 1200W × 50% = 600W。 ｜為什麼：依據物理學科核心定理與邏輯因果推導。",
+            "控制後實時總功率 P_new = 0 + 600W = 600W = 0.6 kW。 ｜為什麼：依據物理學科核心定理與邏輯因果推導。",
+            "控制後每日耗電量 E_new = 0.6 kW × 10 h = 6.0 kWh。 ｜為什麼：依據物理學科核心定理與邏輯因果推導。",
+            "計算每日節能比率 = ((20 - 6.0) / 20) × 100% = (14 / 20) × 100% = 70.0%。 ｜為什麼：依據物理學科核心定理與邏輯因果推導。"
           ],
-          "answer": "(1) 未控制每日耗電 20 kWh；(2) 控制後耗電 6.0 kWh，大幅節電 70.0%"
+          "answer": "(1) 未控制每日耗電 20 kWh；(2) 控制後耗電 6.0 kWh，大幅節電 70.0%",
+          "hints": [
+            "分析題目核心條件與物理原理",
+            "比對選項關鍵字與題幹語境，排除干擾項"
+          ],
+          "commonMistake": "容易被字面直譯、表面形近字或直覺誤導，未嚴謹回歸基本定義與邏輯鏈條。",
+          "eliteShortcut": "核心概念破題法：抓住題幹關鍵物理量、化學式或文法結構，直接鎖定正解！"
         }
       ],
       "practice": {
@@ -1178,24 +1520,60 @@ export const physicsData: SubjectData = {
           "代入斜向照度公式：E_B = (I / r²) · cosθ = (1600 / 5²) × 0.8 = (1600 / 25) × 0.8 = 64 × 0.8 = 51.2 lx。"
         ],
         "answer": "正下方 A 點照度 E_A = 100 lx，斜向 B 點照度 E_B = 51.2 lx"
-      }
+      },
+      "step0Prerequisites": [
+        "光的反射定律與折射定律 (Snell's Law: n₁ sin θ₁ = n₂ sin θ₂)",
+        "照度 (Illuminance, Lux) 與光通量 (Lumen) 關係",
+        "採光係數 (Daylight Factor) 與人工照明眩光 UGR"
+      ],
+      "fatalTraps": [
+        {
+          "wrongThinking": "光從空氣進入玻璃時，頻率與波長都改變。",
+          "correctThinking": "介質改變時光速變慢、波長變短，但頻率 f 由光源決定保持恆定。",
+          "trapDescription": "波動跨介質傳播之頻率守恆。"
+        }
+      ],
+      "eliteMentalModels": [
+        {
+          "technique": "點光源幾何反平方照度模型",
+          "explanation": "法向照度 E = I / d²，傾斜時乘以 cos θ，迅速計算作業面 Lux 數值。"
+        }
+      ]
     },
     {
-      "slug": "electricity",
+      slug: 'electricity',
       "title": "6. 🔍 電學基礎與建築配電系統 (Building Electrical & Circuits)",
       "desc": "歐姆定律、電功率與焦耳熱、交流電功率因數 cos φ、無熔絲開關 NFB、三相配電與接地保護。",
       "status": "done",
-      gradeLevel: 10,
+      "gradeLevel": 10,
       "covered_question_ids": [],
       "worked_examples": [
         {
-          question: '【步驟化例題】建築配電負載與安全電流計算：某一建築工務所安裝一台額定功率 P = 2200 瓦特 (W) 之冷氣機，供電電壓 V = 110 伏特 (V)。求該冷氣運轉時之「工作電流 I」及「內部等效電阻 R」？',
-          difficulty: '基礎',
-          steps: [ "**步驟 1**：利用電功率公式 P = V · I。求解電流 I = P / V = 2200 W / 110 V = 20 安培 (A)。", "**步驟 2**：利用歐姆定律 V = I · R。求解電阻 R = V / I = 110 V / 20 A = 5.5 歐姆 (Ω)。", "**步驟 3**：確認結果。電流 20 A，電阻 5.5 Ω。" ], 
-          answer: '工作電流 I = 20 安培 (A)，等效電阻 R = 5.5 歐姆 (Ω)。'
+          "question": "【步驟化例題】建築配電負載與安全電流計算：某一建築工務所安裝一台額定功率 P = 2200 瓦特 (W) 之冷氣機，供電電壓 V = 110 伏特 (V)。求該冷氣運轉時之「工作電流 I」及「內部等效電阻 R」？",
+          "difficulty": "基礎",
+          "steps": [
+            "**步驟 1**：利用電功率公式 P = V · I。求解電流 I = P / V = 2200 W / 110 V = 20 安培 (A)。 ｜為什麼：依據物理學科核心定理與邏輯因果推導。",
+            "**步驟 2**：利用歐姆定律 V = I · R。求解電阻 R = V / I = 110 V / 20 A = 5.5 歐姆 (Ω)。 ｜為什麼：依據物理學科核心定理與邏輯因果推導。",
+            "**步驟 3**：確認結果。電流 20 A，電阻 5.5 Ω。 ｜為什麼：依據物理學科核心定理與邏輯因果推導。"
+          ],
+          "answer": "工作電流 I = 20 安培 (A)，等效電阻 R = 5.5 歐姆 (Ω)。",
+          "hints": [
+            "分析題目核心條件與物理原理",
+            "比對選項關鍵字與題幹語境，排除干擾項"
+          ],
+          "commonMistake": "容易被字面直譯、表面形近字或直覺誤導，未嚴謹回歸基本定義與邏輯鏈條。",
+          "eliteShortcut": "核心概念破題法：抓住題幹關鍵物理量、化學式或文法結構，直接鎖定正解！"
         }
       ],
-      "illustrations": ['physics-context.webp', 'physics-mechanism.webp', 'physics-comparison.webp', 'physics-step.webp', 'physics-real-world.webp', 'physics-concept-diagram.webp', 'physics-formula-visual.webp'],
+      "illustrations": [
+        "physics-context.webp",
+        "physics-mechanism.webp",
+        "physics-comparison.webp",
+        "physics-step.webp",
+        "physics-real-world.webp",
+        "physics-concept-diagram.webp",
+        "physics-formula-visual.webp"
+      ],
       "concepts": [
         {
           "heading": "歐姆定律與串並聯電路分析 (Ohm's Law & Series-Parallel Circuits)",
@@ -1322,67 +1700,103 @@ export const physicsData: SubjectData = {
           "difficulty": "基礎",
           "question": "某一單相 110V 家用廚房專用分路，同時啟動一台 1100W 的電熱水瓶及一台 880W 的微波爐。(1) 流經該迴路幹線的總電流 I_total 為多少安培？(2) 該分路若配置額定容量 20A 的 NFB 無熔絲開關，是否會發生過載跳脫？",
           "steps": [
-            "計算電熱水瓶電流 I1 = P1 / V = 1100 W / 110 V = 10 A。",
-            "計算微波爐電流 I2 = P2 / V = 880 W / 110 V = 8 A。",
-            "兩電器並聯，總電流 I_total = I1 + I2 = 10 + 8 = 18 A。",
-            "比對 NFB 額定容量：因為 18 A < 20 A，所以電流未超過 20A 額定值，NFB 不會跳脫，運作安全。"
+            "計算電熱水瓶電流 I1 = P1 / V = 1100 W / 110 V = 10 A。 ｜為什麼：依據物理學科核心定理與邏輯因果推導。",
+            "計算微波爐電流 I2 = P2 / V = 880 W / 110 V = 8 A。 ｜為什麼：依據物理學科核心定理與邏輯因果推導。",
+            "兩電器並聯，總電流 I_total = I1 + I2 = 10 + 8 = 18 A。 ｜為什麼：依據物理學科核心定理與邏輯因果推導。",
+            "比對 NFB 額定容量：因為 18 A < 20 A，所以電流未超過 20A 額定值，NFB 不會跳脫，運作安全。 ｜為什麼：依據物理學科核心定理與邏輯因果推導。"
           ],
-          "answer": "總電流 I_total = 18 A，未超過 20A 額定值，不會跳脫"
+          "answer": "總電流 I_total = 18 A，未超過 20A 額定值，不會跳脫",
+          "hints": [
+            "分析題目核心條件與物理原理",
+            "比對選項關鍵字與題幹語境，排除干擾項"
+          ],
+          "commonMistake": "容易被字面直譯、表面形近字或直覺誤導，未嚴謹回歸基本定義與邏輯鏈條。",
+          "eliteShortcut": "核心概念破題法：抓住題幹關鍵物理量、化學式或文法結構，直接鎖定正解！"
         },
         {
           "difficulty": "基礎",
           "question": "一單相降壓變壓器一次側線圈匝數 N₁ = 2200 匝，輸入電壓 V₁ = 2200V。若二次側輸出電壓 V₂ 需為 110V。(1) 計算二次側線圈匝數 N₂ 為多少匝？(2) 若二次側連接 11 kW 負載 (電流 I₂ = 100A)，在不計損耗下一次側電流 I₁ 為多少安培？",
           "steps": [
-            "代入變壓比公式 V₁ / V₂ = N₁ / N₂：",
-            "2200 / 110 = 2200 / N₂ => N₂ = 110 匝。",
-            "代入電流比公式 V₁ · I₁ = V₂ · I₂ (或 N₁ · I₁ = N₂ · I₂)：",
-            "2200V × I₁ = 110V × 100A => 2200 I₁ = 11000 => I₁ = 5 A。"
+            "代入變壓比公式 V₁ / V₂ = N₁ / N₂： ｜為什麼：依據物理學科核心定理與邏輯因果推導。",
+            "2200 / 110 = 2200 / N₂ => N₂ = 110 匝。 ｜為什麼：依據物理學科核心定理與邏輯因果推導。",
+            "代入電流比公式 V₁ · I₁ = V₂ · I₂ (或 N₁ · I₁ = N₂ · I₂)： ｜為什麼：依據物理學科核心定理與邏輯因果推導。",
+            "2200V × I₁ = 110V × 100A => 2200 I₁ = 11000 => I₁ = 5 A。 ｜為什麼：依據物理學科核心定理與邏輯因果推導。"
           ],
-          "answer": "(1) 二次側匝數 N₂ = 110 匝；(2) 一次側電流 I₁ = 5 A"
+          "answer": "(1) 二次側匝數 N₂ = 110 匝；(2) 一次側電流 I₁ = 5 A",
+          "hints": [
+            "分析題目核心條件與物理原理",
+            "比對選項關鍵字與題幹語境，排除干擾項"
+          ],
+          "commonMistake": "容易被字面直譯、表面形近字或直覺誤導，未嚴謹回歸基本定義與邏輯鏈條。",
+          "eliteShortcut": "核心概念破題法：抓住題幹關鍵物理量、化學式或文法結構，直接鎖定正解！"
         },
         {
           "difficulty": "進階",
           "question": "一施工用臨時供電線路長度 L = 100 公尺，採用雙芯銅線 (往返總長度 200 公尺，導線總電阻 R_wire = 0.5 Ω)。當連接一台 220V、消耗電流 I = 20A 的抽水馬達時。(1) 導線上的電壓降 ΔV 及馬達端實際獲得的電壓 V_motor 為多少？(2) 導線上因焦耳熱浪費的電功率 P_loss 為多少瓦特 (W)？",
           "steps": [
-            "計算導線總電壓降 ΔV = I × R_wire = 20 A × 0.5 Ω = 10 V。",
-            "馬達端實際電壓 V_motor = 220 V - 10 V = 210 V (壓降率 = 10/220 = 4.55%)。",
-            "計算導線焦耳熱損耗功率 P_loss = I² × R_wire = (20)² × 0.5 = 400 × 0.5 = 200 W。"
+            "計算導線總電壓降 ΔV = I × R_wire = 20 A × 0.5 Ω = 10 V。 ｜為什麼：依據物理學科核心定理與邏輯因果推導。",
+            "馬達端實際電壓 V_motor = 220 V - 10 V = 210 V (壓降率 = 10/220 = 4.55%)。 ｜為什麼：依據物理學科核心定理與邏輯因果推導。",
+            "計算導線焦耳熱損耗功率 P_loss = I² × R_wire = (20)² × 0.5 = 400 × 0.5 = 200 W。 ｜為什麼：依據物理學科核心定理與邏輯因果推導。"
           ],
-          "answer": "導線壓降 ΔV = 10 V (馬達端 210V)，線路發熱耗損 P_loss = 200 W"
+          "answer": "導線壓降 ΔV = 10 V (馬達端 210V)，線路發熱耗損 P_loss = 200 W",
+          "hints": [
+            "分析題目核心條件與物理原理",
+            "比對選項關鍵字與題幹語境，排除干擾項"
+          ],
+          "commonMistake": "容易被字面直譯、表面形近字或直覺誤導，未嚴謹回歸基本定義與邏輯鏈條。",
+          "eliteShortcut": "核心概念破題法：抓住題幹關鍵物理量、化學式或文法結構，直接鎖定正解！"
         },
         {
           "difficulty": "進階",
           "question": "一商業大樓裝設一具三相 380V、額定功率 P = 30 kW 的空調水冷冰水主機，當前功率因數 cos φ = 0.75。(1) 主機在未改善功率因數前的全載線電流 I_line 為多少安培？(2) 若在主機端加裝進相電容器將功率因數提高至 cos φ' = 0.95，改善後的線電流降為多少安培？(√3 ≒ 1.732)",
           "steps": [
-            "利用三相功率公式 P = √3 · V · I · cos(φ) 求解改善前線電流 I1：",
-            "30,000 W = 1.732 × 380 V × I1 × 0.75 => 30,000 = 493.62 × I1 => I1 ≒ 60.77 A。",
-            "求解功率因數提高至 0.95 後的線電流 I2：",
-            "30,000 W = 1.732 × 380 V × I2 × 0.95 => 30,000 = 625.25 × I2 => I2 ≒ 47.98 A。",
-            "線電流減少量 ΔI = 60.77 - 47.98 = 12.79 A (降低約 21%，有效降低變壓器負擔與線路損耗)。"
+            "利用三相功率公式 P = √3 · V · I · cos(φ) 求解改善前線電流 I1： ｜為什麼：依據物理學科核心定理與邏輯因果推導。",
+            "30,000 W = 1.732 × 380 V × I1 × 0.75 => 30,000 = 493.62 × I1 => I1 ≒ 60.77 A。 ｜為什麼：依據物理學科核心定理與邏輯因果推導。",
+            "求解功率因數提高至 0.95 後的線電流 I2： ｜為什麼：依據物理學科核心定理與邏輯因果推導。",
+            "30,000 W = 1.732 × 380 V × I2 × 0.95 => 30,000 = 625.25 × I2 => I2 ≒ 47.98 A。 ｜為什麼：依據物理學科核心定理與邏輯因果推導。",
+            "線電流減少量 ΔI = 60.77 - 47.98 = 12.79 A (降低約 21%，有效降低變壓器負擔與線路損耗)。 ｜為什麼：依據物理學科核心定理與邏輯因果推導。"
           ],
-          "answer": "改善前電流 I1 ≒ 60.77 A，改善後電流 I2 ≒ 47.98 A (電流降低約 12.79 A)"
+          "answer": "改善前電流 I1 ≒ 60.77 A，改善後電流 I2 ≒ 47.98 A (電流降低約 12.79 A)",
+          "hints": [
+            "分析題目核心條件與物理原理",
+            "比對選項關鍵字與題幹語境，排除干擾項"
+          ],
+          "commonMistake": "容易被字面直譯、表面形近字或直覺誤導，未嚴謹回歸基本定義與邏輯鏈條。",
+          "eliteShortcut": "核心概念破題法：抓住題幹關鍵物理量、化學式或文法結構，直接鎖定正解！"
         },
         {
           "difficulty": "實務應用",
           "question": "一資訊中心機房負載功率 P = 20 kW，配置 48V DC 電池組的在線式 UPS。若要求停電時 UPS 必須依靠電池組持續供電維持 2 小時。假設 UPS 逆變器轉換效率為 90%。(1) 電池組需輸出的總能量為多少 kWh？ (2) 電池組所需最小容量為多少安培小時 (Ah)？",
           "steps": [
-            "計算負載 2 小時總消耗能量 E_load = 20 kW × 2 h = 40 kWh。",
-            "考量逆變器效率 90%，電池組需儲存的能量 E_battery = 40 kWh / 0.9 = 44.44 kWh = 44,444 Wh。",
-            "利用電池組額定電壓 48V 求解最小電量容量 (Ah)：",
-            "Capacity (Ah) = E_battery (Wh) / Voltage (V) = 44,444 Wh / 48 V ≈ 925.92 Ah。"
+            "計算負載 2 小時總消耗能量 E_load = 20 kW × 2 h = 40 kWh。 ｜為什麼：依據物理學科核心定理與邏輯因果推導。",
+            "考量逆變器效率 90%，電池組需儲存的能量 E_battery = 40 kWh / 0.9 = 44.44 kWh = 44,444 Wh。 ｜為什麼：依據物理學科核心定理與邏輯因果推導。",
+            "利用電池組額定電壓 48V 求解最小電量容量 (Ah)： ｜為什麼：依據物理學科核心定理與邏輯因果推導。",
+            "Capacity (Ah) = E_battery (Wh) / Voltage (V) = 44,444 Wh / 48 V ≈ 925.92 Ah。 ｜為什麼：依據物理學科核心定理與邏輯因果推導。"
           ],
-          "answer": "(1) 電池組總能量需求 ≈ 44.44 kWh；(2) 最小電池容量 ≈ 926 Ah"
+          "answer": "(1) 電池組總能量需求 ≈ 44.44 kWh；(2) 最小電池容量 ≈ 926 Ah",
+          "hints": [
+            "分析題目核心條件與物理原理",
+            "比對選項關鍵字與題幹語境，排除干擾項"
+          ],
+          "commonMistake": "容易被字面直譯、表面形近字或直覺誤導，未嚴謹回歸基本定義與邏輯鏈條。",
+          "eliteShortcut": "核心概念破題法：抓住題幹關鍵物理量、化學式或文法結構，直接鎖定正解！"
         },
         {
           "difficulty": "實務應用",
           "question": "一三相四線制 380V / 220V 幹線配電箱，連接三組單相 220V 照明迴路。L1 相電流 I1 = 40A，L2 相電流 I2 = 30A，L3 相電流 I3 = 30A (假設負載功因均為 1.0)。(1) 利用三相向量和公式計算中性線 N 上流過的失衡電流 I_N 為多少安培？(2) 分析若中性線斷路會對單相電器造成的安全危害。",
           "steps": [
-            "三相四線制中性線電流向量公式 I_N = √[ I1² + I2² + I3² - (I1·I2 + I2·I3 + I3·I1) ]。",
-            "代入數值：I_N = √[ 40² + 30² + 30² - (40×30 + 30×30 + 30×40) ]",
-            "I_N = √[ 1600 + 900 + 900 - (1200 + 900 + 1200) ] = √[ 3400 - 3300 ] = √100 = 10 A。",
-            "若中性線 N 斷路，不平衡的三相負載將失去中性點參考位，導致輕負載相電壓暴升至接近 380V，極易燒毀電器設備引電氣火災。"
+            "三相四線制中性線電流向量公式 I_N = √[ I1² + I2² + I3² - (I1·I2 + I2·I3 + I3·I1) ]。 ｜為什麼：依據物理學科核心定理與邏輯因果推導。",
+            "代入數值：I_N = √[ 40² + 30² + 30² - (40×30 + 30×30 + 30×40) ] ｜為什麼：依據物理學科核心定理與邏輯因果推導。",
+            "I_N = √[ 1600 + 900 + 900 - (1200 + 900 + 1200) ] = √[ 3400 - 3300 ] = √100 = 10 A。 ｜為什麼：依據物理學科核心定理與邏輯因果推導。",
+            "若中性線 N 斷路，不平衡的三相負載將失去中性點參考位，導致輕負載相電壓暴升至接近 380V，極易燒毀電器設備引電氣火災。 ｜為什麼：依據物理學科核心定理與邏輯因果推導。"
           ],
-          "answer": "(1) 中性線失衡電流 I_N = 10 A；(2) 中性線斷路會致使不平衡相電壓暴升過壓，毀損電器引發火災"
+          "answer": "(1) 中性線失衡電流 I_N = 10 A；(2) 中性線斷路會致使不平衡相電壓暴升過壓，毀損電器引發火災",
+          "hints": [
+            "分析題目核心條件與物理原理",
+            "比對選項關鍵字與題幹語境，排除干擾項"
+          ],
+          "commonMistake": "容易被字面直譯、表面形近字或直覺誤導，未嚴謹回歸基本定義與邏輯鏈條。",
+          "eliteShortcut": "核心概念破題法：抓住題幹關鍵物理量、化學式或文法結構，直接鎖定正解！"
         }
       ],
       "practice": {
@@ -1395,7 +1809,25 @@ export const physicsData: SubjectData = {
           "比對 NFB 額定容量：因為 18 A < 20 A，所以電流未超過 20A 額定值，NFB 不會跳脫，運作安全。"
         ],
         "answer": "總電流 I_total = 18 A，未超過 20A 額定值，不會跳脫"
-      }
+      },
+      "step0Prerequisites": [
+        "歐姆定律 V = I · R 與電功率 P = V · I = I²R",
+        "基爾霍夫電壓與電流定律 (KVL & KCL)",
+        "交流電有效值與建築三相四線制配電 (220V/380V 或 110V/220V)"
+      ],
+      "fatalTraps": [
+        {
+          "wrongThinking": "並聯電路中電阻越大分得的電流越大。",
+          "correctThinking": "並聯各支路電壓相同，由 I = V/R 知電阻越小電流越大。",
+          "trapDescription": "串聯與並聯電流電壓規律混淆。"
+        }
+      ],
+      "eliteMentalModels": [
+        {
+          "technique": "電路節點電位法 (Nodal Analysis)",
+          "explanation": "選定基準零電位 (接地 GND)，對各節點列 KCL 電流守恆方程式求解電壓。"
+        }
+      ]
     }
   ]
 };

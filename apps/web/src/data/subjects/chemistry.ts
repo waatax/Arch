@@ -1,27 +1,45 @@
 import { SubjectData } from '../types';
 
 export const chemistryData: SubjectData = {
-  "slug": "chemistry",
+  slug: 'chemistry',
   "title": "🧪 化學",
   "category": "自然科學",
   "color": "indigo-600",
   "topics": [
     {
-      "slug": "matter-composition",
+      slug: 'matter-composition',
       "title": "1. 📚 物質的組成與分類",
       "desc": "**<span className='text-rose-600 font-bold'>純物質</span>**與**<span className='text-rose-600 font-bold'>混合物</span>**、原子結構與化學鍵結、塗料/樹脂高分子化學分類、**<span className='text-rose-600 font-bold'>VOCs</span>** 揮發機制與**<span className='text-rose-600 font-bold'>光觸媒</span>**空氣淨化。",
       "status": "done",
-      gradeLevel: 10,
+      "gradeLevel": 10,
       "covered_question_ids": [],
       "worked_examples": [
         {
-          question: '【步驟化例題】塗料高分子與 **<span className="text-rose-600 font-bold">VOCs</span>** 揮發機制：某水性乳膠漆標示總**<span className="text-indigo-600 font-bold">揮發性有機化合物</span>** (**<span className="text-indigo-600 font-bold">TVOC</span>**) 含量為 20 g/L。若一室內牆面塗刷 50 公升該乳膠漆，求施工過程可能散發之最大 **<span className="text-indigo-600 font-bold">TVOC</span>** 重量（克 g）為多少？',
-          difficulty: '基礎',
-          steps: [ "步驟 1：分析 **<span className='text-indigo-600 font-bold'>TVOC</span>** 單位定義。20 g/L 表示每公升塗料含 20 克 **<span className='text-rose-600 font-bold'>VOCs</span>**。", "步驟 2：列計算式。總 **<span className='text-rose-600 font-bold'>VOCs</span>** 重量 = 塗料體積 × 單位 **<span className='text-indigo-600 font-bold'>TVOC</span>** 含量 = 50 L × 20 g/L。", "步驟 3：計算解答。50 × 20 = 1000 g (或 1.0 kg)。" ], 
-          answer: '最大散發 **<span className="text-indigo-600 font-bold">TVOC</span>** 重量為 1000 公克 (1.0 kg)。'
+          "question": "【步驟化例題】塗料高分子與 **<span className=\"text-rose-600 font-bold\">VOCs</span>** 揮發機制：某水性乳膠漆標示總**<span className=\"text-indigo-600 font-bold\">揮發性有機化合物</span>** (**<span className=\"text-indigo-600 font-bold\">TVOC</span>**) 含量為 20 g/L。若一室內牆面塗刷 50 公升該乳膠漆，求施工過程可能散發之最大 **<span className=\"text-indigo-600 font-bold\">TVOC</span>** 重量（克 g）為多少？",
+          "difficulty": "基礎",
+          "steps": [
+            "步驟 1：分析 **<span className='text-indigo-600 font-bold'>TVOC</span>** 單位定義。20 g/L 表示每公升塗料含 20 克 **<span className='text-rose-600 font-bold'>VOCs</span>**。 ｜為什麼：依據化學學科核心定理與邏輯因果推導。",
+            "步驟 2：列計算式。總 **<span className='text-rose-600 font-bold'>VOCs</span>** 重量 = 塗料體積 × 單位 **<span className='text-indigo-600 font-bold'>TVOC</span>** 含量 = 50 L × 20 g/L。 ｜為什麼：依據化學學科核心定理與邏輯因果推導。",
+            "步驟 3：計算解答。50 × 20 = 1000 g (或 1.0 kg)。 ｜為什麼：依據化學學科核心定理與邏輯因果推導。"
+          ],
+          "answer": "最大散發 **<span className=\"text-indigo-600 font-bold\">TVOC</span>** 重量為 1000 公克 (1.0 kg)。",
+          "hints": [
+            "分析題目核心條件與化學原理",
+            "比對選項關鍵字與題幹語境，排除干擾項"
+          ],
+          "commonMistake": "容易被字面直譯、表面形近字或直覺誤導，未嚴謹回歸基本定義與邏輯鏈條。",
+          "eliteShortcut": "核心概念破題法：抓住題幹關鍵物理量、化學式或文法結構，直接鎖定正解！"
         }
       ],
-      "illustrations": ['chemistry-context.webp', 'chemistry-mechanism.webp', 'chemistry-comparison.webp', 'chemistry-step.webp', 'chemistry-real-world.webp', 'concept-diagram.webp', 'formula-visual.webp'],
+      "illustrations": [
+        "chemistry-context.webp",
+        "chemistry-mechanism.webp",
+        "chemistry-comparison.webp",
+        "chemistry-step.webp",
+        "chemistry-real-world.webp",
+        "concept-diagram.webp",
+        "formula-visual.webp"
+      ],
       "concepts": [
         {
           "heading": "物質的分類與建築材料相態 (**<span className='text-rose-600 font-bold'>純物質</span>**與**<span className='text-rose-600 font-bold'>混合物</span>**)",
@@ -143,67 +161,103 @@ export const chemistryData: SubjectData = {
           "difficulty": "基礎",
           "question": "下列何者屬於**<span className='text-rose-600 font-bold'>純物質</span>**？\n(A) 鹽水\n(B) 空氣\n(C) 蒸餾水\n(D) 水性漆 (包含樹脂、顏料與水)",
           "steps": [
-            "分析各選項的化學成分組成。",
-            "鹽水為氯化鈉溶於水，屬均相**<span className='text-rose-600 font-bold'>混合物</span>**。",
-            "空氣包含氮氣、氧氣、氬氣與二氧化碳等多種氣體，屬**<span className='text-rose-600 font-bold'>混合物</span>**。",
-            "水性漆含有高分子樹脂乳液、顏料、助劑與水，屬於多相懸浮**<span className='text-rose-600 font-bold'>混合物</span>**。",
-            "蒸餾水化學式為固定之 H₂O，由氫與氧結合而成之化合物，屬於**<span className='text-rose-600 font-bold'>純物質</span>**。"
+            "分析各選項的化學成分組成。 ｜為什麼：依據化學學科核心定理與邏輯因果推導。",
+            "鹽水為氯化鈉溶於水，屬均相**<span className='text-rose-600 font-bold'>混合物</span>**。 ｜為什麼：依據化學學科核心定理與邏輯因果推導。",
+            "空氣包含氮氣、氧氣、氬氣與二氧化碳等多種氣體，屬**<span className='text-rose-600 font-bold'>混合物</span>**。 ｜為什麼：依據化學學科核心定理與邏輯因果推導。",
+            "水性漆含有高分子樹脂乳液、顏料、助劑與水，屬於多相懸浮**<span className='text-rose-600 font-bold'>混合物</span>**。 ｜為什麼：依據化學學科核心定理與邏輯因果推導。",
+            "蒸餾水化學式為固定之 H₂O，由氫與氧結合而成之化合物，屬於**<span className='text-rose-600 font-bold'>純物質</span>**。 ｜為什麼：依據化學學科核心定理與邏輯因果推導。"
           ],
-          "answer": "(C) 蒸餾水"
+          "answer": "(C) 蒸餾水",
+          "hints": [
+            "分析題目核心條件與化學原理",
+            "比對選項關鍵字與題幹語境，排除干擾項"
+          ],
+          "commonMistake": "容易被字面直譯、表面形近字或直覺誤導，未嚴謹回歸基本定義與邏輯鏈條。",
+          "eliteShortcut": "核心概念破題法：抓住題幹關鍵物理量、化學式或文法結構，直接鎖定正解！"
         },
         {
           "difficulty": "基礎",
           "question": "某建材所含鋼筋組件化學元素分析顯示：鐵原子核內含有 26 個質子與 30 個中子。(1) 該鐵原子的原子序 Z 與**<span className='text-rose-600 font-bold'>質量數</span>** A 分別為何？ (2) 鐵金屬原子之間主要依靠何種化學鍵結合，因而具備優良延展性？",
           "steps": [
-            "原子序 Z 等於**<span className='text-rose-600 font-bold'>質子數</span>**，故 Z = 26 (代表第 26 號元素 鐵 Fe)。",
-            "**<span className='text-rose-600 font-bold'>質量數</span>** A = **<span className='text-rose-600 font-bold'>質子數</span>** Z + **<span className='text-rose-600 font-bold'>中子數</span>** N = 26 + 30 = 56。",
-            "鐵金屬內部金屬原子釋放出價電子形成自由電子海 (Sea of Electrons)，與金屬陽離子間形成「**<span className='text-rose-600 font-bold'>金屬鍵</span>** (Metallic Bond)」，賦予鋼材高強度與延展性。"
+            "原子序 Z 等於**<span className='text-rose-600 font-bold'>質子數</span>**，故 Z = 26 (代表第 26 號元素 鐵 Fe)。 ｜為什麼：依據化學學科核心定理與邏輯因果推導。",
+            "**<span className='text-rose-600 font-bold'>質量數</span>** A = **<span className='text-rose-600 font-bold'>質子數</span>** Z + **<span className='text-rose-600 font-bold'>中子數</span>** N = 26 + 30 = 56。 ｜為什麼：依據化學學科核心定理與邏輯因果推導。",
+            "鐵金屬內部金屬原子釋放出價電子形成自由電子海 (Sea of Electrons)，與金屬陽離子間形成「**<span className='text-rose-600 font-bold'>金屬鍵</span>** (Metallic Bond)」，賦予鋼材高強度與延展性。 ｜為什麼：依據化學學科核心定理與邏輯因果推導。"
           ],
-          "answer": "(1) 原子序 Z = 26，**<span className='text-rose-600 font-bold'>質量數</span>** A = 56；(2) 主要依靠「**<span className='text-rose-600 font-bold'>金屬鍵</span>**」結合"
+          "answer": "(1) 原子序 Z = 26，**<span className='text-rose-600 font-bold'>質量數</span>** A = 56；(2) 主要依靠「**<span className='text-rose-600 font-bold'>金屬鍵</span>**」結合",
+          "hints": [
+            "分析題目核心條件與化學原理",
+            "比對選項關鍵字與題幹語境，排除干擾項"
+          ],
+          "commonMistake": "容易被字面直譯、表面形近字或直覺誤導，未嚴謹回歸基本定義與邏輯鏈條。",
+          "eliteShortcut": "核心概念破題法：抓住題幹關鍵物理量、化學式或文法結構，直接鎖定正解！"
         },
         {
           "difficulty": "進階",
           "question": "某室內塗料樣品含 45% 丙烯酸樹脂、40% 水及 15% 揮發性有機溶劑（以甲苯 C7H8 計）。若於封閉 50 m³ 房間內刷塗 2 kg 此塗料，且溶劑完全揮發至空氣中。已知甲苯分子量為 92 g/mol，在 25°C、1 atm 下氣體莫耳體積為 24.5 L/mol。求：(1) 完全揮發後房間內甲苯的揮發質量 (g)；(2) 空氣中甲苯的體積濃度 (ppmv)。",
           "steps": [
-            "計算塗料中甲苯的揮發質量：塗料總重 = 2 kg = 2000 g。甲苯質量 = 2000 g × 15% = 300 g。",
-            "計算甲苯**<span className='text-rose-600 font-bold'>莫耳數</span>**：n = 300 g / 92 g/mol ≈ 3.261 mol。",
-            "計算甲苯於 25°C、1 atm 下的氣體體積：V_toluene = 3.261 mol × 24.5 L/mol ≈ 79.89 L = 0.07989 m³。",
-            "計算體積 ppm 濃度：ppmv = (氣體體積 / 總空間體積) × 10⁶ = (0.07989 m³ / 50 m³) × 10⁶ = 1,597.8 ppmv ≈ 1598 ppmv。"
+            "計算塗料中甲苯的揮發質量：塗料總重 = 2 kg = 2000 g。甲苯質量 = 2000 g × 15% = 300 g。 ｜為什麼：依據化學學科核心定理與邏輯因果推導。",
+            "計算甲苯**<span className='text-rose-600 font-bold'>莫耳數</span>**：n = 300 g / 92 g/mol ≈ 3.261 mol。 ｜為什麼：依據化學學科核心定理與邏輯因果推導。",
+            "計算甲苯於 25°C、1 atm 下的氣體體積：V_toluene = 3.261 mol × 24.5 L/mol ≈ 79.89 L = 0.07989 m³。 ｜為什麼：依據化學學科核心定理與邏輯因果推導。",
+            "計算體積 ppm 濃度：ppmv = (氣體體積 / 總空間體積) × 10⁶ = (0.07989 m³ / 50 m³) × 10⁶ = 1,597.8 ppmv ≈ 1598 ppmv。 ｜為什麼：依據化學學科核心定理與邏輯因果推導。"
           ],
-          "answer": "(1) 甲苯質量 = 300 g；(2) 體積濃度 ≈ 1598 ppmv (遠超過室內安全標準，需強制通風)"
+          "answer": "(1) 甲苯質量 = 300 g；(2) 體積濃度 ≈ 1598 ppmv (遠超過室內安全標準，需強制通風)",
+          "hints": [
+            "分析題目核心條件與化學原理",
+            "比對選項關鍵字與題幹語境，排除干擾項"
+          ],
+          "commonMistake": "容易被字面直譯、表面形近字或直覺誤導，未嚴謹回歸基本定義與邏輯鏈條。",
+          "eliteShortcut": "核心概念破題法：抓住題幹關鍵物理量、化學式或文法結構，直接鎖定正解！"
         },
         {
           "difficulty": "進階",
           "question": "一面積 30 m² 的牆面塗佈奈米**<span className='text-rose-600 font-bold'>光觸媒</span>** TiO₂ 塗層。若**<span className='text-rose-600 font-bold'>光觸媒</span>**受紫外光照射後，每小時可催化分解 0.005 mol 的游離甲醛 (HCHO，莫耳質量 30 g/mol)。完全反應化學式為：HCHO + O₂ → CO₂ + H₂O。(1) 運轉 10 小時可分解多少公克甲醛？ (2) 反應將生成多少 L 的 CO₂ 氣體 (25°C, 1 atm 下每莫耳 24.5 L)？",
           "steps": [
-            "計算 10 小時內分解的甲醛總**<span className='text-rose-600 font-bold'>莫耳數</span>**：n = 0.005 mol/h × 10 h = 0.05 mol。",
-            "計算分解甲醛質量 m = 0.05 mol × 30 g/mol = 1.50 克。",
-            "根據反應式係數比 1:1，1 mol HCHO 生成 1 mol CO₂，故生成 CO₂ **<span className='text-rose-600 font-bold'>莫耳數</span>** n(CO₂) = 0.05 mol。",
-            "計算生成 CO₂ 氣體體積 V = 0.05 mol × 24.5 L/mol = 1.225 L。"
+            "計算 10 小時內分解的甲醛總**<span className='text-rose-600 font-bold'>莫耳數</span>**：n = 0.005 mol/h × 10 h = 0.05 mol。 ｜為什麼：依據化學學科核心定理與邏輯因果推導。",
+            "計算分解甲醛質量 m = 0.05 mol × 30 g/mol = 1.50 克。 ｜為什麼：依據化學學科核心定理與邏輯因果推導。",
+            "根據反應式係數比 1:1，1 mol HCHO 生成 1 mol CO₂，故生成 CO₂ **<span className='text-rose-600 font-bold'>莫耳數</span>** n(CO₂) = 0.05 mol。 ｜為什麼：依據化學學科核心定理與邏輯因果推導。",
+            "計算生成 CO₂ 氣體體積 V = 0.05 mol × 24.5 L/mol = 1.225 L。 ｜為什麼：依據化學學科核心定理與邏輯因果推導。"
           ],
-          "answer": "(1) 分解甲醛 1.50 克；(2) 生成 1.225 L 二氧化碳"
+          "answer": "(1) 分解甲醛 1.50 克；(2) 生成 1.225 L 二氧化碳",
+          "hints": [
+            "分析題目核心條件與化學原理",
+            "比對選項關鍵字與題幹語境，排除干擾項"
+          ],
+          "commonMistake": "容易被字面直譯、表面形近字或直覺誤導，未嚴謹回歸基本定義與邏輯鏈條。",
+          "eliteShortcut": "核心概念破題法：抓住題幹關鍵物理量、化學式或文法結構，直接鎖定正解！"
         },
         {
           "difficulty": "實務應用",
           "question": "一間 100 m³ 之剛裝修辦公室，剛刷完漆時測得 **<span className='text-indigo-600 font-bold'>TVOC</span>** 初始濃度 C₀ = 8.0 mg/m³。若開啟機械通風換氣系統，使換氣率 ACH = 1.5 h⁻¹ (即每小時換氣 1.5 次)。假設塗料氣體揮發常數 k = 0.05 h⁻¹。利用一階衰減公式 C(t) = C₀ · e^(-(k+ACH)t)，求：(1) 通風運轉 2 小時後，室內 **<span className='text-indigo-600 font-bold'>TVOC</span>** 濃度降低為多少 mg/m³？ (2) 室內 **<span className='text-indigo-600 font-bold'>TVOC</span>** 濃度若要降至綠建築健康標準 0.6 mg/m³ 以下，需持續通風約幾小時？(ln(0.075) ≈ -2.59)",
           "steps": [
-            "總衰減常數 K_total = k + ACH = 0.05 + 1.5 = 1.55 h⁻¹。",
-            "計算 2 小時後濃度：C(2) = 8.0 × e^(-1.55 × 2) = 8.0 × e^(-3.10)。",
-            "因為 e^(-3.10) ≈ 0.04505，故 C(2) = 8.0 × 0.04505 ≈ 0.36 mg/m³。",
-            "計算降至 0.6 mg/m³ 所需時間 t：0.6 = 8.0 × e^(-1.55 · t) => e^(-1.55 · t) = 0.6 / 8.0 = 0.075。",
-            "兩邊取對數：-1.55 · t = ln(0.075) ≈ -2.59 => t = 2.59 / 1.55 ≈ 1.67 小時。"
+            "總衰減常數 K_total = k + ACH = 0.05 + 1.5 = 1.55 h⁻¹。 ｜為什麼：依據化學學科核心定理與邏輯因果推導。",
+            "計算 2 小時後濃度：C(2) = 8.0 × e^(-1.55 × 2) = 8.0 × e^(-3.10)。 ｜為什麼：依據化學學科核心定理與邏輯因果推導。",
+            "因為 e^(-3.10) ≈ 0.04505，故 C(2) = 8.0 × 0.04505 ≈ 0.36 mg/m³。 ｜為什麼：依據化學學科核心定理與邏輯因果推導。",
+            "計算降至 0.6 mg/m³ 所需時間 t：0.6 = 8.0 × e^(-1.55 · t) => e^(-1.55 · t) = 0.6 / 8.0 = 0.075。 ｜為什麼：依據化學學科核心定理與邏輯因果推導。",
+            "兩邊取對數：-1.55 · t = ln(0.075) ≈ -2.59 => t = 2.59 / 1.55 ≈ 1.67 小時。 ｜為什麼：依據化學學科核心定理與邏輯因果推導。"
           ],
-          "answer": "(1) 通風 2 小時後降至約 0.36 mg/m³；(2) 約需持續通風 1.67 小時 (約 100 分鐘) 即可達標"
+          "answer": "(1) 通風 2 小時後降至約 0.36 mg/m³；(2) 約需持續通風 1.67 小時 (約 100 分鐘) 即可達標",
+          "hints": [
+            "分析題目核心條件與化學原理",
+            "比對選項關鍵字與題幹語境，排除干擾項"
+          ],
+          "commonMistake": "容易被字面直譯、表面形近字或直覺誤導，未嚴謹回歸基本定義與邏輯鏈條。",
+          "eliteShortcut": "核心概念破題法：抓住題幹關鍵物理量、化學式或文法結構，直接鎖定正解！"
         },
         {
           "difficulty": "實務應用",
           "question": "某實驗室採用氣候箱法 (CNS 16000) 測試一塊 1 m² 建築夾板的甲醛逸散率。氣候箱體積 1 m³，換氣率 1.0 h⁻¹。測試 28 天後箱內甲醛穩定濃度為 0.05 mg/m³。(1) 求該夾板樣品的甲醛單位面積逸散率 SER (mg/m²·h)；(2) 對照綠建材等級規範（E1 級 SER ≤ 0.08 mg/m²·h，E0 級 SER ≤ 0.005 mg/m²·h），該夾板屬於哪一等級？",
           "steps": [
-            "氣候箱穩定狀態下，逸散率公式 SER = (C_steady × V_chamber × ACH) / A_sample。",
-            "代入數值：SER = (0.05 mg/m³ × 1 m³ × 1.0 h⁻¹) / 1 m² = 0.05 mg/m²·h。",
-            "比對等級：因為 0.05 mg/m²·h ≤ 0.08 mg/m²·h 且 > 0.005 mg/m²·h，故符合 E1 級綠建材標準。"
+            "氣候箱穩定狀態下，逸散率公式 SER = (C_steady × V_chamber × ACH) / A_sample。 ｜為什麼：依據化學學科核心定理與邏輯因果推導。",
+            "代入數值：SER = (0.05 mg/m³ × 1 m³ × 1.0 h⁻¹) / 1 m² = 0.05 mg/m²·h。 ｜為什麼：依據化學學科核心定理與邏輯因果推導。",
+            "比對等級：因為 0.05 mg/m²·h ≤ 0.08 mg/m²·h 且 > 0.005 mg/m²·h，故符合 E1 級綠建材標準。 ｜為什麼：依據化學學科核心定理與邏輯因果推導。"
           ],
-          "answer": "(1) 甲醛逸散率 SER = 0.05 mg/m²·h；(2) 符合 E1 級健康綠建材標準"
+          "answer": "(1) 甲醛逸散率 SER = 0.05 mg/m²·h；(2) 符合 E1 級健康綠建材標準",
+          "hints": [
+            "分析題目核心條件與化學原理",
+            "比對選項關鍵字與題幹語境，排除干擾項"
+          ],
+          "commonMistake": "容易被字面直譯、表面形近字或直覺誤導，未嚴謹回歸基本定義與邏輯鏈條。",
+          "eliteShortcut": "核心概念破題法：抓住題幹關鍵物理量、化學式或文法結構，直接鎖定正解！"
         }
       ],
       "practice": {
@@ -217,24 +271,59 @@ export const chemistryData: SubjectData = {
           "蒸餾水化學式為固定之 H₂O，由氫與氧結合而成之化合物，屬於**<span className='text-rose-600 font-bold'>純物質</span>**。"
         ],
         "answer": "(C) 蒸餾水"
-      }
+      },
+      "step0Prerequisites": [
+        "基本化學元素符號",
+        "莫耳數與化學計量"
+      ],
+      "fatalTraps": [
+        {
+          "wrongThinking": "化學反應式未平衡即進行莫耳數計算。",
+          "correctThinking": "計算前必先平衡方程式係數。",
+          "trapDescription": "化學計量係數遺漏。"
+        }
+      ],
+      "eliteMentalModels": [
+        {
+          "technique": "化學反應本質推理模型",
+          "explanation": "由原子核外電子轉移或共享推論反應路徑。"
+        }
+      ]
     },
     {
-      "slug": "chemical-reactions",
+      slug: 'chemical-reactions',
       "title": "2. 🔍 化學反應與混凝土水化化學",
       "desc": "化學反應式平衡、**<span className='text-rose-600 font-bold'>莫耳數</span>**與化學計量、**<span className='text-rose-600 font-bold'>波特蘭水泥</span>**水化反應 (Concrete Hydration)、**<span className='text-rose-600 font-bold'>波左蘭反應</span>**與**<span className='text-rose-600 font-bold'>絕熱溫升</span>**。",
       "status": "done",
-      gradeLevel: 10,
+      "gradeLevel": 10,
       "covered_question_ids": [],
       "worked_examples": [
         {
-          question: '【步驟化例題】石灰石鍛燒熱化學反應：煅燒石灰石反應 CaCO3(s) → CaO(s) + CO2(g)，其反應熱 ∆H = +178 kJ/mol。若製造 56 公斤生石灰 (CaO, 分子量 56)，需吸收多少千焦耳 (kJ) 的熱量？',
-          difficulty: '中等',
-          steps: [ "步驟 1：計算 CaO **<span className='text-rose-600 font-bold'>莫耳數</span>**。56 kg = 56,000 g。n = 56,000 g / 56 g/mol = 1000 mol。", "步驟 2：列熱化學計算。每生成 1 mol CaO 需吸收 178 kJ。", "步驟 3：求總吸熱量。Q = 1000 mol × 178 kJ/mol = 178,000 kJ (178 MJ)。" ], 
-          answer: '需吸收 178,000 kJ (178 MJ) 的熱量。'
+          "question": "【步驟化例題】石灰石鍛燒熱化學反應：煅燒石灰石反應 CaCO3(s) → CaO(s) + CO2(g)，其反應熱 ∆H = +178 kJ/mol。若製造 56 公斤生石灰 (CaO, 分子量 56)，需吸收多少千焦耳 (kJ) 的熱量？",
+          "difficulty": "中等",
+          "steps": [
+            "步驟 1：計算 CaO **<span className='text-rose-600 font-bold'>莫耳數</span>**。56 kg = 56,000 g。n = 56,000 g / 56 g/mol = 1000 mol。 ｜為什麼：依據化學學科核心定理與邏輯因果推導。",
+            "步驟 2：列熱化學計算。每生成 1 mol CaO 需吸收 178 kJ。 ｜為什麼：依據化學學科核心定理與邏輯因果推導。",
+            "步驟 3：求總吸熱量。Q = 1000 mol × 178 kJ/mol = 178,000 kJ (178 MJ)。 ｜為什麼：依據化學學科核心定理與邏輯因果推導。"
+          ],
+          "answer": "需吸收 178,000 kJ (178 MJ) 的熱量。",
+          "hints": [
+            "分析題目核心條件與化學原理",
+            "比對選項關鍵字與題幹語境，排除干擾項"
+          ],
+          "commonMistake": "容易被字面直譯、表面形近字或直覺誤導，未嚴謹回歸基本定義與邏輯鏈條。",
+          "eliteShortcut": "核心概念破題法：抓住題幹關鍵物理量、化學式或文法結構，直接鎖定正解！"
         }
       ],
-      "illustrations": ['chemistry-context.webp', 'chemistry-mechanism.webp', 'chemistry-comparison.webp', 'chemistry-step.webp', 'chemistry-real-world.webp', 'concept-diagram.webp', 'formula-visual.webp'],
+      "illustrations": [
+        "chemistry-context.webp",
+        "chemistry-mechanism.webp",
+        "chemistry-comparison.webp",
+        "chemistry-step.webp",
+        "chemistry-real-world.webp",
+        "concept-diagram.webp",
+        "formula-visual.webp"
+      ],
       "concepts": [
         {
           "heading": "化學反應平衡與**<span className='text-rose-600 font-bold'>質量守恆定律</span>**",
@@ -319,69 +408,105 @@ export const chemistryData: SubjectData = {
           "difficulty": "基礎",
           "question": "在化學反應 2H₂ + O₂ → 2H₂O 中，若有 8 克的氫氣完全反應，需要多少克的氧氣？（原子量：H=1, O=16）",
           "steps": [
-            "計算 H₂ 分子量 = 1×2 = 2 g/mol。8 g 氫氣**<span className='text-rose-600 font-bold'>莫耳數</span>** n(H₂) = 8 / 2 = 4 mol。",
-            "由平衡化學反應式 2H₂ + O₂ → 2H₂O 可知，H₂ 與 O₂ 莫耳消耗比為 2 : 1。",
-            "所需 O₂ **<span className='text-rose-600 font-bold'>莫耳數</span>** n(O₂) = 4 mol / 2 = 2 mol。",
-            "O₂ 分子量 = 16×2 = 32 g/mol。",
-            "氧氣質量 m = 2 mol × 32 g/mol = 64 克。"
+            "計算 H₂ 分子量 = 1×2 = 2 g/mol。8 g 氫氣**<span className='text-rose-600 font-bold'>莫耳數</span>** n(H₂) = 8 / 2 = 4 mol。 ｜為什麼：依據化學學科核心定理與邏輯因果推導。",
+            "由平衡化學反應式 2H₂ + O₂ → 2H₂O 可知，H₂ 與 O₂ 莫耳消耗比為 2 : 1。 ｜為什麼：依據化學學科核心定理與邏輯因果推導。",
+            "所需 O₂ **<span className='text-rose-600 font-bold'>莫耳數</span>** n(O₂) = 4 mol / 2 = 2 mol。 ｜為什麼：依據化學學科核心定理與邏輯因果推導。",
+            "O₂ 分子量 = 16×2 = 32 g/mol。 ｜為什麼：依據化學學科核心定理與邏輯因果推導。",
+            "氧氣質量 m = 2 mol × 32 g/mol = 64 克。 ｜為什麼：依據化學學科核心定理與邏輯因果推導。"
           ],
-          "answer": "64 克"
+          "answer": "64 克",
+          "hints": [
+            "分析題目核心條件與化學原理",
+            "比對選項關鍵字與題幹語境，排除干擾項"
+          ],
+          "commonMistake": "容易被字面直譯、表面形近字或直覺誤導，未嚴謹回歸基本定義與邏輯鏈條。",
+          "eliteShortcut": "核心概念破題法：抓住題幹關鍵物理量、化學式或文法結構，直接鎖定正解！"
         },
         {
           "difficulty": "基礎",
           "question": "石灰石 (主要成分碳酸鈣 CaCO₃，莫耳質量 100 g/mol) 於高溫水泥窯中煅燒分解為生石灰 (CaO，56 g/mol) 與二氧化碳 (CO₂，44 g/mol)。反應式：CaCO₃ → CaO + CO₂↑。(1) 100 kg 的純碳酸鈣高溫完全分解，可生成多少 kg 的生石灰 CaO？ (2) 釋出多少 kg 的二氧化碳 CO₂？",
           "steps": [
-            "計算 CaCO₃ **<span className='text-rose-600 font-bold'>莫耳數</span>**：質量 m = 100 kg = 100,000 g。n = 100,000 g / 100 g/mol = 1000 mol。",
-            "根據化學反應式係數比 1:1:1，生成 1000 mol CaO 與 1000 mol CO₂。",
-            "生成 CaO 質量 = 1000 mol × 56 g/mol = 56,000 g = 56 kg。",
-            "生成 CO₂ 質量 = 1000 mol × 44 g/mol = 44,000 g = 44 kg。"
+            "計算 CaCO₃ **<span className='text-rose-600 font-bold'>莫耳數</span>**：質量 m = 100 kg = 100,000 g。n = 100,000 g / 100 g/mol = 1000 mol。 ｜為什麼：依據化學學科核心定理與邏輯因果推導。",
+            "根據化學反應式係數比 1:1:1，生成 1000 mol CaO 與 1000 mol CO₂。 ｜為什麼：依據化學學科核心定理與邏輯因果推導。",
+            "生成 CaO 質量 = 1000 mol × 56 g/mol = 56,000 g = 56 kg。 ｜為什麼：依據化學學科核心定理與邏輯因果推導。",
+            "生成 CO₂ 質量 = 1000 mol × 44 g/mol = 44,000 g = 44 kg。 ｜為什麼：依據化學學科核心定理與邏輯因果推導。"
           ],
-          "answer": "(1) 生成生石灰 CaO = 56 kg；(2) 釋出 CO₂ = 44 kg"
+          "answer": "(1) 生成生石灰 CaO = 56 kg；(2) 釋出 CO₂ = 44 kg",
+          "hints": [
+            "分析題目核心條件與化學原理",
+            "比對選項關鍵字與題幹語境，排除干擾項"
+          ],
+          "commonMistake": "容易被字面直譯、表面形近字或直覺誤導，未嚴謹回歸基本定義與邏輯鏈條。",
+          "eliteShortcut": "核心概念破題法：抓住題幹關鍵物理量、化學式或文法結構，直接鎖定正解！"
         },
         {
           "difficulty": "進階",
           "question": "矽酸三鈣 (C₃S，化學式 Ca₃SiO₅，莫耳質量 228.3 g/mol) 是**<span className='text-rose-600 font-bold'>波特蘭水泥</span>**早期強度的主要成分，其完全水化反應式為：2 Ca₃SiO₅ + 11 H₂O → 3CaO·2SiO₂·8H₂O (C-S-H 膠體) + 3 Ca(OH)₂。若有 114.15 kg 之純 C₃S 完全水化：(1) 需消耗多少 kg 的水 (H₂O，莫耳質量 18 g/mol)？ (2) 反應將生成多少 kg 的氫氧化鈣 Ca(OH)₂ (莫耳質量 74.1 g/mol)？",
           "steps": [
-            "計算 C₃S 的**<span className='text-rose-600 font-bold'>莫耳數</span>**：質量 m = 114.15 kg = 114,150 g。n(C₃S) = 114,150 g / 228.3 g/mol = 500 mol。",
-            "根據反應式係數比，2 mol C₃S 消耗 11 mol H₂O 並生成 3 mol Ca(OH)₂。",
-            "(1) 所需 H₂O **<span className='text-rose-600 font-bold'>莫耳數</span>** n(H₂O) = 500 mol × (11 / 2) = 2750 mol。消耗水質量 = 2750 mol × 18 g/mol = 49,500 g = 49.5 kg。",
-            "(2) 生成 Ca(OH)₂ **<span className='text-rose-600 font-bold'>莫耳數</span>** n(Ca(OH)₂) = 500 mol × (3 / 2) = 750 mol。生成氫氧化鈣質量 = 750 mol × 74.1 g/mol = 55,575 g = 55.58 kg。"
+            "計算 C₃S 的**<span className='text-rose-600 font-bold'>莫耳數</span>**：質量 m = 114.15 kg = 114,150 g。n(C₃S) = 114,150 g / 228.3 g/mol = 500 mol。 ｜為什麼：依據化學學科核心定理與邏輯因果推導。",
+            "根據反應式係數比，2 mol C₃S 消耗 11 mol H₂O 並生成 3 mol Ca(OH)₂。 ｜為什麼：依據化學學科核心定理與邏輯因果推導。",
+            "(1) 所需 H₂O **<span className='text-rose-600 font-bold'>莫耳數</span>** n(H₂O) = 500 mol × (11 / 2) = 2750 mol。消耗水質量 = 2750 mol × 18 g/mol = 49,500 g = 49.5 kg。 ｜為什麼：依據化學學科核心定理與邏輯因果推導。",
+            "(2) 生成 Ca(OH)₂ **<span className='text-rose-600 font-bold'>莫耳數</span>** n(Ca(OH)₂) = 500 mol × (3 / 2) = 750 mol。生成氫氧化鈣質量 = 750 mol × 74.1 g/mol = 55,575 g = 55.58 kg。 ｜為什麼：依據化學學科核心定理與邏輯因果推導。"
           ],
-          "answer": "(1) 消耗水 = 49.5 kg；(2) 生成 Ca(OH)₂ = 55.58 kg"
+          "answer": "(1) 消耗水 = 49.5 kg；(2) 生成 Ca(OH)₂ = 55.58 kg",
+          "hints": [
+            "分析題目核心條件與化學原理",
+            "比對選項關鍵字與題幹語境，排除干擾項"
+          ],
+          "commonMistake": "容易被字面直譯、表面形近字或直覺誤導，未嚴謹回歸基本定義與邏輯鏈條。",
+          "eliteShortcut": "核心概念破題法：抓住題幹關鍵物理量、化學式或文法結構，直接鎖定正解！"
         },
         {
           "difficulty": "進階",
           "question": "混凝土中加入飛灰 (Fly Ash) 進行二次**<span className='text-rose-600 font-bold'>波左蘭反應</span>**：Ca(OH)₂ (74.1 g/mol) + SiO₂ (60.1 g/mol) + H₂O → C-S-H 膠體。若水泥水化產生了 37.05 kg 的氫氧化鈣 Ca(OH)₂，理論上需多少 kg 的活性二氧化矽 SiO₂ 才能將其完全反應轉化為 C-S-H 膠體？",
           "steps": [
-            "計算 Ca(OH)₂ **<span className='text-rose-600 font-bold'>莫耳數</span>**：n = 37,050 g / 74.1 g/mol = 500 mol。",
-            "**<span className='text-rose-600 font-bold'>波左蘭反應</span>**中，Ca(OH)₂ 與活性 SiO₂ 莫耳消耗比為 1 : 1。",
-            "需要活性 SiO₂ **<span className='text-rose-600 font-bold'>莫耳數</span>** n(SiO₂) = 500 mol。",
-            "計算所需 SiO₂ 質量 = 500 mol × 60.1 g/mol = 30,050 g = 30.05 kg。"
+            "計算 Ca(OH)₂ **<span className='text-rose-600 font-bold'>莫耳數</span>**：n = 37,050 g / 74.1 g/mol = 500 mol。 ｜為什麼：依據化學學科核心定理與邏輯因果推導。",
+            "**<span className='text-rose-600 font-bold'>波左蘭反應</span>**中，Ca(OH)₂ 與活性 SiO₂ 莫耳消耗比為 1 : 1。 ｜為什麼：依據化學學科核心定理與邏輯因果推導。",
+            "需要活性 SiO₂ **<span className='text-rose-600 font-bold'>莫耳數</span>** n(SiO₂) = 500 mol。 ｜為什麼：依據化學學科核心定理與邏輯因果推導。",
+            "計算所需 SiO₂ 質量 = 500 mol × 60.1 g/mol = 30,050 g = 30.05 kg。 ｜為什麼：依據化學學科核心定理與邏輯因果推導。"
           ],
-          "answer": "需要 30.05 kg 的活性二氧化矽 SiO₂"
+          "answer": "需要 30.05 kg 的活性二氧化矽 SiO₂",
+          "hints": [
+            "分析題目核心條件與化學原理",
+            "比對選項關鍵字與題幹語境，排除干擾項"
+          ],
+          "commonMistake": "容易被字面直譯、表面形近字或直覺誤導，未嚴謹回歸基本定義與邏輯鏈條。",
+          "eliteShortcut": "核心概念破題法：抓住題幹關鍵物理量、化學式或文法結構，直接鎖定正解！"
         },
         {
           "difficulty": "實務應用",
           "question": "一高樓筏基厚 2.0 公尺的巨體積混凝土澆置工程，每立方米混凝土含有 350 kg 的水泥。假設水泥累計水化放熱量 Q = 360 J/g (360 kJ/kg)，混凝土比熱 c = 1.0 kJ/(kg·K)，混凝土密度 ρ = 2400 kg/m³。若在絕熱狀態下，(1) 每立方米混凝土水化累積釋放總熱量為多少 kJ？ (2) 該巨體積混凝土內部的**<span className='text-rose-600 font-bold'>絕熱溫升</span>** ΔT 為多少 °C (K)？",
           "steps": [
-            "計算 1 m³ 混凝土中水泥放熱量 Q_total = 350 kg × 360 kJ/kg = 126,000 kJ。",
-            "計算 1 m³ 混凝土總質量 m_total = 2400 kg。",
-            "利用溫升公式 ΔT = Q_total / (m_total × c)：",
-            "ΔT = 126,000 kJ / (2400 kg × 1.0 kJ/kg·K) = 126,000 / 2400 = 52.5 °C (K)。",
-            "結論：若無降溫對策，內部將急劇升溫 52.5°C，易引發強烈熱應力開裂。"
+            "計算 1 m³ 混凝土中水泥放熱量 Q_total = 350 kg × 360 kJ/kg = 126,000 kJ。 ｜為什麼：依據化學學科核心定理與邏輯因果推導。",
+            "計算 1 m³ 混凝土總質量 m_total = 2400 kg。 ｜為什麼：依據化學學科核心定理與邏輯因果推導。",
+            "利用溫升公式 ΔT = Q_total / (m_total × c)： ｜為什麼：依據化學學科核心定理與邏輯因果推導。",
+            "ΔT = 126,000 kJ / (2400 kg × 1.0 kJ/kg·K) = 126,000 / 2400 = 52.5 °C (K)。 ｜為什麼：依據化學學科核心定理與邏輯因果推導。",
+            "結論：若無降溫對策，內部將急劇升溫 52.5°C，易引發強烈熱應力開裂。 ｜為什麼：依據化學學科核心定理與邏輯因果推導。"
           ],
-          "answer": "(1) 釋放總熱量 = 126,000 kJ/m³；(2) **<span className='text-rose-600 font-bold'>絕熱溫升</span>** ΔT = 52.5 °C"
+          "answer": "(1) 釋放總熱量 = 126,000 kJ/m³；(2) **<span className='text-rose-600 font-bold'>絕熱溫升</span>** ΔT = 52.5 °C",
+          "hints": [
+            "分析題目核心條件與化學原理",
+            "比對選項關鍵字與題幹語境，排除干擾項"
+          ],
+          "commonMistake": "容易被字面直譯、表面形近字或直覺誤導，未嚴謹回歸基本定義與邏輯鏈條。",
+          "eliteShortcut": "核心概念破題法：抓住題幹關鍵物理量、化學式或文法結構，直接鎖定正解！"
         },
         {
           "difficulty": "實務應用",
           "question": "在高性能混凝土 (HPC) 調配中，拌合水灰比 W/C = 0.35。若使用了 400 kg 的 Portland 水泥，已知水泥完全水化所需的理論最小化學結合水灰比約為 0.23，其餘水份留存於孔隙中。(1) 400 kg 水泥完全水化需消耗多少 kg 的化學結合水？ (2) 剩餘的蒸發毛細孔隙水為多少 kg？",
           "steps": [
-            "總拌水量 W_total = 水泥量 × 拌合水灰比 = 400 kg × 0.35 = 140 kg。",
-            "化學結合水 W_bound = 水泥量 × 理論結合水灰比 = 400 kg × 0.23 = 92 kg。",
-            "剩餘毛細孔隙水 W_capillary = W_total - W_bound = 140 kg - 92 kg = 48 kg。",
-            "結論：剩餘 48 kg 水會在硬化過程中形成毛細孔隙，降低水灰比能有效減少毛細孔，提升強度與緻密性。"
+            "總拌水量 W_total = 水泥量 × 拌合水灰比 = 400 kg × 0.35 = 140 kg。 ｜為什麼：依據化學學科核心定理與邏輯因果推導。",
+            "化學結合水 W_bound = 水泥量 × 理論結合水灰比 = 400 kg × 0.23 = 92 kg。 ｜為什麼：依據化學學科核心定理與邏輯因果推導。",
+            "剩餘毛細孔隙水 W_capillary = W_total - W_bound = 140 kg - 92 kg = 48 kg。 ｜為什麼：依據化學學科核心定理與邏輯因果推導。",
+            "結論：剩餘 48 kg 水會在硬化過程中形成毛細孔隙，降低水灰比能有效減少毛細孔，提升強度與緻密性。 ｜為什麼：依據化學學科核心定理與邏輯因果推導。"
           ],
-          "answer": "(1) 化學結合水 = 92 kg；(2) 剩餘毛細孔隙水 = 48 kg"
+          "answer": "(1) 化學結合水 = 92 kg；(2) 剩餘毛細孔隙水 = 48 kg",
+          "hints": [
+            "分析題目核心條件與化學原理",
+            "比對選項關鍵字與題幹語境，排除干擾項"
+          ],
+          "commonMistake": "容易被字面直譯、表面形近字或直覺誤導，未嚴謹回歸基本定義與邏輯鏈條。",
+          "eliteShortcut": "核心概念破題法：抓住題幹關鍵物理量、化學式或文法結構，直接鎖定正解！"
         }
       ],
       "practice": {
@@ -395,24 +520,60 @@ export const chemistryData: SubjectData = {
           "氧氣質量 m = 2 mol × 32 g/mol = 64 克。"
         ],
         "answer": "64 克"
-      }
+      },
+      "step0Prerequisites": [
+        "化學方程式平衡與莫耳數 (Mole) 概念",
+        "化學計量質量守恆定律",
+        "放熱反應 (ΔH < 0) 與吸熱反應 (ΔH > 0) 之熱化學方程式"
+      ],
+      "fatalTraps": [
+        {
+          "wrongThinking": "化學反應平衡時，反應物與生成物濃度必須相等。",
+          "correctThinking": "化學平衡指正逆反應速率相等，各物質濃度維持恆定，而非濃度相等。",
+          "trapDescription": "動態平衡本質概念常考陷阱。"
+        }
+      ],
+      "eliteMentalModels": [
+        {
+          "technique": "莫耳數中樞橋樑法",
+          "explanation": "質量 (g) ÷ 分子量 ＝ 莫耳數 (mol) ＝ 氣體體積 (L) ÷ 22.4 (STP) ＝ 粒子數 ÷ 6.02×10²³。"
+        }
+      ]
     },
     {
-      "slug": "acids-bases-salts",
+      slug: 'acids-bases-salts',
       "title": "3. ⚡ 酸鹼化學與混凝土**<span className='text-rose-600 font-bold'>中性化</span>**",
       "desc": "酸鹼理論與 **<span className='text-rose-600 font-bold'>pH 值</span>**計算、混凝土碳化/**<span className='text-rose-600 font-bold'>中性化</span>**機制、**<span className='text-rose-600 font-bold'>酸雨</span>**石材腐蝕、**<span className='text-rose-600 font-bold'>硫酸鹽侵蝕</span>**與鋼筋鈍化膜。",
       "status": "done",
-      gradeLevel: 10,
+      "gradeLevel": 10,
       "covered_question_ids": [],
       "worked_examples": [
         {
-          question: '【步驟化例題】**<span className="text-rose-600 font-bold">酸雨</span>**侵蝕大理石化學計算：大理石主成分為碳酸鈣 (CaCO3)。若**<span className="text-rose-600 font-bold">酸雨</span>**中含有 0.05 M 之稀硫酸 (H2SO4)，反應式為 CaCO3 + H2SO4 → CaSO4 + H2O + CO2。10 公升該**<span className="text-rose-600 font-bold">酸雨</span>**最多可溶解多少公克碳酸鈣？(Ca=40, C=12, O=16)',
-          difficulty: '中等',
-          steps: [ "步驟 1：計算 H2SO4 **<span className='text-rose-600 font-bold'>莫耳數</span>**。n = M × V = 0.05 mol/L × 10 L = 0.5 mol。", "步驟 2：由**<span className='text-rose-600 font-bold'>莫耳數</span>**比 (1:1) 求溶解之 CaCO3 **<span className='text-rose-600 font-bold'>莫耳數</span>** = 0.5 mol。", "步驟 3：**<span className='text-rose-600 font-bold'>莫耳數</span>**換算質量。CaCO3 分子量 100。m = 0.5 mol × 100 g/mol = 50 g。" ], 
-          answer: '最多可溶解 50 公克碳酸鈣。'
+          "question": "【步驟化例題】**<span className=\"text-rose-600 font-bold\">酸雨</span>**侵蝕大理石化學計算：大理石主成分為碳酸鈣 (CaCO3)。若**<span className=\"text-rose-600 font-bold\">酸雨</span>**中含有 0.05 M 之稀硫酸 (H2SO4)，反應式為 CaCO3 + H2SO4 → CaSO4 + H2O + CO2。10 公升該**<span className=\"text-rose-600 font-bold\">酸雨</span>**最多可溶解多少公克碳酸鈣？(Ca=40, C=12, O=16)",
+          "difficulty": "中等",
+          "steps": [
+            "步驟 1：計算 H2SO4 **<span className='text-rose-600 font-bold'>莫耳數</span>**。n = M × V = 0.05 mol/L × 10 L = 0.5 mol。 ｜為什麼：依據化學學科核心定理與邏輯因果推導。",
+            "步驟 2：由**<span className='text-rose-600 font-bold'>莫耳數</span>**比 (1:1) 求溶解之 CaCO3 **<span className='text-rose-600 font-bold'>莫耳數</span>** = 0.5 mol。 ｜為什麼：依據化學學科核心定理與邏輯因果推導。",
+            "步驟 3：**<span className='text-rose-600 font-bold'>莫耳數</span>**換算質量。CaCO3 分子量 100。m = 0.5 mol × 100 g/mol = 50 g。 ｜為什麼：依據化學學科核心定理與邏輯因果推導。"
+          ],
+          "answer": "最多可溶解 50 公克碳酸鈣。",
+          "hints": [
+            "分析題目核心條件與化學原理",
+            "比對選項關鍵字與題幹語境，排除干擾項"
+          ],
+          "commonMistake": "容易被字面直譯、表面形近字或直覺誤導，未嚴謹回歸基本定義與邏輯鏈條。",
+          "eliteShortcut": "核心概念破題法：抓住題幹關鍵物理量、化學式或文法結構，直接鎖定正解！"
         }
       ],
-      "illustrations": ['chemistry-context.webp', 'chemistry-mechanism.webp', 'chemistry-comparison.webp', 'chemistry-step.webp', 'chemistry-real-world.webp', 'concept-diagram.webp', 'formula-visual.webp'],
+      "illustrations": [
+        "chemistry-context.webp",
+        "chemistry-mechanism.webp",
+        "chemistry-comparison.webp",
+        "chemistry-step.webp",
+        "chemistry-real-world.webp",
+        "concept-diagram.webp",
+        "formula-visual.webp"
+      ],
       "concepts": [
         {
           "heading": "酸鹼定義 (**<span className='text-rose-600 font-bold'>阿瑞尼斯</span>**與**<span className='text-rose-600 font-bold'>布忍斯特-勞里</span>**學說)",
@@ -502,74 +663,110 @@ export const chemistryData: SubjectData = {
           "difficulty": "基礎",
           "question": "若 25°C 時某水溶液中 [H⁺] 濃度為 1.0 × 10⁻⁴ M，試計算該溶液的 **<span className='text-rose-600 font-bold'>pH 值</span>**與 [OH⁻] 離子濃度。",
           "steps": [
-            "代入 pH 計算公式：pH = -log[H⁺] = -log(1.0 × 10⁻⁴) = 4.0。",
-            "利用 25°C 下水之離子積常數 Kw = [H⁺][OH⁻] = 1.0 × 10⁻¹⁴。",
-            "解出 [OH⁻] = 1.0 × 10⁻¹⁴ / 1.0 × 10⁻⁴ = 1.0 × 10⁻¹⁰ M。",
-            "溶液 pH < 7，呈酸性。"
+            "代入 pH 計算公式：pH = -log[H⁺] = -log(1.0 × 10⁻⁴) = 4.0。 ｜為什麼：依據化學學科核心定理與邏輯因果推導。",
+            "利用 25°C 下水之離子積常數 Kw = [H⁺][OH⁻] = 1.0 × 10⁻¹⁴。 ｜為什麼：依據化學學科核心定理與邏輯因果推導。",
+            "解出 [OH⁻] = 1.0 × 10⁻¹⁴ / 1.0 × 10⁻⁴ = 1.0 × 10⁻¹⁰ M。 ｜為什麼：依據化學學科核心定理與邏輯因果推導。",
+            "溶液 pH < 7，呈酸性。 ｜為什麼：依據化學學科核心定理與邏輯因果推導。"
           ],
-          "answer": "pH = 4.0，[OH⁻] = 1.0 × 10⁻¹⁰ M"
+          "answer": "pH = 4.0，[OH⁻] = 1.0 × 10⁻¹⁰ M",
+          "hints": [
+            "分析題目核心條件與化學原理",
+            "比對選項關鍵字與題幹語境，排除干擾項"
+          ],
+          "commonMistake": "容易被字面直譯、表面形近字或直覺誤導，未嚴謹回歸基本定義與邏輯鏈條。",
+          "eliteShortcut": "核心概念破題法：抓住題幹關鍵物理量、化學式或文法結構，直接鎖定正解！"
         },
         {
           "difficulty": "基礎",
           "question": "將 0.1 M 的鹽酸 (HCl) 水溶液 100 mL 與 0.1 M 的氫氧化鈉 (NaOH) 水溶液 50 mL 混合。(1) 混合後剩餘的 H⁺ **<span className='text-rose-600 font-bold'>莫耳數</span>**為多少 mol？ (2) 混合溶液總體積為 150 mL 時，溶液的 **<span className='text-rose-600 font-bold'>pH 值</span>**大約為何？(已知 log 3 ≈ 0.48)",
           "steps": [
-            "計算初始 H⁺ **<span className='text-rose-600 font-bold'>莫耳數</span>** n(H⁺) = 0.1 M × 0.1 L = 0.01 mol。",
-            "計算初始 OH⁻ **<span className='text-rose-600 font-bold'>莫耳數</span>** n(OH⁻) = 0.1 M × 0.05 L = 0.005 mol。",
-            "發生酸鹼中和反應 H⁺ + OH⁻ → H₂O，剩餘 H⁺ **<span className='text-rose-600 font-bold'>莫耳數</span>** = 0.01 - 0.005 = 0.005 mol。",
-            "計算混合後 H⁺ 莫耳濃度 [H⁺] = 0.005 mol / 0.15 L = 1/30 M ≈ 0.0333 M。",
-            "計算 pH = -log(1/30) = log(30) = log(3 × 10) = 1 + log 3 ≈ 1 + 0.48 = 1.48。"
+            "計算初始 H⁺ **<span className='text-rose-600 font-bold'>莫耳數</span>** n(H⁺) = 0.1 M × 0.1 L = 0.01 mol。 ｜為什麼：依據化學學科核心定理與邏輯因果推導。",
+            "計算初始 OH⁻ **<span className='text-rose-600 font-bold'>莫耳數</span>** n(OH⁻) = 0.1 M × 0.05 L = 0.005 mol。 ｜為什麼：依據化學學科核心定理與邏輯因果推導。",
+            "發生酸鹼中和反應 H⁺ + OH⁻ → H₂O，剩餘 H⁺ **<span className='text-rose-600 font-bold'>莫耳數</span>** = 0.01 - 0.005 = 0.005 mol。 ｜為什麼：依據化學學科核心定理與邏輯因果推導。",
+            "計算混合後 H⁺ 莫耳濃度 [H⁺] = 0.005 mol / 0.15 L = 1/30 M ≈ 0.0333 M。 ｜為什麼：依據化學學科核心定理與邏輯因果推導。",
+            "計算 pH = -log(1/30) = log(30) = log(3 × 10) = 1 + log 3 ≈ 1 + 0.48 = 1.48。 ｜為什麼：依據化學學科核心定理與邏輯因果推導。"
           ],
-          "answer": "(1) 剩餘 H⁺ = 0.005 mol；(2) 混合溶液 pH ≈ 1.48 (呈酸性)"
+          "answer": "(1) 剩餘 H⁺ = 0.005 mol；(2) 混合溶液 pH ≈ 1.48 (呈酸性)",
+          "hints": [
+            "分析題目核心條件與化學原理",
+            "比對選項關鍵字與題幹語境，排除干擾項"
+          ],
+          "commonMistake": "容易被字面直譯、表面形近字或直覺誤導，未嚴謹回歸基本定義與邏輯鏈條。",
+          "eliteShortcut": "核心概念破題法：抓住題幹關鍵物理量、化學式或文法結構，直接鎖定正解！"
         },
         {
           "difficulty": "進階",
           "question": "混凝土保護層厚度為 40 mm。在大氣環境下 CO₂ 滲入混凝土發生碳化**<span className='text-rose-600 font-bold'>中性化</span>**反應：Ca(OH)₂ + CO₂ → CaCO₃ + H₂O。若已知混凝土硬化體中包含 5% 重量的游離 Ca(OH)₂ (以每 m³ 混凝土含 300 kg 水泥計算，即含 15 kg/m³ 的 Ca(OH)₂，莫耳質量 74.1 g/mol)。(1) 每立方米混凝土完全**<span className='text-rose-600 font-bold'>中性化</span>**需吸收多少 kg 之 CO₂ (莫耳質量 44 g/mol)？ (2) 若將 1.0 M 的 HCl 100 mL 滴入含有 0.01 mol Ca(OH)₂ 的萃取液中，完全**<span className='text-rose-600 font-bold'>中性化</span>**反應後溶液的 **<span className='text-rose-600 font-bold'>pH 值</span>**為何？",
           "steps": [
-            "(1) 計算每 m³ 混凝土中 Ca(OH)₂ 的**<span className='text-rose-600 font-bold'>莫耳數</span>**：n = 15,000 g / 74.1 g/mol ≈ 202.43 mol。",
-            "根據化學反應 Ca(OH)₂ + CO₂ → CaCO₃ + H₂O，1 mol Ca(OH)₂ 吸收 1 mol CO₂。",
-            "需要 CO₂ **<span className='text-rose-600 font-bold'>莫耳數</span>** = 202.43 mol。CO₂ 質量 = 202.43 mol × 44 g/mol ≈ 8,906.9 g ≈ 8.91 kg。",
-            "(2) 計算 HCl 中 H⁺ **<span className='text-rose-600 font-bold'>莫耳數</span>**：0.1 L × 1.0 M = 0.1 mol H⁺。",
-            "0.01 mol Ca(OH)₂ 含有 0.02 mol OH⁻。",
-            "中和反應 H⁺ + OH⁻ → H₂O，H⁺ 過量：剩餘 H⁺ = 0.1 - 0.02 = 0.08 mol。",
-            "混合後假設溶液總體積約為 0.1 L，則 [H⁺] = 0.08 mol / 0.1 L = 0.8 M。",
-            "pH = -log(0.8) = -log(8/10) = -(3log2 - 1) = 1 - 3(0.301) = 1 - 0.903 = 0.097 ≈ 0.10。"
+            "(1) 計算每 m³ 混凝土中 Ca(OH)₂ 的**<span className='text-rose-600 font-bold'>莫耳數</span>**：n = 15,000 g / 74.1 g/mol ≈ 202.43 mol。 ｜為什麼：依據化學學科核心定理與邏輯因果推導。",
+            "根據化學反應 Ca(OH)₂ + CO₂ → CaCO₃ + H₂O，1 mol Ca(OH)₂ 吸收 1 mol CO₂。 ｜為什麼：依據化學學科核心定理與邏輯因果推導。",
+            "需要 CO₂ **<span className='text-rose-600 font-bold'>莫耳數</span>** = 202.43 mol。CO₂ 質量 = 202.43 mol × 44 g/mol ≈ 8,906.9 g ≈ 8.91 kg。 ｜為什麼：依據化學學科核心定理與邏輯因果推導。",
+            "(2) 計算 HCl 中 H⁺ **<span className='text-rose-600 font-bold'>莫耳數</span>**：0.1 L × 1.0 M = 0.1 mol H⁺。 ｜為什麼：依據化學學科核心定理與邏輯因果推導。",
+            "0.01 mol Ca(OH)₂ 含有 0.02 mol OH⁻。 ｜為什麼：依據化學學科核心定理與邏輯因果推導。",
+            "中和反應 H⁺ + OH⁻ → H₂O，H⁺ 過量：剩餘 H⁺ = 0.1 - 0.02 = 0.08 mol。 ｜為什麼：依據化學學科核心定理與邏輯因果推導。",
+            "混合後假設溶液總體積約為 0.1 L，則 [H⁺] = 0.08 mol / 0.1 L = 0.8 M。 ｜為什麼：依據化學學科核心定理與邏輯因果推導。",
+            "pH = -log(0.8) = -log(8/10) = -(3log2 - 1) = 1 - 3(0.301) = 1 - 0.903 = 0.097 ≈ 0.10。 ｜為什麼：依據化學學科核心定理與邏輯因果推導。"
           ],
-          "answer": "(1) 每 m³ 吸收 CO₂ ≈ 8.91 kg；(2) 中和後溶液 pH ≈ 0.10 (強酸性)"
+          "answer": "(1) 每 m³ 吸收 CO₂ ≈ 8.91 kg；(2) 中和後溶液 pH ≈ 0.10 (強酸性)",
+          "hints": [
+            "分析題目核心條件與化學原理",
+            "比對選項關鍵字與題幹語境，排除干擾項"
+          ],
+          "commonMistake": "容易被字面直譯、表面形近字或直覺誤導，未嚴謹回歸基本定義與邏輯鏈條。",
+          "eliteShortcut": "核心概念破題法：抓住題幹關鍵物理量、化學式或文法結構，直接鎖定正解！"
         },
         {
           "difficulty": "進階",
           "question": "古蹟建築大理石雕刻外牆 (主要成分 CaCO₃ 100 g/mol) 長年受**<span className='text-rose-600 font-bold'>酸雨</span>** (含 H₂SO₄ 98 g/mol) 侵蝕，發生化學反應：CaCO₃ + H₂SO₄ → CaSO₄ + CO₂↑ + H₂O。若某一地區每年降下**<span className='text-rose-600 font-bold'>酸雨</span>**帶給該外牆 9.8 kg 的純 H₂SO₄。(1) 每年因**<span className='text-rose-600 font-bold'>酸雨</span>**侵蝕損耗的大理石 CaCO₃ 質量為多少 kg？ (2) 每年反應釋放出的 CO₂ 氣體在 25°C, 1 atm 下為多少 L (莫耳體積 24.5 L/mol)？",
           "steps": [
-            "計算 H₂SO₄ 的**<span className='text-rose-600 font-bold'>莫耳數</span>**：n(H₂SO₄) = 9,800 g / 98 g/mol = 100 mol。",
-            "根據反應式係數比 1:1，消耗 100 mol CaCO₃ 並生成 100 mol CO₂。",
-            "損耗大理石質量 m(CaCO₃) = 100 mol × 100 g/mol = 10,000 g = 10.0 kg。",
-            "生成 CO₂ 氣體體積 V = 100 mol × 24.5 L/mol = 2450 L = 2.45 m³。"
+            "計算 H₂SO₄ 的**<span className='text-rose-600 font-bold'>莫耳數</span>**：n(H₂SO₄) = 9,800 g / 98 g/mol = 100 mol。 ｜為什麼：依據化學學科核心定理與邏輯因果推導。",
+            "根據反應式係數比 1:1，消耗 100 mol CaCO₃ 並生成 100 mol CO₂。 ｜為什麼：依據化學學科核心定理與邏輯因果推導。",
+            "損耗大理石質量 m(CaCO₃) = 100 mol × 100 g/mol = 10,000 g = 10.0 kg。 ｜為什麼：依據化學學科核心定理與邏輯因果推導。",
+            "生成 CO₂ 氣體體積 V = 100 mol × 24.5 L/mol = 2450 L = 2.45 m³。 ｜為什麼：依據化學學科核心定理與邏輯因果推導。"
           ],
-          "answer": "(1) 每年損耗大理石 10.0 kg；(2) 釋放 CO₂ 氣體 2450 L (2.45 m³)"
+          "answer": "(1) 每年損耗大理石 10.0 kg；(2) 釋放 CO₂ 氣體 2450 L (2.45 m³)",
+          "hints": [
+            "分析題目核心條件與化學原理",
+            "比對選項關鍵字與題幹語境，排除干擾項"
+          ],
+          "commonMistake": "容易被字面直譯、表面形近字或直覺誤導，未嚴謹回歸基本定義與邏輯鏈條。",
+          "eliteShortcut": "核心概念破題法：抓住題幹關鍵物理量、化學式或文法結構，直接鎖定正解！"
         },
         {
           "difficulty": "實務應用",
           "question": "某一沿海建築梁構件保護層厚度 x_cover = 35 mm (3.5 cm)。實測經過 9 年的大氣暴露後，酚酞測試顯示碳化深度已達到 x₁ = 15 mm (1.5 cm)。假設碳化遵從平方根公式 x = k · √t。(1) 求解該混凝土之碳化速率係數 k (mm/年^0.5)；(2) 預估再過多少年，**<span className='text-rose-600 font-bold'>中性化</span>**碳化界面會接觸到鋼筋表面 (即 x = 35 mm)？",
           "steps": [
-            "代入 x₁ = 15 mm, t₁ = 9 年，求 k：15 = k · √9 => 15 = k · 3 => k = 5.0 mm/年^0.5。",
-            "求解碳化達到 35 mm 所需的總時間 t_total：",
-            "35 = 5.0 · √t_total => √t_total = 7 => t_total = 49 年。",
-            "計算還需經過的年數 Δt = t_total - t₁ = 49 - 9 = 40 年。"
+            "代入 x₁ = 15 mm, t₁ = 9 年，求 k：15 = k · √9 => 15 = k · 3 => k = 5.0 mm/年^0.5。 ｜為什麼：依據化學學科核心定理與邏輯因果推導。",
+            "求解碳化達到 35 mm 所需的總時間 t_total： ｜為什麼：依據化學學科核心定理與邏輯因果推導。",
+            "35 = 5.0 · √t_total => √t_total = 7 => t_total = 49 年。 ｜為什麼：依據化學學科核心定理與邏輯因果推導。",
+            "計算還需經過的年數 Δt = t_total - t₁ = 49 - 9 = 40 年。 ｜為什麼：依據化學學科核心定理與邏輯因果推導。"
           ],
-          "answer": "(1) 碳化速率係數 k = 5.0 mm/年^0.5；(2) 約再過 40 年後碳化深抵鋼筋表面"
+          "answer": "(1) 碳化速率係數 k = 5.0 mm/年^0.5；(2) 約再過 40 年後碳化深抵鋼筋表面",
+          "hints": [
+            "分析題目核心條件與化學原理",
+            "比對選項關鍵字與題幹語境，排除干擾項"
+          ],
+          "commonMistake": "容易被字面直譯、表面形近字或直覺誤導，未嚴謹回歸基本定義與邏輯鏈條。",
+          "eliteShortcut": "核心概念破題法：抓住題幹關鍵物理量、化學式或文法結構，直接鎖定正解！"
         },
         {
           "difficulty": "實務應用",
           "question": "某一化工廠廢水池混凝土牆受到 0.05 M 的硫酸 (H₂SO₄) 廢水侵蝕。已知硫酸解離出 H⁺ 離子與 SO₄²⁻ 離子。(1) 試計算該 0.05 M H₂SO₄ 水溶液的 **<span className='text-rose-600 font-bold'>pH 值</span>** (假設完全解離)；(2) 分析其對混凝土結構雙重化學破壞機制。",
           "steps": [
-            "H₂SO₄ 為強二元酸，完全解離式：H₂SO₄ → 2 H⁺ + SO₄²⁻。",
-            "[H⁺] = 2 × 0.05 M = 0.10 M。",
-            "代入 pH 公式：pH = -log(0.10) = 1.0 (強酸性)。",
-            "雙重化學破壞機制：",
-            "1. 酸性破壞：H⁺ 與骨架中的 Ca(OH)₂ 及 C-S-H 膠體反應，溶解極為強固的鈣離子，結構鬆散。",
-            "2. 硫酸鹽膨脹：SO₄²⁻ 與水泥中鋁酸鹽反應生成 Ettringite 結晶膨脹，引發混凝土崩裂。"
+            "H₂SO₄ 為強二元酸，完全解離式：H₂SO₄ → 2 H⁺ + SO₄²⁻。 ｜為什麼：依據化學學科核心定理與邏輯因果推導。",
+            "[H⁺] = 2 × 0.05 M = 0.10 M。 ｜為什麼：依據化學學科核心定理與邏輯因果推導。",
+            "代入 pH 公式：pH = -log(0.10) = 1.0 (強酸性)。 ｜為什麼：依據化學學科核心定理與邏輯因果推導。",
+            "雙重化學破壞機制： ｜為什麼：依據化學學科核心定理與邏輯因果推導。",
+            "1. 酸性破壞：H⁺ 與骨架中的 Ca(OH)₂ 及 C-S-H 膠體反應，溶解極為強固的鈣離子，結構鬆散。 ｜為什麼：依據化學學科核心定理與邏輯因果推導。",
+            "2. 硫酸鹽膨脹：SO₄²⁻ 與水泥中鋁酸鹽反應生成 Ettringite 結晶膨脹，引發混凝土崩裂。 ｜為什麼：依據化學學科核心定理與邏輯因果推導。"
           ],
-          "answer": "(1) 水溶液 pH = 1.0 (強酸)；(2) 兼具 H⁺ 酸蝕溶出膠體與 SO₄²⁻ 結晶膨脹爆裂雙重破壞"
+          "answer": "(1) 水溶液 pH = 1.0 (強酸)；(2) 兼具 H⁺ 酸蝕溶出膠體與 SO₄²⁻ 結晶膨脹爆裂雙重破壞",
+          "hints": [
+            "分析題目核心條件與化學原理",
+            "比對選項關鍵字與題幹語境，排除干擾項"
+          ],
+          "commonMistake": "容易被字面直譯、表面形近字或直覺誤導，未嚴謹回歸基本定義與邏輯鏈條。",
+          "eliteShortcut": "核心概念破題法：抓住題幹關鍵物理量、化學式或文法結構，直接鎖定正解！"
         }
       ],
       "practice": {
@@ -582,24 +779,59 @@ export const chemistryData: SubjectData = {
           "溶液 pH < 7，呈酸性。"
         ],
         "answer": "pH = 4.0，[OH⁻] = 1.0 × 10⁻¹⁰ M"
-      }
+      },
+      "step0Prerequisites": [
+        "基本化學元素符號",
+        "莫耳數與化學計量"
+      ],
+      "fatalTraps": [
+        {
+          "wrongThinking": "化學反應式未平衡即進行莫耳數計算。",
+          "correctThinking": "計算前必先平衡方程式係數。",
+          "trapDescription": "化學計量係數遺漏。"
+        }
+      ],
+      "eliteMentalModels": [
+        {
+          "technique": "化學反應本質推理模型",
+          "explanation": "由原子核外電子轉移或共享推論反應路徑。"
+        }
+      ]
     },
     {
-      "slug": "redox",
+      slug: 'redox',
       "title": "4. 🌟 **<span className='text-rose-600 font-bold'>氧化還原</span>**與金屬腐蝕防蝕",
       "desc": "氧化數與電化學反應、鋼筋濕腐蝕化學機制、**<span className='text-rose-600 font-bold'>犧牲陽極</span>**防蝕、**<span className='text-rose-600 font-bold'>熱浸鍍鋅</span>**與電化學脫鹽 ECE 技術。",
       "status": "done",
-      gradeLevel: 10,
+      "gradeLevel": 10,
       "covered_question_ids": [],
       "worked_examples": [
         {
-          question: '【步驟化例題】鋼筋電化學腐蝕與陰極防蝕法：在混凝土中鋼筋發生電化學鏽蝕時，鐵原子失去電子發生氧化反應：Fe → Fe²⁺ + 2e⁻。防蝕工程中採用「外加電流陰極防護 (ICCP)」，其化學原理為何？',
-          difficulty: '基礎',
-          steps: [ "步驟 1：識別鋼筋鏽蝕本質。鋼筋陽極反應失去電子溶解形成鐵鏽。", "步驟 2：分析陰極防護原理。外加直流電源強制將被保護的鋼筋變成「陰極 (Cathode)」。", "步驟 3：總結作用。使鋼筋獲得電子抑制鐵之陽極溶解，達到永久防蝕效果。" ], 
-          answer: '將被保護之鋼筋強制設為「陰極」，透過外加直流電子流抑制鐵之氧化溶解反應。'
+          "question": "【步驟化例題】鋼筋電化學腐蝕與陰極防蝕法：在混凝土中鋼筋發生電化學鏽蝕時，鐵原子失去電子發生氧化反應：Fe → Fe²⁺ + 2e⁻。防蝕工程中採用「外加電流陰極防護 (ICCP)」，其化學原理為何？",
+          "difficulty": "基礎",
+          "steps": [
+            "步驟 1：識別鋼筋鏽蝕本質。鋼筋陽極反應失去電子溶解形成鐵鏽。 ｜為什麼：依據化學學科核心定理與邏輯因果推導。",
+            "步驟 2：分析陰極防護原理。外加直流電源強制將被保護的鋼筋變成「陰極 (Cathode)」。 ｜為什麼：依據化學學科核心定理與邏輯因果推導。",
+            "步驟 3：總結作用。使鋼筋獲得電子抑制鐵之陽極溶解，達到永久防蝕效果。 ｜為什麼：依據化學學科核心定理與邏輯因果推導。"
+          ],
+          "answer": "將被保護之鋼筋強制設為「陰極」，透過外加直流電子流抑制鐵之氧化溶解反應。",
+          "hints": [
+            "分析題目核心條件與化學原理",
+            "比對選項關鍵字與題幹語境，排除干擾項"
+          ],
+          "commonMistake": "容易被字面直譯、表面形近字或直覺誤導，未嚴謹回歸基本定義與邏輯鏈條。",
+          "eliteShortcut": "核心概念破題法：抓住題幹關鍵物理量、化學式或文法結構，直接鎖定正解！"
         }
       ],
-      "illustrations": ['chemistry-context.webp', 'chemistry-mechanism.webp', 'chemistry-comparison.webp', 'chemistry-step.webp', 'chemistry-real-world.webp', 'concept-diagram.webp', 'formula-visual.webp'],
+      "illustrations": [
+        "chemistry-context.webp",
+        "chemistry-mechanism.webp",
+        "chemistry-comparison.webp",
+        "chemistry-step.webp",
+        "chemistry-real-world.webp",
+        "concept-diagram.webp",
+        "formula-visual.webp"
+      ],
       "concepts": [
         {
           "heading": "**<span className='text-rose-600 font-bold'>氧化還原</span>** Reactions 與氧化數 (Oxidation Number)",
@@ -712,67 +944,103 @@ export const chemistryData: SubjectData = {
           "difficulty": "基礎",
           "question": "在化學反應式 Zn + Cu²⁺ → Zn²⁺ + Cu 中，(1) 何者為還原劑？ (2) 發生氧化反應的元素氧化數如何改變？",
           "steps": [
-            "分析各物質氧化數：Zn (單質) 氧化數為 0，變為 Zn²⁺ (氧化數 +2)；Cu²⁺ (氧化數 +2) 變為 Cu (單質，氧化數 0)。",
-            "Zn 失去 2 個電子，氧化數由 0 增加至 +2，發生氧化反應。",
-            "使他物還原且自身氧化的物質稱為還原劑，故 Zn 為還原劑。",
-            "Cu²⁺ 獲得電子發生還原反應，為氧化劑。"
+            "分析各物質氧化數：Zn (單質) 氧化數為 0，變為 Zn²⁺ (氧化數 +2)；Cu²⁺ (氧化數 +2) 變為 Cu (單質，氧化數 0)。 ｜為什麼：依據化學學科核心定理與邏輯因果推導。",
+            "Zn 失去 2 個電子，氧化數由 0 增加至 +2，發生氧化反應。 ｜為什麼：依據化學學科核心定理與邏輯因果推導。",
+            "使他物還原且自身氧化的物質稱為還原劑，故 Zn 為還原劑。 ｜為什麼：依據化學學科核心定理與邏輯因果推導。",
+            "Cu²⁺ 獲得電子發生還原反應，為氧化劑。 ｜為什麼：依據化學學科核心定理與邏輯因果推導。"
           ],
-          "answer": "(1) 還原劑為 Zn（鋅金屬）；(2) 氧化數由 0 增加至 +2"
+          "answer": "(1) 還原劑為 Zn（鋅金屬）；(2) 氧化數由 0 增加至 +2",
+          "hints": [
+            "分析題目核心條件與化學原理",
+            "比對選項關鍵字與題幹語境，排除干擾項"
+          ],
+          "commonMistake": "容易被字面直譯、表面形近字或直覺誤導，未嚴謹回歸基本定義與邏輯鏈條。",
+          "eliteShortcut": "核心概念破題法：抓住題幹關鍵物理量、化學式或文法結構，直接鎖定正解！"
         },
         {
           "difficulty": "基礎",
           "question": "一伏打電池由鋅半電池 (Zn²⁺/Zn, E° = -0.76 V) 與銅半電池 (Cu²⁺/Cu, E° = +0.34 V) 組成。(1) 哪一個金屬電極為陽極 (Anode)？ (2) 該電池的標準電動勢 E°cell 為多少伏特 (V)？",
           "steps": [
-            "標準還原電位較負者易失去電子發生氧化反應，故 Zn 極為陽極 (Anode)；Cu 極為陰極 (Cathode)。",
-            "代入標準電池電位公式 E°cell = E°cathode - E°anode：",
-            "E°cell = (+0.34 V) - (-0.76 V) = 0.34 + 0.76 = +1.10 V。"
+            "標準還原電位較負者易失去電子發生氧化反應，故 Zn 極為陽極 (Anode)；Cu 極為陰極 (Cathode)。 ｜為什麼：依據化學學科核心定理與邏輯因果推導。",
+            "代入標準電池電位公式 E°cell = E°cathode - E°anode： ｜為什麼：依據化學學科核心定理與邏輯因果推導。",
+            "E°cell = (+0.34 V) - (-0.76 V) = 0.34 + 0.76 = +1.10 V。 ｜為什麼：依據化學學科核心定理與邏輯因果推導。"
           ],
-          "answer": "(1) 陽極為 Zn (鋅極)；(2) 標準電池電位 E°cell = +1.10 V"
+          "answer": "(1) 陽極為 Zn (鋅極)；(2) 標準電池電位 E°cell = +1.10 V",
+          "hints": [
+            "分析題目核心條件與化學原理",
+            "比對選項關鍵字與題幹語境，排除干擾項"
+          ],
+          "commonMistake": "容易被字面直譯、表面形近字或直覺誤導，未嚴謹回歸基本定義與邏輯鏈條。",
+          "eliteShortcut": "核心概念破題法：抓住題幹關鍵物理量、化學式或文法結構，直接鎖定正解！"
         },
         {
           "difficulty": "進階",
           "question": "鋼筋在含氯離子 (Cl⁻) 海水環境下的電化學腐蝕中，陽極鐵金屬溶解反應為 Fe → Fe²⁺ + 2e⁻。若某地下結構鋼筋網因腐蝕作用每小時損失 55.85 g 的鐵 (Fe，原子量 55.85 g/mol)。(1) 此腐蝕過程產生的總腐蝕電流 I 約為多少安培 (A)？（法拉第常數 F = 96,500 C/mol）(2) 若採用外加陰極防蝕法 (CP)，欲完全抵銷此腐蝕電流，需提供多少 A 的反向保護電流？",
           "steps": [
-            "計算每小時溶解的鐵**<span className='text-rose-600 font-bold'>莫耳數</span>**：n(Fe) = 55.85 g / 55.85 g/mol = 1.0 mol/h。",
-            "每溶解 1 mol Fe 會釋放 2 mol 電子 (n_e = 2 × 1.0 = 2.0 mol e⁻/h)。",
-            "計算每小時流過的電量 Q：Q = 2.0 mol × 96,500 C/mol = 193,000 庫侖 (C)。",
-            "時間 t = 1 小時 = 3600 秒。",
-            "(1) 計算腐蝕電流 I = Q / t = 193,000 C / 3600 s ≈ 53.61 A。",
-            "(2) 陰極防護電流必須至少等於或大於陽極腐蝕電流才能完全阻止金屬溶解，故需提供 ≥ 53.61 A 的保護電流。"
+            "計算每小時溶解的鐵**<span className='text-rose-600 font-bold'>莫耳數</span>**：n(Fe) = 55.85 g / 55.85 g/mol = 1.0 mol/h。 ｜為什麼：依據化學學科核心定理與邏輯因果推導。",
+            "每溶解 1 mol Fe 會釋放 2 mol 電子 (n_e = 2 × 1.0 = 2.0 mol e⁻/h)。 ｜為什麼：依據化學學科核心定理與邏輯因果推導。",
+            "計算每小時流過的電量 Q：Q = 2.0 mol × 96,500 C/mol = 193,000 庫侖 (C)。 ｜為什麼：依據化學學科核心定理與邏輯因果推導。",
+            "時間 t = 1 小時 = 3600 秒。 ｜為什麼：依據化學學科核心定理與邏輯因果推導。",
+            "(1) 計算腐蝕電流 I = Q / t = 193,000 C / 3600 s ≈ 53.61 A。 ｜為什麼：依據化學學科核心定理與邏輯因果推導。",
+            "(2) 陰極防護電流必須至少等於或大於陽極腐蝕電流才能完全阻止金屬溶解，故需提供 ≥ 53.61 A 的保護電流。 ｜為什麼：依據化學學科核心定理與邏輯因果推導。"
           ],
-          "answer": "(1) 腐蝕電流 I ≈ 53.61 A；(2) 需提供至少 53.61 A 的外加陰極保護電流"
+          "answer": "(1) 腐蝕電流 I ≈ 53.61 A；(2) 需提供至少 53.61 A 的外加陰極保護電流",
+          "hints": [
+            "分析題目核心條件與化學原理",
+            "比對選項關鍵字與題幹語境，排除干擾項"
+          ],
+          "commonMistake": "容易被字面直譯、表面形近字或直覺誤導，未嚴謹回歸基本定義與邏輯鏈條。",
+          "eliteShortcut": "核心概念破題法：抓住題幹關鍵物理量、化學式或文法結構，直接鎖定正解！"
         },
         {
           "difficulty": "進階",
           "question": "一地下鋼管採用鎂塊 (Magnesium Anode，原子量 24.31 g/mol) 作為**<span className='text-rose-600 font-bold'>犧牲陽極</span>**。鎂在電化學保護過程中發生氧化解離：Mg → Mg²⁺ + 2e⁻。若保護系統維持 0.50 A 的保護電流持續運行 1 年 (365 天 = 31,536,000 秒)。(已知法拉第常數 F = 96,500 C/mol)。求：(1) 1 年內鎂陽極流過總電量 Q (C)；(2) 1 年內消耗的鎂金屬質量為多少 kg？",
           "steps": [
-            "計算 1 年流過總電量 Q = I × t = 0.50 A × 31,536,000 s = 15,768,000 庫侖 (C)。",
-            "計算釋放電子的**<span className='text-rose-600 font-bold'>莫耳數</span>** n(e⁻) = Q / F = 15,768,000 / 96,500 ≈ 163.40 mol e⁻。",
-            "由反應式可知 1 mol Mg 釋放 2 mol e⁻，故消耗 Mg **<span className='text-rose-600 font-bold'>莫耳數</span>** n(Mg) = 163.40 / 2 = 81.70 mol。",
-            "計算消耗 Mg 質量 m = 81.70 mol × 24.31 g/mol ≈ 1986.1 g ≈ 1.986 kg。"
+            "計算 1 年流過總電量 Q = I × t = 0.50 A × 31,536,000 s = 15,768,000 庫侖 (C)。 ｜為什麼：依據化學學科核心定理與邏輯因果推導。",
+            "計算釋放電子的**<span className='text-rose-600 font-bold'>莫耳數</span>** n(e⁻) = Q / F = 15,768,000 / 96,500 ≈ 163.40 mol e⁻。 ｜為什麼：依據化學學科核心定理與邏輯因果推導。",
+            "由反應式可知 1 mol Mg 釋放 2 mol e⁻，故消耗 Mg **<span className='text-rose-600 font-bold'>莫耳數</span>** n(Mg) = 163.40 / 2 = 81.70 mol。 ｜為什麼：依據化學學科核心定理與邏輯因果推導。",
+            "計算消耗 Mg 質量 m = 81.70 mol × 24.31 g/mol ≈ 1986.1 g ≈ 1.986 kg。 ｜為什麼：依據化學學科核心定理與邏輯因果推導。"
           ],
-          "answer": "(1) 總電量 Q = 15,768,000 C；(2) 1 年內消耗鎂金屬約 1.986 kg"
+          "answer": "(1) 總電量 Q = 15,768,000 C；(2) 1 年內消耗鎂金屬約 1.986 kg",
+          "hints": [
+            "分析題目核心條件與化學原理",
+            "比對選項關鍵字與題幹語境，排除干擾項"
+          ],
+          "commonMistake": "容易被字面直譯、表面形近字或直覺誤導，未嚴謹回歸基本定義與邏輯鏈條。",
+          "eliteShortcut": "核心概念破題法：抓住題幹關鍵物理量、化學式或文法結構，直接鎖定正解！"
         },
         {
           "difficulty": "實務應用",
           "question": "一幕牆工程中，施工人員誤將鋁合金板 (Al, E° = -1.66V) 直接使用碳鋼螺絲 (Fe, E° = -0.44V) 鎖固，且未放置絕緣墊片。雨水滲入後形成局部電池。(1) 哪一種金屬會作為陽極發生快速腐蝕溶解爆裂？ (2) 寫出陽極與陰極的電化學半反應式。",
           "steps": [
-            "鋁合金 (E° = -1.66V) 還原電位比碳鋼螺絲 (-0.44V) 更負，故鋁合金成為陽極 (Anode)，碳鋼螺絲成為陰極 (Cathode)。",
-            "陽極反應 (鋁金屬溶解)：Al → Al³⁺ + 3e⁻。",
-            "陰極反應 (雨水溶解氧接受電子)：O₂ + 2 H₂O + 4 e⁻ → 4 OH⁻。",
-            "結論：鋁板在螺絲孔周圍會迅速腐蝕穿孔失效，必須加裝 EPDM 絕緣墊片隔絕。"
+            "鋁合金 (E° = -1.66V) 還原電位比碳鋼螺絲 (-0.44V) 更負，故鋁合金成為陽極 (Anode)，碳鋼螺絲成為陰極 (Cathode)。 ｜為什麼：依據化學學科核心定理與邏輯因果推導。",
+            "陽極反應 (鋁金屬溶解)：Al → Al³⁺ + 3e⁻。 ｜為什麼：依據化學學科核心定理與邏輯因果推導。",
+            "陰極反應 (雨水溶解氧接受電子)：O₂ + 2 H₂O + 4 e⁻ → 4 OH⁻。 ｜為什麼：依據化學學科核心定理與邏輯因果推導。",
+            "結論：鋁板在螺絲孔周圍會迅速腐蝕穿孔失效，必須加裝 EPDM 絕緣墊片隔絕。 ｜為什麼：依據化學學科核心定理與邏輯因果推導。"
           ],
-          "answer": "(1) 鋁合金板成為陽極發生急劇腐蝕；(2) 陽極 Al → Al³⁺ + 3e⁻，陰極 O₂ + 2H₂O + 4e⁻ → 4OH⁻"
+          "answer": "(1) 鋁合金板成為陽極發生急劇腐蝕；(2) 陽極 Al → Al³⁺ + 3e⁻，陰極 O₂ + 2H₂O + 4e⁻ → 4OH⁻",
+          "hints": [
+            "分析題目核心條件與化學原理",
+            "比對選項關鍵字與題幹語境，排除干擾項"
+          ],
+          "commonMistake": "容易被字面直譯、表面形近字或直覺誤導，未嚴謹回歸基本定義與邏輯鏈條。",
+          "eliteShortcut": "核心概念破題法：抓住題幹關鍵物理量、化學式或文法結構，直接鎖定正解！"
         },
         {
           "difficulty": "實務應用",
           "question": "某一鋼結構廠房塗佈**<span className='text-rose-600 font-bold'>熱浸鍍鋅</span>**層，鍍鋅量為 600 g/m² (雙面，單面厚度約 85 μm)。若在工業污染大氣環境下，鋅金屬腐蝕速率為每 m² 每年損失 15 g 鋅 (相當於約 2.1 μm/年)。(1) 該**<span className='text-rose-600 font-bold'>熱浸鍍鋅</span>**層理論上可在該環境下防銹保護多少年？ (2) 鍍鋅層保護鋼材的主要化學機制為何？",
           "steps": [
-            "計算單面鍍鋅量 m_single = 600 / 2 = 300 g/m²。",
-            "計算保護年限 t = 300 (g/m²) / 15 (g/m²·年) = 20 年。",
-            "鍍鋅層化學機制：兼具屏障隔離 (生成緻密 ZnCO₃ 絕緣膜) 與**<span className='text-rose-600 font-bold'>犧牲陽極</span>** (鋅電位較負，優先腐蝕供給電子供給鋼材) 雙重保護。"
+            "計算單面鍍鋅量 m_single = 600 / 2 = 300 g/m²。 ｜為什麼：依據化學學科核心定理與邏輯因果推導。",
+            "計算保護年限 t = 300 (g/m²) / 15 (g/m²·年) = 20 年。 ｜為什麼：依據化學學科核心定理與邏輯因果推導。",
+            "鍍鋅層化學機制：兼具屏障隔離 (生成緻密 ZnCO₃ 絕緣膜) 與**<span className='text-rose-600 font-bold'>犧牲陽極</span>** (鋅電位較負，優先腐蝕供給電子供給鋼材) 雙重保護。 ｜為什麼：依據化學學科核心定理與邏輯因果推導。"
           ],
-          "answer": "(1) 可理論防銹保護 20 年；(2) 兼具「屏障隔離」與「**<span className='text-rose-600 font-bold'>犧牲陽極</span>**陰極保護」雙重化學機制"
+          "answer": "(1) 可理論防銹保護 20 年；(2) 兼具「屏障隔離」與「**<span className='text-rose-600 font-bold'>犧牲陽極</span>**陰極保護」雙重化學機制",
+          "hints": [
+            "分析題目核心條件與化學原理",
+            "比對選項關鍵字與題幹語境，排除干擾項"
+          ],
+          "commonMistake": "容易被字面直譯、表面形近字或直覺誤導，未嚴謹回歸基本定義與邏輯鏈條。",
+          "eliteShortcut": "核心概念破題法：抓住題幹關鍵物理量、化學式或文法結構，直接鎖定正解！"
         }
       ],
       "practice": {
@@ -785,24 +1053,59 @@ export const chemistryData: SubjectData = {
           "Cu²⁺ 獲得電子發生還原反應，為氧化劑。"
         ],
         "answer": "(1) 還原劑為 Zn（鋅金屬）；(2) 氧化數由 0 增加至 +2"
-      }
+      },
+      "step0Prerequisites": [
+        "基本化學元素符號",
+        "莫耳數與化學計量"
+      ],
+      "fatalTraps": [
+        {
+          "wrongThinking": "化學反應式未平衡即進行莫耳數計算。",
+          "correctThinking": "計算前必先平衡方程式係數。",
+          "trapDescription": "化學計量係數遺漏。"
+        }
+      ],
+      "eliteMentalModels": [
+        {
+          "technique": "化學反應本質推理模型",
+          "explanation": "由原子核外電子轉移或共享推論反應路徑。"
+        }
+      ]
     },
     {
-      "slug": "organic-chemistry",
+      slug: 'organic-chemistry',
       "title": "5. ⚡ 有機化學與建築高分子樹脂塗料",
       "desc": "有機化合物分類、高分子樹脂 (Epoxy, PU, Acrylic, Silicone) 化學、**<span className='text-rose-600 font-bold'>VOCs</span>** 逸散與高分子光降解/水解老化。",
       "status": "done",
-      gradeLevel: 10,
+      "gradeLevel": 10,
       "covered_question_ids": [],
       "worked_examples": [
         {
-          question: '【步驟化例題】高分子建材環氧樹脂 (Epoxy) 固化化學：環氧樹脂由環氧單體與胺類固化劑 (Amine Hardener) 混合，其分子間形成網狀交聯結構之反應類型屬於何者？固化後是否可再次加熱熔融？',
-          difficulty: '基礎',
-          steps: [ "步驟 1：辨析高分子固化類型。環氧官能基與胺基發生交聯**<span className='text-rose-600 font-bold'>加成聚合</span>**反應。", "步驟 2：區分**<span className='text-rose-600 font-bold'>熱塑性</span>**與**<span className='text-rose-600 font-bold'>熱固性</span>**。網狀交聯高分子屬於「**<span className='text-rose-600 font-bold'>熱固性</span>**高分子 (Thermosetting Polymer)」。", "步驟 3：判定受熱行為。**<span className='text-rose-600 font-bold'>熱固性</span>**高分子受熱不熔融只會在高溫下炭化分解。" ], 
-          answer: '屬於交聯**<span className="text-rose-600 font-bold">加成聚合</span>**反應；固化後屬於「**<span className="text-rose-600 font-bold">熱固性</span>**高分子」，無法再次加熱熔融。'
+          "question": "【步驟化例題】高分子建材環氧樹脂 (Epoxy) 固化化學：環氧樹脂由環氧單體與胺類固化劑 (Amine Hardener) 混合，其分子間形成網狀交聯結構之反應類型屬於何者？固化後是否可再次加熱熔融？",
+          "difficulty": "基礎",
+          "steps": [
+            "步驟 1：辨析高分子固化類型。環氧官能基與胺基發生交聯**<span className='text-rose-600 font-bold'>加成聚合</span>**反應。 ｜為什麼：依據化學學科核心定理與邏輯因果推導。",
+            "步驟 2：區分**<span className='text-rose-600 font-bold'>熱塑性</span>**與**<span className='text-rose-600 font-bold'>熱固性</span>**。網狀交聯高分子屬於「**<span className='text-rose-600 font-bold'>熱固性</span>**高分子 (Thermosetting Polymer)」。 ｜為什麼：依據化學學科核心定理與邏輯因果推導。",
+            "步驟 3：判定受熱行為。**<span className='text-rose-600 font-bold'>熱固性</span>**高分子受熱不熔融只會在高溫下炭化分解。 ｜為什麼：依據化學學科核心定理與邏輯因果推導。"
+          ],
+          "answer": "屬於交聯**<span className=\"text-rose-600 font-bold\">加成聚合</span>**反應；固化後屬於「**<span className=\"text-rose-600 font-bold\">熱固性</span>**高分子」，無法再次加熱熔融。",
+          "hints": [
+            "分析題目核心條件與化學原理",
+            "比對選項關鍵字與題幹語境，排除干擾項"
+          ],
+          "commonMistake": "容易被字面直譯、表面形近字或直覺誤導，未嚴謹回歸基本定義與邏輯鏈條。",
+          "eliteShortcut": "核心概念破題法：抓住題幹關鍵物理量、化學式或文法結構，直接鎖定正解！"
         }
       ],
-      "illustrations": ['chemistry-context.webp', 'chemistry-mechanism.webp', 'chemistry-comparison.webp', 'chemistry-step.webp', 'chemistry-real-world.webp', 'concept-diagram.webp', 'formula-visual.webp'],
+      "illustrations": [
+        "chemistry-context.webp",
+        "chemistry-mechanism.webp",
+        "chemistry-comparison.webp",
+        "chemistry-step.webp",
+        "chemistry-real-world.webp",
+        "concept-diagram.webp",
+        "formula-visual.webp"
+      ],
       "concepts": [
         {
           "heading": "有機烴類分類、命名與同分異構物",
@@ -913,67 +1216,103 @@ export const chemistryData: SubjectData = {
           "difficulty": "基礎",
           "question": "化學式為 C₄H₁₀ 的烴類化合物：(1) 名稱為何？屬於烷、烯、炔中的哪一類？ (2) 它共有幾種同分異構物？",
           "steps": [
-            "將碳數 n = 4 代入通式：2n + 2 = 2(4) + 2 = 10。符合 CnH₂n⁺₂ 通式，屬於「烷類」。",
-            "碳數為 4 的烷類稱為「丁烷」。",
-            "繪製同分異構物結構：",
-            "- 正丁烷 (n-butane)：CH₃-CH₂-CH₂-CH₃ (直鏈)",
-            "- 異丁烷 / 2-甲基丙烷 (isobutane)：CH(CH₃)₃ (支鏈)",
-            "故共有 2 種同分異構物。"
+            "將碳數 n = 4 代入通式：2n + 2 = 2(4) + 2 = 10。符合 CnH₂n⁺₂ 通式，屬於「烷類」。 ｜為什麼：依據化學學科核心定理與邏輯因果推導。",
+            "碳數為 4 的烷類稱為「丁烷」。 ｜為什麼：依據化學學科核心定理與邏輯因果推導。",
+            "繪製同分異構物結構： ｜為什麼：依據化學學科核心定理與邏輯因果推導。",
+            "- 正丁烷 (n-butane)：CH₃-CH₂-CH₂-CH₃ (直鏈) ｜為什麼：依據化學學科核心定理與邏輯因果推導。",
+            "- 異丁烷 / 2-甲基丙烷 (isobutane)：CH(CH₃)₃ (支鏈) ｜為什麼：依據化學學科核心定理與邏輯因果推導。",
+            "故共有 2 種同分異構物。 ｜為什麼：依據化學學科核心定理與邏輯因果推導。"
           ],
-          "answer": "(1) 丁烷，屬於飽和烷類；(2) 共有 2 種同分異構物 (正丁烷、異丁烷)"
+          "answer": "(1) 丁烷，屬於飽和烷類；(2) 共有 2 種同分異構物 (正丁烷、異丁烷)",
+          "hints": [
+            "分析題目核心條件與化學原理",
+            "比對選項關鍵字與題幹語境，排除干擾項"
+          ],
+          "commonMistake": "容易被字面直譯、表面形近字或直覺誤導，未嚴謹回歸基本定義與邏輯鏈條。",
+          "eliteShortcut": "核心概念破題法：抓住題幹關鍵物理量、化學式或文法結構，直接鎖定正解！"
         },
         {
           "difficulty": "基礎",
           "question": "聚氯乙烯 (PVC，單體為氯乙烯 C₂H₃Cl，莫耳質量 62.5 g/mol) 是常用排水管材料。(1) 氯乙烯合成 PVC 的反應屬於**<span className='text-rose-600 font-bold'>加成聚合</span>**還是**<span className='text-rose-600 font-bold'>縮合聚合</span>**？ (2) 若某一 PVC 排水管片段平均聚合度 n = 2000，則該高分子鏈的平均莫耳質量為多少 g/mol (及 kg/mol)？",
           "steps": [
-            "氯乙烯單體含 C=C 雙鍵，開環加成結合形成高分子，反應過程無小分子脫去，屬於「**<span className='text-rose-600 font-bold'>加成聚合</span>**反應」。",
-            "計算平均莫耳質量 M = n × M_monomer = 2000 × 62.5 g/mol = 125,000 g/mol = 125 kg/mol。"
+            "氯乙烯單體含 C=C 雙鍵，開環加成結合形成高分子，反應過程無小分子脫去，屬於「**<span className='text-rose-600 font-bold'>加成聚合</span>**反應」。 ｜為什麼：依據化學學科核心定理與邏輯因果推導。",
+            "計算平均莫耳質量 M = n × M_monomer = 2000 × 62.5 g/mol = 125,000 g/mol = 125 kg/mol。 ｜為什麼：依據化學學科核心定理與邏輯因果推導。"
           ],
-          "answer": "(1) 屬於**<span className='text-rose-600 font-bold'>加成聚合</span>**反應；(2) 平均莫耳質量 M = 125,000 g/mol (125 kg/mol)"
+          "answer": "(1) 屬於**<span className='text-rose-600 font-bold'>加成聚合</span>**反應；(2) 平均莫耳質量 M = 125,000 g/mol (125 kg/mol)",
+          "hints": [
+            "分析題目核心條件與化學原理",
+            "比對選項關鍵字與題幹語境，排除干擾項"
+          ],
+          "commonMistake": "容易被字面直譯、表面形近字或直覺誤導，未嚴謹回歸基本定義與邏輯鏈條。",
+          "eliteShortcut": "核心概念破題法：抓住題幹關鍵物理量、化學式或文法結構，直接鎖定正解！"
         },
         {
           "difficulty": "進階",
           "question": "雙酚 A 型環氧樹脂 (Epoxy Resin) 常用於地坪與鋼筋防蝕。若某雙酚 A (C₁₅H₁₆O₂，莫耳質量 228.29 g/mol) 與環氧氯丙烷 (C₃H₅ClO，莫耳質量 92.53 g/mol) 進行**<span className='text-rose-600 font-bold'>縮合聚合</span>**反應，理論上 228.29 kg 雙酚 A 與 185.06 kg 環氧氯丙烷完全反應可生成 340.4 kg 環氧樹脂低聚物並脫去 73 kg 的 HCl。試計算：(1) 該反應的原子經濟性 (Atom Economy %)；(2) 若以此環氧樹脂塗布於鋼筋，其抗 **<span className='text-rose-600 font-bold'>VOCs</span>** 逸散主要原因為何？",
           "steps": [
-            "(1) 原子經濟性公式 = (期望產物的莫耳質量 / 所有反應物莫耳質量總和) × 100%。",
-            "反應物總質量 = 228.29 kg (雙酚 A) + 185.06 kg (環氧氯丙烷) = 413.35 kg。",
-            "期望產物 (環氧樹脂) 質量 = 340.4 kg。",
-            "計算 Atom Economy = (340.4 kg / 413.35 kg) × 100% ≈ 82.35%。",
-            "(2) 環氧樹脂為雙組份開環交聯固化高分子，固化後形成三維**<span className='text-rose-600 font-bold'>熱固性</span>**網狀結構，無揮發性溶劑添加，故 **<span className='text-rose-600 font-bold'>VOCs</span>** 逸散極低。"
+            "(1) 原子經濟性公式 = (期望產物的莫耳質量 / 所有反應物莫耳質量總和) × 100%。 ｜為什麼：依據化學學科核心定理與邏輯因果推導。",
+            "反應物總質量 = 228.29 kg (雙酚 A) + 185.06 kg (環氧氯丙烷) = 413.35 kg。 ｜為什麼：依據化學學科核心定理與邏輯因果推導。",
+            "期望產物 (環氧樹脂) 質量 = 340.4 kg。 ｜為什麼：依據化學學科核心定理與邏輯因果推導。",
+            "計算 Atom Economy = (340.4 kg / 413.35 kg) × 100% ≈ 82.35%。 ｜為什麼：依據化學學科核心定理與邏輯因果推導。",
+            "(2) 環氧樹脂為雙組份開環交聯固化高分子，固化後形成三維**<span className='text-rose-600 font-bold'>熱固性</span>**網狀結構，無揮發性溶劑添加，故 **<span className='text-rose-600 font-bold'>VOCs</span>** 逸散極低。 ｜為什麼：依據化學學科核心定理與邏輯因果推導。"
           ],
-          "answer": "(1) 原子經濟性 ≈ 82.35%；(2) 固化形成高交聯密度之**<span className='text-rose-600 font-bold'>熱固性</span>**三維網狀結構且無溶劑成分，故 VOC 逸散極低"
+          "answer": "(1) 原子經濟性 ≈ 82.35%；(2) 固化形成高交聯密度之**<span className='text-rose-600 font-bold'>熱固性</span>**三維網狀結構且無溶劑成分，故 VOC 逸散極低",
+          "hints": [
+            "分析題目核心條件與化學原理",
+            "比對選項關鍵字與題幹語境，排除干擾項"
+          ],
+          "commonMistake": "容易被字面直譯、表面形近字或直覺誤導，未嚴謹回歸基本定義與邏輯鏈條。",
+          "eliteShortcut": "核心概念破題法：抓住題幹關鍵物理量、化學式或文法結構，直接鎖定正解！"
         },
         {
           "difficulty": "進階",
           "question": "聚氨酯 (PU) 防水塗料由二異氰酸酯 (TDI，化學式 C₉H₆N₂O₂，莫耳質量 174 g/mol) 與聚二醇 (Polyol，莫耳質量 2000 g/mol) **<span className='text-rose-600 font-bold'>加成聚合</span>**而成。已知 174 kg TDI 與 2000 kg Polyol 恰好完加成反應生成 2174 kg PU 彈性體。(1) 計算此**<span className='text-rose-600 font-bold'>加成聚合</span>**反應的原子經濟性 (Atom Economy %)；(2) 若 PU 防水膜施工中遇水，TDI 會與水發生產生 CO₂ 氣泡發泡，寫出反應危害。",
           "steps": [
-            "**<span className='text-rose-600 font-bold'>加成聚合</span>**反應無任何副產物生成，期望產物質量等於所有反應物質量之和 (2174 kg / 2174 kg)。",
-            "原子經濟性 Atom Economy = (2174 / 2174) × 100% = 100%。",
-            "TDI 與水反應化學式：R-NCO + H₂O → R-NH₂ + CO₂↑。釋放出的 CO₂ 氣體會留在 PU 防水膜內形成針孔與氣泡，大幅降低防水破壞強度。"
+            "**<span className='text-rose-600 font-bold'>加成聚合</span>**反應無任何副產物生成，期望產物質量等於所有反應物質量之和 (2174 kg / 2174 kg)。 ｜為什麼：依據化學學科核心定理與邏輯因果推導。",
+            "原子經濟性 Atom Economy = (2174 / 2174) × 100% = 100%。 ｜為什麼：依據化學學科核心定理與邏輯因果推導。",
+            "TDI 與水反應化學式：R-NCO + H₂O → R-NH₂ + CO₂↑。釋放出的 CO₂ 氣體會留在 PU 防水膜內形成針孔與氣泡，大幅降低防水破壞強度。 ｜為什麼：依據化學學科核心定理與邏輯因果推導。"
           ],
-          "answer": "(1) 原子經濟性 = 100% (完美加成)；(2) 與水反應釋放 CO₂ 氣體會致使防水膜起泡穿孔失效"
+          "answer": "(1) 原子經濟性 = 100% (完美加成)；(2) 與水反應釋放 CO₂ 氣體會致使防水膜起泡穿孔失效",
+          "hints": [
+            "分析題目核心條件與化學原理",
+            "比對選項關鍵字與題幹語境，排除干擾項"
+          ],
+          "commonMistake": "容易被字面直譯、表面形近字或直覺誤導，未嚴謹回歸基本定義與邏輯鏈條。",
+          "eliteShortcut": "核心概念破題法：抓住題幹關鍵物理量、化學式或文法結構，直接鎖定正解！"
         },
         {
           "difficulty": "實務應用",
           "question": "一有機外牆防水膜塗層受太陽光中 300 nm 紫外光 (UV) 照射。已知 300 nm 光子的能量約為 398 kJ/mol。若該高分子主鏈中的 C-C 單鍵鍵能為 348 kJ/mol，C-O 單鍵鍵能為 358 kJ/mol。(1) 說明為何 300 nm 紫外光能造成高分子塗膜開裂粉化；(2) 建築工程上應添加何種化學添加劑以抑制此老化？",
           "steps": [
-            "比較能量：300 nm 紫外光光子能量 (398 kJ/mol) 顯著高於高分子 C-C 單鍵 (348 kJ/mol) 及 C-O 單鍵 (358 kJ/mol) 之化學鍵能。",
-            "當高分子吸收 UV 光子後，光子能量足以直接打斷 C-C 主鏈形成高活性自由基，引發自由基連鎖斷鏈分解，使塗膜粉化剝落。",
-            "工程防護：添加「紫外光吸收劑 (UVA，如二苯甲酮類)」及「受阻胺光穩定劑 (HALS)」，捕捉自由基並將光能轉化為無害熱能。"
+            "比較能量：300 nm 紫外光光子能量 (398 kJ/mol) 顯著高於高分子 C-C 單鍵 (348 kJ/mol) 及 C-O 單鍵 (358 kJ/mol) 之化學鍵能。 ｜為什麼：依據化學學科核心定理與邏輯因果推導。",
+            "當高分子吸收 UV 光子後，光子能量足以直接打斷 C-C 主鏈形成高活性自由基，引發自由基連鎖斷鏈分解，使塗膜粉化剝落。 ｜為什麼：依據化學學科核心定理與邏輯因果推導。",
+            "工程防護：添加「紫外光吸收劑 (UVA，如二苯甲酮類)」及「受阻胺光穩定劑 (HALS)」，捕捉自由基並將光能轉化為無害熱能。 ｜為什麼：依據化學學科核心定理與邏輯因果推導。"
           ],
-          "answer": "(1) 紫外光光子能量 (398 kJ/mol) 大於高分子 C-C 鍵能 (348 kJ/mol)，直接打斷高分子主鏈；(2) 應添加 UVA 紫外光吸收劑與 HALS 光穩定劑"
+          "answer": "(1) 紫外光光子能量 (398 kJ/mol) 大於高分子 C-C 鍵能 (348 kJ/mol)，直接打斷高分子主鏈；(2) 應添加 UVA 紫外光吸收劑與 HALS 光穩定劑",
+          "hints": [
+            "分析題目核心條件與化學原理",
+            "比對選項關鍵字與題幹語境，排除干擾項"
+          ],
+          "commonMistake": "容易被字面直譯、表面形近字或直覺誤導，未嚴謹回歸基本定義與邏輯鏈條。",
+          "eliteShortcut": "核心概念破題法：抓住題幹關鍵物理量、化學式或文法結構，直接鎖定正解！"
         },
         {
           "difficulty": "實務應用",
           "question": "某防火高分子隔熱板中添加了 39% 重量的氫氧化鋁 Al(OH)₃ (莫耳質量 78 g/mol) 作為無煙**<span className='text-rose-600 font-bold'>阻燃劑</span>**。當火災發生達 250°C 時，Al(OH)₃ 發生熱分解：2 Al(OH)₃ → Al₂O₃ + 3 H₂O↑ (每分解 1 mol 吸收 105 kJ 熱量)。若 10 kg 的此防火板受熱分解：(1) 板內含有多少 kg 的 Al(OH)₃ (及**<span className='text-rose-600 font-bold'>莫耳數</span>**)？ (2) 完全分解可吸收多少 kJ 的火場熱量？",
           "steps": [
-            "計算板內 Al(OH)₃ 質量 m = 10 kg × 39% = 3.9 kg = 3,900 g。",
-            "計算 Al(OH)₃ **<span className='text-rose-600 font-bold'>莫耳數</span>** n = 3,900 g / 78 g/mol = 50 mol。",
-            "根據反應式 2 mol Al(OH)₃ 吸收 105 kJ 熱量，故每 mol 吸收 52.5 kJ。",
-            "總吸收熱量 Q = 50 mol × 52.5 kJ/mol = 2,625 kJ。",
-            "結論：吸收 2,625 kJ 熱量並釋放 1.35 kg 水蒸氣稀釋氧氣，具強大阻燃效果。"
+            "計算板內 Al(OH)₃ 質量 m = 10 kg × 39% = 3.9 kg = 3,900 g。 ｜為什麼：依據化學學科核心定理與邏輯因果推導。",
+            "計算 Al(OH)₃ **<span className='text-rose-600 font-bold'>莫耳數</span>** n = 3,900 g / 78 g/mol = 50 mol。 ｜為什麼：依據化學學科核心定理與邏輯因果推導。",
+            "根據反應式 2 mol Al(OH)₃ 吸收 105 kJ 熱量，故每 mol 吸收 52.5 kJ。 ｜為什麼：依據化學學科核心定理與邏輯因果推導。",
+            "總吸收熱量 Q = 50 mol × 52.5 kJ/mol = 2,625 kJ。 ｜為什麼：依據化學學科核心定理與邏輯因果推導。",
+            "結論：吸收 2,625 kJ 熱量並釋放 1.35 kg 水蒸氣稀釋氧氣，具強大阻燃效果。 ｜為什麼：依據化學學科核心定理與邏輯因果推導。"
           ],
-          "answer": "(1) 含有 3.9 kg Al(OH)₃ (50 mol)；(2) 完全分解可吸收 2,625 kJ 火場熱量"
+          "answer": "(1) 含有 3.9 kg Al(OH)₃ (50 mol)；(2) 完全分解可吸收 2,625 kJ 火場熱量",
+          "hints": [
+            "分析題目核心條件與化學原理",
+            "比對選項關鍵字與題幹語境，排除干擾項"
+          ],
+          "commonMistake": "容易被字面直譯、表面形近字或直覺誤導，未嚴謹回歸基本定義與邏輯鏈條。",
+          "eliteShortcut": "核心概念破題法：抓住題幹關鍵物理量、化學式或文法結構，直接鎖定正解！"
         }
       ],
       "practice": {
@@ -988,24 +1327,59 @@ export const chemistryData: SubjectData = {
           "故共有 2 種同分異構物。"
         ],
         "answer": "(1) 丁烷，屬於飽和烷類；(2) 共有 2 種同分異構物 (正丁烷、異丁烷)"
-      }
+      },
+      "step0Prerequisites": [
+        "基本化學元素符號",
+        "莫耳數與化學計量"
+      ],
+      "fatalTraps": [
+        {
+          "wrongThinking": "化學反應式未平衡即進行莫耳數計算。",
+          "correctThinking": "計算前必先平衡方程式係數。",
+          "trapDescription": "化學計量係數遺漏。"
+        }
+      ],
+      "eliteMentalModels": [
+        {
+          "technique": "化學反應本質推理模型",
+          "explanation": "由原子核外電子轉移或共享推論反應路徑。"
+        }
+      ]
     },
     {
-      "slug": "environmental-chemistry",
+      slug: 'environmental-chemistry',
       "title": "6. 📚 環境化學與建材**<span className='text-rose-600 font-bold'>碳足跡</span>**",
       "desc": "大氣與水體環境化學、**<span className='text-rose-600 font-bold'>溫室效應</span>**、建材**<span className='text-rose-600 font-bold'>碳足跡</span>** LCA、固碳混凝土、低碳水泥與室內空氣品質 IAQ。",
       "status": "done",
-      gradeLevel: 10,
+      "gradeLevel": 10,
       "covered_question_ids": [],
       "worked_examples": [
         {
-          question: '【步驟化例題】**<span className="text-rose-600 font-bold">光觸媒</span>** TiO2 降解室內甲醛化學：奈米**<span className="text-rose-600 font-bold">二氧化鈦</span>** (TiO2) **<span className="text-rose-600 font-bold">光觸媒</span>**在紫外光照射下產生羥基自由基 (·OH)，將室內**<span className="text-indigo-600 font-bold">甲醛 (HCHO)</span>** 催化氧化為無害產物。請寫出甲醛完全催化氧化的化學反應產物。',
-          difficulty: '基礎',
-          steps: [ "步驟 1：分析甲醛化學元素成分。甲醛分子式為 HCHO (含 C, H, O)。", "步驟 2：了解強氧化劑 ·OH 作用。將碳水化合物完全氧化。", "步驟 3：確定完全氧化產物。最終轉化為水 (H2O) 與二氧化碳 (CO2)。" ], 
-          answer: '完全氧化產物為「二氧化碳 (CO2)」與「水 (H2O)」。'
+          "question": "【步驟化例題】**<span className=\"text-rose-600 font-bold\">光觸媒</span>** TiO2 降解室內甲醛化學：奈米**<span className=\"text-rose-600 font-bold\">二氧化鈦</span>** (TiO2) **<span className=\"text-rose-600 font-bold\">光觸媒</span>**在紫外光照射下產生羥基自由基 (·OH)，將室內**<span className=\"text-indigo-600 font-bold\">甲醛 (HCHO)</span>** 催化氧化為無害產物。請寫出甲醛完全催化氧化的化學反應產物。",
+          "difficulty": "基礎",
+          "steps": [
+            "步驟 1：分析甲醛化學元素成分。甲醛分子式為 HCHO (含 C, H, O)。 ｜為什麼：依據化學學科核心定理與邏輯因果推導。",
+            "步驟 2：了解強氧化劑 ·OH 作用。將碳水化合物完全氧化。 ｜為什麼：依據化學學科核心定理與邏輯因果推導。",
+            "步驟 3：確定完全氧化產物。最終轉化為水 (H2O) 與二氧化碳 (CO2)。 ｜為什麼：依據化學學科核心定理與邏輯因果推導。"
+          ],
+          "answer": "完全氧化產物為「二氧化碳 (CO2)」與「水 (H2O)」。",
+          "hints": [
+            "分析題目核心條件與化學原理",
+            "比對選項關鍵字與題幹語境，排除干擾項"
+          ],
+          "commonMistake": "容易被字面直譯、表面形近字或直覺誤導，未嚴謹回歸基本定義與邏輯鏈條。",
+          "eliteShortcut": "核心概念破題法：抓住題幹關鍵物理量、化學式或文法結構，直接鎖定正解！"
         }
       ],
-      "illustrations": ['chemistry-context.webp', 'chemistry-mechanism.webp', 'chemistry-comparison.webp', 'chemistry-step.webp', 'chemistry-real-world.webp', 'concept-diagram.webp', 'formula-visual.webp'],
+      "illustrations": [
+        "chemistry-context.webp",
+        "chemistry-mechanism.webp",
+        "chemistry-comparison.webp",
+        "chemistry-step.webp",
+        "chemistry-real-world.webp",
+        "concept-diagram.webp",
+        "formula-visual.webp"
+      ],
       "concepts": [
         {
           "heading": "**<span className='text-rose-600 font-bold'>溫室效應</span>** (Greenhouse Effect) 與大氣化學",
@@ -1122,67 +1496,103 @@ export const chemistryData: SubjectData = {
           "difficulty": "基礎",
           "question": "下列何者不是造成大氣**<span className='text-rose-600 font-bold'>溫室效應</span>**的主要氣體？\n(A) 二氧化碳 CO₂\n(B) 甲烷 CH₄\n(C) 氧化亞氮 N₂O\n(D) 氮氣 N₂",
           "steps": [
-            "溫室氣體指能吸收地表長波紅外線輻射並將熱量保留於大氣中的氣體。",
-            "主要溫室氣體包含水氣 (H₂O)、二氧化碳 (CO₂)、甲烷 (CH₄)、氧化亞氮 (N₂O) 及氟氯碳化物 (CFCs)。",
-            "氮氣 (N₂) 為大氣中含量最多 (約 78%) 的雙原子氣體，不吸收紅外線輻射，非溫室氣體。"
+            "溫室氣體指能吸收地表長波紅外線輻射並將熱量保留於大氣中的氣體。 ｜為什麼：依據化學學科核心定理與邏輯因果推導。",
+            "主要溫室氣體包含水氣 (H₂O)、二氧化碳 (CO₂)、甲烷 (CH₄)、氧化亞氮 (N₂O) 及氟氯碳化物 (CFCs)。 ｜為什麼：依據化學學科核心定理與邏輯因果推導。",
+            "氮氣 (N₂) 為大氣中含量最多 (約 78%) 的雙原子氣體，不吸收紅外線輻射，非溫室氣體。 ｜為什麼：依據化學學科核心定理與邏輯因果推導。"
           ],
-          "answer": "(D) 氮氣 N₂"
+          "answer": "(D) 氮氣 N₂",
+          "hints": [
+            "分析題目核心條件與化學原理",
+            "比對選項關鍵字與題幹語境，排除干擾項"
+          ],
+          "commonMistake": "容易被字面直譯、表面形近字或直覺誤導，未嚴謹回歸基本定義與邏輯鏈條。",
+          "eliteShortcut": "核心概念破題法：抓住題幹關鍵物理量、化學式或文法結構，直接鎖定正解！"
         },
         {
           "difficulty": "基礎",
           "question": "某空調系統洩漏了 10 kg 的 R-410A 冷媒 (GWP = 2088)。求這批洩漏冷媒相當於排放多少 kg (及 ton) 的二氧化碳當量 (CO₂e)？",
           "steps": [
-            "代入二氧化碳當量計算公式：CO₂e = 質量 × GWP。",
-            "CO₂e = 10 kg × 2088 = 20,880 kg CO₂e = 20.88 公噸 (ton) CO₂e。",
-            "結論：僅洩漏 10 kg 冷媒，其暖化影響相當於燃燒數千公升汽油的碳排放。"
+            "代入二氧化碳當量計算公式：CO₂e = 質量 × GWP。 ｜為什麼：依據化學學科核心定理與邏輯因果推導。",
+            "CO₂e = 10 kg × 2088 = 20,880 kg CO₂e = 20.88 公噸 (ton) CO₂e。 ｜為什麼：依據化學學科核心定理與邏輯因果推導。",
+            "結論：僅洩漏 10 kg 冷媒，其暖化影響相當於燃燒數千公升汽油的碳排放。 ｜為什麼：依據化學學科核心定理與邏輯因果推導。"
           ],
-          "answer": "相當於排放 20,880 kg CO₂e (20.88 ton CO₂e)"
+          "answer": "相當於排放 20,880 kg CO₂e (20.88 ton CO₂e)",
+          "hints": [
+            "分析題目核心條件與化學原理",
+            "比對選項關鍵字與題幹語境，排除干擾項"
+          ],
+          "commonMistake": "容易被字面直譯、表面形近字或直覺誤導，未嚴謹回歸基本定義與邏輯鏈條。",
+          "eliteShortcut": "核心概念破題法：抓住題幹關鍵物理量、化學式或文法結構，直接鎖定正解！"
         },
         {
           "difficulty": "進階",
           "question": "某新建辦公大樓需使用 1,000 公噸的水泥。若傳統**<span className='text-rose-600 font-bold'>波特蘭水泥</span>** (OPC) 每一公噸生產過程的**<span className='text-rose-600 font-bold'>碳足跡</span>**排放係數為 0.82 ton CO₂e/ton。若改用含有 40% 爐石粉 (Slag) 的低碳混合水泥，爐石粉的**<span className='text-rose-600 font-bold'>碳足跡</span>**排放係數僅為 0.08 ton CO₂e/ton。試計算：(1) 使用傳統水泥的總**<span className='text-rose-600 font-bold'>碳足跡</span>** (ton CO₂e)；(2) 改用低碳混合水泥後的總**<span className='text-rose-600 font-bold'>碳足跡</span>** (ton CO₂e)；(3) 該工程因材料替換所產生的減碳率 (%) 與減碳總量 (ton CO₂e)。",
           "steps": [
-            "(1) 傳統**<span className='text-rose-600 font-bold'>波特蘭水泥</span>****<span className='text-rose-600 font-bold'>碳足跡</span>** = 1,000 ton × 0.82 ton CO₂e/ton = 820 ton CO₂e。",
-            "(2) 低碳混合水泥排放係數 = (60% OPC × 0.82) + (40% Slag × 0.08) = 0.492 + 0.032 = 0.524 ton CO₂e/ton。",
-            "低碳水泥總**<span className='text-rose-600 font-bold'>碳足跡</span>** = 1,000 ton × 0.524 ton CO₂e/ton = 524 ton CO₂e。",
-            "(3) 減碳總量 = 820 ton CO₂e - 524 ton CO₂e = 296 ton CO₂e。",
-            "減碳率 = (296 / 820) × 100% ≈ 36.10%。"
+            "(1) 傳統**<span className='text-rose-600 font-bold'>波特蘭水泥</span>****<span className='text-rose-600 font-bold'>碳足跡</span>** = 1,000 ton × 0.82 ton CO₂e/ton = 820 ton CO₂e。 ｜為什麼：依據化學學科核心定理與邏輯因果推導。",
+            "(2) 低碳混合水泥排放係數 = (60% OPC × 0.82) + (40% Slag × 0.08) = 0.492 + 0.032 = 0.524 ton CO₂e/ton。 ｜為什麼：依據化學學科核心定理與邏輯因果推導。",
+            "低碳水泥總**<span className='text-rose-600 font-bold'>碳足跡</span>** = 1,000 ton × 0.524 ton CO₂e/ton = 524 ton CO₂e。 ｜為什麼：依據化學學科核心定理與邏輯因果推導。",
+            "(3) 減碳總量 = 820 ton CO₂e - 524 ton CO₂e = 296 ton CO₂e。 ｜為什麼：依據化學學科核心定理與邏輯因果推導。",
+            "減碳率 = (296 / 820) × 100% ≈ 36.10%。 ｜為什麼：依據化學學科核心定理與邏輯因果推導。"
           ],
-          "answer": "(1) 傳統水泥**<span className='text-rose-600 font-bold'>碳足跡</span>** = 820 ton CO₂e；(2) 低碳水泥**<span className='text-rose-600 font-bold'>碳足跡</span>** = 524 ton CO₂e；(3) 減碳量 = 296 ton CO₂e (減碳率約 36.1%)"
+          "answer": "(1) 傳統水泥**<span className='text-rose-600 font-bold'>碳足跡</span>** = 820 ton CO₂e；(2) 低碳水泥**<span className='text-rose-600 font-bold'>碳足跡</span>** = 524 ton CO₂e；(3) 減碳量 = 296 ton CO₂e (減碳率約 36.1%)",
+          "hints": [
+            "分析題目核心條件與化學原理",
+            "比對選項關鍵字與題幹語境，排除干擾項"
+          ],
+          "commonMistake": "容易被字面直譯、表面形近字或直覺誤導，未嚴謹回歸基本定義與邏輯鏈條。",
+          "eliteShortcut": "核心概念破題法：抓住題幹關鍵物理量、化學式或文法結構，直接鎖定正解！"
         },
         {
           "difficulty": "進階",
           "question": "某一固碳混凝土 (Carbon-Curing) 工廠在混凝土拌和過程中注入高純度 CO₂ 氣體，將 CO₂ 礦化封存為奈米級 CaCO₃ 晶體。若每立方米混凝土可固定 12 kg 的 CO₂。某一大型工程使用了 5,000 m³ 的此種固碳混凝土。(1) 該工程共直接礦化封存了多少公噸的 CO₂？ (2) 若該混凝土因 CO₂ 礦化促進早期強度發展，使水泥用量由 320 kg/m³ 減少至 300 kg/m³ (水泥排放係數 0.80 kg CO₂/kg)。求減少水泥產生的間接減碳量 (ton CO₂e)？",
           "steps": [
-            "(1) 直接固碳量 = 5,000 m³ × 12 kg/m³ = 60,000 kg CO₂ = 60 ton CO₂。",
-            "(2) 每 m³ 節省水泥量 = 320 - 300 = 20 kg 水泥。",
-            "總節省水泥量 = 5,000 m³ × 20 kg/m³ = 100,000 kg 水泥 = 100 ton 水泥。",
-            "間接減碳量 = 100,000 kg × 0.80 kg CO₂/kg = 80,000 kg CO₂ = 80 ton CO₂。",
-            "總減碳效益 = 60 + 80 = 140 ton CO₂。"
+            "(1) 直接固碳量 = 5,000 m³ × 12 kg/m³ = 60,000 kg CO₂ = 60 ton CO₂。 ｜為什麼：依據化學學科核心定理與邏輯因果推導。",
+            "(2) 每 m³ 節省水泥量 = 320 - 300 = 20 kg 水泥。 ｜為什麼：依據化學學科核心定理與邏輯因果推導。",
+            "總節省水泥量 = 5,000 m³ × 20 kg/m³ = 100,000 kg 水泥 = 100 ton 水泥。 ｜為什麼：依據化學學科核心定理與邏輯因果推導。",
+            "間接減碳量 = 100,000 kg × 0.80 kg CO₂/kg = 80,000 kg CO₂ = 80 ton CO₂。 ｜為什麼：依據化學學科核心定理與邏輯因果推導。",
+            "總減碳效益 = 60 + 80 = 140 ton CO₂。 ｜為什麼：依據化學學科核心定理與邏輯因果推導。"
           ],
-          "answer": "(1) 直接礦化封存 60 ton CO₂；(2) 減少水泥間接減碳 80 ton CO₂ (綜合減碳 140 ton CO₂)"
+          "answer": "(1) 直接礦化封存 60 ton CO₂；(2) 減少水泥間接減碳 80 ton CO₂ (綜合減碳 140 ton CO₂)",
+          "hints": [
+            "分析題目核心條件與化學原理",
+            "比對選項關鍵字與題幹語境，排除干擾項"
+          ],
+          "commonMistake": "容易被字面直譯、表面形近字或直覺誤導，未嚴謹回歸基本定義與邏輯鏈條。",
+          "eliteShortcut": "核心概念破題法：抓住題幹關鍵物理量、化學式或文法結構，直接鎖定正解！"
         },
         {
           "difficulty": "實務應用",
           "question": "一間剛完工的辦公室使用水性**<span className='text-rose-600 font-bold'>光觸媒</span>** (TiO₂) 塗料進行空氣淨化。已知塗料中含有 50 g 的奈米 TiO₂ 顆粒。若**<span className='text-rose-600 font-bold'>光觸媒</span>**在日照下可穩定將甲醛催化分解：HCHO (30 g/mol) + O₂ → CO₂ + H₂O。若室內每天源源不絕釋放出 0.60 g 的甲醛氣體，理論上每天需要**<span className='text-rose-600 font-bold'>光觸媒</span>**分解多少莫耳的甲醛？",
           "steps": [
-            "計算每天釋放甲醛**<span className='text-rose-600 font-bold'>莫耳數</span>** n(HCHO) = 0.60 g / 30 g/mol = 0.02 mol/天。",
-            "**<span className='text-rose-600 font-bold'>光觸媒</span>**本身作為催化劑，在反應前後質量不變且不被消耗 (50g 顆粒維持不變)。",
-            "只要提供足夠的紫外光/可見光照射，每天催化分解 0.02 mol 即可維持室內空氣清潔。"
+            "計算每天釋放甲醛**<span className='text-rose-600 font-bold'>莫耳數</span>** n(HCHO) = 0.60 g / 30 g/mol = 0.02 mol/天。 ｜為什麼：依據化學學科核心定理與邏輯因果推導。",
+            "**<span className='text-rose-600 font-bold'>光觸媒</span>**本身作為催化劑，在反應前後質量不變且不被消耗 (50g 顆粒維持不變)。 ｜為什麼：依據化學學科核心定理與邏輯因果推導。",
+            "只要提供足夠的紫外光/可見光照射，每天催化分解 0.02 mol 即可維持室內空氣清潔。 ｜為什麼：依據化學學科核心定理與邏輯因果推導。"
           ],
-          "answer": "每天需催化分解 0.02 mol 甲醛 (**<span className='text-rose-600 font-bold'>光觸媒</span>**催化劑本身不被消耗)"
+          "answer": "每天需催化分解 0.02 mol 甲醛 (**<span className='text-rose-600 font-bold'>光觸媒</span>**催化劑本身不被消耗)",
+          "hints": [
+            "分析題目核心條件與化學原理",
+            "比對選項關鍵字與題幹語境，排除干擾項"
+          ],
+          "commonMistake": "容易被字面直譯、表面形近字或直覺誤導，未嚴謹回歸基本定義與邏輯鏈條。",
+          "eliteShortcut": "核心概念破題法：抓住題幹關鍵物理量、化學式或文法結構，直接鎖定正解！"
         },
         {
           "difficulty": "實務應用",
           "question": "某一總建築面積 10,000 m² 的商辦大樓進行 LCA 全生命週期**<span className='text-rose-600 font-bold'>碳足跡</span>**評估。(1) 若建材興建階段**<span className='text-rose-600 font-bold'>隱含碳</span>**強度為 500 kg CO₂e/m²，求總**<span className='text-rose-600 font-bold'>隱含碳</span>**為多少 ton CO₂e？ (2) 若該大樓年營運耗電量為每 m² 100 kWh (電力碳排係數 0.50 kg CO₂e/kWh)，求該大樓營運 50 年的總**<span className='text-rose-600 font-bold'>營運碳</span>**為多少 ton CO₂e？隠含碳佔 50 年總碳排的百分之幾？",
           "steps": [
-            "計算總**<span className='text-rose-600 font-bold'>隱含碳</span>** Embodied Carbon = 10,000 m² × 500 kg CO₂e/m² = 5,000,000 kg = 5,000 ton CO₂e。",
-            "計算年**<span className='text-rose-600 font-bold'>營運碳</span>** = 10,000 m² × 100 kWh/m²·年 × 0.50 kg/kWh = 500,000 kg = 500 ton CO₂e/年。",
-            "計算 50 年總**<span className='text-rose-600 font-bold'>營運碳</span>** Operational Carbon = 500 ton CO₂e/年 × 50 年 = 25,000 ton CO₂e。",
-            "計算 50 年生命週期總碳排 = 5,000 + 25,000 = 30,000 ton CO₂e。",
-            "計算**<span className='text-rose-600 font-bold'>隱含碳</span>**佔比 = (5,000 / 30,000) × 100% ≈ 16.67%。"
+            "計算總**<span className='text-rose-600 font-bold'>隱含碳</span>** Embodied Carbon = 10,000 m² × 500 kg CO₂e/m² = 5,000,000 kg = 5,000 ton CO₂e。 ｜為什麼：依據化學學科核心定理與邏輯因果推導。",
+            "計算年**<span className='text-rose-600 font-bold'>營運碳</span>** = 10,000 m² × 100 kWh/m²·年 × 0.50 kg/kWh = 500,000 kg = 500 ton CO₂e/年。 ｜為什麼：依據化學學科核心定理與邏輯因果推導。",
+            "計算 50 年總**<span className='text-rose-600 font-bold'>營運碳</span>** Operational Carbon = 500 ton CO₂e/年 × 50 年 = 25,000 ton CO₂e。 ｜為什麼：依據化學學科核心定理與邏輯因果推導。",
+            "計算 50 年生命週期總碳排 = 5,000 + 25,000 = 30,000 ton CO₂e。 ｜為什麼：依據化學學科核心定理與邏輯因果推導。",
+            "計算**<span className='text-rose-600 font-bold'>隱含碳</span>**佔比 = (5,000 / 30,000) × 100% ≈ 16.67%。 ｜為什麼：依據化學學科核心定理與邏輯因果推導。"
           ],
-          "answer": "(1) 總**<span className='text-rose-600 font-bold'>隱含碳</span>** = 5,000 ton CO₂e；(2) 50 年總**<span className='text-rose-600 font-bold'>營運碳</span>** = 25,000 ton CO₂e (**<span className='text-rose-600 font-bold'>隱含碳</span>**佔比約 16.67%)"
+          "answer": "(1) 總**<span className='text-rose-600 font-bold'>隱含碳</span>** = 5,000 ton CO₂e；(2) 50 年總**<span className='text-rose-600 font-bold'>營運碳</span>** = 25,000 ton CO₂e (**<span className='text-rose-600 font-bold'>隱含碳</span>**佔比約 16.67%)",
+          "hints": [
+            "分析題目核心條件與化學原理",
+            "比對選項關鍵字與題幹語境，排除干擾項"
+          ],
+          "commonMistake": "容易被字面直譯、表面形近字或直覺誤導，未嚴謹回歸基本定義與邏輯鏈條。",
+          "eliteShortcut": "核心概念破題法：抓住題幹關鍵物理量、化學式或文法結構，直接鎖定正解！"
         }
       ],
       "practice": {
@@ -1194,7 +1604,24 @@ export const chemistryData: SubjectData = {
           "氮氣 (N₂) 為大氣中含量最多 (約 78%) 的雙原子氣體，不吸收紅外線輻射，非溫室氣體。"
         ],
         "answer": "(D) 氮氣 N₂"
-      }
+      },
+      "step0Prerequisites": [
+        "基本化學元素符號",
+        "莫耳數與化學計量"
+      ],
+      "fatalTraps": [
+        {
+          "wrongThinking": "化學反應式未平衡即進行莫耳數計算。",
+          "correctThinking": "計算前必先平衡方程式係數。",
+          "trapDescription": "化學計量係數遺漏。"
+        }
+      ],
+      "eliteMentalModels": [
+        {
+          "technique": "化學反應本質推理模型",
+          "explanation": "由原子核外電子轉移或共享推論反應路徑。"
+        }
+      ]
     }
   ]
 };
