@@ -1,11 +1,13 @@
 'use client';
 
-import React from 'react';
+import React, { useState } from 'react';
 import MechanicsVisualizer from './MechanicsVisualizer';
 import SurveyingVisualizer from './SurveyingVisualizer';
 import MaterialsVisualizer from './MaterialsVisualizer';
 import DraftingVisualizer from './DraftingVisualizer';
 import MathScienceVisualizer from './MathScienceVisualizer';
+import HumanitiesVisualizer from './HumanitiesVisualizer';
+import BuildingEngineeringVisualizer from './BuildingEngineeringVisualizer';
 
 interface InteractiveVisualizerProps {
   subjectSlug: string;
@@ -13,42 +15,123 @@ interface InteractiveVisualizerProps {
 }
 
 export default function InteractiveVisualizer({ subjectSlug, topicSlug }: InteractiveVisualizerProps) {
-  if (subjectSlug === 'mechanics') {
-    return <MechanicsVisualizer topicSlug={topicSlug} />;
-  }
+  const [activeTabOverride, setActiveTabOverride] = useState<string | null>(null);
 
-  if (subjectSlug === 'surveying') {
-    return <SurveyingVisualizer topicSlug={topicSlug} />;
-  }
+  const defaultModule = (() => {
+    if (subjectSlug === 'mechanics') return 'mechanics';
+    if (subjectSlug === 'surveying') return 'surveying';
+    if (subjectSlug === 'materials') return 'materials';
+    if (subjectSlug === 'drafting') return 'drafting';
+    if (['extensions'].includes(subjectSlug) || topicSlug.includes('bim') || topicSlug.includes('green') || topicSlug.includes('far')) {
+      return 'building';
+    }
+    if (['chinese', 'english', 'history', 'geography', 'civics'].includes(subjectSlug)) {
+      return 'humanities';
+    }
+    return 'math-science';
+  })();
 
-  if (subjectSlug === 'materials') {
-    return <MaterialsVisualizer topicSlug={topicSlug} />;
-  }
-
-  if (subjectSlug === 'drafting') {
-    return <DraftingVisualizer topicSlug={topicSlug} />;
-  }
-
-  if (['math-c', 'physics', 'chemistry', 'extensions'].includes(subjectSlug)) {
-    return <MathScienceVisualizer topicSlug={topicSlug} />;
-  }
+  const currentModule = activeTabOverride ?? defaultModule;
 
   return (
-    <div className="rounded-2xl border border-blue-100 dark:border-blue-900/40 bg-blue-50/30 dark:bg-blue-950/20 p-5 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 text-xs font-mono">
-      <div className="space-y-1">
-        <span className="font-bold text-blue-900 dark:text-blue-200 flex items-center gap-1.5 text-sm">
-          <span>🔬</span> Arch 互動圖解實驗室 (Interactive Studio)
+    <div className="space-y-3">
+      {/* Visualizer Quick Lab Switcher */}
+      <div className="flex items-center justify-between overflow-x-auto pb-1 text-xs font-mono">
+        <span className="text-slate-500 dark:text-slate-400 font-bold shrink-0 mr-2">
+          🔬 互動圖解實驗室：
         </span>
-        <p className="text-slate-600 dark:text-slate-400 font-sans text-xs">
-          探索全科目可互動之結構力學、CNS 投影製圖、工程測量水準平差與混凝土水灰比模擬器。
-        </p>
+        <div className="flex gap-1 shrink-0 bg-slate-100 dark:bg-slate-800/80 p-1 rounded-xl border border-slate-200 dark:border-slate-700/60">
+          <button
+            onClick={() => setActiveTabOverride(defaultModule)}
+            className={`px-2.5 py-1 rounded-lg font-bold transition-all ${
+              currentModule === defaultModule
+                ? 'bg-blue-600 text-white shadow-2xs'
+                : 'text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white'
+            }`}
+          >
+            本章推薦圖解
+          </button>
+          <button
+            onClick={() => setActiveTabOverride('mechanics')}
+            className={`px-2.5 py-1 rounded-lg font-bold transition-all ${
+              currentModule === 'mechanics'
+                ? 'bg-teal-600 text-white shadow-2xs'
+                : 'text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white'
+            }`}
+          >
+            結構力學
+          </button>
+          <button
+            onClick={() => setActiveTabOverride('surveying')}
+            className={`px-2.5 py-1 rounded-lg font-bold transition-all ${
+              currentModule === 'surveying'
+                ? 'bg-emerald-600 text-white shadow-2xs'
+                : 'text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white'
+            }`}
+          >
+            測量實習
+          </button>
+          <button
+            onClick={() => setActiveTabOverride('materials')}
+            className={`px-2.5 py-1 rounded-lg font-bold transition-all ${
+              currentModule === 'materials'
+                ? 'bg-amber-600 text-white shadow-2xs'
+                : 'text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white'
+            }`}
+          >
+            材料試驗
+          </button>
+          <button
+            onClick={() => setActiveTabOverride('drafting')}
+            className={`px-2.5 py-1 rounded-lg font-bold transition-all ${
+              currentModule === 'drafting'
+                ? 'bg-sky-600 text-white shadow-2xs'
+                : 'text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white'
+            }`}
+          >
+            建築製圖
+          </button>
+          <button
+            onClick={() => setActiveTabOverride('building')}
+            className={`px-2.5 py-1 rounded-lg font-bold transition-all ${
+              currentModule === 'building'
+                ? 'bg-emerald-700 text-white shadow-2xs'
+                : 'text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white'
+            }`}
+          >
+            BIM / 綠建築
+          </button>
+          <button
+            onClick={() => setActiveTabOverride('humanities')}
+            className={`px-2.5 py-1 rounded-lg font-bold transition-all ${
+              currentModule === 'humanities'
+                ? 'bg-indigo-600 text-white shadow-2xs'
+                : 'text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white'
+            }`}
+          >
+            人文社會
+          </button>
+          <button
+            onClick={() => setActiveTabOverride('math-science')}
+            className={`px-2.5 py-1 rounded-lg font-bold transition-all ${
+              currentModule === 'math-science'
+                ? 'bg-purple-600 text-white shadow-2xs'
+                : 'text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white'
+            }`}
+          >
+            數理科學
+          </button>
+        </div>
       </div>
-      <a
-        href="/visualizers"
-        className="shrink-0 rounded-xl bg-blue-600 hover:bg-blue-700 text-white font-bold px-4 py-2 transition-colors shadow-2xs"
-      >
-        打開實驗室 →
-      </a>
+
+      {/* Render matching visualizer module */}
+      {currentModule === 'mechanics' && <MechanicsVisualizer topicSlug={topicSlug} />}
+      {currentModule === 'surveying' && <SurveyingVisualizer topicSlug={topicSlug} />}
+      {currentModule === 'materials' && <MaterialsVisualizer topicSlug={topicSlug} />}
+      {currentModule === 'drafting' && <DraftingVisualizer topicSlug={topicSlug} />}
+      {currentModule === 'building' && <BuildingEngineeringVisualizer topicSlug={topicSlug} />}
+      {currentModule === 'humanities' && <HumanitiesVisualizer subjectSlug={subjectSlug} topicSlug={topicSlug} />}
+      {currentModule === 'math-science' && <MathScienceVisualizer topicSlug={topicSlug} />}
     </div>
   );
 }
