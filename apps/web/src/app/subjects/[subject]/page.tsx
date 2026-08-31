@@ -2,6 +2,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { allSubjects } from '@/data/subjects';
+import SubjectConstellationCanvas from '@/components/gamification/SubjectConstellationCanvas';
 
 export function generateStaticParams() {
   return allSubjects.map((subject) => ({ subject: subject.slug }));
@@ -84,6 +85,11 @@ export default async function SubjectPage({ params }: { params: Promise<{ subjec
           </div>
         </div>
       </header>
+
+      {/* Interactive Subject Constellation Star Map Section */}
+      <section className="space-y-4">
+        <SubjectConstellationCanvas subjectSlug={subject.slug} showTitleHeader={true} />
+      </section>
 
       {/* Topics Syllabus Section */}
       <section className="space-y-6">

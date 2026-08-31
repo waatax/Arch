@@ -20,6 +20,10 @@ import { buildDetailedSolution } from '@/lib/pedagogy/solutionSteps';
 import { getLearningSources } from '@/lib/pedagogy/learningSources';
 import { buildExamWalkthrough, getMasteryLesson } from '@/lib/pedagogy/masteryLesson';
 import { isAnswerChoiceCorrect, isAnswerCorrect, isMultipleChoiceAnswer, toggleSelectedChoice } from '@/lib/examAnswers';
+import { useGamificationStore } from '@/lib/store/gamificationStore';
+import { soundEngine } from '@/lib/audio/soundEffects';
+import { findStarByTopic } from '@/data/constellations/subjectConstellations';
+import { Sparkles } from 'lucide-react';
 
 interface TopicPageLayoutProps {
   subject: SubjectData;
@@ -57,6 +61,11 @@ export default function TopicPageLayout({ subject, topic, mappedExamQuestions }:
   ]).size;
   const learningSources = getLearningSources(subject.slug);
   const isExamSubject = ['mechanics', 'materials', 'surveying', 'drafting', 'chinese', 'english', 'math-c'].includes(subject.slug);
+
+  // Gamification & Constellation Star Status
+  const { unlockedStars, unlockStarNode, soundEnabled } = useGamificationStore();
+  const starNode = findStarByTopic(subject.slug, topic.slug);
+  const isStarLit = starNode ? unlockedStars.includes(starNode.id) : false;
 
   // Exam Questions Interactive Answer State
   const [selectedExamAnswers, setSelectedExamAnswers] = useState<Record<string, string>>({});
@@ -247,6 +256,43 @@ export default function TopicPageLayout({ subject, topic, mappedExamQuestions }:
           {/* V8 Step-0 Prerequisite Knowledge Tooltip */}
           {topic.step0Prerequisites && topic.step0Prerequisites.length > 0 && (
             <Step0Tooltip prerequisites={topic.step0Prerequisites} />
+          )}
+
+          {/* Architectural Skill Constellation Coordinate Card */}
+          {starNode && (
+            <div className="flex flex-wrap items-center justify-between gap-3 p-3.5 sm:p-4 rounded-2xl bg-gradient-to-r from-slate-900 via-indigo-950/80 to-slate-900 border border-indigo-500/30 text-white text-xs font-mono shadow-md">
+              <div className="flex items-center gap-2">
+                <Sparkles className="size-4 text-amber-400 animate-pulse" />
+                <span className="text-slate-300">
+                  星系坐標：<strong className="text-indigo-300">{subject.title}</strong> · 第 {starNode.chapterNumber} 單元【{starNode.name}】
+                </span>
+              </div>
+              <div className="flex items-center gap-3">
+                {isStarLit ? (
+                  <span className="flex items-center gap-1 text-emerald-400 font-bold">
+                    <CircleCheckBig className="size-3.5" /> 恆星已點亮
+                  </span>
+                ) : (
+                  <button
+                    type="button"
+                    onClick={() => {
+                      unlockStarNode(starNode.id);
+                      if (soundEnabled) soundEngine.playCorrectChime();
+                    }}
+                    className="px-2.5 py-1 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white font-bold text-[11px] transition flex items-center gap-1 shadow-sm"
+                  >
+                    <Sparkles className="size-3" />
+                    點亮本科星座標 (+40 EXP)
+                  </button>
+                )}
+                <Link
+                  href="/constellation"
+                  className="text-slate-400 hover:text-white underline text-[11px] flex items-center gap-0.5"
+                >
+                  星空全景 →
+                </Link>
+              </div>
+            </div>
           )}
         </div>
 
