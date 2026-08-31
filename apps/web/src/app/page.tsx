@@ -1,15 +1,17 @@
 import Link from 'next/link';
-import { ArrowRight, Building2, CheckCircle2, Compass, DraftingCompass, HardHat, Landmark, Play, ShieldCheck, Target } from 'lucide-react';
+import { ArrowRight, Building2, CheckCircle2, Compass, DraftingCompass, HardHat, Landmark, Play, ShieldCheck, Target, Sparkles, Star } from 'lucide-react';
 import ExpertCouncilBanner from '@/components/pedagogy/ExpertCouncilBanner';
 import AdaptiveDailyLoop from '@/components/pedagogy/AdaptiveDailyLoop';
 
 const paths = [
-  { icon: Compass, eyebrow: '👶 給不知從何開始的你', title: '跟著課程地圖穩穩學', copy: '把 99 個章節依先備知識排好，從生活常識出發，一步步陪你走到統測考題，沒有壓力。', href: '/curriculum', cta: '展開我的學習地圖', tone: 'blue', primary: true },
-  { icon: Target, eyebrow: '🎯 給想找出手感的你', title: '用歷屆試題找弱點', copy: '111–115 年共 925 題。寫錯沒關係，系統會溫柔地幫你拆解步驟，並收錄到專屬錯題本。', href: '/practice', cta: '開始一次無壓力的練習', tone: 'coral', primary: true },
-  { icon: DraftingCompass, eyebrow: '動態圖解', title: '互動圖解實驗室', copy: '簡支梁受力、莫爾圓主應力、第三角投影展開與水灰比強度模擬。', href: '/visualizers', cta: '進入圖解實驗室', tone: 'slate' },
+  { icon: Sparkles, eyebrow: '⚔️ 2026 高二開學首發', title: '高二開學 60 天冒險戰役', copy: '8 大戰役關卡循序推進，結合營造現場工程探案、每日懸賞委託與藍圖碎片收集，無壓力通關。', href: '/quest', cta: '進入開學冒險戰役', tone: 'amber', primary: true },
+  { icon: Star, eyebrow: '✨ 跨領域星系網絡', title: '建築大師技能星空圖', copy: '13 科 111 主題專業技能星空圖，點亮力學、材料、測量、製圖與數學 C 跨領域星系網絡。', href: '/constellation', cta: '點亮我的技能星空', tone: 'blue', primary: true },
+  { icon: Building2, eyebrow: '🏛️ 幾何名築畫布', title: '建築大師工坊', copy: '親手組裝路思義教堂、台中歌劇院、台北101、淡江大橋與 921 園區 3D/SVG 幾何名築。', href: '/studio', cta: '打開大師工坊畫布', tone: 'blue', primary: true },
+  { icon: Compass, eyebrow: '👶 給不知從何開始的你', title: '跟著課程地圖穩穩學', copy: '把 99 個章節依先備知識排好，從生活常識出發，一步步陪你走到統測考題，沒有壓力。', href: '/curriculum', cta: '展開我的學習地圖', tone: 'blue', primary: false },
+  { icon: Target, eyebrow: '🎯 給想找出手感的你', title: '用歷屆試題找弱點', copy: '111–115 年共 925 題。寫錯沒關係，系統會溫柔地幫你拆解步驟，並收錄到專屬錯題本。', href: '/practice', cta: '開始一次無壓力的練習', tone: 'coral', primary: false },
+  { icon: DraftingCompass, eyebrow: '動態圖解', title: '互動圖解實驗室', copy: '簡支梁受力、莫爾圓主應力、第三角投影展開、水準儀與地震振動台模擬。', href: '/visualizers', cta: '進入圖解實驗室', tone: 'slate' },
   { icon: HardHat, eyebrow: '現場實務', title: '營造現場檢驗手冊', copy: '連結施工規範綱要、CNS 坍度氯離子試驗、高張力螺栓與梁穿孔防錯。', href: '/field-guide', cta: '查閱現場手冊', tone: 'slate' },
   { icon: ShieldCheck, eyebrow: '高頻速查', title: '全科考點速查指南', copy: '專一專二高頻公式卡、物理量綱、記憶口訣與一鍵複製 LaTeX 算式。', href: '/cheatsheets', cta: '開啟考點速查卡', tone: 'slate' },
-  { icon: Building2, eyebrow: '建立建築感', title: '從真實案例理解', copy: '把結構、材料、構造與空間，放回你看得見的台灣建築。', href: '/cases', cta: '進入案例實驗室', tone: 'slate' },
   { icon: Landmark, eyebrow: '官方彙整', title: '資格考試資源彙整', copy: '考選部高考建築師、結構技師、土木技師大綱、公會權威與歷屆試題庫。', href: '/resources', cta: '查閱資格考試資源', tone: 'slate' },
 ];
 
@@ -28,8 +30,8 @@ export default function Home() {
         <div className="mx-auto grid max-w-7xl gap-10 px-4 pb-16 pt-12 sm:px-6 sm:pb-24 sm:pt-20 lg:grid-cols-[1.15fr_.85fr] lg:items-center lg:px-8">
           <div className="relative z-10">
             <div className="mb-6 flex flex-wrap items-center gap-2 text-[11px] font-bold tracking-[.16em]">
-              <span className="rounded-full bg-blue-600/90 px-3 py-1.5 text-white">ARCH V8.02</span>
-              <span className="text-slate-500 dark:text-slate-400">台灣高工建築科學習基地</span>
+              <span className="rounded-full bg-blue-600/90 px-3 py-1.5 text-white">ARCH V8.10</span>
+              <span className="text-slate-500 dark:text-slate-400">台灣高工建築科學習基地 · 2026 大師修煉版</span>
             </div>
             <ExpertCouncilBanner compact className="mb-6" />
             <h1 className="max-w-3xl font-serif text-[clamp(2.5rem,7vw,5.5rem)] font-bold leading-[1.1] tracking-[-.03em] text-slate-800 dark:text-slate-100">

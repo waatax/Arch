@@ -14,6 +14,16 @@ import {
   Check,
   Zap
 } from 'lucide-react';
+import TrussZeroForceHunter from '@/components/games/TrussZeroForceHunter';
+import LevelingBubbleMaster from '@/components/games/LevelingBubbleMaster';
+import Orthographic3DBox from '@/components/games/Orthographic3DBox';
+import ConcreteSlumpLab from '@/components/games/ConcreteSlumpLab';
+import BeamBalancerGame from '@/components/games/BeamBalancerGame';
+import VirtualDraftingTable from '@/components/games/VirtualDraftingTable';
+import SeismicDefenseLab from '@/components/games/SeismicDefenseLab';
+import TotalStationTraverseLab from '@/components/games/TotalStationTraverseLab';
+import SiteHazardDetective from '@/components/gamification/SiteHazardDetective';
+import LofiArchitectSoundscape from '@/components/gamification/LofiArchitectSoundscape';
 
 const materialProps = {
   a36: { name: 'CNS A36 低碳鋼', E: 200, fy: 250, desc: 'E = 200 GPa, fy = 250 MPa' },
@@ -237,6 +247,9 @@ export default function VisualizersPage() {
       {/* --- Tab 1: Structural Mechanics Simulator --- */}
       {activeTab === 'mechanics' && (
         <div className="space-y-10 animate-fadeIn">
+          {/* Interactive Game: Truss Zero Force Member Hunter */}
+          <TrussZeroForceHunter />
+
           {/* Section 1: Beam Shear & Moment */}
           <div className="rounded-3xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 p-6 sm:p-8 shadow-sm space-y-6">
             <div className="flex flex-wrap items-center justify-between gap-3 border-b border-slate-100 dark:border-slate-800 pb-4">
@@ -439,6 +452,9 @@ export default function VisualizersPage() {
               </div>
             </div>
           </div>
+
+          {/* Interactive Game: Beam Balancer Game */}
+          <BeamBalancerGame />
 
           {/* Section 2: Mohr's Circle Simulator */}
           <div className="rounded-3xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 p-6 sm:p-8 shadow-sm space-y-6">
@@ -768,12 +784,21 @@ export default function VisualizersPage() {
               </div>
             </div>
           </div>
+
+          {/* Interactive Game: Seismic Shaking Table Lab */}
+          <SeismicDefenseLab />
         </div>
       )}
 
       {/* --- Tab 2: Architectural Drafting Simulator --- */}
       {activeTab === 'drafting' && (
         <div className="space-y-8 animate-fadeIn">
+          {/* Interactive Game: Virtual Drafting Table Lab */}
+          <VirtualDraftingTable />
+
+          {/* Interactive Game: Orthographic 3D Box */}
+          <Orthographic3DBox />
+
           <div className="rounded-3xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 p-6 sm:p-8 shadow-sm space-y-6">
             <div className="flex flex-wrap items-center justify-between gap-3 border-b border-slate-100 dark:border-slate-800 pb-4">
               <div>
@@ -989,6 +1014,11 @@ export default function VisualizersPage() {
       {/* --- Tab 3: Surveying Leveling Simulator --- */}
       {activeTab === 'surveying' && (
         <div className="space-y-8 animate-fadeIn">
+          {/* Interactive Game: Total Station Traverse Lab */}
+          <TotalStationTraverseLab />
+
+          {/* Interactive Game: Leveling Bubble Master */}
+          <LevelingBubbleMaster />
           <div className="rounded-3xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 p-6 sm:p-8 shadow-sm space-y-6">
             <div className="flex flex-wrap items-center justify-between gap-3 border-b border-slate-100 dark:border-slate-800 pb-4">
               <div>
@@ -1090,6 +1120,11 @@ export default function VisualizersPage() {
       {/* --- Tab 4: Concrete Materials & Slump --- */}
       {activeTab === 'materials' && (
         <div className="space-y-8 animate-fadeIn">
+          {/* Interactive Game: Concrete Slump Lab */}
+          <ConcreteSlumpLab />
+
+          {/* Interactive Game: Site Hazard Detective */}
+          <SiteHazardDetective />
           <div className="rounded-3xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 p-6 sm:p-8 shadow-sm space-y-6">
             <div className="flex flex-wrap items-center justify-between gap-3 border-b border-slate-100 dark:border-slate-800 pb-4">
               <div>
@@ -1168,6 +1203,9 @@ export default function VisualizersPage() {
       {/* --- Tab 5: Building Physics --- */}
       {activeTab === 'physics' && (
         <div className="space-y-8 animate-fadeIn">
+          {/* Interactive Component: Lofi Soundscape & Pomodoro Timer */}
+          <LofiArchitectSoundscape />
+
           <div className="rounded-3xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 p-6 sm:p-8 shadow-sm space-y-6">
             <div className="flex flex-wrap items-center justify-between gap-3 border-b border-slate-100 dark:border-slate-800 pb-4">
               <div>

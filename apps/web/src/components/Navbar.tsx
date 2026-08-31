@@ -3,12 +3,17 @@
 import { useState, useMemo, useEffect, useRef } from 'react';
 import Link from 'next/link';
 import { usePathname, useRouter } from 'next/navigation';
+import { Volume2, VolumeX } from 'lucide-react';
 import ThemeToggle from './ThemeToggle';
 import { topicSearchIndex } from '@/data/topicSearchIndex';
+import { useGamificationStore } from '@/lib/store/gamificationStore';
 
 const navLinks = [
   { href: '/', label: '首頁' },
+  { href: '/quest', label: '冒險\n戰役' },
+  { href: '/studio', label: '大師\n工坊' },
   { href: '/curriculum', label: '課程\n地圖' },
+  { href: '/constellation', label: '星空\n技能' },
   { href: '/visualizers', label: '圖解\n實驗' },
   { href: '/field-guide', label: '現場\n手冊' },
   { href: '/cheatsheets', label: '速查\n指南' },
@@ -37,6 +42,14 @@ const specialHubs = [
     badge: '實驗室',
     category: 'hubs',
     tags: ['實驗室', '模擬', '簡支梁', '莫爾圓', '主應力', '第三角', '水準儀', '水灰比', 'u值', 'visualizer', 'sfd', 'bmd'],
+  },
+  {
+    title: '✨ 建築大師技能星空圖 (Constellation)',
+    desc: '13 科 111 主題專業技能星空圖，點亮力學、材料、測量、製圖與數學 C 跨領域星系網絡',
+    href: '/constellation',
+    badge: '技能星空',
+    category: 'hubs',
+    tags: ['星空', '技能樹', '星座', '恆星', '力學星系', '材料星系', '測量星系', '製圖星系', '數學c', 'constellation'],
   },
   {
     title: '🏗️ 營造現場工程實務手冊 (Field Guide)',
@@ -99,6 +112,7 @@ const specialHubs = [
 export default function Navbar() {
   const pathname = usePathname();
   const router = useRouter();
+  const { soundEnabled, toggleSound } = useGamificationStore();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [searchOpen, setSearchOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState('');
@@ -315,6 +329,17 @@ export default function Navbar() {
             </button>
 
             <ThemeToggle />
+
+            {/* Sound Effects Toggle Button */}
+            <button
+              type="button"
+              onClick={toggleSound}
+              className="flex size-9 items-center justify-center rounded-xl border border-slate-200 dark:border-slate-800 text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors cursor-pointer"
+              aria-label={soundEnabled ? '關閉音效' : '開啟音效'}
+              title={soundEnabled ? '音效已開啟 (點擊靜音)' : '音效已靜音 (點擊開啟)'}
+            >
+              {soundEnabled ? <Volume2 className="size-4 text-blue-600 dark:text-blue-400" /> : <VolumeX className="size-4 text-slate-400" />}
+            </button>
 
             {/* Mobile Menu Toggle Button */}
             <button

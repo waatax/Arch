@@ -45,7 +45,16 @@ export const mechanicsGapTopics: TopicContent[] = [
       {
         heading: '等值合力與作用點',
         body: '同向平行力的合力為<span className="text-indigo-600 font-bold">各力代數和</span>；作用線位置由「<span className="text-rose-600 font-bold">對任一點的總力矩相等</span>」決定。分布載重的合力等於**載重圖面積**，作用於**載重圖形心**。',
-        formula: '<span className="text-rose-600 font-bold">R = ΣF</span>；<span className="text-indigo-600 font-bold">x_R = Σ(F_i x_i) / ΣF</span>；R = ∫w(x)dx'
+        formula: '<span className="text-rose-600 font-bold">R = ΣF</span>；<span className="text-indigo-600 font-bold">x_R = Σ(F_i x_i) / ΣF</span>；R = ∫w(x)dx',
+        table: {
+          headers: ['載重類型', '等值合力大小 (R)', '作用線位置 (x_R)', '必背記憶口訣與工程特點'],
+          rows: [
+            ['均布載重 (Uniform, w)', 'R = w · L', '跨度正中點 x = L/2', '對稱分布，各反力均分 (wL/2)'],
+            ['三角形載重 (0 → w₀)', 'R = (1/2) · w₀ · L', '距大端 L/3 (距尖端 2L/3)', '面積除以二，形心偏重端三分之一'],
+            ['集中載重 (Point, P)', 'R = P', '位於載重作用點 x = a', '剪力圖發生突變 (跳階 P)'],
+            ['梯形載重 (w₁ → w₂)', 'R = ((w₁+w₂)/2) · L', '拆解為矩形 + 三角形加權求形心', '疊加原理快速計算反力']
+          ]
+        }
       },
       {
         heading: '均布與三角形載重',
@@ -95,7 +104,16 @@ export const mechanicsGapTopics: TopicContent[] = [
       {
         heading: '三個獨立平衡條件',
         body: '平面剛體平衡必須同時滿足<span className="text-indigo-600 font-bold">水平力</span>、<span className="text-indigo-600 font-bold">垂直力</span>及任一點<span className="text-rose-600 font-bold">總力矩為零</span>。取矩點宜穿過**最多未知力作用線**以簡化計算。',
-        formula: '<span className="text-rose-600 font-bold">ΣF_x=0</span>；<span className="text-rose-600 font-bold">ΣF_y=0</span>；<span className="text-rose-600 font-bold">ΣM_O=0</span>'
+        formula: '<span className="text-rose-600 font-bold">ΣF_x=0</span>；<span className="text-rose-600 font-bold">ΣF_y=0</span>；<span className="text-rose-600 font-bold">ΣM_O=0</span>',
+        table: {
+          headers: ['支承約束型式', '反力數與未知量', '平衡方程式組', '統測解題 SOP 與取矩技巧'],
+          rows: [
+            ['滾支承 (Roller)', '1 個垂直反力 (R_y)', 'ΣF_y = 0', '允許水平移動與自由轉動'],
+            ['鉸支承 (Hinged / Pin)', '2 個反力 (R_x, R_y)', 'ΣF_x = 0, ΣF_y = 0', '取矩點首選鉸支承點，消去 2 個未知數'],
+            ['固定端 (Fixed)', '3 個反力 (R_x, R_y, M_A)', 'ΣF_x = 0, ΣF_y = 0, ΣM_A = 0', '含反力矩 M_A，懸臂梁直接由自由端回推'],
+            ['三力平衡剛體', '3 個共面力交於一點或平行', '拉密定理 / 力三角形閉合', '三非平行力平衡時其作用線必共點']
+          ]
+        }
       },
       {
         heading: '力的移轉與力偶',
@@ -145,7 +163,17 @@ export const mechanicsGapTopics: TopicContent[] = [
       {
         heading: '直接剪應力',
         body: '鉚釘、螺栓或沖孔面常先以<span className="text-indigo-600 font-bold">平均剪應力</span>計算。**雙剪**有兩個剪切面，有效面積是單剪的兩倍。',
-        formula: '<span className="text-rose-600 font-bold">τ_avg = V / A_s</span>；A_s = n(πd²/4)'
+        formula: '<span className="text-rose-600 font-bold">τ_avg = V / A_s</span>；A_s = n(πd²/4)',
+        table: {
+          headers: ['截面形狀 / 受剪型態', '平均剪應力公式', '最大剪應力 τ_max', '統測秒殺倍率與注意事項'],
+          rows: [
+            ['單剪連接 (Single Shear)', 'τ = V / A', 'τ_max = V / A', '剪切面積 A = πd²/4 (單面受剪)'],
+            ['雙剪連接 (Double Shear)', 'τ = V / (2A)', 'τ_max = V / (2A)', '有效受剪面積加倍 (2A)，應力減半'],
+            ['矩形梁截面 (b × h)', 'τ_avg = V / (bh)', 'τ_max = 1.5 · (V/A)', '最大剪應力發生於中性軸 (NA)，為平均值 1.5 倍'],
+            ['實心圓形截面 (直徑 d)', 'τ_avg = V / (πr²)', 'τ_max = (4/3) · (V/A)', '最大剪應力為平均值 4/3 倍 (約 1.33 倍)'],
+            ['薄壁圓管 (厚度 t)', 'τ_avg = V / A', 'τ_max = 2.0 · (V/A)', '最大剪應力為平均值 2.0 倍']
+          ]
+        }
       },
       {
         heading: '梁的橫向剪應力',
@@ -198,7 +226,16 @@ export const surveyingGapTopics: TopicContent[] = [
     concepts: [
       {
         heading: '測量工作與基準',
-        body: '測量以距離、角度與高差觀測建立點位。小區域可採<span className="text-indigo-600 font-bold">平面測量假設</span>；範圍擴大時必須考慮地球曲率、坐標系與高程基準。'
+        body: '測量以距離、角度與高差觀測建立點位。小區域可採<span className="text-indigo-600 font-bold">平面測量假設</span>；範圍擴大時必須考慮地球曲率、坐標系與高程基準。',
+        table: {
+          headers: ['誤差 / 指標類別', '主要成因與物理特徵', '消減與改正對策', '統測必背公式與記憶口訣'],
+          rows: [
+            ['人為粗差 (Blunder / Mistake)', '讀數粗心、記錄顛倒、立尺不垂直', '加強檢核、重測並直接剔除', '嚴禁混入平差計算；核對正倒鏡'],
+            ['系統誤差 (Systematic Error)', '尺長不符、溫差膨脹、視準軸偏差', '計算公式改正或特定觀測法消除', '具規律性與累積性；盤左盤右消差'],
+            ['偶然誤差 (Accidental Error)', '大氣擾動、調焦估讀隨機微小震盪', '多次重複觀測取算術平均值 (最或是值)', '遵循常態分佈；總誤差 ∝ √N，均值誤差 ∝ 1/√N'],
+            ['精度指標 (Precision vs Accuracy)', '精密度：觀測值離散度；準確度：接近真值', '以標準差 σ、中誤差 m、相對精度 1/M 表示', '相對閉合精度 = 閉合差 K / 總長 L = 1/M']
+          ]
+        }
       },
       {
         heading: '誤差、錯誤與精度',
@@ -248,7 +285,16 @@ export const surveyingGapTopics: TopicContent[] = [
       {
         heading: '視距測量',
         body: '標尺垂直且視線有垂直角 α 時，水平距離包含<span className="text-indigo-600 font-bold">乘常數項</span>與<span className="text-indigo-600 font-bold">加常數項</span>；題目若只給上下絲讀數，視距間隔 s 為**兩者之差**。',
-        formula: '<span className="text-rose-600 font-bold">H = K s cos²α + C cosα</span>'
+        formula: '<span className="text-rose-600 font-bold">H = K s cos²α + C cosα</span>',
+        table: {
+          headers: ['間接測量方法', '觀測幾何條件與變數', '核心計算公式', '統測考點與常數設定'],
+          rows: [
+            ['視距測量 (水平視線 α=0°)', '儀器乘常數 K=100，加常數 C=0，尺間隔 s', 'H = K · s = 100 · (上絲 - 下絲)', '秒殺口訣：水平視線距離等於 100 倍尺間隔'],
+            ['視距測量 (傾斜視線 α≠0°)', '垂直角 α，標尺垂直地面', 'H = K·s·cos²α + C·cosα\\nV = (1/2)·K·s·sin(2α)', '注意 cos 平方項；高差 V 代入三角高程求高程'],
+            ['三角高程測量', '已知 A 高程 H_A、儀器高 i、水平距 D、目標高 v', 'H_B = H_A + i + D·tanα - v', '記憶口訣：起點高 + 儀器高 + 距離乘tan仰角 - 稜鏡高'],
+            ['不可達距離 (三角形法)', '基線長 b，兩端夾角 A, B', 'a = b · sin(A) / sin(180°-A-B)', '正弦定理解三角形，先畫圖定角防錯配']
+          ]
+        }
       },
       {
         heading: '三角高程',
@@ -308,7 +354,16 @@ export const draftingGapTopics: TopicContent[] = [
       {
         heading: '建蔽率與容積率的法規定義與空間管制原理',
         body: '建蔽率 (Building Coverage Ratio, BCR) 是指建築物在基地上的水平投影面積（建築面積）佔基地面積之百分比，目的在於保留空地，確保日照、通風、防火與都市防災間隔；容積率 (Floor Area Ratio, FAR) 是指建築物各層總樓地板面積佔基地面積之百分比，用以管制都市土地開發強度與公共設施承載力。',
-        formula: '建蔽率 BCR = (建築面積 / 基地面積) × 100%\n容積率 FAR = (總樓地板面積 / 基地面積) × 100%'
+        formula: '建蔽率 BCR = (建築面積 / 基地面積) × 100%\n容積率 FAR = (總樓地板面積 / 基地面積) × 100%',
+        table: {
+          headers: ['法規管制項目', '計算定義公式', '主要目的與都市機能', '統測核心計算與防錯要點'],
+          rows: [
+            ['建蔽率 (BCR)', '(建築面積 / 基地面積) × 100%', '保留地面空地，確保通風、採光、日照與都市防災', '最大建築面積 = 基地面積 × 法定建蔽率（分母為基地面積）'],
+            ['容積率 (FAR)', '(總容積樓地板面積 / 基地面積) × 100%', '控制都市人口密度、交通量與公共設施總承載力', '最大總樓地板面積 = 基地面積 × 法定容積率'],
+            ['極限樓層數估算', '最大層數 = 法定容積率 / 實際規劃建蔽率', '垂直量體向上發展，騰出地面綠化空間', '例：FAR 240% / 建蔽 50% = 4.8 層（蓋滿建蔽率時最多 4 整層）'],
+            ['免計容積項目', '建築技術規則第 162 條', '鼓勵停車、避難與公共設施', '陽台 ≤ 該層 10%、地下避難/機電、法定梯廳免計容積']
+          ]
+        }
       },
       {
         heading: '免計容積與容積獎勵機制 (建築技術規則第 162 條)',
@@ -391,7 +446,17 @@ export const draftingGapTopics: TopicContent[] = [
     concepts: [
       {
         heading: '工程圖的溝通功能與圖說階層',
-        body: '工程圖以標準化線條、符號、尺度與註記傳遞設計及施工資訊；清晰、一致、可追溯比藝術化表現更重要。\n\n| 圖說種類 | 核心目的 | 精度與標註要求 |\n| :--- | :--- | :--- |\n| **草圖 (Sketch)** | 快速記錄設計構想 | 徒手繪製，無須精確比例 |\n| **設計圖 (Design)** | 空間與機能檢討 | 比例準確，標示主要尺寸 |\n| **施工圖 (Working)** | 提供現場施工依據 | 尺寸精確詳盡，含材料構造註記 |'
+        body: '工程圖以標準化線條、符號、尺度與註記傳遞設計及施工資訊；清晰、一致、可追溯比藝術化表現更重要。',
+        table: {
+          headers: ['A 系列圖紙規格', '外框尺寸 (mm × mm)', '幾何模矩特性', 'CNS 折疊與管理標準'],
+          rows: [
+            ['A0', '1189 × 841', '面積剛好 1.0 m²，長寬比 √2 : 1', '折疊至 A4 大小，標題欄永遠露出在正面右下'],
+            ['A1', '841 × 594', 'A0 對折，面積 0.5 m²', '長邊折半變短邊，短邊直接變長邊'],
+            ['A2', '594 × 420', 'A1 對折，面積 0.25 m²', '標題欄固定繪於圖面右下角，便於檢索'],
+            ['A3', '420 × 297', 'A2 對折，面積 0.125 m²', '施工圖常用規格，現場翻閱裝訂便捷'],
+            ['A4', '297 × 210', '標準文件檔案夾單元，面積 0.0625 m²', '所有大圖折疊歸檔之最終收納基準尺寸']
+          ]
+        }
       },
       {
         heading: 'A 系列圖紙幾何特徵與標準折疊規範',
@@ -465,7 +530,16 @@ export const draftingGapTopics: TopicContent[] = [
     concepts: [
       {
         heading: '圖說之間如何互證與閉合檢核',
-        body: '平面圖確認水平位置，立面圖確認外觀與高度，剖面圖確認垂直構造，詳圖放大接合做法；同一構件的編號、尺寸與高程必須一致。\n\n**🔄 跨科連結：** 這些圖說上的尺寸與高程，必須依賴《測量實習》的放樣技術才能在工地現場準確落實，測量與製圖是工程的一體兩面。'
+        body: '平面圖確認水平位置，立面圖確認外觀與高度，剖面圖確認垂直構造，詳圖放大接合做法；同一構件的編號、尺寸與高程必須一致。\n\n**🔄 跨科連結：** 這些圖說上的尺寸與高程，必須依賴《測量實習》的放樣技術才能在工地現場準確落實，測量與製圖是工程的一體兩面。',
+        table: {
+          headers: ['工程圖說種類', '圖面代號與核心內容', '空間維度與查核重點', '跨圖衝突處理準則 (SOP)'],
+          rows: [
+            ['建築圖 (Architectural)', 'A 圖 (A1 平面, A2 立面, A3 剖面, A4 詳圖)', '水平 X-Y 隔間、門窗編號、垂直 Z 淨高、裝修材', '空間機能與法規依 A 圖；文字標註優先於量圖'],
+            ['結構圖 (Structural)', 'S 圖 (S1 基礎, S2 梁柱配筋, S3 版牆)', '柱梁斷面尺寸、鋼筋型號/間距/搭接長度/保護層', '結構安全與承重依 S 圖；與 A 圖衝突提送 RFI'],
+            ['機電設備圖 (MEP)', 'M (空調風管), E (強弱電), P (給排水), F (消防)', '管線走向、坡度、預留穿梁套管 (SEM/CSD 套繪)', '重力排水管優先，冷熱給水與電纜橋架避讓繞行'],
+            ['圖說疑義處理 (RFI)', 'Request for Information', '工程界面衝突、尺寸矛盾、索引遺漏時填單核覆', '嚴禁自行量圖施工，取得建築師核可書面方可作業']
+          ]
+        }
       },
       {
         heading: '建築圖 (A) 與結構圖 (S) 的判讀分工與衝突協調',

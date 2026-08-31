@@ -901,7 +901,18 @@ export const englishData: SubjectData = {
         },
         {
           "heading": "6. 統測對話題解題法",
-          "body": "統測對話題通常篇幅不長，關鍵在於迅速抓出對話的「情境(Context)[TTS:Context]」與說話者的「意圖(Intention)[TTS:Intention]」。\n\n**解題步驟:**\n1. **判斷角色關係:** 是朋友、師生、店員與顧客，還是工頭與工人？這會影響用語的正式程度。\n2. **尋找關鍵字:** 注意表達時間、地點、情緒或特定主題的單字。\n3. **利用刪去法:** 排除語氣不對、時態不符或與情境無關的選項。\n4. **前後呼應:** 空格處的答案必須能承接上一句，並自然地引導出下一句。\n\n[DIALOGUE_START:統測對話解題會話：捕捉關鍵轉折詞]\nTutor: In dialogue questions, always pay attention to tone shifts and polite refusals. | 在對話題型中，一定要特別注意語氣轉折與委婉拒絕。\nStudent: Like when a speaker says \"I'd love to, but I have a prior commitment\"? | 就像說話者說「我很想去，但我已經有約了」這樣嗎？\nTutor: Exactly! That indicates a polite \"no\", which usually rules out affirmative choices. | 沒錯！那代表委婉的拒絕，通常可以直接排除肯定的選項。\nStudent: Catching these conversational cues makes answering much easier! | 掌握這些對話線索讓作答變得容易多了！\n[DIALOGUE_END]"
+          "body": "統測對話題通常篇幅不長，關鍵在於迅速抓出對話的「情境(Context)[TTS:Context]」與說話者的「意圖(Intention)[TTS:Intention]」。\n\n**解題步驟:**\n1. **判斷角色關係:** 是朋友、師生、店員與顧客，還是工頭與工人？這會影響用語的正式程度。\n2. **尋找關鍵字:** 注意表達時間、地點、情緒或特定主題的單字。\n3. **利用刪去法:** 排除語氣不對、時態不符或與情境無關的選項。\n4. **前後呼應:** 空格處的答案必須能承接上一句，並自然地引導出下一句。\n\n[DIALOGUE_START:統測對話解題會話：捕捉關鍵轉折詞]\nTutor: In dialogue questions, always pay attention to tone shifts and polite refusals. | 在對話題型中，一定要特別注意語氣轉折與委婉拒絕。\nStudent: Like when a speaker says \"I'd love to, but I have a prior commitment\"? | 就像說話者說「我很想去，但我已經有約了」這樣嗎？\nTutor: Exactly! That indicates a polite \"no\", which usually rules out affirmative choices. | 沒錯！那代表委婉的拒絕，通常可以直接排除肯定的選項。\nStudent: Catching these conversational cues makes answering much easier! | 掌握這些對話線索讓作答變得容易多了！\n[DIALOGUE_END]",
+          "table": {
+            "headers": ["常考情境類別", "典型提問與發話句型", "標準應對與社交回答", "統測高頻陷阱與解題秘訣"],
+            "rows": [
+              ["問候與寒暄 (Greetings)", "How is it going? / What's up?", "Pretty good. / Not much.", "避免直譯字面；Not much 代表「沒什麼特別的，一切如常」"],
+              ["購物與退換 (Shopping)", "May I try this on? / Any discount?", "The fitting room is over there. / It is 20% off.", "20% off 是打八折（減價 20%），不是兩折！"],
+              ["餐廳點餐 (Dining)", "How would you like your steak?", "Medium-rare, please. / To go, please.", "回答熟度 (rare/medium/well-done) 或內用外帶 (for here/to go)"],
+              ["電話與預約 (Telephone)", "May I speak to Mr. Lin?", "Hold on, please. / May I take a message?", "本人接聽回答「This is he/she speaking.」勿回答「I am Lin.」"],
+              ["問路與交通 (Directions)", "Could you tell me how to get to...?", "Go straight for two blocks and turn left.", "注意介系詞搭配 (on the corner of, opposite to, across from)"],
+              ["請求與道歉 (Requests)", "Would you mind helping me with this?", "Not at all. / I would be glad to.", "Mind 問句回答「Not at all / Of course not」表示「不介意＝同意幫忙」"]
+            ]
+          }
         }
       ],
       "practices": [
@@ -1232,7 +1243,16 @@ export const englishData: SubjectData = {
         },
         {
           "heading": "7. 統測閱讀四大題型攻略",
-          "body": "統測閱讀測驗可歸納為四大題型：\n1. **主旨題**：抓首尾段、各段主題句。\n2. **細節題**：抓題幹關鍵字回文章找同義替換。\n3. **詞義題**：回到該單字出現的段落，利用上下文線索(Context Clues[TTS:Context Clues])推敲。\n4. **推論/是非題 (True/False)**：最耗時的題型，建議將四個選項的關鍵字分別帶回文章比對。\n\n[DIALOGUE_START:閱讀題型攻略會話：時間管理與作答節奏]\nStudent: I often run out of time on the reading section of the Unified Exam. | 我在統測英文的閱讀測驗部分經常寫不完。\nAdvisor: Read the questions first before reading the article to focus your attention. | 在讀文章前先看題目，這樣能集中你的注意力。\nStudent: That way, I know exactly what keywords and details to look for! | 這樣一來我就確切知道該找哪些關鍵字與細節了！\nAdvisor: Exactly. Aim for no more than eight minutes per reading passage. | 沒錯。目標是每篇閱讀測驗不超過八分鐘。\n[DIALOGUE_END]"
+          "body": "統測閱讀測驗可歸納為四大題型：\n1. **主旨題**：抓首尾段、各段主題句。\n2. **細節題**：抓題幹關鍵字回文章找同義替換。\n3. **詞義題**：回到該單字出現的段落，利用上下文線索(Context Clues[TTS:Context Clues])推敲。\n4. **推論/是非題 (True/False)**：最耗時的題型，建議將四個選項的關鍵字分別帶回文章比對。\n\n[DIALOGUE_START:閱讀題型攻略會話：時間管理與作答節奏]\nStudent: I often run out of time on the reading section of the Unified Exam. | 我在統測英文的閱讀測驗部分經常寫不完。\nAdvisor: Read the questions first before reading the article to focus your attention. | 在讀文章前先看題目，這樣能集中你的注意力。\nStudent: That way, I know exactly what keywords and details to look for! | 這樣一來我就確切知道該找哪些關鍵字與細節了！\nAdvisor: Exactly. Aim for no more than eight minutes per reading passage. | 沒錯。目標是每篇閱讀測驗不超過八分鐘。\n[DIALOGUE_END]",
+          "table": {
+            "headers": ["統測閱讀四大題型", "核心提問句型範例", "黃金解題策略與步驟 (SOP)", "干擾選項特徵與避坑指南"],
+            "rows": [
+              ["主旨題 (Main Idea)", "What is the main idea / best title?", "抓首段尾句與末段總結句，統計全文高頻核心關鍵字", "避開「以偏概全（只講某一段細節）」或「過度延伸」"],
+              ["細節題 (Fact / Detail)", "According to the passage, which is true?", "用題幹專有名詞/數字/大寫字母回文「掃讀 (Scanning)」定位", "注意「同義字替換 (Paraphrase)」，避開扭曲程度或因果顛倒"],
+              ["猜字題 (Vocabulary in Context)", "The word \\\"X\\\" in line 5 is closest in meaning to...", "依前後文轉折詞 (however)、解釋詞 (that is) 或舉例 (such as) 推敲", "切勿直接選取「最常見字義」，必須符合該段特定語境"],
+              ["推論題 (Inference / Suggestion)", "What can be inferred from the article?", "根據文本現有客觀事實進行合乎邏輯的一步推論", "嚴禁憑個人主觀常識過度腦補未提及之結論"]
+            ]
+          }
         }
       ],
       "practices": [
@@ -4325,6 +4345,15 @@ export const englishData: SubjectData = {
         {
           "heading": "7. 非選擇題 16 分搶分秘技",
           "body": "統測非選共16分，通常包含兩題翻譯或重組（各3-4分）與其他題型。\n搶分關鍵：\n- 拼字務必正確，錯一字可能扣0.5至1分。\n- 字跡工整，避免閱卷老師誤判（如 a[TTS:a] 與 u[TTS:u], r[TTS:r] 與 v[TTS:v]）。\n- 寫完後務必檢查主動詞單複數一致 (S-V agreement[TTS:S-V agreement])。\n\n[DIALOGUE_START:非選 16 分搶分會話：黃金答題檢核清單]\nTutor: In the non-multiple-choice section, every point counts toward your dream college. | 在非選擇題的十六分中，每一分都關係到你能否錄取心目中的理想志願。\nStudent: I will follow the checklist: correct spelling, proper verb endings, capitalization, and punctuation. | 我一定會嚴格執行檢核清單：單字拼寫正確、動詞時態字尾無誤、大小寫及標點符號確實。\nTutor: Write neatly and double-check before handing in your answer sheet. | 字體書寫工整，並在交卷前進行最後複查。\nStudent: I am fully prepared to score full marks on the translation and writing section! | 我已經做好充分準備，要在非選翻譯與寫作部分拿下滿分！\n[DIALOGUE_END]",
+          "table": {
+            "headers": ["非選題型 / 寫作要項", "典型考點與高頻句型", "常犯致命錯誤 (扣分地雷)", "滿分答題秘訣與檢查清單"],
+            "rows": [
+              ["中譯英 (Translation)", "S + V + O + 地方 + 時間 / It takes... to V", "中文逐字硬翻、動詞時態漏寫過去式 -ed", "先抓主詞與動詞骨架，修飾語放句尾"],
+              ["句子重組 (Unscrambling)", "固定片語 (look forward to) / 分詞修飾片語", "漏掉單字、大小寫錯誤、漏加句號", "用語塊 (Chunking) 先組小組件再拼主幹"],
+              ["字首提示填空 (Spelling)", "名詞單複數 (-s/-es)、動詞三態變化", "只寫單字原型忘記時態/單複數變化", "看前後詞性，助動詞後用原形，進行式加 -ing"],
+              ["段落寫作 (Paragraph Writing)", "主題句 + 2~3 個支持句 (First/Second) + 結論句", "逗號連接兩完整句子 (Comma Splice)", "嚴格遵守 IBC 結構，使用連接詞與轉折副詞"]
+            ]
+          },
           "steps": [
             "步驟一：先做非選擇題（翻譯與填空），趁大腦思維最清晰時搶下基礎分。 ｜為什麼：確保高投報率題目穩穩拿分。",
             "步驟二：翻譯題先寫草稿，反覆檢核「主詞動詞單複數」與「時態」。 ｜為什麼：減少粗心失分。",

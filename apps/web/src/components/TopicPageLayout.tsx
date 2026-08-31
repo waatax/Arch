@@ -879,29 +879,39 @@ export default function TopicPageLayout({ subject, topic, mappedExamQuestions }:
 
               {/* Structured Comparison Table */}
               {concept.table ? (
-                <div className="mobile-scroll overflow-x-auto rounded-xl border border-slate-200 dark:border-slate-800" tabIndex={0} role="region" aria-label={`${concept.heading}整理表`}>
-                  <table className="min-w-[42rem] w-full border-collapse text-left text-sm">
-                    <thead>
-                      <tr className="bg-slate-100 dark:bg-slate-800">
-                        {concept.table.headers.map((header) => (
-                          <th key={header} className="border-b border-slate-200 dark:border-slate-700 px-4 py-3 font-bold text-slate-900 dark:text-white">
-                            {header}
-                          </th>
-                        ))}
-                      </tr>
-                    </thead>
-                    <tbody className="divide-y divide-slate-200 dark:divide-slate-800">
-                      {concept.table.rows.map((row, rowIndex) => (
-                        <tr key={rowIndex} className="hover:bg-slate-50/60 dark:hover:bg-slate-800/40 transition-colors">
-                          {row.map((cell, cellIndex) => (
-                            <td key={cellIndex} className="whitespace-pre-line px-4 py-3 leading-relaxed text-slate-700 dark:text-slate-300">
-                              <MathText content={cell} />
-                            </td>
+                <div className="rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900/60 shadow-xs overflow-hidden" role="region" aria-label={`${concept.heading}重點整理表`}>
+                  <div className="flex items-center justify-between px-4 py-2.5 bg-slate-50 dark:bg-slate-800/80 border-b border-slate-200 dark:border-slate-800 text-xs text-slate-600 dark:text-slate-400">
+                    <span className="font-bold flex items-center gap-1.5 text-indigo-700 dark:text-indigo-300">
+                      <span aria-hidden="true">📊</span> 重點整理與核心矩陣
+                    </span>
+                    <span className="hidden sm:inline text-slate-600 dark:text-slate-400">
+                      左右滑動可完整查看表格
+                    </span>
+                  </div>
+                  <div className="mobile-scroll overflow-x-auto" tabIndex={0}>
+                    <table className="min-w-[42rem] w-full border-collapse text-left text-sm">
+                      <thead>
+                        <tr className="bg-slate-100/70 dark:bg-slate-800/60">
+                          {concept.table.headers.map((header) => (
+                            <th key={header} className="border-b border-slate-200 dark:border-slate-700 px-4 py-3 font-bold text-slate-900 dark:text-white">
+                              {header}
+                            </th>
                           ))}
                         </tr>
-                      ))}
-                    </tbody>
-                  </table>
+                      </thead>
+                      <tbody className="divide-y divide-slate-200 dark:divide-slate-800">
+                        {concept.table.rows.map((row, rowIndex) => (
+                          <tr key={rowIndex} className="hover:bg-indigo-50/30 dark:hover:bg-indigo-950/20 transition-colors odd:bg-transparent even:bg-slate-50/40 dark:even:bg-slate-800/20">
+                            {row.map((cell, cellIndex) => (
+                              <td key={cellIndex} className="whitespace-pre-line px-4 py-3 leading-relaxed text-slate-700 dark:text-slate-300 font-normal">
+                                <MathText content={cell} />
+                              </td>
+                            ))}
+                          </tr>
+                        ))}
+                      </tbody>
+                    </table>
+                  </div>
                 </div>
               ) : null}
             </section>
@@ -1318,47 +1328,99 @@ export default function TopicPageLayout({ subject, topic, mappedExamQuestions }:
         </div>
       </footer>
 
-      {/* Formula Cheat Sheet Modal */}
+      {/* Formula & Memory Cheat Sheet Modal */}
       {isFormulaDrawerOpen && (
         <div
           className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 p-4 backdrop-blur-sm animate-fade-in"
           onClick={() => setIsFormulaDrawerOpen(false)}
         >
           <div
-            className="w-full max-w-2xl max-h-[85vh] overflow-y-auto rounded-3xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 p-6 sm:p-8 shadow-2xl space-y-6"
+            className="w-full max-w-3xl max-h-[85vh] overflow-y-auto rounded-3xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 p-6 sm:p-8 shadow-2xl space-y-6"
             onClick={(e) => e.stopPropagation()}
           >
             <div className="flex items-center justify-between border-b border-slate-200 dark:border-slate-800 pb-4">
               <div>
                 <span className="text-xs font-mono font-bold uppercase tracking-wider text-amber-600 dark:text-amber-400">
-                  Quick Formula Card
+                  Quick Review Matrix · 考點速查
                 </span>
                 <h3 className="font-serif text-2xl font-bold text-slate-900 dark:text-white">
-                  {topic.title} · 核心公式速查卡
+                  {topic.title} · 核心公式與記憶矩陣
                 </h3>
               </div>
               <button
                 onClick={() => setIsFormulaDrawerOpen(false)}
-                className="rounded-full bg-slate-100 dark:bg-slate-800 px-3 py-1 text-xs font-bold text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white"
+                className="rounded-full bg-slate-100 dark:bg-slate-800 px-3.5 py-1.5 text-xs font-bold text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white cursor-pointer transition-colors"
               >
                 ✕ 關閉
               </button>
             </div>
 
-            <div className="space-y-4">
-              {topic.concepts
-                .filter((c) => c.formula)
-                .map((concept, idx) => (
-                  <div key={idx} className="rounded-2xl border border-amber-200 dark:border-amber-800/60 bg-amber-50/20 dark:bg-amber-950/20 p-4 sm:p-5 space-y-2">
-                    <span className="text-xs font-mono font-bold text-amber-800 dark:text-amber-300">
-                      公式 {idx + 1}：{concept.heading}
-                    </span>
-                    <div className="overflow-x-auto whitespace-pre-line font-mono text-base font-bold text-slate-900 dark:text-white">
-                      <MathText content={concept.formula} />
-                    </div>
-                  </div>
-                ))}
-            </div>
+            {/* Formulas List */}
+            {topic.concepts.some((c) => c.formula) && (
+              <div className="space-y-3">
+                <h4 className="text-sm font-bold text-amber-800 dark:text-amber-300 flex items-center gap-1.5">
+                  <span>📐</span> 必考核心公式
+                </h4>
+                <div className="grid gap-3">
+                  {topic.concepts
+                    .filter((c) => c.formula)
+                    .map((concept, idx) => (
+                      <div key={idx} className="rounded-2xl border border-amber-200 dark:border-amber-800/60 bg-amber-50/20 dark:bg-amber-950/20 p-4 space-y-2">
+                        <span className="text-xs font-mono font-bold text-amber-800 dark:text-amber-300">
+                          公式 {idx + 1}：{concept.heading}
+                        </span>
+                        <div className="overflow-x-auto whitespace-pre-line font-mono text-base font-bold text-slate-900 dark:text-white">
+                          <MathText content={concept.formula} />
+                        </div>
+                      </div>
+                    ))}
+                </div>
+              </div>
+            )}
+
+            {/* Structured Tables in Modal */}
+            {topic.concepts.some((c) => c.table) && (
+              <div className="space-y-3">
+                <h4 className="text-sm font-bold text-indigo-700 dark:text-indigo-300 flex items-center gap-1.5">
+                  <span>📊</span> 重點整理與必背矩陣
+                </h4>
+                <div className="space-y-4">
+                  {topic.concepts
+                    .filter((c) => c.table)
+                    .map((concept, idx) => (
+                      <div key={idx} className="rounded-xl border border-slate-200 dark:border-slate-800 overflow-hidden bg-slate-50/50 dark:bg-slate-800/30">
+                        <div className="px-3 py-2 bg-slate-100 dark:bg-slate-800 text-xs font-bold text-slate-700 dark:text-slate-300 border-b border-slate-200 dark:border-slate-700">
+                          {concept.heading}
+                        </div>
+                        <div className="mobile-scroll overflow-x-auto">
+                          <table className="min-w-[36rem] w-full text-left text-xs">
+                            <thead>
+                              <tr className="bg-slate-100/80 dark:bg-slate-800/60">
+                                {concept.table?.headers.map((h) => (
+                                  <th key={h} className="px-3 py-2 font-bold text-slate-800 dark:text-slate-200 border-b border-slate-200 dark:border-slate-700">
+                                    {h}
+                                  </th>
+                                ))}
+                              </tr>
+                            </thead>
+                            <tbody className="divide-y divide-slate-200 dark:divide-slate-800">
+                              {concept.table?.rows.map((row, rIdx) => (
+                                <tr key={rIdx} className="hover:bg-indigo-50/30 dark:hover:bg-indigo-950/20">
+                                  {row.map((cell, cIdx) => (
+                                    <td key={cIdx} className="px-3 py-2 whitespace-pre-line text-slate-700 dark:text-slate-300">
+                                      <MathText content={cell} />
+                                    </td>
+                                  ))}
+                                </tr>
+                              ))}
+                            </tbody>
+                          </table>
+                        </div>
+                      </div>
+                    ))}
+                </div>
+              </div>
+            )}
 
             <div className="rounded-xl bg-slate-50 dark:bg-slate-800/50 p-4 text-xs leading-relaxed text-slate-600 dark:text-slate-400 border border-slate-200 dark:border-slate-800">
               💡 <strong>考前秒殺秘訣：</strong>

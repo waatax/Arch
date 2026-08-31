@@ -40,7 +40,16 @@ export const surveyingData: SubjectData = {
       "concepts": [
         {
           "heading": "測量工作與基準",
-          "body": "測量以距離、角度與高差觀測建立點位。小區域可採<span className=\"text-indigo-600 font-bold\">平面測量假設</span>；範圍擴大時必須考慮地球曲率、坐標系與高程基準。"
+          "body": "測量以距離、角度與高差觀測建立點位。小區域可採<span className=\"text-indigo-600 font-bold\">平面測量假設</span>；範圍擴大時必須考慮地球曲率、坐標系與高程基準。",
+          "table": {
+            "headers": ["誤差 / 指標類別", "主要成因與物理特徵", "消減與改正對策", "統測必背公式與記憶口訣"],
+            "rows": [
+              ["人為粗差 (Blunder / Mistake)", "讀數粗心、記錄顛倒、立尺不垂直", "加強檢核、重測並直接剔除", "嚴禁混入平差計算；核對正倒鏡"],
+              ["系統誤差 (Systematic Error)", "尺長不符、溫差膨脹、視準軸偏差", "計算公式改正或特定觀測法消除", "具規律性與累積性；盤左盤右消差"],
+              ["偶然誤差 (Accidental Error)", "大氣擾動、調焦估讀隨機微小震盪", "多次重複觀測取算術平均值 (最或是值)", "遵循常態分佈；總誤差 ∝ √N，均值誤差 ∝ 1/√N"],
+              ["精度指標 (Precision vs Accuracy)", "精密度：觀測值離散度；準確度：接近真值", "以標準差 σ、中誤差 m、相對精度 1/M 表示", "相對閉合精度 = 閉合差 K / 總長 L = 1/M"]
+            ]
+          }
         },
         {
           "heading": "誤差、錯誤與精度",
@@ -181,7 +190,16 @@ export const surveyingData: SubjectData = {
         {
           "heading": "視距測量",
           "body": "標尺垂直且視線有垂直角 α 時，水平距離包含<span className=\"text-indigo-600 font-bold\">乘常數項</span>與<span className=\"text-indigo-600 font-bold\">加常數項</span>；題目若只給上下絲讀數，視距間隔 s 為**兩者之差**。",
-          "formula": "<span className=\"text-rose-600 font-bold\">H = K s cos²α + C cosα</span>"
+          "formula": "<span className=\"text-rose-600 font-bold\">H = K s cos²α + C cosα</span>",
+          "table": {
+            "headers": ["間接測量方法", "觀測幾何條件與變數", "核心計算公式", "統測考點與常數設定"],
+            "rows": [
+              ["視距測量 (水平視線 α=0°)", "儀器乘常數 K=100，加常數 C=0，尺間隔 s", "H = K · s = 100 · (上絲 - 下絲)", "秒殺口訣：水平視線距離等於 100 倍尺間隔"],
+              ["視距測量 (傾斜視線 α≠0°)", "垂直角 α，標尺垂直地面", "H = K·s·cos²α + C·cosα\\nV = (1/2)·K·s·sin(2α)", "注意 cos 平方項；高差 V 代入三角高程求高程"],
+              ["三角高程測量", "已知 A 高程 H_A、儀器高 i、水平距 D、目標高 v", "H_B = H_A + i + D·tanα - v", "記憶口訣：起點高 + 儀器高 + 距離乘tan仰角 - 稜鏡高"],
+              ["不可達距離 (三角形法)", "基線長 b，兩端夾角 A, B", "a = b · sin(A) / sin(180°-A-B)", "正弦定理解三角形，先畫圖定角防錯配"]
+            ]
+          }
         },
         {
           "heading": "三角高程",
