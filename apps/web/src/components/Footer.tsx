@@ -15,11 +15,11 @@ export default function Footer() {
                 Arch
               </span>
               <span className="rounded-full bg-blue-700/10 dark:bg-blue-400/10 px-2 py-0.5 text-[10px] font-mono font-bold text-blue-700 dark:text-blue-300 border border-blue-700/20">
-                V8.02
+                V9.00
               </span>
             </div>
             <p className="text-sm leading-relaxed text-slate-600 dark:text-slate-400 max-w-md">
-              面向台灣高工建築科學生的開放學習基地。整合 108 課綱技術型高中土木與建築群大綱、四技二專統測歷屆 925 道全真題、動態圖解實驗室、營造工程現場檢驗手冊與本機優先的無障礙自主學習架構。
+              面向台灣高工建築科學生的開放學習基地。整合 108 課綱技術型高中土木與建築群大綱、大學 5 年制建築學士 (B.Arch) 課綱、四技二專統測歷屆 925 道全真題、動態圖解實驗室、營造工程現場檢驗手冊與本機優先的無障礙自主學習架構。
             </p>
             <div className="rounded-xl border border-emerald-200/50 bg-emerald-50/50 p-3 dark:border-emerald-900/30 dark:bg-emerald-950/20">
               <p className="mb-2 text-[10px] font-bold tracking-wider text-emerald-800 dark:text-emerald-400">7 大領域專家團隊品質背書 (EXPERT COUNCIL VERIFIED)</p>
@@ -38,7 +38,7 @@ export default function Footer() {
                 108 課綱技術型高中標準
               </span>
               <span className="px-2.5 py-1 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-full text-slate-600 dark:text-slate-400">
-                13 科 · 99 逐頁主題
+                13 科 · 111 逐頁主題
               </span>
               <span className="px-2.5 py-1 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-full text-slate-600 dark:text-slate-400">
                 統測五科全收錄 (925 題)
@@ -52,6 +52,11 @@ export default function Footer() {
               學習與實務核心專區
             </h4>
             <ul className="space-y-2 text-xs text-slate-600 dark:text-slate-400 font-mono">
+              <li>
+                <Link href="/pathway" className="hover:text-blue-700 dark:hover:text-blue-400 transition-colors text-blue-700 dark:text-blue-400 font-bold">
+                  • 🏛️ 建築之路 (5年制大學課綱)
+                </Link>
+              </li>
               <li>
                 <Link href="/visualizers" className="hover:text-blue-700 dark:hover:text-blue-400 transition-colors text-blue-700 dark:text-blue-400 font-bold">
                   • 🔬 互動圖解實驗室 (Interactive Lab)
@@ -69,7 +74,7 @@ export default function Footer() {
               </li>
               <li>
                 <Link href="/curriculum" className="hover:text-blue-700 dark:hover:text-blue-400 transition-colors">
-                  • 課程地圖 (13 科 99 章)
+                  • 課程地圖 (13 科 111 主題)
                 </Link>
               </li>
               <li>
@@ -103,22 +108,22 @@ export default function Footer() {
             <ul className="space-y-2 text-xs text-slate-600 dark:text-slate-400 font-mono">
               <li>
                 <Link href="/subjects/mechanics" className="hover:text-teal-600 transition-colors">
-                  • 專業（一）：工程力學 (7 章)
+                  • 專業（一）：工程力學 (13 章)
                 </Link>
               </li>
               <li>
                 <Link href="/subjects/materials" className="hover:text-amber-600 transition-colors">
-                  • 專業（一）：材料與試驗 (12 章)
+                  • 專業（一）：材料與試驗 (13 章)
                 </Link>
               </li>
               <li>
                 <Link href="/subjects/surveying" className="hover:text-emerald-600 transition-colors">
-                  • 專業（二）：測量實習 (6 章)
+                  • 專業（二）：測量實習 (8 章)
                 </Link>
               </li>
               <li>
                 <Link href="/subjects/drafting" className="hover:text-sky-600 transition-colors">
-                  • 專業（二）：製圖實習 (8 章)
+                  • 專業（二）：製圖實習 (16 章)
                 </Link>
               </li>
               <li>

@@ -3,7 +3,7 @@
 import { useState, useEffect, useRef } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { Binoculars, BookOpenCheck, Building2, CircleCheckBig, Lightbulb, Route, School, SearchCheck } from 'lucide-react';
+import { Binoculars, BookOpenCheck, Building2, CircleCheckBig, Lightbulb, Route, School, SearchCheck, Printer } from 'lucide-react';
 import type { SubjectData, TopicContent } from '@/data/types';
 import MathText from '@/components/MathText';
 import InteractiveVisualizer from '@/components/visualizers/InteractiveVisualizer';
@@ -12,6 +12,8 @@ import FatalTrapXRay from '@/components/pedagogy/FatalTrapXRay';
 import EliteMentalModel from '@/components/pedagogy/EliteMentalModel';
 import Step0Tooltip from '@/components/pedagogy/Step0Tooltip';
 import ExpertCouncilBanner from '@/components/pedagogy/ExpertCouncilBanner';
+import TopicInfographicCard from '@/components/pedagogy/TopicInfographicCard';
+import EnglishAudioHub from '@/components/pedagogy/EnglishAudioHub';
 import { getTopicRealLifeGuide } from '@/lib/pedagogy/realLifeHelpers';
 import { getTopicInterestHook } from '@/lib/pedagogy/interestHooks';
 import { getTopicDeepKnowledge } from '@/lib/pedagogy/topicKnowledgeExpander';
@@ -199,7 +201,7 @@ export default function TopicPageLayout({ subject, topic, mappedExamQuestions }:
       {/* Floating Zen Mode Toggle */}
       <button
         onClick={() => setIsZenMode(!isZenMode)}
-        className="fixed bottom-6 right-6 z-50 flex h-12 w-12 items-center justify-center rounded-full bg-slate-900 text-white shadow-xl hover:bg-slate-800 focus:outline-none focus:ring-4 focus:ring-blue-500/30 dark:bg-slate-100 dark:text-slate-900 transition-transform hover:scale-105 active:scale-95"
+        className="print:hidden fixed bottom-6 right-6 z-50 flex h-12 w-12 items-center justify-center rounded-full bg-slate-900 text-white shadow-xl hover:bg-slate-800 focus:outline-none focus:ring-4 focus:ring-blue-500/30 dark:bg-slate-100 dark:text-slate-900 transition-transform hover:scale-105 active:scale-95 cursor-pointer"
         aria-label={isZenMode ? '關閉禪意模式' : '開啟禪意全螢幕模式 (Zen Mode)'}
         title={isZenMode ? '關閉禪意模式' : '開啟無干擾禪意模式 (Zen Mode)'}
       >
@@ -237,6 +239,15 @@ export default function TopicPageLayout({ subject, topic, mappedExamQuestions }:
             <span className="rounded-full bg-slate-100 dark:bg-slate-800 px-2.5 py-0.5 text-xs font-mono text-slate-600 dark:text-slate-400">
               ⏱️ 建議研讀 20-30 分鐘
             </span>
+            <button
+              type="button"
+              onClick={() => window.print()}
+              className="print:hidden rounded-full bg-slate-100 hover:bg-slate-200 dark:bg-slate-800 dark:hover:bg-slate-700 px-3 py-0.5 text-xs font-mono font-bold text-slate-700 dark:text-slate-200 border border-slate-300 dark:border-slate-700 transition-colors flex items-center gap-1.5 cursor-pointer shadow-xs"
+              title="以 A4 紙本格式列印或另存為 PDF 講義"
+            >
+              <Printer className="size-3 text-slate-600 dark:text-slate-300" />
+              <span>列印講義 (A4)</span>
+            </button>
           </div>
 
           <h1 className="font-serif text-3xl font-bold leading-tight text-slate-900 dark:text-white sm:text-4xl">
@@ -255,7 +266,7 @@ export default function TopicPageLayout({ subject, topic, mappedExamQuestions }:
 
           {/* V8 Step-0 Prerequisite Knowledge Tooltip */}
           {topic.step0Prerequisites && topic.step0Prerequisites.length > 0 && (
-            <Step0Tooltip prerequisites={topic.step0Prerequisites} />
+            <Step0Tooltip prerequisites={topic.step0Prerequisites} subjectSlug={subject.slug} />
           )}
 
           {/* Architectural Skill Constellation Coordinate Card */}
@@ -293,6 +304,11 @@ export default function TopicPageLayout({ subject, topic, mappedExamQuestions }:
                 </Link>
               </div>
             </div>
+          )}
+
+          {/* Dedicated English Audio Hub for pronunciation and listening immersion */}
+          {subject.slug === 'english' && (
+            <EnglishAudioHub topic={topic} />
           )}
         </div>
 
@@ -391,10 +407,44 @@ export default function TopicPageLayout({ subject, topic, mappedExamQuestions }:
 
           <div className="flex items-start gap-3 border-t border-blue-100 bg-blue-50/65 px-5 py-4 text-sm leading-6 text-slate-700 dark:border-blue-950 dark:bg-blue-950/20 dark:text-slate-300 sm:px-7 lg:px-8">
             <span className="mt-0.5 shrink-0" aria-hidden="true">🧩</span>
-            <p>
-              <strong className="text-slate-900 dark:text-white">其實你不是從零開始：</strong>{' '}
-              {interestHook.bridge}
-            </p>
+            <div className="space-y-2 flex-1">
+              <p>
+                <strong className="text-slate-900 dark:text-white">其實你不是從零開始：</strong>{' '}
+                {interestHook.bridge}
+              </p>
+              {subject.slug === 'english' && (
+                <div className="flex flex-wrap items-center gap-2 pt-1 font-mono text-xs">
+                  <span className="text-slate-400 font-bold text-[11px]">國中先備微課直達：</span>
+                  <Link
+                    href="/prerequisites/english/vocab-1200"
+                    className="inline-flex items-center gap-1 px-2.5 py-1 rounded-lg bg-blue-100 hover:bg-blue-200 dark:bg-blue-900/60 dark:hover:bg-blue-800 text-blue-800 dark:text-blue-200 font-bold border border-blue-200 dark:border-blue-800 transition-colors shadow-2xs"
+                  >
+                    <span>✓ 國中英語必備 1200 字彙</span>
+                    <span className="text-[10px]">↗</span>
+                  </Link>
+                  <Link
+                    href="/prerequisites/english/basic-tenses-passive"
+                    className="inline-flex items-center gap-1 px-2.5 py-1 rounded-lg bg-indigo-100 hover:bg-indigo-200 dark:bg-indigo-900/60 dark:hover:bg-indigo-800 text-indigo-800 dark:text-indigo-200 font-bold border border-indigo-200 dark:border-indigo-800 transition-colors shadow-2xs"
+                  >
+                    <span>✓ 基本時態（現在、過去、被動語態）</span>
+                    <span className="text-[10px]">↗</span>
+                  </Link>
+                  <Link
+                    href="/prerequisites/english/complex-sentences"
+                    className="inline-flex items-center gap-1 px-2.5 py-1 rounded-lg bg-purple-100 hover:bg-purple-200 dark:bg-purple-900/60 dark:hover:bg-purple-800 text-purple-800 dark:text-purple-200 font-bold border border-purple-200 dark:border-purple-800 transition-colors shadow-2xs"
+                  >
+                    <span>✓ 主從複合句型與連接詞</span>
+                    <span className="text-[10px]">↗</span>
+                  </Link>
+                  <Link
+                    href="/prerequisites"
+                    className="inline-flex items-center gap-1 px-2 py-1 rounded-lg bg-slate-100 hover:bg-slate-200 dark:bg-slate-800 dark:hover:bg-slate-700 text-slate-600 dark:text-slate-300 transition-colors text-[11px]"
+                  >
+                    <span>先備跳板中心 ↗</span>
+                  </Link>
+                </div>
+              )}
+            </div>
           </div>
         </section>
 
@@ -603,6 +653,9 @@ export default function TopicPageLayout({ subject, topic, mappedExamQuestions }:
           </div>
         </div>
       )}
+
+      {/* === [Topic Infographic & Concept Blueprint] === */}
+      <TopicInfographicCard subjectSlug={subject.slug} topicSlug={topic.slug} />
 
       {/* Embedded Dynamic Interactive Visualizer Widget */}
       <section className="lesson-deferred-section space-y-4" aria-label="互動式幾何與力學模擬器">

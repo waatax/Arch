@@ -2,20 +2,21 @@
 
 Arch 是面向台灣高工建築科學生的開放學習平台，將四技二專統測準備、建築專業實作、台灣建築案例與本機優先的個人學習教練整合在同一條學習路徑。
 
-目前版本是 **V8.02**（Android 1.1.0／versionCode 3）。產品、教學、統測覆蓋與技術的唯一總規格見 [`V8-Core.md`](./V8-Core.md)（相容映射於 [`V6-Core.md`](./V6-Core.md)），可重跑的驗收計畫見 [`docs/v6-implementation-plan.md`](./docs/v6-implementation-plan.md)，86 頁五題深度解析紀錄見 [`docs/v6-deep-teaching-iteration.md`](./docs/v6-deep-teaching-iteration.md)；Android 發版、簽章與低記憶體驗收見 [`android/README.md`](./android/README.md)。[`Arch-v5.md`](./Arch-v5.md) 與 [`Arch-v4.md`](./Arch-v4.md) 僅保留為歷史規格。
+目前版本是 **V9.00**（9.0.0）。產品、教學、統測覆蓋與技術的唯一總規格見 [`V9-Core.md`](./V9-Core.md)（歷史規格見 [`V8-Core.md`](./V8-Core.md) 與 [`V6-Core.md`](./V6-Core.md)），可重跑的驗收計畫見 [`docs/v6-implementation-plan.md`](./docs/v6-implementation-plan.md)，86 頁五題深度解析紀錄見 [`docs/v6-deep-teaching-iteration.md`](./docs/v6-deep-teaching-iteration.md)；Android 發版、簽章與低記憶體驗收見 [`android/README.md`](./android/README.md)。
 
 ## 目前已有
 
 - Next.js 靜態網站骨架，可部署至 GitHub Pages。
-- 統測共同科目、專業科目（一／二）與建築科延伸課程入口。
-- 臺中國家歌劇院、路思義教堂、921 地震教育園區案例頁。
+- **建築之路 (`/pathway`)**：大學 5 年制建築學士 (B.Arch) 10 學期完整課綱、8 大核心領域教學、評圖文化生存指南與高工銜接攻略。
+- 統測共同科目、專業科目（一／二）與建築科延伸課程入口（13 科 111 主題）。
+- 925 道統測真題逐題解析與線上模擬測驗 (`/practice`)。
+- 8 大互動工程實驗室 (`/visualizers`) 與台灣經典名築幾何工坊 (`/studio`)。
+- 建築大師技能星空圖 (`/constellation`) 與高二開學冒險戰役 (`/quest`)。
+- 營造工程現場檢驗手冊 (`/field-guide`) 與考點速查指南 (`/cheatsheets`)。
+- 臺中國家歌劇院、路思義教堂、921 地震教育園區等台灣經典案例頁 (`/cases`)。
 - Architectural Editorial 視覺 token、深色模式與響應式版面。
 - 來源與學校 overlay registry 的初始資料。
 - Android 16 WebView App：renderer 終止復原、低 RAM 精簡模式、R8 與 Play AAB 發版鏈。
-
-## 開發
-
-需求：Node.js 20 以上、pnpm。
 
 ```bash
 pnpm install

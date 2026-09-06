@@ -8,6 +8,7 @@ import DraftingVisualizer from './DraftingVisualizer';
 import MathScienceVisualizer from './MathScienceVisualizer';
 import HumanitiesVisualizer from './HumanitiesVisualizer';
 import BuildingEngineeringVisualizer from './BuildingEngineeringVisualizer';
+import EnglishVisualizer from './EnglishVisualizer';
 
 interface InteractiveVisualizerProps {
   subjectSlug: string;
@@ -25,7 +26,10 @@ export default function InteractiveVisualizer({ subjectSlug, topicSlug }: Intera
     if (['extensions'].includes(subjectSlug) || topicSlug.includes('bim') || topicSlug.includes('green') || topicSlug.includes('far')) {
       return 'building';
     }
-    if (['chinese', 'english', 'history', 'geography', 'civics'].includes(subjectSlug)) {
+    if (subjectSlug === 'english') {
+      return 'english';
+    }
+    if (['chinese', 'history', 'geography', 'civics'].includes(subjectSlug)) {
       return 'humanities';
     }
     return 'math-science';
@@ -102,6 +106,16 @@ export default function InteractiveVisualizer({ subjectSlug, topicSlug }: Intera
             BIM / 綠建築
           </button>
           <button
+            onClick={() => setActiveTabOverride('english')}
+            className={`px-2.5 py-1 rounded-lg font-bold transition-all ${
+              currentModule === 'english'
+                ? 'bg-blue-600 text-white shadow-2xs'
+                : 'text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white'
+            }`}
+          >
+            英語文圖解
+          </button>
+          <button
             onClick={() => setActiveTabOverride('humanities')}
             className={`px-2.5 py-1 rounded-lg font-bold transition-all ${
               currentModule === 'humanities'
@@ -125,6 +139,7 @@ export default function InteractiveVisualizer({ subjectSlug, topicSlug }: Intera
       </div>
 
       {/* Render matching visualizer module */}
+      {currentModule === 'english' && <EnglishVisualizer topicSlug={topicSlug} />}
       {currentModule === 'mechanics' && <MechanicsVisualizer topicSlug={topicSlug} />}
       {currentModule === 'surveying' && <SurveyingVisualizer topicSlug={topicSlug} />}
       {currentModule === 'materials' && <MaterialsVisualizer topicSlug={topicSlug} />}

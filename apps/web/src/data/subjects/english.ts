@@ -148,7 +148,7 @@ export const englishData: SubjectData = {
         },
         {
           "heading": "3. 基礎動詞片語與介系詞搭配",
-          "body": "<p>英文中，同一個動詞加上不同的<span className=\"text-blue-600 font-bold\">介系詞</span>會產生完全不同的意義。這是統測必考題型，必須熟記常見動詞 (如 look [TTS:look], take [TTS:take], put [TTS:put], get [TTS:get]) 的片語搭配。</p>\n\n[DIALOGUE_START:動詞片語會話：工地任務執行]\nForeman: We need to carry out the safety inspection before pouring concrete. | 我們在澆置混凝土之前，必須先執行安全檢查。\nWorker: Understood. I will look into the rebar spacing right away. | 收到。我會立刻仔細檢查鋼筋的間距。\nForeman: Great. Make sure everyone puts on their safety gear. | 很好。請確保每個人都穿戴好安全裝備。\nWorker: All workers have already put on their helmets and boots. | 所有工人都已經戴好安全帽並穿上安全鞋了。\n[DIALOGUE_END]",
+          "body": "<p>英文中，同一個動詞加上不同的<span className=\"text-blue-600 font-bold\">介系詞</span>會產生完全不同的意義。這是統測必考題型，必須熟記常見動詞 (如 look [TTS:look], take [TTS:take], put [TTS:put], get [TTS:get]) 的片語搭配。</p>\n\n<div className=\"p-3 rounded-xl bg-blue-50 dark:bg-blue-950/40 border border-blue-200 dark:border-blue-800 text-xs font-mono space-y-1 my-3\">\n  <div className=\"font-bold text-blue-800 dark:text-blue-300\">🧭 核心介系詞空間方位圖解：</div>\n  <div>• [ON] 表面接觸 ──► on the floor / on the roof</div>\n  <div>• [IN] 空間內部 ──► in the building / in the room</div>\n  <div>• [AT] 特定點狀 ──► at the corner / at the station</div>\n  <div>• [THROUGH] 穿越立體 ──► through the tunnel / through the pipeline</div>\n  <div>• [UNDER] 垂直正下方 ──► under construction / under the bridge</div>\n</div>\n\n[DIALOGUE_START:動詞片語會話：工地任務執行]\nForeman: We need to carry out the safety inspection before pouring concrete. | 我們在澆置混凝土之前，必須先執行安全檢查。\nWorker: Understood. I will look into the rebar spacing right away. | 收到。我會立刻仔細檢查鋼筋的間距。\nForeman: Great. Make sure everyone puts on their safety gear. | 很好。請確保每個人都穿戴好安全裝備。\nWorker: All workers have already put on their helmets and boots. | 所有工人都已經戴好安全帽並穿上安全鞋了。\n[DIALOGUE_END]",
           "table": {
             "headers": [
               "動詞片語",
@@ -255,6 +255,54 @@ export const englishData: SubjectData = {
             "A: Did you bring the blueprint for the new bridge? [TTS:Did you bring the blueprint for the new bridge?] (你有帶新橋的藍圖嗎？)\nB: Yes, I left it in the site office. [TTS:Yes, I left it in the site office.] (有，我把它留在工地辦公室了。)",
             "A: What material should we use for the roof? [TTS:What material should we use for the roof?] (屋頂我們該用什麼材料？)\nB: Steel is the best choice because it is very durable. [TTS:Steel is the best choice because it is very durable.] (鋼材是最好的選擇，因為它非常耐用。)"
           ]
+        },
+        {
+          "heading": "9. 統測常考易混淆字對與不規則動詞三態陷阱表",
+          "body": "<p>統測英文第一大題單字題與克漏字中，命題委員極常放置「外觀拼寫極為相似但語義或詞性完全不同」的易混淆字作為誘答陷阱。同時，不規則動詞三態（尤其是 lie/lay 與 hang）每年必考，考前務必熟練辨別。</p>\n\n[DIALOGUE_START:易混淆字會話：材料性質辨析]\nInspector: The hot weather will definitely affect the curing speed of concrete. | 炎熱的天氣肯定會影響混凝土的養護速度。\nEngineer: Yes, extreme heat produces a negative effect on its ultimate compressive strength. | 是的，極端高溫會對其最終抗壓強度產生負面影響。\nInspector: Good distinction! \"Affect\" is the verb, while \"effect\" is the noun. | 區分得很好！affect 是動詞，而 effect 是名詞。\nEngineer: Exactly! And we should also adapt our pouring schedule to cooler morning hours. | 沒錯！而且我們也應該調整澆灌時間表以適應較涼爽的清晨時段。\n[DIALOGUE_END]",
+          "table": {
+            "headers": [
+              "單字對與三態變化",
+              "詞性與中文意",
+              "實戰用法與考點範例"
+            ],
+            "rows": [
+              [
+                "affect [TTS:affect] vs effect [TTS:effect]",
+                "affect (v.) 影響；effect (n.) 效果/影響",
+                "Smoking affects health. [TTS:Smoking affects health.] / It has a serious effect on health. [TTS:It has a serious effect on health.]"
+              ],
+              [
+                "adapt [TTS:adapt] vs adopt [TTS:adopt]",
+                "adapt (v.) 適應/改編；adopt (v.) 採納/領養",
+                "adapt to the new site environment [TTS:adapt to the new site environment] / adopt a modern design method [TTS:adopt a modern design method]"
+              ],
+              [
+                "sensible [TTS:sensible] vs sensitive [TTS:sensitive]",
+                "sensible (adj.) 明智理智的；sensitive (adj.) 敏感靈敏的",
+                "make a sensible choice [TTS:make a sensible choice] / sensitive measuring instrument [TTS:sensitive measuring instrument]"
+              ],
+              [
+                "economic [TTS:economic] vs economical [TTS:economical]",
+                "economic (adj.) 經濟學的/國家經濟；economical (adj.) 節儉省錢實惠的",
+                "rapid economic development [TTS:rapid economic development] / an economical construction plan [TTS:an economical construction plan]"
+              ],
+              [
+                "lie-lay-lain [TTS:lie, lay, lain] (躺/位於)",
+                "不及物動詞 (三態：lie - lay - lain - lying)",
+                "The blueprint lies on the table. [TTS:The blueprint lies on the table.] (藍圖躺在桌上。)"
+              ],
+              [
+                "lay-laid-laid [TTS:lay, laid, laid] (放置/產卵)",
+                "及物動詞 (三態：lay - laid - laid - laying)",
+                "Workers laid the bricks carefully. [TTS:Workers laid the bricks carefully.] (工人細心地鋪設磚塊。)"
+              ],
+              [
+                "hang-hung [TTS:hang, hung] vs hang-hanged [TTS:hang, hanged]",
+                "hung (懸掛/吊起)；hanged (處絞刑)",
+                "They hung a warning sign on the door. [TTS:They hung a warning sign on the door.] (他們在門上掛了一面警告標誌。)"
+              ]
+            ]
+          }
         }
       ],
       "practices": [
@@ -463,7 +511,7 @@ export const englishData: SubjectData = {
       "concepts": [
         {
           "heading": "英文五大基本句型",
-          "body": "英文句子由主詞 (S)、動詞 (V)、受詞 (O)、補語 (C) 等元素組成。動詞的性質決定了句子的基本架構，土木建築常描述結構體，多用這五大句型。\n\n[DIALOGUE_START:五大句型會話：清楚傳達工程指令]\nArchitect: The client considers the new lobby spacious and modern. | 業主認為新的大廳既寬敞又具現代感。\nAssistant: That is an S + V + O + OC sentence pattern, right? | 那是「主詞 + 動詞 + 受詞 + 受詞補語」的句型，對吧？\nArchitect: Yes. Mastering basic sentence patterns helps you write clear reports. | 是的。掌握基本句型能幫助你寫出條理清晰的報告。\nAssistant: I will keep my project descriptions concise and accurate. | 我會讓專案說明保持簡潔且精準。\n[DIALOGUE_END]",
+          "body": "英文句子由主詞 (S)、動詞 (V)、受詞 (O)、補語 (C) 等元素組成。動詞的性質決定了句子的基本架構，土木建築常描述結構體，多用這五大句型。\n\n<div className=\"p-3 rounded-xl bg-blue-50 dark:bg-blue-950/40 border border-blue-200 dark:border-blue-800 text-xs font-mono space-y-1 my-3\">\n  <div className=\"font-bold text-blue-800 dark:text-blue-300\">📐 五大句型解構天平圖示：</div>\n  <div>• [S + V]        主詞 ──► 不及物動詞 (無受詞)</div>\n  <div>• [S + V + C]    主詞 ──► 連綴動詞 ──► 補語 (形容主詞狀態)</div>\n  <div>• [S + V + O]    主詞 ──► 及物動詞 ──► 受詞 (動作承受者)</div>\n  <div>• [S + V + IO + DO] 主詞 ──► 授與動詞 ──► 間接受詞(人) + 直接受詞(物)</div>\n  <div>• [S + V + O + OC]  主詞 ──► 動詞 ──► 受詞 ──► 受詞補語 (使役/感官)</div>\n</div>\n\n[DIALOGUE_START:五大句型會話：清楚傳達工程指令]\nArchitect: The client considers the new lobby spacious and modern. | 業主認為新的大廳既寬敞又具現代感。\nAssistant: That is an S + V + O + OC sentence pattern, right? | 那是「主詞 + 動詞 + 受詞 + 受詞補語」的句型，對吧？\nArchitect: Yes. Mastering basic sentence patterns helps you write clear reports. | 是的。掌握基本句型能幫助你寫出條理清晰的報告。\nAssistant: I will keep my project descriptions concise and accurate. | 我會讓專案說明保持簡潔且精準。\n[DIALOGUE_END]",
           "table": {
             "headers": [
               "句型",
@@ -501,7 +549,7 @@ export const englishData: SubjectData = {
         },
         {
           "heading": "12 時態完整剖析（重點：現在完成式）",
-          "body": "時態表達動作發生的時間和狀態。分為現在、過去、未來，以及簡單、進行、完成、完成進行。統測最愛考現在完成式，表示從過去持續到現在的動作或經驗。\n\n[DIALOGUE_START:時態會話：工程里程碑進度確認]\nInspector: Have you finished pouring the concrete for the third-floor slab? | 三樓樓板的混凝土澆置已經完成了嗎？\nSupervisor: Yes, we have just completed it, and the curing process is ongoing. | 是的，我們剛剛完成，目前正在進行養護作業。\nInspector: Good. We will inspect the compressive strength next Monday. | 很好。我們下週一會檢驗抗壓強度。\nSupervisor: We will have all laboratory test reports ready by then. | 屆時我們會準備好所有實驗室的檢驗報告。\n[DIALOGUE_END]",
+          "body": "時態表達動作發生的時間和狀態。分為現在、過去、未來，以及簡單、進行、完成、完成進行。統測最愛考現在完成式，表示從過去持續到現在的動作或經驗。\n\n<div className=\"p-3 rounded-xl bg-indigo-50 dark:bg-indigo-950/40 border border-indigo-200 dark:border-indigo-800 text-xs font-mono space-y-1 my-3\">\n  <div className=\"font-bold text-indigo-800 dark:text-indigo-300\">⏳ 動詞 12 時態時空座標軸圖解：</div>\n  <div>• [過去完成式 had + p.p.] ◄── 比過去更早發生 (By the time S+Ved, S+had p.p.)</div>\n  <div>• [過去簡單式 V-ed]       ◄── 明確過去時間點 (yesterday, in 2020, ago)</div>\n  <div>• [現在完成式 have/has p.p.] ◄── 過去持續至今 (since + 過去點, for + 一段時間)</div>\n  <div>• [現在簡單式 V / V-s]     ◄── 恆常真理、材料物理性質 (Steel expands when heated)</div>\n  <div>• [未來簡單式 will + V]     ──► 未來事件 (if/when 子句用現在式代替未來式)</div>\n</div>\n\n[DIALOGUE_START:時態會話：工程里程碑進度確認]\nInspector: Have you finished pouring the concrete for the third-floor slab? | 三樓樓板的混凝土澆置已經完成了嗎？\nSupervisor: Yes, we have just completed it, and the curing process is ongoing. | 是的，我們剛剛完成，目前正在進行養護作業。\nInspector: Good. We will inspect the compressive strength next Monday. | 很好。我們下週一會檢驗抗壓強度。\nSupervisor: We will have all laboratory test reports ready by then. | 屆時我們會準備好所有實驗室的檢驗報告。\n[DIALOGUE_END]",
           "table": {
             "headers": [
               "時態重點",
@@ -516,12 +564,12 @@ export const englishData: SubjectData = {
               ],
               [
                 "過去簡單式",
-                "過去的單一事件 (V-ed)",
+                "過去的單一事件 (V-ed [TTS:past tense verb])",
                 "We finished the foundation yesterday.[TTS:We finished the foundation yesterday.] (我們昨天完成了地基。)"
               ],
               [
                 "現在完成式",
-                "過去發生持續到現在，或對現在有影響 (have/has + p.p.)",
+                "過去發生持續到現在，或對現在有影響 (have/has + p.p. [TTS:have or has plus past participle])",
                 "They have built three bridges since 2015.[TTS:They have built three bridges since 2015.] (自2015年起他們已建了三座橋。)"
               ]
             ]
@@ -616,6 +664,54 @@ export const englishData: SubjectData = {
             "對話一：\nA: Have you finished the structural design yet?[TTS:Have you finished the structural design yet?]\nB: Not yet. I am still working on the foundation plans.[TTS:Not yet. I am still working on the foundation plans.]",
             "對話二：\nA: The new library will be completed by next month.[TTS:The new library will be completed by next month.]\nB: That is amazing! I can't wait to see it.[TTS:That is amazing! I can't wait to see it.]"
           ]
+        },
+        {
+          "heading": "9. 主謂一致性 (Subject-Verb Agreement) 八大核心法則",
+          "body": "<p>英文句型中，「主詞與動詞的單複數一致」是統測克漏字與文法選擇題每年必考的經典考點。很多同學看到主詞後面有一長串修飾語就忘記真正的主詞是誰，掌握以下八大公式即可秒殺破題！</p>\n\n[DIALOGUE_START:主謂一致會話：工地人員管理]\nSupervisor: Either the project manager or the site inspectors are responsible for the report. | 不是專案經理就是現場檢驗員要為這份報告負責。\nClerk: Why did you use \"are\" instead of \"is\"? | 為什麼你用 are 而不是 is 呢？\nSupervisor: Because with \"either...or...\", the verb agrees with the closer subject, which is \"inspectors\"! | 因為在 either...or... 句型中，動詞要和較靠近的主詞一致，也就是複數的 inspectors！\nClerk: I get it now! And \"The number of workers is increasing\" uses \"is\" because the subject is \"The number\". | 我現在懂了！而 The number of workers is increasing 用 is 是因為主詞是 The number。\n[DIALOGUE_END]",
+          "table": {
+            "headers": [
+              "句型結構與法則",
+              "動詞單複數規則",
+              "實戰例句與考點解析"
+            ],
+            "rows": [
+              [
+                "Either A or B / Neither A nor B [TTS:Either A or B, Neither A nor B]",
+                "動詞依「鄰近的主詞 B」決定單複數",
+                "Neither the foreman nor the workers are tired. [TTS:Neither the foreman nor the workers are tired.] (工頭與工人們都不累。)"
+              ],
+              [
+                "Not only A but also B [TTS:Not only A but also B]",
+                "動詞依「鄰近的主詞 B」決定單複數",
+                "Not only the engineer but also the architect approves the plan. [TTS:Not only the engineer but also the architect approves the plan.] (不僅工程師，連建築師也批准了該計畫。)"
+              ],
+              [
+                "A as well as B / A together with B [TTS:A as well as B, A together with B]",
+                "動詞依「前面主要的主詞 A」決定單複數",
+                "The chief engineer, as well as his assistants, is on site. [TTS:The chief engineer, as well as his assistants, is on site.] (總工程師連同其助理都在工地上。)"
+              ],
+              [
+                "The number of + 複數名詞 [TTS:The number of]",
+                "表示「...的數量」，動詞一律用「單數 (is/was/has)」",
+                "The number of construction accidents has dropped significantly. [TTS:The number of construction accidents has dropped significantly.] (工安意外的數量顯著下降。)"
+              ],
+              [
+                "A number of + 複數名詞 [TTS:A number of]",
+                "表示「許多... (= many)」，動詞一律用「複數 (are/were/have)」",
+                "A number of skilled workers are needed for the project. [TTS:A number of skilled workers are needed for the project.] (該專案需要許多技術純熟的工人。)"
+              ],
+              [
+                "Each of / Every one of + 複數名詞 [TTS:Each of, Every one of]",
+                "強調「每一個個體」，動詞一律用「單數動詞」",
+                "Each of the structural beams has been inspected. [TTS:Each of the structural beams has been inspected.] (每一根結構橫樑都已經過檢驗。)"
+              ],
+              [
+                "時間 / 金額 / 距離 / 重量 [TTS:time, money, distance, weight]",
+                "視為「單一整體量」，動詞一律用「單數動詞」",
+                "Two million dollars is a fair budget for this renovation. [TTS:Two million dollars is a fair budget for this renovation.] (兩百萬美元對這項翻新工程是合理的預算。)"
+              ]
+            ]
+          }
         }
       ],
       "practices": [
@@ -905,12 +1001,50 @@ export const englishData: SubjectData = {
           "table": {
             "headers": ["常考情境類別", "典型提問與發話句型", "標準應對與社交回答", "統測高頻陷阱與解題秘訣"],
             "rows": [
-              ["問候與寒暄 (Greetings)", "How is it going? / What's up?", "Pretty good. / Not much.", "避免直譯字面；Not much 代表「沒什麼特別的，一切如常」"],
-              ["購物與退換 (Shopping)", "May I try this on? / Any discount?", "The fitting room is over there. / It is 20% off.", "20% off 是打八折（減價 20%），不是兩折！"],
-              ["餐廳點餐 (Dining)", "How would you like your steak?", "Medium-rare, please. / To go, please.", "回答熟度 (rare/medium/well-done) 或內用外帶 (for here/to go)"],
-              ["電話與預約 (Telephone)", "May I speak to Mr. Lin?", "Hold on, please. / May I take a message?", "本人接聽回答「This is he/she speaking.」勿回答「I am Lin.」"],
-              ["問路與交通 (Directions)", "Could you tell me how to get to...?", "Go straight for two blocks and turn left.", "注意介系詞搭配 (on the corner of, opposite to, across from)"],
-              ["請求與道歉 (Requests)", "Would you mind helping me with this?", "Not at all. / I would be glad to.", "Mind 問句回答「Not at all / Of course not」表示「不介意＝同意幫忙」"]
+              ["問候與寒暄 (Greetings [TTS:Greetings])", "How is it going? [TTS:How is it going?] / What's up? [TTS:What's up?]", "Pretty good. [TTS:Pretty good.] / Not much. [TTS:Not much.]", "避免直譯字面；Not much 代表「沒什麼特別的，一切如常」"],
+              ["購物與退換 (Shopping [TTS:Shopping])", "May I try this on? [TTS:May I try this on?] / Any discount? [TTS:Any discount?]", "The fitting room is over there. [TTS:The fitting room is over there.] / It is 20% off. [TTS:It is 20% off.]", "20% off 是打八折（減價 20%），不是兩折！"],
+              ["餐廳點餐 (Dining [TTS:Dining])", "How would you like your steak? [TTS:How would you like your steak?]", "Medium-rare, please. [TTS:Medium-rare, please.] / To go, please. [TTS:To go, please.]", "回答熟度 (rare/medium/well-done [TTS:rare, medium, well-done]) 或內用外帶 (for here/to go [TTS:for here, to go])"],
+              ["電話與預約 (Telephone [TTS:Telephone])", "May I speak to Mr. Lin? [TTS:May I speak to Mr. Lin?]", "Hold on, please. [TTS:Hold on, please.] / May I take a message? [TTS:May I take a message?]", "本人接聽回答「This is he/she speaking. [TTS:This is he speaking.]」勿回答「I am Lin.」"],
+              ["問路與交通 (Directions [TTS:Directions])", "Could you tell me how to get to...? [TTS:Could you tell me how to get to the station?]", "Go straight for two blocks and turn left. [TTS:Go straight for two blocks and turn left.]", "注意介系詞搭配 (on the corner of [TTS:on the corner of], opposite to [TTS:opposite to], across from [TTS:across from])"],
+              ["請求與道歉 (Requests [TTS:Requests])", "Would you mind helping me with this? [TTS:Would you mind helping me with this?]", "Not at all. [TTS:Not at all.] / I would be glad to. [TTS:I would be glad to.]", "Mind 問句回答「Not at all [TTS:Not at all] / Of course not [TTS:Of course not]」表示「不介意＝同意幫忙」"]
+            ]
+          }
+        },
+        {
+          "heading": "7. 統測高頻進階情境會話（看病醫療、飯店住宿、機場海關與委婉拒絕）",
+          "body": "<p>近年統測英文對話題逐漸跳脫傳統問候與天氣，大量融入「國外差旅、飯店入住、就診醫療與機場安檢海關」等成年人真實世界溝通情境。熟記各情境的關鍵觸發問句與應對回答，能助你穩拿對話題滿分！</p>\n\n[DIALOGUE_START:進階情境會話：飯店入住與商務差旅]\nReceptionist: Welcome to Grand Hyatt Taipei. How may I assist you today? | 歡迎蒞臨台北君悅酒店。今天有什麼能為您服務的嗎？\nGuest: I would like to check in, please. I have a reservation under Lin. | 我想辦理入住。我有用林先生的名字預約訂房。\nReceptionist: Certainly, Mr. Lin. Your deluxe room is ready on the 12th floor. Complimentary breakfast is served from 6:30 to 10:00 a.m. | 好的，林先生。您在 12 樓的豪華客房已經準備好了。免費早餐供應時間為上午 6:30 至 10:00。\nGuest: Wonderful! What time is check-out tomorrow? | 太棒了！請問明天幾點前需要退房？\nReceptionist: Check-out time is twelve noon. Enjoy your stay with us! | 退房時間是中午十二點整。祝您住宿愉快！\n[DIALOGUE_END]",
+          "table": {
+            "headers": [
+              "生活與差旅情境",
+              "典型核心問句與發話句",
+              "標準回覆與慣用語句",
+              "統測命中要點"
+            ],
+            "rows": [
+              [
+                "看病醫療 (Clinic & Pharmacy [TTS:Clinic & Pharmacy])",
+                "What seems to be the problem? [TTS:What seems to be the problem?] / Do you have any allergies? [TTS:Do you have any allergies?]",
+                "I have a terrible headache and fever. [TTS:I have a terrible headache and fever.] / Take this medicine after meals. [TTS:Take this medicine after meals.]",
+                "症狀字彙：fever (發燒), sore throat (喉嚨痛), dizziness (頭暈), allergic to (對...過敏)"
+              ],
+              [
+                "飯店住宿 (Hotel Check-in [TTS:Hotel Check-in])",
+                "I have a reservation under the name... [TTS:I have a reservation under the name Lin.] / Is breakfast included? [TTS:Is breakfast included?]",
+                "Here is your room keycard. [TTS:Here is your room keycard.] / Check-out is by 11:00 AM. [TTS:Check-out is by 11:00 AM.]",
+                "reservation (預訂), deposit (押金), complimentary (免費贈送的), vacancy (空房)"
+              ],
+              [
+                "機場與海關 (Airport & Customs [TTS:Airport & Customs])",
+                "Window or aisle seat? [TTS:Window or aisle seat?] / What is the purpose of your visit? [TTS:What is the purpose of your visit?]",
+                "I'm traveling for business. [TTS:I'm traveling for business.] / Nothing to declare. [TTS:Nothing to declare.]",
+                "aisle (走道), boarding pass (登機證), declare (申報), pleasure vs business (觀光 vs 出差)"
+              ],
+              [
+                "委婉拒絕 (Polite Refusals [TTS:Polite Refusals])",
+                "Would you like to join us for dinner tonight? [TTS:Would you like to join us for dinner tonight?]",
+                "I would love to, but I have a prior engagement. [TTS:I would love to, but I have a prior engagement.] / I wish I could, but I am tied up. [TTS:I wish I could, but I am tied up.]",
+                "看到 but 後面接「prior commitment / tied up (忙得不可開交)」，代表客氣婉拒"
+              ]
             ]
           }
         }
@@ -1184,8 +1318,9 @@ export const englishData: SubjectData = {
           "question": "Dialogue Example 1:\nA: I can't figure out the meaning of 'sustainable' in this passage.\nB: Look at the context clues. The passage mentions 'using renewable energy' and 'reducing waste'.\nA: Ah, I see!\n\nQuestion: What does B suggest A do?[TTS:Dialogue Example 1:\nA: I can't figure out the meaning of 'sustainable' in this passage.\nB: Look at the context clues. The passage mentions 'using renewable energy' and 'reducing waste'.\nA: Ah, I see!\n\nQuestion: What does B suggest A do?]",
           "difficulty": "2",
           "steps": [
-            "1. Read the dialogue.[TTS:Read the dialogue.] ｜為什麼：由句型結構與語意邏輯推導出唯一正解。",
-            "2. Identify B's advice.[TTS:Identify B's advice.] ｜為什麼：由句型結構與語意邏輯推導出唯一正解。"
+            "步驟一：審題與對話焦點定位。題幹詢問「What does B suggest A do?」，因此核心答題線索在於 B 的發言內容。 ｜為什麼：由句型結構與語意邏輯推導出唯一正解。",
+            "步驟二：分析 B 的建議與實例說明。B 回答「Look at the context clues. The passage mentions 'using renewable energy' and 'reducing waste'.」，說明遇到不懂的單字時，應由前後文事例推敲字義。 ｜為什麼：由句型結構與語意邏輯推導出唯一正解。",
+            "步驟三：歸納上下文線索解題策略。B 明確建議尋找「context clues（上下文線索）」，藉由前後同義語境理解生字，鎖定正解。 ｜為什麼：由句型結構與語意邏輯推導出唯一正解。"
           ],
           "answer": "Look at the context clues.[TTS:Look at the context clues.]",
           "hints": [
@@ -1199,8 +1334,9 @@ export const englishData: SubjectData = {
           "question": "Dialogue Example 2:\nA: Skimming is too hard. I keep stopping at words I don't know.\nB: You shouldn't do that. Just read the first and last sentences of each paragraph to get the main idea.\n\nQuestion: According to B, how should one skim a passage?[TTS:Dialogue Example 2:\nA: Skimming is too hard. I keep stopping at words I don't know.\nB: You shouldn't do that. Just read the first and last sentences of each paragraph to get the main idea.\n\nQuestion: According to B, how should one skim a passage?]",
           "difficulty": "2",
           "steps": [
-            "1. Read the dialogue.[TTS:Read the dialogue.] ｜為什麼：由句型結構與語意邏輯推導出唯一正解。",
-            "2. Identify B's explanation of skimming.[TTS:Identify B's explanation of skimming.] ｜為什麼：由句型結構與語意邏輯推導出唯一正解。"
+            "步驟一：審題與鎖定閱讀技巧說明。題目詢問「According to B, how should one skim a passage?」，需精確定位 B 對於略讀 (skimming) 操作步驟的指示。 ｜為什麼：由句型結構與語意邏輯推導出唯一正解。",
+            "步驟二：提取關鍵句與操作原則。B 指出不應停下來查生字，而是「Just read the first and last sentences of each paragraph to get the main idea.」。 ｜為什麼：由句型結構與語意邏輯推導出唯一正解。",
+            "步驟三：統整略讀策略與核心步驟。略讀的正確做法是閱讀「每個段落的第一句與最後一句」以快速掌握文章主旨，完整呼應選項。 ｜為什麼：由句型結構與語意邏輯推導出唯一正解。"
           ],
           "answer": "By reading the first and last sentences of each paragraph.[TTS:By reading the first and last sentences of each paragraph.]",
           "hints": [
@@ -1247,10 +1383,10 @@ export const englishData: SubjectData = {
           "table": {
             "headers": ["統測閱讀四大題型", "核心提問句型範例", "黃金解題策略與步驟 (SOP)", "干擾選項特徵與避坑指南"],
             "rows": [
-              ["主旨題 (Main Idea)", "What is the main idea / best title?", "抓首段尾句與末段總結句，統計全文高頻核心關鍵字", "避開「以偏概全（只講某一段細節）」或「過度延伸」"],
-              ["細節題 (Fact / Detail)", "According to the passage, which is true?", "用題幹專有名詞/數字/大寫字母回文「掃讀 (Scanning)」定位", "注意「同義字替換 (Paraphrase)」，避開扭曲程度或因果顛倒"],
-              ["猜字題 (Vocabulary in Context)", "The word \\\"X\\\" in line 5 is closest in meaning to...", "依前後文轉折詞 (however)、解釋詞 (that is) 或舉例 (such as) 推敲", "切勿直接選取「最常見字義」，必須符合該段特定語境"],
-              ["推論題 (Inference / Suggestion)", "What can be inferred from the article?", "根據文本現有客觀事實進行合乎邏輯的一步推論", "嚴禁憑個人主觀常識過度腦補未提及之結論"]
+              ["主旨題 (Main Idea [TTS:Main Idea])", "What is the main idea? [TTS:What is the main idea?] / What is the best title? [TTS:What is the best title?]", "抓首段尾句與末段總結句，統計全文高頻核心關鍵字", "避開「以偏概全（只講某一段細節）」或「過度延伸」"],
+              ["細節題 (Fact / Detail [TTS:Fact and Detail])", "According to the passage, which is true? [TTS:According to the passage, which is true?]", "用題幹專有名詞/數字/大寫字母回文「掃讀 (Scanning [TTS:Scanning])」定位", "注意「同義字替換 (Paraphrase [TTS:Paraphrase])」，避開扭曲程度或因果顛倒"],
+              ["猜字題 (Vocabulary in Context [TTS:Vocabulary in Context])", "The word is closest in meaning to... [TTS:closest in meaning to]", "依前後文轉折詞 (however [TTS:however])、解釋詞 (that is [TTS:that is]) 或舉例 (such as [TTS:such as]) 推敲", "切勿直接選取「最常見字義」，必須符合該段特定語境"],
+              ["推論題 (Inference / Suggestion [TTS:Inference and Suggestion])", "What can be inferred from the article? [TTS:What can be inferred from the article?]", "根據文本現有客觀事實進行合乎邏輯的一步推論", "嚴禁憑個人主觀常識過度腦補未提及之結論"]
             ]
           }
         }
@@ -1763,6 +1899,49 @@ export const englishData: SubjectData = {
             "A: Hey, did you check the blueprint for the new foundation?[TTS:Hey, did you check the blueprint for the new foundation?]\nB: Yes, we need to complete the rebar placement before tomorrow.[TTS:Yes, we need to complete the rebar placement before tomorrow.]\nA: Great. Don't forget your hard hat on site.[TTS:Great. Don't forget your hard hat on site.]\nB: Got it.[TTS:Got it.]",
             "A: The total station shows a small error in the elevation.[TTS:The total station shows a small error in the elevation.]\nB: Let me verify it with the level.[TTS:Let me verify it with the level.]\nA: We must be precise before pouring concrete.[TTS:We must be precise before pouring concrete.]\nB: I will double-check the dimensions on the floor plan.[TTS:I will double-check the dimensions on the floor plan.]"
           ]
+        },
+        {
+          "heading": "9. 綠建築與 ESG 永續工程詞彙 (Green Building & Sustainability)",
+          "body": "<p>近年統測英文跨領域閱讀題與技高雙語教學中，綠建築 (Green Building)、ESG 永續指標與淨零碳排 (Net Zero) 已經成為最熱門的新興命題熱區。熟悉這些專業英文，能大幅提昇長篇科技閱讀與素養題得分率！</p>\n\n[DIALOGUE_START:綠建築與ESG會話：評估淨零建築]\nArchitect: Our new office complex is aiming for LEED Platinum certification. | 我們的新辦公大樓綜合體正朝向 LEED 白金級綠建築認證目標邁進。\nConsultant: That requires a thirty percent reduction in operational carbon footprint. | 那需要降低百分之三十的營運碳足跡。\nArchitect: We integrated solar panels, rainwater harvesting, and high-efficiency HVAC systems. | 我們整合了太陽能光電板、雨水回收系統以及高效率空調通風系統。\nConsultant: Impressive! These sustainable features will significantly lower energy consumption. | 令人印象深刻！這些永續特性將顯著降低能源消耗。\n[DIALOGUE_END]",
+          "table": {
+            "headers": [
+              "綠色工程詞彙",
+              "中文專業譯名",
+              "統測必備情境例句"
+            ],
+            "rows": [
+              [
+                "Green Building [TTS:Green Building]",
+                "綠建築",
+                "Green buildings use natural ventilation to reduce air conditioning needs. [TTS:Green buildings use natural ventilation to reduce air conditioning needs.]"
+              ],
+              [
+                "Net Zero Emissions [TTS:Net Zero Emissions]",
+                "淨零排放",
+                "The government pledges to achieve net zero emissions by 2050. [TTS:The government pledges to achieve net zero emissions by 2050.]"
+              ],
+              [
+                "Carbon Footprint [TTS:Carbon Footprint]",
+                "碳足跡",
+                "Using local timber reduces the embodied carbon footprint of the project. [TTS:Using local timber reduces the embodied carbon footprint of the project.]"
+              ],
+              [
+                "LEED Certification [TTS:LEED Certification]",
+                "LEED 綠建築認證 (領先能源與環境設計)",
+                "This skyscraper received LEED Gold certification for energy efficiency. [TTS:This skyscraper received LEED Gold certification for energy efficiency.]"
+              ],
+              [
+                "Renewable Energy [TTS:Renewable Energy]",
+                "再生能源 (如太陽能/風力)",
+                "The rooftop solar panels provide renewable energy for the entire building. [TTS:The rooftop solar panels provide renewable energy for the entire building.]"
+              ],
+              [
+                "Circular Economy [TTS:Circular Economy]",
+                "循環經濟 (建材回收與重用)",
+                "Crushed concrete can be recycled into aggregates under a circular economy model. [TTS:Crushed concrete can be recycled into aggregates under a circular economy model.]"
+              ]
+            ]
+          }
         }
       ],
       "practices": [
@@ -1958,7 +2137,7 @@ export const englishData: SubjectData = {
       "concepts": [
         {
           "heading": "關係代名詞與形容詞子句",
-          "body": "<p>形容詞子句用來修飾前面的名詞（先行詞），由<span className=\"font-semibold text-blue-600\">關係代名詞 (who, whom, which, that, whose) [TTS:who, whom, which, that, whose]</span>引導。需特別注意限定與非限定（有逗號）的差別，以及介系詞移至關代前面的進階句型。在工程敘述中，常用形容詞子句來精確定義材料或工法。</p>\n\n[DIALOGUE_START:關係子句會話：精準修飾建築標的]\nArchitect: The tower that was constructed with recycled steel won a green building gold medal. | 那棟使用回收鋼材建造的塔樓榮獲了綠建築金獎。\nIntern: Here, \"that was constructed with recycled steel\" is an adjective clause modifying \"tower\". | 這裡 that was constructed with recycled steel 是形容詞子句，用來修飾 tower。\nArchitect: Correct. When referring to engineers, we use \"who\": \"The engineer who inspected the site is John.\" | 沒錯。指涉工程師時我們用 who：「勘查工地的工程師是約翰。」\nIntern: Relative clauses help combine multiple observations into one sophisticated sentence. | 關係子句能幫我們把多個觀察整合成一個嚴謹的高階句子。\n[DIALOGUE_END]",
+          "body": "<p>形容詞子句用來修飾前面的名詞（先行詞），由<span className=\"font-semibold text-blue-600\">關係代名詞 (who, whom, which, that, whose) [TTS:who, whom, which, that, whose]</span>引導。需特別注意限定與非限定（有逗號）的差別，以及介系詞移至關代前面的進階句型。在工程敘述中，常用形容詞子句來精確定義材料或工法。</p>\n\n<div className=\"p-3 rounded-xl bg-purple-50 dark:bg-purple-950/40 border border-purple-200 dark:border-purple-800 text-xs font-mono space-y-1 my-3\">\n  <div className=\"font-bold text-purple-800 dark:text-purple-300\">🌳 關係子句解剖樹狀圖解：</div>\n  <div>• [先行詞 N (人)] ──► [who / whom / whose] ──► (缺少主格/受格/所有格)</div>\n  <div>• [先行詞 N (物)] ──► [which / that / whose]  ──► (缺少主格/受格/所有格)</div>\n  <div>⚠️ 兩大禁忌：逗號後面不能用 that；介系詞後面不能用 that！</div>\n</div>\n\n[DIALOGUE_START:關係子句會話：精準修飾建築標的]\nArchitect: The tower that was constructed with recycled steel won a green building gold medal. | 那棟使用回收鋼材建造的塔樓榮獲了綠建築金獎。\nIntern: Here, \"that was constructed with recycled steel\" is an adjective clause modifying \"tower\". | 這裡 that was constructed with recycled steel 是形容詞子句，用來修飾 tower。\nArchitect: Correct. When referring to engineers, we use \"who\": \"The engineer who inspected the site is John.\" | 沒錯。指涉工程師時我們用 who：「勘查工地的工程師是約翰。」\nIntern: Relative clauses help combine multiple observations into one sophisticated sentence. | 關係子句能幫我們把多個觀察整合成一個嚴謹的高階句子。\n[DIALOGUE_END]",
           "steps": [
             "判斷先行詞是人、事、物或地方/時間。",
             "判斷關代在子句中扮演的角色（主詞、受詞或所有格）。",
@@ -2130,21 +2309,21 @@ export const englishData: SubjectData = {
             ],
             "rows": [
               [
-                "使役 (make/have)",
-                "O + 原形動詞 (V)",
-                "O + 過去分詞 (p.p.)",
+                "使役 (make/have [TTS:make and have])",
+                "O + 原形動詞 (V [TTS:base verb])",
+                "O + 過去分詞 (p.p. [TTS:past participle])",
                 "The manager had the blueprints redrawn. [TTS:The manager had the blueprints redrawn.]"
               ],
               [
-                "使役 (let)",
-                "O + 原形動詞 (V)",
-                "O + be p.p.",
+                "使役 (let [TTS:let])",
+                "O + 原形動詞 (V [TTS:base verb])",
+                "O + be p.p. [TTS:be plus past participle]",
                 "Let the cement be mixed properly. [TTS:Let the cement be mixed properly.]"
               ],
               [
-                "感官 (see/hear)",
-                "O + V (事實) / V-ing (進行)",
-                "O + 過去分詞 (p.p.)",
+                "感官 (see/hear [TTS:see and hear])",
+                "O + V (事實) / V-ing (進行 [TTS:verb with ing])",
+                "O + 過去分詞 (p.p. [TTS:past participle])",
                 "I saw the crane lifting the heavy steel beams. [TTS:I saw the crane lifting the heavy steel beams.]"
               ]
             ]
@@ -2168,27 +2347,27 @@ export const englishData: SubjectData = {
             ],
             "rows": [
               [
-                "現在分詞 (V-ing)",
+                "現在分詞 (V-ing [TTS:present participle, V-ing])",
                 "主動、進行",
-                "N + V-ing",
+                "N + V-ing [TTS:N plus V-ing]",
                 "The workers repairing the roof are wearing safety harnesses. [TTS:The workers repairing the roof are wearing safety harnesses.]"
               ],
               [
-                "過去分詞 (p.p.)",
+                "過去分詞 (p.p. [TTS:past participle])",
                 "被動、完成",
-                "N + p.p.",
+                "N + p.p. [TTS:N plus past participle]",
                 "The materials used in this project are eco-friendly. [TTS:The materials used in this project are eco-friendly.]"
               ],
               [
-                "情緒分詞 (V-ing)",
+                "情緒分詞 (V-ing [TTS:participle with ing])",
                 "令人...的 (通常修飾物)",
-                "N + be V-ing",
+                "N + be V-ing [TTS:N plus be plus V-ing]",
                 "The architectural design is amazing. [TTS:The architectural design is amazing.]"
               ],
               [
-                "情緒分詞 (V-ed)",
+                "情緒分詞 (V-ed [TTS:participle with ed])",
                 "感到...的 (通常修飾人)",
-                "S(人) + be V-ed",
+                "S(人) + be V-ed [TTS:subject plus be plus V-ed]",
                 "The engineers were excited about the new software. [TTS:The engineers were excited about the new software.]"
               ]
             ]
@@ -2210,6 +2389,57 @@ export const englishData: SubjectData = {
             "A: Do not start the excavation until the site manager gives the signal. [TTS:Do not start the excavation until the site manager gives the signal.] (在工地主任發出信號前，不要開始挖掘。)",
             "B: I understand. I will also make sure that everyone wears their safety gear. [TTS:I understand. I will also make sure that everyone wears their safety gear.] (我明白。我也會確保每個人都穿戴好安全裝備。)",
             "A: Good. Safety is the priority even though we are behind schedule. [TTS:Good. Safety is the priority even though we are behind schedule.] (很好。即使我們進度落後，安全仍是首要任務。)"
+          ]
+        },
+        {
+          "heading": "9. 複合關係代名詞 (what) 與關係副詞 (where, when, why) 速查大表",
+          "body": "複合關係代名詞 <span className=\"font-bold text-blue-600\">what [TTS:what]</span> 相當於 the thing(s) which [TTS:the thing(s) which]，本身已包含先行詞，因此其前方絕對不能再有名詞先行詞，其引導之名詞子句在全句中扮演主詞、受詞或補語。<br/>而關係副詞 <span className=\"font-bold text-emerald-600\">where, when, why [TTS:where, when, why]</span> 則由「介系詞 + 關係代名詞 which」衍生而來（如 in which = where, on which = when, for which = why），修飾時間、地點、原因之先行詞，後方接「主謂受完整子句（不缺主詞或受詞）」。在統測題中是區分頂標與均標的分水嶺。\n\n[DIALOGUE_START:複合關係詞與關係副詞解析會話：工法論證]\nJunior Engineer: Should I write: \"This is the factory what produces precast panels\"? | 我應該寫 This is the factory what produces precast panels 嗎？\nSenior Engineer: No, \"what\" contains its own antecedent. Say: \"This is the factory WHICH produces...\" or \"...WHERE precast panels are made.\" | 不行，what 本身就自帶先行詞了。應該說：This is the factory which produces... 或 where precast panels are made。\nJunior Engineer: Ah! \"Where\" introduces a complete clause, whereas \"which\" acts as the subject! | 啊！where 引導主謂完整的子句，而 which 在子句中擔任主詞！\nSenior Engineer: Spot on. Remember: What you learn today guarantees construction quality tomorrow. | 一點也沒錯。記住：你今天所學的知識，確保了明天的施工品質。\n[DIALOGUE_END]",
+          "table": {
+            "headers": [
+              "關係詞類別",
+              "等價替換公式",
+              "後方子句完整度",
+              "經典考題與工程實例"
+            ],
+            "rows": [
+              [
+                "what (複合關代) [TTS:what]",
+                "the thing(s) which / that [TTS:the thing which]",
+                "不完整（缺 S 或 O）",
+                "What matters most on a jobsite is safety. [TTS:What matters most on a jobsite is safety.] (工地上最重要的就是安全。)"
+              ],
+              [
+                "where (地點關係副詞) [TTS:where]",
+                "in / at / on which [TTS:in which, at which, on which]",
+                "完整（S + V + O）",
+                "This is the laboratory where we test tensile strength. [TTS:This is the laboratory where we test tensile strength.] (這是我們測試抗拉強度的實驗室。)"
+              ],
+              [
+                "when (時間關係副詞) [TTS:when]",
+                "at / in / on which [TTS:at which, in which]",
+                "完整（S + V + O）",
+                "I remember the day when the foundation was poured. [TTS:I remember the day when the foundation was poured.] (我記得澆灌地基的那一天。)"
+              ],
+              [
+                "why (原因關係副詞) [TTS:why]",
+                "for which [TTS:for which]",
+                "完整（S + V + O）",
+                "That is the reason why the concrete cracked. [TTS:That is the reason why the concrete cracked.] (這就是混凝土開裂的原因。)"
+              ],
+              [
+                "whose (所有格關代) [TTS:whose]",
+                "of which the + N [TTS:of which the noun]",
+                "名詞前置完整句（whose + N + V）",
+                "We hired an architect whose blueprints won first prize. [TTS:We hired an architect whose blueprints won first prize.] (我們聘請了一位藍圖榮獲首獎的建築師。)"
+              ]
+            ]
+          },
+          "steps": [
+            "步驟一：觀察空格前面是否有先行詞名詞。若已有先行詞（如 the factory），絕不可選 what [TTS:what]。",
+            "步驟二：檢視空格後方子句是否完整。若缺少主詞或受詞，應選關係代名詞 which / who / that [TTS:which, who, that]。",
+            "步驟三：若先行詞為地點且後方子句主謂完整，選 where [TTS:where] 或「介系詞 + which」[TTS:preposition plus which]。",
+            "步驟四：若先行詞是 the reason 且後方子句完整，選 why [TTS:why]；若先行詞是 the way，不可與 how 並存（只寫 the way 或 how）[TTS:the way or how]。",
+            "步驟五：進行回填驗算：若將空格換為 that which 或 in which 能讀通，即可確認作答正確。"
           ]
         }
       ],
@@ -2874,6 +3104,44 @@ export const englishData: SubjectData = {
         {
           "heading": "6. 冠詞與特指規則",
           "body": "a/an [TTS:a/an] 用於泛指某個單數可數名詞，the [TTS:the] 用於特指（雙方都知道的對象、前面提過的對象，或世上獨一無二的事物）。在工程圖說中，首次提到某個結構用 \"a column\" [TTS:\"a column\"]，再次提到就要用 \"the column\" [TTS:\"the column\"]。\n\n[DIALOGUE_START:冠詞特指會話：首次提及與特指辨析]\nProofreader: Why is it \"a bridge\" in sentence 1, but \"the bridge\" in sentence 3? | 為什麼第 1 句用 a bridge，到了第 3 句卻變成 the bridge？\nAuthor: Because \"a bridge\" introduces a new noun, while \"the bridge\" refers to the specific one already introduced. | 因為 a bridge 是首次引入新名詞，而 the bridge 則是特指前面已經介紹過的那座橋。\nProofreader: Clear distinction! Definite articles define specific reference in English. | 非常清晰的區別！定冠詞在英文中用來定義特定指涉對象。\nAuthor: Mastering articles makes technical writing natural and precise. | 掌握冠詞能讓技術寫作變得既自然又精確。\n[DIALOGUE_END]"
+        },
+        {
+          "heading": "7. 統測四大天王轉折詞全覽矩陣 (因果、轉折、遞進、舉例) 與標點法則",
+          "body": "<p>統測克漏字每回必出 2~3 題篇章銜接轉折詞。掌握「四大天王邏輯分類」與「標點符號判斷公式」，就能在看到空格時直接用刪去法秒殺無效選項！</p>\n\n[DIALOGUE_START:四大天王轉折詞會話：克漏字標點與邏輯解密]\nTeacher: Notice the semicolon and comma in \"The material is light; however, it is brittle.\" | 注意這句話裡的分號與逗號：The material is light; however, it is brittle。\nStudent: Why can't we just use a comma like \"The material is light, however it is brittle\"? | 為什麼不能只用逗號像 The material is light, however it is brittle 這樣寫呢？\nTeacher: Because \"however\" is a conjunctive adverb, not a conjunction! It cannot join two independent clauses with only a comma. | 因為 however 是連接副詞，不是連接詞！它絕對不能只靠一個逗號連接兩個獨立子句。\nStudent: So it must be either a period or a semicolon before \"however\"! That rule eliminates half the wrong options in cloze tests! | 所以 however 前面一定要是句點或分號！這項規則能在克漏字中直接排除一半的錯誤選項！\n[DIALOGUE_END]",
+          "table": {
+            "headers": [
+              "邏輯分類",
+              "四大天王高頻轉折詞",
+              "標點符號與語法位置規則",
+              "統測命中例句"
+            ],
+            "rows": [
+              [
+                "因果推論 (Cause & Effect [TTS:Cause & Effect])",
+                "therefore, thus, consequently, as a result, hence [TTS:therefore, thus, consequently, as a result, hence]",
+                "S + V. Therefore, S + V. 或 S + V; therefore, S + V.",
+                "Soil bearing capacity is weak. Therefore, deep pile foundations are required. [TTS:Soil bearing capacity is weak. Therefore, deep pile foundations are required.]"
+              ],
+              [
+                "轉折對比 (Contrast & Concession [TTS:Contrast & Concession])",
+                "however, nevertheless, on the other hand, in contrast, nonetheless [TTS:however, nevertheless, on the other hand, in contrast, nonetheless]",
+                "S + V. However, S + V. 或 S + V; however, S + V. (前後語意反向)",
+                "The truss is extremely lightweight; however, it can resist strong wind loads. [TTS:The truss is extremely lightweight; however, it can resist strong wind loads.]"
+              ],
+              [
+                "遞進補充 (Addition & Reinforcement [TTS:Addition & Reinforcement])",
+                "moreover, furthermore, in addition, besides, additionally [TTS:moreover, furthermore, in addition, besides, additionally]",
+                "S + V. Moreover, S + V. (同向論點再加碼)",
+                "Steel structures are flexible. Furthermore, they are recyclable. [TTS:Steel structures are flexible. Furthermore, they are recyclable.]"
+              ],
+              [
+                "舉例與總結 (Exemplification & Summary [TTS:Exemplification & Summary])",
+                "for example, for instance, in short, to sum up, in conclusion [TTS:for example, for instance, in short, to sum up, in conclusion]",
+                "舉例佐證或文章最後一段總結主題",
+                "Many ancient arches remain standing; for instance, the Roman aqueducts are intact. [TTS:Many ancient arches remain standing; for instance, the Roman aqueducts are intact.]"
+              ]
+            ]
+          }
         }
       ],
       "practices": [
@@ -3063,7 +3331,7 @@ export const englishData: SubjectData = {
       "concepts": [
         {
           "heading": "1. 假設語氣與現在/過去事實相反",
-          "body": "<span className=\"text-blue-600 font-bold\">假設語氣</span>的核心在於「時態退一步」。與現在相反用過去式，與過去相反用過去完成式。\n\n[DIALOGUE_START:假設語氣會話：土質地質風險評估]\nGeotechnical Lead: If we had performed the core drilling earlier, we would have detected the underground sinkhole. | 如果我們當初早一點進行鑽探取樣，我們就能察覺到地下的岩溶空洞。\nStructural Engineer: If the bedrock were stronger, we could reduce the pile foundation depth. | 如果岩盤層更堅固一些，我們就可以縮減基樁的深度。\nGeotechnical Lead: Had we known the water table was so high, we would have installed dewatering pumps. | 要是我們早知道地下水位這麼高，我們早就安裝抽水沉水泵了。\nStructural Engineer: Let us reinforce the slurry walls immediately to prevent subsidence. | 我們立刻為連續壁進行補強，以防地層下陷。\n[DIALOGUE_END]",
+          "body": "<span className=\"text-blue-600 font-bold\">假設語氣</span>的核心在於「時態退一步」。與現在相反用過去式，與過去相反用過去完成式。\n\n<div className=\"p-3 rounded-xl bg-amber-50 dark:bg-amber-950/40 border border-amber-200 dark:border-amber-800 text-xs font-mono space-y-1 my-3\">\n  <div className=\"font-bold text-amber-800 dark:text-amber-300\">⚖️ 假設語氣時態降格天平圖解：</div>\n  <div>• 與現在相反 (退一步)：If S + were/V-ed, S + would/could + 原形V</div>\n  <div>• 與過去相反 (退兩步)：If S + had p.p., S + would/could + have p.p.</div>\n  <div>• 倒裝句 (省略 If)：Had they known... / Were he here... / Should you need...</div>\n</div>\n\n[DIALOGUE_START:假設語氣會話：土質地質風險評估]\nGeotechnical Lead: If we had performed the core drilling earlier, we would have detected the underground sinkhole. | 如果我們當初早一點進行鑽探取樣，我們就能察覺到地下的岩溶空洞。\nStructural Engineer: If the bedrock were stronger, we could reduce the pile foundation depth. | 如果岩盤層更堅固一些，我們就可以縮減基樁的深度。\nGeotechnical Lead: Had we known the water table was so high, we would have installed dewatering pumps. | 要是我們早知道地下水位這麼高，我們早就安裝抽水沉水泵了。\nStructural Engineer: Let us reinforce the slurry walls immediately to prevent subsidence. | 我們立刻為連續壁進行補強，以防地層下陷。\n[DIALOGUE_END]",
           "steps": [
             "與現在事實相反：If S + were/V-ed, S + would/could/should/might + VR.[TTS:If S + were/V-ed, S + would/could/should/might + VR.]",
             "與過去事實相反：If S + had p.p., S + would/could/should/might + have p.p.[TTS:If S + had p.p., S + would/could/should/might + have p.p.]",
@@ -3276,6 +3544,62 @@ export const englishData: SubjectData = {
             "B: If you had told me, I would have helped you contact the supplier.[TTS:B: If you had told me, I would have helped you contact the supplier.] (如果你早點告訴我，我就會幫你聯繫供應商了。)",
             "A: Did you see the new architectural design?[TTS:A: Did you see the new architectural design?] (你有看到新的建築設計嗎？)",
             "B: Never have I seen such an innovative building in this city.[TTS:B: Never have I seen such an innovative building in this city.] (我從未在這座城市看過如此創新的建築。)"
+          ]
+        },
+        {
+          "heading": "9. 省略 If 的倒裝假設語氣三本柱與否定倒裝句",
+          "body": "統測高階文法每年必考的封頂題型即為<span className=\"font-bold text-rose-600\">「假設語氣省略 If 之倒裝句」</span>與<span className=\"font-bold text-indigo-600\">「否定副詞置於句首之倒裝句」</span>。當 If 條件句省略 If 時，必須將助動詞或 be 動詞搬到主詞前方：(1) 與現在相反倒裝為 <span className=\"font-mono font-bold\">Were + S + to V / adj</span>；(2) 與過去相反倒裝為 <span className=\"font-mono font-bold\">Had + S + p.p.</span>；(3) 與未來相反（萬一）倒裝為 <span className=\"font-mono font-bold\">Should + S + 原形動詞</span>。此外，否定副詞（Not only, Never, Seldom, Hardly, Under no circumstances）置於句首時，語序如同一般疑問句（助動詞 + S + V）。\n\n[DIALOGUE_START:進階倒裝句與假設語氣會話：總工程師的驗收嚴審]\nChief Auditor: Had the foundation piles not been driven to bedrock, this structure would have settled unevenly! | 倘若基樁當初沒有打到岩盤，這棟結構體早就發生不均勻沉陷了！\nSite Superintendent: We followed the seismic blueprints to the millimeter, sir. | 長官，我們百分之百按耐震施工藍圖精確施作至公釐等級。\nChief Auditor: Under no circumstances should project deadlines compromise structural integrity. | 任何情況下，工程期限都絕不能犧牲結構安全與完整性。\nSite Superintendent: Absolutely. Not only do we conduct ultrasonic weld tests daily, but we also file third-party reports. | 絕對如此。我們不僅每日進行超音波焊道檢測，還由第三方機構出具正式簽證報告。\n[DIALOGUE_END]",
+          "table": {
+            "headers": [
+              "倒裝句型類別",
+              "正常語序 (含 If / 否定詞)",
+              "省略倒裝語序 (金牌公式)",
+              "統測高分示範例句"
+            ],
+            "rows": [
+              [
+                "與過去事實相反倒裝 [TTS:Past subjunctive inversion]",
+                "If S + had + p.p., S + would have + p.p. [TTS:If subject had p.p., subject would have p.p.]",
+                "Had + S + p.p., S + would have + p.p. [TTS:Had subject p.p., subject would have p.p.]",
+                "Had the contractor used reinforced rebar, the wall would not have collapsed. [TTS:Had the contractor used reinforced rebar, the wall would not have collapsed.] (倘若承包商當初使用了加強鋼筋，牆面就不會坍塌了。)"
+              ],
+              [
+                "與現在事實相反倒裝 [TTS:Present subjunctive inversion]",
+                "If S + were..., S + would + V [TTS:If subject were, subject would base verb]",
+                "Were + S + to V / N / Adj, S + would + V [TTS:Were subject to verb, subject would verb]",
+                "Were I the chief engineer, I would re-evaluate the seismic safety margin. [TTS:Were I the chief engineer, I would re-evaluate the seismic safety margin.] (如果我是總工程師，我會重新評估耐震安全係數。)"
+              ],
+              [
+                "與未來可能相反 (萬一) [TTS:Future subjunctive inversion]",
+                "If S + should + V, S + will/would + V [TTS:If subject should verb, subject will verb]",
+                "Should + S + V (原形), (祈使句 / S + will + V) [TTS:Should subject base verb]",
+                "Should any fire hazard occur, press the emergency alarm immediately. [TTS:Should any fire hazard occur, press the emergency alarm immediately.] (萬一發生任何火災隱患，請立即按下緊急警報。)"
+              ],
+              [
+                "否定副詞置於句首 [TTS:Negative adverb inversion]",
+                "S + seldom / never / hardly + V [TTS:Subject seldom, never, hardly verbs]",
+                "Never / Seldom / Hardly + 助動詞 + S + V [TTS:Never, Seldom, Hardly plus auxiliary plus subject plus verb]",
+                "Seldom have we witnessed such impeccable architectural precision. [TTS:Seldom have we witnessed such impeccable architectural precision.] (我們極少見證過如此無懈可擊的建築精準度。)"
+              ],
+              [
+                "Not only 句首倒裝 [TTS:Not only inversion]",
+                "S + not only V1 + but also V2 [TTS:Subject not only verbs but also verbs]",
+                "Not only + 助動詞 + S + V, but S + also + V [TTS:Not only plus auxiliary plus subject plus verb, but subject also verbs]",
+                "Not only did they finish under budget, but they also won the safety trophy. [TTS:Not only did they finish under budget, but they also won the safety trophy.] (他們不僅在預算內完工，更贏得了工安獎盃。)"
+              ],
+              [
+                "絕不 (強烈禁令倒裝) [TTS:Under no circumstances]",
+                "S + must not under any circumstances V [TTS:Subject must not under any circumstances verb]",
+                "Under no circumstances + should/must + S + V [TTS:Under no circumstances should subject verb]",
+                "Under no circumstances should workers enter the shaft without respirators. [TTS:Under no circumstances should workers enter the shaft without respirators.] (在任何情況下，工人都絕不得在未配戴呼吸防護具時進入豎井。)"
+              ]
+            ]
+          },
+          "steps": [
+            "步驟一：判定是否為假設倒裝：題目句首若出現 Had / Were / Should [TTS:Had, Were, Should]，且句尾為句號（非問句），100% 為省略 If 的假設語氣倒裝句。 ｜為什麼：倒裝問句句尾為問號，倒裝陳述句句尾為句號。",
+            "步驟二：匹配後半主要子句時態：若主要子句為 would have p.p. [TTS:would have p.p.]，句首立刻填 Had + S + p.p. [TTS:Had + S + p.p.]；若主要子句為 would + V [TTS:would + base verb]，句首填 Were + S [TTS:Were + S]；若後半為祈使句或 will + V，句首填 Should + S + V [TTS:Should + S + base verb]。 ｜為什麼：時態前後呼應原則。",
+            "步驟三：判定否定倒裝：句首若出現 Never, Seldom, Hardly, Barely, Not only, Under no circumstances [TTS:Never, Seldom, Hardly, Barely, Not only, Under no circumstances]，後方必須緊接助動詞 (do / does / did / have / has / had / can / should) 再接主詞。 ｜為什麼：否定詞前置強調引起主謂語序倒裝。",
+            "步驟四：驗算助動詞還原法：將助動詞移回主詞後面，還原成正常直述句檢核文意與時態是否正確。 ｜為什麼：逆向驗算排除動詞形態錯誤。"
           ]
         }
       ],
@@ -3629,10 +3953,10 @@ export const englishData: SubjectData = {
                 "The site passed the safety inspection.[TTS:The site passed the safety inspection.]"
               ],
               [
-                "walk-through",
+                "walk-through [TTS:walk-through]",
                 "n.",
                 "實地查勘；巡視",
-                "Let's do a quick walk-through of the site."
+                "Let's do a quick walk-through of the site. [TTS:Let's do a quick walk-through of the site.]"
               ]
             ]
           }
@@ -3966,12 +4290,12 @@ export const englishData: SubjectData = {
             ],
             "rows": [
               [
-                "Skimming (略讀)",
+                "Skimming [TTS:Skimming] (略讀)",
                 "主旨題 (Main Idea[TTS:Main Idea])",
                 "快速掃過文章，只抓大意，忽略細節。"
               ],
               [
-                "Scanning (掃讀)",
+                "Scanning [TTS:Scanning] (掃讀)",
                 "細節題 (Details[TTS:Details])",
                 "帶著題目的關鍵字，在文章中快速尋找目標資訊。"
               ]
@@ -4348,16 +4672,79 @@ export const englishData: SubjectData = {
           "table": {
             "headers": ["非選題型 / 寫作要項", "典型考點與高頻句型", "常犯致命錯誤 (扣分地雷)", "滿分答題秘訣與檢查清單"],
             "rows": [
-              ["中譯英 (Translation)", "S + V + O + 地方 + 時間 / It takes... to V", "中文逐字硬翻、動詞時態漏寫過去式 -ed", "先抓主詞與動詞骨架，修飾語放句尾"],
-              ["句子重組 (Unscrambling)", "固定片語 (look forward to) / 分詞修飾片語", "漏掉單字、大小寫錯誤、漏加句號", "用語塊 (Chunking) 先組小組件再拼主幹"],
-              ["字首提示填空 (Spelling)", "名詞單複數 (-s/-es)、動詞三態變化", "只寫單字原型忘記時態/單複數變化", "看前後詞性，助動詞後用原形，進行式加 -ing"],
-              ["段落寫作 (Paragraph Writing)", "主題句 + 2~3 個支持句 (First/Second) + 結論句", "逗號連接兩完整句子 (Comma Splice)", "嚴格遵守 IBC 結構，使用連接詞與轉折副詞"]
+              ["中譯英 (Translation [TTS:Translation])", "S + V + O + 地方 + 時間 / It takes... to V [TTS:It takes time to complete the project.]", "中文逐字硬翻、動詞時態漏寫過去式 -ed [TTS:-ed]", "先抓主詞與動詞骨架，修飾語放句尾"],
+              ["句子重組 (Unscrambling [TTS:Unscrambling])", "固定片語 (look forward to [TTS:look forward to]) / 分詞修飾片語", "漏掉單字、大小寫錯誤、漏加句號", "用語塊 (Chunking [TTS:Chunking]) 先組小組件再拼主幹"],
+              ["字首提示填空 (Spelling [TTS:Spelling])", "名詞單複數 (-s/-es [TTS:-s or -es])、動詞三態變化", "只寫單字原型忘記時態/單複數變化", "看前後詞性，助動詞後用原形，進行式加 -ing [TTS:-ing]"],
+              ["段落寫作 (Paragraph Writing [TTS:Paragraph Writing])", "主題句 + 2~3 個支持句 (First/Second [TTS:First, Second]) + 結論句", "逗號連接兩完整句子 (Comma Splice [TTS:Comma Splice])", "嚴格遵守 IBC 結構，使用連接詞與轉折副詞"]
             ]
           },
           "steps": [
             "步驟一：先做非選擇題（翻譯與填空），趁大腦思維最清晰時搶下基礎分。 ｜為什麼：確保高投報率題目穩穩拿分。",
             "步驟二：翻譯題先寫草稿，反覆檢核「主詞動詞單複數」與「時態」。 ｜為什麼：減少粗心失分。",
             "步驟三：寫作留出至少 3 分鐘進行最後潤飾與錯字校對。 ｜為什麼：細節決定高分關鍵。"
+          ]
+        },
+        {
+          "heading": "8. 統測非選擇題 20 大黃金句型大全與句子重組拆解法",
+          "body": "統測非選擇題（翻譯與句子重組）每年占分 16 分，是決定頂標與前標的決勝戰場！分析近十年統測命題，高頻出現的句型高度集中在「虛主詞 It」、「so... that...」、「not only... but also...」、「使役與被動」、「花費時間金錢 (take/spend)」、「倒裝與假設」等核心範式。<br/>掌握以下黃金句型矩陣與意群切塊 (Chunking) 拆解法，不僅翻譯能直覺下筆，重組題目也能在 45 秒內零失誤破題。\n\n[DIALOGUE_START:非選 20 大黃金句型實戰會話：衝刺滿分]\nWriting Specialist: In non-multiple-choice translation, what is the secret to scoring full marks? | 在非選擇題翻譯中，拿到滿分的秘訣是什麼？\nHigh Achiever: I spot the golden sentence pattern first—whether it is \"It is adj to V\" or \"so... that\"—and map the chunks onto the template. | 我會先辨識出黃金句型——是 It is adj to V 還是 so... that——然後將各意群語塊套入模板。\nWriting Specialist: And how do you ensure zero points are deducted for minor errors? | 那你如何確保細微錯誤不被扣分？\nHigh Achiever: I always run my Triple-Check routine: capitalization, verb tense agreement, and final period. Precision equals full points! | 我一定會執行三重檢核程序：首字大寫、動詞時態主謂一致與句尾句號。精準就等於滿分！\n[DIALOGUE_END]",
+          "table": {
+            "headers": [
+              "黃金句型公式",
+              "語意功能與文法焦點",
+              "統測歷屆仿真示範",
+              "重組拆解關鍵語塊 (Chunks)"
+            ],
+            "rows": [
+              [
+                "It is + adj. + for sb to V [TTS:It is adj for sb to V]",
+                "虛主詞結構（做某事對某人而言是...的）",
+                "It is crucial for civil engineers to wear protective gear. [TTS:It is crucial for civil engineers to wear protective gear.] (土木工程師配戴防護裝備是至關重要的。)",
+                "[It is crucial] [for civil engineers] [to wear protective gear]"
+              ],
+              [
+                "so + adj./adv. + that + S + V [TTS:so adj that clause]",
+                "因果結果（如此...以致於...）",
+                "The girder was so heavy that the crane could barely lift it. [TTS:The girder was so heavy that the crane could barely lift it.] (那根鋼樑太重了，以至於起重機幾乎吊不起來。)",
+                "[The girder was] [so heavy that] [the crane could barely lift it]"
+              ],
+              [
+                "too + adj./adv. + to V [TTS:too adj to V]",
+                "否定結果（太...而不能...）",
+                "The concrete mix was too dry to pour into the framework. [TTS:The concrete mix was too dry to pour into the framework.] (混凝土拌合物太乾了，無法澆灌進模板中。)",
+                "[The concrete mix was] [too dry to pour] [into the framework]"
+              ],
+              [
+                "It takes (sb) + time + to V [TTS:It takes time to V]",
+                "花費時間做某事（物當主詞）",
+                "It took the team three months to inspect the suspension bridge. [TTS:It took the team three months to inspect the suspension bridge.] (團隊花了三個月的時間檢驗這座懸索吊橋。)",
+                "[It took the team] [three months] [to inspect the suspension bridge]"
+              ],
+              [
+                "sb + spend + time/money + on N / (in) V-ing [TTS:spend time on or V-ing]",
+                "人當主詞的花費結構",
+                "The government spent millions of dollars renovating the harbor. [TTS:The government spent millions of dollars renovating the harbor.] (政府花費了數百萬美元整修港口。)",
+                "[The government spent] [millions of dollars] [renovating the harbor]"
+              ],
+              [
+                "be used to + V-ing / N [TTS:be used to V-ing]",
+                "習慣於某事（不同於 used to V 過去習慣）",
+                "Site surveyors are used to working under extreme weather. [TTS:Site surveyors are used to working under extreme weather.] (工地測量員習慣在極端天氣下工作。)",
+                "[Site surveyors] [are used to working] [under extreme weather]"
+              ],
+              [
+                "With + O + O.C. (V-ing / p.p.) [TTS:With noun participle]",
+                "附帶狀況獨立分詞結構（伴隨著...）",
+                "With the inspection successfully completed, the ceremony began. [TTS:With the inspection successfully completed, the ceremony began.] (隨著檢驗順利完成，典禮正式開始。)",
+                "[With the inspection] [successfully completed,] [the ceremony began]"
+              ]
+            ]
+          },
+          "steps": [
+            "步驟一：語塊劃分法 (Chunking)：拿到打散單字時，先圈出名詞片語（如 the suspension bridge）與固定片語（如 look forward to, in accordance with）。 ｜為什麼：降低干擾，化繁為簡。",
+            "步驟二：尋找骨架主謂 (S + V)：找出主詞名詞與主要動詞，確立「誰做了什麼事情」的核心主幹。 ｜為什麼：主謂確立後，全句骨骼即成型 70%。",
+            "步驟三：套用黃金句型模板：確認是否包含 It is... to V, so... that, Not only... but also 等固定句構。 ｜為什麼：黃金句型能自動鎖定連接詞與補語位置。",
+            "步驟四：擺放修飾片語：將時間副詞（如 yesterday, next month）與地點介系詞片語置於句尾，或置於句首加逗號。 ｜為什麼：符合英文「主幹在前、修飾在後」語序。",
+            "步驟五：終極三查 (Triple Check)：檢查「大小寫首字母」、「名詞單複數 -s」與「動詞時態與被動 p.p.」及句尾標點符號。 ｜為什麼：非選擇題拼寫與標點是扣分重災區。"
           ]
         }
       ],

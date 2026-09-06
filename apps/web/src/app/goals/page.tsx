@@ -394,8 +394,11 @@ export default function GoalsPage() {
             </div>
           </div>
           <div className="mt-12 flex flex-col items-start justify-between gap-6 border-t border-white/15 pt-8 sm:flex-row sm:items-center">
-            <div><p className="inline-flex items-center gap-2 text-sm font-bold"><BadgeCheck className="size-5 text-cyan-300" />下一步不是決定一輩子，而是先把共同基礎學紮實。</p><p className="mt-2 text-xs text-slate-400">版本 V8.02 · 資料查核日期 2026-08-21</p></div>
-            <Link href="/curriculum" className="inline-flex min-h-12 items-center gap-2 rounded-full bg-white px-6 text-sm font-bold text-slate-950 transition hover:scale-[1.02]">回到課程地圖 <ArrowRight className="size-4" /></Link>
+            <div><p className="inline-flex items-center gap-2 text-sm font-bold"><BadgeCheck className="size-5 text-cyan-300" />下一步不是決定一輩子，而是先把共同基礎學紮實。</p><p className="mt-2 text-xs text-slate-400">版本 V9.00 · 資料查核日期 2026-08-21</p></div>
+            <div className="flex flex-wrap items-center gap-3">
+              <Link href="/pathway" className="inline-flex min-h-12 items-center gap-2 rounded-full bg-cyan-400 px-6 text-sm font-bold text-slate-950 transition hover:bg-cyan-300">探索建築之路 (大學課綱) <ArrowRight className="size-4" /></Link>
+              <Link href="/curriculum" className="inline-flex min-h-12 items-center gap-2 rounded-full bg-white px-6 text-sm font-bold text-slate-950 transition hover:scale-[1.02]">回到課程地圖 <ArrowRight className="size-4" /></Link>
+            </div>
           </div>
         </div>
       </section>

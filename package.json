@@ -1,6 +1,6 @@
 {
   "name": "arch",
-  "version": "8.2.0",
+  "version": "9.0.0",
   "private": true,
   "scripts": {
     "build": "pnpm --filter web build",
@@ -8,7 +8,9 @@
     "validate:anti-slop": "node scripts/validate-anti-slop.mjs",
     "validate:gamification": "node scripts/validate-gamification.mjs",
     "validate:topic-tables": "node scripts/validate-topic-tables.mjs",
-    "validate:content": "node scripts/validate-data-syntax.mjs && node scripts/validate-anti-slop.mjs && node scripts/validate-gamification.mjs && node scripts/validate-topic-tables.mjs && node scripts/validate-course-data.mjs && node scripts/validate-exam-coverage.mjs && node scripts/validate-full-exam-data.mjs",
+    "validate:content": "node scripts/validate-data-syntax.mjs && node scripts/validate-anti-slop.mjs && node scripts/validate-gamification.mjs && node scripts/validate-topic-tables.mjs && node scripts/validate-topic-infographics.mjs && node scripts/validate-expert-council.mjs && node scripts/validate-course-data.mjs && node scripts/validate-exam-coverage.mjs && node scripts/validate-full-exam-data.mjs",
+    "validate:infographics": "node scripts/validate-topic-infographics.mjs",
+    "validate:expert-council": "node scripts/validate-expert-council.mjs",
     "build:exam-coverage": "node scripts/build-exam-coverage.mjs",
     "build:full-exams": "python scripts/build-full-exam-assets.py",
     "validate:built-links": "node scripts/validate-built-learning-links.mjs",

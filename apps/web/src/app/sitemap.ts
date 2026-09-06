@@ -9,7 +9,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
   // 1. Static Hubs and Major Pages
   const staticRoutes = [
     '',
+    '/pathway',
+    '/quest',
+    '/studio',
     '/curriculum',
+    '/constellation',
     '/visualizers',
     '/field-guide',
     '/cheatsheets',
@@ -19,6 +23,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/exam-116',
     '/exams',
     '/resources',
+    '/prerequisites',
+    '/prerequisites/english/vocab-1200',
+    '/prerequisites/english/basic-tenses-passive',
+    '/prerequisites/english/complex-sentences',
+    '/prerequisites/english/parts-of-speech',
+    '/prerequisites/english/phonetics-dictionary',
   ].map((route) => ({
     url: `${baseUrl}${route}`,
     lastModified: new Date(),

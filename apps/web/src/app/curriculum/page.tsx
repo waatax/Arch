@@ -57,14 +57,19 @@ export default function CurriculumPage() {
       <div className="space-y-6">
         <div className="flex flex-col sm:flex-row sm:justify-between sm:items-end gap-6 border-b border-slate-200 dark:border-slate-800 pb-8">
           <div className="space-y-2">
-            <span className="text-xs font-mono text-blue-600 dark:text-blueprint-700 uppercase tracking-[0.2em] block font-bold">
-              Arch V7.5 Curriculum
-            </span>
+            <div className="flex items-center gap-2">
+              <span className="text-xs font-mono text-blue-600 dark:text-blueprint-700 uppercase tracking-[0.2em] block font-bold">
+                Arch V9.00 Curriculum
+              </span>
+              <span className="rounded-md bg-blue-700/10 text-blue-700 dark:text-blue-300 text-[10px] font-mono font-bold px-2 py-0.5 border border-blue-700/20">
+                108 課綱完整對齊
+              </span>
+            </div>
             <h1 className="text-fluid-h1 font-serif font-bold text-slate-900 dark:text-white">
               土木與建築群學習地圖
             </h1>
             <p className="text-base text-slate-600 dark:text-slate-400 max-w-2xl leading-relaxed mt-2">
-              完全對齊 108 課綱與臺中高工三年三階課程配當。涵蓋高一基礎實作、高二丙乙級檢定、至高三四技二專統測衝刺。
+              完全對齊 108 課綱與臺中高工三年三階課程配當。涵蓋高一基礎實作、高二丙乙級檢定、至高三四技二專統測衝刺與大學建築系銜接。
             </p>
           </div>
 
@@ -86,6 +91,34 @@ export default function CurriculumPage() {
             </div>
           </div>
         </div>
+
+        {/* ── Architecture Pathway Banner ── */}
+        <Link
+          href="/pathway"
+          className="group block rounded-2xl border border-blue-200/80 dark:border-blue-900/60 bg-gradient-to-r from-blue-50 via-white to-blue-50/50 dark:from-blue-950/40 dark:via-slate-900 dark:to-blue-950/20 p-5 transition-all duration-300 hover:border-blue-500 hover:shadow-md"
+        >
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+            <div className="space-y-1">
+              <div className="flex items-center gap-2">
+                <span className="rounded bg-blue-700 text-white text-[10px] font-mono font-bold px-2 py-0.5">
+                  NEW
+                </span>
+                <span className="text-xs font-mono font-bold text-blue-700 dark:text-blue-400">
+                  大學 5 年制建築學士 (B.Arch) 完整課綱系統
+                </span>
+              </div>
+              <h3 className="font-serif text-lg font-bold text-slate-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
+                🏛️ 前進「建築之路」：探索 10 學期 Studio 與 8 大核心領域教學 →
+              </h3>
+              <p className="text-xs text-slate-600 dark:text-slate-400">
+                涵蓋建築設計 Studio I~X、建築史論、構造細部、環境控制 EEWH、結構系統、敷地計畫、建築法規與評圖文化生存手冊。
+              </p>
+            </div>
+            <span className="text-xs font-mono font-bold text-blue-700 dark:text-blue-400 bg-white dark:bg-slate-800 border border-blue-200 dark:border-blue-800 px-4 py-2 rounded-xl shrink-0 group-hover:bg-blue-700 group-hover:text-white transition-all text-center">
+              立即探索建築之路
+            </span>
+          </div>
+        </Link>
       </div>
 
       {/* ── Fluid Navigation & Search ── */}

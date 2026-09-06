@@ -7,9 +7,11 @@ import { Volume2, VolumeX } from 'lucide-react';
 import ThemeToggle from './ThemeToggle';
 import { topicSearchIndex } from '@/data/topicSearchIndex';
 import { useGamificationStore } from '@/lib/store/gamificationStore';
+import { triggerHaptic } from '@/lib/haptics';
 
 const navLinks = [
   { href: '/', label: '首頁' },
+  { href: '/pathway', label: '建築\n之路' },
   { href: '/quest', label: '冒險\n戰役' },
   { href: '/studio', label: '大師\n工坊' },
   { href: '/curriculum', label: '課程\n地圖' },
@@ -35,6 +37,14 @@ const categoryFilters = [
 ];
 
 const specialHubs = [
+  {
+    title: '🏛️ 建築之路：大學建築系 5 年制完整課綱 (Architecture Pathway)',
+    desc: '5 年 10 學期進程、8 大核心領域（設計Studio、史論、構造、環控EEWH、結構系統、敷地、法規實務、BIM）與評圖文化指南',
+    href: '/pathway',
+    badge: '建築之路',
+    category: 'goals',
+    tags: ['建築之路', '大學建築系', 'b.arch', '課綱', 'studio', '評圖', '建築設計', '建築史', '構造', '細部', '環控', 'eewh', '結構系統', '敷地', '建築師', 'pathway'],
+  },
   {
     title: '🔬 互動圖解實驗室 (Interactive Lab)',
     desc: '簡支梁剪力彎矩圖、莫爾圓主應力旋轉、CNS 第三角投影展開、水準儀高與混凝土水灰比模擬器',
@@ -144,14 +154,23 @@ export default function Navbar() {
     const handleKeyDown = (e: KeyboardEvent) => {
       if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === 'k') {
         e.preventDefault();
+        triggerHaptic('medium');
         setSearchOpen((prev) => !prev);
       }
       if (e.key === 'Escape' && searchOpen) {
         setSearchOpen(false);
       }
     };
+    const handleCustomOpen = () => {
+      triggerHaptic('medium');
+      setSearchOpen(true);
+    };
     window.addEventListener('keydown', handleKeyDown);
-    return () => window.removeEventListener('keydown', handleKeyDown);
+    window.addEventListener('arch:open-search', handleCustomOpen);
+    return () => {
+      window.removeEventListener('keydown', handleKeyDown);
+      window.removeEventListener('arch:open-search', handleCustomOpen);
+    };
   }, [searchOpen]);
 
   // Focus input when modal opens
@@ -282,7 +301,7 @@ export default function Navbar() {
                     Arch
                   </span>
                   <span className="rounded-full bg-blue-700/10 dark:bg-blue-400/10 px-2 py-0.5 text-[10px] font-mono font-bold text-blue-700 dark:text-blue-300 border border-blue-700/20">
-                    V8.02
+                    V9.00
                   </span>
                 </div>
                 <span className="text-[10px] font-mono text-slate-500 dark:text-slate-400 -mt-1 hidden sm:inline">
@@ -317,12 +336,15 @@ export default function Navbar() {
             {/* Quick Search Button */}
             <button
               type="button"
-              onClick={() => setSearchOpen(true)}
-              className="flex items-center gap-2 rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-800/60 px-3 py-1.5 text-xs font-mono text-slate-600 dark:text-slate-300 hover:border-slate-300 dark:hover:border-slate-700 transition-colors cursor-pointer"
+              onClick={() => {
+                triggerHaptic('medium');
+                setSearchOpen(true);
+              }}
+              className="flex items-center gap-2 rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-800/60 px-3 py-1.5 text-xs font-mono text-slate-600 dark:text-slate-300 hover:border-slate-300 dark:hover:border-slate-700 transition-all active:scale-95 cursor-pointer"
               aria-label="快速搜尋全站章節 (Ctrl+K)"
             >
               <span className="text-sm">🔍</span>
-              <span className="hidden md:inline font-sans">搜尋 99 章／公式／實驗室...</span>
+              <span className="hidden md:inline font-sans">搜尋 111 主題／公式／實驗室...</span>
               <span className="hidden md:inline-block rounded bg-white dark:bg-slate-700 border border-slate-200 dark:border-slate-600 px-1 text-[10px] text-slate-400">
                 Ctrl+K
               </span>
@@ -333,8 +355,11 @@ export default function Navbar() {
             {/* Sound Effects Toggle Button */}
             <button
               type="button"
-              onClick={toggleSound}
-              className="flex size-9 items-center justify-center rounded-xl border border-slate-200 dark:border-slate-800 text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors cursor-pointer"
+              onClick={() => {
+                triggerHaptic('light');
+                toggleSound();
+              }}
+              className="flex size-9 items-center justify-center rounded-xl border border-slate-200 dark:border-slate-800 text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 transition-all active:scale-95 cursor-pointer"
               aria-label={soundEnabled ? '關閉音效' : '開啟音效'}
               title={soundEnabled ? '音效已開啟 (點擊靜音)' : '音效已靜音 (點擊開啟)'}
             >
@@ -344,8 +369,11 @@ export default function Navbar() {
             {/* Mobile Menu Toggle Button */}
             <button
               type="button"
-              onClick={() => setMobileMenuOpen((prev) => !prev)}
-              className="flex size-9 items-center justify-center rounded-xl border border-slate-200 dark:border-slate-800 text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors xl:hidden cursor-pointer"
+              onClick={() => {
+                triggerHaptic('light');
+                setMobileMenuOpen((prev) => !prev);
+              }}
+              className="flex size-9 items-center justify-center rounded-xl border border-slate-200 dark:border-slate-800 text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 transition-all active:scale-95 xl:hidden cursor-pointer"
               aria-label={mobileMenuOpen ? '關閉主選單' : '開啟主選單'}
               aria-expanded={mobileMenuOpen}
             >
@@ -360,19 +388,23 @@ export default function Navbar() {
             <button
               type="button"
               onClick={() => {
+                triggerHaptic('medium');
                 setMobileMenuOpen(false);
                 setSearchOpen(true);
               }}
               className="w-full flex items-center justify-between rounded-lg bg-blue-50 dark:bg-blue-950/40 px-3 py-2.5 text-xs font-mono font-bold text-blue-700 dark:text-blue-300 mb-2 border border-blue-200 dark:border-blue-800"
             >
-              <span>🔍 全站快速搜尋 (Omnibar)</span>
+              <span>🔍 全站快速搜尋 (Omnibar · 111 主題)</span>
               <span className="rounded bg-blue-700 px-1.5 py-0.5 text-[10px] text-white">開啟</span>
             </button>
             {navLinks.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
-                onClick={() => setMobileMenuOpen(false)}
+                onClick={() => {
+                  triggerHaptic('selection');
+                  setMobileMenuOpen(false);
+                }}
                 className={`block rounded-lg px-3 py-2 text-sm font-mono font-bold transition-colors ${
                   pathname === link.href
                     ? 'bg-blue-50 text-blue-700 dark:bg-blue-950/60 dark:text-blue-300'
@@ -413,7 +445,7 @@ export default function Navbar() {
                   setSelectedIndex(0);
                 }}
                 onKeyDown={handleInputKeyDown}
-                placeholder="搜尋 99 個章節、公式速查、現場手冊、圖解實驗室或建築案例..."
+                placeholder="搜尋 111 個主題、公式速查、現場手冊、圖解實驗室或建築案例..."
                 className="w-full bg-transparent text-sm sm:text-base text-slate-900 dark:text-white placeholder-slate-400 focus:outline-hidden font-sans"
               />
               {searchQuery && (
@@ -442,6 +474,7 @@ export default function Navbar() {
                   key={cat.id}
                   type="button"
                   onClick={() => {
+                    triggerHaptic('selection');
                     setActiveCategory(cat.id);
                     setSelectedIndex(0);
                   }}
@@ -636,7 +669,7 @@ export default function Navbar() {
                 <span><kbd className="rounded bg-white dark:bg-slate-800 border px-1">↵</kbd> 選取前往</span>
                 <span><kbd className="rounded bg-white dark:bg-slate-800 border px-1">ESC</kbd> 關閉</span>
               </div>
-              <span className="hidden sm:inline">Arch V8.02 Omnibar</span>
+              <span className="hidden sm:inline">Arch V9.00 Omnibar</span>
             </div>
           </div>
         </div>

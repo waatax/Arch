@@ -100,10 +100,11 @@ export default function MathText({ content, className }: { content?: string | nu
                           key={subIndex}
                           type="button"
                           onClick={() => handlePlayTTS(text)}
-                          className="inline-flex items-center justify-center bg-sky-100 text-sky-700 hover:bg-sky-200 border border-sky-200 rounded-md px-1.5 py-0.5 text-[11px] mx-1 cursor-pointer transition-colors translate-y-[-2px] active:scale-95"
-                          title="播放英文發音"
+                          className="inline-flex items-center gap-1 bg-sky-100 dark:bg-sky-950/80 text-sky-700 dark:text-sky-300 hover:bg-sky-200 dark:hover:bg-sky-900 border border-sky-200 dark:border-sky-800 rounded-md px-1.5 py-0.5 text-[11px] font-mono mx-1 cursor-pointer transition-all translate-y-[-1px] active:scale-95 shadow-2xs"
+                          title="播放英文發音 (Listen to English Pronunciation)"
                         >
-                          🔊 播放
+                          <span>🔊</span>
+                          <span>發音</span>
                         </button>
                       );
                     }

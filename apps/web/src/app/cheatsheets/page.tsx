@@ -7,12 +7,13 @@ import {
   Check, 
   Search, 
   Star,
-  Zap
+  Zap,
+  Printer
 } from 'lucide-react';
 
 interface FormulaCard {
   id: string;
-  category: 'mechanics' | 'materials' | 'surveying' | 'drafting' | 'math';
+  category: 'mechanics' | 'materials' | 'surveying' | 'drafting' | 'math' | 'english';
   subjectName: string;
   title: string;
   formula: string;
@@ -247,6 +248,95 @@ const cheatsheetData: FormulaCard[] = [
     caution: '雙曲線與橢圓焦距關係式勿混淆：橢圓 a² = b² + c²，雙曲線 c² = a² + b²。',
     latexCopy: '\\frac{(x-h)^2}{a^2} + \\frac{(y-k)^2}{b^2} = 1, \\quad a^2 = b^2 + c^2',
   },
+  // --- English Pocket Review (東大隨身讀精華) ---
+  {
+    id: 'eng-1',
+    category: 'english',
+    subjectName: '共同科目 英語文（隨身讀）',
+    title: '統測不規則動詞三態變化大表 (Irregular Verbs Master Matrix)',
+    formula: 'AAA(cost-cost-cost) | ABB(build-built-built) | ABC(choose-chose-chosen)',
+    variables: [
+      { symbol: 'AAA 型 (同形)', meaning: 'cost, cut, hit, hurt, let, put, set, spread', unit: '原形 = 過去式 = p.p.' },
+      { symbol: 'ABB 型 (過=分)', meaning: 'build-built, buy-bought, feel-felt, leave-left, teach-taught', unit: '過去式 = p.p.' },
+      { symbol: 'ABA 型 (原=分)', meaning: 'come-came-come, run-ran-run, become-became-become', unit: '原形 = p.p.' },
+      { symbol: 'ABC 型 (三態皆異)', meaning: 'choose-chose-chosen, give-gave-given, see-saw-seen, take-took-taken, write-wrote-written', unit: '原形 ≠ 過去式 ≠ p.p.' },
+      { symbol: '★ 統測大陷阱', meaning: 'lie-lay-lain (躺/位於) vs lay-laid-laid (放置/產卵) vs lie-lied-lied (說謊)', unit: '每年必考' },
+    ],
+    examFrequency: 5,
+    examTips: '東大隨身讀第一章首要核心！統測文法題與克漏字每年必考動詞三態與被動語態，辨清 lie/lay、hang-hung (掛) 與 hang-hanged (絞死) 直接秒殺。',
+    caution: 'lie (躺) 的現在分詞為 lying；lay (放置) 的現在分詞為 laying，拼寫切勿混淆。',
+    latexCopy: '\\text{Base} \\to \\text{Past} \\to \\text{Past Participle (p.p.)}',
+  },
+  {
+    id: 'eng-2',
+    category: 'english',
+    subjectName: '共同科目 英語文（隨身讀）',
+    title: '統測非選擇題 20 大黃金句型 (Top 20 Golden Sentence Patterns)',
+    formula: 'It is + adj + (for sb) to V | so + adj/adv + that + S + V',
+    variables: [
+      { symbol: '句型 1 虛主詞', meaning: 'It is vital for engineers to inspect the structural foundation carefully.', unit: 'It is adj for sb to V' },
+      { symbol: '句型 2 如此以致', meaning: 'The steel beam is so durable that it can withstand severe earthquakes.', unit: 'so...that + S + V' },
+      { symbol: '句型 3 太...以致不能', meaning: 'The concrete wall is too damaged to support extra weight.', unit: 'too...to V' },
+      { symbol: '句型 4 習慣用法', meaning: 'Workers are used to wearing helmets on the site. (習慣於 + V-ing)', unit: 'be used to + V-ing' },
+      { symbol: '句型 5 不僅而且', meaning: 'Not only is safety essential, but quality also matters.', unit: 'Not only + 倒裝 + but also' },
+    ],
+    examFrequency: 5,
+    examTips: '統測非選擇題 16 分（字首填空、句子重組、中譯英）命題 80% 來自這 20 組句型！整句語塊記憶，下筆無阻。',
+    caution: 'used to + V (過去常...), be used to + V-ing (習慣於...), be used to + V (被用來做...)，三者意義與語態截然不同！',
+    latexCopy: '\\text{It is } + \\text{Adj} + \\text{ for sb to } V',
+  },
+  {
+    id: 'eng-3',
+    category: 'english',
+    subjectName: '共同科目 英語文（隨身讀）',
+    title: '統測高頻四大天王轉折語矩陣 (Transition Words Matrix)',
+    formula: '因果 (therefore) | 轉折 (however) | 遞進 (furthermore) | 舉例 (for example)',
+    variables: [
+      { symbol: '因果關係', meaning: 'therefore, thus, consequently, as a result, accordingly', unit: '由因導果' },
+      { symbol: '轉折對比', meaning: 'however, nevertheless, on the contrary, in contrast, whereas', unit: '前後反向' },
+      { symbol: '遞進補充', meaning: 'furthermore, moreover, in addition, besides, additionally', unit: '同向增強' },
+      { symbol: '舉例與總結', meaning: 'for example, for instance, in short, to sum up, in conclusion', unit: '具體佐證/結論' },
+    ],
+    examFrequency: 5,
+    examTips: '統測克漏字每年必考 2-3 題篇章銜接詞！解題時先看前後兩句是「順向因果」、「逆向轉折」還是「論點遞進」，即可快速鎖定正確選項。',
+    caution: 'however 與 therefore 是副詞，連接兩個獨立子句時必須用分號或句點（例：; however, ），絕不能只用逗號連接！',
+    latexCopy: '\\text{S} + \\text{V}; \\; \\text{however/therefore}, \\; \\text{S} + \\text{V}.',
+  },
+  {
+    id: 'eng-4',
+    category: 'english',
+    subjectName: '共同科目 英語文（隨身讀）',
+    title: '統測常考易混淆字與成對字速查 (Confusing Word Pairs)',
+    formula: 'affect (動詞) vs effect (名詞) | adapt (適應) vs adopt (採納)',
+    variables: [
+      { symbol: 'affect vs effect', meaning: 'Bad weather affects construction. / The design has a positive effect on traffic.', unit: 'v. 影響 vs n. 效果/影響' },
+      { symbol: 'adapt vs adopt', meaning: 'adapt to new regulations (適應) vs adopt a modern building method (採納)', unit: '適應 vs 採納/領養' },
+      { symbol: 'sensible vs sensitive', meaning: 'a sensible decision (明智合理的) vs sensitive surveying instrument (靈敏敏感的)', unit: '明智的 vs 靈敏敏感的' },
+      { symbol: 'economic vs economical', meaning: 'economic growth (總體經濟的) vs economical construction material (省錢實惠的)', unit: '經濟相關的 vs 節省實惠的' },
+    ],
+    examFrequency: 4,
+    examTips: '統測字彙題命題委員最愛放的誘答煙霧彈！長相極相似但字義天差地遠，考前隨身讀 3 分鐘速記防失分。',
+    caution: 'compliment (讚美, 中間 i) vs complement (補充/互補, 中間 e 來自 complete)。',
+    latexCopy: '\\text{affect (v.) } \\neq \\text{ effect (n.)}',
+  },
+  {
+    id: 'eng-5',
+    category: 'english',
+    subjectName: '共同科目 英語文（隨身讀）',
+    title: '統測高頻介系詞片語與搭配詞庫 (Prepositional Collocations)',
+    formula: 'depend on | look forward to + V-ing | be responsible for',
+    variables: [
+      { symbol: '搭配 on', meaning: 'depend on, rely on, focus on, insist on, based on', unit: '依賴/專注/基於' },
+      { symbol: '搭配 in', meaning: 'participate in, succeed in, believe in, interested in', unit: '參與/成功/感興趣' },
+      { symbol: '搭配 to (+ V-ing)', meaning: 'look forward to + V-ing, object to + V-ing, be dedicated to + V-ing', unit: '期待/反對/致力於' },
+      { symbol: '搭配 of', meaning: 'be aware of, be proud of, be capable of, run out of', unit: '意識到/具備能力/用盡' },
+      { symbol: '搭配 for', meaning: 'be responsible for, apply for, stand for, compensate for', unit: '為...負責/申請/補償' },
+    ],
+    examFrequency: 5,
+    examTips: '統測克漏字命中率最高的題目類型！看到空格前後的動詞或介系詞，即可反射推測出固定搭配，答題速度翻倍。',
+    caution: 'look forward to 中的 to 是介系詞，後面必須接動名詞 (V-ing) 或名詞，絕對不可接原形動詞！',
+    latexCopy: '\\text{look forward to } + V\\text{-ing}',
+  },
 ];
 
 export default function CheatsheetsPage() {
@@ -314,6 +404,7 @@ export default function CheatsheetsPage() {
               { id: 'surveying', label: '專業（二）測量' },
               { id: 'drafting', label: '專業（二）製圖' },
               { id: 'math', label: '數學（C）' },
+              { id: 'english', label: '🇬🇧 統測英文隨身讀' },
             ].map((cat) => (
               <button
                 key={cat.id}
@@ -322,6 +413,8 @@ export default function CheatsheetsPage() {
                   activeCategory === cat.id
                     ? cat.id === 'five-star'
                       ? 'bg-red-600 text-white shadow-sm'
+                      : cat.id === 'english'
+                      ? 'bg-indigo-600 text-white shadow-sm'
                       : 'bg-amber-600 text-white shadow-sm'
                     : 'bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700'
                 }`}
@@ -331,16 +424,29 @@ export default function CheatsheetsPage() {
             ))}
           </div>
 
-          {/* Search Input */}
-          <div className="relative w-full sm:w-72">
-            <Search className="size-4 absolute left-3 top-1/2 -translate-y-1/2 text-slate-400" />
-            <input
-              type="text"
-              placeholder="搜尋公式、關鍵字或考點..."
-              value={searchQuery}
-              onChange={(e) => setSearchQuery(e.target.value)}
-              className="w-full pl-9 pr-4 py-2 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 text-xs font-mono placeholder:text-slate-400 focus:outline-blue-600"
-            />
+          {/* Action Row: Search & Print */}
+          <div className="flex items-center gap-2 w-full sm:w-auto">
+            <button
+              type="button"
+              onClick={() => window.print()}
+              className="print:hidden rounded-xl bg-slate-100 hover:bg-slate-200 dark:bg-slate-800 dark:hover:bg-slate-700 px-3.5 py-2 text-xs font-mono font-bold text-slate-700 dark:text-slate-200 border border-slate-300 dark:border-slate-700 transition-colors flex items-center gap-1.5 cursor-pointer shrink-0 shadow-xs"
+              title="以 A4 紙本卡片格式列印整份速查手冊"
+            >
+              <Printer className="size-3.5 text-slate-600 dark:text-slate-300" />
+              <span>列印速查手冊 (A4)</span>
+            </button>
+
+            {/* Search Input */}
+            <div className="relative w-full sm:w-64">
+              <Search className="size-4 absolute left-3 top-1/2 -translate-y-1/2 text-slate-400" />
+              <input
+                type="text"
+                placeholder="搜尋公式、關鍵字或考點..."
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
+                className="w-full pl-9 pr-4 py-2 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 text-xs font-mono placeholder:text-slate-400 focus:outline-blue-600"
+              />
+            </div>
           </div>
         </div>
       </div>
@@ -420,7 +526,7 @@ export default function CheatsheetsPage() {
             <div className="pt-2 border-t border-slate-100 dark:border-slate-800 flex justify-between items-center text-xs font-mono">
               <span className="text-slate-400">完整章節推導詳解</span>
               <Link
-                href={`/subjects/${card.category === 'mechanics' ? 'mechanics' : card.category === 'materials' ? 'materials' : card.category === 'surveying' ? 'surveying' : card.category === 'math' ? 'math-c' : 'drafting'}`}
+                href={`/subjects/${card.category === 'english' ? 'english' : card.category === 'mechanics' ? 'mechanics' : card.category === 'materials' ? 'materials' : card.category === 'surveying' ? 'surveying' : card.category === 'math' ? 'math-c' : 'drafting'}`}
                 className="text-blue-600 dark:text-blue-400 font-bold hover:underline inline-flex items-center gap-1"
               >
                 進入章節學習 →

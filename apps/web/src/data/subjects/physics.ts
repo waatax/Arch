@@ -111,7 +111,7 @@ export const physicsData: SubjectData = {
         },
         {
           "heading": "力學物理量與工程單位換算表 (Mechanics Unit Conversions)",
-          "body": "在建築結構計算中，常涉及國際標準單位 (SI) 與舊制工程單位 (公噸、公斤重) 之轉換。",
+          "body": "在土木與建築力學計算中，精確掌握 SI 國際制單位（牛頓 N、帕斯卡 Pa）與傳統工程重力制單位（公斤重 kgf、公噸重 tf）之間的物理轉換因數，是杜絕結構配筋與截面應力算錯十倍百倍致命失誤的根本防線。",
           "table": {
             "headers": [
               "物理量 (Physical Quantity)",
@@ -416,7 +416,7 @@ export const physicsData: SubjectData = {
         },
         {
           "heading": "能量與功率單位換算對照表 (Energy & Power Unit Conversions)",
-          "body": "建築與機電常用之焦耳、度數 (kWh)、卡路里、馬力與冷凍噸單位換算關係。",
+          "body": "在建築設備、綠建築能源模擬與暖通空調 (HVAC) 系統規劃中，能量（焦耳、千瓦小時 kWh、千卡 kcal）與功率（瓦特 W、馬力 HP、冷凍噸 RT）之間的精確換算是計算空調節能效率比 (COP / CSPF) 與建築耗電密度的基本功。",
           "table": {
             "headers": [
               "物理量類別",
@@ -1318,7 +1318,7 @@ export const physicsData: SubjectData = {
         },
         {
           "heading": "光學與照明單位對照及 CNS 照度標準規範表 (Lighting Standards Table)",
-          "body": "光度學單位換算與台灣國家標準 (CNS 12112) 各類建築空間建議照度。",
+          "body": "依據台灣國家標準 CNS 12112（室內工作場所照明）規範，光通量 (流明 lm)、發光強度 (坎德拉 cd)、照度 (勒克斯 lx) 與亮度 (cd/m²) 構成建築光環境量化體系，直接決定製圖教室、辦公室及展示空間的視覺舒適度與節能表現。",
           "table": {
             "headers": [
               "空間類型 / 作業性質",
