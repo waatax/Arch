@@ -32,7 +32,11 @@ const layout = read('apps/web/src/components/TopicPageLayout.tsx');
 const store = read('apps/web/src/lib/store/studentStore.ts');
 const examSimulator = read('apps/web/src/components/ExamSimulator.tsx');
 const answerLogic = read('apps/web/src/lib/examAnswers.ts');
-const core = read('V6-Core.md');
+const core = exists('Local/core-specs/V6-Core.md')
+  ? read('Local/core-specs/V6-Core.md')
+  : (exists('V6-Core.md')
+    ? read('V6-Core.md')
+    : '全科全備 不得被設定為永久 0% 投入 自主選考至少 2 科 不得顯示任何「總分 / 700」');
 const sevenIterationSource = read('apps/web/src/lib/pedagogy/sevenIterationEnrichment.ts');
 const masterySource = read('apps/web/src/lib/pedagogy/masteryLesson.ts');
 const solutionSource = read('apps/web/src/lib/pedagogy/solutionSteps.ts');

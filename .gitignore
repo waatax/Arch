@@ -32,5 +32,10 @@ key.properties
 *.apks
 *.idsig
 arch.learn.tw-mapping.txt
-# Editor metadata
+# Editor metadata & AI configs
 .claude/
+.agents/
+
+# Local-only private specs, planning, corrections, and AI prompts
+Local/
+local/

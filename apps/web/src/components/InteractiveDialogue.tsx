@@ -122,7 +122,7 @@ export default function InteractiveDialogue({ title = '情境對話範例 (Pract
   };
 
   return (
-    <div className="my-4 rounded-2xl border border-slate-200 bg-white shadow-xs dark:border-slate-800 dark:bg-slate-900/90 overflow-hidden">
+    <div className="dialogue-block my-4 rounded-2xl border border-slate-200 bg-white shadow-xs dark:border-slate-800 dark:bg-slate-900/90 overflow-hidden">
       {/* Dialogue Header */}
       <div className="flex flex-wrap items-center justify-between gap-2 border-b border-slate-200 bg-slate-50/80 px-4 py-3 dark:border-slate-800 dark:bg-slate-800/60">
         <div className="flex items-center gap-2">

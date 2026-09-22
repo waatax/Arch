@@ -2,13 +2,13 @@
 
 Arch 是面向台灣高工建築科學生的開放學習平台，將四技二專統測準備、建築專業實作、台灣建築案例與本機優先的個人學習教練整合在同一條學習路徑。
 
-目前版本是 **V9.00**（9.0.0）。產品、教學、統測覆蓋與技術的唯一總規格見 [`V9-Core.md`](./V9-Core.md)（歷史規格見 [`V8-Core.md`](./V8-Core.md) 與 [`V6-Core.md`](./V6-Core.md)），可重跑的驗收計畫見 [`docs/v6-implementation-plan.md`](./docs/v6-implementation-plan.md)，86 頁五題深度解析紀錄見 [`docs/v6-deep-teaching-iteration.md`](./docs/v6-deep-teaching-iteration.md)；Android 發版、簽章與低記憶體驗收見 [`android/README.md`](./android/README.md)。
+目前版本是 **V9.00**（9.0.0），全站收錄 13 門學科與專業實習、120 個知識點主題、925 道統測歷屆真題與 8 大互動工程實驗室；Android 發版、簽章與低記憶體驗收見 [`android/README.md`](./android/README.md)。
 
 ## 目前已有
 
 - Next.js 靜態網站骨架，可部署至 GitHub Pages。
 - **建築之路 (`/pathway`)**：大學 5 年制建築學士 (B.Arch) 10 學期完整課綱、8 大核心領域教學、評圖文化生存指南與高工銜接攻略。
-- 統測共同科目、專業科目（一／二）與建築科延伸課程入口（13 科 111 主題）。
+- 統測共同科目、專業科目（一／二）與建築科延伸課程入口（13 科 120 主題）。
 - 925 道統測真題逐題解析與線上模擬測驗 (`/practice`)。
 - 8 大互動工程實驗室 (`/visualizers`) 與台灣經典名築幾何工坊 (`/studio`)。
 - 建築大師技能星空圖 (`/constellation`) 與高二開學冒險戰役 (`/quest`)。
@@ -45,7 +45,7 @@ docs/                  課程對照、研究依據與執行計畫
 
 - 以當年度官方課綱、統測簡章與招生資訊為準，顯示來源、查核日與適用學年度。
 - 課程覆蓋與官方考綱對照見 `docs/course-coverage.md`；資料提交前必須通過 `pnpm validate:content`。
-- 每章的 OpenAI 教學圖解與生成提示規格記錄於 `docs/image-generation-prompts.md`。
+- 每章均配有專屬視覺圖解（Infographics）與建築實例向量圖示。
 - 手機支援寬度、觸控與發布前抽測路徑記錄於 `docs/responsive-qa.md`。
 - 題庫只收錄可合法使用或自行編寫的內容；外部教材以深連結與索引為主。
 - 學生作答、錯題、作品與反思預設只留在裝置端，可匯出也可永久刪除。
@@ -53,4 +53,4 @@ docs/                  課程對照、研究依據與執行計畫
 
 ## 授權與貢獻
 
-正式開放投稿前，仍須補齊內容授權、CLA、審稿與下架流程；詳見實作計畫的 P0 治理工作。
+正式開放投稿前，仍須補齊內容授權、CLA、審稿與下架流程。

@@ -13,6 +13,7 @@ import {
 } from 'lucide-react';
 import { topicInfographicsMap } from '@/lib/pedagogy/topicInfographicsData';
 import { commonTopicInfographicsMap } from '@/lib/pedagogy/topicInfographicsCommon';
+import TopicInfographicSvgViewer from './TopicInfographicSvgViewer';
 
 interface TopicInfographicCardProps {
   subjectSlug: string;
@@ -120,6 +121,15 @@ export default function TopicInfographicCard({
               {infographic.diagramDescription}
             </p>
           </div>
+
+          {/* Authentic Technical SVG Diagram Canvas */}
+          <TopicInfographicSvgViewer
+            conceptType={infographic.conceptType}
+            topicSlug={topicSlug}
+            subjectSlug={subjectSlug}
+            title={infographic.diagramTitle}
+            visualHighlights={infographic.visualHighlights}
+          />
 
           {/* Visual Annotations Grid */}
           <div>

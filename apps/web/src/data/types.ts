@@ -60,10 +60,13 @@ export interface TopicContent {
   desc: string;
   concepts: {
     heading: string;
+    /** 對應官方考試大綱細項代碼，例如 MC14.2 */
+    outlineRefs?: string[];
     body: string;
     steps?: string[];
     formula?: string;
     table?: { headers: string[]; rows: string[][] }; 
+    diagram?: { title: string; caption?: string; svg?: string };
   }[];
   practice?: PracticeItem;
   practices?: PracticeItem[];

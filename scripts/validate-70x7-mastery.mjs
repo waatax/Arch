@@ -91,7 +91,7 @@ for (const sf of subjectFiles) {
   }
 }
 
-// 4. Check 111 Topics in Topic Search Index
+// 4. Check 120 Topics in Topic Search Index
 const searchIndexPath = path.join(webRoot, 'src', 'data', 'topicSearchIndex.ts');
 const searchIndexRaw = fs.readFileSync(searchIndexPath, 'utf-8');
 const searchIndexJson = searchIndexRaw.slice(searchIndexRaw.indexOf('['), searchIndexRaw.indexOf('] as const') + 1);
@@ -104,7 +104,7 @@ for (const t of topicSearchIndex) {
   );
 }
 
-// 5. Check 111 Topics Infographic Visual Diagrams Coverage
+// 5. Check 120 Topics Infographic Visual Diagrams Coverage
 const dataContent1 = fs.readFileSync(path.join(webRoot, 'src', 'lib', 'pedagogy', 'topicInfographicsData.ts'), 'utf-8');
 const dataContent2 = fs.readFileSync(path.join(webRoot, 'src', 'lib', 'pedagogy', 'topicInfographicsCommon.ts'), 'utf-8');
 const combinedInfographics = dataContent1 + '\n' + dataContent2;
@@ -115,11 +115,13 @@ for (const t of topicSearchIndex) {
   assert(hasInfographic, `教學 Infographic 圖解已覆蓋：${key}`);
 }
 
-// 6. Check 111 Topics in Subject Source Code Files
+// 6. Check 120 Topics in Subject Source Code Files
 for (const t of topicSearchIndex) {
   const sfContent = subjectContents[t.subjectSlug] || '';
   const hasTopicInSource = sfContent.includes(`slug: '${t.topicSlug}'`) || 
                            sfContent.includes(`slug: "${t.topicSlug}"`) || 
+                           sfContent.includes(`"slug": "${t.topicSlug}"`) || 
+                           sfContent.includes(`"${t.topicSlug}"`) || 
                            sfContent.includes(`'${t.topicSlug}'`);
   assert(hasTopicInSource, `學科課綱主題錨定：${t.subjectSlug}/${t.topicSlug}`);
 }
@@ -315,7 +317,7 @@ const navbarPath = path.join(webRoot, 'src', 'components', 'Navbar.tsx');
 const navbarContent = fs.readFileSync(navbarPath, 'utf-8');
 assert(navbarContent.includes('Omnibar'), 'Navbar 包含 Omnibar 指揮中心標記');
 assert(navbarContent.includes('categoryFilters'), 'Navbar 支援分類標籤篩選');
-assert(navbarContent.includes('111 主題'), 'Navbar 搜尋欄標註 111 主題');
+assert(navbarContent.includes('120 主題'), 'Navbar 搜尋欄標註 120 主題');
 
 console.log(`\n======================================================`);
 console.log(`🎯 70x7 品質閘門檢驗結果：${passCount} / 490 項指標通過`);

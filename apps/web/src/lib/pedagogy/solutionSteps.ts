@@ -30,7 +30,12 @@ export function buildDetailedSolution(item: PracticeItem) {
   const steps = [
     `先用白話重述：這題要我們根據「${compact(item.question)}」找出一個數值、關係或判斷。先不計算，說清楚最後要回答什麼。`,
     '畫出思考地圖：把已知、未知、限制、單位分成四欄；可以畫圖的題目一定先畫，並在圖上標記方向、位置或前後關係。',
-    ...original.map((step, index) => `正式推理 ${index + 1}：${step}｜為什麼：${explainWhy(step)}`),
+    ...original.map((step, index) => {
+      const parts = step.split('｜為什麼：');
+      const baseStep = parts[0].trim();
+      const why = parts[1] ? parts[1].trim() : explainWhy(baseStep);
+      return `正式推理 ${index + 1}：${baseStep}｜為什麼：${why}`;
+    }),
   ];
 
   if (isCalculation(item.question)) {

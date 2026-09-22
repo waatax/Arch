@@ -27,7 +27,7 @@ export interface TopicInfographicItem {
   keyTakeaways: string[];
 }
 
-// 13 Subjects x 111 Topics Complete Infographics Registry
+// 13 Subjects x 120 Topics Complete Infographics Registry
 export const topicInfographicsMap: Record<string, TopicInfographicItem> = {
   // ==========================================
   // 1. MECHANICS (13 Topics)

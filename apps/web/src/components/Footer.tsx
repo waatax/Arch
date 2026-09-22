@@ -53,6 +53,11 @@ export default function Footer() {
             </h4>
             <ul className="space-y-2 text-xs text-slate-600 dark:text-slate-400 font-mono">
               <li>
+                <Link href="/cad-software" className="hover:text-blue-700 dark:hover:text-blue-400 transition-colors text-blue-700 dark:text-blue-400 font-bold">
+                  • 🖥️ 電腦繪圖軟體全鑑 (CAD/BIM)
+                </Link>
+              </li>
+              <li>
                 <Link href="/pathway" className="hover:text-blue-700 dark:hover:text-blue-400 transition-colors text-blue-700 dark:text-blue-400 font-bold">
                   • 🏛️ 建築之路 (5年制大學課綱)
                 </Link>
@@ -74,7 +79,7 @@ export default function Footer() {
               </li>
               <li>
                 <Link href="/curriculum" className="hover:text-blue-700 dark:hover:text-blue-400 transition-colors">
-                  • 課程地圖 (13 科 111 主題)
+                  • 課程地圖 (13 科 120 主題)
                 </Link>
               </li>
               <li>

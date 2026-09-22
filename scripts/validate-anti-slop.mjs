@@ -15,7 +15,7 @@ const FORBIDDEN_PATTERNS = [
 let totalErrors = 0;
 const files = fs.readdirSync(subjectsDir).filter((f) => f.endsWith('.ts'));
 
-console.log('🛡️  啟動 Anti-Slop & 教學品質防護檢查 (13 科 111 主題)...');
+console.log('🛡️  啟動 Anti-Slop & 教學品質防護檢查 (13 科 120 主題)...');
 
 for (const file of files) {
   const filePath = path.join(subjectsDir, file);

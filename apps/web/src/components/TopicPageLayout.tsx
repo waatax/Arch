@@ -3,7 +3,7 @@
 import { useState, useEffect, useRef } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { Binoculars, BookOpenCheck, Building2, CircleCheckBig, Lightbulb, Route, School, SearchCheck, Printer } from 'lucide-react';
+import { Binoculars, BookOpenCheck, Building2, CircleCheckBig, Lightbulb, Route, School, SearchCheck } from 'lucide-react';
 import type { SubjectData, TopicContent } from '@/data/types';
 import MathText from '@/components/MathText';
 import InteractiveVisualizer from '@/components/visualizers/InteractiveVisualizer';
@@ -12,8 +12,10 @@ import FatalTrapXRay from '@/components/pedagogy/FatalTrapXRay';
 import EliteMentalModel from '@/components/pedagogy/EliteMentalModel';
 import Step0Tooltip from '@/components/pedagogy/Step0Tooltip';
 import ExpertCouncilBanner from '@/components/pedagogy/ExpertCouncilBanner';
+import ExpertCouncilDeepMatrix from '@/components/pedagogy/ExpertCouncilDeepMatrix';
 import TopicInfographicCard from '@/components/pedagogy/TopicInfographicCard';
 import EnglishAudioHub from '@/components/pedagogy/EnglishAudioHub';
+import { PrintControls, PrintHandoutCover, PrintHandoutColophon } from '@/components/pedagogy/PrintHandout';
 import { getTopicRealLifeGuide } from '@/lib/pedagogy/realLifeHelpers';
 import { getTopicInterestHook } from '@/lib/pedagogy/interestHooks';
 import { getTopicDeepKnowledge } from '@/lib/pedagogy/topicKnowledgeExpander';
@@ -62,6 +64,8 @@ export default function TopicPageLayout({ subject, topic, mappedExamQuestions }:
     ...practices.map((item) => item.question),
   ]).size;
   const learningSources = getLearningSources(subject.slug);
+  const conceptTableCount = topic.concepts.filter((concept) => concept.table).length;
+  const printableQuestionCount = (topic.worked_examples?.length ?? 0) + practices.length + mappedExamQuestions.length;
   const isExamSubject = ['mechanics', 'materials', 'surveying', 'drafting', 'chinese', 'english', 'math-c'].includes(subject.slug);
 
   // Gamification & Constellation Star Status
@@ -209,6 +213,20 @@ export default function TopicPageLayout({ subject, topic, mappedExamQuestions }:
       </button>
 
       <article className="mx-auto max-w-3xl space-y-16 px-4 py-8 sm:px-6 sm:py-16 text-lg leading-[1.8] text-slate-800 dark:text-slate-200 tracking-wide">
+        {/* Print-only A4 handout cover strip (first page) */}
+        <PrintHandoutCover
+          subjectTitle={subject.title}
+          subjectCategory={subject.category}
+          chapterNo={currentIndex + 1}
+          totalChapters={subject.topics.length}
+          topicTitle={topic.title}
+          topicDesc={topic.desc}
+          conceptCount={topic.concepts.length}
+          tableCount={conceptTableCount}
+          questionCount={printableQuestionCount}
+          examHitRate={topic.examHitRate}
+        />
+
         {/* Header Navigation & Breadcrumbs */}
         <header className={`space-y-6 zen-mode-transition ${isZenMode ? 'zen-hidden h-0 overflow-hidden !my-0' : ''}`}>
         <nav className="mobile-scroll flex items-center gap-2 overflow-x-auto whitespace-nowrap text-xs font-mono text-slate-500 dark:text-slate-400" aria-label="麵包屑導覽">
@@ -225,8 +243,10 @@ export default function TopicPageLayout({ subject, topic, mappedExamQuestions }:
 
         {/* Title & Metadata Badges */}
         <div className="space-y-4">
-          <ExpertCouncilBanner topicTitle={topic.title} />
-          <div className="flex flex-wrap items-center gap-2">
+          <div className="print:hidden">
+            <ExpertCouncilBanner topicTitle={topic.title} />
+          </div>
+          <div className="print:hidden flex flex-wrap items-center gap-2">
             <span className="rounded-full bg-blue-600/10 px-3 py-0.5 text-xs font-mono font-bold text-blue-700 dark:text-blue-300 border border-blue-600/20">
               {subject.category}
             </span>
@@ -239,30 +259,24 @@ export default function TopicPageLayout({ subject, topic, mappedExamQuestions }:
             <span className="rounded-full bg-slate-100 dark:bg-slate-800 px-2.5 py-0.5 text-xs font-mono text-slate-600 dark:text-slate-400">
               ⏱️ 建議研讀 20-30 分鐘
             </span>
-            <button
-              type="button"
-              onClick={() => window.print()}
-              className="print:hidden rounded-full bg-slate-100 hover:bg-slate-200 dark:bg-slate-800 dark:hover:bg-slate-700 px-3 py-0.5 text-xs font-mono font-bold text-slate-700 dark:text-slate-200 border border-slate-300 dark:border-slate-700 transition-colors flex items-center gap-1.5 cursor-pointer shadow-xs"
-              title="以 A4 紙本格式列印或另存為 PDF 講義"
-            >
-              <Printer className="size-3 text-slate-600 dark:text-slate-300" />
-              <span>列印講義 (A4)</span>
-            </button>
+            <PrintControls compact />
           </div>
 
-          <h1 className="font-serif text-3xl font-bold leading-tight text-slate-900 dark:text-white sm:text-4xl">
+          <h1 className="print:hidden font-serif text-3xl font-bold leading-tight text-slate-900 dark:text-white sm:text-4xl">
             {topic.title}
           </h1>
-          <p className="max-w-3xl text-base leading-relaxed text-slate-600 dark:text-slate-400">
+          <p className="print:hidden max-w-3xl text-base leading-relaxed text-slate-600 dark:text-slate-400">
             {interestHook.topicSummary}
           </p>
 
           {/* V8 Big Data Exam Hit Rate Radar */}
-          <HitRateRadar
-            hitRate={topic.examHitRate}
-            coveredCount={mappedExamQuestions.length}
-            gradeLevel={topic.gradeLevel}
-          />
+          <div className="print:hidden">
+            <HitRateRadar
+              hitRate={topic.examHitRate}
+              coveredCount={mappedExamQuestions.length}
+              gradeLevel={topic.gradeLevel}
+            />
+          </div>
 
           {/* V8 Step-0 Prerequisite Knowledge Tooltip */}
           {topic.step0Prerequisites && topic.step0Prerequisites.length > 0 && (
@@ -271,7 +285,7 @@ export default function TopicPageLayout({ subject, topic, mappedExamQuestions }:
 
           {/* Architectural Skill Constellation Coordinate Card */}
           {starNode && (
-            <div className="flex flex-wrap items-center justify-between gap-3 p-3.5 sm:p-4 rounded-2xl bg-gradient-to-r from-slate-900 via-indigo-950/80 to-slate-900 border border-indigo-500/30 text-white text-xs font-mono shadow-md">
+            <div className="print:hidden flex flex-wrap items-center justify-between gap-3 p-3.5 sm:p-4 rounded-2xl bg-gradient-to-r from-slate-900 via-indigo-950/80 to-slate-900 border border-indigo-500/30 text-white text-xs font-mono shadow-md">
               <div className="flex items-center gap-2">
                 <Sparkles className="size-4 text-amber-400 animate-pulse" />
                 <span className="text-slate-300">
@@ -306,9 +320,12 @@ export default function TopicPageLayout({ subject, topic, mappedExamQuestions }:
             </div>
           )}
 
-          {/* Dedicated English Audio Hub for pronunciation and listening immersion */}
+          {/* Dedicated English Audio Hub for pronunciation and listening immersion
+              (screen-only: a TTS player has nothing to give a paper handout) */}
           {subject.slug === 'english' && (
-            <EnglishAudioHub topic={topic} />
+            <div className="print:hidden">
+              <EnglishAudioHub topic={topic} />
+            </div>
           )}
         </div>
 
@@ -500,7 +517,7 @@ export default function TopicPageLayout({ subject, topic, mappedExamQuestions }:
         {/* Seven-part lesson path: every control navigates to real content. */}
         <div className="flex items-center gap-1 overflow-x-auto pb-1 border-b border-slate-200 dark:border-slate-800 text-xs font-mono" aria-label="七段教學快速導覽">
           {[
-            ['exam-focus', '1 這在考什麼'], ['observable', '2 看得到的東西'], ['application-mastery', '3 應用與課綱'], ['seven-iterations', '4 七輪深化'], ['principles', '5 原理推導'],
+            ['exam-focus', '1 這在考什麼'], ['observable', '2 看得到的東西'], ['application-mastery', '3 應用與課綱'], ['expert-council-7x7', '🏛️ 7x7專家矩陣'], ['seven-iterations', '4 七輪深化'], ['principles', '5 原理推導'],
             ['worked', '6 示範題'], ['practice', '7 自己做'], ['traps', '8 最容易錯'], ['sources', '9 來源版本'],
           ].map(([id, label]) => (
             <button key={id} onClick={() => jumpTo(id)} className="shrink-0 rounded-t-lg px-3.5 py-2 font-bold text-slate-600 transition-colors hover:bg-blue-600 hover:text-white dark:text-slate-400">
@@ -809,6 +826,9 @@ export default function TopicPageLayout({ subject, topic, mappedExamQuestions }:
         </div>
       </section>
 
+      {/* === [Expert Council 7x7 Master Evolution Matrix] === */}
+      <ExpertCouncilDeepMatrix subjectSlug={subject.slug} topic={topic} />
+
       <section id="seven-iterations" className="lesson-deferred-section scroll-mt-24 space-y-5" aria-labelledby="seven-iterations-title">
         <div className="space-y-2">
           <div className="flex flex-wrap items-center gap-2">
@@ -919,13 +939,13 @@ export default function TopicPageLayout({ subject, topic, mappedExamQuestions }:
               </div>
 
               {/* Concept Body with MathText Rendering */}
-              <div className="whitespace-pre-line text-[15px] leading-relaxed text-slate-700 dark:text-slate-300">
+              <div className="concept-body whitespace-pre-line text-[15px] leading-relaxed text-slate-700 dark:text-slate-300">
                 <MathText content={concept.body} />
               </div>
 
               {/* Step Sequence if available */}
               {concept.steps?.length ? (
-                <div className="space-y-2 rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-50/70 dark:bg-slate-800/40 p-4">
+                <div className="concept-steps space-y-2 rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-50/70 dark:bg-slate-800/40 p-4">
                   <span className="text-[11px] font-mono uppercase tracking-wider text-slate-500 dark:text-slate-400 font-bold block mb-1">
                     標準操作與推導步驟 (SOP)
                   </span>
@@ -978,12 +998,12 @@ export default function TopicPageLayout({ subject, topic, mappedExamQuestions }:
 
               {/* Structured Comparison Table */}
               {concept.table ? (
-                <div className="rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900/60 shadow-xs overflow-hidden" role="region" aria-label={`${concept.heading}重點整理表`}>
+                <div className="concept-table rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900/60 shadow-xs overflow-hidden" role="region" aria-label={`${concept.heading}重點整理表`}>
                   <div className="flex items-center justify-between px-4 py-2.5 bg-slate-50 dark:bg-slate-800/80 border-b border-slate-200 dark:border-slate-800 text-xs text-slate-600 dark:text-slate-400">
                     <span className="font-bold flex items-center gap-1.5 text-indigo-700 dark:text-indigo-300">
                       <span aria-hidden="true">📊</span> 重點整理與核心矩陣
                     </span>
-                    <span className="hidden sm:inline text-slate-600 dark:text-slate-400">
+                    <span className="print:hidden hidden sm:inline text-slate-600 dark:text-slate-400">
                       左右滑動可完整查看表格
                     </span>
                   </div>
@@ -1011,6 +1031,26 @@ export default function TopicPageLayout({ subject, topic, mappedExamQuestions }:
                       </tbody>
                     </table>
                   </div>
+                </div>
+              ) : null}
+
+              {/* Concept-Level Engineering Diagram / Visual Illustration */}
+              {concept.diagram ? (
+                <div className="concept-diagram rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-50/60 dark:bg-slate-900/60 p-4 space-y-2.5">
+                  <div className="flex items-center justify-between text-xs">
+                    <span className="font-bold font-mono text-indigo-700 dark:text-indigo-300 flex items-center gap-1.5">
+                      <span aria-hidden="true">📐</span> {concept.diagram.title}
+                    </span>
+                    {concept.diagram.caption && (
+                      <span className="text-slate-500 dark:text-slate-400 text-[11px] font-mono">{concept.diagram.caption}</span>
+                    )}
+                  </div>
+                  {concept.diagram.svg && (
+                    <div
+                      className="w-full overflow-hidden rounded-lg bg-white dark:bg-slate-950 p-2 border border-slate-200/80 dark:border-slate-800/80 shadow-xs"
+                      dangerouslySetInnerHTML={{ __html: concept.diagram.svg }}
+                    />
+                  )}
                 </div>
               ) : null}
             </section>
@@ -1055,6 +1095,9 @@ export default function TopicPageLayout({ subject, topic, mappedExamQuestions }:
                     <MathText content={we.question} />
                   </div>
 
+                  {/* Print-only blank answer area (練習卷模式) */}
+                  <div className="print-answer-box" aria-hidden="true" />
+
                   {/* Toggle solution steps button */}
                   <button
                     onClick={() => toggleSteps(index)}
@@ -1064,7 +1107,7 @@ export default function TopicPageLayout({ subject, topic, mappedExamQuestions }:
                   </button>
 
                   <div
-                    className={`grid transition-[grid-template-rows] duration-300 ease-in-out ${
+                    className={`solution-steps grid transition-[grid-template-rows] duration-300 ease-in-out ${
                       isStepsShown ? 'grid-rows-[1fr]' : 'grid-rows-[0fr]'
                     }`}
                   >
@@ -1124,20 +1167,24 @@ export default function TopicPageLayout({ subject, topic, mappedExamQuestions }:
                   <button
                     type="button"
                     onClick={() => setShowPracticeAnswers((prev) => ({ ...prev, [index]: !prev[index] }))}
-                    className="w-full text-left font-bold leading-relaxed text-slate-900 dark:text-white flex items-start gap-2.5 cursor-pointer focus:outline-hidden"
+                    className="print-keep w-full text-left font-bold leading-relaxed text-slate-900 dark:text-white flex items-start gap-2.5 cursor-pointer focus:outline-hidden"
                   >
                     <span className="mt-0.5 shrink-0 rounded-md bg-emerald-600 px-2 py-0.5 text-xs text-white shadow-2xs font-mono">
                       自我檢測 {index + 1}
                     </span>
                     <div className="flex-1">
                       <MathText content={practice.question} />
-                      <span className={`ml-2 text-xs font-normal text-slate-500 dark:text-slate-400 ${isPracticeShown ? 'hidden' : ''}`}>
+                      <span className={`print:hidden ml-2 text-xs font-normal text-slate-500 dark:text-slate-400 ${isPracticeShown ? 'hidden' : ''}`}>
                         (點擊展開看解析與答案)
                       </span>
                     </div>
                   </button>
+
+                  {/* Print-only blank answer area (練習卷模式) */}
+                  <div className="print-answer-box" aria-hidden="true" />
+
                   <div
-                    className={`grid transition-[grid-template-rows] duration-300 ease-in-out ${
+                    className={`solution-steps grid transition-[grid-template-rows] duration-300 ease-in-out ${
                       isPracticeShown ? 'grid-rows-[1fr]' : 'grid-rows-[0fr]'
                     }`}
                   >
@@ -1234,7 +1281,7 @@ export default function TopicPageLayout({ subject, topic, mappedExamQuestions }:
                     </figure>
                   )}
 
-                  <div className="grid gap-2 sm:grid-cols-2 text-xs">
+                  <div className="exam-choice-grid grid gap-2 sm:grid-cols-2 text-xs">
                     {(['A', 'B', 'C', 'D'] as const).map((choice) => {
                       const isSelected = userChoice?.includes(choice) ?? false;
                       const isRightChoice = isAnswered && isAnswerChoiceCorrect(q.answer, choice);
@@ -1246,7 +1293,7 @@ export default function TopicPageLayout({ subject, topic, mappedExamQuestions }:
                             [q.id]: isMultiple ? toggleSelectedChoice(prev[q.id], choice) : choice,
                           }))}
                           aria-pressed={isSelected}
-                          className={`flex items-start gap-2.5 p-3 rounded-xl border text-left transition-all cursor-pointer ${
+                          className={`print-keep exam-choice flex items-start gap-2.5 p-3 rounded-xl border text-left transition-all cursor-pointer ${
                             isSelected
                               ? isRightChoice
                                 ? 'border-emerald-600 bg-emerald-100/70 text-emerald-950 dark:bg-emerald-900/60 dark:text-emerald-100 font-bold'
@@ -1353,6 +1400,16 @@ export default function TopicPageLayout({ subject, topic, mappedExamQuestions }:
           <p className="mt-2 text-[11px] leading-5 text-slate-500">補教與公開解析僅用於比對題型、常見錯法與解題順序；答案及命題範圍一律以官方資料為準。</p>
         </div>
       </section>
+
+      {/* === [A4 Printable Handout Export] === */}
+      <PrintControls />
+
+      {/* Print-only closing block: notes area + source colophon */}
+      <PrintHandoutColophon
+        subjectTitle={subject.title}
+        topicTitle={topic.title}
+        sourceNote={`第 ${currentIndex + 1} / ${subject.topics.length} 章。`}
+      />
 
       {/* === [Scaffolding: Clear Next Steps] === */}
       <section className="lesson-deferred-section mt-12 mb-8 space-y-4 rounded-3xl bg-white p-6 shadow-sm border border-slate-200/60 dark:bg-slate-900/50 dark:border-slate-800/60">

@@ -6,7 +6,7 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 const root = path.resolve(__dirname, '..');
 
-console.log('📊 啟動 Arch 13 科 111 主題專屬教學 Infographic (視覺資訊圖解) 覆蓋率檢驗...\n');
+console.log('📊 啟動 Arch 13 科 120 主題專屬教學 Infographic (視覺資訊圖解) 覆蓋率檢驗...\n');
 
 // 1. Load subjects exactly like validate-course-data.mjs
 const subjectsDir = path.join(root, 'apps', 'web', 'src', 'data', 'subjects');
@@ -75,6 +75,6 @@ if (missingInfographics > 0) {
   console.error(`❌ 檢驗失敗：尚有 ${missingInfographics} 個主題未配置專屬 Infographic！`);
   process.exit(1);
 } else {
-  console.log(`🎉 驗證全數通過！全站 13 科 111 個知識點教學頁面皆具備專屬高品質教學 Infographic！`);
+  console.log(`🎉 驗證全數通過！全站 13 科 120 個知識點教學頁面皆具備專屬高品質教學 Infographic！`);
   process.exit(0);
 }

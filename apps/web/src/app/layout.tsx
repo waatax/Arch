@@ -16,7 +16,7 @@ const jsonLdData = {
       "@id": "https://waatax.github.io/Arch/#website",
       "url": "https://waatax.github.io/Arch/",
       "name": "Arch · 台灣高工建築科學習基地",
-      "description": "面向全台高工建築科學生與教師的開放共學基地。收錄 13 科 111 主題教學、動態圖解實驗室、營造現場手冊、考點速查卡、925 題統測詳解與建築師/技師證照地圖。",
+      "description": "面向全台高工建築科學生與教師的開放共學基地。收錄 13 科 120 主題教學、動態圖解實驗室、營造現場手冊、考點速查卡、925 題統測詳解與建築師/技師證照地圖。",
       "inLanguage": "zh-TW"
     },
     {
@@ -46,7 +46,7 @@ export const metadata: Metadata = {
     default: "Arch · 台灣高工建築科學習基地 · 信達雅建築素養與統測備考",
     template: "%s · Arch 台灣高工建築科",
   },
-  description: "面向全台高工建築科學生與教師的開放共學基地。收錄 13 科 111 主題教學、動態圖解實驗室、營造現場手冊、考點速查卡、925 題統測詳解與建築師/技師證照地圖。",
+  description: "面向全台高工建築科學生與教師的開放共學基地。收錄 13 科 120 主題教學、動態圖解實驗室、營造現場手冊、考點速查卡、925 題統測詳解與建築師/技師證照地圖。",
   keywords: ["台灣高工建築科", "統測建築類", "工程力學", "建築材料", "測量實習", "建築製圖", "建築師考試", "結構技師", "土木技師", "SFD BMD", "莫爾圓", "CNS 建築製圖"],
   authors: [{ name: "Arch 開放教育社群" }],
   manifest: "/manifest.webmanifest",
@@ -55,7 +55,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: "Arch · 台灣高工建築科學習基地",
-    description: "把建築學懂，也把分數蓋起來。13 科 111 主題完整課程、五大動態圖解實驗室、營造現場手冊與 925 道統測五科全詳解。",
+    description: "把建築學懂，也把分數蓋起來。13 科 120 主題完整課程、五大動態圖解實驗室、營造現場手冊與 925 道統測五科全詳解。",
     type: "website",
     locale: "zh_TW",
     siteName: "Arch",

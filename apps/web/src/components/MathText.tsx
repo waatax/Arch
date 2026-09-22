@@ -110,6 +110,10 @@ export default function MathText({ content, className }: { content?: string | nu
                     }
 
                     let htmlContent = subPart.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
+                    // Teaching data authors JSX-style `className=` inside body HTML, but this
+                    // string is injected as raw HTML, where the browser ignores `className` and
+                    // the emphasis colouring silently disappears. Normalise it to `class`.
+                    htmlContent = htmlContent.replace(/\sclassName=/g, ' class=');
                     htmlContent = htmlContent.replace(/\n/g, '<br />');
 
                     return (

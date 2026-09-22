@@ -24,10 +24,12 @@ const navLinks = [
   { href: '/goals', label: '終極\n目標' },
   { href: '/exam-116', label: '入學\n指南' },
   { href: '/resources', label: '資格\n考試' },
+  { href: '/cad-software', label: '電腦\n繪圖' },
 ];
 
 const categoryFilters = [
   { id: 'all', label: '全部' },
+  { id: 'cad', label: '電腦繪圖' },
   { id: 'hubs', label: '專題工具' },
   { id: 'mechanics', label: '工程力學' },
   { id: 'materials', label: '材料試驗' },
@@ -37,6 +39,78 @@ const categoryFilters = [
 ];
 
 const specialHubs = [
+  {
+    title: '🖥️ 建築電腦繪圖軟體全鑑 (TAG: 電腦繪圖)',
+    desc: '業界學界 8 大主力軟體全鑑（SketchUp, Blender, AutoCAD, Revit, 3ds Max, ArchiCAD, Rhino, 即時光追引擎），含新手 10 步 SOP、快捷鍵速查與 7 輪深度進化指南',
+    href: '/cad-software',
+    badge: '電腦繪圖',
+    category: 'cad',
+    tags: ['電腦繪圖', 'cad', 'sketchup', 'blender', 'autocad', 'revit', '3dsmax', 'archicad', 'rhino', 'bim', '建築製圖', '3d建模', '渲染', 'enscape', 'lumion', 'd5', 'twinmotion', '繪圖軟體'],
+  },
+  {
+    title: '📐 Trimble SketchUp Pro 建築概念推拉與 LayOut 施工圖',
+    desc: '直覺空間推拉建模、快速方案發想、LayOut 建築施工圖成圖與 Enscape 即時渲染',
+    href: '/cad-software/sketchup',
+    badge: '電腦繪圖',
+    category: 'cad',
+    tags: ['電腦繪圖', 'sketchup', '草圖大師', 'su', 'layout', '3d建模', '推拉', '概念體量'],
+  },
+  {
+    title: '🧊 Blender 3D (Bonsai 原生 openBIM 與幾何節點)',
+    desc: '開源 3D 全能神兵、原生 IFC 建築資訊模型、幾何節點參數化生成與 Cycles 頂級光追',
+    href: '/cad-software/blender',
+    badge: '電腦繪圖',
+    category: 'cad',
+    tags: ['電腦繪圖', 'blender', 'bonsai', 'blenderbim', 'openbim', 'ifc', '幾何節點', 'cycles', '開源'],
+  },
+  {
+    title: '📏 Autodesk AutoCAD Architecture 2D 建築施工圖業界基石',
+    desc: 'CNS 建築製圖標準、圖層標準、動態圖塊、外部參考 XREF 與配置多視埠比例尺出圖',
+    href: '/cad-software/autocad',
+    badge: '電腦繪圖',
+    category: 'cad',
+    tags: ['電腦繪圖', 'autocad', 'cad', '施工圖', '執照圖', 'dwg', '圖層', 'xref', 'cns11567'],
+  },
+  {
+    title: '🏢 Autodesk Revit 全方位 BIM 建築資訊模型旗艦',
+    desc: '全生命週期智慧構件、平立剖即時連動、參數化族群、明細表算料與機電管線碰撞檢討',
+    href: '/cad-software/revit',
+    badge: '電腦繪圖',
+    category: 'cad',
+    tags: ['電腦繪圖', 'revit', 'bim', '建築資訊模型', '參數族群', '明細表', '碰撞檢討', 'mep'],
+  },
+  {
+    title: '🎨 Autodesk 3ds Max 殿堂級建築視覺化 ArchViz 傳奇',
+    desc: '極致材質貼圖、Forest Pack 億級生態散布、Corona/V-Ray 照片級物理渲染與競圖動畫',
+    href: '/cad-software/3dsmax',
+    badge: '電腦繪圖',
+    category: 'cad',
+    tags: ['電腦繪圖', '3dsmax', 'max', 'archviz', '效果圖', 'vray', 'corona', 'forestpack', '渲染'],
+  },
+  {
+    title: '🏛️ Graphisoft Archicad 歐洲 BIM 先驅與虛擬建築哲學',
+    desc: '建築師思維介面、複合構造優先順序交接、GDL 參數化構件與 BIMcloud 零延遲多人協同',
+    href: '/cad-software/archicad',
+    badge: '電腦繪圖',
+    category: 'cad',
+    tags: ['電腦繪圖', 'archicad', 'graphisoft', '虛擬建築', 'bimcloud', 'bimx', 'openbim', 'gdl'],
+  },
+  {
+    title: '🦏 Rhino 3D & Grasshopper NURBS 曲面造型與演算法建築',
+    desc: '自由曲面高階連續性控制、Grasshopper 參數化演算法、Ladybug 日照輻射分析與 Make2D 出圖',
+    href: '/cad-software/rhino',
+    badge: '電腦繪圖',
+    category: 'cad',
+    tags: ['電腦繪圖', 'rhino', 'grasshopper', '犀牛', '參數化', 'nurbs', '曲面', 'ladybug', 'make2d'],
+  },
+  {
+    title: '⚡ 建築即時渲染引擎群 (Enscape / Lumion / D5 / Twinmotion)',
+    desc: '毫秒級 RTX 光追即時連動預覽、大氣氣候天候、一鍵 VR 沉浸漫遊與 4K 60fps 動畫輸出',
+    href: '/cad-software/rendering-engines',
+    badge: '電腦繪圖',
+    category: 'cad',
+    tags: ['電腦繪圖', 'enscape', 'lumion', 'd5', 'twinmotion', '即時渲染', '光線追蹤', 'vr', '動畫'],
+  },
   {
     title: '🏛️ 建築之路：大學建築系 5 年制完整課綱 (Architecture Pathway)',
     desc: '5 年 10 學期進程、8 大核心領域（設計Studio、史論、構造、環控EEWH、結構系統、敷地、法規實務、BIM）與評圖文化指南',
@@ -55,7 +129,7 @@ const specialHubs = [
   },
   {
     title: '✨ 建築大師技能星空圖 (Constellation)',
-    desc: '13 科 111 主題專業技能星空圖，點亮力學、材料、測量、製圖與數學 C 跨領域星系網絡',
+    desc: '13 科 120 主題專業技能星空圖，點亮力學、材料、測量、製圖與數學 C 跨領域星系網絡',
     href: '/constellation',
     badge: '技能星空',
     category: 'hubs',
@@ -185,7 +259,9 @@ export default function Navbar() {
   // Filter topics and major hubs for quick search
   const filteredHubs = useMemo(() => {
     let list = specialHubs;
-    if (activeCategory === 'hubs') {
+    if (activeCategory === 'cad') {
+      list = specialHubs.filter((h) => h.category === 'cad');
+    } else if (activeCategory === 'hubs') {
       list = specialHubs.filter((h) => h.category === 'hubs');
     } else if (activeCategory === 'cases') {
       list = specialHubs.filter((h) => h.category === 'cases');
@@ -217,7 +293,7 @@ export default function Navbar() {
       list = list.filter((t) => t.subjectSlug === 'materials');
     } else if (activeCategory === 'survey-draft') {
       list = list.filter((t) => t.subjectSlug === 'surveying' || t.subjectSlug === 'drafting');
-    } else if (activeCategory === 'hubs' || activeCategory === 'cases' || activeCategory === 'goals') {
+    } else if (activeCategory === 'hubs' || activeCategory === 'cases' || activeCategory === 'goals' || activeCategory === 'cad') {
       return [];
     }
 
@@ -344,7 +420,7 @@ export default function Navbar() {
               aria-label="快速搜尋全站章節 (Ctrl+K)"
             >
               <span className="text-sm">🔍</span>
-              <span className="hidden md:inline font-sans">搜尋 111 主題／公式／實驗室...</span>
+              <span className="hidden md:inline font-sans">搜尋 120 主題／公式／實驗室...</span>
               <span className="hidden md:inline-block rounded bg-white dark:bg-slate-700 border border-slate-200 dark:border-slate-600 px-1 text-[10px] text-slate-400">
                 Ctrl+K
               </span>
@@ -394,7 +470,7 @@ export default function Navbar() {
               }}
               className="w-full flex items-center justify-between rounded-lg bg-blue-50 dark:bg-blue-950/40 px-3 py-2.5 text-xs font-mono font-bold text-blue-700 dark:text-blue-300 mb-2 border border-blue-200 dark:border-blue-800"
             >
-              <span>🔍 全站快速搜尋 (Omnibar · 111 主題)</span>
+              <span>🔍 全站快速搜尋 (Omnibar · 120 主題)</span>
               <span className="rounded bg-blue-700 px-1.5 py-0.5 text-[10px] text-white">開啟</span>
             </button>
             {navLinks.map((link) => (
@@ -445,7 +521,7 @@ export default function Navbar() {
                   setSelectedIndex(0);
                 }}
                 onKeyDown={handleInputKeyDown}
-                placeholder="搜尋 111 個主題、公式速查、現場手冊、圖解實驗室或建築案例..."
+                placeholder="搜尋 120 個主題、公式速查、現場手冊、圖解實驗室或建築案例..."
                 className="w-full bg-transparent text-sm sm:text-base text-slate-900 dark:text-white placeholder-slate-400 focus:outline-hidden font-sans"
               />
               {searchQuery && (

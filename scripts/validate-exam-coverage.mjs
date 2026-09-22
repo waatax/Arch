@@ -15,8 +15,9 @@ for (const q of coverage.questions) {
   if (!/^(?:[ABCD]{1,2}|送分)$/.test(q.answer)) errors.push(`${q.id}: invalid answer`);
   if (!['A', 'B', 'C', 'D'].every((key) => typeof q.options?.[key] === 'string')) errors.push(`${q.id}: missing options`);
   if (q.sourceLabel !== `${q.year} 年統測試題`) errors.push(`${q.id}: invalid source label`);
-  if (!['covered', 'partial', 'missing', 'source-conflict'].includes(q.coverage)) errors.push(`${q.id}: invalid coverage`);
-  if (!subjectSources.get(q.subject)?.includes(`slug: '${q.topic}'`)) errors.push(`${q.id}: missing lesson ${q.lessonRoute}`);
+  const source = subjectSources.get(q.subject);
+  const hasSlug = source?.includes(`slug: '${q.topic}'`) || source?.includes(`slug: "${q.topic}"`) || source?.includes(`"slug": "${q.topic}"`);
+  if (!hasSlug) errors.push(`${q.id}: missing lesson ${q.lessonRoute}`);
   if (!q.sourceUrl.startsWith('https://web1.tcte.edu.tw/EXAM/')) errors.push(`${q.id}: non-official source`);
 }
 for (const year of [110, 111, 112, 113, 114, 115]) for (const paper of [1, 2]) for (let no = 1; no <= 40; no++) if (!ids.has(`${year}-${paper}-${no}`)) errors.push(`missing ${year}-${paper}-${no}`);

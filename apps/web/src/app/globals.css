@@ -600,101 +600,475 @@ html.arch-lite .bg-blueprint-subtle {
   text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
 }
 
-/* ══════════════════════════════════════════════════════
-   PRINT & A4 PAPER HANDOUT STYLING (列印教學講義專用排版)
-   ══════════════════════════════════════════════════════ */
+/* ══════════════════════════════════════════════════════════════════
+   A4 列印講義排版系統 (Print Handout Layout System)
+   目標：任一教學頁按下「列印講義」即輸出可直接發給學生的紙本複習講義
+   ── 三種列印模式（data-print-mode）
+      full    完整講義：觀念 + 表格 + 對話 + 例題 + 練習 + 歷屆題
+      tables  重點速記表：只留標題與重點整理表（考前速刷用）
+      quiz    題目練習卷：只留例題／練習／歷屆題，並附作答欄
+   ══════════════════════════════════════════════════════════════════ */
+
+/* 螢幕上一律隱藏列印專用元件 */
+.print-only,
+.print-only-block,
+.print-answer-box,
+.print-note-lines {
+  display: none;
+}
+
 @media print {
   @page {
     size: A4 portrait;
-    margin: 1.5cm 1.2cm 1.5cm 1.2cm;
+    /* 上下留白較大，供瀏覽器頁首頁尾（頁碼／日期）使用 */
+    margin: 15mm 13mm 16mm 13mm;
   }
 
-  /* Force clean white background and dark text to save ink */
-  *, *:before, *:after {
-    background: transparent !important;
-    color: #0f172a !important;
+  /* ── 基礎版面 ───────────────────────────────────────────── */
+  html,
+  body {
+    background: #ffffff !important;
+    color: #111827 !important;
+    font-size: 10.5pt !important;
+    line-height: 1.55 !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+    overflow: visible !important;
+  }
+
+  /* 去除螢幕視覺特效，節省碳粉並避免灰底吃字 */
+  *,
+  *::before,
+  *::after {
+    background-image: none !important;
     box-shadow: none !important;
     text-shadow: none !important;
+    animation: none !important;
+    transition: none !important;
+    filter: none !important;
+    backdrop-filter: none !important;
+    border-radius: 0 !important;
+    text-decoration-color: currentColor !important;
+    /* `content-visibility: auto` lets the engine skip off-screen subtrees; on paper
+       that can silently drop whole sections. Force every deferred block to render. */
+    content-visibility: visible !important;
+    contain-intrinsic-size: auto !important;
+    contain: none !important;
   }
 
-  body, html {
+  /* 強制紙本淺色配色。深色模式下前景是白字，若不強制轉深色，
+     列印出來會是「白紙白字」的空白頁——這是列印最致命的失誤。 */
+  html, body,
+  main, article, section, div, header, footer, aside, figure, figcaption,
+  h1, h2, h3, h4, h5, h6,
+  p, span, li, dt, dd, a, strong, em, b, i, small, label,
+  blockquote, code, pre, ol, ul, table, tbody, thead, tr, td, th {
+    color: #111827 !important;
+    background-color: transparent !important;
+  }
+  html,
+  body {
     background-color: #ffffff !important;
-    color: #0f172a !important;
-    font-size: 11pt !important;
-    line-height: 1.5 !important;
   }
 
-  /* Hide screen-only interactive chrome */
-  header nav,
+  /* ── 列印專用元件顯示 ──────────────────────────────────── */
+  .print-only,
+  .print-only-block,
+  .print-note-lines {
+    display: block !important;
+  }
+  /* 空白作答欄只在「題目練習卷」模式出現 */
+  .print-answer-box {
+    display: none !important;
+  }
+  .print-only-inline {
+    display: inline !important;
+  }
+
+  /* ── 隱藏所有導覽、浮動與互動介面 ────────────────────── */
   nav,
-  footer,
   aside,
-  button:not(.print-keep),
+  footer:not(.print-keep),
   .print\:hidden,
+  .print-hide,
   .zen-hidden,
+  .arch-ambient,
+  .fixed,
+  .sticky,
   [role="dialog"],
-  [aria-modal="true"] {
+  [aria-modal="true"],
+  button:not(.print-keep),
+  select,
+  audio,
+  video,
+  canvas,
+  input[type="range"],
+  input[type="checkbox"],
+  iframe {
     display: none !important;
   }
 
-  /* Ensure article uses full paper width */
-  article {
+  /* ── 主版心：吃滿紙寬 ─────────────────────────────────── */
+  main,
+  article,
+  .max-w-3xl,
+  .max-w-4xl,
+  .max-w-7xl {
     max-width: 100% !important;
-    padding: 0 !important;
+    width: 100% !important;
     margin: 0 !important;
+    padding: 0 !important;
+  }
+  article > * + * {
+    margin-top: 10pt !important;
+  }
+  article {
+    font-size: 10.5pt !important;
+    line-height: 1.55 !important;
+    letter-spacing: 0 !important;
   }
 
-  /* Clean solid borders for paper printing */
-  .border, [class*="border-"] {
-    border-color: #cbd5e1 !important;
+  /* 橫向捲動容器在紙上一律攤平 */
+  .mobile-scroll,
+  .overflow-x-auto,
+  .overflow-hidden,
+  .overflow-y-auto {
+    overflow: visible !important;
+    max-height: none !important;
   }
 
-  /* Prevent page-break cutting through elements awkwardly */
-  table, pre, blockquote, figure, img, svg,
-  .rounded-2xl, .rounded-3xl, .rounded-xl,
-  .worked-example-card, .xray-danger, .xray-safe, .elite-panel {
-    page-break-inside: avoid !important;
-    break-inside: avoid !important;
+  /* ── 標題階層 ─────────────────────────────────────────── */
+  h1 {
+    font-size: 17pt !important;
+    line-height: 1.3 !important;
+    margin: 0 0 4pt !important;
+    break-after: avoid-page;
+  }
+  h2 {
+    font-size: 13pt !important;
+    line-height: 1.35 !important;
+    margin: 14pt 0 6pt !important;
+    padding-bottom: 3pt !important;
+    border-bottom: 1.2pt solid #1f2937 !important;
+    break-after: avoid-page;
+  }
+  h3 {
+    font-size: 11.5pt !important;
+    line-height: 1.4 !important;
+    margin: 10pt 0 4pt !important;
+    break-after: avoid-page;
+  }
+  h4,
+  h5 {
+    font-size: 10.5pt !important;
+    margin: 8pt 0 3pt !important;
+    break-after: avoid-page;
+  }
+  p,
+  li {
+    orphans: 3;
+    widows: 3;
   }
 
-  /* Tables formatting on paper */
+  /* ── 觀念卡片：紙本化為「編號小節」 ────────────────────── */
+  #principles > div > section,
+  #principles section {
+    border: 0 !important;
+    border-top: 0.8pt solid #cbd5e1 !important;
+    padding: 8pt 0 0 !important;
+    margin: 0 0 10pt !important;
+    background: transparent !important;
+    break-inside: auto;
+  }
+  #principles section:first-of-type {
+    border-top: 0 !important;
+  }
+  /* 觀念編號徽章改為方框數字 */
+  #principles section span[class*="rounded-xl"] {
+    background: transparent !important;
+    color: #111827 !important;
+    border: 1pt solid #111827 !important;
+    width: 16pt !important;
+    height: 16pt !important;
+    font-size: 9pt !important;
+  }
+
+  /* ── 表格：紙本重點整理表 ─────────────────────────────── */
   table {
     width: 100% !important;
+    min-width: 0 !important;
     border-collapse: collapse !important;
-    margin-top: 8pt !important;
-    margin-bottom: 8pt !important;
-    font-size: 9.5pt !important;
+    font-size: 8.8pt !important;
+    line-height: 1.45 !important;
+    margin: 5pt 0 8pt !important;
+    break-inside: auto;
   }
-
+  /* 覆寫 Tailwind 任意值最小寬度，避免超出紙寬 */
+  .min-w-\[42rem\],
+  [class*="min-w-\["] {
+    min-width: 0 !important;
+  }
   thead {
     display: table-header-group !important;
   }
-
+  tfoot {
+    display: table-footer-group !important;
+  }
   tr {
-    page-break-inside: avoid !important;
     break-inside: avoid !important;
+    page-break-inside: avoid !important;
   }
-
-  th, td {
-    border: 1px solid #94a3b8 !important;
-    padding: 4pt 6pt !important;
+  th,
+  td {
+    border: 0.6pt solid #64748b !important;
+    padding: 3.2pt 4.5pt !important;
+    vertical-align: top !important;
+    word-break: break-word;
+    background: transparent !important;
+    color: #111827 !important;
   }
-
   th {
-    background-color: #f1f5f9 !important;
-    font-weight: bold !important;
+    background: #e5e7eb !important;
+    font-weight: 700 !important;
+    text-align: left !important;
+  }
+  /* 表格外框標題列（📊 重點整理與核心矩陣）壓縮成一行小標 */
+  table + *,
+  [aria-label*="重點整理表"] > div:first-child {
+    font-size: 8.5pt !important;
+    padding: 2pt 0 !important;
+    border: 0 !important;
+    background: transparent !important;
   }
 
-  /* Dialogues & Callouts in Handouts */
-  .bg-amber-50, .bg-blue-50, .bg-rose-50, .bg-emerald-50, .bg-indigo-50, .bg-slate-50 {
-    background-color: #f8fafc !important;
-    border: 1px solid #cbd5e1 !important;
+  /* ── SOP 步驟區塊 ─────────────────────────────────────── */
+  ol,
+  ul {
+    margin: 4pt 0 6pt !important;
+    padding-left: 14pt !important;
+  }
+  ol li,
+  ul li {
+    margin: 2pt 0 !important;
   }
 
-  /* Links */
-  a {
+  /* ── 情境對話：紙本壓縮為雙語對照腳本 ─────────────────── */
+  .dialogue-block {
+    border: 0.8pt solid #64748b !important;
+    margin: 6pt 0 !important;
+    break-inside: avoid;
+  }
+  /* 對話標頭 */
+  .dialogue-block > div:first-child {
+    border-bottom: 0.6pt solid #94a3b8 !important;
+    padding: 3pt 5pt !important;
+  }
+  /* 對話內容容器 */
+  .dialogue-block > div:last-child {
+    padding: 4pt 5pt !important;
+  }
+  /* 每一句：改為左側細線的緊湊列，省紙且好讀 */
+  .dialogue-block > div:last-child > div {
+    border: 0 !important;
+    border-left: 1.4pt solid #64748b !important;
+    padding: 1.5pt 0 1.5pt 6pt !important;
+    margin: 0 0 2.5pt !important;
+    break-inside: avoid;
+  }
+  .dialogue-block p {
+    margin: 0 !important;
+  }
+
+  /* ── 提示框／卡片統一為細框，不上底色 ──────────────────── */
+  [class*="bg-amber-"],
+  [class*="bg-blue-"],
+  [class*="bg-rose-"],
+  [class*="bg-emerald-"],
+  [class*="bg-indigo-"],
+  [class*="bg-sky-"],
+  [class*="bg-slate-"],
+  [class*="bg-teal-"],
+  [class*="bg-white"],
+  [class*="bg-gradient"] {
+    background: transparent !important;
+  }
+  [class*="border-"] {
+    border-color: #94a3b8 !important;
+  }
+  .elite-panel,
+  .xray-danger,
+  .xray-safe {
+    background: transparent !important;
+    color: #111827 !important;
+    border: 0.8pt solid #64748b !important;
+  }
+
+  /* ── 圖片：限高避免佔滿整頁 ───────────────────────────── */
+  img,
+  figure,
+  svg {
+    max-width: 100% !important;
+    max-height: 78mm !important;
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+  figure {
+    margin: 6pt 0 !important;
+  }
+  figcaption {
+    font-size: 8.5pt !important;
+    color: #374151 !important;
+  }
+
+  /* ── 連結：不上色、不畫底線 ───────────────────────────── */
+  a,
+  a:visited {
+    color: #111827 !important;
     text-decoration: none !important;
-    color: #0f172a !important;
+  }
+
+  /* ── 列印專用：講義封面與頁末 ─────────────────────────── */
+  .print-cover {
+    display: block !important;
+    border: 1.2pt solid #111827 !important;
+    padding: 7pt 9pt !important;
+    margin: 0 0 10pt !important;
+    break-inside: avoid;
+    break-after: avoid-page;
+  }
+  .print-cover .print-cover-kicker {
+    font-size: 8pt !important;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+  }
+  .print-cover .print-cover-title {
+    font-size: 15pt !important;
+    font-weight: 700 !important;
+    line-height: 1.3 !important;
+    margin: 2pt 0 3pt !important;
+  }
+  .print-cover .print-cover-meta {
+    font-size: 8.6pt !important;
+    line-height: 1.5 !important;
+  }
+  .print-cover .print-cover-fields {
+    display: flex !important;
+    gap: 14pt;
+    margin-top: 6pt !important;
+    padding-top: 5pt !important;
+    border-top: 0.6pt dashed #64748b !important;
+    font-size: 9pt !important;
+  }
+  .print-cover .print-cover-fields span {
+    flex: 1;
+    border-bottom: 0.6pt solid #111827;
+    padding-bottom: 1pt;
+  }
+
+  /* 章節分頁控制 */
+  .print-page-break {
+    break-before: page !important;
+    page-break-before: always !important;
+  }
+  .print-avoid-break {
+    break-inside: avoid !important;
+    page-break-inside: avoid !important;
+  }
+
+  /* 作答欄與筆記橫線 */
+  .print-answer-box {
+    border: 0.6pt solid #64748b !important;
+    height: 22mm;
+    margin: 4pt 0 8pt !important;
+    break-inside: avoid;
+  }
+  .print-note-lines {
+    margin-top: 6pt !important;
+    break-inside: avoid;
+  }
+  .print-note-lines i {
+    display: block;
+    border-bottom: 0.5pt solid #94a3b8;
+    height: 8.5mm;
+  }
+
+  /* 頁末版權與來源 */
+  .print-colophon {
+    display: block !important;
+    margin-top: 12pt !important;
+    padding-top: 5pt !important;
+    border-top: 0.8pt solid #111827 !important;
+    font-size: 8pt !important;
+    color: #374151 !important;
+  }
+
+  /* 保留在紙本上的按鈕（題幹與選項）改以純文字樣式呈現 */
+  button.print-keep {
+    display: block !important;
+    width: 100% !important;
+    border: 0 !important;
+    padding: 0 !important;
+    text-align: left !important;
+    font: inherit !important;
+    color: #111827 !important;
+  }
+  button.print-keep.exam-choice {
+    display: flex !important;
+    border: 0.5pt solid #94a3b8 !important;
+    padding: 2.5pt 4pt !important;
+    margin-bottom: 2pt !important;
+    font-size: 9pt !important;
+  }
+  /* 選項排成兩欄，與試卷排版一致 */
+  .exam-choice-grid {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    gap: 3pt !important;
+  }
+
+  /* 螢幕上以 grid-rows 收合的詳解區塊，紙本一律完整展開 */
+  .solution-steps {
+    display: block !important;
+    grid-template-rows: 1fr !important;
+  }
+  .solution-steps > div,
+  .solution-steps > div > div {
+    overflow: visible !important;
+    max-height: none !important;
+  }
+
+  /* ══ 模式二：重點速記表（只留標題與表格） ══ */
+  html[data-print-mode="tables"] #interest-hook,
+  html[data-print-mode="tables"] #application-mastery,
+  html[data-print-mode="tables"] #seven-iterations,
+  html[data-print-mode="tables"] #worked,
+  html[data-print-mode="tables"] #practice,
+  html[data-print-mode="tables"] #exam-questions-section,
+  html[data-print-mode="tables"] #sources,
+  html[data-print-mode="tables"] .dialogue-block,
+  html[data-print-mode="tables"] .concept-body,
+  html[data-print-mode="tables"] .concept-steps,
+  html[data-print-mode="tables"] figure,
+  html[data-print-mode="tables"] img {
+    display: none !important;
+  }
+
+  /* ══ 模式三：題目練習卷（只留題目與作答欄） ══ */
+  html[data-print-mode="quiz"] #interest-hook,
+  html[data-print-mode="quiz"] #application-mastery,
+  html[data-print-mode="quiz"] #seven-iterations,
+  html[data-print-mode="quiz"] #principles,
+  html[data-print-mode="quiz"] #traps,
+  html[data-print-mode="quiz"] #sources,
+  html[data-print-mode="quiz"] figure,
+  html[data-print-mode="quiz"] img {
+    display: none !important;
+  }
+  html[data-print-mode="quiz"] .print-answer-box {
+    display: block !important;
+  }
+  /* 練習卷模式下把詳解收合，留給學生自己作答 */
+  html[data-print-mode="quiz"] .solution-steps {
+    display: none !important;
   }
 }
-

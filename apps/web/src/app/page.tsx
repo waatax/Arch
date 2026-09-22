@@ -1,14 +1,15 @@
 import Link from 'next/link';
-import { ArrowRight, Building2, CheckCircle2, Compass, DraftingCompass, HardHat, Landmark, Play, ShieldCheck, Target, Sparkles, Star } from 'lucide-react';
+import { ArrowRight, Building2, CheckCircle2, Compass, DraftingCompass, HardHat, Landmark, Play, ShieldCheck, Target, Sparkles, Star, Monitor } from 'lucide-react';
 import ExpertCouncilBanner from '@/components/pedagogy/ExpertCouncilBanner';
 import AdaptiveDailyLoop from '@/components/pedagogy/AdaptiveDailyLoop';
 
 const paths = [
   { icon: Building2, eyebrow: '🏛️ 大學 5 年制完整課綱', title: '建築之路：大學課綱與大師養成', copy: '10 學期 Studio 進程、8 大核心學術領域（設計、史論、構造、環控EEWH、結構、敷地、法規、BIM）與評圖生存指南。', href: '/pathway', cta: '探索 5 年制建築之路', tone: 'blue', primary: true },
-  { icon: Sparkles, eyebrow: '⚔️ 2026 高二開學首發', title: '高二開學 60 天冒險戰役', copy: '8 大戰役關卡循序推進，結合營造現場工程探案、每日懸賞委託與藍圖碎片收集，無壓力通關。', href: '/quest', cta: '進入開學冒險戰役', tone: 'amber', primary: true },
-  { icon: Star, eyebrow: '✨ 跨領域星系網絡', title: '建築大師技能星空圖', copy: '13 科 111 主題專業技能星空圖，點亮力學、材料、測量、製圖與數學 C 跨領域星系網絡。', href: '/constellation', cta: '點亮我的技能星空', tone: 'blue', primary: false },
+  { icon: Monitor, eyebrow: '🖥️ TAG: 電腦繪圖', title: '建築電腦繪圖軟體全鑑', copy: '業界學界 8 大主力軟體全鑑（SketchUp, Blender, AutoCAD, Revit, 3ds Max, ArchiCAD, Rhino, 即時光追），含 7 輪 100%+ 深度進化躍遷與新手 10 步起步 SOP。', href: '/cad-software', cta: '進入電腦繪圖全鑑', tone: 'blue', primary: true },
+  { icon: Sparkles, eyebrow: '⚔️ 2026 高二開學首發', title: '高二開學 60 天冒險戰役', copy: '8 大戰役關卡循序推進，結合營造現場工程探案、每日懸賞委託與藍圖碎片收集，無壓力通關。', href: '/quest', cta: '進入開學冒險戰役', tone: 'amber', primary: false },
+  { icon: Star, eyebrow: '✨ 跨領域星系網絡', title: '建築大師技能星空圖', copy: '13 科 120 主題專業技能星空圖，點亮力學、材料、測量、製圖與數學 C 跨領域星系網絡。', href: '/constellation', cta: '點亮我的技能星空', tone: 'blue', primary: false },
   { icon: Building2, eyebrow: '🏛️ 幾何名築畫布', title: '建築大師工坊', copy: '親手組裝路思義教堂、台中歌劇院、台北101、淡江大橋與 921 園區 3D/SVG 幾何名築。', href: '/studio', cta: '打開大師工坊畫布', tone: 'blue', primary: false },
-  { icon: Compass, eyebrow: '👶 給不知從何開始的你', title: '跟著課程地圖穩穩學', copy: '把 111 個章節依先備知識排好，從生活常識出發，一步步陪你走到統測考題，沒有壓力。', href: '/curriculum', cta: '展開我的學習地圖', tone: 'blue', primary: false },
+  { icon: Compass, eyebrow: '👶 給不知從何開始的你', title: '跟著課程地圖穩穩學', copy: '把 120 個章節依先備知識排好，從生活常識出發，一步步陪你走到統測考題，沒有壓力。', href: '/curriculum', cta: '展開我的學習地圖', tone: 'blue', primary: false },
   { icon: Target, eyebrow: '🎯 給想找出手感的你', title: '用歷屆試題找弱點', copy: '111–115 年共 925 題。寫錯沒關係，系統會溫柔地幫你拆解步驟，並收錄到專屬錯題本。', href: '/practice', cta: '開始一次無壓力的練習', tone: 'coral', primary: false },
   { icon: DraftingCompass, eyebrow: '動態圖解', title: '互動圖解實驗室', copy: '簡支梁受力、莫爾圓主應力、第三角投影展開、水準儀與地震振動台模擬。', href: '/visualizers', cta: '進入圖解實驗室', tone: 'slate' },
   { icon: HardHat, eyebrow: '現場實務', title: '營造現場檢驗手冊', copy: '連結施工規範綱要、CNS 坍度氯離子試驗、高張力螺栓與梁穿孔防錯。', href: '/field-guide', cta: '查閱現場手冊', tone: 'slate' },

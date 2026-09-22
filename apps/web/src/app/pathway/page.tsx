@@ -743,6 +743,14 @@ export default function ArchitecturePathwayPage() {
                               <p className="text-xs text-slate-600 dark:text-slate-400 leading-relaxed font-sans">
                                 {course.desc}
                               </p>
+                              {(course.name.includes('電腦') || course.name.includes('BIM') || course.name.includes('參數化') || course.desc.includes('AutoCAD') || course.desc.includes('Revit')) && (
+                                <Link
+                                  href="/cad-software"
+                                  className="inline-flex items-center gap-1 text-[11px] text-blue-600 dark:text-blue-400 hover:underline font-mono font-bold pt-1"
+                                >
+                                  <span>🖥️ 建築電腦繪圖 (CAD/BIM) 專屬教學頁面 →</span>
+                                </Link>
+                              )}
                             </div>
                           ))}
                         </div>
