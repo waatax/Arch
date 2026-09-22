@@ -178,25 +178,25 @@ export default function CadSoftwareDetailView({ software, prevSoftware, nextSoft
               href="#seven-iterations"
               className="rounded-xl bg-purple-600/10 text-purple-700 dark:text-purple-300 border border-purple-600/20 px-3.5 py-1.5 text-xs font-mono font-bold hover:bg-purple-600 hover:text-white transition"
             >
-              ↓ 7 輪深度進化與維度躍遷 (100%+)
+              ↓ 7 輪進階工程深度躍遷
             </a>
             <a
               href="#beginner-guide"
               className="rounded-xl bg-emerald-600/10 text-emerald-700 dark:text-emerald-300 border border-emerald-600/20 px-3.5 py-1.5 text-xs font-mono font-bold hover:bg-emerald-600 hover:text-white transition"
             >
-              ↓ 新手入門 10 步 SOP 與避坑
+              ↓ 工程實作 10 步 SOP 與防錯
             </a>
             <a
               href="#pipeline"
               className="rounded-xl bg-slate-200/80 dark:bg-slate-800 px-3.5 py-1.5 text-xs font-mono font-medium text-slate-700 dark:text-slate-300 hover:bg-blue-600 hover:text-white transition"
             >
-              ↓ 跨軟體格式管線
+              ↓ 跨軟體協同與格式管線
             </a>
             <a
               href="#official-links"
               className="rounded-xl bg-slate-200/80 dark:bg-slate-800 px-3.5 py-1.5 text-xs font-mono font-medium text-slate-700 dark:text-slate-300 hover:bg-blue-600 hover:text-white transition"
             >
-              ↓ 官網正版與學生授權
+              ↓ 官方資源與授權管道
             </a>
           </div>
         </div>
@@ -368,14 +368,14 @@ export default function CadSoftwareDetailView({ software, prevSoftware, nextSoft
                   PART 02 · 7-ROUND EVOLUTIONARY MASTERY CYCLES
                 </span>
                 <h2 className="mt-1 font-serif text-2xl sm:text-3xl font-bold text-slate-900 dark:text-white">
-                  完整 7 輪深度進化：每輪遞增 100%+ 實戰維度
+                  7 輪進階工程深度躍遷體系
                 </h2>
                 <p className="text-sm text-slate-500 dark:text-slate-400 mt-1">
-                  依循七輪指數級躍遷架構，深入數學公式、工程參數矩陣、除錯決策樹與自主檢驗清單
+                  依循七輪進階架構，深入幾何數學公式、工程參數矩陣、除錯決策樹與自主檢驗清單
                 </p>
               </div>
               <span className="rounded-full bg-purple-600/10 text-purple-700 dark:text-purple-300 border border-purple-600/20 px-3 py-1 text-xs font-mono font-bold">
-                每輪至少 +100% 延伸內容
+                7 輪維度持續演進
               </span>
             </div>
           </div>
@@ -415,11 +415,11 @@ export default function CadSoftwareDetailView({ software, prevSoftware, nextSoft
                 </h3>
               </div>
 
-              {/* 100%+ Content Expansion Badge */}
+              {/* Content Expansion Badge */}
               <div className="rounded-xl bg-gradient-to-r from-purple-500/10 to-blue-500/10 border border-purple-500/20 p-3 text-xs max-w-sm">
                 <span className="font-mono font-bold text-purple-600 dark:text-purple-400 flex items-center gap-1">
                   <Zap className="size-3.5" />
-                  本次輪次 100%+ 深度躍遷：
+                  本輪工程能力躍遷重點：
                 </span>
                 <p className="text-slate-600 dark:text-slate-400 text-[11px] mt-1 leading-relaxed">
                   {currentCycle.contentExpansion}
@@ -639,7 +639,7 @@ export default function CadSoftwareDetailView({ software, prevSoftware, nextSoft
               PART 03 · BEGINNER ONBOARDING & PRO TIPS
             </span>
             <h2 className="mt-1 font-serif text-2xl sm:text-3xl font-bold text-slate-900 dark:text-white">
-              基礎新手開始使用 TIP 教學及實戰建議
+              工程實務入門指南、SOP 與防錯機制
             </h2>
             <p className="text-sm text-slate-500 dark:text-slate-400 mt-1">
               {software.beginnerGuide.introduction}
@@ -675,7 +675,7 @@ export default function CadSoftwareDetailView({ software, prevSoftware, nextSoft
             <div className="mb-6">
               <h3 className="font-serif text-xl font-bold text-slate-900 dark:text-white flex items-center gap-2">
                 <CheckCircle2 className="size-5 text-emerald-500" />
-                新手從零開始 10 步驟實戰 SOP：產出第一張合規圖面
+                標準化工程實作 10 步驟 SOP：產出第一套合規圖紙
               </h3>
               <p className="text-xs text-slate-500 dark:text-slate-400 mt-1">
                 嚴格遵循此標準流程，初學者能在 30 分鐘內建立完整的建築空間模型並完成出圖
@@ -791,7 +791,7 @@ export default function CadSoftwareDetailView({ software, prevSoftware, nextSoft
             <div className="rounded-3xl border border-rose-200 dark:border-rose-900/50 bg-rose-50/30 dark:bg-rose-950/10 p-6 sm:p-8 space-y-4">
               <h3 className="font-serif text-lg font-bold text-rose-900 dark:text-rose-200 flex items-center gap-2">
                 <AlertTriangle className="size-5 text-rose-500" />
-                新手必踩致命陷阱與解藥
+                工程實務常見致命陷阱與防錯對策
               </h3>
               <div className="space-y-3">
                 {software.beginnerGuide.fatalTraps.map((trap, idx) => (

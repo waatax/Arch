@@ -3,11 +3,11 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import {
-  Monitor,
   ExternalLink,
   Sparkles,
   ArrowRight,
   Flame,
+  Workflow,
 } from 'lucide-react';
 import { cadSoftwareList } from '@/data/cad-software/cadSoftwareData';
 
@@ -44,52 +44,51 @@ export default function CadSoftwareHubPage() {
             >
               首頁
             </Link>
-            <span className="text-slate-400 text-xs">/</span>
-            <span className="inline-flex items-center gap-1.5 rounded-full bg-blue-600 text-white px-3 py-1 text-xs font-mono font-bold tracking-wider shadow-sm shadow-blue-500/20">
-              <Monitor className="size-3.5" />
+            <span className="text-slate-300 dark:text-slate-700">/</span>
+            <span className="text-xs font-mono font-bold text-blue-600 dark:text-blue-400">
               TAG: 電腦繪圖
             </span>
-            <span className="inline-flex items-center gap-1 rounded-full bg-emerald-500/10 text-emerald-700 dark:text-emerald-300 border border-emerald-500/20 px-2.5 py-0.5 text-xs font-mono font-medium">
-              業界學界 8 大主力軟體全鑑
+            <span className="inline-flex items-center gap-1 rounded-full bg-blue-500/10 text-blue-700 dark:text-blue-300 border border-blue-500/20 px-2.5 py-0.5 text-xs font-mono font-medium">
+              建築運算設計與營建工程資訊模型
             </span>
-            <span className="inline-flex items-center gap-1 rounded-full bg-purple-500/10 text-purple-700 dark:text-purple-300 border border-purple-500/20 px-2.5 py-0.5 text-xs font-mono font-medium">
-              7 輪深度進化 100%+ 躍遷
+            <span className="inline-flex items-center gap-1 rounded-full bg-emerald-500/10 text-emerald-700 dark:text-emerald-300 border border-emerald-500/20 px-2.5 py-0.5 text-xs font-mono font-medium">
+              CNS 11567 & ISO 19650 標準
             </span>
           </div>
 
           <h1 className="font-serif text-3xl font-bold tracking-tight text-slate-900 dark:text-white sm:text-5xl lg:text-6xl">
             建築電腦繪圖軟體全鑑
             <span className="block text-2xl sm:text-4xl text-blue-600 dark:text-blue-400 mt-2 font-normal">
-              業界與學界主力工具 · 深度獨立專頁與 7 輪躍遷體系
+              業界與學界主力工具 · 幾何底層、工程法規與 7 輪深度進化體系
             </span>
           </h1>
 
           <p className="mt-6 max-w-3xl text-base sm:text-lg leading-relaxed text-slate-600 dark:text-slate-400">
-            從高工建築科製圖實習、大學建築系（B.Arch）五年間的設計 Studio，到專技高考建築師、工程顧問公司與營造廠現場，電腦繪圖（CAD / BIM / 3D 建模 / 參數化 / 即時光追）是建築人實踐空間想像的最強武器。
-            本專區針對台灣與國際最核心的 8 大軟體體系，建立每套軟體的獨立深度介紹頁面、新手起步 10 步實戰教學、高頻快捷鍵秘笈、5 大避坑指南，以及每輪擴充 100%+ 知識維度的 7 輪深度進化心法。
+            現代建築工程與運算化設計已從單純之二維幾何描繪，深化為結合建築資訊模型 (BIM)、非標準自由曲面演算法、環境物理模擬與即時光線追蹤之跨領域數位協同體系。
+            本全鑑完整收錄台灣營建實務與國際頂尖事務所採用之 8 大核心軟體工具，從底層微分幾何、CNS 11567 國家製圖規範、ISO 19650 資訊管理架構到可執行自動化腳本，建立系統化之工程實務知識庫。
           </p>
 
           {/* Quick Metrics */}
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mt-10">
             <div className="rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 p-4 shadow-sm">
-              <span className="block text-xs text-slate-500 dark:text-slate-400">收錄獨立專題軟體</span>
-              <span className="text-2xl font-bold font-mono text-blue-600 dark:text-blue-400">8 大神兵</span>
-              <span className="block text-[11px] text-slate-400 mt-1">涵蓋 CAD/BIM/CG/曲面</span>
+              <span className="block text-xs text-slate-500 dark:text-slate-400 font-mono">核心工具體系</span>
+              <span className="text-2xl font-bold font-mono text-blue-600 dark:text-blue-400">8 大主力</span>
+              <span className="block text-[11px] text-slate-400 mt-1">CAD / BIM / 曲面 / 即時光追</span>
             </div>
             <div className="rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 p-4 shadow-sm">
-              <span className="block text-xs text-slate-500 dark:text-slate-400">深度迭代輪次</span>
+              <span className="block text-xs text-slate-500 dark:text-slate-400 font-mono">深度進化體系</span>
               <span className="text-2xl font-bold font-mono text-purple-600 dark:text-purple-400">7 輪躍遷</span>
-              <span className="block text-[11px] text-slate-400 mt-1">每輪延伸 100%+ 深度內容</span>
+              <span className="block text-[11px] text-slate-400 mt-1">數學公式、參數矩陣、除錯樹</span>
             </div>
             <div className="rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 p-4 shadow-sm">
-              <span className="block text-xs text-slate-500 dark:text-slate-400">新手實作 SOP</span>
-              <span className="text-2xl font-bold font-mono text-emerald-600 dark:text-emerald-400">10 步起步法</span>
-              <span className="block text-[11px] text-slate-400 mt-1">零基礎從空白到第一張圖</span>
+              <span className="block text-xs text-slate-500 dark:text-slate-400 font-mono">法規與規範標準</span>
+              <span className="text-2xl font-bold font-mono text-emerald-600 dark:text-emerald-400">100% 貫穿</span>
+              <span className="block text-[11px] text-slate-400 mt-1">CNS 11567 / ISO 19650 / IFC4</span>
             </div>
             <div className="rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 p-4 shadow-sm">
-              <span className="block text-xs text-slate-500 dark:text-slate-400">官方正版教育授權</span>
-              <span className="text-2xl font-bold font-mono text-amber-600 dark:text-amber-400">100% 直連</span>
-              <span className="block text-[11px] text-slate-400 mt-1">學生免費申請通道彙整</span>
+              <span className="block text-xs text-slate-500 dark:text-slate-400 font-mono">工程實務二次開發</span>
+              <span className="text-2xl font-bold font-mono text-amber-600 dark:text-amber-400">可執行腳本</span>
+              <span className="block text-[11px] text-slate-400 mt-1">LISP / Python / Dynamo / GDL</span>
             </div>
           </div>
         </div>
@@ -105,7 +104,7 @@ export default function CadSoftwareHubPage() {
               核心電腦繪圖軟體獨立介紹專頁
             </h2>
             <p className="text-sm text-slate-500 dark:text-slate-400 mt-1">
-              點擊進入每款軟體的專屬深研頁面，閱讀建築製圖應用、新手起步 SOP、快捷鍵與 7 輪進化指南。
+              點擊進入每款軟體的專屬深研頁面，查閱建築實務應用、標準代碼範例、參數矩陣與 7 輪進化指南。
             </p>
           </div>
 
@@ -233,96 +232,103 @@ export default function CadSoftwareHubPage() {
         </div>
       </section>
 
-      {/* Decision Tree: Architecture Learning Roadmap */}
+      {/* Decision Tree: Architecture Professional Workflow Pipeline */}
       <section className="mx-auto max-w-6xl px-4 py-12 sm:px-6 lg:px-8">
         <div className="rounded-3xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 p-8 sm:p-12 shadow-sm">
           <div className="max-w-2xl">
-            <span className="text-xs font-mono font-bold uppercase tracking-wider text-blue-600 dark:text-blue-400">
-              LEARNING ROADMAP & DECISION TREE
+            <span className="text-xs font-mono font-bold uppercase tracking-wider text-blue-600 dark:text-blue-400 flex items-center gap-1.5">
+              <Workflow className="size-4" />
+              ARCHITECTURAL WORKFLOW PIPELINE & SOFTWARE TAXONOMY
             </span>
             <h2 className="mt-2 font-serif text-2xl sm:text-3xl font-bold text-slate-900 dark:text-white">
-              建築人電腦繪圖軟體修煉路徑：何時該學哪一套？
+              建築專業專案推進階段與軟體定位矩陣
             </h2>
             <p className="mt-3 text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
-              很多初學者常問：「我到底該學 AutoCAD、Revit 還是 SketchUp、Rhino？」答案取決於你目前的學習階段與專案目標。以下是台灣建築界公認的最佳進階順序：
+              在現代營建工程與建築師事務所之專業分工體系中，不同軟體依據其幾何核心與資料結構，各自承擔特定的專案交付階段：
             </p>
           </div>
 
           <div className="grid gap-6 mt-8 sm:grid-cols-3">
             {/* Stage 1 */}
-            <div className="rounded-2xl border border-blue-100 dark:border-blue-900/40 bg-blue-50/40 dark:bg-blue-950/20 p-6">
-              <div className="flex items-center gap-2 mb-3">
-                <span className="flex size-7 items-center justify-center rounded-full bg-blue-600 text-xs font-bold text-white font-mono">
-                  1
-                </span>
-                <span className="text-xs font-mono font-bold text-blue-700 dark:text-blue-300">
-                  高工建築科 / 大一基礎
-                </span>
+            <div className="rounded-2xl border border-blue-100 dark:border-blue-900/40 bg-blue-50/40 dark:bg-blue-950/20 p-6 flex flex-col justify-between">
+              <div>
+                <div className="flex items-center gap-2 mb-3">
+                  <span className="flex size-7 items-center justify-center rounded-full bg-blue-600 text-xs font-bold text-white font-mono">
+                    I
+                  </span>
+                  <span className="text-xs font-mono font-bold text-blue-700 dark:text-blue-300">
+                    概念方案推敲與 2D 圖說標準
+                  </span>
+                </div>
+                <h3 className="font-serif text-lg font-bold text-slate-900 dark:text-white mb-2">
+                  2D 製圖規範與直覺體量建立
+                </h3>
+                <p className="text-xs text-slate-600 dark:text-slate-400 leading-relaxed mb-4">
+                  落實 <strong>AutoCAD</strong>（遵循 CNS 11567 國家標準正投影法、出圖樣式表 CTB 線寬階層與外部參考 XREF 多工種套繪）；結合 <strong>SketchUp Pro</strong> 進行概念量體推拉、法定冬至日照陰影分析與 Trimble LayOut 動態施工圖出圖。
+                </p>
               </div>
-              <h3 className="font-serif text-lg font-bold text-slate-900 dark:text-white mb-2">
-                2D 圖學底子與直覺 3D 發想
-              </h3>
-              <p className="text-xs text-slate-600 dark:text-slate-400 leading-relaxed mb-4">
-                首先精通 <strong>AutoCAD</strong>（掌握 CNS 建築製圖投影法、線型線寬與圖層概念），同時上手 <strong>SketchUp</strong> 建立直覺的三維推拉與空間尺度感。
-              </p>
-              <div className="flex flex-wrap gap-1.5 font-mono text-[11px]">
-                <span className="rounded bg-white dark:bg-slate-800 px-2 py-0.5 text-blue-700 dark:text-blue-300 border border-blue-200 dark:border-blue-800">
-                  AutoCAD (2D施工圖基石)
+              <div className="flex flex-wrap gap-1.5 font-mono text-[11px] pt-3 border-t border-blue-200/50 dark:border-blue-800/50">
+                <span className="rounded bg-white dark:bg-slate-800 px-2 py-0.5 text-blue-700 dark:text-blue-300 border border-blue-200 dark:border-blue-800 font-bold">
+                  AutoCAD (CNS 11567 標準)
                 </span>
-                <span className="rounded bg-white dark:bg-slate-800 px-2 py-0.5 text-blue-700 dark:text-blue-300 border border-blue-200 dark:border-blue-800">
-                  SketchUp (直覺體量)
+                <span className="rounded bg-white dark:bg-slate-800 px-2 py-0.5 text-blue-700 dark:text-blue-300 border border-blue-200 dark:border-blue-800 font-bold">
+                  SketchUp Pro (概念體量)
                 </span>
               </div>
             </div>
 
             {/* Stage 2 */}
-            <div className="rounded-2xl border border-purple-100 dark:border-purple-900/40 bg-purple-50/40 dark:bg-purple-950/20 p-6">
-              <div className="flex items-center gap-2 mb-3">
-                <span className="flex size-7 items-center justify-center rounded-full bg-purple-600 text-xs font-bold text-white font-mono">
-                  2
-                </span>
-                <span className="text-xs font-mono font-bold text-purple-700 dark:text-purple-300">
-                  大學大二到大三 / 競圖深化
-                </span>
+            <div className="rounded-2xl border border-purple-100 dark:border-purple-900/40 bg-purple-50/40 dark:bg-purple-950/20 p-6 flex flex-col justify-between">
+              <div>
+                <div className="flex items-center gap-2 mb-3">
+                  <span className="flex size-7 items-center justify-center rounded-full bg-purple-600 text-xs font-bold text-white font-mono">
+                    II
+                  </span>
+                  <span className="text-xs font-mono font-bold text-purple-700 dark:text-purple-300">
+                    自由曲面參數化與微氣候模擬
+                  </span>
+                </div>
+                <h3 className="font-serif text-lg font-bold text-slate-900 dark:text-white mb-2">
+                  非標準幾何有理化與物理光追
+                </h3>
+                <p className="text-xs text-slate-600 dark:text-slate-400 leading-relaxed mb-4">
+                  運用 <strong>Rhino 8 & Grasshopper</strong> 進行高階 NURBS 自由曲面建模、高斯曲率展開分析與 Kangaroo 結構懸垂鬆弛；透過 Ladybug 模擬日照輻射與採光自主率；同步結合 <strong>即時渲染引擎 (D5 / Enscape / Twinmotion)</strong> 進行毫秒級光影評估。
+                </p>
               </div>
-              <h3 className="font-serif text-lg font-bold text-slate-900 dark:text-white mb-2">
-                自由曲面參數化與即時光追
-              </h3>
-              <p className="text-xs text-slate-600 dark:text-slate-400 leading-relaxed mb-4">
-                進階掌握 <strong>Rhino 3D + Grasshopper</strong> 進行演算法幾何造型與日照遮陽分析；同步掛載 <strong>Enscape / Lumion / D5</strong> 實現評圖當天的 60fps 照片級即時透視渲染。
-              </p>
-              <div className="flex flex-wrap gap-1.5 font-mono text-[11px]">
-                <span className="rounded bg-white dark:bg-slate-800 px-2 py-0.5 text-purple-700 dark:text-purple-300 border border-purple-200 dark:border-purple-800">
-                  Rhino + Grasshopper
+              <div className="flex flex-wrap gap-1.5 font-mono text-[11px] pt-3 border-t border-purple-200/50 dark:border-purple-800/50">
+                <span className="rounded bg-white dark:bg-slate-800 px-2 py-0.5 text-purple-700 dark:text-purple-300 border border-purple-200 dark:border-purple-800 font-bold">
+                  Rhino + GH (NURBS 演算法)
                 </span>
-                <span className="rounded bg-white dark:bg-slate-800 px-2 py-0.5 text-purple-700 dark:text-purple-300 border border-purple-200 dark:border-purple-800">
-                  Enscape / D5 Render
+                <span className="rounded bg-white dark:bg-slate-800 px-2 py-0.5 text-purple-700 dark:text-purple-300 border border-purple-200 dark:border-purple-800 font-bold">
+                  即時光追引擎群 (RTX 60fps)
                 </span>
               </div>
             </div>
 
             {/* Stage 3 */}
-            <div className="rounded-2xl border border-emerald-100 dark:border-emerald-900/40 bg-emerald-50/40 dark:bg-emerald-950/20 p-6">
-              <div className="flex items-center gap-2 mb-3">
-                <span className="flex size-7 items-center justify-center rounded-full bg-emerald-600 text-xs font-bold text-white font-mono">
-                  3
-                </span>
-                <span className="text-xs font-mono font-bold text-emerald-700 dark:text-emerald-300">
-                  高年級畢業設計 / 事務所就業
-                </span>
+            <div className="rounded-2xl border border-emerald-100 dark:border-emerald-900/40 bg-emerald-50/40 dark:bg-emerald-950/20 p-6 flex flex-col justify-between">
+              <div>
+                <div className="flex items-center gap-2 mb-3">
+                  <span className="flex size-7 items-center justify-center rounded-full bg-emerald-600 text-xs font-bold text-white font-mono">
+                    III
+                  </span>
+                  <span className="text-xs font-mono font-bold text-emerald-700 dark:text-emerald-300">
+                    BIM 資訊模型、跨工種碰撞與營造交付
+                  </span>
+                </div>
+                <h3 className="font-serif text-lg font-bold text-slate-900 dark:text-white mb-2">
+                  全生命週期數位資產與施工集成
+                </h3>
+                <p className="text-xs text-slate-600 dark:text-slate-400 leading-relaxed mb-4">
+                  架構 <strong>Autodesk Revit</strong> 或 <strong>Graphisoft Archicad</strong> 進行多專業中央協同、複合構造接頭優先級運算、CSD/SEM 機電穿梁干涉檢討與材料明細表提量；搭配 <strong>Blender (Bonsai)</strong> 落實 OpenBIM IFC4 原生資訊交付，及 <strong>3ds Max</strong> 產出電影級競圖成果。
+                </p>
               </div>
-              <h3 className="font-serif text-lg font-bold text-slate-900 dark:text-white mb-2">
-                BIM 建築資訊模型與工程協同
-              </h3>
-              <p className="text-xs text-slate-600 dark:text-slate-400 leading-relaxed mb-4">
-                全流程掌握 <strong>Autodesk Revit</strong> 或 <strong>Archicad</strong>（參數族群、平立剖連動施工圖、工程數量估算、管線碰撞檢討）以及 <strong>Blender (Bonsai openBIM)</strong>，完成學用無縫接軌。
-              </p>
-              <div className="flex flex-wrap gap-1.5 font-mono text-[11px]">
-                <span className="rounded bg-white dark:bg-slate-800 px-2 py-0.5 text-emerald-700 dark:text-emerald-300 border border-emerald-200 dark:border-emerald-800">
-                  Revit / Archicad (BIM旗艦)
+              <div className="flex flex-wrap gap-1.5 font-mono text-[11px] pt-3 border-t border-emerald-200/50 dark:border-emerald-800/50">
+                <span className="rounded bg-white dark:bg-slate-800 px-2 py-0.5 text-emerald-700 dark:text-emerald-300 border border-emerald-200 dark:border-emerald-800 font-bold">
+                  Revit / Archicad (BIM 旗艦)
                 </span>
-                <span className="rounded bg-white dark:bg-slate-800 px-2 py-0.5 text-emerald-700 dark:text-emerald-300 border border-emerald-200 dark:border-emerald-800">
-                  3ds Max (頂級效果圖)
+                <span className="rounded bg-white dark:bg-slate-800 px-2 py-0.5 text-emerald-700 dark:text-emerald-300 border border-emerald-200 dark:border-emerald-800 font-bold">
+                  Blender Bonsai (OpenBIM)
                 </span>
               </div>
             </div>
@@ -335,10 +341,10 @@ export default function CadSoftwareHubPage() {
         <div className="rounded-3xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 p-8 shadow-sm overflow-hidden">
           <div className="mb-6">
             <h2 className="font-serif text-2xl font-bold text-slate-900 dark:text-white">
-              8 大建築繪圖軟體性能橫向對比總表
+              8 大建築繪圖軟體性能與工程規格橫向對比總表
             </h2>
             <p className="text-xs text-slate-500 dark:text-slate-400 mt-1">
-              以建築師事務所與營造工程實務視角，橫向對比各軟體核心能力與指標
+              以建築師事務所、結構工程顧問與營造工程實務視角，橫向對比各軟體核心能力、幾何內核與標準規範
             </p>
           </div>
 
@@ -348,10 +354,10 @@ export default function CadSoftwareHubPage() {
                 <tr className="border-b border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-800/60 text-slate-600 dark:text-slate-400">
                   <th className="p-3 font-bold">軟體名稱</th>
                   <th className="p-3 font-bold">核心定位領域</th>
-                  <th className="p-3 font-bold">學習門檻</th>
-                  <th className="p-3 font-bold">BIM 支援度</th>
-                  <th className="p-3 font-bold">施工圖產出能力</th>
-                  <th className="p-3 font-bold">渲染真實度</th>
+                  <th className="p-3 font-bold">幾何與資料庫內核</th>
+                  <th className="p-3 font-bold">BIM 資訊深度</th>
+                  <th className="p-3 font-bold">施工圖紙輸出</th>
+                  <th className="p-3 font-bold">二次開發語言</th>
                   <th className="p-3 font-bold">官方教育版</th>
                 </tr>
               </thead>
@@ -364,12 +370,21 @@ export default function CadSoftwareHubPage() {
                       </Link>
                     </td>
                     <td className="p-3 text-slate-600 dark:text-slate-400">{soft.category}</td>
-                    <td className="p-3 text-slate-600 dark:text-slate-400">{soft.rating.learningCurve.split('(')[0]}</td>
+                    <td className="p-3 text-slate-600 dark:text-slate-400">
+                      {soft.slug === 'sketchup' && 'B-Rep 多邊形表面'}
+                      {soft.slug === 'blender' && '網格多邊形 + OpenBIM STEP'}
+                      {soft.slug === 'autocad' && '2D/3D 齊次向量坐標系'}
+                      {soft.slug === 'revit' && '參數化關聯式建築資料庫'}
+                      {soft.slug === '3dsmax' && '修改器堆疊 + 多邊形拓撲'}
+                      {soft.slug === 'archicad' && '虛擬建築 + GDL 描述語言'}
+                      {soft.slug === 'rhino' && '雙精度 NURBS + 節點資料樹'}
+                      {soft.slug === 'rendering-engines' && 'RTX BVH 硬體即時光追'}
+                    </td>
                     <td className="p-3">
                       <span className={`inline-block px-2 py-0.5 rounded text-[10px] ${
                         soft.rating.bimCapability.includes('天花板') || soft.rating.bimCapability.includes('頂級')
                           ? 'bg-emerald-100 text-emerald-800 dark:bg-emerald-950 dark:text-emerald-300 font-bold'
-                          : soft.rating.bimCapability.includes('中階') || soft.rating.bimCapability.includes('強大')
+                          : soft.rating.bimCapability.includes('中階') || soft.rating.bimCapability.includes('強大') || soft.rating.bimCapability.includes('全能')
                           ? 'bg-blue-100 text-blue-800 dark:bg-blue-950 dark:text-blue-300'
                           : 'bg-slate-100 text-slate-600 dark:bg-slate-800 dark:text-slate-400'
                       }`}>
@@ -377,7 +392,16 @@ export default function CadSoftwareHubPage() {
                       </span>
                     </td>
                     <td className="p-3 text-slate-600 dark:text-slate-400">{soft.rating.drawingOutput.split('(')[0]}</td>
-                    <td className="p-3 text-slate-600 dark:text-slate-400">{soft.rating.renderingQuality.split('(')[0]}</td>
+                    <td className="p-3 text-purple-600 dark:text-purple-400 font-bold">
+                      {soft.slug === 'sketchup' && 'Ruby API'}
+                      {soft.slug === 'blender' && 'Python (bpy)'}
+                      {soft.slug === 'autocad' && 'AutoLISP / .NET'}
+                      {soft.slug === 'revit' && 'Dynamo / C#'}
+                      {soft.slug === '3dsmax' && 'MAXScript / Python'}
+                      {soft.slug === 'archicad' && 'GDL / JSON API'}
+                      {soft.slug === 'rhino' && 'Grasshopper / C#'}
+                      {soft.slug === 'rendering-engines' && 'HLSL / WebXR'}
+                    </td>
                     <td className="p-3 text-emerald-600 dark:text-emerald-400 font-bold">
                       {soft.slug === 'blender' ? '完全開源免費' : '學生免費授權'}
                     </td>

@@ -12,8 +12,8 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   if (!software) return { title: '軟體未找到' };
 
   return {
-    title: `${software.name} (${software.englishName}) - 建築製圖實務與新手 7 輪深度進化教學 | TAG 電腦繪圖 | Arch`,
-    description: `${software.shortDesc} 包含建築製圖應用、新手 10 步驟入門 SOP、高頻快捷鍵對照表、致命避坑指南、7 輪 100%+ 深度進化內容與官方教育版連結。`,
+    title: `${software.name} (${software.englishName}) - 建築工程實務、運算幾何與 7 輪深度進化 | 電腦繪圖 | Arch`,
+    description: `${software.name} 於建築工程設計之實務應用、幾何原理、CNS 11567/ISO 19650 規範、新手實作 SOP、高階參數矩陣與自動化二次開發。`,
   };
 }
 
