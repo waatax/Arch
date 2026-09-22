@@ -3,11 +3,9 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import {
-  Monitor,
   ExternalLink,
   ChevronRight,
   Sparkles,
-  GraduationCap,
   Building2,
   CheckCircle2,
   ArrowRight,
@@ -22,6 +20,14 @@ import {
   ShieldCheck,
   Compass,
   Maximize2,
+  Copy,
+  Check,
+  Code2,
+  Layers,
+  Sliders,
+  GitBranch,
+  CheckSquare,
+  Square,
 } from 'lucide-react';
 import { CadSoftware } from '@/data/cad-software/cadSoftwareData';
 
@@ -34,6 +40,8 @@ interface Props {
 export default function CadSoftwareDetailView({ software, prevSoftware, nextSoftware }: Props) {
   const [activeRound, setActiveRound] = useState<number>(1);
   const [shortcutFilter, setShortcutFilter] = useState<string>('all');
+  const [copiedSnippetTitle, setCopiedSnippetTitle] = useState<string | null>(null);
+  const [completedChecklist, setCompletedChecklist] = useState<Record<string, boolean>>({});
 
   const currentCycle = software.sevenIterations.find((i) => i.round === activeRound) || software.sevenIterations[0];
 
@@ -42,112 +50,154 @@ export default function CadSoftwareDetailView({ software, prevSoftware, nextSoft
     return s.frequency === shortcutFilter;
   });
 
+  const handleCopyCode = (code: string, title: string) => {
+    if (typeof navigator !== 'undefined' && navigator.clipboard) {
+      navigator.clipboard.writeText(code);
+      setCopiedSnippetTitle(title);
+      setTimeout(() => setCopiedSnippetTitle(null), 2000);
+    }
+  };
+
+  const toggleChecklist = (itemKey: string) => {
+    setCompletedChecklist((prev) => ({
+      ...prev,
+      [itemKey]: !prev[itemKey],
+    }));
+  };
+
   return (
-    <div className="min-h-screen bg-slate-50 dark:bg-slate-950 pb-24 text-slate-800 dark:text-slate-100">
-      {/* Top Breadcrumb Header */}
-      <div className="border-b border-slate-200 dark:border-slate-800 bg-white/80 dark:bg-slate-900/80 backdrop-blur-md sticky top-16 z-30 px-4 py-3 sm:px-6 lg:px-8">
-        <div className="mx-auto max-w-6xl flex items-center justify-between">
-          <div className="flex items-center gap-2 text-xs font-mono text-slate-500 dark:text-slate-400">
+    <div className="min-h-screen bg-slate-50 dark:bg-slate-950 text-slate-800 dark:text-slate-100 transition-colors">
+      {/* Breadcrumb Navigation */}
+      <div className="border-b border-slate-200 dark:border-slate-800 bg-white/70 dark:bg-slate-900/70 backdrop-blur sticky top-16 z-30">
+        <div className="mx-auto max-w-6xl px-4 py-2.5 sm:px-6 lg:px-8 flex flex-wrap items-center justify-between gap-2 text-xs font-mono">
+          <div className="flex items-center gap-1.5 text-slate-500 dark:text-slate-400">
             <Link href="/" className="hover:text-blue-600 transition">首頁</Link>
-            <span>/</span>
-            <Link href="/cad-software" className="hover:text-blue-600 transition flex items-center gap-1">
-              <Monitor className="size-3" />
-              電腦繪圖軟體全鑑
-            </Link>
-            <span>/</span>
-            <span className="font-bold text-slate-900 dark:text-white">{software.name}</span>
+            <ChevronRight className="size-3.5" />
+            <Link href="/cad-software" className="hover:text-blue-600 transition">電腦繪圖軟體全鑑</Link>
+            <ChevronRight className="size-3.5" />
+            <span className="text-slate-900 dark:text-white font-bold">{software.name}</span>
           </div>
 
-          <div className="flex items-center gap-2">
+          <div className="flex items-center gap-3">
+            <span className="rounded-full bg-blue-600/10 text-blue-700 dark:text-blue-300 border border-blue-600/20 px-2.5 py-0.5 text-[11px] font-bold">
+              TAG 電腦繪圖
+            </span>
+            <span className="text-slate-400">|</span>
             <a
               href={software.officialUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-1 rounded-lg bg-blue-50 dark:bg-blue-950/50 text-blue-700 dark:text-blue-300 border border-blue-200 dark:border-blue-800/80 px-2.5 py-1 text-xs font-medium hover:bg-blue-100 transition"
+              className="inline-flex items-center gap-1 text-blue-600 dark:text-blue-400 hover:underline text-[11px]"
             >
-              <ExternalLink className="size-3" />
-              官網
-            </a>
-            <a
-              href={software.studentLicenseUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-1 rounded-lg bg-emerald-50 dark:bg-emerald-950/50 text-emerald-700 dark:text-emerald-300 border border-emerald-200 dark:border-emerald-800/80 px-2.5 py-1 text-xs font-medium hover:bg-emerald-100 transition"
-            >
-              <GraduationCap className="size-3" />
-              學生教育版
+              官網入口 <ExternalLink className="size-3" />
             </a>
           </div>
         </div>
       </div>
 
       {/* Hero Header Section */}
-      <section className="border-b border-slate-200 dark:border-slate-800 bg-gradient-to-b from-blue-50/40 via-white to-slate-50 dark:from-blue-950/20 dark:via-slate-900 dark:to-slate-950 px-4 py-12 sm:px-6 sm:py-16 lg:px-8">
-        <div className="mx-auto max-w-6xl">
-          <div className="flex flex-wrap items-center gap-2 mb-4">
-            <span className="inline-flex items-center gap-1 rounded-full bg-blue-600 text-white px-3 py-1 text-xs font-mono font-bold tracking-wider">
-              <Monitor className="size-3.5" />
-              TAG: 電腦繪圖
-            </span>
-            <span className="rounded-full bg-blue-100 text-blue-800 dark:bg-blue-950 dark:text-blue-300 px-3 py-1 text-xs font-mono font-bold">
-              {software.category}
-            </span>
-            <span className="rounded-full bg-amber-500/10 text-amber-700 dark:text-amber-300 border border-amber-500/20 px-2.5 py-1 text-xs font-mono font-medium">
-              {software.badge}
-            </span>
-            <span className="text-xs text-slate-400 font-mono">
-              開發商：{software.vendor} · 初版：{software.releaseYear}
-            </span>
+      <section className="border-b border-slate-200 dark:border-slate-800 bg-gradient-to-b from-white via-slate-50 to-slate-100 dark:from-slate-900 dark:via-slate-900/90 dark:to-slate-950 py-12 sm:py-16">
+        <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 space-y-8">
+          <div className="space-y-4 max-w-4xl">
+            <div className="flex flex-wrap items-center gap-2.5">
+              <span className="rounded-lg bg-blue-600 text-white font-mono text-xs px-2.5 py-1 font-bold shadow-sm">
+                {software.category}
+              </span>
+              <span className="rounded-lg bg-purple-100 dark:bg-purple-950/70 text-purple-700 dark:text-purple-300 border border-purple-200 dark:border-purple-800 font-mono text-xs px-2.5 py-1 font-bold">
+                {software.badge}
+              </span>
+              <span className="text-xs font-mono text-slate-500 dark:text-slate-400">
+                {software.vendor} · {software.releaseYear}
+              </span>
+            </div>
+
+            <h1 className="font-serif text-3xl sm:text-5xl font-bold tracking-tight text-slate-900 dark:text-white">
+              {software.name}
+            </h1>
+            <p className="text-lg font-mono text-blue-600 dark:text-blue-400">
+              {software.englishName}
+            </p>
+            <p className="text-base sm:text-lg text-slate-600 dark:text-slate-300 leading-relaxed max-w-3xl">
+              {software.fullDesc}
+            </p>
           </div>
 
-          <h1 className="font-serif text-3xl font-bold tracking-tight text-slate-900 dark:text-white sm:text-5xl lg:text-6xl">
-            {software.name}
-          </h1>
-          <p className="text-sm sm:text-base text-slate-500 dark:text-slate-400 font-mono mt-1">
-            {software.englishName}
-          </p>
-
-          <p className="mt-6 max-w-3xl text-base sm:text-lg leading-relaxed text-slate-700 dark:text-slate-300">
-            {software.fullDesc}
-          </p>
-
-          {/* Hero Metrics */}
-          <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mt-8">
+          {/* Quick Metrics Cards */}
+          <div className="grid grid-cols-2 gap-3 sm:grid-cols-4 sm:gap-4">
             {software.heroMetrics.map((m) => (
               <div
                 key={m.label}
-                className="rounded-2xl border border-slate-200 dark:border-slate-800 bg-white/80 dark:bg-slate-900/80 p-4 shadow-sm"
+                className="rounded-2xl border border-slate-200 dark:border-slate-800 bg-white/80 dark:bg-slate-900/80 p-4 shadow-sm backdrop-blur"
               >
-                <span className="block text-xs text-slate-400 font-mono">{m.label}</span>
-                <span className="text-xl font-bold font-mono text-blue-600 dark:text-blue-400 mt-1 block">
+                <div className="text-xs font-mono text-slate-500 dark:text-slate-400">{m.label}</div>
+                <div className="mt-1 text-base sm:text-lg font-serif font-bold text-slate-900 dark:text-white">
                   {m.value}
-                </span>
+                </div>
               </div>
             ))}
           </div>
 
-          {/* Rating Matrix */}
-          <div className="grid grid-cols-2 sm:grid-cols-5 gap-3 mt-4 p-4 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-xs font-mono">
-            <div>
-              <span className="text-slate-400 block text-[10px]">學習曲線</span>
-              <span className="font-bold text-slate-700 dark:text-slate-300">{software.rating.learningCurve}</span>
+          {/* Capability Rating Matrix */}
+          <div className="rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 p-5 shadow-sm space-y-3">
+            <span className="text-xs font-mono font-bold uppercase tracking-wider text-slate-400 block">
+              綜合能力評估矩陣 (CAPABILITY MATRIX)
+            </span>
+            <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-5 text-xs">
+              <div className="border-l-2 border-blue-500 pl-3">
+                <span className="text-slate-400 block font-mono">學習曲線</span>
+                <span className="font-bold text-slate-800 dark:text-slate-200">{software.rating.learningCurve}</span>
+              </div>
+              <div className="border-l-2 border-emerald-500 pl-3">
+                <span className="text-slate-400 block font-mono">業界普及度</span>
+                <span className="font-bold text-slate-800 dark:text-slate-200">{software.rating.industryAdoption}</span>
+              </div>
+              <div className="border-l-2 border-purple-500 pl-3">
+                <span className="text-slate-400 block font-mono">BIM 資訊深度</span>
+                <span className="font-bold text-slate-800 dark:text-slate-200">{software.rating.bimCapability}</span>
+              </div>
+              <div className="border-l-2 border-amber-500 pl-3">
+                <span className="text-slate-400 block font-mono">施工圖出圖精確度</span>
+                <span className="font-bold text-slate-800 dark:text-slate-200">{software.rating.drawingOutput}</span>
+              </div>
+              <div className="border-l-2 border-rose-500 pl-3">
+                <span className="text-slate-400 block font-mono">渲染質感表現力</span>
+                <span className="font-bold text-slate-800 dark:text-slate-200">{software.rating.renderingQuality}</span>
+              </div>
             </div>
-            <div>
-              <span className="text-slate-400 block text-[10px]">業界普及率</span>
-              <span className="font-bold text-slate-700 dark:text-slate-300">{software.rating.industryAdoption}</span>
-            </div>
-            <div>
-              <span className="text-slate-400 block text-[10px]">BIM 資訊深度</span>
-              <span className="font-bold text-slate-700 dark:text-slate-300">{software.rating.bimCapability}</span>
-            </div>
-            <div>
-              <span className="text-slate-400 block text-[10px]">施工圖說成圖</span>
-              <span className="font-bold text-slate-700 dark:text-slate-300">{software.rating.drawingOutput}</span>
-            </div>
-            <div className="col-span-2 sm:col-span-1">
-              <span className="text-slate-400 block text-[10px]">渲染擬真能力</span>
-              <span className="font-bold text-slate-700 dark:text-slate-300">{software.rating.renderingQuality}</span>
-            </div>
+          </div>
+
+          {/* Jump Links */}
+          <div className="flex flex-wrap gap-2 pt-2">
+            <a
+              href="#applications"
+              className="rounded-xl bg-slate-200/80 dark:bg-slate-800 px-3.5 py-1.5 text-xs font-mono font-medium text-slate-700 dark:text-slate-300 hover:bg-blue-600 hover:text-white transition"
+            >
+              ↓ 建築實務應用與代碼範例
+            </a>
+            <a
+              href="#seven-iterations"
+              className="rounded-xl bg-purple-600/10 text-purple-700 dark:text-purple-300 border border-purple-600/20 px-3.5 py-1.5 text-xs font-mono font-bold hover:bg-purple-600 hover:text-white transition"
+            >
+              ↓ 7 輪深度進化與維度躍遷 (100%+)
+            </a>
+            <a
+              href="#beginner-guide"
+              className="rounded-xl bg-emerald-600/10 text-emerald-700 dark:text-emerald-300 border border-emerald-600/20 px-3.5 py-1.5 text-xs font-mono font-bold hover:bg-emerald-600 hover:text-white transition"
+            >
+              ↓ 新手入門 10 步 SOP 與避坑
+            </a>
+            <a
+              href="#pipeline"
+              className="rounded-xl bg-slate-200/80 dark:bg-slate-800 px-3.5 py-1.5 text-xs font-mono font-medium text-slate-700 dark:text-slate-300 hover:bg-blue-600 hover:text-white transition"
+            >
+              ↓ 跨軟體格式管線
+            </a>
+            <a
+              href="#official-links"
+              className="rounded-xl bg-slate-200/80 dark:bg-slate-800 px-3.5 py-1.5 text-xs font-mono font-medium text-slate-700 dark:text-slate-300 hover:bg-blue-600 hover:text-white transition"
+            >
+              ↓ 官網正版與學生授權
+            </a>
           </div>
         </div>
       </section>
@@ -160,13 +210,13 @@ export default function CadSoftwareDetailView({ software, prevSoftware, nextSoft
           <div className="border-b border-slate-200 dark:border-slate-800 pb-4">
             <span className="text-xs font-mono font-bold uppercase tracking-wider text-blue-600 dark:text-blue-400 flex items-center gap-1.5">
               <Building2 className="size-4" />
-              PART 01 · ARCHITECTURAL APPLICATIONS
+              PART 01 · ARCHITECTURAL APPLICATIONS & ENGINEERING CODE
             </span>
             <h2 className="mt-1 font-serif text-2xl sm:text-3xl font-bold text-slate-900 dark:text-white">
-              在建築製圖與工程設計上的核心應用
+              在建築製圖與工程設計上的核心實務深度應用
             </h2>
             <p className="text-sm text-slate-500 dark:text-slate-400 mt-1">
-              深度解析 {software.name} 在當代建築專業工作流中的實質角色與交付圖說標準
+              深入解構 {software.name} 底層物理幾何原理、法定營造規範標準 (CNS/ISO) 與可執行代碼範例
             </p>
           </div>
 
@@ -174,10 +224,10 @@ export default function CadSoftwareDetailView({ software, prevSoftware, nextSoft
             {software.architecturalApplications.map((app, idx) => (
               <div
                 key={app.title}
-                className="rounded-3xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 p-6 sm:p-8 flex flex-col justify-between shadow-sm"
+                className="rounded-3xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 p-6 sm:p-8 flex flex-col justify-between shadow-sm space-y-5"
               >
-                <div>
-                  <div className="flex items-center gap-2 mb-3">
+                <div className="space-y-4">
+                  <div className="flex items-center gap-2">
                     <span className="flex size-6 items-center justify-center rounded-full bg-blue-100 dark:bg-blue-950 text-blue-700 dark:text-blue-300 text-xs font-mono font-bold">
                       0{idx + 1}
                     </span>
@@ -186,16 +236,98 @@ export default function CadSoftwareDetailView({ software, prevSoftware, nextSoft
                     </span>
                   </div>
 
-                  <h3 className="font-serif text-xl font-bold text-slate-900 dark:text-white mb-2">
+                  <h3 className="font-serif text-xl font-bold text-slate-900 dark:text-white">
                     {app.title}
                   </h3>
-                  <p className="text-sm text-slate-600 dark:text-slate-400 leading-relaxed mb-4">
+                  <p className="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
                     {app.description}
                   </p>
 
-                  <div className="space-y-2 mb-4">
+                  {/* Deep Dive Principles if present */}
+                  {app.deepDivePrinciples && app.deepDivePrinciples.length > 0 && (
+                    <div className="rounded-2xl bg-blue-50/50 dark:bg-blue-950/20 border border-blue-100 dark:border-blue-900/40 p-4 space-y-2">
+                      <span className="text-xs font-mono font-bold text-blue-700 dark:text-blue-300 flex items-center gap-1.5">
+                        <Layers className="size-3.5" />
+                        底層原理解構 (Deep-Dive Principles)：
+                      </span>
+                      <ul className="space-y-1.5 text-xs text-slate-600 dark:text-slate-300">
+                        {app.deepDivePrinciples.map((principle) => (
+                          <li key={principle} className="flex items-start gap-2">
+                            <span className="size-1.5 rounded-full bg-blue-500 mt-1.5 shrink-0" />
+                            <span>{principle}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  )}
+
+                  {/* Real World Case & Standard Code */}
+                  {(app.realWorldCase || app.standardCodeRef) && (
+                    <div className="grid gap-2 sm:grid-cols-2 text-xs">
+                      {app.realWorldCase && (
+                        <div className="rounded-xl border border-slate-100 dark:border-slate-800 bg-slate-50 dark:bg-slate-800/40 p-3">
+                          <span className="font-mono font-bold text-slate-700 dark:text-slate-300 block mb-1">
+                            🏢 實務標竿案例：
+                          </span>
+                          <span className="text-slate-600 dark:text-slate-400 leading-relaxed">
+                            {app.realWorldCase}
+                          </span>
+                        </div>
+                      )}
+                      {app.standardCodeRef && (
+                        <div className="rounded-xl border border-slate-100 dark:border-slate-800 bg-slate-50 dark:bg-slate-800/40 p-3">
+                          <span className="font-mono font-bold text-slate-700 dark:text-slate-300 block mb-1">
+                            📜 相關法規標準：
+                          </span>
+                          <span className="text-slate-600 dark:text-slate-400 leading-relaxed">
+                            {app.standardCodeRef}
+                          </span>
+                        </div>
+                      )}
+                    </div>
+                  )}
+
+                  {/* Code Snippet Block if present */}
+                  {app.codeSnippet && (
+                    <div className="rounded-2xl border border-slate-800 bg-slate-950 p-4 text-xs font-mono text-slate-200 space-y-2">
+                      <div className="flex items-center justify-between gap-2 border-b border-slate-800 pb-2">
+                        <div className="flex items-center gap-1.5 text-blue-400 font-bold">
+                          <Code2 className="size-3.5" />
+                          <span className="uppercase">{app.codeSnippet.language}</span>
+                          <span className="text-slate-500 font-normal">· {app.codeSnippet.title}</span>
+                        </div>
+                        <button
+                          onClick={() => handleCopyCode(app.codeSnippet!.code, app.codeSnippet!.title)}
+                          className="flex items-center gap-1 rounded bg-slate-800 hover:bg-slate-700 px-2 py-1 text-[10px] text-slate-300 transition"
+                        >
+                          {copiedSnippetTitle === app.codeSnippet.title ? (
+                            <>
+                              <Check className="size-3 text-emerald-400" />
+                              <span className="text-emerald-400">已複製</span>
+                            </>
+                          ) : (
+                            <>
+                              <Copy className="size-3" />
+                              <span>複製代碼</span>
+                            </>
+                          )}
+                        </button>
+                      </div>
+
+                      <pre className="overflow-x-auto p-2 text-[11px] leading-relaxed text-slate-300 font-mono scrollbar-thin">
+                        <code>{app.codeSnippet.code}</code>
+                      </pre>
+
+                      <p className="text-[11px] text-slate-400 pt-1 border-t border-slate-800/60 leading-relaxed">
+                        💡 {app.codeSnippet.explanation}
+                      </p>
+                    </div>
+                  )}
+
+                  {/* Technical Details */}
+                  <div className="space-y-2">
                     <span className="text-xs font-mono font-bold text-slate-700 dark:text-slate-300 block">
-                      核心技術細節與手法：
+                      核心技術細節與操作手法：
                     </span>
                     <ul className="space-y-1 text-xs text-slate-600 dark:text-slate-400">
                       {app.technicalDetails.map((tech) => (
@@ -239,7 +371,7 @@ export default function CadSoftwareDetailView({ software, prevSoftware, nextSoft
                   完整 7 輪深度進化：每輪遞增 100%+ 實戰維度
                 </h2>
                 <p className="text-sm text-slate-500 dark:text-slate-400 mt-1">
-                  依循七輪指數級躍遷架構，從底層幾何認知、CNS 圖說規範、BIM 參數算料到雲端 AI 協同
+                  依循七輪指數級躍遷架構，深入數學公式、工程參數矩陣、除錯決策樹與自主檢驗清單
                 </p>
               </div>
               <span className="rounded-full bg-purple-600/10 text-purple-700 dark:text-purple-300 border border-purple-600/20 px-3 py-1 text-xs font-mono font-bold">
@@ -267,7 +399,7 @@ export default function CadSoftwareDetailView({ software, prevSoftware, nextSoft
           </div>
 
           {/* Active Round Content Card */}
-          <div className="rounded-3xl border-2 border-purple-200 dark:border-purple-900/60 bg-white dark:bg-slate-900 p-6 sm:p-10 shadow-lg shadow-purple-500/5 space-y-6">
+          <div className="rounded-3xl border-2 border-purple-200 dark:border-purple-900/60 bg-white dark:bg-slate-900 p-6 sm:p-10 shadow-lg shadow-purple-500/5 space-y-8">
             <div className="flex flex-wrap items-center justify-between gap-3 border-b border-slate-100 dark:border-slate-800 pb-4">
               <div>
                 <div className="flex items-center gap-2">
@@ -296,15 +428,100 @@ export default function CadSoftwareDetailView({ software, prevSoftware, nextSoft
             </div>
 
             {/* Core Theory */}
-            <div className="rounded-2xl bg-purple-50/40 dark:bg-purple-950/20 border border-purple-100 dark:border-purple-900/40 p-5">
-              <span className="text-xs font-mono font-bold text-purple-700 dark:text-purple-300 flex items-center gap-1.5 mb-2">
+            <div className="rounded-2xl bg-purple-50/40 dark:bg-purple-950/20 border border-purple-100 dark:border-purple-900/40 p-5 space-y-2">
+              <span className="text-xs font-mono font-bold text-purple-700 dark:text-purple-300 flex items-center gap-1.5">
                 <BookOpen className="size-4" />
                 底層架構理論與幾何原理 (Core Theory)
               </span>
               <p className="text-sm text-slate-700 dark:text-slate-300 leading-relaxed">
                 {currentCycle.coreTheory}
               </p>
+
+              {/* Mathematical Formula if present */}
+              {currentCycle.mathematicalFormula && (
+                <div className="mt-3 rounded-xl bg-white dark:bg-slate-900 border border-purple-200 dark:border-purple-800/60 p-3 font-mono text-xs">
+                  <span className="text-[11px] font-bold text-purple-600 dark:text-purple-400 block mb-1">
+                    📐 幾何數學公式判定 (Mathematical Formulation)：
+                  </span>
+                  <code className="text-slate-900 dark:text-slate-100 font-bold block overflow-x-auto py-1">
+                    {currentCycle.mathematicalFormula}
+                  </code>
+                </div>
+              )}
+
+              {/* Code Snippet in Cycle if present */}
+              {currentCycle.codeSnippet && (
+                <div className="mt-3 rounded-2xl border border-slate-800 bg-slate-950 p-4 text-xs font-mono text-slate-200 space-y-2">
+                  <div className="flex items-center justify-between gap-2 border-b border-slate-800 pb-2">
+                    <div className="flex items-center gap-1.5 text-purple-400 font-bold">
+                      <Code2 className="size-3.5" />
+                      <span className="uppercase">{currentCycle.codeSnippet.language}</span>
+                      <span className="text-slate-400 font-normal">· {currentCycle.codeSnippet.title}</span>
+                    </div>
+                    <button
+                      onClick={() => handleCopyCode(currentCycle.codeSnippet!.code, currentCycle.codeSnippet!.title)}
+                      className="flex items-center gap-1 rounded bg-slate-800 hover:bg-slate-700 px-2 py-1 text-[10px] text-slate-300 transition"
+                    >
+                      {copiedSnippetTitle === currentCycle.codeSnippet.title ? (
+                        <>
+                          <Check className="size-3 text-emerald-400" />
+                          <span className="text-emerald-400">已複製</span>
+                        </>
+                      ) : (
+                        <>
+                          <Copy className="size-3" />
+                          <span>複製代碼</span>
+                        </>
+                      )}
+                    </button>
+                  </div>
+
+                  <pre className="overflow-x-auto p-2 text-[11px] leading-relaxed text-slate-300 font-mono scrollbar-thin">
+                    <code>{currentCycle.codeSnippet.code}</code>
+                  </pre>
+
+                  <p className="text-[11px] text-slate-400 pt-1 border-t border-slate-800/60 leading-relaxed">
+                    💡 {currentCycle.codeSnippet.explanation}
+                  </p>
+                </div>
+              )}
             </div>
+
+            {/* Advanced Parameter Matrix if present */}
+            {currentCycle.advancedParameters && currentCycle.advancedParameters.length > 0 && (
+              <div className="space-y-3">
+                <span className="text-xs font-mono font-bold text-slate-700 dark:text-slate-300 uppercase tracking-wider flex items-center gap-1.5">
+                  <Sliders className="size-4 text-purple-500" />
+                  高階工程參數矩陣 (Advanced Parameter Matrix)：
+                </span>
+                <div className="overflow-x-auto rounded-2xl border border-slate-200 dark:border-slate-800">
+                  <table className="w-full text-left text-xs font-mono">
+                    <thead className="bg-slate-100 dark:bg-slate-800 text-slate-500 dark:text-slate-400 border-b border-slate-200 dark:border-slate-800">
+                      <tr>
+                        <th className="px-4 py-2.5 font-bold">參數名稱 (Parameter)</th>
+                        <th className="px-4 py-2.5 font-bold">推薦設定值 (Recommended Value)</th>
+                        <th className="px-4 py-2.5 font-bold">工程目的與機制 (Purpose & Mechanism)</th>
+                      </tr>
+                    </thead>
+                    <tbody className="divide-y divide-slate-100 dark:divide-slate-800/60 bg-white dark:bg-slate-900">
+                      {currentCycle.advancedParameters.map((param) => (
+                        <tr key={param.name} className="hover:bg-slate-50 dark:hover:bg-slate-800/50 transition">
+                          <td className="px-4 py-2.5 font-bold text-purple-600 dark:text-purple-400 whitespace-nowrap">
+                            {param.name}
+                          </td>
+                          <td className="px-4 py-2.5 text-slate-900 dark:text-white font-medium whitespace-nowrap">
+                            {param.value}
+                          </td>
+                          <td className="px-4 py-2.5 text-slate-600 dark:text-slate-300 font-sans">
+                            {param.purpose}
+                          </td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            )}
 
             {/* Practical Walkthrough SOP */}
             <div className="space-y-3">
@@ -328,8 +545,33 @@ export default function CadSoftwareDetailView({ software, prevSoftware, nextSoft
               </div>
             </div>
 
+            {/* Diagnostic Troubleshooting Decision Tree if present */}
+            {currentCycle.diagnosticDecisionTree && currentCycle.diagnosticDecisionTree.length > 0 && (
+              <div className="rounded-2xl border border-amber-200/80 dark:border-amber-900/40 bg-amber-50/30 dark:bg-amber-950/15 p-5 space-y-3">
+                <span className="text-xs font-mono font-bold text-amber-800 dark:text-amber-300 flex items-center gap-1.5">
+                  <GitBranch className="size-4" />
+                  診斷決策樹：異常問題排查流程 (Diagnostic Decision Tree)
+                </span>
+                <div className="space-y-2">
+                  {currentCycle.diagnosticDecisionTree.map((node, nIdx) => (
+                    <div
+                      key={node}
+                      className="flex items-start gap-2.5 rounded-xl bg-white dark:bg-slate-900 border border-amber-100 dark:border-amber-900/30 p-3 text-xs"
+                    >
+                      <span className="flex size-5 shrink-0 items-center justify-center rounded bg-amber-100 dark:bg-amber-900/60 text-amber-800 dark:text-amber-300 font-mono text-[11px] font-bold">
+                        {nIdx === 0 ? '?' : `S${nIdx}`}
+                      </span>
+                      <span className="text-slate-700 dark:text-slate-300 leading-relaxed">
+                        {node}
+                      </span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
+
             {/* Standards and Pitfalls */}
-            <div className="grid gap-4 sm:grid-cols-2 pt-4 border-t border-slate-100 dark:border-slate-800 text-xs">
+            <div className="grid gap-4 sm:grid-cols-2 pt-2 text-xs">
               <div className="rounded-xl border border-blue-100 dark:border-blue-900/40 bg-blue-50/30 dark:bg-blue-950/20 p-4">
                 <span className="font-mono font-bold text-blue-700 dark:text-blue-300 flex items-center gap-1.5 mb-1.5">
                   <ShieldCheck className="size-4" />
@@ -350,6 +592,42 @@ export default function CadSoftwareDetailView({ software, prevSoftware, nextSoft
                 </p>
               </div>
             </div>
+
+            {/* Interactive Mastery Checklist if present */}
+            {currentCycle.masteryChecklist && currentCycle.masteryChecklist.length > 0 && (
+              <div className="rounded-2xl border border-emerald-200/80 dark:border-emerald-900/40 bg-emerald-50/30 dark:bg-emerald-950/15 p-5 space-y-3">
+                <span className="text-xs font-mono font-bold text-emerald-800 dark:text-emerald-300 flex items-center gap-1.5">
+                  <CheckSquare className="size-4" />
+                  本輪掌握度實戰檢驗清單 (Mastery Checklist)：
+                </span>
+                <div className="grid gap-2 sm:grid-cols-3">
+                  {currentCycle.masteryChecklist.map((item, cIdx) => {
+                    const itemKey = `${currentCycle.round}-${cIdx}`;
+                    const isChecked = !!completedChecklist[itemKey];
+                    return (
+                      <button
+                        key={item}
+                        onClick={() => toggleChecklist(itemKey)}
+                        className={`flex items-start gap-2.5 rounded-xl border p-3 text-left transition text-xs ${
+                          isChecked
+                            ? 'bg-emerald-100/60 dark:bg-emerald-950/40 border-emerald-400 text-emerald-900 dark:text-emerald-200'
+                            : 'bg-white dark:bg-slate-900 border-slate-200 dark:border-slate-800 text-slate-700 dark:text-slate-300 hover:border-emerald-300'
+                        }`}
+                      >
+                        {isChecked ? (
+                          <CheckSquare className="size-4 text-emerald-600 dark:text-emerald-400 mt-0.5 shrink-0" />
+                        ) : (
+                          <Square className="size-4 text-slate-400 mt-0.5 shrink-0" />
+                        )}
+                        <span className={`leading-relaxed ${isChecked ? 'line-through opacity-80' : ''}`}>
+                          {item}
+                        </span>
+                      </button>
+                    );
+                  })}
+                </div>
+              </div>
+            )}
           </div>
         </section>
 
@@ -436,7 +714,7 @@ export default function CadSoftwareDetailView({ software, prevSoftware, nextSoft
                   高頻必備快捷鍵秘笈（左手盲打速查對照表）
                 </h3>
                 <p className="text-xs text-slate-500 dark:text-slate-400 mt-1">
-                  右手握滑鼠、左手固定鍵盤左側，是所有繪圖高手的共同特徵
+                  右手握滑鼠、左手固定鍵盤左側，搭配專屬記憶口訣與組合技修飾鍵
                 </p>
               </div>
 
@@ -461,9 +739,9 @@ export default function CadSoftwareDetailView({ software, prevSoftware, nextSoft
               {filteredShortcuts.map((sc) => (
                 <div
                   key={sc.key}
-                  className="flex flex-col justify-between rounded-2xl border border-slate-100 dark:border-slate-800 bg-slate-50/60 dark:bg-slate-800/40 p-3.5"
+                  className="flex flex-col justify-between rounded-2xl border border-slate-100 dark:border-slate-800 bg-slate-50/60 dark:bg-slate-800/40 p-3.5 space-y-2"
                 >
-                  <div className="flex items-center justify-between gap-2 mb-2">
+                  <div className="flex items-center justify-between gap-2">
                     <kbd className="rounded-lg bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 px-2.5 py-1 font-mono text-xs font-bold text-blue-600 dark:text-blue-400 shadow-sm">
                       {sc.key}
                     </kbd>
@@ -479,12 +757,29 @@ export default function CadSoftwareDetailView({ software, prevSoftware, nextSoft
                       {sc.frequency}
                     </span>
                   </div>
+
                   <div>
                     <span className="font-bold text-xs text-slate-800 dark:text-slate-200 block">{sc.command}</span>
                     <span className="text-[11px] text-slate-500 dark:text-slate-400 mt-1 block leading-relaxed">
                       {sc.explanation}
                     </span>
                   </div>
+
+                  {/* Mnemonic and Context Modifier */}
+                  {(sc.mnemonic || sc.contextModifier) && (
+                    <div className="pt-2 border-t border-slate-200/50 dark:border-slate-700/50 flex flex-wrap items-center gap-1.5 text-[10px] font-mono">
+                      {sc.mnemonic && (
+                        <span className="bg-amber-50 dark:bg-amber-950/40 text-amber-700 dark:text-amber-300 px-1.5 py-0.5 rounded border border-amber-200/60 dark:border-amber-800/50">
+                          🗣️ {sc.mnemonic}
+                        </span>
+                      )}
+                      {sc.contextModifier && (
+                        <span className="bg-purple-50 dark:bg-purple-950/40 text-purple-700 dark:text-purple-300 px-1.5 py-0.5 rounded border border-purple-200/60 dark:border-purple-800/50">
+                          ⚡ {sc.contextModifier}
+                        </span>
+                      )}
+                    </div>
+                  )}
                 </div>
               ))}
             </div>
