@@ -12,6 +12,7 @@ import SemesterTableOfContents from '@/components/review/SemesterTableOfContents
 import SemesterWorkedExample from '@/components/review/SemesterWorkedExample';
 import SemesterChecklist from '@/components/review/SemesterChecklist';
 import SemesterDiagramView from '@/components/review/SemesterDiagramView';
+import SemesterFormulaCardView from '@/components/review/SemesterFormulaCardView';
 import { 
   Star, 
   AlertTriangle, 
@@ -356,31 +357,10 @@ export default async function SemesterReviewDetailPage({
 
                   {/* Formula Card */}
                   {chapter.formulaCard && (
-                    <div className="rounded-2xl bg-amber-50/70 dark:bg-amber-950/30 border border-amber-200/80 dark:border-amber-900/50 p-3.5 sm:p-4 space-y-2.5 print:bg-white print:border-black shadow-2xs">
-                      <div className="flex items-center justify-between">
-                        <span className="text-[11px] font-mono font-bold uppercase tracking-wider text-amber-900 dark:text-amber-300">
-                          ⚡ 核心速查公式 (Formula)
-                        </span>
-                        <span className="text-[10px] font-mono text-amber-700 dark:text-amber-400">
-                          [{chapter.formulaCard.unit}]
-                        </span>
-                      </div>
-
-                      <div className="rounded-xl bg-white dark:bg-slate-900 p-2.5 border border-amber-200 dark:border-amber-900/40 text-center overflow-x-auto print:border-none print:p-1">
-                        <code className="font-mono text-xs sm:text-sm font-bold text-amber-950 dark:text-amber-200">
-                          {chapter.formulaCard.formula}
-                        </code>
-                      </div>
-
-                      <div className="space-y-1 text-[11px]">
-                        <p className="text-amber-900 dark:text-amber-200 leading-snug">
-                          <strong>意涵：</strong>{chapter.formulaCard.meaning}
-                        </p>
-                        <p className="text-rose-800 dark:text-rose-300 text-[10px] leading-snug">
-                          <strong>⚠️ 盲點：</strong>{chapter.formulaCard.cautions}
-                        </p>
-                      </div>
-                    </div>
+                    <SemesterFormulaCardView
+                      formulaCard={chapter.formulaCard}
+                      chapterNo={chapter.chapterNo}
+                    />
                   )}
 
                   {/* Chapter Checklist */}

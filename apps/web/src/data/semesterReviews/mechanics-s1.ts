@@ -57,10 +57,10 @@ export const mechanicsS1Review: SemesterReviewData = {
         }
       ],
       formulaCard: {
-        formula: "F_x = F · cosθ, \\quad F_y = F · sinθ, \\quad R = \\sqrt{R_x^2 + R_y^2}",
-        meaning: "Fx、Fy 為力 F 在 x 與 y 軸之正交分量；R 為平面力系之總合力大小",
+        formula: "F_x = F \\cdot \\cos\\theta, \\quad F_y = F \\cdot \\sin\\theta, \\quad R = \\sqrt{R_x^2 + R_y^2}",
+        meaning: "$F_x$、$F_y$ 為力 $F$ 在 $x$ 與 $y$ 軸之正交分量；$R$ 為平面力系之總合力大小",
         unit: "kN 或 N",
-        cautions: "θ 角度必須辨識為相對於水平軸 (x 軸) 或鉛直軸 (y 軸)，切勿機械化盲目套用 cos 與 sin。",
+        cautions: "$\\theta$ 角度必須辨識為相對於水平軸 ($x$ 軸) 或鉛直軸 ($y$ 軸)，切勿機械化盲目套用 $\\cos$ 與 $\\sin$。",
         latex: "R_x = \\sum F_x, \\quad R_y = \\sum F_y, \\quad R = \\sqrt{R_x^2 + R_y^2}, \\quad \\theta = \\tan^{-1}\\left(\\frac{R_y}{R_x}\\right)"
       },
       diagram: {

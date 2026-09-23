@@ -59,11 +59,11 @@ export const materialsS2Review: SemesterReviewData = {
         }
       ],
       formulaCard: {
-        formula: "\\text{FM} = \\frac{\\sum (\\text{累積留篩百分比 \\%})}{100}, \\quad f_c' = \\frac{A}{B^{(W/C)}} \\text{ (Abrams' Law)}",
-        meaning: "FM 為粗細模數；W/C 為水灰比（水重量 / 水泥重量）",
-        unit: "FM 為純量無因次（保留兩位小數，如 2.80）；W/C 為重量比",
-        cautions: "FM 計算式中是『累積留篩百分比』相加！不是單一篩留篩百分比！且底盤通過百分比不計入留篩！",
-        latex: "\\text{FM} = \\frac{\\sum_{i=1}^{n} R_i}{100}; \\quad \\text{合格細骨材: } 2.3 \\le \\text{FM} \\le 3.1"
+        formula: "\\text{FM} = \\frac{\\sum R_i}{100}, \\quad f_c' = \\frac{A}{B^{(W/C)}} \\text{ (Abrams' Law)}",
+        meaning: "FM 為細骨材粗細模數（各標準篩累積留篩百分率總和除以 100）；W/C 為水灰比（水重量 / 水泥重量）",
+        unit: "FM 為純量無因次（保留兩位小數，合格細骨材 $2.3 \\le \\text{FM} \\le 3.1$）；W/C 為重量比",
+        cautions: "FM 計算式中是『累積留篩百分比』相加！不是單一篩留篩百分比！且底盤通過百分比不計入留篩！混凝土配比設計基準狀態為『飽和面乾 (SSD)』。",
+        latex: "2.3 \\le \\text{FM} \\le 3.1 \\text{ (細骨材標準)}; \\quad \\Delta \\text{FM} \\le \\pm 0.20"
       },
       tables: [
         {
@@ -111,10 +111,10 @@ export const materialsS2Review: SemesterReviewData = {
         }
       ],
       formulaCard: {
-        formula: "f_c' = \\frac{P_{\\max}}{A} = \\frac{P}{\\frac{\\pi}{4} D^2}, \\quad \\text{坍度錐尺寸: 上 } 10 \\text{ cm, 底 } 20 \\text{ cm, 高 } 30 \\text{ cm}",
-        meaning: "fc' 為混凝土圓柱抗壓強度 (MPa)；P_max 為最大破壞載重 (N)；A 為圓柱斷面積",
-        unit: "強度為 MPa (N/mm²)；坍度為 cm",
-        cautions: "圓柱試體長徑比 L/D 必須為 2.0 (如 15×30 cm)；若長徑比小於 2.0，測得強度會因試驗機壓板摩擦束制效應而偏高，必須乘上強度折減修正係數！",
+        formula: "f_c' = \\frac{P_{\\max}}{A} = \\frac{P}{\\frac{\\pi}{4} D^2} \\approx \\frac{P}{17671.5 \\text{ mm}^2}",
+        meaning: "CNS 1232 混凝土圓柱試體抗壓強度。標準尺寸為直徑 $D = 150\\text{ mm}$、高 $H = 300\\text{ mm}$ ($L/D = 2.0$)。坍度錐尺寸：上徑 $10\\text{ cm}$、底徑 $20\\text{ cm}$、高 $30\\text{ cm}$，分 3 層每層搗 25 次。",
+        unit: "抗壓強度為 MPa (N/mm²)；坍度值為 cm",
+        cautions: "圓柱試體長徑比 $L/D$ 必須為 2.0；若 $L/D < 2.0$，抗壓強度會因端部摩擦束制而虛假偏高，必須乘上折減修正係數！",
         latex: "A = \\frac{\\pi}{4}(150)^2 \\approx 17671.5 \\text{ mm}^2; \\quad f_c' = \\frac{P \\text{ (N)}}{17671.5}"
       },
       diagram: {
@@ -179,10 +179,10 @@ export const materialsS2Review: SemesterReviewData = {
         }
       ],
       formulaCard: {
-        formula: "\\text{FSP} \\approx 28\\% \\sim 30\\%, \\quad \\text{乾縮: 弦向 } > \\text{ 徑向 } > \\text{ 縱向}, \\quad \\text{強度: 順紋 } > \\text{ 橫紋}",
-        meaning: "FSP 為纖維飽和點；弦向指年輪切線方向；徑向指髓心輻射方向；縱向指樹幹生長方向",
-        unit: "含水率為 %",
-        cautions: "在含水率高於 FSP 時，木材強度為固定常數，不會因為再吸水而強度變小！只有在含水率『低於 FSP』時，乾燥才會使強度升高！",
+        formula: "\\text{FSP} \\approx 28\\% \\sim 30\\%, \\quad \\text{乾縮: 弦向 } > \\text{ 徑向 } > \\text{ 縱向}",
+        meaning: "FSP 為木材纖維飽和點 (Fiber Saturation Point)。含水率高於 FSP 時，強度與尺寸保持恆定不變；含水率低於 FSP 時，水分蒸發引發顯著乾縮且抗壓/抗彎強度顯著攀升。",
+        unit: "含水率為 %；乾縮率為 %",
+        cautions: "木材乾縮率大小順序：弦向 (年輪切線方向，約 6~12%) > 徑向 (約 3~6%) >> 縱向 (順紋，約 0.1~0.3%)！原木乾燥時易沿徑向開裂！",
         latex: "\\omega \\le \\text{FSP} \\implies f_{12} = f_t [1 + \\alpha(t - 12)]; \\quad \\text{弦向收縮} \\approx 2 \\times \\text{徑向收縮}"
       },
       tables: [
@@ -230,10 +230,10 @@ export const materialsS2Review: SemesterReviewData = {
       ],
       formulaCard: {
         formula: "\\text{CE} = \\text{C} + \\frac{\\text{Mn}}{6} + \\frac{\\text{Cr}+\\text{Mo}+\\text{V}}{5} + \\frac{\\text{Ni}+\\text{Cu}}{15} \\le 0.55\\%",
-        meaning: "CE 為碳當量 (Carbon Equivalent)；評估鋼材銲接裂紋敏感性",
-        unit: "成分以重量百分比 % 表示",
-        cautions: "碳含量提高固然增加強度，但會嚴重削弱延性與可銲性！耐震結構首重『延性與吸能』，故嚴格禁止使用過高碳鋼！",
-        latex: "f_y \\ge 280 \\text{ MPa (SD280)}, \\quad f_y \\ge 420 \\text{ MPa (SD420)}"
+        meaning: "CNS 560 碳當量 (Carbon Equivalent, CE) 計算公式，評估耐震結構用鋼筋 (如 SD420W) 之可銲性與冷裂紋敏感性。SD280 降伏強度 $f_y \\ge 280\\text{ MPa}$；SD420 降伏強度 $f_y \\ge 420\\text{ MPa}$。",
+        unit: "化學元素成分為重量百分比 wt%；降伏強度單位為 MPa (N/mm²)",
+        cautions: "碳含量增加會大幅提升鋼材之硬度與降伏強度，但會嚴重損害『延展性 (伸長率)、韌性與可銲性』！耐震鋼筋嚴格要求強屈比 $f_u / f_y \\ge 1.25$！",
+        latex: "f_y \\ge 280 \\text{ MPa (SD280)}, \\quad f_y \\ge 420 \\text{ MPa (SD420)}, \\quad \\frac{f_u}{f_y} \\ge 1.25"
       },
       diagram: {
         title: "低碳結構鋼單軸拉伸應力-應變關係曲線",
@@ -306,11 +306,11 @@ export const materialsS2Review: SemesterReviewData = {
         }
       ],
       formulaCard: {
-        formula: "\\text{四大綠建材: 生態、健康、高性能、再生}; \\quad \\text{健康綠建材: 嚴格管制 TVOC 與甲醛逸散}",
-        meaning: "台灣綠建材四大評定領域核心指標",
-        unit: "逸散速率單位為 mg/(m²·h)",
-        cautions: "綠建材中認證最多、最貼近室內健康的是『健康綠建材』；不要將『低逸散甲醛』誤歸入生態綠建材！",
-        latex: "\\text{TVOC 逸散率} \\le 0.19 \\text{ mg}/(\\text{m}^2\\cdot\\text{h}); \\quad \\text{甲醛} \\le 0.05 \\text{ mg}/(\\text{m}^2\\cdot\\text{h})"
+        formula: "\\text{TVOC 逸散率} \\le 0.19 \\text{ mg}/(\\text{m}^2\\cdot\\text{h}), \\quad \\text{甲醛逸散率} \\le 0.05 \\text{ mg}/(\\text{m}^2\\cdot\\text{h})",
+        meaning: "內政部建築研究所「健康綠建材」核心門檻評定標準（嚴格管制室內甲醛與總揮發性有機化合物 TVOC 逸散率，杜絕病態建築症候群 SBS）。四大綠建材：生態、健康、高性能、再生。",
+        unit: "逸散速率為 mg/(m²·h)",
+        cautions: "市面上認證件數最多的是『健康綠建材』；不要將『低甲醛無毒塗料』誤歸為生態綠建材！高爐爐石粉具潛在水硬性，飛灰具卜特蘭二次反應與滾珠效應。",
+        latex: "\\text{卜作嵐反應: } \\text{Pozzolan (活性 } \\text{SiO}_2 + \\text{Al}_2\\text{O}_3) + \\text{Ca(OH)}_2 + \\text{H}_2\\text{O} \\longrightarrow \\text{C-S-H 凝膠}"
       },
       tables: [
         {

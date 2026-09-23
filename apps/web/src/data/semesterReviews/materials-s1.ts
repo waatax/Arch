@@ -57,9 +57,9 @@ export const materialsS1Review: SemesterReviewData = {
       ],
       formulaCard: {
         formula: "P = \\left(1 - \\frac{\\rho_0}{\\rho}\\right) \\times 100\\%, \\quad \\omega = \\frac{W_{\\text{wet}} - W_{\\text{dry}}}{W_{\\text{dry}}} \\times 100\\%",
-        meaning: "P 為材料孔隙率；ρ₀ 為體積密度；ρ 為真密度；ω 為材料含水率",
+        meaning: "$P$: 材料孔隙率 (\\%)；$\\rho_0$: 體積密度 (表觀密度)；$\\rho$: 真密度；$\\omega$: 材料含水率 (\\%)；$W_{\\text{wet}}$: 濕潤重量；$W_{\\text{dry}}$: 絕乾重量",
         unit: "密度為 g/cm³ 或 kg/m³；孔隙率與含水率為 %",
-        cautions: "計算含水率時，分母一定是『乾燥重量 W_dry』！若誤除以濕重 W_wet，算出的數值會偏小而全錯！",
+        cautions: "計算含水率與吸水率時，分母一定是『絕乾重量 $W_{\\text{dry}}$』！若誤除以濕重 $W_{\\text{wet}}$，算出的數值會偏小而全錯！另外水結冰體積膨脹約 $9\\%$，孔隙水飽和易受凍脹破壞。",
         latex: "P = 1 - D; \\quad \\text{吸水率 } A_w = \\frac{W_{\\text{sat}} - W_{\\text{dry}}}{W_{\\text{dry}}} \\times 100\\%"
       },
       tables: [
@@ -87,29 +87,29 @@ export const materialsS1Review: SemesterReviewData = {
       coreConcepts: [
         {
           heading: "水泥四大核心熟料礦物 (Clinker Compounds)",
-          explanation: "波特蘭水泥熟料主要由石灰石、黏土與鐵礦砂經 1450°C 高溫煆燒生成四大礦物化合物：C3S (矽酸三鈣)、C2S (矽酸二鈣)、C3A (鋁酸三鈣)、C4AF (鐵鋁酸四鈣)。",
+          explanation: "波特蘭水泥熟料主要由石灰石、黏土與鐵礦砂經 1450°C 高溫煆燒生成四大礦物化合物：矽酸三鈣（Tricalcium silicate，簡稱 $C_3S$，化學式為 $Ca_3SiO_5$）、矽酸二鈣（Dicalcium silicate，簡稱 $C_2S$，化學式為 $Ca_2SiO_4$）、鋁酸三鈣（Tricalcium aluminate，簡稱 $C_3A$，化學式為 $Ca_3Al_2O_6$）、鐵鋁酸四鈣（Tetracalcium aluminoferrite，簡稱 $C_4AF$，化學式為 $Ca_4Al_2Fe_2O_{10}$）。",
           keyPoints: [
-            "C3S (Alite, 佔 45~60%)：水化反應快，決定水泥的『早期強度』(7 天以內強度) 與初期水化熱。",
-            "C2S (Belite, 佔 15~30%)：水化反應極為緩慢，主導『後期強度』(28 天至 1 年強度)，水化熱極低，抗化學侵蝕佳。",
-            "C3A (Aluminate, 佔 6~12%)：水化速度最快，發熱量最高，極易遭海水及地下水中的硫酸鹽侵蝕產生鈣礬石 (Ettringite) 膨脹破壞！",
-            "C4AF (Ferrite, 佔 6~10%)：水化速度中等，提供水泥深灰色外觀，耐硫酸鹽侵蝕性能優良。"
+            "矽酸三鈣（Tricalcium silicate，簡稱 $C_3S$，化學式為 $Ca_3SiO_5$，佔 45~60%）：水化反應快，放熱量約 $500\\text{ J/g}$，主導水泥『早期強度』(7 天以內強度) 與初期水化熱。",
+            "矽酸二鈣（Dicalcium silicate，簡稱 $C_2S$，化學式為 $Ca_2SiO_4$，佔 15~30%）：水化極為緩慢，放熱量僅約 $250\\text{ J/g}$，主導『後期強度』(28 天至 1 年強度)，水化熱極低，耐水性與抗化學侵蝕最佳。",
+            "鋁酸三鈣（Tricalcium aluminate，簡稱 $C_3A$，化學式為 $Ca_3Al_2O_6$，佔 6~12%）：水化速度最快，發熱量最高 (約 $850\\text{ J/g}$)，極易遭海水及地下水硫酸鹽侵蝕生成膨脹性鈣礬石 (Ettringite) 開裂破壞！",
+            "鐵鋁酸四鈣（Tetracalcium aluminoferrite，簡稱 $C_4AF$，化學式為 $Ca_4Al_2Fe_2O_{10}$，佔 6~10%）：水化速度中等，放熱適中，耐硫酸鹽侵蝕性能優良，賦予水泥深灰色外觀。"
           ]
         },
         {
-          heading: "石膏 (Gypsum, CaSO4·2H2O) 的關鍵角色",
+          heading: "石膏（二水石膏，Gypsum，化學式為 CaSO4·2H2O）的關鍵角色",
           explanation: "水泥熟料研磨時必須添加約 3% ~ 5% 的石膏，其唯一目的為：『調節凝結時間，防止快凝 (Flash Set)』。",
           keyPoints: [
-            "若無石膏：C3A 與水相遇數秒內劇烈反應釋放大量熱量，瞬間固化無法施工（快凝）。",
-            "石膏作用機制：石膏與 C3A 反應在顆粒表面形成不溶性針狀鈣礬石保護層，暫緩 C3A 水化，提供充裕的施工工作時間。"
+            "若無石膏：鋁酸三鈣 ($C_3A, Ca_3Al_2O_6$) 與水相遇數秒內劇烈反應釋放大量熱量，瞬間固化無法施工（快凝）。",
+            "石膏作用機制：石膏與 $C_3A$ 反應在顆粒表面形成不溶性針狀鈣礬石保護層，暫緩 $C_3A$ 劇烈水化，提供充裕的施工工作時間。"
           ]
         }
       ],
       formulaCard: {
-        formula: "\\text{C}_3\\text{S}: 3\\text{CaO}\\cdot\\text{SiO}_2, \\quad \\text{C}_2\\text{S}: 2\\text{CaO}\\cdot\\text{SiO}_2, \\quad \\text{C}_3\\text{A}: 3\\text{CaO}\\cdot\\text{Al}_2\\text{O}_3",
-        meaning: "水泥化學縮寫：C=CaO, S=SiO₂, A=Al₂O₃, F=Fe₂O₃, H=H₂O",
-        unit: "礦物含量以重量百分比 wt% 計算",
-        cautions: "決定水泥『長期/後期強度』的是 C2S，決定『早期強度』的是 C3S！兩者切勿混淆倒置！",
-        latex: "2\\text{C}_3\\text{S} + 6\\text{H} \\longrightarrow \\text{C-S-H 凝膠} + 3\\text{Ca(OH)}_2 \\quad (\\Delta H = 500 \\text{ J/g})"
+        formula: "2Ca_3SiO_5 + 6H_2O \\longrightarrow 3CaO\\cdot 2SiO_2\\cdot 3H_2O \\text{ (C-S-H 凝膠)} + 3Ca(OH)_2",
+        meaning: "【水化核心反應】矽酸三鈣（Tricalcium silicate，簡稱 $C_3S$，化學式為 $Ca_3SiO_5$）與水反應生成水化矽酸鈣（C-S-H 凝膠，強度主要來源）與氫氧化鈣 $Ca(OH)_2$。熟料四大礦物：矽酸三鈣 $Ca_3SiO_5$ ($C_3S$)、矽酸二鈣 $Ca_2SiO_4$ ($C_2S$)、鋁酸三鈣 $Ca_3Al_2O_6$ ($C_3A$)、鐵鋁酸四鈣 $Ca_4Al_2Fe_2O_{10}$ ($C_4AF$)",
+        unit: "礦物含量為重量百分比 (wt%)；水化放熱量為 J/g",
+        cautions: "決定水泥『長期/後期強度』的是矽酸二鈣 ($C_2S, Ca_2SiO_4$)；決定『早期強度』的是矽酸三鈣 ($C_3S, Ca_3SiO_5$)；水化最快放熱最劇烈的是鋁酸三鈣 ($C_3A, Ca_3Al_2O_6$)！",
+        latex: "Ca_3Al_2O_6 + 3(CaSO_4\\cdot 2H_2O) + 26H_2O \\longrightarrow 3CaO\\cdot Al_2O_3\\cdot 3CaSO_4\\cdot 32H_2O \\text{ (鈣礬石 / Ettringite)}"
       },
       diagram: {
         title: "卜特蘭水泥四大熟料放熱與強度發展特徵圖",
@@ -171,11 +171,11 @@ export const materialsS1Review: SemesterReviewData = {
         }
       ],
       formulaCard: {
-        formula: "\\text{Type I: 普通}, \\quad \\text{Type II: 中度抗硫/中熱}, \\quad \\text{Type III: 早強}, \\quad \\text{Type IV: 低熱}, \\quad \\text{Type V: 高抗硫}",
-        meaning: "CNS 61 五大水泥類型代號與核心工程定義",
-        unit: "比表面積單位為 m²/kg (布氏比表面積)",
-        cautions: "第 III 型早強水泥『絕對不可用於大水壩等巨積混凝土』，否則巨額水化熱積聚將使結構爆裂！巨積工程唯一指名第 IV 型！",
-        latex: "\\text{C}_3\\text{A} \\le 8\\% \\text{ (Type II)}; \\quad \\text{C}_3\\text{A} \\le 5\\% \\text{ (Type V)}; \\quad \\text{Type III 比表面積最高}"
+        formula: "\\text{Type II: } C_3A \\le 8\\%, \\quad \\text{Type V: } C_3A \\le 5\\%, \\quad \\text{Type III: 比表面積 } \\ge 390 \\text{ m}^2/\\text{kg}",
+        meaning: "CNS 61 五大水泥化學成分管制門檻：Type I 普通水泥；Type II 中度抗硫酸鹽 (限制 $C_3A \\le 8\\%$)；Type III 早強水泥 (高 $C_3S$ 且極細磨)；Type IV 低熱水泥 (高 $C_2S$ 達 $50\\%$ 且 $C_3A \\le 7\\%$)；Type V 高抗硫酸鹽 (嚴限 $C_3A \\le 5\\%$)。",
+        unit: "比表面積單位為 m²/kg (布氏法)；礦物含量為 wt%",
+        cautions: "第 III 型早強水泥『絕對不可用於大水壩等巨積混凝土』，否則水化熱積聚將使結構爆裂！巨積水利工程唯一指名第 IV 型低熱水泥！",
+        latex: "\\text{巨積工程必選 Type IV: } C_2S \\ge 40\\% \\sim 50\\%, \\; C_3A \\le 7\\% \\implies \\Delta H \\le 250 \\text{ J/g}"
       },
       tables: [
         {
@@ -221,11 +221,11 @@ export const materialsS1Review: SemesterReviewData = {
         }
       ],
       formulaCard: {
-        formula: "\\text{初凝: 距底板 } 25 \\text{ mm, 時間 } \\ge 45 \\text{ min}; \\quad \\text{終凝: 環形無痕, 時間 } \\le 375 \\text{ min}",
-        meaning: "CNS 786 卜特蘭水泥初凝與終凝標準判定門檻值",
-        unit: "距離為 mm；時間為分鐘 (min)",
-        cautions: "初凝是『≥ 45 分鐘』(太快會快凝無法施工)；終凝是『≤ 375 分鐘』(太慢會無法拆模延誤工期)！大小於符號切勿記反！",
-        latex: "T_{\\text{initial}} \\ge 45 \\text{ min}, \\quad T_{\\text{final}} \\le 375 \\text{ min} \\quad (\\text{CNS 61})"
+        formula: "T_{\\text{初凝}} \\ge 45 \\text{ min} \\text{ (針尖距底板 } 25 \\text{ mm)}, \\quad T_{\\text{終凝}} \\le 375 \\text{ min} \\text{ (外環無壓痕)}",
+        meaning: "CNS 786 / CNS 61 維卡儀 (Vicat) 試驗合格門檻：標準稠度為 $\\phi 10\\text{ mm}$ 柱桿下陷距底板 $10 \\pm 1\\text{ mm}$；初凝時間以 $\\phi 1\\text{ mm}$ 細針刺入距底板 $25\\text{ mm}$ 判定；終凝時間以針端裝環形附件時外環完全無壓痕判定。",
+        unit: "下陷深度為 mm；凝結時間為分鐘 (min)",
+        cautions: "初凝時間是『$T \\ge 45\\text{ 分鐘}$』(防太快凝固無法施工)；終凝時間是『$T \\le 375\\text{ 分鐘}$』(防太慢硬化延誤工期)！不等號方向切勿記反！",
+        latex: "\\text{標準稠度: } d_{\\text{底板}} = 10 \\pm 1 \\text{ mm}; \\quad 45 \\text{ min} \\le T \\le 375 \\text{ min}"
       },
       diagram: {
         title: "維卡儀 (Vicat) 試驗探針與下陷深度判別標準",
@@ -292,11 +292,11 @@ export const materialsS1Review: SemesterReviewData = {
         }
       ],
       formulaCard: {
-        formula: "f_c' = \\frac{P_{\\text{fail}}}{A} = \\frac{P}{50 \\text{ mm} \\times 50 \\text{ mm}} = \\frac{P}{2500 \\text{ mm}^2}",
-        meaning: "fc' 為水泥砂漿立方體抗壓強度；P 為破壞最大載重 (N)；A 為受壓截面積",
-        unit: "強度單位為 MPa (N/mm²)",
-        cautions: "試模尺寸為 50 mm 立方體，截面積 A = 2500 mm²。若題目給予荷重為 kN，必須先乘以 1000 換算為 N 再行除以 2500！",
-        latex: "1 : 2.75 : 0.485 \\text{ (水泥:砂:水)}; \\quad A = 50 \\times 50 = 2500 \\text{ mm}^2"
+        formula: "f_c' = \\frac{P_{\\max}}{A} = \\frac{P}{50 \\text{ mm} \\times 50 \\text{ mm}} = \\frac{P}{2500 \\text{ mm}^2}",
+        meaning: "CNS 1015 標準水泥砂漿立方體抗壓強度（配比為 水泥 : 渥太華砂 : 水 = $1 : 2.75 : 0.485$）。$P$ 為極限抗壓荷重 (N)；$A = 2500\\text{ mm}^2$ 為受壓斷面積。",
+        unit: "抗壓強度單位為 MPa (即 N/mm²)",
+        cautions: "若題目給定荷重為 $\\text{kN}$，必須先乘 $1000$ 換算為 $\\text{N}$ 再除以 $2500\\text{ mm}^2$！假凝（二水石膏脫水）不放熱、重攪可恢復；快凝（$C_3A$ 劇烈水化）放高熱、不可逆！",
+        latex: "CaSO_4\\cdot 2H_2O \\xrightarrow{> 110^\\circ\\text{C}} CaSO_4\\cdot \\frac{1}{2}H_2O + 1.5H_2O \\text{ (二水石膏脫水成半水石膏，假凝主因)}"
       },
       tables: [
         {
@@ -342,11 +342,11 @@ export const materialsS1Review: SemesterReviewData = {
         }
       ],
       formulaCard: {
-        formula: "\\Delta T = T_{\\text{core}} - T_{\\text{surface}} \\le 20^\\circ\\text{C}, \\quad \\text{Autoclave Expansion} \\le 0.80\\%",
-        meaning: "巨積混凝土內外溫差安全上限 20°C；水泥壓熱蒸氣健全性膨脹率上限 0.80%",
-        unit: "溫差為 °C；膨脹率為 %",
-        cautions: "水泥安定性 (Soundness) 不合格時，膨脹崩解現象常在施工數月甚至數年後才發生，屬重大工程隱患，嚴禁出廠使用！",
-        latex: "f\\text{-CaO} + \\text{H}_2\\text{O} \\longrightarrow \\text{Ca(OH)}_2 \\quad (\\Delta V \\approx +90\\%)"
+        formula: "\\Delta T = T_{\\text{core}} - T_{\\text{surface}} \\le 20^\\circ\\text{C}, \\quad \\text{壓熱蒸氣膨脹率 } \\le 0.80\\%",
+        meaning: "巨積混凝土內部核心與表面溫差安全上限 $\\le 20^\\circ\\text{C}$；ASTM C151 壓熱法檢驗游離氧化鎂 ($MgO$) 膨脹率上限 $0.80\\%$；CNS 1010 雷氏夾沸騰法檢驗游離氧化鈣 ($CaO$) 膨脹值 $\\le 10\\text{ mm}$。",
+        unit: "溫差為 °C；壓熱膨脹率為 %；雷氏指針距離為 mm",
+        cautions: "游離氧化鈣 ($f\\text{-}CaO$) 與游離氧化鎂 ($f\\text{-}MgO$) 遇水水化體積膨脹高達 $90\\% \\sim 118\\%$，易造成硬化混凝土遲發性開裂崩解！",
+        latex: "CaO + H_2O \\longrightarrow Ca(OH)_2 \\; (\\Delta V \\approx +90\\%), \\quad MgO + H_2O \\longrightarrow Mg(OH)_2 \\; (\\Delta V \\approx +118\\%)"
       },
       tables: [
         {

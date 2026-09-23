@@ -491,7 +491,7 @@ export const materialsData: SubjectData = {
       "concepts": [
         {
           "heading": "卜特蘭水泥水化化學成分 (Mineral Compositions)",
-          "body": "水泥熟料經高溫 1450°C 燒結而成，主要四大部分為：\n- 矽酸三鈣 (<span className=\"text-rose-600 font-bold\">C3S</span>)：水化極快，提供混凝土早期強度。\n- 矽酸二鈣 (<span className=\"text-rose-600 font-bold\">C2S</span>)：水化緩慢，提供後期強度。\n- 鋁酸三鈣 (<span className=\"text-rose-600 font-bold\">C3A</span>)：水化最快，釋放極高**水化熱**。\n- 鐵鋁酸四鈣 (<span className=\"text-rose-600 font-bold\">C4AF</span>)：主要影響水泥外觀與抗硫能力。\n\n*備註：石膏 (CaSO₄·2H₂O) 之添加旨在調節 <span className=\"text-rose-600 font-bold\">C3A</span> 之反應，避免發生「<span className=\"text-rose-600 font-bold\">閃凝</span> (Flash Set)」。\n\n### 🚨 統測陷阱\n考題常把「早期強度(C3S)」與「快凝發熱(C3A)」搞混！請記住，C3A 對強度幾乎沒有貢獻，它最大的特徵是「反應最快、最熱、容易導致閃凝」。",
+          "body": "水泥熟料經高溫 1450°C 燒結而成，主要四大部分為：\n- 矽酸三鈣（Tricalcium silicate，簡稱 <span className=\"text-rose-600 font-bold\">C3S</span>，化學式為 Ca₃SiO₅）：水化極快，提供混凝土早期強度。\n- 矽酸二鈣（Dicalcium silicate，簡稱 <span className=\"text-rose-600 font-bold\">C2S</span>，化學式為 Ca₂SiO₄）：水化緩慢，提供後期強度。\n- 鋁酸三鈣（Tricalcium aluminate，簡稱 <span className=\"text-rose-600 font-bold\">C3A</span>，化學式為 Ca₃Al₂O₆）：水化最快，釋放極高**水化熱**。\n- 鐵鋁酸四鈣（Tetracalcium aluminoferrite，簡稱 <span className=\"text-rose-600 font-bold\">C4AF</span>，化學式為 Ca₄Al₂Fe₂O₁₀）：主要影響水泥外觀與抗硫能力。\n\n*備註：石膏 (CaSO₄·2H₂O) 之添加旨在調節 <span className=\"text-rose-600 font-bold\">C3A</span> 之反應，避免發生「<span className=\"text-rose-600 font-bold\">閃凝</span> (Flash Set)」。\n\n### 🚨 統測陷阱\n考題常把「早期強度(C3S)」與「快凝發熱(C3A)」搞混！請記住，C3A 對強度幾乎沒有貢獻，它最大的特徵是「反應最快、最熱、容易導致閃凝」。",
           "table": {
             "headers": [
               "化合物名稱",
@@ -502,28 +502,28 @@ export const materialsData: SubjectData = {
             ],
             "rows": [
               [
-                "矽酸三鈣 (Tricalcium Silicate)",
+                "矽酸三鈣 (Tricalcium Silicate, Ca₃SiO₅)",
                 "C3S",
                 "快速 (數天內)",
                 "中高 (500 J/g)",
                 "主要提供 28 天前之早期強度"
               ],
               [
-                "矽酸二鈣 (Dicalcium Silicate)",
+                "矽酸二鈣 (Dicalcium Silicate, Ca₂SiO₄)",
                 "C2S",
                 "緩慢 (數週至數月)",
                 "低 (250 J/g)",
                 "提供 28 天後之後期長期強度"
               ],
               [
-                "鋁酸三鈣 (Tricalcium Aluminates)",
+                "鋁酸三鈣 (Tricalcium Aluminates, Ca₃Al₂O₆)",
                 "C3A",
                 "極快 (數小時內)",
                 "極高 (850 J/g)",
                 "對強度貢獻低，易引發溫差裂縫"
               ],
               [
-                "鐵鋁酸四鈣 (Tetracalcium Aluminoferrite)",
+                "鐵鋁酸四鈣 (Tetracalcium Aluminoferrite, Ca₄Al₂Fe₂O₁₀)",
                 "C4AF",
                 "中等",
                 "中低 (420 J/g)",
