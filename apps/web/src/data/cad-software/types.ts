@@ -73,6 +73,24 @@ export interface IterationCycle {
   codeSnippet?: CodeSnippet;
 }
 
+export interface LearningResource {
+  title: string;
+  provider: string;
+  category: '國家檢定與法規' | '官方原廠教學' | '實務工作流與開放標準' | '學術研討與開放教材';
+  url: string;
+  description: string;
+  badge?: string;
+}
+
+export interface CertificationStandard {
+  name: string;
+  level: string;
+  authority: string;
+  description: string;
+  keyCompetencies: string[];
+  officialExamUrl?: string;
+}
+
 export interface CadSoftware {
   slug: string;
   name: string;
@@ -96,6 +114,8 @@ export interface CadSoftware {
   docUrl: string;
   communityUrl: string;
   heroMetrics: { label: string; value: string }[];
+  learningResources: LearningResource[];
+  certificationStandards?: CertificationStandard[];
   architecturalApplications: ArchitecturalApplication[];
   beginnerGuide: {
     introduction: string;

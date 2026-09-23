@@ -1,400 +1,767 @@
 import { CadSoftware } from '../types';
 
 export const rhinoData: CadSoftware = {
-  slug: 'rhino',
-  name: 'Rhino 8 & Grasshopper',
-  englishName: 'Rhinoceros 8 NURBS & Grasshopper Algorithmic Suite',
-  vendor: 'Robert McNeel & Associates',
-  releaseYear: '1998 (源自 Applied Geometry Corporation，現全球曲面與運算化建築神級霸主)',
-  tag: '電腦繪圖',
-  category: '自由曲面幾何天花板、參數化演算法設計與前衛數位構築',
-  badge: '非標準幾何與運算化建築宗師',
-  rating: {
-    learningCurve: '中等至高深 (Rhino 建模直覺，但精通 Grasshopper 資料樹需強大數學思維)',
-    industryAdoption: '全球頂級前衛事務所 (ZHA, MAD, BIG, Foster) 標配普及率 98%',
-    bimCapability: '革命性進化 (透過 Rhino.Inside.Revit 直通原生 Revit 族群與 IFC)',
-    drawingOutput: '卓越 (Rhino 8 增強 Make2D 截面剖切與標註，直出高精向量圖)',
-    renderingQuality: '極佳 (內建 Cycles 渲染核心，無縫對接 V-Ray / Enscape / D5)',
+  "slug": "rhino",
+  "name": "Rhino 8 & Grasshopper",
+  "englishName": "Rhinoceros 8 NURBS & Grasshopper Algorithmic Suite",
+  "vendor": "Robert McNeel & Associates",
+  "releaseYear": "1998 (源自 Applied Geometry Corporation，現全球曲面與運算化建築神級霸主)",
+  "tag": "電腦繪圖",
+  "category": "自由曲面幾何天花板、參數化演算法設計與前衛數位構築",
+  "badge": "非標準幾何與運算化建築宗師",
+  "rating": {
+    "learningCurve": "中等至高深 (Rhino 建模直覺，但精通 Grasshopper 資料樹需強大數學思維)",
+    "industryAdoption": "全球頂級前衛事務所 (ZHA, MAD, BIG, Foster) 標配普及率 98%",
+    "bimCapability": "革命性進化 (透過 Rhino.Inside.Revit 直通原生 Revit 族群與 IFC)",
+    "drawingOutput": "卓越 (Rhino 8 增強 Make2D 截面剖切與標註，直出高精向量圖)",
+    "renderingQuality": "極佳 (內建 Cycles 渲染核心，無縫對接 V-Ray / Enscape / D5)"
   },
-  shortDesc: '全球自由雙曲面幾何、非標建築造型與參數化運算化設計 (Computational Design) 的最高權威。結合 Grasshopper 資料樹，釋放無窮無盡的建築形體想像。',
-  fullDesc: 'Rhinoceros（簡稱 Rhino）以純粹的 NURBS（非均勻有理 B 樣條）數學核心，定義了現代前衛建築與自由形體 (Freeform Architecture) 的工程製造基準。無論是北京大興機場的流體採光天窗，還是哈爾濱大劇院的波浪白鋁板，全球幾乎所有震撼人心的標誌性非標建築背後皆由 Rhino 構築。其內建的 Grasshopper 圖形化演算法編輯器徹底翻轉了設計範式，讓建築師透過邏輯資料樹、吸引子場域、Kangaroo 物理懸垂鬆弛與 Ladybug 微氣候分析，探索幾何、結構與環境共生的極致形態。',
-  officialUrl: 'https://www.rhino3d.com/',
-  studentLicenseUrl: 'https://www.rhino3d.com/for-students-and-faculty/',
-  docUrl: 'https://docs.mcneel.com/rhino/8/help/en-us/index.htm',
-  communityUrl: 'https://discourse.mcneel.com/',
-  heroMetrics: [
-    { label: '全球前衛事務所滲透', value: '98% 頂尖團隊標配' },
-    { label: '幾何數學精確度', value: 'NURBS 奈米級雙精度' },
-    { label: '運算化節點生態', value: 'Grasshopper 3000+ 插件' },
-    { label: '跨平台直通核心', value: 'Rhino.Inside.Revit' },
+  "shortDesc": "全球自由雙曲面幾何、非標建築造型與參數化運算化設計 (Computational Design) 的最高權威。結合 Grasshopper 資料樹，釋放無窮無盡的建築形體想像。",
+  "fullDesc": "Rhinoceros（簡稱 Rhino）以純粹的 NURBS（非均勻有理 B 樣條）數學核心，定義了現代前衛建築與自由形體 (Freeform Architecture) 的工程製造基準。無論是北京大興機場的流體採光天窗，還是哈爾濱大劇院的波浪白鋁板，全球幾乎所有震撼人心的標誌性非標建築背後皆由 Rhino 構築。其內建的 Grasshopper 圖形化演算法編輯器徹底翻轉了設計範式，讓建築師透過邏輯資料樹、吸引子場域、Kangaroo 物理懸垂鬆弛與 Ladybug 微氣候分析，探索幾何、結構與環境共生的極致形態。",
+  "officialUrl": "https://www.rhino3d.com/",
+  "studentLicenseUrl": "https://www.rhino3d.com/for-students-and-faculty/",
+  "docUrl": "https://docs.mcneel.com/rhino/8/help/en-us/index.htm",
+  "communityUrl": "https://discourse.mcneel.com/",
+  "heroMetrics": [
+    {
+      "label": "全球前衛事務所滲透",
+      "value": "98% 頂尖團隊標配"
+    },
+    {
+      "label": "幾何數學精確度",
+      "value": "NURBS 奈米級雙精度"
+    },
+    {
+      "label": "運算化節點生態",
+      "value": "Grasshopper 3000+ 插件"
+    },
+    {
+      "label": "跨平台直通核心",
+      "value": "Rhino.Inside.Revit"
+    }
   ],
-  architecturalApplications: [
+  "architecturalApplications": [
     {
-      area: '雙曲面自由造型與幾何有理化 (Rationalization)',
-      title: '高斯曲率分析與複雜帷幕板塊化工程',
-      description: '將前衛建築自由曲面透過微分幾何高斯曲率 (Gaussian Curvature) 進行拓撲分析，將雙曲面拆解為可展開的單曲面或共面四邊形 (PQ Mesh)，大幅降低營造造價。',
-      deepDivePrinciples: [
-        '高斯曲率本質：K = k1 · k2 (第一與第二主曲率相乘)。K=0 為可展開面 (Developable Surface, 如圓柱/圓錐)，可用平板冷彎；K>0 為同向曲面 (如穹頂)；K<0 為反向馬鞍面',
-        '平面四邊形網格化 (Planar Quad Mesh, PQ)：透過對角線相交與扭轉角公差收斂，使每塊玻璃或鋁板皆為 100% 絕對平面',
-        'NURBS 階數 (Degree) 與節點向量 (Knot Vector)：控制曲線在接縫處達到 G0 (位置), G1 (切線), G2 (曲率連續) 之頂級流暢度',
+      "area": "雙曲面自由造型與幾何有理化 (Rationalization)",
+      "title": "高斯曲率分析與複雜帷幕板塊化工程",
+      "description": "將前衛建築自由曲面透過微分幾何高斯曲率 (Gaussian Curvature) 進行拓撲分析，將雙曲面拆解為可展開的單曲面或共面四邊形 (PQ Mesh)，大幅降低營造造價。",
+      "deepDivePrinciples": [
+        "高斯曲率本質：K = k1 · k2 (第一與第二主曲率相乘)。K=0 為可展開面 (Developable Surface, 如圓柱/圓錐)，可用平板冷彎；K>0 為同向曲面 (如穹頂)；K<0 為反向馬鞍面",
+        "平面四邊形網格化 (Planar Quad Mesh, PQ)：透過對角線相交與扭轉角公差收斂，使每塊玻璃或鋁板皆為 100% 絕對平面",
+        "NURBS 階數 (Degree) 與節點向量 (Knot Vector)：控制曲線在接縫處達到 G0 (位置), G1 (切線), G2 (曲率連續) 之頂級流暢度"
       ],
-      realWorldCase: '札哈·哈蒂 (ZHA) 北京大興國際機場 C 型柱與曲面採光頂：利用 Rhino 進行曲面有理化，將數萬平方米雙曲面幾何劃分為 8,000 片平面玻璃單元，節省數億元熱彎玻璃開模成本。',
-      standardCodeRef: 'ASTM E1300 建築玻璃載重與平面度公差標準與 ISO 10303-42 幾何連續性階數規範。',
-      codeSnippet: {
-        language: 'python',
-        title: 'Rhino Python (rhinoscriptsyntax) 計算曲面上所有控制點高斯曲率',
-        code: `import rhinoscriptsyntax as rs\n\nsrf_id = rs.GetObject("請選取欲分析之建築雙曲面", rs.filter.surface)\nif srf_id:\n    # 取得曲面 UV 網格取樣點\n    domain_u = rs.SurfaceDomain(srf_id, 0)\n    domain_v = rs.SurfaceDomain(srf_id, 1)\n    \n    samples = 10\n    for i in range(samples + 1):\n        u = domain_u[0] + (domain_u[1] - domain_u[0]) * (i / float(samples))\n        for j in range(samples + 1):\n            v = domain_v[0] + (domain_v[1] - domain_v[0]) * (j / float(samples))\n            # 計算 UV 點位高斯曲率 K\n            curv = rs.SurfaceCurvature(srf_id, (u, v))\n            if curv:\n                k = curv[7] # Index 7 為高斯曲率數值 (Gaussian Curvature)\n                pt = curv[0]\n                if abs(k) < 0.0001:\n                    rs.AddPoint(pt) # 標記為可展開平面區域`,
-        explanation: '利用 Rhino Python 腳本在曲面微元處採樣曲率張量，即時篩選出無需熱壓開模即可展開的平坦區域，輔助施工成本評估。',
+      "realWorldCase": "札哈·哈蒂 (ZHA) 北京大興國際機場 C 型柱與曲面採光頂：利用 Rhino 進行曲面有理化，將數萬平方米雙曲面幾何劃分為 8,000 片平面玻璃單元，節省數億元熱彎玻璃開模成本。",
+      "standardCodeRef": "ASTM E1300 建築玻璃載重與平面度公差標準與 ISO 10303-42 幾何連續性階數規範。",
+      "codeSnippet": {
+        "language": "python",
+        "title": "Rhino Python (rhinoscriptsyntax) 計算曲面上所有控制點高斯曲率",
+        "code": "import rhinoscriptsyntax as rs\n\nsrf_id = rs.GetObject(\"請選取欲分析之建築雙曲面\", rs.filter.surface)\nif srf_id:\n    # 取得曲面 UV 網格取樣點\n    domain_u = rs.SurfaceDomain(srf_id, 0)\n    domain_v = rs.SurfaceDomain(srf_id, 1)\n    \n    samples = 10\n    for i in range(samples + 1):\n        u = domain_u[0] + (domain_u[1] - domain_u[0]) * (i / float(samples))\n        for j in range(samples + 1):\n            v = domain_v[0] + (domain_v[1] - domain_v[0]) * (j / float(samples))\n            # 計算 UV 點位高斯曲率 K\n            curv = rs.SurfaceCurvature(srf_id, (u, v))\n            if curv:\n                k = curv[7] # Index 7 為高斯曲率數值 (Gaussian Curvature)\n                pt = curv[0]\n                if abs(k) < 0.0001:\n                    rs.AddPoint(pt) # 標記為可展開平面區域",
+        "explanation": "利用 Rhino Python 腳本在曲面微元處採樣曲率張量，即時篩選出無需熱壓開模即可展開的平坦區域，輔助施工成本評估。"
       },
-      technicalDetails: [
-        '指令 CurvatureAnalysis (曲率分析) 以假彩色等高線顯示正負曲率分佈',
-        '指令 UnrollSrf (展開曲面) 將可展開單曲面壓平成 2D CNC 裁切輪廓',
-        '指令 ShrinkTrimmedSrf 消除修剪曲面多餘節點向量，大幅輕量化模型體積',
+      "technicalDetails": [
+        "指令 CurvatureAnalysis (曲率分析) 以假彩色等高線顯示正負曲率分佈",
+        "指令 UnrollSrf (展開曲面) 將可展開單曲面壓平成 2D CNC 裁切輪廓",
+        "指令 ShrinkTrimmedSrf 消除修剪曲面多餘節點向量，大幅輕量化模型體積"
       ],
-      deliverables: ['雙曲面有理化嵌板分割模型', 'CNC 鋁板工廠加工展開下料圖', '高斯曲率造價風險評估熱力圖'],
+      "deliverables": [
+        "雙曲面有理化嵌板分割模型",
+        "CNC 鋁板工廠加工展開下料圖",
+        "高斯曲率造價風險評估熱力圖"
+      ]
     },
     {
-      area: 'Grasshopper 參數化演算法生成設計',
-      title: '吸引子場域與自適應環境反應立面',
-      description: '利用 Grasshopper 資料樹 (Data Trees) 構建演算法網路，將基地人流向量、日照角度與建築高度轉化為漸變穿孔板、動態百葉與結構仿生骨架。',
-      deepDivePrinciples: [
-        '資料樹拓撲路徑記法 (Tree Path Notation)：`{0;0;1}[index]` 嚴格定義多維巢狀幾何分支，避免跨分支資料污染',
-        '純量場與向量場 (Scalar & Vector Fields)：計算任意三維空間點到多個引力點 (Attractors) 之歐氏距離，映射為開孔半徑 r = f(1/d²)',
-        '非同步並行運算 (Multi-threading GH)：Rhino 8 採用 .NET Core 7 多核心並行解算，百萬節點毫秒級刷新響應',
+      "area": "Grasshopper 參數化演算法生成設計",
+      "title": "吸引子場域與自適應環境反應立面",
+      "description": "利用 Grasshopper 資料樹 (Data Trees) 構建演算法網路，將基地人流向量、日照角度與建築高度轉化為漸變穿孔板、動態百葉與結構仿生骨架。",
+      "deepDivePrinciples": [
+        "資料樹拓撲路徑記法 (Tree Path Notation)：`{0;0;1}[index]` 嚴格定義多維巢狀幾何分支，避免跨分支資料污染",
+        "純量場與向量場 (Scalar & Vector Fields)：計算任意三維空間點到多個引力點 (Attractors) 之歐氏距離，映射為開孔半徑 r = f(1/d²)",
+        "非同步並行運算 (Multi-threading GH)：Rhino 8 採用 .NET Core 7 多核心並行解算，百萬節點毫秒級刷新響應"
       ],
-      realWorldCase: '卡達國家博物館沙漠玫瑰造型天棚：利用 Grasshopper 演算法生成相互交錯的巨大圓盤結構，資料樹自動關聯每片圓盤相交之空間卡榫鋼構節點。',
-      standardCodeRef: 'CIE 國際照明委員會採光係數規範與台灣綠建築外殼遮陽指標 (As 值)。',
-      technicalDetails: [
-        '使用 Graft, Flatten, Simplify 操控複雜資料樹分支流動',
-        '結合 Graph Mapper (曲線映射器) 調整立面孔隙度之非線性漸變曲線',
-        '自訂 C# / Python 節點嵌入複雜矩陣運算與遞迴分形演算法 (Fractals)',
+      "realWorldCase": "卡達國家博物館沙漠玫瑰造型天棚：利用 Grasshopper 演算法生成相互交錯的巨大圓盤結構，資料樹自動關聯每片圓盤相交之空間卡榫鋼構節點。",
+      "standardCodeRef": "CIE 國際照明委員會採光係數規範與台灣綠建築外殼遮陽指標 (As 值)。",
+      "technicalDetails": [
+        "使用 Graft, Flatten, Simplify 操控複雜資料樹分支流動",
+        "結合 Graph Mapper (曲線映射器) 調整立面孔隙度之非線性漸變曲線",
+        "自訂 C# / Python 節點嵌入複雜矩陣運算與遞迴分形演算法 (Fractals)"
       ],
-      deliverables: ['自適應參數化立面生成模型', '立面構件幾何編號加工表', '開孔率隨高度變化曲線報告'],
+      "deliverables": [
+        "自適應參數化立面生成模型",
+        "立面構件幾何編號加工表",
+        "開孔率隨高度變化曲線報告"
+      ]
     },
     {
-      area: 'Kangaroo 物理力學模擬與薄殼懸垂動態鬆弛',
-      title: '粒子系統形式尋找 (Form-Finding) 與索網結構',
-      description: '利用 Kangaroo 物理引擎模擬真實重力、彈簧虎克定律與薄膜表面張力，重現高第 (Antoni Gaudí) 逆吊懸垂線模型與 Frei Otto 輕量張力結構。',
-      deepDivePrinciples: [
-        '動態鬆弛演算法 (Dynamic Relaxation Method)：將結構網格離散化為質點與彈簧阻尼系統，求解牛頓第二運動定律收斂平衡狀態',
-        '純受壓雙曲薄殼拱圈求解：懸垂狀態下純受拉之索網幾何，在空間中垂直翻轉 180 度即成為 100% 無彎矩、純受壓之極致高效砌體結構',
-        '共面約束目標算子 (Planar Goal)：在網格鬆弛尋形的同時強制每個四邊形網格收斂至共面公差範圍內',
+      "area": "Kangaroo 物理力學模擬與薄殼懸垂動態鬆弛",
+      "title": "粒子系統形式尋找 (Form-Finding) 與索網結構",
+      "description": "利用 Kangaroo 物理引擎模擬真實重力、彈簧虎克定律與薄膜表面張力，重現高第 (Antoni Gaudí) 逆吊懸垂線模型與 Frei Otto 輕量張力結構。",
+      "deepDivePrinciples": [
+        "動態鬆弛演算法 (Dynamic Relaxation Method)：將結構網格離散化為質點與彈簧阻尼系統，求解牛頓第二運動定律收斂平衡狀態",
+        "純受壓雙曲薄殼拱圈求解：懸垂狀態下純受拉之索網幾何，在空間中垂直翻轉 180 度即成為 100% 無彎矩、純受壓之極致高效砌體結構",
+        "共面約束目標算子 (Planar Goal)：在網格鬆弛尋形的同時強制每個四邊形網格收斂至共面公差範圍內"
       ],
-      realWorldCase: '英國大英博物館中庭大屋頂：利用 Kangaroo 尋形演算法優化網格受力，實現由數千塊三角形玻璃拼成之無柱輕盈鋼骨穹頂。',
-      standardCodeRef: 'IASS (國際薄殼與空間結構學會) 輕型空間結構設計準則與 CNS 鋼構造耐震標準。',
-      technicalDetails: [
-        '配置 Kangaroo Goals：Springs (彈簧), Anchor (邊界支承固定點), Pressure (充氣膨脹壓)',
-        '使用 Bouncy Solver 或 Zombie Solver (極速無動畫瞬間收斂至平衡點)',
-        '即時提取桿件軸力，以色彩漸層視覺化呈現拉力 (藍) 與壓力 (紅)',
+      "realWorldCase": "英國大英博物館中庭大屋頂：利用 Kangaroo 尋形演算法優化網格受力，實現由數千塊三角形玻璃拼成之無柱輕盈鋼骨穹頂。",
+      "standardCodeRef": "IASS (國際薄殼與空間結構學會) 輕型空間結構設計準則與 CNS 鋼構造耐震標準。",
+      "technicalDetails": [
+        "配置 Kangaroo Goals：Springs (彈簧), Anchor (邊界支承固定點), Pressure (充氣膨脹壓)",
+        "使用 Bouncy Solver 或 Zombie Solver (極速無動畫瞬間收斂至平衡點)",
+        "即時提取桿件軸力，以色彩漸層視覺化呈現拉力 (藍) 與壓力 (紅)"
       ],
-      deliverables: ['純受壓薄殼尋形三維模型', '索網拉索內力分佈明細表', '充氣膜結構充氣極限幾何形態圖'],
+      "deliverables": [
+        "純受壓薄殼尋形三維模型",
+        "索網拉索內力分佈明細表",
+        "充氣膜結構充氣極限幾何形態圖"
+      ]
     },
     {
-      area: 'Rhino.Inside.Revit 跨平台深度整合翻模',
-      title: '在 Revit 記憶體中原生執行 Rhino 與 Grasshopper',
-      description: '徹底打破 Rhino 與 Revit 之間的鴻溝！透過 Rhino.Inside 技術直接在 Revit 的行程 (Process) 內運作，將自由曲面演算法直接實例化為原生 Revit 柱梁、牆體與自適應嵌板。',
-      deepDivePrinciples: [
-        '共用進程記憶體通訊架構：Rhino 與 Revit 共享同一塊 RAM 記憶體位址，零檔案轉換、零幾何精度損耗、毫秒級雙向同步',
-        '原生品類實體建立 (Native Category Instantiation)：GH 運算結果直接呼叫 Revit API 生成具備真實標高與材料之 Wall/Floor/FamilyInstance',
-        '雙向參數穿透：在 Grasshopper 中即時讀取 Revit 專案標高、房間邊界與視圖屬性，計算完畢後寫回 Revit 共享參數',
+      "area": "Rhino.Inside.Revit 跨平台深度整合翻模",
+      "title": "在 Revit 記憶體中原生執行 Rhino 與 Grasshopper",
+      "description": "徹底打破 Rhino 與 Revit 之間的鴻溝！透過 Rhino.Inside 技術直接在 Revit 的行程 (Process) 內運作，將自由曲面演算法直接實例化為原生 Revit 柱梁、牆體與自適應嵌板。",
+      "deepDivePrinciples": [
+        "共用進程記憶體通訊架構：Rhino 與 Revit 共享同一塊 RAM 記憶體位址，零檔案轉換、零幾何精度損耗、毫秒級雙向同步",
+        "原生品類實體建立 (Native Category Instantiation)：GH 運算結果直接呼叫 Revit API 生成具備真實標高與材料之 Wall/Floor/FamilyInstance",
+        "雙向參數穿透：在 Grasshopper 中即時讀取 Revit 專案標高、房間邊界與視圖屬性，計算完畢後寫回 Revit 共享參數"
       ],
-      realWorldCase: 'BIG 建築事務所哥本哈根滑雪發電廠 (CopenHill)：全案複雜的斜向屋頂雪道與鋁質方塊帷幕，100% 透過 Rhino.Inside.Revit 從 GH 演算法無縫注入 Revit 施工圖資料庫。',
-      standardCodeRef: 'buildingSMART 運算化 BIM 交付規範與 ISO 19650-2 資訊交換標準。',
-      technicalDetails: [
-        '使用 DirectShape 節點快速將異形實體封裝為指定品類 (如結構框架)',
-        '使用 Add Adaptive Component 批次在空間三維引導點陣列中放置上千組嵌板族群',
-        '透過 Element Tracking 功能，當 GH 參數滑動時，Revit 模型即時增量更新而非刪除重建',
+      "realWorldCase": "BIG 建築事務所哥本哈根滑雪發電廠 (CopenHill)：全案複雜的斜向屋頂雪道與鋁質方塊帷幕，100% 透過 Rhino.Inside.Revit 從 GH 演算法無縫注入 Revit 施工圖資料庫。",
+      "standardCodeRef": "buildingSMART 運算化 BIM 交付規範與 ISO 19650-2 資訊交換標準。",
+      "technicalDetails": [
+        "使用 DirectShape 節點快速將異形實體封裝為指定品類 (如結構框架)",
+        "使用 Add Adaptive Component 批次在空間三維引導點陣列中放置上千組嵌板族群",
+        "透過 Element Tracking 功能，當 GH 參數滑動時，Revit 模型即時增量更新而非刪除重建"
       ],
-      deliverables: ['Revit 原生 LOD 350 BIM 施工模型', 'Rhino-Revit 雙向參數連動腳本 (.gh)', '全案嵌板定位點座標清冊'],
+      "deliverables": [
+        "Revit 原生 LOD 350 BIM 施工模型",
+        "Rhino-Revit 雙向參數連動腳本 (.gh)",
+        "全案嵌板定位點座標清冊"
+      ]
     },
+    {
+      "area": "複雜非標準自由曲面幕牆面板有理化 (Panelization)",
+      "title": "雙曲面玻璃與鋁板之平面四邊形 (PQ) 幾何逼近與 CNC 加工展開",
+      "description": "將非標準建築自由曲面拆解為可工廠預製之平面四邊形 (Planar Quads) 或單曲面冷彎板，大幅壓降雙曲面模具製造成本。",
+      "deepDivePrinciples": [
+        "高斯曲率 (Gaussian Curvature K = k1 * k2) 分析：K=0 為可展曲面 (Developable Surface)；K>0 為同向雙曲面 (如球體)；K<0 為馬鞍形反向雙曲面",
+        "平面四邊形 (Planar Quadrilateral, PQ) 網格優化：利用動態鬆弛 (Dynamic Relaxation) 演算法將四邊形四頂點強制約束共平面，誤差控制於 1mm 以內",
+        "法向量連續性與防水膠縫檢討：確保相鄰面板法向量夾角平滑漸變，預留 15~20mm 矽利康彈性伸縮縫，防止雨水滲漏"
+      ],
+      "realWorldCase": "台中歌劇院 / 高雄港埠旅運中心：極度複雜之連續曲面外牆，透過 Rhino + Grasshopper 演算法進行面板有理化，將雙曲熱壓板比例由 80% 降至 15%，為業主省下逾 1.2 億元加工預算。",
+      "standardCodeRef": "ASTM E1300 建築玻璃結構強度與 CNS 11567 帷幕牆大樣標準。",
+      "codeSnippet": {
+        "language": "python",
+        "title": "Rhino-Python 檢驗任意曲面網格四頂點是否共面 (Planarity Test)",
+        "code": "import rhinoscriptsyntax as rs\nimport math\n\ndef test_face_planarity(pt1, pt2, pt3, pt4):\n    # 建立向量 v1=pt2-pt1, v2=pt3-pt1, v3=pt4-pt1\n    v1 = rs.VectorCreate(pt2, pt1)\n    v2 = rs.VectorCreate(pt3, pt1)\n    v3 = rs.VectorCreate(pt4, pt1)\n    normal = rs.VectorCrossProduct(v1, v2)\n    normal = rs.VectorUnitize(normal)\n    dist = abs(rs.VectorDotProduct(v3, normal))\n    return dist # 距離為 0 則完全共面\n\n# 容許公差 1.5mm\nprint(\"面板共面偏差值檢測函數載入完成，最大允許誤差: 1.5mm\")",
+        "explanation": "利用向量三重積計算第四頂點到前三點所形成平面的垂直距離，快速篩選出需要冷彎或雙曲模具加工之面板。"
+      },
+      "technicalDetails": [
+        "使用 Grasshopper 之 Kangaroo 物理求解器進行幾何共面鬆弛",
+        "自動生成每片面板唯一編號標籤 (Panel-A101) 與角隅 3D 坐標檔案",
+        "匯出 STEP / IGES 格式供鋼構廠 5 軸加工機直接讀取放樣"
+      ],
+      "deliverables": [
+        "面板有理化 3D 施工模型",
+        "每片外牆面板加工展開製造圖 (.dxf)",
+        "全案角隅節點 3D 坐標放樣表 (.csv)"
+      ]
+    },
+    {
+      "area": "Ladybug Tools 建築微氣候與日照輻射參數化環境模擬",
+      "title": "基於太陽軌跡矩陣之立面自適應遮陽板幾何演算",
+      "description": "在 Grasshopper 中連結 Ladybug Tools，匯入台灣氣象站 EPW 資料，模擬全年度太陽方位角與高度角，參數化驅動遮陽板折角。",
+      "deepDivePrinciples": [
+        "太陽方位角 (Azimuth) 與高度角 (Altitude) 即時幾何投影向量矩陣計算",
+        "全年度累積日照輻射量 (kWh/m²) 映射於建築立面網格，以彩色熱圖 (Heatmap) 指導立面開窗率",
+        "自適應遮陽機構演算法：在夏季高輻射角度自動閉合，在冬季低角度柔和採光，達成綠建築節能效益極大化"
+      ],
+      "realWorldCase": "台南科學園區零碳綠建築辦公大樓：運用 Ladybug Tools 最佳化南向與西向外遮陽板傾角，成功減少室內空調尖峰冷房負荷達 28%，獲得 EEWH 鑽石級綠建築標章。",
+      "standardCodeRef": "內政部建築研究所《綠建築評估手冊 (EEWH)》日常節能指標與 ASHRAE Standard 90.1。",
+      "technicalDetails": [
+        "讀取 Central Weather Administration (CWA) 台灣標準氣象資料檔 (.epw)",
+        "設定 Radiance 逆向蒙地卡羅射線追蹤參數 (-ab 3 -ad 1024)",
+        "輸出全年度採光自主率 (sDA) 與年度陽光暴露量 (ASE) 評估報告"
+      ],
+      "deliverables": [
+        "立面全年日照輻射彩色模擬圖",
+        "自適應遮陽板開合連動 Grasshopper 演算法腳本",
+        "EEWH 節能送審計算報告"
+      ]
+    }
   ],
-  beginnerGuide: {
-    introduction: 'Rhino 是以純數學 NURBS 為靈魂的工具。新手切忌濫用布林運算！學好 Rhino 的三大心法是：保持曲線乾淨低階、理解 UV 曲面修剪本質、用好指令列提示。',
-    viewportControls: [
-      { action: '視角旋轉 (Orbit)', keyOrMouse: '按住滑鼠右鍵拖曳', tip: '在透視視圖中環繞模型自由旋轉 (右鍵是 Rhino 的精髓)' },
-      { action: '平移視圖 (Pan)', keyOrMouse: 'Shift + 按住滑鼠右鍵拖曳 (或在正交視圖直接按右鍵)', tip: '在當前視圖平行移動' },
-      { action: '平滑縮放 (Zoom)', keyOrMouse: '滾動滑鼠滾輪 或 Ctrl + 按住滑鼠右鍵拖曳', tip: '微距推進觀察曲面邊緣' },
-      { action: '最大化當前視埠', keyOrMouse: '雙擊視埠左上角名稱 (如雙擊「Perspective」)', tip: '在單一全螢幕與 Top/Front/Right/Perspective 四視圖間極速切換' },
-    ],
-    tenStepsSop: [
-      { step: 1, title: '設定公制單位與絕對公差', action: '進入 檔案 (File) → 內容 (Properties) → 單位 (Units)', keyPoint: '模型單位改為「Millimeters (公釐)」，絕對公差 (Absolute Tolerance) 設為 0.01 mm' },
-      { step: 2, title: '開啟底部捕捉神器 (Osnap & Gumball)', action: '點擊底部狀態列開啟「Osnap」與「操作軸 (Gumball)」', keyPoint: '在 Osnap 勾選：端點 (End)、最近點 (Near)、點 (Point)、中點 (Mid)、交點 (Int)、垂直點 (Perp)' },
-      { step: 3, title: '繪製高品質低階控制點曲線', action: '輸入 Curve 或使用「控制點曲線」工具在 Top 視圖點擊', keyPoint: '控制點數量盡量少，點與點間隔均勻，獲得極致平滑的建築軸線' },
-      { step: 4, title: '擠出實體牆體 (ExtrudeCrv)', action: '選中曲線，輸入 ExtrudeCrv 並按 Enter', keyPoint: '在指令行勾選「實體=是 (Solid=Yes)」，輸入高度 3600 mm 拔地而起' },
-      { step: 5, title: '雙向放樣曲面 (Loft)', action: '繪製兩條或多條不同斷面的空間曲線，輸入 Loft 指令', keyPoint: '在放樣選項選擇「正常 (Normal)」或「鬆弛 (Loose)」，生成光滑自由曲面屋頂' },
-      { step: 6, title: '開啟控制點微調形體 (PointsOn)', action: '選取未修剪曲面，按下鍵盤 F10 (或輸入 PointsOn)', keyPoint: '空間浮現 UV 控制點網格，拉動操作軸 Gumball 箭頭直觀雕塑屋頂曲率' },
-      { step: 7, title: '曲面修剪與挖洞 (Trim / Split)', action: '在曲面上投影一條封閉曲線，輸入 Trim 指令', keyPoint: '點擊想要切除的區域，乾淨挖穿天窗開口，按 Enter 確認' },
-      { step: 8, title: '組合為封閉多重曲面 (Join)', action: '框選相鄰的牆面與屋面，按 Ctrl + J 或輸入 Join', keyPoint: '在物件內容檢查是否顯示為「封閉多重曲面 (Closed Polysurface)」，代表水密實體' },
-      { step: 9, title: '快速生成 2D 建築施工線條 (Make2D)', action: '調整好透視或正交視角，全選模型輸入 Make2D 指令', keyPoint: '勾選「隱藏線 (Hidden lines)」與「場景輪廓」，一秒生成極高精度 2D CAD 線稿' },
-      { step: 10, title: '呼喚 Grasshopper 進行運算設計', action: '在指令行輸入 Grasshopper 並按 Enter', keyPoint: '開啟綠色帆布世界，拉出 Number Slider 與 Curve 節點，開啟參數化探索之旅' },
-    ],
-    shortcuts: [
-      { key: '滑鼠右鍵', command: '重複前一個指令 / 確定 Enter', explanation: 'Rhino 最神設計！按右鍵等同按 Enter，連續右鍵能重複上一指令', frequency: '必須秒按', mnemonic: '右鍵確認加重複' },
-      { key: 'F10', command: '開啟控制點 (PointsOn)', explanation: '顯示曲線或曲面的 NURBS 控制點網格進行雕塑', frequency: '必須秒按', mnemonic: 'F10 叫出控制點' },
-      { key: 'F11', command: '關閉控制點 (PointsOff)', explanation: '隱藏控制點恢復純淨幾何顯示', frequency: '必須秒按', mnemonic: 'F11 收回控制點' },
-      { key: 'Ctrl + J', command: '組合 (Join)', explanation: '將邊緣相碰的曲線或曲面熔接為多重物件', frequency: '必須秒按', mnemonic: 'Ctrl+J 結合成一體' },
-      { key: 'Ctrl + Shift + 點擊', command: '次物件選取 (Sub-object Select)', explanation: '直接點擊多重實體的某個單一表面或邊緣進行推拉！', frequency: '必須秒按', mnemonic: 'Ctrl+Shift 點選子表面' },
-      { key: 'M', command: '移動 (Move)', explanation: '精準捕捉基準點平移幾何構件', frequency: '必須秒按', mnemonic: 'M 移動抓端點' },
-      { key: 'C', command: '複製 (Copy)', explanation: '多重複製圖元至目標座標', frequency: '必須秒按', mnemonic: 'C 複製隨處放' },
-      { key: 'TR', command: '修剪 (Trim)', explanation: '選取切割刀具，點選欲修除的多餘面或線', frequency: '必須秒按', mnemonic: 'TR 剪去不需要' },
-      { key: 'S', command: '分割 (Split)', explanation: '將物件切成兩半但完整保留兩部分幾何', frequency: '高頻常用', mnemonic: 'S 一分為二' },
-      { key: 'Osnap', command: '物件鎖定列切換', explanation: '隨時開關端點、中點、垂直點捕捉', frequency: '必須秒按', mnemonic: 'Osnap 鎖點不手滑' },
-      { key: 'Gumball', command: '操作軸開關', explanation: '顯示帶有移動箭頭、旋轉弧線與縮放方塊之操作軸心', frequency: '必須秒按', mnemonic: 'Gumball 操控一切' },
-      { key: 'Z + E', command: '縮放至全場 (Zoom Extents)', explanation: '瞬間將全體模型拉滿居中於工作視圖', frequency: '高頻常用', mnemonic: 'ZE 置中滿版' },
-    ],
-    fatalTraps: [
+  "beginnerGuide": {
+    "introduction": "Rhino 是以純數學 NURBS 為靈魂的工具。新手切忌濫用布林運算！學好 Rhino 的三大心法是：保持曲線乾淨低階、理解 UV 曲面修剪本質、用好指令列提示。",
+    "viewportControls": [
       {
-        trap: '絕對公差 (Tolerance) 設得過寬導致後續 Join 或布林運算徹底失敗',
-        reason: '公差設為 1mm 時繪製的模型，放大看接縫處有 0.5mm 裂縫，系統判定不相交，Solid Boolean 永遠報錯。',
-        solution: '建模一開始在「檔案 → 內容 → 單位」中，將絕對公差嚴格設為「0.01 mm」或「0.001 mm」。',
+        "action": "視角旋轉 (Orbit)",
+        "keyOrMouse": "按住滑鼠右鍵拖曳",
+        "tip": "在透視視圖中環繞模型自由旋轉 (右鍵是 Rhino 的精髓)"
       },
       {
-        trap: '對已修剪曲面 (Trimmed Surface) 狂按 F10 試圖調整修剪邊界',
-        reason: 'NURBS 的修剪面本質只是在底層未修剪矩形面上打上「隱藏標籤」。按 F10 只能看到外圍原始控制點，無法直接拉動修剪邊。',
-        solution: '若要調整形體，應在未修剪前雕塑控制點；或者使用 Untrim 指令還原完整曲面再重新修剪。',
+        "action": "平移視圖 (Pan)",
+        "keyOrMouse": "Shift + 按住滑鼠右鍵拖曳 (或在正交視圖直接按右鍵)",
+        "tip": "在當前視圖平行移動"
       },
       {
-        trap: 'Grasshopper 中隨手拉出 Flatten 導致所有資料樹分支混為一談',
-        reason: '未理解資料結構就胡亂扁平化，原本分屬 20 個樓層的輪廓線被混在同一個清單，生成出一團混亂的交叉面。',
-        solution: '養成在每個重要運算元後方掛載「Param Viewer」檢視樹狀路徑結構的好習慣，善用 Shift Path 而非盲目 Flatten。',
+        "action": "平滑縮放 (Zoom)",
+        "keyOrMouse": "滾動滑鼠滾輪 或 Ctrl + 按住滑鼠右鍵拖曳",
+        "tip": "微距推進觀察曲面邊緣"
       },
       {
-        trap: '布林運算兩構件交界處有「共面重疊面 (Coplanar Overlap)」',
-        reason: '兩塊實體的表面完全重疊在同一個數學平面上，布林交集演算法無法判定實體內外側，導致運算無效失敗。',
-        solution: '將其中一個物件在非關鍵方向微幅推移 0.05mm 破除奇異點，或手工使用 Intersect + Split + Join 進行精準布林。',
+        "action": "最大化當前視埠",
+        "keyOrMouse": "雙擊視埠左上角名稱 (如雙擊「Perspective」)",
+        "tip": "在單一全螢幕與 Top/Front/Right/Perspective 四視圖間極速切換"
+      }
+    ],
+    "tenStepsSop": [
+      {
+        "step": 1,
+        "title": "設定公制單位與絕對公差",
+        "action": "進入 檔案 (File) → 內容 (Properties) → 單位 (Units)",
+        "keyPoint": "模型單位改為「Millimeters (公釐)」，絕對公差 (Absolute Tolerance) 設為 0.01 mm"
       },
+      {
+        "step": 2,
+        "title": "開啟底部捕捉神器 (Osnap & Gumball)",
+        "action": "點擊底部狀態列開啟「Osnap」與「操作軸 (Gumball)」",
+        "keyPoint": "在 Osnap 勾選：端點 (End)、最近點 (Near)、點 (Point)、中點 (Mid)、交點 (Int)、垂直點 (Perp)"
+      },
+      {
+        "step": 3,
+        "title": "繪製高品質低階控制點曲線",
+        "action": "輸入 Curve 或使用「控制點曲線」工具在 Top 視圖點擊",
+        "keyPoint": "控制點數量盡量少，點與點間隔均勻，獲得極致平滑的建築軸線"
+      },
+      {
+        "step": 4,
+        "title": "擠出實體牆體 (ExtrudeCrv)",
+        "action": "選中曲線，輸入 ExtrudeCrv 並按 Enter",
+        "keyPoint": "在指令行勾選「實體=是 (Solid=Yes)」，輸入高度 3600 mm 拔地而起"
+      },
+      {
+        "step": 5,
+        "title": "雙向放樣曲面 (Loft)",
+        "action": "繪製兩條或多條不同斷面的空間曲線，輸入 Loft 指令",
+        "keyPoint": "在放樣選項選擇「正常 (Normal)」或「鬆弛 (Loose)」，生成光滑自由曲面屋頂"
+      },
+      {
+        "step": 6,
+        "title": "開啟控制點微調形體 (PointsOn)",
+        "action": "選取未修剪曲面，按下鍵盤 F10 (或輸入 PointsOn)",
+        "keyPoint": "空間浮現 UV 控制點網格，拉動操作軸 Gumball 箭頭直觀雕塑屋頂曲率"
+      },
+      {
+        "step": 7,
+        "title": "曲面修剪與挖洞 (Trim / Split)",
+        "action": "在曲面上投影一條封閉曲線，輸入 Trim 指令",
+        "keyPoint": "點擊想要切除的區域，乾淨挖穿天窗開口，按 Enter 確認"
+      },
+      {
+        "step": 8,
+        "title": "組合為封閉多重曲面 (Join)",
+        "action": "框選相鄰的牆面與屋面，按 Ctrl + J 或輸入 Join",
+        "keyPoint": "在物件內容檢查是否顯示為「封閉多重曲面 (Closed Polysurface)」，代表水密實體"
+      },
+      {
+        "step": 9,
+        "title": "快速生成 2D 建築施工線條 (Make2D)",
+        "action": "調整好透視或正交視角，全選模型輸入 Make2D 指令",
+        "keyPoint": "勾選「隱藏線 (Hidden lines)」與「場景輪廓」，一秒生成極高精度 2D CAD 線稿"
+      },
+      {
+        "step": 10,
+        "title": "呼喚 Grasshopper 進行運算設計",
+        "action": "在指令行輸入 Grasshopper 並按 Enter",
+        "keyPoint": "開啟綠色帆布世界，拉出 Number Slider 與 Curve 節點，開啟參數化探索之旅"
+      }
     ],
-    proTips: [
-      { title: '操作軸 (Gumball) 點擊白色小圓球可直接擠出實體', description: '選取一條封閉曲線，操作軸箭頭上有個小圓球 (Extrude Handle)，直接拖動它，曲線瞬間拉出帶有厚度的實體！按住 Ctrl 拖動面還能拉出新區段。' },
-      { title: 'DupBorder 與 DupEdge 是逆向提取輪廓的救星', description: '想要取得任何曲面外緣的完整邊界線？輸入 DupBorder 一鍵提取！輸入 DupEdge 則可單獨拾取某一條空間立體弧線作為放樣導軌。' },
-      { title: 'Grasshopper 中按兩次滑鼠左鍵輸入搜尋數學語法', description: '在 GH 畫布空白處雙擊，輸入 `0..100..1` 直接生成精準 Slider；輸入 `//` 自動建立 Panel 筆記板；輸入 `+` 或 `*` 快速調出算術運算元！' },
+    "shortcuts": [
+      {
+        "key": "滑鼠右鍵",
+        "command": "重複前一個指令 / 確定 Enter",
+        "explanation": "Rhino 最神設計！按右鍵等同按 Enter，連續右鍵能重複上一指令",
+        "frequency": "必須秒按",
+        "mnemonic": "右鍵確認加重複"
+      },
+      {
+        "key": "F10",
+        "command": "開啟控制點 (PointsOn)",
+        "explanation": "顯示曲線或曲面的 NURBS 控制點網格進行雕塑",
+        "frequency": "必須秒按",
+        "mnemonic": "F10 叫出控制點"
+      },
+      {
+        "key": "F11",
+        "command": "關閉控制點 (PointsOff)",
+        "explanation": "隱藏控制點恢復純淨幾何顯示",
+        "frequency": "必須秒按",
+        "mnemonic": "F11 收回控制點"
+      },
+      {
+        "key": "Ctrl + J",
+        "command": "組合 (Join)",
+        "explanation": "將邊緣相碰的曲線或曲面熔接為多重物件",
+        "frequency": "必須秒按",
+        "mnemonic": "Ctrl+J 結合成一體"
+      },
+      {
+        "key": "Ctrl + Shift + 點擊",
+        "command": "次物件選取 (Sub-object Select)",
+        "explanation": "直接點擊多重實體的某個單一表面或邊緣進行推拉！",
+        "frequency": "必須秒按",
+        "mnemonic": "Ctrl+Shift 點選子表面"
+      },
+      {
+        "key": "M",
+        "command": "移動 (Move)",
+        "explanation": "精準捕捉基準點平移幾何構件",
+        "frequency": "必須秒按",
+        "mnemonic": "M 移動抓端點"
+      },
+      {
+        "key": "C",
+        "command": "複製 (Copy)",
+        "explanation": "多重複製圖元至目標座標",
+        "frequency": "必須秒按",
+        "mnemonic": "C 複製隨處放"
+      },
+      {
+        "key": "TR",
+        "command": "修剪 (Trim)",
+        "explanation": "選取切割刀具，點選欲修除的多餘面或線",
+        "frequency": "必須秒按",
+        "mnemonic": "TR 剪去不需要"
+      },
+      {
+        "key": "S",
+        "command": "分割 (Split)",
+        "explanation": "將物件切成兩半但完整保留兩部分幾何",
+        "frequency": "高頻常用",
+        "mnemonic": "S 一分為二"
+      },
+      {
+        "key": "Osnap",
+        "command": "物件鎖定列切換",
+        "explanation": "隨時開關端點、中點、垂直點捕捉",
+        "frequency": "必須秒按",
+        "mnemonic": "Osnap 鎖點不手滑"
+      },
+      {
+        "key": "Gumball",
+        "command": "操作軸開關",
+        "explanation": "顯示帶有移動箭頭、旋轉弧線與縮放方塊之操作軸心",
+        "frequency": "必須秒按",
+        "mnemonic": "Gumball 操控一切"
+      },
+      {
+        "key": "Z + E",
+        "command": "縮放至全場 (Zoom Extents)",
+        "explanation": "瞬間將全體模型拉滿居中於工作視圖",
+        "frequency": "高頻常用",
+        "mnemonic": "ZE 置中滿版"
+      }
     ],
+    "fatalTraps": [
+      {
+        "trap": "絕對公差 (Tolerance) 設得過寬導致後續 Join 或布林運算徹底失敗",
+        "reason": "公差設為 1mm 時繪製的模型，放大看接縫處有 0.5mm 裂縫，系統判定不相交，Solid Boolean 永遠報錯。",
+        "solution": "建模一開始在「檔案 → 內容 → 單位」中，將絕對公差嚴格設為「0.01 mm」或「0.001 mm」。"
+      },
+      {
+        "trap": "對已修剪曲面 (Trimmed Surface) 狂按 F10 試圖調整修剪邊界",
+        "reason": "NURBS 的修剪面本質只是在底層未修剪矩形面上打上「隱藏標籤」。按 F10 只能看到外圍原始控制點，無法直接拉動修剪邊。",
+        "solution": "若要調整形體，應在未修剪前雕塑控制點；或者使用 Untrim 指令還原完整曲面再重新修剪。"
+      },
+      {
+        "trap": "Grasshopper 中隨手拉出 Flatten 導致所有資料樹分支混為一談",
+        "reason": "未理解資料結構就胡亂扁平化，原本分屬 20 個樓層的輪廓線被混在同一個清單，生成出一團混亂的交叉面。",
+        "solution": "養成在每個重要運算元後方掛載「Param Viewer」檢視樹狀路徑結構的好習慣，善用 Shift Path 而非盲目 Flatten。"
+      },
+      {
+        "trap": "布林運算兩構件交界處有「共面重疊面 (Coplanar Overlap)」",
+        "reason": "兩塊實體的表面完全重疊在同一個數學平面上，布林交集演算法無法判定實體內外側，導致運算無效失敗。",
+        "solution": "將其中一個物件在非關鍵方向微幅推移 0.05mm 破除奇異點，或手工使用 Intersect + Split + Join 進行精準布林。"
+      }
+    ],
+    "proTips": [
+      {
+        "title": "操作軸 (Gumball) 點擊白色小圓球可直接擠出實體",
+        "description": "選取一條封閉曲線，操作軸箭頭上有個小圓球 (Extrude Handle)，直接拖動它，曲線瞬間拉出帶有厚度的實體！按住 Ctrl 拖動面還能拉出新區段。"
+      },
+      {
+        "title": "DupBorder 與 DupEdge 是逆向提取輪廓的救星",
+        "description": "想要取得任何曲面外緣的完整邊界線？輸入 DupBorder 一鍵提取！輸入 DupEdge 則可單獨拾取某一條空間立體弧線作為放樣導軌。"
+      },
+      {
+        "title": "Grasshopper 中按兩次滑鼠左鍵輸入搜尋數學語法",
+        "description": "在 GH 畫布空白處雙擊，輸入 `0..100..1` 直接生成精準 Slider；輸入 `//` 自動建立 Panel 筆記板；輸入 `+` 或 `*` 快速調出算術運算元！"
+      }
+    ]
   },
-  sevenIterations: [
+  "sevenIterations": [
     {
-      round: 1,
-      badge: 'R1 基礎核心認知',
-      title: 'NURBS 微分幾何本質與操作軸 (Gumball) 精確操控',
-      focus: '徹底掌握階數 (Degree)、控制點 (CV)、節點向量 (Knots) 與權重 (Weights) 之數學底層。',
-      contentExpansion: '延伸內容擴充 115%：深度推導 B 樣條基底函數遞迴公式 (Cox-de Boor Algorithm)，解析 G0, G1, G2 連續性判定法，將曲面建模精度推向 0.001mm 航空工級別。',
-      coreTheory: 'NURBS (Non-Uniform Rational B-Splines) 是以參數 u, v 映射的三維向量函數。曲線由控制點的多項式加權決定。Degree 1 為折線，Degree 2 為拋物線/圓錐曲線，Degree 3 為標準立方貝茲平滑曲線。透過調整端點控制點切線斜率，可確保兩塊相鄰建築曲面在接縫處達到曲率半徑完全相等的 G2 (Curvature Continuous) 鏡面無折痕質感。',
-      mathematicalFormula: 'NURBS 曲線方程式：C(u) = (∑_{i=0}^n N_{i,p}(u) · w_i · P_i) / (∑_{i=0}^n N_{i,p}(u) · w_i)',
-      advancedParameters: [
-        { name: 'Absolute Tolerance', value: '0.01 mm (建築施工圖) / 0.001 mm (精密開模)', purpose: '決定所有幾何邊界熔接與布林運算成敗' },
-        { name: 'Angle Tolerance', value: '0.1 度', purpose: '精準捕捉相切幾何與法線微傾斜' },
+      "round": 1,
+      "badge": "R1 基礎核心認知",
+      "title": "NURBS 微分幾何本質與操作軸 (Gumball) 精確操控",
+      "focus": "徹底掌握階數 (Degree)、控制點 (CV)、節點向量 (Knots) 與權重 (Weights) 之數學底層。",
+      "contentExpansion": "延伸內容擴充 115%：深度推導 B 樣條基底函數遞迴公式 (Cox-de Boor Algorithm)，解析 G0, G1, G2 連續性判定法，將曲面建模精度推向 0.001mm 航空工級別。",
+      "coreTheory": "NURBS (Non-Uniform Rational B-Splines) 是以參數 u, v 映射的三維向量函數。曲線由控制點的多項式加權決定。Degree 1 為折線，Degree 2 為拋物線/圓錐曲線，Degree 3 為標準立方貝茲平滑曲線。透過調整端點控制點切線斜率，可確保兩塊相鄰建築曲面在接縫處達到曲率半徑完全相等的 G2 (Curvature Continuous) 鏡面無折痕質感。",
+      "mathematicalFormula": "NURBS 曲線方程式：C(u) = (∑_{i=0}^n N_{i,p}(u) · w_i · P_i) / (∑_{i=0}^n N_{i,p}(u) · w_i)",
+      "advancedParameters": [
+        {
+          "name": "Absolute Tolerance",
+          "value": "0.01 mm (建築施工圖) / 0.001 mm (精密開模)",
+          "purpose": "決定所有幾何邊界熔接與布林運算成敗"
+        },
+        {
+          "name": "Angle Tolerance",
+          "value": "0.1 度",
+          "purpose": "精準捕捉相切幾何與法線微傾斜"
+        }
       ],
-      practicalWalkthrough: [
-        '在單位面板設定公釐 (mm) 與 0.01mm 絕對公差',
-        '繪製一條 Degree 3 的 4 點控制點曲線，使用 CurvatureGraph (曲率梳) 檢查曲率變化均勻度',
-        '使用 Rebuild (重建) 指令將多段雜亂曲線統一重構為點數均勻、階數一致的高階曲線',
-        '利用操作軸 Gumball 配合 Shift 與 Alt 鍵進行點位對稱縮放與原位複製',
+      "practicalWalkthrough": [
+        "在單位面板設定公釐 (mm) 與 0.01mm 絕對公差",
+        "繪製一條 Degree 3 的 4 點控制點曲線，使用 CurvatureGraph (曲率梳) 檢查曲率變化均勻度",
+        "使用 Rebuild (重建) 指令將多段雜亂曲線統一重構為點數均勻、階數一致的高階曲線",
+        "利用操作軸 Gumball 配合 Shift 與 Alt 鍵進行點位對稱縮放與原位複製"
       ],
-      industryStandardOrCode: 'ISO 10303 STEP 產品模型資料交換標準之幾何拓撲描述協定。',
-      pitfallsAndVerification: '嚴禁在自由曲面建模時使用高達 10 階以上的極端高階曲線！高階曲線容易在端點引發劇烈震盪 (龍格現象 Runge\'s phenomenon)，應使用多段 Degree 3 曲線拼合。',
-      diagnosticDecisionTree: [
-        '問題：兩塊相交曲面執行 Boolean Union (布林聯集) 提示失敗？',
-        '步驟 1：輸入 Intersect 檢查兩曲面是否產生完整閉合的相交曲線',
-        '步驟 2：若交線有微小斷點，代表交角過於貼齊或公差不足，手動稍微延伸曲面 (ExtendSrf)',
-        '步驟 3：使用 Trim 指令手動修剪多餘部位後按 Join 結合成閉合多重曲面',
+      "industryStandardOrCode": "ISO 10303 STEP 產品模型資料交換標準之幾何拓撲描述協定。",
+      "pitfallsAndVerification": "嚴禁在自由曲面建模時使用高達 10 階以上的極端高階曲線！高階曲線容易在端點引發劇烈震盪 (龍格現象 Runge's phenomenon)，應使用多段 Degree 3 曲線拼合。",
+      "diagnosticDecisionTree": [
+        "問題：兩塊相交曲面執行 Boolean Union (布林聯集) 提示失敗？",
+        "步驟 1：輸入 Intersect 檢查兩曲面是否產生完整閉合的相交曲線",
+        "步驟 2：若交線有微小斷點，代表交角過於貼齊或公差不足，手動稍微延伸曲面 (ExtendSrf)",
+        "步驟 3：使用 Trim 指令手動修剪多餘部位後按 Join 結合成閉合多重曲面"
       ],
-      masteryChecklist: [
-        '能一眼透過 Curvature Graph 判定曲線之 G0, G1, G2 連續性',
-        '熟練操作 Gumball 軸向約束、角度微調與擠出熱點',
-        '精通 Rebuild 指令在維持幾何形狀前提下大幅淨化控制點陣列',
-      ],
+      "masteryChecklist": [
+        "能一眼透過 Curvature Graph 判定曲線之 G0, G1, G2 連續性",
+        "熟練操作 Gumball 軸向約束、角度微調與擠出熱點",
+        "精通 Rebuild 指令在維持幾何形狀前提下大幅淨化控制點陣列"
+      ]
     },
     {
-      round: 2,
-      badge: 'R2 建築製圖規範',
-      title: 'Make2D 向量投影引擎與建築施工圖正交剖切',
-      focus: '精通 Rhino 8 革命性 Clipping Plane (剖切面) 與 Make2D 演算法，直出高精準施工圖。',
-      contentExpansion: '延伸內容擴充 130%：深入隱藏線消隱 (Hidden Line Removal, HLR) 演算法，建立標準建築平立剖面線寬分層、剖面實心塗黑與 CNS 圖框排版系統。',
-      coreTheory: 'Make2D 是將 3D NURBS 模型投射至 2D 視平面的向量演算法。它會自動計算相機射線與幾何實體的遮擋關係，將線條分類為 Visible Lines (可見外輪廓)、Hidden Lines (隱藏虛線)、Silhouette (輪廓剪影線) 與 Section Cut Lines (剖切實線)。在 Rhino 8 中，Clipping Plane 具備動態剖切填充功能，並可直接在配置圖紙 (Layout) 中輸出向量 PDF。',
-      advancedParameters: [
-        { name: 'Make2D Hidden Lines', value: '開啟並分派至專用 HIDDEN 圖層 (0.18mm 虛線)', purpose: '完整展現結構梁柱與隱蔽管線' },
-        { name: 'Clipping Plane Fill', value: 'Solid Black (剖面實心填黑)', purpose: '符合 CNS 11567 建築剖面切體標準' },
+      "round": 2,
+      "badge": "R2 建築製圖規範",
+      "title": "Make2D 向量投影引擎與建築施工圖正交剖切",
+      "focus": "精通 Rhino 8 革命性 Clipping Plane (剖切面) 與 Make2D 演算法，直出高精準施工圖。",
+      "contentExpansion": "延伸內容擴充 130%：深入隱藏線消隱 (Hidden Line Removal, HLR) 演算法，建立標準建築平立剖面線寬分層、剖面實心塗黑與 CNS 圖框排版系統。",
+      "coreTheory": "Make2D 是將 3D NURBS 模型投射至 2D 視平面的向量演算法。它會自動計算相機射線與幾何實體的遮擋關係，將線條分類為 Visible Lines (可見外輪廓)、Hidden Lines (隱藏虛線)、Silhouette (輪廓剪影線) 與 Section Cut Lines (剖切實線)。在 Rhino 8 中，Clipping Plane 具備動態剖切填充功能，並可直接在配置圖紙 (Layout) 中輸出向量 PDF。",
+      "advancedParameters": [
+        {
+          "name": "Make2D Hidden Lines",
+          "value": "開啟並分派至專用 HIDDEN 圖層 (0.18mm 虛線)",
+          "purpose": "完整展現結構梁柱與隱蔽管線"
+        },
+        {
+          "name": "Clipping Plane Fill",
+          "value": "Solid Black (剖面實心填黑)",
+          "purpose": "符合 CNS 11567 建築剖面切體標準"
+        }
       ],
-      practicalWalkthrough: [
-        '在建築模型中建立水平 Clipping Plane 作為 1F 平面剖切面 (標高 +1200mm)',
-        '切換至 Top 視圖，選取剖切範圍輸入 Make2D 指令，勾選「Clipping plane intersections」',
-        '系統自動建立 Make2D 圖層樹狀目錄，包含剖切線、可見線與投影背景線',
-        '在 Layout 圖紙空間建立 A1 圖框，設定 1:100 比例尺視埠並標註開間軸網尺寸',
+      "practicalWalkthrough": [
+        "在建築模型中建立水平 Clipping Plane 作為 1F 平面剖切面 (標高 +1200mm)",
+        "切換至 Top 視圖，選取剖切範圍輸入 Make2D 指令，勾選「Clipping plane intersections」",
+        "系統自動建立 Make2D 圖層樹狀目錄，包含剖切線、可見線與投影背景線",
+        "在 Layout 圖紙空間建立 A1 圖框，設定 1:100 比例尺視埠並標註開間軸網尺寸"
       ],
-      industryStandardOrCode: 'CNS 11567 A1042 建築製圖投影法與尺度標註規範。',
-      pitfallsAndVerification: '執行 Make2D 前務必先將遠離原點的雜散幾何圖元清除，否則 2D 投影圖會因範圍過大而被壓縮在極小角落無法尋找。',
-      diagnosticDecisionTree: [
-        '問題：Make2D 運算時間異常漫長甚至卡死？',
-        '原因：場景中包含大量未縫合的高多邊形網格 (如高面數樹木或複雜家具)',
-        '解法：在執行前將高面數非結構圖層隱藏 (Hide)，僅選取純 NURBS 建築結構主體執行投影',
+      "industryStandardOrCode": "CNS 11567 A1042 建築製圖投影法與尺度標註規範。",
+      "pitfallsAndVerification": "執行 Make2D 前務必先將遠離原點的雜散幾何圖元清除，否則 2D 投影圖會因範圍過大而被壓縮在極小角落無法尋找。",
+      "diagnosticDecisionTree": [
+        "問題：Make2D 運算時間異常漫長甚至卡死？",
+        "原因：場景中包含大量未縫合的高多邊形網格 (如高面數樹木或複雜家具)",
+        "解法：在執行前將高面數非結構圖層隱藏 (Hide)，僅選取純 NURBS 建築結構主體執行投影"
       ],
-      masteryChecklist: [
-        '能運用 Clipping Plane 結合動態剖切填充產出雜誌級建築剖透視圖',
-        '精通 Make2D 的圖層架構與線寬對應設定',
-        '能獨立在 Rhino Layout 中完成包含圖框、指北針與尺寸標註之施工圖集',
-      ],
+      "masteryChecklist": [
+        "能運用 Clipping Plane 結合動態剖切填充產出雜誌級建築剖透視圖",
+        "精通 Make2D 的圖層架構與線寬對應設定",
+        "能獨立在 Rhino Layout 中完成包含圖框、指北針與尺寸標註之施工圖集"
+      ]
     },
     {
-      round: 3,
-      badge: 'R3 高階幾何拓撲',
-      title: 'SubD 細分曲面與有機前衛建築形體塑造',
-      focus: '掌握 Rhino 8 原生 SubD (細分幾何體) 工作流，無縫銜接有機概念造型與精密 NURBS 轉換。',
-      contentExpansion: '延伸內容擴充 160%：深入 Catmull-Clark 極限曲面與多邊形網格橋接技術，實現流暢的 Y 型異形分叉巨柱、空中景觀天橋與無柱大跨距穹頂。',
-      coreTheory: 'Rhino 8 的 SubD 是結合多邊形建模極速推拉與 NURBS 精密數學連續性的全新幾何類型。SubD 物件在記憶體中同時保有「控制網格 (Control Box)」與「極限光滑曲面 (Limit Surface)」。按下 Tab 鍵即可在粗模正交與極限光滑間自由切換。最關鍵的是：SubD 可使用 `ToNURBS` 指令 100% 無損轉換為標準 NURBS 實體，供工程開模製造。',
-      mathematicalFormula: 'Catmull-Clark 極限點矩陣變換：P_limit = (I - S)^{-1} · P_control，在邊緣處維持 C² 連續。',
-      advancedParameters: [
-        { name: 'SubD Crease Weight', value: '1.0 (銳利稜線) / 0.0 (絕對光滑)', purpose: '局部保留建築立面挺拔折線' },
-        { name: 'ToNURBS - Packed Option', value: 'Packed = Yes', purpose: '合併相鄰面為 G1 連續的大曲面，大幅減少 NURBS 碎片' },
+      "round": 3,
+      "badge": "R3 高階幾何拓撲",
+      "title": "SubD 細分曲面與有機前衛建築形體塑造",
+      "focus": "掌握 Rhino 8 原生 SubD (細分幾何體) 工作流，無縫銜接有機概念造型與精密 NURBS 轉換。",
+      "contentExpansion": "延伸內容擴充 160%：深入 Catmull-Clark 極限曲面與多邊形網格橋接技術，實現流暢的 Y 型異形分叉巨柱、空中景觀天橋與無柱大跨距穹頂。",
+      "coreTheory": "Rhino 8 的 SubD 是結合多邊形建模極速推拉與 NURBS 精密數學連續性的全新幾何類型。SubD 物件在記憶體中同時保有「控制網格 (Control Box)」與「極限光滑曲面 (Limit Surface)」。按下 Tab 鍵即可在粗模正交與極限光滑間自由切換。最關鍵的是：SubD 可使用 `ToNURBS` 指令 100% 無損轉換為標準 NURBS 實體，供工程開模製造。",
+      "mathematicalFormula": "Catmull-Clark 極限點矩陣變換：P_limit = (I - S)^{-1} · P_control，在邊緣處維持 C² 連續。",
+      "advancedParameters": [
+        {
+          "name": "SubD Crease Weight",
+          "value": "1.0 (銳利稜線) / 0.0 (絕對光滑)",
+          "purpose": "局部保留建築立面挺拔折線"
+        },
+        {
+          "name": "ToNURBS - Packed Option",
+          "value": "Packed = Yes",
+          "purpose": "合併相鄰面為 G1 連續的大曲面，大幅減少 NURBS 碎片"
+        }
       ],
-      practicalWalkthrough: [
-        '使用 SubD Box 建立基礎方塊，按 Tab 鍵切換為平滑有機流體模式',
-        '選中頂部與底部面，按操作軸 Extrude 向上拉伸並旋轉，塑造分叉樹狀結構柱',
-        '使用 SubD Bridge (橋接) 工具將兩根傾斜的柱體在空中優雅相連成拱',
-        '滿意造型後輸入 ToNURBS 指令，一鍵轉為可用 Solid Tools 進行布林開孔的實體幾何',
+      "practicalWalkthrough": [
+        "使用 SubD Box 建立基礎方塊，按 Tab 鍵切換為平滑有機流體模式",
+        "選中頂部與底部面，按操作軸 Extrude 向上拉伸並旋轉，塑造分叉樹狀結構柱",
+        "使用 SubD Bridge (橋接) 工具將兩根傾斜的柱體在空中優雅相連成拱",
+        "滿意造型後輸入 ToNURBS 指令，一鍵轉為可用 Solid Tools 進行布林開孔的實體幾何"
       ],
-      industryStandardOrCode: 'ISO/IEC 14772 自由曲面拓撲標準與國際前衛建築學會 (ACADIA) 數位構築準則。',
-      pitfallsAndVerification: '避免在 SubD 中產生非流形邊 (Non-manifold edges，如三片面共用一條邊)，這會導致無法轉換為閉合的 NURBS 實體。',
-      diagnosticDecisionTree: [
-        '問題：SubD 轉為 NURBS 後，曲面上佈滿了密密麻麻數千個細碎的小碎片？',
-        '原因：執行 ToNURBS 時未勾選「Packed Faces」選項',
-        '解法：重新執行 ToNURBS，在指令行將「Packed」設為「Yes」，自動將連續面打包為優質大曲面',
+      "industryStandardOrCode": "ISO/IEC 14772 自由曲面拓撲標準與國際前衛建築學會 (ACADIA) 數位構築準則。",
+      "pitfallsAndVerification": "避免在 SubD 中產生非流形邊 (Non-manifold edges，如三片面共用一條邊)，這會導致無法轉換為閉合的 NURBS 實體。",
+      "diagnosticDecisionTree": [
+        "問題：SubD 轉為 NURBS 後，曲面上佈滿了密密麻麻數千個細碎的小碎片？",
+        "原因：執行 ToNURBS 時未勾選「Packed Faces」選項",
+        "解法：重新執行 ToNURBS，在指令行將「Packed」設為「Yes」，自動將連續面打包為優質大曲面"
       ],
-      masteryChecklist: [
-        '能運用 SubD 在 15 分鐘內推敲出前衛流體建築地標概念量體',
-        '精通 Tab 鍵雙視態切換與邊緣 Crease (皺褶) 軟硬調控',
-        '能無損將 SubD 幾何資產導出為符合施工圖規範之 NURBS 閉合多重實體',
-      ],
+      "masteryChecklist": [
+        "能運用 SubD 在 15 分鐘內推敲出前衛流體建築地標概念量體",
+        "精通 Tab 鍵雙視態切換與邊緣 Crease (皺褶) 軟硬調控",
+        "能無損將 SubD 幾何資產導出為符合施工圖規範之 NURBS 閉合多重實體"
+      ]
     },
     {
-      round: 4,
-      badge: 'R4 建築構造深化',
-      title: 'Grasshopper 資料樹 (Data Trees) 演算法與結構網格',
-      focus: '攻克 Grasshopper 最核心門檻：多維資料樹路徑運算、清單分流與仿生桁架生成。',
-      contentExpansion: '延伸內容擴充 185%：深度剖析樹狀路徑映射 (Path Mapping)、樹分支偏移 (Shift Paths) 與資料對齊 (Data Matching: Longest, Shortest, Cross Reference)，搭建大型空間網架演算法。',
-      coreTheory: 'Grasshopper 的本質是圖形化資料流處理器。所有圖元皆依附於資料樹結構。一個路徑 `{A; B}[i]` 代表第 A 棟大樓、第 B 個樓層的第 i 根梁。若搞混了路徑結構，幾何連線會發生「維度爆炸」，例如原本應成對相連的 100 根桿件變成 100×100=10,000 根交錯雜線。精通資料樹是邁向專業運算化建築師的成人禮。',
-      mathematicalFormula: '路徑映射變換矩陣：`{a; b; c} -> {a; b}` 透過 Shift Paths 降低資料深度，實現同樓層構件全域聚合運算。',
-      advancedParameters: [
-        { name: 'Data Matching Mode', value: 'Cross Reference (交叉引用) / Longest List', purpose: '精準掌控網格雙向交叉交點生成' },
-        { name: 'Panel Display Mode', value: 'Multiline Data (開啟換行符號)', purpose: '直觀稽核資料結構深度與分支數量' },
+      "round": 4,
+      "badge": "R4 建築構造深化",
+      "title": "Grasshopper 資料樹 (Data Trees) 演算法與結構網格",
+      "focus": "攻克 Grasshopper 最核心門檻：多維資料樹路徑運算、清單分流與仿生桁架生成。",
+      "contentExpansion": "延伸內容擴充 185%：深度剖析樹狀路徑映射 (Path Mapping)、樹分支偏移 (Shift Paths) 與資料對齊 (Data Matching: Longest, Shortest, Cross Reference)，搭建大型空間網架演算法。",
+      "coreTheory": "Grasshopper 的本質是圖形化資料流處理器。所有圖元皆依附於資料樹結構。一個路徑 `{A; B}[i]` 代表第 A 棟大樓、第 B 個樓層的第 i 根梁。若搞混了路徑結構，幾何連線會發生「維度爆炸」，例如原本應成對相連的 100 根桿件變成 100×100=10,000 根交錯雜線。精通資料樹是邁向專業運算化建築師的成人禮。",
+      "mathematicalFormula": "路徑映射變換矩陣：`{a; b; c} -> {a; b}` 透過 Shift Paths 降低資料深度，實現同樓層構件全域聚合運算。",
+      "advancedParameters": [
+        {
+          "name": "Data Matching Mode",
+          "value": "Cross Reference (交叉引用) / Longest List",
+          "purpose": "精準掌控網格雙向交叉交點生成"
+        },
+        {
+          "name": "Panel Display Mode",
+          "value": "Multiline Data (開啟換行符號)",
+          "purpose": "直觀稽核資料結構深度與分支數量"
+        }
       ],
-      practicalWalkthrough: [
-        '在 GH 中載入一條建築外殼曲面，使用 Divide Domain² (UV 劃分) 將其分割為 20×10 網格',
-        '使用 Isoprimitive 提取 UV 交叉節點陣列，觀察輸出端呈現 20 個分支，每個分支 10 個點',
-        '使用 Relative Item 節點跨分支配對相鄰頂點，自動連出空間雙向對角交叉支撐斜桿',
-        '使用 Pipe 節點沿桿件軸線賦予直徑 150mm 之圓管斷面，生成全鋼構大跨度穹頂',
+      "practicalWalkthrough": [
+        "在 GH 中載入一條建築外殼曲面，使用 Divide Domain² (UV 劃分) 將其分割為 20×10 網格",
+        "使用 Isoprimitive 提取 UV 交叉節點陣列，觀察輸出端呈現 20 個分支，每個分支 10 個點",
+        "使用 Relative Item 節點跨分支配對相鄰頂點，自動連出空間雙向對角交叉支撐斜桿",
+        "使用 Pipe 節點沿桿件軸線賦予直徑 150mm 之圓管斷面，生成全鋼構大跨度穹頂"
       ],
-      industryStandardOrCode: 'CNS 11567 鋼結構空間桁架大樣標註規範與 JSSC 日本鋼構造協會網架設計手冊。',
-      pitfallsAndVerification: '調試資料樹時，務必在每個複雜運算元旁掛一個「Param Viewer」，觀察分支路徑數量是否與預期的樓層或模矩數量一致。',
-      diagnosticDecisionTree: [
-        '問題：連線後 GH 畫布計算了 30 秒甚至凍結，生成出密密麻麻宛如黑洞的線團？',
-        '原因：兩組資料輸入端的分支維度不匹配，觸發了預設的「笛卡兒積交叉配對」',
-        '解法：立即按 Esc 中斷運算，鎖定節點後使用 Graft (植株) 或 Simplify (簡化路徑) 統一步調',
+      "industryStandardOrCode": "CNS 11567 鋼結構空間桁架大樣標註規範與 JSSC 日本鋼構造協會網架設計手冊。",
+      "pitfallsAndVerification": "調試資料樹時，務必在每個複雜運算元旁掛一個「Param Viewer」，觀察分支路徑數量是否與預期的樓層或模矩數量一致。",
+      "diagnosticDecisionTree": [
+        "問題：連線後 GH 畫布計算了 30 秒甚至凍結，生成出密密麻麻宛如黑洞的線團？",
+        "原因：兩組資料輸入端的分支維度不匹配，觸發了預設的「笛卡兒積交叉配對」",
+        "解法：立即按 Esc 中斷運算，鎖定節點後使用 Graft (植株) 或 Simplify (簡化路徑) 統一步調"
       ],
-      masteryChecklist: [
-        '能手繪並推導任意三層資料樹路徑在 Flatten, Graft, Shift Path 後的形態變遷',
-        '能運用 Flip Matrix 實現網格 UV 軸向橫縱翻轉運算',
-        '能自主搭建「空間雙曲網架結構全參數化生成腳本」',
-      ],
+      "masteryChecklist": [
+        "能手繪並推導任意三層資料樹路徑在 Flatten, Graft, Shift Path 後的形態變遷",
+        "能運用 Flip Matrix 實現網格 UV 軸向橫縱翻轉運算",
+        "能自主搭建「空間雙曲網架結構全參數化生成腳本」"
+      ]
     },
     {
-      round: 5,
-      badge: 'R5 渲染與光學物理',
-      title: 'Ladybug Tools 微氣候環境運算與日照輻射分析',
-      focus: '整合 Ladybug + Honeybee，以真實氣象資料 (.epw) 驅動建築形態最佳化。',
-      contentExpansion: '延伸內容擴充 210%：深度模擬全天候太陽輻射熱 (Solar Radiation)、晝光自主率 (Daylight Autonomy, sDA) 與室外微氣候熱舒適度 (UTCI)，打造真正高性能綠建築。',
-      coreTheory: '現代運算化建築拒絕形式主義，形態必須由環境物理數據驅動。Ladybug 直接讀取美國能源部 EnergyPlus 氣象檔案 (.epw)。透過逆向射線追蹤 (Radiance 引擎)，計算全年中每一小時陽光在建築表面的輻射通量 (kWh/m²)。演算法自動將高輻射區域的窗戶百葉角度轉向遮陽，而將背陰面的百葉轉向漫射採光。',
-      mathematicalFormula: '表面太陽輻射通量積分：E_total = ∫∫ (I_direct · cos θ + I_diffuse · SVF) dt dA，其中 SVF 為天空開闊度。',
-      advancedParameters: [
-        { name: 'Grid Size (採樣網格)', value: '500 mm x 500 mm', purpose: '精準捕捉建築開窗局部受熱差異' },
-        { name: 'Radiance Ambient Bounces', value: '-ab 3 (三次天空漫射反彈)', purpose: '精確評估室內進深區域採光自主率' },
+      "round": 5,
+      "badge": "R5 渲染與光學物理",
+      "title": "Ladybug Tools 微氣候環境運算與日照輻射分析",
+      "focus": "整合 Ladybug + Honeybee，以真實氣象資料 (.epw) 驅動建築形態最佳化。",
+      "contentExpansion": "延伸內容擴充 210%：深度模擬全天候太陽輻射熱 (Solar Radiation)、晝光自主率 (Daylight Autonomy, sDA) 與室外微氣候熱舒適度 (UTCI)，打造真正高性能綠建築。",
+      "coreTheory": "現代運算化建築拒絕形式主義，形態必須由環境物理數據驅動。Ladybug 直接讀取美國能源部 EnergyPlus 氣象檔案 (.epw)。透過逆向射線追蹤 (Radiance 引擎)，計算全年中每一小時陽光在建築表面的輻射通量 (kWh/m²)。演算法自動將高輻射區域的窗戶百葉角度轉向遮陽，而將背陰面的百葉轉向漫射採光。",
+      "mathematicalFormula": "表面太陽輻射通量積分：E_total = ∫∫ (I_direct · cos θ + I_diffuse · SVF) dt dA，其中 SVF 為天空開闊度。",
+      "advancedParameters": [
+        {
+          "name": "Grid Size (採樣網格)",
+          "value": "500 mm x 500 mm",
+          "purpose": "精準捕捉建築開窗局部受熱差異"
+        },
+        {
+          "name": "Radiance Ambient Bounces",
+          "value": "-ab 3 (三次天空漫射反彈)",
+          "purpose": "精確評估室內進深區域採光自主率"
+        }
       ],
-      practicalWalkthrough: [
-        '在 GH 載入基地氣象檔 (如 TPE_Taipei.epw)，提取全年日照軌跡圖 (SunPath)',
-        '連接 Ladybug_Incident Radiation 節點，將建築雙曲面量體作為分析目標幾何體',
-        '將分析產出的色彩雲圖覆蓋在模型上，一眼辨別夏季高熱負荷之危險區域',
-        '透過 Galapagos 遺傳演算法求解器，將建築扭轉角作為自變數，自動尋求「冬季採光最大化、夏季熱負荷最小化」之最佳形態',
+      "practicalWalkthrough": [
+        "在 GH 載入基地氣象檔 (如 TPE_Taipei.epw)，提取全年日照軌跡圖 (SunPath)",
+        "連接 Ladybug_Incident Radiation 節點，將建築雙曲面量體作為分析目標幾何體",
+        "將分析產出的色彩雲圖覆蓋在模型上，一眼辨別夏季高熱負荷之危險區域",
+        "透過 Galapagos 遺傳演算法求解器，將建築扭轉角作為自變數，自動尋求「冬季採光最大化、夏季熱負荷最小化」之最佳形態"
       ],
-      industryStandardOrCode: 'LEED v4 建築能源與採光標準與台灣《綠建築評估手冊》外殼節能指標。',
-      pitfallsAndVerification: '進行輻射模擬時必須將周遭鄰棟建物作為「Context (遮蔽環境)」一同連入，否則會高估建築底層的日照量。',
-      diagnosticDecisionTree: [
-        '問題：Ladybug 日照輻射分析跑出來全場呈現同一種均勻顏色沒有漸變？',
-        '原因：幾何體法線反向朝內，或者模型單位為 mm 但 Ladybug 預期單位為公尺 (m)',
-        '解法：檢查曲面 Normal 方向確保朝外，並在計算前將模型幾何尺度縮放至公尺標準',
+      "industryStandardOrCode": "LEED v4 建築能源與採光標準與台灣《綠建築評估手冊》外殼節能指標。",
+      "pitfallsAndVerification": "進行輻射模擬時必須將周遭鄰棟建物作為「Context (遮蔽環境)」一同連入，否則會高估建築底層的日照量。",
+      "diagnosticDecisionTree": [
+        "問題：Ladybug 日照輻射分析跑出來全場呈現同一種均勻顏色沒有漸變？",
+        "原因：幾何體法線反向朝內，或者模型單位為 mm 但 Ladybug 預期單位為公尺 (m)",
+        "解法：檢查曲面 Normal 方向確保朝外，並在計算前將模型幾何尺度縮放至公尺標準"
       ],
-      masteryChecklist: [
-        '能運用 Ladybug 輸出專業的日光軌跡圖 (Sunpath) 與風花圖 (Wind Rose)',
-        '精通利用 Galapagos / Wallacei 多目標演算法進行綠建築形態進化求解',
-        '能產出符合 LEED / 綠建築審查標準之採光自主率 (sDA) 分析圖說',
-      ],
+      "masteryChecklist": [
+        "能運用 Ladybug 輸出專業的日光軌跡圖 (Sunpath) 與風花圖 (Wind Rose)",
+        "精通利用 Galapagos / Wallacei 多目標演算法進行綠建築形態進化求解",
+        "能產出符合 LEED / 綠建築審查標準之採光自主率 (sDA) 分析圖說"
+      ]
     },
     {
-      round: 6,
-      badge: 'R6 跨軟體協同與 BIM',
-      title: 'Rhino.Inside.Revit 深度串流與 OpenBIM 原生實體轉譯',
-      focus: '架構從 Grasshopper 到 Revit 的無損直通管線，實現雙曲面演算法原生 BIM 翻模。',
-      contentExpansion: '延伸內容擴充 230%：解構 Rhino 8 的 Rhino.Inside 技術，繞過中間暫存檔直接操作 Revit API，將百萬點陣列一鍵轉譯為具備工程標註之原生 Revit 帷幕單元與結構柱梁。',
-      coreTheory: 'Rhino.Inside.Revit (RiR) 是一場營建軟體革命。它將 Rhino 8 的整個 C++ 核心載入到 Revit.exe 的記憶體空間中。兩者不再透過檔案匯出匯入，而是直接在同一個記憶體進程中互相通訊。在 GH 畫布中移動 Slider，Revit 視埠內的真實牆體與族群即時連動變更，徹底解決了幾何與 BIM 語意分離的世紀難題。',
-      advancedParameters: [
-        { name: 'Revit Document Context', value: 'Active Revit Document', purpose: '確保 GH 運算結果直接寫入當前專案' },
-        { name: 'Tracking Mode', value: 'Replace / Update (依圖元 GUID 原位更新)', purpose: '防止參數調整時幾何重複堆疊' },
+      "round": 6,
+      "badge": "R6 跨軟體協同與 BIM",
+      "title": "Rhino.Inside.Revit 深度串流與 OpenBIM 原生實體轉譯",
+      "focus": "架構從 Grasshopper 到 Revit 的無損直通管線，實現雙曲面演算法原生 BIM 翻模。",
+      "contentExpansion": "延伸內容擴充 230%：解構 Rhino 8 的 Rhino.Inside 技術，繞過中間暫存檔直接操作 Revit API，將百萬點陣列一鍵轉譯為具備工程標註之原生 Revit 帷幕單元與結構柱梁。",
+      "coreTheory": "Rhino.Inside.Revit (RiR) 是一場營建軟體革命。它將 Rhino 8 的整個 C++ 核心載入到 Revit.exe 的記憶體空間中。兩者不再透過檔案匯出匯入，而是直接在同一個記憶體進程中互相通訊。在 GH 畫布中移動 Slider，Revit 視埠內的真實牆體與族群即時連動變更，徹底解決了幾何與 BIM 語意分離的世紀難題。",
+      "advancedParameters": [
+        {
+          "name": "Revit Document Context",
+          "value": "Active Revit Document",
+          "purpose": "確保 GH 運算結果直接寫入當前專案"
+        },
+        {
+          "name": "Tracking Mode",
+          "value": "Replace / Update (依圖元 GUID 原位更新)",
+          "purpose": "防止參數調整時幾何重複堆疊"
+        }
       ],
-      practicalWalkthrough: [
-        '在 Revit 中點擊「加載項」啟動「Rhino.Inside.Revit」，開啟內嵌之 Rhino 與 GH',
-        '在 GH 中利用「Query Levels」讀取 Revit 專案內已設定好的所有樓層高程標高',
-        '將自由曲面立面等高線離散為點陣列，連入「Add Adaptive Component」節點',
-        '一鍵在 Revit 空間中精準鋪設 1,200 組自適應四點玻璃帷幕單元，且每個嵌板皆可參與 Revit 明細表計算',
+      "practicalWalkthrough": [
+        "在 Revit 中點擊「加載項」啟動「Rhino.Inside.Revit」，開啟內嵌之 Rhino 與 GH",
+        "在 GH 中利用「Query Levels」讀取 Revit 專案內已設定好的所有樓層高程標高",
+        "將自由曲面立面等高線離散為點陣列，連入「Add Adaptive Component」節點",
+        "一鍵在 Revit 空間中精準鋪設 1,200 組自適應四點玻璃帷幕單元，且每個嵌板皆可參與 Revit 明細表計算"
       ],
-      industryStandardOrCode: 'ISO 19650 共通資料交換標準與 buildingSMART OpenBIM 規範。',
-      pitfallsAndVerification: '在 RiR 中批次生成上千個 Revit 構件時，切記在 GH 節點前加上「Data Dam」水壩運算元，避免每滑動一次參數就引發 Revit 全案重新生成長達數分鐘。',
-      diagnosticDecisionTree: [
-        '問題：透過 RiR 建立的 Revit 構件在滑動參數時重複生成、模型重疊疊加？',
-        '原因：GH 節點的 Tracking Mode 被設為「None」失去了對原構件 GUID 的追蹤',
-        '解法：在 RiR 節點按右鍵，將 Tracking Mode 設定為「Update」，強制原圖元位置更新',
+      "industryStandardOrCode": "ISO 19650 共通資料交換標準與 buildingSMART OpenBIM 規範。",
+      "pitfallsAndVerification": "在 RiR 中批次生成上千個 Revit 構件時，切記在 GH 節點前加上「Data Dam」水壩運算元，避免每滑動一次參數就引發 Revit 全案重新生成長達數分鐘。",
+      "diagnosticDecisionTree": [
+        "問題：透過 RiR 建立的 Revit 構件在滑動參數時重複生成、模型重疊疊加？",
+        "原因：GH 節點的 Tracking Mode 被設為「None」失去了對原構件 GUID 的追蹤",
+        "解法：在 RiR 節點按右鍵，將 Tracking Mode 設定為「Update」，強制原圖元位置更新"
       ],
-      masteryChecklist: [
-        '能熟練搭建 Rhino.Inside.Revit 雙向即時通訊資料管線',
-        '精通利用 DirectShape 與 Adaptive Component 進行非標幾何之 BIM 語義化封裝',
-        '能將 GH 演算法計算產出的面板編號與尺寸直接寫入 Revit 構件屬性參數中',
-      ],
+      "masteryChecklist": [
+        "能熟練搭建 Rhino.Inside.Revit 雙向即時通訊資料管線",
+        "精通利用 DirectShape 與 Adaptive Component 進行非標幾何之 BIM 語義化封裝",
+        "能將 GH 演算法計算產出的面板編號與尺寸直接寫入 Revit 構件屬性參數中"
+      ]
     },
     {
-      round: 7,
-      badge: 'R7 腳本自動化與前瞻',
-      title: 'Python / C# 二次開發與次世代機器人數位製造 (Robotic Fabrication)',
-      focus: '掌握 RhinoCommon SDK 底層架構，開發客製化 GH 外掛，對接機械手臂 3D 列印與木構切削。',
-      contentExpansion: '延伸內容擴充 260%：深入 RhinoCommon 幾何幾何類別庫，編寫高效多執行緒 C# 運算元，整合 ABB / KUKA 工業機械手臂運動學 (Kinematics)，實現從代碼到建造。',
-      coreTheory: 'Rhino 8 全面原生支援 .NET Core 7 與 Python 3。RhinoCommon 是業界最強大的計算幾何類別庫之一。透過直接呼叫 `Rhino.Geometry` 底層資料結構，運算效能較純 GH 節點提升 50 倍以上。結合機械手臂外掛 (如 KUKA|prc 或 Robots)，建築幾何可直接被轉譯為 G-code 或機械手臂軸關節旋轉指令，實現異形木構 CNC 切削與混凝土 3D 列印。',
-      mathematicalFormula: '6 軸機械手臂逆運動學求解：θ_1..6 = InverseKinematics(Target_TCP_Matrix, Robot_Arm_Lengths)',
-      advancedParameters: [
-        { name: 'Python Engine', value: 'CPython 3.9 (支援 NumPy, SciPy, PyTorch)', purpose: '直接在 Rhino 內運行深度學習幾何模型' },
-        { name: 'Task Parallel Library (TPL)', value: 'Parallel.ForEach 多核心平行運算', purpose: '百萬點雲幾何即時解算' },
+      "round": 7,
+      "badge": "R7 腳本自動化與前瞻",
+      "title": "Python / C# 二次開發與次世代機器人數位製造 (Robotic Fabrication)",
+      "focus": "掌握 RhinoCommon SDK 底層架構，開發客製化 GH 外掛，對接機械手臂 3D 列印與木構切削。",
+      "contentExpansion": "延伸內容擴充 260%：深入 RhinoCommon 幾何幾何類別庫，編寫高效多執行緒 C# 運算元，整合 ABB / KUKA 工業機械手臂運動學 (Kinematics)，實現從代碼到建造。",
+      "coreTheory": "Rhino 8 全面原生支援 .NET Core 7 與 Python 3。RhinoCommon 是業界最強大的計算幾何類別庫之一。透過直接呼叫 `Rhino.Geometry` 底層資料結構，運算效能較純 GH 節點提升 50 倍以上。結合機械手臂外掛 (如 KUKA|prc 或 Robots)，建築幾何可直接被轉譯為 G-code 或機械手臂軸關節旋轉指令，實現異形木構 CNC 切削與混凝土 3D 列印。",
+      "mathematicalFormula": "6 軸機械手臂逆運動學求解：θ_1..6 = InverseKinematics(Target_TCP_Matrix, Robot_Arm_Lengths)",
+      "advancedParameters": [
+        {
+          "name": "Python Engine",
+          "value": "CPython 3.9 (支援 NumPy, SciPy, PyTorch)",
+          "purpose": "直接在 Rhino 內運行深度學習幾何模型"
+        },
+        {
+          "name": "Task Parallel Library (TPL)",
+          "value": "Parallel.ForEach 多核心平行運算",
+          "purpose": "百萬點雲幾何即時解算"
+        }
       ],
-      practicalWalkthrough: [
-        '在 VS Code 或 Rhino 內建 Script 編輯器中使用 Python 3 引入 `Rhino.Geometry`',
-        '編寫多執行緒腳本，批次對三維點雲進行 Delaunay 3D 空間網格重構',
-        '使用 KUKA|prc 外掛，將自由曲面空間軌跡轉換為 6 軸機械手臂刀具路徑 (Toolpaths)',
-        '進行碰撞模擬檢測 (Collision Avoidance)，確保手臂在實體加工切削時絕不干涉施工台',
+      "practicalWalkthrough": [
+        "在 VS Code 或 Rhino 內建 Script 編輯器中使用 Python 3 引入 `Rhino.Geometry`",
+        "編寫多執行緒腳本，批次對三維點雲進行 Delaunay 3D 空間網格重構",
+        "使用 KUKA|prc 外掛，將自由曲面空間軌跡轉換為 6 軸機械手臂刀具路徑 (Toolpaths)",
+        "進行碰撞模擬檢測 (Collision Avoidance)，確保手臂在實體加工切削時絕不干涉施工台"
       ],
-      industryStandardOrCode: 'ISO 10218 工業機器人安全規範與建築數位建造國際標準。',
-      pitfallsAndVerification: '機械手臂加工路徑必須嚴格檢查「奇異點 (Singularities)」；當手臂關節軸心共線時會引發極限角速度抖動，需在演算法中預先施加角度偏移約束。',
-      diagnosticDecisionTree: [
-        '問題：Python 腳本在處理數十萬個幾何體時效能低落？',
-        '原因：频繁在迴圈中將物件加入到 RhinoDoc 文檔中觸發畫面重繪',
-        '解法：先在純記憶體中完成全部幾何矩陣運算，最後以 `doc.Objects.Add()` 一次性批次寫入',
+      "industryStandardOrCode": "ISO 10218 工業機器人安全規範與建築數位建造國際標準。",
+      "pitfallsAndVerification": "機械手臂加工路徑必須嚴格檢查「奇異點 (Singularities)」；當手臂關節軸心共線時會引發極限角速度抖動，需在演算法中預先施加角度偏移約束。",
+      "diagnosticDecisionTree": [
+        "問題：Python 腳本在處理數十萬個幾何體時效能低落？",
+        "原因：频繁在迴圈中將物件加入到 RhinoDoc 文檔中觸發畫面重繪",
+        "解法：先在純記憶體中完成全部幾何矩陣運算，最後以 `doc.Objects.Add()` 一次性批次寫入"
       ],
-      masteryChecklist: [
-        '能運用 Python 3 調用 NumPy 實現建築幾何大規模向量化矩陣運算',
-        '理解 RhinoCommon 中 Brep, Mesh, Curve 類別的核心方法與記憶體釋放機制',
-        '能獨立編寫機械手臂空間加工刀位軌跡生成演算法',
-      ],
-    },
+      "masteryChecklist": [
+        "能運用 Python 3 調用 NumPy 實現建築幾何大規模向量化矩陣運算",
+        "理解 RhinoCommon 中 Brep, Mesh, Curve 類別的核心方法與記憶體釋放機制",
+        "能獨立編寫機械手臂空間加工刀位軌跡生成演算法"
+      ]
+    }
   ],
-  industryPipeline: {
-    stage: '前衛概念發想、複雜幾何有理化、參數化立面生成、性能模擬與數位建造加工',
-    softwareRole: '全球前衛建築、非標雙曲面造型與運算化設計無可爭議之神級霸主',
-    fileFormats: {
-      import: ['.3dm', '.dwg', '.dxf', '.obj', '.step', '.iges', '.sat', '.skp', '.fbx', '.ply', '.pdf'],
-      export: ['.3dm', '.step', '.iges', '.dwg', '.dxf', '.obj', '.fbx', '.ai', '.sat', '.stl', '.gcode'],
+  "industryPipeline": {
+    "stage": "前衛概念發想、複雜幾何有理化、參數化立面生成、性能模擬與數位建造加工",
+    "softwareRole": "全球前衛建築、非標雙曲面造型與運算化設計無可爭議之神級霸主",
+    "fileFormats": {
+      "import": [
+        ".3dm",
+        ".dwg",
+        ".dxf",
+        ".obj",
+        ".step",
+        ".iges",
+        ".sat",
+        ".skp",
+        ".fbx",
+        ".ply",
+        ".pdf"
+      ],
+      "export": [
+        ".3dm",
+        ".step",
+        ".iges",
+        ".dwg",
+        ".dxf",
+        ".obj",
+        ".fbx",
+        ".ai",
+        ".sat",
+        ".stl",
+        ".gcode"
+      ]
     },
-    collaborationWith: ['Revit (經由 Rhino.Inside.Revit 無縫對接)', 'AutoCAD (DWG 向量施工圖導出)', 'Archicad (Grasshopper Live Connection)', 'Unreal Engine 5 (即時大場景串流)'],
+    "collaborationWith": [
+      "Revit (經由 Rhino.Inside.Revit 無縫對接)",
+      "AutoCAD (DWG 向量施工圖導出)",
+      "Archicad (Grasshopper Live Connection)",
+      "Unreal Engine 5 (即時大場景串流)"
+    ]
   },
+  "learningResources": [
+    {
+      "title": "McNeel Rhino Learn - 官方 Rhino 與 Grasshopper 運算化建築幾何指南",
+      "provider": "Robert McNeel & Associates",
+      "category": "官方原廠教學",
+      "url": "https://www.rhino3d.com/learn/",
+      "description": "Rhino 官方核心教學庫，涵蓋 NURBS 自由曲面拓撲、微分幾何分析、SubD 與 Grasshopper 參數化建模。",
+      "badge": "原廠官方指南"
+    },
+    {
+      "title": "Grasshopper Docs - 參數化演算法元件庫與拓撲手冊",
+      "provider": "Grasshopper Docs Community",
+      "category": "官方原廠教學",
+      "url": "https://grasshopperdocs.com",
+      "description": "全球最完整之 Grasshopper 演算法元件百科，包含 Kangaroo 物理受力、Karakter 結構分析與異形曲面分割。",
+      "badge": "元件演算法手冊"
+    },
+    {
+      "title": "Ladybug Tools Academy - 建築環境物理分析與綠建築微氣候模擬",
+      "provider": "Ladybug Tools LLC",
+      "category": "實務工作流與開放標準",
+      "url": "https://www.ladybug.tools",
+      "description": "結合 Radiance 與 EnergyPlus，在 Rhino/GH 中進行建築日光輻射、眩光分析、風場舒適度與日照陰影模擬。",
+      "badge": "綠建築物理模擬"
+    },
+    {
+      "title": "Rhino-Python 建築自由曲面與面板有理化 (Panelization) 演算法教學",
+      "provider": "McNeel Developer Guides",
+      "category": "官方原廠教學",
+      "url": "https://developer.rhino3d.com/guides/rhinopython/",
+      "description": "透過 Python 腳本控制 Rhino.Geometry 幾何庫，實現雙曲面四邊形平面化逼近與 CNC 預製加工編號自動化。",
+      "badge": "程式碼二次開發"
+    },
+    {
+      "title": "形構建築 (Fab-Union) 與 ZHA 參數化建造實務技術手冊",
+      "provider": "國際運算化設計與數位製造研討會",
+      "category": "學術研討與開放教材",
+      "url": "https://www.zaha-hadid.com/design/computation-and-design-zhcode/",
+      "description": "國際頂尖異形建築事務所之數位製造流程：從 Grasshopper 演算法到工廠 5 軸機械手臂加工落地實錄。",
+      "badge": "國際前沿前瞻"
+    }
+  ],
+  "certificationStandards": [
+    {
+      "name": "McNeel Certified Rhino Specialist (Level 1 & Level 2)",
+      "level": "國際原廠專家級認證",
+      "authority": "Robert McNeel & Associates",
+      "description": "考核 NURBS 曲線階數 (Degree)、連續性 (G0/G1/G2/G3/G4)、曲面交集、布林拓撲與精確建築製造公差控制。",
+      "keyCompetencies": [
+        "NURBS 曲線曲面微積分幾何原理",
+        "高階連續性曲面匹配 (MatchSrf)",
+        "實體拓撲網格化 (Meshing Tolerances)",
+        "Grasshopper 樹狀資料結構 (Data Trees)"
+      ],
+      "officialExamUrl": "https://www.rhino3d.com/learn/"
+    }
+  ]
 };

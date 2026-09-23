@@ -28,6 +28,9 @@ import {
   GitBranch,
   CheckSquare,
   Square,
+  Award,
+  GraduationCap,
+  BookMarked,
 } from 'lucide-react';
 import { CadSoftware } from '@/data/cad-software/cadSoftwareData';
 
@@ -40,6 +43,7 @@ interface Props {
 export default function CadSoftwareDetailView({ software, prevSoftware, nextSoftware }: Props) {
   const [activeRound, setActiveRound] = useState<number>(1);
   const [shortcutFilter, setShortcutFilter] = useState<string>('all');
+  const [resourceCategory, setResourceCategory] = useState<string>('all');
   const [copiedSnippetTitle, setCopiedSnippetTitle] = useState<string | null>(null);
   const [completedChecklist, setCompletedChecklist] = useState<Record<string, boolean>>({});
 
@@ -168,11 +172,19 @@ export default function CadSoftwareDetailView({ software, prevSoftware, nextSoft
 
           {/* Jump Links */}
           <div className="flex flex-wrap gap-2 pt-2">
+            {software.certificationStandards && software.certificationStandards.length > 0 && (
+              <a
+                href="#certifications"
+                className="rounded-xl bg-amber-500/10 text-amber-700 dark:text-amber-300 border border-amber-500/20 px-3.5 py-1.5 text-xs font-mono font-bold hover:bg-amber-500 hover:text-white transition"
+              >
+                ↓ 國家檢定與認證體系 ({software.certificationStandards.length})
+              </a>
+            )}
             <a
               href="#applications"
               className="rounded-xl bg-slate-200/80 dark:bg-slate-800 px-3.5 py-1.5 text-xs font-mono font-medium text-slate-700 dark:text-slate-300 hover:bg-blue-600 hover:text-white transition"
             >
-              ↓ 建築實務應用與代碼範例
+              ↓ 建築實務應用與代碼 ({software.architecturalApplications.length})
             </a>
             <a
               href="#seven-iterations"
@@ -192,11 +204,19 @@ export default function CadSoftwareDetailView({ software, prevSoftware, nextSoft
             >
               ↓ 跨軟體協同與格式管線
             </a>
+            {software.learningResources && software.learningResources.length > 0 && (
+              <a
+                href="#learning-resources"
+                className="rounded-xl bg-blue-600/10 text-blue-700 dark:text-blue-300 border border-blue-600/20 px-3.5 py-1.5 text-xs font-mono font-bold hover:bg-blue-600 hover:text-white transition"
+              >
+                ↓ 網路權威教學與法規資源 ({software.learningResources.length})
+              </a>
+            )}
             <a
               href="#official-links"
               className="rounded-xl bg-slate-200/80 dark:bg-slate-800 px-3.5 py-1.5 text-xs font-mono font-medium text-slate-700 dark:text-slate-300 hover:bg-blue-600 hover:text-white transition"
             >
-              ↓ 官方資源與授權管道
+              ↓ 官方正版授權
             </a>
           </div>
         </div>
@@ -204,6 +224,80 @@ export default function CadSoftwareDetailView({ software, prevSoftware, nextSoft
 
       {/* Main Content Sections */}
       <div className="mx-auto max-w-6xl px-4 py-12 sm:px-6 lg:px-8 space-y-16">
+
+        {/* SECTION 0: 國家檢定與專業證照標準 */}
+        {software.certificationStandards && software.certificationStandards.length > 0 && (
+          <section id="certifications" className="rounded-3xl border border-amber-200 dark:border-amber-900/50 bg-gradient-to-r from-amber-50/40 via-white to-amber-50/20 dark:from-amber-950/20 dark:via-slate-900 dark:to-slate-900 p-6 sm:p-8 shadow-sm space-y-6">
+            <div className="border-b border-amber-200/60 dark:border-amber-900/40 pb-4">
+              <span className="text-xs font-mono font-bold uppercase tracking-wider text-amber-600 dark:text-amber-400 flex items-center gap-1.5">
+                <Award className="size-4" />
+                PROFESSIONAL LICENSURE & CERTIFICATION STANDARDS
+              </span>
+              <h2 className="mt-1 font-serif text-2xl font-bold text-slate-900 dark:text-white">
+                國家檢定與原廠專業證照認證對標
+              </h2>
+              <p className="text-xs text-slate-500 dark:text-slate-400 mt-1">
+                本工具於台灣國家技術士考試（勞動部建築製圖應用職類）、國際原廠認證與業界能力指標之嚴格對標
+              </p>
+            </div>
+
+            <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+              {software.certificationStandards.map((cert) => (
+                <div
+                  key={cert.name}
+                  className="flex flex-col justify-between rounded-2xl border border-amber-200/70 dark:border-amber-900/40 bg-white dark:bg-slate-900/80 p-5 space-y-4 hover:border-amber-500 transition shadow-sm"
+                >
+                  <div className="space-y-2">
+                    <div className="flex items-center justify-between gap-2">
+                      <span className="inline-flex items-center gap-1 rounded-full bg-amber-500/10 text-amber-700 dark:text-amber-300 border border-amber-500/20 px-2 py-0.5 text-[11px] font-mono font-bold">
+                        <GraduationCap className="size-3" />
+                        {cert.level}
+                      </span>
+                      <span className="text-[11px] font-mono text-slate-400">{cert.authority}</span>
+                    </div>
+
+                    <h3 className="font-bold text-sm text-slate-900 dark:text-white">
+                      {cert.name}
+                    </h3>
+
+                    <p className="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">
+                      {cert.description}
+                    </p>
+                  </div>
+
+                  <div className="space-y-3 pt-3 border-t border-slate-100 dark:border-slate-800">
+                    <div>
+                      <span className="text-[11px] font-mono font-bold text-slate-500 dark:text-slate-400 block mb-1.5">
+                        評測核心技能 (Key Competencies)：
+                      </span>
+                      <div className="flex flex-wrap gap-1">
+                        {cert.keyCompetencies.map((comp) => (
+                          <span
+                            key={comp}
+                            className="rounded bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 px-2 py-0.5 text-[11px] font-mono"
+                          >
+                            ✓ {comp}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+
+                    {cert.officialExamUrl && (
+                      <a
+                        href={cert.officialExamUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-1.5 text-xs font-mono font-bold text-amber-600 dark:text-amber-400 hover:underline pt-1"
+                      >
+                        檢定簡章與考照入口 <ExternalLink className="size-3" />
+                      </a>
+                    )}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </section>
+        )}
 
         {/* SECTION 1: 建築製圖與工程實務核心應用 */}
         <section id="applications" className="space-y-6">
@@ -896,6 +990,85 @@ export default function CadSoftwareDetailView({ software, prevSoftware, nextSoft
             </div>
           </div>
         </section>
+
+        {/* SECTION 4.5: 網路電腦繪製建築圖權威教學與知識庫網絡 */}
+        {software.learningResources && software.learningResources.length > 0 && (
+          <section id="learning-resources" className="rounded-3xl border border-blue-200 dark:border-blue-900/60 bg-white dark:bg-slate-900 p-6 sm:p-8 shadow-sm space-y-6">
+            <div className="border-b border-slate-100 dark:border-slate-800 pb-4">
+              <span className="text-xs font-mono font-bold uppercase tracking-wider text-blue-600 dark:text-blue-400 flex items-center gap-1.5">
+                <BookMarked className="size-4" />
+                CURATED LEARNING RESOURCES & STATUTORY CODES
+              </span>
+              <h2 className="mt-1 font-serif text-2xl font-bold text-slate-900 dark:text-white">
+                網路電腦繪製建築圖權威教學與法規資源庫
+              </h2>
+              <p className="text-xs text-slate-500 dark:text-slate-400 mt-1">
+                嚴格收錄政府檢定試題、CNS 國家標準規範、官方原廠手冊與營造實務套圖指引之有效權威連結
+              </p>
+
+              {/* Filter categories */}
+              <div className="flex flex-wrap gap-1.5 mt-4">
+                {['all', '國家檢定與法規', '官方原廠教學', '實務工作流與開放標準', '學術研討與開放教材'].map((cat) => (
+                  <button
+                    key={cat}
+                    onClick={() => setResourceCategory(cat)}
+                    className={`rounded-full px-3 py-1 text-xs font-mono transition ${
+                      resourceCategory === cat
+                        ? 'bg-blue-600 text-white font-bold'
+                        : 'bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400 hover:bg-slate-200 dark:hover:bg-slate-700'
+                    }`}
+                  >
+                    {cat === 'all' ? '全部資源' : cat}
+                  </button>
+                ))}
+              </div>
+            </div>
+
+            <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+              {software.learningResources
+                .filter((res) => resourceCategory === 'all' || res.category === resourceCategory)
+                .map((resource) => (
+                  <a
+                    key={resource.url}
+                    href={resource.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="group flex flex-col justify-between rounded-2xl border border-slate-200 dark:border-slate-800 bg-slate-50/50 dark:bg-slate-800/40 p-5 hover:border-blue-500 dark:hover:border-blue-400 transition hover:shadow-md space-y-3"
+                  >
+                    <div className="space-y-2">
+                      <div className="flex items-center justify-between gap-2">
+                        <span className="rounded-full bg-blue-100 dark:bg-blue-900/40 text-blue-700 dark:text-blue-300 px-2 py-0.5 text-[10px] font-mono font-bold">
+                          {resource.category}
+                        </span>
+                        {resource.badge && (
+                          <span className="rounded bg-amber-500/10 text-amber-700 dark:text-amber-300 border border-amber-500/20 px-1.5 py-0.5 text-[10px] font-mono">
+                            {resource.badge}
+                          </span>
+                        )}
+                      </div>
+
+                      <h3 className="font-bold text-sm text-slate-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 transition leading-snug">
+                        {resource.title}
+                      </h3>
+
+                      <span className="block text-[11px] font-mono text-slate-400">
+                        🏛️ 來源主辦：{resource.provider}
+                      </span>
+
+                      <p className="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">
+                        {resource.description}
+                      </p>
+                    </div>
+
+                    <div className="pt-2 border-t border-slate-200/60 dark:border-slate-700/60 flex items-center justify-between text-xs text-blue-600 dark:text-blue-400 font-mono font-bold">
+                      <span>開啟官方資源</span>
+                      <ExternalLink className="size-3.5 group-hover:translate-x-0.5 transition" />
+                    </div>
+                  </a>
+                ))}
+            </div>
+          </section>
+        )}
 
         {/* SECTION 5: 官方網站與正版教育授權連結 */}
         <section id="official-links" className="rounded-3xl border border-blue-200 dark:border-blue-900/60 bg-gradient-to-r from-blue-50/50 via-white to-purple-50/50 dark:from-blue-950/20 dark:via-slate-900 dark:to-purple-950/20 p-6 sm:p-10 shadow-sm">

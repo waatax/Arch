@@ -1,398 +1,767 @@
 import { CadSoftware } from '../types';
 
 export const renderingEnginesData: CadSoftware = {
-  slug: 'rendering-engines',
-  name: '即時渲染引擎 (Enscape / D5 / Twinmotion / Lumion)',
-  englishName: 'Next-Gen Realtime Architectural Rendering Engines Suite',
-  vendor: 'Chaos, D5 Technology, Epic Games, Act-3D',
-  releaseYear: '2015-2025 (自硬體即時光追普及後，徹底重塑建築視覺表現生態)',
-  tag: '電腦繪圖',
-  category: '即時光線追蹤、沉浸式 VR 與次世代互動式建築視覺化',
-  badge: '零秒等待即時光影與互動元宇宙',
-  rating: {
-    learningCurve: '極親民 (直覺滑桿控制，設計師半天即可產出專業大片)',
-    industryAdoption: '全球建築事務所日常方案深化普及率高達 95%',
-    bimCapability: '即時雙向連動 (LiveSync 支援 Revit, SketchUp, Rhino, Archicad)',
-    drawingOutput: '非專長 (專注於 4K/8K 照片、60fps 動畫、VR 與 360 全景)',
-    renderingQuality: '頂級即時光追 (DLSS 3.5 光線重建 + RTX 硬體光學加速)',
+  "slug": "rendering-engines",
+  "name": "即時渲染引擎 (Enscape / D5 / Twinmotion / Lumion)",
+  "englishName": "Next-Gen Realtime Architectural Rendering Engines Suite",
+  "vendor": "Chaos, D5 Technology, Epic Games, Act-3D",
+  "releaseYear": "2015-2025 (自硬體即時光追普及後，徹底重塑建築視覺表現生態)",
+  "tag": "電腦繪圖",
+  "category": "即時光線追蹤、沉浸式 VR 與次世代互動式建築視覺化",
+  "badge": "零秒等待即時光影與互動元宇宙",
+  "rating": {
+    "learningCurve": "極親民 (直覺滑桿控制，設計師半天即可產出專業大片)",
+    "industryAdoption": "全球建築事務所日常方案深化普及率高達 95%",
+    "bimCapability": "即時雙向連動 (LiveSync 支援 Revit, SketchUp, Rhino, Archicad)",
+    "drawingOutput": "非專長 (專注於 4K/8K 照片、60fps 動畫、VR 與 360 全景)",
+    "renderingQuality": "頂級即時光追 (DLSS 3.5 光線重建 + RTX 硬體光學加速)"
   },
-  shortDesc: '徹底終結傳統「漫長算圖等待」的次世代視覺革命。以 Enscape、D5 Render、Twinmotion、Lumion 為代表，實現設計推拉即時光追反射，直出 8K、VR 與 360 度全景漫遊。',
-  fullDesc: '即時渲染引擎是過去十年建築表現領域最深刻的一場技術巨變。借助 NVIDIA RTX 硬體光追核心、AI 降噪與 Epic Games Unreal Engine 5 的頂尖圖形技術（如 Lumen 動態全域光照與 Nanite 虛擬微多邊形），傳統需要數小時離線渲染的複雜大場景，如今能在 0.03 秒（每秒 60 幀）內即時呈現無瑕的陽光漫射、水體倒影與微表面材質。搭配 LiveSync 雙向即時通訊，建築師在 SketchUp, Revit, Rhino 或 Archicad 中拉動一面牆，渲染畫面同步毫秒級更新，極大加速了方案推敲與業主沉浸式溝通決策。',
-  officialUrl: 'https://enscape3d.com/',
-  studentLicenseUrl: 'https://www.d5render.com/education',
-  docUrl: 'https://docs.twinmotion.com/',
-  communityUrl: 'https://forum.lumion.com/',
-  heroMetrics: [
-    { label: '即時渲染幀率', value: '60fps 4K 實時光追' },
-    { label: '多軟體雙向聯動', value: 'LiveSync 零延遲同步' },
-    { label: '沉浸式虛擬實境', value: '一鍵開啟 SteamVR' },
-    { label: '大場景生態資產', value: '萬種 PBR 植栽人物' },
+  "shortDesc": "徹底終結傳統「漫長算圖等待」的次世代視覺革命。以 Enscape、D5 Render、Twinmotion、Lumion 為代表，實現設計推拉即時光追反射，直出 8K、VR 與 360 度全景漫遊。",
+  "fullDesc": "即時渲染引擎是過去十年建築表現領域最深刻的一場技術巨變。借助 NVIDIA RTX 硬體光追核心、AI 降噪與 Epic Games Unreal Engine 5 的頂尖圖形技術（如 Lumen 動態全域光照與 Nanite 虛擬微多邊形），傳統需要數小時離線渲染的複雜大場景，如今能在 0.03 秒（每秒 60 幀）內即時呈現無瑕的陽光漫射、水體倒影與微表面材質。搭配 LiveSync 雙向即時通訊，建築師在 SketchUp, Revit, Rhino 或 Archicad 中拉動一面牆，渲染畫面同步毫秒級更新，極大加速了方案推敲與業主沉浸式溝通決策。",
+  "officialUrl": "https://enscape3d.com/",
+  "studentLicenseUrl": "https://www.d5render.com/education",
+  "docUrl": "https://docs.twinmotion.com/",
+  "communityUrl": "https://forum.lumion.com/",
+  "heroMetrics": [
+    {
+      "label": "即時渲染幀率",
+      "value": "60fps 4K 實時光追"
+    },
+    {
+      "label": "多軟體雙向聯動",
+      "value": "LiveSync 零延遲同步"
+    },
+    {
+      "label": "沉浸式虛擬實境",
+      "value": "一鍵開啟 SteamVR"
+    },
+    {
+      "label": "大場景生態資產",
+      "value": "萬種 PBR 植栽人物"
+    }
   ],
-  architecturalApplications: [
+  "architecturalApplications": [
     {
-      area: '方案推敲雙向即時同步 (LiveSync)',
-      title: '設計推拉與毫秒級光影同步響應',
-      description: '透過 LiveSync 外掛將 CAD/BIM 軟體與即時渲染引擎同屏並排。建築師在 SketchUp 或 Revit 中修改牆體厚度或推拉開口，渲染視窗同步毫秒級呈現真實日光漫射與材質陰影。',
-      deepDivePrinciples: [
-        '雙向命名管道 (Named Pipes) 與共享記憶體 (IPC) 通訊協定：以最小開銷即時傳遞頂點矩陣增量更新 (Delta Updates)',
-        '相機矩陣即時鏡像同步：CAD 視角旋轉時，渲染引擎相機同頻率運作，消除「雙螢幕對不齊」的作業割裂感',
-        '材質關鍵字自動指派演算法：自動識別圖層名包含「Glass」、「Water」、「Grass」並智慧套用物理著色器',
+      "area": "方案推敲雙向即時同步 (LiveSync)",
+      "title": "設計推拉與毫秒級光影同步響應",
+      "description": "透過 LiveSync 外掛將 CAD/BIM 軟體與即時渲染引擎同屏並排。建築師在 SketchUp 或 Revit 中修改牆體厚度或推拉開口，渲染視窗同步毫秒級呈現真實日光漫射與材質陰影。",
+      "deepDivePrinciples": [
+        "雙向命名管道 (Named Pipes) 與共享記憶體 (IPC) 通訊協定：以最小開銷即時傳遞頂點矩陣增量更新 (Delta Updates)",
+        "相機矩陣即時鏡像同步：CAD 視角旋轉時，渲染引擎相機同頻率運作，消除「雙螢幕對不齊」的作業割裂感",
+        "材質關鍵字自動指派演算法：自動識別圖層名包含「Glass」、「Water」、「Grass」並智慧套用物理著色器"
       ],
-      realWorldCase: '台北信義計畫區商業總部競圖：事務所採用 Enscape 與 SketchUp 雙螢幕同步設計，在 48 小時極限截稿期內隨時推敲外遮陽百葉對室內採光眩光的即時影響，極速產出 20 組方案對照圖。',
-      standardCodeRef: 'CIE 117-1995 建築室內不舒適眩光 (UGR) 評估標準與 IESNA 晝光照明設計準則。',
-      codeSnippet: {
-        language: 'hlsl',
-        title: '即時渲染引擎視差遮擋映射 (Parallax Occlusion Mapping, POM) 核心著色代碼',
-        code: `// POM 視差遮擋映射：在平面網格上計算真實微表面凹凸遮擋與陰影\nfloat2 ParallaxMapping(float2 texCoords, float3 viewDir, float heightScale)\n{\n    const float minLayers = 8.0;\n    const float maxLayers = 32.0;\n    float numLayers = lerp(maxLayers, minLayers, max(dot(float3(0, 0, 1), viewDir), 0.0));\n    float layerDepth = 1.0 / numLayers;\n    float currentLayerDepth = 0.0;\n    float2 P = viewDir.xy * heightScale;\n    float2 deltaTexCoords = P / numLayers;\n    \n    float2 currentTexCoords = texCoords;\n    float currentDepthMapValue = HeightTexture.Sample(SamplerState, currentTexCoords).r;\n    \n    while(currentLayerDepth < currentDepthMapValue)\n    {\n        currentTexCoords -= deltaTexCoords;\n        currentDepthMapValue = HeightTexture.Sample(SamplerState, currentTexCoords).r;\n        currentLayerDepth += layerDepth;\n    }\n    return currentTexCoords; // 回傳校正後之視差貼圖座標\n}`,
-        explanation: '即時渲染引擎透過 POM 演算法在不增加任何幾何多邊形的前提下，為建築外牆石材、瓦片與磚縫賦予立體深度與自我遮擋投影。',
+      "realWorldCase": "台北信義計畫區商業總部競圖：事務所採用 Enscape 與 SketchUp 雙螢幕同步設計，在 48 小時極限截稿期內隨時推敲外遮陽百葉對室內採光眩光的即時影響，極速產出 20 組方案對照圖。",
+      "standardCodeRef": "CIE 117-1995 建築室內不舒適眩光 (UGR) 評估標準與 IESNA 晝光照明設計準則。",
+      "codeSnippet": {
+        "language": "hlsl",
+        "title": "即時渲染引擎視差遮擋映射 (Parallax Occlusion Mapping, POM) 核心著色代碼",
+        "code": "// POM 視差遮擋映射：在平面網格上計算真實微表面凹凸遮擋與陰影\nfloat2 ParallaxMapping(float2 texCoords, float3 viewDir, float heightScale)\n{\n    const float minLayers = 8.0;\n    const float maxLayers = 32.0;\n    float numLayers = lerp(maxLayers, minLayers, max(dot(float3(0, 0, 1), viewDir), 0.0));\n    float layerDepth = 1.0 / numLayers;\n    float currentLayerDepth = 0.0;\n    float2 P = viewDir.xy * heightScale;\n    float2 deltaTexCoords = P / numLayers;\n    \n    float2 currentTexCoords = texCoords;\n    float currentDepthMapValue = HeightTexture.Sample(SamplerState, currentTexCoords).r;\n    \n    while(currentLayerDepth < currentDepthMapValue)\n    {\n        currentTexCoords -= deltaTexCoords;\n        currentDepthMapValue = HeightTexture.Sample(SamplerState, currentTexCoords).r;\n        currentLayerDepth += layerDepth;\n    }\n    return currentTexCoords; // 回傳校正後之視差貼圖座標\n}",
+        "explanation": "即時渲染引擎透過 POM 演算法在不增加任何幾何多邊形的前提下，為建築外牆石材、瓦片與磚縫賦予立體深度與自我遮擋投影。"
       },
-      technicalDetails: [
-        '相機視角兩點透視 (Two-Point Perspective) 一鍵校正垂直線',
-        '動態日照時間滑桿 (Time of Day Slider) 毫秒級模擬晨曦至正午日照',
-        '內建高精度氣象模型 (雲量、霧氣濁度、丁達爾日光束)',
+      "technicalDetails": [
+        "相機視角兩點透視 (Two-Point Perspective) 一鍵校正垂直線",
+        "動態日照時間滑桿 (Time of Day Slider) 毫秒級模擬晨曦至正午日照",
+        "內建高精度氣象模型 (雲量、霧氣濁度、丁達爾日光束)"
       ],
-      deliverables: ['即時方案對比多視角截圖', '4K 方案推敲動畫短片', '全區多視角全景日照分析圖'],
+      "deliverables": [
+        "即時方案對比多視角截圖",
+        "4K 方案推敲動畫短片",
+        "全區多視角全景日照分析圖"
+      ]
     },
     {
-      area: '超大規模生態景觀與季節天候模擬',
-      title: '百萬植栽筆刷鋪設與動態雨雪風力系統',
-      description: '利用 GPU 實例化 (GPU Instancing) 筆刷在基地上快速塗抹茂密灌木、喬木與草皮；一鍵切換雨天積水、寒冬覆雪與金秋落葉，展現建築在極端天候下的詩意張力。',
-      deepDivePrinciples: [
-        '階層邊界體積 (BVH) 與 GPU 錐體裁剪：鏡頭外的樹木自動剔除，維持 60fps 流暢幀率',
-        '動態材質混合著色器 (Dynamic Weather Blend Shader)：雨天自動在水平朝上表面增加水膜 Roughness=0.02 與法線漣漪，雪天覆蓋 PBR 結晶白色厚度',
-        '風力場物理擾動 (Wind Vector Field)：樹枝與樹葉依據風速等級進行非線性擺動與落葉粒子模擬',
+      "area": "超大規模生態景觀與季節天候模擬",
+      "title": "百萬植栽筆刷鋪設與動態雨雪風力系統",
+      "description": "利用 GPU 實例化 (GPU Instancing) 筆刷在基地上快速塗抹茂密灌木、喬木與草皮；一鍵切換雨天積水、寒冬覆雪與金秋落葉，展現建築在極端天候下的詩意張力。",
+      "deepDivePrinciples": [
+        "階層邊界體積 (BVH) 與 GPU 錐體裁剪：鏡頭外的樹木自動剔除，維持 60fps 流暢幀率",
+        "動態材質混合著色器 (Dynamic Weather Blend Shader)：雨天自動在水平朝上表面增加水膜 Roughness=0.02 與法線漣漪，雪天覆蓋 PBR 結晶白色厚度",
+        "風力場物理擾動 (Wind Vector Field)：樹枝與樹葉依據風速等級進行非線性擺動與落葉粒子模擬"
       ],
-      realWorldCase: '日月潭湖畔生態度假村：團隊在 D5 Render 中以植物筆刷 10 分鐘內鋪設 12 萬株台灣原生蕨類與落羽松，利用雨天滑桿呈現湖面波紋與木棧道雨水倒影，獲業主一致讚譽。',
-      standardCodeRef: '台灣《綠建築評估手冊》生態多樣性與水資源涵養指標。',
-      technicalDetails: [
-        '智慧散射工具 (Scatter) 依據坡度與地表法線限制植栽生長範圍',
-        '動態車流與行走人流路徑工具 (Path Tools) 模擬繁華都市街道活力',
-        '即時水體著色器 (Ocean & Lake Water) 模擬深水吸收與物理焦散光斑',
+      "realWorldCase": "日月潭湖畔生態度假村：團隊在 D5 Render 中以植物筆刷 10 分鐘內鋪設 12 萬株台灣原生蕨類與落羽松，利用雨天滑桿呈現湖面波紋與木棧道雨水倒影，獲業主一致讚譽。",
+      "standardCodeRef": "台灣《綠建築評估手冊》生態多樣性與水資源涵養指標。",
+      "technicalDetails": [
+        "智慧散射工具 (Scatter) 依據坡度與地表法線限制植栽生長範圍",
+        "動態車流與行走人流路徑工具 (Path Tools) 模擬繁華都市街道活力",
+        "即時水體著色器 (Ocean & Lake Water) 模擬深水吸收與物理焦散光斑"
       ],
-      deliverables: ['四季景觀變換展示圖集', '動態降雨雨滴漣漪動畫', '超大尺度整體規劃鳥瞰宣傳片'],
+      "deliverables": [
+        "四季景觀變換展示圖集",
+        "動態降雨雨滴漣漪動畫",
+        "超大尺度整體規劃鳥瞰宣傳片"
+      ]
     },
     {
-      area: '沉浸式 VR 虛擬實境與全景線上漫遊',
-      title: '一鍵 SteamVR 頭盔沉浸漫遊與 Web 360 雲端展廳',
-      description: '無需漫長烘焙等待，點擊按鈕立即將 3D 建築場景串流至 VR 頭盔 (Meta Quest / HTC Vive)；一鍵輸出 8K 360 度立體全景圖，部署至手機與網頁線上漫遊。',
-      deepDivePrinciples: [
-        '單通道雙目渲染 (Single Pass Stereo / Instanced Stereo)：利用單次幾何處理同時輸出左右眼視角，VR 渲染開銷降低 45%',
-        '非同步時間扭曲 (Asynchronous Timewarp, ATW)：以 90Hz 重新投影畫面，杜絕人體前庭系統眩暈感',
-        '立方體全景映射 (Equirectangular Cube Mapping)：產出 8192×4096 高動態範圍無縫全景圖，支援三維陀螺儀旋轉',
+      "area": "沉浸式 VR 虛擬實境與全景線上漫遊",
+      "title": "一鍵 SteamVR 頭盔沉浸漫遊與 Web 360 雲端展廳",
+      "description": "無需漫長烘焙等待，點擊按鈕立即將 3D 建築場景串流至 VR 頭盔 (Meta Quest / HTC Vive)；一鍵輸出 8K 360 度立體全景圖，部署至手機與網頁線上漫遊。",
+      "deepDivePrinciples": [
+        "單通道雙目渲染 (Single Pass Stereo / Instanced Stereo)：利用單次幾何處理同時輸出左右眼視角，VR 渲染開銷降低 45%",
+        "非同步時間扭曲 (Asynchronous Timewarp, ATW)：以 90Hz 重新投影畫面，杜絕人體前庭系統眩暈感",
+        "立方體全景映射 (Equirectangular Cube Mapping)：產出 8192×4096 高動態範圍無縫全景圖，支援三維陀螺儀旋轉"
       ],
-      realWorldCase: '台中精密機械科技園區展覽館：競圖決選簡報時，評審委員會直接戴上 VR 頭盔在挑高中庭自由漫步體驗空間尺度，當場全票通過方案。',
-      standardCodeRef: 'ISO/IEC 19775 可擴展三維視訊標準與 WebXR 裝置 API 規範。',
-      technicalDetails: [
-        'VR 傳送模式 (Teleportation) 與碰撞碰撞體檢測 (Collision Mesh)',
-        '自訂資訊熱點 (Hotspots) 點擊跳轉不同房間或彈出建材規格卡片',
-        '雲端網頁全景導覽 (Cloud Panoramic Tour) 自動生成二維碼供手機掃描',
+      "realWorldCase": "台中精密機械科技園區展覽館：競圖決選簡報時，評審委員會直接戴上 VR 頭盔在挑高中庭自由漫步體驗空間尺度，當場全票通過方案。",
+      "standardCodeRef": "ISO/IEC 19775 可擴展三維視訊標準與 WebXR 裝置 API 規範。",
+      "technicalDetails": [
+        "VR 傳送模式 (Teleportation) 與碰撞碰撞體檢測 (Collision Mesh)",
+        "自訂資訊熱點 (Hotspots) 點擊跳轉不同房間或彈出建材規格卡片",
+        "雲端網頁全景導覽 (Cloud Panoramic Tour) 自動生成二維碼供手機掃描"
       ],
-      deliverables: ['VR 沉浸式互動漫遊應用程式', 'Web 360 雲端全景導覽網址', '8K 雙目光學全景立體圖檔'],
+      "deliverables": [
+        "VR 沉浸式互動漫遊應用程式",
+        "Web 360 雲端全景導覽網址",
+        "8K 雙目光學全景立體圖檔"
+      ]
     },
     {
-      area: '電影級光線重建與後期色調調色',
-      title: 'NVIDIA DLSS 3.5 光線重建與 ACEScg 色彩管理',
-      description: '利用深度學習神經網路重建高頻間接反射與環境遮蔽，在即時渲染中實現媲美離線 V-Ray 的細膩微表面陰影、粗糙金屬高光與乾淨無噪點畫面。',
-      deepDivePrinciples: [
-        '神經輻射降噪器 (AI Ray Reconstruction, RR)：以神經網路替代傳統時空濾波器，精確還原微弱次表面散射與細密條紋百葉光影',
-        'ReSTIR (時空儲備重要性取樣)：在每幀百萬條射線中智慧挑選最具代表性的光子路徑，達成即時直接與間接光模擬',
-        'LUT (Look-Up Table) 色彩查找表：將電影級阿萊 (ARRI) 與柯達膠片風格曲線注入建築畫面，營造厚重空氣質感',
+      "area": "電影級光線重建與後期色調調色",
+      "title": "NVIDIA DLSS 3.5 光線重建與 ACEScg 色彩管理",
+      "description": "利用深度學習神經網路重建高頻間接反射與環境遮蔽，在即時渲染中實現媲美離線 V-Ray 的細膩微表面陰影、粗糙金屬高光與乾淨無噪點畫面。",
+      "deepDivePrinciples": [
+        "神經輻射降噪器 (AI Ray Reconstruction, RR)：以神經網路替代傳統時空濾波器，精確還原微弱次表面散射與細密條紋百葉光影",
+        "ReSTIR (時空儲備重要性取樣)：在每幀百萬條射線中智慧挑選最具代表性的光子路徑，達成即時直接與間接光模擬",
+        "LUT (Look-Up Table) 色彩查找表：將電影級阿萊 (ARRI) 與柯達膠片風格曲線注入建築畫面，營造厚重空氣質感"
       ],
-      realWorldCase: '台北流行音樂中心室內演講廳效果圖：在 Twinmotion 中啟用 Lumen 全域光照與 DLSS 3.5，天花吸音擴散板的細微溝槽陰影與舞台聚光燈真實光束完美呈現，出圖耗時僅 8 秒。',
-      standardCodeRef: 'CIE 171:2006 電腦採光程式測試規程與電影電視工程師協會 (SMPTE) 色彩標準。',
-      technicalDetails: [
-        '光線追蹤反射 (Ray Traced Reflections) 解決螢幕空間反射 (SSR) 邊緣被切斷的破綻',
-        'ACEScg 色彩映射維持高光直射不泛白、暗部不發黑',
-        '多通道材質 ID 遮罩與深度通道 (Z-Depth) 批次匯出供 Photoshop 最終潤飾',
+      "realWorldCase": "台北流行音樂中心室內演講廳效果圖：在 Twinmotion 中啟用 Lumen 全域光照與 DLSS 3.5，天花吸音擴散板的細微溝槽陰影與舞台聚光燈真實光束完美呈現，出圖耗時僅 8 秒。",
+      "standardCodeRef": "CIE 171:2006 電腦採光程式測試規程與電影電視工程師協會 (SMPTE) 色彩標準。",
+      "technicalDetails": [
+        "光線追蹤反射 (Ray Traced Reflections) 解決螢幕空間反射 (SSR) 邊緣被切斷的破綻",
+        "ACEScg 色彩映射維持高光直射不泛白、暗部不發黑",
+        "多通道材質 ID 遮罩與深度通道 (Z-Depth) 批次匯出供 Photoshop 最終潤飾"
       ],
-      deliverables: ['8K 超清晰商業宣傳大片', '無死白高動態範圍電影級短片', '建築照明工程夜間照度渲染圖'],
+      "deliverables": [
+        "8K 超清晰商業宣傳大片",
+        "無死白高動態範圍電影級短片",
+        "建築照明工程夜間照度渲染圖"
+      ]
     },
+    {
+      "area": "Unreal Engine 5 Nanite 與 Lumen 在超大型公共工程數位雙生之極限應用",
+      "title": "百萬級 BIM 構件零面數簡化即時交互式沉浸式導覽",
+      "description": "將整座高鐵站或機場航廈之完整 Revit/Rhino 模型直接匯入 UE5，運用 Nanite 微多邊形技術免烘焙即時漫遊。",
+      "deepDivePrinciples": [
+        "Nanite 虛擬化幾何體底層機制：直接處理數億個微多邊形三角形，依據螢幕畫素大小在 GPU 上以幾微秒時間進行動態 LOD 裁切，再也不需要漫長的手動減面",
+        "Lumen 動態全域光照：無限次光線反彈計算，當建築師移動牆體或天窗開口時，室內間接漫反射與色彩滲透 (Color Bleeding) 即刻真實重算",
+        "Datasmith 即時同步外掛：在 Revit 修改族群或在 Rhino 調整曲面，點擊 Synchronize 即在 UE5 中原位更新，保留已設定之物理材質與碰撞盒"
+      ],
+      "realWorldCase": "新北地標市立博物館案：統包團隊將 45 萬件結構鋼構與外牆預鑄板完整匯入 UE5，打造沉浸式 VR 數位雙生體驗中心，讓評審委員在建築動工前戴上頭戴顯示器親自「走入」完工後的巨型挑空大廳。",
+      "standardCodeRef": "ISO 19650 共通資訊環境可視化交付與 IEEE 虛擬實境互動標準。",
+      "technicalDetails": [
+        "利用 Datasmith Direct Link 建立即時連線通道",
+        "以藍圖 (Blueprints) 編寫開門、換地磚、開關燈光與切換日夜景之互動功能",
+        "使用 Unreal Engine Pixel Streaming (像素串流) 讓業主透過手機網頁瀏覽器即可流暢體驗百萬面場景"
+      ],
+      "deliverables": [
+        "UE5 獨立可執行虛擬漫遊應用程式 (.exe)",
+        "網頁像素串流伺服器部署包",
+        "4K 建築電影級宣傳預告片"
+      ]
+    },
+    {
+      "area": "5 大即時渲染引擎選型與營建專案全生命週期工作流矩陣",
+      "title": "競圖概念、施工協調與商業發布之多引擎戰略決策",
+      "description": "深入對比 Enscape, Twinmotion, D5 Render, Lumion 與 UE5 之硬體需求、算圖速度、資產深度與輸出品質，建立事務所最優工具鏈。",
+      "deepDivePrinciples": [
+        "方案初期 (快速推敲)：首選 Enscape，內嵌於 Revit/SketchUp，修改模型即時看見光影，零學習門檻",
+        "景觀與都市審議：首選 Lumion / Twinmotion，具備強大樹木風動與行人車流動態系統，極速產出簡報短片",
+        "商業級建案效果圖與競圖：首選 D5 Render，搭載 RTX 光線追蹤與 DLSS 3.5，具備媲美離線渲染器之極致畫質與超高速出圖",
+        "頂級數位雙生與沉浸式互動：首選 Unreal Engine 5，支援完全自訂程式邏輯、IoT 感測器數據連動與百萬面超大場景"
+      ],
+      "realWorldCase": "台北信義區旗艦總部大樓專案：設計團隊在概念階段用 Enscape 每日內部推敲，競圖階段用 D5 Render 在 48 小時內產出 16 張 8K 寫真效果圖，簽約後以 UE5 開發全案智慧物聯網 (IoT) 數位雙生中控台。",
+      "standardCodeRef": "智慧建築標章評估手冊與建案電子商務虛擬賞屋規範。",
+      "technicalDetails": [
+        "建立跨引擎共通 PBR 材質紋理庫 (Albedo, Normal, Roughness, Metalness, AO)",
+        "針對不同硬體規格 (RTX 4060 vs RTX 4090) 調校動態解析度與光追取樣率",
+        "統一色溫標準 (D65, 6500K) 確保跨引擎色彩表現一致"
+      ],
+      "deliverables": [
+        "事務所 5 大即時引擎選型決策樹指南",
+        "跨引擎標準 PBR 建築材質庫",
+        "多平台整合虛擬展演套件"
+      ]
+    }
   ],
-  beginnerGuide: {
-    introduction: '即時渲染引擎是建築師的「魔法鏡頭」。新手切忌濫用極端數值！學好即時渲染的核心是：控制視野焦距在人眼舒適範圍 (35-50mm)、堅持兩點透視立柱垂直、用真實物理光源流明。',
-    viewportControls: [
-      { action: '視角旋轉 (Look Around)', keyOrMouse: '按住滑鼠右鍵拖曳', tip: '如同第一人稱射擊遊戲般自由轉動頭部視線' },
-      { action: '空間前後左右走動', keyOrMouse: '鍵盤 W (前), S (後), A (左), D (右)', tip: '像真實漫步般在建築室內外走動檢視' },
-      { action: '鏡頭垂直升降', keyOrMouse: '鍵盤 Q (下降), E (上升)', tip: '精確調整視平線高度 (人眼高度建議設為 1600mm)' },
-      { action: '衝刺加速移動', keyOrMouse: 'Shift + WASD (或按空白鍵快速飛躍)', tip: '在數公頃超大基地中快速穿梭' },
-    ],
-    tenStepsSop: [
-      { step: 1, title: '啟動 LiveSync 雙向連動', action: '在 SketchUp / Revit 中點擊渲染引擎外掛圖示 (如 Start Enscape / D5)', keyPoint: '獨立渲染視窗彈出，視角與原始建模軟體即時完美鏡像連動' },
-      { step: 2, title: '校正兩點透視相機', action: '在渲染面板中切換投影模式為「Two-Point Perspective (兩點透視)」', keyPoint: '所有建築立面垂直梁柱瞬間由傾斜變為絕對筆直，消除透視畸變' },
-      { step: 3, title: '調整太陽高度角與方位角', action: '長按右鍵 + Shift (或滑動 Time of Day 滑桿) 調整時間', keyPoint: '調整至早晨 9:30 或下午 15:30，陽光以 45 度角斜射進建築室內拉出優雅長陰影' },
-      { step: 4, title: '配置 PBR 玻璃與金屬材質', action: '使用吸管點擊窗戶玻璃，將 Transparency 設為 90%，Roughness 設為 0.05', keyPoint: '點擊室內鋼骨，金屬度 (Metallic) 設為 1.0，粗糙度設為 0.25 呈現消光黑鐵質感' },
-      { step: 5, title: '利用植物筆刷鋪設景觀', action: '打開資產庫 (Asset Library)，選擇植栽並切換為「筆刷 (Brush) 模式」', keyPoint: '在基地草皮上輕輕塗抹，數萬株不同品種的真實草皮與灌木錯落生長' },
-      { step: 6, title: '放置自然動態人物與家具', action: '在資產庫挑選具備真實服裝質感的 3D 人物與家具', keyPoint: '依照動線自然排布，避免人物直接面對鏡頭看呆，塑造生活感 (Lived-in feel)' },
-      { step: 7, title: '配置室內人工光源與 IES', action: '在天花板筒燈處放置「IES 射燈」，載入真實燈具配光曲線貼圖', keyPoint: '將色溫設為 3000K 暖光，流明 (Lumens) 設為 800 lm，烘托室內溫潤層次' },
-      { step: 8, title: '微調大氣霧氣與景深', action: '在環境設定中微調 Fog (霧氣濃度 5%) 與 Depth of Field (景深)', keyPoint: '景深對焦點鎖定在近景建築細部，背景鄰棟建築輕度虛化突出主體' },
-      { step: 9, title: '儲存精確視角與動畫關鍵格', action: '點擊「儲存視圖 (Save View)」將當前鏡頭焦距、光影與材質狀態鎖定', keyPoint: '在動畫編輯器中建立相機路徑，設定平滑漫遊軌跡' },
-      { step: 10, title: '一秒出圖與多格式導出', action: '點擊「Render Image」，選擇 4K 解析度 (3840×2160)', keyPoint: '短短 3 至 8 秒內，一張無暇的照片級高畫質建築效果圖直接存檔完成' },
-    ],
-    shortcuts: [
-      { key: 'WASD', command: '前後左右漫遊 (Walk Navigation)', explanation: '第一人稱空間走動探索', frequency: '必須秒按', mnemonic: 'WASD 漫步全場' },
-      { key: 'Q / E', command: '鏡頭升降 (Elevation Down / Up)', explanation: '控制相機高度升至鳥瞰或降至人眼', frequency: '必須秒按', mnemonic: 'Q 降 E 升調高度' },
-      { key: 'Shift + 右鍵拖曳', command: '即時調整太陽時間 (Sun Time Scrub)', explanation: '滑鼠直接拖動日光從清晨跳轉到正午與黃昏', frequency: '必須秒按', mnemonic: 'Shift右鍵調日照' },
-      { key: 'Ctrl + 右鍵拖曳', command: '旋轉太陽方位角 (Sun Rotation)', explanation: '360 度旋轉陽光照射建築之入射角', frequency: '必須秒按', mnemonic: 'Ctrl右鍵轉方位' },
-      { key: '空白鍵 (Space)', command: '切換飛行/步行模式 (Walk / Fly Mode)', explanation: '步行模式會受到地面重力限制，飛行模式可在空中自由穿梭', frequency: '必須秒按', mnemonic: '空白切換飛或走' },
-      { key: 'Shift + F11', command: '全螢幕簡報模式 (Full Screen Presentation)', explanation: '隱藏所有操作介面，純淨展示給業主與評審', frequency: '高頻常用', mnemonic: 'Shift+F11 沉浸大畫面' },
-      { key: 'M', command: '材質編輯器 (Material Picker)', explanation: '快速啟用材質吸管拾取構件調整 PBR 參數', frequency: '必須秒按', mnemonic: 'M 吸管調材質' },
-      { key: 'U', command: '即時光追開關 (Toggle Real-time Ray Tracing)', explanation: '在預覽光追與最終品質光追間快速切換', frequency: '高頻常用', mnemonic: 'U 鍵光追隨心開' },
-      { key: 'B', command: '植物筆刷工具 (Foliage Brush)', explanation: '切換為植栽散佈筆刷模式快速綠化基地', frequency: '高頻常用', mnemonic: 'B 筆刷種萬木' },
-      { key: 'Ctrl + P', command: '即時截圖出圖 (Render Screenshot)', explanation: '直接以當前視窗解析度拍下高清晰靜態影像', frequency: '必須秒按', mnemonic: 'Ctrl+P 秒出效果圖' },
-      { key: 'V', command: '兩點透視切換 (Two-Point Perspective)', explanation: '一鍵矯正所有垂直立柱消除倒仰畸變', frequency: '必須秒按', mnemonic: 'V 垂直兩點透視' },
-      { key: 'F', command: '聚焦選取物件 (Focus on Selection)', explanation: '相機瞬間平滑推進到當前點選的家具或構件', frequency: '高頻常用', mnemonic: 'F 鏡頭推焦點' },
-    ],
-    fatalTraps: [
+  "beginnerGuide": {
+    "introduction": "即時渲染引擎是建築師的「魔法鏡頭」。新手切忌濫用極端數值！學好即時渲染的核心是：控制視野焦距在人眼舒適範圍 (35-50mm)、堅持兩點透視立柱垂直、用真實物理光源流明。",
+    "viewportControls": [
       {
-        trap: '廣角鏡頭拉得過大產生外星魚眼畸變 (Extreme FOV Disaster)',
-        reason: '為了在單張圖中拍下整間客廳，將視野 (Field of View) 設為 110 度，兩側柱子被拉扯成巨大斜角怪物。',
-        solution: '建築攝影黃金焦距：室內建議維持 24-28mm (約 70-80 度)，室外建議 35-50mm，保持空間尺度親切真實。',
+        "action": "視角旋轉 (Look Around)",
+        "keyOrMouse": "按住滑鼠右鍵拖曳",
+        "tip": "如同第一人稱射擊遊戲般自由轉動頭部視線"
       },
       {
-        trap: '室內空間完全依靠「拉高整體曝光 (Exposure)」照亮',
-        reason: '房間背陰處太暗，隨手將 Exposure 滑桿拉到底，導致窗外天空與陽光直射處徹底死白過曝 (Blown out)。',
-        solution: '曝光維持在 50% 物理基準，在背陰處補設不可見的「面光源 (Rect Light)」或天花筒燈進行補光。',
+        "action": "空間前後左右走動",
+        "keyOrMouse": "鍵盤 W (前), S (後), A (左), D (右)",
+        "tip": "像真實漫步般在建築室內外走動檢視"
       },
       {
-        trap: '植物筆刷半徑過大導致樹木穿透地坪長在客廳磁磚上',
-        reason: '在戶外刷樹時未在圖層或選取條件中隔離室內地坪，樹幹直接穿透天花板與地板生長。',
-        solution: '善用散射工具中的「圖層過濾 (Filter by Layer)」或「斜率限制」，僅允許植栽在特定景觀地形上生成。',
+        "action": "鏡頭垂直升降",
+        "keyOrMouse": "鍵盤 Q (下降), E (上升)",
+        "tip": "精確調整視平線高度 (人眼高度建議設為 1600mm)"
       },
       {
-        trap: '使用非 PBR 材質貼圖導致渲染呈現塑料反光假感',
-        reason: '隨手抓取網路上帶有強烈高光反光的 2D 照片作為貼圖，沒有分配 Roughness 與 Normal 深度。',
-        solution: '使用渲染引擎內建的官方 PBR 資產庫，或載入包含 BaseColor, Normal, Roughness, AO 的完整紋理包。',
+        "action": "衝刺加速移動",
+        "keyOrMouse": "Shift + WASD (或按空白鍵快速飛躍)",
+        "tip": "在數公頃超大基地中快速穿梭"
+      }
+    ],
+    "tenStepsSop": [
+      {
+        "step": 1,
+        "title": "啟動 LiveSync 雙向連動",
+        "action": "在 SketchUp / Revit 中點擊渲染引擎外掛圖示 (如 Start Enscape / D5)",
+        "keyPoint": "獨立渲染視窗彈出，視角與原始建模軟體即時完美鏡像連動"
       },
+      {
+        "step": 2,
+        "title": "校正兩點透視相機",
+        "action": "在渲染面板中切換投影模式為「Two-Point Perspective (兩點透視)」",
+        "keyPoint": "所有建築立面垂直梁柱瞬間由傾斜變為絕對筆直，消除透視畸變"
+      },
+      {
+        "step": 3,
+        "title": "調整太陽高度角與方位角",
+        "action": "長按右鍵 + Shift (或滑動 Time of Day 滑桿) 調整時間",
+        "keyPoint": "調整至早晨 9:30 或下午 15:30，陽光以 45 度角斜射進建築室內拉出優雅長陰影"
+      },
+      {
+        "step": 4,
+        "title": "配置 PBR 玻璃與金屬材質",
+        "action": "使用吸管點擊窗戶玻璃，將 Transparency 設為 90%，Roughness 設為 0.05",
+        "keyPoint": "點擊室內鋼骨，金屬度 (Metallic) 設為 1.0，粗糙度設為 0.25 呈現消光黑鐵質感"
+      },
+      {
+        "step": 5,
+        "title": "利用植物筆刷鋪設景觀",
+        "action": "打開資產庫 (Asset Library)，選擇植栽並切換為「筆刷 (Brush) 模式」",
+        "keyPoint": "在基地草皮上輕輕塗抹，數萬株不同品種的真實草皮與灌木錯落生長"
+      },
+      {
+        "step": 6,
+        "title": "放置自然動態人物與家具",
+        "action": "在資產庫挑選具備真實服裝質感的 3D 人物與家具",
+        "keyPoint": "依照動線自然排布，避免人物直接面對鏡頭看呆，塑造生活感 (Lived-in feel)"
+      },
+      {
+        "step": 7,
+        "title": "配置室內人工光源與 IES",
+        "action": "在天花板筒燈處放置「IES 射燈」，載入真實燈具配光曲線貼圖",
+        "keyPoint": "將色溫設為 3000K 暖光，流明 (Lumens) 設為 800 lm，烘托室內溫潤層次"
+      },
+      {
+        "step": 8,
+        "title": "微調大氣霧氣與景深",
+        "action": "在環境設定中微調 Fog (霧氣濃度 5%) 與 Depth of Field (景深)",
+        "keyPoint": "景深對焦點鎖定在近景建築細部，背景鄰棟建築輕度虛化突出主體"
+      },
+      {
+        "step": 9,
+        "title": "儲存精確視角與動畫關鍵格",
+        "action": "點擊「儲存視圖 (Save View)」將當前鏡頭焦距、光影與材質狀態鎖定",
+        "keyPoint": "在動畫編輯器中建立相機路徑，設定平滑漫遊軌跡"
+      },
+      {
+        "step": 10,
+        "title": "一秒出圖與多格式導出",
+        "action": "點擊「Render Image」，選擇 4K 解析度 (3840×2160)",
+        "keyPoint": "短短 3 至 8 秒內，一張無暇的照片級高畫質建築效果圖直接存檔完成"
+      }
     ],
-    proTips: [
-      { title: 'Shift + 右鍵直接在畫面上拖拉陽光是天下最快推敲法', description: '想要知道建築立面在下午何時會產生最具立體感的陰影？按住 Shift 不放，在畫面上左右拖動滑鼠，太陽軌跡如縮時攝影般即時飛轉，光影效果秒判斷！' },
-      { title: '材質名字加上特定字尾自動啟用高級著色器', description: '在 SketchUp 中將材質命名為「Grass_dense」或「Water_pool」，即時渲染引擎自動辨識並將其轉化為立體動態吹風草皮與波動水體，完全免手動調參！' },
-      { title: '兩點透視 (Two-Point Perspective) 是建築出圖第一鐵律', description: '不管是哪一家即時渲染引擎，出圖前永遠檢查是否已開啟兩點透視！所有垂直立柱與外牆必須絕對垂直於地平線，這是區分業餘塗鴉與專業建築攝影的核心標準。' },
+    "shortcuts": [
+      {
+        "key": "WASD",
+        "command": "前後左右漫遊 (Walk Navigation)",
+        "explanation": "第一人稱空間走動探索",
+        "frequency": "必須秒按",
+        "mnemonic": "WASD 漫步全場"
+      },
+      {
+        "key": "Q / E",
+        "command": "鏡頭升降 (Elevation Down / Up)",
+        "explanation": "控制相機高度升至鳥瞰或降至人眼",
+        "frequency": "必須秒按",
+        "mnemonic": "Q 降 E 升調高度"
+      },
+      {
+        "key": "Shift + 右鍵拖曳",
+        "command": "即時調整太陽時間 (Sun Time Scrub)",
+        "explanation": "滑鼠直接拖動日光從清晨跳轉到正午與黃昏",
+        "frequency": "必須秒按",
+        "mnemonic": "Shift右鍵調日照"
+      },
+      {
+        "key": "Ctrl + 右鍵拖曳",
+        "command": "旋轉太陽方位角 (Sun Rotation)",
+        "explanation": "360 度旋轉陽光照射建築之入射角",
+        "frequency": "必須秒按",
+        "mnemonic": "Ctrl右鍵轉方位"
+      },
+      {
+        "key": "空白鍵 (Space)",
+        "command": "切換飛行/步行模式 (Walk / Fly Mode)",
+        "explanation": "步行模式會受到地面重力限制，飛行模式可在空中自由穿梭",
+        "frequency": "必須秒按",
+        "mnemonic": "空白切換飛或走"
+      },
+      {
+        "key": "Shift + F11",
+        "command": "全螢幕簡報模式 (Full Screen Presentation)",
+        "explanation": "隱藏所有操作介面，純淨展示給業主與評審",
+        "frequency": "高頻常用",
+        "mnemonic": "Shift+F11 沉浸大畫面"
+      },
+      {
+        "key": "M",
+        "command": "材質編輯器 (Material Picker)",
+        "explanation": "快速啟用材質吸管拾取構件調整 PBR 參數",
+        "frequency": "必須秒按",
+        "mnemonic": "M 吸管調材質"
+      },
+      {
+        "key": "U",
+        "command": "即時光追開關 (Toggle Real-time Ray Tracing)",
+        "explanation": "在預覽光追與最終品質光追間快速切換",
+        "frequency": "高頻常用",
+        "mnemonic": "U 鍵光追隨心開"
+      },
+      {
+        "key": "B",
+        "command": "植物筆刷工具 (Foliage Brush)",
+        "explanation": "切換為植栽散佈筆刷模式快速綠化基地",
+        "frequency": "高頻常用",
+        "mnemonic": "B 筆刷種萬木"
+      },
+      {
+        "key": "Ctrl + P",
+        "command": "即時截圖出圖 (Render Screenshot)",
+        "explanation": "直接以當前視窗解析度拍下高清晰靜態影像",
+        "frequency": "必須秒按",
+        "mnemonic": "Ctrl+P 秒出效果圖"
+      },
+      {
+        "key": "V",
+        "command": "兩點透視切換 (Two-Point Perspective)",
+        "explanation": "一鍵矯正所有垂直立柱消除倒仰畸變",
+        "frequency": "必須秒按",
+        "mnemonic": "V 垂直兩點透視"
+      },
+      {
+        "key": "F",
+        "command": "聚焦選取物件 (Focus on Selection)",
+        "explanation": "相機瞬間平滑推進到當前點選的家具或構件",
+        "frequency": "高頻常用",
+        "mnemonic": "F 鏡頭推焦點"
+      }
     ],
+    "fatalTraps": [
+      {
+        "trap": "廣角鏡頭拉得過大產生外星魚眼畸變 (Extreme FOV Disaster)",
+        "reason": "為了在單張圖中拍下整間客廳，將視野 (Field of View) 設為 110 度，兩側柱子被拉扯成巨大斜角怪物。",
+        "solution": "建築攝影黃金焦距：室內建議維持 24-28mm (約 70-80 度)，室外建議 35-50mm，保持空間尺度親切真實。"
+      },
+      {
+        "trap": "室內空間完全依靠「拉高整體曝光 (Exposure)」照亮",
+        "reason": "房間背陰處太暗，隨手將 Exposure 滑桿拉到底，導致窗外天空與陽光直射處徹底死白過曝 (Blown out)。",
+        "solution": "曝光維持在 50% 物理基準，在背陰處補設不可見的「面光源 (Rect Light)」或天花筒燈進行補光。"
+      },
+      {
+        "trap": "植物筆刷半徑過大導致樹木穿透地坪長在客廳磁磚上",
+        "reason": "在戶外刷樹時未在圖層或選取條件中隔離室內地坪，樹幹直接穿透天花板與地板生長。",
+        "solution": "善用散射工具中的「圖層過濾 (Filter by Layer)」或「斜率限制」，僅允許植栽在特定景觀地形上生成。"
+      },
+      {
+        "trap": "使用非 PBR 材質貼圖導致渲染呈現塑料反光假感",
+        "reason": "隨手抓取網路上帶有強烈高光反光的 2D 照片作為貼圖，沒有分配 Roughness 與 Normal 深度。",
+        "solution": "使用渲染引擎內建的官方 PBR 資產庫，或載入包含 BaseColor, Normal, Roughness, AO 的完整紋理包。"
+      }
+    ],
+    "proTips": [
+      {
+        "title": "Shift + 右鍵直接在畫面上拖拉陽光是天下最快推敲法",
+        "description": "想要知道建築立面在下午何時會產生最具立體感的陰影？按住 Shift 不放，在畫面上左右拖動滑鼠，太陽軌跡如縮時攝影般即時飛轉，光影效果秒判斷！"
+      },
+      {
+        "title": "材質名字加上特定字尾自動啟用高級著色器",
+        "description": "在 SketchUp 中將材質命名為「Grass_dense」或「Water_pool」，即時渲染引擎自動辨識並將其轉化為立體動態吹風草皮與波動水體，完全免手動調參！"
+      },
+      {
+        "title": "兩點透視 (Two-Point Perspective) 是建築出圖第一鐵律",
+        "description": "不管是哪一家即時渲染引擎，出圖前永遠檢查是否已開啟兩點透視！所有垂直立柱與外牆必須絕對垂直於地平線，這是區分業餘塗鴉與專業建築攝影的核心標準。"
+      }
+    ]
   },
-  sevenIterations: [
+  "sevenIterations": [
     {
-      round: 1,
-      badge: 'R1 基礎核心認知',
-      title: '即時光追架構 (RTX/BVH) 與相機兩點透視光學',
-      focus: '掌握硬體加速光追底層原理、雙向 LiveSync 即時同步與建築攝影構圖。',
-      contentExpansion: '延伸內容擴充 110%：解析邊界體積階層 (BVH) 遍歷加速結構，推導兩點透視相機垂直移軸光學變換矩陣，消除視角畸變。',
-      coreTheory: '即時光線追蹤依賴 GPU 內部的 RT Core 進行射線與多邊形求交 (Ray-Triangle Intersection)。為了在 16.6 毫秒內完成整幀渲染，相機採用兩點透視光學投影：保持相機觀察向量位於絕對水平面 (Z=0)，透過移軸感光元件 (Sensor Shift) 向上偏移捕捉高樓頂部，消除三點透視之垂直倒仰。',
-      mathematicalFormula: '移軸光學投影矩陣：P_shift = [1, 0, 2·shift_x, 0; 0, 1, 2·shift_y, 0; 0, 0, 1, 0; 0, 0, 0, 1] · P_ortho',
-      advancedParameters: [
-        { name: 'Camera Field of View (FOV)', value: '65 - 75 度 (相當於 24-28mm 全片幅焦段)', purpose: '兼顧室內空間深度與透視自然感' },
-        { name: 'Hardware Raytracing', value: 'Enabled (啟用 DXR / Vulkan Ray Tracing)', purpose: '開啟硬體級反射與陰影計算' },
+      "round": 1,
+      "badge": "R1 基礎核心認知",
+      "title": "即時光追架構 (RTX/BVH) 與相機兩點透視光學",
+      "focus": "掌握硬體加速光追底層原理、雙向 LiveSync 即時同步與建築攝影構圖。",
+      "contentExpansion": "延伸內容擴充 110%：解析邊界體積階層 (BVH) 遍歷加速結構，推導兩點透視相機垂直移軸光學變換矩陣，消除視角畸變。",
+      "coreTheory": "即時光線追蹤依賴 GPU 內部的 RT Core 進行射線與多邊形求交 (Ray-Triangle Intersection)。為了在 16.6 毫秒內完成整幀渲染，相機採用兩點透視光學投影：保持相機觀察向量位於絕對水平面 (Z=0)，透過移軸感光元件 (Sensor Shift) 向上偏移捕捉高樓頂部，消除三點透視之垂直倒仰。",
+      "mathematicalFormula": "移軸光學投影矩陣：P_shift = [1, 0, 2·shift_x, 0; 0, 1, 2·shift_y, 0; 0, 0, 1, 0; 0, 0, 0, 1] · P_ortho",
+      "advancedParameters": [
+        {
+          "name": "Camera Field of View (FOV)",
+          "value": "65 - 75 度 (相當於 24-28mm 全片幅焦段)",
+          "purpose": "兼顧室內空間深度與透視自然感"
+        },
+        {
+          "name": "Hardware Raytracing",
+          "value": "Enabled (啟用 DXR / Vulkan Ray Tracing)",
+          "purpose": "開啟硬體級反射與陰影計算"
+        }
       ],
-      practicalWalkthrough: [
-        '啟動 LiveSync 連結當前建築專案模型，確認雙螢幕視角即時鏡像跟隨',
-        '開啟相機設定，勾選「Two-Point Perspective」，驗證立面梁柱達到絕對 90 度垂直',
-        '使用 WASD 與 QE 調整視點至標準人眼高度 (+1600mm)',
-        '調整相機焦距為 50mm (標準鏡頭)，捕捉入口大門局部空間比例',
+      "practicalWalkthrough": [
+        "啟動 LiveSync 連結當前建築專案模型，確認雙螢幕視角即時鏡像跟隨",
+        "開啟相機設定，勾選「Two-Point Perspective」，驗證立面梁柱達到絕對 90 度垂直",
+        "使用 WASD 與 QE 調整視點至標準人眼高度 (+1600mm)",
+        "調整相機焦距為 50mm (標準鏡頭)，捕捉入口大門局部空間比例"
       ],
-      industryStandardOrCode: 'CIE 國際照明委員會建築攝影標準與 ISO 12232 數位相機感光度標準。',
-      pitfallsAndVerification: '嚴禁在視線水平高度過低 (如 300mm 爬蟲視角) 下盲目開啟兩點透視，否則視圖邊界會產生嚴重的上下極端拉伸。',
-      diagnosticDecisionTree: [
-        '問題：開啟 LiveSync 後，CAD 軟體操作極度卡頓、旋轉幀率掉至 10fps？',
-        '原因：CAD 軟體同步了過於繁複的散線散面或非封閉模型',
-        '解法：在同步外掛設定中將「幾何同步頻率」從即時連續 (Continuous) 改為「相機移動結束後更新 (On Idle)」',
+      "industryStandardOrCode": "CIE 國際照明委員會建築攝影標準與 ISO 12232 數位相機感光度標準。",
+      "pitfallsAndVerification": "嚴禁在視線水平高度過低 (如 300mm 爬蟲視角) 下盲目開啟兩點透視，否則視圖邊界會產生嚴重的上下極端拉伸。",
+      "diagnosticDecisionTree": [
+        "問題：開啟 LiveSync 後，CAD 軟體操作極度卡頓、旋轉幀率掉至 10fps？",
+        "原因：CAD 軟體同步了過於繁複的散線散面或非封閉模型",
+        "解法：在同步外掛設定中將「幾何同步頻率」從即時連續 (Continuous) 改為「相機移動結束後更新 (On Idle)」"
       ],
-      masteryChecklist: [
-        '能一眼辨別出圖是否符合兩點透視建築攝影標準',
-        '精通 LiveSync 跨螢幕操作與視角同步鎖定技巧',
-        '熟練操作第一人稱 WASD 導航在空間中行雲流水漫遊',
-      ],
+      "masteryChecklist": [
+        "能一眼辨別出圖是否符合兩點透視建築攝影標準",
+        "精通 LiveSync 跨螢幕操作與視角同步鎖定技巧",
+        "熟練操作第一人稱 WASD 導航在空間中行雲流水漫遊"
+      ]
     },
     {
-      round: 2,
-      badge: 'R2 建築製圖規範',
-      title: 'PBR 物理材質體系與微表面雙向反射分佈 (BRDF)',
-      focus: '精通 Base Color, Normal, Roughness, Metallic, Height 五大物理通道。',
-      contentExpansion: '延伸內容擴充 130%：深度剖析 Cook-Torrance BRDF 微表面理論，精確配置清水混凝土模痕、陽極氧化鋁板、Low-E 複層玻璃與防滑石材地坪。',
-      coreTheory: 'PBR (Physically Based Rendering) 基於真實物質物理光學特性。金屬與非金屬的光學行為截然不同：非金屬 (金屬度=0) 垂直入射反射率固定在 4% 左右 (IOR ≈ 1.5)，高光顏色永遠是純白；金屬 (金屬度=1) 則反射帶有金屬本身固有色相之光線。粗糙度 (Roughness) 決定微表面法線偏轉方差，控制高光邊緣的銳利與擴散。',
-      advancedParameters: [
-        { name: 'Glass Specular / IOR', value: '1.52 (建築標準浮法玻璃)', purpose: '呈現真實菲涅耳 (Fresnel) 邊緣強反射' },
-        { name: 'Roughness Map Invert', value: '根據貼圖命名區分 Roughness vs Glossiness', purpose: '避免黑白相反導致粗糙面變鏡面' },
+      "round": 2,
+      "badge": "R2 建築製圖規範",
+      "title": "PBR 物理材質體系與微表面雙向反射分佈 (BRDF)",
+      "focus": "精通 Base Color, Normal, Roughness, Metallic, Height 五大物理通道。",
+      "contentExpansion": "延伸內容擴充 130%：深度剖析 Cook-Torrance BRDF 微表面理論，精確配置清水混凝土模痕、陽極氧化鋁板、Low-E 複層玻璃與防滑石材地坪。",
+      "coreTheory": "PBR (Physically Based Rendering) 基於真實物質物理光學特性。金屬與非金屬的光學行為截然不同：非金屬 (金屬度=0) 垂直入射反射率固定在 4% 左右 (IOR ≈ 1.5)，高光顏色永遠是純白；金屬 (金屬度=1) 則反射帶有金屬本身固有色相之光線。粗糙度 (Roughness) 決定微表面法線偏轉方差，控制高光邊緣的銳利與擴散。",
+      "advancedParameters": [
+        {
+          "name": "Glass Specular / IOR",
+          "value": "1.52 (建築標準浮法玻璃)",
+          "purpose": "呈現真實菲涅耳 (Fresnel) 邊緣強反射"
+        },
+        {
+          "name": "Roughness Map Invert",
+          "value": "根據貼圖命名區分 Roughness vs Glossiness",
+          "purpose": "避免黑白相反導致粗糙面變鏡面"
+        }
       ],
-      practicalWalkthrough: [
-        '使用材質吸管拾取外牆表面，指派 4K 清水混凝土 BaseColor 紋理',
-        '連接 Normal Map 貼圖，將強度設為 1.5，凸顯木模板紋路與拉桿螺栓孔凹陷',
-        '在玻璃材質中啟用「Thin (薄片模式)」，消除雙面玻璃折射引發的黑面重疊',
-        '利用「污漬覆蓋 (Dirt / Weathering)」滑桿，在建築陰角踢腳處自動生成雨水沉積暗影',
+      "practicalWalkthrough": [
+        "使用材質吸管拾取外牆表面，指派 4K 清水混凝土 BaseColor 紋理",
+        "連接 Normal Map 貼圖，將強度設為 1.5，凸顯木模板紋路與拉桿螺栓孔凹陷",
+        "在玻璃材質中啟用「Thin (薄片模式)」，消除雙面玻璃折射引發的黑面重疊",
+        "利用「污漬覆蓋 (Dirt / Weathering)」滑桿，在建築陰角踢腳處自動生成雨水沉積暗影"
       ],
-      industryStandardOrCode: 'CNS 11567 建築構造材質外觀標示規範與 ASTM C1036 平板玻璃標準。',
-      pitfallsAndVerification: '檢查粗糙度與法線貼圖：金屬材質切忌將 Roughness 設為純 0 (絕對鏡面)，自然界不存在完全無微表面瑕疵的絕對鏡面。',
-      diagnosticDecisionTree: [
-        '問題：玻璃窗在室外看起來像一堵水泥牆，反射不出天空且不通透？',
-        '原因：玻璃的不透明度 (Opacity) 設得過高，或環境中缺乏足夠強度的天光照射',
-        '解法：將 Opacity 降至 10-15%，開啟環境光追反射，並確保背後有光源穿透',
+      "industryStandardOrCode": "CNS 11567 建築構造材質外觀標示規範與 ASTM C1036 平板玻璃標準。",
+      "pitfallsAndVerification": "檢查粗糙度與法線貼圖：金屬材質切忌將 Roughness 設為純 0 (絕對鏡面)，自然界不存在完全無微表面瑕疵的絕對鏡面。",
+      "diagnosticDecisionTree": [
+        "問題：玻璃窗在室外看起來像一堵水泥牆，反射不出天空且不通透？",
+        "原因：玻璃的不透明度 (Opacity) 設得過高，或環境中缺乏足夠強度的天光照射",
+        "解法：將 Opacity 降至 10-15%，開啟環境光追反射，並確保背後有光源穿透"
       ],
-      masteryChecklist: [
-        '能獨立調配出包含「拉絲不銹鋼、消光氟碳烤漆、清水混凝土、Low-E 玻璃」四大王牌材質',
-        '理解 Normal 貼圖之 RGB 向量編碼原理 (紅=X, 綠=Y, 藍=Z 法向)',
-        '能運用視差遮擋 (POM) 製作凹凸立體感強烈之砌磚牆面',
-      ],
+      "masteryChecklist": [
+        "能獨立調配出包含「拉絲不銹鋼、消光氟碳烤漆、清水混凝土、Low-E 玻璃」四大王牌材質",
+        "理解 Normal 貼圖之 RGB 向量編碼原理 (紅=X, 綠=Y, 藍=Z 法向)",
+        "能運用視差遮擋 (POM) 製作凹凸立體感強烈之砌磚牆面"
+      ]
     },
     {
-      round: 3,
-      badge: 'R3 高階幾何拓撲',
-      title: '大尺度環境生態散射 (Scatter) 與微氣候物理大氣',
-      focus: '掌握 GPU 實例化植栽分佈演算法，模擬真實體積雲、大氣霧霾與真實光照。',
-      contentExpansion: '延伸內容擴充 150%：解構大氣瑞利散射與米氏散射公式，利用動態天空模型 (Nishita / Hosek-Wilkie) 模擬從黎明破曉到落日餘暉之光譜變化。',
-      coreTheory: '大尺度真實感源於大氣介質的存在。當光線穿過數公里空氣時，短波長藍光被微粒散射形成藍天，長波長紅黃光穿透形成金色陽光。在即時渲染器中，啟用 Volumetric Fog (體積霧)，陽光穿過外立面格柵與森林樹冠時會即刻生成壯麗的「耶穌光 (God Rays / Crepuscular Rays)」，強烈突顯空間深度。',
-      mathematicalFormula: '米氏大氣散射衰減公式：I(s) = I_0 · exp(-β_ext · s)，其中 β_ext 為消光係數，s 為穿透路徑長度。',
-      advancedParameters: [
-        { name: 'Atmospheric Fog Density', value: '3% - 8% (微霧氣氛)', purpose: '賦予遠處山體與鄰棟建築層次豐富之退後感' },
-        { name: 'Sun Disk Size', value: '2.0 (微放大太陽視直徑)', purpose: '使地面建築陰影邊緣產生柔軟微漸變半影 (Penumbra)' },
+      "round": 3,
+      "badge": "R3 高階幾何拓撲",
+      "title": "大尺度環境生態散射 (Scatter) 與微氣候物理大氣",
+      "focus": "掌握 GPU 實例化植栽分佈演算法，模擬真實體積雲、大氣霧霾與真實光照。",
+      "contentExpansion": "延伸內容擴充 150%：解構大氣瑞利散射與米氏散射公式，利用動態天空模型 (Nishita / Hosek-Wilkie) 模擬從黎明破曉到落日餘暉之光譜變化。",
+      "coreTheory": "大尺度真實感源於大氣介質的存在。當光線穿過數公里空氣時，短波長藍光被微粒散射形成藍天，長波長紅黃光穿透形成金色陽光。在即時渲染器中，啟用 Volumetric Fog (體積霧)，陽光穿過外立面格柵與森林樹冠時會即刻生成壯麗的「耶穌光 (God Rays / Crepuscular Rays)」，強烈突顯空間深度。",
+      "mathematicalFormula": "米氏大氣散射衰減公式：I(s) = I_0 · exp(-β_ext · s)，其中 β_ext 為消光係數，s 為穿透路徑長度。",
+      "advancedParameters": [
+        {
+          "name": "Atmospheric Fog Density",
+          "value": "3% - 8% (微霧氣氛)",
+          "purpose": "賦予遠處山體與鄰棟建築層次豐富之退後感"
+        },
+        {
+          "name": "Sun Disk Size",
+          "value": "2.0 (微放大太陽視直徑)",
+          "purpose": "使地面建築陰影邊緣產生柔軟微漸變半影 (Penumbra)"
+        }
       ],
-      practicalWalkthrough: [
-        '在基地外圍繪製景觀區域，設定植物筆刷半徑為 15 公尺',
-        '混合勾選樟樹、欒樹、灌木與芒草，設定密度為 40%，隨機旋轉與縮放',
-        '調整大氣設定：Cloud Cover (雲量) 設為 35%，Cirrus (卷雲) 增加高空肌理',
-        '調整 Sun Altitude 至 18 度，方位角正對建築主立面，營造金黃暮色氛圍',
+      "practicalWalkthrough": [
+        "在基地外圍繪製景觀區域，設定植物筆刷半徑為 15 公尺",
+        "混合勾選樟樹、欒樹、灌木與芒草，設定密度為 40%，隨機旋轉與縮放",
+        "調整大氣設定：Cloud Cover (雲量) 設為 35%，Cirrus (卷雲) 增加高空肌理",
+        "調整 Sun Altitude 至 18 度，方位角正對建築主立面，營造金黃暮色氛圍"
       ],
-      industryStandardOrCode: 'CIE 115-2010 戶外照明環境標準與台灣建築晝光節能指引。',
-      pitfallsAndVerification: '植栽鋪設時務必檢查相機近景：近景 5 公尺內的植物必須使用最高精度的 LOD 0 樹木模型，避免葉片出現低多邊形紙片感。',
-      diagnosticDecisionTree: [
-        '問題：大氣霧氣開啟後，整張畫面灰濛濛宛如起濃霧、反差極度低落？',
-        '原因：Fog Scattering 數值過大，且環境天光 (Sky Light) 亮度壓過了主日照',
-        '解法：降低霧氣濃度至 5% 以下，微幅提升 Sun Intensity，並在後期調色中拉高 Contrast (對比度)',
+      "industryStandardOrCode": "CIE 115-2010 戶外照明環境標準與台灣建築晝光節能指引。",
+      "pitfallsAndVerification": "植栽鋪設時務必檢查相機近景：近景 5 公尺內的植物必須使用最高精度的 LOD 0 樹木模型，避免葉片出現低多邊形紙片感。",
+      "diagnosticDecisionTree": [
+        "問題：大氣霧氣開啟後，整張畫面灰濛濛宛如起濃霧、反差極度低落？",
+        "原因：Fog Scattering 數值過大，且環境天光 (Sky Light) 亮度壓過了主日照",
+        "解法：降低霧氣濃度至 5% 以下，微幅提升 Sun Intensity，並在後期調色中拉高 Contrast (對比度)"
       ],
-      masteryChecklist: [
-        '能運用動態氣象系統一鍵切換「暴風雨積水、冬日殘雪、晴空萬里」三種天候氛圍',
-        '精通丁達爾光束 (God Rays) 體積霧參數控制',
-        '能運用生態筆刷在 5 分鐘內完成萬坪景觀自然分佈',
-      ],
+      "masteryChecklist": [
+        "能運用動態氣象系統一鍵切換「暴風雨積水、冬日殘雪、晴空萬里」三種天候氛圍",
+        "精通丁達爾光束 (God Rays) 體積霧參數控制",
+        "能運用生態筆刷在 5 分鐘內完成萬坪景觀自然分佈"
+      ]
     },
     {
-      round: 4,
-      badge: 'R4 建築構造深化',
-      title: '夜間照明工程與真實 IES 測光分佈模擬',
-      focus: '精準配置室內外照明系統，載入國際大廠 IES 配光檔案，模擬建築夜景燈光計畫。',
-      contentExpansion: '延伸內容擴充 170%：解析燈具流明 (Lumens)、照度 (Lux) 與色溫 (Kelvin) 物理量算，實現間接照明燈帶、立面投光燈與地底埋地燈之真實光域網重現。',
-      coreTheory: '真實照明並非點光源 (Point Light) 的均勻發散。真實燈具因具備反射罩與透鏡，其光線在空間中的分佈呈特定立體光瓣 (Luminous Lobe)。IES 檔案即為記錄該三維配光曲線的國際標準格式。在即時渲染引擎中載入 IES，可精確呈現外牆洗牆燈 (Wall Washer) 的羽狀漸變光斑與天花筒燈的清晰切光角。',
-      advancedParameters: [
-        { name: 'Color Temperature', value: '2700K (溫暖居家) / 4000K (商業辦公) / 6000K (展覽戶外)', purpose: '嚴格遵循照明工程色溫層次' },
-        { name: 'Light Attenuation Falloff', value: 'Inverse Square (反平方比衰減 1/d²)', purpose: '遵循真實光子擴散物理規律' },
+      "round": 4,
+      "badge": "R4 建築構造深化",
+      "title": "夜間照明工程與真實 IES 測光分佈模擬",
+      "focus": "精準配置室內外照明系統，載入國際大廠 IES 配光檔案，模擬建築夜景燈光計畫。",
+      "contentExpansion": "延伸內容擴充 170%：解析燈具流明 (Lumens)、照度 (Lux) 與色溫 (Kelvin) 物理量算，實現間接照明燈帶、立面投光燈與地底埋地燈之真實光域網重現。",
+      "coreTheory": "真實照明並非點光源 (Point Light) 的均勻發散。真實燈具因具備反射罩與透鏡，其光線在空間中的分佈呈特定立體光瓣 (Luminous Lobe)。IES 檔案即為記錄該三維配光曲線的國際標準格式。在即時渲染引擎中載入 IES，可精確呈現外牆洗牆燈 (Wall Washer) 的羽狀漸變光斑與天花筒燈的清晰切光角。",
+      "advancedParameters": [
+        {
+          "name": "Color Temperature",
+          "value": "2700K (溫暖居家) / 4000K (商業辦公) / 6000K (展覽戶外)",
+          "purpose": "嚴格遵循照明工程色溫層次"
+        },
+        {
+          "name": "Light Attenuation Falloff",
+          "value": "Inverse Square (反平方比衰減 1/d²)",
+          "purpose": "遵循真實光子擴散物理規律"
+        }
       ],
-      practicalWalkthrough: [
-        '將時間滑桿切換至夜晚 20:30，環境背景轉為深藍色暮光 (Blue Hour)',
-        '在建築外牆底部放置 Line Light (線性燈條)，隱藏於踢腳構造凹槽內做間接照明',
-        '在入口挑高大廳天花板載入 ERCO 廠商提供之窄角度 IES 射燈檔案',
-        '調整相機曝光補償，使室內暖光與天空深藍冷調形成強烈冷暖對比 (Color Contrast)',
+      "practicalWalkthrough": [
+        "將時間滑桿切換至夜晚 20:30，環境背景轉為深藍色暮光 (Blue Hour)",
+        "在建築外牆底部放置 Line Light (線性燈條)，隱藏於踢腳構造凹槽內做間接照明",
+        "在入口挑高大廳天花板載入 ERCO 廠商提供之窄角度 IES 射燈檔案",
+        "調整相機曝光補償，使室內暖光與天空深藍冷調形成強烈冷暖對比 (Color Contrast)"
       ],
-      industryStandardOrCode: 'IESNA LM-63-02 燈具光度測量資料標準與 CNS 12112 室內工作場所照明標準。',
-      pitfallsAndVerification: '嚴禁在夜景中將自發光材質 (Emissive) 設得過亮來充當主光源！自發光材質在即時引擎中噪點較高，應使用真實的 Rect Light 或 Spot Light 照射主體。',
-      diagnosticDecisionTree: [
-        '問題：夜景渲染畫面充滿閃爍的小亮點噪點 (Specular Fireflies)？',
-        '原因：強光直接照射在 Roughness 接近 0 的高反射金屬五金上',
-        '解法：微調燈具位置避開直射視角，或在材質中將該金屬 Roughness 提高至 0.15 柔化高光',
+      "industryStandardOrCode": "IESNA LM-63-02 燈具光度測量資料標準與 CNS 12112 室內工作場所照明標準。",
+      "pitfallsAndVerification": "嚴禁在夜景中將自發光材質 (Emissive) 設得過亮來充當主光源！自發光材質在即時引擎中噪點較高，應使用真實的 Rect Light 或 Spot Light 照射主體。",
+      "diagnosticDecisionTree": [
+        "問題：夜景渲染畫面充滿閃爍的小亮點噪點 (Specular Fireflies)？",
+        "原因：強光直接照射在 Roughness 接近 0 的高反射金屬五金上",
+        "解法：微調燈具位置避開直射視角，或在材質中將該金屬 Roughness 提高至 0.15 柔化高光"
       ],
-      masteryChecklist: [
-        '能運用「冷天色 (8000K) + 暖室內 (3000K)」黃金對比法則營造夜景氛圍',
-        '精通 IES 檔案的載入與洗牆燈 (Wall Washer) 光影漸變推敲',
-        '能產出符合照度標準之建築夜景照明工程提案圖',
-      ],
+      "masteryChecklist": [
+        "能運用「冷天色 (8000K) + 暖室內 (3000K)」黃金對比法則營造夜景氛圍",
+        "精通 IES 檔案的載入與洗牆燈 (Wall Washer) 光影漸變推敲",
+        "能產出符合照度標準之建築夜景照明工程提案圖"
+      ]
     },
     {
-      round: 5,
-      badge: 'R5 渲染與光學物理',
-      title: 'DLSS 3.5 光線重建 (Ray Reconstruction) 與電影調色 LUT',
-      focus: '掌握神經網路降噪核心與影視級後期調色，直出相機底片質感宣傳大片。',
-      contentExpansion: '延伸內容擴充 190%：深入 NVIDIA DLSS 3.5 AI 神經降噪機制，解析 ACEScg 寬色域映射，運用 3D LUT (Look-Up Table) 與色調曲線塑造大師級色調。',
-      coreTheory: '即時渲染的最大突破在於 AI 光線重建。過去的即時降噪演算法 (如 NRD / SVGF) 依靠時間累積與空間模糊，容易抹平細微的木紋與格柵陰影。DLSS 3.5 透過在百萬張超算離線渲染圖上訓練的卷積神經網路，能即時識別光線走向，在極高頻細節處重構出完全銳利的高光倒影與微表面環境遮蔽 (AO)。',
-      mathematicalFormula: '色彩查找表三維三線性插值：C_out = TrilinearInterpolate(LUT_3D, R_in, G_in, B_in)',
-      advancedParameters: [
-        { name: 'NVIDIA DLSS Mode', value: 'Quality (品質優先) 搭配 Ray Reconstruction: ON', purpose: '在 4K 下實現頂級細節與無噪點表現' },
-        { name: 'Tone Mapping Curve', value: 'ACES (Academy Color Encoding System)', purpose: '保證強烈陽光不爆白、暗部層次豐富' },
+      "round": 5,
+      "badge": "R5 渲染與光學物理",
+      "title": "DLSS 3.5 光線重建 (Ray Reconstruction) 與電影調色 LUT",
+      "focus": "掌握神經網路降噪核心與影視級後期調色，直出相機底片質感宣傳大片。",
+      "contentExpansion": "延伸內容擴充 190%：深入 NVIDIA DLSS 3.5 AI 神經降噪機制，解析 ACEScg 寬色域映射，運用 3D LUT (Look-Up Table) 與色調曲線塑造大師級色調。",
+      "coreTheory": "即時渲染的最大突破在於 AI 光線重建。過去的即時降噪演算法 (如 NRD / SVGF) 依靠時間累積與空間模糊，容易抹平細微的木紋與格柵陰影。DLSS 3.5 透過在百萬張超算離線渲染圖上訓練的卷積神經網路，能即時識別光線走向，在極高頻細節處重構出完全銳利的高光倒影與微表面環境遮蔽 (AO)。",
+      "mathematicalFormula": "色彩查找表三維三線性插值：C_out = TrilinearInterpolate(LUT_3D, R_in, G_in, B_in)",
+      "advancedParameters": [
+        {
+          "name": "NVIDIA DLSS Mode",
+          "value": "Quality (品質優先) 搭配 Ray Reconstruction: ON",
+          "purpose": "在 4K 下實現頂級細節與無噪點表現"
+        },
+        {
+          "name": "Tone Mapping Curve",
+          "value": "ACES (Academy Color Encoding System)",
+          "purpose": "保證強烈陽光不爆白、暗部層次豐富"
+        }
       ],
-      practicalWalkthrough: [
-        '在設定面板中啟用 NVIDIA DLSS 3.5 Ray Reconstruction',
-        '在後期調色 (Post-processing) 載入自訂 3D LUT (如 Kodak 2383 膠片模擬檔)',
-        '調整 Highlights (高光 -15) 壓制窗戶過曝，提升 Shadows (陰影 +10) 提亮進深細節',
-        '微幅增加 Vignette (暗角 10%) 與 Chromatic Aberration (色散 2%) 營造光學鏡頭感',
+      "practicalWalkthrough": [
+        "在設定面板中啟用 NVIDIA DLSS 3.5 Ray Reconstruction",
+        "在後期調色 (Post-processing) 載入自訂 3D LUT (如 Kodak 2383 膠片模擬檔)",
+        "調整 Highlights (高光 -15) 壓制窗戶過曝，提升 Shadows (陰影 +10) 提亮進深細節",
+        "微幅增加 Vignette (暗角 10%) 與 Chromatic Aberration (色散 2%) 營造光學鏡頭感"
       ],
-      industryStandardOrCode: 'SMPTE 國際電影色彩標準與 ACES 1.2 色彩管理規格。',
-      pitfallsAndVerification: '使用 LUT 時強度切勿調至 100% 滿格！建議控制在 30% - 60% 之間，保留建築材料本身的真實物理色彩，避免風格過於濃烈失真。',
-      diagnosticDecisionTree: [
-        '問題：人物走動或鏡頭快速旋轉時，畫面邊緣產生拖影黑邊 (Ghosting / Smearing)？',
-        '原因：時域抗鋸齒 (TAA) 或時域累積過度依賴歷史影格',
-        '解法：開啟 DLSS 3.5 光線重建，或在抗鋸齒設定中降低 Temporal Stability 權重',
+      "industryStandardOrCode": "SMPTE 國際電影色彩標準與 ACES 1.2 色彩管理規格。",
+      "pitfallsAndVerification": "使用 LUT 時強度切勿調至 100% 滿格！建議控制在 30% - 60% 之間，保留建築材料本身的真實物理色彩，避免風格過於濃烈失真。",
+      "diagnosticDecisionTree": [
+        "問題：人物走動或鏡頭快速旋轉時，畫面邊緣產生拖影黑邊 (Ghosting / Smearing)？",
+        "原因：時域抗鋸齒 (TAA) 或時域累積過度依賴歷史影格",
+        "解法：開啟 DLSS 3.5 光線重建，或在抗鋸齒設定中降低 Temporal Stability 權重"
       ],
-      masteryChecklist: [
-        '理解 DLSS 3.5 光線重建與傳統時空降噪演算法之畫質本質差異',
-        '精通利用 LUT 與曲線工具在渲染引擎內部直出無須修圖之雜誌級大片',
-        '能運用多通道 ID 遮罩在 Photoshop 中進行極致細微局部調光',
-      ],
+      "masteryChecklist": [
+        "理解 DLSS 3.5 光線重建與傳統時空降噪演算法之畫質本質差異",
+        "精通利用 LUT 與曲線工具在渲染引擎內部直出無須修圖之雜誌級大片",
+        "能運用多通道 ID 遮罩在 Photoshop 中進行極致細微局部調光"
+      ]
     },
     {
-      round: 6,
-      badge: 'R6 跨軟體協同與 BIM',
-      title: '沉浸式 VR 頭盔串流與 Web 360 雲端全景發布',
-      focus: '打通從 PC 即時光追到 VR 頭盔 (OpenXR) 與行動網頁 360 度互動漫遊全管線。',
-      contentExpansion: '延伸內容擴充 210%：解析 WebXR 與 WebGL 全景投影技術，架構無需安裝軟體之網頁端 360 雲端展廳，支援業主手機陀螺儀自由旋轉。',
-      coreTheory: '沉浸式體驗的關鍵在於極致延遲控制。人腦對視覺延遲極度敏感，運動到光子延遲 (Motion-to-Photon Latency) 必須小於 20 毫秒方可消除眩暈。透過 OpenXR 國際標準接口，渲染引擎繞過作業系統視窗直接向頭盔顯示器推流。而在 Web 端，將立方體貼圖 (Cubemap) 拆解為 6 個正方形紋理並壓縮為 WebP 格式，在行動網路上實現毫秒級無縫載入。',
-      advancedParameters: [
-        { name: 'VR Target Refresh Rate', value: '90 Hz (鎖定 90fps 零掉幀)', purpose: '保證沉浸體驗舒適無眩暈' },
-        { name: 'Panorama Resolution', value: '8192 x 4096 (8K 等距圓柱投影)', purpose: '放大檢視細節清晰不模糊' },
+      "round": 6,
+      "badge": "R6 跨軟體協同與 BIM",
+      "title": "沉浸式 VR 頭盔串流與 Web 360 雲端全景發布",
+      "focus": "打通從 PC 即時光追到 VR 頭盔 (OpenXR) 與行動網頁 360 度互動漫遊全管線。",
+      "contentExpansion": "延伸內容擴充 210%：解析 WebXR 與 WebGL 全景投影技術，架構無需安裝軟體之網頁端 360 雲端展廳，支援業主手機陀螺儀自由旋轉。",
+      "coreTheory": "沉浸式體驗的關鍵在於極致延遲控制。人腦對視覺延遲極度敏感，運動到光子延遲 (Motion-to-Photon Latency) 必須小於 20 毫秒方可消除眩暈。透過 OpenXR 國際標準接口，渲染引擎繞過作業系統視窗直接向頭盔顯示器推流。而在 Web 端，將立方體貼圖 (Cubemap) 拆解為 6 個正方形紋理並壓縮為 WebP 格式，在行動網路上實現毫秒級無縫載入。",
+      "advancedParameters": [
+        {
+          "name": "VR Target Refresh Rate",
+          "value": "90 Hz (鎖定 90fps 零掉幀)",
+          "purpose": "保證沉浸體驗舒適無眩暈"
+        },
+        {
+          "name": "Panorama Resolution",
+          "value": "8192 x 4096 (8K 等距圓柱投影)",
+          "purpose": "放大檢視細節清晰不模糊"
+        }
       ],
-      practicalWalkthrough: [
-        '連接 Meta Quest 3 或 HTC Vive，點擊渲染器頂部「VR (OpenXR)」按鈕',
-        '在虛擬建築中漫步，測試雙手控制器傳送 (Teleport) 與高度調整',
-        '點擊「Batch Panorama」批次在各房間中心生成 8K 360 度全景圖',
-        '使用 720yun 或 Kuula 平台上傳全景圖，建立空間跳轉錨點與建材介紹導覽熱點',
+      "practicalWalkthrough": [
+        "連接 Meta Quest 3 或 HTC Vive，點擊渲染器頂部「VR (OpenXR)」按鈕",
+        "在虛擬建築中漫步，測試雙手控制器傳送 (Teleport) 與高度調整",
+        "點擊「Batch Panorama」批次在各房間中心生成 8K 360 度全景圖",
+        "使用 720yun 或 Kuula 平台上傳全景圖，建立空間跳轉錨點與建材介紹導覽熱點"
       ],
-      industryStandardOrCode: 'Khronos Group OpenXR 1.0 國際標準與 W3C WebXR Device API。',
-      pitfallsAndVerification: 'VR 模式下嚴格禁止在相機上開啟「動態模糊 (Motion Blur)」或「景深 (Depth of Field)」，這會造成人眼前庭神經劇烈衝突導致頭暈嘔吐。',
-      diagnosticDecisionTree: [
-        '問題：戴上 VR 頭盔後畫面發生抖動或黑邊撕裂？',
-        '原因：場景面數或光追負荷過高，GPU 幀率跌破 90fps 觸發掉幀',
-        '解法：降低視埠即時採樣數 (Samples per Pixel)，或開啟動態解析度縮放 (Dynamic Resolution)',
+      "industryStandardOrCode": "Khronos Group OpenXR 1.0 國際標準與 W3C WebXR Device API。",
+      "pitfallsAndVerification": "VR 模式下嚴格禁止在相機上開啟「動態模糊 (Motion Blur)」或「景深 (Depth of Field)」，這會造成人眼前庭神經劇烈衝突導致頭暈嘔吐。",
+      "diagnosticDecisionTree": [
+        "問題：戴上 VR 頭盔後畫面發生抖動或黑邊撕裂？",
+        "原因：場景面數或光追負荷過高，GPU 幀率跌破 90fps 觸發掉幀",
+        "解法：降低視埠即時採樣數 (Samples per Pixel)，或開啟動態解析度縮放 (Dynamic Resolution)"
       ],
-      masteryChecklist: [
-        '能獨立搭建無卡頓、零眩暈之評審級 VR 虛擬實境漫遊展間',
-        '精通 360 度全景圖輸出、熱點配置與手機端雲端展廳發布',
-        '能運用 WebXR 技術在瀏覽器中實現跨平台 3D 空間互動展示',
-      ],
+      "masteryChecklist": [
+        "能獨立搭建無卡頓、零眩暈之評審級 VR 虛擬實境漫遊展間",
+        "精通 360 度全景圖輸出、熱點配置與手機端雲端展廳發布",
+        "能運用 WebXR 技術在瀏覽器中實現跨平台 3D 空間互動展示"
+      ]
     },
     {
-      round: 7,
-      badge: 'R7 腳本自動化與前瞻',
-      title: '次世代神經渲染、高斯潑濺 (3DGS) 融合與智慧生成式管線',
-      focus: '掌握 3D Gaussian Splatting 實景融合技術，整合即時串流與 AI 空間影片生成。',
-      contentExpansion: '延伸內容擴充 250%：解析從空拍無人機照片到 3DGS 點雲之微秒級即時著色管線，結合即時引擎生成 60fps 數位雙生 (Digital Twin) 互動應用。',
-      coreTheory: '即時渲染的未來是「顯式高斯射線輻射場 (3D Gaussian Splatting) 與物理光追的幾何混合」。傳統幾何網格難以重現基地周遭複雜的樹枝與歷史破舊磚石；透過 3DGS，數百萬個帶有協方差與球諧函數的高斯橢球體在 GPU 上以極限速度光柵化，與即時引擎中的數位設計方案量體進行深度緩衝區 (Z-Buffer) 完美融合，達成虛實莫辨的基地實境整合。',
-      mathematicalFormula: '球諧函數視角依賴色彩合成：C(v) = ∑_{l=0}^k ∑_{m=-l}^l c_l^m · Y_l^m(v)',
-      advancedParameters: [
-        { name: 'Gaussian Depth Blending', value: 'Depth-tested Splat Rasterization: ON', purpose: '確保新設計大樓精確遮擋實景背景點雲' },
-        { name: 'Pixel Streaming Protocol', value: 'WebRTC (Ultra-low Latency H.264/HEVC)', purpose: '百萬坪場景伺服器算圖手機即時操控' },
+      "round": 7,
+      "badge": "R7 腳本自動化與前瞻",
+      "title": "次世代神經渲染、高斯潑濺 (3DGS) 融合與智慧生成式管線",
+      "focus": "掌握 3D Gaussian Splatting 實景融合技術，整合即時串流與 AI 空間影片生成。",
+      "contentExpansion": "延伸內容擴充 250%：解析從空拍無人機照片到 3DGS 點雲之微秒級即時著色管線，結合即時引擎生成 60fps 數位雙生 (Digital Twin) 互動應用。",
+      "coreTheory": "即時渲染的未來是「顯式高斯射線輻射場 (3D Gaussian Splatting) 與物理光追的幾何混合」。傳統幾何網格難以重現基地周遭複雜的樹枝與歷史破舊磚石；透過 3DGS，數百萬個帶有協方差與球諧函數的高斯橢球體在 GPU 上以極限速度光柵化，與即時引擎中的數位設計方案量體進行深度緩衝區 (Z-Buffer) 完美融合，達成虛實莫辨的基地實境整合。",
+      "mathematicalFormula": "球諧函數視角依賴色彩合成：C(v) = ∑_{l=0}^k ∑_{m=-l}^l c_l^m · Y_l^m(v)",
+      "advancedParameters": [
+        {
+          "name": "Gaussian Depth Blending",
+          "value": "Depth-tested Splat Rasterization: ON",
+          "purpose": "確保新設計大樓精確遮擋實景背景點雲"
+        },
+        {
+          "name": "Pixel Streaming Protocol",
+          "value": "WebRTC (Ultra-low Latency H.264/HEVC)",
+          "purpose": "百萬坪場景伺服器算圖手機即時操控"
+        }
       ],
-      practicalWalkthrough: [
-        '使用無人機環繞基地拍攝 500 張空拍照片，利用 Nerfstudio 產出 3DGS 模型 (.ply)',
-        '在即時渲染引擎 (如 Twinmotion / UE5) 中匯入 3DGS 基地實景',
-        '將 BIM 建築方案精確放置於基地空地中央，開啟深度混合與陰影遮擋',
-        '架設 Pixel Streaming 像素串流伺服器，生成 URL 讓客戶在 iPad 瀏覽器以 60fps 即時操控光影',
+      "practicalWalkthrough": [
+        "使用無人機環繞基地拍攝 500 張空拍照片，利用 Nerfstudio 產出 3DGS 模型 (.ply)",
+        "在即時渲染引擎 (如 Twinmotion / UE5) 中匯入 3DGS 基地實景",
+        "將 BIM 建築方案精確放置於基地空地中央，開啟深度混合與陰影遮擋",
+        "架設 Pixel Streaming 像素串流伺服器，生成 URL 讓客戶在 iPad 瀏覽器以 60fps 即時操控光影"
       ],
-      industryStandardOrCode: 'IEEE 空間運算與次世代數位雙生技術規範標準。',
-      pitfallsAndVerification: '虛實疊合時，務必將 3DGS 實景點雲在真北方向與尺度 (Scale) 上與 CAD 坐標 1:1 精確對齊，避免方案建築懸空或比例失調。',
-      diagnosticDecisionTree: [
-        '問題：像素串流 (Pixel Streaming) 在遠端手機開啟時延遲高達數秒且畫面馬賽克？',
-        '原因：伺服器上傳頻寬不足或 WebRTC 碼率限制過於嚴苛',
-        '解法：在伺服器端將串流碼率鎖定為 15 Mbps，並強制啟用 H.265 硬體編碼器加速',
+      "industryStandardOrCode": "IEEE 空間運算與次世代數位雙生技術規範標準。",
+      "pitfallsAndVerification": "虛實疊合時，務必將 3DGS 實景點雲在真北方向與尺度 (Scale) 上與 CAD 坐標 1:1 精確對齊，避免方案建築懸空或比例失調。",
+      "diagnosticDecisionTree": [
+        "問題：像素串流 (Pixel Streaming) 在遠端手機開啟時延遲高達數秒且畫面馬賽克？",
+        "原因：伺服器上傳頻寬不足或 WebRTC 碼率限制過於嚴苛",
+        "解法：在伺服器端將串流碼率鎖定為 15 Mbps，並強制啟用 H.265 硬體編碼器加速"
       ],
-      masteryChecklist: [
-        '能獨立完成「無人機空拍 → 3DGS 實景模型 → 即時光追融合」前瞻全流程',
-        '精通 WebRTC 雲端像素串流伺服器部署與多用戶遠端漫遊管理',
-        '理解 AI 神經渲染在即時建築視覺化領域之演進方向與落地潛能',
-      ],
-    },
+      "masteryChecklist": [
+        "能獨立完成「無人機空拍 → 3DGS 實景模型 → 即時光追融合」前瞻全流程",
+        "精通 WebRTC 雲端像素串流伺服器部署與多用戶遠端漫遊管理",
+        "理解 AI 神經渲染在即時建築視覺化領域之演進方向與落地潛能"
+      ]
+    }
   ],
-  industryPipeline: {
-    stage: '概念方案推敲、每日設計審查、競圖多媒體大片、業主 VR 沉浸體驗與行銷發布',
-    softwareRole: '重塑全球建築表現流程之極速光影引擎與沉浸式元宇宙中樞',
-    fileFormats: {
-      import: ['.skp', '.rvt', '.3dm', '.pln', '.fbx', '.obj', '.gltf', '.hdr', '.ies', '.ply (3DGS)'],
-      export: ['.mp4', '.png', '.exr', '.panorama (8K)', '.exe (獨立漫遊包)', '.html (Web 360)'],
+  "industryPipeline": {
+    "stage": "概念方案推敲、每日設計審查、競圖多媒體大片、業主 VR 沉浸體驗與行銷發布",
+    "softwareRole": "重塑全球建築表現流程之極速光影引擎與沉浸式元宇宙中樞",
+    "fileFormats": {
+      "import": [
+        ".skp",
+        ".rvt",
+        ".3dm",
+        ".pln",
+        ".fbx",
+        ".obj",
+        ".gltf",
+        ".hdr",
+        ".ies",
+        ".ply (3DGS)"
+      ],
+      "export": [
+        ".mp4",
+        ".png",
+        ".exr",
+        ".panorama (8K)",
+        ".exe (獨立漫遊包)",
+        ".html (Web 360)"
+      ]
     },
-    collaborationWith: ['SketchUp (LiveSync 即時同步)', 'Revit (BIM 構件同步)', 'Rhino (曲面即時渲染)', 'Archicad (虛擬建築即時漫遊)'],
+    "collaborationWith": [
+      "SketchUp (LiveSync 即時同步)",
+      "Revit (BIM 構件同步)",
+      "Rhino (曲面即時渲染)",
+      "Archicad (虛擬建築即時漫遊)"
+    ]
   },
+  "learningResources": [
+    {
+      "title": "Epic Games Unreal Engine Architecture Hub - UE5 建築數位雙生與沉浸式虛擬導覽",
+      "provider": "Epic Games Official",
+      "category": "官方原廠教學",
+      "url": "https://www.unrealengine.com/solutions/architecture",
+      "description": "官方建築專用入口，深度解析 Nanite 虛擬微多邊形、Lumen 全域光照與 Datasmith 跨軟體無損同步。",
+      "badge": "原廠官方門戶"
+    },
+    {
+      "title": "D5 Render Official Academy - 即時光追、AI 氛圍匹配與建築動畫大師課",
+      "provider": "D5 Render Team",
+      "category": "官方原廠教學",
+      "url": "https://www.d5render.com/learn",
+      "description": "D5 官方學習中心，包含 RTX 即時光追、動態天氣系統、建築生長動畫與 AI 渲染後製功能全解。",
+      "badge": "官方教學中心"
+    },
+    {
+      "title": "Enscape Knowledge Base - 建築師即時同步算圖與 VR 體驗工作流",
+      "provider": "Chaos Enscape Official",
+      "category": "官方原廠教學",
+      "url": "https://learn.enscape3d.com",
+      "description": "Enscape 知識庫，專注於 Revit / SketchUp / Rhino 單鍵即時雙向連動、一鍵 VR 穿戴式虛擬檢驗。",
+      "badge": "即時同步手冊"
+    },
+    {
+      "title": "Twinmotion Learning - 雲端即時簡報與 BIM 模型無縫串接手冊",
+      "provider": "Epic Games Twinmotion",
+      "category": "官方原廠教學",
+      "url": "https://www.twinmotion.com/learn",
+      "description": "Twinmotion 官方指南，介紹快速景觀營造、雲端簡報發布 (Cloud Presentations) 與 Revit 一鍵直出。",
+      "badge": "雲端簡報手冊"
+    },
+    {
+      "title": "Lumion Community & Tutorials - 景觀建築大規模自然生態環境營造",
+      "provider": "Act-3D Lumion Official",
+      "category": "學術研討與開放教材",
+      "url": "https://lumion.com/tutorials",
+      "description": "Lumion 官方教學，傳授大場景景觀植栽動態風力吹拂、大氣降雨降雪物理表現與極速影片製作。",
+      "badge": "景觀動畫指南"
+    }
+  ],
+  "certificationStandards": [
+    {
+      "name": "Epic Games Certified Unreal Engine Instructor (Architectural Visualization)",
+      "level": "國際原廠最高導師級認證",
+      "authority": "Epic Games Inc.",
+      "description": "考核超大尺度建築數位雙生、Datasmith 工作流管線、虛擬實境 (VR/XR) 開發與藍圖 (Blueprints) 互動腳本編寫。",
+      "keyCompetencies": [
+        "Nanite 虛擬多邊形管線優化",
+        "Lumen 即時全域光照與反射調校",
+        "Datasmith 多軟體資產管線整合",
+        "藍圖 (Blueprints) 互動開門與空間漫遊系統"
+      ],
+      "officialExamUrl": "https://www.unrealengine.com/certification"
+    },
+    {
+      "name": "D5 Render Certified Professional (D5CP)",
+      "level": "國際即時渲染專家認證",
+      "authority": "Dimension 5 Tech",
+      "description": "考核建築即時光線追蹤技術、物理攝影機控制、複雜景觀散布與即時高畫質 4K 影片發布能力。",
+      "keyCompetencies": [
+        "DLSS 3.5 光線重構與降噪控制",
+        "建築施工進度生長動畫排程",
+        "AI 氛圍匹配與後期色彩微調",
+        "4K 60FPS 影片批次渲染任務管理"
+      ],
+      "officialExamUrl": "https://www.d5render.com/certification"
+    }
+  ]
 };

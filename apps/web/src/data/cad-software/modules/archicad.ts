@@ -1,399 +1,779 @@
 import { CadSoftware } from '../types';
 
 export const archicadData: CadSoftware = {
-  slug: 'archicad',
-  name: 'Graphisoft Archicad',
-  englishName: 'Graphisoft Archicad BIM Solution',
-  vendor: 'Graphisoft (Nemetschek Group)',
-  releaseYear: '1987 (全球首款在個人電腦運行的「虛擬建築 Virtual Building」BIM 始祖)',
-  tag: '電腦繪圖',
-  category: '歐洲建築師最愛之純血 BIM 與直覺式虛擬建築出圖平台',
-  badge: '歐洲純血 BIM 建築美學大師',
-  rating: {
-    learningCurve: '極親和 (專為建築師思維打造，無機械工程之生硬繁複感)',
-    industryAdoption: '歐洲、日本、澳洲與台灣先鋒建築事務所高達 70% 佔有率',
-    bimCapability: '頂級純血 (OpenBIM 領頭羊，IFC 雙向交換精準度業界之冠)',
-    drawingOutput: '神級美感 (內建 Layout Book 出圖排版極致優雅，CNS 一鍵整合)',
-    renderingQuality: '極佳 (內建 Maxon Redshift 物理引擎，直通 Twinmotion/D5)',
+  "slug": "archicad",
+  "name": "Graphisoft Archicad",
+  "englishName": "Graphisoft Archicad BIM Solution",
+  "vendor": "Graphisoft (Nemetschek Group)",
+  "releaseYear": "1987 (全球首款在個人電腦運行的「虛擬建築 Virtual Building」BIM 始祖)",
+  "tag": "電腦繪圖",
+  "category": "歐洲建築師最愛之純血 BIM 與直覺式虛擬建築出圖平台",
+  "badge": "歐洲純血 BIM 建築美學大師",
+  "rating": {
+    "learningCurve": "極親和 (專為建築師思維打造，無機械工程之生硬繁複感)",
+    "industryAdoption": "歐洲、日本、澳洲與台灣先鋒建築事務所高達 70% 佔有率",
+    "bimCapability": "頂級純血 (OpenBIM 領頭羊，IFC 雙向交換精準度業界之冠)",
+    "drawingOutput": "神級美感 (內建 Layout Book 出圖排版極致優雅，CNS 一鍵整合)",
+    "renderingQuality": "極佳 (內建 Maxon Redshift 物理引擎，直通 Twinmotion/D5)"
   },
-  shortDesc: '全世界第一款在個人電腦上實現「虛擬建築 (Virtual Building)」的純血 BIM 軟體。由建築師為建築師量身定制，以無與倫比的出圖美感與 OpenBIM 哲學風靡歐洲。',
-  fullDesc: 'Archicad 是現代 BIM 技術的真正鼻祖。不同於從製造業機械軟體衍生出的工具，Archicad 的基因完全植根於建築學思維。其「專案地圖 → 視圖地圖 → 圖紙手冊 → 發布器集」四位一體導航器結構，徹底解決了從 3D 虛擬建造到 2D 精美施工圖的發布難題。獨步天下的「建築材料優先順序 (0~999)」演算法實現了全自動材料收頭，而幾何描述語言 (GDL) 則以幾十 KB 的微小體積定義極其複雜的參數化建築構件。搭配獲獎無數的 BIMx 超級模型，讓營造現場手持平板穿梭圖紙與實境。',
-  officialUrl: 'https://graphisoft.com/solutions/archicad',
-  studentLicenseUrl: 'https://myarchicad.graphisoft.com/',
-  docUrl: 'https://help.graphisoft.com/category/archicad/',
-  communityUrl: 'https://community.graphisoft.com/',
-  heroMetrics: [
-    { label: 'BIM 歷史創始者', value: '1987 首創虛擬建築' },
-    { label: 'OpenBIM 國際認證', value: 'buildingSMART 最高等級' },
-    { label: '圖紙手冊整合度', value: 'Layout Book 零跳接出圖' },
-    { label: '行動巡檢神器', value: 'BIMx 超模型虛實穿梭' },
+  "shortDesc": "全世界第一款在個人電腦上實現「虛擬建築 (Virtual Building)」的純血 BIM 軟體。由建築師為建築師量身定制，以無與倫比的出圖美感與 OpenBIM 哲學風靡歐洲。",
+  "fullDesc": "Archicad 是現代 BIM 技術的真正鼻祖。不同於從製造業機械軟體衍生出的工具，Archicad 的基因完全植根於建築學思維。其「專案地圖 → 視圖地圖 → 圖紙手冊 → 發布器集」四位一體導航器結構，徹底解決了從 3D 虛擬建造到 2D 精美施工圖的發布難題。獨步天下的「建築材料優先順序 (0~999)」演算法實現了全自動材料收頭，而幾何描述語言 (GDL) 則以幾十 KB 的微小體積定義極其複雜的參數化建築構件。搭配獲獎無數的 BIMx 超級模型，讓營造現場手持平板穿梭圖紙與實境。",
+  "officialUrl": "https://graphisoft.com/solutions/archicad",
+  "studentLicenseUrl": "https://myarchicad.graphisoft.com/",
+  "docUrl": "https://help.graphisoft.com/category/archicad/",
+  "communityUrl": "https://community.graphisoft.com/",
+  "heroMetrics": [
+    {
+      "label": "BIM 歷史創始者",
+      "value": "1987 首創虛擬建築"
+    },
+    {
+      "label": "OpenBIM 國際認證",
+      "value": "buildingSMART 最高等級"
+    },
+    {
+      "label": "圖紙手冊整合度",
+      "value": "Layout Book 零跳接出圖"
+    },
+    {
+      "label": "行動巡檢神器",
+      "value": "BIMx 超模型虛實穿梭"
+    }
   ],
-  architecturalApplications: [
+  "architecturalApplications": [
     {
-      area: '虛擬建築模型與優先級材料收頭',
-      title: '建築材料優先級 (0-999) 智慧構造碰撞',
-      description: '設定建材強度優先級 (Building Material Priority, BMP)，當複合牆、斜屋頂與梁柱相交時，系統依照 0 至 999 權重全自動精準切削，材料交接無縫潔淨。',
-      deepDivePrinciples: [
-        '建材交接碰撞演算法 (Collision Priority Matrix)：RC 結構 (800) 自動穿透粉刷層 (200) 與保溫層 (450)，杜絕平立剖手動修線',
-        '多層複合結構 (Composites) 核心線對齊機制：以結構核心面為基準，即使外牆增加保溫厚度，室內淨開間尺寸分毫不移',
-        '四位一體導航器 (Navigator Flow)：Project Map (幾何資料) → View Map (圖形設定) → Layout Book (圖紙排版) → Publisher (一鍵多格式發布)',
+      "area": "虛擬建築模型與優先級材料收頭",
+      "title": "建築材料優先級 (0-999) 智慧構造碰撞",
+      "description": "設定建材強度優先級 (Building Material Priority, BMP)，當複合牆、斜屋頂與梁柱相交時，系統依照 0 至 999 權重全自動精準切削，材料交接無縫潔淨。",
+      "deepDivePrinciples": [
+        "建材交接碰撞演算法 (Collision Priority Matrix)：RC 結構 (800) 自動穿透粉刷層 (200) 與保溫層 (450)，杜絕平立剖手動修線",
+        "多層複合結構 (Composites) 核心線對齊機制：以結構核心面為基準，即使外牆增加保溫厚度，室內淨開間尺寸分毫不移",
+        "四位一體導航器 (Navigator Flow)：Project Map (幾何資料) → View Map (圖形設定) → Layout Book (圖紙排版) → Publisher (一鍵多格式發布)"
       ],
-      realWorldCase: '瑞士阿爾卑斯山木構與清水模度假酒店：全案採用 Archicad 建立 1:20 構造模型，透過 BMP 優先級自動計算落葉松木外飾板、斷熱岩棉與預力 RC 柱梁之交界，無任何手動補線。',
-      standardCodeRef: 'DIN 276 建築營造成本結構標準與 CNS 11567 建築剖面標示規則。',
-      codeSnippet: {
-        language: 'gdl',
-        title: 'GDL 幾何描述語言客製化參數化旋轉遮陽木百葉',
-        code: `! GDL 3D Script: 參數化雙向旋轉遮陽百葉\nRESOL 36\nMATERIAL mat_louver\n\nFOR i = 1 TO louver_count\n    z_pos = (i - 1) * louver_spacing\n    ADDZ z_pos\n    ROTX louver_angle ! 依太陽高度角旋轉\n    ! 繪製薄型流線百葉斷面實體\n    PRISM_ 5, louver_length,\n        -louver_width/2, -louver_thick/2, 15,\n         louver_width/2, -louver_thick/2, 15,\n         louver_width/2,  louver_thick/2, 15,\n        -louver_width/2,  louver_thick/2, 15,\n        -louver_width/2, -louver_thick/2, -1\n    DEL 2 ! 還原座標系堆疊\nNEXT i`,
-        explanation: '利用 Archicad 原生 GDL 語言，以不到 20 行純文字數學代碼定義出包含數量、間距、旋轉角之全參數化百葉，檔案大小僅 12KB，執行速度極致輕快。',
+      "realWorldCase": "瑞士阿爾卑斯山木構與清水模度假酒店：全案採用 Archicad 建立 1:20 構造模型，透過 BMP 優先級自動計算落葉松木外飾板、斷熱岩棉與預力 RC 柱梁之交界，無任何手動補線。",
+      "standardCodeRef": "DIN 276 建築營造成本結構標準與 CNS 11567 建築剖面標示規則。",
+      "codeSnippet": {
+        "language": "gdl",
+        "title": "GDL 幾何描述語言客製化參數化旋轉遮陽木百葉",
+        "code": "! GDL 3D Script: 參數化雙向旋轉遮陽百葉\nRESOL 36\nMATERIAL mat_louver\n\nFOR i = 1 TO louver_count\n    z_pos = (i - 1) * louver_spacing\n    ADDZ z_pos\n    ROTX louver_angle ! 依太陽高度角旋轉\n    ! 繪製薄型流線百葉斷面實體\n    PRISM_ 5, louver_length,\n        -louver_width/2, -louver_thick/2, 15,\n         louver_width/2, -louver_thick/2, 15,\n         louver_width/2,  louver_thick/2, 15,\n        -louver_width/2,  louver_thick/2, 15,\n        -louver_width/2, -louver_thick/2, -1\n    DEL 2 ! 還原座標系堆疊\nNEXT i",
+        "explanation": "利用 Archicad 原生 GDL 語言，以不到 20 行純文字數學代碼定義出包含數量、間距、旋轉角之全參數化百葉，檔案大小僅 12KB，執行速度極致輕快。"
       },
-      technicalDetails: [
-        '實體元素操作 (Solid Element Operations, SEO) 實現減去、向上擠出減去之靈活布林運算',
-        '圖層交標號碼 (Layer Intersection Groups) 控制不同圖層間是否產生幾何自動熔接',
-        '翻新篩選器 (Renovation Filter) 控制既有、拆除與新建構件之圖形覆寫',
+      "technicalDetails": [
+        "實體元素操作 (Solid Element Operations, SEO) 實現減去、向上擠出減去之靈活布林運算",
+        "圖層交標號碼 (Layer Intersection Groups) 控制不同圖層間是否產生幾何自動熔接",
+        "翻新篩選器 (Renovation Filter) 控制既有、拆除與新建構件之圖形覆寫"
       ],
-      deliverables: ['LOD 350 精細虛擬建築模型', 'CNS 標準全套建築執照圖', '工程構件數量自動分類清單'],
+      "deliverables": [
+        "LOD 350 精細虛擬建築模型",
+        "CNS 標準全套建築執照圖",
+        "工程構件數量自動分類清單"
+      ]
     },
     {
-      area: '圖紙手冊 (Layout Book) 與精準出圖排版',
-      title: '全專案圖紙集動態聯動與自動發布',
-      description: '將平立剖視圖直接拖入圖紙手冊 (Layout Book)，圖號、頁碼、審查日期、自訂修訂版次與視圖比例尺 100% 自動關聯連動。',
-      deepDivePrinciples: [
-        '自動文字 (AutoText) 巨集變換：圖框中的 `<ProjectName>`, `<LayoutID>`, `<RevisionID>` 即時讀取專案中繼資料',
-        '繪圖邊界即時剪裁 (Drawing Frame Clipping)：視圖邊界可在圖紙上自由拖動縮放，底層模型幾何依然維持向量真實性',
-        '多格式一鍵發布器 (Publisher Sets)：一次點擊同時輸出供公部門審查之 PDF、供營造廠施作之 DWG 與供業主瀏覽之 BIMx 超模型',
+      "area": "圖紙手冊 (Layout Book) 與精準出圖排版",
+      "title": "全專案圖紙集動態聯動與自動發布",
+      "description": "將平立剖視圖直接拖入圖紙手冊 (Layout Book)，圖號、頁碼、審查日期、自訂修訂版次與視圖比例尺 100% 自動關聯連動。",
+      "deepDivePrinciples": [
+        "自動文字 (AutoText) 巨集變換：圖框中的 `<ProjectName>`, `<LayoutID>`, `<RevisionID>` 即時讀取專案中繼資料",
+        "繪圖邊界即時剪裁 (Drawing Frame Clipping)：視圖邊界可在圖紙上自由拖動縮放，底層模型幾何依然維持向量真實性",
+        "多格式一鍵發布器 (Publisher Sets)：一次點擊同時輸出供公部門審查之 PDF、供營造廠施作之 DWG 與供業主瀏覽之 BIMx 超模型"
       ],
-      realWorldCase: '日本東京涉谷商業複合大樓：全案 350 張施工圖紙，設計變更時僅需修改 3D 核心模型，點擊 Publisher 一鍵在 4 分鐘內重新發布全套向量 PDF 與 IFC 模型。',
-      standardCodeRef: 'ISO 5457 建築技術製圖圖紙尺寸與格式標準。',
-      technicalDetails: [
-        '模型檢視選項 (Model View Options, MVO) 一鍵切換建築執照圖、結構施工圖與天花配置圖',
-        '圖形覆寫規則 (Graphic Override Rules) 依構件防火時效 (1hr/2hr) 自動上色高亮',
-        '圖紙變更管理 (Revision Management) 自動在圖紙標記雲形線並產出發行履歷紀錄表',
+      "realWorldCase": "日本東京涉谷商業複合大樓：全案 350 張施工圖紙，設計變更時僅需修改 3D 核心模型，點擊 Publisher 一鍵在 4 分鐘內重新發布全套向量 PDF 與 IFC 模型。",
+      "standardCodeRef": "ISO 5457 建築技術製圖圖紙尺寸與格式標準。",
+      "technicalDetails": [
+        "模型檢視選項 (Model View Options, MVO) 一鍵切換建築執照圖、結構施工圖與天花配置圖",
+        "圖形覆寫規則 (Graphic Override Rules) 依構件防火時效 (1hr/2hr) 自動上色高亮",
+        "圖紙變更管理 (Revision Management) 自動在圖紙標記雲形線並產出發行履歷紀錄表"
       ],
-      deliverables: ['A1/A0 施工圖紙集 (Layout Book)', '多格式發布器配置文件 (.xml)', '變更設計工程修訂追蹤清單'],
+      "deliverables": [
+        "A1/A0 施工圖紙集 (Layout Book)",
+        "多格式發布器配置文件 (.xml)",
+        "變更設計工程修訂追蹤清單"
+      ]
     },
     {
-      area: 'BIMx 行動虛實整合超級模型 (Hyper-model)',
-      title: '工地行動裝置穿梭圖紙與 3D 虛擬實境',
-      description: '將整棟 3D 建築模型與全套 2D PDF 施工圖紙打包為極度壓縮之 BIMx 超模型，現場工程師在 iPad 上點擊剖切線，鏡頭順滑無縫切入 3D 剖面。',
-      deepDivePrinciples: [
-        '超模型虛實投影融合技術 (Hyper-model In-Context View)：將 2D 圖紙直接以半透明形式投射貼合於 3D 空間對應切面位置',
-        '空間幾何超級壓縮演算法：將數百 MB 的巨型專案無損壓縮至數十 MB，低階行動裝置亦能以 60fps 流暢漫遊',
-        '即時構件資訊調取：點選 3D 現場任意柱梁，立即彈出製造廠商、出廠檢驗證明與防火等級規格書',
+      "area": "BIMx 行動虛實整合超級模型 (Hyper-model)",
+      "title": "工地行動裝置穿梭圖紙與 3D 虛擬實境",
+      "description": "將整棟 3D 建築模型與全套 2D PDF 施工圖紙打包為極度壓縮之 BIMx 超模型，現場工程師在 iPad 上點擊剖切線，鏡頭順滑無縫切入 3D 剖面。",
+      "deepDivePrinciples": [
+        "超模型虛實投影融合技術 (Hyper-model In-Context View)：將 2D 圖紙直接以半透明形式投射貼合於 3D 空間對應切面位置",
+        "空間幾何超級壓縮演算法：將數百 MB 的巨型專案無損壓縮至數十 MB，低階行動裝置亦能以 60fps 流暢漫遊",
+        "即時構件資訊調取：點選 3D 現場任意柱梁，立即彈出製造廠商、出廠檢驗證明與防火等級規格書"
       ],
-      realWorldCase: '台南沙崙智慧綠能科學城施工現場：監造團隊全面摒棄紙本圖紙，手持 iPad 於地下室管道間透過 BIMx 穿梭檢驗預留孔與通風管路，查核效率提升 3 倍。',
-      standardCodeRef: '內政部建築研究所營造階段行動化 BIM 應用查驗規範。',
-      technicalDetails: [
-        'BIMx 網頁檢視器 (Web Viewer) 允許業主無需安裝任何軟體直接在瀏覽器漫遊',
-        'BIMcloud 整合支援現場即時標記留言與 BCF 議題指派拍照回傳',
-        '陽光位置與陰影即時滑桿調節，現場比對太陽真實照射角度',
+      "realWorldCase": "台南沙崙智慧綠能科學城施工現場：監造團隊全面摒棄紙本圖紙，手持 iPad 於地下室管道間透過 BIMx 穿梭檢驗預留孔與通風管路，查核效率提升 3 倍。",
+      "standardCodeRef": "內政部建築研究所營造階段行動化 BIM 應用查驗規範。",
+      "technicalDetails": [
+        "BIMx 網頁檢視器 (Web Viewer) 允許業主無需安裝任何軟體直接在瀏覽器漫遊",
+        "BIMcloud 整合支援現場即時標記留言與 BCF 議題指派拍照回傳",
+        "陽光位置與陰影即時滑桿調節，現場比對太陽真實照射角度"
       ],
-      deliverables: ['BIMx 超級模型檔案 (.bimx)', '現場工程缺失查驗照片回傳清單', '業主沉浸式漫遊簡報模組'],
+      "deliverables": [
+        "BIMx 超級模型檔案 (.bimx)",
+        "現場工程缺失查驗照片回傳清單",
+        "業主沉浸式漫遊簡報模組"
+      ]
     },
     {
-      area: '透寫紙 (Trace & Reference) 虛擬底圖疊合',
-      title: '跨樓層、跨圖紙即時透視對照與套繪',
-      description: '宛如在手繪圖桌上鋪上一張半透明描圖紙，可在當前樓層即刻以任意色彩透視看見上一層、結構梁圖或地下室開挖範圍。',
-      deepDivePrinciples: [
-        '雙向空間投影映射 (Dual-View Raster-Vector Blending)：主工作視窗與參照底圖獨立著色，支援即時微調參照偏移與旋轉',
-        '臨時分割簾條 (Splitter Tool)：在視窗中拉動滑桿，宛如拉開窗簾般左右對比當前平面與結構底圖之差異',
-        '跨類型參照支援：能在立面圖中將平面圖設為參考底圖，精準校驗管道間豎向貫通對齊',
+      "area": "透寫紙 (Trace & Reference) 虛擬底圖疊合",
+      "title": "跨樓層、跨圖紙即時透視對照與套繪",
+      "description": "宛如在手繪圖桌上鋪上一張半透明描圖紙，可在當前樓層即刻以任意色彩透視看見上一層、結構梁圖或地下室開挖範圍。",
+      "deepDivePrinciples": [
+        "雙向空間投影映射 (Dual-View Raster-Vector Blending)：主工作視窗與參照底圖獨立著色，支援即時微調參照偏移與旋轉",
+        "臨時分割簾條 (Splitter Tool)：在視窗中拉動滑桿，宛如拉開窗簾般左右對比當前平面與結構底圖之差異",
+        "跨類型參照支援：能在立面圖中將平面圖設為參考底圖，精準校驗管道間豎向貫通對齊"
       ],
-      realWorldCase: '台中歌劇院周邊住宅大樓：建築師在繪製標準層時，將地下三層停車場柱網與排煙豎道設為 Trace Reference，以橙色半透明疊合，確保全棟垂直管道間 100% 貫通無偏位。',
-      standardCodeRef: 'CNS 11567 建築工程多工種套繪標準。',
-      technicalDetails: [
-        '自訂參考視圖顏色 (如淺藍或粉紅) 與透明度 (Transparency Slider)',
-        '位移與旋轉參考 (Nudge Reference) 校正外來測量圖之偏差',
-        '將 3D 視圖設為 2D 平面圖的 Trace Reference，實現極致直覺空間比對',
+      "realWorldCase": "台中歌劇院周邊住宅大樓：建築師在繪製標準層時，將地下三層停車場柱網與排煙豎道設為 Trace Reference，以橙色半透明疊合，確保全棟垂直管道間 100% 貫通無偏位。",
+      "standardCodeRef": "CNS 11567 建築工程多工種套繪標準。",
+      "technicalDetails": [
+        "自訂參考視圖顏色 (如淺藍或粉紅) 與透明度 (Transparency Slider)",
+        "位移與旋轉參考 (Nudge Reference) 校正外來測量圖之偏差",
+        "將 3D 視圖設為 2D 平面圖的 Trace Reference，實現極致直覺空間比對"
       ],
-      deliverables: ['垂直管道管線套繪檢討圖', '結構梁柱與建築開口對齊分析圖', '複層挑空空間關係示意圖'],
+      "deliverables": [
+        "垂直管道管線套繪檢討圖",
+        "結構梁柱與建築開口對齊分析圖",
+        "複層挑空空間關係示意圖"
+      ]
     },
+    {
+      "area": "Teamwork BIMcloud 跨地域營造協同作業與即時微鎖定機制",
+      "title": "BIMcloud 跨國連線與構件層級 Reservation 協同管理",
+      "description": "利用 Graphisoft 專利之 Delta Server 技術，實現數十位建築師在跨國低頻寬環境下同步編輯同一棟超高層大樓。",
+      "deepDivePrinciples": [
+        "元件層級即時鎖定 (Element Reservation)：不同於鎖定整層樓或檔案，Archicad 允許建築師 A 預約特定一道牆，建築師 B 預約該牆上的門，互不衝突",
+        "Delta 差量傳輸技術：僅傳送修改之構件位元組 (Bytes)，而非整份數百 MB 之圖檔，即使在工地 4G 網路下依然順暢",
+        "離線快取與衝突合併：出差斷線時可本機離線繪圖，重新連網時自動執行三向合併 (Three-Way Merge) 並發送衝突解決請求"
+      ],
+      "realWorldCase": "歐洲跨國事務所 BIG (Bjarke Ingels Group)：哥本哈根與紐約兩地團隊透過 BIMcloud 共同設計 8 萬坪複合商辦案，實現 24 小時接力設計且無任何模型版本覆蓋事故。",
+      "standardCodeRef": "ISO 19650-1 資訊交付環境 (CDE) 協同作業安全標準。",
+      "technicalDetails": [
+        "透過 BIMcloud Manager 設定使用者角色與權限 (Role-Based Access)",
+        "內建 Teamwork 即時通訊附帶構件超連結 (Message with Element Context)",
+        "定時自動快照與伺服器差異化備份機制"
+      ],
+      "deliverables": [
+        "即時同步 BIMcloud 專案檔 (.pln / .pla)",
+        "協同衝突審查日誌報告",
+        "異地備份快照還原點清冊"
+      ]
+    },
+    {
+      "area": "GDL (幾何描述語言) 智慧建築五金與台灣標準門窗元件庫開發",
+      "title": "基於 GDL 參數化腳本之台灣標準鋁門窗與構造接頭",
+      "description": "編寫 GDL 腳本自訂智慧型建築構件，支援任意開口尺寸、紗窗開啟方向、氣密條厚度與 CNS 規範圖例符號自動切換。",
+      "deepDivePrinciples": [
+        "2D 符號與 3D 幾何解耦：2D Script 控制平面開啟弧線與文字標註，3D Script 以 PRISM_ 與 CYLIND 指令建構高精度鋁擠型外框",
+        "Master Script 參數共用：將窗框斷面寬度與玻璃厚度約束在同一變數清單中，動態計算隔音等級與熱傳導率 (U-Value)",
+        "多細節等級 (MVO - Model View Options) 響應：在 1/200 視圖自動簡化為單線，在 1/20 視圖顯示精細斷面構造"
+      ],
+      "realWorldCase": "台灣知名鋁帷幕門窗大廠：委託開發全系列 GDL 智慧元件庫，供全國建築師免費載入，設計圖面標註之型號直接連動工廠 CNC 裁切單，設計到加工零落差。",
+      "standardCodeRef": "CNS 3092 鋁合金製門窗與 CNS 11567 建築門窗圖例規範。",
+      "codeSnippet": {
+        "language": "gdl",
+        "title": "GDL 3D Script 參數化鋁合金雙開推拉窗幾何建構",
+        "code": "! 3D 腳本：參數化鋁合金雙開推拉窗\nMATERIAL mat_frame\nRESOL 36\npen pen_3d\n\n! 繪製外框\nPRISM_ 5, frame_thick,\n    0, 0, 15,\n    A, 0, 15,\n    A, B, 15,\n    0, B, 15,\n    0, 0, -1\n\n! 切除玻璃開口\nADDZ -0.01\nCUTSHAPE frame_width, frame_width, A - frame_width, B - frame_width\nCUTEND\nDEL 1",
+        "explanation": "利用 GDL 向量多邊形指令 PRISM_ 與切削指令 CUTSHAPE，依據建築師輸入的寬度 A、高度 B 與框厚 frame_thick 動態生成窗框。"
+      },
+      "technicalDetails": [
+        "使用 GDL Editor 撰寫 Parameter Script, 2D Script, 3D Script, UI Script",
+        "客製化 UI 介面面板，提供建築師點選五金把手樣式與窗簾盒配件",
+        "將構件封裝為 GSM 格式，體積僅數十 KB 卻可產生無窮變化"
+      ],
+      "deliverables": [
+        "台灣標準建築門窗 GDL 程式庫 (.gsm / .lcf)",
+        "門窗元件使用參數說明手冊",
+        "自動統計之門窗五金明細清冊"
+      ]
+    }
   ],
-  beginnerGuide: {
-    introduction: 'Archicad 專為建築師的大腦運作而設計。牢記「導航器四步驟」：專案地圖建構模型 → 視圖地圖儲存風格 → 圖紙手冊排版 → 發布器輸出。永遠用真實建築構件思考。',
-    viewportControls: [
-      { action: '平移視圖 (Pan)', keyOrMouse: '按住滑鼠滾輪不放並拖曳', tip: '平滑移動工作圖面' },
-      { action: '3D 軌道旋轉 (Orbit)', keyOrMouse: 'Shift + 按住滑鼠滾輪拖曳 (或按鍵盤 O)', tip: '圍繞建築模型自由旋轉 3D 透視' },
-      { action: '視圖充滿視窗 (Fit in Window)', keyOrMouse: '滑鼠雙擊滾輪 或 點擊底部「充滿視窗」按鈕', tip: '一秒將全體模型置中拉回視野焦點' },
-      { action: '快速測量工具 (Measure)', keyOrMouse: '鍵盤按 M', tip: '點選任意兩點即時顯示空間直線距離、水平距離與斜角' },
-    ],
-    tenStepsSop: [
-      { step: 1, title: '設定專案工作單位與尺寸', action: '進入 選項 (Options) → 專案偏好 (Project Preferences) → 工作單位', keyPoint: '長度單位改為「毫米 (mm)」，小數位設為 0；尺寸標註偏好設為符合 CNS 公制標準' },
-      { step: 2, title: '設定樓層高度 (Story Settings)', action: '在專案地圖「樓層」按右鍵選擇「樓層設定」或按 Ctrl + 7', keyPoint: '建立 1FL (0mm, 高度 3600), 2FL (3600mm, 高度 3600), 3FL (7200mm), RF (10800mm)' },
-      { step: 3, title: '放置結構柱網 (Grid Tool)', action: '切換至工具箱「網格 (Grid)」，在 1FL 繪製 X 軸與 Y 軸柱網', keyPoint: '在網格設定中勾選「在 3D 視窗中顯示」，讓標註軸線穿透立體空間' },
-      { step: 4, title: '繪製結構複合外牆 (Wall Tool)', action: '點選「牆工具 (Wall)」，選擇複合結構「RC 200mm + 保溫層 + 飾面」', keyPoint: '參考線位置設為「核心外面 (Core Outside)」，頂部直接綁定至「2FL」，高度自動算好' },
-      { step: 5, title: '放置建築地坪樓板 (Slab Tool)', action: '點選「板工具 (Slab)」，按住鍵盤空白鍵 (魔術棒) 點擊封閉外牆內部', keyPoint: '魔術棒 (Magic Wand) 自動捕捉牆體邊界，一秒精準生成地坪樓板' },
-      { step: 6, title: '插入智慧門窗 (Door & Window)', action: '點選「門工具」或「窗工具」，在牆面上點擊放置', keyPoint: '點擊太陽圖示指定外側，再點擊室內決定開闔方向，系統自動挖洞並放置五金窗套' },
-      { step: 7, title: '啟用透寫紙對齊上一層 (Trace & Reference)', action: '雙擊進入 2FL 平面，在 1FL 樓層按右鍵點選「顯示為追蹤參照」', keyPoint: '1FL 的梁柱牆體瞬間以淺藍色虛影半透明顯示在 2FL 底層，對齊完全不盲目' },
-      { step: 8, title: '儲存至視圖地圖 (Save View)', action: '在右側導航器切換至第二個標籤「視圖地圖 (View Map)」', keyPoint: '點擊下方「儲存目前視圖」，鎖定 1:100 比例尺、模型檢視選項與圖層組合' },
-      { step: 9, title: '排版進圖紙手冊 (Layout Book)', action: '在導航器切換至第三個標籤「圖紙手冊 (Layout Book)」，新建 A1 圖紙', keyPoint: '從視圖地圖直接將剛剛儲存的平面圖拖入 A1 圖紙，放置圖名與自動比例尺' },
-      { step: 10, title: '一鍵發布 PDF 與 BIMx', action: '切換至第四個標籤「發布器集 (Publisher Sets)」，點選「PDF 發布」', keyPoint: '點擊「發布 (Publish)」按鈕，全案自動編制完整目錄與超連結多頁向量圖紙' },
-    ],
-    shortcuts: [
-      { key: 'W', command: '牆工具 (Wall Tool)', explanation: '啟用繪製外牆與內隔間指令', frequency: '必須秒按', mnemonic: 'W 砌牆築堡壘' },
-      { key: 'D', command: '門工具 (Door Tool)', explanation: '在牆面插入具備開啟半徑的實體門', frequency: '必須秒按', mnemonic: 'D 門洞自然開' },
-      { key: '空白鍵 (Spacebar)', command: '魔術棒 (Magic Wand)', explanation: '按住空白鍵點擊任何封閉多邊形，自動生成樓板、屋頂或天花板', frequency: '必須秒按', mnemonic: '空白魔術棒一鍵成形' },
-      { key: 'M', command: '測量工具 (Measure)', explanation: '快速測量圖面上任意兩點之三維距離與投影夾角', frequency: '必須秒按', mnemonic: 'M 精準量尺度' },
-      { key: 'F5', command: '顯示選取範圍 3D (Show Selection in 3D)', explanation: '在平面圖框選局部構件，按 F5 3D 視窗僅顯示該局部！', frequency: '必須秒按', mnemonic: 'F5 局部 3D 檢視' },
-      { key: 'Ctrl + F5', command: '全體模型 3D 顯示 (Show All in 3D)', explanation: '從局部 3D 恢復為顯示全棟大樓三維模型', frequency: '必須秒按', mnemonic: 'Ctrl+F5 全場現形' },
-      { key: 'Alt + 點擊', command: '吸管工具 (Pick Parameters)', explanation: '吸取畫面上任何物件的全部屬性與圖層設定', frequency: '必須秒按', mnemonic: 'Alt 吸取全屬性' },
-      { key: 'Ctrl + Alt + 點擊', command: '注射器工具 (Inject Parameters)', explanation: '將吸管吸取的屬性直接注入另一個構件一鍵覆寫', frequency: '必須秒按', mnemonic: 'Ctrl+Alt 注入屬性' },
-      { key: 'Ctrl + L', command: '圖層設定 (Layer Settings)', explanation: '開啟圖層與圖層組合管理視窗', frequency: '必須秒按', mnemonic: 'Ctrl+L 圖層開合' },
-      { key: 'Ctrl + 7', command: '樓層設定 (Story Settings)', explanation: '編輯調整全棟建築各樓層地坪標高與樓層淨高', frequency: '高頻常用', mnemonic: 'Ctrl+7 樓層標高調整' },
-      { key: 'O', command: '3D 軌道旋轉 (Orbit Toggle)', explanation: '進入或退出 3D 自由旋轉滑鼠狀態', frequency: '高頻常用', mnemonic: 'O 環繞看立體' },
-      { key: 'Ctrl + T', command: '工具預設設定 (Tool Settings Dialog)', explanation: '開啟當前選取物件或工具的深度參數調整對話框', frequency: '必須秒按', mnemonic: 'Ctrl+T 詳細參數面板' },
-    ],
-    fatalTraps: [
+  "beginnerGuide": {
+    "introduction": "Archicad 專為建築師的大腦運作而設計。牢記「導航器四步驟」：專案地圖建構模型 → 視圖地圖儲存風格 → 圖紙手冊排版 → 發布器輸出。永遠用真實建築構件思考。",
+    "viewportControls": [
       {
-        trap: '直接在「專案地圖 (Project Map)」出圖排版導致樣式崩潰',
-        reason: '專案地圖只是資料庫原始數據，不會記憶圖層組合、比例尺與圖形覆寫。直接拉進圖紙出圖，線型樣式隨意跳變。',
-        solution: '鐵律：所有視圖必須先在「視圖地圖 (View Map)」中儲存並鎖定圖層與比例尺，再拖曳到圖紙手冊！',
+        "action": "平移視圖 (Pan)",
+        "keyOrMouse": "按住滑鼠滾輪不放並拖曳",
+        "tip": "平滑移動工作圖面"
       },
       {
-        trap: '兩個圖層的「圖層交標號碼 (Layer Intersection Group)」設為相同',
-        reason: '不希望相交融合的兩種構件（如方案 A 牆與方案 B 牆），因交標皆設為 1，在空間中自動黏合破面。',
-        solution: '在圖層面板中，為互斥或不同方案的圖層指定不同的交標號碼 (如設為 0 或 2)，阻止幾何自動相交。',
+        "action": "3D 軌道旋轉 (Orbit)",
+        "keyOrMouse": "Shift + 按住滑鼠滾輪拖曳 (或按鍵盤 O)",
+        "tip": "圍繞建築模型自由旋轉 3D 透視"
       },
       {
-        trap: '圖元未正確頂部綁定 (Top Link) 導致調整層高時全棟破洞',
-        reason: '繪製 1FL 牆體時手動輸入固定高度 3600mm，當建築師將 1F 挑高改為 4200mm 時，牆體未連動頂面出現 600mm 大裂縫。',
-        solution: '牆體與柱子性質中，頂部連結一律選擇「上一層 (Top Linked: Story + 1)」，樓層調整時全棟自動跟隨拉長。',
+        "action": "視圖充滿視窗 (Fit in Window)",
+        "keyOrMouse": "滑鼠雙擊滾輪 或 點擊底部「充滿視窗」按鈕",
+        "tip": "一秒將全體模型置中拉回視野焦點"
       },
       {
-        trap: '從外部載入數百 MB 雜亂 SketchUp 模型未經 GDL 優化',
-        reason: '直接拖入 SKP 檔案轉換為 Archicad 物件，生成數十萬條非參數化散線散面，圖檔體積膨脹數倍。',
-        solution: '匯入前先用 Rhino 或 3ds Max 減面，或在 Archicad 中另存為乾淨 GDL 物件並簡化 2D 符號表現。',
+        "action": "快速測量工具 (Measure)",
+        "keyOrMouse": "鍵盤按 M",
+        "tip": "點選任意兩點即時顯示空間直線距離、水平距離與斜角"
+      }
+    ],
+    "tenStepsSop": [
+      {
+        "step": 1,
+        "title": "設定專案工作單位與尺寸",
+        "action": "進入 選項 (Options) → 專案偏好 (Project Preferences) → 工作單位",
+        "keyPoint": "長度單位改為「毫米 (mm)」，小數位設為 0；尺寸標註偏好設為符合 CNS 公制標準"
       },
+      {
+        "step": 2,
+        "title": "設定樓層高度 (Story Settings)",
+        "action": "在專案地圖「樓層」按右鍵選擇「樓層設定」或按 Ctrl + 7",
+        "keyPoint": "建立 1FL (0mm, 高度 3600), 2FL (3600mm, 高度 3600), 3FL (7200mm), RF (10800mm)"
+      },
+      {
+        "step": 3,
+        "title": "放置結構柱網 (Grid Tool)",
+        "action": "切換至工具箱「網格 (Grid)」，在 1FL 繪製 X 軸與 Y 軸柱網",
+        "keyPoint": "在網格設定中勾選「在 3D 視窗中顯示」，讓標註軸線穿透立體空間"
+      },
+      {
+        "step": 4,
+        "title": "繪製結構複合外牆 (Wall Tool)",
+        "action": "點選「牆工具 (Wall)」，選擇複合結構「RC 200mm + 保溫層 + 飾面」",
+        "keyPoint": "參考線位置設為「核心外面 (Core Outside)」，頂部直接綁定至「2FL」，高度自動算好"
+      },
+      {
+        "step": 5,
+        "title": "放置建築地坪樓板 (Slab Tool)",
+        "action": "點選「板工具 (Slab)」，按住鍵盤空白鍵 (魔術棒) 點擊封閉外牆內部",
+        "keyPoint": "魔術棒 (Magic Wand) 自動捕捉牆體邊界，一秒精準生成地坪樓板"
+      },
+      {
+        "step": 6,
+        "title": "插入智慧門窗 (Door & Window)",
+        "action": "點選「門工具」或「窗工具」，在牆面上點擊放置",
+        "keyPoint": "點擊太陽圖示指定外側，再點擊室內決定開闔方向，系統自動挖洞並放置五金窗套"
+      },
+      {
+        "step": 7,
+        "title": "啟用透寫紙對齊上一層 (Trace & Reference)",
+        "action": "雙擊進入 2FL 平面，在 1FL 樓層按右鍵點選「顯示為追蹤參照」",
+        "keyPoint": "1FL 的梁柱牆體瞬間以淺藍色虛影半透明顯示在 2FL 底層，對齊完全不盲目"
+      },
+      {
+        "step": 8,
+        "title": "儲存至視圖地圖 (Save View)",
+        "action": "在右側導航器切換至第二個標籤「視圖地圖 (View Map)」",
+        "keyPoint": "點擊下方「儲存目前視圖」，鎖定 1:100 比例尺、模型檢視選項與圖層組合"
+      },
+      {
+        "step": 9,
+        "title": "排版進圖紙手冊 (Layout Book)",
+        "action": "在導航器切換至第三個標籤「圖紙手冊 (Layout Book)」，新建 A1 圖紙",
+        "keyPoint": "從視圖地圖直接將剛剛儲存的平面圖拖入 A1 圖紙，放置圖名與自動比例尺"
+      },
+      {
+        "step": 10,
+        "title": "一鍵發布 PDF 與 BIMx",
+        "action": "切換至第四個標籤「發布器集 (Publisher Sets)」，點選「PDF 發布」",
+        "keyPoint": "點擊「發布 (Publish)」按鈕，全案自動編制完整目錄與超連結多頁向量圖紙"
+      }
     ],
-    proTips: [
-      { title: '魔術棒 (Magic Wand) 是輪廓生成大殺器', description: '按住鍵盤空白鍵，滑鼠游標會變成一支發光的「魔術棒」。點擊任何封閉的外牆或曲線，一秒將基地地形等高線轉為 Slab、屋頂或網格幾何體！' },
-      { title: '實體元素操作 (SEO) 實現極速布林開挖', description: '按「設計 → 實體元素操作」，將地下室牆體設為「目標 (Target)」，基坑開挖體積設為「運算元 (Operator)」，選擇「減去」，基坑土方立即全自動挖空且動態連動。' },
-      { title: '吸管與注射器 (Alt / Ctrl+Alt) 是快速建模神技', description: '想要新畫的牆跟既有外牆完全一樣？按 Alt 點擊既有牆，當前工具瞬間吸收其厚度、材料、圖層；按 Ctrl+Alt 點擊另一面牆，直接將屬性注入置換！' },
+    "shortcuts": [
+      {
+        "key": "W",
+        "command": "牆工具 (Wall Tool)",
+        "explanation": "啟用繪製外牆與內隔間指令",
+        "frequency": "必須秒按",
+        "mnemonic": "W 砌牆築堡壘"
+      },
+      {
+        "key": "D",
+        "command": "門工具 (Door Tool)",
+        "explanation": "在牆面插入具備開啟半徑的實體門",
+        "frequency": "必須秒按",
+        "mnemonic": "D 門洞自然開"
+      },
+      {
+        "key": "空白鍵 (Spacebar)",
+        "command": "魔術棒 (Magic Wand)",
+        "explanation": "按住空白鍵點擊任何封閉多邊形，自動生成樓板、屋頂或天花板",
+        "frequency": "必須秒按",
+        "mnemonic": "空白魔術棒一鍵成形"
+      },
+      {
+        "key": "M",
+        "command": "測量工具 (Measure)",
+        "explanation": "快速測量圖面上任意兩點之三維距離與投影夾角",
+        "frequency": "必須秒按",
+        "mnemonic": "M 精準量尺度"
+      },
+      {
+        "key": "F5",
+        "command": "顯示選取範圍 3D (Show Selection in 3D)",
+        "explanation": "在平面圖框選局部構件，按 F5 3D 視窗僅顯示該局部！",
+        "frequency": "必須秒按",
+        "mnemonic": "F5 局部 3D 檢視"
+      },
+      {
+        "key": "Ctrl + F5",
+        "command": "全體模型 3D 顯示 (Show All in 3D)",
+        "explanation": "從局部 3D 恢復為顯示全棟大樓三維模型",
+        "frequency": "必須秒按",
+        "mnemonic": "Ctrl+F5 全場現形"
+      },
+      {
+        "key": "Alt + 點擊",
+        "command": "吸管工具 (Pick Parameters)",
+        "explanation": "吸取畫面上任何物件的全部屬性與圖層設定",
+        "frequency": "必須秒按",
+        "mnemonic": "Alt 吸取全屬性"
+      },
+      {
+        "key": "Ctrl + Alt + 點擊",
+        "command": "注射器工具 (Inject Parameters)",
+        "explanation": "將吸管吸取的屬性直接注入另一個構件一鍵覆寫",
+        "frequency": "必須秒按",
+        "mnemonic": "Ctrl+Alt 注入屬性"
+      },
+      {
+        "key": "Ctrl + L",
+        "command": "圖層設定 (Layer Settings)",
+        "explanation": "開啟圖層與圖層組合管理視窗",
+        "frequency": "必須秒按",
+        "mnemonic": "Ctrl+L 圖層開合"
+      },
+      {
+        "key": "Ctrl + 7",
+        "command": "樓層設定 (Story Settings)",
+        "explanation": "編輯調整全棟建築各樓層地坪標高與樓層淨高",
+        "frequency": "高頻常用",
+        "mnemonic": "Ctrl+7 樓層標高調整"
+      },
+      {
+        "key": "O",
+        "command": "3D 軌道旋轉 (Orbit Toggle)",
+        "explanation": "進入或退出 3D 自由旋轉滑鼠狀態",
+        "frequency": "高頻常用",
+        "mnemonic": "O 環繞看立體"
+      },
+      {
+        "key": "Ctrl + T",
+        "command": "工具預設設定 (Tool Settings Dialog)",
+        "explanation": "開啟當前選取物件或工具的深度參數調整對話框",
+        "frequency": "必須秒按",
+        "mnemonic": "Ctrl+T 詳細參數面板"
+      }
     ],
+    "fatalTraps": [
+      {
+        "trap": "直接在「專案地圖 (Project Map)」出圖排版導致樣式崩潰",
+        "reason": "專案地圖只是資料庫原始數據，不會記憶圖層組合、比例尺與圖形覆寫。直接拉進圖紙出圖，線型樣式隨意跳變。",
+        "solution": "鐵律：所有視圖必須先在「視圖地圖 (View Map)」中儲存並鎖定圖層與比例尺，再拖曳到圖紙手冊！"
+      },
+      {
+        "trap": "兩個圖層的「圖層交標號碼 (Layer Intersection Group)」設為相同",
+        "reason": "不希望相交融合的兩種構件（如方案 A 牆與方案 B 牆），因交標皆設為 1，在空間中自動黏合破面。",
+        "solution": "在圖層面板中，為互斥或不同方案的圖層指定不同的交標號碼 (如設為 0 或 2)，阻止幾何自動相交。"
+      },
+      {
+        "trap": "圖元未正確頂部綁定 (Top Link) 導致調整層高時全棟破洞",
+        "reason": "繪製 1FL 牆體時手動輸入固定高度 3600mm，當建築師將 1F 挑高改為 4200mm 時，牆體未連動頂面出現 600mm 大裂縫。",
+        "solution": "牆體與柱子性質中，頂部連結一律選擇「上一層 (Top Linked: Story + 1)」，樓層調整時全棟自動跟隨拉長。"
+      },
+      {
+        "trap": "從外部載入數百 MB 雜亂 SketchUp 模型未經 GDL 優化",
+        "reason": "直接拖入 SKP 檔案轉換為 Archicad 物件，生成數十萬條非參數化散線散面，圖檔體積膨脹數倍。",
+        "solution": "匯入前先用 Rhino 或 3ds Max 減面，或在 Archicad 中另存為乾淨 GDL 物件並簡化 2D 符號表現。"
+      }
+    ],
+    "proTips": [
+      {
+        "title": "魔術棒 (Magic Wand) 是輪廓生成大殺器",
+        "description": "按住鍵盤空白鍵，滑鼠游標會變成一支發光的「魔術棒」。點擊任何封閉的外牆或曲線，一秒將基地地形等高線轉為 Slab、屋頂或網格幾何體！"
+      },
+      {
+        "title": "實體元素操作 (SEO) 實現極速布林開挖",
+        "description": "按「設計 → 實體元素操作」，將地下室牆體設為「目標 (Target)」，基坑開挖體積設為「運算元 (Operator)」，選擇「減去」，基坑土方立即全自動挖空且動態連動。"
+      },
+      {
+        "title": "吸管與注射器 (Alt / Ctrl+Alt) 是快速建模神技",
+        "description": "想要新畫的牆跟既有外牆完全一樣？按 Alt 點擊既有牆，當前工具瞬間吸收其厚度、材料、圖層；按 Ctrl+Alt 點擊另一面牆，直接將屬性注入置換！"
+      }
+    ]
   },
-  sevenIterations: [
+  "sevenIterations": [
     {
-      round: 1,
-      badge: 'R1 基礎核心認知',
-      title: '虛擬建築 (Virtual Building) 哲學與四位一體導航器體系',
-      focus: '徹底掌握 Project Map → View Map → Layout Book → Publisher Sets 之數據流動核心鏈。',
-      contentExpansion: '延伸內容擴充 105%：深度剖析 Archicad 專利虛擬建築空間關聯資料庫結構，掌握 64 位元多核心幾何計算架構與背景預測性彩現技術。',
-      coreTheory: 'Archicad 的設計哲學是「一次建造，全自動推導 (Build Once, Derive All)」。使用者在空間中組裝包含真實物理屬性的虛擬構件。Navigator 導航器是系統神經中樞：Project Map 提供原始幾何視點，View Map 綁定顯示狀態 (Layer Combination + Scale + MVO + Graphic Override)，Layout Book 負責圖框圖紙排版，Publisher 實現一鍵多格式打包。',
-      mathematicalFormula: '四位一體視圖轉換映射：View(t) = f_display(Geometry_data, LayerComb, Scale, MVO, GraphicOverride)',
-      advancedParameters: [
-        { name: 'Model View Options (MVO)', value: 'Construction Documentation (施工圖詳細模式)', purpose: '控制門窗開啟角在平面顯示為 90 度實線而非概念圖' },
-        { name: 'On-Screen View Options', value: 'Clean Wall & Beam Intersections: ON', purpose: '確保視埠精確預覽材料優先級自動修邊' },
+      "round": 1,
+      "badge": "R1 基礎核心認知",
+      "title": "虛擬建築 (Virtual Building) 哲學與四位一體導航器體系",
+      "focus": "徹底掌握 Project Map → View Map → Layout Book → Publisher Sets 之數據流動核心鏈。",
+      "contentExpansion": "延伸內容擴充 105%：深度剖析 Archicad 專利虛擬建築空間關聯資料庫結構，掌握 64 位元多核心幾何計算架構與背景預測性彩現技術。",
+      "coreTheory": "Archicad 的設計哲學是「一次建造，全自動推導 (Build Once, Derive All)」。使用者在空間中組裝包含真實物理屬性的虛擬構件。Navigator 導航器是系統神經中樞：Project Map 提供原始幾何視點，View Map 綁定顯示狀態 (Layer Combination + Scale + MVO + Graphic Override)，Layout Book 負責圖框圖紙排版，Publisher 實現一鍵多格式打包。",
+      "mathematicalFormula": "四位一體視圖轉換映射：View(t) = f_display(Geometry_data, LayerComb, Scale, MVO, GraphicOverride)",
+      "advancedParameters": [
+        {
+          "name": "Model View Options (MVO)",
+          "value": "Construction Documentation (施工圖詳細模式)",
+          "purpose": "控制門窗開啟角在平面顯示為 90 度實線而非概念圖"
+        },
+        {
+          "name": "On-Screen View Options",
+          "value": "Clean Wall & Beam Intersections: ON",
+          "purpose": "確保視埠精確預覽材料優先級自動修邊"
+        }
       ],
-      practicalWalkthrough: [
-        '開啟專案偏好設定，設定公制 mm 單位與符合 CNS 的尺寸標註規範',
-        '建立包含地下室與各標準層之樓層結構，設定樓層標高與樓板淨空',
-        '在 1FL 平面使用 Wall Tool 沿軸線繪製外圍護結構，並設定頂部與 2FL 動態綁定',
-        '在視圖地圖中建立「1F 建築施工圖」視圖，並將其拖入 A1 圖紙手冊驗證即時連動',
+      "practicalWalkthrough": [
+        "開啟專案偏好設定，設定公制 mm 單位與符合 CNS 的尺寸標註規範",
+        "建立包含地下室與各標準層之樓層結構，設定樓層標高與樓板淨空",
+        "在 1FL 平面使用 Wall Tool 沿軸線繪製外圍護結構，並設定頂部與 2FL 動態綁定",
+        "在視圖地圖中建立「1F 建築施工圖」視圖，並將其拖入 A1 圖紙手冊驗證即時連動"
       ],
-      industryStandardOrCode: 'buildingSMART 建築資訊模型通用交付協定與 ISO 19650-1 專案結構標準。',
-      pitfallsAndVerification: '嚴禁在專案地圖 (Project Map) 狀態下直接列印圖面！必須檢查視圖地圖是否正確綁定了專屬的圖層組合 (Layer Combination)。',
-      diagnosticDecisionTree: [
-        '問題：在圖紙上放了平面圖，門窗的尺寸標註與文字卻變得巨大無比或極端微小？',
-        '原因：視圖儲存時設定的比例尺與圖紙實際需要之比例尺衝突',
-        '解法：在視圖地圖中右鍵點擊該視圖選擇「視圖設定」，將比例尺重設為 1:100 並更新',
+      "industryStandardOrCode": "buildingSMART 建築資訊模型通用交付協定與 ISO 19650-1 專案結構標準。",
+      "pitfallsAndVerification": "嚴禁在專案地圖 (Project Map) 狀態下直接列印圖面！必須檢查視圖地圖是否正確綁定了專屬的圖層組合 (Layer Combination)。",
+      "diagnosticDecisionTree": [
+        "問題：在圖紙上放了平面圖，門窗的尺寸標註與文字卻變得巨大無比或極端微小？",
+        "原因：視圖儲存時設定的比例尺與圖紙實際需要之比例尺衝突",
+        "解法：在視圖地圖中右鍵點擊該視圖選擇「視圖設定」，將比例尺重設為 1:100 並更新"
       ],
-      masteryChecklist: [
-        '能精闢解釋導航器四大板塊 (Project Map, View Map, Layout Book, Publisher) 職責',
-        '精通「魔術棒 (Magic Wand)」快速由封閉多邊形生成構造之操作',
-        '能設定全棟建築樓層高度動態連鎖響應',
-      ],
+      "masteryChecklist": [
+        "能精闢解釋導航器四大板塊 (Project Map, View Map, Layout Book, Publisher) 職責",
+        "精通「魔術棒 (Magic Wand)」快速由封閉多邊形生成構造之操作",
+        "能設定全棟建築樓層高度動態連鎖響應"
+      ]
     },
     {
-      round: 2,
-      badge: 'R2 建築製圖規範',
-      title: '建材優先順序 (BMP 0-999) 與複合結構 (Composites) 收頭演算法',
-      focus: '精準配置 Building Material Priorities，讓梁柱、複合牆與屋頂相交時全自動潔淨收頭。',
-      contentExpansion: '延伸內容擴充 135%：解析 0 至 999 權重數值碰撞矩陣，建立涵蓋 RC 結構、輕鋼架隔間、保溫斷熱層與飾面磁磚之 24 組標準複合結構庫。',
-      coreTheory: '建材優先順序 (BMP) 是 Archicad 獨步全球的核心演算法。當兩個構件在 3D 空間中發生幾何相交時，系統即時比對相交部位的建材優先級整數值。優先級較高的材料 (如鋼筋混凝土 800) 會在記憶體中自動對優先級較低的材料 (如水泥砂漿 240、油漆 120) 執行幾何剪切，徹底杜絕 2D 圖紙上手動修剪白線與填充圖樣的低效人工作業。',
-      advancedParameters: [
-        { name: 'Structural Concrete BMP', value: 'Priority: 800', purpose: '最高層級承重主體，優先穿透所有裝修構造' },
-        { name: 'Thermal Insulation BMP', value: 'Priority: 450', purpose: '保持連續斷熱包覆，穿透室內非承重隔間' },
-        { name: 'Plaster / Finish BMP', value: 'Priority: 200', purpose: '最低層級飾面，遇任何結構構件自動退縮' },
+      "round": 2,
+      "badge": "R2 建築製圖規範",
+      "title": "建材優先順序 (BMP 0-999) 與複合結構 (Composites) 收頭演算法",
+      "focus": "精準配置 Building Material Priorities，讓梁柱、複合牆與屋頂相交時全自動潔淨收頭。",
+      "contentExpansion": "延伸內容擴充 135%：解析 0 至 999 權重數值碰撞矩陣，建立涵蓋 RC 結構、輕鋼架隔間、保溫斷熱層與飾面磁磚之 24 組標準複合結構庫。",
+      "coreTheory": "建材優先順序 (BMP) 是 Archicad 獨步全球的核心演算法。當兩個構件在 3D 空間中發生幾何相交時，系統即時比對相交部位的建材優先級整數值。優先級較高的材料 (如鋼筋混凝土 800) 會在記憶體中自動對優先級較低的材料 (如水泥砂漿 240、油漆 120) 執行幾何剪切，徹底杜絕 2D 圖紙上手動修剪白線與填充圖樣的低效人工作業。",
+      "advancedParameters": [
+        {
+          "name": "Structural Concrete BMP",
+          "value": "Priority: 800",
+          "purpose": "最高層級承重主體，優先穿透所有裝修構造"
+        },
+        {
+          "name": "Thermal Insulation BMP",
+          "value": "Priority: 450",
+          "purpose": "保持連續斷熱包覆，穿透室內非承重隔間"
+        },
+        {
+          "name": "Plaster / Finish BMP",
+          "value": "Priority: 200",
+          "purpose": "最低層級飾面，遇任何結構構件自動退縮"
+        }
       ],
-      practicalWalkthrough: [
-        '進入「屬性管理員 (Attribute Manager)」，檢視與自訂 Building Materials 列表',
-        '為「外牆 RC 複合結構」配置：磁磚 (300) + 黏著劑 (260) + RC 核心 (800) + 內粉刷 (200)',
-        '使用 Wall Tool 繪製外牆並與 Slab 樓板交會，在 3D 剖面盒中檢視 RC 核心自動熔接',
-        '利用「牆端頭工具 (Wall End Tool)」為女兒牆頂部加上專用斜向滴水披水板構造',
+      "practicalWalkthrough": [
+        "進入「屬性管理員 (Attribute Manager)」，檢視與自訂 Building Materials 列表",
+        "為「外牆 RC 複合結構」配置：磁磚 (300) + 黏著劑 (260) + RC 核心 (800) + 內粉刷 (200)",
+        "使用 Wall Tool 繪製外牆並與 Slab 樓板交會，在 3D 剖面盒中檢視 RC 核心自動熔接",
+        "利用「牆端頭工具 (Wall End Tool)」為女兒牆頂部加上專用斜向滴水披水板構造"
       ],
-      industryStandardOrCode: 'CNS 11567 A1042 建築構造材料剖面表示標準與 CNS 8407 建築製圖符號規範。',
-      pitfallsAndVerification: '檢查剖面接角處是否有細線阻斷核心；若有，代表兩者材料定義不同或優先級設定相同，需統一調校建材屬性。',
-      diagnosticDecisionTree: [
-        '問題：外牆與隔間牆相交時，內隔間牆的石膏板直接切斷了外牆的 RC 結構體？',
-        '原因：內隔間石膏板材料的 BMP 數值被誤設為高於 RC 混凝土',
-        '解法：進入「選項 → 元素屬性 → 建築材料」，將石膏板優先級調低至 180，低於 RC 的 800',
+      "industryStandardOrCode": "CNS 11567 A1042 建築構造材料剖面表示標準與 CNS 8407 建築製圖符號規範。",
+      "pitfallsAndVerification": "檢查剖面接角處是否有細線阻斷核心；若有，代表兩者材料定義不同或優先級設定相同，需統一調校建材屬性。",
+      "diagnosticDecisionTree": [
+        "問題：外牆與隔間牆相交時，內隔間牆的石膏板直接切斷了外牆的 RC 結構體？",
+        "原因：內隔間石膏板材料的 BMP 數值被誤設為高於 RC 混凝土",
+        "解法：進入「選項 → 元素屬性 → 建築材料」，將石膏板優先級調低至 180，低於 RC 的 800"
       ],
-      masteryChecklist: [
-        '能獨立配置符合台灣耐震法規與斷熱規範之全套複合牆體材料庫',
-        '精通 BMP 0-999 碰撞演算法機制並能快速除錯節點異常',
-        '能運用複合構造核心線 (Core Outside/Inside) 精準控制柱跨軸線定位',
-      ],
+      "masteryChecklist": [
+        "能獨立配置符合台灣耐震法規與斷熱規範之全套複合牆體材料庫",
+        "精通 BMP 0-999 碰撞演算法機制並能快速除錯節點異常",
+        "能運用複合構造核心線 (Core Outside/Inside) 精準控制柱跨軸線定位"
+      ]
     },
     {
-      round: 3,
-      badge: 'R3 高階幾何拓撲',
-      title: '複合柱梁剖面管理器 (Profile Manager) 與複雜幾何造型',
-      focus: '運用 Profile Manager 繪製任意異形鋼構型鋼、異形天溝柱與漸變截面斜撐。',
-      contentExpansion: '延伸內容擴充 150%：掌握複雜剖面偏移修飾符 (Offset Modifiers)，賦予單一異形斷面可任意在 3D 視埠中拉伸翼緣厚度與腹板高度之參數化彈性。',
-      coreTheory: '剖面管理器將二維幾何斷面透過封閉填充線 (Fills) 轉譯為具備 BMP 屬性的擠出實體。透過添加偏移修飾符 (Offset Modifiers)，斷面中某一段多邊形頂點可被定義為自變數。結合梁柱分段 (Segmented Columns/Beams)，單一構件可在兩端呈現不同斷面造型並沿軸線平滑過渡，完美構築前衛傾斜異形拱肋。',
-      mathematicalFormula: '變截面放樣插值函數：S(t) = (1 - t) · Section_Start + t · Section_End, t ∈ [0, 1]',
-      advancedParameters: [
-        { name: 'Profile Modifier - Web Height', value: 'Parametric Stretch: 300 - 900 mm', purpose: '單一型鋼定義支援多尺度跨度梁' },
-        { name: 'Beam Edge Chamfer', value: 'Fillet / Chamfer: 15 mm', purpose: '直接在斷面上預製鋼柱角隅倒角高光' },
+      "round": 3,
+      "badge": "R3 高階幾何拓撲",
+      "title": "複合柱梁剖面管理器 (Profile Manager) 與複雜幾何造型",
+      "focus": "運用 Profile Manager 繪製任意異形鋼構型鋼、異形天溝柱與漸變截面斜撐。",
+      "contentExpansion": "延伸內容擴充 150%：掌握複雜剖面偏移修飾符 (Offset Modifiers)，賦予單一異形斷面可任意在 3D 視埠中拉伸翼緣厚度與腹板高度之參數化彈性。",
+      "coreTheory": "剖面管理器將二維幾何斷面透過封閉填充線 (Fills) 轉譯為具備 BMP 屬性的擠出實體。透過添加偏移修飾符 (Offset Modifiers)，斷面中某一段多邊形頂點可被定義為自變數。結合梁柱分段 (Segmented Columns/Beams)，單一構件可在兩端呈現不同斷面造型並沿軸線平滑過渡，完美構築前衛傾斜異形拱肋。",
+      "mathematicalFormula": "變截面放樣插值函數：S(t) = (1 - t) · Section_Start + t · Section_End, t ∈ [0, 1]",
+      "advancedParameters": [
+        {
+          "name": "Profile Modifier - Web Height",
+          "value": "Parametric Stretch: 300 - 900 mm",
+          "purpose": "單一型鋼定義支援多尺度跨度梁"
+        },
+        {
+          "name": "Beam Edge Chamfer",
+          "value": "Fillet / Chamfer: 15 mm",
+          "purpose": "直接在斷面上預製鋼柱角隅倒角高光"
+        }
       ],
-      practicalWalkthrough: [
-        '開啟「選項 → 複合剖面 → 剖面管理器 (Profile Manager)」',
-        '使用填充工具繪製複雜的雙箱型鋼梁 (Box Girder) 斷面，並分派不同的鋼材屬性',
-        '加入「寬度」與「高度」拉伸修飾符，指定受動邊界',
-        '在專案中繪製梁構件，並在 3D 視埠中直接以滑鼠拖動修飾符握把調整局部斷面',
+      "practicalWalkthrough": [
+        "開啟「選項 → 複合剖面 → 剖面管理器 (Profile Manager)」",
+        "使用填充工具繪製複雜的雙箱型鋼梁 (Box Girder) 斷面，並分派不同的鋼材屬性",
+        "加入「寬度」與「高度」拉伸修飾符，指定受動邊界",
+        "在專案中繪製梁構件，並在 3D 視埠中直接以滑鼠拖動修飾符握把調整局部斷面"
       ],
-      industryStandardOrCode: 'CNS 2473 一般結構用軋鋼料規格與日本 JIS G 3101 構造用鋼材標準。',
-      pitfallsAndVerification: '剖面編輯器中的「基準點 (Profile Origin)」是構件插入與軸線定位的生命線，切勿讓斷面偏離基準點過遠。',
-      diagnosticDecisionTree: [
-        '問題：自訂的複雜剖面梁在轉角交接處無法乾淨斜切接合 (Miter Joint)？',
-        '原因：兩根梁的基準線 (Reference Axis) 高程不共面或剖面幾何方向顛倒',
-        '解法：檢查兩梁的標高與參考線偏移，確保基準線精確相交於同一坐標點',
+      "industryStandardOrCode": "CNS 2473 一般結構用軋鋼料規格與日本 JIS G 3101 構造用鋼材標準。",
+      "pitfallsAndVerification": "剖面編輯器中的「基準點 (Profile Origin)」是構件插入與軸線定位的生命線，切勿讓斷面偏離基準點過遠。",
+      "diagnosticDecisionTree": [
+        "問題：自訂的複雜剖面梁在轉角交接處無法乾淨斜切接合 (Miter Joint)？",
+        "原因：兩根梁的基準線 (Reference Axis) 高程不共面或剖面幾何方向顛倒",
+        "解法：檢查兩梁的標高與參考線偏移，確保基準線精確相交於同一坐標點"
       ],
-      masteryChecklist: [
-        '能運用剖面管理器製作包含倒角、排水天溝之高鐵預力箱型梁大樣',
-        '精通分段式梁柱 (Segmented Beams/Columns) 之異形漸變過渡設定',
-        '能靈活運用 Offset Modifiers 實現施工圖大樣局部尺寸參數化調控',
-      ],
+      "masteryChecklist": [
+        "能運用剖面管理器製作包含倒角、排水天溝之高鐵預力箱型梁大樣",
+        "精通分段式梁柱 (Segmented Beams/Columns) 之異形漸變過渡設定",
+        "能靈活運用 Offset Modifiers 實現施工圖大樣局部尺寸參數化調控"
+      ]
     },
     {
-      round: 4,
-      badge: 'R4 建築構造深化',
-      title: '帷幕牆工具 (Curtain Wall) 與樓梯扶手幾何階層運算',
-      focus: '精通系統級工具之子元素架構，掌控帷幕牆樣式圖元 (Scheme) 與符合人因工程之樓梯演算法。',
-      contentExpansion: '延伸內容擴充 165%：解構樓梯法規運算公式 (2R + G = 63cm)，深入扶手欄杆連續性轉角接頭拓撲，建立前衛雙曲面幕牆與旋轉鋼構逃生梯。',
-      coreTheory: 'Archicad 的階層化工具 (Curtain Wall, Stair, Railing) 採用「巨系統-微構件」模式。樓梯工具內嵌國際建築法規合規求解器。在繪製坡度時，系統依照設定之級高 (Riser) 與踏深 (Going) 極限自動進行整數求解。若遇到空間轉向，系統自動依據人體工學插入均分踏步 (Winder with Walking Line) 緩衝扇區。',
-      mathematicalFormula: '布隆德爾人體工學步幅公式：600 mm ≤ 2 · Riser + Going ≤ 640 mm (內政部建築技術規則施工編第 33 條標準)',
-      advancedParameters: [
-        { name: 'Stair Riser Height', value: 'Max: 180 mm / Min: 150 mm', purpose: '嚴格符合台灣公用建築逃生梯規範' },
-        { name: 'Curtain Wall Scheme Pattern', value: '1800 x 3200 mm 模矩陣列', purpose: '標準化玻璃原板尺寸經濟劃分' },
+      "round": 4,
+      "badge": "R4 建築構造深化",
+      "title": "帷幕牆工具 (Curtain Wall) 與樓梯扶手幾何階層運算",
+      "focus": "精通系統級工具之子元素架構，掌控帷幕牆樣式圖元 (Scheme) 與符合人因工程之樓梯演算法。",
+      "contentExpansion": "延伸內容擴充 165%：解構樓梯法規運算公式 (2R + G = 63cm)，深入扶手欄杆連續性轉角接頭拓撲，建立前衛雙曲面幕牆與旋轉鋼構逃生梯。",
+      "coreTheory": "Archicad 的階層化工具 (Curtain Wall, Stair, Railing) 採用「巨系統-微構件」模式。樓梯工具內嵌國際建築法規合規求解器。在繪製坡度時，系統依照設定之級高 (Riser) 與踏深 (Going) 極限自動進行整數求解。若遇到空間轉向，系統自動依據人體工學插入均分踏步 (Winder with Walking Line) 緩衝扇區。",
+      "mathematicalFormula": "布隆德爾人體工學步幅公式：600 mm ≤ 2 · Riser + Going ≤ 640 mm (內政部建築技術規則施工編第 33 條標準)",
+      "advancedParameters": [
+        {
+          "name": "Stair Riser Height",
+          "value": "Max: 180 mm / Min: 150 mm",
+          "purpose": "嚴格符合台灣公用建築逃生梯規範"
+        },
+        {
+          "name": "Curtain Wall Scheme Pattern",
+          "value": "1800 x 3200 mm 模矩陣列",
+          "purpose": "標準化玻璃原板尺寸經濟劃分"
+        }
       ],
-      practicalWalkthrough: [
-        '點選「樓梯工具」，設定起點 1FL、終點 2FL，在樓梯設定中鎖定 2R+G 規則',
-        '沿著核心筒邊緣點擊繪製折返樓梯，系統自動計算平台 (Landing) 與梯段過渡',
-        '點選「欄杆工具 (Railing)」，按住空白鍵魔術棒點擊樓梯邊緣，欄杆全自動順應梯級附著生成',
-        '切換至 Edit Mode 局部進入樓梯次物件模式，手動微調單一扶手轉角彎管造型',
+      "practicalWalkthrough": [
+        "點選「樓梯工具」，設定起點 1FL、終點 2FL，在樓梯設定中鎖定 2R+G 規則",
+        "沿著核心筒邊緣點擊繪製折返樓梯，系統自動計算平台 (Landing) 與梯段過渡",
+        "點選「欄杆工具 (Railing)」，按住空白鍵魔術棒點擊樓梯邊緣，欄杆全自動順應梯級附著生成",
+        "切換至 Edit Mode 局部進入樓梯次物件模式，手動微調單一扶手轉角彎管造型"
       ],
-      industryStandardOrCode: '內政部《建築技術規則設計施工編》第 33 至 39 條樓梯構造與欄杆淨高規範。',
-      pitfallsAndVerification: '繪製樓梯時若跳出求解衝突警告，點擊彈出的「求解選項」對話框，挑選最符合法規與淨高要求的踏步均分方案。',
-      diagnosticDecisionTree: [
-        '問題：樓梯轉角平台處，扶手高度突然向下驟降或產生難看的斷裂折角？',
-        '原因：平台處踩步步行線延伸長度與梯段不匹配',
-        '解法：進入欄杆轉角設定 (Node Settings)，將過渡模式改為「Gooseneck (鵝頸過渡)」平滑升降',
+      "industryStandardOrCode": "內政部《建築技術規則設計施工編》第 33 至 39 條樓梯構造與欄杆淨高規範。",
+      "pitfallsAndVerification": "繪製樓梯時若跳出求解衝突警告，點擊彈出的「求解選項」對話框，挑選最符合法規與淨高要求的踏步均分方案。",
+      "diagnosticDecisionTree": [
+        "問題：樓梯轉角平台處，扶手高度突然向下驟降或產生難看的斷裂折角？",
+        "原因：平台處踩步步行線延伸長度與梯段不匹配",
+        "解法：進入欄杆轉角設定 (Node Settings)，將過渡模式改為「Gooseneck (鵝頸過渡)」平滑升降"
       ],
-      masteryChecklist: [
-        '能運用樓梯工具自動求解符合建築法規之剪刀梯與雙跑安全梯',
-        '精通帷幕牆 Scheme Pattern 樣式圖元在傾斜多面體建築立面之鋪設',
-        '能熟練進入次物件編輯模式 (Edit Mode) 局部改造單一梯級或立柱',
-      ],
+      "masteryChecklist": [
+        "能運用樓梯工具自動求解符合建築法規之剪刀梯與雙跑安全梯",
+        "精通帷幕牆 Scheme Pattern 樣式圖元在傾斜多面體建築立面之鋪設",
+        "能熟練進入次物件編輯模式 (Edit Mode) 局部改造單一梯級或立柱"
+      ]
     },
     {
-      round: 5,
-      badge: 'R5 渲染與光學物理',
-      title: 'Maxon Redshift 物理彩現核心與圖形覆寫 (Graphic Overrides)',
-      focus: '駕馭整合於 Archicad 內部的 Maxon 物理光追引擎，並運用圖形覆寫實現法規視覺化審查。',
-      contentExpansion: '延伸內容擴充 180%：全面解析 Archicad 圖形覆寫矩陣 (Graphic Override Combinations)，將消防區劃、防火時效、無障礙動線以法規圖例自動化著色呈現。',
-      coreTheory: '圖形覆寫是 Archicad 最強大的資料視覺化武器。它允許使用者定義「條件規則 (Criteria Rules)」與「外觀覆寫 (Overrides)」。例如：`當 構件為牆 且 防火時效 = 2小時` 時，將其平面填充強制替換為紅色斜紋。結合內建 Maxon 物理渲染引擎，無須匯出外部軟體即可在幾秒內產出具備精確晝光環境之照片級透視圖。',
-      advancedParameters: [
-        { name: 'Redshift GI Mode', value: 'Brute Force + Irradiance Cache', purpose: '平衡室內間接漫射採光與計算時間' },
-        { name: 'Graphic Override Priority', value: '上層規則優先覆蓋下層規則', purpose: '精準掌控多條件疊加時之顏色呈現' },
+      "round": 5,
+      "badge": "R5 渲染與光學物理",
+      "title": "Maxon Redshift 物理彩現核心與圖形覆寫 (Graphic Overrides)",
+      "focus": "駕馭整合於 Archicad 內部的 Maxon 物理光追引擎，並運用圖形覆寫實現法規視覺化審查。",
+      "contentExpansion": "延伸內容擴充 180%：全面解析 Archicad 圖形覆寫矩陣 (Graphic Override Combinations)，將消防區劃、防火時效、無障礙動線以法規圖例自動化著色呈現。",
+      "coreTheory": "圖形覆寫是 Archicad 最強大的資料視覺化武器。它允許使用者定義「條件規則 (Criteria Rules)」與「外觀覆寫 (Overrides)」。例如：`當 構件為牆 且 防火時效 = 2小時` 時，將其平面填充強制替換為紅色斜紋。結合內建 Maxon 物理渲染引擎，無須匯出外部軟體即可在幾秒內產出具備精確晝光環境之照片級透視圖。",
+      "advancedParameters": [
+        {
+          "name": "Redshift GI Mode",
+          "value": "Brute Force + Irradiance Cache",
+          "purpose": "平衡室內間接漫射採光與計算時間"
+        },
+        {
+          "name": "Graphic Override Priority",
+          "value": "上層規則優先覆蓋下層規則",
+          "purpose": "精準掌控多條件疊加時之顏色呈現"
+        }
       ],
-      practicalWalkthrough: [
-        '進入「文件 → 圖形覆寫 → 圖形覆寫組合」',
-        '新建「01_消防安全與防火分區檢討」組合，新增規則：防火時效 1hr 填黃色、2hr 填紅色',
-        '新建規則：將無障礙通道所經地坪自動覆寫為淺綠色，並顯示寬度淨尺寸',
-        '開啟照片彩現設定，引擎切換為 Maxon Redshift，設定陽光位置並算出一鍵競圖透視',
+      "practicalWalkthrough": [
+        "進入「文件 → 圖形覆寫 → 圖形覆寫組合」",
+        "新建「01_消防安全與防火分區檢討」組合，新增規則：防火時效 1hr 填黃色、2hr 填紅色",
+        "新建規則：將無障礙通道所經地坪自動覆寫為淺綠色，並顯示寬度淨尺寸",
+        "開啟照片彩現設定，引擎切換為 Maxon Redshift，設定陽光位置並算出一鍵競圖透視"
       ],
-      industryStandardOrCode: '內政部《建築技術規則設計施工編》第 3 章防火避難設施與消防設備圖例標準。',
-      pitfallsAndVerification: '驗證圖形覆寫規則時，確保過濾條件包含特定樓層或品類，避免將室內家具或景觀植栽意外塗抹上消防警示色彩。',
-      diagnosticDecisionTree: [
-        '問題：設定了圖形覆寫規則，但在平面圖上某些構件顏色依然頑固不變？',
-        '原因：構件的元素屬性中強制啟用了「符號線覆寫」或使用了 GDL 專用固定腳本',
-        '解法：在圖形覆寫規則中勾選「覆寫所有填充類型」與「覆寫線條與背景顏色」之強制複選框',
+      "industryStandardOrCode": "內政部《建築技術規則設計施工編》第 3 章防火避難設施與消防設備圖例標準。",
+      "pitfallsAndVerification": "驗證圖形覆寫規則時，確保過濾條件包含特定樓層或品類，避免將室內家具或景觀植栽意外塗抹上消防警示色彩。",
+      "diagnosticDecisionTree": [
+        "問題：設定了圖形覆寫規則，但在平面圖上某些構件顏色依然頑固不變？",
+        "原因：構件的元素屬性中強制啟用了「符號線覆寫」或使用了 GDL 專用固定腳本",
+        "解法：在圖形覆寫規則中勾選「覆寫所有填充類型」與「覆寫線條與背景顏色」之強制複選框"
       ],
-      masteryChecklist: [
-        '能搭建包含「建照審查、消防區劃、結構承重、無障礙通道」四套圖形覆寫體系',
-        '精通 Maxon 物理彩現參數調校，產出高品質室內外建築晝夜景效果圖',
-        '能運用 3D 剖切盒 (3D Cutaway) 製作極具說服力之立體構造透視分析圖',
-      ],
+      "masteryChecklist": [
+        "能搭建包含「建照審查、消防區劃、結構承重、無障礙通道」四套圖形覆寫體系",
+        "精通 Maxon 物理彩現參數調校，產出高品質室內外建築晝夜景效果圖",
+        "能運用 3D 剖切盒 (3D Cutaway) 製作極具說服力之立體構造透視分析圖"
+      ]
     },
     {
-      round: 6,
-      badge: 'R6 跨軟體協同與 BIM',
-      title: 'BIMcloud 團隊協同、OpenBIM IFC4 與 BCF 議題管線',
-      focus: '架構跨地域多人即時 Teamwork 協作體系，打通 buildingSMART 國際 OpenBIM 最高級交付。',
-      contentExpansion: '延伸內容擴充 210%：深度剖析 Archicad 專利 Delta Server 通訊協定，解析 IFC 轉換器 (IFC Translators) 類型對應與幾何轉換，實現零差錯跨平台協同。',
-      coreTheory: 'Archicad 是 OpenBIM 的堅定捍衛者。其 Teamwork 功能基於 BIMcloud 專利專利「Delta Server」技術，成員在本地修改時僅需傳輸幾 KB 的幾何增量字元，即使跨國連線亦能實現毫秒級無感協同。在 IFC 轉換器中，Archicad 提供業界最精確的幾何與屬性映射表，確保模型導入 Revit 或 Solibri 時幾何拓撲 100% 潔淨無破損。',
-      advancedParameters: [
-        { name: 'IFC Translator Schema', value: 'IFC4 Reference View', purpose: '各國公共工程 BIM 審查法定規格' },
-        { name: 'Delta Cache Compression', value: 'Level 9 (最高壓縮率)', purpose: '偏遠工地或行動網路環境下流暢同步' },
+      "round": 6,
+      "badge": "R6 跨軟體協同與 BIM",
+      "title": "BIMcloud 團隊協同、OpenBIM IFC4 與 BCF 議題管線",
+      "focus": "架構跨地域多人即時 Teamwork 協作體系，打通 buildingSMART 國際 OpenBIM 最高級交付。",
+      "contentExpansion": "延伸內容擴充 210%：深度剖析 Archicad 專利 Delta Server 通訊協定，解析 IFC 轉換器 (IFC Translators) 類型對應與幾何轉換，實現零差錯跨平台協同。",
+      "coreTheory": "Archicad 是 OpenBIM 的堅定捍衛者。其 Teamwork 功能基於 BIMcloud 專利專利「Delta Server」技術，成員在本地修改時僅需傳輸幾 KB 的幾何增量字元，即使跨國連線亦能實現毫秒級無感協同。在 IFC 轉換器中，Archicad 提供業界最精確的幾何與屬性映射表，確保模型導入 Revit 或 Solibri 時幾何拓撲 100% 潔淨無破損。",
+      "advancedParameters": [
+        {
+          "name": "IFC Translator Schema",
+          "value": "IFC4 Reference View",
+          "purpose": "各國公共工程 BIM 審查法定規格"
+        },
+        {
+          "name": "Delta Cache Compression",
+          "value": "Level 9 (最高壓縮率)",
+          "purpose": "偏遠工地或行動網路環境下流暢同步"
+        }
       ],
-      practicalWalkthrough: [
-        '在 BIMcloud 伺服器建立全新專案並指派團隊成員角色權限 (Architect, Drafter, Viewer)',
-        '團隊成員點選「團隊協作 (Teamwork) → 加入專案」，本地端建立鏡像工作空間',
-        '選取待修改之立面外牆，按「預訂 (Reserve)」鎖定該圖元 GUID，修改後按「發送與接收」同步',
-        '設定 IFC4 導出轉換器，將 Archicad 分類法精確映射至 IfcBuildingElementProxy 與 IfcWall',
+      "practicalWalkthrough": [
+        "在 BIMcloud 伺服器建立全新專案並指派團隊成員角色權限 (Architect, Drafter, Viewer)",
+        "團隊成員點選「團隊協作 (Teamwork) → 加入專案」，本地端建立鏡像工作空間",
+        "選取待修改之立面外牆，按「預訂 (Reserve)」鎖定該圖元 GUID，修改後按「發送與接收」同步",
+        "設定 IFC4 導出轉換器，將 Archicad 分類法精確映射至 IfcBuildingElementProxy 與 IfcWall"
       ],
-      industryStandardOrCode: 'ISO 16739-1 (IFC4) 國際標準與 ISO 19650-2 資訊交付架構。',
-      pitfallsAndVerification: '下班離開辦公室前，切記在 Teamwork 面板點擊「釋放所有預訂 (Release All)」，防止佔用圖元導致其他時區協作夥伴無法工作。',
-      diagnosticDecisionTree: [
-        '問題：Teamwork 協同作業時，某些梁柱被鎖定無法選取編輯？',
-        '原因：該構件已被其他同仁「預訂 (Reserved)」且尚未發送同步',
-        '解法：在構件上按右鍵點擊「請求元素 (Request Element)」，系統自動向對方發送內建即時請求訊息',
+      "industryStandardOrCode": "ISO 16739-1 (IFC4) 國際標準與 ISO 19650-2 資訊交付架構。",
+      "pitfallsAndVerification": "下班離開辦公室前，切記在 Teamwork 面板點擊「釋放所有預訂 (Release All)」，防止佔用圖元導致其他時區協作夥伴無法工作。",
+      "diagnosticDecisionTree": [
+        "問題：Teamwork 協同作業時，某些梁柱被鎖定無法選取編輯？",
+        "原因：該構件已被其他同仁「預訂 (Reserved)」且尚未發送同步",
+        "解法：在構件上按右鍵點擊「請求元素 (Request Element)」，系統自動向對方發送內建即時請求訊息"
       ],
-      masteryChecklist: [
-        '能在私有雲或公有雲部署並管理 Archicad BIMcloud 團隊協作伺服器',
-        '精通 IFC Translators 自訂規則，解決跨軟體構件幾何碎片化痛點',
-        '能運用 BCF (BIM Collaboration Format) 實現與結構技師之非破壞性碰撞議題閉環',
-      ],
+      "masteryChecklist": [
+        "能在私有雲或公有雲部署並管理 Archicad BIMcloud 團隊協作伺服器",
+        "精通 IFC Translators 自訂規則，解決跨軟體構件幾何碎片化痛點",
+        "能運用 BCF (BIM Collaboration Format) 實現與結構技師之非破壞性碰撞議題閉環"
+      ]
     },
     {
-      round: 7,
-      badge: 'R7 腳本自動化與前瞻',
-      title: 'GDL 幾何描述語言開發與 Archicad-Grasshopper 即時雙向連動',
-      focus: '編寫 GDL 參數化原創構件腳本，並透過 Live Connection 實現 Grasshopper 即時運算翻模。',
-      contentExpansion: '延伸內容擴充 240%：解析 GDL (Geometric Description Language) 空間座標堆疊 (ADD, ROT, MUL, DEL) 運算機制，架構參數化算法驅動之大型公共地標。',
-      coreTheory: 'GDL 是基於 BASIC 語法之專利幾何腳本語言。不同於傳統 3D 軟體儲存龐大的頂點網格資料庫，GDL 僅儲存純文字演算法指令，構件在視窗開啟時由 CPU 即時計算生成。搭配 Archicad-Grasshopper Live Connection 外掛，Rhino 中的複雜自由曲面運算結果能以原生 Archicad Wall, Beam, Roof 實體即時呈現在 BIM 專案中。',
-      mathematicalFormula: 'GDL 座標轉換堆疊逆向求解：`DEL n` 彈出頂層 n 個矩陣變換，恢復至原始空間基準點。',
-      advancedParameters: [
-        { name: 'Live Connection Poll Rate', value: 'Real-time (50ms 延遲雙向心跳)', purpose: '滑動 Grasshopper 參數時 Archicad 即時反應' },
-        { name: 'GDL Compatibility Flag', value: '2D/3D Complete Scripting', purpose: '兼顧 2D 施工符號美感與 3D 寫實幾何' },
+      "round": 7,
+      "badge": "R7 腳本自動化與前瞻",
+      "title": "GDL 幾何描述語言開發與 Archicad-Grasshopper 即時雙向連動",
+      "focus": "編寫 GDL 參數化原創構件腳本，並透過 Live Connection 實現 Grasshopper 即時運算翻模。",
+      "contentExpansion": "延伸內容擴充 240%：解析 GDL (Geometric Description Language) 空間座標堆疊 (ADD, ROT, MUL, DEL) 運算機制，架構參數化算法驅動之大型公共地標。",
+      "coreTheory": "GDL 是基於 BASIC 語法之專利幾何腳本語言。不同於傳統 3D 軟體儲存龐大的頂點網格資料庫，GDL 僅儲存純文字演算法指令，構件在視窗開啟時由 CPU 即時計算生成。搭配 Archicad-Grasshopper Live Connection 外掛，Rhino 中的複雜自由曲面運算結果能以原生 Archicad Wall, Beam, Roof 實體即時呈現在 BIM 專案中。",
+      "mathematicalFormula": "GDL 座標轉換堆疊逆向求解：`DEL n` 彈出頂層 n 個矩陣變換，恢復至原始空間基準點。",
+      "advancedParameters": [
+        {
+          "name": "Live Connection Poll Rate",
+          "value": "Real-time (50ms 延遲雙向心跳)",
+          "purpose": "滑動 Grasshopper 參數時 Archicad 即時反應"
+        },
+        {
+          "name": "GDL Compatibility Flag",
+          "value": "2D/3D Complete Scripting",
+          "purpose": "兼顧 2D 施工符號美感與 3D 寫實幾何"
+        }
       ],
-      practicalWalkthrough: [
-        '選取「檔案 → 資源庫與物件 → 新建物件」，進入 GDL 腳本編輯器',
-        '在「參數 (Parameters)」面板自訂長、寬、高與材質變數',
-        '在「3D 腳本」編寫代碼利用 CYLIND, BLOCK, PRISM_ 指令建立參數化欄杆構件',
-        '啟動 Grasshopper Live Connection，將 Rhino 雙曲面幾何一鍵轉為原生 Archicad 帷幕牆系統',
+      "practicalWalkthrough": [
+        "選取「檔案 → 資源庫與物件 → 新建物件」，進入 GDL 腳本編輯器",
+        "在「參數 (Parameters)」面板自訂長、寬、高與材質變數",
+        "在「3D 腳本」編寫代碼利用 CYLIND, BLOCK, PRISM_ 指令建立參數化欄杆構件",
+        "啟動 Grasshopper Live Connection，將 Rhino 雙曲面幾何一鍵轉為原生 Archicad 帷幕牆系統"
       ],
-      industryStandardOrCode: 'Graphisoft GDL Technical Standards 國際參數化構件規格手冊。',
-      pitfallsAndVerification: '編寫 GDL 3D 腳本時，每次使用 ADD (位移) 或 ROT (旋轉) 後，必須在運算結束時以 `DEL` 嚴格消除堆疊矩陣，否則會引發後續構件坐標飄移。',
-      diagnosticDecisionTree: [
-        '問題：GDL 構件在 3D 顯示完美，但在 2D 平面圖上卻變成一個簡單的黑盒子？',
-        '原因：未在「2D 腳本」中撰寫專屬符號代碼，系統退回預設外包絡方框投影',
-        '解法：在 2D 腳本中加入 `PROJECT2 3, 270, 2` 一鍵自動將 3D 幾何正交投影為精緻 2D 施工線條',
+      "industryStandardOrCode": "Graphisoft GDL Technical Standards 國際參數化構件規格手冊。",
+      "pitfallsAndVerification": "編寫 GDL 3D 腳本時，每次使用 ADD (位移) 或 ROT (旋轉) 後，必須在運算結束時以 `DEL` 嚴格消除堆疊矩陣，否則會引發後續構件坐標飄移。",
+      "diagnosticDecisionTree": [
+        "問題：GDL 構件在 3D 顯示完美，但在 2D 平面圖上卻變成一個簡單的黑盒子？",
+        "原因：未在「2D 腳本」中撰寫專屬符號代碼，系統退回預設外包絡方框投影",
+        "解法：在 2D 腳本中加入 `PROJECT2 3, 270, 2` 一鍵自動將 3D 幾何正交投影為精緻 2D 施工線條"
       ],
-      masteryChecklist: [
-        '能獨立撰寫包含 2D 符號與 3D 幾何連動之客製化 GDL 智慧家具或外遮陽物件',
-        '精通 Archicad-Grasshopper Live Connection 雙向即時參數化連動翻模',
-        '理解 JSON / Python API 於 Archicad 專案資訊批次提取自動化之應用',
-      ],
-    },
+      "masteryChecklist": [
+        "能獨立撰寫包含 2D 符號與 3D 幾何連動之客製化 GDL 智慧家具或外遮陽物件",
+        "精通 Archicad-Grasshopper Live Connection 雙向即時參數化連動翻模",
+        "理解 JSON / Python API 於 Archicad 專案資訊批次提取自動化之應用"
+      ]
+    }
   ],
-  industryPipeline: {
-    stage: '概念方案、極致美感施工圖出圖、歐洲與日本建築執照審查與工地行動化檢驗',
-    softwareRole: '歐洲建築界純血 BIM 標竿與全套施工圖集發布最高效率神器',
-    fileFormats: {
-      import: ['.pln', '.pla', '.ifc', '.dwg', '.dxf', '.skp', '.obj', '.3dm (Rhino)', '.pdf'],
-      export: ['.pln', '.pla', '.bimx', '.ifc', '.dwg', '.dxf', '.pdf', '.3dm', '.fbx'],
+  "industryPipeline": {
+    "stage": "概念方案、極致美感施工圖出圖、歐洲與日本建築執照審查與工地行動化檢驗",
+    "softwareRole": "歐洲建築界純血 BIM 標竿與全套施工圖集發布最高效率神器",
+    "fileFormats": {
+      "import": [
+        ".pln",
+        ".pla",
+        ".ifc",
+        ".dwg",
+        ".dxf",
+        ".skp",
+        ".obj",
+        ".3dm (Rhino)",
+        ".pdf"
+      ],
+      "export": [
+        ".pln",
+        ".pla",
+        ".bimx",
+        ".ifc",
+        ".dwg",
+        ".dxf",
+        ".pdf",
+        ".3dm",
+        ".fbx"
+      ]
     },
-    collaborationWith: ['Rhino / Grasshopper (官方 Live Connection 雙向連動)', 'Twinmotion / D5 Render (即時光追渲染)', 'Solibri Model Checker (OpenBIM 碰撞檢核)', 'AutoCAD (DWG 精準雙向出圖)'],
+    "collaborationWith": [
+      "Rhino / Grasshopper (官方 Live Connection 雙向連動)",
+      "Twinmotion / D5 Render (即時光追渲染)",
+      "Solibri Model Checker (OpenBIM 碰撞檢核)",
+      "AutoCAD (DWG 精準雙向出圖)"
+    ]
   },
+  "learningResources": [
+    {
+      "title": "Graphisoft Learn - Archicad 官方 BIM 專業認證與進階訓練門戶",
+      "provider": "Graphisoft Official Learn",
+      "category": "官方原廠教學",
+      "url": "https://learn.graphisoft.com",
+      "description": "Graphisoft 官方原廠學習平台，涵蓋 BIM Author、BIM Manager、GDL 程式設計與 Teamwork BIMcloud。",
+      "badge": "原廠官方認證"
+    },
+    {
+      "title": "Archicad GDL (Geometric Description Language) 核心開發技術手冊",
+      "provider": "Graphisoft Help Center",
+      "category": "官方原廠教學",
+      "url": "https://gdl.graphisoft.com",
+      "description": "幾何描述語言官方指南，深入 2D/3D 參數化腳本、材質屬性計算與專屬智慧元件庫開發。",
+      "badge": "開發者核心手冊"
+    },
+    {
+      "title": "buildingSMART International - openBIM 與 BCF 專案實務指南",
+      "provider": "buildingSMART International",
+      "category": "實務工作流與開放標準",
+      "url": "https://www.buildingsmart.org",
+      "description": "Archicad 作為 OpenBIM 領航者之 IFC 屬性映射、分類系統 (Classifications) 與 BCF 跨平台協同標準。",
+      "badge": "OpenBIM 國際標準"
+    },
+    {
+      "title": "臺灣建築資訊模型在建築師事務所之導入實務手冊",
+      "provider": "臺灣建築學會 / 中華民國全國建築師公會",
+      "category": "實務工作流與開放標準",
+      "url": "https://www.airoc.org.tw",
+      "description": "台灣中小型建築師事務所導入 Archicad 進行全套施工圖出圖、台灣常用門窗五金元件與圖面編碼指引。",
+      "badge": "建築師實務手冊"
+    },
+    {
+      "title": "日本建築學會 (AIJ) Archicad 施工圖自動化樣板設計準則",
+      "provider": "Architectural Institute of Japan (AIJ)",
+      "category": "學術研討與開放教材",
+      "url": "https://www.aij.or.jp",
+      "description": "日本營建業主流之 Archicad 施工圖樣板、複合構造層級、圖面覆寫與細部構造標準。",
+      "badge": "營造出圖標準"
+    }
+  ],
+  "certificationStandards": [
+    {
+      "name": "Graphisoft Certified BIM Author",
+      "level": "國際原廠專業級認證",
+      "authority": "Graphisoft SE",
+      "description": "考核 Archicad 虛擬建築模型建構、施工圖視圖設定、圖面覆寫規則與複合構件參數化控制。",
+      "keyCompetencies": [
+        "複合牆/樓版/屋頂核心層級設定",
+        "圖形覆寫 (Graphic Overrides) 視圖控制",
+        "門窗清單與材料數量表自動生成",
+        "發布器 (Publisher) 多頁出圖"
+      ],
+      "officialExamUrl": "https://learn.graphisoft.com"
+    },
+    {
+      "name": "Graphisoft Certified BIM Manager",
+      "level": "國際原廠大師級認證 (頂級)",
+      "authority": "Graphisoft SE",
+      "description": "考核大型專案 BIM 執行計畫 (BEP)、BIMcloud 伺服器部署、IFC 跨平台資料轉換設定與 GDL 構件庫架構。",
+      "keyCompetencies": [
+        "BIMcloud 伺服器權限管理與跨國協同",
+        "IFC 屬性映射與分類系統 (Uniclass/OmniClass)",
+        "ISO 19650 資訊交付合規檢驗",
+        "GDL 智慧參數化元件開發"
+      ],
+      "officialExamUrl": "https://learn.graphisoft.com"
+    }
+  ]
 };

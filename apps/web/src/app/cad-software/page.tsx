@@ -8,6 +8,12 @@ import {
   ArrowRight,
   Flame,
   Workflow,
+  BookOpen,
+  Award,
+  GraduationCap,
+  ShieldCheck,
+  CheckCircle2,
+  FileText,
 } from 'lucide-react';
 import { cadSoftwareList } from '@/data/cad-software/cadSoftwareData';
 
@@ -203,6 +209,22 @@ export default function CadSoftwareHubPage() {
                       + 共 7 輪完整迭代
                     </span>
                   </div>
+                </div>
+
+                {/* Certifications and Learning Resources badge */}
+                <div className="mt-4 flex flex-wrap items-center gap-1.5 pt-3 border-t border-slate-100 dark:border-slate-800 text-[11px] font-mono">
+                  {soft.certificationStandards && soft.certificationStandards.length > 0 && (
+                    <span className="inline-flex items-center gap-1 rounded bg-amber-50 dark:bg-amber-950/40 text-amber-700 dark:text-amber-300 border border-amber-500/20 px-2 py-0.5 font-bold">
+                      <Award className="size-3" />
+                      對標 {soft.certificationStandards.length} 階國家/原廠證照
+                    </span>
+                  )}
+                  {soft.learningResources && soft.learningResources.length > 0 && (
+                    <span className="inline-flex items-center gap-1 rounded bg-blue-50 dark:bg-blue-950/40 text-blue-700 dark:text-blue-300 border border-blue-500/20 px-2 py-0.5 font-medium">
+                      <BookOpen className="size-3" />
+                      收錄 {soft.learningResources.length} 筆權威教學連結
+                    </span>
+                  )}
                 </div>
               </div>
 
@@ -409,6 +431,131 @@ export default function CadSoftwareHubPage() {
                 ))}
               </tbody>
             </table>
+          </div>
+        </div>
+      </section>
+
+      {/* Statutory Standards & Certification Hub */}
+      <section className="mx-auto max-w-6xl px-4 py-12 sm:px-6 lg:px-8 space-y-8">
+        <div className="rounded-3xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 p-8 sm:p-12 shadow-sm space-y-8">
+          <div className="border-b border-slate-100 dark:border-slate-800 pb-6">
+            <span className="text-xs font-mono font-bold uppercase tracking-wider text-emerald-600 dark:text-emerald-400 flex items-center gap-1.5">
+              <ShieldCheck className="size-4" />
+              NATIONAL STANDARDS & OCCUPATIONAL CERTIFICATION
+            </span>
+            <h2 className="mt-2 font-serif text-2xl sm:text-3xl font-bold text-slate-900 dark:text-white">
+              電腦繪製建築圖國家標準 (CNS 11567)、技能檢定與實務套圖協同體系
+            </h2>
+            <p className="mt-2 text-sm text-slate-600 dark:text-slate-400 leading-relaxed max-w-3xl">
+              建築電腦繪圖絕非單純之電腦操作技能，而是依據國家法定技術規則、工程圖學標準與營建施工界面協同所建構之精密溝通語言。
+            </p>
+          </div>
+
+          <div className="grid gap-6 md:grid-cols-3">
+            {/* Box 1: CNS 11567 */}
+            <div className="rounded-2xl border border-slate-200 dark:border-slate-800 bg-slate-50/50 dark:bg-slate-800/40 p-6 space-y-3">
+              <div className="flex items-center gap-2 text-blue-600 dark:text-blue-400 font-bold text-sm font-mono">
+                <FileText className="size-4" />
+                <span>CNS 11567《建築製圖》法典</span>
+              </div>
+              <p className="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">
+                經濟部標準檢驗局制定之建築工程法定製圖規範。
+              </p>
+              <ul className="text-xs text-slate-600 dark:text-slate-300 space-y-1.5 pt-2 border-t border-slate-200/60 dark:border-slate-700/60">
+                <li className="flex items-start gap-1.5">
+                  <CheckCircle2 className="size-3.5 text-blue-500 mt-0.5 shrink-0" />
+                  <span><strong>線寬層級對比：</strong>粗線 (0.7mm 輪廓)、中線 (0.5mm)、細線 (0.25mm 標註/虛線)，嚴格維持 4:2:1 比例</span>
+                </li>
+                <li className="flex items-start gap-1.5">
+                  <CheckCircle2 className="size-3.5 text-blue-500 mt-0.5 shrink-0" />
+                  <span><strong>18 種法定比例尺：</strong>1/1 到 1/600，嚴禁任意自訂非標準比例</span>
+                </li>
+                <li className="flex items-start gap-1.5">
+                  <CheckCircle2 className="size-3.5 text-blue-500 mt-0.5 shrink-0" />
+                  <span><strong>三道尺寸標註法：</strong>外層總尺寸、中層柱心跨距、內層門窗垛牆開口細部</span>
+                </li>
+              </ul>
+              <div className="pt-2">
+                <a
+                  href="https://www.cnsonline.com.tw"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-xs font-mono text-blue-600 dark:text-blue-400 font-bold hover:underline inline-flex items-center gap-1"
+                >
+                  CNS 國家標準檢索入口 <ExternalLink className="size-3" />
+                </a>
+              </div>
+            </div>
+
+            {/* Box 2: 建築製圖應用技能檢定 */}
+            <div className="rounded-2xl border border-slate-200 dark:border-slate-800 bg-slate-50/50 dark:bg-slate-800/40 p-6 space-y-3">
+              <div className="flex items-center gap-2 text-amber-600 dark:text-amber-400 font-bold text-sm font-mono">
+                <GraduationCap className="size-4" />
+                <span>全國技能檢定「建築製圖應用」</span>
+              </div>
+              <p className="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">
+                勞動部技檢中心主辦之職類檢定（代號 21100），分為電腦繪圖項與手繪圖項。
+              </p>
+              <ul className="text-xs text-slate-600 dark:text-slate-300 space-y-1.5 pt-2 border-t border-slate-200/60 dark:border-slate-700/60">
+                <li className="flex items-start gap-1.5">
+                  <CheckCircle2 className="size-3.5 text-amber-500 mt-0.5 shrink-0" />
+                  <span><strong>丙級 (21101)：</strong>考核基本平立剖面圖、樓梯大樣圖、結構平面圖及 180 分鐘內出圖排程</span>
+                </li>
+                <li className="flex items-start gap-1.5">
+                  <CheckCircle2 className="size-3.5 text-amber-500 mt-0.5 shrink-0" />
+                  <span><strong>乙級 (21100)：</strong>考核地下室坡道排水分區、昇降機道剖面大樣、帷幕牆泛水構造與 CAD 系統規劃</span>
+                </li>
+                <li className="flex items-start gap-1.5">
+                  <CheckCircle2 className="size-3.5 text-amber-500 mt-0.5 shrink-0" />
+                  <span><strong>零分防衛天條：</strong>出圖未關閉 Fit-to-Paper 導致比例失真、主要圖面漏項、圖框範圍越界即判定不合格</span>
+                </li>
+              </ul>
+              <div className="pt-2">
+                <a
+                  href="https://skill.tcte.edu.tw"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-xs font-mono text-amber-600 dark:text-amber-400 font-bold hover:underline inline-flex items-center gap-1"
+                >
+                  技檢中心術科試題庫 <ExternalLink className="size-3" />
+                </a>
+              </div>
+            </div>
+
+            {/* Box 3: CSD / SEM 套圖協同 */}
+            <div className="rounded-2xl border border-slate-200 dark:border-slate-800 bg-slate-50/50 dark:bg-slate-800/40 p-6 space-y-3">
+              <div className="flex items-center gap-2 text-emerald-600 dark:text-emerald-400 font-bold text-sm font-mono">
+                <Workflow className="size-4" />
+                <span>CSD / SEM 界面整合套圖</span>
+              </div>
+              <p className="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">
+                公共工程與大型建案確保營造品質、避免現場敲除變更設計之核心圖說。
+              </p>
+              <ul className="text-xs text-slate-600 dark:text-slate-300 space-y-1.5 pt-2 border-t border-slate-200/60 dark:border-slate-700/60">
+                <li className="flex items-start gap-1.5">
+                  <CheckCircle2 className="size-3.5 text-emerald-500 mt-0.5 shrink-0" />
+                  <span><strong>CSD (機電整合圖)：</strong>疊合空調風管、給排水、消防與強弱電纜槽，重力管優先排擠壓力管</span>
+                </li>
+                <li className="flex items-start gap-1.5">
+                  <CheckCircle2 className="size-3.5 text-emerald-500 mt-0.5 shrink-0" />
+                  <span><strong>SEM (結構機電圖)：</strong>結構梁開孔 D &le; h/3，開孔中心落於中段 1/3 且距柱面 &ge; h</span>
+                </li>
+                <li className="flex items-start gap-1.5">
+                  <CheckCircle2 className="size-3.5 text-emerald-500 mt-0.5 shrink-0" />
+                  <span><strong>BIM 數位升級：</strong>從傳統 2D XREF 疊合走向 Revit + Navisworks 3D 硬碰撞與間隙公差自動檢測</span>
+                </li>
+              </ul>
+              <div className="pt-2">
+                <a
+                  href="https://www.abri.gov.tw"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-xs font-mono text-emerald-600 dark:text-emerald-400 font-bold hover:underline inline-flex items-center gap-1"
+                >
+                  建研所 BIM 協同指南 <ExternalLink className="size-3" />
+                </a>
+              </div>
+            </div>
           </div>
         </div>
       </section>
