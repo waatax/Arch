@@ -14,6 +14,7 @@ import {
 import { topicInfographicsMap } from '@/lib/pedagogy/topicInfographicsData';
 import { commonTopicInfographicsMap } from '@/lib/pedagogy/topicInfographicsCommon';
 import TopicInfographicSvgViewer from './TopicInfographicSvgViewer';
+import MathText from '@/components/MathText';
 
 interface TopicInfographicCardProps {
   subjectSlug: string;
@@ -104,7 +105,7 @@ export default function TopicInfographicCard({
                 <span>核心定量關係與幾何公式</span>
               </div>
               <div className="mt-2 font-mono text-sm font-bold text-indigo-950 dark:text-indigo-200 sm:text-base">
-                {infographic.formulaBanner}
+                <MathText content={infographic.formulaBanner} />
               </div>
             </div>
           )}

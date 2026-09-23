@@ -76,16 +76,54 @@ export default function MathText({ content, className }: { content?: string | nu
           return <InteractiveDialogue key={dIdx} title={title} lines={lines} />;
         }
 
-        // Standard Math & TTS parsing
-        const parts = dialogueBlock.split(/(\$\$[\s\S]*?\$\$|\$[\s\S]*?\$)/g);
+        // Standard Math & TTS parsing: support $$, $, \[, \(
+        const parts = dialogueBlock.split(/(\$\$[\s\S]*?\$\$|\$[\s\S]*?\$|\\\[[\s\S]*?\\\]|\\\([\s\S]*?\\\))/g);
         return (
           <span key={dIdx}>
             {parts.map((part, index) => {
               if (part.startsWith('$$') && part.endsWith('$$')) {
-                return <BlockMath key={index} math={part.slice(2, -2)} />;
+                return (
+                  <BlockMath
+                    key={index}
+                    math={part.slice(2, -2).trim()}
+                    renderError={() => (
+                      <span className="font-mono text-xs text-rose-600 dark:text-rose-400 break-all">{part}</span>
+                    )}
+                  />
+                );
+              }
+              if (part.startsWith('\\[') && part.endsWith('\\]')) {
+                return (
+                  <BlockMath
+                    key={index}
+                    math={part.slice(2, -2).trim()}
+                    renderError={() => (
+                      <span className="font-mono text-xs text-rose-600 dark:text-rose-400 break-all">{part}</span>
+                    )}
+                  />
+                );
               }
               if (part.startsWith('$') && part.endsWith('$')) {
-                return <InlineMath key={index} math={part.slice(1, -1)} />;
+                return (
+                  <InlineMath
+                    key={index}
+                    math={part.slice(1, -1).trim()}
+                    renderError={() => (
+                      <span className="font-mono text-xs text-rose-600 dark:text-rose-400 break-all">{part}</span>
+                    )}
+                  />
+                );
+              }
+              if (part.startsWith('\\(') && part.endsWith('\\)')) {
+                return (
+                  <InlineMath
+                    key={index}
+                    math={part.slice(2, -2).trim()}
+                    renderError={() => (
+                      <span className="font-mono text-xs text-rose-600 dark:text-rose-400 break-all">{part}</span>
+                    )}
+                  />
+                );
               }
 
               // Match [TTS:...] for Text-to-Speech
@@ -115,6 +153,36 @@ export default function MathText({ content, className }: { content?: string | nu
                     // the emphasis colouring silently disappears. Normalise it to `class`.
                     htmlContent = htmlContent.replace(/\sclassName=/g, ' class=');
                     htmlContent = htmlContent.replace(/\n/g, '<br />');
+
+                    // If subPart contains obvious raw LaTeX math commands and no HTML tags,
+                    // attempt safe KaTeX rendering with automatic graceful fallback to HTML.
+                    const hasRawLatex =
+                      !/<[a-zA-Z]/.test(subPart) &&
+                      /\\(?:frac|sqrt|sum|int|times|cdot|approx|le|ge|pm|Delta|sigma|tau|vec|alpha|beta|theta|pi|longrightarrow|to|left|right|text|partial|nabla|quad|qquad)\b/.test(subPart);
+
+                    if (hasRawLatex) {
+                      const isMultiLine = subPart.includes('\n') || subPart.includes('\\\\');
+                      const cleanMath = subPart.trim();
+                      return (
+                        <span key={subIndex} className="inline-block">
+                          {isMultiLine ? (
+                            <BlockMath
+                              math={cleanMath}
+                              renderError={() => (
+                                <span dangerouslySetInnerHTML={{ __html: htmlContent }} />
+                              )}
+                            />
+                          ) : (
+                            <InlineMath
+                              math={cleanMath}
+                              renderError={() => (
+                                <span dangerouslySetInnerHTML={{ __html: htmlContent }} />
+                              )}
+                            />
+                          )}
+                        </span>
+                      );
+                    }
 
                     return (
                       <span key={subIndex} dangerouslySetInnerHTML={{ __html: htmlContent }} />

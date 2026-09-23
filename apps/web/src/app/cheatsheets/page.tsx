@@ -10,6 +10,7 @@ import {
   Zap,
   Printer
 } from 'lucide-react';
+import { BlockMath } from 'react-katex';
 
 interface FormulaCard {
   id: string;
@@ -477,9 +478,16 @@ export default function CheatsheetsPage() {
                   {card.title}
                 </h3>
                 <div className="mt-3 rounded-2xl bg-amber-50/60 dark:bg-amber-950/30 p-4 border border-amber-200/80 dark:border-amber-900/50 flex items-center justify-between gap-3">
-                  <code className="font-mono text-sm sm:text-base font-bold text-amber-950 dark:text-amber-200 tracking-wide overflow-x-auto">
-                    {card.formula}
-                  </code>
+                  <div className="overflow-x-auto py-1 flex-1 text-slate-900 dark:text-amber-100 text-sm sm:text-base">
+                    <BlockMath
+                      math={card.latexCopy || card.formula}
+                      renderError={() => (
+                        <code className="font-mono text-sm sm:text-base font-bold text-amber-950 dark:text-amber-200 tracking-wide">
+                          {card.formula}
+                        </code>
+                      )}
+                    />
+                  </div>
                   <button
                     onClick={() => handleCopyLatex(card.latexCopy, card.id)}
                     className="shrink-0 p-2 rounded-lg bg-white/80 dark:bg-slate-900/80 hover:bg-white text-slate-700 dark:text-slate-300 border border-amber-300 dark:border-amber-800 transition-colors cursor-pointer"

@@ -52,7 +52,7 @@ export const chemistryData: SubjectData = {
         {
           "heading": "微觀原子結構與化學鍵結 (Atomic Structure & Chemical Bonding)",
           "body": "💡 **核心概念解析**：\n原子為化學元素的最小基元，由帶正電的原子核（質子與中子）以及核外帶負電的電子構成。\n- **<span className='text-rose-600 font-bold'>質量數</span>** (A) = **<span className='text-rose-600 font-bold'>質子數</span>** (Z) + **<span className='text-rose-600 font-bold'>中子數</span>** (N)。\n- 價電子與化學鍵：原子的最外層電子決定其化學性質。建築材料的物理強度與耐候性取決於內部的化學鍵結型態：\n  1. **<span className='text-rose-600 font-bold'>離子鍵</span>** (Ionic Bond)：如陶瓷、石灰石 (CaCO₃)，硬度高但具脆性。\n  2. **<span className='text-rose-600 font-bold'>共價鍵</span>** (Covalent Bond)：如金剛石、矽酸鹽礦物與高分子骨架，鍵結極強。\n  3. **<span className='text-rose-600 font-bold'>金屬鍵</span>** (Metallic Bond)：金屬自由電子形成金屬膠泥，賦予鋼材優異的延展性與導電性。\n\n⚠️ **統測陷阱**：考試常考「分子晶體」與「網狀共價晶體」的差別！冰塊是分子晶體（氫鍵），熔點低；石英(SiO₂)是網狀共價晶體，熔點極高。\n\n🔗 **跨領域連結**：與【物理：力學】連結，金屬鍵中的自由電子海，是鋼材具備「高延展性」能吸收地震能量（塑性變形）的微觀原因。\n\n| 鍵結類型 | 組成粒子 | 硬度 | 熔沸點 | 導電性 (固態/熔融態) |\n| :--- | :--- | :--- | :--- | :--- |\n| 離子鍵 | 陰陽離子 | 高 (脆) | 高 | 無 / 有 |\n| 共價鍵 | 原子 | 極高 | 極高 | 無 / 無 (除石墨) |\n| 金屬鍵 | 金屬陽離子+自由電子 | 中至高 (延展性佳) | 中至高 | 有 / 有 |",
-          "formula": "****<span className='text-rose-600 font-bold'>質量數</span>** A = **<span className='text-rose-600 font-bold'>質子數</span>** Z + **<span className='text-rose-600 font-bold'>中子數</span>** N\nE_bond (**<span className='text-rose-600 font-bold'>共價鍵</span>**) > E_bond (氫鍵/凡得瓦力)**"
+          "formula": "$$\\text{質量數 } A = \\text{質子數 } Z + \\text{中子數 } N$$\\n$$E_{\\text{bond}}(\\text{共價鍵}) \\gg E_{\\text{bond}}(\\text{氫鍵}) > E_{\\text{bond}}(\\text{凡得瓦力})$$"
         },
         {
           "heading": "塗料、樹脂高分子與**<span className='text-indigo-600 font-bold'>揮發性有機化合物</span>** (**<span className='text-rose-600 font-bold'>VOCs</span>**) 基礎",
@@ -115,7 +115,7 @@ export const chemistryData: SubjectData = {
         {
           "heading": "奈米**<span className='text-rose-600 font-bold'>二氧化鈦</span>** (TiO₂) **<span className='text-rose-600 font-bold'>光觸媒</span>**催化空氣淨化與自潔化學",
           "body": "💡 **核心概念解析**：\n奈米級銳鈦礦型**<span className='text-rose-600 font-bold'>二氧化鈦</span>** (TiO₂) 在波長 < 387 nm 的近紫外光照射下，電子由價帶躍遷至導帶形成電子-電洞對 (e⁻/h⁺)。電洞水解生成具有強氧化性的羥基自由基 (·OH)，能將空氣中的**<span className='text-indigo-600 font-bold'>甲醛 (HCHO)</span>** 與苯系物降解為二氧化碳與水，同能賦予塗膜超親水性 (Super-hydrophilicity) 達成雨水自潔效應。",
-          "formula": "**TiO₂ + hν (UV) → e⁻ + h⁺\nh⁺ + H₂O → ·OH + H⁺\nHCHO + 4 ·OH → CO₂ + 3 H₂O**",
+          "formula": "$$TiO_2 + h\\nu (\\text{UV}) \\longrightarrow e^- + h^+$$\\n$$h^+ + H_2O \\longrightarrow \\cdot OH + H^+$$\\n$$HCHO + 4\\cdot OH \\longrightarrow CO_2 + 3H_2O$$",
           "steps": [
             "🔹 **第一步**（光子吸收）：紫外光光子激發奈米 TiO₂ 電子躍遷。",
             "🔹 **第二步**（自由基生成）：電洞氧化吸附的水分子產生超強氧化劑 ·OH 自由基。",
@@ -125,7 +125,7 @@ export const chemistryData: SubjectData = {
         {
           "heading": "氣體擴散與室內 **<span className='text-indigo-600 font-bold'>TVOC</span>** 濃度隨時間衰減一階動力學模型",
           "body": "💡 **核心概念解析**：\n建築塗料施工後，室內 **<span className='text-indigo-600 font-bold'>TVOC</span>** 氣體濃度遵循**<span className='text-rose-600 font-bold'>一階衰減動力學</span>** (First-Order Decay Kinetics)。濃度衰減速率取決於塗料化學成分揮發常數 k 與建築通風換氣率 (ACH, Air Changes per Hour)。",
-          "formula": "**C(t) = C₀ · e^(-(k + ACH) · t)**",
+          "formula": "$$C(t) = C_0 \\cdot e^{-(k + \\text{ACH})\\cdot t}$$",
           "table": {
             "headers": [
               "建材與塗料類別",
@@ -332,12 +332,12 @@ export const chemistryData: SubjectData = {
         {
           "heading": "莫耳與化學計量計算 (Stoichiometry)",
           "body": "💡 **核心概念解析**：\n莫耳 (Mole, mol) 是化學計量巨量物質與微觀粒子的橋樑。1 莫耳包含 6.02 × 10²³ 個粒子 (亞佛加厥常數 NA)。\n- **<span className='text-rose-600 font-bold'>莫耳數</span>** (n) = 物質質量 (m, g) / 莫耳質量 (M, g/mol)。\n- 在氣體標準狀況 (STP, 0°C, 1 atm) 下，1 莫耳理想氣體體積為 22.4 L；在常溫常壓 (NTP, 25°C, 1 atm) 下約為 24.5 L。",
-          "formula": "**n = m / M**"
+          "formula": "$$n = \\frac{m}{M} = \\frac{N}{N_A}$$"
         },
         {
           "heading": "**<span className='text-rose-600 font-bold'>波特蘭水泥</span>**之化學水化反應 (Concrete Hydration)",
-          "body": "💡 **核心概念解析**：\n混凝土強度發展源自卜特蘭水泥熟料礦物與水的交聯化學反應 (Concrete Hydration)。\n- 主要熟料化學成分：\n  1. 矽酸三鈣 (C₃S, 3CaO·SiO₂)：含量約 50~70%，負責早期強度發展。水化生成 C-S-H 膠體與氫氧化鈣 Ca(OH)₂。\n  2. 矽酸二鈣 (C₂S, 2CaO·SiO₂)：含量約 15~30%，水化速率慢，負責後期 (28 天後) 強度。\n  3. 鋁酸三鈣 (C₃A, 3CaO·Al₂O₃)：反應極劇烈，放熱量最高，需加入石膏 (CaSO₄·2H₂O) 調節凝結時間，防止快凝。",
-          "formula": "**2 (3CaO·SiO₂) + 11 H₂O → 3CaO·2SiO₂·8H₂O (C-S-H 膠體) + 3 Ca(OH)₂\n2 (2CaO·SiO₂) + 9 H₂O → 3CaO·2SiO₂·8H₂O (C-S-H 膠體) + Ca(OH)₂**"
+          "body": "💡 **核心概念解析**：\n混凝土強度發展源自卜特蘭水泥熟料礦物與水的交聯化學反應 (Concrete Hydration)。\n- 主要熟料化學成分：\n  1. 矽酸三鈣（Tricalcium silicate，簡稱 $C_3S$，化學式為 $Ca_3SiO_5$，水泥化學式 $3CaO\\cdot SiO_2$）：含量約 50~70%，水化反應快且放熱高，負責 1~7 天早期強度發展。水化生成 C-S-H 凝膠與氫氧化鈣 $Ca(OH)_2$。\n  2. 矽酸二鈣（Dicalcium silicate，簡稱 $C_2S$，化學式為 $Ca_2SiO_4$，水泥化學式 $2CaO\\cdot SiO_2$）：含量約 15~30%，水化速率慢且放熱低，負責後期 (28 天後至數年) 強度穩定增長。\n  3. 鋁酸三鈣（Tricalcium aluminate，簡稱 $C_3A$，化學式為 $Ca_3Al_2O_6$，水泥化學式 $3CaO\\cdot Al_2O_3$）：反應極劇烈，放熱量最高，需加入石膏 ($CaSO_4\\cdot 2H_2O$) 調節凝結時間，防止快凝。\n  4. 鐵鋁酸四鈣（Tetracalcium aluminoferrite，簡稱 $C_4AF$，化學式為 $Ca_4Al_2Fe_2O_{10}$，水泥化學式 $4CaO\\cdot Al_2O_3\\cdot Fe_2O_3$）：水化速度中等，耐硫酸鹽性佳，賦予水泥深灰色。",
+          "formula": "$$2Ca_3SiO_5 + 6H_2O \\longrightarrow 3CaO\\cdot 2SiO_2\\cdot 3H_2O \\text{ (C-S-H 凝膠)} + 3Ca(OH)_2$$\\n$$2Ca_2SiO_4 + 4H_2O \\longrightarrow 3CaO\\cdot 2SiO_2\\cdot 3H_2O \\text{ (C-S-H 凝膠)} + Ca(OH)_2$$"
         },
         {
           "heading": "**<span className='text-rose-600 font-bold'>波特蘭水泥</span>**四大熟料礦物水化特性比較",
@@ -352,29 +352,29 @@ export const chemistryData: SubjectData = {
             ],
             "rows": [
               [
-                "矽酸三鈣 (3CaO·SiO₂)",
-                "C₃S",
+                "矽酸三鈣（Tricalcium silicate，化學式為 Ca₃SiO₅）",
+                "C₃S (3CaO·SiO₂)",
                 "快",
                 "高 (~500 J/g)",
                 "早期強度 (1 ~ 7 天)"
               ],
               [
-                "矽酸二鈣 (2CaO·SiO₂)",
-                "C₂S",
+                "矽酸二鈣（Dicalcium silicate，化學式為 Ca₂SiO₄）",
+                "C₂S (2CaO·SiO₂)",
                 "慢",
                 "低 (~250 J/g)",
                 "後期強度 (28 天至數年)"
               ],
               [
-                "鋁酸三鈣 (3CaO·Al₂O₃)",
-                "C₃A",
+                "鋁酸三鈣（Tricalcium aluminate，化學式為 Ca₃Al₂O₆）",
+                "C₃A (3CaO·Al₂O₃)",
                 "極快 (需石膏延凝)",
                 "極高 (~850 J/g)",
                 "初始凝結與 1 天內發熱"
               ],
               [
-                "鐵鋁酸四鈣 (4CaO·Al₂O₃·Fe₂O₃)",
-                "C₄AF",
+                "鐵鋁酸四鈣（Tetracalcium aluminoferrite，化學式為 Ca₄Al₂Fe₂O₁₀）",
+                "C₄AF (4CaO·Al₂O₃·Fe₂O₃)",
                 "中等",
                 "中低 (~400 J/g)",
                 "對強度貢獻較小，賦予水泥灰色"
@@ -385,17 +385,17 @@ export const chemistryData: SubjectData = {
         {
           "heading": "**<span className='text-indigo-600 font-bold'>水化熱</span>**控制與卜特嵐礦物摻和料 (Fly Ash & Slag) 之**<span className='text-rose-600 font-bold'>波左蘭反應</span>**",
           "body": "💡 **核心概念解析**：\n水化反應為強烈放熱反應。在巨體積混凝土 (Mass Concrete，如大壩、厚基礎版) 中，內部累積的**<span className='text-indigo-600 font-bold'>水化熱</span>**易導致內外溫差開裂。\n- **<span className='text-rose-600 font-bold'>波左蘭反應</span>** (Pozzolanic Reaction)：加入飛灰 (Fly Ash) 或爐石粉 (GGBS)，其活性矽 (SiO₂) 可與水泥水化產生的 Ca(OH)₂ 發生二次**<span className='text-rose-600 font-bold'>波左蘭反應</span>**，生成額外的 C-S-H 膠體，能顯著降低水化放熱峰值並提高混凝土緻密性與耐久性。",
-          "formula": "**Ca(OH)₂ + Active SiO₂ + H₂O → Secondary C-S-H Gel (二次矽酸鈣膠體)**"
+          "formula": "$$Ca(OH)_2 + \\text{活性 } SiO_2 + H_2O \\longrightarrow \\text{C-S-H 凝膠 (二次水化反應)}$$"
         },
         {
           "heading": "石膏 (CaSO₄·2H₂O) 調節凝結化學與**<span className='text-indigo-600 font-bold'>鈣礬石 (Ettringite)</span>** 形成",
           "body": "💡 **核心概念解析**：\n未添加石膏的水泥在加水時，C₃A 會在幾分鐘內迅速水化並結晶，導致混凝土發生「快凝 (Flash Set)」無法施工。研磨水泥時摻入約 3%~5% 石膏，石膏中的硫酸根 SO₄²⁻ 與 C₃A 及水反應在顆粒表面覆蓋一層緻密的鈣礬石 (Ettringite, 3CaO·Al₂O₃·3CaSO₄·32H₂O) 薄膜，可延緩 C₃A 水化達到適當的施工工作時間 (1~2 小時)。",
-          "formula": "**C₃A + 3 (CaSO₄·2H₂O) + 26 H₂O → C₃A·3CaSO₄·32H₂O (Ettringite 鈣礬石)**"
+          "formula": "$$Ca_3Al_2O_6 + 3(CaSO_4\\cdot 2H_2O) + 26H_2O \\longrightarrow 3CaO\\cdot Al_2O_3\\cdot 3CaSO_4\\cdot 32H_2O \\text{ (鈣礬石 Ettringite)}$$"
         },
         {
           "heading": "巨體積混凝土**<span className='text-rose-600 font-bold'>絕熱溫升</span>** ΔT_adiab 化學計算與溫差裂縫預防",
           "body": "💡 **核心概念解析**：\n每克普通卜特蘭水泥完全水化放熱約 350~500 J。混凝土比熱 c ≈ 1.0 kJ/(kg·K)。在大體積混凝土中，內部累積的水化放熱幾乎無法散逸，**<span className='text-rose-600 font-bold'>絕熱溫升</span>** ΔT 升幅可達 30°C~50°C。若內部與表面溫差 ΔT > 20°C，熱應力將超過混凝土拉伸強度，導致裂縫 (Thermal Cracking)。",
-          "formula": "**ΔT_adiab = (m_cement · Q_hydration) / (m_total · c_concrete)**",
+          "formula": "$$\\Delta T_{\\text{adiab}} = \\frac{m_{\\text{cement}} \\cdot Q_{\\text{hydration}}}{m_{\\text{total}} \\cdot c_{\\text{concrete}}}$$",
           "steps": [
             "🔹 **第一步**（低熱水泥選配）：採用低熱 I/II 型水泥或以 40% 爐石粉替代水泥熟料。",
             "🔹 **第二步**（預冷拌合水）：拌合時使用冰水或加入碎冰塊，降低混凝土預澆置初溫。",
@@ -582,12 +582,12 @@ export const chemistryData: SubjectData = {
         {
           "heading": "溶液 **<span className='text-rose-600 font-bold'>pH 值</span>**計算與水的離子積 (Kw)",
           "body": "💡 **核心概念解析**：\n純水會發生極微量的自體解離：H₂O ⇌ H⁺ + OH⁻。\n- 在 25°C 時，水之離子積常數 Kw = [H⁺] × [OH⁻] = 1.0 × 10⁻¹⁴ M²。\n- pH = -log[H⁺]，pOH = -log[OH⁻]，且 pH + pOH = 14。\n- 中性溶液：pH = 7；酸性溶液：pH < 7；鹼性溶液：pH > 7。\n新拌與硬化混凝土內部孔隙液含有大量 Ca(OH)₂ 與 KOH/NaOH，強鹼性使 **<span className='text-rose-600 font-bold'>pH 值</span>**高達 12.5 ~ 13.5，能使鋼筋表面形成極薄的鈍化保護膜 (Passivation Film, Fe₂O₃)。",
-          "formula": "**pH = -log[H⁺]\n[H⁺] × [OH⁻] = 1.0 × 10⁻¹⁴ (at 25°C)**"
+          "formula": "$$\\text{pH} = -\\log_{10}[\\text{H}^+], \\quad K_w = [\\text{H}^+][\\text{OH}^-] = 1.0 \\times 10^{-14} \\text{ (at } 25^\\circ\\text{C)}$$"
         },
         {
           "heading": "混凝土**<span className='text-rose-600 font-bold'>中性化</span>**（碳化反應）化學與鋼筋防護失效",
           "body": "💡 **核心概念解析**：\n大氣中的二氧化碳 (CO₂) 擴散進入混凝土孔隙中，溶解於孔隙水形成碳酸，並與混凝土中的氫氧化鈣 Ca(OH)₂ 發生反應，稱為**<span className='text-rose-600 font-bold'>中性化</span>**或**<span className='text-rose-600 font-bold'>碳化作用</span>** (Carbonation)。\n- 化學反應：Ca(OH)₂ + CO₂ → CaCO₃↓ + H₂O。\n- 碳化危害：當混凝土**<span className='text-rose-600 font-bold'>中性化</span>**深抵鋼筋表面時，孔隙液 **<span className='text-rose-600 font-bold'>pH 值</span>**將降至 9.0 以下，致使鋼筋表面的鹼性鈍化膜溶解破壞，一旦遇到水分與氧氣便會引發鋼筋劇烈電化學銹蝕。",
-          "formula": "**Ca(OH)₂ + CO₂ → CaCO₃↓ + H₂O**"
+          "formula": "$$Ca(OH)_2 + CO_2 \\longrightarrow CaCO_3\\downarrow + H_2O$$"
         },
         {
           "heading": "常用建築材料對酸鹼化學環境之耐蝕性比較",
@@ -646,12 +646,12 @@ export const chemistryData: SubjectData = {
         {
           "heading": "地下水**<span className='text-rose-600 font-bold'>硫酸鹽侵蝕</span>** (Sulfate Attack) 與結晶膨脹破壞",
           "body": "💡 **核心概念解析**：\n土壤與地下水中的硫酸鹽離子 (SO₄²⁻) 滲入混凝土內部，與水泥水化產生的 Ca(OH)₂ 及水化鋁酸鈣 (C-S-A) 反應，生成遲延型鈣礬石 (Delayed Ettringite) 或石膏 (Gypsum)。結晶生成過程伴隨 2~3 倍的固體體積膨脹，引發混凝土內部產生巨大張應力，導致混凝土開裂崩解。",
-          "formula": "**Ca(OH)₂ + SO₄²⁻ + 2 H₂O → CaSO₄·2H₂O (石膏膨脹)\nC₃A·CH·H + 3 SO₄²⁻ → Ettringite (鈣礬石巨大幅度膨脹)**"
+          "formula": "$$Ca(OH)_2 + SO_4^{2-} + 2H_2O \\longrightarrow CaSO_4\\cdot 2H_2O \\text{ (石膏結晶膨脹)}$$\\n$$3CaO\\cdot Al_2O_3\\cdot CaSO_4\\cdot 12H_2O + 2SO_4^{2-} + 2Ca^{2+} + 20H_2O \\longrightarrow 3CaO\\cdot Al_2O_3\\cdot 3CaSO_4\\cdot 32H_2O \\text{ (遲延鈣礬石膨脹)}$$"
         },
         {
           "heading": "混凝土碳化深度擴散模型 (Fick's Diffusion Law & Carbonation Depth)",
           "body": "💡 **核心概念解析**：\n二氧化碳在混凝土孔隙中的擴散過程符合費克第一定律 (Fick's First Law)。**<span className='text-rose-600 font-bold'>中性化</span>**碳化深度 x 與大氣暴露時間 t 的平方根成正比 (x = k · √t)。碳化速率係數 k 受水灰比 (W/C)、環境相對濕度 (RH 50%~70% 時碳化最快) 及保護層緻密性控制。",
-          "formula": "**x = k · √t\nk = f(W/C, RH%, [CO₂])**",
+          "formula": "$$x = k \\sqrt{t}, \\quad k = f(\\text{W/C}, \\text{RH}, [\\text{CO}_2])$$",
           "steps": [
             "🔹 **第一步**（酚酞指示劑測試）：於新鮮混凝土切面噴灑 1% 酚酞試液，未碳化強鹼區呈紫色，已碳化**<span className='text-rose-600 font-bold'>中性化</span>**區不變色 (無色)。",
             "🔹 **第二步**（壽命推算）：利用 x = k · √t 代入已知保護層厚度 x_cover (如 40 mm)，計算鋼筋周圍被碳化破壞所需的年限 t。"
@@ -840,7 +840,7 @@ export const chemistryData: SubjectData = {
         {
           "heading": "鋼筋與建築金屬之電化學腐蝕化學 (Metal Corrosion)",
           "body": "💡 **核心概念解析**：\n金屬腐蝕 (Metal Corrosion) 本質上為局部微小伏打電池的電化學**<span className='text-rose-600 font-bold'>氧化還原</span>**反應。\n- 鋼筋濕腐蝕三要素：鐵金屬、水分 (電解質)、氧氣 (O₂)。\n- 陽極反應 (Anode)：鐵金屬失去電子解離溶出：Fe → Fe²⁺ + 2e⁻ (金屬損耗)。\n- 陰極反應 (Cathode)：溶解氧在鹼性/中性環境下接受電子：O₂ + 2H₂O + 4e⁻ → 4OH⁻。\n- 鐵銹生成：Fe²⁺ 與 OH⁻ 結合生成 Fe(OH)₂，進一步被氧化生成水合三氧化二鐵 (Fe₂O₃·nH₂O，紅銹)，體積膨脹 2~6 倍，導致混凝土開裂剝落。",
-          "formula": "**陽極反應: Fe → Fe²⁺ + 2e⁻\n陰極反應: O₂ + 2H₂O + 4e⁻ → 4OH⁻\n銹斑生成: 4 Fe(OH)₂ + O₂ + 2 H₂O → 4 Fe(OH)₃ → Fe₂O₃·nH₂O**"
+          "formula": "$$\\text{陽極反應 (Anode): } Fe \\longrightarrow Fe^{2+} + 2e^-$$\\n$$\\text{陰極反應 (Cathode): } O_2 + 2H_2O + 4e^- \\longrightarrow 4OH^-$$\\n$$\\text{水合氧化鐵銹生成: } Fe^{2+} + 2OH^- \\to Fe(OH)_2 \\xrightarrow{O_2, H_2O} Fe_2O_3\\cdot nH_2O \\text{ (體積膨脹 2}\\sim 6\\text{ 倍)}$$"
         },
         {
           "heading": "金屬防蝕化學方法：**<span className='text-rose-600 font-bold'>犧牲陽極</span>**法與電化學防護",
@@ -903,7 +903,7 @@ export const chemistryData: SubjectData = {
         {
           "heading": "異種金屬**<span className='text-rose-600 font-bold'>電位差腐蝕</span>** (Galvanic Corrosion) 與工程隔離對策",
           "body": "💡 **核心概念解析**：\n當兩種標準電位差異較大的金屬（如鋁與碳鋼、銅與鐵）在電解質（如雨水、潮濕空氣）存在下直接接觸時，電位較負的活潑金屬將成為陽極並發生急劇加速腐蝕，此現象稱為**<span className='text-rose-600 font-bold'>電位差腐蝕</span>** (Galvanic Corrosion)。",
-          "formula": "**ΔE° = E°_cathode - E°_anode (ΔE° 越大，腐蝕驅動力越強)**",
+          "formula": "$$\\Delta E^\\circ = E^\\circ_{\\text{cathode}} - E^\\circ_{\\text{anode}} \\quad (\\Delta E^\\circ > 0 \\text{ 驅動自發腐蝕)}$$",
           "steps": [
             "防護一（絕緣隔離）：在異種金屬鎖固接觸面裝設氯丁橡膠墊圈或 Teflon 絕緣套管。",
             "防護二（塗層防護）：在陰極與陽極界面同時塗佈防腐蝕環氧塗料。",
@@ -1110,7 +1110,7 @@ export const chemistryData: SubjectData = {
         {
           "heading": "有機烴類分類、命名與同分異構物",
           "body": "💡 **核心概念解析**：\n有機化學以碳骨架為核心。\n- 烴類 (Hydrocarbons)：僅由碳與氫組成的化合物。\n  1. 烷類 (Alkane)：全單鍵飽和烴，通式 CnH₂n⁺₂ (如甲烷 CH₄、丙烷 C₃H₈)。\n  2. 烯類 (Alkene)：含 C=C 雙鍵不飽和烴，通式 CnH₂n (如乙烯 C₂H₄)。\n  3. 炔類 (Alkyne)：含 C≡C 三鍵不飽和烴，通式 CnH₂n⁻₂ (如乙炔 C₂H₂，用於氣切焊接)。\n  4. 芳香烴 (Aromatic Hydrocarbons)：含苯環結構 (如苯 C₆H₆、甲苯 C₇H₈)，為傳統油性塗料主要溶劑，具毒性與揮發性。",
-          "formula": "**烷類 CnH₂n⁺₂ | 烯類 CnH₂n | 炔類 CnH₂n⁻₂**"
+          "formula": "$$\\text{烷類 (Alkane): } C_n H_{2n+2} \\quad|\\quad \\text{烯類 (Alkene): } C_n H_{2n} \\quad|\\quad \\text{炔類 (Alkyne): } C_n H_{2n-2}$$"
         },
         {
           "heading": "建築高分子塗料與樹脂 (Paints & Resins) 的化學合成與結構",
@@ -1208,7 +1208,7 @@ export const chemistryData: SubjectData = {
         {
           "heading": "**<span className='text-rose-600 font-bold'>阻燃劑</span>**化學 (Flame Retardants) 與建築高分子防火等級",
           "body": "💡 **核心概念解析**：\n有機高分子建材具易燃性。添加**<span className='text-rose-600 font-bold'>阻燃劑</span>**可提高極限氧指數 (LOI > 26)。阻燃化學機制包括：\n1. 吸熱冷凝機制：氫氧化鋁 Al(OH)₃ 或氫氧化鎂 Mg(OH)₂ 受熱分解釋放水蒸氣並吸收大量熱能。\n2. 膨脹炭化層機制：磷氮系**<span className='text-rose-600 font-bold'>阻燃劑</span>**受熱形成緻密多孔焦炭層 (Char Layer)，隔絕氧氣與熱量傳導。",
-          "formula": "**2 Al(OH)₃ + Δ (250°C) → Al₂O₃ + 3 H₂O↑ (吸收 1050 J/g 巨大熱量)**"
+          "formula": "$$2Al(OH)_3 \\xrightarrow{\\Delta \\ge 200^\\circ\\text{C}} Al_2O_3 + 3H_2O\\uparrow \\quad (\\Delta H = +1050 \\text{ J/g 吸熱阻燃)}$$"
         }
       ],
       "practices": [
@@ -1388,7 +1388,7 @@ export const chemistryData: SubjectData = {
         {
           "heading": "建築材料**<span className='text-rose-600 font-bold'>碳足跡</span>** (Carbon Footprint of Building Materials) 與化學排放",
           "body": "💡 **核心概念解析**：\n建築產業碳排放占全球總碳排約 39%，其中建材製造階段的「**<span className='text-rose-600 font-bold'>隱含碳</span>** (Embodied Carbon)」占極大比例。\n- 建材**<span className='text-rose-600 font-bold'>碳足跡</span>** (Carbon Footprint)：指產品在整個生命週期 (LCA) 或「搖籃到大門 (Cradle-to-Gate)」階段產生的溫室氣體排放總量 (以 kg CO₂e 表示)。\n- 水泥製造的化學碳排放：在石灰石煅燒過程中發生分解反應：CaCO₃ (石灰石) → CaO (生石灰) + CO₂↑。此化學脫碳反應產生的 CO₂ 占水泥生產總碳排的 60% 以上，其餘 40% 源自煅燒高溫 (1450°C) 燃料燃燒。",
-          "formula": "**碳排放量 (kg CO₂e) = 活動數據 (Activity Data) × 碳排放係數 (Emission Factor)**"
+          "formula": "$$\\text{碳排放量 (kg CO}_2\\text{e)} = \\text{活動數據 (Activity Data)} \\times \\text{碳排放係數 (Emission Factor)}$$"
         },
         {
           "heading": "低碳水泥、固碳混凝土 (Carbon-Curing) 與**<span className='text-rose-600 font-bold'>地質聚合物</span>** (Geopolymer)",
@@ -1488,7 +1488,7 @@ export const chemistryData: SubjectData = {
         {
           "heading": "建築生命週期評估 (LCA) 雙指標：**<span className='text-rose-600 font-bold'>隱含碳</span>** (Embodied) vs **<span className='text-rose-600 font-bold'>營運碳</span>** (Operational)",
           "body": "💡 **核心概念解析**：\n建築總生命週期碳排放包含興建階段的「**<span className='text-rose-600 font-bold'>隱含碳</span>**」與數十年使用期的「**<span className='text-rose-600 font-bold'>營運碳</span>**」。隨著空調與照明能源效率提升，**<span className='text-rose-600 font-bold'>隱含碳</span>**佔建築全生命週期碳排的比重已由原本的 20% 升至 50% 以上。推動低碳建材與預鑄工法 (Off-site Construction) 成為建築減碳關鍵。",
-          "formula": "**Carbon_LCA = Embodied_Carbon (Material + Transport + Const) + Operational_Carbon (Energy + Water) × Years**"
+          "formula": "$$\\text{Carbon}_{\\text{LCA}} = \\text{Embodied (Material+Transport+Const)} + \\text{Operational (Energy+Water)} \\times \\text{Years}$$"
         }
       ],
       "practices": [

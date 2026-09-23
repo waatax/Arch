@@ -46,7 +46,7 @@ export const materialsData: SubjectData = {
         {
           "heading": "台灣綠建材標章四大分類體系",
           "body": "依據內政部建研所規範，綠建材標章分為四大類：(1) 生態綠建材（採用天然竹木或無匱乏危機資源）；(2) 健康綠建材（經小型釋放腔檢驗，低甲醛與低 TVOC 逸散）；(3) 高性能綠建材（具備高隔音、高隔熱節能或透水性機能）；(4) 再生綠建材（利用營建廢棄物或工業副產物回收製造，符合再生材料含量比例）。",
-          "formula": "總揮發性有機化合物: TVOC ≤ 0.19 mg/(m²·h)\n甲醛逸散速率: HCHO ≤ 0.05 mg/(m²·h)",
+          "formula": "$$\\text{TVOC 逸散速率} \\le 0.19 \\text{ mg}/(\\text{m}^2\\cdot\\text{h}), \\quad \\text{HCHO 逸散速率} \\le 0.05 \\text{ mg}/(\\text{m}^2\\cdot\\text{h})$$",
           "table": {
             "headers": [
               "綠建材標章類別",
@@ -249,7 +249,7 @@ export const materialsData: SubjectData = {
         {
           "heading": "物理性質指標與密度體系",
           "body": "建築材料的物理性質由密實度、<span className=\"text-rose-600 font-bold\">孔隙率</span> (Porosity)、<span className=\"text-rose-600 font-bold\">含水率</span> (Moisture Content) 及比重 (Specific Gravity) 決定。材料密度劃分為真密度 (True Density)、<span className=\"text-rose-600 font-bold\">表觀密度</span> (Apparent Density) 與體積密度 (Bulk Density)。",
-          "formula": "<span className=\"text-rose-600 font-bold\">體積密度</span> ρb = W / V\n孔隙率 n = (Vv / V) × 100% = [1 - (ρb / ρs)] × 100%\n含水率 w = [(Ww - Wd) / Wd] × 100%",
+          "formula": "$$\\rho_b = \\frac{W}{V}, \\quad P = \\left(1 - \\frac{\\rho_b}{\\rho_s}\\right) \\times 100\\%, \\quad \\omega = \\frac{W_w - W_d}{W_d} \\times 100\\%$$",
           "table": {
             "headers": [
               "密度類別",
@@ -282,7 +282,7 @@ export const materialsData: SubjectData = {
         {
           "heading": "力學性質與應力-應變關係 (Stress-Strain Diagram)",
           "body": "材料受外力作用時呈現應力與應變的變化關係。經典拉伸曲線包含比例限度 (Proportional Limit)、彈性限度 (Elastic Limit)、降伏點 (Yield Point)、抗拉極限強度 (Ultimate Tensile Strength, UTS) 與斷裂破壞點。\n\n### 🔗 跨學科連結\n應力與應變的計算，與《工程力學》中的「材料力學」單元息息相關。虎克定律 (σ = E × ε) 中的彈性模數 (E) 是決定結構構件變形量 (ΔL = PL/AE) 的核心參數。\n\n### 🚨 統測陷阱\n請務必區分「比例限度」與「彈性限度」！比例限度是「應力與應變成正比」的最高點（虎克定律適用上限）；彈性限度則是「卸載後能完全恢復原狀」的最高點。兩者非常接近，但定義不同。\n\n| 特徵點 | 意義 | 力學行為 |\n|---|---|---|\n| 比例限度 | 虎克定律適用上限 | 應力與應變成絕對直線正比 |\n| 彈性限度 | 彈性變形上限 | 卸載後無永久變形，但曲線不一定是直線 |\n| 降伏點 | 開始發生明顯塑性變形 | 應力未顯著增加，但應變大幅增加 |\n| 抗拉極限 | 材料能承受的最大應力 | 試體開始發生頸縮現象 |",
-          "formula": "正應力 σ = P / A₀\n正應變 ε = ΔL / L₀\n虎克定律 σ = E × ε (E為彈性模數)\n泊松比 ν = - (橫向應變 εy / 軸向應變 εx)"
+          "formula": "$$\\sigma = \\frac{P}{A_0}, \\quad \\epsilon = \\frac{\\Delta L}{L_0}, \\quad \\sigma = E \\cdot \\epsilon, \\quad \\nu = -\\frac{\\epsilon_{\\text{transverse}}}{\\epsilon_{\\text{axial}}}$$"
         },
         {
           "heading": "比重與吸水率試驗步驟 (<span className=\"text-indigo-600 font-bold\">CNS</span> 486 / <span className=\"text-indigo-600 font-bold\">ASTM</span> C127)",
@@ -330,7 +330,7 @@ export const materialsData: SubjectData = {
         {
           "heading": "粒料含水狀態與表面含水率修正公式 (Moisture States & Water Correction)",
           "body": "在混凝土與瀝青配比設計中，粒料包含**絕乾** (OD)、空氣乾燥 (AD)、**面乾內飽和** (**SSD**) 及濕潤 (Wet) 四種含水狀態。計算拌和水時，必須根據表面含水率 (Surface Moisture) 調整實際加水量。",
-          "formula": "總含水率 p (%) = [ (W_wet - W_od) / W_od ] × 100%\n吸水率 Abs (%) = [ (W_ssd - W_od) / W_od ] × 100%\n表面含水率 SM (%) = 總含水率 p - <span className=\"text-rose-600 font-bold\">吸水率</span> Abs = [ (W_wet - W_ssd) / W_ssd ] × 100%\n拌和水調整量：當 SM > 0 時應扣減加水量；當 SM < 0 (空氣乾燥) 時應增加加水量。",
+          "formula": "$$p = \\frac{W_{\\text{wet}} - W_{\\text{od}}}{W_{\\text{od}}} \\times 100\\%, \\quad A_{\\text{abs}} = \\frac{W_{\\text{ssd}} - W_{\\text{od}}}{W_{\\text{od}}} \\times 100\\%, \\quad \\text{SM} = p - A_{\\text{abs}}$$\\n$$\\text{拌和水調整量：當 } \\text{SM} > 0 \\text{ 時扣減水量；當 } \\text{SM} < 0 \\text{ 時補足水量}$$",
           "table": {
             "headers": [
               "含水狀態",
@@ -1446,7 +1446,7 @@ export const materialsData: SubjectData = {
         {
           "heading": "水灰比理論 (Abrams' Law) 與耐久性",
           "body": "<span className=\"text-indigo-600 font-bold\">亞伯拉罕法則</span> (Abrams' Law) 指出，在**完全密實**的條件下，混凝土強度僅由水膠比 (W/C 或 W/B) 決定。水灰比越低，毛細孔隙率越低，抗壓強度越高。",
-          "formula": "fc' = A / (B^(W/C))\nACI 規範：一般結構 W/C ≤ 0.60；受凍融或防蝕要求 W/C ≤ 0.45"
+          "formula": "$$f_c' = \\frac{A}{B^{\\text{W/C}}}, \\quad \\text{一般結構: } \\text{W/C} \\le 0.60, \\quad \\text{耐久抗凍防蝕: } \\text{W/C} \\le 0.45$$"
         },
         {
           "heading": "<span className=\"text-indigo-600 font-bold\">絕對體積法</span> (Absolute Volume Method) 配比設計步驟 (ACI 211.1)",
@@ -1877,7 +1877,7 @@ export const materialsData: SubjectData = {
         {
           "heading": "<span className=\"text-rose-600 font-bold\">含水率</span> (Moisture Content) 與纖維飽和點 (<span className=\"text-rose-600 font-bold\">FSP</span>)",
           "body": "木材水分分為細胞腔內的**自由水**與細胞壁內的**結合水**。**自由水**排空而**結合水**飽和時，稱為纖維飽和點 (<span className=\"text-rose-600 font-bold\">FSP</span>，約 25%~30%)。",
-          "formula": "w = [(W - Wd) / Wd] × 100%\nw > <span className=\"text-rose-600 font-bold\">FSP</span>：水分增減不影響強度與體積\nw < <span className=\"text-rose-600 font-bold\">FSP</span>：**結合水**蒸發，含水率每降 1%，強度提升且發生乾縮"
+          "formula": "$$\\omega = \\frac{W - W_d}{W_d} \\times 100\\%, \\quad \\text{FSP} \\approx 28\\% \\sim 30\\%$$\\n$$\\omega > \\text{FSP}: \\text{自由水增減不影響強度體積；} \\omega < \\text{FSP}: \\text{結合水散失引起乾縮與強度上升}$$"
         },
         {
           "heading": "木材之**異向性**與濕脹乾縮",
@@ -2565,7 +2565,7 @@ export const materialsData: SubjectData = {
         {
           "heading": "綠色低碳混凝土：飛灰與水淬高爐石粉 (PoZZolanic Materials)",
           "body": "飛灰 (<span className=\"text-indigo-600 font-bold\">CNS</span> 3036) 具圓球形微觀顆粒 (滾珠效應)，提升工作性並具波佐蘭反應；水淬高爐石粉 (<span className=\"text-indigo-600 font-bold\">CNS</span> 12549) 具潛在水硬性，提高抗氯離子與抗硫酸鹽能力。",
-          "formula": "<span className=\"text-rose-600 font-bold\">波佐蘭反應</span>：SiO₂ + Ca(OH)₂ + H₂O → C-S-H 膠體\nCO₂ 減碳量 ≈ 水泥替代重量 (kg) × 0.85 kg-CO₂/kg"
+          "formula": "$$\\text{卜作嵐二次水化反應: } Ca(OH)_2 + \\text{活性 } SiO_2 + H_2O \\longrightarrow \\text{C-S-H 凝膠}$$\\n$$\\text{CO}_2 \\text{ 減碳效益 } \\approx \\text{熟料替代量 (kg)} \\times 0.85 \\text{ kg-CO}_2/\\text{kg}$$"
         },
         {
           "heading": "再生骨材與再生粒料應用分級",
