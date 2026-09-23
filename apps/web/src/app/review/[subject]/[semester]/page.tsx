@@ -11,6 +11,7 @@ import SemesterPrintToolbar from '@/components/review/SemesterPrintToolbar';
 import SemesterTableOfContents from '@/components/review/SemesterTableOfContents';
 import SemesterWorkedExample from '@/components/review/SemesterWorkedExample';
 import SemesterChecklist from '@/components/review/SemesterChecklist';
+import SemesterDiagramView from '@/components/review/SemesterDiagramView';
 import { 
   Star, 
   AlertTriangle, 
@@ -55,7 +56,7 @@ export default async function SemesterReviewDetailPage({
   const otherSemesters = subjectMeta?.semesters ?? [];
 
   return (
-    <div className="mx-auto max-w-5xl px-4 py-6 sm:px-6 sm:py-10 space-y-10 min-h-screen">
+    <div className="mx-auto max-w-5xl px-3.5 py-5 sm:px-6 sm:py-8 space-y-6 sm:space-y-8 min-h-screen">
       {/* ── 列印專用講義封面資訊欄（紙本列印時自動出現在第一頁最上方） ── */}
       <div className="print-cover print-only" aria-hidden="true">
         <div className="print-cover-kicker">
@@ -212,19 +213,19 @@ export default async function SemesterReviewDetailPage({
           </div>
         </div>
 
-        {/* Core Themes Chips */}
-        <div className="space-y-2 pt-2">
+        {/* Core Themes Chips - Compact 2-column grid */}
+        <div className="space-y-1.5 pt-1">
           <span className="text-slate-400 font-mono text-[11px] font-bold block">
-            本學期五大必考命題主題群：
+            本學期必考命題主題群：
           </span>
-          <div className="grid gap-2">
+          <div className="grid gap-1.5 sm:grid-cols-2">
             {review.examAnalysis.coreExamThemes.map((theme, idx) => (
               <div
                 key={idx}
-                className="flex items-start gap-2 text-xs text-slate-700 dark:text-slate-300 bg-slate-50/70 dark:bg-slate-950 p-2.5 rounded-xl border border-slate-100 dark:border-slate-800/80"
+                className="flex items-start gap-1.5 text-xs text-slate-700 dark:text-slate-300 bg-slate-50/70 dark:bg-slate-950 p-2 rounded-xl border border-slate-100 dark:border-slate-800/80 leading-snug"
               >
-                <span className="size-1.5 rounded-full bg-blue-600 mt-1.5 shrink-0" />
-                <span className="leading-relaxed">{theme}</span>
+                <span className="size-1.5 rounded-full bg-blue-600 mt-1 shrink-0" />
+                <span className="text-[11px] sm:text-xs">{theme}</span>
               </div>
             ))}
           </div>
@@ -246,15 +247,15 @@ export default async function SemesterReviewDetailPage({
           <article
             key={chapter.chapterNo}
             id={`chapter-${chapter.chapterNo}`}
-            className="rounded-3xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 p-6 sm:p-8 shadow-xs space-y-6 print:border print:border-slate-400 print:p-4 print:break-inside-avoid print:shadow-none"
+            className="rounded-3xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 p-5 sm:p-7 shadow-xs space-y-5 print:border print:border-slate-400 print:p-3 print:break-inside-avoid print:shadow-none"
           >
-            {/* Chapter Header */}
-            <div className="flex flex-wrap items-center justify-between gap-2 border-b border-slate-100 dark:border-slate-800 pb-4">
+            {/* Chapter Header - Compact & Clean */}
+            <div className="flex flex-wrap items-center justify-between gap-2 border-b border-slate-100 dark:border-slate-800 pb-3">
               <div>
-                <span className="font-mono text-xs font-bold text-blue-600 dark:text-blue-400 block mb-0.5">
+                <span className="font-mono text-[11px] font-bold text-blue-600 dark:text-blue-400 block mb-0.5">
                   CHAPTER {chapter.chapterNo}
                 </span>
-                <h3 className="font-serif text-2xl font-bold text-slate-900 dark:text-white">
+                <h3 className="font-serif text-xl sm:text-2xl font-bold text-slate-900 dark:text-white">
                   第 {chapter.chapterNo} 章：{chapter.title}
                 </h3>
               </div>
@@ -266,122 +267,140 @@ export default async function SemesterReviewDetailPage({
               </div>
             </div>
 
-            {/* Core Concepts */}
-            <div className="space-y-4">
-              {chapter.coreConcepts.map((concept, cIdx) => (
-                <div
-                  key={cIdx}
-                  className="rounded-2xl border border-slate-100 dark:border-slate-800 bg-slate-50/50 dark:bg-slate-950 p-4 sm:p-5 space-y-2.5"
-                >
-                  <h4 className="font-serif font-bold text-base text-slate-900 dark:text-white flex items-center gap-2">
-                    <span className="flex size-5 items-center justify-center rounded-md bg-blue-100 dark:bg-blue-900/60 text-blue-700 dark:text-blue-300 text-[10px] font-mono">
-                      {cIdx + 1}
-                    </span>
-                    {concept.heading}
-                  </h4>
-                  <p className="text-xs sm:text-sm text-slate-700 dark:text-slate-300 leading-relaxed font-sans">
-                    {concept.explanation}
-                  </p>
-                  <ul className="space-y-1.5 pt-1">
-                    {concept.keyPoints.map((point, pIdx) => (
-                      <li key={pIdx} className="flex items-start gap-2 text-xs text-slate-600 dark:text-slate-400">
-                        <span className="text-blue-600 dark:text-blue-400 font-bold shrink-0">•</span>
-                        <span className="leading-relaxed">{point}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              ))}
-            </div>
-
-            {/* Formula Card */}
-            {chapter.formulaCard && (
-              <div className="rounded-2xl bg-amber-50/70 dark:bg-amber-950/30 border border-amber-200/80 dark:border-amber-900/50 p-4 sm:p-5 space-y-3 print:bg-white print:border-black">
-                <div className="flex items-center justify-between">
-                  <span className="text-xs font-mono font-bold uppercase tracking-wider text-amber-900 dark:text-amber-300">
-                    ⚡ 核心公式速查卡 (Formula Card)
-                  </span>
-                  <span className="text-[10px] font-mono text-amber-700 dark:text-amber-400">
-                    標準單位：[{chapter.formulaCard.unit}]
-                  </span>
-                </div>
-
-                <div className="rounded-xl bg-white dark:bg-slate-900 p-3.5 border border-amber-200 dark:border-amber-900/40 text-center overflow-x-auto print:border-none print:p-1">
-                  <code className="font-mono text-sm sm:text-base font-bold text-amber-950 dark:text-amber-200">
-                    {chapter.formulaCard.formula}
-                  </code>
-                </div>
-
-                <div className="space-y-1 text-xs">
-                  <p className="text-amber-900 dark:text-amber-200">
-                    <strong>物理意涵：</strong>{chapter.formulaCard.meaning}
-                  </p>
-                  <p className="text-rose-800 dark:text-rose-300 text-[11px]">
-                    <strong>⚠️ 計算盲點與警告：</strong>{chapter.formulaCard.cautions}
-                  </p>
-                </div>
-              </div>
-            )}
-
-            {/* Structured Comparison Tables */}
-            {chapter.tables && chapter.tables.length > 0 && (
-              <div className="space-y-4">
-                {chapter.tables.map((table, tIdx) => (
-                  <div key={tIdx} className="space-y-2">
-                    <div className="flex items-center gap-2">
-                      <span className="size-1.5 rounded-full bg-blue-600" />
-                      <h4 className="font-serif font-bold text-xs sm:text-sm text-slate-800 dark:text-slate-200">
-                        {table.title}
+            {/* Compact Two-Column Responsive Grid (Left: Concepts & Tables, Right: Visual Diagram & Formula Card) */}
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-5 items-start">
+              {/* Left Column: Core Concepts & Structured Tables */}
+              <div className={`space-y-4 ${chapter.diagram || chapter.formulaCard ? 'lg:col-span-7 xl:col-span-8' : 'lg:col-span-12'}`}>
+                {/* Core Concepts */}
+                <div className="space-y-3">
+                  {chapter.coreConcepts.map((concept, cIdx) => (
+                    <div
+                      key={cIdx}
+                      className="rounded-2xl border border-slate-100 dark:border-slate-800 bg-slate-50/50 dark:bg-slate-950 p-3.5 sm:p-4 space-y-2"
+                    >
+                      <h4 className="font-serif font-bold text-sm sm:text-base text-slate-900 dark:text-white flex items-center gap-2">
+                        <span className="flex size-5 items-center justify-center rounded-md bg-blue-100 dark:bg-blue-900/60 text-blue-700 dark:text-blue-300 text-[10px] font-mono shrink-0">
+                          {cIdx + 1}
+                        </span>
+                        {concept.heading}
                       </h4>
+                      <p className="text-xs sm:text-sm text-slate-700 dark:text-slate-300 leading-relaxed font-sans">
+                        {concept.explanation}
+                      </p>
+                      <ul className="space-y-1 pt-0.5">
+                        {concept.keyPoints.map((point, pIdx) => (
+                          <li key={pIdx} className="flex items-start gap-1.5 text-xs text-slate-600 dark:text-slate-400 leading-relaxed">
+                            <span className="text-blue-600 dark:text-blue-400 font-bold shrink-0">•</span>
+                            <span>{point}</span>
+                          </li>
+                        ))}
+                      </ul>
                     </div>
+                  ))}
+                </div>
 
-                    <div className="overflow-x-auto rounded-2xl border border-slate-200 dark:border-slate-800 print:overflow-visible">
-                      <table className="w-full text-left text-xs">
-                        <thead className="bg-slate-100 dark:bg-slate-800/80 font-mono text-slate-700 dark:text-slate-300 border-b border-slate-200 dark:border-slate-700">
-                          <tr>
-                            {table.headers.map((h, hIdx) => (
-                              <th key={hIdx} className="px-3.5 py-2.5 font-bold whitespace-nowrap">
-                                {h}
-                              </th>
-                            ))}
-                          </tr>
-                        </thead>
-                        <tbody className="divide-y divide-slate-100 dark:divide-slate-800 bg-white dark:bg-slate-900">
-                          {table.rows.map((row, rIdx) => (
-                            <tr key={rIdx} className="hover:bg-slate-50/50 dark:hover:bg-slate-800/30">
-                              {row.map((cell, cIdx) => (
-                                <td
-                                  key={cIdx}
-                                  className={`px-3.5 py-2.5 text-slate-700 dark:text-slate-300 leading-relaxed ${
-                                    cIdx === 0 ? 'font-bold text-slate-900 dark:text-white' : ''
-                                  }`}
-                                >
-                                  {cell}
-                                </td>
+                {/* Structured Comparison Tables */}
+                {chapter.tables && chapter.tables.length > 0 && (
+                  <div className="space-y-3 pt-1">
+                    {chapter.tables.map((table, tIdx) => (
+                      <div key={tIdx} className="space-y-1.5">
+                        <div className="flex items-center gap-2">
+                          <span className="size-1.5 rounded-full bg-blue-600 shrink-0" />
+                          <h4 className="font-serif font-bold text-xs sm:text-sm text-slate-800 dark:text-slate-200">
+                            {table.title}
+                          </h4>
+                        </div>
+
+                        <div className="overflow-x-auto rounded-2xl border border-slate-200 dark:border-slate-800 print:overflow-visible shadow-2xs">
+                          <table className="w-full text-left text-xs">
+                            <thead className="bg-slate-100 dark:bg-slate-800/80 font-mono text-slate-700 dark:text-slate-300 border-b border-slate-200 dark:border-slate-700">
+                              <tr>
+                                {table.headers.map((h, hIdx) => (
+                                  <th key={hIdx} className="px-3 py-2 font-bold whitespace-nowrap text-[11px] sm:text-xs">
+                                    {h}
+                                  </th>
+                                ))}
+                              </tr>
+                            </thead>
+                            <tbody className="divide-y divide-slate-100 dark:divide-slate-800 bg-white dark:bg-slate-900">
+                              {table.rows.map((row, rIdx) => (
+                                <tr key={rIdx} className="hover:bg-slate-50/50 dark:hover:bg-slate-800/30">
+                                  {row.map((cell, cIdx) => (
+                                    <td
+                                      key={cIdx}
+                                      className={`px-3 py-2 text-slate-700 dark:text-slate-300 leading-relaxed text-[11px] sm:text-xs ${
+                                        cIdx === 0 ? 'font-bold text-slate-900 dark:text-white' : ''
+                                      }`}
+                                    >
+                                      {cell}
+                                    </td>
+                                  ))}
+                                </tr>
                               ))}
-                            </tr>
-                          ))}
-                        </tbody>
-                      </table>
-                    </div>
+                            </tbody>
+                          </table>
+                        </div>
+                      </div>
+                    ))}
                   </div>
-                ))}
+                )}
               </div>
-            )}
 
-            {/* Chapter Checklist */}
-            <div className="p-3.5 rounded-xl bg-slate-50 dark:bg-slate-800/40 border border-slate-100 dark:border-slate-800 space-y-1.5 text-xs">
-              <span className="font-mono font-bold text-slate-500 block text-[11px]">
-                章節掌握度檢定點：
-              </span>
-              <div className="grid gap-1">
-                {chapter.mustMasterChecklist.map((item, mIdx) => (
-                  <div key={mIdx} className="flex items-start gap-1.5 text-slate-600 dark:text-slate-400">
-                    <CheckCircle2 className="size-3.5 text-emerald-600 dark:text-emerald-400 shrink-0 mt-0.5" />
-                    <span>{item}</span>
-                  </div>
-                ))}
-              </div>
+              {/* Right Column: Visual Diagram, Formula Card & Must-Master Checklist */}
+              {(chapter.diagram || chapter.formulaCard || chapter.mustMasterChecklist.length > 0) && (
+                <div className="lg:col-span-5 xl:col-span-4 space-y-3.5">
+                  {/* Visual Diagram Schematic */}
+                  {chapter.diagram && (
+                    <SemesterDiagramView diagram={chapter.diagram} chapterNo={chapter.chapterNo} />
+                  )}
+
+                  {/* Formula Card */}
+                  {chapter.formulaCard && (
+                    <div className="rounded-2xl bg-amber-50/70 dark:bg-amber-950/30 border border-amber-200/80 dark:border-amber-900/50 p-3.5 sm:p-4 space-y-2.5 print:bg-white print:border-black shadow-2xs">
+                      <div className="flex items-center justify-between">
+                        <span className="text-[11px] font-mono font-bold uppercase tracking-wider text-amber-900 dark:text-amber-300">
+                          ⚡ 核心速查公式 (Formula)
+                        </span>
+                        <span className="text-[10px] font-mono text-amber-700 dark:text-amber-400">
+                          [{chapter.formulaCard.unit}]
+                        </span>
+                      </div>
+
+                      <div className="rounded-xl bg-white dark:bg-slate-900 p-2.5 border border-amber-200 dark:border-amber-900/40 text-center overflow-x-auto print:border-none print:p-1">
+                        <code className="font-mono text-xs sm:text-sm font-bold text-amber-950 dark:text-amber-200">
+                          {chapter.formulaCard.formula}
+                        </code>
+                      </div>
+
+                      <div className="space-y-1 text-[11px]">
+                        <p className="text-amber-900 dark:text-amber-200 leading-snug">
+                          <strong>意涵：</strong>{chapter.formulaCard.meaning}
+                        </p>
+                        <p className="text-rose-800 dark:text-rose-300 text-[10px] leading-snug">
+                          <strong>⚠️ 盲點：</strong>{chapter.formulaCard.cautions}
+                        </p>
+                      </div>
+                    </div>
+                  )}
+
+                  {/* Chapter Checklist */}
+                  {chapter.mustMasterChecklist && chapter.mustMasterChecklist.length > 0 && (
+                    <div className="p-3 rounded-2xl bg-slate-50 dark:bg-slate-800/40 border border-slate-100 dark:border-slate-800 space-y-1.5 text-xs shadow-2xs">
+                      <span className="font-mono font-bold text-slate-500 block text-[11px]">
+                        章節掌握度檢定點：
+                      </span>
+                      <div className="grid gap-1">
+                        {chapter.mustMasterChecklist.map((item, mIdx) => (
+                          <div key={mIdx} className="flex items-start gap-1.5 text-slate-600 dark:text-slate-400 text-[11px] leading-snug">
+                            <CheckCircle2 className="size-3 text-emerald-600 dark:text-emerald-400 shrink-0 mt-0.5" />
+                            <span>{item}</span>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  )}
+                </div>
+              )}
             </div>
           </article>
         ))}

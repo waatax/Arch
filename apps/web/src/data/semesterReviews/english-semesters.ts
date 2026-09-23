@@ -110,6 +110,26 @@ export const englishS1Review: SemesterReviewData = {
         cautions: "since 後面接的是『過去特定時間點或過去式子句』，前面主要子句 100% 搭配『現在完成式 have/has + p.p.』！",
         latex: "S + \\text{have/has} + \\text{p.p.} + \\dots + \\text{since} + S + V_{\\text{past}}"
       },
+      diagram: {
+        title: "五大英文核心時態時間軸對照圖",
+        type: "timeline",
+        caption: "過去簡單式強調過去特定點；現在完成式涵蓋過去至現在之一整段時間區間 (since/for)；現在式表達習慣與真理。",
+        asciiArt: `   ─────────────────────────────┼─────────────────────────────► 時間軸
+   [過去 Past]                 [現在 Present]              [未來 Future]
+        * 過去簡單式                 * 現在簡單式                 * 未來式
+      (yesterday, ago)            (every day, always)         (tomorrow, will)
+        V-ed                        V / V-s                     will + V
+   
+        ├─── 現在完成式 (have/has + p.p.) ───►|
+          (從過去持續到現在, since 2018 / for 5 years)
+   
+        >>> 現在進行式 (be + V-ing) <<< (此時此刻正在發生, now, Look!)`,
+        labels: [
+          { label: "現在完成式", desc: "have/has + p.p.，時間自過去延伸至今，搭配 since/for" },
+          { label: "過去簡單式", desc: "動詞過去式 V-ed，動作在過去已結束，搭配 yesterday/ago" },
+          { label: "現在簡單式", desc: "V / V-s，常態性習慣、客觀真理、科學事實" }
+        ]
+      },
       tables: [
         {
           title: "五大時態動詞形態與指標時間副詞速查表",
@@ -390,6 +410,22 @@ export const englishS2Review: SemesterReviewData = {
         cautions: "間接問句中絕對不可再出現 do, does, did 等疑問倒裝助動詞！若原問句是 does，動詞要記得加 s！",
         latex: "\\text{Direct: } \\text{Wh-} + \\text{Aux} + S + V? \\implies \\text{Indirect: } \\text{Wh-} + S + V"
       },
+      diagram: {
+        title: "間接問句 (名詞子句) 絕不倒裝結構圖",
+        type: "flowchart",
+        caption: "直接問句嵌入主要子句後，必須恢復為直述句正常語序：疑問詞 (Wh-) + 主詞 (S) + 動詞 (V)，不可出現助動詞 do/does/did 倒裝！",
+        asciiArt: `    【直接問句 Direct】               【間接問句 Indirect (嵌入句)】
+      Where does he live?  ───┐          I don't know where he lives.
+      ▲      ▲   ▲  ▲         │          ──────────── ───── ── ─────
+      Wh-   助動 主  動       │           主要子句    Wh-  S    V
+            (倒裝助動詞)      └──► 轉化 ───►  [恢復直述語序：Wh + S + V]
+                                             ❌ 不可寫成 ...where does he live.`,
+        labels: [
+          { label: "正常語序", desc: "疑問詞 + 主詞 + 動詞 (Wh- + S + V)，直述句骨幹" },
+          { label: "剔除倒裝", desc: "do, does, did 助動詞必須完全剔除，動詞依主詞人稱變化" },
+          { label: "是否子句", desc: "若原句為 Yes/No 問句，則以 whether / if (是否) 引導" }
+        ]
+      },
       tables: [
         {
           title: "直接問句轉換為間接問句語序對照表",
@@ -565,6 +601,26 @@ export const englishS3Review: SemesterReviewData = {
         unit: "關係詞",
         cautions: "看到先行詞是地方，不可盲目選 where！若後方子句缺主詞或受詞，依然必須選 which / that！只有在後方子句『完整不缺主受詞』時才能選 where！",
         latex: ", + \\text{that } (\\times); \\quad \\text{Prep} + \\text{that } (\\times); \\quad \\text{where} = \\text{in which}"
+      },
+      diagram: {
+        title: "關係代名詞 that 兩大黃金禁忌決策樹",
+        type: "decision-tree",
+        caption: "先行詞後有逗點或介系詞時，絕對不可使用 that！非限定逗點後用 who/which，介系詞後用 whom/which。",
+        asciiArt: `                     先行詞 (人或事物)
+                             │
+            ┌────────────────┴────────────────┐
+     [前方有逗點 , ]                   [前方有介系詞 Prep]
+            │                                 │
+     ❌ 禁忌：不可用 that              ❌ 禁忌：不可用 that
+            │                                 │
+     ┌──────┴──────┐                   ┌──────┴──────┐
+     人 → 用 who   物 → 用 which       人 → Prep+whom  物 → Prep+which
+   (非限定補充說明)                   (如 with whom, in which)`,
+        labels: [
+          { label: "逗點後禁 that", desc: "非限定子句 (有逗點) 只能用 who (人) 或 which (物)" },
+          { label: "介系詞後禁 that", desc: "介系詞後只能用受格 whom (人) 或 which (物)" },
+          { label: "受格省略", desc: "關代在子句中作及物動詞之受詞且無介系詞時，可直接省略" }
+        ]
       },
       tables: [
         {
@@ -896,6 +952,27 @@ export const englishS4Review: SemesterReviewData = {
         unit: "語氣",
         cautions: "與過去事實相反時，主要子句一定要有『have + p.p.』！不可只寫 would + 原形！",
         latex: "\\text{If } S + \\text{had } p.p. \\iff \\text{Had } S + p.p."
+      },
+      diagram: {
+        title: "假設語氣與事實相反時態倒流模型",
+        type: "timeline",
+        caption: "假設語氣文法原則為『時態倒退一步』：與現在事實相反退至過去式 (were/would+V)；與過去事實相反退至過去完成式 (had+p.p./would have+p.p.)。",
+        asciiArt: `    【事實狀態 (Fact)】                      【假設語氣 (Subjunctive)】
+    
+    [現在事實 Present Fact]      倒退一步    [與現在相反]
+    I am not a rich man.       ─────────►   If I WERE rich,
+    I cannot buy this tower.                 I WOULD BUY this tower.
+                                             (If S + 過去式, S + would + V)
+    
+    [過去事實 Past Fact]         倒退一步    [與過去相反]
+    He did not study hard.     ─────────►   If he HAD STUDIED hard,
+    He failed the exam.                      he WOULD HAVE PASSED.
+                                             (If S + had p.p., S + would have p.p.)`,
+        labels: [
+          { label: "與現在相反", desc: "If 子句動詞用過去式 (be動詞一律用 were)，主要子句用 would/could + 原形V" },
+          { label: "與過去相反", desc: "If 子句用 had + p.p.，主要子句用 would/could + have + p.p." },
+          { label: "if 省略倒裝", desc: "省略 If 時將 Were 或 Had 提前至主詞前：Had I known... / Were I..." }
+        ]
       },
       tables: [
         {

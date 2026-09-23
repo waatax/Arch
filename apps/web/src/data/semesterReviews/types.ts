@@ -13,6 +13,15 @@ export interface SemesterFormulaCard {
   latex?: string;
 }
 
+export interface SemesterDiagram {
+  title: string;
+  type: 'fbd' | 'stress' | 'chart' | 'flowchart' | 'decision-tree' | 'projection' | 'geometry' | 'matrix' | 'section' | 'cross-section' | 'component' | 'timeline' | 'mindmap';
+  caption: string;
+  svgContent?: string; // 輕量向量圖或標註
+  asciiArt?: string; // 緊湊精確的幾何/受力/架構圖示
+  labels?: { label: string; desc: string }[];
+}
+
 export interface SemesterChapterSummary {
   chapterNo: number;
   title: string;
@@ -23,6 +32,7 @@ export interface SemesterChapterSummary {
     explanation: string;
     keyPoints: string[];
   }[];
+  diagram?: SemesterDiagram;
   formulaCard?: SemesterFormulaCard;
   tables?: SemesterTableData[];
   mustMasterChecklist: string[];

@@ -63,6 +63,25 @@ export const mechanicsS1Review: SemesterReviewData = {
         cautions: "θ 角度必須辨識為相對於水平軸 (x 軸) 或鉛直軸 (y 軸)，切勿機械化盲目套用 cos 與 sin。",
         latex: "R_x = \\sum F_x, \\quad R_y = \\sum F_y, \\quad R = \\sqrt{R_x^2 + R_y^2}, \\quad \\theta = \\tan^{-1}\\left(\\frac{R_y}{R_x}\\right)"
       },
+      diagram: {
+        title: "平面向量正交分解與方向餘弦幾何圖解",
+        type: "geometry",
+        caption: "任意力向量 F 分解為水平分量 Fx 與垂直分量 Fy，合力 R 與夾角 θ 滿足勾股定理與三角正切關係。",
+        asciiArt: `       y ▲
+         │        /▲ F (向量力)
+         │       / │
+      Fy ┼──────/──┤
+         │     /θ  │
+         │    /────┴──────► x
+         └─────────┼──────
+                  Fx
+   關係式：Fx = F·cosθ,  Fy = F·sinθ,  F = √(Fx² + Fy²)`,
+        labels: [
+          { label: "Fx", desc: "水平正交分量（F 乘以鄰邊夾角餘弦 cosθ）" },
+          { label: "Fy", desc: "鉛直正交分量（F 乘以對邊夾角正弦 sinθ）" },
+          { label: "θ", desc: "力作用線與正 x 軸之夾角" }
+        ]
+      },
       tables: [
         {
           title: "土木與力學常用物理量單位與因次對照表",
@@ -110,6 +129,24 @@ export const mechanicsS1Review: SemesterReviewData = {
         unit: "kN 或 N",
         cautions: "拉密定理僅適用於『三力共點平衡』；若有四力以上或為非共點力系，切勿誤套拉密定理！",
         latex: "\\sum F_x = 0, \\quad \\sum F_y = 0 \\implies \\frac{P}{\\sin\\alpha} = \\frac{Q}{\\sin\\beta} = \\frac{R}{\\sin\\gamma}"
+      },
+      diagram: {
+        title: "拉密定理 (Lami's Theorem) 三共點力平衡圖解",
+        type: "fbd",
+        caption: "三力共點平衡時，各力大小與其對向兩力夾角之正弦成正比，合力多邊形必封閉首尾相接。",
+        asciiArt: `           ▲ FA
+            \\       /
+        γ    \\     /   β
+              \\ o /
+       ─────────*─────────
+                 │
+             α   │
+                 ▼ FB
+   公式：FA / sinα = FB / sinβ = FC / sinγ (α + β + γ = 360°)`,
+        labels: [
+          { label: "三力平衡", desc: "僅適用於 3 個共點力平衡體系" },
+          { label: "正弦對角", desc: "力 FA 所對應的角 α 為 FB 與 FC 之夾角" }
+        ]
       },
       tables: [
         {
@@ -253,6 +290,24 @@ export const mechanicsS1Review: SemesterReviewData = {
         unit: "力為 kN 或 N；摩擦係數 μs 無因次 (純量)",
         cautions: "正向力 N 不一定等於物體重量 W！若外力有傾斜拉力或推力，必須由 ∑Fy = 0 重新求解正確的正向力 N。",
         latex: "f_s \\le \\mu_s N; \\quad \\phi_s = \\tan^{-1}(\\mu_s); \\quad \\text{滑動條件: } P \\ge f_{s,\\max}"
+      },
+      diagram: {
+        title: "物體受水平拉力臨界滑動與摩擦角圖解",
+        type: "fbd",
+        caption: "接觸面全反力 R 由法向支承力 N 與最大切向靜摩擦力 fs,max 合成，夾角 φs 滿足 tanφs = μs。",
+        asciiArt: `               N ▲      ▲ R (全反力)
+                 │     /
+                 │ φs /  
+           ──────┴───/─────
+          ◄──────[ 物體 W ]──────► P (拉力)
+          fs_max │
+                 ▼ W (重力)
+   臨界平衡：P = fs_max = μs·N,  tanφs = μs,  R = √(N² + fs_max²)`,
+        labels: [
+          { label: "N", desc: "接觸面正壓力（∑Fy=0 垂直平衡反力）" },
+          { label: "fs_max", desc: "最大極限靜摩擦力（阻礙滑動之極限阻力）" },
+          { label: "φs", desc: "靜摩擦角，tanφs = μs，斜面自鎖角" }
+        ]
       },
       tables: [
         {

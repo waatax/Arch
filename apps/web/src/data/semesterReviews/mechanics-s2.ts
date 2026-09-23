@@ -112,6 +112,22 @@ export const mechanicsS2Review: SemesterReviewData = {
         cautions: "截面法切開桁架時，切線所穿過之未知桿件數目以『不超過 3 根』為原則，否則平衡方程式不足以求解。",
         latex: "m + r = 2j \\text{ (靜定)}; \\quad m + r > 2j \\text{ (靜不定)}; \\quad m + r < 2j \\text{ (不穩定)}"
       },
+      diagram: {
+        title: "桁架零力桿兩大幾何判讀模型",
+        type: "fbd",
+        caption: "無外力節點中，兩桿非共線皆為零力桿；三桿兩共線時，不共線的第三桿必為零力桿。",
+        asciiArt: `   【模型一：V 形無載二桿】         【模型二：T 形無載三桿】
+          /                           │ (F3 = 0)
+         /                            │ 必為零力桿
+        * (無外載)                     * (無外載)
+         \\                       ──────┴──────
+          \\                       F1 (共線)   F2 (共線)
+      F1 = 0, F2 = 0              F1 = F2,  F3 = 0`,
+        labels: [
+          { label: "V 形二桿", desc: "兩桿成任意角，節點無外力時兩桿軸力必為 0" },
+          { label: "T 形三桿", desc: "兩桿共線成直線，不共線的第三桿必為 0" }
+        ]
+      },
       tables: [
         {
           title: "零力桿判讀口訣與幾何情境對照表",
@@ -161,6 +177,27 @@ export const mechanicsS2Review: SemesterReviewData = {
         unit: "剪力 V 為 kN；彎矩 M 為 kN·m",
         cautions: "利用面積法累加彎矩時，正剪力面積代表彎矩累加增加 (+)，負剪力面積代表彎矩累減減少 (-)！",
         latex: "M_{\\max} \\implies V = \\frac{dM}{dx} = 0; \\quad M_{\\text{mid}} = \\frac{w L^2}{8} \\text{ (簡支均布)}"
+      },
+      diagram: {
+        title: "簡支梁受均布載重之 SFD 與 BMD 對應圖",
+        type: "chart",
+        caption: "載重為零階常數，剪力為一階斜直線，彎矩為二階拋物線；剪力 V=0 處彎矩產生最大極值 M_max = wL²/8。",
+        asciiArt: `   [載重圖]  w (均布載重) ↓↓↓↓↓↓↓↓↓↓↓↓↓
+            ▲ A ───────────────────── ▲ B  (跨度 L)
+            Ra = wL/2                Rb = wL/2
+   [SFD 剪力] +wL/2 ▲
+                    │ \\   (一階斜直線, 斜率 = -w)
+                    ┼───\\──────────────►
+                    │    \\  V=0 (中央)
+                    │     \\ ▼ -wL/2
+   [BMD 彎矩]       │     /▲\\  M_max = wL²/8 (二次拋物線)
+                    │    / │ \\
+                    └───/──┴──\\────────► x (跨度中央極值)`,
+        labels: [
+          { label: "V=0 點", desc: "剪力為零截面，彎矩必達最大值 M_max" },
+          { label: "M_max", desc: "均布載重簡支梁中央最大彎矩 = wL²/8" },
+          { label: "面積差", desc: "左半剪力三角形面積 = (1/2)(L/2)(wL/2) = wL²/8" }
+        ]
       },
       tables: [
         {
@@ -212,6 +249,24 @@ export const mechanicsS2Review: SemesterReviewData = {
         unit: "P 為 N；L 為 mm；E 為 MPa (N/mm²)；A 為 mm²；ΔL 為 mm；σ 為 MPa",
         cautions: "單位必須全部統一！將力化為 N、長度化為 mm，則應力結果即自動為 MPa (N/mm²)。絕不可用 m 與 mm 混算！",
         latex: "\\Delta L = \\sum_{i} \\frac{P_i L_i}{E_i A_i}; \\quad \\sigma_{\\max} = \\frac{M}{Z} = \\frac{6 M}{b h^2} \\text{ (矩形)}"
+      },
+      diagram: {
+        title: "梁純彎曲橫截面正應力分佈圖",
+        type: "stress",
+        caption: "中性軸 (NA) 處應力為零，上下兩側應力隨距離 y 呈線性分佈；頂部受壓、底部受拉，極值 σ_max = M/Z。",
+        asciiArt: `    梁橫截面 (寬 b, 高 h)             彎曲正應力分佈 (σ = My/I)
+         ┌────────┐               -σ_max (壓應力) ◄────┐
+         │        │                 ───────►           │ 頂部受壓
+         │        │                   ───►             │ (Compression)
+    ─────┼────────┼───── 中性軸 (NA) ──┼───────────────┤ (σ = 0)
+         │        │                   ◄───             │ 底部受拉
+         │        │                 ◄───────           │ (Tension)
+         └────────┘               +σ_max (拉應力) ─────┘`,
+        labels: [
+          { label: "中性軸 NA", desc: "通過斷面形心，彎曲正應力 σ = 0，無伸長亦無縮短" },
+          { label: "最大壓應力", desc: "頂部最外緣 y = +h/2 處，σ = -M/(I/y) = -M/Z" },
+          { label: "最大拉應力", desc: "底部最外緣 y = -h/2 處，σ = +M/(I/y) = +M/Z" }
+        ]
       },
       tables: [
         {
@@ -265,6 +320,26 @@ export const mechanicsS2Review: SemesterReviewData = {
         unit: "應力單位為 MPa 或 N/mm²",
         cautions: "莫耳圓上轉角為『2θ』！若莫耳圓上旋轉 90°，實體微元實際旋轉角度僅為 45°！切勿直接代入 θ！",
         latex: "C = \\frac{\\sigma_x + \\sigma_y}{2}, \\quad R = \\sqrt{\\left(\\frac{\\sigma_x - \\sigma_y}{2}\\right)^2 + \\tau_{xy}^2}, \\quad \\sigma_{1,2} = C \\pm R"
+      },
+      diagram: {
+        title: "平面應力狀態莫耳圓圖解模型",
+        type: "chart",
+        caption: "橫軸為正應力 σ，縱軸為剪應力 τ；圓心 C=((σx+σy)/2, 0)，半徑 R=τ_max，圓心角為實體傾角之兩倍 (2θ)。",
+        asciiArt: `                     ▲ τ (剪應力)
+                     │       Y(σy, τxy)
+                     │       ┌──*──┐
+                     │     /   │     \\
+                     │   /     │ R     \\
+          ───────────┼──(──────C───────)───*───────► σ (正應力)
+                     │   \\   圓心      /   σ₁ (最大主應力)
+                     │     \\   │     /   (τ = 0)
+                     │       *───┘
+                     │    X(σx, -τxy)`,
+        labels: [
+          { label: "圓心 C", desc: "橫坐標 C = (σx + σy)/2，即平均正應力 σ_avg" },
+          { label: "半徑 R", desc: "R = √[((σx-σy)/2)² + τxy²] = 最大剪應力 τ_max" },
+          { label: "主應力點", desc: "圓與橫軸兩交點：σ₁ = C + R (最大), σ₂ = C - R (最小)" }
+        ]
       },
       tables: [
         {

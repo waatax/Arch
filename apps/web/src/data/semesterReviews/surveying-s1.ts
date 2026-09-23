@@ -114,6 +114,28 @@ export const surveyingS1Review: SemesterReviewData = {
         cautions: "豎軸傾斜誤差絕對無法靠正倒鏡平均消除！整平氣泡跑掉必須立即重新調平！",
         latex: "\\beta = \\frac{1}{2}\\left[ (\\text{FL}_B - \\text{FL}_A) + (\\text{FR}_B - \\text{FR}_A) \\right]; \\quad \\text{豎軸傾斜不可消除}"
       },
+      diagram: {
+        title: "經緯儀三大軸線幾何正交關係圖",
+        type: "projection",
+        caption: "豎軸 V-V (鉛直)、橫軸 H-H (水平)、視準軸 Z-Z (視線) 互相垂直；正倒鏡平均可消 c 角與 i 角，但無法消豎軸傾斜。",
+        asciiArt: `              ▲ 豎軸 (Vertical Axis, V-V) 鉛直線
+              │
+              │  橫軸 (Horizontal Axis, H-H)
+        ◄─────┼─────► 水平旋轉軸
+             /│\\
+            / │ \\
+           /  │  \\ 視準軸 (Collimation Axis, Z-Z)
+          ▼   │   ▼ 望遠鏡視線
+       正交條件：
+       1. 照準儀水準管軸 ⊥ 豎軸 V-V
+       2. 橫軸 H-H ⊥ 豎軸 V-V (消除橫軸誤差 i)
+       3. 視準軸 Z-Z ⊥ 橫軸 H-H (消除視準差 c)`,
+        labels: [
+          { label: "豎軸 V-V", desc: "儀器鉛直旋轉軸，整平不良導致傾斜 (v角) 正倒鏡無法消除" },
+          { label: "橫軸 H-H", desc: "望遠鏡俯仰旋轉軸，不垂直豎軸為 i 角，正倒鏡可完全消除" },
+          { label: "視準軸 Z-Z", desc: "十字絲中心與物鏡光心連線，不垂直橫軸為 c 角，正倒鏡可消除" }
+        ]
+      },
       tables: [
         {
           title: "經緯儀主要儀器誤差與正倒鏡觀測消除效益表",
@@ -167,6 +189,26 @@ export const surveyingS1Review: SemesterReviewData = {
         cautions: "計算高程表時：後視讀數永遠用加的 (+BS)，前視讀數永遠用減的 (-FS)！檢查算式：∑BS - ∑FS = 終點高程 - 起點高程！",
         latex: "\\sum \\text{BS} - \\sum \\text{FS} = \\text{Elev}_{\\text{end}} - \\text{Elev}_{\\text{start}} \\quad (\\text{水準算術檢核})"
       },
+      diagram: {
+        title: "水準測量前後等距完全消差幾何模型",
+        type: "geometry",
+        caption: "當後視距 S_BS = 前視距 S_FS 時，地球曲率、大氣折光與視準軸傾斜 (i 角) 產生的誤差量完全相等，於 (BS - FS) 算式中精確對稱抵消！",
+        asciiArt: `     [後視點 A]           [水準儀測站]           [前視點 B]
+      標尺 A 讀數          水準儀 (高程 HI)       標尺 B 讀數
+         │                     ▲                     │
+     ----┼ - - - - - - - - - - ┼ - - - - - - - - - - ┼---- 水平視線
+         │ \\  +e (i角偏差)    │    +e (i角偏差)   / │
+         │   \\ ───────────────┼─────────────── /   │ 傾斜視準軸
+         │    \\               │               /    │
+        (A)   ◄──── S_BS ────►│◄──── S_FS ────►   (B)
+        ─────── (後視距) ──────┴────── (前視距) ───────
+             條件：S_BS = S_FS  ⇒  Δh = (BS + e) - (FS + e) = BS - FS`,
+        labels: [
+          { label: "等距原則", desc: "S_BS = S_FS，前後視距保持相等" },
+          { label: "消 i 角誤差", desc: "視準軸傾斜量 e = S · tan(i)，相減時 (+e) - (+e) = 0" },
+          { label: "消曲率與折光", desc: "球氣差 Δh_CR = 0.0675 · K²，前後等距時完全抵消" }
+        ]
+      },
       tables: [
         {
           title: "水準測量標準外業記錄簿計算示範表",
@@ -217,6 +259,29 @@ export const surveyingS1Review: SemesterReviewData = {
         unit: "讀數與距離為 m；i 角為弧度 (rad) 或秒 (\")",
         cautions: "中央置儀時算出的高差 Δh = a₁ - b₁ 是『真金不怕火煉的絕對真實高差』！任何 i 角誤差都在此步驟被前後等距所殺死！",
         latex: "i = \\frac{(a_2 - a_1) - (b_2 - b_1)}{D} \\text{ (rad)}"
+      },
+      diagram: {
+        title: "釘樁法 (Peg Test) 兩測站檢校 i 角幾何圖",
+        type: "geometry",
+        caption: "測站 S1 置中等距測得無誤差之真高差 Δh；測站 S2 置於端點近測 B、遠測 A，反求 A 尺無誤差正確讀數 a₂_corr = b₂ + Δh。",
+        asciiArt: `  【第一次：S1 置於中點】
+       標尺 A              水準儀 S1              標尺 B
+         │                     ▲                     │
+         ├─────────────────────┼─────────────────────┤
+        (A)   ◄───── 25m ─────►│◄───── 25m ─────►   (B)
+         等距消差：真實高差 Δh_true = a₁ - b₁
+
+  【第二次：S2 置於近端】
+       標尺 A                               水準儀 S2 標尺 B
+         │                                     ▲    │
+         ├─── ─── ─── ─── ─── ─── ─── ─── ─── ─┼────┤
+        (A)   ◄────────────── 50m ────────────►│ 2m (B)
+         遠端 A 尺正確讀數 a₂_corr = b₂ + Δh_true (旋轉十字絲對準之)`,
+        labels: [
+          { label: "測站 S1 (中點)", desc: "置於 AB 正中央等距處，測得真金不怕火煉的真高差 Δh" },
+          { label: "測站 S2 (端點)", desc: "移至靠近 B 尺 (約 2~3m)，使距離不對稱，暴露 i 角偏差" },
+          { label: "十字絲校正", desc: "調整十字絲校正螺絲，使遠端 A 尺讀數由 a₂ 強制轉到 a₂_corr" }
+        ]
       },
       tables: [
         {

@@ -104,6 +104,25 @@ export const mathCS1Review: SemesterReviewData = {
         cautions: "求切線時，若點在圓上，過該點僅有 1 條切線；若點在圓外，過該點必有 2 條切線（若只算出 1 個斜率 m，另一條必為鉛直切線 x = x₀）！",
         latex: "x x_0 + y y_0 + d\\frac{x+x_0}{2} + e\\frac{y+y_0}{2} + f = 0 \\text{ (圓上切線)}"
       },
+      diagram: {
+        title: "直線與圓三大位置關係幾何圖",
+        type: "geometry",
+        caption: "以圓心至直線距離 d 與半徑 r 之大小關係秒殺：d < r (割線交兩點), d = r (切線交一點), d > r (相離不相交)。",
+        asciiArt: `   【相割 (d < r)】        【相切 (d = r)】        【相離 (d > r)】
+        交於兩點 A, B            切於一點 P              無交點
+          ┌─────┐                 ┌─────┐                 ┌─────┐
+       ───┼─ * ─┼─── L         ───┴──*──┴─── L         ───────── L
+         /│  O  │\\               /   O   \\               /   O   \\
+        ( │  │  │ )             (    │    )             (    │    )
+         \\│  ▼  │/               \\   ▼   /               \\   ▼   /
+          └──d──┘                 └──d=r┘                 └──d>r┘
+        弦長 2√(r²-d²)          切線垂直半徑 OP         最短距 = d - r`,
+        labels: [
+          { label: "相割 (d < r)", desc: "直線穿過圓內部交於兩點，弦長 = 2 · √(r² - d²)" },
+          { label: "相切 (d = r)", desc: "圓心至直線距離 d 等於半徑 r，切線斜率代入求唯一解" },
+          { label: "相離 (d > r)", desc: "圓與直線完全分離，圓上一點到直線之最短距離為 d - r" }
+        ]
+      },
       tables: [
         {
           title: "圓與直線幾何位置判別表",
@@ -293,6 +312,25 @@ export const mathCS2Review: SemesterReviewData = {
         unit: "純量",
         cautions: "內積的結果是一個『純量 (數字)』，不是向量！兩個向量相乘不可寫成外積符號，純量結果必為數字！",
         latex: "(a^2 + b^2)(x^2 + y^2) \\ge (a x + b y)^2"
+      },
+      diagram: {
+        title: "平面向量內積與夾角幾何示意圖",
+        type: "geometry",
+        caption: "u · v = |u||v|cosθ；θ < 90° 為正，θ = 90° 內積為 0 (互相垂直)，θ > 90° 為負。",
+        asciiArt: `   【銳角：u·v > 0】       【直角垂直：u·v = 0】       【鈍角：u·v < 0】
+           v                       v                           v
+          /                       │                           /
+         / θ < 90°                │ θ = 90°                  / θ > 90°
+        *───────► u             *───────► u         u ◄──────*
+        cosθ > 0                cosθ = 0 (垂直充要)         cosθ < 0
+        
+   【垂直核心定理】：u ⊥ v  ⇔  u₁v₁ + u₂v₂ = 0
+   【柯西不等式】：(u₁² + u₂²)(v₁² + v₂²) ≥ (u₁v₁ + u₂v₂)²`,
+        labels: [
+          { label: "垂直判定", desc: "兩向量互相垂直 ⇔ 內積為零 u · v = u₁v₁ + u₂v₂ = 0" },
+          { label: "夾角公式", desc: "cosθ = (u · v) / (|u||v|)，決定銳角、直角或鈍角" },
+          { label: "柯西極值", desc: "平行時等號成立：u₁/v₁ = u₂/v₂，用於求解二元極值" }
+        ]
       },
       tables: [
         {
@@ -529,6 +567,29 @@ export const mathCS3Review: SemesterReviewData = {
         unit: "坐標值與面積平方單位",
         cautions: "外積第二分量為 z₁x₂ - z₂x₁（若寫成 x₁z₂ - x₂z₁ 必須加負號）！外積結果為『向量』，內積結果為『純量數值』！",
         latex: "|\\vec{u} \\times \\vec{v}| = |\\vec{u}||\\vec{v}|\\sin\\theta; \\quad \\vec{u} \\cdot (\\vec{u} \\times \\vec{v}) = 0"
+      },
+      diagram: {
+        title: "空間向量外積右手定則與面積幾何圖",
+        type: "geometry",
+        caption: "外積 u × v 同時垂直於 u 與 v，其大小 |u × v| 等於兩向量張開之平行四邊形面積，三角形面積為其一半。",
+        asciiArt: `           ▲ n = u × v (外積向量，法向量)
+           │ 同時垂直於 u 與 v
+           │  ┌───────────────────────┐
+           │ /                       /  圍成平行四邊形面積
+           │/                       /   Area = |u × v|
+           *───────────────────────*
+          / 點 O                   │
+         /  θ (夾角)               │
+        /                          │
+       ▼ v (向量二)                ▼ u (向量一)
+       
+   【三角形面積】：Area_△ = (1/2) |u × v|
+   【外積坐標】：(y₁z₂ - y₂z₁,  z₁x₂ - z₂x₁,  x₁y₂ - x₂y₁)`,
+        labels: [
+          { label: "外積向量", desc: "u × v 垂直於底面平面，為平面的法向量 n" },
+          { label: "平行四邊形面積", desc: "|u × v| = |u||v| sinθ" },
+          { label: "三角形面積", desc: "Area_△ = (1/2) |u × v|，統測高頻計算考點" }
+        ]
       },
       tables: [
         {
@@ -813,6 +874,25 @@ export const mathCS4Review: SemesterReviewData = {
         cautions: "橢圓是『a 最大 (a²=b²+c²)』；雙曲線是『c 最大 (c²=a²+b²)』！兩者的 a, b, c 關係式千萬不可記反！",
         latex: "\\text{正焦弦長: } \\text{拋物線 } |4c|, \\quad \\text{橢圓與雙曲線 } \\frac{2b^2}{a}"
       },
+      diagram: {
+        title: "三大圓錐曲線焦準幾何特徵對比圖",
+        type: "geometry",
+        caption: "拋物線 PF=d (正焦弦 4c)；橢圓焦點和 2a (a²=b²+c², a最大)；雙曲線焦點差 2a (c²=a²+b², c最大)。",
+        asciiArt: `   【拋物線：y²=4cx】      【橢圓：x²/a²+y²/b²=1】    【雙曲線：x²/a²-y²/b²=1】
+            ▲                        ▲                        ▲  / 漸近線
+            │   (焦點 F)             │    長軸 2a             │ /
+        準線│  /                     │ ┌───┴───┐              │/   (焦點 F₁)
+       ───┼─┼─*──► x        (F₁) ──┼─(───*───)─┼── (F₂) ───*──┼───*──► x
+        x=-c│  頂點                  │  短軸 2b               │\\ (頂點)
+            │                        │                        │ \\
+        PF = 到準線距離 d         PF₁ + PF₂ = 2a (和為常數)   |PF₁ - PF₂| = 2a (差為常數)
+        正焦弦長 = |4c|          a² = b² + c² (a 最大)      c² = a² + b² (c 最大)`,
+        labels: [
+          { label: "拋物線", desc: "離心率 e = 1，焦點距等於準線距，正焦弦長 |4c|" },
+          { label: "橢圓", desc: "離心率 e < 1，長軸 2a，短軸 2b，焦距 2c，a² = b² + c²" },
+          { label: "雙曲線", desc: "離心率 e > 1，貫軸 2a，共軛軸 2b，c² = a² + b²，有漸近線" }
+        ]
+      },
       tables: [
         {
           title: "三大圓錐曲線核心特徵與正焦弦長速記表",
@@ -913,6 +993,24 @@ export const mathCS4Review: SemesterReviewData = {
         unit: "斜率為純數值，面積為平方單位",
         cautions: "定積分求面積時，若曲線在 x 軸下方 (f(x) < 0)，積分值會是『負數』！面積必須加負號或取絕對值變為正數！",
         latex: "m = f'(x_0); \\quad y - y_0 = f'(x_0)(x - x_0); \\quad \\text{Area} = \\int_a^b |f(x)| dx"
+      },
+      diagram: {
+        title: "微積分切線斜率與定積分圍成面積圖",
+        type: "chart",
+        caption: "導函數 f'(x₀) 為點 (x₀, y₀) 之幾何切線斜率 m；定積分 ∫_a^b f(x) dx 為曲線與 x 軸圍成區域之有向代數面積。",
+        asciiArt: `   ▲ y                        ▲ y
+   │       y = f(x)           │       y = f(x)
+   │         .─.              │         .─.
+   │       .'   * (x₀, y₀)    │       .'///\\'.
+   │     .'    / 切線 m=f'(x₀)│      / ////// \\
+   │    /     /               │     │ ///////  │  面積 Area = ∫_a^b f(x) dx
+   └───┴─────/─────────► x    └───┴─┴────────┴─┴────────► x
+            切線斜率                a          b (定積分求面積)`,
+        labels: [
+          { label: "切線斜率", desc: "m = f'(x₀)，切線方程式 y - y₀ = f'(x₀)(x - x₀)" },
+          { label: "臨界點極值", desc: "f'(x) = 0 為函數斜率為水平之臨界點，可判定極大或極小值" },
+          { label: "定積分面積", desc: "Area = ∫_a^b f(x) dx = F(b) - F(a) (微積分基本定理)" }
+        ]
       },
       tables: [
         {

@@ -60,6 +60,26 @@ export const surveyingS2Review: SemesterReviewData = {
         cautions: "閉合導線計算角度閉合差時，先確認觀測的是『內角』還是『外角』！五邊形內角和為 (5-2)×180° = 540°；外角和為 (5+2)×180° = 1260°！",
         latex: "f_\\beta = \\sum \\beta_{\\text{實測}} - (n - 2) \\times 180^\\circ; \\quad \\Delta \\text{Az} = \\text{Az} + 180^\\circ \\pm \\theta"
       },
+      diagram: {
+        title: "導線前進方位角與偏角轉折推算幾何圖",
+        type: "geometry",
+        caption: "以正北為 0° 順時針計量；前線方位角 = 後線反方位角 + 順時針轉折角 (右偏加，左偏減)，若大於 360° 減去 360°。",
+        asciiArt: `              ▲ 北 (N, 0°)                ▲ 北 (N, 0°)
+              │                           │
+              │ 測線 AB                   │ 測線 BC
+              │ 方位角 Az_AB              │ 方位角 Az_BC
+              │   /                       │   /
+              │  /                        │  /
+              │ / 轉折角 β (右偏加)       │ /
+       ───────*───────────────────────────*────────► 東 (E)
+             點 A                        點 B
+        推算口訣：Az_BC = Az_AB + 180° ± 轉折偏角 (大於 360° 減 360°)`,
+        labels: [
+          { label: "方位角 Az", desc: "由正北順時針量至目標測線 (0° ~ 360°)" },
+          { label: "正反方位角", desc: "反方位角 = 正方位角 ± 180° (相差半圓 180°)" },
+          { label: "轉折角推算", desc: "右偏為加 (+θ)，左偏為減 (-θ)；超界則做 ±360° 歸一化" }
+        ]
+      },
       tables: [
         {
           title: "四大象限方位角 (Azimuth) 與方向角 (Bearing) 互換速查表",
@@ -110,6 +130,31 @@ export const surveyingS2Review: SemesterReviewData = {
         unit: "坐標與距離為公尺 (m)",
         cautions: "平差改正數的符號必須『與閉合差相反 (-W)』！若閉合差 W_N 為 +0.10 m，則改正數必定為負項 (-)，才能把總和拉回零！",
         latex: "K = \\sqrt{W_N^2 + W_E^2}; \\quad \\text{精度} = \\frac{1}{\\sum D / K}"
+      },
+      diagram: {
+        title: "坐標增量與導線閉合差向量分解圖",
+        type: "geometry",
+        caption: "緯距 ΔN = D·cos(Az)，經距 ΔE = D·sin(Az)；閉合差 W_N = ∑ΔN, W_E = ∑ΔE, 全長閉合差 K = √(W_N² + W_E²)。",
+        asciiArt: `           ▲ 北 (N) 軸
+           │           終點 B(N_B, E_B)
+           │            *
+           │           /│
+           │       D  / │
+           │         /  │ 緯距增量 ΔN = D·cos(Az)
+           │        /   │
+           │  Az   /    │
+           │ ┌─── /     │
+           │ │   /      │
+           ├─┴──*───────┴────────► 東 (E) 軸
+          原點 A   經距增量 ΔE = D·sin(Az)
+          
+   [導線閉合差]  全長閉合差 K = √(W_N² + W_E²)
+                 精度 Ratio = 1 / (∑D / K) (要求如 1/5000)`,
+        labels: [
+          { label: "緯距 ΔN", desc: "縱軸增量 ΔN = D · cos(方位角 Az)，北正南負" },
+          { label: "經距 ΔE", desc: "橫軸增量 ΔE = D · sin(方位角 Az)，東正西負" },
+          { label: "羅盤儀平差", desc: "各邊改正數 C_i = - W · (D_i / ∑D)，與該邊長成正比" }
+        ]
       },
       tables: [
         {
