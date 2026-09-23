@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { allSubjects } from '@/data/subjects';
 import SubjectConstellationCanvas from '@/components/gamification/SubjectConstellationCanvas';
+import { getSubjectSemesters } from '@/data/semesterReviews';
 
 export function generateStaticParams() {
   return allSubjects.map((subject) => ({ subject: subject.slug }));
@@ -85,6 +86,65 @@ export default async function SubjectPage({ params }: { params: Promise<{ subjec
           </div>
         </div>
       </header>
+
+      {/* Semester Comprehensive Review Handout Banner */}
+      {(() => {
+        const subjectSemesters = getSubjectSemesters(subject.slug);
+        if (!subjectSemesters || subjectSemesters.semesters.length === 0) return null;
+        return (
+          <section className="rounded-3xl border border-blue-200 dark:border-blue-900/60 bg-blue-50/40 dark:bg-blue-950/20 p-6 sm:p-8 space-y-4 shadow-xs">
+            <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 border-b border-blue-200/60 dark:border-blue-900/40 pb-4">
+              <div>
+                <span className="text-[10px] font-mono font-bold uppercase tracking-wider text-blue-700 dark:text-blue-300">
+                  Pre-Exam Comprehensive Revision
+                </span>
+                <h2 className="font-serif text-2xl font-bold text-slate-900 dark:text-white mt-0.5">
+                  📚 {subject.title} 考前學期筆記大複習手冊
+                </h2>
+                <p className="text-xs text-slate-600 dark:text-slate-400 mt-1">
+                  教科書級系統歸納、統測命題趨勢、高頻比較表與歷屆真題五步 SOP 詳解，支援一鍵轉存 A4 向量 PDF 列印！
+                </p>
+              </div>
+
+              <Link
+                href="/review"
+                className="inline-flex items-center gap-1.5 text-xs font-mono font-bold text-blue-600 dark:text-blue-400 hover:underline shrink-0"
+              >
+                <span>瀏覽全站各科總複習 →</span>
+              </Link>
+            </div>
+
+            <div className="grid gap-3 sm:grid-cols-2">
+              {subjectSemesters.semesters.map((sem) => (
+                <Link
+                  key={sem.code}
+                  href={`/review/${subject.slug}/${sem.code}`}
+                  className="group flex flex-col justify-between p-4 rounded-2xl border border-blue-100 dark:border-blue-900/50 bg-white dark:bg-slate-900 hover:border-blue-400 dark:hover:border-blue-600 hover:shadow-md transition-all space-y-3"
+                >
+                  <div className="space-y-1">
+                    <div className="flex items-center justify-between">
+                      <span className="font-mono font-bold text-xs text-blue-600 dark:text-blue-400">
+                        {sem.title} (高{sem.gradeLevel === 10 ? '一' : sem.gradeLevel === 11 ? '二' : '三'})
+                      </span>
+                      <span className="text-[10px] font-mono font-bold text-amber-600 dark:text-amber-400">
+                        {sem.examWeight}
+                      </span>
+                    </div>
+                    <p className="text-xs text-slate-600 dark:text-slate-300 leading-relaxed line-clamp-2">
+                      {sem.scope}
+                    </p>
+                  </div>
+
+                  <div className="flex items-center justify-between pt-2 border-t border-slate-100 dark:border-slate-800 text-xs font-mono font-bold text-blue-600 dark:text-blue-400">
+                    <span>🖨️ 進入學期講義 (可另存 PDF)</span>
+                    <span className="transition-transform group-hover:translate-x-1">→</span>
+                  </div>
+                </Link>
+              ))}
+            </div>
+          </section>
+        );
+      })()}
 
       {/* Interactive Subject Constellation Star Map Section */}
       <section className="space-y-4">

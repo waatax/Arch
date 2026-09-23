@@ -78,6 +78,11 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
+                <Link href="/review" className="hover:text-blue-700 dark:hover:text-blue-400 transition-colors text-blue-700 dark:text-blue-400 font-bold">
+                  • 📚 科目學期考前筆記大複習 (A4 PDF)
+                </Link>
+              </li>
+              <li>
                 <Link href="/curriculum" className="hover:text-blue-700 dark:hover:text-blue-400 transition-colors">
                   • 課程地圖 (13 科 120 主題)
                 </Link>

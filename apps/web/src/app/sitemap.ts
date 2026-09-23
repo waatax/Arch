@@ -17,6 +17,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/visualizers',
     '/field-guide',
     '/cheatsheets',
+    '/review',
     '/practice',
     '/cases',
     '/goals',

@@ -19,6 +19,7 @@ const navLinks = [
   { href: '/visualizers', label: '圖解\n實驗' },
   { href: '/field-guide', label: '現場\n手冊' },
   { href: '/cheatsheets', label: '速查\n指南' },
+  { href: '/review', label: '學期\n複習' },
   { href: '/practice', label: '歷屆\n模擬' },
   { href: '/cases', label: '建築\n案例' },
   { href: '/goals', label: '終極\n目標' },
