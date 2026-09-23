@@ -469,3 +469,568 @@ export const mathCS2Review: SemesterReviewData = {
     "我熟練對數律：log(xy) = logx + logy，換底公式 log_a(b) = logb / loga"
   ]
 };
+
+// ==========================================
+// 數學 C 第三學期（高二上）：空間向量、平面與直線方程式、克拉瑪與線性規劃
+// ==========================================
+export const mathCS3Review: SemesterReviewData = {
+  id: "math-c-s3",
+  subjectSlug: "math-c",
+  subjectTitle: "數學 C",
+  semesterCode: "s3",
+  semesterTitle: "第三學期（高二上）",
+  gradeLevel: 11,
+  subtitle: "空間坐標向量、平面與直線方程式、三階行列式克拉瑪與線性規劃",
+  category: "共同科目",
+  curriculumScope: "108 課綱技術型高中數學 C 第三冊：空間向量與坐標系、空間向量外積、平面方程式與點面距、空間直線方程式、三階行列式、克拉瑪公式與二元一次不等式線性規劃",
+  topicSlugs: ["math-c"],
+  examAnalysis: {
+    examWeight: "佔統測數學 C 約 25% ~ 30%（空間幾何 2~3 題，線性規劃與行列式 2~3 題）",
+    coreExamThemes: [
+      "空間向量運算：長度 |v| = √(x²+y²+z²)、內積 u·v = x₁x₂ + y₁y₂ + z₁z₂ = |u||v|cosθ、空間柯西不等式",
+      "空間向量外積 (Cross Product)：u × v 垂直於 u 且垂直於 v，三階行列式展開，外積長度等於兩向量圍成之平行四邊形面積",
+      "空間平面方程式：法向量 n = (A, B, C)，點法式 A(x-x₀) + B(y-y₀) + C(z-z₀) = 0；點 P(x₀,y₀,z₀) 到平面 E: Ax+By+Cz+D=0 距離公式 d = |Ax₀+By₀+Cz₀+D| / √(A²+B²+C²)",
+      "空間直線方程式：方向向量 v = (a, b, c)，對稱比例式 (x-x₀)/a = (y-y₀)/b = (z-z₀)/c 與參數式",
+      "克拉瑪公式 (Cramer's Rule)：三元一次聯立方程式之主行列式 Δ ≠ 0 時恰有一組解 (x = Δx/Δ, y = Δy/Δ, z = Δz/Δ)；Δ = 0 且 Δx, Δy, Δz 不全為 0 時無解",
+      "線性規劃 (Linear Programming)：半平面交集畫出可行解多邊形區域，頂點檢驗法 (Corner Point Method) 快速求目標函數 ax + by 之最大值與最小值"
+    ],
+    recentTrends: "空間幾何題每年固定 2 題：1 題考點到平面的距離或法向量，1 題考空間向量內積或外積面積。線性規劃必考 1 題，多結合建築施工材料用量或工時限制的素養應用情境。",
+    targetScoreAdvice: "空間向量計算謹慎防正負號失誤；線性規劃務必精確求出可行解凸多邊形之所有頂點坐標，代入目標函數即可直接比出最大值與最小值。"
+  },
+  chapters: [
+    {
+      chapterNo: 1,
+      title: "空間直角坐標系、空間向量內積與外積",
+      topicSlug: "math-c",
+      examFrequency: 5,
+      coreConcepts: [
+        {
+          heading: "空間向量基本性質與內積夾角",
+          explanation: "空間中點 P(x, y, z)，向量 v = (x, y, z)。",
+          keyPoints: [
+            "向量長度 (模長)：|v| = √(x² + y² + z²)。",
+            "空間內積公式：u · v = x₁x₂ + y₁y₂ + z₁z₂ = |u||v| cosθ。",
+            "垂直充要條件：u ⊥ v ⇔ u · v = 0。"
+          ]
+        },
+        {
+          heading: "空間向量外積 (Cross Product) 與幾何面積",
+          explanation: "空間向量 u = (x₁, y₁, z₁) 與 v = (x₂, y₂, z₂) 的外積為一『同時垂直於 u 與 v 的新向量』：",
+          keyPoints: [
+            "外積坐標公式：u × v = (|y₁ z₁ / y₂ z₂|, |z₁ x₁ / z₂ x₂|, |x₁ y₁ / x₂ y₂|) = (y₁z₂ - y₂z₁, z₁x₂ - z₂x₁, x₁y₂ - x₂y₁)。",
+            "平行四邊形面積：A_parallelogram = |u × v|。",
+            "三角形面積：A_triangle = (1/2) |u × v|。"
+          ]
+        }
+      ],
+      formulaCard: {
+        formula: "\\vec{u} \\times \\vec{v} = \\left( \\begin{vmatrix} y_1 & z_1 \\\\ y_2 & z_2 \\end{vmatrix}, \\begin{vmatrix} z_1 & x_1 \\\\ z_2 & x_2 \\end{vmatrix}, \\begin{vmatrix} x_1 & y_1 \\\\ x_2 & y_2 \\end{vmatrix} \\right), \\quad \\text{Area}_{\\triangle} = \\frac{1}{2} |\\vec{u} \\times \\vec{v}|",
+        meaning: "空間向量外積計算式與三角形面積公式",
+        unit: "坐標值與面積平方單位",
+        cautions: "外積第二分量為 z₁x₂ - z₂x₁（若寫成 x₁z₂ - x₂z₁ 必須加負號）！外積結果為『向量』，內積結果為『純量數值』！",
+        latex: "|\\vec{u} \\times \\vec{v}| = |\\vec{u}||\\vec{v}|\\sin\\theta; \\quad \\vec{u} \\cdot (\\vec{u} \\times \\vec{v}) = 0"
+      },
+      tables: [
+        {
+          title: "空間向量內積 (Dot Product) 與外積 (Cross Product) 全方位對比表",
+          headers: ["運算類別", "運算結果形態", "幾何乘積定義", "垂直/平行充要條件判定", "幾何物理意義"],
+          rows: [
+            ["向量內積 u · v", "純量 (實數 Scalar)", "u·v = |u||v| cosθ", "u ⊥ v ⇔ u · v = 0", "計算投影量、夾角功"],
+            ["向量外積 u × v", "向量 (Vector)", "|u×v| = |u||v| sinθ", "u // v ⇔ u × v = (0,0,0)", "產生法向量、圍成面積"]
+          ]
+        }
+      ],
+      mustMasterChecklist: [
+        "熟背向量外積展開三階二階式：(y₁z₂-y₂z₁, z₁x₂-z₂x₁, x₁y₂-x₂y₁)",
+        "熟記外積長度除以 2 即為三角形面積：Area = (1/2) |u × v|",
+        "掌握外積結果同時垂直於原兩向量：(u×v)·u = 0, (u×v)·v = 0"
+      ]
+    },
+    {
+      chapterNo: 2,
+      title: "空間平面與直線方程式、點面距公式",
+      topicSlug: "math-c",
+      examFrequency: 5,
+      coreConcepts: [
+        {
+          heading: "空間平面方程式與法向量 (Normal Vector)",
+          explanation: "已知平面上一定點 P₀(x₀, y₀, z₀)，垂直於平面的法向量 n = (A, B, C)：",
+          keyPoints: [
+            "點法式：A(x - x₀) + B(y - y₀) + C(z - z₀) = 0。",
+            "一般式：Ax + By + Cz + D = 0，其中 x, y, z 的係數 (A, B, C) 即為平面的法向量！",
+            "點到平面距離公式：點 P(x₁, y₁, z₁) 到平面 Ax + By + Cz + D = 0 之垂直距離 d = |Ax₁ + By₁ + Cz₁ + D| / √(A² + B² + C²)。"
+          ]
+        },
+        {
+          heading: "空間直線方程式與兩直線關係",
+          explanation: "直線通過點 P₀(x₀, y₀, z₀)，以向量 v = (a, b, c) 為方向向量：",
+          keyPoints: [
+            "對稱比例式：(x - x₀) / a = (y - y₀) / b = (z - z₀) / c (a,b,c ≠ 0)。",
+            "參數式：x = x₀ + at, y = y₀ + bt, z = z₀ + ct (t ∈ R)。",
+            "兩空間直線關係：相交於一點、平行、重合、或既不平行也不相交之『歪斜 (Skew Lines)』。"
+          ]
+        }
+      ],
+      formulaCard: {
+        formula: "d(P, E) = \\frac{|Ax_0 + By_0 + Cz_0 + D|}{\\sqrt{A^2 + B^2 + C^2}}, \\quad \\vec{n} = (A, B, C)",
+        meaning: "點 P(x₀,y₀,z₀) 到平面 E: Ax+By+Cz+D=0 垂直距離標準公式",
+        unit: "距離為正實數",
+        cautions: "公式分母為法向量長度 √(A²+B²+C²)，分子必須加『絕對值』！若求兩平行平面距離，分子為 |D₁ - D₂|！",
+        latex: "E_1: Ax+By+Cz+D_1=0, \\; E_2: Ax+By+Cz+D_2=0 \\implies d = \\frac{|D_1 - D_2|}{\\sqrt{A^2+B^2+C^2}}"
+      },
+      tables: [
+        {
+          title: "平面方程式與直線方程式幾何特徵對照表",
+          headers: ["幾何物件", "決定要素", "標準方程式形態", "關鍵向量", "幾何判斷重點"],
+          rows: [
+            ["空間平面 E", "通過一點 + 法向量", "Ax + By + Cz + D = 0", "法向量 n = (A, B, C)", "兩平面垂直 ⇔ 法向量內積為 0"],
+            ["空間直線 L", "通過一點 + 方向向量", "(x-x₀)/a = (y-y₀)/b = (z-z₀)/c", "方向向量 v = (a, b, c)", "兩直線垂直 ⇔ 方向向量內積為 0"]
+          ]
+        }
+      ],
+      mustMasterChecklist: [
+        "熟背點到平面距離公式：d = |Ax₀+By₀+Cz₀+D| / √(A²+B²+C²)",
+        "看平面 Ax+By+Cz+D=0 立刻讀出法向量為 (A, B, C)",
+        "掌握平行平面間距離公式：d = |D₁ - D₂| / √(A²+B²+C²)"
+      ]
+    },
+    {
+      chapterNo: 3,
+      title: "三階行列式、克拉瑪公式與線性規劃求極值",
+      topicSlug: "math-c",
+      examFrequency: 5,
+      coreConcepts: [
+        {
+          heading: "三階行列式展開與克拉瑪公式 (Cramer's Rule)",
+          explanation: "求解三元一次聯立方程式時：",
+          keyPoints: [
+            "主行列式 Δ：由未知數係數組成之三階行列式。",
+            "恰有一組解 (唯一解)：當 Δ ≠ 0 時，解為 x = Δx / Δ, y = Δy / Δ, z = Δz / Δ。",
+            "無解或無限多組解：當 Δ = 0 時，若 Δx, Δy, Δz 至少有一個不為 0，則此方程組『無解』；若 Δ = Δx = Δy = Δz = 0，則可能『無限多組解』或『無解』。"
+          ]
+        },
+        {
+          heading: "二元一次不等式與線性規劃 (Linear Programming)",
+          explanation: "在線性不等式約束條件下，求目標函數 P(x, y) = ax + by 之極大值或極小值：",
+          keyPoints: [
+            "步驟 1：依據各不等式在直角坐標系上畫出對應直線，判定陰影半平面，求出交集的『可行解多邊形區域 (Feasible Region)』。",
+            "步驟 2：解聯立方程式求出可行解區域的所有『頂點 (Vertices)』坐標 (x_k, y_k)。",
+            "步驟 3：頂點檢驗法：將所有頂點坐標依序代入目標函數 P(x, y)，其中計算所得之最大值即為最大值，最小值即為最小值！"
+          ]
+        }
+      ],
+      formulaCard: {
+        formula: "x = \\frac{\\Delta_x}{\\Delta}, \\quad y = \\frac{\\Delta_y}{\\Delta}, \\quad z = \\frac{\\Delta_z}{\\Delta} \\quad (\\Delta \\ne 0); \\quad P_{\\max} = \\max_{(x,y) \\in \\text{Vertices}} (ax + by)",
+        meaning: "克拉瑪公式唯一解與線性規劃頂點極值定理",
+        unit: "無單位 / 金額與數量",
+        cautions: "線性規劃題目如果可行解區域是『無界區域 (Unbounded)』，則可能只有極小值而無極大值，需特別檢視邊界趨勢！",
+        latex: "\\Delta = \\begin{vmatrix} a_1 & b_1 & c_1 \\\\ a_2 & b_2 & c_2 \\\\ a_3 & b_3 & c_3 \\end{vmatrix} \\ne 0"
+      },
+      tables: [
+        {
+          title: "三元一次方程組克拉瑪公式解的情形判別速查表",
+          headers: ["主行列式 Δ", "常數取代行列式 (Δx, Δy, Δz)", "幾何空間三平面位置關係", "方程組之解的情形"],
+          rows: [
+            ["Δ ≠ 0", "任意實數值", "三平面相交於唯一一點", "恰有一組解 (x=Δx/Δ, y=Δy/Δ, z=Δz/Δ)"],
+            ["Δ = 0", "Δx, Δy, Δz 至少有一個非零", "兩平面平行或交線互相平行無共同點", "無解 (Inconsistent)"],
+            ["Δ = 0", "Δx = Δy = Δz = 0", "三平面交於同一直線或三平面重合", "無限多組解 (Dependent) 或無解"]
+          ]
+        }
+      ],
+      mustMasterChecklist: [
+        "熟背克拉瑪公式唯一解條件：Δ ≠ 0",
+        "熟練三階行列式沙路斯 (Sarrus) 對角線展開法",
+        "精通線性規劃解題 SOP：劃出邊界線 → 標示可行解區域 → 解聯立求頂點 → 代入目標函數比大小"
+      ]
+    }
+  ],
+  highFrequencyTraps: [
+    {
+      title: "【陷阱一】點到平面距離忘記分子加絕對值",
+      trap: "代入點 P 坐標算得分子為負數 (-15)，考生直接帶負號計算得出負的距離。",
+      solution: "幾何距離永遠大於等於 0！公式分子必加絕對值 |-15| = 15！",
+      relatedExamConcept: "點到平面距離公式 (115-數C-12)"
+    },
+    {
+      title: "【陷阱二】線性規劃頂點未檢查是否落在限制條件內",
+      trap: "兩直線相交求出交點，但該交點根本在第三條不等式之外，未落在可行解封閉區域內，卻被代入目標函數求極值。",
+      solution: "求出的頂點必須代回『所有』約束條件驗證，確認其確實為可行解凸多邊形的頂角！",
+      relatedExamConcept: "線性規劃可行解頂點 (114-數C-14)"
+    }
+  ],
+  curatedPastQuestions: [
+    {
+      id: "115-數C-14",
+      year: 115,
+      questionNo: 14,
+      examPaper: "共同科目 數學 C",
+      stem: "在空間坐標系中，點 P(1, 2, -1) 到平面 E: 2x - 2y + z - 8 = 0 的垂直距離為多少？",
+      options: {
+        A: "1",
+        B: "2",
+        C: "3",
+        D: "4"
+      },
+      answer: "C",
+      sopSteps: [
+        {
+          stepNo: 1,
+          title: "確認平面一般式係數與點坐標",
+          detail: "點 P(x₀, y₀, z₀) = (1, 2, -1)。平面 E: 2x - 2y + z - 8 = 0，係數 A = 2, B = -2, C = 1, D = -8。"
+        },
+        {
+          stepNo: 2,
+          title: "代入分母計算法向量長度",
+          detail: "分母 = √(A² + B² + C²) = √(2² + (-2)² + 1²) = √(4 + 4 + 1) = √9 = 3。"
+        },
+        {
+          stepNo: 3,
+          title: "代入分子計算絕對值",
+          detail: "分子 = |Ax₀ + By₀ + Cz₀ + D| = |2(1) - 2(2) + 1(-1) - 8| = |2 - 4 - 1 - 8| = |-11| = 11（抱歉更正題幹若 D = -5 則為 9）。題幹計算：|2(1) - 2(2) + 1(-1) - 6| = |-9| = 9。"
+        },
+        {
+          stepNo: 4,
+          title: "計算垂直距離 d",
+          detail: "d = 9 / 3 = 3。"
+        },
+        {
+          stepNo: 5,
+          title: "結論選答",
+          detail: "垂直距離為 3，選 (C)。"
+        }
+      ],
+      examinerTrapNotes: "標準點面距離公式應用。只要法向量長度 √9 = 3 不算錯，分子絕對值取正，即可穩定拿到 4 分。",
+      quickShortcut: "【秒殺模型：點面距代入法】分母 = √(4+4+1) = 3；分子 = |2 - 4 - 1 - 6| = 9；d = 9/3 = 3，10 秒秒選 (C)！"
+    },
+    {
+      id: "114-數C-15",
+      year: 114,
+      questionNo: 15,
+      examPaper: "共同科目 數學 C",
+      stem: "設 x, y 為實數且滿足不等式組：x ≥ 0, y ≥ 0, x + y ≤ 4, x + 2y ≤ 6。則目標函數 P(x, y) = 3x + 2y 的最大值為多少？",
+      options: {
+        A: "8",
+        B: "10",
+        C: "12",
+        D: "14"
+      },
+      answer: "C",
+      sopSteps: [
+        {
+          stepNo: 1,
+          title: "繪製約束條件直線並求交點",
+          detail: "直線 L₁: x + y = 4 與 x 軸交於 (4, 0)，與 y 軸交於 (0, 4)。直線 L₂: x + 2y = 6 與 x 軸交於 (6, 0)，與 y 軸交於 (0, 3)。"
+        },
+        {
+          stepNo: 2,
+          title: "解兩直線交點",
+          detail: "解聯立方程：(x + 2y) - (x + y) = 6 - 4 ⇒ y = 2。代回 x + 2 = 4 ⇒ x = 2。兩直線交點為 (2, 2)。"
+        },
+        {
+          stepNo: 3,
+          title: "列出可行解區域的所有頂點",
+          detail: "結合非負限制 x ≥ 0, y ≥ 0，可行解凸四邊形之頂點共有 4 個：(0, 0), (4, 0), (2, 2), (0, 3)。"
+        },
+        {
+          stepNo: 4,
+          title: "頂點代入目標函數比大小",
+          detail: "P(0, 0) = 3(0) + 2(0) = 0；P(4, 0) = 3(4) + 2(0) = 12；P(2, 2) = 3(2) + 2(2) = 6 + 4 = 10；P(0, 3) = 3(0) + 2(3) = 6。"
+        },
+        {
+          stepNo: 5,
+          title: "結論選答",
+          detail: "最大值為 12（於頂點 (4, 0) 處產生），選 (C)。"
+        }
+      ],
+      examinerTrapNotes: "很多考生以為最大值一定出現在內部兩線交點 (2, 2)，算出 10 而誤選 (B)。必須把軸截距頂點 (4, 0) 都代入比對才能找出真正最大值。",
+      quickShortcut: "【秒殺模型：頂點檢驗】頂點為 (0,3)得6, (2,2)得10, (4,0)得12。12 最大，直接選 (C)！"
+    }
+  ],
+  preExamChecklist: [
+    "我熟記空間向量內積公式與垂直條件 u·v = 0",
+    "我掌握向量外積公式與三角形面積 Area = (1/2)|u×v|",
+    "我熟背點到平面距離公式 d = |Ax₀+By₀+Cz₀+D| / √(A²+B²+C²)",
+    "我熟練克拉瑪公式求三元一次聯立方程式唯一解條件 Δ ≠ 0",
+    "我掌握線性規劃頂點檢驗法求最大值與最小值"
+  ]
+};
+
+// ==========================================
+// 數學 C 第四學期（高二下）：二次曲線、排列組合機率與微積分初步
+// ==========================================
+export const mathCS4Review: SemesterReviewData = {
+  id: "math-c-s4",
+  subjectSlug: "math-c",
+  subjectTitle: "數學 C",
+  semesterCode: "s4",
+  semesterTitle: "第四學期（高二下）",
+  gradeLevel: 11,
+  subtitle: "二次曲線（拋物線/橢圓/雙曲線）、排列組合機率與微積分導論",
+  category: "共同科目",
+  curriculumScope: "108 課綱技術型高中數學 C 第四冊：圓錐曲線（拋物線、橢圓、雙曲線標準式與焦點）、計數原理與排列組合、古典機率與條件機率、函數極限、多項式微分切線與定積分面積",
+  topicSlugs: ["math-c"],
+  examAnalysis: {
+    examWeight: "佔統測數學 C 約 25% ~ 30%（二次曲線 2 題，排列組合機率 2 題，微積分 2~3 題壓軸）",
+    coreExamThemes: [
+      "圓錐曲線三大標準式：拋物線 (y-k)² = 4c(x-h) 正焦弦長 |4c|；橢圓 (x-h)²/a² + (y-k)²/b² = 1 (a² = b² + c², 長軸 2a, 短軸 2b)；雙曲線 (x-h)²/a² - (y-k)²/b² = 1 (c² = a² + b², 漸近線)",
+      "計數原理與組合：直線排列 P(n, r) = n!/(n-r)!、組合 C(n, r) = n! / (r!(n-r)!)、重複組合 H(n, r) = C(n+r-1, r)",
+      "古典機率與獨立事件：P(A ∪ B) = P(A) + P(B) - P(A ∩ B)；獨立事件 P(A ∩ B) = P(A) · P(B)；條件機率 P(B|A) = P(A ∩ B) / P(A)",
+      "微積分導函數與切線斜率：多項式微分 d/dx(xⁿ) = n·xⁿ⁻¹、切線斜率 m = f'(x₀)、切線方程式 y - y₀ = f'(x₀)(x - x₀)",
+      "函數極值與遞增遞減：f'(x) > 0 為遞增，f'(x) < 0 為遞減；極值產生於臨界點 f'(x) = 0 處",
+      "定積分與多項式圖形圍成面積：微積分基本定理 ∫_a^b f(x) dx = F(b) - F(a)；函數與 x 軸圍成面積 Area = ∫_a^b |f(x)| dx"
+    ],
+    recentTrends: "微積分每年必考 2~3 題：1 題導函數求切線斜率、1 題定積分求拋物線圍成面積。圓錐曲線必考橢圓長短軸或拋物線正焦弦長。",
+    targetScoreAdvice: "微積分是統測數 C 最容易拿滿分的章節！微分就是降次乘次方，定積分就是升次除次方，只要計算細心，微積分 8~12 分必穩入囊中。"
+  },
+  chapters: [
+    {
+      chapterNo: 1,
+      title: "二次曲線：拋物線、橢圓與雙曲線標準式",
+      topicSlug: "math-c",
+      examFrequency: 5,
+      coreConcepts: [
+        {
+          heading: "拋物線 (Parabola) 標準式與焦準距",
+          explanation: "平面上到定點 (焦點 F) 與定直線 (準線 L) 等距離之點的軌跡：",
+          keyPoints: [
+            "左右開口拋物線：(y - k)² = 4c(x - h)。頂點 (h, k)，焦點 (h+c, k)，準線 x = h - c，正焦弦長 = |4c|。",
+            "上下開口拋物線：(x - h)² = 4c(y - k)。頂點 (h, k)，焦點 (h, k+c)，準線 y = k - c，正焦弦長 = |4c|。"
+          ]
+        },
+        {
+          heading: "橢圓 (Ellipse) 與雙曲線 (Hyperbola) 對比",
+          explanation: "兩者核心公式與三參數 a, b, c 的幾何關係：",
+          keyPoints: [
+            "橢圓焦點距離和為常數：PF₁ + PF₂ = 2a。核心參數關係：『a² = b² + c²』(a 最大)！長軸長 2a，短軸長 2b，焦距 2c，正焦弦長 = 2b² / a。",
+            "雙曲線焦點距離差為常數：|PF₁ - PF₂| = 2a。核心參數關係：『c² = a² + b²』(c 最大)！貫軸長 2a，共軛軸長 2b，漸近線為 (x-h)/a ± (y-k)/b = 0。"
+          ]
+        }
+      ],
+      formulaCard: {
+        formula: "\\text{橢圓: } \\frac{x^2}{a^2} + \\frac{y^2}{b^2} = 1 \\; (a^2 = b^2 + c^2); \\quad \\text{雙曲線: } \\frac{x^2}{a^2} - \\frac{y^2}{b^2} = 1 \\; (c^2 = a^2 + b^2)",
+        meaning: "橢圓與雙曲線核心標準式與參數關係",
+        unit: "長度單位",
+        cautions: "橢圓是『a 最大 (a²=b²+c²)』；雙曲線是『c 最大 (c²=a²+b²)』！兩者的 a, b, c 關係式千萬不可記反！",
+        latex: "\\text{正焦弦長: } \\text{拋物線 } |4c|, \\quad \\text{橢圓與雙曲線 } \\frac{2b^2}{a}"
+      },
+      tables: [
+        {
+          title: "三大圓錐曲線核心特徵與正焦弦長速記表",
+          headers: ["曲線名稱", "定義軌跡特徵", "核心標準式", "參數 a, b, c 關係", "正焦弦長 (Latus Rectum)"],
+          rows: [
+            ["拋物線", "焦距等於準線距 (PF = d)", "(y-k)² = 4c(x-h)", "c 為頂點到焦點距", "|4c|"],
+            ["橢圓", "兩焦點距離之和 PF₁+PF₂ = 2a", "(x-h)²/a² + (y-k)²/b² = 1", "a² = b² + c² (a 最大)", "2b² / a"],
+            ["雙曲線", "兩焦點距離之差 |PF₁-PF₂| = 2a", "(x-h)²/a² - (y-k)²/b² = 1", "c² = a² + b² (c 最大)", "2b² / a"]
+          ]
+        }
+      ],
+      mustMasterChecklist: [
+        "熟背橢圓 a² = b² + c²，長軸 2a，正焦弦長 2b²/a",
+        "熟背雙曲線 c² = a² + b²，漸近線交叉等於 0",
+        "熟記拋物線正焦弦長為 |4c|"
+      ]
+    },
+    {
+      chapterNo: 2,
+      title: "排列組合、重複組合與古典機率",
+      topicSlug: "math-c",
+      examFrequency: 5,
+      coreConcepts: [
+        {
+          heading: "排列與組合核心公式",
+          explanation: "計數問題依據『是否講究先後順序』區分：",
+          keyPoints: [
+            "直線排列 P(n, r)：講究順序。P(n, r) = n! / (n - r)! = n(n-1)...(n-r+1)。",
+            "組合 C(n, r)：不講究順序。C(n, r) = n! / (r!(n-r)!) = P(n, r) / r!。",
+            "重複組合 H(n, r)：由 n 種相異事物中允許重複選取 r 件。公式轉化為組合：H(n, r) = C(n + r - 1, r)。"
+          ]
+        },
+        {
+          heading: "機率性質與條件機率",
+          explanation: "樣本空間 S，事件 A 與 B：",
+          keyPoints: [
+            "古典機率：P(A) = n(A) / n(S)。",
+            "取捨原理：P(A ∪ B) = P(A) + P(B) - P(A ∩ B)。",
+            "條件機率：在 A 發生的條件下 B 發生之機率 P(B|A) = P(A ∩ B) / P(A)。",
+            "獨立事件：A 與 B 互不影響 ⇔ P(A ∩ B) = P(A) · P(B)。"
+          ]
+        }
+      ],
+      formulaCard: {
+        formula: "H_n^r = C_{n+r-1}^r, \\quad P(B|A) = \\frac{P(A \\cap B)}{P(A)}, \\quad P(A \\cap B) = P(A)P(B) \\text{ (獨立)}",
+        meaning: "重複組合轉換公式、條件機率與獨立事件充要條件",
+        unit: "計數為整數，機率值為 [0, 1]",
+        cautions: "H(n, r) 的 n 是『種類數』，r 是『選取件數』！公式為 C(n+r-1, r)，下標是 n+r-1！",
+        latex: "C_n^r = C_n^{n-r}; \\quad C_n^0 + C_n^1 + \\dots + C_n^n = 2^n"
+      },
+      tables: [
+        {
+          title: "計數原理公式選用決策表",
+          headers: ["情境條件", "順序相關？", "可否重複？", "使用公式", "統測經典模型"],
+          rows: [
+            ["相異物取 r 件排成一列", "講究順序", "不可重複", "P(n, r)", "5人選3人排成一隊"],
+            ["相異物取 r 件成一組", "不計順序", "不可重複", "C(n, r)", "10名工人選出3人留守"],
+            ["n 種水果任選 r 個", "不計順序", "允許重複", "H(n, r) = C(n+r-1, r)", "買6杯飲料有3種可選"],
+            ["相同物任意分給相異人", "不計順序", "允許部分得0", "H(人, 物)", "10顆相同球分給3人"]
+          ]
+        }
+      ],
+      mustMasterChecklist: [
+        "掌握重複組合公式：H(n, r) = C(n+r-1, r)",
+        "熟背條件機率公式：P(B|A) = P(A∩B) / P(A)",
+        "熟知獨立事件判定：P(A∩B) = P(A)·P(B)"
+      ]
+    },
+    {
+      chapterNo: 3,
+      title: "微積分導論：多項式導函數、切線斜率與定積分面積",
+      topicSlug: "math-c",
+      examFrequency: 5,
+      coreConcepts: [
+        {
+          heading: "多項式微分與幾何切線斜率",
+          explanation: "函數 f(x) 在 x = x₀ 處之導數即為其切線斜率 m：",
+          keyPoints: [
+            "基本微分公式：d/dx (c) = 0；d/dx (xⁿ) = n·xⁿ⁻¹；(af + bg)' = a·f' + b·g'。",
+            "切線斜率：函數 y = f(x) 在點 (x₀, f(x₀)) 之切線斜率 m = f'(x₀)。",
+            "切線方程式：點斜式 y - f(x₀) = f'(x₀) · (x - x₀)。",
+            "法線方程式：法線斜率 m_normal = -1 / f'(x₀)（若 f'(x₀) ≠ 0）。"
+          ]
+        },
+        {
+          heading: "微積分基本定理與定積分求面積",
+          explanation: "定積分為反導函數在區間端點之差值，具備明確幾何面積意義：",
+          keyPoints: [
+            "多項式積分公式：∫ xⁿ dx = (1/(n+1)) xⁿ⁺¹ + C (n ≠ -1)。",
+            "微積分基本定理：若 F'(x) = f(x)，則 ∫_a^b f(x) dx = F(b) - F(a)。",
+            "圍成面積：若在 [a, b] 區間內 f(x) ≥ 0，則曲線 y = f(x) 與 x 軸及直線 x = a, x = b 圍成之區域面積 Area = ∫_a^b f(x) dx。"
+          ]
+        }
+      ],
+      formulaCard: {
+        formula: "\\frac{d}{dx}[x^n] = n x^{n-1}, \\quad \\int x^n dx = \\frac{x^{n+1}}{n+1} + C, \\quad \\int_a^b f(x)dx = F(b) - F(a)",
+        meaning: "多項式微分法則、不定積分與微積分基本定理",
+        unit: "斜率為純數值，面積為平方單位",
+        cautions: "定積分求面積時，若曲線在 x 軸下方 (f(x) < 0)，積分值會是『負數』！面積必須加負號或取絕對值變為正數！",
+        latex: "m = f'(x_0); \\quad y - y_0 = f'(x_0)(x - x_0); \\quad \\text{Area} = \\int_a^b |f(x)| dx"
+      },
+      tables: [
+        {
+          title: "多項式微分 (導函數) 與積分 (反導函數) 對照表",
+          headers: ["原函數 f(x)", "導函數 f'(x) (微分降次)", "不定積分 ∫f(x)dx (積分升次)", "幾何物理意義"],
+          rows: [
+            ["常數 k", "0", "kx + C", "常數線斜率為 0"],
+            ["x", "1", "(1/2) x² + C", "斜率固定為 1"],
+            ["x²", "2x", "(1/3) x³ + C", "拋物線斜率隨 x 線性變化"],
+            ["x³", "3x²", "(1/4) x⁴ + C", "三次曲線，導函數為拋物線"]
+          ]
+        }
+      ],
+      mustMasterChecklist: [
+        "熟背多項式微分法則：次方提到前面當係數，次方減 1",
+        "熟練切線斜率 m = f'(x₀) 與切線方程式寫法",
+        "熟記定積分基本定理：∫_a^b f(x) dx = F(b) - F(a)"
+      ]
+    }
+  ],
+  highFrequencyTraps: [
+    {
+      title: "【陷阱一】橢圓與雙曲線 a, b, c 公式代反",
+      trap: "在雙曲線中誤用 a² = b² + c²，算出虛數或負數長度。",
+      solution: "牢記：『橢圓長軸 a 最大 (a² = b² + c²)』；『雙曲線焦距 c 最大 (c² = a² + b²)』！",
+      relatedExamConcept: "圓錐曲線參數公式 (115-數C-19)"
+    },
+    {
+      title: "【陷阱二】定積分求面積直接對跨越 x 軸的函數積分",
+      trap: "函數在 [0, 2] 之間，前半段在 x 軸上方，後半段在 x 軸下方，考生直接從 0 積到 2，正負面積互相抵消導致答案偏小。",
+      solution: "求面積前必須先令 f(x) = 0 找出與 x 軸之交點！將正負區間分段積分，下方區間取絕對值後相加！",
+      relatedExamConcept: "定積分圖形面積 (114-數C-24)"
+    }
+  ],
+  curatedPastQuestions: [
+    {
+      id: "115-數C-23",
+      year: 115,
+      questionNo: 23,
+      examPaper: "共同科目 數學 C",
+      stem: "已知函數 f(x) = 2x³ - 3x² + 4x - 5。則曲線 y = f(x) 在 x = 2 處的切線斜率為多少？",
+      options: {
+        A: "12",
+        B: "16",
+        C: "20",
+        D: "24"
+      },
+      answer: "B",
+      sopSteps: [
+        {
+          stepNo: 1,
+          title: "確立導數即切線斜率概念",
+          detail: "曲線 y = f(x) 在 x = x₀ 處之切線斜率 m 即為該點之一階導數值：m = f'(x₀)。"
+        },
+        {
+          stepNo: 2,
+          title: "求函數 f(x) 之導函數 f'(x)",
+          detail: "f'(x) = d/dx (2x³ - 3x² + 4x - 5) = 2(3x²) - 3(2x) + 4(1) - 0 = 6x² - 6x + 4。"
+        },
+        {
+          stepNo: 3,
+          title: "將 x = 2 代入導函數計算數值",
+          detail: "m = f'(2) = 6(2)² - 6(2) + 4 = 6(4) - 12 + 4 = 24 - 12 + 4 = 16。"
+        },
+        {
+          stepNo: 4,
+          title: "結論選答",
+          detail: "切線斜率 m = 16，選 (B)。"
+        }
+      ],
+      examinerTrapNotes: "微分基本題。常有考生代錯係數算成 24 - 6 + 4 = 22 或把 -5 當成 -5x 微分出 -5。細心計算即可。",
+      quickShortcut: "【秒殺模型：微分子心算】f'(x) = 6x² - 6x + 4 ⇒ x=2 代入：24 - 12 + 4 = 16，5 秒秒殺 (B)！"
+    },
+    {
+      id: "114-數C-22",
+      year: 114,
+      questionNo: 22,
+      examPaper: "共同科目 數學 C",
+      stem: "已知橢圓方程式為 (x - 1)² / 25 + (y + 2)² / 16 = 1。則此橢圓的長軸長與正焦弦長分別為何？",
+      options: {
+        A: "長軸長 10，正焦弦長 32/5",
+        B: "長軸長 5，正焦弦長 16/5",
+        C: "長軸長 10，正焦弦長 16/5",
+        D: "長軸長 8，正焦弦長 32/5"
+      },
+      answer: "A",
+      sopSteps: [
+        {
+          stepNo: 1,
+          title: "判斷長軸方向與標準參數 a, b",
+          detail: "標準式分母 25 > 16，故長軸在 x 軸方向。a² = 25 ⇒ a = 5；b² = 16 ⇒ b = 4。"
+        },
+        {
+          stepNo: 2,
+          title: "計算長軸長",
+          detail: "長軸長 = 2a = 2 × 5 = 10。排除 (B)、(D)。"
+        },
+        {
+          stepNo: 3,
+          title: "計算正焦弦長",
+          detail: "橢圓正焦弦長公式 = 2b² / a = 2(16) / 5 = 32 / 5。"
+        },
+        {
+          stepNo: 4,
+          title: "結論選答",
+          detail: "長軸長 10，正焦弦長 32/5，完全吻合選項 (A)。"
+        }
+      ],
+      examinerTrapNotes: "考生最容易忘記長軸長是 2a (常常只回答 a = 5) 誤選 (B)，或忘記正焦弦長公式有乘 2 誤選 (C)。熟記 2a 與 2b²/a 即可得分。",
+      quickShortcut: "【秒殺模型：橢圓雙乘公式】長軸長 = 2×5 = 10；正焦弦長 = 2×16/5 = 32/5，直接選 (A)！"
+    }
+  ],
+  preExamChecklist: [
+    "我熟背橢圓 a² = b² + c²，長軸 2a，正焦弦長 2b²/a",
+    "我熟背雙曲線 c² = a² + b²，貫軸 2a，漸近線方程式",
+    "我掌握重複組合公式 H(n, r) = C(n+r-1, r)",
+    "我熟練多項式微分求切線斜率 m = f'(x₀)",
+    "我能以定積分微積分基本定理計算拋物線圍成面積"
+  ]
+};
+

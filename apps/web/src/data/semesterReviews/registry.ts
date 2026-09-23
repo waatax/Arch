@@ -7,8 +7,13 @@ import { surveyingS1Review } from './surveying-s1';
 import { surveyingS2Review } from './surveying-s2';
 import { draftingS1Review } from './drafting-s1';
 import { draftingS2Review } from './drafting-s2';
-import { mathCS1Review, mathCS2Review } from './math-c-semesters';
-import { chineseS1Review } from './common-and-general';
+import {
+  mathCS1Review,
+  mathCS2Review,
+  mathCS3Review,
+  mathCS4Review,
+} from './math-c-semesters';
+import { chineseS1Review, chineseS3Review } from './common-and-general';
 import {
   englishS1Review,
   englishS2Review,
@@ -27,7 +32,10 @@ export const allSemesterReviews: SemesterReviewData[] = [
   draftingS2Review,
   mathCS1Review,
   mathCS2Review,
+  mathCS3Review,
+  mathCS4Review,
   chineseS1Review,
+  chineseS3Review,
   englishS1Review,
   englishS2Review,
   englishS3Review,
@@ -69,10 +77,10 @@ export const allSubjectSemestersMeta: SubjectSemesterMeta[] = [
         code: 's1',
         title: '第一學期（高二上）',
         gradeLevel: 11,
-        scope: '材料物理性質、卜特蘭水泥四大熟料、CNS 61 水泥分類與維卡儀強度試驗',
+        scope: '材料物理性質、卜特蘭水泥四大熟料、CNS 61 水泥分類、維卡儀試驗與水化熱溫控健全性',
         examWeight: '約佔專一 25% ~ 30%（約 10~12 題）',
-        chapterCount: 5,
-        questionCount: 2,
+        chapterCount: 6,
+        questionCount: 3,
       },
       {
         code: 's2',
@@ -94,10 +102,10 @@ export const allSubjectSemestersMeta: SubjectSemesterMeta[] = [
         code: 's1',
         title: '第一學期（高二上）',
         gradeLevel: 11,
-        scope: '測量誤差理論、儀器整平檢校、水準測高與前後等距消除法',
+        scope: '測量誤差理論、儀器整平檢校、水準測高、前後等距消差法與權重閉合差',
         examWeight: '約佔專二 25% ~ 30%（約 10~12 題）',
-        chapterCount: 4,
-        questionCount: 2,
+        chapterCount: 5,
+        questionCount: 3,
       },
       {
         code: 's2',
@@ -158,6 +166,24 @@ export const allSubjectSemestersMeta: SubjectSemesterMeta[] = [
         chapterCount: 3,
         questionCount: 1,
       },
+      {
+        code: 's3',
+        title: '第三學期（高二上）',
+        gradeLevel: 11,
+        scope: '空間坐標系、空間向量外積面積、空間平面直線方程式、克拉瑪公式與線性規劃求極值',
+        examWeight: '約佔數C 25% ~ 30%（空間幾何與線性規劃關鍵題）',
+        chapterCount: 3,
+        questionCount: 2,
+      },
+      {
+        code: 's4',
+        title: '第四學期（高二下）',
+        gradeLevel: 11,
+        scope: '圓錐曲線（拋物線/橢圓/雙曲線標準式與正焦弦）、排列組合機率、微積分導函數切線斜率與定積分面積',
+        examWeight: '約佔數C 25% ~ 30%（壓軸滿分分水嶺）',
+        chapterCount: 3,
+        questionCount: 2,
+      },
     ],
   },
   {
@@ -173,6 +199,15 @@ export const allSubjectSemestersMeta: SubjectSemesterMeta[] = [
         examWeight: '約佔國文 50% 核心考點',
         chapterCount: 1,
         questionCount: 1,
+      },
+      {
+        code: 's3',
+        title: '第三學期（高二上）',
+        gradeLevel: 11,
+        scope: '古文核心名篇（赤壁賦/師說/出師表/項脊軒志）、高頻文言虛詞體系、論孟文化思辨與長篇素養對讀',
+        examWeight: '約佔國文 45% ~ 50%（古文與長篇素養核心）',
+        chapterCount: 2,
+        questionCount: 2,
       },
     ],
   },
@@ -206,7 +241,7 @@ export const allSubjectSemestersMeta: SubjectSemesterMeta[] = [
         scope: '高頻 3500 單字、關係代名詞 (that 兩大禁忌)、關係副詞、分詞構句、高頻轉折詞 (However/Therefore)',
         examWeight: '佔統測英語約 25% ~ 30%（克漏字與長篇閱測分水嶺）',
         chapterCount: 2,
-        questionCount: 2,
+        questionCount: 3,
       },
       {
         code: 's4',

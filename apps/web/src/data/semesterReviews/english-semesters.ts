@@ -776,15 +776,61 @@ export const englishS3Review: SemesterReviewData = {
       ],
       examinerTrapNotes: "很多考生誤以為別墅存在是主動而選 Locating (B)。記住：be located 永遠是用被動！",
       quickShortcut: "【秒殺模型：座落必被動】be located 必用被動，分詞構句選 Located (A)，2 秒搞定！"
+    },
+    {
+      id: "113-英文-24",
+      year: 113,
+      questionNo: 24,
+      examPaper: "共同科目 英語文",
+      stem: "The municipal government decided to build a new transit hub to boost local economy. _______, many environmentalists strongly opposed the construction because of potential damage to wetlands.",
+      options: {
+        A: "In addition",
+        B: "However",
+        C: "Therefore",
+        D: "For example"
+      },
+      answer: "B",
+      sopSteps: [
+        {
+          stepNo: 1,
+          title: "剖析前句情境與語意方向",
+          detail: "前句指『市政府決定興建新轉運樞紐以促進在地經濟』，語氣為積極推動建設 (+)。"
+        },
+        {
+          stepNo: 2,
+          title: "剖析後句情境與語意方向",
+          detail: "後句指『許多環保人士因為可能破壞濕地而強烈反對施工』，語氣為抗爭反對 (-)。"
+        },
+        {
+          stepNo: 3,
+          title: "確立前後句邏輯關係",
+          detail: "政府想蓋 vs 環保人士反對，前後句邏輯呈現 180 度正反逆轉，必須使用表『語氣轉折 (Contrast)』之副詞。"
+        },
+        {
+          stepNo: 4,
+          title: "檢視選項邏輯功能",
+          detail: "(A) In addition (此外) 為順向遞進；(B) However (然而) 為反向轉折；(C) Therefore (因此) 為順向因果；(D) For example (例如) 為舉例說明。"
+        },
+        {
+          stepNo: 5,
+          title: "結論選答",
+          detail: "精準選 (B)。"
+        }
+      ],
+      examinerTrapNotes: "克漏字每年必考 1~2 題轉折詞。解題絕招是先替前後句打上 (+) 或 (-)，若同號選 Therefore/In addition，若異號必選 However/Nevertheless！",
+      quickShortcut: "【秒殺模型：正反符號法】前句蓋樞紐 (+)，後句反對建案 (-)。正負異號直接秒選 However (B)！"
     }
   ],
   preExamChecklist: [
     "我熟記逗點後面絕對不能用 that，只能用 who 或 which",
     "我知道分詞構句主動選 V-ing，被動選 p.p.",
     "我清楚 Although 後接句子 (S+V)，Despite 後接名詞 (N)",
-    "我掌握 However (轉折), Therefore (因果), Furthermore (補充) 的用法"
+    "我掌握 However (轉折), Therefore (因果), Furthermore (補充) 的用法",
+    "我清楚 whose 後面緊接無冠詞名詞表示所有格",
+    "我熟練介系詞 + which/whom 的結構（介系詞後絕不用 that）"
   ]
 };
+
 
 // ==========================================
 // 英語文 第四學期（高二下至高三衝刺）：進階 4500 字、假設語氣、倒裝句與閱讀素養
