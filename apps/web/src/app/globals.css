@@ -1037,12 +1037,36 @@ html.arch-lite .bg-blueprint-subtle {
     max-height: none !important;
   }
 
+  /* 知識亮點與掌握度檢核紙本最佳化 */
+  .knowledge-highlights-card {
+    break-inside: avoid !important;
+    page-break-inside: avoid !important;
+    border: 0.8pt solid #d97706 !important;
+    background: #fffbeb !important;
+    padding: 8pt 10pt !important;
+    margin: 8pt 0 12pt !important;
+  }
+  .knowledge-highlights-card article {
+    border: 0.5pt solid #cbd5e1 !important;
+    padding: 5pt 7pt !important;
+    background: #ffffff !important;
+  }
+  .mastery-checklist {
+    break-inside: avoid !important;
+    page-break-inside: avoid !important;
+    border: 0.8pt solid #059669 !important;
+    background: #ecfdf5 !important;
+    padding: 8pt 10pt !important;
+    margin: 10pt 0 12pt !important;
+  }
+
   /* ══ 模式二：重點速記表（只留標題與表格） ══ */
   html[data-print-mode="tables"] #interest-hook,
   html[data-print-mode="tables"] #application-mastery,
   html[data-print-mode="tables"] #seven-iterations,
   html[data-print-mode="tables"] #worked,
   html[data-print-mode="tables"] #practice,
+  html[data-print-mode="tables"] #mastery-checklist,
   html[data-print-mode="tables"] #exam-questions-section,
   html[data-print-mode="tables"] #sources,
   html[data-print-mode="tables"] .dialogue-block,
@@ -1055,10 +1079,12 @@ html.arch-lite .bg-blueprint-subtle {
 
   /* ══ 模式三：題目練習卷（只留題目與作答欄） ══ */
   html[data-print-mode="quiz"] #interest-hook,
+  html[data-print-mode="quiz"] #knowledge-highlights,
   html[data-print-mode="quiz"] #application-mastery,
   html[data-print-mode="quiz"] #seven-iterations,
   html[data-print-mode="quiz"] #principles,
   html[data-print-mode="quiz"] #traps,
+  html[data-print-mode="quiz"] #mastery-checklist,
   html[data-print-mode="quiz"] #sources,
   html[data-print-mode="quiz"] figure,
   html[data-print-mode="quiz"] img {

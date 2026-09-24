@@ -3,7 +3,7 @@
 import { useState, useEffect, useRef } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { Binoculars, BookOpenCheck, Building2, CircleCheckBig, Lightbulb, Route, School, SearchCheck } from 'lucide-react';
+import { Binoculars, BookOpenCheck, Building2, CircleCheckBig, Lightbulb, Route, School, SearchCheck, Sparkles } from 'lucide-react';
 import type { SubjectData, TopicContent } from '@/data/types';
 import MathText from '@/components/MathText';
 import InteractiveVisualizer from '@/components/visualizers/InteractiveVisualizer';
@@ -27,7 +27,8 @@ import { isAnswerChoiceCorrect, isAnswerCorrect, isMultipleChoiceAnswer, toggleS
 import { useGamificationStore } from '@/lib/store/gamificationStore';
 import { soundEngine } from '@/lib/audio/soundEffects';
 import { findStarByTopic } from '@/data/constellations/subjectConstellations';
-import { Sparkles } from 'lucide-react';
+import TopicKnowledgeHighlights from '@/components/pedagogy/TopicKnowledgeHighlights';
+import TopicMasteryChecklist from '@/components/pedagogy/TopicMasteryChecklist';
 
 interface TopicPageLayoutProps {
   subject: SubjectData;
@@ -515,10 +516,10 @@ export default function TopicPageLayout({ subject, topic, mappedExamQuestions }:
         </aside>
 
         {/* Seven-part lesson path: every control navigates to real content. */}
-        <div className="flex items-center gap-1 overflow-x-auto pb-1 border-b border-slate-200 dark:border-slate-800 text-xs font-mono" aria-label="七段教學快速導覽">
+        <div className="sticky top-14 z-20 -mx-2 px-2 py-1.5 bg-white/90 dark:bg-slate-900/90 backdrop-blur-md flex items-center gap-1 overflow-x-auto border-b border-slate-200 dark:border-slate-800 text-xs font-mono shadow-xs" aria-label="七段教學快速導覽">
           {[
-            ['exam-focus', '1 這在考什麼'], ['observable', '2 看得到的東西'], ['application-mastery', '3 應用與課綱'], ['expert-council-7x7', '🏛️ 7x7專家矩陣'], ['seven-iterations', '4 七輪深化'], ['principles', '5 原理推導'],
-            ['worked', '6 示範題'], ['practice', '7 自己做'], ['traps', '8 最容易錯'], ['sources', '9 來源版本'],
+            ['exam-focus', '1 這在考什麼'], ['observable', '2 看得到的東西'], ['knowledge-highlights', '💡 知識亮點'], ['application-mastery', '3 應用與課綱'], ['expert-council-7x7', '🏛️ 7x7專家矩陣'], ['seven-iterations', '4 七輪深化'], ['principles', '5 原理推導'],
+            ['worked', '6 示範題'], ['practice', '7 自己做'], ['traps', '8 最容易錯'], ['mastery-checklist', '🏆 全知檢核'], ['sources', '9 來源版本'],
           ].map(([id, label]) => (
             <button key={id} onClick={() => jumpTo(id)} className="shrink-0 rounded-t-lg px-3.5 py-2 font-bold text-slate-600 transition-colors hover:bg-blue-600 hover:text-white dark:text-slate-400">
               {label}
@@ -596,6 +597,14 @@ export default function TopicPageLayout({ subject, topic, mappedExamQuestions }:
           </figure>
         </div>
       </section>
+
+      {/* === [Topic Knowledge Highlights & Fast-Track Takeaways] === */}
+      <TopicKnowledgeHighlights
+        subject={subject}
+        topic={topic}
+        deepKnowledge={deepKnowledge}
+        realLifeGuide={realLifeGuide}
+      />
 
       {/* One continuous scaffold: intuition → application → curriculum → mastery. */}
       <section id="application-mastery" className="lesson-deferred-section scroll-mt-24 space-y-5" aria-labelledby="application-mastery-title">
@@ -919,8 +928,23 @@ export default function TopicPageLayout({ subject, topic, mappedExamQuestions }:
                         </span>
                       )}
                     </div>
-                    <h3 className="font-serif text-xl font-bold text-slate-900 dark:text-white mt-0.5">
-                      {concept.heading}
+                    <h3 className="font-serif text-xl font-bold text-slate-900 dark:text-white mt-0.5 flex flex-wrap items-center gap-2">
+                      <span>{concept.heading}</span>
+                      {concept.formula && (
+                        <span className="rounded-md bg-amber-100/70 dark:bg-amber-950/60 px-2 py-0.5 text-[10px] font-mono text-amber-800 dark:text-amber-300 border border-amber-300/60 dark:border-amber-800">
+                          📐 核心公式
+                        </span>
+                      )}
+                      {concept.table && (
+                        <span className="rounded-md bg-indigo-100/70 dark:bg-indigo-950/60 px-2 py-0.5 text-[10px] font-mono text-indigo-800 dark:text-indigo-300 border border-indigo-300/60 dark:border-indigo-800">
+                          📊 重點矩陣
+                        </span>
+                      )}
+                      {Boolean(concept.steps?.length) && (
+                        <span className="rounded-md bg-teal-100/70 dark:bg-teal-950/60 px-2 py-0.5 text-[10px] font-mono text-teal-800 dark:text-teal-300 border border-teal-300/60 dark:border-teal-800">
+                          🛠️ SOP 步驟
+                        </span>
+                      )}
                     </h3>
                   </div>
                 </div>
@@ -939,26 +963,29 @@ export default function TopicPageLayout({ subject, topic, mappedExamQuestions }:
               </div>
 
               {/* Concept Body with MathText Rendering */}
-              <div className="concept-body whitespace-pre-line text-[15px] leading-relaxed text-slate-700 dark:text-slate-300">
+              <div className="concept-body whitespace-pre-line text-[15px] sm:text-[15.5px] leading-[1.8] text-slate-700 dark:text-slate-300 border-l-2 border-slate-200 dark:border-slate-800 pl-4 py-0.5">
                 <MathText content={concept.body} />
               </div>
 
               {/* Step Sequence if available */}
               {concept.steps?.length ? (
-                <div className="concept-steps space-y-2 rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-50/70 dark:bg-slate-800/40 p-4">
-                  <span className="text-[11px] font-mono uppercase tracking-wider text-slate-500 dark:text-slate-400 font-bold block mb-1">
-                    標準操作與推導步驟 (SOP)
-                  </span>
+                <div className="concept-steps space-y-3 rounded-2xl border border-slate-200 dark:border-slate-800 bg-slate-50/80 dark:bg-slate-800/40 p-4 sm:p-5">
+                  <div className="flex items-center justify-between">
+                    <span className="text-[11px] font-mono uppercase tracking-wider text-teal-700 dark:text-teal-300 font-bold flex items-center gap-1.5">
+                      <span>🛠️</span> 標準操作與推導步驟 (SOP)
+                    </span>
+                    <span className="text-[10px] font-mono text-slate-500 dark:text-slate-400">共 {concept.steps.length} 步驟</span>
+                  </div>
                   <ol className="space-y-2.5">
                     {concept.steps.map((step, stepIndex) => (
-                      <li key={step} className="flex gap-3 text-sm leading-relaxed text-slate-800 dark:text-slate-200">
+                      <li key={step} className="flex gap-3 text-sm leading-relaxed text-slate-800 dark:text-slate-200 bg-white/70 dark:bg-slate-900/50 p-3 rounded-xl border border-slate-200/60 dark:border-slate-800/60 shadow-2xs">
                         <span
-                          className="font-mono font-bold shrink-0"
+                          className="font-mono font-bold shrink-0 text-xs mt-0.5"
                           style={{ color: `var(--color-${subject.color})` }}
                         >
-                          {stepIndex + 1}.
+                          步驟 {stepIndex + 1}.
                         </span>
-                        <span>
+                        <span className="flex-1">
                           <MathText content={step} />
                         </span>
                       </li>
@@ -1211,6 +1238,16 @@ export default function TopicPageLayout({ subject, topic, mappedExamQuestions }:
           </div>
         </section>
       ) : null}
+
+      {/* === [Complete Knowledge Mastery Checklist & Audit] === */}
+      <TopicMasteryChecklist
+        subject={subject}
+        topic={topic}
+        deepKnowledge={deepKnowledge}
+        realLifeGuide={realLifeGuide}
+        starNode={starNode}
+        isStarLit={isStarLit}
+      />
 
       {/* === [Mapped Past Exam Questions: Active Retrieval Section] === */}
       {mappedExamQuestions.length > 0 ? (
