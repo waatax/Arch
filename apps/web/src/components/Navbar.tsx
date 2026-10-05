@@ -3,29 +3,202 @@
 import { useState, useMemo, useEffect, useRef } from 'react';
 import Link from 'next/link';
 import { usePathname, useRouter } from 'next/navigation';
-import { Volume2, VolumeX } from 'lucide-react';
+import { Volume2, VolumeX, ChevronDown } from 'lucide-react';
 import ThemeToggle from './ThemeToggle';
 import { topicSearchIndex } from '@/data/topicSearchIndex';
 import { useGamificationStore } from '@/lib/store/gamificationStore';
 import { triggerHaptic } from '@/lib/haptics';
+import {
+  IconProps,
+  IconTrussBeam,
+  IconDraftingTools,
+  IconSurveyingLevel,
+  IconSlumpCone,
+  IconClassicalOrder,
+  IconBIMModel,
+  IconFieldSafety,
+  IconExamLicense,
+  IconStudioForge,
+  IconConstellationMap,
+  IconFastFormula,
+  IconTopicDiscovery,
+  IconPerspective,
+  IconGreenBuilding,
+} from '@/components/ui/ArchitecturalIcons';
 
-const navLinks = [
-  { href: '/', label: '首頁' },
-  { href: '/pathway', label: '建築\n之路' },
-  { href: '/quest', label: '冒險\n戰役' },
-  { href: '/studio', label: '大師\n工坊' },
-  { href: '/curriculum', label: '課程\n地圖' },
-  { href: '/constellation', label: '星空\n技能' },
-  { href: '/visualizers', label: '圖解\n實驗' },
-  { href: '/field-guide', label: '現場\n手冊' },
-  { href: '/cheatsheets', label: '速查\n指南' },
-  { href: '/review', label: '學期\n複習' },
-  { href: '/practice', label: '歷屆\n模擬' },
-  { href: '/cases', label: '建築\n案例' },
-  { href: '/goals', label: '終極\n目標' },
-  { href: '/exam-116', label: '入學\n指南' },
-  { href: '/resources', label: '資格\n考試' },
-  { href: '/cad-software', label: '電腦\n繪圖' },
+// ── 專業分組導覽體系 (信達雅架構) ──
+interface NavGroupItem {
+  href: string;
+  label: string;
+  desc: string;
+  icon: React.ComponentType<IconProps>;
+  badge?: string;
+}
+
+interface NavGroup {
+  id: string;
+  label: string;
+  icon: React.ComponentType<IconProps>;
+  items: NavGroupItem[];
+}
+
+const navGroups: NavGroup[] = [
+  {
+    id: 'curriculum',
+    label: '課程與學科',
+    icon: IconDraftingTools,
+    items: [
+      {
+        href: '/curriculum',
+        label: '學習地圖總覽',
+        desc: '108 課綱 13 科 120 主題三年三階完整路徑',
+        icon: IconDraftingTools,
+        badge: '全學程',
+      },
+      {
+        href: '/subjects/mechanics',
+        label: '工程力學 (專一)',
+        desc: '靜力平衡、桁架零力桿、SFD/BMD 剪力彎矩圖與莫爾圓',
+        icon: IconTrussBeam,
+      },
+      {
+        href: '/subjects/materials',
+        label: '材料與試驗 (專一)',
+        desc: '混凝土坍度、水灰比、抗壓強度、水泥骨材與鋼筋竹節',
+        icon: IconSlumpCone,
+      },
+      {
+        href: '/subjects/surveying',
+        label: '測量實習 (專二)',
+        desc: '水準儀視距差、高程閉合平差、經緯儀測角與全測站',
+        icon: IconSurveyingLevel,
+      },
+      {
+        href: '/subjects/drafting',
+        label: '製圖實習 (專二)',
+        desc: 'CNS 11567 建築製圖標準、第三角投影、透視消點與詳圖',
+        icon: IconPerspective,
+      },
+      {
+        href: '/prerequisites',
+        label: '先備知識探索',
+        desc: '國中幾何、物理與英文基底補強，無痛銜接高職',
+        icon: IconTopicDiscovery,
+      },
+      {
+        href: '/review',
+        label: '學期考前複習',
+        desc: '高一至高三各學期單元重難點手冊與 A4 複習筆記',
+        icon: IconFastFormula,
+      },
+    ],
+  },
+  {
+    id: 'labs',
+    label: '圖解與工坊',
+    icon: IconTrussBeam,
+    items: [
+      {
+        href: '/visualizers',
+        label: '互動圖解實驗室',
+        desc: '簡支梁受力、莫爾圓主應力、第三角折疊箱與水準調平',
+        icon: IconTrussBeam,
+        badge: '8大沙盒',
+      },
+      {
+        href: '/studio',
+        label: '幾何名築大師工坊',
+        desc: '手作路思義教堂、台中歌劇院與台北 101 幾何力學',
+        icon: IconStudioForge,
+        badge: '3D 幾何',
+      },
+      {
+        href: '/constellation',
+        label: '建築大師技能星空',
+        desc: '13 科 120 主題跨領域星系網絡，點亮力學材料恆星',
+        icon: IconConstellationMap,
+      },
+      {
+        href: '/quest',
+        label: '60 天冒險戰役',
+        desc: '高二開學情境式工程任務、懸賞委託與藍圖碎片',
+        icon: IconFieldSafety,
+      },
+    ],
+  },
+  {
+    id: 'field',
+    label: '實務與工具',
+    icon: IconBIMModel,
+    items: [
+      {
+        href: '/cad-software',
+        label: '建築電腦繪圖全鑑',
+        desc: 'AutoCAD、Revit BIM、SketchUp、Blender、Rhino 與即時光追',
+        icon: IconBIMModel,
+        badge: '8大軟體',
+      },
+      {
+        href: '/field-guide',
+        label: '營造工程現場手冊',
+        desc: '施工規範、CNS 坍度氯離子、高張力螺栓與鋼筋綁紮防錯',
+        icon: IconFieldSafety,
+      },
+      {
+        href: '/cheatsheets',
+        label: '考點高頻速查指南',
+        desc: '力學材料測量核心公式卡、物理量綱與一鍵複製 LaTeX',
+        icon: IconFastFormula,
+        badge: '公式卡',
+      },
+      {
+        href: '/cases',
+        label: '台灣經典建築案例',
+        desc: '臺中國家歌劇院、路思義教堂、台北 101 與 921 園區解析',
+        icon: IconClassicalOrder,
+      },
+    ],
+  },
+  {
+    id: 'pathway',
+    label: '建築之路與升學',
+    icon: IconClassicalOrder,
+    items: [
+      {
+        href: '/pathway',
+        label: '建築之路：5年制課綱',
+        desc: '大學 5 年制 B.Arch 10 學期 Studio、8 大學術領域與評圖指南',
+        icon: IconClassicalOrder,
+        badge: 'B.Arch',
+      },
+      {
+        href: '/practice',
+        label: '近五年統測全真模擬',
+        desc: '111–115 年全科目 925 題逐題五段式解析與錯題 X 光',
+        icon: IconFastFormula,
+        badge: '925題',
+      },
+      {
+        href: '/exam-116',
+        label: '116 統測入學指南',
+        desc: '考科結構、級分換算、大專院校建築科系選填與備審指引',
+        icon: IconExamLicense,
+      },
+      {
+        href: '/goals',
+        label: '終極目標',
+        desc: '建築師、結構工程技師、土木工程技師報考資格與執業差異',
+        icon: IconExamLicense,
+        badge: '證照',
+      },
+      {
+        href: '/resources',
+        label: '資格考試法規資源',
+        desc: '考選部高考大綱、命題大綱、公會權威與歷屆試題庫',
+        icon: IconGreenBuilding,
+      },
+    ],
+  },
 ];
 
 const categoryFilters = [
@@ -41,76 +214,12 @@ const categoryFilters = [
 
 const specialHubs = [
   {
-    title: '🖥️ 建築電腦繪圖軟體全鑑 (TAG: 電腦繪圖)',
+    title: '🖥️ 建築電腦繪圖軟體全鑑 (CAD / BIM)',
     desc: '業界學界 8 大主力軟體全鑑（SketchUp, Blender, AutoCAD, Revit, 3ds Max, ArchiCAD, Rhino, 即時光追引擎），含新手 10 步 SOP、快捷鍵速查與 7 輪深度進化指南',
     href: '/cad-software',
     badge: '電腦繪圖',
     category: 'cad',
     tags: ['電腦繪圖', 'cad', 'sketchup', 'blender', 'autocad', 'revit', '3dsmax', 'archicad', 'rhino', 'bim', '建築製圖', '3d建模', '渲染', 'enscape', 'lumion', 'd5', 'twinmotion', '繪圖軟體'],
-  },
-  {
-    title: '📐 Trimble SketchUp Pro 建築概念推拉與 LayOut 施工圖',
-    desc: '直覺空間推拉建模、快速方案發想、LayOut 建築施工圖成圖與 Enscape 即時渲染',
-    href: '/cad-software/sketchup',
-    badge: '電腦繪圖',
-    category: 'cad',
-    tags: ['電腦繪圖', 'sketchup', '草圖大師', 'su', 'layout', '3d建模', '推拉', '概念體量'],
-  },
-  {
-    title: '🧊 Blender 3D (Bonsai 原生 openBIM 與幾何節點)',
-    desc: '開源 3D 全能神兵、原生 IFC 建築資訊模型、幾何節點參數化生成與 Cycles 頂級光追',
-    href: '/cad-software/blender',
-    badge: '電腦繪圖',
-    category: 'cad',
-    tags: ['電腦繪圖', 'blender', 'bonsai', 'blenderbim', 'openbim', 'ifc', '幾何節點', 'cycles', '開源'],
-  },
-  {
-    title: '📏 Autodesk AutoCAD Architecture 2D 建築施工圖業界基石',
-    desc: 'CNS 建築製圖標準、圖層標準、動態圖塊、外部參考 XREF 與配置多視埠比例尺出圖',
-    href: '/cad-software/autocad',
-    badge: '電腦繪圖',
-    category: 'cad',
-    tags: ['電腦繪圖', 'autocad', 'cad', '施工圖', '執照圖', 'dwg', '圖層', 'xref', 'cns11567'],
-  },
-  {
-    title: '🏢 Autodesk Revit 全方位 BIM 建築資訊模型旗艦',
-    desc: '全生命週期智慧構件、平立剖即時連動、參數化族群、明細表算料與機電管線碰撞檢討',
-    href: '/cad-software/revit',
-    badge: '電腦繪圖',
-    category: 'cad',
-    tags: ['電腦繪圖', 'revit', 'bim', '建築資訊模型', '參數族群', '明細表', '碰撞檢討', 'mep'],
-  },
-  {
-    title: '🎨 Autodesk 3ds Max 殿堂級建築視覺化 ArchViz 傳奇',
-    desc: '極致材質貼圖、Forest Pack 億級生態散布、Corona/V-Ray 照片級物理渲染與競圖動畫',
-    href: '/cad-software/3dsmax',
-    badge: '電腦繪圖',
-    category: 'cad',
-    tags: ['電腦繪圖', '3dsmax', 'max', 'archviz', '效果圖', 'vray', 'corona', 'forestpack', '渲染'],
-  },
-  {
-    title: '🏛️ Graphisoft Archicad 歐洲 BIM 先驅與虛擬建築哲學',
-    desc: '建築師思維介面、複合構造優先順序交接、GDL 參數化構件與 BIMcloud 零延遲多人協同',
-    href: '/cad-software/archicad',
-    badge: '電腦繪圖',
-    category: 'cad',
-    tags: ['電腦繪圖', 'archicad', 'graphisoft', '虛擬建築', 'bimcloud', 'bimx', 'openbim', 'gdl'],
-  },
-  {
-    title: '🦏 Rhino 3D & Grasshopper NURBS 曲面造型與演算法建築',
-    desc: '自由曲面高階連續性控制、Grasshopper 參數化演算法、Ladybug 日照輻射分析與 Make2D 出圖',
-    href: '/cad-software/rhino',
-    badge: '電腦繪圖',
-    category: 'cad',
-    tags: ['電腦繪圖', 'rhino', 'grasshopper', '犀牛', '參數化', 'nurbs', '曲面', 'ladybug', 'make2d'],
-  },
-  {
-    title: '⚡ 建築即時渲染引擎群 (Enscape / Lumion / D5 / Twinmotion)',
-    desc: '毫秒級 RTX 光追即時連動預覽、大氣氣候天候、一鍵 VR 沉浸漫遊與 4K 60fps 動畫輸出',
-    href: '/cad-software/rendering-engines',
-    badge: '電腦繪圖',
-    category: 'cad',
-    tags: ['電腦繪圖', 'enscape', 'lumion', 'd5', 'twinmotion', '即時渲染', '光線追蹤', 'vr', '動畫'],
   },
   {
     title: '🏛️ 建築之路：大學建築系 5 年制完整課綱 (Architecture Pathway)',
@@ -122,7 +231,7 @@ const specialHubs = [
   },
   {
     title: '🔬 互動圖解實驗室 (Interactive Lab)',
-    desc: '簡支梁剪力彎矩圖、莫爾圓主應力旋轉、CNS 第三角投影展開、水準儀高與混凝土水灰比模擬器',
+    desc: '簡支梁剪力彎矩圖、莫爾圓主應力旋轉、CNS 第三角投影展開、水準儀高程與混凝土水灰比模擬器',
     href: '/visualizers',
     badge: '實驗室',
     category: 'hubs',
@@ -203,6 +312,9 @@ export default function Navbar() {
   const [searchQuery, setSearchQuery] = useState('');
   const [activeCategory, setActiveCategory] = useState('all');
   const [selectedIndex, setSelectedIndex] = useState(0);
+  const [openDropdown, setOpenDropdown] = useState<string | null>(null);
+  const [mobileExpandedGroup, setMobileExpandedGroup] = useState<string | null>('curriculum');
+
   const [recentSearches, setRecentSearches] = useState<string[]>(() => {
     try {
       const saved = typeof window !== 'undefined' ? localStorage.getItem('arch_recent_searches') : null;
@@ -211,7 +323,28 @@ export default function Navbar() {
       return [];
     }
   });
+
   const searchInputRef = useRef<HTMLInputElement>(null);
+  const navContainerRef = useRef<HTMLDivElement>(null);
+
+  // 關閉下拉選單（點擊外部）
+  useEffect(() => {
+    const handleClickOutside = (e: MouseEvent) => {
+      if (navContainerRef.current && !navContainerRef.current.contains(e.target as Node)) {
+        setOpenDropdown(null);
+      }
+    };
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside);
+  }, []);
+
+  // 路由切換時關閉所有浮層（依據 React 官方模式，在渲染階段調整狀態，避免 cascading render）
+  const [prevPathname, setPrevPathname] = useState(pathname);
+  if (prevPathname !== pathname) {
+    setPrevPathname(pathname);
+    setOpenDropdown(null);
+    setMobileMenuOpen(false);
+  }
 
   const saveRecentSearch = (query: string) => {
     if (!query.trim()) return;
@@ -232,8 +365,9 @@ export default function Navbar() {
         triggerHaptic('medium');
         setSearchOpen((prev) => !prev);
       }
-      if (e.key === 'Escape' && searchOpen) {
+      if (e.key === 'Escape') {
         setSearchOpen(false);
+        setOpenDropdown(null);
       }
     };
     const handleCustomOpen = () => {
@@ -286,7 +420,7 @@ export default function Navbar() {
   }, [searchQuery, activeCategory]);
 
   const filteredResults = useMemo(() => {
-    let list: Array<{ subjectSlug: string; subjectTitle: string; topicSlug: string; topicTitle: string; desc: string }> = [...topicSearchIndex];
+    let list = [...topicSearchIndex];
 
     if (activeCategory === 'mechanics') {
       list = list.filter((t) => t.subjectSlug === 'mechanics');
@@ -303,7 +437,7 @@ export default function Navbar() {
     }
 
     const q = searchQuery.toLowerCase().trim();
-    const results: Array<{ subjectSlug: string; subjectTitle: string; topicSlug: string; topicTitle: string; desc: string }> = [];
+    const results = [];
 
     for (const topic of list) {
       if (
@@ -362,11 +496,12 @@ export default function Navbar() {
   return (
     <>
       <nav
+        ref={navContainerRef}
         className="sticky top-0 z-50 w-full border-b border-slate-200/80 dark:border-slate-800/80 bg-white/90 dark:bg-slate-900/90 backdrop-blur-md transition-colors"
         aria-label="主要導覽"
       >
         <div className="mx-auto flex h-16 max-w-7xl items-center justify-between gap-3 px-4 sm:px-6 lg:px-8">
-          {/* Logo & Brand */}
+          {/* 品牌標誌與標語 */}
           <div className="flex shrink-0 items-center gap-3">
             <Link href="/" className="flex items-center gap-2.5 group" aria-label="Arch 學習平台首頁">
               <span className="flex size-9 items-center justify-center rounded-xl bg-blue-700 dark:bg-blue-600 text-white font-mono text-base font-bold shadow-sm transition-transform duration-200 group-hover:scale-105">
@@ -388,29 +523,120 @@ export default function Navbar() {
             </Link>
           </div>
 
-          {/* Desktop Navigation Links */}
-          <div className="hidden xl:flex items-center gap-0.5">
-            {navLinks.map((link) => {
-              const isActive = pathname === link.href;
+          {/* ── 桌面版分組導覽 (信達雅建築結構化選單) ── */}
+          <div className="hidden lg:flex items-center gap-1">
+            <Link
+              href="/"
+              className={`px-3 py-2 rounded-xl text-xs font-bold transition-colors ${
+                pathname === '/'
+                  ? 'bg-blue-50 text-blue-700 dark:bg-blue-950/60 dark:text-blue-300'
+                  : 'text-slate-700 hover:bg-slate-100 hover:text-slate-900 dark:text-slate-300 dark:hover:bg-slate-800 dark:hover:text-white'
+              }`}
+            >
+              首頁
+            </Link>
+
+            {navGroups.map((group) => {
+              const isOpen = openDropdown === group.id;
+              const isGroupActive = group.items.some((item) => pathname.startsWith(item.href) && item.href !== '/');
+              const GroupIcon = group.icon;
+
               return (
-                <Link
-                  key={link.href}
-                  href={link.href}
-                  className={`flex flex-col items-center justify-center rounded-lg px-2 py-1.5 text-xs font-mono font-bold leading-tight whitespace-pre-line text-center transition-colors ${
-                    isActive
-                      ? 'bg-blue-50 text-blue-700 dark:bg-blue-950/60 dark:text-blue-300'
-                      : 'text-slate-600 hover:bg-slate-100 hover:text-slate-900 dark:text-slate-300 dark:hover:bg-slate-800 dark:hover:text-white'
-                  }`}
-                >
-                  {link.label}
-                </Link>
+                <div key={group.id} className="relative">
+                  <button
+                    type="button"
+                    onClick={() => {
+                      triggerHaptic('light');
+                      setOpenDropdown((prev) => (prev === group.id ? null : group.id));
+                    }}
+                    onMouseEnter={() => setOpenDropdown(group.id)}
+                    className={`inline-flex items-center gap-1.5 px-3 py-2 rounded-xl text-xs font-bold transition-all cursor-pointer ${
+                      isGroupActive || isOpen
+                        ? 'bg-blue-50 text-blue-700 dark:bg-blue-950/60 dark:text-blue-300'
+                        : 'text-slate-700 hover:bg-slate-100 hover:text-slate-900 dark:text-slate-300 dark:hover:bg-slate-800 dark:hover:text-white'
+                    }`}
+                    aria-expanded={isOpen}
+                  >
+                    <GroupIcon size={16} />
+                    <span>{group.label}</span>
+                    <ChevronDown
+                      size={14}
+                      className={`transition-transform duration-200 ${isOpen ? 'rotate-180 text-blue-600' : 'text-slate-400'}`}
+                    />
+                  </button>
+
+                  {/* 懸浮 Mega-Menu 下拉浮層 */}
+                  {isOpen && (
+                    <div
+                      onMouseLeave={() => setOpenDropdown(null)}
+                      className="absolute left-0 top-full pt-2 w-80 sm:w-96 z-50 animate-fade-in"
+                    >
+                      <div className="rounded-2xl border border-slate-200 dark:border-slate-800 bg-white/95 dark:bg-slate-900/95 backdrop-blur-xl p-3 shadow-2xl shadow-slate-900/10">
+                        <div className="px-3 py-1.5 border-b border-slate-100 dark:border-slate-800/80 mb-1 flex items-center justify-between">
+                          <span className="text-[10px] font-mono font-bold uppercase tracking-wider text-slate-400">
+                            {group.label} 專區導覽
+                          </span>
+                          <span className="text-[10px] font-mono text-blue-600 dark:text-blue-400">
+                            {group.items.length} 個子項目
+                          </span>
+                        </div>
+                        <div className="space-y-1">
+                          {group.items.map((item) => {
+                            const ItemIcon = item.icon;
+                            const isActive = pathname === item.href;
+                            return (
+                              <Link
+                                key={item.href}
+                                href={item.href}
+                                onClick={() => {
+                                  triggerHaptic('selection');
+                                  setOpenDropdown(null);
+                                }}
+                                className={`group flex items-start gap-3 p-2.5 rounded-xl transition-all ${
+                                  isActive
+                                    ? 'bg-blue-50 dark:bg-blue-950/60 text-blue-700 dark:text-blue-300'
+                                    : 'hover:bg-slate-50 dark:hover:bg-slate-800/60 text-slate-800 dark:text-slate-200'
+                                }`}
+                              >
+                                <div
+                                  className={`p-2 rounded-lg shrink-0 mt-0.5 transition-colors ${
+                                    isActive
+                                      ? 'bg-blue-600 text-white'
+                                      : 'bg-slate-100 dark:bg-slate-800 text-slate-500 group-hover:bg-blue-100 group-hover:text-blue-600 dark:group-hover:bg-blue-950 dark:group-hover:text-blue-300'
+                                  }`}
+                                >
+                                  <ItemIcon size={18} strokeWidth={1.75} />
+                                </div>
+                                <div className="min-w-0 flex-1">
+                                  <div className="flex items-center justify-between gap-1">
+                                    <span className="font-serif font-bold text-xs group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
+                                      {item.label}
+                                    </span>
+                                    {item.badge && (
+                                      <span className="rounded bg-blue-100 dark:bg-blue-900/40 px-1.5 py-0.2 text-[9px] font-mono font-bold text-blue-700 dark:text-blue-300 shrink-0">
+                                        {item.badge}
+                                      </span>
+                                    )}
+                                  </div>
+                                  <p className="text-[11px] text-slate-500 dark:text-slate-400 line-clamp-1 mt-0.5">
+                                    {item.desc}
+                                  </p>
+                                </div>
+                              </Link>
+                            );
+                          })}
+                        </div>
+                      </div>
+                    </div>
+                  )}
+                </div>
               );
             })}
           </div>
 
-          {/* Right Actions: Quick Search, Theme Toggle, Mobile Menu Button */}
+          {/* ── 右側動作區：快速搜尋、主題切換、音效與行動版漢堡選單 ── */}
           <div className="flex items-center gap-2">
-            {/* Quick Search Button */}
+            {/* Quick Search Button (Omnibar) */}
             <button
               type="button"
               onClick={() => {
@@ -420,8 +646,8 @@ export default function Navbar() {
               className="flex items-center gap-2 rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-800/60 px-3 py-1.5 text-xs font-mono text-slate-600 dark:text-slate-300 hover:border-slate-300 dark:hover:border-slate-700 transition-all active:scale-95 cursor-pointer"
               aria-label="快速搜尋全站章節 (Ctrl+K)"
             >
-              <span className="text-sm">🔍</span>
-              <span className="hidden md:inline font-sans">搜尋 120 主題／公式／實驗室...</span>
+              <IconTopicDiscovery size={16} className="text-blue-600 dark:text-blue-400" />
+              <span className="hidden md:inline font-sans">搜尋 120 主題／實驗／公式...</span>
               <span className="hidden md:inline-block rounded bg-white dark:bg-slate-700 border border-slate-200 dark:border-slate-600 px-1 text-[10px] text-slate-400">
                 Ctrl+K
               </span>
@@ -450,7 +676,7 @@ export default function Navbar() {
                 triggerHaptic('light');
                 setMobileMenuOpen((prev) => !prev);
               }}
-              className="flex size-9 items-center justify-center rounded-xl border border-slate-200 dark:border-slate-800 text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 transition-all active:scale-95 xl:hidden cursor-pointer"
+              className="flex size-9 items-center justify-center rounded-xl border border-slate-200 dark:border-slate-800 text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 transition-all active:scale-95 lg:hidden cursor-pointer"
               aria-label={mobileMenuOpen ? '關閉主選單' : '開啟主選單'}
               aria-expanded={mobileMenuOpen}
             >
@@ -459,9 +685,9 @@ export default function Navbar() {
           </div>
         </div>
 
-        {/* Mobile Navigation Dropdown */}
+        {/* ── 行動版結構化抽屜選單 ── */}
         {mobileMenuOpen && (
-          <div className="border-t border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 px-4 py-3 xl:hidden space-y-1">
+          <div className="border-t border-slate-200 dark:border-slate-800 bg-white/95 dark:bg-slate-900/95 backdrop-blur-xl px-4 py-4 lg:hidden max-h-[80vh] overflow-y-auto space-y-3">
             <button
               type="button"
               onClick={() => {
@@ -469,33 +695,93 @@ export default function Navbar() {
                 setMobileMenuOpen(false);
                 setSearchOpen(true);
               }}
-              className="w-full flex items-center justify-between rounded-lg bg-blue-50 dark:bg-blue-950/40 px-3 py-2.5 text-xs font-mono font-bold text-blue-700 dark:text-blue-300 mb-2 border border-blue-200 dark:border-blue-800"
+              className="w-full flex items-center justify-between rounded-xl bg-blue-50 dark:bg-blue-950/40 px-4 py-3 text-xs font-mono font-bold text-blue-700 dark:text-blue-300 border border-blue-200 dark:border-blue-800"
             >
-              <span>🔍 全站快速搜尋 (Omnibar · 120 主題)</span>
-              <span className="rounded bg-blue-700 px-1.5 py-0.5 text-[10px] text-white">開啟</span>
+              <div className="flex items-center gap-2">
+                <IconTopicDiscovery size={18} />
+                <span>全站快速搜尋 (Omnibar · 120 主題)</span>
+              </div>
+              <span className="rounded bg-blue-700 px-2 py-0.5 text-[10px] text-white">開啟</span>
             </button>
-            {navLinks.map((link) => (
-              <Link
-                key={link.href}
-                href={link.href}
-                onClick={() => {
-                  triggerHaptic('selection');
-                  setMobileMenuOpen(false);
-                }}
-                className={`block rounded-lg px-3 py-2 text-sm font-mono font-bold transition-colors ${
-                  pathname === link.href
-                    ? 'bg-blue-50 text-blue-700 dark:bg-blue-950/60 dark:text-blue-300'
-                    : 'text-slate-700 hover:bg-slate-100 dark:text-slate-300 dark:hover:bg-slate-800'
-                }`}
-              >
-                {link.label}
-              </Link>
-            ))}
+
+            <Link
+              href="/"
+              onClick={() => {
+                triggerHaptic('selection');
+                setMobileMenuOpen(false);
+              }}
+              className={`block rounded-xl px-4 py-2.5 text-sm font-bold transition ${
+                pathname === '/'
+                  ? 'bg-blue-50 text-blue-700 dark:bg-blue-950/60 dark:text-blue-300'
+                  : 'text-slate-800 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800'
+              }`}
+            >
+              首頁
+            </Link>
+
+            {/* 行動端手風琴分類 */}
+            <div className="space-y-2 pt-1 border-t border-slate-200/60 dark:border-slate-800/60">
+              {navGroups.map((group) => {
+                const isExpanded = mobileExpandedGroup === group.id;
+                const GroupIcon = group.icon;
+
+                return (
+                  <div key={group.id} className="rounded-xl border border-slate-200/80 dark:border-slate-800/80 overflow-hidden">
+                    <button
+                      type="button"
+                      onClick={() => setMobileExpandedGroup((prev) => (prev === group.id ? null : group.id))}
+                      className="w-full flex items-center justify-between p-3 bg-slate-50/50 dark:bg-slate-800/40 text-left font-bold text-xs text-slate-800 dark:text-slate-200"
+                    >
+                      <div className="flex items-center gap-2">
+                        <GroupIcon size={18} className="text-blue-600 dark:text-blue-400" />
+                        <span>{group.label}</span>
+                      </div>
+                      <ChevronDown
+                        size={16}
+                        className={`transition-transform ${isExpanded ? 'rotate-180 text-blue-600' : 'text-slate-400'}`}
+                      />
+                    </button>
+
+                    {isExpanded && (
+                      <div className="p-2 space-y-1 bg-white dark:bg-slate-900 border-t border-slate-100 dark:border-slate-800">
+                        {group.items.map((item) => {
+                          const ItemIcon = item.icon;
+                          const isActive = pathname === item.href;
+                          return (
+                            <Link
+                              key={item.href}
+                              href={item.href}
+                              onClick={() => {
+                                triggerHaptic('selection');
+                                setMobileMenuOpen(false);
+                              }}
+                              className={`flex items-center gap-2.5 px-3 py-2 rounded-lg text-xs font-medium transition ${
+                                isActive
+                                  ? 'bg-blue-50 text-blue-700 font-bold dark:bg-blue-950/60 dark:text-blue-300'
+                                  : 'text-slate-700 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800'
+                              }`}
+                            >
+                              <ItemIcon size={16} className="text-slate-400 shrink-0" />
+                              <span className="flex-1">{item.label}</span>
+                              {item.badge && (
+                                <span className="text-[10px] font-mono text-slate-400 bg-slate-100 dark:bg-slate-800 px-1.5 py-0.5 rounded">
+                                  {item.badge}
+                                </span>
+                              )}
+                            </Link>
+                          );
+                        })}
+                      </div>
+                    )}
+                  </div>
+                );
+              })}
+            </div>
           </div>
         )}
       </nav>
 
-      {/* Global Quick Search Omnibar Modal (Cmd+K) */}
+      {/* ── Global Quick Search Omnibar Modal (Cmd+K) ── */}
       {searchOpen && (
         <div
           className="fixed inset-0 z-50 flex items-start justify-center bg-black/60 p-4 pt-12 sm:pt-20 backdrop-blur-md animate-fade-in"
@@ -507,7 +793,7 @@ export default function Navbar() {
           >
             {/* Input Header */}
             <div className="flex items-center border-b border-slate-200 dark:border-slate-800 px-4 py-3.5 bg-slate-50/50 dark:bg-slate-800/30">
-              <span className="text-xl text-slate-400 mr-3">🔍</span>
+              <IconTopicDiscovery size={22} className="text-blue-600 dark:text-blue-400 mr-3" />
               <input
                 id="search-input"
                 ref={searchInputRef}
@@ -522,14 +808,14 @@ export default function Navbar() {
                   setSelectedIndex(0);
                 }}
                 onKeyDown={handleInputKeyDown}
-                placeholder="搜尋 120 個主題、公式速查、現場手冊、圖解實驗室或建築案例..."
+                placeholder="搜尋 120 個建築主題、公式速查、現場手冊、圖解實驗室或名築案例..."
                 className="w-full bg-transparent text-sm sm:text-base text-slate-900 dark:text-white placeholder-slate-400 focus:outline-hidden font-sans"
               />
               {searchQuery && (
                 <button
                   type="button"
                   onClick={() => setSearchQuery('')}
-                  className="mr-2 text-xs text-slate-400 hover:text-slate-600 dark:hover:text-slate-200"
+                  className="mr-2 text-xs text-slate-400 hover:text-slate-600 dark:hover:text-slate-200 cursor-pointer"
                 >
                   清除
                 </button>

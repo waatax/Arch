@@ -16,6 +16,19 @@ import {
   FileText,
 } from 'lucide-react';
 import { cadSoftwareList } from '@/data/cad-software/cadSoftwareData';
+import {
+  IconBIMModel,
+  IconDraftingTools,
+  IconPerspective,
+  IconStudioForge,
+} from '@/components/ui/ArchitecturalIcons';
+
+function getCadSoftwareIcon(slug: string, category: string) {
+  if (category.includes('BIM')) return IconBIMModel;
+  if (slug === 'autocad' || category.includes('CAD')) return IconDraftingTools;
+  if (slug === 'rhino' || category.includes('參數化')) return IconStudioForge;
+  return IconPerspective;
+}
 
 export default function CadSoftwareHubPage() {
   const [selectedCategory, setSelectedCategory] = useState<string>('all');
@@ -62,17 +75,24 @@ export default function CadSoftwareHubPage() {
             </span>
           </div>
 
-          <h1 className="font-serif text-3xl font-bold tracking-tight text-slate-900 dark:text-white sm:text-5xl lg:text-6xl">
-            建築電腦繪圖軟體全鑑
-            <span className="block text-2xl sm:text-4xl text-blue-600 dark:text-blue-400 mt-2 font-normal">
-              業界與學界主力工具 · 幾何底層、工程法規與 7 輪深度進化體系
-            </span>
-          </h1>
+          <div className="flex flex-col md:flex-row md:items-start gap-6">
+            <div className="hidden md:flex size-20 shrink-0 items-center justify-center rounded-3xl bg-blue-700/10 dark:bg-blue-500/20 border border-blue-500/30 text-blue-700 dark:text-blue-400 shadow-inner">
+              <IconBIMModel size={44} strokeWidth={1.8} />
+            </div>
+            <div>
+              <h1 className="font-serif text-3xl font-bold tracking-tight text-slate-900 dark:text-white sm:text-5xl lg:text-6xl">
+                建築電腦繪圖軟體全鑑
+                <span className="block text-2xl sm:text-4xl text-blue-600 dark:text-blue-400 mt-2 font-normal">
+                  業界與學界主力工具 · 幾何底層、工程法規與 7 輪深度進化體系
+                </span>
+              </h1>
 
-          <p className="mt-6 max-w-3xl text-base sm:text-lg leading-relaxed text-slate-600 dark:text-slate-400">
-            現代建築工程與運算化設計已從單純之二維幾何描繪，深化為結合建築資訊模型 (BIM)、非標準自由曲面演算法、環境物理模擬與即時光線追蹤之跨領域數位協同體系。
-            本全鑑完整收錄台灣營建實務與國際頂尖事務所採用之 8 大核心軟體工具，從底層微分幾何、CNS 11567 國家製圖規範、ISO 19650 資訊管理架構到可執行自動化腳本，建立系統化之工程實務知識庫。
-          </p>
+              <p className="mt-6 max-w-3xl text-base sm:text-lg leading-relaxed text-slate-600 dark:text-slate-400">
+                現代建築工程與運算化設計已從單純之二維幾何描繪，深化為結合建築資訊模型 (BIM)、非標準自由曲面演算法、環境物理模擬與即時光線追蹤之跨領域數位協同體系。
+                本全鑑完整收錄台灣營建實務與國際頂尖事務所採用之 8 大核心軟體工具，從底層微分幾何、CNS 11567 國家製圖規範、ISO 19650 資訊管理架構到可執行自動化腳本，建立系統化之工程實務知識庫。
+              </p>
+            </div>
+          </div>
 
           {/* Quick Metrics */}
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mt-10">
@@ -133,34 +153,39 @@ export default function CadSoftwareHubPage() {
 
         {/* Software Cards Grid */}
         <div className="grid gap-6 md:grid-cols-2">
-          {filteredList.map((soft) => (
-            <div
-              key={soft.slug}
-              className="group relative flex flex-col justify-between rounded-3xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 p-6 sm:p-8 transition-all duration-300 hover:-translate-y-1 hover:border-blue-300 dark:hover:border-blue-700 hover:shadow-xl hover:shadow-blue-500/5"
-            >
-              <div>
-                {/* Header tags */}
-                <div className="flex flex-wrap items-center justify-between gap-2 mb-4">
-                  <div className="flex items-center gap-2">
-                    <span className="rounded-full bg-blue-50 text-blue-700 dark:bg-blue-900/30 dark:text-blue-300 px-3 py-0.5 text-xs font-mono font-bold">
-                      {soft.category}
-                    </span>
-                    <span className="rounded-full bg-amber-500/10 text-amber-700 dark:text-amber-300 border border-amber-500/20 px-2 py-0.5 text-[11px] font-mono">
-                      {soft.badge}
-                    </span>
+          {filteredList.map((soft) => {
+            const SoftIcon = getCadSoftwareIcon(soft.slug, soft.category);
+            return (
+              <div
+                key={soft.slug}
+                className="group relative flex flex-col justify-between rounded-3xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 p-6 sm:p-8 transition-all duration-300 hover:-translate-y-1 hover:border-blue-300 dark:hover:border-blue-700 hover:shadow-xl hover:shadow-blue-500/5"
+              >
+                <div>
+                  {/* Header tags */}
+                  <div className="flex flex-wrap items-center justify-between gap-2 mb-4">
+                    <div className="flex items-center gap-2">
+                      <div className="p-1.5 rounded-lg bg-blue-100 dark:bg-blue-900/50 text-blue-700 dark:text-blue-300">
+                        <SoftIcon size={18} strokeWidth={1.8} />
+                      </div>
+                      <span className="rounded-full bg-blue-50 text-blue-700 dark:bg-blue-900/30 dark:text-blue-300 px-3 py-0.5 text-xs font-mono font-bold">
+                        {soft.category}
+                      </span>
+                      <span className="rounded-full bg-amber-500/10 text-amber-700 dark:text-amber-300 border border-amber-500/20 px-2 py-0.5 text-[11px] font-mono">
+                        {soft.badge}
+                      </span>
+                    </div>
+                    <span className="text-xs text-slate-400 font-mono">{soft.vendor}</span>
                   </div>
-                  <span className="text-xs text-slate-400 font-mono">{soft.vendor}</span>
-                </div>
 
-                {/* Software Title */}
-                <h3 className="font-serif text-2xl font-bold text-slate-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 transition">
-                  {soft.name}
-                </h3>
-                <p className="text-xs text-slate-400 font-mono mt-0.5">{soft.englishName}</p>
+                  {/* Software Title */}
+                  <h3 className="font-serif text-2xl font-bold text-slate-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 transition">
+                    {soft.name}
+                  </h3>
+                  <p className="text-xs text-slate-400 font-mono mt-0.5">{soft.englishName}</p>
 
-                <p className="mt-4 text-sm leading-relaxed text-slate-600 dark:text-slate-400">
-                  {soft.shortDesc}
-                </p>
+                  <p className="mt-4 text-sm leading-relaxed text-slate-600 dark:text-slate-400">
+                    {soft.shortDesc}
+                  </p>
 
                 {/* Metrics Mini-grid */}
                 <div className="grid grid-cols-2 gap-2 mt-5 p-3 rounded-2xl bg-slate-50 dark:bg-slate-800/50 text-xs font-mono">
@@ -250,7 +275,8 @@ export default function CadSoftwareHubPage() {
                 </Link>
               </div>
             </div>
-          ))}
+          );
+        })}
         </div>
       </section>
 

@@ -10,6 +10,7 @@ import {
   Zap,
   Trophy,
 } from 'lucide-react';
+import { IconConstellationMap } from '@/components/ui/ArchitecturalIcons';
 import { soundEngine } from '@/lib/audio/soundEffects';
 import { useGamificationStore } from '@/lib/store/gamificationStore';
 import {
@@ -63,17 +64,22 @@ export default function ArchitectSkillConstellation() {
         <div className="absolute bottom-0 left-1/3 w-80 h-80 bg-cyan-500/10 rounded-full blur-3xl pointer-events-none" />
 
         <div className="relative z-10 flex flex-col lg:flex-row lg:items-center lg:justify-between gap-6">
-          <div className="space-y-3 max-w-2xl">
-            <div className="inline-flex items-center gap-2 rounded-full bg-indigo-500/20 border border-indigo-400/30 px-3.5 py-1 text-xs font-mono font-bold text-indigo-300">
-              <Sparkles className="size-3.5 text-amber-400 animate-pulse" />
-              13 科 120 主題全宇宙專業技能星圖 · ARCHITECTURAL GALAXY
+          <div className="flex items-start gap-5">
+            <div className="hidden sm:flex size-16 shrink-0 items-center justify-center rounded-2xl bg-indigo-500/20 border border-indigo-400/30 text-indigo-300 shadow-inner">
+              <IconConstellationMap size={36} strokeWidth={1.8} />
             </div>
-            <h1 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-white via-indigo-100 to-indigo-300">
-              點亮你的專業技能星系網絡
-            </h1>
-            <p className="text-xs sm:text-sm text-slate-300 leading-relaxed font-sans">
-              將高職建築科 13 個科目、120 個教學單元構築為宏偉的知識點星圖。每點亮一顆恆星節點，即可啟動跨學科知識光束，直通專屬教學單元頁面！
-            </p>
+            <div className="space-y-3 max-w-2xl">
+              <div className="inline-flex items-center gap-2 rounded-full bg-indigo-500/20 border border-indigo-400/30 px-3.5 py-1 text-xs font-mono font-bold text-indigo-300">
+                <Sparkles className="size-3.5 text-amber-400 animate-pulse" />
+                13 科 120 主題全宇宙專業技能星圖 · ARCHITECTURAL GALAXY
+              </div>
+              <h1 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-white via-indigo-100 to-indigo-300">
+                點亮你的專業技能星系網絡
+              </h1>
+              <p className="text-xs sm:text-sm text-slate-300 leading-relaxed font-sans">
+                將高職建築科 13 個科目、120 個教學單元構築為宏偉的知識點星圖。每點亮一顆恆星節點，即可啟動跨學科知識光束，直通專屬教學單元頁面！
+              </p>
+            </div>
           </div>
 
           {/* Global Progress Metrics Box */}

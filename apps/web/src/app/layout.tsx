@@ -6,7 +6,7 @@ import DeferredPomodoro from "@/components/DeferredPomodoro";
 import IOSMobileTabBar from "@/components/IOSMobileTabBar";
 import "./globals.css";
 
-const displayBootstrap = `(function(){try{var r=document.documentElement;var ua=navigator.userAgent||'';if(/(?:ArchLowRam\\/1|ArchLite)/i.test(ua)){r.classList.add('arch-lite');}var saved=localStorage.getItem('arch-theme');var dark=saved==='dark'||(saved!=='light'&&matchMedia('(prefers-color-scheme: dark)').matches);r.classList.toggle('dark',dark);r.style.colorScheme=dark?'dark':'light';}catch(e){}})();`;
+const displayBootstrap = `(function(){try{var r=document.documentElement;var ua=navigator.userAgent||'';if(/(?:ArchLowRam\\/1|ArchLite)/i.test(ua)){r.classList.add('arch-lite');}var saved=localStorage.getItem('arch-theme');var dark=saved==='dark'||saved==='oled'||(saved!=='light'&&saved!=='sepia'&&matchMedia('(prefers-color-scheme: dark)').matches);r.classList.toggle('dark',dark);if(saved==='sepia'){r.classList.add('theme-sepia');r.style.colorScheme='light';}else if(saved==='oled'){r.classList.add('theme-oled');r.style.colorScheme='dark';}else{r.style.colorScheme=dark?'dark':'light';}var savedSize=localStorage.getItem('arch-font-size');if(savedSize){r.classList.add('text-size-'+savedSize);}}catch(e){}})();`;
 
 const jsonLdData = {
   "@context": "https://schema.org",

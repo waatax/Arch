@@ -4,6 +4,7 @@ import { notFound } from 'next/navigation';
 import { allSubjects } from '@/data/subjects';
 import SubjectConstellationCanvas from '@/components/gamification/SubjectConstellationCanvas';
 import { getSubjectSemesters } from '@/data/semesterReviews';
+import { ArchitecturalSubjectIcon } from '@/components/ui/ArchitecturalIcons';
 
 export function generateStaticParams() {
   return allSubjects.map((subject) => ({ subject: subject.slug }));
@@ -14,7 +15,7 @@ export async function generateMetadata({ params }: { params: Promise<{ subject: 
   const subject = allSubjects.find((item) => item.slug === slug);
   if (!subject) return { title: 'Not Found' };
   return {
-    title: `${subject.title} 完整課程與考點導覽 | Arch V8.02`,
+    title: `${subject.title} 完整課程與考點導覽 | Arch V9.00`,
     description: `從生活直覺、圖像拆解到統測解題，深入掌握 108 課綱技術型高中建築科 ${subject.title} 核心觀念。`,
   };
 }
@@ -45,9 +46,14 @@ export default async function SubjectPage({ params }: { params: Promise<{ subjec
             </span>
           </div>
 
-          <h1 className="font-serif text-3xl font-bold leading-tight text-slate-900 dark:text-white sm:text-5xl">
-            {subject.title}
-          </h1>
+          <div className="flex items-center gap-4">
+            <div className="p-3.5 rounded-2xl bg-blue-50 dark:bg-blue-950/60 text-blue-700 dark:text-blue-300 border border-blue-200/60 dark:border-blue-900/40 shrink-0">
+              <ArchitecturalSubjectIcon slug={subject.slug} size={36} strokeWidth={1.75} />
+            </div>
+            <h1 className="font-serif text-3xl font-bold leading-tight text-slate-900 dark:text-white sm:text-5xl">
+              {subject.title}
+            </h1>
+          </div>
 
           <p className="text-base leading-relaxed text-slate-600 dark:text-slate-400">
             每一章都依循「生活直覺 → 概念圖解 → 白話定義 → 公式速查 → 步驟化例題 → 統測驗證」六步架構。建立扎實的專業底子，不靠死背也能融會貫通。

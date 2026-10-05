@@ -75,21 +75,34 @@ export interface ExamWalkthroughInput {
   options?: Partial<Record<'A' | 'B' | 'C' | 'D', string>>;
 }
 
-export function buildExamWalkthrough(question: ExamWalkthroughInput, topic: TopicContent) {
+export function buildExamWalkthrough(
+  question: ExamWalkthroughInput,
+  topic?: Partial<TopicContent> | { title?: string; desc?: string; concepts?: Array<{ heading: string; body: string }> }
+) {
   const answerChoices: string[] = question.answer.match(/[A-D]/g) ?? [];
-  const correctText = answerChoices.map((choice) => `${choice}「${question.options?.[choice as 'A' | 'B' | 'C' | 'D'] ?? '以官方題本圖文為準'}」`).join('、');
-  const anchor = topic.concepts[0];
-  const rule = anchor ? `${anchor.heading}：${compact(anchor.body, 170)}` : compact(topic.desc, 170);
-  const scopeWords = /不|非|錯誤|不可/.test(question.excerpt) ? '題幹含否定語，最後必須再確認你選的是「不符合」的項目。' : '題幹是正向提問，要找完整符合條件的項目。';
+  const correctText = answerChoices
+    .map((choice) => `${choice}「${question.options?.[choice as 'A' | 'B' | 'C' | 'D'] ?? '以官方題本圖文為準'}」`)
+    .join('、');
+  const anchor = topic?.concepts?.[0];
+  const rule = anchor
+    ? `${anchor.heading}：${compact(anchor.body, 170)}`
+    : topic?.desc
+    ? compact(topic.desc, 170)
+    : '依據 108 課綱與統測命題標準，解題首重核心公式量綱、題幹邊界條件與空間/物理因果關係。';
+  const scopeWords = /不|非|錯誤|不可/.test(question.excerpt)
+    ? '題幹含否定語（反向提問），最後務必核對你選出的是「不符合」或「錯誤」的項目。'
+    : '題幹為正向提問，需找出所有條件完整吻合之最佳解答。';
+
+  const title = topic?.title ?? '本科核心主題';
 
   return {
-    restate: `這題其實在問：你能不能從題幹線索辨認「${topic.title}」的適用規則。${scopeWords}`,
-    clues: `先圈出名詞、數值、單位、圖示和「一定、可能、最大、最小、僅」等範圍詞；再把它們對回本章第一個核心原理。`,
+    restate: `這題其實在問：你能不能從題幹線索辨認「${title}」的適用規則。${scopeWords}`,
+    clues: `先圈出關鍵物理量、幾何符號、材料名詞、單位（如 N, kN, MPa, cm, m）與「一定、可能、最大、最小、僅」等範圍限定詞。`,
     rule,
-    correct: `官方答案是 ${question.answer}，也就是 ${correctText}。它必須同時符合題幹條件與上述核心原理；不是因為字看起來熟悉，而是條件、方向或因果關係能逐項對上。`,
+    correct: `官方標準答案是 ${question.answer}，即 ${correctText}。它必須同時符合題幹幾何/物理邊界條件；不是因為字面看起來熟悉，而是推導邏輯與因果關係能完全契合。`,
     distractors: (['A', 'B', 'C', 'D'] as const)
       .filter((choice) => !answerChoices.includes(choice) && question.options?.[choice])
-      .map((choice) => `${choice}「${compact(question.options?.[choice] ?? '', 80)}」：不是官方答案。回查它是否偷換名詞、顛倒方向／因果、漏掉適用條件、誤用單位，或只說對一部分。`),
-    transfer: `把題目的數值、物件或情境換掉，但保留同一核心關係，再說一次判斷步驟；能做到，才代表不是背答案。`,
+      .map((choice) => `${choice}「${compact(question.options?.[choice] ?? '', 80)}」：此為典型誘答干擾項（這不是官方答案）。回查它是否偷換概念、方向顛倒、漏看適用前提、單位未換算或過度外推。`),
+    transfer: `若將題目的數值、受力形式或幾何尺度改變，仍可套用相同解題 SOP 迅速驗算破題。`,
   };
 }

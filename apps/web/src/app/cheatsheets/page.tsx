@@ -7,9 +7,18 @@ import {
   Check, 
   Search, 
   Star,
-  Zap,
-  Printer
+  Printer,
+  Flame,
 } from 'lucide-react';
+import {
+  IconFastFormula,
+  IconTrussBeam,
+  IconSlumpCone,
+  IconSurveyingLevel,
+  IconDraftingTools,
+  IconMohrCircle,
+  IconTopicDiscovery,
+} from '@/components/ui/ArchitecturalIcons';
 import { BlockMath } from 'react-katex';
 
 interface FormulaCard {
@@ -380,7 +389,7 @@ export default function CheatsheetsPage() {
       {/* Header */}
       <header className="space-y-4 text-center max-w-3xl mx-auto">
         <div className="inline-flex items-center gap-2 rounded-full border border-amber-200 dark:border-amber-900/80 bg-amber-50/80 dark:bg-amber-950/40 px-3.5 py-1 text-xs font-mono font-bold text-amber-700 dark:text-amber-300">
-          <Zap className="size-3.5 text-amber-600 dark:text-amber-400" />
+          <IconFastFormula className="size-4 text-amber-600 dark:text-amber-400" />
           Arch V8.02 統測考點高頻速查指南 (Cheatsheets)
         </div>
         <h1 className="font-serif text-3xl font-bold tracking-tight text-slate-950 dark:text-white sm:text-5xl">
@@ -398,31 +407,35 @@ export default function CheatsheetsPage() {
           {/* Categories */}
           <div className="flex items-center gap-1.5 overflow-x-auto w-full sm:w-auto pb-1 text-xs font-mono mobile-scroll">
             {[
-              { id: 'all', label: '全部公式卡' },
-              { id: 'five-star', label: '🔥 考前10分鐘必背 (5星)', highlight: true },
-              { id: 'mechanics', label: '專業（一）力學' },
-              { id: 'materials', label: '專業（一）材料' },
-              { id: 'surveying', label: '專業（二）測量' },
-              { id: 'drafting', label: '專業（二）製圖' },
-              { id: 'math', label: '數學（C）' },
-              { id: 'english', label: '🇬🇧 統測英文隨身讀' },
-            ].map((cat) => (
-              <button
-                key={cat.id}
-                onClick={() => setActiveCategory(cat.id)}
-                className={`px-3.5 py-2 rounded-xl font-bold transition-all shrink-0 cursor-pointer ${
-                  activeCategory === cat.id
-                    ? cat.id === 'five-star'
-                      ? 'bg-red-600 text-white shadow-sm'
-                      : cat.id === 'english'
-                      ? 'bg-indigo-600 text-white shadow-sm'
-                      : 'bg-amber-600 text-white shadow-sm'
-                    : 'bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700'
-                }`}
-              >
-                {cat.label}
-              </button>
-            ))}
+              { id: 'all', label: '全部公式卡', icon: IconFastFormula },
+              { id: 'five-star', label: '考前10分鐘必背 (5星)', highlight: true, icon: Flame },
+              { id: 'mechanics', label: '專業（一）力學', icon: IconTrussBeam },
+              { id: 'materials', label: '專業（一）材料', icon: IconSlumpCone },
+              { id: 'surveying', label: '專業（二）測量', icon: IconSurveyingLevel },
+              { id: 'drafting', label: '專業（二）製圖', icon: IconDraftingTools },
+              { id: 'math', label: '數學（C）', icon: IconMohrCircle },
+              { id: 'english', label: '統測英文隨身讀', icon: IconTopicDiscovery },
+            ].map((cat) => {
+              const Icon = cat.icon;
+              return (
+                <button
+                  key={cat.id}
+                  onClick={() => setActiveCategory(cat.id)}
+                  className={`flex items-center gap-1.5 px-3.5 py-2 rounded-xl font-bold transition-all shrink-0 cursor-pointer ${
+                    activeCategory === cat.id
+                      ? cat.id === 'five-star'
+                        ? 'bg-red-600 text-white shadow-sm'
+                        : cat.id === 'english'
+                        ? 'bg-indigo-600 text-white shadow-sm'
+                        : 'bg-amber-600 text-white shadow-sm'
+                      : 'bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700'
+                  }`}
+                >
+                  {Icon && <Icon className="size-3.5" />}
+                  <span>{cat.label}</span>
+                </button>
+              );
+            })}
           </div>
 
           {/* Action Row: Search & Print */}

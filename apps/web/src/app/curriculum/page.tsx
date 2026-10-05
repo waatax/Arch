@@ -3,6 +3,8 @@
 import { useState, useMemo, useEffect } from 'react';
 import Link from 'next/link';
 import { allSubjects } from '@/data/subjects';
+import { getSubjectArchitecturalIcon, IconDraftingTools } from '@/components/ui/ArchitecturalIcons';
+import { triggerHaptic } from '@/lib/haptics';
 
 export default function CurriculumPage() {
   const [activeTab, setActiveTab] = useState<string>('all');
@@ -23,19 +25,43 @@ export default function CurriculumPage() {
   const progressPercent = Math.round((doneTopics / totalTopics) * 100);
 
   const navigationTabs = [
-    { id: 'all', label: '全部課程 (3年學程)' },
+    { id: 'all', label: '全部科目 (13科 · 120章)' },
+    { id: 'professional', label: '專業核心 (專一/專二)' },
+    { id: 'common', label: '共同科目 (國/英/數C)' },
+    { id: 'general', label: '基礎科學與人文 (物化史地公)' },
     { id: 'g10', label: '高一 (基礎探索)' },
     { id: 'g11', label: '高二 (專業精進)' },
-    { id: 'g12', label: '高三 (統測與專題)' },
+    { id: 'g12', label: '高三 (統測衝刺)' },
+  ];
+
+  const quickSearchTags = [
+    '剪力彎矩',
+    '莫爾圓',
+    '桁架零力桿',
+    '坍度試驗',
+    '水準儀閉合',
+    '第三角投影',
+    '透視消點',
+    '雙十鋼筋綁紮',
+    '三角函數',
   ];
 
   const getFilteredSubjects = useMemo(() => {
     return allSubjects.filter((subject) => {
       let matchesCategory = true;
-      // 簡易 Grade 映射 (實際應由 TopicContent.gradeLevel 控制，此處為展示邏輯)
-      if (activeTab === 'g10') matchesCategory = ['chinese', 'english', 'math-c', 'mechanics', 'materials', 'drafting', 'surveying'].includes(subject.slug);
-      else if (activeTab === 'g11') matchesCategory = ['mechanics', 'materials', 'surveying', 'drafting', 'extensions'].includes(subject.slug);
-      else if (activeTab === 'g12') matchesCategory = ['extensions', 'mechanics', 'materials', 'surveying', 'drafting'].includes(subject.slug);
+      if (activeTab === 'professional') {
+        matchesCategory = ['mechanics', 'materials', 'surveying', 'drafting'].includes(subject.slug);
+      } else if (activeTab === 'common') {
+        matchesCategory = ['chinese', 'english', 'math-c'].includes(subject.slug);
+      } else if (activeTab === 'general') {
+        matchesCategory = ['physics', 'chemistry', 'history', 'geography', 'civics', 'extensions'].includes(subject.slug);
+      } else if (activeTab === 'g10') {
+        matchesCategory = ['chinese', 'english', 'math-c', 'mechanics', 'materials', 'drafting', 'surveying'].includes(subject.slug);
+      } else if (activeTab === 'g11') {
+        matchesCategory = ['mechanics', 'materials', 'surveying', 'drafting', 'extensions'].includes(subject.slug);
+      } else if (activeTab === 'g12') {
+        matchesCategory = ['extensions', 'mechanics', 'materials', 'surveying', 'drafting'].includes(subject.slug);
+      }
 
       if (!matchesCategory) return false;
 
@@ -58,7 +84,7 @@ export default function CurriculumPage() {
         <div className="flex flex-col sm:flex-row sm:justify-between sm:items-end gap-6 border-b border-slate-200 dark:border-slate-800 pb-8">
           <div className="space-y-2">
             <div className="flex items-center gap-2">
-              <span className="text-xs font-mono text-blue-600 dark:text-blueprint-700 uppercase tracking-[0.2em] block font-bold">
+              <span className="text-xs font-mono text-blue-600 dark:text-blue-400 uppercase tracking-[0.2em] block font-bold">
                 Arch V9.00 Curriculum
               </span>
               <span className="rounded-md bg-blue-700/10 text-blue-700 dark:text-blue-300 text-[10px] font-mono font-bold px-2 py-0.5 border border-blue-700/20">
@@ -69,11 +95,11 @@ export default function CurriculumPage() {
               土木與建築群學習地圖
             </h1>
             <p className="text-base text-slate-600 dark:text-slate-400 max-w-2xl leading-relaxed mt-2">
-              完全對齊 108 課綱與臺中高工三年三階課程配當。涵蓋高一基礎實作、高二丙乙級檢定、至高三四技二專統測衝刺與大學建築系銜接。
+              完全對齊 108 課綱與技術型高級中等學校三年三階課程配當。涵蓋高一基礎實作、高二專業精進、至高三四技二專統測衝刺與大學建築系銜接。
             </p>
           </div>
 
-          <div className="rounded-xl border border-slate-200 dark:border-slate-800 bg-white/50 dark:bg-slate-900/50 backdrop-blur-md p-4 shadow-xs flex-shrink-0 w-full sm:w-64">
+          <div className="rounded-2xl border border-slate-200 dark:border-slate-800 bg-white/50 dark:bg-slate-900/50 backdrop-blur-md p-4 shadow-xs flex-shrink-0 w-full sm:w-64">
             <div className="text-xs font-mono text-slate-500 mb-2 flex justify-between">
               <span>全站章節建置進度</span>
               <span className="font-bold text-blue-600 dark:text-blue-400">{progressPercent}%</span>
@@ -122,17 +148,20 @@ export default function CurriculumPage() {
       </div>
 
       {/* ── Fluid Navigation & Search ── */}
-      <div className="space-y-6 sticky top-0 z-10 bg-background/90 backdrop-blur-md py-4 -mx-4 px-4 sm:mx-0 sm:px-0">
-        <div className="flex flex-col sm:flex-row gap-4">
+      <div className="space-y-4 sticky top-16 z-20 bg-background/95 backdrop-blur-md py-4 -mx-4 px-4 sm:mx-0 sm:px-0 border-b border-slate-200/60 dark:border-slate-800/60">
+        <div className="flex flex-col sm:flex-row gap-3">
           {/* Navigation Tabs */}
-          <div className="flex overflow-x-auto mobile-scroll pb-2 sm:pb-0 gap-2 font-mono text-xs font-bold w-full sm:w-auto flex-shrink-0">
+          <div className="flex overflow-x-auto mobile-scroll pb-1 sm:pb-0 gap-2 font-mono text-xs font-bold w-full sm:w-auto flex-shrink-0">
             {navigationTabs.map((tab) => (
               <button
                 key={tab.id}
-                onClick={() => setActiveTab(tab.id)}
-                className={`px-5 py-2.5 rounded-full transition-all duration-300 whitespace-nowrap btn-tactile ${
+                onClick={() => {
+                  triggerHaptic('light');
+                  setActiveTab(tab.id);
+                }}
+                className={`px-4 py-2.5 rounded-xl transition-all duration-200 whitespace-nowrap cursor-pointer ${
                   activeTab === tab.id
-                    ? 'bg-slate-900 text-white dark:bg-white dark:text-slate-900 shadow-md'
+                    ? 'bg-blue-700 text-white shadow-sm'
                     : 'bg-white dark:bg-slate-900 text-slate-600 dark:text-slate-400 border border-slate-200 dark:border-slate-800 hover:border-slate-400 dark:hover:border-slate-600'
                 }`}
               >
@@ -147,25 +176,48 @@ export default function CurriculumPage() {
               type="text"
               value={searchKeyword}
               onChange={(e) => setSearchKeyword(e.target.value)}
-              placeholder="🔍 依關鍵字搜尋 (例如: 向量, 水準儀, 剪力彎矩, 101阻尼器)..."
-              className="w-full rounded-full border border-slate-200 dark:border-slate-800 bg-white/80 dark:bg-slate-900/80 px-5 py-2.5 text-sm text-slate-900 dark:text-white placeholder-slate-400 focus:border-blue-500 focus:outline-hidden transition-all shadow-xs"
+              placeholder="🔍 依關鍵字搜尋章節 (例如: 剪力彎矩, 莫爾圓, 水準儀, 坍度, 第三角)..."
+              className="w-full rounded-xl border border-slate-200 dark:border-slate-800 bg-white/90 dark:bg-slate-900/90 px-4 py-2.5 text-sm text-slate-900 dark:text-white placeholder-slate-400 focus:border-blue-500 focus:outline-hidden transition shadow-xs"
             />
             {searchKeyword && (
               <button
+                type="button"
                 onClick={() => setSearchKeyword('')}
-                className="absolute right-4 top-2.5 text-xs text-slate-400 hover:text-slate-700 dark:hover:text-white transition-colors"
+                className="absolute right-4 top-2.5 text-xs text-slate-400 hover:text-slate-700 dark:hover:text-white transition-colors cursor-pointer"
               >
                 ✕ 清除
               </button>
             )}
           </div>
         </div>
+
+        {/* Quick Search Chips */}
+        <div className="flex flex-wrap items-center gap-1.5 pt-1">
+          <span className="text-[11px] font-mono text-slate-400">快速篩選：</span>
+          {quickSearchTags.map((tag) => (
+            <button
+              key={tag}
+              type="button"
+              onClick={() => {
+                triggerHaptic('selection');
+                setSearchKeyword(tag);
+              }}
+              className={`rounded-full px-2.5 py-0.5 text-[11px] font-mono transition cursor-pointer ${
+                searchKeyword === tag
+                  ? 'bg-blue-600 text-white font-bold'
+                  : 'bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400 hover:bg-slate-200 dark:hover:bg-slate-700'
+              }`}
+            >
+              #{tag}
+            </button>
+          ))}
+        </div>
       </div>
 
       {/* ── Subject Masonry / Grid ── */}
       <div className="space-y-12">
         {!isLoaded ? (
-          // Shimmer Skeleton Screen (Zero CLS prep)
+          // Shimmer Skeleton Screen
           <div className="space-y-8">
             {[1, 2].map((i) => (
               <div key={i} className="rounded-3xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 p-8">
@@ -193,22 +245,23 @@ export default function CurriculumPage() {
 
             if (topicList.length === 0) return null;
 
+            const SubjectArchitecturalIcon = getSubjectArchitecturalIcon(subject.slug);
+
             return (
               <section
                 key={subject.slug}
-                className="animate-fade-in-up rounded-[2rem] border border-slate-200/80 dark:border-slate-800/80 bg-white/60 dark:bg-slate-900/40 backdrop-blur-sm p-6 sm:p-10 shadow-xs v7-route"
+                className="animate-fade-in-up rounded-[2rem] border border-slate-200/80 dark:border-slate-800/80 bg-white/70 dark:bg-slate-900/50 backdrop-blur-sm p-6 sm:p-10 shadow-xs"
               >
                 <header className="flex flex-wrap items-end justify-between gap-4 mb-8">
                   <div className="flex items-center gap-4">
-                    <span
-                      className="size-4 rounded-full shadow-inner"
-                      style={{ backgroundColor: `var(--color-${subject.color})` }}
-                    />
+                    <div className="p-3 rounded-2xl bg-blue-50 dark:bg-blue-950/60 text-blue-700 dark:text-blue-300 border border-blue-200/60 dark:border-blue-900/40">
+                      <SubjectArchitecturalIcon size={26} strokeWidth={1.75} />
+                    </div>
                     <div>
                       <span className="text-[10px] font-mono font-bold text-slate-500 uppercase tracking-widest block mb-1">
                         {subject.category}
                       </span>
-                      <h2 className="font-serif text-3xl font-bold text-slate-900 dark:text-white">
+                      <h2 className="font-serif text-2xl sm:text-3xl font-bold text-slate-900 dark:text-white">
                         <Link href={`/subjects/${subject.slug}`} className="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
                           {subject.title}
                         </Link>
@@ -217,7 +270,7 @@ export default function CurriculumPage() {
                   </div>
                   <Link
                     href={`/subjects/${subject.slug}`}
-                    className="text-xs font-mono font-bold text-blue-600 dark:text-blue-400 hover:bg-blue-50 dark:hover:bg-blue-900/30 px-4 py-2 rounded-full transition-colors border border-blue-100 dark:border-blue-900"
+                    className="text-xs font-mono font-bold text-blue-600 dark:text-blue-400 hover:bg-blue-50 dark:hover:bg-blue-900/30 px-4 py-2 rounded-xl transition-colors border border-blue-100 dark:border-blue-900"
                   >
                     進入科目大綱 ({subject.topics.length} 章) →
                   </Link>
@@ -228,11 +281,11 @@ export default function CurriculumPage() {
                     <Link
                       key={topic.slug}
                       href={`/subjects/${subject.slug}/${topic.slug}`}
-                      className="group flex flex-col justify-between rounded-2xl border border-slate-200/60 dark:border-slate-800/60 bg-slate-50/50 dark:bg-slate-950/40 p-5 card-lift border-subtle-glow"
+                      className="group flex flex-col justify-between rounded-2xl border border-slate-200/70 dark:border-slate-800/70 bg-slate-50/60 dark:bg-slate-950/40 p-5 transition-all duration-200 hover:-translate-y-1 hover:border-blue-500 hover:shadow-md hover:bg-white dark:hover:bg-slate-900"
                     >
                       <div className="space-y-2.5">
                         <div className="flex items-center justify-between text-[11px] font-mono">
-                          <span className="text-slate-500 bg-slate-200/50 dark:bg-slate-800/50 px-2 py-0.5 rounded-sm">
+                          <span className="text-slate-500 bg-slate-200/60 dark:bg-slate-800/60 px-2 py-0.5 rounded-md font-bold">
                             CH {String(idx + 1).padStart(2, '0')}
                           </span>
                           <div className="flex gap-2">
@@ -253,7 +306,7 @@ export default function CurriculumPage() {
                       </div>
 
                       <div className="mt-4 pt-3 border-t border-slate-200/60 dark:border-slate-800/60 flex items-center justify-between text-xs font-bold text-slate-500 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
-                        <span>{topic.estimatedMinutes ? `${topic.estimatedMinutes} 分鐘` : '25 分鐘'}微循環</span>
+                        <span className="font-mono text-[11px]">{topic.estimatedMinutes ? `${topic.estimatedMinutes} 分鐘` : '25 分鐘'}微循環</span>
                         <span className="group-hover:translate-x-1 transition-transform">→</span>
                       </div>
                     </Link>
@@ -264,12 +317,12 @@ export default function CurriculumPage() {
           })
         ) : (
           <div className="rounded-[2rem] border-2 border-dashed border-slate-200 dark:border-slate-800 bg-slate-50/50 dark:bg-slate-900/20 p-16 text-center animate-fade-in-up">
-            <div className="text-4xl mb-4 opacity-50">🏗️</div>
+            <IconDraftingTools size={40} className="mx-auto text-slate-400 mb-4 opacity-50" />
             <h3 className="font-serif text-xl font-bold text-slate-700 dark:text-slate-300 mb-2">
               查無相符章節
             </h3>
             <p className="text-sm text-slate-500">
-              請嘗試其他關鍵字，或是切換不同的年級視角。
+              請嘗試其他關鍵字，或是切換不同的領域與年級視角。
             </p>
           </div>
         )}

@@ -1,6 +1,7 @@
 import { notFound } from 'next/navigation';
 import TopicPageLayout, { type MappedExamQuestion } from '@/components/TopicPageLayout';
 import { allSubjects } from '@/data/subjects';
+import { getConceptVisuals } from '@/data/conceptVisuals';
 import coverageRegistry from '../../../../../../../data/registry/exam-coverage.json';
 import commonRegistry from '../../../../../../../data/registry/common-exam-questions.json';
 
@@ -43,6 +44,7 @@ export default async function TopicPage({ params }: { params: Promise<{ subject:
       subject={subject}
       topic={topic}
       mappedExamQuestions={[...professionalQuestions, ...commonQuestions]}
+      conceptVisuals={getConceptVisuals(subject.slug, topic.slug)}
     />
   );
 }

@@ -3,26 +3,30 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import { 
-  Building2, 
-  GraduationCap, 
-  Compass, 
   BookOpen, 
-  Layers, 
-  Sun, 
-  ShieldCheck, 
-  Cpu, 
   Award, 
   CheckCircle2, 
   Sparkles, 
-  FileText, 
   Ruler, 
   Search,
   ArrowRight,
-  BookMarked
+  BookMarked,
+  GraduationCap
 } from 'lucide-react';
 import { pathwaySubjects } from '@/data/pathwayCurriculum';
 import PathwayIllustrationViewer from '@/components/pathway/PathwayIllustrationViewer';
 import PathwayWorkedExampleCard from '@/components/pathway/PathwayWorkedExampleCard';
+import {
+  IconStudioForge,
+  IconClassicalOrder,
+  IconRebarSection,
+  IconGreenBuilding,
+  IconDamperTMD,
+  IconCompassRose,
+  IconExamLicense,
+  IconBIMModel,
+  ArchitecturalPathwayIcon,
+} from '@/components/ui/ArchitecturalIcons';
 
 // 5-Year B.Arch Progression Data
 const bArchYears = [
@@ -165,7 +169,7 @@ const bArchYears = [
 const corePillars = [
   {
     id: 'studio',
-    icon: Building2,
+    icon: IconStudioForge,
     tag: '領域 01',
     title: '建築設計工作坊 (Design Studio I ~ X & 畢業設計)',
     badge: '核心命脈',
@@ -182,7 +186,7 @@ const corePillars = [
   },
   {
     id: 'history',
-    icon: BookOpen,
+    icon: IconClassicalOrder,
     tag: '領域 02',
     title: '建築史論與批判理論 (History & Theory)',
     badge: '思維底蘊',
@@ -200,7 +204,7 @@ const corePillars = [
   },
   {
     id: 'construction',
-    icon: Layers,
+    icon: IconRebarSection,
     tag: '領域 03',
     title: '建築構造、細部與構造型態學 (Tectonics & Detailing)',
     badge: '實體落地',
@@ -218,7 +222,7 @@ const corePillars = [
   },
   {
     id: 'environment',
-    icon: Sun,
+    icon: IconGreenBuilding,
     tag: '領域 04',
     title: '建築物理、環境控制與 EEWH 綠建築 (Building Physics & EEWH)',
     badge: '永續科技',
@@ -236,7 +240,7 @@ const corePillars = [
   },
   {
     id: 'structure',
-    icon: ShieldCheck,
+    icon: IconDamperTMD,
     tag: '領域 05',
     title: '建築結構系統與耐震科技 (Structural Systems & Seismic)',
     badge: '安全基石',
@@ -254,7 +258,7 @@ const corePillars = [
   },
   {
     id: 'site',
-    icon: Compass,
+    icon: IconCompassRose,
     tag: '領域 06',
     title: '敷地計畫、景觀與都市設計 (Site Planning & Urban Design)',
     badge: '宏觀視野',
@@ -272,7 +276,7 @@ const corePillars = [
   },
   {
     id: 'codes',
-    icon: FileText,
+    icon: IconExamLicense,
     tag: '領域 07',
     title: '建築法規、技術規則與執業實務 (Codes & Practice)',
     badge: '執業門檻',
@@ -290,7 +294,7 @@ const corePillars = [
   },
   {
     id: 'digital',
-    icon: Cpu,
+    icon: IconBIMModel,
     tag: '領域 08',
     title: '數位運算、BIM 與前瞻建築科技 (Computation & BIM)',
     badge: '未來前沿',
@@ -478,30 +482,39 @@ export default function ArchitecturePathwayPage() {
                     key={subj.id}
                     type="button"
                     onClick={() => setSelectedPathwaySubjectId(subj.id)}
-                    className={`flex flex-col items-start p-4 rounded-2xl border text-left transition-all cursor-pointer ${
+                    className={`flex items-start gap-3 p-4 rounded-2xl border text-left transition-all cursor-pointer ${
                       isSelected
                         ? 'border-blue-600 bg-blue-50/90 dark:bg-blue-950/70 shadow-md ring-2 ring-blue-600/30 scale-[1.02]'
                         : 'border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 hover:border-slate-300 dark:hover:border-slate-700'
                     }`}
                   >
-                    <div className="flex items-center justify-between w-full mb-2">
-                      <span className="text-[10px] font-mono font-bold uppercase tracking-wider text-slate-400">
-                        科目 0{sIdx + 1}
-                      </span>
-                      <span className={`rounded-md px-1.5 py-0.2 text-[9px] font-mono font-bold ${
-                        isSelected 
-                          ? 'bg-blue-700 text-white' 
-                          : 'bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400'
-                      }`}>
-                        {subj.badge}
+                    <div className={`p-2.5 rounded-xl shrink-0 transition-colors ${
+                      isSelected
+                        ? 'bg-blue-700 text-white shadow-xs'
+                        : 'bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300'
+                    }`}>
+                      <ArchitecturalPathwayIcon id={subj.id} size={20} strokeWidth={1.8} />
+                    </div>
+                    <div className="min-w-0 flex-1">
+                      <div className="flex items-center justify-between w-full mb-1">
+                        <span className="text-[10px] font-mono font-bold uppercase tracking-wider text-slate-400">
+                          科目 0{sIdx + 1}
+                        </span>
+                        <span className={`rounded-md px-1.5 py-0.2 text-[9px] font-mono font-bold ${
+                          isSelected 
+                            ? 'bg-blue-700 text-white' 
+                            : 'bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400'
+                        }`}>
+                          {subj.badge}
+                        </span>
+                      </div>
+                      <h3 className="font-serif font-bold text-xs sm:text-sm text-slate-900 dark:text-white line-clamp-1">
+                        {subj.title.split('(')[0]}
+                      </h3>
+                      <span className="text-[10px] font-mono text-blue-600 dark:text-blue-400 mt-0.5 line-clamp-1 block">
+                        {subj.code}
                       </span>
                     </div>
-                    <h3 className="font-serif font-bold text-xs sm:text-sm text-slate-900 dark:text-white line-clamp-1">
-                      {subj.title.split('(')[0]}
-                    </h3>
-                    <span className="text-[10px] font-mono text-blue-600 dark:text-blue-400 mt-0.5 line-clamp-1">
-                      {subj.code}
-                    </span>
                   </button>
                 );
               })}
@@ -511,27 +524,32 @@ export default function ArchitecturePathwayPage() {
             <div className="rounded-3xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 p-6 sm:p-9 shadow-sm space-y-8">
               {/* Subject Hero Metadata */}
               <div className="flex flex-col lg:flex-row lg:items-start justify-between gap-6 border-b border-slate-100 dark:border-slate-800 pb-6">
-                <div className="space-y-2 max-w-3xl">
-                  <div className="flex flex-wrap items-center gap-2">
-                    <span className="rounded-md bg-blue-700 text-white font-mono text-xs font-bold px-2.5 py-1">
-                      {currentPathwaySubject.code}
-                    </span>
-                    <span className="rounded-md bg-blue-100 dark:bg-blue-900/50 text-blue-800 dark:text-blue-300 font-mono text-xs font-bold px-2.5 py-1">
-                      {currentPathwaySubject.credits}
-                    </span>
-                    <span className="rounded-md bg-amber-100 dark:bg-amber-950/60 text-amber-800 dark:text-amber-300 font-mono text-xs font-bold px-2.5 py-1">
-                      📅 {currentPathwaySubject.academicYear}
-                    </span>
+                <div className="flex items-start gap-5 max-w-3xl">
+                  <div className="hidden sm:flex size-16 shrink-0 items-center justify-center rounded-2xl bg-blue-50 dark:bg-blue-950/60 border border-blue-200 dark:border-blue-900/60 text-blue-700 dark:text-blue-400 shadow-inner">
+                    <ArchitecturalPathwayIcon id={currentPathwaySubject.id} size={34} strokeWidth={1.8} />
                   </div>
-                  <h3 className="font-serif text-2xl sm:text-3xl font-bold text-slate-900 dark:text-white">
-                    {currentPathwaySubject.title}
-                  </h3>
-                  <p className="text-xs font-mono text-blue-600 dark:text-blue-400">
-                    {currentPathwaySubject.englishTitle}
-                  </p>
-                  <p className="text-sm text-slate-600 dark:text-slate-300 leading-relaxed font-sans pt-1">
-                    {currentPathwaySubject.summary}
-                  </p>
+                  <div className="space-y-2">
+                    <div className="flex flex-wrap items-center gap-2">
+                      <span className="rounded-md bg-blue-700 text-white font-mono text-xs font-bold px-2.5 py-1">
+                        {currentPathwaySubject.code}
+                      </span>
+                      <span className="rounded-md bg-blue-100 dark:bg-blue-900/50 text-blue-800 dark:text-blue-300 font-mono text-xs font-bold px-2.5 py-1">
+                        {currentPathwaySubject.credits}
+                      </span>
+                      <span className="rounded-md bg-amber-100 dark:bg-amber-950/60 text-amber-800 dark:text-amber-300 font-mono text-xs font-bold px-2.5 py-1">
+                        📅 {currentPathwaySubject.academicYear}
+                      </span>
+                    </div>
+                    <h3 className="font-serif text-2xl sm:text-3xl font-bold text-slate-900 dark:text-white">
+                      {currentPathwaySubject.title}
+                    </h3>
+                    <p className="text-xs font-mono text-blue-600 dark:text-blue-400">
+                      {currentPathwaySubject.englishTitle}
+                    </p>
+                    <p className="text-sm text-slate-600 dark:text-slate-300 leading-relaxed font-sans pt-1">
+                      {currentPathwaySubject.summary}
+                    </p>
+                  </div>
                 </div>
 
                 {/* Licensure & Books Box */}
@@ -822,21 +840,31 @@ export default function ArchitecturePathwayPage() {
             {/* Active Pillar Detailed View */}
             <div className="rounded-3xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 p-6 sm:p-10 shadow-xs space-y-8">
               <div className="flex flex-wrap items-start justify-between gap-4 border-b border-slate-100 dark:border-slate-800 pb-6">
-                <div className="space-y-2">
-                  <div className="flex items-center gap-2">
-                    <span className="rounded-md bg-blue-700 text-white font-mono text-xs font-bold px-2.5 py-1 uppercase">
-                      {currentPillarData.tag}
-                    </span>
-                    <span className="rounded-md bg-blue-100 dark:bg-blue-900/50 text-blue-800 dark:text-blue-300 font-mono text-xs font-bold px-2.5 py-1">
-                      {currentPillarData.badge}
-                    </span>
+                <div className="flex items-start gap-4 max-w-3xl">
+                  {(() => {
+                    const PillarIcon = currentPillarData.icon;
+                    return (
+                      <div className="hidden sm:flex size-14 shrink-0 items-center justify-center rounded-2xl bg-blue-50 dark:bg-blue-950/60 border border-blue-200 dark:border-blue-900/60 text-blue-700 dark:text-blue-400 shadow-inner">
+                        <PillarIcon size={32} strokeWidth={1.8} />
+                      </div>
+                    );
+                  })()}
+                  <div className="space-y-2">
+                    <div className="flex items-center gap-2">
+                      <span className="rounded-md bg-blue-700 text-white font-mono text-xs font-bold px-2.5 py-1 uppercase">
+                        {currentPillarData.tag}
+                      </span>
+                      <span className="rounded-md bg-blue-100 dark:bg-blue-900/50 text-blue-800 dark:text-blue-300 font-mono text-xs font-bold px-2.5 py-1">
+                        {currentPillarData.badge}
+                      </span>
+                    </div>
+                    <h3 className="font-serif text-2xl sm:text-3xl font-bold text-slate-900 dark:text-white">
+                      {currentPillarData.title}
+                    </h3>
+                    <p className="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+                      {currentPillarData.summary}
+                    </p>
                   </div>
-                  <h3 className="font-serif text-2xl sm:text-3xl font-bold text-slate-900 dark:text-white">
-                    {currentPillarData.title}
-                  </h3>
-                  <p className="text-sm text-slate-600 dark:text-slate-300 max-w-3xl leading-relaxed">
-                    {currentPillarData.summary}
-                  </p>
                 </div>
 
                 <button

@@ -11,6 +11,11 @@ export interface MistakeCard {
   nextReviewAt: string;
   reviewStage: 0 | 1 | 2 | 3;
   createdAt: string;
+  subject?: string;
+  topic?: string;
+  userChoice?: string;
+  correctAnswer?: string;
+  lessonRoute?: string;
 }
 
 export interface StudentState {
@@ -22,7 +27,8 @@ export interface StudentState {
   mistakeCards: MistakeCard[];
   updateAccuracy: (isCorrect: boolean) => void;
   completeCycle: () => void;
-  addMistakeCard: (card: Pick<MistakeCard, 'id' | 'prompt' | 'correction' | 'reason'>) => void;
+  addMistakeCard: (card: Pick<MistakeCard, 'id' | 'prompt' | 'correction' | 'reason'> & Partial<Pick<MistakeCard, 'subject' | 'topic' | 'userChoice' | 'correctAnswer' | 'lessonRoute'>>) => void;
+  removeMistakeCard: (id: string) => void;
   reviewMistakeCard: (id: string, recalled: boolean) => void;
   resetDailyIfNewDay: () => void;
 }
@@ -62,6 +68,10 @@ export const useStudentStore = create<StudentState>()(
             reviewStage: 0,
           },
         ],
+      })),
+
+      removeMistakeCard: (id) => set((state) => ({
+        mistakeCards: state.mistakeCards.filter((card) => card.id !== id),
       })),
 
       reviewMistakeCard: (id, recalled) => set((state) => ({

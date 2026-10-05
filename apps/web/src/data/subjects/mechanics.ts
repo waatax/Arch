@@ -2642,11 +2642,11 @@ export const mechanicsData: SubjectData = {
       "concepts": [
         {
           "heading": "空間力向量與方向餘弦 (Spatial Vector & Direction Cosines)",
-          "body": "在三維笛卡兒坐標系中，一空間單力向量可表示為 $\u000bec{F} = F_x \u000bec{i} + F_y \u000bec{j} + F_z \u000bec{k}$。其中 $\u000bec{i}, \u000bec{j}, \u000bec{k}$ 為 X, Y, Z 軸之單位向量。方向餘弦 $cosalpha, cos\beta, cosgamma$ 為力向量與 X, Y, Z 三坐標軸夾角之餘弦值。",
+          "body": "在三維笛卡兒坐標系中，一空間單力向量可表示為 $\\vec{F} = F_x \\vec{i} + F_y \\vec{j} + F_z \\vec{k}$。其中 $\\vec{i}, \\vec{j}, \\vec{k}$ 為 X, Y, Z 軸之單位向量。方向餘弦 $\\cos\\alpha, \\cos\\beta, \\cos\\gamma$ 為力向量與 X, Y, Z 三坐標軸夾角之餘弦值。",
           "steps": [
-            "向量大小：$F = |\u000bec{F}| = sqrt{F_x^2 + F_y^2 + F_z^2}$。",
-            "方向餘弦關係：$cosalpha = F_x / F, cos\beta = F_y / F, cosgamma = F_z / F$。",
-            "恆等式：$cos^2alpha + cos^2\beta + cos^2gamma = 1$。"
+            "向量大小：$F = |\\vec{F}| = \\sqrt{F_x^2 + F_y^2 + F_z^2}$。",
+            "方向餘弦關係：$\\cos\\alpha = F_x / F, \\cos\\beta = F_y / F, \\cos\\gamma = F_z / F$。",
+            "恆等式：$\\cos^2\\alpha + \\cos^2\\beta + \\cos^2\\gamma = 1$。"
           ]
         },
         {
@@ -2664,26 +2664,26 @@ export const mechanicsData: SubjectData = {
                 "空間共點力系",
                 "所有作用力交於同一空間點",
                 "3 個方程",
-                "$sum F_x = 0, sum F_y = 0, sum F_z = 0$"
+                "$\\sum F_x = 0, \\sum F_y = 0, \\sum F_z = 0$"
               ],
               [
                 "空間平行力系",
                 "所有作用力均平行於某特定軸 (如 Z 軸)",
                 "3 個方程",
-                "$sum F_z = 0, sum M_x = 0, sum M_y = 0$"
+                "$\\sum F_z = 0, \\sum M_x = 0, \\sum M_y = 0$"
               ],
               [
                 "空間非共點非平行力系",
                 "作用力在空間隨意分佈",
                 "6 個方程",
-                "$sum F_x = 0, sum F_y = 0, sum F_z = 0, sum M_x = 0, sum M_y = 0, sum M_z = 0$"
+                "$\\sum F_x = 0, \\sum F_y = 0, \\sum F_z = 0, \\sum M_x = 0, \\sum M_y = 0, \\sum M_z = 0$"
               ]
             ]
           }
         },
         {
           "heading": "空間剛體六個平衡方程與三維支承 (Spatial Rigid Body Equilibrium & Supports)",
-          "body": "三維剛體不受拘束時具備 6 個自由度（3 個平移 + 3 個旋轉）。剛體完全<span className=\"text-rose-600 font-bold\">靜力平衡</span>之<span className=\"text-indigo-600 font-bold\">充要條件</span>為合力向量 $\u000bec{R}=0$ 且對任意點之合力矩向量 $\u000bec{M}=0$。",
+          "body": "三維剛體不受拘束時具備 6 個自由度（3 個平移 + 3 個旋轉）。剛體完全<span className=\"text-rose-600 font-bold\">靜力平衡</span>之<span className=\"text-indigo-600 font-bold\">充要條件</span>為合力向量 $\\vec{R}=0$ 且對任意點之合力矩向量 $\\vec{M}=0$。",
           "steps": [
             "球窩關節 (Ball-and-Socket Joint)：提供 3 個方向之約束力反力 (Rx, Ry, Rz)，但不限制轉動 (Moment = 0)。",
             "無摩擦滾子/球底支承：僅提供垂直於接觸面之 1 個法向約束力反力。",
@@ -2840,14 +2840,14 @@ export const mechanicsData: SubjectData = {
           "heading": "平面應力與斜面應力轉換公式 (Plane Stress & Stress Transformation)",
           "body": "平面應力 (Plane Stress) 指三維物體中與某一平面垂直之應力分量全為零（即 σz = 0, τxz = 0, τyz = 0）。當沿與 X 軸夾角為 θ 之斜面剖開時，斜面上的正交應力 σθ 與剪應力 τθ 隨角度改變。",
           "steps": [
-            "正交應力轉換：$sigma_\theta = \frac{sigma_x + sigma_y}{2} + \frac{sigma_x - sigma_y}{2}cos 2\theta + \tau_{xy}sin 2\theta$。",
-            "剪應力轉換：$\tau_\theta = -\frac{sigma_x - sigma_y}{2}sin 2\theta + \tau_{xy}cos 2\theta$。",
-            "正交應力不變量：在任何互相垂直之斜面上，正交應力之和恆為常數（$sigma_\theta + sigma_{\theta+90^circ} = sigma_x + sigma_y$）。"
+            "正交應力轉換：$\\sigma_\\theta = \\frac{\\sigma_x + \\sigma_y}{2} + \\frac{\\sigma_x - \\sigma_y}{2}\\cos 2\\theta + \\tau_{xy}\\sin 2\\theta$。",
+            "剪應力轉換：$\\tau_\\theta = -\\frac{\\sigma_x - \\sigma_y}{2}\\sin 2\\theta + \\tau_{xy}\\cos 2\\theta$。",
+            "正交應力不變量：在任何互相垂直之斜面上，正交應力之和恆為常數（$\\sigma_\\theta + \\sigma_{\\theta+90^\\circ} = \\sigma_x + \\sigma_y$）。"
           ]
         },
         {
           "heading": "主平面、主應力與最大剪應力 (Principal Planes & Stresses)",
-          "body": "主平面 (Principal Planes) 指剪應力為零 (τ = 0) 之特定斜面。作用於主平面上之正交應力稱為主應力 ($sigma_1, sigma_2$)，代表該點正交應力之極大值與極小值。",
+          "body": "主平面 (Principal Planes) 指剪應力為零 (τ = 0) 之特定斜面。作用於主平面上之正交應力稱為主應力 ($\\sigma_1, \\sigma_2$)，代表該點正交應力之極大值與極小值。",
           "table": {
             "headers": [
               "應力物理量",
@@ -2857,22 +2857,22 @@ export const mechanicsData: SubjectData = {
             ],
             "rows": [
               [
-                "平均正應力 $sigma_{avg}$",
-                "$sigma_{avg} = (sigma_x + sigma_y) / 2$",
+                "平均正應力 $\\sigma_{\\text{avg}}$",
+                "$\\sigma_{\\text{avg}} = (\\sigma_x + \\sigma_y) / 2$",
                 "莫耳圓圓心 X 座標",
                 "無特別要求"
               ],
               [
-                "主應力極值 $sigma_{1,2}$",
-                "$sigma_{avg} pm sqrt{((sigma_x - sigma_y)/2)^2 + \tau_{xy}^2}$",
-                "主平面夾角 $\tan 2\theta_p = \frac{2\tau_{xy}}{sigma_x - sigma_y}$",
+                "主應力極值 $\\sigma_{1,2}$",
+                "$\\sigma_{\\text{avg}} \\pm \\sqrt{\\left(\\frac{\\sigma_x - \\sigma_y}{2}\\right)^2 + \\tau_{xy}^2}$",
+                "主平面夾角 $\\tan 2\\theta_p = \\frac{2\\tau_{xy}}{\\sigma_x - \\sigma_y}$",
                 "剪應力精確等於 0"
               ],
               [
-                "最大剪應力 $\tau_{max}$",
-                "$\tau_{max} = R = \frac{sigma_1 - sigma_2}{2}$",
-                "最大剪應力平面與主平面相差 $45^circ$",
-                "對應正交應力等於 $sigma_{avg}$"
+                "最大剪應力 $\\tau_{\\max}$",
+                "$\\tau_{\\max} = R = \\frac{\\sigma_1 - \\sigma_2}{2}$",
+                "最大剪應力平面與主平面相差 $45^\\circ$",
+                "對應正交應力等於 $\\sigma_{\\text{avg}}$"
               ]
             ]
           }

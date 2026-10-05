@@ -3,6 +3,7 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { globalArchitectureCases } from '@/data/globalArchitectureCases';
+import { IconPerspective } from '@/components/ui/ArchitecturalIcons';
 
 export default function CasesPage() {
   const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? '';
@@ -108,27 +109,32 @@ export default function CasesPage() {
 
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
-      <div className="mb-10 max-w-3xl">
-        <span className="text-xs font-mono text-(--color-teal-700) uppercase tracking-wider block">Architecture Case Lab · Taiwan to the World</span>
-        <h1 className="text-3xl sm:text-4xl font-bold font-serif text-(--color-ink-900) mt-1 mb-4">
-          建築案例實驗室
-        </h1>
-        <p className="text-base text-(--color-ink-650) leading-relaxed">
-          從台灣出發，延伸至日本、中國與世界經典，用真實建築反覆練習可遷移的閱讀方法。從好奇提問、實景觀察、工程圖解到學科連結，看懂建築背後的科學與取捨。
-        </p>
-        <div className="mt-4 flex flex-wrap gap-2 pt-2">
-          <Link
-            href="/visualizers"
-            className="inline-flex items-center gap-1.5 rounded-lg bg-blue-50 dark:bg-blue-950/40 border border-blue-200 dark:border-blue-800 px-3 py-1.5 text-xs font-mono font-bold text-blue-700 dark:text-blue-300 hover:bg-blue-100 transition-colors"
-          >
-            🔬 結構與外殼圖解模擬器 →
-          </Link>
-          <Link
-            href="/field-guide"
-            className="inline-flex items-center gap-1.5 rounded-lg bg-teal-50 dark:bg-teal-950/40 border border-teal-200 dark:border-teal-800 px-3 py-1.5 text-xs font-mono font-bold text-teal-700 dark:text-teal-300 hover:bg-teal-100 transition-colors"
-          >
-            🏗️ 營造現場工程手冊 →
-          </Link>
+      <div className="mb-10 max-w-3xl flex items-start gap-5">
+        <div className="hidden sm:flex size-14 shrink-0 items-center justify-center rounded-2xl bg-teal-50 dark:bg-teal-950/60 border border-teal-200 dark:border-teal-800 text-teal-700 dark:text-teal-300 shadow-inner">
+          <IconPerspective size={32} strokeWidth={1.8} />
+        </div>
+        <div>
+          <span className="text-xs font-mono text-(--color-teal-700) uppercase tracking-wider block">Architecture Case Lab · Taiwan to the World</span>
+          <h1 className="text-3xl sm:text-4xl font-bold font-serif text-(--color-ink-900) mt-1 mb-4">
+            建築案例實驗室
+          </h1>
+          <p className="text-base text-(--color-ink-650) leading-relaxed">
+            從台灣出發，延伸至日本、中國與世界經典，用真實建築反覆練習可遷移的閱讀方法。從好奇提問、實景觀察、工程圖解到學科連結，看懂建築背後的科學與取捨。
+          </p>
+          <div className="mt-4 flex flex-wrap gap-2 pt-2">
+            <Link
+              href="/visualizers"
+              className="inline-flex items-center gap-1.5 rounded-lg bg-blue-50 dark:bg-blue-950/40 border border-blue-200 dark:border-blue-800 px-3 py-1.5 text-xs font-mono font-bold text-blue-700 dark:text-blue-300 hover:bg-blue-100 transition-colors"
+            >
+              🔬 結構與外殼圖解模擬器 →
+            </Link>
+            <Link
+              href="/field-guide"
+              className="inline-flex items-center gap-1.5 rounded-lg bg-teal-50 dark:bg-teal-950/40 border border-teal-200 dark:border-teal-800 px-3 py-1.5 text-xs font-mono font-bold text-teal-700 dark:text-teal-300 hover:bg-teal-100 transition-colors"
+            >
+              🏗️ 營造現場工程手冊 →
+            </Link>
+          </div>
         </div>
       </div>
 

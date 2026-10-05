@@ -3,18 +3,21 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
 import { 
-  HardHat, 
   ShieldCheck, 
   CheckSquare, 
-  Layers, 
   AlertTriangle, 
-  Building2, 
-  FileText, 
   ClipboardCheck, 
   ChevronDown, 
   ChevronUp, 
   RotateCcw
 } from 'lucide-react';
+import {
+  IconRebarSection,
+  IconTrussBeam,
+  IconFieldSafety,
+  IconOrthographicBox,
+  IconGreenBuilding,
+} from '@/components/ui/ArchitecturalIcons';
 
 interface GuideSection {
   id: string;
@@ -38,7 +41,7 @@ const guideSections: GuideSection[] = [
     id: 'rc-quality',
     title: '鋼筋混凝土 (RC) 結構品管與試驗',
     subtitle: '公共工程施工綱要第 03310 章 · 現場抽樣、坍度、氯離子與試體強度驗收',
-    icon: Layers,
+    icon: IconRebarSection,
     badge: '結構安全核心',
     overview: '鋼筋混凝土是台灣最普及的建築構造。從預拌車抵達工地進場驗收、泵送澆置、振動密實到拆模養護，每一道工序均有嚴格的國家標準 (CNS) 與公共工程檢驗頻率規定。',
     standards: ['CNS 3090 預拌混凝土', 'CNS 1176 混凝土坍度試驗法', 'CNS 1232 圓柱試體抗壓強度試驗法', '公共工程施工綱要第 03310 章'],
@@ -81,7 +84,7 @@ const guideSections: GuideSection[] = [
     id: 'steel-quality',
     title: '鋼結構工程 (SS/SRC) 施工與檢驗實務',
     subtitle: '公共工程施工綱要第 05120 章 · 鋼構吊裝、高張力螺栓與銲道非破壞檢驗',
-    icon: Building2,
+    icon: IconTrussBeam,
     badge: '高層與大跨距必備',
     overview: '鋼結構具備高強度、韌性好、施工快速與大跨距優勢。現場施工核心在於構件吊裝校正、高張力螺栓鎖固扭矩以及全滲透銲道的非破壞檢驗 (NDT)。',
     standards: ['CNS 4220 結構用高張力六角螺栓', 'AWS D1.1 鋼結構銲接規範', '公共工程施工綱要第 05120 章'],
@@ -117,7 +120,7 @@ const guideSections: GuideSection[] = [
     id: 'excavation-safety',
     title: '基礎開挖與擋土安全監測 (Excavation & Safety)',
     subtitle: '連續壁、微型樁、地錨與安全監測系統（水壓計、傾度管、沉陷點）',
-    icon: HardHat,
+    icon: IconFieldSafety,
     badge: '工地防災防坍必讀',
     overview: '地下室深開挖是建築工程風險最高的階段。台北、台中等都會區周邊鄰房密集，必須透過連續壁或擋土排樁配合型鋼支撐，並以即時儀器監測確保擋土結構與鄰房安全。',
     standards: ['建築物基礎構造設計規範', '公共工程施工綱要第 02260 章 擋土支撐'],
@@ -146,7 +149,7 @@ const guideSections: GuideSection[] = [
     id: 'drawing-review',
     title: '建築圖說判讀與施工衝突排查 (Drawing Review)',
     subtitle: '平面圖、立面剖面詳圖、結構梁柱配筋與水電 MEP 介面協調',
-    icon: FileText,
+    icon: IconOrthographicBox,
     badge: '避免敲除重做',
     overview: '營造現場最常發生的工期延誤與返工，80% 來自「圖面矛盾與專業介面衝突」。施工前落實建築 (A)、結構 (S)、機電水電 (MEP) 的套圖檢討 (BIM Coordination) 是現代工程管理的核心能力。',
     standards: ['CNS 11567 建築製圖標準', '各專業介面衝突協調準則'],
@@ -182,7 +185,7 @@ const guideSections: GuideSection[] = [
     id: 'eewh-green',
     title: '綠建築與環境控制實務 (EEWH / Passive Design)',
     subtitle: '台灣氣候特性 · 外殼節能 (ENVLOAD)、遮陽採光與健康綠建材',
-    icon: HardHat,
+    icon: IconGreenBuilding,
     badge: '永續建築前瞻',
     overview: '台灣地處亞熱帶高溫高濕氣候區，綠建築 (EEWH) 核心在於「被動式節能設計」——利用自然遮陽、深出簷、誘導通風與屋頂隔熱，大幅減少空調依賴，並兼顧基地保水與生態多樣性。',
     standards: ['內政部建築研究所 綠建築評估手冊 (EEWH)', '建築技術規則建築節能專章'],
@@ -266,7 +269,7 @@ export default function FieldGuidePage() {
       {/* Header */}
       <header className="space-y-4 text-center max-w-3xl mx-auto">
         <div className="inline-flex items-center gap-2 rounded-full border border-teal-200 dark:border-teal-900/80 bg-teal-50/80 dark:bg-teal-950/40 px-3.5 py-1 text-xs font-mono font-bold text-teal-700 dark:text-teal-300">
-          <HardHat className="size-3.5 text-teal-600 dark:text-teal-400" />
+          <IconFieldSafety className="size-4 text-teal-600 dark:text-teal-400" />
           Arch V8.02 建築工程現場實務百科 (Field Inspection Guide)
         </div>
         <h1 className="font-serif text-3xl font-bold tracking-tight text-slate-950 dark:text-white sm:text-5xl">
@@ -327,22 +330,27 @@ export default function FieldGuidePage() {
         <main className="lg:col-span-3 space-y-8">
           {/* Section Hero Banner */}
           <div className="rounded-3xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 p-6 sm:p-8 shadow-sm space-y-4">
-            <div className="flex flex-wrap items-center justify-between gap-2">
-              <span className="rounded-full bg-teal-100 dark:bg-teal-950 text-teal-800 dark:text-teal-300 px-3 py-1 text-xs font-mono font-bold">
-                {currentSection.badge}
-              </span>
-              <span className="text-xs font-mono text-slate-400">
-                施工現場必備規範
-              </span>
+            <div className="flex items-start gap-4">
+              <div className="hidden sm:flex size-14 shrink-0 items-center justify-center rounded-2xl bg-teal-50 dark:bg-teal-950/60 border border-teal-200 dark:border-teal-900/60 text-teal-700 dark:text-teal-300 shadow-inner">
+                <currentSection.icon size={32} strokeWidth={1.8} />
+              </div>
+              <div className="space-y-1 flex-1">
+                <div className="flex flex-wrap items-center justify-between gap-2">
+                  <span className="rounded-full bg-teal-100 dark:bg-teal-950 text-teal-800 dark:text-teal-300 px-3 py-1 text-xs font-mono font-bold">
+                    {currentSection.badge}
+                  </span>
+                  <span className="text-xs font-mono text-slate-400">
+                    施工現場必備規範
+                  </span>
+                </div>
+                <h2 className="font-serif text-2xl sm:text-3xl font-bold text-slate-900 dark:text-white pt-1">
+                  {currentSection.title}
+                </h2>
+                <p className="text-xs font-mono text-teal-700 dark:text-teal-300">
+                  {currentSection.subtitle}
+                </p>
+              </div>
             </div>
-
-            <h2 className="font-serif text-2xl sm:text-3xl font-bold text-slate-900 dark:text-white">
-              {currentSection.title}
-            </h2>
-
-            <p className="text-xs font-mono text-teal-700 dark:text-teal-300">
-              {currentSection.subtitle}
-            </p>
 
             <p className="text-sm leading-relaxed text-slate-600 dark:text-slate-300 pt-2 border-t border-slate-100 dark:border-slate-800">
               {currentSection.overview}

@@ -20,6 +20,8 @@
     "validate:70x7": "node scripts/validate-70x7-mastery.mjs",
     "validate:android": "node scripts/validate-android-release.mjs",
     "dev": "pnpm --filter web dev",
+    "test": "node scripts/test-learning-ux-pipeline.mjs",
+    "test:ux": "node scripts/test-learning-ux-pipeline.mjs",
     "lint": "pnpm --filter web lint",
     "start": "pnpm --filter web start"
   },

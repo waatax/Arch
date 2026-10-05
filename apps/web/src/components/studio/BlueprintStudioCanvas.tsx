@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react';
 import { Building2, Sparkles, Download, Layers, Compass, CheckCircle2 } from 'lucide-react';
+import { IconStudioForge } from '@/components/ui/ArchitecturalIcons';
 import { soundEngine } from '@/lib/audio/soundEffects';
 import { useGamificationStore, LandmarkProgress } from '@/lib/store/gamificationStore';
 
@@ -28,17 +29,22 @@ export default function BlueprintStudioCanvas() {
       <div className="rounded-[2.5rem] border border-blue-200 dark:border-blue-900/40 bg-gradient-to-br from-blue-950 via-slate-900 to-slate-950 p-6 sm:p-10 text-white shadow-2xl relative overflow-hidden">
         <div className="absolute top-0 right-0 w-96 h-96 bg-blue-600/10 rounded-full blur-3xl pointer-events-none" />
         <div className="relative z-10 flex flex-col md:flex-row md:items-center md:justify-between gap-6">
-          <div className="space-y-2">
-            <div className="inline-flex items-center gap-2 rounded-full bg-blue-500/20 border border-blue-400/30 px-3.5 py-1 text-xs font-mono font-bold text-blue-300">
-              <Sparkles className="size-3.5 text-blue-400" />
-              建築大師工坊 · ARCHITECT&apos;S BLUEPRINT STUDIO
+          <div className="flex items-start gap-5">
+            <div className="hidden sm:flex size-16 shrink-0 items-center justify-center rounded-2xl bg-blue-500/20 border border-blue-400/30 text-blue-300 shadow-inner">
+              <IconStudioForge size={36} strokeWidth={1.8} />
             </div>
-            <h2 className="font-serif text-3xl sm:text-4xl font-bold tracking-tight">
-              打造屬於你的台灣經典名築畫布
-            </h2>
-            <p className="text-sm text-slate-300 max-w-xl leading-relaxed">
-              每次完成學習微迴圈或攻克工程解謎，即可獲得經典建築幾何構件。在專屬藍圖畫布上親手組裝台灣五大現代建築地標！
-            </p>
+            <div className="space-y-2">
+              <div className="inline-flex items-center gap-2 rounded-full bg-blue-500/20 border border-blue-400/30 px-3.5 py-1 text-xs font-mono font-bold text-blue-300">
+                <Sparkles className="size-3.5 text-blue-400" />
+                建築大師工坊 · ARCHITECT&apos;S BLUEPRINT STUDIO
+              </div>
+              <h2 className="font-serif text-3xl sm:text-4xl font-bold tracking-tight">
+                打造屬於你的台灣經典名築畫布
+              </h2>
+              <p className="text-sm text-slate-300 max-w-xl leading-relaxed">
+                每次完成學習微迴圈或攻克工程解謎，即可獲得經典建築幾何構件。在專屬藍圖畫布上親手組裝台灣五大現代建築地標！
+              </p>
+            </div>
           </div>
 
           <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 shrink-0 font-mono text-xs">

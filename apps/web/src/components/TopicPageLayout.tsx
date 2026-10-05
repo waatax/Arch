@@ -3,8 +3,9 @@
 import { useState, useEffect, useRef } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { Binoculars, BookOpenCheck, Building2, CircleCheckBig, Lightbulb, Route, School, SearchCheck, Sparkles } from 'lucide-react';
+import { Binoculars, BookOpenCheck, Building2, CircleCheckBig, Lightbulb, Route, School, SearchCheck, Sparkles, Flame, Check, Maximize2, Minimize2 } from 'lucide-react';
 import type { SubjectData, TopicContent } from '@/data/types';
+import { useTheme } from '@/components/ThemeProvider';
 import MathText from '@/components/MathText';
 import InteractiveVisualizer from '@/components/visualizers/InteractiveVisualizer';
 import HitRateRadar from '@/components/pedagogy/HitRateRadar';
@@ -25,15 +26,29 @@ import { getLearningSources } from '@/lib/pedagogy/learningSources';
 import { buildExamWalkthrough, getMasteryLesson } from '@/lib/pedagogy/masteryLesson';
 import { isAnswerChoiceCorrect, isAnswerCorrect, isMultipleChoiceAnswer, toggleSelectedChoice } from '@/lib/examAnswers';
 import { useGamificationStore } from '@/lib/store/gamificationStore';
+import { useStudentStore, type MistakeReason } from '@/lib/store/studentStore';
+import MistakeNotebookModal from '@/components/pedagogy/MistakeNotebookModal';
 import { soundEngine } from '@/lib/audio/soundEffects';
 import { findStarByTopic } from '@/data/constellations/subjectConstellations';
 import TopicKnowledgeHighlights from '@/components/pedagogy/TopicKnowledgeHighlights';
 import TopicMasteryChecklist from '@/components/pedagogy/TopicMasteryChecklist';
+import ConceptFigure from '@/components/pedagogy/ConceptFigure';
+import { groupVisualsByConcept, type ConceptVisual } from '@/data/conceptVisuals';
+import {
+  IconPerspective,
+  IconDraftingTools,
+  IconFastFormula,
+  IconExamLicense,
+  IconFieldSafety,
+  ArchitecturalSubjectIcon,
+} from '@/components/ui/ArchitecturalIcons';
 
 interface TopicPageLayoutProps {
   subject: SubjectData;
   topic: TopicContent;
   mappedExamQuestions: MappedExamQuestion[];
+  /** 依觀念掛載的圖解／圖表（由 server page 從 data/conceptVisuals 取出，避免整包進 client bundle） */
+  conceptVisuals?: ConceptVisual[];
 }
 
 export interface MappedExamQuestion {
@@ -51,7 +66,8 @@ export interface MappedExamQuestion {
   options?: Partial<Record<'A' | 'B' | 'C' | 'D', string>>;
 }
 
-export default function TopicPageLayout({ subject, topic, mappedExamQuestions }: TopicPageLayoutProps) {
+export default function TopicPageLayout({ subject, topic, mappedExamQuestions, conceptVisuals = [] }: TopicPageLayoutProps) {
+  const visualsByConcept = groupVisualsByConcept(topic.concepts.map((concept) => concept.heading), conceptVisuals);
   const currentIndex = subject.topics.findIndex((item) => item.slug === topic.slug);
   const prevTopic = currentIndex > 0 ? subject.topics[currentIndex - 1] : null;
   const nextTopic = currentIndex < subject.topics.length - 1 ? subject.topics[currentIndex + 1] : null;
@@ -96,8 +112,44 @@ export default function TopicPageLayout({ subject, topic, mappedExamQuestions }:
   // Practice Assessment Toggle State
   const [showPracticeAnswers, setShowPracticeAnswers] = useState<Record<number, boolean>>({});
 
-  // Zen Mode (Distraction-free) State
+  // Zen Mode (Distraction-free) & Learning Modes
   const [isZenMode, setIsZenMode] = useState(false);
+  const [learningMode, setLearningMode] = useState<'standard' | 'fast' | 'zen'>('standard');
+  const [isMistakeNotebookOpen, setIsMistakeNotebookOpen] = useState(false);
+
+  // Student store integration
+  const { mistakeCards, addMistakeCard } = useStudentStore();
+
+  // Theme & Reader Ergonomics
+  const { theme, fontSize, setFontSize, toggleTheme, readingWidth, setReadingWidth } = useTheme();
+  const [scrollProgress, setScrollProgress] = useState(0);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const total = document.documentElement.scrollHeight - window.innerHeight;
+      if (total > 0) {
+        const progress = Math.min(100, Math.max(0, (window.scrollY / total) * 100));
+        setScrollProgress(progress);
+      }
+    };
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  const handleTagTopicMistake = (q: MappedExamQuestion, reason: MistakeReason) => {
+    const walkthrough = buildExamWalkthrough(q, topic);
+    addMistakeCard({
+      id: q.id,
+      prompt: q.excerpt,
+      correction: `【官方標準解答 ${q.answer}】${walkthrough.correct}`,
+      reason,
+      subject: subject.title,
+      topic: topic.title,
+      userChoice: selectedExamAnswers[q.id] || '未填',
+      correctAnswer: q.answer,
+      lessonRoute: `/subjects/${subject.slug}/${topic.slug}`,
+    });
+  };
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -203,17 +255,43 @@ export default function TopicPageLayout({ subject, topic, mappedExamQuestions }:
 
   return (
     <div className={`transition-colors duration-500 bg-blueprint-subtle min-h-screen ${isZenMode ? 'bg-paper-50 dark:bg-slate-950' : ''}`}>
-      {/* Floating Zen Mode Toggle */}
-      <button
-        onClick={() => setIsZenMode(!isZenMode)}
-        className="print:hidden fixed bottom-6 right-6 z-50 flex h-12 w-12 items-center justify-center rounded-full bg-slate-900 text-white shadow-xl hover:bg-slate-800 focus:outline-none focus:ring-4 focus:ring-blue-500/30 dark:bg-slate-100 dark:text-slate-900 transition-transform hover:scale-105 active:scale-95 cursor-pointer"
-        aria-label={isZenMode ? '關閉禪意模式' : '開啟禪意全螢幕模式 (Zen Mode)'}
-        title={isZenMode ? '關閉禪意模式' : '開啟無干擾禪意模式 (Zen Mode)'}
-      >
-        {isZenMode ? '👁️' : '🧘'}
-      </button>
+      {/* Top Reading Scroll Progress Bar */}
+      <div
+        className="reading-progress-bar print:hidden"
+        style={{ width: `${scrollProgress}%` }}
+        role="progressbar"
+        aria-valuenow={Math.round(scrollProgress)}
+        aria-valuemin={0}
+        aria-valuemax={100}
+        aria-label="章節閱讀進度條"
+      />
 
-      <article className="mx-auto max-w-3xl space-y-16 px-4 py-8 sm:px-6 sm:py-16 text-lg leading-[1.8] text-slate-800 dark:text-slate-200 tracking-wide">
+      {/* Floating Reader Controls (Positioned safely above mobile tab bar) */}
+      <div className="print:hidden fixed bottom-20 md:bottom-6 right-4 md:right-6 z-40 flex items-center gap-2">
+        {scrollProgress > 15 && (
+          <button
+            type="button"
+            onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+            className="flex h-11 w-11 items-center justify-center rounded-full bg-white/90 dark:bg-slate-800/90 text-slate-700 dark:text-slate-200 border border-slate-200 dark:border-slate-700 shadow-xl hover:bg-slate-100 dark:hover:bg-slate-700 transition-all hover:scale-105 active:scale-95 cursor-pointer backdrop-blur-md"
+            aria-label="回到頁面頂端"
+            title="回到頂端"
+          >
+            <span className="text-sm font-bold">↑</span>
+          </button>
+        )}
+        <button
+          onClick={() => setIsZenMode(!isZenMode)}
+          className="flex h-11 w-11 md:h-12 md:w-12 items-center justify-center rounded-full bg-slate-900 text-white shadow-xl hover:bg-slate-800 focus:outline-none focus:ring-4 focus:ring-blue-500/30 dark:bg-slate-100 dark:text-slate-900 transition-transform hover:scale-105 active:scale-95 cursor-pointer"
+          aria-label={isZenMode ? '關閉禪意模式' : '開啟禪意全螢幕模式 (Zen Mode)'}
+          title={isZenMode ? '關閉禪意模式' : '開啟無干擾禪意模式 (Zen Mode)'}
+        >
+          {isZenMode ? '👁️' : '🧘'}
+        </button>
+      </div>
+
+      <article className={`mx-auto space-y-16 px-4 py-8 sm:px-6 sm:py-16 text-lg leading-[1.8] text-slate-800 dark:text-slate-200 tracking-wide transition-all duration-300 ${
+        readingWidth === 'wide' ? 'max-w-6xl' : 'max-w-3xl'
+      }`}>
         {/* Print-only A4 handout cover strip (first page) */}
         <PrintHandoutCover
           subjectTitle={subject.title}
@@ -263,12 +341,19 @@ export default function TopicPageLayout({ subject, topic, mappedExamQuestions }:
             <PrintControls compact />
           </div>
 
-          <h1 className="print:hidden font-serif text-3xl font-bold leading-tight text-slate-900 dark:text-white sm:text-4xl">
-            {topic.title}
-          </h1>
-          <p className="print:hidden max-w-3xl text-base leading-relaxed text-slate-600 dark:text-slate-400">
-            {interestHook.topicSummary}
-          </p>
+          <div className="flex items-start gap-4 pt-1">
+            <div className="p-3 rounded-2xl bg-blue-50 dark:bg-blue-950/60 text-blue-700 dark:text-blue-300 border border-blue-200/60 dark:border-blue-900/40 shrink-0 mt-1">
+              <ArchitecturalSubjectIcon slug={subject.slug} size={28} strokeWidth={1.75} />
+            </div>
+            <div>
+              <h1 className="print:hidden font-serif text-3xl font-bold leading-tight text-slate-900 dark:text-white sm:text-4xl">
+                {topic.title}
+              </h1>
+              <p className="print:hidden max-w-3xl text-base leading-relaxed text-slate-600 dark:text-slate-400 mt-2">
+                {interestHook.topicSummary}
+              </p>
+            </div>
+          </div>
 
           {/* V8 Big Data Exam Hit Rate Radar */}
           <div className="print:hidden">
@@ -328,6 +413,23 @@ export default function TopicPageLayout({ subject, topic, mappedExamQuestions }:
               <EnglishAudioHub topic={topic} />
             </div>
           )}
+        </div>
+
+        {/* === Stage 1: 直覺啟蒙與情境錨定 === */}
+        <div id="stage-intuition" className="scroll-mt-24 space-y-3">
+          <div className="flex items-center gap-3 px-1">
+            <div className="flex size-9 items-center justify-center rounded-xl bg-emerald-600 text-white shadow-xs">
+              <IconPerspective size={20} strokeWidth={1.8} />
+            </div>
+            <div>
+              <span className="text-[10px] font-mono font-bold uppercase tracking-wider text-emerald-600 dark:text-emerald-400 block">
+                Stage 1 · Intuition & Context Anchor
+              </span>
+              <h2 className="font-serif text-lg sm:text-xl font-bold text-slate-900 dark:text-white">
+                階段一 · 直覺啟蒙與情境錨定（從生活看懂物理與幾何）
+              </h2>
+            </div>
+          </div>
         </div>
 
         {/* Every lesson opens with a route-specific interest hook and its own illustration. */}
@@ -515,13 +617,123 @@ export default function TopicPageLayout({ subject, topic, mappedExamQuestions }:
           </div>
         </aside>
 
+        {/* Four Cognitive Stages Navigation Banner & Mode Controls */}
+        <div className="sticky top-14 z-30 -mx-2 px-3 py-2 bg-white/95 dark:bg-slate-900/95 backdrop-blur-md flex flex-wrap items-center justify-between gap-2 border-b border-slate-200 dark:border-slate-800 text-xs font-mono shadow-sm">
+          <div className="flex items-center gap-1.5 overflow-x-auto no-scrollbar py-0.5">
+            <span className="font-bold text-slate-400 text-[11px] mr-1 hidden sm:inline">學習階梯：</span>
+            {[
+              { id: 'stage-intuition', label: '1.直覺入門', icon: IconPerspective },
+              { id: 'principles', label: '2.觀念精講', icon: IconDraftingTools },
+              { id: 'worked', label: '3.示範避坑', icon: IconFastFormula },
+              { id: 'exam-questions-section', label: '4.真題實戰', icon: IconExamLicense },
+              { id: 'stage-advanced', label: '5.延伸法規', icon: IconFieldSafety },
+            ].map((stage) => {
+              const StageIcon = stage.icon;
+              return (
+                <button
+                  key={stage.id}
+                  onClick={() => jumpTo(stage.id)}
+                  className="flex shrink-0 items-center gap-1.5 rounded-xl px-2.5 py-1 font-bold text-slate-700 dark:text-slate-300 hover:bg-blue-50 dark:hover:bg-blue-950/50 hover:text-blue-600 transition-all cursor-pointer whitespace-nowrap"
+                >
+                  <StageIcon size={14} className="text-blue-600 dark:text-blue-400" />
+                  <span>{stage.label}</span>
+                </button>
+              );
+            })}
+          </div>
+
+          <div className="flex items-center gap-1.5 flex-wrap">
+            {/* Desktop Reading Width Toggle */}
+            <button
+              type="button"
+              onClick={() => setReadingWidth(readingWidth === 'wide' ? 'standard' : 'wide')}
+              className="hidden lg:flex items-center gap-1 rounded-lg border border-slate-200 dark:border-slate-800 bg-slate-100 dark:bg-slate-800 px-2 py-1 text-[11px] font-mono font-bold text-slate-700 dark:text-slate-300 hover:bg-white dark:hover:bg-slate-700 transition-colors cursor-pointer"
+              title={readingWidth === 'wide' ? '切換為專注閱讀 (768px)' : '切換為全景廣視 (1152px)'}
+            >
+              {readingWidth === 'wide' ? <Minimize2 className="size-3 text-teal-600 dark:text-teal-400" /> : <Maximize2 className="size-3 text-teal-600 dark:text-teal-400" />}
+              <span>{readingWidth === 'wide' ? '專注寬度' : '全景廣視'}</span>
+            </button>
+
+            {/* Quick Theme Cycle Button */}
+            <button
+              type="button"
+              onClick={() => toggleTheme()}
+              className="flex items-center gap-1 rounded-lg border border-slate-200 dark:border-slate-800 bg-slate-100 dark:bg-slate-800 px-2 py-1 text-[11px] font-mono font-bold text-slate-700 dark:text-slate-300 hover:bg-white dark:hover:bg-slate-700 transition-colors cursor-pointer"
+              title={`切換閱讀色調（當前：${theme === 'light' ? '和紙白' : theme === 'sepia' ? '護眼杏' : theme === 'dark' ? '深岩藍' : '極夜黑'}）`}
+            >
+              <span>{theme === 'light' ? '☀️' : theme === 'sepia' ? '🍵' : theme === 'dark' ? '🌙' : '🖤'}</span>
+              <span className="hidden sm:inline">{theme === 'light' ? '和紙' : theme === 'sepia' ? '護眼' : theme === 'dark' ? '深岩' : '極夜'}</span>
+            </button>
+
+            {/* Quick Font Size Controls */}
+            <div className="flex items-center rounded-lg bg-slate-100 dark:bg-slate-800 p-0.5 text-[11px] font-mono">
+              <button
+                type="button"
+                onClick={() => {
+                  if (fontSize === 'xl') setFontSize('lg');
+                  else if (fontSize === 'lg') setFontSize('base');
+                  else if (fontSize === 'base') setFontSize('sm');
+                }}
+                disabled={fontSize === 'sm'}
+                className="px-1.5 py-0.5 rounded text-slate-600 dark:text-slate-300 hover:bg-white dark:hover:bg-slate-700 disabled:opacity-40 transition-colors cursor-pointer"
+                title="縮小字體"
+              >
+                A-
+              </button>
+              <button
+                type="button"
+                onClick={() => {
+                  if (fontSize === 'sm') setFontSize('base');
+                  else if (fontSize === 'base') setFontSize('lg');
+                  else if (fontSize === 'lg') setFontSize('xl');
+                }}
+                disabled={fontSize === 'xl'}
+                className="px-1.5 py-0.5 rounded text-slate-600 dark:text-slate-300 hover:bg-white dark:hover:bg-slate-700 disabled:opacity-40 transition-colors cursor-pointer"
+                title="放大字體"
+              >
+                A+
+              </button>
+            </div>
+
+            <div className="flex items-center rounded-lg bg-slate-100 dark:bg-slate-800 p-0.5 text-[11px]">
+              <button
+                type="button"
+                onClick={() => { setLearningMode('standard'); setIsZenMode(false); }}
+                className={`px-2 py-0.5 rounded-md transition-colors cursor-pointer ${learningMode === 'standard' && !isZenMode ? 'bg-white dark:bg-slate-700 font-bold shadow-2xs text-blue-600 dark:text-blue-400' : 'text-slate-500'}`}
+                title="循序精熟模式：完整展開教學階梯"
+              >
+                循序精熟
+              </button>
+              <button
+                type="button"
+                onClick={() => { setLearningMode('fast'); setIsZenMode(false); }}
+                className={`px-2 py-0.5 rounded-md transition-colors cursor-pointer ${learningMode === 'fast' ? 'bg-white dark:bg-slate-700 font-bold shadow-2xs text-amber-600 dark:text-amber-400' : 'text-slate-500'}`}
+                title="考前速查模式：聚焦公式、決策樹與易錯陷阱"
+              >
+                ⚡速查
+              </button>
+            </div>
+
+            <button
+              type="button"
+              onClick={() => setIsMistakeNotebookOpen(true)}
+              className="flex items-center gap-1 rounded-lg bg-rose-50 dark:bg-rose-950/40 border border-rose-200 dark:border-rose-900/60 px-2 py-1 text-[11px] font-bold text-rose-700 dark:text-rose-300 hover:bg-rose-100 transition-colors cursor-pointer"
+              title="開啟錯題 X 光筆記本"
+            >
+              <Flame className="size-3 text-rose-500 fill-current" />
+              <span>錯題 ({mistakeCards.length})</span>
+            </button>
+          </div>
+        </div>
+
         {/* Seven-part lesson path: every control navigates to real content. */}
-        <div className="sticky top-14 z-20 -mx-2 px-2 py-1.5 bg-white/90 dark:bg-slate-900/90 backdrop-blur-md flex items-center gap-1 overflow-x-auto border-b border-slate-200 dark:border-slate-800 text-xs font-mono shadow-xs" aria-label="七段教學快速導覽">
+        <div className="flex items-center gap-1 overflow-x-auto py-1 text-[11px] font-mono text-slate-500 dark:text-slate-400 border-b border-slate-100 dark:border-slate-800">
+          <span className="shrink-0 text-slate-400">細部索引：</span>
           {[
             ['exam-focus', '1 這在考什麼'], ['observable', '2 看得到的東西'], ['knowledge-highlights', '💡 知識亮點'], ['application-mastery', '3 應用與課綱'], ['expert-council-7x7', '🏛️ 7x7專家矩陣'], ['seven-iterations', '4 七輪深化'], ['principles', '5 原理推導'],
             ['worked', '6 示範題'], ['practice', '7 自己做'], ['traps', '8 最容易錯'], ['mastery-checklist', '🏆 全知檢核'], ['sources', '9 來源版本'],
           ].map(([id, label]) => (
-            <button key={id} onClick={() => jumpTo(id)} className="shrink-0 rounded-t-lg px-3.5 py-2 font-bold text-slate-600 transition-colors hover:bg-blue-600 hover:text-white dark:text-slate-400">
+            <button key={id} onClick={() => jumpTo(id)} className="shrink-0 rounded px-2 py-0.5 hover:bg-slate-100 dark:hover:bg-slate-800 hover:text-blue-600 transition-colors cursor-pointer">
               {label}
             </button>
           ))}
@@ -887,6 +1099,23 @@ export default function TopicPageLayout({ subject, topic, mappedExamQuestions }:
         </div>
       </section>
 
+      {/* === Stage 2: 觀念精講與動態圖解 === */}
+      <div id="stage-concepts" className="scroll-mt-24 space-y-3 pt-6">
+        <div className="flex items-center gap-3 px-1">
+          <div className="flex size-9 items-center justify-center rounded-xl bg-blue-600 text-white shadow-xs">
+            <IconDraftingTools size={20} strokeWidth={1.8} />
+          </div>
+          <div>
+            <span className="text-[10px] font-mono font-bold uppercase tracking-wider text-blue-600 dark:text-blue-400 block">
+              Stage 2 · Core Concepts & Visual Models
+            </span>
+            <h2 className="font-serif text-lg sm:text-xl font-bold text-slate-900 dark:text-white">
+              階段二 · 觀念精講與動態圖解（建立空間表徵與數學模型）
+            </h2>
+          </div>
+        </div>
+      </div>
+
       {/* === Core Concepts List === */}
       <div id="principles" className="lesson-deferred-section scroll-mt-24 space-y-6">
         <div className="flex items-center justify-between">
@@ -966,6 +1195,15 @@ export default function TopicPageLayout({ subject, topic, mappedExamQuestions }:
               <div className="concept-body whitespace-pre-line text-[15px] sm:text-[15.5px] leading-[1.8] text-slate-700 dark:text-slate-300 border-l-2 border-slate-200 dark:border-slate-800 pl-4 py-0.5">
                 <MathText content={concept.body} />
               </div>
+
+              {/* Concept figures: diagrams / charts / comparison tables placed right after the explanation (dual coding) */}
+              {visualsByConcept[index]?.length ? (
+                <div className="concept-figures space-y-4">
+                  {visualsByConcept[index].map((visual, visualIndex) => (
+                    <ConceptFigure key={visual.title} visual={visual} figureNumber={`${index + 1}-${visualIndex + 1}`} />
+                  ))}
+                </div>
+              ) : null}
 
               {/* Step Sequence if available */}
               {concept.steps?.length ? (
@@ -1085,6 +1323,23 @@ export default function TopicPageLayout({ subject, topic, mappedExamQuestions }:
         })}
       </div>
 
+      {/* === Stage 3: 解題思維與避坑指南 === */}
+      <div id="stage-worked-traps" className="scroll-mt-24 space-y-3 pt-6">
+        <div className="flex items-center gap-3 px-1">
+          <div className="flex size-9 items-center justify-center rounded-xl bg-amber-600 text-white shadow-xs">
+            <IconFastFormula size={20} strokeWidth={1.8} />
+          </div>
+          <div>
+            <span className="text-[10px] font-mono font-bold uppercase tracking-wider text-amber-600 dark:text-amber-400 block">
+              Stage 3 · Worked Examples & Trap Defense
+            </span>
+            <h2 className="font-serif text-lg sm:text-xl font-bold text-slate-900 dark:text-white">
+              階段三 · 解題思維與避坑指南（名師示範思維與陷阱 X 光）
+            </h2>
+          </div>
+        </div>
+      </div>
+
       {/* === Worked Examples Section === */}
       {topic.worked_examples?.length ? (
         <section id="worked" className="lesson-deferred-section scroll-mt-24 space-y-4 pt-4" aria-labelledby="worked-title">
@@ -1170,6 +1425,23 @@ export default function TopicPageLayout({ subject, topic, mappedExamQuestions }:
           )}
         </section>
       ) : null}
+
+      {/* === Stage 4: 全真測驗與錯題反思 === */}
+      <div id="stage-exam-practice" className="scroll-mt-24 space-y-3 pt-6">
+        <div className="flex items-center gap-3 px-1">
+          <div className="flex size-9 items-center justify-center rounded-xl bg-indigo-600 text-white shadow-xs">
+            <IconExamLicense size={20} strokeWidth={1.8} />
+          </div>
+          <div>
+            <span className="text-[10px] font-mono font-bold uppercase tracking-wider text-indigo-600 dark:text-indigo-400 block">
+              Stage 4 · Active Retrieval & Diagnostic Mastery
+            </span>
+            <h2 className="font-serif text-lg sm:text-xl font-bold text-slate-900 dark:text-white">
+              階段四 · 全真測驗與錯題反思（統測真題實戰與錯因歸納）
+            </h2>
+          </div>
+        </div>
+      </div>
 
       {/* === Self Practice Section === */}
       {practices.length ? (
@@ -1361,11 +1633,49 @@ export default function TopicPageLayout({ subject, topic, mappedExamQuestions }:
                             <span className="flex items-center gap-2"><span className="text-xl">☕</span> 沒關係，統測本來就有陷阱！</span>
                             <span className="text-sm font-normal text-amber-900/80 dark:text-amber-200/80">你的選擇是 {userChoice}。先喝口水，我們一起來看看老師是怎麼拆解這題的：</span>
                           </span>
-                        )}{' '}
+                        )}
                       </p>
-                      <p className="text-sm border-b border-slate-200 dark:border-slate-700 pb-3">
-                        <strong className="text-slate-700 dark:text-slate-300">官方標準答案：{q.answer}</strong>
-                      </p>
+                      <div className="flex flex-wrap items-center justify-between gap-2 border-b border-slate-200 dark:border-slate-700 pb-3">
+                        <p className="text-sm">
+                          <strong className="text-slate-700 dark:text-slate-300">官方標準答案：{q.answer}</strong>
+                        </p>
+
+                        {/* 1-Click Mistake Reason Tagging */}
+                        <div className="flex items-center gap-1.5 flex-wrap">
+                          {mistakeCards.some((c) => c.id === q.id) ? (
+                            <span className="inline-flex items-center gap-1 rounded-lg bg-emerald-100 dark:bg-emerald-950 px-2 py-0.5 text-xs font-mono font-bold text-emerald-800 dark:text-emerald-200 border border-emerald-300 dark:border-emerald-800">
+                              <Check className="size-3" /> 已納入錯題筆記 (Leitner 複習)
+                            </span>
+                          ) : (
+                            <div className="flex items-center gap-1 text-xs flex-wrap">
+                              <span className="font-mono text-slate-500 font-bold flex items-center gap-1">
+                                <Flame className="size-3 text-rose-500" /> 標記錯因收納：
+                              </span>
+                              {(['K', 'F', 'U', 'G', 'A', 'R'] as const).map((r) => {
+                                const labels: Record<string, string> = {
+                                  K: 'K盲點',
+                                  F: 'F公式',
+                                  U: 'U單位',
+                                  G: 'G圖面',
+                                  A: 'A計算',
+                                  R: 'R審題',
+                                };
+                                return (
+                                  <button
+                                    key={r}
+                                    type="button"
+                                    onClick={() => handleTagTopicMistake(q, r)}
+                                    className="rounded-md border border-rose-200 dark:border-rose-900 bg-rose-50/70 dark:bg-rose-950/40 px-2 py-0.5 text-[11px] font-mono font-bold text-rose-700 dark:text-rose-300 hover:bg-rose-600 hover:text-white transition-colors cursor-pointer"
+                                    title={`標記為 ${labels[r]} 並收入 1/7/21 天間隔複習筆記本`}
+                                  >
+                                    {labels[r]}
+                                  </button>
+                                );
+                              })}
+                            </div>
+                          )}
+                        </div>
+                      </div>
                       <div className="space-y-4 rounded-2xl border border-blue-100 bg-blue-50/50 p-5 dark:border-blue-900/40 dark:bg-blue-950/20">
                         <h3 className="flex items-center gap-2 text-base font-bold text-blue-900 dark:text-blue-100"><Lightbulb className="size-5 text-amber-500" />老師邊想邊說：我們一步一步來</h3>
                         <ol className="space-y-3 text-sm leading-relaxed text-slate-700 dark:text-slate-300">
@@ -1406,6 +1716,23 @@ export default function TopicPageLayout({ subject, topic, mappedExamQuestions }:
           <p className="mt-1">教材與五題詳解仍依官方考綱持續建設；在逐題確認題幹確實考查本知識點之前，不以關鍵字硬掛真題，也不把合成題冒充歷屆題。</p>
         </section>
       ) : null}
+
+      {/* === Stage 5: 延伸工程規範與學術深化 === */}
+      <div id="stage-advanced" className="scroll-mt-24 space-y-3 pt-6">
+        <div className="flex items-center gap-3 px-1">
+          <div className="flex size-9 items-center justify-center rounded-xl bg-purple-600 text-white shadow-xs">
+            <IconFieldSafety size={20} strokeWidth={1.8} />
+          </div>
+          <div>
+            <span className="text-[10px] font-mono font-bold uppercase tracking-wider text-purple-600 dark:text-purple-400 block">
+              Stage 5 · Advanced Engineering & Regulatory Standards
+            </span>
+            <h2 className="font-serif text-lg sm:text-xl font-bold text-slate-900 dark:text-white">
+              延伸進階 · 工程規範與學術深化（CNS 法規 · 雙語名詞 · 7x7 專家精熟矩陣）
+            </h2>
+          </div>
+        </div>
+      </div>
 
       {/* === [One-Sentence Mastery Recap & Exit Check] === */}
       <section id="sources" className="lesson-deferred-section scroll-mt-24 rounded-2xl border border-indigo-200 dark:border-indigo-900/60 bg-gradient-to-r from-indigo-50/50 via-white to-sky-50/40 dark:from-indigo-950/30 dark:via-slate-900 dark:to-slate-900 p-6 sm:p-7 shadow-xs space-y-3">
@@ -1622,6 +1949,9 @@ export default function TopicPageLayout({ subject, topic, mappedExamQuestions }:
           </div>
         </div>
       )}
+
+      {/* Spaced Repetition Mistake Notebook Modal */}
+      <MistakeNotebookModal isOpen={isMistakeNotebookOpen} onClose={() => setIsMistakeNotebookOpen(false)} />
       </article>
     </div>
   );

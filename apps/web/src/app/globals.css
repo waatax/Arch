@@ -50,6 +50,115 @@
 }
 
 /* ══════════════════════════════════════════════════════
+   SEPIA / WARM EYE-CARE (暖柔・羊皮護眼米 + 柔和暖褐墨)
+   ══════════════════════════════════════════════════════ */
+:root.theme-sepia {
+  color-scheme: light;
+  --color-paper-50: #F6EFE6;       /* 溫潤護眼羊皮米 */
+  --color-paper-100: #EBE2D4;      /* 杏仁柔紙 */
+  --color-ink-900: #2C2117;        /* 柔和暖褐濃墨 */
+  --color-ink-650: #6D5C4E;        /* 溫潤赭石褐 */
+  --color-teal-700: #1C6B64;       /* 沉靜墨竹綠 */
+  --color-brick-700: #B84737;      /* 暖泥赤 */
+  --color-blueprint-700: #225677;  /* 雅青 */
+  --color-moss-700: #2F887C;       /* 橄欖苔綠 */
+  --color-sun-500: #AB782A;        /* 暖琥珀金 */
+  --color-concrete-300: #DCD0C0;   /* 暖米細線 */
+  --color-danger-750: #BC5D4A;     /* 溫暖玫瑰土 */
+
+  --background: var(--color-paper-50);
+  --foreground: var(--color-ink-900);
+
+  --color-slate-50: #F6EFE6;
+  --color-slate-100: #EBE2D4;
+  --color-slate-200: #DFD2C2;
+  --color-slate-300: #CBB9A5;
+  --color-slate-400: #A89582;
+  --color-slate-500: #887462;
+  --color-slate-600: #6D5C4E;
+  --color-slate-700: #4D3F33;
+  --color-slate-800: #2C2117;
+  --color-slate-900: #231A12;
+  --color-slate-950: #1A120B;
+}
+
+:root.theme-sepia body {
+  background-color: #F6EFE6 !important;
+}
+
+:root.theme-sepia .bg-white {
+  background-color: #FCF8F2 !important;
+}
+
+/* ══════════════════════════════════════════════════════
+   OLED PITCH BLACK MODE (極夜・純黑 OLED + 琉璃夜光)
+   ══════════════════════════════════════════════════════ */
+:root.dark.theme-oled {
+  color-scheme: dark;
+  --color-paper-50: #000000;       /* 純粹黑色 (OLED 0 功耗) */
+  --color-paper-100: #0A0D11;      /* 幽微深墨 */
+  --color-ink-900: #E2E8F0;        /* 柔霧月白 */
+  --color-ink-650: #94A3B8;        /* 寧靜岩灰 */
+  --color-teal-700: #38BDF8;       /* 極光碧青 */
+  --color-brick-700: #F87171;      /* 霞赤 */
+  --color-blueprint-700: #60A5FA;  /* 星空藍 */
+  --color-moss-700: #34D399;       /* 翡翠綠 */
+  --color-sun-500: #FBBF24;        /* 金星金 */
+  --color-concrete-300: #141B22;   /* 極深邊線 */
+  --color-danger-750: #FB7185;
+
+  --background: #000000;
+  --foreground: #E2E8F0;
+
+  --color-slate-800: #11161D;
+  --color-slate-900: #07090C;
+  --color-slate-950: #000000;
+}
+
+:root.dark.theme-oled body {
+  background-color: #000000 !important;
+}
+
+:root.dark.theme-oled .bg-slate-900,
+:root.dark.theme-oled .bg-slate-900\/95,
+:root.dark.theme-oled .bg-slate-900\/90,
+:root.dark.theme-oled .bg-slate-900\/80,
+:root.dark.theme-oled .bg-slate-900\/60 {
+  background-color: #07090C !important;
+}
+
+:root.dark.theme-oled .bg-slate-950 {
+  background-color: #000000 !important;
+}
+
+/* ══════════════════════════════════════════════════════
+   KATEX MOBILE & READING ERGONOMICS
+   ══════════════════════════════════════════════════════ */
+.katex-display {
+  max-width: 100% !important;
+  overflow-x: auto !important;
+  overflow-y: hidden !important;
+  padding: 0.5rem 0 !important;
+  -webkit-overflow-scrolling: touch !important;
+  scrollbar-width: thin;
+}
+
+.katex {
+  text-rendering: auto;
+  font-size: 1.05em;
+}
+
+.theme-sepia .katex {
+  color: #2C2117 !important;
+}
+.dark .katex {
+  color: #E2E8F0 !important;
+}
+.dark.theme-oled .katex {
+  color: #F1F5F9 !important;
+}
+
+/* ══════════════════════════════════════════════════════
    FONT SIZE SCALING
    ══════════════════════════════════════════════════════ */
 :root.text-size-sm {
@@ -60,6 +169,36 @@
 }
 :root.text-size-lg {
   font-size: 18px;
+}
+:root.text-size-xl {
+  font-size: 20px;
+}
+
+/* Reading Progress Bar */
+.reading-progress-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #1E7572, #38BDF8, #F59E0B);
+  z-index: 70;
+  transition: width 0.12s ease-out;
+  pointer-events: none;
+}
+.dark .reading-progress-bar {
+  background: linear-gradient(90deg, #4DD2D2, #60A5FA, #FBBF24);
+}
+.theme-sepia .reading-progress-bar {
+  background: linear-gradient(90deg, #1C6B64, #AB782A, #B84737);
+}
+
+/* Mobile & Desktop Reader Ergonomics */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
 
 @theme inline {
@@ -1097,4 +1236,92 @@ html.arch-lite .bg-blueprint-subtle {
   html[data-print-mode="quiz"] .solution-steps {
     display: none !important;
   }
+}
+
+/* ══════════════════════════════════════════════════════
+   CONCEPT VISUALS 概念圖解（data/conceptVisuals → <ConceptFigure>）
+   圖中只使用 cv-* 類別，色票隨主題（淺色／深色／護眼／OLED）與列印自動切換。
+   ══════════════════════════════════════════════════════ */
+.cv-svg {
+  --cv-ink: var(--color-ink-900);
+  --cv-muted: var(--color-ink-650);
+  --cv-grid: color-mix(in srgb, var(--color-ink-650) 22%, transparent);
+  --cv-paper: var(--color-paper-50);
+  --cv-blue: var(--color-blueprint-700);
+  --cv-red: var(--color-brick-700);
+  --cv-green: var(--color-teal-700);
+  --cv-amber: var(--color-sun-500);
+  --cv-violet: #6B4FA0;
+  display: block;
+  width: 100%;
+  height: auto;
+  min-width: 26rem;
+  margin-inline: auto;
+  font-family: "Noto Sans TC", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  overflow: visible;
+}
+.dark .cv-svg { --cv-violet: #B9A3F0; }
+.cv-svg .cv-nofill { fill: none; }
+.cv-svg .cv-nostroke { stroke: none; }
+.cv-svg .cv-s-ink { stroke: var(--cv-ink); }
+.cv-svg .cv-s-muted { stroke: var(--cv-muted); }
+.cv-svg .cv-s-grid { stroke: var(--cv-grid); }
+.cv-svg .cv-s-paper { stroke: var(--cv-paper); }
+.cv-svg .cv-s-blue { stroke: var(--cv-blue); }
+.cv-svg .cv-s-red { stroke: var(--cv-red); }
+.cv-svg .cv-s-green { stroke: var(--cv-green); }
+.cv-svg .cv-s-amber { stroke: var(--cv-amber); }
+.cv-svg .cv-s-violet { stroke: var(--cv-violet); }
+.cv-svg .cv-f-ink { fill: var(--cv-ink); }
+.cv-svg .cv-f-muted { fill: var(--cv-muted); }
+.cv-svg .cv-f-grid { fill: var(--cv-grid); }
+.cv-svg .cv-f-paper { fill: var(--cv-paper); }
+.cv-svg .cv-f-blue { fill: var(--cv-blue); }
+.cv-svg .cv-f-red { fill: var(--cv-red); }
+.cv-svg .cv-f-green { fill: var(--cv-green); }
+.cv-svg .cv-f-amber { fill: var(--cv-amber); }
+.cv-svg .cv-f-violet { fill: var(--cv-violet); }
+.cv-svg .cv-t-ink { fill: color-mix(in srgb, var(--cv-ink) 10%, transparent); }
+.cv-svg .cv-t-muted { fill: color-mix(in srgb, var(--cv-muted) 14%, transparent); }
+.cv-svg .cv-t-grid { fill: var(--cv-grid); }
+.cv-svg .cv-t-paper { fill: var(--cv-paper); }
+.cv-svg .cv-t-blue { fill: color-mix(in srgb, var(--cv-blue) 16%, transparent); }
+.cv-svg .cv-t-red { fill: color-mix(in srgb, var(--cv-red) 16%, transparent); }
+.cv-svg .cv-t-green { fill: color-mix(in srgb, var(--cv-green) 16%, transparent); }
+.cv-svg .cv-t-amber { fill: color-mix(in srgb, var(--cv-amber) 20%, transparent); }
+.cv-svg .cv-t-violet { fill: color-mix(in srgb, var(--cv-violet) 16%, transparent); }
+.cv-svg .cv-dash { stroke-dasharray: 6 4; }
+.cv-svg .cv-dot { stroke-dasharray: 1.5 4; stroke-linecap: round; }
+.cv-svg .cv-center { stroke-dasharray: 14 4 2 4; }
+.cv-svg .cv-hidden { stroke-dasharray: 4 3; }
+.cv-svg .cv-text { stroke: none; }
+.cv-svg .cv-halo {
+  stroke: var(--cv-paper);
+  stroke-width: 3.2px;
+  stroke-linejoin: round;
+  paint-order: stroke fill;
+}
+.cv-svg .cv-mono { font-family: "JetBrains Mono", ui-monospace, monospace; }
+
+.cv-figure-canvas {
+  background: var(--color-paper-50);
+}
+
+@media print {
+  .cv-svg {
+    --cv-ink: #182630 !important;
+    --cv-muted: #506270 !important;
+    --cv-grid: #d5dde3 !important;
+    --cv-paper: #ffffff !important;
+    --cv-blue: #1F567A !important;
+    --cv-red: #C04838 !important;
+    --cv-green: #1E7572 !important;
+    --cv-amber: #9a6d22 !important;
+    --cv-violet: #6B4FA0 !important;
+    min-width: 0 !important;
+    max-width: 15cm;
+  }
+  .cv-figure { break-inside: avoid; page-break-inside: avoid; }
+  .cv-figure-canvas { background: #ffffff !important; overflow: visible !important; }
+  .cv-figure-zoom { display: none !important; }
 }

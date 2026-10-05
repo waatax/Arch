@@ -6,8 +6,11 @@ import ChartRenderer from './ChartRenderer';
 import TableRenderer from './TableRenderer';
 import MathText from './MathText';
 import { isAnswerChoiceCorrect, isAnswerCorrect, isMultipleChoiceAnswer, toggleSelectedChoice } from '../lib/examAnswers';
-import { Flag, Play, Pause, RotateCcw, Clock, CheckCircle, AlertCircle, BookOpen, PenTool } from 'lucide-react';
+import { Flag, Play, Pause, RotateCcw, Clock, CheckCircle, AlertCircle, BookOpen, PenTool, Flame, Sparkles, Check } from 'lucide-react';
 import ScratchpadCanvas from './pedagogy/ScratchpadCanvas';
+import MistakeNotebookModal from './pedagogy/MistakeNotebookModal';
+import { useStudentStore, type MistakeReason } from '../lib/store/studentStore';
+import { buildExamWalkthrough } from '../lib/pedagogy/masteryLesson';
 
 export interface SimulationQuestion {
   id: string;
@@ -137,8 +140,13 @@ export default function ExamSimulator({ catalog }: { catalog: PracticeCatalog })
   const [elapsedSeconds, setElapsedSeconds] = useState(0);
   const [timerRunning, setTimerRunning] = useState(false);
   
-  // Scratchpad state
+  // Scratchpad & Mistake Notebook state
   const [isCanvasOpen, setIsCanvasOpen] = useState(false);
+  const [isMistakeNotebookOpen, setIsMistakeNotebookOpen] = useState(false);
+  const [, setMistakeTagStatus] = useState<Record<string, MistakeReason>>({});
+
+  // Student store integration for Leitner 1/7/21 mistake tracking
+  const { mistakeCards, addMistakeCard, updateAccuracy } = useStudentStore();
 
   const requestGenerationRef = useRef(0);
   const abortControllerRef = useRef<AbortController | null>(null);
@@ -267,13 +275,48 @@ export default function ExamSimulator({ catalog }: { catalog: PracticeCatalog })
     }
   };
 
+  const handleTagMistake = (q: SimulationQuestion, reason: MistakeReason) => {
+    setMistakeTagStatus((prev) => ({ ...prev, [q.id]: reason }));
+    const walkthrough = buildExamWalkthrough(q, { title: q.topic });
+    addMistakeCard({
+      id: q.id,
+      prompt: q.excerpt,
+      correction: `【官方標準正解 ${q.answer}】${walkthrough.correct}`,
+      reason,
+      subject: q.subjectName,
+      topic: q.topic,
+      userChoice: answers[q.id] || '未填',
+      correctAnswer: q.answer,
+      lessonRoute: q.lessonRoute ?? undefined,
+    });
+  };
+
+  const handleRetryMistakes = () => {
+    const wrongQuestions = session.filter((q) => !isAnswerCorrect(q.answer, answers[q.id]));
+    if (wrongQuestions.length === 0) return;
+    setSession(wrongQuestions);
+    setAnswers({});
+    setFlagged({});
+    setSubmitted(false);
+    setFilterResult('all');
+    setElapsedSeconds(0);
+    setTimerRunning(true);
+    scrollToTop();
+  };
+
   const handleSubmit = () => {
     setSubmitted(true);
     setTimerRunning(false);
     
-    // Save mistakes to local storage
+    // Save mistakes and update student accuracy in store
     try {
       const wrongQuestions = session.filter((q) => !isAnswerCorrect(q.answer, answers[q.id]));
+      wrongQuestions.forEach(() => updateAccuracy(false));
+      const correctCount = session.length - wrongQuestions.length;
+      for (let i = 0; i < correctCount; i++) {
+        updateAccuracy(true);
+      }
+
       if (wrongQuestions.length > 0) {
         const saved = typeof window !== 'undefined' ? localStorage.getItem('arch_mistakes_vault_v7') : null;
         const currentList: SimulationQuestion[] = saved ? JSON.parse(saved) : [];
@@ -411,6 +454,16 @@ export default function ExamSimulator({ catalog }: { catalog: PracticeCatalog })
           >
             ⚡ 考點速查卡 ↗
           </a>
+
+          <button
+            type="button"
+            onClick={() => setIsMistakeNotebookOpen(true)}
+            className="rounded-lg bg-rose-50 dark:bg-rose-950/40 border border-rose-200 dark:border-rose-900 px-3 py-1.5 text-xs font-bold text-rose-700 dark:text-rose-300 hover:bg-rose-100 dark:hover:bg-rose-900/60 transition-colors cursor-pointer inline-flex items-center gap-1.5 shadow-2xs"
+            title="開啟 1/7/21 間隔複習錯題本"
+          >
+            <Flame className="size-3.5 text-rose-500 fill-current" />
+            <span>錯題本 ({mistakeCards.length})</span>
+          </button>
           
           <button 
             type="button" 
@@ -492,6 +545,28 @@ export default function ExamSimulator({ catalog }: { catalog: PracticeCatalog })
               )}
             </div>
           </div>
+
+          {/* Drill Missed Questions CTA */}
+          {session.length - score > 0 && (
+            <div className="pt-3 border-t border-blue-200/60 dark:border-blue-900/40 flex flex-wrap items-center gap-3">
+              <button
+                type="button"
+                onClick={handleRetryMistakes}
+                className="inline-flex items-center gap-2 rounded-xl bg-rose-600 hover:bg-rose-700 text-white px-5 py-2.5 text-xs font-bold shadow-md transition-all cursor-pointer"
+              >
+                <RotateCcw className="size-4" />
+                重新挑戰這 {session.length - score} 題錯題（弱點特訓）
+              </button>
+              <button
+                type="button"
+                onClick={() => setIsMistakeNotebookOpen(true)}
+                className="inline-flex items-center gap-2 rounded-xl border border-rose-300 dark:border-rose-800 bg-white dark:bg-slate-900 hover:bg-rose-50 dark:hover:bg-rose-950/40 text-rose-700 dark:text-rose-300 px-5 py-2.5 text-xs font-bold shadow-xs transition-all cursor-pointer"
+              >
+                <Flame className="size-4 text-rose-500 fill-current" />
+                檢視錯題 X 光筆記 ({mistakeCards.length})
+              </button>
+            </div>
+          )}
         </section>
       )}
 
@@ -668,32 +743,124 @@ export default function ExamSimulator({ catalog }: { catalog: PracticeCatalog })
 
                 {/* Submitted Analysis */}
                 {submitted && (
-                  <div className="mt-5 border-t border-slate-100 dark:border-slate-800 pt-5 space-y-3">
-                    <div className="flex items-center gap-2">
-                      {isCorrect ? (
-                        <span className="inline-flex items-center gap-1 text-sm font-bold text-emerald-600 dark:text-emerald-400">
-                          <CheckCircle className="size-4" />
-                          答對！官方正解：{question.answer}
-                        </span>
-                      ) : (
-                        <span className="inline-flex items-center gap-1 text-sm font-bold text-rose-600 dark:text-rose-400">
-                          <AlertCircle className="size-4" />
-                          答錯；你的作答：{selected || '未填'}，官方正解：{question.answer}
-                        </span>
-                      )}
+                  <div className="mt-5 border-t border-slate-100 dark:border-slate-800 pt-5 space-y-4">
+                    <div className="flex flex-wrap items-center justify-between gap-3">
+                      <div className="flex items-center gap-2">
+                        {isCorrect ? (
+                          <span className="inline-flex items-center gap-1.5 rounded-full bg-emerald-100 dark:bg-emerald-950/80 px-3 py-1 text-xs font-bold text-emerald-700 dark:text-emerald-300 border border-emerald-300 dark:border-emerald-800">
+                            <CheckCircle className="size-4" />
+                            答對！官方正解：{question.answer}
+                          </span>
+                        ) : (
+                          <span className="inline-flex items-center gap-1.5 rounded-full bg-rose-100 dark:bg-rose-950/80 px-3 py-1 text-xs font-bold text-rose-700 dark:text-rose-300 border border-rose-300 dark:border-rose-800">
+                            <AlertCircle className="size-4" />
+                            答錯；你的作答：{selected || '未填'}，官方正解：{question.answer}
+                          </span>
+                        )}
+                      </div>
+
+                      {/* 1-Click Mistake Reason Tagging */}
+                      <div className="flex items-center gap-1.5 flex-wrap">
+                        {mistakeCards.some((c) => c.id === question.id) ? (
+                          <span className="inline-flex items-center gap-1 rounded-lg bg-emerald-100 dark:bg-emerald-950 px-2.5 py-1 text-xs font-mono font-bold text-emerald-800 dark:text-emerald-200 border border-emerald-300 dark:border-emerald-800">
+                            <Check className="size-3" /> 已納入錯題本 (Leitner 複習)
+                          </span>
+                        ) : (
+                          <div className="flex items-center gap-1 text-xs flex-wrap">
+                            <span className="font-mono text-slate-500 font-bold flex items-center gap-1">
+                              <Flame className="size-3 text-rose-500" /> 標記錯因收納：
+                            </span>
+                            {(['K', 'F', 'U', 'G', 'A', 'R'] as const).map((r) => {
+                              const labels: Record<string, string> = {
+                                K: 'K盲點',
+                                F: 'F公式',
+                                U: 'U單位',
+                                G: 'G圖面',
+                                A: 'A計算',
+                                R: 'R審題',
+                              };
+                              return (
+                                <button
+                                  key={r}
+                                  type="button"
+                                  onClick={() => handleTagMistake(question, r)}
+                                  className="rounded-md border border-rose-200 dark:border-rose-900 bg-rose-50/70 dark:bg-rose-950/40 px-2 py-0.5 text-[11px] font-mono font-bold text-rose-700 dark:text-rose-300 hover:bg-rose-600 hover:text-white transition-colors cursor-pointer"
+                                  title={`標記為 ${labels[r]} 並收入 1/7/21 天間隔複習筆記本`}
+                                >
+                                  {labels[r]}
+                                </button>
+                              );
+                            })}
+                          </div>
+                        )}
+                      </div>
                     </div>
-                    <p className="text-xs font-mono text-slate-500">
-                      考科歸屬／知識點：{question.subjectName} · {question.topic}
-                    </p>
-                    {question.lessonRoute && (
-                      <a
-                        href={localHref(question.lessonRoute)}
-                        className="inline-flex items-center gap-1.5 rounded-xl bg-blue-600 hover:bg-blue-500 px-4 py-2 text-xs font-bold text-white transition-colors cursor-pointer"
-                      >
-                        <BookOpen className="size-3.5" />
-                        前往該章節深入學習 →
-                      </a>
-                    )}
+
+                    {/* 5-Step In-Depth Walkthrough */}
+                    {(() => {
+                      const walkthrough = buildExamWalkthrough(question, { title: question.topic });
+                      return (
+                        <div className="space-y-3 rounded-2xl border border-blue-100 bg-blue-50/40 p-4 sm:p-5 dark:border-blue-900/40 dark:bg-blue-950/20 text-xs sm:text-sm">
+                          <div className="flex flex-wrap items-center justify-between border-b border-blue-200/60 dark:border-blue-900/40 pb-2 gap-2">
+                            <span className="font-bold text-blue-900 dark:text-blue-200 flex items-center gap-1.5 font-serif text-sm sm:text-base">
+                              <Sparkles className="size-4 text-amber-500" /> 名師思路拆解：五段式 SOP 解題心法
+                            </span>
+                            <span className="font-mono text-[11px] text-slate-500">
+                              {question.subjectName} · {question.topic}
+                            </span>
+                          </div>
+
+                          <ol className="space-y-2.5 text-slate-700 dark:text-slate-300 leading-relaxed">
+                            <li>
+                              <strong className="text-blue-700 dark:text-blue-300">1. 題目到底在問什麼？</strong>
+                              <p className="text-slate-600 dark:text-slate-400 mt-0.5">{walkthrough.restate}</p>
+                            </li>
+                            <li>
+                              <strong className="text-blue-700 dark:text-blue-300">2. 破題關鍵線索：</strong>
+                              <p className="text-slate-600 dark:text-slate-400 mt-0.5">{walkthrough.clues}</p>
+                            </li>
+                            <li>
+                              <strong className="text-blue-700 dark:text-blue-300">3. 核心原理與解題準則：</strong>
+                              <div className="mt-0.5"><MathText content={walkthrough.rule} /></div>
+                            </li>
+                            <li>
+                              <strong className="text-emerald-700 dark:text-emerald-300">4. 為什麼官方正解是對的？</strong>
+                              <div className="mt-0.5 text-emerald-950 dark:text-emerald-100"><MathText content={walkthrough.correct} /></div>
+                            </li>
+                          </ol>
+
+                          {walkthrough.distractors.length > 0 && (
+                            <div className="mt-3 rounded-xl bg-amber-50/80 p-3.5 border border-amber-200/60 dark:bg-amber-950/25 dark:border-amber-900/30 space-y-1.5">
+                              <p className="font-bold text-amber-900 dark:text-amber-200 text-xs">
+                                ⚠️ 考場誘答陷阱剖析：其他選項錯在哪？
+                              </p>
+                              <ul className="space-y-1 text-xs text-amber-900/90 dark:text-amber-200/90">
+                                {walkthrough.distractors.map((d) => (
+                                  <li key={d} className="leading-relaxed">
+                                    • <MathText content={d} />
+                                  </li>
+                                ))}
+                              </ul>
+                            </div>
+                          )}
+
+                          <div className="flex flex-wrap items-center justify-between gap-2 pt-2 border-t border-blue-100 dark:border-blue-900/30">
+                            {question.lessonRoute ? (
+                              <a
+                                href={localHref(question.lessonRoute)}
+                                className="inline-flex items-center gap-1.5 rounded-lg bg-blue-600 hover:bg-blue-500 px-3 py-1.5 text-xs font-bold text-white transition-colors"
+                              >
+                                <BookOpen className="size-3.5" />
+                                前往「{question.topic}」章節複習觀念 →
+                              </a>
+                            ) : null}
+                            <span className="text-[11px] font-mono text-slate-400">
+                              掌握度檢核：融會貫通不靠死背
+                            </span>
+                          </div>
+                        </div>
+                      );
+                    })()}
                   </div>
                 )}
               </li>
@@ -730,6 +897,7 @@ export default function ExamSimulator({ catalog }: { catalog: PracticeCatalog })
         </button>
       )}
       <ScratchpadCanvas isOpen={isCanvasOpen} onClose={() => setIsCanvasOpen(false)} />
+      <MistakeNotebookModal isOpen={isMistakeNotebookOpen} onClose={() => setIsMistakeNotebookOpen(false)} />
     </div>
   );
 }

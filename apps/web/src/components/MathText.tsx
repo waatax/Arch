@@ -83,24 +83,26 @@ export default function MathText({ content, className }: { content?: string | nu
             {parts.map((part, index) => {
               if (part.startsWith('$$') && part.endsWith('$$')) {
                 return (
-                  <BlockMath
-                    key={index}
-                    math={part.slice(2, -2).trim()}
-                    renderError={() => (
-                      <span className="font-mono text-xs text-rose-600 dark:text-rose-400 break-all">{part}</span>
-                    )}
-                  />
+                  <div key={index} className="my-2 max-w-full overflow-x-auto py-1 text-center mobile-scroll" tabIndex={0}>
+                    <BlockMath
+                      math={part.slice(2, -2).trim()}
+                      renderError={() => (
+                        <span className="font-mono text-xs text-rose-600 dark:text-rose-400 break-all">{part}</span>
+                      )}
+                    />
+                  </div>
                 );
               }
               if (part.startsWith('\\[') && part.endsWith('\\]')) {
                 return (
-                  <BlockMath
-                    key={index}
-                    math={part.slice(2, -2).trim()}
-                    renderError={() => (
-                      <span className="font-mono text-xs text-rose-600 dark:text-rose-400 break-all">{part}</span>
-                    )}
-                  />
+                  <div key={index} className="my-2 max-w-full overflow-x-auto py-1 text-center mobile-scroll" tabIndex={0}>
+                    <BlockMath
+                      math={part.slice(2, -2).trim()}
+                      renderError={() => (
+                        <span className="font-mono text-xs text-rose-600 dark:text-rose-400 break-all">{part}</span>
+                      )}
+                    />
+                  </div>
                 );
               }
               if (part.startsWith('$') && part.endsWith('$')) {
@@ -164,7 +166,7 @@ export default function MathText({ content, className }: { content?: string | nu
                       const isMultiLine = subPart.includes('\n') || subPart.includes('\\\\');
                       const cleanMath = subPart.trim();
                       return (
-                        <span key={subIndex} className="inline-block">
+                        <span key={subIndex} className="inline-block max-w-full overflow-x-auto align-middle mobile-scroll">
                           {isMultiLine ? (
                             <BlockMath
                               math={cleanMath}

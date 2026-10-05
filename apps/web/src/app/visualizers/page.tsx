@@ -3,17 +3,19 @@
 import React, { useState, useMemo } from 'react';
 import Link from 'next/link';
 import { 
-  DraftingCompass, 
-  Layers, 
-  Compass, 
-  Activity, 
-  Sun, 
   BookOpen, 
   Sparkles,
   Copy,
   Check,
   Zap
 } from 'lucide-react';
+import {
+  IconTrussBeam,
+  IconDraftingTools,
+  IconSurveyingLevel,
+  IconSlumpCone,
+  IconGreenBuilding,
+} from '@/components/ui/ArchitecturalIcons';
 import TrussZeroForceHunter from '@/components/games/TrussZeroForceHunter';
 import LevelingBubbleMaster from '@/components/games/LevelingBubbleMaster';
 import Orthographic3DBox from '@/components/games/Orthographic3DBox';
@@ -219,11 +221,11 @@ export default function VisualizersPage() {
       {/* Module Selector Tabs */}
       <nav className="flex items-center justify-start sm:justify-center gap-2 overflow-x-auto pb-2 border-b border-slate-200 dark:border-slate-800 text-xs sm:text-sm font-mono mobile-scroll" aria-label="實驗室模組切換">
         {[
-          { id: 'mechanics', label: '🛠️ 結構力學實驗台', icon: Activity },
-          { id: 'drafting', label: '📐 建築製圖實驗台', icon: DraftingCompass },
-          { id: 'surveying', label: '🔭 工程測量實驗台', icon: Compass },
-          { id: 'materials', label: '🧱 材料試驗實驗台', icon: Layers },
-          { id: 'physics', label: '🌿 建築物理環境', icon: Sun },
+          { id: 'mechanics', label: '結構力學實驗台', icon: IconTrussBeam },
+          { id: 'drafting', label: '建築製圖實驗台', icon: IconDraftingTools },
+          { id: 'surveying', label: '工程測量實驗台', icon: IconSurveyingLevel },
+          { id: 'materials', label: '材料試驗實驗台', icon: IconSlumpCone },
+          { id: 'physics', label: '建築物理環境', icon: IconGreenBuilding },
         ].map((tab) => {
           const Icon = tab.icon;
           const isActive = activeTab === tab.id;
