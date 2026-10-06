@@ -161,23 +161,26 @@ export default function TopicPageLayout({ subject, topic, mappedExamQuestions, c
   };
 
   useEffect(() => {
-    const savedList = topicConceptProgress?.[topicRoute] || [];
-    if (savedList.length > 0) {
-      const map: Record<number, boolean> = {};
-      savedList.forEach((idx) => {
-        map[idx] = true;
-      });
-      setCompletedConcepts(map);
-    } else {
-      try {
-        const saved = localStorage.getItem(`progress_${subject.slug}_${topic.slug}`);
-        if (saved) {
-          setCompletedConcepts(JSON.parse(saved));
+    const timer = setTimeout(() => {
+      const savedList = topicConceptProgress?.[topicRoute] || [];
+      if (savedList.length > 0) {
+        const map: Record<number, boolean> = {};
+        savedList.forEach((idx) => {
+          map[idx] = true;
+        });
+        setCompletedConcepts(map);
+      } else {
+        try {
+          const saved = localStorage.getItem(`progress_${subject.slug}_${topic.slug}`);
+          if (saved) {
+            setCompletedConcepts(JSON.parse(saved));
+          }
+        } catch {
+          // Ignore localStorage errors in SSR
         }
-      } catch {
-        // Ignore localStorage errors in SSR
       }
-    }
+    }, 0);
+    return () => clearTimeout(timer);
   }, [subject.slug, topic.slug, topicRoute, topicConceptProgress]);
 
   useEffect(() => {

@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
-import { X, Copy, Check, ExternalLink, Calculator, Sparkles } from 'lucide-react';
+import { X, Copy, Check, ExternalLink, Calculator } from 'lucide-react';
 import type { TopicConcept } from '@/data/types';
 import MathText from '@/components/MathText';
 import { soundEngine } from '@/lib/audio/soundEffects';

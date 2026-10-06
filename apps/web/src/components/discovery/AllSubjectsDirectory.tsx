@@ -2,28 +2,8 @@
 
 import React, { useState } from 'react';
 import Link from 'next/link';
-import {
-  ArrowRight,
-  BookOpen,
-  CheckCircle2,
-  Layers,
-  Sparkles,
-  Award
-} from 'lucide-react';
-import {
-  IconTrussBeam,
-  IconSlumpCone,
-  IconSurveyingLevel,
-  IconDraftingTools,
-  IconMohrCircle,
-  IconClassicalOrder,
-  IconPerspective,
-  IconGreenBuilding,
-  IconBIMModel,
-  IconFieldSafety,
-  ArchitecturalSubjectIcon,
-  type IconProps
-} from '@/components/ui/ArchitecturalIcons';
+import { ArrowRight } from 'lucide-react';
+import { ArchitecturalSubjectIcon } from '@/components/ui/ArchitecturalIcons';
 import { allSubjects } from '@/data/subjects';
 
 interface SubjectCategoryGroup {

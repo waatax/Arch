@@ -2,7 +2,7 @@
 
 import React from 'react';
 import Link from 'next/link';
-import { Flame, Bookmark, ArrowRight, CheckCircle2, Sparkles, BookOpen, Target, Award } from 'lucide-react';
+import { Flame, Bookmark, ArrowRight, BookOpen, Award } from 'lucide-react';
 import { useStudentStore } from '@/lib/store/studentStore';
 import { useGamificationStore } from '@/lib/store/gamificationStore';
 import { topicSearchIndex } from '@/data/topicSearchIndex';
@@ -13,7 +13,6 @@ export default function PersonalStudyHub() {
     questionsCompleted,
     dailyGoal,
     bookmarkedTopics,
-    completedTopics,
   } = useStudentStore();
 
   const { exp, rankTitle, unlockedStars } = useGamificationStore();

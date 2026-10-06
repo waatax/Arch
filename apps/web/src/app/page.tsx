@@ -8,8 +8,6 @@ import AllSubjectsDirectory from '@/components/discovery/AllSubjectsDirectory';
 import {
   IconTrussBeam,
   IconDraftingTools,
-  IconSurveyingLevel,
-  IconSlumpCone,
   IconClassicalOrder,
   IconBIMModel,
   IconFieldSafety,

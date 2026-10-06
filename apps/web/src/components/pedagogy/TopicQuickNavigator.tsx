@@ -2,23 +2,16 @@
 
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
-import { useRouter } from 'next/navigation';
 import {
   Bookmark,
   CheckCircle2,
   ChevronDown,
-  Layers,
   Sparkles,
   Zap,
   BookOpen,
   Target,
   Flame,
-  Award,
-  Share2,
-  Maximize2,
-  Minimize2,
-  ArrowRight,
-  ListOrdered
+  Award
 } from 'lucide-react';
 import type { SubjectData, TopicContent } from '@/data/types';
 import { useStudentStore } from '@/lib/store/studentStore';
@@ -55,7 +48,6 @@ export default function TopicQuickNavigator({
   onOpenMistakeNotebook,
   formulaCount,
 }: TopicQuickNavigatorProps) {
-  const router = useRouter();
   const [isChapterMenuOpen, setIsChapterMenuOpen] = useState(false);
   const [activeStage, setActiveStage] = useState('stage-intuition');
   const [showCelebration, setShowCelebration] = useState(false);
@@ -74,10 +66,6 @@ export default function TopicQuickNavigator({
 
   const isBookmarked = (bookmarkedTopics || []).includes(topicRoute);
   const isCompleted = (completedTopics || []).includes(topicRoute);
-
-  const masteryPercent = Math.round(
-    ((completedConceptsCount + (isCompleted ? totalConcepts : 0)) / (totalConcepts * 2 || 1)) * 100
-  );
 
   // ScrollSpy for Active Stage
   useEffect(() => {

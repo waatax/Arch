@@ -8,15 +8,9 @@ import {
   Filter,
   Bookmark,
   CheckCircle2,
-  Sparkles,
-  Zap,
-  BookOpen,
-  ArrowRight,
-  Flame,
-  Award,
   Compass
 } from 'lucide-react';
-import type { SubjectData, TopicContent } from '@/data/types';
+import type { SubjectData } from '@/data/types';
 import { useStudentStore } from '@/lib/store/studentStore';
 import { soundEngine } from '@/lib/audio/soundEffects';
 
@@ -56,7 +50,7 @@ export default function SubjectTopicExplorer({ subject }: SubjectTopicExplorerPr
 
   // 篩選章節清單
   const filteredTopics = useMemo(() => {
-    return subject.topics.filter((topic, index) => {
+    return subject.topics.filter((topic) => {
       const route = `/subjects/${subject.slug}/${topic.slug}`;
       const isBookmarked = (bookmarkedTopics || []).includes(route);
       const isCompleted = (completedTopics || []).includes(route);
