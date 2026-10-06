@@ -3,6 +3,8 @@ import { ArrowRight, CheckCircle2, Play } from 'lucide-react';
 import ExpertCouncilBanner from '@/components/pedagogy/ExpertCouncilBanner';
 import AdaptiveDailyLoop from '@/components/pedagogy/AdaptiveDailyLoop';
 import TopicDiscoveryHub from '@/components/discovery/TopicDiscoveryHub';
+import PersonalStudyHub from '@/components/discovery/PersonalStudyHub';
+import AllSubjectsDirectory from '@/components/discovery/AllSubjectsDirectory';
 import {
   IconTrussBeam,
   IconDraftingTools,
@@ -127,12 +129,7 @@ const paths = [
   },
 ];
 
-const subjects = [
-  { no: '01', title: '工程力學', meta: '13 章 · 專業（一）', href: '/subjects/mechanics', icon: IconTrussBeam, desc: '力的合成分解、桁架零力桿、SFD/BMD 剪力彎矩圖、莫爾圓主應力' },
-  { no: '02', title: '材料與試驗', meta: '13 章 · 專業（一）', href: '/subjects/materials', icon: IconSlumpCone, desc: 'CNS 混凝土坍度、水灰比抗壓、骨材級配、鋼筋竹節與瀝青防水' },
-  { no: '03', title: '測量實習', meta: '8 章 · 專業（二）', href: '/subjects/surveying', icon: IconSurveyingLevel, desc: '水準儀差、高程閉合平差、經緯儀水平角與全測站電子導線' },
-  { no: '04', title: '製圖實習', meta: '16 章 · 專業（二）', href: '/subjects/drafting', icon: IconDraftingTools, desc: 'CNS 11567 建築標準、第三角投影展開、透視消點與平立剖詳圖' },
-];
+
 
 export default function Home() {
   return (
@@ -203,8 +200,13 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── 自適應每日微循環 ── */}
+      {/* ── 個人化今日學習儀表板 (Personal Study Hub) ── */}
       <section className="mx-auto max-w-7xl px-4 pt-10 sm:px-6 lg:px-8">
+        <PersonalStudyHub />
+      </section>
+
+      {/* ── 自適應每日微循環 ── */}
+      <section className="mx-auto max-w-7xl px-4 pt-8 sm:px-6 lg:px-8">
         <AdaptiveDailyLoop />
       </section>
 
@@ -264,41 +266,10 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── 四門專業核心 (信達雅建築圖解) ── */}
-      <section className="border-y border-slate-200 bg-slate-100/70 dark:border-slate-800 dark:bg-slate-900/40">
-        <div className="mx-auto grid max-w-7xl gap-12 px-4 py-16 sm:px-6 sm:py-24 lg:grid-cols-[.8fr_1.2fr] lg:px-8">
-          <div>
-            <p className="v7-kicker">CORE SUBJECTS · 專業核心</p>
-            <h2 className="mt-3 font-serif text-3xl font-bold text-slate-950 dark:text-white sm:text-4xl">
-              四門專業核心，<br />連成一張建築圖。
-            </h2>
-            <p className="mt-5 max-w-md text-sm leading-7 text-slate-600 dark:text-slate-400">
-              力學回答「為什麼站得住」，材料回答「用什麼蓋」，測量與製圖則把想法準確放到現場。
-            </p>
-            <Link href="/curriculum" className="mt-7 inline-flex items-center gap-2 text-sm font-bold text-blue-700 dark:text-blue-300">
-              瀏覽全部共同與專業科目 (13科) <ArrowRight className="size-4" />
-            </Link>
-          </div>
-          <div className="divide-y divide-slate-300 border-y border-slate-300 dark:divide-slate-700 dark:border-slate-700">
-            {subjects.map((subject) => {
-              const Icon = subject.icon;
-              return (
-                <Link href={subject.href} key={subject.no} className="group grid grid-cols-[2.5rem_auto_1fr_auto] items-center gap-4 py-5 sm:grid-cols-[3.5rem_auto_1fr_auto] sm:py-6">
-                  <span className="font-mono text-xs text-slate-400">{subject.no}</span>
-                  <div className="p-2.5 rounded-xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-600 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
-                    <Icon size={22} strokeWidth={1.75} />
-                  </div>
-                  <div>
-                    <h3 className="font-serif text-xl font-bold text-slate-900 group-hover:text-blue-700 dark:text-white dark:group-hover:text-blue-300 sm:text-2xl">
-                      {subject.title}
-                    </h3>
-                    <p className="mt-1 text-xs text-slate-500 font-mono">{subject.meta} · {subject.desc}</p>
-                  </div>
-                  <ArrowRight className="size-5 transition-transform group-hover:translate-x-1" />
-                </Link>
-              );
-            })}
-          </div>
+      {/* ── 全站 13 科知識分類體系矩陣 ── */}
+      <section className="border-y border-slate-200/80 bg-slate-100/60 dark:border-slate-800/80 dark:bg-slate-900/30">
+        <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 sm:py-24 lg:px-8">
+          <AllSubjectsDirectory />
         </div>
       </section>
 

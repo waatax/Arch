@@ -5,6 +5,7 @@ import { allSubjects } from '@/data/subjects';
 import SubjectConstellationCanvas from '@/components/gamification/SubjectConstellationCanvas';
 import { getSubjectSemesters } from '@/data/semesterReviews';
 import { ArchitecturalSubjectIcon } from '@/components/ui/ArchitecturalIcons';
+import SubjectTopicExplorer from '@/components/discovery/SubjectTopicExplorer';
 
 export function generateStaticParams() {
   return allSubjects.map((subject) => ({ subject: subject.slug }));
@@ -157,84 +158,9 @@ export default async function SubjectPage({ params }: { params: Promise<{ subjec
         <SubjectConstellationCanvas subjectSlug={subject.slug} showTitleHeader={true} />
       </section>
 
-      {/* Topics Syllabus Section */}
+      {/* Topics Syllabus Section with Explorer */}
       <section className="space-y-6">
-        <div className="flex items-center justify-between">
-          <div>
-            <span className="text-xs font-mono uppercase tracking-widest text-blue-600 dark:text-blue-400 font-bold block">
-              Curriculum Progression
-            </span>
-            <h2 className="font-serif text-2xl font-bold text-slate-900 dark:text-white">
-              章節學習進程與考點列表
-            </h2>
-          </div>
-          <span className="text-xs font-mono text-slate-500 dark:text-slate-400">
-            共 {subject.topics.length} 個教學節點
-          </span>
-        </div>
-
-        <div className="grid gap-5 md:grid-cols-2">
-          {subject.topics.map((topic, index) => {
-            const href = `/subjects/${subject.slug}/${topic.slug}`;
-            const visualSrc = `${process.env.NEXT_PUBLIC_BASE_PATH ?? ''}/learning-visuals/${subject.slug}/${topic.slug}.webp`;
-
-            return (
-              <article
-                key={topic.slug}
-                className={`group overflow-hidden rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 shadow-xs hover:shadow-md hover:border-blue-300 dark:hover:border-blue-700 transition-all duration-300 ${
-                  topic.status === 'done' ? 'card-lift' : 'opacity-70'
-                }`}
-              >
-                <Link
-                  href={topic.status === 'done' ? href : '#'}
-                  className="grid h-full grid-cols-[7.5rem_1fr] sm:grid-cols-[9.5rem_1fr]"
-                  aria-disabled={topic.status !== 'done'}
-                >
-                  <div className="image-wash relative min-h-48 overflow-hidden border-r border-slate-200 dark:border-slate-800 bg-slate-100 dark:bg-slate-950 flex items-center justify-center">
-                    <Image
-                      src={visualSrc}
-                      alt={`${topic.title}觀念插圖`}
-                      fill
-                      className="object-cover transition duration-500 group-hover:scale-105"
-                      sizes="(max-width: 640px) 120px, 160px"
-                    />
-                    <span className="absolute left-3 top-3 rounded-lg bg-black/70 px-2.5 py-1 text-xs font-mono font-bold text-white backdrop-blur-md">
-                      第 {index + 1} 章
-                    </span>
-                  </div>
-
-                  <div className="flex min-w-0 flex-col justify-between p-4 sm:p-5 space-y-3">
-                    <div>
-                      <div className="mb-1.5 flex flex-wrap items-center gap-2">
-                        <span className="rounded bg-blue-50 dark:bg-blue-950/60 px-2 py-0.5 text-[10px] font-mono font-bold text-blue-700 dark:text-blue-300">
-                          {topic.concepts.length} 個核心觀念
-                        </span>
-                        {topic.worked_examples?.length ? (
-                          <span className="rounded bg-emerald-50 dark:bg-emerald-950/60 px-2 py-0.5 text-[10px] font-mono font-bold text-emerald-700 dark:text-emerald-300">
-                            {topic.worked_examples.length} 道步驟化例題
-                          </span>
-                        ) : null}
-                      </div>
-
-                      <h3 className="font-serif text-lg font-bold leading-snug text-slate-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
-                        {topic.title}
-                      </h3>
-
-                      <p className="mt-1.5 line-clamp-2 text-xs leading-relaxed text-slate-600 dark:text-slate-400">
-                        {topic.desc}
-                      </p>
-                    </div>
-
-                    <div className="flex items-center justify-between pt-2 border-t border-slate-100 dark:border-slate-800/80 text-xs font-bold text-blue-600 dark:text-blue-400">
-                      <span>看圖開始學習</span>
-                      <span className="group-hover:translate-x-1 transition-transform">→</span>
-                    </div>
-                  </div>
-                </Link>
-              </article>
-            );
-          })}
-        </div>
+        <SubjectTopicExplorer subject={subject} />
       </section>
     </div>
   );

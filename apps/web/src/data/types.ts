@@ -96,3 +96,6 @@ export interface SubjectData {
   color: string;
   topics: TopicContent[];
 }
+
+export type TopicConcept = TopicContent['concepts'][number];
+

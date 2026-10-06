@@ -3,10 +3,11 @@
 import { useState, useMemo, useEffect, useRef } from 'react';
 import Link from 'next/link';
 import { usePathname, useRouter } from 'next/navigation';
-import { Volume2, VolumeX, ChevronDown } from 'lucide-react';
+import { Volume2, VolumeX, ChevronDown, Flame, Bookmark } from 'lucide-react';
 import ThemeToggle from './ThemeToggle';
 import { topicSearchIndex } from '@/data/topicSearchIndex';
 import { useGamificationStore } from '@/lib/store/gamificationStore';
+import { useStudentStore } from '@/lib/store/studentStore';
 import { triggerHaptic } from '@/lib/haptics';
 import {
   IconProps,
@@ -307,6 +308,15 @@ export default function Navbar() {
   const pathname = usePathname();
   const router = useRouter();
   const { soundEnabled, toggleSound } = useGamificationStore();
+  const {
+    streakDays,
+    bookmarkedTopics,
+    completedTopics,
+    questionsCompleted,
+    dailyGoal,
+  } = useStudentStore();
+  const [bookmarksOpen, setBookmarksOpen] = useState(false);
+  const [streakModalOpen, setStreakModalOpen] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [searchOpen, setSearchOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState('');
@@ -332,6 +342,8 @@ export default function Navbar() {
     const handleClickOutside = (e: MouseEvent) => {
       if (navContainerRef.current && !navContainerRef.current.contains(e.target as Node)) {
         setOpenDropdown(null);
+        setBookmarksOpen(false);
+        setStreakModalOpen(false);
       }
     };
     document.addEventListener('mousedown', handleClickOutside);
@@ -652,6 +664,139 @@ export default function Navbar() {
                 Ctrl+K
               </span>
             </button>
+
+            {/* Streak Counter Button */}
+            <div className="relative">
+              <button
+                type="button"
+                onClick={() => {
+                  triggerHaptic('light');
+                  setStreakModalOpen((prev) => !prev);
+                  setBookmarksOpen(false);
+                }}
+                className="hidden sm:flex items-center gap-1.5 rounded-xl border border-orange-200 dark:border-orange-900/60 bg-orange-50/80 dark:bg-orange-950/40 px-2.5 py-1.5 text-xs font-mono font-bold text-orange-600 dark:text-orange-400 hover:bg-orange-100 dark:hover:bg-orange-950/70 transition-all active:scale-95 cursor-pointer"
+                title="每日學習打卡連勝"
+              >
+                <Flame className="size-3.5 fill-current text-orange-500 animate-pulse" />
+                <span>{streakDays || 1} 天</span>
+              </button>
+
+              {streakModalOpen && (
+                <div className="absolute right-0 top-full mt-2 w-72 rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 shadow-2xl p-4 z-50 space-y-3">
+                  <div className="flex items-center justify-between border-b border-slate-100 dark:border-slate-800 pb-2">
+                    <span className="font-bold text-xs text-slate-800 dark:text-slate-200 flex items-center gap-1.5">
+                      <Flame className="size-4 fill-current text-orange-500" />
+                      每日學習連勝養成
+                    </span>
+                    <button
+                      type="button"
+                      onClick={() => setStreakModalOpen(false)}
+                      className="text-[10px] font-mono text-slate-400 hover:text-slate-600 cursor-pointer"
+                    >
+                      關閉
+                    </button>
+                  </div>
+                  <div className="text-center py-2">
+                    <span className="text-3xl font-mono font-bold text-orange-600 dark:text-orange-400">
+                      {streakDays || 1}
+                    </span>
+                    <span className="text-xs text-slate-500 ml-1 font-mono">天連續研讀</span>
+                    <p className="text-xs text-slate-600 dark:text-slate-400 mt-1">
+                      每天攻克 1 個知識點或完成 5 題練習，保持手感！
+                    </p>
+                  </div>
+                  <div className="rounded-xl bg-slate-50 dark:bg-slate-800/60 p-2.5 text-[11px] font-mono space-y-1.5">
+                    <div className="flex justify-between">
+                      <span className="text-slate-400">今日已做題目：</span>
+                      <span className="font-bold text-blue-600 dark:text-blue-400">
+                        {questionsCompleted} / {dailyGoal} 題
+                      </span>
+                    </div>
+                    <div className="flex justify-between">
+                      <span className="text-slate-400">全站已掌握章節：</span>
+                      <span className="font-bold text-emerald-600 dark:text-emerald-400">
+                        {(completedTopics || []).length} / 120 章
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              )}
+            </div>
+
+            {/* Bookmarks Quick Drawer */}
+            <div className="relative">
+              <button
+                type="button"
+                onClick={() => {
+                  triggerHaptic('light');
+                  setBookmarksOpen((prev) => !prev);
+                  setStreakModalOpen(false);
+                }}
+                className={`flex size-9 items-center justify-center rounded-xl border transition-all active:scale-95 cursor-pointer ${
+                  (bookmarkedTopics || []).length > 0
+                    ? 'border-amber-300 bg-amber-50 dark:border-amber-900/60 dark:bg-amber-950/40 text-amber-600 dark:text-amber-400'
+                    : 'border-slate-200 dark:border-slate-800 text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800'
+                }`}
+                aria-label="我的書籤"
+                title={`已收藏 ${(bookmarkedTopics || []).length} 個主題`}
+              >
+                <Bookmark className={`size-4 ${(bookmarkedTopics || []).length > 0 ? 'fill-current' : ''}`} />
+              </button>
+
+              {bookmarksOpen && (
+                <div className="absolute right-0 top-full mt-2 w-72 sm:w-80 rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 shadow-2xl p-3 z-50">
+                  <div className="flex items-center justify-between border-b border-slate-100 dark:border-slate-800 pb-2 mb-2">
+                    <span className="font-mono text-xs font-bold text-slate-700 dark:text-slate-300 flex items-center gap-1.5">
+                      <Bookmark className="size-3.5 fill-current text-amber-500" />
+                      我的學習書籤 ({bookmarkedTopics?.length || 0})
+                    </span>
+                    <button
+                      type="button"
+                      onClick={() => setBookmarksOpen(false)}
+                      className="text-[10px] font-mono text-slate-400 hover:text-slate-600 cursor-pointer"
+                    >
+                      關閉
+                    </button>
+                  </div>
+
+                  {(!bookmarkedTopics || bookmarkedTopics.length === 0) ? (
+                    <div className="py-6 text-center text-xs text-slate-400">
+                      尚未收藏任何章節。<br />
+                      在各章節頁面上方點擊書籤圖示即可收藏！
+                    </div>
+                  ) : (
+                    <div className="max-h-60 overflow-y-auto space-y-1">
+                      {bookmarkedTopics.map((route) => {
+                        const parts = route.replace('/subjects/', '').split('/');
+                        const sSlug = parts[0];
+                        const tSlug = parts[1];
+                        const item = topicSearchIndex.find(
+                          (i) => i.subjectSlug === sSlug && i.topicSlug === tSlug
+                        );
+                        return (
+                          <Link
+                            key={route}
+                            href={route}
+                            onClick={() => setBookmarksOpen(false)}
+                            className="flex items-center justify-between p-2 rounded-xl text-xs hover:bg-slate-50 dark:hover:bg-slate-800 text-slate-700 dark:text-slate-200 transition-colors"
+                          >
+                            <div className="truncate pr-2">
+                              <span className="text-[10px] font-mono text-blue-600 dark:text-blue-400 block">
+                                {item?.subjectTitle || sSlug}
+                              </span>
+                              <span className="font-bold truncate block">
+                                {item?.topicTitle || tSlug}
+                              </span>
+                            </div>
+                            <span className="text-slate-400 shrink-0">→</span>
+                          </Link>
+                        );
+                      })}
+                    </div>
+                  )}
+                </div>
+              )}
+            </div>
 
             <ThemeToggle />
 

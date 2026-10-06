@@ -32,6 +32,8 @@ import { soundEngine } from '@/lib/audio/soundEffects';
 import { findStarByTopic } from '@/data/constellations/subjectConstellations';
 import TopicKnowledgeHighlights from '@/components/pedagogy/TopicKnowledgeHighlights';
 import TopicMasteryChecklist from '@/components/pedagogy/TopicMasteryChecklist';
+import TopicQuickNavigator from '@/components/pedagogy/TopicQuickNavigator';
+import TopicFormulaDrawerModal from '@/components/pedagogy/TopicFormulaDrawerModal';
 import ConceptFigure from '@/components/pedagogy/ConceptFigure';
 import { groupVisualsByConcept, type ConceptVisual } from '@/data/conceptVisuals';
 import {
@@ -86,7 +88,7 @@ export default function TopicPageLayout({ subject, topic, mappedExamQuestions, c
   const isExamSubject = ['mechanics', 'materials', 'surveying', 'drafting', 'chinese', 'english', 'math-c'].includes(subject.slug);
 
   // Gamification & Constellation Star Status
-  const { unlockedStars, unlockStarNode, soundEnabled } = useGamificationStore();
+  const { unlockedStars, unlockStarNode, soundEnabled, addExp } = useGamificationStore();
   const starNode = findStarByTopic(subject.slug, topic.slug);
   const isStarLit = starNode ? unlockedStars.includes(starNode.id) : false;
 
@@ -118,7 +120,14 @@ export default function TopicPageLayout({ subject, topic, mappedExamQuestions, c
   const [isMistakeNotebookOpen, setIsMistakeNotebookOpen] = useState(false);
 
   // Student store integration
-  const { mistakeCards, addMistakeCard } = useStudentStore();
+  const {
+    mistakeCards,
+    addMistakeCard,
+    topicConceptProgress,
+    toggleConceptProgress: storeToggleConceptProgress,
+  } = useStudentStore();
+
+  const topicRoute = `/subjects/${subject.slug}/${topic.slug}`;
 
   // Theme & Reader Ergonomics
   const { theme, fontSize, setFontSize, toggleTheme, readingWidth, setReadingWidth } = useTheme();
@@ -147,12 +156,19 @@ export default function TopicPageLayout({ subject, topic, mappedExamQuestions, c
       topic: topic.title,
       userChoice: selectedExamAnswers[q.id] || '未填',
       correctAnswer: q.answer,
-      lessonRoute: `/subjects/${subject.slug}/${topic.slug}`,
+      lessonRoute: topicRoute,
     });
   };
 
   useEffect(() => {
-    const timer = setTimeout(() => {
+    const savedList = topicConceptProgress?.[topicRoute] || [];
+    if (savedList.length > 0) {
+      const map: Record<number, boolean> = {};
+      savedList.forEach((idx) => {
+        map[idx] = true;
+      });
+      setCompletedConcepts(map);
+    } else {
       try {
         const saved = localStorage.getItem(`progress_${subject.slug}_${topic.slug}`);
         if (saved) {
@@ -161,9 +177,8 @@ export default function TopicPageLayout({ subject, topic, mappedExamQuestions, c
       } catch {
         // Ignore localStorage errors in SSR
       }
-    }, 0);
-    return () => clearTimeout(timer);
-  }, [subject.slug, topic.slug]);
+    }
+  }, [subject.slug, topic.slug, topicRoute, topicConceptProgress]);
 
   useEffect(() => {
     if (!isLightboxOpen) return;
@@ -193,8 +208,13 @@ export default function TopicPageLayout({ subject, topic, mappedExamQuestions, c
   }, [isLightboxOpen]);
 
   const toggleConceptProgress = (index: number) => {
-    const next = { ...completedConcepts, [index]: !completedConcepts[index] };
+    const isNowChecked = storeToggleConceptProgress(topicRoute, index);
+    const next = { ...completedConcepts, [index]: isNowChecked };
     setCompletedConcepts(next);
+    if (isNowChecked) {
+      if (soundEnabled) soundEngine.playCorrectChime();
+      addExp(20);
+    }
     try {
       localStorage.setItem(`progress_${subject.slug}_${topic.slug}`, JSON.stringify(next));
     } catch {
@@ -319,6 +339,22 @@ export default function TopicPageLayout({ subject, topic, mappedExamQuestions, c
           <span aria-hidden="true">/</span>
           <span className="font-bold text-slate-900 dark:text-white">第 {currentIndex + 1} 章</span>
         </nav>
+
+        {/* Floating / Sticky Learning HUD & Quick Chapter Switcher */}
+        <TopicQuickNavigator
+          subject={subject}
+          topic={topic}
+          currentIndex={currentIndex}
+          totalConcepts={topic.concepts.length}
+          completedConceptsCount={completedCount}
+          learningMode={learningMode}
+          setLearningMode={setLearningMode}
+          isZenMode={isZenMode}
+          setIsZenMode={setIsZenMode}
+          onOpenFormulaDrawer={() => setIsFormulaDrawerOpen(true)}
+          onOpenMistakeNotebook={() => setIsMistakeNotebookOpen(true)}
+          formulaCount={topic.concepts.filter((c) => Boolean(c.formula)).length}
+        />
 
         {/* Title & Metadata Badges */}
         <div className="space-y-4">
@@ -1132,7 +1168,8 @@ export default function TopicPageLayout({ subject, topic, mappedExamQuestions, c
           return (
             <section
               key={concept.heading}
-              className={`space-y-5 rounded-2xl border transition-all duration-200 p-5 sm:p-7 ${
+              id={`concept-${index}`}
+              className={`scroll-mt-24 space-y-5 rounded-2xl border transition-all duration-200 p-5 sm:p-7 ${
                 isChecked
                   ? 'border-emerald-300 bg-emerald-50/25 dark:border-emerald-800/80 dark:bg-emerald-950/20'
                   : 'border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 shadow-xs'
@@ -1597,10 +1634,19 @@ export default function TopicPageLayout({ subject, topic, mappedExamQuestions, c
                       return (
                         <button
                           key={choice}
-                          onClick={() => setSelectedExamAnswers((prev) => ({
-                            ...prev,
-                            [q.id]: isMultiple ? toggleSelectedChoice(prev[q.id], choice) : choice,
-                          }))}
+                          onClick={() => {
+                            const newChoice = isMultiple ? toggleSelectedChoice(userChoice, choice) : choice;
+                            setSelectedExamAnswers((prev) => ({
+                              ...prev,
+                              [q.id]: newChoice,
+                            }));
+                            if (isAnswerChoiceCorrect(q.answer, newChoice)) {
+                              if (soundEnabled) soundEngine.playCorrectChime();
+                              addExp(15);
+                            } else {
+                              if (soundEnabled) soundEngine.playClickBeep();
+                            }
+                          }}
                           aria-pressed={isSelected}
                           className={`print-keep exam-choice flex items-start gap-2.5 p-3 rounded-xl border text-left transition-all cursor-pointer ${
                             isSelected
@@ -1949,6 +1995,20 @@ export default function TopicPageLayout({ subject, topic, mappedExamQuestions, c
           </div>
         </div>
       )}
+
+      {/* Quick Formula Drawer Modal */}
+      <TopicFormulaDrawerModal
+        isOpen={isFormulaDrawerOpen}
+        onClose={() => setIsFormulaDrawerOpen(false)}
+        topicTitle={topic.title}
+        concepts={topic.concepts}
+        onJumpToConcept={(idx) => {
+          const el = document.getElementById(`concept-${idx}`);
+          if (el) {
+            el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          }
+        }}
+      />
 
       {/* Spaced Repetition Mistake Notebook Modal */}
       <MistakeNotebookModal isOpen={isMistakeNotebookOpen} onClose={() => setIsMistakeNotebookOpen(false)} />
