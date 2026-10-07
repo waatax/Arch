@@ -345,10 +345,10 @@ export default function ExamSimulator({ catalog }: { catalog: PracticeCatalog })
   if (!session.length) return (
     <section className="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm sm:p-8 dark:border-slate-800 dark:bg-slate-900" aria-labelledby="setup-title" aria-busy={loading}>
       <div className="max-w-2xl">
-        <p className="text-xs font-mono uppercase tracking-widest text-blue-600 dark:text-blue-400 font-bold">All-subject simulation</p>
+        <p className="text-xs font-mono uppercase tracking-widest text-blue-600 dark:text-blue-400 font-bold">108 Curriculum Past Exam Simulator</p>
         <h2 id="setup-title" className="mt-1 font-serif text-3xl font-bold text-slate-900 dark:text-white">建立全科目模擬試卷</h2>
         <p className="mt-3 text-sm leading-7 text-slate-600 dark:text-slate-400">
-          收錄 111–115 年歷屆五科共 925 題。支援全真計時器、標記待核對、錯題自動收錄與解析導航。
+          完整對齊 108 課綱大考命題標準，收錄歷屆全科目真題。支援全真計時器、待核對標記、Leitner 錯題收錄與五段式名師思維詳解（每題皆可直達 108 課綱教學頁面精熟）。
         </p>
       </div>
 
@@ -610,10 +610,15 @@ export default function ExamSimulator({ catalog }: { catalog: PracticeCatalog })
               >
                 {/* Meta Header & Flag Toggle */}
                 <div className="flex flex-wrap items-center justify-between gap-2 border-b border-slate-100 dark:border-slate-800 pb-3">
-                  <div className="flex items-center gap-2">
+                  <div className="flex flex-wrap items-center gap-2">
                     <span className="text-xs font-mono font-bold text-blue-600 dark:text-blue-400">
                       第 {index + 1} 題 · {question.subjectName} 原題第 {question.questionNo} 題
                     </span>
+                    {question.topic ? (
+                      <span className="inline-flex items-center rounded-md bg-blue-50 dark:bg-blue-950/60 border border-blue-200/80 dark:border-blue-800/60 px-2 py-0.5 text-[11px] font-medium text-blue-700 dark:text-blue-300">
+                        108 課綱：{question.topic}
+                      </span>
+                    ) : null}
                     {isFlagged && (
                       <span className="rounded-md bg-amber-100 dark:bg-amber-900/60 px-2 py-0.5 text-[10px] font-mono font-bold text-amber-700 dark:text-amber-300">
                         🚩 待核對
@@ -844,19 +849,34 @@ export default function ExamSimulator({ catalog }: { catalog: PracticeCatalog })
                             </div>
                           )}
 
-                          <div className="flex flex-wrap items-center justify-between gap-2 pt-2 border-t border-blue-100 dark:border-blue-900/30">
-                            {question.lessonRoute ? (
+                          {question.lessonRoute && (
+                            <div className="mt-3 flex flex-wrap items-center justify-between gap-3 rounded-xl border border-blue-200/90 bg-blue-100/50 p-3.5 dark:border-blue-800/80 dark:bg-blue-900/30">
+                              <div className="flex items-center gap-2.5">
+                                <span className="rounded-lg bg-blue-600 px-2 py-1 text-[11px] font-mono font-bold text-white shadow-2xs">
+                                  108 課綱
+                                </span>
+                                <div>
+                                  <p className="text-xs font-bold text-slate-900 dark:text-white">
+                                    對應教學單元：{question.subjectName} · {question.topic}
+                                  </p>
+                                  <p className="text-[11px] text-slate-500 dark:text-slate-400">
+                                    直達專屬概念卡、重點公式表、動態圖解與防禦心智模型
+                                  </p>
+                                </div>
+                              </div>
                               <a
                                 href={localHref(question.lessonRoute)}
-                                className="inline-flex items-center gap-1.5 rounded-lg bg-blue-600 hover:bg-blue-500 px-3 py-1.5 text-xs font-bold text-white transition-colors"
+                                className="inline-flex items-center gap-1.5 rounded-xl bg-blue-600 px-4 py-2 text-xs font-bold text-white shadow-xs hover:bg-blue-500 transition-all cursor-pointer"
                               >
                                 <BookOpen className="size-3.5" />
-                                前往「{question.topic}」章節複習觀念 →
+                                直達課綱教學頁面精熟 →
                               </a>
-                            ) : null}
-                            <span className="text-[11px] font-mono text-slate-400">
-                              掌握度檢核：融會貫通不靠死背
-                            </span>
+                            </div>
+                          )}
+
+                          <div className="flex flex-wrap items-center justify-between gap-2 pt-2 border-t border-blue-100 dark:border-blue-900/30 text-[11px] text-slate-500">
+                            <span>掌握度檢核：融會貫通不靠死背</span>
+                            <span className="font-mono">108 課綱素養導向檢定</span>
                           </div>
                         </div>
                       );

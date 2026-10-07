@@ -5,6 +5,7 @@ import AdaptiveDailyLoop from '@/components/pedagogy/AdaptiveDailyLoop';
 import TopicDiscoveryHub from '@/components/discovery/TopicDiscoveryHub';
 import PersonalStudyHub from '@/components/discovery/PersonalStudyHub';
 import AllSubjectsDirectory from '@/components/discovery/AllSubjectsDirectory';
+import CurriculumExamPathwayGuide from '@/components/pedagogy/CurriculumExamPathwayGuide';
 import {
   IconTrussBeam,
   IconDraftingTools,
@@ -206,6 +207,11 @@ export default function Home() {
       {/* ── 自適應每日微循環 ── */}
       <section className="mx-auto max-w-7xl px-4 pt-8 sm:px-6 lg:px-8">
         <AdaptiveDailyLoop />
+      </section>
+
+      {/* ── 108 課綱大考預備導覽：學測 GSAT x 統測 TCTE 雙軌全景與 7 年大考對齊 ── */}
+      <section className="mx-auto max-w-7xl px-4 pt-10 sm:px-6 lg:px-8">
+        <CurriculumExamPathwayGuide />
       </section>
 
       {/* ── 核心焦點：主題探索與興趣導航盤 (TopicDiscoveryHub) ── */}
