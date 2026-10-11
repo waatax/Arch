@@ -34,6 +34,9 @@ import TopicKnowledgeHighlights from '@/components/pedagogy/TopicKnowledgeHighli
 import TopicMasteryChecklist from '@/components/pedagogy/TopicMasteryChecklist';
 import TopicQuickNavigator from '@/components/pedagogy/TopicQuickNavigator';
 import TopicFormulaDrawerModal from '@/components/pedagogy/TopicFormulaDrawerModal';
+import FloatingStudyCompanionHUD from '@/components/pedagogy/FloatingStudyCompanionHUD';
+import TopicInteractiveMicroQuiz from '@/components/pedagogy/TopicInteractiveMicroQuiz';
+import RelatedTopicConnections from '@/components/pedagogy/RelatedTopicConnections';
 import ConceptFigure from '@/components/pedagogy/ConceptFigure';
 import { groupVisualsByConcept, type ConceptVisual } from '@/data/conceptVisuals';
 import {
@@ -1363,6 +1366,9 @@ export default function TopicPageLayout({ subject, topic, mappedExamQuestions, c
         })}
       </div>
 
+      {/* === 隨堂 30 秒觀念微檢測 (Interactive Concept Micro-Quiz) === */}
+      <TopicInteractiveMicroQuiz subject={subject} topic={topic} />
+
       {/* === Stage 3: 解題思維與避坑指南 === */}
       <div id="stage-worked-traps" className="scroll-mt-24 space-y-3 pt-6">
         <div className="flex items-center gap-3 px-1">
@@ -1846,6 +1852,9 @@ export default function TopicPageLayout({ subject, topic, mappedExamQuestions, c
         </div>
       </section>
 
+      {/* === 跨學科星系關聯與接續推薦 (Cross-Disciplinary Connections) === */}
+      <RelatedTopicConnections subject={subject} topic={topic} currentIndex={currentIndex} />
+
       {/* === Fixed Bottom Floating Navigation Bar === */}
       <footer className="fixed bottom-0 left-0 right-0 z-40 border-t border-slate-200 dark:border-slate-800 bg-white/95 dark:bg-slate-900/95 px-3 py-2 pb-[max(0.5rem,env(safe-area-inset-bottom))] backdrop-blur-md shadow-lg sm:px-4 sm:py-3">
         <div className="mx-auto grid max-w-4xl grid-cols-[1fr_auto_1fr] items-center gap-2 text-xs font-bold text-slate-900 dark:text-white">
@@ -2015,6 +2024,14 @@ export default function TopicPageLayout({ subject, topic, mappedExamQuestions, c
 
       {/* Spaced Repetition Mistake Notebook Modal */}
       <MistakeNotebookModal isOpen={isMistakeNotebookOpen} onClose={() => setIsMistakeNotebookOpen(false)} />
+
+      {/* Floating Smart Study Companion HUD (TOC Jump, Ambient Audio, Pomodoro, Back to top) */}
+      <FloatingStudyCompanionHUD
+        topicTitle={topic.title}
+        onOpenFormulaDrawer={() => setIsFormulaDrawerOpen(true)}
+        totalConcepts={topic.concepts.length}
+        completedConceptsCount={Object.values(completedConcepts).filter(Boolean).length}
+      />
       </article>
     </div>
   );
