@@ -37,6 +37,7 @@ import TopicFormulaDrawerModal from '@/components/pedagogy/TopicFormulaDrawerMod
 import FloatingStudyCompanionHUD from '@/components/pedagogy/FloatingStudyCompanionHUD';
 import TopicInteractiveMicroQuiz from '@/components/pedagogy/TopicInteractiveMicroQuiz';
 import RelatedTopicConnections from '@/components/pedagogy/RelatedTopicConnections';
+import TopicScratchpadNotes from '@/components/pedagogy/TopicScratchpadNotes';
 import ConceptFigure from '@/components/pedagogy/ConceptFigure';
 import { groupVisualsByConcept, type ConceptVisual } from '@/data/conceptVisuals';
 import {
@@ -1851,6 +1852,14 @@ export default function TopicPageLayout({ subject, topic, mappedExamQuestions, c
           </Link>
         </div>
       </section>
+
+      {/* === 隨堂速記便籤與私房考點筆記 (Personal Study Scratchpad) === */}
+      <TopicScratchpadNotes
+        topicTitle={topic.title}
+        topicSlug={topic.slug}
+        subjectTitle={subject.title}
+        subjectSlug={subject.slug}
+      />
 
       {/* === 跨學科星系關聯與接續推薦 (Cross-Disciplinary Connections) === */}
       <RelatedTopicConnections subject={subject} topic={topic} currentIndex={currentIndex} />

@@ -18,6 +18,14 @@ export interface MistakeCard {
   lessonRoute?: string;
 }
 
+/** 最近造訪的章節與閱讀位置（用於「繼續上次學習」） */
+export interface RecentTopic {
+  route: string;
+  visitedAt: string;
+  /** 最後停留的段落 id，例如 concept-2、worked、practice */
+  section?: string;
+}
+
 export interface StudentState {
   questionsCompleted: number;
   dailyGoal: number;
@@ -29,6 +37,7 @@ export interface StudentState {
   completedTopics: string[];
   streakDays: number;
   topicConceptProgress: Record<string, number[]>;
+  recentTopics: RecentTopic[];
   updateAccuracy: (isCorrect: boolean) => void;
   completeCycle: () => void;
   addMistakeCard: (card: Pick<MistakeCard, 'id' | 'prompt' | 'correction' | 'reason'> & Partial<Pick<MistakeCard, 'subject' | 'topic' | 'userChoice' | 'correctAnswer' | 'lessonRoute'>>) => void;
@@ -39,6 +48,7 @@ export interface StudentState {
   markTopicCompleted: (topicRoute: string) => void;
   toggleConceptProgress: (topicRoute: string, conceptIndex: number) => boolean;
   recordDailyActivity: () => void;
+  recordTopicVisit: (route: string, section?: string) => void;
 }
 
 const reviewIntervals = [1, 7, 21] as const;
@@ -61,6 +71,7 @@ export const useStudentStore = create<StudentState>()(
       completedTopics: [],
       streakDays: 1,
       topicConceptProgress: {},
+      recentTopics: [],
 
       updateAccuracy: (isCorrect) => {
         get().recordDailyActivity();
@@ -172,6 +183,12 @@ export const useStudentStore = create<StudentState>()(
         });
         return !exists;
       },
+
+      recordTopicVisit: (route, section) => set((state) => {
+        const previous = (state.recentTopics || []).find((item) => item.route === route);
+        const entry: RecentTopic = { route, visitedAt: new Date().toISOString(), section: section ?? previous?.section };
+        return { recentTopics: [entry, ...(state.recentTopics || []).filter((item) => item.route !== route)].slice(0, 12) };
+      }),
     }),
     { name: 'arch-student-storage', version: 3 },
   ),

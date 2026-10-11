@@ -15,7 +15,7 @@ export default function FatalTrapXRay({ traps }: FatalTrapXRayProps) {
   if (!traps || traps.length === 0) return null;
 
   return (
-    <section aria-labelledby="fatal-traps-heading" className="rounded-3xl border border-rose-200 dark:border-rose-900/50 bg-rose-50/20 dark:bg-rose-950/10 p-5 sm:p-7 shadow-xs space-y-4">
+    <section id="traps" aria-labelledby="fatal-traps-heading" className="scroll-mt-28 rounded-3xl border border-rose-200 dark:border-rose-900/50 bg-rose-50/20 dark:bg-rose-950/10 p-5 sm:p-7 shadow-xs space-y-4">
       <div className="flex items-center justify-between">
         <div className="flex items-center gap-2.5">
           <div className="flex size-9 items-center justify-center rounded-xl bg-rose-600 text-white shadow-xs">
@@ -24,14 +24,14 @@ export default function FatalTrapXRay({ traps }: FatalTrapXRayProps) {
           <div>
             <div className="flex items-center gap-2">
               <span className="text-xs font-mono font-bold uppercase tracking-wider text-rose-700 dark:text-rose-400">
-                補教名師預警 · 致命陷阱 X 光比對
+                易錯觀念對照
               </span>
               <span className="rounded-full bg-rose-100 dark:bg-rose-900/60 px-2 py-0.5 text-[10px] font-bold text-rose-800 dark:text-rose-200">
-                80% 考生失分區
+                {traps.length} 個常見陷阱
               </span>
             </div>
             <h3 id="fatal-traps-heading" className="font-serif text-lg sm:text-xl font-bold text-slate-900 dark:text-white">
-              考場必死盲點與正確思路 X 光穿透
+              最容易錯的地方：錯誤直覺 vs. 正確思路
             </h3>
           </div>
         </div>
@@ -48,7 +48,7 @@ export default function FatalTrapXRay({ traps }: FatalTrapXRayProps) {
       </div>
 
       <p className="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">
-        補習班大數據統計：統測考生在此主題最常犯的直覺推導錯誤。在下筆作答前，先用 X 光比對「死穴思維」與「滿分推導」。
+        以下是這個主題最常見的直覺錯誤。先遮住右欄，自己判斷左欄的說法錯在哪裡，再對照正確思路。
       </p>
 
       {isOpen && (
@@ -67,7 +67,7 @@ export default function FatalTrapXRay({ traps }: FatalTrapXRayProps) {
                 <div className="xray-danger p-4 sm:p-5 space-y-2">
                   <div className="flex items-center gap-1.5 text-xs font-mono font-bold text-rose-800 dark:text-rose-300">
                     <AlertOctagon className="size-4 shrink-0 text-rose-600 dark:text-rose-400" />
-                    <span>❌ 80% 考生的直覺誤區 (Fatal Pitfall)</span>
+                    <span>❌ 常見的錯誤直覺</span>
                   </div>
                   <div className="text-xs sm:text-sm text-rose-950 dark:text-rose-100 leading-relaxed">
                     <MathText content={trap.wrongThinking} />
@@ -78,7 +78,7 @@ export default function FatalTrapXRay({ traps }: FatalTrapXRayProps) {
                 <div className="xray-safe p-4 sm:p-5 space-y-2">
                   <div className="flex items-center gap-1.5 text-xs font-mono font-bold text-emerald-800 dark:text-emerald-300">
                     <CheckCircle2 className="size-4 shrink-0 text-emerald-600 dark:text-emerald-400" />
-                    <span>✅ 滿分專家的正規破題 (Mastery Derivation)</span>
+                    <span>✅ 正確的思路</span>
                   </div>
                   <div className="text-xs sm:text-sm text-emerald-950 dark:text-emerald-100 leading-relaxed font-medium">
                     <MathText content={trap.correctThinking} />

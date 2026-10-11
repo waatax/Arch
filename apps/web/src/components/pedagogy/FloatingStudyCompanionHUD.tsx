@@ -124,6 +124,7 @@ export default function FloatingStudyCompanionHUD({
     { id: 'visual-learning-title', label: '專屬圖解', desc: 'CNS 建築視覺資訊圖' },
     { id: 'stage-concepts', label: '核心觀念', desc: '課綱觀念與公式定理' },
     { id: 'stage-worked-traps', label: '示範解題', desc: '名師 SOP 與防禦心智' },
+    { id: 'scratchpad-notes', label: '隨堂便籤', desc: '私房筆記與公式速寫' },
     { id: 'stage-exam-practice', label: '實戰驗證', desc: '自主練習與歷屆大考題' },
     { id: 'seven-iterations', label: '七輪深化', desc: '由淺入深認知躍遷' },
     { id: 'sources', label: '研究來源', desc: '官方題本與規範標準' },

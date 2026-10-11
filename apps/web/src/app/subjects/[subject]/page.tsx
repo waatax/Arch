@@ -5,6 +5,8 @@ import SubjectConstellationCanvas from '@/components/gamification/SubjectConstel
 import { getSubjectSemesters } from '@/data/semesterReviews';
 import { ArchitecturalSubjectIcon } from '@/components/ui/ArchitecturalIcons';
 import SubjectTopicExplorer from '@/components/discovery/SubjectTopicExplorer';
+import SubjectQuickSwitcher from '@/components/discovery/SubjectQuickSwitcher';
+import SubjectContinueBanner from '@/components/discovery/SubjectContinueBanner';
 
 export function generateStaticParams() {
   return allSubjects.map((subject) => ({ subject: subject.slug }));
@@ -30,7 +32,10 @@ export default async function SubjectPage({ params }: { params: Promise<{ subjec
   const totalWorked = subject.topics.reduce((acc, t) => acc + (t.worked_examples?.length ?? 0), 0);
 
   return (
-    <div className="mx-auto max-w-6xl px-4 py-8 sm:px-6 sm:py-12 space-y-10">
+    <div className="mx-auto max-w-6xl px-4 py-8 sm:px-6 sm:py-12 space-y-8">
+      {/* 13 科學群快速切換導覽列 */}
+      <SubjectQuickSwitcher currentSubjectSlug={subject.slug} />
+
       {/* Subject Hero Header */}
       <header className="relative overflow-hidden rounded-3xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 p-6 sm:p-10 shadow-sm">
         <div className="relative z-10 max-w-3xl space-y-4">
@@ -92,6 +97,9 @@ export default async function SubjectPage({ params }: { params: Promise<{ subjec
           </div>
         </div>
       </header>
+
+      {/* 個人接續學習導航橫幅 */}
+      <SubjectContinueBanner subject={subject} />
 
       {/* Semester Comprehensive Review Handout Banner */}
       {(() => {
