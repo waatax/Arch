@@ -37,6 +37,7 @@ export interface StudentState {
   completedTopics: string[];
   streakDays: number;
   topicConceptProgress: Record<string, number[]>;
+  highlightedConcepts: Record<string, number[]>;
   recentTopics: RecentTopic[];
   updateAccuracy: (isCorrect: boolean) => void;
   completeCycle: () => void;
@@ -47,6 +48,7 @@ export interface StudentState {
   toggleBookmark: (topicRoute: string) => void;
   markTopicCompleted: (topicRoute: string) => void;
   toggleConceptProgress: (topicRoute: string, conceptIndex: number) => boolean;
+  toggleConceptHighlight: (topicRoute: string, conceptIndex: number) => boolean;
   recordDailyActivity: () => void;
   recordTopicVisit: (route: string, section?: string) => void;
 }
@@ -71,6 +73,7 @@ export const useStudentStore = create<StudentState>()(
       completedTopics: [],
       streakDays: 1,
       topicConceptProgress: {},
+      highlightedConcepts: {},
       recentTopics: [],
 
       updateAccuracy: (isCorrect) => {
@@ -177,6 +180,24 @@ export const useStudentStore = create<StudentState>()(
 
         set({
           topicConceptProgress: {
+            ...currentMap,
+            [topicRoute]: nextList,
+          },
+        });
+        return !exists;
+      },
+
+      toggleConceptHighlight: (topicRoute, conceptIndex) => {
+        get().recordDailyActivity();
+        const currentMap = get().highlightedConcepts || {};
+        const currentList = currentMap[topicRoute] || [];
+        const exists = currentList.includes(conceptIndex);
+        const nextList = exists
+          ? currentList.filter((idx) => idx !== conceptIndex)
+          : [...currentList, conceptIndex];
+
+        set({
+          highlightedConcepts: {
             ...currentMap,
             [topicRoute]: nextList,
           },

@@ -133,17 +133,58 @@ export default function TopicCompletionCelebration({
                 <Compass className="size-4 text-indigo-500" />
                 <span>查看技能星空全貌</span>
               </Link>
+            </div>
 
-              {nextTopic && (
+            {/* 艾賓浩斯科學間隔記憶排程提示 */}
+            <div className="rounded-xl bg-slate-50 dark:bg-slate-900/80 p-4 border border-slate-200/80 dark:border-slate-800 space-y-2 text-xs">
+              <div className="flex items-center justify-between font-mono font-bold text-slate-700 dark:text-slate-300">
+                <span className="flex items-center gap-1.5 text-blue-600 dark:text-blue-400">
+                  <Sparkles className="size-3.5" /> 艾賓浩斯記憶鞏固迴圈已建立
+                </span>
+                <span className="text-[11px] text-slate-500">科學間隔複習推薦</span>
+              </div>
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-2.5 pt-1 text-[11px]">
+                <div className="p-2.5 rounded-lg bg-emerald-50 dark:bg-emerald-950/40 border border-emerald-200/60 dark:border-emerald-800/60">
+                  <strong className="block text-emerald-800 dark:text-emerald-300 font-bold">✓ 今日 (初次精熟)</strong>
+                  <p className="text-slate-600 dark:text-slate-400 mt-0.5">章節圖解與定理完整通讀</p>
+                </div>
+                <div className="p-2.5 rounded-lg bg-blue-50 dark:bg-blue-950/40 border border-blue-200/60 dark:border-blue-800/60">
+                  <strong className="block text-blue-800 dark:text-blue-300 font-bold">明日 (+24小時)</strong>
+                  <p className="text-slate-600 dark:text-slate-400 mt-0.5">3 分鐘抽測本章主動回憶快卡</p>
+                </div>
+                <div className="p-2.5 rounded-lg bg-purple-50 dark:bg-purple-950/40 border border-purple-200/60 dark:border-purple-800/60">
+                  <strong className="block text-purple-800 dark:text-purple-300 font-bold">第 7 天 (長期鎖定)</strong>
+                  <p className="text-slate-600 dark:text-slate-400 mt-0.5">大考真題實戰與錯因複查</p>
+                </div>
+              </div>
+            </div>
+
+            {/* 下一章無縫過渡腳手架橋樑 */}
+            {nextTopic && (
+              <div className="pt-2">
                 <Link
                   href={`/subjects/${subject.slug}/${nextTopic.slug}`}
-                  className="inline-flex items-center gap-1.5 rounded-xl bg-blue-600 hover:bg-blue-700 text-white px-5 py-2.5 transition-colors shadow-xs"
+                  className="group flex flex-col sm:flex-row sm:items-center justify-between p-4 rounded-2xl bg-gradient-to-r from-blue-600 to-indigo-600 text-white shadow-md hover:shadow-xl transition-all cursor-pointer"
                 >
-                  <span>前進下一章：{nextTopic.title}</span>
-                  <ArrowRight className="size-4" />
+                  <div className="space-y-1">
+                    <span className="text-[10px] font-mono font-bold tracking-widest uppercase text-blue-200 block">
+                      SEAMLESS NEXT CHAPTER JOURNEY
+                    </span>
+                    <h4 className="font-serif text-base font-bold flex items-center gap-2">
+                      <span>下一章：{nextTopic.title}</span>
+                      <span className="text-xs font-normal text-blue-200 font-mono">（約 6-8 分鐘）</span>
+                    </h4>
+                    <p className="text-xs text-blue-100/90 line-clamp-1 max-w-xl">
+                      {nextTopic.desc}
+                    </p>
+                  </div>
+                  <div className="mt-3 sm:mt-0 flex items-center gap-2 rounded-xl bg-white/20 hover:bg-white/30 px-4 py-2 font-bold text-xs shrink-0 self-start sm:self-auto backdrop-blur-xs">
+                    <span>順暢邁入下一章</span>
+                    <ArrowRight className="size-4 transition-transform group-hover:translate-x-1" />
+                  </div>
                 </Link>
-              )}
-            </div>
+              </div>
+            )}
           </div>
         )}
       </div>

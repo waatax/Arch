@@ -118,33 +118,52 @@ export default function CurriculumPage() {
           </div>
         </div>
 
-        {/* ── Architecture Pathway Banner ── */}
-        <Link
-          href="/pathway"
-          className="group block rounded-2xl border border-blue-200/80 dark:border-blue-900/60 bg-gradient-to-r from-blue-50 via-white to-blue-50/50 dark:from-blue-950/40 dark:via-slate-900 dark:to-blue-950/20 p-5 transition-all duration-300 hover:border-blue-500 hover:shadow-md"
-        >
-          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
-            <div className="space-y-1">
+        {/* ── Twin Banners: Pathway & Step-0 Prerequisites ── */}
+        <div className="grid gap-4 sm:grid-cols-2">
+          <Link
+            href="/pathway"
+            className="group block rounded-2xl border border-blue-200/80 dark:border-blue-900/60 bg-gradient-to-r from-blue-50 via-white to-blue-50/50 dark:from-blue-950/40 dark:via-slate-900 dark:to-blue-950/20 p-5 transition-all duration-300 hover:border-blue-500 hover:shadow-md"
+          >
+            <div className="space-y-2">
               <div className="flex items-center gap-2">
                 <span className="rounded bg-blue-700 text-white text-[10px] font-mono font-bold px-2 py-0.5">
-                  NEW
+                  B.ARCH
                 </span>
                 <span className="text-xs font-mono font-bold text-blue-700 dark:text-blue-400">
-                  大學 5 年制建築學士 (B.Arch) 完整課綱系統
+                  大學 5 年制建築學士課綱
                 </span>
               </div>
-              <h3 className="font-serif text-lg font-bold text-slate-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
-                🏛️ 前進「建築之路」：探索 10 學期 Studio 與 8 大核心領域教學 →
+              <h3 className="font-serif text-base sm:text-lg font-bold text-slate-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
+                🏛️ 前進「建築之路」：10 學期 Studio 與 8 大領域 →
               </h3>
-              <p className="text-xs text-slate-600 dark:text-slate-400">
-                涵蓋建築設計 Studio I~X、建築史論、構造細部、環境控制 EEWH、結構系統、敷地計畫、建築法規與評圖文化生存手冊。
+              <p className="text-xs text-slate-600 dark:text-slate-400 line-clamp-2">
+                涵蓋設計評圖、建築史論、構造細部、環控EEWH、結構系統、敷地計畫與法規生存指南。
               </p>
             </div>
-            <span className="text-xs font-mono font-bold text-blue-700 dark:text-blue-400 bg-white dark:bg-slate-800 border border-blue-200 dark:border-blue-800 px-4 py-2 rounded-xl shrink-0 group-hover:bg-blue-700 group-hover:text-white transition-all text-center">
-              立即探索建築之路
-            </span>
-          </div>
-        </Link>
+          </Link>
+
+          <Link
+            href="/prerequisites"
+            className="group block rounded-2xl border border-amber-200/80 dark:border-amber-900/60 bg-gradient-to-r from-amber-50 via-white to-amber-50/50 dark:from-amber-950/40 dark:via-slate-900 dark:to-amber-950/20 p-5 transition-all duration-300 hover:border-amber-500 hover:shadow-md"
+          >
+            <div className="space-y-2">
+              <div className="flex items-center gap-2">
+                <span className="rounded bg-amber-600 text-white text-[10px] font-mono font-bold px-2 py-0.5">
+                  STEP-0
+                </span>
+                <span className="text-xs font-mono font-bold text-amber-700 dark:text-amber-400">
+                  零痛先備跨領域跳板中心
+                </span>
+              </div>
+              <h3 className="font-serif text-base sm:text-lg font-bold text-slate-900 dark:text-white group-hover:text-amber-600 dark:group-hover:text-amber-400 transition-colors">
+                🎯 基礎不足？10 大先備微技能直覺通關 →
+              </h3>
+              <p className="text-xs text-slate-600 dark:text-slate-400 line-clamp-2">
+                涵蓋工程力學向量分解、圖學正投影三視圖、測量水準高程、水泥水化與英文核心。
+              </p>
+            </div>
+          </Link>
+        </div>
       </div>
 
       {/* ── Fluid Navigation & Search ── */}

@@ -137,6 +137,8 @@ export default function TopicPageLayout({ subject, topic, mappedExamQuestions, c
     addMistakeCard,
     topicConceptProgress,
     toggleConceptProgress: storeToggleConceptProgress,
+    highlightedConcepts,
+    toggleConceptHighlight: storeToggleConceptHighlight,
   } = useStudentStore();
 
   const topicRoute = `/subjects/${subject.slug}/${topic.slug}`;
@@ -237,6 +239,27 @@ export default function TopicPageLayout({ subject, topic, mappedExamQuestions, c
     }
   };
 
+  const [highlightedMap, setHighlightedMap] = useState<Record<number, boolean>>({});
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      const savedList = highlightedConcepts?.[topicRoute] || [];
+      const map: Record<number, boolean> = {};
+      savedList.forEach((idx) => {
+        map[idx] = true;
+      });
+      setHighlightedMap(map);
+    }, 0);
+    return () => clearTimeout(timer);
+  }, [topicRoute, highlightedConcepts]);
+
+  const toggleConceptHighlightAction = (index: number) => {
+    const isNowHighlighted = storeToggleConceptHighlight(topicRoute, index);
+    setHighlightedMap((prev) => ({ ...prev, [index]: isNowHighlighted }));
+    if (soundEnabled) soundEngine.playClickBeep();
+  };
+
+  const highlightedCount = Object.values(highlightedMap).filter(Boolean).length;
   const completedCount = Object.values(completedConcepts).filter(Boolean).length;
   const progressPercent = topic.concepts.length > 0 ? Math.round((completedCount / topic.concepts.length) * 100) : 0;
 
@@ -1180,12 +1203,15 @@ export default function TopicPageLayout({ subject, topic, mappedExamQuestions, c
 
         {topic.concepts.map((concept, index) => {
           const isChecked = !!completedConcepts[index];
+          const isHighlighted = !!highlightedMap[index];
           return (
             <section
               key={concept.heading}
               id={`concept-${index}`}
-              className={`scroll-mt-24 space-y-5 rounded-2xl border transition-all duration-200 p-5 sm:p-7 ${
-                isChecked
+              className={`scroll-mt-24 space-y-5 rounded-2xl border transition-all duration-200 p-5 sm:p-7 relative ${
+                isHighlighted
+                  ? 'border-amber-400/90 dark:border-amber-600/80 ring-2 ring-amber-400/30 bg-amber-50/20 dark:bg-amber-950/20 shadow-md'
+                  : isChecked
                   ? 'border-emerald-300 bg-emerald-50/25 dark:border-emerald-800/80 dark:bg-emerald-950/20'
                   : 'border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 shadow-xs'
               }`}
@@ -1206,6 +1232,12 @@ export default function TopicPageLayout({ subject, topic, mappedExamQuestions, c
                       {isChecked && (
                         <span className="rounded bg-emerald-100 dark:bg-emerald-900/60 px-2 py-0.5 text-[10px] font-bold text-emerald-800 dark:text-emerald-200">
                           ✓ 已熟練
+                        </span>
+                      )}
+                      {isHighlighted && (
+                        <span className="rounded bg-amber-100 dark:bg-amber-900/60 px-2 py-0.5 text-[10px] font-bold text-amber-800 dark:text-amber-200 border border-amber-300/50 inline-flex items-center gap-1 font-mono">
+                          <Sparkles className="size-2.5 text-amber-600 dark:text-amber-300" />
+                          核心突破點
                         </span>
                       )}
                     </div>
@@ -1230,17 +1262,34 @@ export default function TopicPageLayout({ subject, topic, mappedExamQuestions, c
                   </div>
                 </div>
 
-                {/* Mark as understood button */}
-                <button
-                  onClick={() => toggleConceptProgress(index)}
-                  className={`flex items-center gap-1.5 rounded-lg px-3 py-1.5 text-xs font-bold transition-all ${
-                    isChecked
-                      ? 'bg-emerald-600 text-white shadow-xs'
-                      : 'bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 border border-slate-300 dark:border-slate-700 hover:bg-emerald-50 dark:hover:bg-emerald-950/50'
-                  }`}
-                >
-                  {isChecked ? '✓ 已標記理解' : '標記為理解'}
-                </button>
+                <div className="flex items-center gap-2 shrink-0">
+                  {/* Highlight key concept button */}
+                  <button
+                    type="button"
+                    onClick={() => toggleConceptHighlightAction(index)}
+                    title={isHighlighted ? '取消重點螢光標記' : '標記為核心突破點（螢光筆）'}
+                    className={`flex items-center gap-1 rounded-lg px-2.5 py-1.5 text-xs font-bold transition-all cursor-pointer ${
+                      isHighlighted
+                        ? 'bg-amber-500 text-white shadow-xs'
+                        : 'bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400 hover:text-amber-600 dark:hover:text-amber-400 hover:bg-amber-50 dark:hover:bg-amber-950/40 border border-slate-300 dark:border-slate-700'
+                    }`}
+                  >
+                    <Sparkles className="size-3.5" />
+                    <span className="hidden sm:inline">{isHighlighted ? '已標記重點' : '螢光標記'}</span>
+                  </button>
+
+                  {/* Mark as understood button */}
+                  <button
+                    onClick={() => toggleConceptProgress(index)}
+                    className={`flex items-center gap-1.5 rounded-lg px-3 py-1.5 text-xs font-bold transition-all cursor-pointer ${
+                      isChecked
+                        ? 'bg-emerald-600 text-white shadow-xs'
+                        : 'bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 border border-slate-300 dark:border-slate-700 hover:bg-emerald-50 dark:hover:bg-emerald-950/50'
+                    }`}
+                  >
+                    {isChecked ? '✓ 已標記理解' : '標記為理解'}
+                  </button>
+                </div>
               </div>
 
               {/* Concept Body with MathText Rendering */}
@@ -2061,6 +2110,7 @@ export default function TopicPageLayout({ subject, topic, mappedExamQuestions, c
         speechText={speechSummaryText}
         totalConcepts={topic.concepts.length}
         completedConceptsCount={Object.values(completedConcepts).filter(Boolean).length}
+        highlightedConceptsCount={highlightedCount}
       />
       </article>
     </div>

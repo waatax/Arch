@@ -28,6 +28,7 @@ interface FloatingStudyCompanionHUDProps {
   activeStage?: string;
   totalConcepts?: number;
   completedConceptsCount?: number;
+  highlightedConceptsCount?: number;
 }
 
 export default function FloatingStudyCompanionHUD({
@@ -38,6 +39,7 @@ export default function FloatingStudyCompanionHUD({
   activeStage,
   totalConcepts = 3,
   completedConceptsCount = 0,
+  highlightedConceptsCount = 0,
 }: FloatingStudyCompanionHUDProps) {
   const [isOpen, setIsOpen] = useState(false);
   const [activeTab, setActiveTab] = useState<'toc' | 'ambient' | 'speech' | 'pomodoro'>('toc');
@@ -281,6 +283,15 @@ export default function FloatingStudyCompanionHUD({
                   進度：{completedConceptsCount}/{totalConcepts} 觀念
                 </span>
               </div>
+
+              {highlightedConceptsCount > 0 && (
+                <div className="flex items-center justify-between rounded-xl bg-amber-50 dark:bg-amber-950/40 border border-amber-200/70 dark:border-amber-800/60 px-3 py-1.5 text-[11px] font-mono text-amber-800 dark:text-amber-300">
+                  <span className="font-bold flex items-center gap-1">
+                    <span>✨</span> 核心重點已標記
+                  </span>
+                  <span>{highlightedConceptsCount} 處重點突破</span>
+                </div>
+              )}
               {sections.map((sec, idx) => {
                 const isActive = activeStage === sec.id;
                 return (

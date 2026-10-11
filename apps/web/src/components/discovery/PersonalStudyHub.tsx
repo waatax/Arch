@@ -53,6 +53,27 @@ export default function PersonalStudyHub() {
           <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-400 leading-relaxed max-w-xl">
             每日完成 5 題測驗或攻克 1 個知識點，漸進累積實力。所有筆記、錯題與觀念進度已在本地無縫同步。
           </p>
+
+          <div className="flex flex-wrap items-center gap-2 pt-1 text-xs font-mono font-bold">
+            <Link
+              href="/studio"
+              className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-slate-100 hover:bg-slate-200 dark:bg-slate-800 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-300 transition-colors"
+            >
+              <span>🏛️ 大師工坊</span>
+            </Link>
+            <Link
+              href="/prerequisites"
+              className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-slate-100 hover:bg-slate-200 dark:bg-slate-800 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-300 transition-colors"
+            >
+              <span>🎯 10大先備跳板</span>
+            </Link>
+            <Link
+              href="/cheatsheets"
+              className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-slate-100 hover:bg-slate-200 dark:bg-slate-800 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-300 transition-colors"
+            >
+              <span>⚡ 考點速查卡</span>
+            </Link>
+          </div>
         </div>
 
         {/* 右側：繼續學習快速卡片與統計 */}
