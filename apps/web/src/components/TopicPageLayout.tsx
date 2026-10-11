@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useRef, useMemo } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { Binoculars, BookOpenCheck, Building2, CircleCheckBig, Lightbulb, Route, School, SearchCheck, Sparkles, Flame, Check, Maximize2, Minimize2 } from 'lucide-react';
@@ -38,6 +38,8 @@ import FloatingStudyCompanionHUD from '@/components/pedagogy/FloatingStudyCompan
 import TopicInteractiveMicroQuiz from '@/components/pedagogy/TopicInteractiveMicroQuiz';
 import RelatedTopicConnections from '@/components/pedagogy/RelatedTopicConnections';
 import TopicScratchpadNotes from '@/components/pedagogy/TopicScratchpadNotes';
+import TopicActiveRecallDrawer from '@/components/pedagogy/TopicActiveRecallDrawer';
+import TopicCompletionCelebration from '@/components/pedagogy/TopicCompletionCelebration';
 import ConceptFigure from '@/components/pedagogy/ConceptFigure';
 import { groupVisualsByConcept, type ConceptVisual } from '@/data/conceptVisuals';
 import {
@@ -111,6 +113,12 @@ export default function TopicPageLayout({ subject, topic, mappedExamQuestions, c
 
   // Quick Formula Drawer State
   const [isFormulaDrawerOpen, setIsFormulaDrawerOpen] = useState(false);
+  const [isRecallDrawerOpen, setIsRecallDrawerOpen] = useState(false);
+
+  const speechSummaryText = useMemo(() => {
+    const conceptTexts = topic.concepts.map((c) => `${c.heading}：${c.body.slice(0, 80)}`).join('。');
+    return `章節：${topic.title}。${topic.desc}。核心觀念重點：${conceptTexts}`;
+  }, [topic.title, topic.desc, topic.concepts]);
 
   // Worked Example Steps Toggle State
   const [showSolutionSteps, setShowSolutionSteps] = useState<Record<number, boolean>>({});
@@ -1831,6 +1839,9 @@ export default function TopicPageLayout({ subject, topic, mappedExamQuestions, c
         sourceNote={`第 ${currentIndex + 1} / ${subject.topics.length} 章。`}
       />
 
+      {/* === [Chapter Mastery Milestone Celebration & Blueprint Reward] === */}
+      <TopicCompletionCelebration topic={topic} subject={subject} nextTopic={nextTopic} />
+
       {/* === [Scaffolding: Clear Next Steps] === */}
       <section className="lesson-deferred-section mt-12 mb-8 space-y-4 rounded-3xl bg-white p-6 shadow-sm border border-slate-200/60 dark:bg-slate-900/50 dark:border-slate-800/60">
         <h3 className="font-bold text-lg text-slate-800 dark:text-slate-200 flex items-center gap-2">
@@ -2034,10 +2045,20 @@ export default function TopicPageLayout({ subject, topic, mappedExamQuestions, c
       {/* Spaced Repetition Mistake Notebook Modal */}
       <MistakeNotebookModal isOpen={isMistakeNotebookOpen} onClose={() => setIsMistakeNotebookOpen(false)} />
 
-      {/* Floating Smart Study Companion HUD (TOC Jump, Ambient Audio, Pomodoro, Back to top) */}
+      {/* Active Recall Flashcards Modal Drawer */}
+      <TopicActiveRecallDrawer
+        isOpen={isRecallDrawerOpen}
+        onClose={() => setIsRecallDrawerOpen(false)}
+        topic={topic}
+        subject={subject}
+      />
+
+      {/* Floating Smart Study Companion HUD (TOC Jump, Ambient Audio, Speech, Pomodoro, Back to top) */}
       <FloatingStudyCompanionHUD
         topicTitle={topic.title}
         onOpenFormulaDrawer={() => setIsFormulaDrawerOpen(true)}
+        onOpenRecallDrawer={() => setIsRecallDrawerOpen(true)}
+        speechText={speechSummaryText}
         totalConcepts={topic.concepts.length}
         completedConceptsCount={Object.values(completedConcepts).filter(Boolean).length}
       />

@@ -15,12 +15,16 @@ import {
   VolumeX,
   CloudRain,
   Wind,
+  Radio,
+  BrainCircuit,
 } from 'lucide-react';
 import { soundEngine } from '@/lib/audio/soundEffects';
 
 interface FloatingStudyCompanionHUDProps {
   topicTitle: string;
   onOpenFormulaDrawer?: () => void;
+  onOpenRecallDrawer?: () => void;
+  speechText?: string;
   activeStage?: string;
   totalConcepts?: number;
   completedConceptsCount?: number;
@@ -29,18 +33,24 @@ interface FloatingStudyCompanionHUDProps {
 export default function FloatingStudyCompanionHUD({
   topicTitle,
   onOpenFormulaDrawer,
+  onOpenRecallDrawer,
+  speechText,
   activeStage,
   totalConcepts = 3,
   completedConceptsCount = 0,
 }: FloatingStudyCompanionHUDProps) {
   const [isOpen, setIsOpen] = useState(false);
-  const [activeTab, setActiveTab] = useState<'toc' | 'ambient' | 'pomodoro'>('toc');
+  const [activeTab, setActiveTab] = useState<'toc' | 'ambient' | 'speech' | 'pomodoro'>('toc');
   const [scrollProgress, setScrollProgress] = useState(0);
   const [showBackToTop, setShowBackToTop] = useState(false);
 
   // Ambient sound state
   const [ambientSound, setAmbientSound] = useState<'none' | 'rain' | 'breeze'>('none');
   const ambientVolume = 0.12;
+
+  // Web Speech API narration state
+  const [isSpeaking, setIsSpeaking] = useState(false);
+  const [speechRate, setSpeechRate] = useState(1.0);
 
   // Pomodoro timer state
   const [pomodoroSeconds, setPomodoroSeconds] = useState(25 * 60);
@@ -96,6 +106,53 @@ export default function FloatingStudyCompanionHUD({
       } else if (type === 'breeze') {
         soundEngine.startBreezeAmbient(ambientVolume);
       }
+    }
+  };
+
+  // Web Speech API handlers
+  useEffect(() => {
+    return () => {
+      if (typeof window !== 'undefined' && 'speechSynthesis' in window) {
+        window.speechSynthesis.cancel();
+      }
+    };
+  }, []);
+
+  const handleToggleSpeech = () => {
+    if (typeof window === 'undefined' || !('speechSynthesis' in window)) {
+      return;
+    }
+
+    if (isSpeaking) {
+      window.speechSynthesis.cancel();
+      setIsSpeaking(false);
+      return;
+    }
+
+    window.speechSynthesis.cancel();
+    const textToSpeak = speechText || `正在為您朗讀章節：${topicTitle}。請跟隨畫面閱讀核心觀念與步驟例題。`;
+    const utterance = new SpeechSynthesisUtterance(textToSpeak);
+    utterance.lang = 'zh-TW';
+    utterance.rate = speechRate;
+    utterance.onend = () => setIsSpeaking(false);
+    utterance.onerror = () => setIsSpeaking(false);
+
+    window.speechSynthesis.speak(utterance);
+    setIsSpeaking(true);
+    soundEngine.playClickBeep();
+  };
+
+  const handleChangeSpeechRate = (rate: number) => {
+    setSpeechRate(rate);
+    if (isSpeaking && typeof window !== 'undefined' && 'speechSynthesis' in window) {
+      window.speechSynthesis.cancel();
+      const textToSpeak = speechText || `章節：${topicTitle}。`;
+      const utterance = new SpeechSynthesisUtterance(textToSpeak);
+      utterance.lang = 'zh-TW';
+      utterance.rate = rate;
+      utterance.onend = () => setIsSpeaking(false);
+      utterance.onerror = () => setIsSpeaking(false);
+      window.speechSynthesis.speak(utterance);
     }
   };
 
@@ -164,39 +221,54 @@ export default function FloatingStudyCompanionHUD({
           </div>
 
           {/* Tab Selector */}
-          <div className="mt-3 grid grid-cols-3 gap-1 rounded-xl bg-slate-100 p-1 dark:bg-slate-800 text-xs font-bold">
+          <div className="mt-3 grid grid-cols-4 gap-1 rounded-xl bg-slate-100 p-1 dark:bg-slate-800 text-xs font-bold">
             <button
               type="button"
               onClick={() => setActiveTab('toc')}
-              className={`flex items-center justify-center gap-1.5 rounded-lg py-1.5 transition-all cursor-pointer ${
+              className={`flex items-center justify-center gap-1 rounded-lg py-1.5 transition-all cursor-pointer ${
                 activeTab === 'toc'
                   ? 'bg-white text-blue-600 shadow-2xs dark:bg-slate-900 dark:text-blue-400'
                   : 'text-slate-600 hover:text-slate-900 dark:text-slate-400 dark:hover:text-white'
               }`}
             >
-              <List className="size-3.5" /> 目錄
+              <List className="size-3" />
+              <span>目錄</span>
             </button>
             <button
               type="button"
               onClick={() => setActiveTab('ambient')}
-              className={`flex items-center justify-center gap-1.5 rounded-lg py-1.5 transition-all cursor-pointer ${
+              className={`flex items-center justify-center gap-1 rounded-lg py-1.5 transition-all cursor-pointer ${
                 activeTab === 'ambient'
                   ? 'bg-white text-blue-600 shadow-2xs dark:bg-slate-900 dark:text-blue-400'
                   : 'text-slate-600 hover:text-slate-900 dark:text-slate-400 dark:hover:text-white'
               }`}
             >
-              <Headphones className="size-3.5" /> 聲景
+              <Headphones className="size-3" />
+              <span>聲景</span>
+            </button>
+            <button
+              type="button"
+              onClick={() => setActiveTab('speech')}
+              className={`flex items-center justify-center gap-1 rounded-lg py-1.5 transition-all cursor-pointer ${
+                activeTab === 'speech'
+                  ? 'bg-white text-blue-600 shadow-2xs dark:bg-slate-900 dark:text-blue-400'
+                  : 'text-slate-600 hover:text-slate-900 dark:text-slate-400 dark:hover:text-white'
+              }`}
+            >
+              <Radio className={`size-3 ${isSpeaking ? 'text-emerald-500 animate-pulse' : ''}`} />
+              <span>朗讀</span>
             </button>
             <button
               type="button"
               onClick={() => setActiveTab('pomodoro')}
-              className={`flex items-center justify-center gap-1.5 rounded-lg py-1.5 transition-all cursor-pointer ${
+              className={`flex items-center justify-center gap-1 rounded-lg py-1.5 transition-all cursor-pointer ${
                 activeTab === 'pomodoro'
                   ? 'bg-white text-blue-600 shadow-2xs dark:bg-slate-900 dark:text-blue-400'
                   : 'text-slate-600 hover:text-slate-900 dark:text-slate-400 dark:hover:text-white'
               }`}
             >
-              <Timer className="size-3.5" /> 番茄鐘
+              <Timer className="size-3" />
+              <span>番茄鐘</span>
             </button>
           </div>
 
@@ -245,6 +317,20 @@ export default function FloatingStudyCompanionHUD({
                 >
                   <BookOpen className="size-3.5" />
                   展開全章核心公式卡
+                </button>
+              )}
+
+              {onOpenRecallDrawer && (
+                <button
+                  type="button"
+                  onClick={() => {
+                    setIsOpen(false);
+                    onOpenRecallDrawer();
+                  }}
+                  className="w-full mt-1.5 inline-flex items-center justify-center gap-1.5 rounded-xl bg-indigo-50 dark:bg-indigo-950/40 border border-indigo-200 dark:border-indigo-800 text-indigo-800 dark:text-indigo-200 py-2 text-xs font-bold hover:bg-indigo-100 transition-colors cursor-pointer"
+                >
+                  <BrainCircuit className="size-3.5" />
+                  核心觀念主動回憶快卡
                 </button>
               )}
             </div>
@@ -300,6 +386,61 @@ export default function FloatingStudyCompanionHUD({
                   </button>
                 </div>
               )}
+            </div>
+          )}
+
+          {/* ── Tab 3: Speech Audio Narration ── */}
+          {activeTab === 'speech' && (
+            <div className="mt-4 space-y-3">
+              <div className="flex items-center justify-between text-xs text-slate-500">
+                <span className="flex items-center gap-1.5 font-bold text-slate-700 dark:text-slate-300">
+                  <Radio className={`size-3.5 ${isSpeaking ? 'text-emerald-500 animate-pulse' : 'text-slate-400'}`} />
+                  {isSpeaking ? '語音導讀進行中...' : 'Web Speech 語音導讀'}
+                </span>
+                <span className="font-mono text-[10px] text-slate-400">離線可用</span>
+              </div>
+
+              <div className="rounded-2xl border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-800/50 p-3.5 space-y-3">
+                <p className="text-xs text-slate-600 dark:text-slate-400 leading-relaxed line-clamp-3 font-serif">
+                  {speechText ? speechText.slice(0, 90) + '...' : `章節核心導讀：${topicTitle}`}
+                </p>
+
+                <div className="flex items-center justify-between pt-2 border-t border-slate-200/60 dark:border-slate-700/60">
+                  <button
+                    type="button"
+                    onClick={handleToggleSpeech}
+                    className={`inline-flex items-center gap-1.5 rounded-xl px-3.5 py-1.5 text-xs font-bold text-white shadow-xs transition-all cursor-pointer ${
+                      isSpeaking ? 'bg-amber-600 hover:bg-amber-700' : 'bg-emerald-600 hover:bg-emerald-700'
+                    }`}
+                  >
+                    {isSpeaking ? <Pause className="size-3.5" /> : <Play className="size-3.5 fill-current" />}
+                    <span>{isSpeaking ? '暫停' : '播放導讀'}</span>
+                  </button>
+
+                  {/* 語速調節 */}
+                  <div className="flex items-center gap-1 text-[10px] font-mono font-bold">
+                    <span className="text-slate-400 mr-0.5">速：</span>
+                    {[0.8, 1.0, 1.25, 1.5].map((rate) => (
+                      <button
+                        key={rate}
+                        type="button"
+                        onClick={() => handleChangeSpeechRate(rate)}
+                        className={`px-1.5 py-0.5 rounded cursor-pointer transition-colors ${
+                          speechRate === rate
+                            ? 'bg-blue-600 text-white font-bold'
+                            : 'bg-white dark:bg-slate-700 text-slate-600 dark:text-slate-300 hover:bg-slate-200'
+                        }`}
+                      >
+                        {rate}x
+                      </button>
+                    ))}
+                  </div>
+                </div>
+              </div>
+
+              <p className="text-[11px] text-slate-400 leading-normal">
+                💡 通勤與視力疲勞伴聽首選，自動朗讀課綱重點。
+              </p>
             </div>
           )}
 
