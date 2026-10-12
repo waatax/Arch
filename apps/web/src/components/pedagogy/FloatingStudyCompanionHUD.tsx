@@ -344,6 +344,22 @@ export default function FloatingStudyCompanionHUD({
                   核心觀念主動回憶快卡
                 </button>
               )}
+
+              <button
+                type="button"
+                onClick={() => {
+                  if (typeof document !== 'undefined') {
+                    if (!document.fullscreenElement) {
+                      document.documentElement.requestFullscreen().catch(() => {});
+                    } else {
+                      document.exitFullscreen().catch(() => {});
+                    }
+                  }
+                }}
+                className="w-full mt-1.5 inline-flex items-center justify-center gap-1.5 rounded-xl bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-300 py-2 text-xs font-bold hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors cursor-pointer"
+              >
+                <span>⛶ 切換橫式全螢幕劇院視野</span>
+              </button>
             </div>
           )}
 

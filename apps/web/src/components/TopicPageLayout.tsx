@@ -3,7 +3,7 @@
 import { useState, useEffect, useRef, useMemo } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { Binoculars, BookOpenCheck, Building2, CircleCheckBig, Lightbulb, Route, School, SearchCheck, Sparkles, Flame, Check, Maximize2, Minimize2 } from 'lucide-react';
+import { Binoculars, BookOpenCheck, Building2, CircleCheckBig, Lightbulb, Route, School, SearchCheck, Sparkles, Flame, Check, Maximize2 } from 'lucide-react';
 import type { SubjectData, TopicContent } from '@/data/types';
 import { useTheme } from '@/components/ThemeProvider';
 import MathText from '@/components/MathText';
@@ -41,6 +41,8 @@ import TopicScratchpadNotes from '@/components/pedagogy/TopicScratchpadNotes';
 import TopicActiveRecallDrawer from '@/components/pedagogy/TopicActiveRecallDrawer';
 import TopicCompletionCelebration from '@/components/pedagogy/TopicCompletionCelebration';
 import ConceptFigure from '@/components/pedagogy/ConceptFigure';
+import CurricularLicensureMatrix from '@/components/pedagogy/CurricularLicensureMatrix';
+import TopicProgressiveHintDeck from '@/components/pedagogy/TopicProgressiveHintDeck';
 import { groupVisualsByConcept, type ConceptVisual } from '@/data/conceptVisuals';
 import {
   IconPerspective,
@@ -348,7 +350,7 @@ export default function TopicPageLayout({ subject, topic, mappedExamQuestions, c
       </div>
 
       <article className={`mx-auto space-y-16 px-4 py-8 sm:px-6 sm:py-16 text-lg leading-[1.8] text-slate-800 dark:text-slate-200 tracking-wide transition-all duration-300 ${
-        readingWidth === 'wide' ? 'max-w-6xl' : 'max-w-3xl'
+        readingWidth === 'full' ? 'max-w-[96rem] px-4 sm:px-8 lg:px-12' : readingWidth === 'wide' ? 'max-w-6xl' : 'max-w-3xl'
       }`}>
         {/* Print-only A4 handout cover strip (first page) */}
         <PrintHandoutCover
@@ -442,6 +444,11 @@ export default function TopicPageLayout({ subject, topic, mappedExamQuestions, c
           {topic.step0Prerequisites && topic.step0Prerequisites.length > 0 && (
             <Step0Tooltip prerequisites={topic.step0Prerequisites} subjectSlug={subject.slug} />
           )}
+
+          {/* 108 課綱核心素養與專技高考考科對齊矩陣 */}
+          <div className="print:hidden">
+            <CurricularLicensureMatrix subject={subject} topic={topic} />
+          </div>
 
           {/* Architectural Skill Constellation Coordinate Card */}
           {starNode && (
@@ -717,15 +724,64 @@ export default function TopicPageLayout({ subject, topic, mappedExamQuestions, c
           </div>
 
           <div className="flex items-center gap-1.5 flex-wrap">
-            {/* Desktop Reading Width Toggle */}
+            {/* Desktop Reading Width Segmented Selector */}
+            <div className="hidden lg:flex items-center rounded-lg border border-slate-200 dark:border-slate-800 bg-slate-100 dark:bg-slate-800 p-0.5 text-[11px] font-mono">
+              <button
+                type="button"
+                onClick={() => setReadingWidth('standard')}
+                className={`px-2 py-0.5 rounded-md transition-colors cursor-pointer ${
+                  readingWidth === 'standard'
+                    ? 'bg-white dark:bg-slate-700 text-teal-700 dark:text-teal-300 font-bold shadow-2xs'
+                    : 'text-slate-600 hover:text-slate-900 dark:text-slate-400 dark:hover:text-white'
+                }`}
+                title="專注標準寬度 (768px)"
+              >
+                標準
+              </button>
+              <button
+                type="button"
+                onClick={() => setReadingWidth('wide')}
+                className={`px-2 py-0.5 rounded-md transition-colors cursor-pointer ${
+                  readingWidth === 'wide'
+                    ? 'bg-white dark:bg-slate-700 text-teal-700 dark:text-teal-300 font-bold shadow-2xs'
+                    : 'text-slate-600 hover:text-slate-900 dark:text-slate-400 dark:hover:text-white'
+                }`}
+                title="全景廣視寬度 (1152px)"
+              >
+                寬幅
+              </button>
+              <button
+                type="button"
+                onClick={() => setReadingWidth('full')}
+                className={`px-2 py-0.5 rounded-md transition-colors cursor-pointer flex items-center gap-1 ${
+                  readingWidth === 'full'
+                    ? 'bg-white dark:bg-slate-700 text-teal-700 dark:text-teal-300 font-bold shadow-2xs'
+                    : 'text-slate-600 hover:text-slate-900 dark:text-slate-400 dark:hover:text-white'
+                }`}
+                title="橫式全螢幕劇院視野 (1536px+ Ultra-wide)"
+              >
+                <Maximize2 className="size-2.5 text-teal-600 dark:text-teal-400" />
+                <span>橫式全屏</span>
+              </button>
+            </div>
+
+            {/* Native Fullscreen Theater Mode */}
             <button
               type="button"
-              onClick={() => setReadingWidth(readingWidth === 'wide' ? 'standard' : 'wide')}
+              onClick={() => {
+                if (typeof document !== 'undefined') {
+                  if (!document.fullscreenElement) {
+                    document.documentElement.requestFullscreen().catch(() => {});
+                    setReadingWidth('full');
+                  } else {
+                    document.exitFullscreen().catch(() => {});
+                  }
+                }
+              }}
               className="hidden lg:flex items-center gap-1 rounded-lg border border-slate-200 dark:border-slate-800 bg-slate-100 dark:bg-slate-800 px-2 py-1 text-[11px] font-mono font-bold text-slate-700 dark:text-slate-300 hover:bg-white dark:hover:bg-slate-700 transition-colors cursor-pointer"
-              title={readingWidth === 'wide' ? '切換為專注閱讀 (768px)' : '切換為全景廣視 (1152px)'}
+              title="切換瀏覽器全螢幕劇院模式 (Cinema Mode)"
             >
-              {readingWidth === 'wide' ? <Minimize2 className="size-3 text-teal-600 dark:text-teal-400" /> : <Maximize2 className="size-3 text-teal-600 dark:text-teal-400" />}
-              <span>{readingWidth === 'wide' ? '專注寬度' : '全景廣視'}</span>
+              <span>⛶ 劇院</span>
             </button>
 
             {/* Quick Theme Cycle Button */}
@@ -1483,6 +1539,15 @@ export default function TopicPageLayout({ subject, topic, mappedExamQuestions, c
 
                   {/* Print-only blank answer area (練習卷模式) */}
                   <div className="print-answer-box" aria-hidden="true" />
+
+                  {/* Junyi-style Progressive 3-Stage Hint Deck */}
+                  <div className="print:hidden">
+                    <TopicProgressiveHintDeck
+                      example={we}
+                      topicTitle={topic.title}
+                      questionExcerpt={we.question.slice(0, 50) + (we.question.length > 50 ? '...' : '')}
+                    />
+                  </div>
 
                   {/* Toggle solution steps button */}
                   <button

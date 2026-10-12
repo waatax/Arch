@@ -182,8 +182,16 @@ export default function LessonNav({
                 </div>
                 <div className="hidden items-center justify-between gap-2 lg:flex">
                   <span className="text-slate-600 dark:text-slate-400">版面寬度</span>
-                  <button type="button" onClick={() => setReadingWidth(readingWidth === 'wide' ? 'standard' : 'wide')} className="min-h-8 rounded-md border border-slate-200 px-3 font-bold dark:border-slate-700">
-                    {readingWidth === 'wide' ? '寬版' : '標準'} ⟳
+                  <button
+                    type="button"
+                    onClick={() => {
+                      if (readingWidth === 'standard') setReadingWidth('wide');
+                      else if (readingWidth === 'wide') setReadingWidth('full');
+                      else setReadingWidth('standard');
+                    }}
+                    className="min-h-8 rounded-md border border-slate-200 px-3 font-bold dark:border-slate-700"
+                  >
+                    {readingWidth === 'full' ? '橫屏' : readingWidth === 'wide' ? '寬版' : '標準'} ⟳
                   </button>
                 </div>
                 <button

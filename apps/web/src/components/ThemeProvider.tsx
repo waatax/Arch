@@ -4,7 +4,7 @@ import { createContext, useContext, useEffect, useState, ReactNode } from 'react
 
 export type Theme = 'light' | 'sepia' | 'dark' | 'oled';
 export type FontSize = 'sm' | 'base' | 'lg' | 'xl';
-export type ReadingWidth = 'standard' | 'wide';
+export type ReadingWidth = 'standard' | 'wide' | 'full';
 
 interface ThemeContextType {
   theme: Theme;
@@ -71,7 +71,7 @@ export default function ThemeProvider({ children }: { children: ReactNode }) {
       );
 
       const savedWidth = readStorage('arch-reading-width');
-      setReadingWidthState(savedWidth === 'wide' ? 'wide' : 'standard');
+      setReadingWidthState(savedWidth === 'full' ? 'full' : savedWidth === 'wide' ? 'wide' : 'standard');
 
       setPreferencesReady(true);
     }, 0);

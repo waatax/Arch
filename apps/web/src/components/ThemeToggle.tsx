@@ -212,6 +212,20 @@ export default function ThemeToggle() {
                 >
                   全景 (1152px)
                 </button>
+                <button
+                  type="button"
+                  onClick={() => {
+                    triggerHaptic('selection');
+                    setReadingWidth('full');
+                  }}
+                  className={`px-2 py-0.5 rounded-md transition-colors cursor-pointer ${
+                    readingWidth === 'full'
+                      ? 'bg-white dark:bg-slate-700 text-teal-700 dark:text-teal-300 font-bold shadow-2xs'
+                      : 'text-slate-500 hover:text-slate-900 dark:hover:text-white'
+                  }`}
+                >
+                  橫屏 (1536px+)
+                </button>
               </div>
             </div>
           </div>
