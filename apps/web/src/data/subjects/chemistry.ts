@@ -9,9 +9,10 @@ export const chemistryData: SubjectData = {
     {
       "slug": "matter-composition",
       "title": "1. 📚 物質的組成與分類",
-      "desc": "**<span className='text-rose-600 font-bold'>純物質</span>**與**<span className='text-rose-600 font-bold'>混合物</span>**、原子結構與化學鍵結、塗料/樹脂高分子化學分類、**<span className='text-rose-600 font-bold'>VOCs</span>** 揮發機制與**<span className='text-rose-600 font-bold'>光觸媒</span>**空氣淨化。",
+      "desc": "純物質與混合物、原子結構與化學鍵結、塗料/樹脂高分子化學分類、VOCs 揮發機制與光觸媒空氣淨化。",
       "status": "done",
       "gradeLevel": 10,
+      "curriculumCode": "108-CAa",
       "covered_question_ids": [],
       "worked_examples": [
         {
@@ -42,7 +43,8 @@ export const chemistryData: SubjectData = {
       ],
       "concepts": [
         {
-          "heading": "物質的分類與建築材料相態 (**<span className='text-rose-600 font-bold'>純物質</span>**與**<span className='text-rose-600 font-bold'>混合物</span>**)",
+          "heading": "物質的分類與建築材料相態 (純物質與混合物)",
+          "outlineRefs": ["CAb-V.2-2"],
           "body": "💡 **核心概念解析**：\n物質根據組成成分的均勻性與固定性可劃分為**<span className='text-rose-600 font-bold'>純物質</span>**與**<span className='text-rose-600 font-bold'>混合物</span>**。\n- **<span className='text-rose-600 font-bold'>純物質</span>** (Pure Substance)：具有固定的化學組成與特定物理常數 (如熔點、沸點、密度)。分為元素 (Element，如金屬鐵 Fe、銅 Cu) 與化合物 (Compound，如水 H₂O、二氧化矽 SiO₂)。\n- **<span className='text-rose-600 font-bold'>混合物</span>** (Mixture)：由兩種或兩種以上的**<span className='text-rose-600 font-bold'>純物質</span>**混合而成，成分比例可變。分為均相**<span className='text-rose-600 font-bold'>混合物</span>** (Homogeneous Mixture，如合金、鹽水) 與非均相**<span className='text-rose-600 font-bold'>混合物</span>** (Heterogeneous Mixture，如混凝土、乳化漆、泥水)。\n在建築工程中，大多數建材如混凝土、塗料、高分子防護劑皆屬於非均相高分子複合**<span className='text-rose-600 font-bold'>混合物</span>**。",
           "steps": [
             "🔹 **第一步**（成分確定）：判斷物質是否有單一固定化學式 (如 CaCO₃ 為**<span className='text-rose-600 font-bold'>純物質</span>**化合物)。",
@@ -51,15 +53,26 @@ export const chemistryData: SubjectData = {
         },
         {
           "heading": "微觀原子結構與化學鍵結 (Atomic Structure & Chemical Bonding)",
-          "body": "💡 **核心概念解析**：\n原子為化學元素的最小基元，由帶正電的原子核（質子與中子）以及核外帶負電的電子構成。\n- **<span className='text-rose-600 font-bold'>質量數</span>** (A) = **<span className='text-rose-600 font-bold'>質子數</span>** (Z) + **<span className='text-rose-600 font-bold'>中子數</span>** (N)。\n- 價電子與化學鍵：原子的最外層電子決定其化學性質。建築材料的物理強度與耐候性取決於內部的化學鍵結型態：\n  1. **<span className='text-rose-600 font-bold'>離子鍵</span>** (Ionic Bond)：如陶瓷、石灰石 (CaCO₃)，硬度高但具脆性。\n  2. **<span className='text-rose-600 font-bold'>共價鍵</span>** (Covalent Bond)：如金剛石、矽酸鹽礦物與高分子骨架，鍵結極強。\n  3. **<span className='text-rose-600 font-bold'>金屬鍵</span>** (Metallic Bond)：金屬自由電子形成金屬膠泥，賦予鋼材優異的延展性與導電性。\n\n⚠️ **統測陷阱**：考試常考「分子晶體」與「網狀共價晶體」的差別！冰塊是分子晶體（氫鍵），熔點低；石英(SiO₂)是網狀共價晶體，熔點極高。\n\n🔗 **跨領域連結**：與【物理：力學】連結，金屬鍵中的自由電子海，是鋼材具備「高延展性」能吸收地震能量（塑性變形）的微觀原因。\n\n| 鍵結類型 | 組成粒子 | 硬度 | 熔沸點 | 導電性 (固態/熔融態) |\n| :--- | :--- | :--- | :--- | :--- |\n| 離子鍵 | 陰陽離子 | 高 (脆) | 高 | 無 / 有 |\n| 共價鍵 | 原子 | 極高 | 極高 | 無 / 無 (除石墨) |\n| 金屬鍵 | 金屬陽離子+自由電子 | 中至高 (延展性佳) | 中至高 | 有 / 有 |",
-          "formula": "$$\\text{質量數 } A = \\text{質子數 } Z + \\text{中子數 } N$$\\n$$E_{\\text{bond}}(\\text{共價鍵}) \\gg E_{\\text{bond}}(\\text{氫鍵}) > E_{\\text{bond}}(\\text{凡得瓦力})$$"
+          "outlineRefs": ["CAa-V.2-3", "CCb-V.2-3"],
+          "body": "💡 **核心概念解析**：\n原子為化學元素的最小基元，由帶正電的原子核（質子與中子）以及核外帶負電的電子構成。\n- **<span className='text-rose-600 font-bold'>質量數</span>** (A) = **<span className='text-rose-600 font-bold'>質子數</span>** (Z) + **<span className='text-rose-600 font-bold'>中子數</span>** (N)。\n- 價電子與化學鍵：原子的最外層電子決定其化學性質。建築材料的物理強度與耐候性取決於內部的化學鍵結型態：\n  1. **<span className='text-rose-600 font-bold'>離子鍵</span>** (Ionic Bond)：如陶瓷、石灰石 (CaCO₃)，硬度高但具脆性。\n  2. **<span className='text-rose-600 font-bold'>共價鍵</span>** (Covalent Bond)：如金剛石、矽酸鹽礦物與高分子骨架，鍵結極強。\n  3. **<span className='text-rose-600 font-bold'>金屬鍵</span>** (Metallic Bond)：金屬自由電子形成金屬膠泥，賦予鋼材優異的延展性與導電性。\n\n⚠️ **統測陷阱**：考試常考「分子晶體」與「網狀共價晶體」的差別！冰塊是分子晶體（氫鍵），熔點低；石英(SiO₂)是網狀共價晶體，熔點極高。\n\n🔗 **跨領域連結**：與【物理：力學】連結，金屬鍵中的自由電子海，是鋼材具備「高延展性」能吸收地震能量（塑性變形）的微觀原因。",
+          "formula": "$$\\text{質量數 } A = \\text{質子數 } Z + \\text{中子數 } N$$\\n$$E_{\\text{bond}}(\\text{共價鍵}) \\gg E_{\\text{bond}}(\\text{氫鍵}) > E_{\\text{bond}}(\\text{凡得瓦力})$$",
+          "table": {
+            "headers": ["鍵結類型", "組成粒子", "硬度", "熔沸點", "導電性 (固態/熔融態)"],
+            "rows": [
+              ["離子鍵", "陰陽離子", "高 (脆)", "高", "無 / 有"],
+              ["共價鍵", "原子", "極高", "極高", "無 / 無 (除石墨)"],
+              ["金屬鍵", "金屬陽離子+自由電子", "中至高 (延展性佳)", "中至高", "有 / 有"]
+            ]
+          }
         },
         {
-          "heading": "塗料、樹脂高分子與**<span className='text-indigo-600 font-bold'>揮發性有機化合物</span>** (**<span className='text-rose-600 font-bold'>VOCs</span>**) 基礎",
+          "heading": "塗料、樹脂高分子與揮發性有機化合物 (VOCs) 基礎",
+          "outlineRefs": ["CMc-V.2-4"],
           "body": "💡 **核心概念解析**：\n塗料與樹脂 (Paints & Resins) 為建築裝修與結構防蝕的重要化學材料。\n- 塗料組成：主要由基料 (Binder/Resin)、溶劑 (Solvent)、顏填料 (Pigment & Extender) 及添加劑 (Additives) 四大部分組成。基料決定塗膜的物理及化學性質，溶劑則影響施工性與乾燥速度。\n- **<span className='text-rose-600 font-bold'>VOCs</span>** (Volatile Organic Compounds，**<span className='text-indigo-600 font-bold'>揮發性有機化合物</span>**)：指在常溫常壓下飽和蒸氣壓大於 133.32 Pa 的有機化合物 (如苯、甲苯、二甲苯、游離甲醛)。\n⚠️ **健康危害與實務考量**：\n塗料施工與固化過程中，溶劑的揮發是室內 **<span className='text-rose-600 font-bold'>VOCs</span>** 污染的主要來源。長期暴露於高濃度 **<span className='text-rose-600 font-bold'>VOCs</span>** 環境中可能引發「病態建築症候群」(SBS, Sick Building Syndrome)，造成頭痛、呼吸道刺激、甚至有致癌風險。因此，在室內裝修中，選擇水性塗料或低 **<span className='text-rose-600 font-bold'>VOC</span>** 綠建材，並配合施工後充分通風，是確保居住安全的關鍵。"
         },
         {
           "heading": "建築塗料與樹脂材料之化學分類比較",
+          "outlineRefs": ["CMc-V.2-4"],
           "body": "💡 **核心概念解析**：\n比較常見建築塗料與樹脂基材的化學組成、溶劑類型、固化機制與環境揮發性 (**<span className='text-rose-600 font-bold'>VOCs</span>**)。",
           "table": {
             "headers": [
@@ -110,10 +123,12 @@ export const chemistryData: SubjectData = {
         },
         {
           "heading": "綠色建材認證與 VOC 逸散控制化學",
+          "outlineRefs": ["CMe-V.2-2"],
           "body": "💡 **核心概念解析**：\n為保障室內空氣品質 (IAQ) 與健康居住環境，現代建築法規對建材的 **<span className='text-indigo-600 font-bold'>TVOC</span>** (總**<span className='text-indigo-600 font-bold'>揮發性有機化合物</span>**) 與甲醛逸散率有嚴格限制。\n- 測試標準：常採用氣候箱法 (Chamber Method，CNS 16000 / ISO 16000)，測量塗料塗刷後 28 天內的揮發量，確保建材在實際使用環境下的逸散濃度符合安全規範。\n- 低 VOC 化學技術：\n  1. **水性化 (Waterborne)**：利用水取代大部分有機溶劑，大幅降低施工與乾燥過程的有害揮發物。\n  2. **無溶劑高固含量 (High Solids)**：提高樹脂含量，減少揮發性溶劑比例，適用於重防腐與工業地坪。\n  3. **無機矽酸鹽化學**：完全無有機溶劑，利用化學矽化反應與基底結合，達到零 **<span className='text-rose-600 font-bold'>VOCs</span>** 的環保標準。\n🛠️ **工程實務應用**：\n在選擇「健康綠建材」時，不僅要關注產品包裝上的標章，還需確認其 **<span className='text-indigo-600 font-bold'>TVOC</span>** 與甲醛逸散率檢測報告，避免多種建材在密閉空間中產生「疊加效應」而導致總濃度超標。"
         },
         {
-          "heading": "奈米**<span className='text-rose-600 font-bold'>二氧化鈦</span>** (TiO₂) **<span className='text-rose-600 font-bold'>光觸媒</span>**催化空氣淨化與自潔化學",
+          "heading": "奈米二氧化鈦 (TiO₂) 光觸媒催化空氣淨化與自潔化學",
+          "outlineRefs": ["CMc-V.2-7"],
           "body": "💡 **核心概念解析**：\n奈米級銳鈦礦型**<span className='text-rose-600 font-bold'>二氧化鈦</span>** (TiO₂) 在波長 < 387 nm 的近紫外光照射下，電子由價帶躍遷至導帶形成電子-電洞對 (e⁻/h⁺)。電洞水解生成具有強氧化性的羥基自由基 (·OH)，能將空氣中的**<span className='text-indigo-600 font-bold'>甲醛 (HCHO)</span>** 與苯系物降解為二氧化碳與水，同能賦予塗膜超親水性 (Super-hydrophilicity) 達成雨水自潔效應。",
           "formula": "$$TiO_2 + h\\nu (\\text{UV}) \\longrightarrow e^- + h^+$$\\n$$h^+ + H_2O \\longrightarrow \\cdot OH + H^+$$\\n$$HCHO + 4\\cdot OH \\longrightarrow CO_2 + 3H_2O$$",
           "steps": [
@@ -123,7 +138,8 @@ export const chemistryData: SubjectData = {
           ]
         },
         {
-          "heading": "氣體擴散與室內 **<span className='text-indigo-600 font-bold'>TVOC</span>** 濃度隨時間衰減一階動力學模型",
+          "heading": "氣體擴散與室內 TVOC 濃度隨時間衰減一階動力學模型",
+          "outlineRefs": ["CJe-V.2-1"],
           "body": "💡 **核心概念解析**：\n建築塗料施工後，室內 **<span className='text-indigo-600 font-bold'>TVOC</span>** 氣體濃度遵循**<span className='text-rose-600 font-bold'>一階衰減動力學</span>** (First-Order Decay Kinetics)。濃度衰減速率取決於塗料化學成分揮發常數 k 與建築通風換氣率 (ACH, Air Changes per Hour)。",
           "formula": "$$C(t) = C_0 \\cdot e^{-(k + \\text{ACH})\\cdot t}$$",
           "table": {
@@ -152,6 +168,50 @@ export const chemistryData: SubjectData = {
                 "< 0.01",
                 "1 - 2 天即可入住"
               ]
+            ]
+          }
+        },
+        {
+          "heading": "原子結構、電子排列與元素週期表 (Atomic Structure & Periodic Table)",
+          "outlineRefs": ["CAa-V.2-3", "CAa-V.2-4", "CAa-V.2-5", "CAa-V.2-6"],
+          "body": "**原子結構**：原子由原子核（質子 + 中子）與核外電子組成。原子序 = 質子數；質量數 = 質子數 + 中子數。質子數相同而中子數不同者互為**同位素**，如碳-12 與碳-14。\n**電子排列**：電子依殼層 K、L、M、N… 由內向外排列，第 n 層最多容納 2n² 個電子（2、8、18…）。最外層電子稱**價電子**，決定元素的化學性質。\n**元素週期表**：依原子序排列。\n• 同族（直行）：價電子數相同，化學性質相似。第 1 族鹼金屬很活潑；第 17 族鹵素易得電子；第 18 族惰性氣體最外層填滿，非常穩定。\n• 同週期（橫列）：由左而右金屬性減弱、非金屬性增強。\n**建築常見元素**：Ca（石灰、水泥）、Si（石英、玻璃）、Fe（鋼）、Al（鋁窗）、O（氧化物與水）。\n⚠️ 易錯：週期表的「週期」數等於電子殼層數，「族」數（主族）與價電子數有關；不要把兩者弄反。",
+          "table": {
+            "headers": ["元素", "原子序", "電子排列", "族", "建築材料中的角色"],
+            "rows": [
+              ["氧 O", "8", "2, 6", "16", "氧化物、水、空氣"],
+              ["鈉 Na", "11", "2, 8, 1", "1", "海砂中的 NaCl"],
+              ["鋁 Al", "13", "2, 8, 3", "13", "鋁門窗、帷幕框"],
+              ["矽 Si", "14", "2, 8, 4", "14", "石英砂、玻璃、水泥熟料"],
+              ["鈣 Ca", "20", "2, 8, 8, 2", "2", "石灰石、水泥、石膏"]
+            ]
+          }
+        },
+        {
+          "heading": "物質的三相圖與分離、鑑定方法 (Phase Diagram & Separation)",
+          "outlineRefs": ["CAb-V.2-1", "CCa-V.2-1"],
+          "body": "**三相圖**：以壓力為縱軸、溫度為橫軸，三條曲線把平面分成固、液、氣三個區域。**三相點**是固、液、氣三相共存的溫度與壓力；**臨界點**以上無法區分液、氣，稱超臨界流體。\n**水的特殊性**：水的固液平衡線斜率為負，加壓會使冰熔化；冰的密度比水小，結冰時體積約膨脹 9%，這就是水管凍裂與混凝土**凍融破壞**的原因。\n**物質的分離**：過濾（分離不溶固體）、蒸發與結晶（取出溶解的固體）、蒸餾（分離沸點不同的液體，如石油分餾）、萃取、層析、傾析、磁選。\n**物質的鑑定**：熔點、沸點、密度等物理性質，或以焰色反應（Na 黃色、K 紫色、Ca 磚紅色、Cu 藍綠色）、指示劑等化學方法判斷。\n⚠️ 易錯：純物質有固定的熔點與沸點，混合物則在一個溫度範圍內熔化或沸騰，可用來判斷純度。",
+          "table": {
+            "headers": ["分離方法", "依據的性質差異", "例子"],
+            "rows": [
+              ["過濾", "顆粒大小（溶解與否）", "分離泥沙與水"],
+              ["蒸發、結晶", "溶質不揮發", "海水曬鹽"],
+              ["蒸餾", "沸點不同", "石油分餾、製造蒸餾水"],
+              ["層析", "在固定相上移動速率不同", "分離色素"],
+              ["磁選", "磁性", "自廢料中分離鐵屑"]
+            ]
+          }
+        },
+        {
+          "heading": "化學式與分子模型：實驗式、分子式、結構式 (Chemical Formulas & Molecular Models)",
+          "outlineRefs": ["CCb-V.2-1", "CCb-V.2-3", "CCb-V.2-4"],
+          "body": "**化學式種類**：\n• 實驗式（簡式）：各原子的最簡整數比，如葡萄糖的實驗式為 CH₂O。\n• 分子式：分子中各原子的實際數目，如葡萄糖 C₆H₁₂O₆。\n• 結構式：表示原子間的鍵結方式。\n• 示性式：突顯官能基，如乙醇 C₂H₅OH。\n**分子模型**：球棒模型能看出鍵角與鍵結方向；填充模型能看出原子的相對大小與分子外形。\n**分子形狀**：甲烷 CH₄ 為正四面體（鍵角約 109.5°）、水 H₂O 為角形（約 104.5°）、二氧化碳 CO₂ 為直線形、氨 NH₃ 為角錐形。\n**建築材料的化學式**：石英 SiO₂、方解石（石灰石）CaCO₃、石膏 CaSO₄·2H₂O、熟石灰 Ca(OH)₂、生石灰 CaO。離子化合物與網狀固體（如 NaCl、SiO₂）沒有獨立分子，只能寫實驗式。\n⚠️ 易錯：SiO₂ 不代表「一個分子含 1 個 Si 和 2 個 O」，而是網狀固體中 Si 與 O 的原子數比為 1 : 2。",
+          "table": {
+            "headers": ["物質", "實驗式", "分子式", "分子形狀或結構"],
+            "rows": [
+              ["甲烷", "CH₄", "CH₄", "正四面體"],
+              ["水", "H₂O", "H₂O", "角形"],
+              ["葡萄糖", "CH₂O", "C₆H₁₂O₆", "環狀結構"],
+              ["二氧化矽（石英）", "SiO₂", "無獨立分子", "三維網狀共價固體"]
             ]
           }
         }
@@ -293,9 +353,10 @@ export const chemistryData: SubjectData = {
     {
       "slug": "chemical-reactions",
       "title": "2. 🔍 化學反應與混凝土水化化學",
-      "desc": "化學反應式平衡、**<span className='text-rose-600 font-bold'>莫耳數</span>**與化學計量、**<span className='text-rose-600 font-bold'>波特蘭水泥</span>**水化反應 (Concrete Hydration)、**<span className='text-rose-600 font-bold'>波左蘭反應</span>**與**<span className='text-rose-600 font-bold'>絕熱溫升</span>**。",
+      "desc": "化學反應式平衡、莫耳數與化學計量、波特蘭水泥水化反應 (Concrete Hydration)、波左蘭反應與絕熱溫升。",
       "status": "done",
       "gradeLevel": 10,
+      "curriculumCode": "108-CJa",
       "covered_question_ids": [],
       "worked_examples": [
         {
@@ -326,21 +387,25 @@ export const chemistryData: SubjectData = {
       ],
       "concepts": [
         {
-          "heading": "化學反應平衡與**<span className='text-rose-600 font-bold'>質量守恆定律</span>**",
+          "heading": "化學反應平衡與質量守恆定律",
+          "outlineRefs": ["CAa-V.2-1", "CJa-V.2-1"],
           "body": "💡 **核心概念解析**：\n化學反應遵守**<span className='text-rose-600 font-bold'>質量守恆定律</span>** (Law of Conservation of Mass)，即反應前反應物的原子種類與總個數，必須等於反應後生成物的原子種類與總個數。\n平衡化學反應式時，需調整反應物與生成物化學式前的最簡整數係數。化學反應式的係數代表化學反應中各粒子間的「**<span className='text-rose-600 font-bold'>莫耳數</span>**比」，而非質量比。"
         },
         {
           "heading": "莫耳與化學計量計算 (Stoichiometry)",
+          "outlineRefs": ["CAa-V.2-2", "CJa-V.2-2"],
           "body": "💡 **核心概念解析**：\n莫耳 (Mole, mol) 是化學計量巨量物質與微觀粒子的橋樑。1 莫耳包含 6.02 × 10²³ 個粒子 (亞佛加厥常數 NA)。\n- **<span className='text-rose-600 font-bold'>莫耳數</span>** (n) = 物質質量 (m, g) / 莫耳質量 (M, g/mol)。\n- 在氣體標準狀況 (STP, 0°C, 1 atm) 下，1 莫耳理想氣體體積為 22.4 L；在常溫常壓 (NTP, 25°C, 1 atm) 下約為 24.5 L。",
           "formula": "$$n = \\frac{m}{M} = \\frac{N}{N_A}$$"
         },
         {
-          "heading": "**<span className='text-rose-600 font-bold'>波特蘭水泥</span>**之化學水化反應 (Concrete Hydration)",
+          "heading": "波特蘭水泥之化學水化反應 (Concrete Hydration)",
+          "outlineRefs": ["CJa-V.2-1"],
           "body": "💡 **核心概念解析**：\n混凝土強度發展源自卜特蘭水泥熟料礦物與水的交聯化學反應 (Concrete Hydration)。\n- 主要熟料化學成分：\n  1. 矽酸三鈣（Tricalcium silicate，簡稱 $C_3S$，化學式為 $Ca_3SiO_5$，水泥化學式 $3CaO\\cdot SiO_2$）：含量約 50~70%，水化反應快且放熱高，負責 1~7 天早期強度發展。水化生成 C-S-H 凝膠與氫氧化鈣 $Ca(OH)_2$。\n  2. 矽酸二鈣（Dicalcium silicate，簡稱 $C_2S$，化學式為 $Ca_2SiO_4$，水泥化學式 $2CaO\\cdot SiO_2$）：含量約 15~30%，水化速率慢且放熱低，負責後期 (28 天後至數年) 強度穩定增長。\n  3. 鋁酸三鈣（Tricalcium aluminate，簡稱 $C_3A$，化學式為 $Ca_3Al_2O_6$，水泥化學式 $3CaO\\cdot Al_2O_3$）：反應極劇烈，放熱量最高，需加入石膏 ($CaSO_4\\cdot 2H_2O$) 調節凝結時間，防止快凝。\n  4. 鐵鋁酸四鈣（Tetracalcium aluminoferrite，簡稱 $C_4AF$，化學式為 $Ca_4Al_2Fe_2O_{10}$，水泥化學式 $4CaO\\cdot Al_2O_3\\cdot Fe_2O_3$）：水化速度中等，耐硫酸鹽性佳，賦予水泥深灰色。",
           "formula": "$$2Ca_3SiO_5 + 6H_2O \\longrightarrow 3CaO\\cdot 2SiO_2\\cdot 3H_2O \\text{ (C-S-H 凝膠)} + 3Ca(OH)_2$$\\n$$2Ca_2SiO_4 + 4H_2O \\longrightarrow 3CaO\\cdot 2SiO_2\\cdot 3H_2O \\text{ (C-S-H 凝膠)} + Ca(OH)_2$$"
         },
         {
-          "heading": "**<span className='text-rose-600 font-bold'>波特蘭水泥</span>**四大熟料礦物水化特性比較",
+          "heading": "波特蘭水泥四大熟料礦物水化特性比較",
+          "outlineRefs": ["CMc-V.2-6"],
           "body": "💡 **核心概念解析**：\n比較**<span className='text-rose-600 font-bold'>波特蘭水泥</span>**中四大熟料成分的水化反應速度、水化發熱量與強度貢獻。",
           "table": {
             "headers": [
@@ -383,17 +448,20 @@ export const chemistryData: SubjectData = {
           }
         },
         {
-          "heading": "**<span className='text-indigo-600 font-bold'>水化熱</span>**控制與卜特嵐礦物摻和料 (Fly Ash & Slag) 之**<span className='text-rose-600 font-bold'>波左蘭反應</span>**",
+          "heading": "水化熱控制與卜特嵐礦物摻和料 (Fly Ash & Slag) 之波左蘭反應",
+          "outlineRefs": ["CBa-V.2-1"],
           "body": "💡 **核心概念解析**：\n水化反應為強烈放熱反應。在巨體積混凝土 (Mass Concrete，如大壩、厚基礎版) 中，內部累積的**<span className='text-indigo-600 font-bold'>水化熱</span>**易導致內外溫差開裂。\n- **<span className='text-rose-600 font-bold'>波左蘭反應</span>** (Pozzolanic Reaction)：加入飛灰 (Fly Ash) 或爐石粉 (GGBS)，其活性矽 (SiO₂) 可與水泥水化產生的 Ca(OH)₂ 發生二次**<span className='text-rose-600 font-bold'>波左蘭反應</span>**，生成額外的 C-S-H 膠體，能顯著降低水化放熱峰值並提高混凝土緻密性與耐久性。",
           "formula": "$$Ca(OH)_2 + \\text{活性 } SiO_2 + H_2O \\longrightarrow \\text{C-S-H 凝膠 (二次水化反應)}$$"
         },
         {
-          "heading": "石膏 (CaSO₄·2H₂O) 調節凝結化學與**<span className='text-indigo-600 font-bold'>鈣礬石 (Ettringite)</span>** 形成",
+          "heading": "石膏 (CaSO₄·2H₂O) 調節凝結化學與鈣礬石 (Ettringite) 形成",
+          "outlineRefs": ["CJa-V.2-1"],
           "body": "💡 **核心概念解析**：\n未添加石膏的水泥在加水時，C₃A 會在幾分鐘內迅速水化並結晶，導致混凝土發生「快凝 (Flash Set)」無法施工。研磨水泥時摻入約 3%~5% 石膏，石膏中的硫酸根 SO₄²⁻ 與 C₃A 及水反應在顆粒表面覆蓋一層緻密的鈣礬石 (Ettringite, 3CaO·Al₂O₃·3CaSO₄·32H₂O) 薄膜，可延緩 C₃A 水化達到適當的施工工作時間 (1~2 小時)。",
           "formula": "$$Ca_3Al_2O_6 + 3(CaSO_4\\cdot 2H_2O) + 26H_2O \\longrightarrow 3CaO\\cdot Al_2O_3\\cdot 3CaSO_4\\cdot 32H_2O \\text{ (鈣礬石 Ettringite)}$$"
         },
         {
-          "heading": "巨體積混凝土**<span className='text-rose-600 font-bold'>絕熱溫升</span>** ΔT_adiab 化學計算與溫差裂縫預防",
+          "heading": "巨體積混凝土絕熱溫升 ΔT_adiab 化學計算與溫差裂縫預防",
+          "outlineRefs": ["CBa-V.2-1"],
           "body": "💡 **核心概念解析**：\n每克普通卜特蘭水泥完全水化放熱約 350~500 J。混凝土比熱 c ≈ 1.0 kJ/(kg·K)。在大體積混凝土中，內部累積的水化放熱幾乎無法散逸，**<span className='text-rose-600 font-bold'>絕熱溫升</span>** ΔT 升幅可達 30°C~50°C。若內部與表面溫差 ΔT > 20°C，熱應力將超過混凝土拉伸強度，導致裂縫 (Thermal Cracking)。",
           "formula": "$$\\Delta T_{\\text{adiab}} = \\frac{m_{\\text{cement}} \\cdot Q_{\\text{hydration}}}{m_{\\text{total}} \\cdot c_{\\text{concrete}}}$$",
           "steps": [
@@ -401,6 +469,49 @@ export const chemistryData: SubjectData = {
             "🔹 **第二步**（預冷拌合水）：拌合時使用冰水或加入碎冰塊，降低混凝土預澆置初溫。",
             "🔹 **第三步**（管道冷卻）：在厚版內部預埋冷卻水管通水循環散熱。"
           ]
+        },
+        {
+          "heading": "氣體的性質與氣體定律：波以耳、查理、亞佛加厥 (Gas Laws)",
+          "outlineRefs": ["CEc-V.2-1", "CEc-V.2-2", "CEc-V.2-3", "CEc-V.2-4"],
+          "body": "**氣體的性質**：可以壓縮、會擴散、能充滿整個容器。\n**波以耳定律**：定溫時，一定量氣體的壓力與體積成反比，P₁V₁ = P₂V₂。\n**查理定律**：定壓時，一定量氣體的體積與絕對溫度成正比，V₁ / T₁ = V₂ / T₂。\n**亞佛加厥定律**：同溫同壓下，同體積的氣體含有相同的分子數；在 STP（0 ℃、1 atm）下，1 mol 氣體約占 22.4 L。\n**理想氣體方程式**（進階）：PV = nRT，R = 0.082 atm·L/(mol·K)。**分壓定律**（進階）：混合氣體總壓等於各成分氣體分壓的和。\n例：27 ℃、1 atm 的空氣 10 L，在定壓下加熱到 127 ℃，V = 10 × (127 + 273) / (27 + 273) = 10 × 400 / 300 ≈ 13.3 L。\n⚠️ 易錯：氣體定律中的溫度一定要換算成絕對溫度 K；直接用 ℃ 計算會得到錯誤答案。",
+          "formula": "波以耳：P₁V₁ = P₂V₂\n查理：V₁ / T₁ = V₂ / T₂\n理想氣體：PV = nRT",
+          "table": {
+            "headers": ["定律", "固定條件", "關係式", "生活例子"],
+            "rows": [
+              ["波以耳定律", "溫度、氣體量", "PV = 定值", "打氣筒壓縮空氣"],
+              ["查理定律", "壓力、氣體量", "V / T = 定值", "夏天輪胎膨脹"],
+              ["亞佛加厥定律", "溫度、壓力", "V ∝ n", "氣球充氣越多越大"]
+            ]
+          }
+        },
+        {
+          "heading": "反應速率與影響因素 (Reaction Rate)",
+          "outlineRefs": ["CJe-V.2-1", "CJe-V.2-3", "CJe-V.2-4"],
+          "body": "**反應速率**：單位時間內反應物濃度的減少量或生成物濃度的增加量（單位 M/s）。\n**碰撞學說**（進階）：反應物粒子必須以足夠的能量（大於活化能）且方向適當地碰撞，才會發生反應。\n**影響反應速率的因素**：\n• 反應物本性：離子間的反應通常比需要斷裂共價鍵的反應快。\n• 濃度：濃度越高，碰撞頻率越高，速率越快。\n• 溫度：溫度升高，具有足夠能量的粒子比例增加；粗略估計溫度每升高 10 ℃，速率約增為 2–3 倍。\n• 接觸面積：粉末比塊狀反應快，如粉塵爆炸；水泥磨得越細，水化越快。\n• 催化劑：降低活化能、加快反應，本身在反應前後不改變，如 TiO₂ 光觸媒。\n🏗️ 情境：夏季高溫使混凝土凝結加快，需加緩凝劑或降低拌合水溫；冬季低溫則需保溫養護。第 III 型早強水泥就是把熟料磨得更細、增加接觸面積。\n⚠️ 易錯：催化劑只改變反應速率，不改變反應的產量與平衡位置。",
+          "table": {
+            "headers": ["因素", "改變", "速率變化", "營建實例"],
+            "rows": [
+              ["溫度", "升高", "加快", "夏季混凝土凝結快"],
+              ["接觸面積", "增大（磨細）", "加快", "早強水泥細度高"],
+              ["濃度", "增加", "加快", "酸雨濃度越高侵蝕越快"],
+              ["催化劑", "加入", "加快", "TiO₂ 光觸媒分解污染物"]
+            ]
+          }
+        },
+        {
+          "heading": "可逆反應、動態平衡與勒沙特列原理 (Chemical Equilibrium)",
+          "outlineRefs": ["CJe-V.2-5", "CJe-V.2-6", "CJe-V.2-7", "CJe-V.2-8"],
+          "body": "**可逆反應**：正反應與逆反應同時進行，以「⇌」表示。\n**動態平衡**：正反應速率等於逆反應速率時，各物質濃度不再改變，但反應並沒有停止。\n**勒沙特列原理**（進階）：處於平衡的系統受到改變時，平衡會向「**減弱該改變**」的方向移動。\n• 濃度：加入反應物 → 平衡向右；移除生成物 → 平衡向右。\n• 壓力：加壓 → 平衡向氣體分子數較少的一方移動。\n• 溫度：升溫 → 平衡向吸熱方向移動。\n• 催化劑：不改變平衡位置，只加快達到平衡。\n🏗️ 情境：石灰石煅燒 CaCO₃ ⇌ CaO + CO₂ 為吸熱反應，高溫且把 CO₂ 不斷排出窯外，有利於生石灰的生成。\n**平衡常數**（進階）：aA + bB ⇌ cC + dD，Kc = [C]ᶜ[D]ᵈ / ([A]ᵃ[B]ᵇ)；只受溫度影響。\n⚠️ 易錯：達到平衡時反應物與生成物的濃度「不再改變」，不代表兩者濃度「相等」。",
+          "formula": "aA + bB ⇌ cC + dD\nKc = [C]ᶜ[D]ᵈ / ([A]ᵃ[B]ᵇ)",
+          "table": {
+            "headers": ["改變條件", "平衡移動方向", "以 CaCO₃ ⇌ CaO + CO₂（吸熱）為例"],
+            "rows": [
+              ["升高溫度", "向吸熱方向", "向右，生石灰增加"],
+              ["移除 CO₂", "向生成 CO₂ 的方向", "向右，分解更完全"],
+              ["增加壓力", "向氣體分子數少的一方", "向左，不利分解"],
+              ["加入催化劑", "不移動", "只加快達到平衡"]
+            ]
+          }
         }
       ],
       "practices": [
@@ -542,10 +653,11 @@ export const chemistryData: SubjectData = {
     },
     {
       "slug": "acids-bases-salts",
-      "title": "3. ⚡ 酸鹼化學與混凝土**<span className='text-rose-600 font-bold'>中性化</span>**",
-      "desc": "酸鹼理論與 **<span className='text-rose-600 font-bold'>pH 值</span>**計算、混凝土碳化/**<span className='text-rose-600 font-bold'>中性化</span>**機制、**<span className='text-rose-600 font-bold'>酸雨</span>**石材腐蝕、**<span className='text-rose-600 font-bold'>硫酸鹽侵蝕</span>**與鋼筋鈍化膜。",
+      "title": "3. ⚡ 酸鹼化學與混凝土中性化",
+      "desc": "酸鹼理論與 pH 值計算、混凝土碳化/中性化機制、酸雨石材腐蝕、硫酸鹽侵蝕與鋼筋鈍化膜。",
       "status": "done",
       "gradeLevel": 10,
+      "curriculumCode": "108-CJd",
       "covered_question_ids": [],
       "worked_examples": [
         {
@@ -576,21 +688,25 @@ export const chemistryData: SubjectData = {
       ],
       "concepts": [
         {
-          "heading": "酸鹼定義 (**<span className='text-rose-600 font-bold'>阿瑞尼斯</span>**與**<span className='text-rose-600 font-bold'>布忍斯特-勞里</span>**學說)",
+          "heading": "酸鹼定義 (阿瑞尼斯與布忍斯特-勞里學說)",
+          "outlineRefs": ["CJd-V.2-1"],
           "body": "💡 **核心概念解析**：\n酸鹼化學是化學與材料腐蝕的核心。\n- **<span className='text-rose-600 font-bold'>阿瑞尼斯</span>**學說 (Arrhenius)：酸是在水中能解離產生 H⁺ 的物質 (如 HCl, HNO₃, H₂SO₄)；鹼是在水中能解離產生 OH⁻ 的物質 (如 NaOH, Ca(OH)₂)。\n- **<span className='text-rose-600 font-bold'>布忍斯特-勞里</span>**學說 (Brønsted-Lowry)：酸是質子 (H⁺) 的提供者 (Proton Donor)；鹼是質子的接受者 (Proton Acceptor)。"
         },
         {
-          "heading": "溶液 **<span className='text-rose-600 font-bold'>pH 值</span>**計算與水的離子積 (Kw)",
+          "heading": "溶液 pH 值計算與水的離子積 (Kw)",
+          "outlineRefs": ["CJb-V.2-1", "CJd-V.2-1"],
           "body": "💡 **核心概念解析**：\n純水會發生極微量的自體解離：H₂O ⇌ H⁺ + OH⁻。\n- 在 25°C 時，水之離子積常數 Kw = [H⁺] × [OH⁻] = 1.0 × 10⁻¹⁴ M²。\n- pH = -log[H⁺]，pOH = -log[OH⁻]，且 pH + pOH = 14。\n- 中性溶液：pH = 7；酸性溶液：pH < 7；鹼性溶液：pH > 7。\n新拌與硬化混凝土內部孔隙液含有大量 Ca(OH)₂ 與 KOH/NaOH，強鹼性使 **<span className='text-rose-600 font-bold'>pH 值</span>**高達 12.5 ~ 13.5，能使鋼筋表面形成極薄的鈍化保護膜 (Passivation Film, Fe₂O₃)。",
           "formula": "$$\\text{pH} = -\\log_{10}[\\text{H}^+], \\quad K_w = [\\text{H}^+][\\text{OH}^-] = 1.0 \\times 10^{-14} \\text{ (at } 25^\\circ\\text{C)}$$"
         },
         {
-          "heading": "混凝土**<span className='text-rose-600 font-bold'>中性化</span>**（碳化反應）化學與鋼筋防護失效",
+          "heading": "混凝土中性化（碳化反應）化學與鋼筋防護失效",
+          "outlineRefs": ["CJd-V.2-1"],
           "body": "💡 **核心概念解析**：\n大氣中的二氧化碳 (CO₂) 擴散進入混凝土孔隙中，溶解於孔隙水形成碳酸，並與混凝土中的氫氧化鈣 Ca(OH)₂ 發生反應，稱為**<span className='text-rose-600 font-bold'>中性化</span>**或**<span className='text-rose-600 font-bold'>碳化作用</span>** (Carbonation)。\n- 化學反應：Ca(OH)₂ + CO₂ → CaCO₃↓ + H₂O。\n- 碳化危害：當混凝土**<span className='text-rose-600 font-bold'>中性化</span>**深抵鋼筋表面時，孔隙液 **<span className='text-rose-600 font-bold'>pH 值</span>**將降至 9.0 以下，致使鋼筋表面的鹼性鈍化膜溶解破壞，一旦遇到水分與氧氣便會引發鋼筋劇烈電化學銹蝕。",
           "formula": "$$Ca(OH)_2 + CO_2 \\longrightarrow CaCO_3\\downarrow + H_2O$$"
         },
         {
           "heading": "常用建築材料對酸鹼化學環境之耐蝕性比較",
+          "outlineRefs": ["CJd-V.2-1"],
           "body": "💡 **核心概念解析**：\n建築物長年暴露於大氣酸雨（二氧化硫與氮氧化物轉化之硫酸與硝酸）或工業化學環境中，各類建材之離子鍵與共價鍵結構決定其耐腐蝕性。評估混凝土中性化、石灰岩溶蝕與金屬鈍化膜行為，是工程防護與耐久性設計之基石。",
           "table": {
             "headers": [
@@ -640,22 +756,40 @@ export const chemistryData: SubjectData = {
           }
         },
         {
-          "heading": "**<span className='text-rose-600 font-bold'>酸雨</span>** (Acid Rain) 的化學成因與建築石材溶蝕",
+          "heading": "酸雨 (Acid Rain) 的化學成因與建築石材溶蝕",
+          "outlineRefs": ["CMe-V.2-2"],
           "body": "💡 **核心概念解析**：\n正常未受污染雨水因溶解大氣中 CO₂ 呈弱酸性 (pH ≈ 5.6)。當雨水 **<span className='text-rose-600 font-bold'>pH 值</span>**低於 5.0 時即定義為**<span className='text-rose-600 font-bold'>酸雨</span>**。\n- 成因：化石燃料燃燒排放之 SO₂ 與 NOx 在大氣中氧化並溶於水滴，形成硫酸 (H₂SO₄) 與硝酸 (HNO₃)。\n- 石材侵蝕：**<span className='text-rose-600 font-bold'>酸雨</span>**降落至碳酸鹽類建築石材 (如大理石 CaCO₃) 表面時，發生反應：CaCO₃ + H₂SO₄ → CaSO₄ + CO₂↑ + H₂O，生成的石膏 (CaSO₄) 溶解度較高且易剝落，造成古蹟與石材外牆嚴重毀損。"
         },
         {
-          "heading": "地下水**<span className='text-rose-600 font-bold'>硫酸鹽侵蝕</span>** (Sulfate Attack) 與結晶膨脹破壞",
+          "heading": "地下水硫酸鹽侵蝕 (Sulfate Attack) 與結晶膨脹破壞",
+          "outlineRefs": ["CJb-V.2-1"],
           "body": "💡 **核心概念解析**：\n土壤與地下水中的硫酸鹽離子 (SO₄²⁻) 滲入混凝土內部，與水泥水化產生的 Ca(OH)₂ 及水化鋁酸鈣 (C-S-A) 反應，生成遲延型鈣礬石 (Delayed Ettringite) 或石膏 (Gypsum)。結晶生成過程伴隨 2~3 倍的固體體積膨脹，引發混凝土內部產生巨大張應力，導致混凝土開裂崩解。",
           "formula": "$$Ca(OH)_2 + SO_4^{2-} + 2H_2O \\longrightarrow CaSO_4\\cdot 2H_2O \\text{ (石膏結晶膨脹)}$$\\n$$3CaO\\cdot Al_2O_3\\cdot CaSO_4\\cdot 12H_2O + 2SO_4^{2-} + 2Ca^{2+} + 20H_2O \\longrightarrow 3CaO\\cdot Al_2O_3\\cdot 3CaSO_4\\cdot 32H_2O \\text{ (遲延鈣礬石膨脹)}$$"
         },
         {
           "heading": "混凝土碳化深度擴散模型 (Fick's Diffusion Law & Carbonation Depth)",
+          "outlineRefs": [],
           "body": "💡 **核心概念解析**：\n二氧化碳在混凝土孔隙中的擴散過程符合費克第一定律 (Fick's First Law)。**<span className='text-rose-600 font-bold'>中性化</span>**碳化深度 x 與大氣暴露時間 t 的平方根成正比 (x = k · √t)。碳化速率係數 k 受水灰比 (W/C)、環境相對濕度 (RH 50%~70% 時碳化最快) 及保護層緻密性控制。",
           "formula": "$$x = k \\sqrt{t}, \\quad k = f(\\text{W/C}, \\text{RH}, [\\text{CO}_2])$$",
           "steps": [
             "🔹 **第一步**（酚酞指示劑測試）：於新鮮混凝土切面噴灑 1% 酚酞試液，未碳化強鹼區呈紫色，已碳化**<span className='text-rose-600 font-bold'>中性化</span>**區不變色 (無色)。",
             "🔹 **第二步**（壽命推算）：利用 x = k · √t 代入已知保護層厚度 x_cover (如 40 mm)，計算鋼筋周圍被碳化破壞所需的年限 t。"
           ]
+        },
+        {
+          "heading": "水的性質、硬水軟化與水質淨化 (Water Quality & Treatment)",
+          "outlineRefs": ["CFa-V.2-2", "CFa-V.2-3", "CJb-V.2-1"],
+          "body": "**水的性質**：水是極性分子，分子間有氫鍵，因此比熱大、沸點高，而且是很好的溶劑。水在 4 ℃ 時密度最大，結冰時體積約膨脹 9%。\n**水溶液濃度**：重量百分率、ppm（稀薄水溶液中 1 ppm ≈ 1 mg/L）、體積莫耳濃度 M = 溶質莫耳數 / 溶液體積（L）。\n**硬水**：含較多 Ca²⁺、Mg²⁺ 的水。\n• 暫時硬水：含碳酸氫鹽，煮沸即可軟化：Ca(HCO₃)₂ → CaCO₃↓ + H₂O + CO₂↑（熱水器與水壺的水垢）。\n• 永久硬水：含硫酸鹽或氯化物，需加碳酸鈉或用離子交換樹脂軟化。\n• 硬水會使肥皂不易起泡、管線與熱水器結垢。\n**淨化與純化**：自來水廠流程為混凝（加入明礬或多元氯化鋁）→ 沉澱 → 過濾 → 消毒（加氯）。純化可用蒸餾、離子交換、逆滲透（RO）。\n⚠️ 易錯：煮沸只能去除暫時硬度，不能去除永久硬度；逆滲透與蒸餾則可同時去除大部分離子。",
+          "table": {
+            "headers": ["處理步驟", "方法", "目的"],
+            "rows": [
+              ["混凝", "加入明礬、多元氯化鋁", "使細小懸浮微粒凝聚成較大顆粒"],
+              ["沉澱", "靜置", "讓凝聚的顆粒沉降"],
+              ["過濾", "砂濾、活性碳", "去除殘餘懸浮物與異味"],
+              ["消毒", "加氯或臭氧", "殺滅細菌與病原體"],
+              ["軟化／純化", "離子交換、逆滲透、蒸餾", "降低硬度或製造純水"]
+            ]
+          }
         }
       ],
       "practices": [
@@ -800,10 +934,11 @@ export const chemistryData: SubjectData = {
     },
     {
       "slug": "redox",
-      "title": "4. 🌟 **<span className='text-rose-600 font-bold'>氧化還原</span>**與金屬腐蝕防蝕",
-      "desc": "氧化數與電化學反應、鋼筋濕腐蝕化學機制、**<span className='text-rose-600 font-bold'>犧牲陽極</span>**防蝕、**<span className='text-rose-600 font-bold'>熱浸鍍鋅</span>**與電化學脫鹽 ECE 技術。",
+      "title": "4. 🌟 氧化還原與金屬腐蝕防蝕",
+      "desc": "氧化數與電化學反應、鋼筋濕腐蝕化學機制、犧牲陽極防蝕、熱浸鍍鋅與電化學脫鹽 ECE 技術。",
       "status": "done",
       "gradeLevel": 10,
+      "curriculumCode": "108-CJc",
       "covered_question_ids": [],
       "worked_examples": [
         {
@@ -834,20 +969,24 @@ export const chemistryData: SubjectData = {
       ],
       "concepts": [
         {
-          "heading": "**<span className='text-rose-600 font-bold'>氧化還原</span>** Reactions 與氧化數 (Oxidation Number)",
+          "heading": "氧化還原 Reactions 與氧化數 (Oxidation Number)",
+          "outlineRefs": ["CJc-V.2-1"],
           "body": "💡 **核心概念解析**：\n**<span className='text-rose-600 font-bold'>氧化還原</span>**反應伴隨電子的轉移。\n- 氧化 (Oxidation)：物質失去電子，氧化數上升；發生氧化的物質為還原劑 (Reducing Agent)。\n- 還原 (Reduction)：物質獲得電子，氧化數下降；發生還原的物質為氧化劑 (Oxidizing Agent)。\n- 氧化數判定：自由元素為 0 (如 Fe, O₂)；單原子離子等於其電荷 (如 Fe²⁺ 氧化數為 +2)；化合物中 H 通常為 +1，O 通常為 -2。"
         },
         {
           "heading": "鋼筋與建築金屬之電化學腐蝕化學 (Metal Corrosion)",
+          "outlineRefs": ["CJc-V.2-1"],
           "body": "💡 **核心概念解析**：\n金屬腐蝕 (Metal Corrosion) 本質上為局部微小伏打電池的電化學**<span className='text-rose-600 font-bold'>氧化還原</span>**反應。\n- 鋼筋濕腐蝕三要素：鐵金屬、水分 (電解質)、氧氣 (O₂)。\n- 陽極反應 (Anode)：鐵金屬失去電子解離溶出：Fe → Fe²⁺ + 2e⁻ (金屬損耗)。\n- 陰極反應 (Cathode)：溶解氧在鹼性/中性環境下接受電子：O₂ + 2H₂O + 4e⁻ → 4OH⁻。\n- 鐵銹生成：Fe²⁺ 與 OH⁻ 結合生成 Fe(OH)₂，進一步被氧化生成水合三氧化二鐵 (Fe₂O₃·nH₂O，紅銹)，體積膨脹 2~6 倍，導致混凝土開裂剝落。",
           "formula": "$$\\text{陽極反應 (Anode): } Fe \\longrightarrow Fe^{2+} + 2e^-$$\\n$$\\text{陰極反應 (Cathode): } O_2 + 2H_2O + 4e^- \\longrightarrow 4OH^-$$\\n$$\\text{水合氧化鐵銹生成: } Fe^{2+} + 2OH^- \\to Fe(OH)_2 \\xrightarrow{O_2, H_2O} Fe_2O_3\\cdot nH_2O \\text{ (體積膨脹 2}\\sim 6\\text{ 倍)}$$"
         },
         {
-          "heading": "金屬防蝕化學方法：**<span className='text-rose-600 font-bold'>犧牲陽極</span>**法與電化學防護",
+          "heading": "金屬防蝕化學方法：犧牲陽極法與電化學防護",
+          "outlineRefs": ["CJc-V.2-1", "CNc-V.2-4"],
           "body": "💡 **核心概念解析**：\n防止金屬腐蝕化學主要措施：\n1. **<span className='text-rose-600 font-bold'>犧牲陽極</span>**陰極防蝕法 (Sacrificial Anode Cathodic Protection)：利用活性高於鐵的金屬 (如鋅 Zn、鎂 Mg、鋁 Al) 與鋼材電氣連接。鋅金屬優先氧化失去電子 (Zn → Zn²⁺ + 2e⁻)，將電子供給鋼筋，使鋼筋維持在陰極保護狀態 (如**<span className='text-rose-600 font-bold'>熱浸鍍鋅</span>**鋼管)。\n2. 陰極外加電流防護法 (ICCP)：利用外加直流電源，將負極接至被保護鋼筋，正極接至不惰性陽極。\n3. 防蝕塗層：如環氧樹脂塗層鋼筋 (Epoxy-Coated Rebar)，隔絕水與氧氣到達鐵金屬表面。"
         },
         {
           "heading": "常用建築金屬之活性序列、標準電位與防蝕特性比較",
+          "outlineRefs": ["CAa-V.2-5", "CJc-V.2-1"],
           "body": "💡 **核心概念解析**：\n比較常見建築金屬材料的標準還原電位 (E°)、金屬活性與工程防蝕策略。",
           "table": {
             "headers": [
@@ -898,10 +1037,12 @@ export const chemistryData: SubjectData = {
         },
         {
           "heading": "電解與鋼筋電化學脫鹽防蝕 (Electrochemical Chloride Extraction)",
+          "outlineRefs": ["CJc-V.2-1"],
           "body": "💡 **核心概念解析**：\n當海砂或鹽害導致氯離子 (Cl⁻) 滲入混凝土內部破壞鋼筋鈍化膜時，可採用電化學脫鹽技術 (ECE)。\n- 原理：利用外加電場，將混凝土內鋼筋接為陰極 (負極)，外部設置陽極網與電解質溶液。帶負電的氯離子 (Cl⁻) 在電場作用下受陰極排斥並向外部陽極遷移排出混凝土，同時陰極反應產生 OH⁻，可重新補足鋼筋周圍的鹼性保護環境。"
         },
         {
-          "heading": "異種金屬**<span className='text-rose-600 font-bold'>電位差腐蝕</span>** (Galvanic Corrosion) 與工程隔離對策",
+          "heading": "異種金屬電位差腐蝕 (Galvanic Corrosion) 與工程隔離對策",
+          "outlineRefs": ["CNc-V.2-4"],
           "body": "💡 **核心概念解析**：\n當兩種標準電位差異較大的金屬（如鋁與碳鋼、銅與鐵）在電解質（如雨水、潮濕空氣）存在下直接接觸時，電位較負的活潑金屬將成為陽極並發生急劇加速腐蝕，此現象稱為**<span className='text-rose-600 font-bold'>電位差腐蝕</span>** (Galvanic Corrosion)。",
           "formula": "$$\\Delta E^\\circ = E^\\circ_{\\text{cathode}} - E^\\circ_{\\text{anode}} \\quad (\\Delta E^\\circ > 0 \\text{ 驅動自發腐蝕)}$$",
           "steps": [
@@ -911,7 +1052,8 @@ export const chemistryData: SubjectData = {
           ]
         },
         {
-          "heading": "鋼構**<span className='text-rose-600 font-bold'>熱浸鍍鋅</span>** (Hot-Dip Galvanizing) 雙重化學保護機制",
+          "heading": "鋼構熱浸鍍鋅 (Hot-Dip Galvanizing) 雙重化學保護機制",
+          "outlineRefs": ["CJc-V.2-1"],
           "body": "💡 **核心概念解析**：\n**<span className='text-rose-600 font-bold'>熱浸鍍鋅</span>**是將鋼構件浸入 450°C 熔融鋅液中。鋅與鐵表面發生擴散反應生成多層鋅鐵合金層 (Gamma, Delta, Zeta 相) 及純鋅外層 (Eta 相)。",
           "table": {
             "headers": [
@@ -935,6 +1077,22 @@ export const chemistryData: SubjectData = {
                 "腐蝕速率 1 ~ 3 μm/年",
                 "標準 85 μm 鍍鋅層在大氣環境可防銹 30 ~ 50 年以上"
               ]
+            ]
+          }
+        },
+        {
+          "heading": "化學電池原理與常見電池 (Electrochemical Cells)",
+          "outlineRefs": ["CNc-V.2-4", "CNc-V.2-5", "CNc-V.2-6"],
+          "body": "**化學電池**把化學能轉換成電能。活性較大的金屬當**負極**（陽極），發生氧化而放出電子；活性較小者當**正極**（陰極），發生還原。電子經外電路由負極流向正極，**鹽橋**則讓離子移動、維持兩杯溶液的電中性。\n**鋅銅電池**：負極 Zn → Zn²⁺ + 2e⁻；正極 Cu²⁺ + 2e⁻ → Cu；標準狀態電壓約 1.10 V。\n**常見電池**：乾電池（鋅錳電池，約 1.5 V）、鹼性電池（以 KOH 為電解質，約 1.5 V，容量較大）、鉛蓄電池（汽車用，每格約 2 V，可充電）、鋰離子電池（約 3.6–3.7 V，可充電，用於手機與建築儲能系統）、燃料電池（H₂ 與 O₂ 反應生成水並發電）。\n**與腐蝕的關係**：鋼筋生鏽其實就是在混凝土中「意外形成」的小電池；犧牲陽極法則是刻意用活性大的鋅、鎂當負極保護鋼材。\n**實驗**：以鹽水或檸檬汁為電解質，插入銅片與鋅片，即可組成電池點亮 LED。\n⚠️ 易錯：電池中「陽極」發生氧化，在原電池中是負極；不要把「陽極」和「正極」混為一談。",
+          "formula": "負極（陽極）：Zn → Zn²⁺ + 2e⁻\n正極（陰極）：Cu²⁺ + 2e⁻ → Cu\n全反應：Zn + Cu²⁺ → Zn²⁺ + Cu（約 1.10 V）",
+          "table": {
+            "headers": ["電池", "電壓（約）", "可否充電", "用途"],
+            "rows": [
+              ["乾電池（鋅錳）", "1.5 V", "否", "遙控器、手電筒"],
+              ["鹼性電池", "1.5 V", "否", "耗電量較大的小家電"],
+              ["鉛蓄電池", "2 V／格", "可", "汽車、緊急照明"],
+              ["鋰離子電池", "3.6–3.7 V", "可", "手機、電動車、建築儲能"],
+              ["燃料電池", "依堆疊", "持續供應燃料", "備用電源、氫能車"]
             ]
           }
         }
@@ -1075,9 +1233,10 @@ export const chemistryData: SubjectData = {
     {
       "slug": "organic-chemistry",
       "title": "5. ⚡ 有機化學與建築高分子樹脂塗料",
-      "desc": "有機化合物分類、高分子樹脂 (Epoxy, PU, Acrylic, Silicone) 化學、**<span className='text-rose-600 font-bold'>VOCs</span>** 逸散與高分子光降解/水解老化。",
+      "desc": "有機化合物分類、高分子樹脂 (Epoxy, PU, Acrylic, Silicone) 化學、VOCs 逸散與高分子光降解/水解老化。",
       "status": "done",
       "gradeLevel": 10,
+      "curriculumCode": "108-CJf",
       "covered_question_ids": [],
       "worked_examples": [
         {
@@ -1109,19 +1268,23 @@ export const chemistryData: SubjectData = {
       "concepts": [
         {
           "heading": "有機烴類分類、命名與同分異構物",
+          "outlineRefs": ["CJf-V.2-1", "CJf-V.2-2", "CJf-V.2-3"],
           "body": "💡 **核心概念解析**：\n有機化學以碳骨架為核心。\n- 烴類 (Hydrocarbons)：僅由碳與氫組成的化合物。\n  1. 烷類 (Alkane)：全單鍵飽和烴，通式 CnH₂n⁺₂ (如甲烷 CH₄、丙烷 C₃H₈)。\n  2. 烯類 (Alkene)：含 C=C 雙鍵不飽和烴，通式 CnH₂n (如乙烯 C₂H₄)。\n  3. 炔類 (Alkyne)：含 C≡C 三鍵不飽和烴，通式 CnH₂n⁻₂ (如乙炔 C₂H₂，用於氣切焊接)。\n  4. 芳香烴 (Aromatic Hydrocarbons)：含苯環結構 (如苯 C₆H₆、甲苯 C₇H₈)，為傳統油性塗料主要溶劑，具毒性與揮發性。",
           "formula": "$$\\text{烷類 (Alkane): } C_n H_{2n+2} \\quad|\\quad \\text{烯類 (Alkene): } C_n H_{2n} \\quad|\\quad \\text{炔類 (Alkyne): } C_n H_{2n-2}$$"
         },
         {
           "heading": "建築高分子塗料與樹脂 (Paints & Resins) 的化學合成與結構",
+          "outlineRefs": ["CJf-V.2-6", "CMc-V.2-4"],
           "body": "💡 **核心概念解析**：\n高分子化合物由小分子單體 (Monomer) 經聚合反應 (Polymerization) 形成巨量分子。\n- **<span className='text-rose-600 font-bold'>加成聚合</span>** (Addition Polymerization)：單體含雙鍵開環加成，無副產物 (如聚氯乙烯 PVC、聚乙烯 PE、丙烯酸樹脂 Acrylics)。\n- **<span className='text-rose-600 font-bold'>縮合聚合</span>** (Condensation Polymerization)：單體官能基反應釋放小分子如水或醇 (如聚酯 Polyester、酚酚樹脂)。\n- **<span className='text-rose-600 font-bold'>熱塑性</span>** (Thermoplastic) vs **<span className='text-rose-600 font-bold'>熱固性</span>** (Thermosetting)：\n  1. **<span className='text-rose-600 font-bold'>熱塑性</span>**：線狀或支鏈結構，加熱可軟化重複加工 (如 PVC 水管、PE 膜)。\n  2. **<span className='text-rose-600 font-bold'>熱固性</span>**：高交聯三維網狀結構，加熱不軟化，化學強度高 (如環氧樹脂 Epoxy、聚氨酯 PU 防水材)。"
         },
         {
-          "heading": "塗料中**<span className='text-indigo-600 font-bold'>揮發性有機化合物</span>** (**<span className='text-rose-600 font-bold'>VOCs</span>**) 的化學逸散與環境健康影響",
+          "heading": "塗料中揮發性有機化合物 (VOCs) 的化學逸散與環境健康影響",
+          "outlineRefs": ["CMe-V.2-2"],
           "body": "💡 **核心概念解析**：\n塗料與膠粘劑施工後，有機溶劑經由擴散與蒸發作用釋放至室內空間。\n- 常見有害 **<span className='text-rose-600 font-bold'>VOCs</span>** 化學成分：\n  1. **<span className='text-indigo-600 font-bold'>甲醛 (HCHO)</span>**：來自尿醛樹脂 (UF) 膠合板、木工膠，具刺激性與致癌性。\n  2. 苯、甲苯、二甲苯 (BTEX)：油性漆稀釋劑，損害中樞神經與造血機能。\n  3. 游離異氰酸酯 (TDI/MDI)：低品質 PU 塗料殘留單體，具強烈呼吸道誘發過敏性。"
         },
         {
           "heading": "常用建築樹脂塗料 (Epoxy, PU, Acrylic, Silicone) 之化學與物理比較",
+          "outlineRefs": ["CMc-V.2-4"],
           "body": "💡 **核心概念解析**：\n比較建築常用四種高分子樹脂塗料的化學結構特徵、力學彈性、耐候性與建築應用場合。",
           "table": {
             "headers": [
@@ -1165,10 +1328,12 @@ export const chemistryData: SubjectData = {
         },
         {
           "heading": "有機高分子材料的高分子老化（UV 紫外光降解與水解）機制",
+          "outlineRefs": ["CMc-V.2-4"],
           "body": "💡 **核心概念解析**：\n建築高分子外牆漆與防水膜在戶外陽光與雨水作用下易發生**<span className='text-rose-600 font-bold'>光化學老化</span>**與水解降解。\n- 光降解 (Photo-degradation)：太陽光中 UV 紫外光子能量高於碳-碳單鍵 (C-C) 鍵能，引發高分子自由基斷鏈化學反應，導致塗膜開裂、粉化 (Chalking) 與變色。\n- 水解作用 (Hydrolysis)：聚酯或酯類高分子在酸鹼水溶液作用下發生酯鍵斷裂，導致彈性結構破壞。"
         },
         {
           "heading": "建築塑膠管材 (PVC, CPVC, PEX, HDPE) 化學結構與工程特徵",
+          "outlineRefs": ["CMc-V.2-4"],
           "body": "💡 **核心概念解析**：\n現代建築給排水與地暖系統廣泛採用塑膠高分子管材替代傳統金屬管，以防範生銹與結垢。",
           "table": {
             "headers": [
@@ -1206,9 +1371,26 @@ export const chemistryData: SubjectData = {
           }
         },
         {
-          "heading": "**<span className='text-rose-600 font-bold'>阻燃劑</span>**化學 (Flame Retardants) 與建築高分子防火等級",
+          "heading": "阻燃劑化學 (Flame Retardants) 與建築高分子防火等級",
+          "outlineRefs": [],
           "body": "💡 **核心概念解析**：\n有機高分子建材具易燃性。添加**<span className='text-rose-600 font-bold'>阻燃劑</span>**可提高極限氧指數 (LOI > 26)。阻燃化學機制包括：\n1. 吸熱冷凝機制：氫氧化鋁 Al(OH)₃ 或氫氧化鎂 Mg(OH)₂ 受熱分解釋放水蒸氣並吸收大量熱能。\n2. 膨脹炭化層機制：磷氮系**<span className='text-rose-600 font-bold'>阻燃劑</span>**受熱形成緻密多孔焦炭層 (Char Layer)，隔絕氧氣與熱量傳導。",
           "formula": "$$2Al(OH)_3 \\xrightarrow{\\Delta \\ge 200^\\circ\\text{C}} Al_2O_3 + 3H_2O\\uparrow \\quad (\\Delta H = +1050 \\text{ J/g 吸熱阻燃)}$$"
+        },
+        {
+          "heading": "生活中的化學：肥皂與清潔劑、衣料纖維、食品與藥物 (Chemistry in Daily Life)",
+          "outlineRefs": ["CMc-V.2-1", "CMc-V.2-2", "CMc-V.2-3", "CMc-V.2-5", "CMc-V.2-8"],
+          "body": "**肥皂**：油脂與氫氧化鈉作用生成脂肪酸鈉（肥皂）與甘油，稱為**皂化反應**。肥皂分子一端親水、一端親油，在水中形成**微胞**把油污包住而洗去。合成清潔劑在硬水中仍能去污，但部分成分不易被微生物分解。\n**衣料纖維**：天然纖維包括棉、麻（纖維素）與羊毛、蠶絲（蛋白質）；合成纖維如耐綸、聚酯，強度高、易乾。工地防護衣常使用阻燃或高強度纖維。\n**食品與化學**：醣類、蛋白質、油脂提供能量與身體所需材料，維生素與礦物質調節生理機能；食品添加物必須依法定種類與用量使用。\n**藥物與化學**：阿斯匹靈可止痛退燒，抗生素可抑制細菌；藥物須依醫囑使用，濫用抗生素會產生抗藥性。\n**鼻涕蟲實驗**：在聚乙烯醇（PVA）膠水中加入硼砂溶液，分子鏈之間形成交聯，變成黏彈性的高分子，說明「交聯」會使高分子變稠、變有彈性。\n⚠️ 易錯：肥皂在硬水中會與 Ca²⁺、Mg²⁺ 生成不溶的沉澱（皂垢），因此去污力下降。",
+          "formula": "油脂 + 3NaOH → 3 脂肪酸鈉（肥皂） + 甘油",
+          "table": {
+            "headers": ["主題", "關鍵化學觀念", "生活例子"],
+            "rows": [
+              ["肥皂", "皂化反應、微胞", "洗手去油污"],
+              ["合成清潔劑", "硬水中仍可去污", "洗衣精、洗碗精"],
+              ["纖維", "纖維素、蛋白質、合成高分子", "棉 T 恤、羊毛衣、聚酯防護衣"],
+              ["高分子交聯", "PVA 與硼砂形成交聯", "鼻涕蟲實驗"],
+              ["藥物", "有效成分、劑量與抗藥性", "止痛藥、抗生素"]
+            ]
+          }
         }
       ],
       "practices": [
@@ -1348,10 +1530,11 @@ export const chemistryData: SubjectData = {
     },
     {
       "slug": "environmental-chemistry",
-      "title": "6. 📚 環境化學與建材**<span className='text-rose-600 font-bold'>碳足跡</span>**",
-      "desc": "大氣與水體環境化學、**<span className='text-rose-600 font-bold'>溫室效應</span>**、建材**<span className='text-rose-600 font-bold'>碳足跡</span>** LCA、固碳混凝土、低碳水泥與室內空氣品質 IAQ。",
+      "title": "6. 📚 環境化學與建材碳足跡",
+      "desc": "大氣與水體環境化學、溫室效應、建材碳足跡 LCA、固碳混凝土、低碳水泥與室內空氣品質 IAQ。",
       "status": "done",
       "gradeLevel": 10,
+      "curriculumCode": "108-CMe",
       "covered_question_ids": [],
       "worked_examples": [
         {
@@ -1382,20 +1565,24 @@ export const chemistryData: SubjectData = {
       ],
       "concepts": [
         {
-          "heading": "**<span className='text-rose-600 font-bold'>溫室效應</span>** (Greenhouse Effect) 與大氣化學",
+          "heading": "溫室效應 (Greenhouse Effect) 與大氣化學",
+          "outlineRefs": ["CMe-V.2-2", "CNb-V.2-1"],
           "body": "💡 **核心概念解析**：\n大氣層中部分氣體能吸收地表反射的長波紅外線輻射，阻止熱量散逸至外太空，維繫地表平均溫度，此現象稱為**<span className='text-rose-600 font-bold'>溫室效應</span>**。\n- 主要溫室氣體與全球暖化潛勢 (GWP, 以 CO₂ = 1 為基準)：\n  1. 二氧化碳 (CO₂)：GWP = 1，大氣中總量最大，主要源自化石燃料燃燒與水泥煅燒。\n  2. 甲烷 (CH₄)：GWP ≈ 28~36，源自有機廢棄物堆肥、天然氣開採與畜牧。\n  3. 氧化亞氮 (N₂O)：GWP ≈ 265~298，源自化肥使用與工業排放。\n  4. 氟氯碳化物 (CFCs / HFCs)：GWP 可高達數千至上萬，源自冷氣空調制冷劑與保溫發泡劑。"
         },
         {
-          "heading": "建築材料**<span className='text-rose-600 font-bold'>碳足跡</span>** (Carbon Footprint of Building Materials) 與化學排放",
+          "heading": "建築材料碳足跡 (Carbon Footprint of Building Materials) 與化學排放",
+          "outlineRefs": ["CNa-V.2-1"],
           "body": "💡 **核心概念解析**：\n建築產業碳排放占全球總碳排約 39%，其中建材製造階段的「**<span className='text-rose-600 font-bold'>隱含碳</span>** (Embodied Carbon)」占極大比例。\n- 建材**<span className='text-rose-600 font-bold'>碳足跡</span>** (Carbon Footprint)：指產品在整個生命週期 (LCA) 或「搖籃到大門 (Cradle-to-Gate)」階段產生的溫室氣體排放總量 (以 kg CO₂e 表示)。\n- 水泥製造的化學碳排放：在石灰石煅燒過程中發生分解反應：CaCO₃ (石灰石) → CaO (生石灰) + CO₂↑。此化學脫碳反應產生的 CO₂ 占水泥生產總碳排的 60% 以上，其餘 40% 源自煅燒高溫 (1450°C) 燃料燃燒。",
           "formula": "$$\\text{碳排放量 (kg CO}_2\\text{e)} = \\text{活動數據 (Activity Data)} \\times \\text{碳排放係數 (Emission Factor)}$$"
         },
         {
-          "heading": "低碳水泥、固碳混凝土 (Carbon-Curing) 與**<span className='text-rose-600 font-bold'>地質聚合物</span>** (Geopolymer)",
+          "heading": "低碳水泥、固碳混凝土 (Carbon-Curing) 與地質聚合物 (Geopolymer)",
+          "outlineRefs": ["CNa-V.2-1"],
           "body": "💡 **核心概念解析**：\n建築界為達成淨零碳排 (Net Zero) 推出的綠色化學減碳技術：\n1. 卜特蘭混合水泥：以水粹爐石粉 (GGBS) 或飛灰 (Fly Ash) 替代部分水泥熟料，可直接減少石灰石煅燒的 CO₂ 化學排放。\n2. 固碳混凝土 (Carbon Capture & Mineralization)：在混凝土拌和過程中注入二氧化碳氣體，CO₂ 與水泥中的鈣離子化學結合生成奈米級 CaCO₃ 晶體，既能固碳封存又能提高早期強度。\n3. **<span className='text-rose-600 font-bold'>地質聚合物</span>** (Geopolymer)：利用鹼激發劑 (如水玻璃 K₂SiO₃ + KOH) 激發富含矽鋁的工業副產品 (爐石/飛灰)，完全不使用**<span className='text-rose-600 font-bold'>波特蘭水泥</span>**熟料，減碳幅度可達 70~80%。"
         },
         {
-          "heading": "常見建築結構與裝修材料之**<span className='text-rose-600 font-bold'>碳足跡</span>**與環境效應比較",
+          "heading": "常見建築結構與裝修材料之碳足跡與環境效應比較",
+          "outlineRefs": ["CNa-V.2-1"],
           "body": "💡 **核心概念解析**：\n比較常見建築材料在製造階段的**<span className='text-rose-600 font-bold'>碳足跡</span>**排放強度、主要碳排放來源與減碳潛力。",
           "table": {
             "headers": [
@@ -1439,11 +1626,13 @@ export const chemistryData: SubjectData = {
           }
         },
         {
-          "heading": "室內空氣品質 (IAQ) 化學：**<span className='text-indigo-600 font-bold'>甲醛 (HCHO)</span>**、苯系物與氡氣控制",
+          "heading": "室內空氣品質 (IAQ) 化學：甲醛 (HCHO)、苯系物與氡氣控制",
+          "outlineRefs": ["CFa-V.2-5", "CMe-V.2-2"],
           "body": "💡 **核心概念解析**：\n室內化學污染物治理是綠色建築重要一環。\n- 甲醛 (Formaldehyde, HCHO)：游離甲醛刺鼻且致癌，源自木作板材脲甲醛樹脂膠。防護方法包括採用 E0/F1 級板材與水性**<span className='text-rose-600 font-bold'>光觸媒</span>** (TiO₂) 催化分解反應 (HCHO + O₂ → CO₂ + H₂O)。\n- 氡氣 (Radon-222, ²²²Rn)：無色無味的放射性惰性氣體，源自花崗岩、磚石建材中微量鈾元素 (²³⁸U) 衰變鏈。防護方法為強化地下室與室內機械通風。"
         },
         {
           "heading": "臭氧層破壞化學與空調低 GWP 環保冷媒演進",
+          "outlineRefs": ["CMe-V.2-2"],
           "body": "💡 **核心概念解析**：\n傳統氟氯碳化物 (CFCs / HCFCs 如 R-22) 逸散至平流層後，受紫外光照射釋放氯自由基 (Cl·)，強烈催化破壞臭氧層 (Cl· + O₃ → ClO· + O₂)。現代綠建築空調全面改用臭氧破壞潛勢 ODP = 0 且全球暖化潛勢低 (Low GWP) 的新一代冷媒 (如 R-32, R-1234yf)。",
           "table": {
             "headers": [
@@ -1486,9 +1675,55 @@ export const chemistryData: SubjectData = {
           }
         },
         {
-          "heading": "建築生命週期評估 (LCA) 雙指標：**<span className='text-rose-600 font-bold'>隱含碳</span>** (Embodied) vs **<span className='text-rose-600 font-bold'>營運碳</span>** (Operational)",
+          "heading": "建築生命週期評估 (LCA) 雙指標：隱含碳 (Embodied) vs 營運碳 (Operational)",
+          "outlineRefs": ["CNa-V.2-1"],
           "body": "💡 **核心概念解析**：\n建築總生命週期碳排放包含興建階段的「**<span className='text-rose-600 font-bold'>隱含碳</span>**」與數十年使用期的「**<span className='text-rose-600 font-bold'>營運碳</span>**」。隨著空調與照明能源效率提升，**<span className='text-rose-600 font-bold'>隱含碳</span>**佔建築全生命週期碳排的比重已由原本的 20% 升至 50% 以上。推動低碳建材與預鑄工法 (Off-site Construction) 成為建築減碳關鍵。",
           "formula": "$$\\text{Carbon}_{\\text{LCA}} = \\text{Embodied (Material+Transport+Const)} + \\text{Operational (Energy+Water)} \\times \\text{Years}$$"
+        },
+        {
+          "heading": "化石燃料、石油分餾與汽油辛烷值 (Fossil Fuels)",
+          "outlineRefs": ["CNc-V.2-1", "CNc-V.2-2", "CNc-V.2-3"],
+          "body": "**化石燃料**：煤、石油、天然氣、頁岩油，由古代生物遺骸在地層中經長時間高溫高壓形成，屬於**不可再生能源**。\n**石油分餾**：利用各成分沸點不同，在分餾塔中分離。由塔頂到塔底（沸點由低到高、碳數由少到多）依序為：石油氣（液化石油氣）、汽油、煤油（航空燃油）、柴油、重油，塔底殘餘物為**瀝青**，用於鋪路與屋頂防水。\n**烴的燃燒**：完全燃燒生成 CO₂ 與 H₂O；氧氣不足時不完全燃燒會產生**一氧化碳 CO**（劇毒），所以瓦斯熱水器必須安裝在通風良好的位置。\n**辛烷值**：汽油抗震爆能力的指標，以異辛烷為 100、正庚烷為 0。95 無鉛汽油代表抗震爆性能相當於含 95% 異辛烷、5% 正庚烷的混合物。\n⚠️ 易錯：辛烷值是「抗震爆能力」的指標，不代表汽油中真的含有 95% 的異辛烷，也不代表熱值較高。",
+          "formula": "完全燃燒：CₓHᵧ + (x + y/4) O₂ → x CO₂ + (y/2) H₂O",
+          "table": {
+            "headers": ["分餾產物", "碳數（約）", "沸點範圍（約）", "用途"],
+            "rows": [
+              ["石油氣", "C1–C4", "< 40 ℃", "液化石油氣（桶裝瓦斯）"],
+              ["汽油", "C5–C12", "40–200 ℃", "汽機車燃料"],
+              ["煤油", "C12–C16", "150–275 ℃", "航空燃油"],
+              ["柴油", "C15–C18", "250–350 ℃", "柴油車、施工機具、發電機"],
+              ["重油", "C18 以上", "> 350 ℃", "船舶與工業燃料"],
+              ["瀝青", "殘餘物", "—", "道路鋪面、屋頂防水"]
+            ]
+          }
+        },
+        {
+          "heading": "替代能源與臺灣的再生能源 (Alternative Energy in Taiwan)",
+          "outlineRefs": ["CNc-V.2-7", "CNc-V.2-8"],
+          "body": "**替代能源**：太陽能（太陽光電、太陽熱水器）、風力（陸域、離岸風電）、水力、地熱、生質能、氫能與燃料電池、海洋能（潮汐、波浪、溫差、海流）。\n**臺灣的條件**：\n• 日照充足，適合屋頂型與地面型太陽光電。\n• 臺灣海峽冬季東北季風強勁，是發展**離岸風電**的優良場址。\n• 地熱資源集中於大屯火山群與宜蘭等地。\n• 黑潮流經東部外海，具有海流發電潛力。\n**建築應用**：屋頂太陽光電、建築整合型光電（BIPV，把光電板當外牆或採光罩）、太陽能熱水器，搭配儲能電池與智慧電網。\n**限制與配套**：再生能源多具**間歇性**（日夜、季風），且涉及土地使用與生態影響，需要搭配儲能、電網調度與節能一起推動。\n⚠️ 易錯：再生能源也有環境衝擊，例如光電板廢棄回收、風機對鳥類與漁業的影響；評估時要看全生命週期。",
+          "table": {
+            "headers": ["能源", "臺灣的優勢", "主要限制", "建築或都市應用"],
+            "rows": [
+              ["太陽光電", "日照充足", "日夜與天氣變化", "屋頂光電、BIPV"],
+              ["離岸風電", "臺灣海峽季風強", "施工與維運成本、生態影響", "供電給城市電網"],
+              ["地熱", "火山與溫泉地區", "區位受限", "區域供熱、溫泉建築"],
+              ["生質能", "農林廢棄物", "收集運輸成本", "沼氣發電"]
+            ]
+          }
+        },
+        {
+          "heading": "水汙染、土壤汙染與自然界的物質循環 (Pollution & Material Cycles)",
+          "outlineRefs": ["CMe-V.2-1", "CMe-V.2-3", "CFa-V.2-1", "CFa-V.2-4", "CFa-V.2-6"],
+          "body": "**物質循環**：碳循環（光合作用吸收 CO₂，呼吸、燃燒與分解釋放 CO₂；混凝土碳化也會緩慢吸收 CO₂）、氮循環、水循環。\n**土壤**：岩石風化並混合有機質形成，成分包含礦物、有機質、水與空氣。黏土是製造磚、瓦、陶瓷的原料。\n**海洋資源**：食鹽、鎂、溴、深層海水，以及海洋能源。\n**水汙染**：\n• 有機物分解耗氧，BOD（生化需氧量）越高代表汙染越嚴重。\n• 優養化：氮、磷過多使藻類大量繁殖，水中缺氧。\n• 重金屬：鎘、汞、鉛等會累積在生物體內。\n• 工地廢水含高鹼性水泥漿與泥沙，須沉澱、中和後才能排放。\n**土壤汙染**：重金屬、油品洩漏、廢棄物不當掩埋。整治方法有客土、翻轉稀釋、化學淋洗、生物復育；土地開發前應調查土壤與地下水汙染。\n⚠️ 易錯：BOD 是「被微生物分解有機物所需的氧量」，數值越大表示水中有機汙染越多，而不是水中含氧越多。",
+          "table": {
+            "headers": ["汙染類型", "主要來源", "指標或影響", "防治方法"],
+            "rows": [
+              ["有機物汙染", "生活汙水、畜牧廢水", "BOD 升高、水中缺氧", "汙水處理廠、截流"],
+              ["優養化", "肥料、清潔劑中的氮磷", "藻類大量繁殖", "減少氮磷排放"],
+              ["重金屬", "工業廢水、廢棄物", "生物累積、危害健康", "源頭管制、土壤整治"],
+              ["工地廢水", "水泥漿、泥沙", "pH 偏高、混濁", "沉澱池、中和後排放"]
+            ]
+          }
         }
       ],
       "practices": [

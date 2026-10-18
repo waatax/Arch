@@ -7,6 +7,7 @@ import { ArchitecturalSubjectIcon } from '@/components/ui/ArchitecturalIcons';
 import SubjectTopicExplorer from '@/components/discovery/SubjectTopicExplorer';
 import SubjectQuickSwitcher from '@/components/discovery/SubjectQuickSwitcher';
 import SubjectContinueBanner from '@/components/discovery/SubjectContinueBanner';
+import SubjectCurriculumMap from '@/components/discovery/SubjectCurriculumMap';
 
 export function generateStaticParams() {
   return allSubjects.map((subject) => ({ subject: subject.slug }));
@@ -164,6 +165,9 @@ export default async function SubjectPage({ params }: { params: Promise<{ subjec
       <section className="space-y-4">
         <SubjectConstellationCanvas subjectSlug={subject.slug} showTitleHeader={true} />
       </section>
+
+      {/* 官方課綱／統測大綱單元 × 本科主題對照 */}
+      <SubjectCurriculumMap subject={subject} />
 
       {/* Topics Syllabus Section with Explorer */}
       <section className="space-y-6">

@@ -12,6 +12,7 @@ export const materialsData: SubjectData = {
       "desc": "掌握台灣綠建材四大標章體系（生態、健康、高性能、再生）、低碳水泥（PLC/高爐水泥/飛灰）與循環營建材料評估標準。",
       "status": "done",
       "gradeLevel": 10,
+      "curriculumCode": "TCTE115-MT8",
       "examHitRate": 4,
       "step0Prerequisites": [
         "內政部建築研究所綠建材標章評定基準",
@@ -45,6 +46,7 @@ export const materialsData: SubjectData = {
       "concepts": [
         {
           "heading": "台灣綠建材標章四大分類體系",
+          "outlineRefs": ["MT8.1"],
           "body": "依據內政部建研所規範，綠建材標章分為四大類：(1) 生態綠建材（採用天然竹木或無匱乏危機資源）；(2) 健康綠建材（經小型釋放腔檢驗，低甲醛與低 TVOC 逸散）；(3) 高性能綠建材（具備高隔音、高隔熱節能或透水性機能）；(4) 再生綠建材（利用營建廢棄物或工業副產物回收製造，符合再生材料含量比例）。",
           "formula": "$$\\text{TVOC 逸散速率} \\le 0.19 \\text{ mg}/(\\text{m}^2\\cdot\\text{h}), \\quad \\text{HCHO 逸散速率} \\le 0.05 \\text{ mg}/(\\text{m}^2\\cdot\\text{h})$$",
           "table": {
@@ -84,10 +86,12 @@ export const materialsData: SubjectData = {
         },
         {
           "heading": "低碳水泥與卜特蘭石灰石水泥 (PLC)",
+          "outlineRefs": ["MT8.1", "MT8.2"],
           "body": "傳統卜特蘭水泥熟料鍛燒排放大量 CO₂。現代低碳水泥透過摻入 5%~15% 細磨石灰石粉製成卜特蘭石灰石水泥 (Portland-Limestone Cement, Type IL)，或摻入高爐水淬爐石粉 (GGBS)、燃煤飛灰 (Fly Ash) 替代熟料，可顯著降低熟料比例與碳排放達 10%~40%，且微細粉可改善混凝土後期緻密性與抗硫酸鹽侵蝕能力。"
         },
         {
           "heading": "循環營建與再生骨材應用規範",
+          "outlineRefs": ["MT8.1"],
           "body": "營建廢棄混凝土經破碎、篩分、除雜後製成再生粒料。由於再生骨材孔隙率較大、吸水率高（通常粗粒料吸水率 > 5%），在混凝土配比時需額外預先浸水潤濕並適度調整水膠比，確保坍度與 28 天抗壓強度符合設計要求。"
         }
       ],
@@ -155,9 +159,10 @@ export const materialsData: SubjectData = {
     {
       "slug": "basic-properties",
       "title": "1. 材料與試驗概論與基本性質",
-      "desc": "材料分類規格、真密度/體積密度/孔隙率、吸水率與含水率、應力應變關係、泊松比、硬度與衝擊韌性。\n\n🔥 V6.0 考前秒殺秘訣：此核心概念統測出題率極高，建議善用圖解與鷹架提示反覆練習！",
+      "desc": "材料分類規格、真密度/體積密度/孔隙率、吸水率與含水率、應力應變關係、泊松比、硬度與衝擊韌性。",
       "status": "done",
       "gradeLevel": 10,
+      "curriculumCode": "TCTE115-MT1",
       "examHitRate": 4,
       "step0Prerequisites": [
         "材料質量與體積基本物理量測方法",
@@ -239,6 +244,7 @@ export const materialsData: SubjectData = {
       "concepts": [
         {
           "heading": "材料與試驗總論與品質管理體系",
+          "outlineRefs": ["MT1.1", "MT1.2", "MT1.7"],
           "body": "土木與建築材料為工程結構之根本。材料品質管制作業遵循 <span className=\"text-indigo-600 font-bold\">CNS</span> (中華民國國家標準) 與 <span className=\"text-indigo-600 font-bold\">ASTM</span> (美國材料與試驗協會) 規範。試驗數據管理需進行測定值精度計算、離群值剔除與數據圖表化分析（如正態分布與標準差 s 控管）。",
           "steps": [
             "試體抽樣 (Sampling)：依批量隨機抽樣，確保試體具備統計代表性。",
@@ -248,6 +254,7 @@ export const materialsData: SubjectData = {
         },
         {
           "heading": "物理性質指標與密度體系",
+          "outlineRefs": ["MT1.3", "MT1.8"],
           "body": "建築材料的物理性質由密實度、<span className=\"text-rose-600 font-bold\">孔隙率</span> (Porosity)、<span className=\"text-rose-600 font-bold\">含水率</span> (Moisture Content) 及比重 (Specific Gravity) 決定。材料密度劃分為真密度 (True Density)、<span className=\"text-rose-600 font-bold\">表觀密度</span> (Apparent Density) 與體積密度 (Bulk Density)。",
           "formula": "$$\\rho_b = \\frac{W}{V}, \\quad P = \\left(1 - \\frac{\\rho_b}{\\rho_s}\\right) \\times 100\\%, \\quad \\omega = \\frac{W_w - W_d}{W_d} \\times 100\\%$$",
           "table": {
@@ -281,11 +288,22 @@ export const materialsData: SubjectData = {
         },
         {
           "heading": "力學性質與應力-應變關係 (Stress-Strain Diagram)",
-          "body": "材料受外力作用時呈現應力與應變的變化關係。經典拉伸曲線包含比例限度 (Proportional Limit)、彈性限度 (Elastic Limit)、降伏點 (Yield Point)、抗拉極限強度 (Ultimate Tensile Strength, UTS) 與斷裂破壞點。\n\n### 🔗 跨學科連結\n應力與應變的計算，與《工程力學》中的「材料力學」單元息息相關。虎克定律 (σ = E × ε) 中的彈性模數 (E) 是決定結構構件變形量 (ΔL = PL/AE) 的核心參數。\n\n### 🚨 統測陷阱\n請務必區分「比例限度」與「彈性限度」！比例限度是「應力與應變成正比」的最高點（虎克定律適用上限）；彈性限度則是「卸載後能完全恢復原狀」的最高點。兩者非常接近，但定義不同。\n\n| 特徵點 | 意義 | 力學行為 |\n|---|---|---|\n| 比例限度 | 虎克定律適用上限 | 應力與應變成絕對直線正比 |\n| 彈性限度 | 彈性變形上限 | 卸載後無永久變形，但曲線不一定是直線 |\n| 降伏點 | 開始發生明顯塑性變形 | 應力未顯著增加，但應變大幅增加 |\n| 抗拉極限 | 材料能承受的最大應力 | 試體開始發生頸縮現象 |",
-          "formula": "$$\\sigma = \\frac{P}{A_0}, \\quad \\epsilon = \\frac{\\Delta L}{L_0}, \\quad \\sigma = E \\cdot \\epsilon, \\quad \\nu = -\\frac{\\epsilon_{\\text{transverse}}}{\\epsilon_{\\text{axial}}}$$"
+          "outlineRefs": ["MT1.3", "MT1.6"],
+          "body": "材料受外力作用時呈現應力與應變的變化關係。經典拉伸曲線包含比例限度 (Proportional Limit)、彈性限度 (Elastic Limit)、降伏點 (Yield Point)、抗拉極限強度 (Ultimate Tensile Strength, UTS) 與斷裂破壞點。\n\n### 🔗 跨學科連結\n應力與應變的計算，與《工程力學》中的「材料力學」單元息息相關。虎克定律 (σ = E × ε) 中的彈性模數 (E) 是決定結構構件變形量 (ΔL = PL/AE) 的核心參數。\n\n### 🚨 統測陷阱\n請務必區分「比例限度」與「彈性限度」！比例限度是「應力與應變成正比」的最高點（虎克定律適用上限）；彈性限度則是「卸載後能完全恢復原狀」的最高點。兩者非常接近，但定義不同。",
+          "formula": "$$\\sigma = \\frac{P}{A_0}, \\quad \\epsilon = \\frac{\\Delta L}{L_0}, \\quad \\sigma = E \\cdot \\epsilon, \\quad \\nu = -\\frac{\\epsilon_{\\text{transverse}}}{\\epsilon_{\\text{axial}}}$$",
+          "table": {
+            "headers": ["特徵點", "意義", "力學行為"],
+            "rows": [
+              ["比例限度", "虎克定律適用上限", "應力與應變成絕對直線正比"],
+              ["彈性限度", "彈性變形上限", "卸載後無永久變形，但曲線不一定是直線"],
+              ["降伏點", "開始發生明顯塑性變形", "應力未顯著增加，但應變大幅增加"],
+              ["抗拉極限", "材料能承受的最大應力", "試體開始發生頸縮現象"]
+            ]
+          }
         },
         {
-          "heading": "比重與吸水率試驗步驟 (<span className=\"text-indigo-600 font-bold\">CNS</span> 486 / <span className=\"text-indigo-600 font-bold\">ASTM</span> C127)",
+          "heading": "比重與吸水率試驗步驟 (CNS 486 / ASTM C127)",
+          "outlineRefs": ["MT1.4", "MT3.4"],
           "body": "依據 CNS 486 與 ASTM C127 規範，粗粒料與固體結構材料的比重與吸水率試驗，旨在精確判定材料在面乾內飽和 (SSD) 狀態下的有效體積與內部連通孔隙容積。此參數為混凝土配比設計時調整自由拌和水量與粒料實質體積之核心依據。",
           "steps": [
             "試樣準備：將樣品完全浸泡於 23 ± 2°C 清水中 24 ± 4 小時使其孔隙達到水分吸附飽和。",
@@ -297,6 +315,7 @@ export const materialsData: SubjectData = {
         },
         {
           "heading": "材料韌性、硬度與疲勞 (Toughness & Fatigue)",
+          "outlineRefs": ["MT1.3"],
           "body": "韌性 (Toughness) 代表材料衝擊破壞前吸收能量的能力，常以夏比衝擊試驗 (Charpy Impact Test) 測量吸能焦耳值 (J)；硬度 (Hardness) 係指抗刮擦或壓痕侵入能力 (如勃氏 HB、洛氏 HR、維氏 HV)；疲勞 (Fatigue) 係指材料在反覆循環應力作用下發生的突然脆性破壞。這些動態與表面力學性質對於承受反覆載重與磨耗的橋樑或路面工程至關重要。",
           "table": {
             "headers": [
@@ -329,6 +348,7 @@ export const materialsData: SubjectData = {
         },
         {
           "heading": "粒料含水狀態與表面含水率修正公式 (Moisture States & Water Correction)",
+          "outlineRefs": ["MT3.4"],
           "body": "在混凝土與瀝青配比設計中，粒料包含**絕乾** (OD)、空氣乾燥 (AD)、**面乾內飽和** (**SSD**) 及濕潤 (Wet) 四種含水狀態。計算拌和水時，必須根據表面含水率 (Surface Moisture) 調整實際加水量。",
           "formula": "$$p = \\frac{W_{\\text{wet}} - W_{\\text{od}}}{W_{\\text{od}}} \\times 100\\%, \\quad A_{\\text{abs}} = \\frac{W_{\\text{ssd}} - W_{\\text{od}}}{W_{\\text{od}}} \\times 100\\%, \\quad \\text{SM} = p - A_{\\text{abs}}$$\\n$$\\text{拌和水調整量：當 } \\text{SM} > 0 \\text{ 時扣減水量；當 } \\text{SM} < 0 \\text{ 時補足水量}$$",
           "table": {
@@ -363,6 +383,20 @@ export const materialsData: SubjectData = {
                 "有游離水膜",
                 "工地現場狀態，需扣除游離水膜重量"
               ]
+            ]
+          }
+        },
+        {
+          "heading": "測定值、有效數字與精度：試驗結果的表示與品管運用",
+          "outlineRefs": ["MT1.5", "MT1.6", "MT1.7"],
+          "body": "**測定值與精度**：每次量測都含誤差。量測值彼此接近代表**精密度**高；平均值接近真值代表**準確度**高。報告數據時應依儀器最小刻度保留有效數字，例如天平可讀到 0.1 g，就記錄為 125.3 g 而不是 125 g 或 125.30 g。\n**數值進位**：依 CNS 數值修約規則，捨棄位數字為 5 且後面無其他非零數字時，前一位是奇數就進位、偶數就捨去（四捨六入五成雙），可避免累積偏差。\n**結果表示**：試驗結果常用表格與圖表呈現，例如應力–應變曲線、篩分析級配曲線、強度–齡期曲線，以便判讀趨勢與規範界限。\n**品管運用**：同一批試體的強度以平均值 x̄ 與標準差 s 描述；變異係數 V = s / x̄ × 100% 越小，品質越穩定。把每批平均值畫在**管制圖**上，超出管制界限（如 x̄ ± 3s）就要追查原因。\n⚠️ 易錯：有效數字不能因為計算機顯示很多位數就全部寫上；最終結果的精度不能高於原始量測值。",
+          "formula": "平均值 x̄ = Σxᵢ / n\n標準差 s = √[Σ(xᵢ − x̄)² / (n − 1)]\n變異係數 V = s / x̄ × 100%",
+          "table": {
+            "headers": ["試驗數據（MPa）", "計算", "結果"],
+            "rows": [
+              ["三個試體：28.0、29.5、30.5", "平均值 x̄ = 88.0 / 3", "29.3 MPa"],
+              ["同上", "標準差 s = √[(1.7² + 0.2² + 1.2²) / 2]", "約 1.26 MPa"],
+              ["同上", "變異係數 V = 1.26 / 29.3 × 100%", "約 4.3%（品質穩定）"]
             ]
           }
         }
@@ -439,9 +473,10 @@ export const materialsData: SubjectData = {
     {
       "slug": "cement-composition",
       "title": "2.1 卜特蘭水泥水化化學成分",
-      "desc": "深入解析卜特蘭水泥的四大主要化學成分 (C3S, C2S, C3A, C4AF) 及其水化反應機制、釋放熱量與強度貢獻。\n\n🔥 V6.0 考前秒殺秘訣：此核心概念統測出題率極高，建議善用圖解與鷹架提示反覆練習！",
+      "desc": "深入解析卜特蘭水泥的四大主要化學成分 (C3S, C2S, C3A, C4AF) 及其水化反應機制、釋放熱量與強度貢獻。",
       "status": "done",
       "gradeLevel": 10,
+      "curriculumCode": "TCTE115-MT2",
       "examHitRate": 4,
       "step0Prerequisites": [
         "高溫鍛燒石灰石與黏土化學反應 (CaCO3 -> CaO + CO2)",
@@ -491,6 +526,7 @@ export const materialsData: SubjectData = {
       "concepts": [
         {
           "heading": "卜特蘭水泥水化化學成分 (Mineral Compositions)",
+          "outlineRefs": ["MT2.3"],
           "body": "水泥熟料經高溫 1450°C 燒結而成，主要四大部分為：\n- 矽酸三鈣（Tricalcium silicate，簡稱 <span className=\"text-rose-600 font-bold\">C3S</span>，化學式為 Ca₃SiO₅）：水化極快，提供混凝土早期強度。\n- 矽酸二鈣（Dicalcium silicate，簡稱 <span className=\"text-rose-600 font-bold\">C2S</span>，化學式為 Ca₂SiO₄）：水化緩慢，提供後期強度。\n- 鋁酸三鈣（Tricalcium aluminate，簡稱 <span className=\"text-rose-600 font-bold\">C3A</span>，化學式為 Ca₃Al₂O₆）：水化最快，釋放極高**水化熱**。\n- 鐵鋁酸四鈣（Tetracalcium aluminoferrite，簡稱 <span className=\"text-rose-600 font-bold\">C4AF</span>，化學式為 Ca₄Al₂Fe₂O₁₀）：主要影響水泥外觀與抗硫能力。\n\n*備註：石膏 (CaSO₄·2H₂O) 之添加旨在調節 <span className=\"text-rose-600 font-bold\">C3A</span> 之反應，避免發生「<span className=\"text-rose-600 font-bold\">閃凝</span> (Flash Set)」。\n\n### 🚨 統測陷阱\n考題常把「早期強度(C3S)」與「快凝發熱(C3A)」搞混！請記住，C3A 對強度幾乎沒有貢獻，它最大的特徵是「反應最快、最熱、容易導致閃凝」。",
           "table": {
             "headers": [
@@ -538,7 +574,8 @@ export const materialsData: SubjectData = {
           }
         },
         {
-          "heading": "**水化熱**與體積變化控制",
+          "heading": "水化熱與體積變化控制",
+          "outlineRefs": ["MT2.3"],
           "body": "水泥在水化過程中會釋放大量熱能（稱為**水化熱**）。在巨積混凝土（Mass Concrete）中，若內部散熱不良，會導致內外溫差過大而產生嚴重裂縫。因此，控制**水化熱**是大型工程的關鍵：通常透過降低 <span className=\"text-rose-600 font-bold\">C3S</span> 與 <span className=\"text-rose-600 font-bold\">C3A</span> 比例，或使用卜特蘭低熱水泥 (Type IV)。",
           "steps": [
             "【選用低熱水泥】：使用 Type IV 低熱卜特蘭水泥或 Type II 中熱水泥，從源頭降低發熱量。",
@@ -549,7 +586,20 @@ export const materialsData: SubjectData = {
         },
         {
           "heading": "成分、齡期與強度的判讀順序",
+          "outlineRefs": ["MT2.3"],
           "body": "判讀配比時先看 <span className=\"text-rose-600 font-bold\">C3S</span> 與 <span className=\"text-rose-600 font-bold\">C2S</span> 對早、後期強度的分工，再檢查 <span className=\"text-rose-600 font-bold\">C3A</span> 對**水化熱**與硫酸鹽耐久性的影響，最後確認石膏是否足以控制凝結。"
+        },
+        {
+          "heading": "水泥的定義與硬化：水硬性膠結材料",
+          "outlineRefs": ["MT2.1", "MT2.3"],
+          "body": "**水泥**是一種粉狀無機膠結材料，加水拌合後經**水化反應**凝結、硬化，能把砂、石膠結成整體，而且在水中也能持續硬化，屬於**水硬性膠結材料**。相對地，石灰、石膏只能在空氣中硬化，稱為氣硬性膠結材料。\n**波特蘭水泥（卜特蘭水泥）**：以石灰石（CaO 來源）與黏土（SiO₂、Al₂O₃、Fe₂O₃ 來源）為主要原料，經旋窯約 1450 °C 燒成熟料，冷卻後加入約 3%–5% 石膏共同磨細而成。石膏的作用是調節凝結時間，防止 C₃A 造成閃凝。\n**凝結與硬化**：加水後先失去可塑性（初凝 → 終凝，以維卡儀測定），之後強度隨齡期持續成長（硬化）；一般以 28 天抗壓強度作為設計強度依據。\n⚠️ 易錯：「凝結」指失去可塑性的過程，「硬化」指強度成長的過程，兩者不同；水泥砂漿終凝後仍需持續養護才會繼續硬化。",
+          "table": {
+            "headers": ["膠結材料", "硬化條件", "代表材料", "工程用途"],
+            "rows": [
+              ["水硬性", "空氣中、水中皆可硬化", "波特蘭水泥、高爐水泥", "結構混凝土、水中工程"],
+              ["氣硬性", "只能在空氣中硬化", "石灰、石膏", "粉刷、裝修、石膏板"]
+            ]
+          }
         }
       ],
       "practices": [
@@ -618,9 +668,10 @@ export const materialsData: SubjectData = {
     {
       "slug": "cement-types",
       "title": "2.2 CNS 61 卜特蘭水泥五大類型比較",
-      "desc": "詳解中華民國國家標準 (CNS 61) 劃分之五種基本卜特蘭水泥特性與其適合之工程應用場景。\n\n🔥 V6.0 考前秒殺秘訣：此核心概念統測出題率極高，建議善用圖解與鷹架提示反覆練習！",
+      "desc": "詳解中華民國國家標準 (CNS 61) 劃分之五種基本卜特蘭水泥特性與其適合之工程應用場景。",
       "status": "done",
       "gradeLevel": 10,
+      "curriculumCode": "TCTE115-MT2",
       "examHitRate": 4,
       "step0Prerequisites": [
         "CNS 61 卜特蘭水泥五大類型分類基準",
@@ -690,7 +741,8 @@ export const materialsData: SubjectData = {
       ],
       "concepts": [
         {
-          "heading": "<span className=\"text-indigo-600 font-bold\">CNS</span> 61 卜特蘭水泥五大類型規格比較",
+          "heading": "CNS 61 卜特蘭水泥五大類型規格比較",
+          "outlineRefs": ["MT2.2", "MT2.3"],
           "body": "針對不同工程需求，水泥廠商會透過調整熟料中四大礦物的比例（尤其是 <span className=\"text-rose-600 font-bold\">C3A</span> 與 <span className=\"text-rose-600 font-bold\">C3S</span> 的含量）以及研磨粗細度，生產出五種標準卜特蘭水泥。",
           "table": {
             "headers": [
@@ -734,11 +786,13 @@ export const materialsData: SubjectData = {
           }
         },
         {
-          "heading": "**硫酸鹽侵蝕**機制 (Sulfate Attack)",
+          "heading": "硫酸鹽侵蝕機制 (Sulfate Attack)",
+          "outlineRefs": ["MT2.3"],
           "body": "在海水或鹼性土壤中，環境中的硫酸鹽 (SO₄²⁻) 會滲入混凝土，與水泥水化產物及未反應的 <span className=\"text-rose-600 font-bold\">C3A</span> 作用，生成體積龐大的**鈣礬石** (Ettringite) 或石膏。這會導致內部產生巨大的膨脹應力，進而使混凝土龜裂崩解。Type V 水泥嚴格限制 <span className=\"text-rose-600 font-bold\">C3A</span> 含量不大於 5% 便是為了解決此問題。"
         },
         {
           "heading": "依工程條件選型",
+          "outlineRefs": ["MT2.2"],
           "body": "選水泥類型應同時核對施工速度、構件尺寸、環境硫酸鹽濃度與養護溫度；沒有單一類型能在所有工程條件下都最佳。"
         }
       ],
@@ -807,9 +861,10 @@ export const materialsData: SubjectData = {
     {
       "slug": "cement-vicat",
       "title": "2.3 維卡儀 (Vicat) 凝結時間試驗",
-      "desc": "介紹測定水泥水化過程初凝 (Initial Set) 與終凝 (Final Set) 時間之國家標準步驟。\n\n🔥 V6.0 考前秒殺秘訣：此核心概念統測出題率極高，建議善用圖解與鷹架提示反覆練習！",
+      "desc": "介紹測定水泥水化過程初凝 (Initial Set) 與終凝 (Final Set) 時間之國家標準步驟。",
       "status": "done",
       "gradeLevel": 10,
+      "curriculumCode": "TCTE115-MT2",
       "examHitRate": 4,
       "step0Prerequisites": [
         "CNS 788 水泥膏標準稠度檢驗方法",
@@ -866,7 +921,8 @@ export const materialsData: SubjectData = {
       ],
       "concepts": [
         {
-          "heading": "<span className=\"text-indigo-600 font-bold\">維卡儀</span> (Vicat Apparatus) 凝結時間試驗步驟 (<span className=\"text-indigo-600 font-bold\">CNS</span> 786)",
+          "heading": "維卡儀 (Vicat Apparatus) 凝結時間試驗步驟 (CNS 786)",
+          "outlineRefs": ["MT2.3"],
           "body": "依據 CNS 61 規範，卜特蘭水泥之凝結時間採用維卡儀 (Vicat) 測定：初凝時間不得少於 45 分鐘（確保攪拌、輸送與澆置振動過程中維持工作性）；終凝時間不得超過 375 分鐘（確保硬化過程如期發展，便於拆模與表面修飾作業）。",
           "table": {
             "headers": [
@@ -910,10 +966,12 @@ export const materialsData: SubjectData = {
         },
         {
           "heading": "初凝與終凝的工程意義",
+          "outlineRefs": ["MT2.3"],
           "body": "初凝時間確保有足夠的操作時間進行拌合、運輸與澆置；若初凝過快會導致無法順利澆置。終凝時間則代表水泥膏已具備足夠的硬度承受外力，此後可進行拆模及後續施工養護。"
         },
         {
           "heading": "試驗誤差控制",
+          "outlineRefs": ["MT2.3", "MT1.5"],
           "body": "水泥膏溫度、拌合起算時間、針頭清潔度與自由落針方式都會影響讀值；每次觀測必須避開前一次針孔並保持固定間隔。"
         }
       ],
@@ -982,9 +1040,10 @@ export const materialsData: SubjectData = {
     {
       "slug": "cement-strength",
       "title": "2.4 水泥砂漿抗壓強度試驗",
-      "desc": "評估水泥品質與強度的標準砂漿試體 (5 × 5 × 5 cm 立方體) 製作與抗壓測試。\n\n🔥 V6.0 考前秒殺秘訣：此核心概念統測出題率極高，建議善用圖解與鷹架提示反覆練習！",
+      "desc": "評估水泥品質與強度的標準砂漿試體 (5 × 5 × 5 cm 立方體) 製作與抗壓測試。",
       "status": "done",
       "gradeLevel": 10,
+      "curriculumCode": "TCTE115-MT2",
       "examHitRate": 4,
       "step0Prerequisites": [
         "CNS 1010 水泥水化熱與砂漿抗壓試驗規範",
@@ -1038,7 +1097,8 @@ export const materialsData: SubjectData = {
       ],
       "concepts": [
         {
-          "heading": "水泥砂漿抗壓強度試驗步驟 (<span className=\"text-indigo-600 font-bold\">CNS</span> 1010)",
+          "heading": "水泥砂漿抗壓強度試驗步驟 (CNS 1010)",
+          "outlineRefs": ["MT2.3"],
           "body": "依據 CNS 1010 規範，利用標準級配之純淨石英砂與指定配比（水泥:砂=1:2.75，W/C=0.485）製作 50 mm 立方體試體，排除天然骨材形狀與級配變異之干擾，純粹檢驗水泥水化膠體之強度發展潛能與品質合格性。",
           "table": {
             "headers": [
@@ -1082,11 +1142,13 @@ export const materialsData: SubjectData = {
           ]
         },
         {
-          "heading": "為何使用**標準砂**？",
+          "heading": "為何使用標準砂？",
+          "outlineRefs": ["MT2.3"],
           "body": "試驗中使用「渥太華**標準砂** (Ottawa Sand)」是為了控制骨材的變因（例如粒徑分布、形狀、吸水率皆一致）。如此一來，抗壓強度的差異就能完全反映出「水泥本身」的品質好壞，而非受砂石雜質所影響。"
         },
         {
           "heading": "載重速率與受壓面",
+          "outlineRefs": ["MT2.3", "MT1.4"],
           "body": "抗壓試驗機需以 900 ~ 1800 N/s 之標準速率連續均勻加載，且試體受壓面必須保持絕對平整置中。加載面若有微小凹凸或偏心受力，會引發局部剪切應力集中而導致早期脆裂，大幅低估材料真實強度。"
         }
       ],
@@ -1159,9 +1221,10 @@ export const materialsData: SubjectData = {
     {
       "slug": "cement-storage",
       "title": "2.5 水泥儲存與假凝 (False Set) 現象",
-      "desc": "水泥包裝、工地儲存管理規範，以及與「閃凝」不同的「假凝」現象之原理與處置。\n\n🔥 V6.0 考前秒殺秘訣：此核心概念統測出題率極高，建議善用圖解與鷹架提示反覆練習！",
+      "desc": "水泥包裝、工地儲存管理規範，以及與「閃凝」不同的「假凝」現象之原理與處置。",
       "status": "done",
       "gradeLevel": 10,
+      "curriculumCode": "TCTE115-MT2",
       "examHitRate": 4,
       "step0Prerequisites": [
         "水泥吸濕硬化物理特性",
@@ -1211,6 +1274,7 @@ export const materialsData: SubjectData = {
       "concepts": [
         {
           "heading": "水泥包裝與工地儲存防潮",
+          "outlineRefs": ["MT2.4"],
           "body": "台灣市售水泥包裝每袋標準重量為 50 kg。水泥具有極強的吸濕性，若於空氣中吸收水分會產生預先水化並結塊（風化現象），導致活性降低與強度折損。",
           "steps": [
             "墊高儲存：現場儲存需置於棧板上，墊高離地至少 30 cm 以上，防止吸收地面濕氣。",
@@ -1219,7 +1283,8 @@ export const materialsData: SubjectData = {
           ]
         },
         {
-          "heading": "<span className=\"text-rose-600 font-bold\">假凝</span> (False Set) vs <span className=\"text-rose-600 font-bold\">閃凝</span> (Flash Set)",
+          "heading": "假凝 (False Set) vs 閃凝 (Flash Set)",
+          "outlineRefs": ["MT2.3"],
           "body": "這兩種現象皆會導致水泥漿體在加水拌合後數分鐘內迅速失去工作性變硬，但其化學機理與工程處置截然不同：假凝為二水石膏脫水微晶析出（不放熱、強制攪拌可恢復），閃凝為 C3A 劇烈反應（大量放熱且不可逆毀滅性硬化）。",
           "table": {
             "headers": [
@@ -1253,6 +1318,7 @@ export const materialsData: SubjectData = {
         },
         {
           "heading": "進場驗收與批次管理",
+          "outlineRefs": ["MT2.4", "MT1.7"],
           "body": "水泥進場應核對製造日期、批號與包裝完整性；發現受潮硬塊、袋重異常或超期儲存時，需隔離並依規定重新試驗，不可直接投入拌合。"
         }
       ],
@@ -1327,9 +1393,10 @@ export const materialsData: SubjectData = {
     {
       "slug": "concrete",
       "title": "3. 混凝土構造與配比設計",
-      "desc": "混凝土組成、水灰比 (W/C) 與強度關係 (Abrams Law)、絕對體積法配比設計步驟、坍度試驗、抗壓試驗與 SCC/HPC 特種混凝土。\n\n🔥 V6.0 考前秒殺秘訣：此核心概念統測出題率極高，建議善用圖解與鷹架提示反覆練習！",
+      "desc": "混凝土組成、水灰比 (W/C) 與強度關係 (Abrams Law)、絕對體積法配比設計步驟、坍度試驗、抗壓試驗與 SCC/HPC 特種混凝土。",
       "status": "done",
       "gradeLevel": 10,
+      "curriculumCode": "TCTE115-MT3",
       "examHitRate": 4,
       "step0Prerequisites": [
         "骨材篩分析與最大粒徑、細度模數 (F.M.) 定義",
@@ -1401,6 +1468,7 @@ export const materialsData: SubjectData = {
       "concepts": [
         {
           "heading": "混凝土組成與水化反應 (Hydration)",
+          "outlineRefs": ["MT3.1", "MT3.2", "MT3.3"],
           "body": "混凝土由卜特蘭水泥、拌合水、粗粒料 (石子)、細粒料 (砂) 及化學摻劑組成。水化反應生成物主要為矽酸鈣水合物 (C-S-H 膠體) 與氫氧化鈣 Ca(OH)₂ 結晶。",
           "table": {
             "headers": [
@@ -1445,11 +1513,13 @@ export const materialsData: SubjectData = {
         },
         {
           "heading": "水灰比理論 (Abrams' Law) 與耐久性",
+          "outlineRefs": ["MT3.4"],
           "body": "<span className=\"text-indigo-600 font-bold\">亞伯拉罕法則</span> (Abrams' Law) 指出，在**完全密實**的條件下，混凝土強度僅由水膠比 (W/C 或 W/B) 決定。水灰比越低，毛細孔隙率越低，抗壓強度越高。",
           "formula": "$$f_c' = \\frac{A}{B^{\\text{W/C}}}, \\quad \\text{一般結構: } \\text{W/C} \\le 0.60, \\quad \\text{耐久抗凍防蝕: } \\text{W/C} \\le 0.45$$"
         },
         {
-          "heading": "<span className=\"text-indigo-600 font-bold\">絕對體積法</span> (Absolute Volume Method) 配比設計步驟 (ACI 211.1)",
+          "heading": "絕對體積法 (Absolute Volume Method) 配比設計步驟 (ACI 211.1)",
+          "outlineRefs": ["MT3.2", "MT3.4"],
           "body": "配比設計旨在確保 1 m³ (1,000 L) 新鮮混凝土中，水泥、水、粒料與空氣之絕對體積總和精確等於 1 m³。",
           "steps": [
             "選擇目標強度 fcr'：依設計強度 fc' 與標準差 s 計算 fcr' = fc' + 1.34s。",
@@ -1461,7 +1531,8 @@ export const materialsData: SubjectData = {
           ]
         },
         {
-          "heading": "坍度試驗與抗壓強度試驗 (<span className=\"text-indigo-600 font-bold\">CNS</span> 1176 / <span className=\"text-indigo-600 font-bold\">CNS</span> 1232)",
+          "heading": "坍度試驗與抗壓強度試驗 (CNS 1176 / CNS 1232)",
+          "outlineRefs": ["MT3.4"],
           "body": "評估新鮮混凝土工作性 (Workability) 與 28 天設計抗壓強度 (fc') 之標準檢測程序。",
           "steps": [
             "坍度圓錐筒填裝 (<span className=\"text-indigo-600 font-bold\">CNS</span> 1176)：頂直徑 10cm、底直徑 20cm、高 30cm。分 3 層填入試樣，每層搗實 25 次。平穩提筒後量測頂面降落高度 (cm)。",
@@ -1470,6 +1541,7 @@ export const materialsData: SubjectData = {
         },
         {
           "heading": "特種混凝土比較：SCC vs HPC vs 輕質混凝土 vs 透水混凝土",
+          "outlineRefs": ["MT3.1", "MT8.2"],
           "body": "針對現代高層摩天大樓、長跨度橋樑及海工耐久性要求，特種混凝土透過礦物摻料（矽灰、爐石、飛灰）與高效化學外加劑進行微觀孔結構優化，突破傳統混凝土在工作性、強度與耐久性之間難以兼顧的工程極限。",
           "table": {
             "headers": [
@@ -1502,6 +1574,62 @@ export const materialsData: SubjectData = {
                 "無細粒料或極少砂，粗粒料點對點黏結",
                 "零坍度 (開級配)",
                 "孔隙率 15~25%，具備極佳透水性與降溫功能"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "細骨材篩分析與細度模數 FM",
+          "outlineRefs": ["MT3.2", "MT3.4"],
+          "body": "**篩分析**：把烘乾的骨材試樣依序通過一組標準篩（由大到小：9.5 mm、4.75 mm、2.36 mm、1.18 mm、600 μm、300 μm、150 μm），稱出各篩停留量，計算**累積停留百分率**，再畫成**級配曲線**判斷顆粒分佈是否落在規範範圍。\n**細度模數 FM**：把標準篩（150 μm 以上各篩）的累積停留百分率加總後除以 100。FM 越大代表砂越粗；混凝土用細骨材的 FM 一般約 2.3–3.1。\n**粗細骨材分界**：一般以 4.75 mm（No.4）篩為界，停留者為粗骨材、通過者為細骨材。\n⚠️ 易錯：FM 用的是「累積」停留百分率，不是各篩個別的停留百分率；而且 4.75 mm 以下的細骨材計算時，4.75 mm 以上各篩若無停留，累積值記 0。",
+          "formula": "FM = Σ（標準篩累積停留百分率） / 100",
+          "table": {
+            "headers": ["篩號", "停留量 (g)", "個別停留 (%)", "累積停留 (%)"],
+            "rows": [
+              ["4.75 mm (No.4)", "20", "4", "4"],
+              ["2.36 mm (No.8)", "60", "12", "16"],
+              ["1.18 mm (No.16)", "90", "18", "34"],
+              ["600 μm (No.30)", "120", "24", "58"],
+              ["300 μm (No.50)", "120", "24", "82"],
+              ["150 μm (No.100)", "70", "14", "96"],
+              ["底盤", "20", "4", "—"],
+              [
+                "合計 500 g",
+                "",
+                "",
+                "FM = (4 + 16 + 34 + 58 + 82 + 96) / 100 = 2.90"
+              ]
+            ]
+          }
+        },
+        {
+          "heading": "混凝土摻料：化學摻料與礦物摻料",
+          "outlineRefs": ["MT3.5"],
+          "body": "**摻料**是在拌合時加入，用來改善新拌或硬固混凝土性質的材料（水泥、骨材、水以外的成分）。\n**化學摻料**（用量少，以水泥重量的百分比計）：\n• 輸氣劑（AE 劑）：產生微小氣泡，提高工作性與**抗凍融**能力，但強度略降。\n• 減水劑／高性能減水劑（強塑劑）：在相同坍度下減少用水量，提高強度；自充填混凝土（SCC）必用。\n• 緩凝劑：延長凝結時間，用於炎熱天氣、大體積澆置或長距離運送。\n• 早強劑（促凝劑）：加速凝結與早期強度，用於寒冷天氣或搶修；含氯的促凝劑會使鋼筋生鏽，RC 結構應避免。\n**礦物摻料**（用量大，可取代部分水泥）：飛灰、水淬高爐爐石粉、矽灰。利用**卜作嵐反應**消耗 Ca(OH)₂ 生成額外 C-S-H，可降低水化熱、提高後期強度與耐久性，也能減碳。\n⚠️ 易錯：輸氣劑會降低強度（空氣量每增加 1%，強度約降低 5%）；不能把「輸氣」當成提高強度的方法。",
+          "table": {
+            "headers": ["摻料", "主要作用", "常見用途", "注意事項"],
+            "rows": [
+              ["輸氣劑 (AE)", "產生微小氣泡", "寒冷地區、提高工作性", "強度略降"],
+              ["減水劑／強塑劑", "減少用水量", "高強度、自充填混凝土", "用量過多易泌水、緩凝"],
+              ["緩凝劑", "延遲凝結", "夏季施工、大體積澆置", "過量可能不凝結"],
+              ["早強劑", "加速凝結與早期強度", "冬季施工、搶修", "含氯者不可用於 RC"],
+              ["飛灰／爐石粉", "卜作嵐反應、降低水化熱", "巨積混凝土、低碳混凝土", "早期強度發展較慢"]
+            ]
+          }
+        },
+        {
+          "heading": "拌合用水與混凝土氯離子含量試驗",
+          "outlineRefs": ["MT3.3", "MT3.4"],
+          "body": "**拌合用水**：原則上可飲用的水都可拌合混凝土。不可使用含油、酸、鹼、有機物、糖分或大量鹽分的水；海水含氯離子，會加速鋼筋腐蝕，**不可用於鋼筋混凝土**。\n**氯離子的危害**：氯離子會破壞鋼筋表面的鈍化膜，使鋼筋生鏽、體積膨脹，造成混凝土保護層龜裂剝落，即俗稱的**海砂屋**。氯離子來源包括未洗淨的海砂、海水、含氯摻料。\n**氯離子含量試驗**：工地常用試紙或電極法快速檢測新拌混凝土的水溶性氯離子含量。CNS 3090（預拌混凝土）對鋼筋混凝土新拌混凝土的最大水溶性氯離子含量，103 年版規定為 **0.15 kg/m³**；經濟部標準檢驗局於 114 年 12 月公告修訂為 **0.30 kg/m³**（參考 JIS A5308:2024），並註明不適用於硬固混凝土。作答時依題目或教材採用的版本判斷。\n⚠️ 易錯：氯離子限值的單位是每立方公尺混凝土所含的氯離子公斤數（kg/m³），不是百分比；檢測對象是新拌混凝土。",
+          "table": {
+            "headers": ["項目", "規定或作法", "目的"],
+            "rows": [
+              ["拌合用水", "清潔、可飲用；不得用海水拌合鋼筋混凝土", "避免雜質影響凝結與鋼筋腐蝕"],
+              ["細骨材", "海砂須充分淡化並檢驗", "控制氯離子來源"],
+              [
+                "新拌混凝土氯離子",
+                "RC：103 年版 ≤ 0.15 kg/m³；114 年 12 月修訂版 ≤ 0.30 kg/m³（CNS 3090 表 7）",
+                "防止鋼筋腐蝕（海砂屋）"
               ]
             ]
           }
@@ -1580,9 +1708,10 @@ export const materialsData: SubjectData = {
     {
       "slug": "stone-ceramics-glass",
       "title": "4. 石材、陶瓷製品與玻璃",
-      "desc": "火成岩/堆積岩/變質岩分類與花崗岩/大理石應用、普通磚與面磚試驗、吸水率與抗壓強度、平板玻璃/強化玻璃/複層低輻射 (Low-E) 玻璃與膠合玻璃。\n\n🔥 V6.0 考前秒殺秘訣：此核心概念統測出題率極高，建議善用圖解與鷹架提示反覆練習！",
+      "desc": "火成岩/堆積岩/變質岩分類與花崗岩/大理石應用、普通磚與面磚試驗、吸水率與抗壓強度、平板玻璃/強化玻璃/複層低輻射 (Low-E) 玻璃與膠合玻璃。",
       "status": "done",
       "gradeLevel": 10,
+      "curriculumCode": "TCTE115-MT4",
       "examHitRate": 4,
       "step0Prerequisites": [
         "火成岩、沉積岩、變質岩三大岩類礦物硬度與耐候性",
@@ -1636,6 +1765,7 @@ export const materialsData: SubjectData = {
       "concepts": [
         {
           "heading": "建築石材地質三大分類與物理特性",
+          "outlineRefs": ["MT4.1"],
           "body": "天然石材按地質生成原因分為火成岩 (Igneous)、沉積岩 (Sedimentary) 與變質岩 (Metamorphic)。花崗岩硬度高、耐酸鹼，適合外牆與高磨耗地坪；大理石紋理美觀但不耐酸雨，適用於室內牆面；板岩具天然頁理，常用於屋頂與景觀步道。",
           "table": {
             "headers": [
@@ -1678,7 +1808,8 @@ export const materialsData: SubjectData = {
           }
         },
         {
-          "heading": "陶瓷製品分類與普通紅磚品質試驗 (<span className=\"text-indigo-600 font-bold\">CNS</span> 382)",
+          "heading": "陶瓷製品分類與普通紅磚品質試驗 (CNS 382)",
+          "outlineRefs": ["MT4.2"],
           "body": "陶瓷製品由黏土經成型高溫燒結而成。按燒結程度分為土器、陶器、炻器 (Stoneware) 與瓷器 (Porcelain)。普通紅磚 (Red Clay Bricks, <span className=\"text-indigo-600 font-bold\">CNS</span> 382) 劃分為一等磚與二等磚，試驗項目包含外觀尺寸、吸水率與抗壓強度。",
           "steps": [
             "普通紅磚標準尺寸：200 mm (長) × 95 mm (寬) × 53 mm (厚)。",
@@ -1687,11 +1818,13 @@ export const materialsData: SubjectData = {
           ]
         },
         {
-          "heading": "面磚 (Tiles) 分類與 <span className=\"text-indigo-600 font-bold\">CNS</span> 3299 檢測規範",
+          "heading": "面磚 (Tiles) 分類與 CNS 3299 檢測規範",
+          "outlineRefs": ["MT4.2"],
           "body": "建築面磚按吸水率分為 I 類 (瓷質，<span className=\"text-rose-600 font-bold\">吸水率</span> ≤ 1.0%)、II 類 (炻質，<span className=\"text-rose-600 font-bold\">吸水率</span> ≤ 3.0%) 及 III 類 (陶質，<span className=\"text-rose-600 font-bold\">吸水率</span> ≤ 50.0%)。外牆面磚必須採用 I 類或 II 類，並通過耐凍融性試驗與 <span className=\"text-indigo-600 font-bold\">CNS</span> 12611 搬移拉拔防脫落試驗 (拉拔強度應 ≥ 0.6 MPa)。"
         },
         {
           "heading": "建築玻璃種類與安全性能比較",
+          "outlineRefs": ["MT4.3"],
           "body": "玻璃由矽砂 (SiO₂)、純鹼 (Na₂CO₃) 與石灰石經 1500°C 熔融製成。現代建築帷幕牆廣泛採用功能性安全玻璃。",
           "table": {
             "headers": [
@@ -1730,7 +1863,22 @@ export const materialsData: SubjectData = {
         },
         {
           "heading": "石材乾掛工法 (Dry-Hanging System) 與防污處理",
+          "outlineRefs": ["MT4.1"],
           "body": "高層建築外牆石材嚴禁採用傳統水泥砂漿濕貼工法（易引發白華 Efflorescence 及掉落危險），必須採用不銹鋼掛件乾掛工法。石材安裝前六面需塗刷滲透型防護劑 (Silane/Siloxane)，阻絕水分與污染物深入石材毛細孔。"
+        },
+        {
+          "heading": "石材規格與材積計算（才、立方公尺換算）",
+          "outlineRefs": ["MT4.1"],
+          "body": "**石材規格**：板材以長 × 寬 × 厚（cm 或 mm）表示，常見地坪與外牆板厚 2–3 cm；塊石、條石則以體積計價。\n**材積單位**：營建實務中石材與木材常用「才」計算材積。1 臺尺 ≈ 30.3 cm、1 臺寸 ≈ 3.03 cm；1 才 = 1 臺寸 × 1 臺寸 × 10 臺尺 ≈ 0.00278 m³（約 1/360 m³），因此 1 m³ ≈ 360 才。\n**計算步驟**：先把各邊長統一單位，再相乘得體積，最後換算成才或立方公尺。例：一塊花崗石長 1.2 m、寬 0.6 m、厚 0.03 m，體積 = 1.2 × 0.6 × 0.03 = 0.0216 m³ ≈ 0.0216 × 360 ≈ 7.8 才。\n**石材維護**：大理石含碳酸鈣，怕酸雨與酸性清潔劑；花崗石耐候但吸水率差異大，外牆應做防水撥水處理，並避免使用鐵件造成鏽水。\n⚠️ 易錯：板材面積計價（m² 或才 × 厚度）與塊材體積計價不同；換算時一定要先統一長度單位。",
+          "formula": "體積 V = 長 × 寬 × 厚（m³）\n1 m³ ≈ 360 才；1 才 ≈ 0.00278 m³",
+          "table": {
+            "headers": ["石材", "尺寸 (m)", "體積 (m³)", "約當才數"],
+            "rows": [
+              ["花崗石地坪板", "1.2 × 0.6 × 0.03", "0.0216", "7.8"],
+              ["大理石檯面", "2.4 × 0.6 × 0.02", "0.0288", "10.4"],
+              ["花崗石條石", "1.0 × 0.3 × 0.3", "0.09", "32.4"]
+            ]
+          }
         }
       ],
       "practices": [
@@ -1806,9 +1954,10 @@ export const materialsData: SubjectData = {
     {
       "slug": "wood",
       "title": "5. 木材構造與品質試驗",
-      "desc": "木材年輪構造、纖維飽和點 (FSP)、含水率與強度關係、集成材 (Glulam) 與 CLT 技術規格、木材防腐防蟻壓力注入法與抗彎試驗。\n\n🔥 V6.0 考前秒殺秘訣：此核心概念統測出題率極高，建議善用圖解與鷹架提示反覆練習！",
+      "desc": "木材年輪構造、纖維飽和點 (FSP)、含水率與強度關係、集成材 (Glulam) 與 CLT 技術規格、木材防腐防蟻壓力注入法與抗彎試驗。",
       "status": "done",
       "gradeLevel": 10,
+      "curriculumCode": "TCTE115-MT5",
       "examHitRate": 4,
       "step0Prerequisites": [
         "木材年輪（春材/夏材）、心材與邊材構造",
@@ -1872,19 +2021,23 @@ export const materialsData: SubjectData = {
       "concepts": [
         {
           "heading": "木材微觀構造與年輪組織",
+          "outlineRefs": ["MT5.2"],
           "body": "樹木橫斷面由內向外包含髓心、木質部 (心材與邊材)、形成層與樹皮。年輪由春材 (早材，細胞壁薄、細胞腔大、顏色淺) 與夏材 (晚材，細胞壁厚、密實度高、顏色深) 構成。心材水分少且耐腐性佳；邊材含水率高易受蟲蛀。"
         },
         {
-          "heading": "<span className=\"text-rose-600 font-bold\">含水率</span> (Moisture Content) 與纖維飽和點 (<span className=\"text-rose-600 font-bold\">FSP</span>)",
+          "heading": "含水率 (Moisture Content) 與纖維飽和點 (FSP)",
+          "outlineRefs": ["MT5.3"],
           "body": "木材水分分為細胞腔內的**自由水**與細胞壁內的**結合水**。**自由水**排空而**結合水**飽和時，稱為纖維飽和點 (<span className=\"text-rose-600 font-bold\">FSP</span>，約 25%~30%)。",
           "formula": "$$\\omega = \\frac{W - W_d}{W_d} \\times 100\\%, \\quad \\text{FSP} \\approx 28\\% \\sim 30\\%$$\\n$$\\omega > \\text{FSP}: \\text{自由水增減不影響強度體積；} \\omega < \\text{FSP}: \\text{結合水散失引起乾縮與強度上升}$$"
         },
         {
-          "heading": "木材之**異向性**與濕脹乾縮",
+          "heading": "木材之異向性與濕脹乾縮",
+          "outlineRefs": ["MT5.3"],
           "body": "木材三個主方向乾縮率：縱向 (順紋) 最小 (0.1~0.3%)，徑向次之 (3~6%)，弦向最大 (6~12%)。弦向乾縮率約為徑向的 1.5~2 倍，為開裂翹曲主因。"
         },
         {
           "heading": "工程木材規格：集成材 (Glulam) 與直交集成板 (CLT)",
+          "outlineRefs": ["MT5.5"],
           "body": "集成材 (<span className=\"text-indigo-600 font-bold\">CNS</span> 14630) 膠合木板同向疊合；直交集成板 (CLT) 各層正交 90° 堆疊，大幅克服**異向性**缺陷。",
           "table": {
             "headers": [
@@ -1922,7 +2075,8 @@ export const materialsData: SubjectData = {
           }
         },
         {
-          "heading": "木材防腐防蟻處理與試驗步驟 (<span className=\"text-indigo-600 font-bold\">CNS</span> 3000 / <span className=\"text-indigo-600 font-bold\">CNS</span> 453)",
+          "heading": "木材防腐防蟻處理與試驗步驟 (CNS 3000 / CNS 453)",
+          "outlineRefs": ["MT5.3", "MT5.5"],
           "body": "木材防腐防蟻常採用 ACQ (銅氨季胺鹽) 於加壓釜內執行「前真空抽氣 → 壓力注入藥劑 (1.0~1.5 MPa) → 後真空排液」之標準加壓滲透工法；力學性能則依 CNS 453 進行三點或四點靜曲加載試驗，測定木材破壞抗彎強度 (MOR) 與彈性模數 (MOE)。",
           "steps": [
             "前處理乾燥：**烘乾**至含水率 ≤ 19%。",
@@ -1931,6 +2085,22 @@ export const materialsData: SubjectData = {
             "後真空固化：再次抽真空清除表面多餘藥液後出釜固化。",
             "靜曲抗彎試驗 (<span className=\"text-indigo-600 font-bold\">CNS</span> 453)：三分點載重測試，計算破壞抗彎強度 MOR 與彈性模數 MOE。"
           ]
+        },
+        {
+          "heading": "木材的定義、比重與強度試驗、品質辨識",
+          "outlineRefs": ["MT5.1", "MT5.3", "MT5.4"],
+          "body": "**木材的定義**：由樹木莖幹經伐採、製材而得的天然有機材料，主要由纖維素、半纖維素與木質素組成，屬於**異向性**、多孔隙且會吸濕的材料。依樹種分為**針葉樹材**（軟材，如檜木、杉木、松木）與**闊葉樹材**（硬材，如櫸木、柚木）。\n**比重試驗**：一般以**氣乾比重**（含水率約 15%）或**全乾比重**表示，比重 = 試體質量 / 同體積水的質量。比重越大，強度與硬度通常越高。\n**強度試驗**：木材**順紋（縱向）**強度遠大於**橫紋（橫向）**強度；順紋抗拉 > 順紋抗壓 > 橫紋抗壓。含水率在纖維飽和點以下時，含水率越低強度越高。\n**品質辨識**：常見缺點有**節**（活節較緊密、死節易脫落）、**裂**（乾裂、輪裂）、**腐朽**、**蟲蛀**、**翹曲**（弓彎、側彎、扭曲）與**斜紋**。結構材應選節少、紋理直、無腐朽蟲害者。\n⚠️ 易錯：木材的「硬材、軟材」是依樹種分類（闊葉、針葉），不一定代表實際硬度；巴沙木是闊葉樹卻非常輕軟。",
+          "formula": "比重 = 試體質量 / (試體體積 × 水的密度)\n含水率 = (濕重 − 全乾重) / 全乾重 × 100%",
+          "table": {
+            "headers": ["缺點", "成因", "對強度的影響", "辨識與處理"],
+            "rows": [
+              ["節", "枝條殘留於樹幹", "纖維彎曲，降低抗拉強度", "死節易脫落，結構受拉區避免"],
+              ["裂", "乾燥收縮不均", "降低剪力強度", "端面封蠟、緩慢乾燥"],
+              ["腐朽", "真菌在潮濕環境侵蝕", "強度大幅下降", "敲擊聲沉悶；需防腐處理或汰換"],
+              ["翹曲", "異向收縮", "影響尺寸與安裝", "依含水率乾燥後再加工"],
+              ["斜紋", "纖維方向與材軸不平行", "降低抗彎與抗拉強度", "量測斜紋比，結構材應限制"]
+            ]
+          }
         }
       ],
       "practices": [
@@ -1998,9 +2168,10 @@ export const materialsData: SubjectData = {
     {
       "slug": "polymers-asphalt",
       "title": "6. 高分子、瀝青與防水塗料",
-      "desc": "石油瀝青 (Asphalt) 物理性質與針入度/軟化點試驗、塑膠 (熱塑性 vs 熱固性)、合成樹脂 (Epoxy, PU, Silicone) 與建築防水材料規範。\n\n🔥 V6.0 考前秒殺秘訣：此核心概念統測出題率極高，建議善用圖解與鷹架提示反覆練習！",
+      "desc": "石油瀝青 (Asphalt) 物理性質與針入度/軟化點試驗、塑膠 (熱塑性 vs 熱固性)、合成樹脂 (Epoxy, PU, Silicone) 與建築防水材料規範。",
       "status": "done",
       "gradeLevel": 10,
+      "curriculumCode": "TCTE115-MT6",
       "examHitRate": 4,
       "step0Prerequisites": [
         "高分子熱塑性 (Thermoplastic) 與熱固性 (Thermosetting) 分子鏈差異",
@@ -2057,10 +2228,12 @@ export const materialsData: SubjectData = {
       "concepts": [
         {
           "heading": "石油瀝青 (Asphalt) 分類與膠體學性質",
+          "outlineRefs": ["MT6.1"],
           "body": "瀝青為石油煉製過程殘留之黑褐色高分子烴類混合物。由瀝青質 (Asphaltenes，提供黏結性與硬度)、膠質 (Resins) 與油分 (Oils，提供流動性) 組成。建築工程常採用直吹瀝青 (Straight Asphalt) 做路面鋪設，氧化瀝青 (Blown Asphalt) 作防水層。"
         },
         {
-          "heading": "瀝青三大基本性質試驗 (<span className=\"text-indigo-600 font-bold\">CNS</span> 2260 / <span className=\"text-indigo-600 font-bold\">CNS</span> 2261)",
+          "heading": "瀝青三大基本性質試驗 (CNS 2260 / CNS 2261)",
+          "outlineRefs": ["MT6.1"],
           "body": "道路與防水瀝青三大核心指標試驗為：(1) 針入度試驗 (25°C、100g 荷重、5 秒沉入深度，評估硬度分級)；(2) 軟化點試驗 (環球法，測定瀝青受熱軟化流動溫度，評估高溫抗變形能力)；(3) 延展性試驗 (25°C 下以 5 cm/min 速率拉伸至斷裂之長度，評估低溫抗裂性)。",
           "steps": [
             "針入度試驗 (Penetration Test, <span className=\"text-indigo-600 font-bold\">CNS</span> 2260)：在 25°C 條件下，以 100g 重之標準鋼針貫入瀝青試體 5 秒鐘，貫入深度 0.1 mm 定義為 1 度 (例如 60/70 級分瀝青代表針入度為 60~70 度)。針入度越大，瀝青越軟。",
@@ -2070,6 +2243,7 @@ export const materialsData: SubjectData = {
         },
         {
           "heading": "高分子塑膠分類：熱塑性 (Thermoplastic) vs 熱固性 (Thermosetting)",
+          "outlineRefs": ["MT6.2"],
           "body": "建築高分子按熱行為分為兩大類：熱塑性塑膠（如 PVC、PE、PP、PMMA，分子鏈呈線性或支鏈狀，加熱軟化熔融可重複加工塑形）；熱固性塑膠（如環氧樹脂 Epoxy、酚醛樹脂、不飽和聚酯，經化學交聯固化後形成立體網狀結構，受熱不熔化只會炭化分解，具高耐熱性與機械強度）。",
           "table": {
             "headers": [
@@ -2096,6 +2270,7 @@ export const materialsData: SubjectData = {
         },
         {
           "heading": "塑膠資源回收標籤號碼 (Plastic Recycling Codes 1~7) 與工程特性",
+          "outlineRefs": ["MT6.2"],
           "body": "國際通用塑膠資源回收編碼由 1 至 7 號組成，不同材質具備獨特之耐熱性、耐衝擊性與耐腐蝕性，常見於工程與日常生活。",
           "table": {
             "headers": [
@@ -2160,6 +2335,7 @@ export const materialsData: SubjectData = {
         },
         {
           "heading": "建築三大防水樹脂與塗料比較：Epoxy vs PU vs Silicone",
+          "outlineRefs": ["MT6.3"],
           "body": "建築防水工程常用高分子塗膜包括：PU 聚氨酯（彈性延伸率極高，耐候性佳，適用於屋頂與露台）；環氧樹脂 Epoxy（耐磨抗化學腐蝕且附著力極強，適用於地下室地坪與儲槽）；壓克力防水膠（水性環保耐紫外線，適用於外牆抗滲）；橡化瀝青防水毯（高耐穿刺與自癒性，適用於地下室外牆與連續壁）。",
           "table": {
             "headers": [
@@ -2192,6 +2368,7 @@ export const materialsData: SubjectData = {
         },
         {
           "heading": "建築防水工法：瀝青油毛氈 (Asphalt Felt) vs 高分子防水單層膜",
+          "outlineRefs": ["MT6.1", "MT6.2"],
           "body": "傳統熱瀝青油毛氈工法 (<span className=\"text-indigo-600 font-bold\">CNS</span> 10145) 利用 3 鋪 4 塗鋪設油毛氈與熔融瀝青；現代工法採用 TPO / EPDM 高分子防水單層膜或熱熔式 APP/SBS 改質瀝青防水捲材，具備高施工效率與低空氣污染特點。"
         }
       ],
@@ -2264,9 +2441,10 @@ export const materialsData: SubjectData = {
     {
       "slug": "metals",
       "title": "7. 金屬材料與防蝕試驗",
-      "desc": "鋼材化學成分與碳含量效應、結構鋼規格 (SS400, SN490, SD280, SD420)、鋼筋拉伸試驗 (CNS 2111)、金屬電化學腐蝕與熱浸鍍鋅/陰極防蝕技術。\n\n🔥 V6.0 考前秒殺秘訣：此核心概念統測出題率極高，建議善用圖解與鷹架提示反覆練習！",
+      "desc": "鋼材化學成分與碳含量效應、結構鋼規格 (SS400, SN490, SD280, SD420)、鋼筋拉伸試驗 (CNS 2111)、金屬電化學腐蝕與熱浸鍍鋅/陰極防蝕技術。",
       "status": "done",
       "gradeLevel": 10,
+      "curriculumCode": "TCTE115-MT7",
       "examHitRate": 4,
       "step0Prerequisites": [
         "碳鋼含碳量 (0.02% ~ 2.14%) 對強度、延性與可焊性之影響",
@@ -2331,10 +2509,12 @@ export const materialsData: SubjectData = {
       "concepts": [
         {
           "heading": "鋼材化學成分與碳含量效應",
+          "outlineRefs": ["MT7.1"],
           "body": "鋼材由鐵 (Fe) 與碳 (C) 構成，碳含量增加時，珠光體比例上升，<span className=\"text-rose-600 font-bold\">抗拉強度</span>、降伏強度與硬度提高；但延展性、衝擊韌性與銲接性能劇烈下降。"
         },
         {
-          "heading": "結構用鋼材規格與 <span className=\"text-indigo-600 font-bold\">CNS</span> 標準",
+          "heading": "結構用鋼材規格與 CNS 標準",
+          "outlineRefs": ["MT7.2"],
           "body": "建築鋼結構常用規格：SS400 一般結構鋼、SN490B/C 建築耐震結構鋼 (限制降伏比 fy/fu ≤ 0.80) 及 SD280W/SD420W 銲接級鋼筋。",
           "table": {
             "headers": [
@@ -2377,7 +2557,8 @@ export const materialsData: SubjectData = {
           }
         },
         {
-          "heading": "鋼筋拉伸試驗步驟 (<span className=\"text-indigo-600 font-bold\">CNS</span> 2111 / <span className=\"text-indigo-600 font-bold\">ASTM</span> A370)",
+          "heading": "鋼筋拉伸試驗步驟 (CNS 2111 / ASTM A370)",
+          "outlineRefs": ["MT7.4"],
           "body": "測定鋼筋降伏強度 (σy)、<span className=\"text-rose-600 font-bold\">抗拉強度</span> (σu) 與伸長率之標準程序。",
           "steps": [
             "標點標記：標距長度 L₀ (L₀ = 5d 或 200 mm)。",
@@ -2388,10 +2569,12 @@ export const materialsData: SubjectData = {
         },
         {
           "heading": "鋼筋與鋼結構電化學腐蝕機制",
+          "outlineRefs": ["MT7.3"],
           "body": "陽極反應：Fe → Fe²⁺ + 2e⁻；陰極反應：O₂ + 2H₂O + 4e⁻ → 4OH⁻。生成鐵鏽 Fe₂O₃·nH₂O 體積膨脹 2~6 倍，導致混凝土開裂剝落。"
         },
         {
           "heading": "金屬防蝕與陰極保護技術",
+          "outlineRefs": ["MT7.3"],
           "body": "**熱浸鍍鋅** (Hot-Dip Galvanizing，提供物理隔離與犧牲陽極)、陰極防蝕 (Cathodic Protection)、環氧樹脂塗裝鋼筋與耐候鋼 (SPA-H)。"
         }
       ],
@@ -2462,9 +2645,10 @@ export const materialsData: SubjectData = {
     {
       "slug": "green-materials",
       "title": "8. 綠建材與永續材料發展",
-      "desc": "綠建材標章四大分類 (生態、健康、高性能、再生)、TVOC 與甲醛小型釋放腔檢測、飛灰/爐石低碳水泥、再生骨材與 LCA 碳足跡。\n\n🔥 V6.0 考前秒殺秘訣：此核心概念統測出題率極高，建議善用圖解與鷹架提示反覆練習！",
+      "desc": "綠建材標章四大分類 (生態、健康、高性能、再生)、TVOC 與甲醛小型釋放腔檢測、飛灰/爐石低碳水泥、再生骨材與 LCA 碳足跡。",
       "status": "done",
       "gradeLevel": 10,
+      "curriculumCode": "TCTE115-MT8",
       "examHitRate": 4,
       "step0Prerequisites": [
         "內政部建築研究所綠建材標章評定機制",
@@ -2517,6 +2701,7 @@ export const materialsData: SubjectData = {
       "concepts": [
         {
           "heading": "綠建材標章四大分類體系 (Green Building Material)",
+          "outlineRefs": ["MT8.1"],
           "body": "台灣綠建材標章依功能與生命週期分為四大類別：生態綠建材（使用天然生質原料）、健康綠建材（低甲醛 HCHO 及低 TVOC 逸散）、高性能綠建材（具備高隔音、高隔熱或透水防滑性能）、再生綠建材（利用營建廢棄物與回收材料製造）。",
           "table": {
             "headers": [
@@ -2554,7 +2739,8 @@ export const materialsData: SubjectData = {
           }
         },
         {
-          "heading": "健康綠建材**甲醛**與 **TVOC** 檢測步驟 (<span className=\"text-indigo-600 font-bold\">CNS</span> 16053)",
+          "heading": "健康綠建材甲醛與 TVOC 檢測步驟 (CNS 16053)",
+          "outlineRefs": ["MT8.1", "MT1.8"],
           "body": "依據 CNS 16053 與 ISO 16000 國家標準，採用密閉小型釋放環境測試腔 (Emission Test Chamber)，在精確控制之溫度、相對濕度與空氣置換率條件下，定量評定建築板材與室內裝修塗料在持續通風過程中的甲醛 (HCHO) 與總揮發性有機化合物 (TVOC) 之面比逸散速率。",
           "steps": [
             "試樣採集：非測試邊緣用不銹鋼箔密封，留單面逸散。",
@@ -2564,15 +2750,18 @@ export const materialsData: SubjectData = {
         },
         {
           "heading": "綠色低碳混凝土：飛灰與水淬高爐石粉 (PoZZolanic Materials)",
+          "outlineRefs": ["MT8.1", "MT3.5"],
           "body": "飛灰 (<span className=\"text-indigo-600 font-bold\">CNS</span> 3036) 具圓球形微觀顆粒 (滾珠效應)，提升工作性並具波佐蘭反應；水淬高爐石粉 (<span className=\"text-indigo-600 font-bold\">CNS</span> 12549) 具潛在水硬性，提高抗氯離子與抗硫酸鹽能力。",
           "formula": "$$\\text{卜作嵐二次水化反應: } Ca(OH)_2 + \\text{活性 } SiO_2 + H_2O \\longrightarrow \\text{C-S-H 凝膠}$$\\n$$\\text{CO}_2 \\text{ 減碳效益 } \\approx \\text{熟料替代量 (kg)} \\times 0.85 \\text{ kg-CO}_2/\\text{kg}$$"
         },
         {
           "heading": "再生骨材與再生粒料應用分級",
+          "outlineRefs": ["MT8.1"],
           "body": "廢混凝土塊加工之再生骨材 (RCA) 結構性混凝土限用 A 級 (<span className=\"text-rose-600 font-bold\">吸水率</span> < 3%)，非結構性面層可用 B/C 級。"
         },
         {
-          "heading": "綠建築**生命週期評估** (LCA) 與碳足跡",
+          "heading": "綠建築生命週期評估 (LCA) 與碳足跡",
+          "outlineRefs": ["MT8.1", "MT8.2"],
           "body": "建材環境衝擊由 LCA 衡量，包含原料開採、加工、施工、使用至拆除回收。建築物蘊含碳 (Embodied Carbon) 控制為 Net-zero 淨零目標核心。"
         }
       ],

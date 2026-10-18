@@ -12,6 +12,7 @@ export const englishData: SubjectData = {
       "desc": "掌握統測核心2000字，包含字首字根字尾分析、日常實用片語、情緒字彙與生活常見單字，為英文打下堅實基礎。",
       "status": "done",
       "gradeLevel": 10,
+      "curriculumCode": "TCTE115-EN1",
       "examHitRate": 5,
       "covered_question_ids": [
         "111-english-1",
@@ -111,6 +112,7 @@ export const englishData: SubjectData = {
       "concepts": [
         {
           "heading": "1. 構詞法（字首字根字尾）",
+          "outlineRefs": ["EN1.3.3"],
           "body": "<p>英文單字大多可由<span className=\"text-rose-600 font-bold\">字首 (prefix [TTS:prefix])</span>、<span className=\"text-blue-600 font-bold\">字根 (root [TTS:root])</span>及<span className=\"text-green-600 font-bold\">字尾 (suffix [TTS:suffix])</span>組成。掌握構詞法則能讓單字記憶事半功倍，並能推測未知單字的意思。</p>\n\n[DIALOGUE_START:構詞法實戰會話：拆解建築單字]\nTeacher: Look at the word \"reconstruct\". What does the prefix \"re-\" mean? | 看一下 reconstruct 這個單字。字首 re- 是什麼意思呢？\nStudent: It means \"again\", so \"reconstruct\" means to build something again! | 它的意思是「再次」，所以 reconstruct 就是「重建」的意思！\nTeacher: Exactly! And what about \"construction\"? The suffix \"-tion\" makes it a noun. | 完全正確！那 construction 呢？字尾 -tion 把它變成了名詞。\nStudent: I see! Understanding roots and prefixes helps me memorize technical terms faster. | 我懂了！掌握字根與字首能幫我更快記住專業術語。\n[DIALOGUE_END]",
           "table": {
             "headers": [
@@ -139,6 +141,7 @@ export const englishData: SubjectData = {
         },
         {
           "heading": "2. 生活與校園核心字彙 Level 1-2",
+          "outlineRefs": ["EN1.3.3"],
           "body": "<p>統測英文的基礎在於國中及高中前兩年的核心字彙(約2000字)，這些字彙常出現在第一部分的字彙題與克漏字中。熟悉生活周遭的常見物品與動作描述是拿分關鍵。</p>\n\n[DIALOGUE_START:校園與工場生活會話：借用工具]\nKevin: Excuse me, do you have a spare measuring tape in your toolbox? | 不好意思，你的工具箱裡有多餘的捲尺可以借我嗎？\nAmy: Yes, here it is. Be sure to return it before the drafting class ends. | 有的，給你。記得在製圖課結束前還我喔。\nKevin: No problem. Thanks a lot for your help! | 沒問題。非常謝謝你的幫忙！\nAmy: You are welcome. Let us finish our floor plan assignment together. | 不客氣。我們一起把平面圖作業完成吧。\n[DIALOGUE_END]",
           "steps": [
             "每天定期複習基礎2000字。",
@@ -148,6 +151,7 @@ export const englishData: SubjectData = {
         },
         {
           "heading": "3. 基礎動詞片語與介系詞搭配",
+          "outlineRefs": ["EN1.4.1"],
           "body": "<p>英文中，同一個動詞加上不同的<span className=\"text-blue-600 font-bold\">介系詞</span>會產生完全不同的意義。這是統測必考題型，必須熟記常見動詞 (如 look [TTS:look], take [TTS:take], put [TTS:put], get [TTS:get]) 的片語搭配。</p>\n\n<div className=\"p-3 rounded-xl bg-blue-50 dark:bg-blue-950/40 border border-blue-200 dark:border-blue-800 text-xs font-mono space-y-1 my-3\">\n  <div className=\"font-bold text-blue-800 dark:text-blue-300\">🧭 核心介系詞空間方位圖解：</div>\n  <div>• [ON] 表面接觸 ──► on the floor / on the roof</div>\n  <div>• [IN] 空間內部 ──► in the building / in the room</div>\n  <div>• [AT] 特定點狀 ──► at the corner / at the station</div>\n  <div>• [THROUGH] 穿越立體 ──► through the tunnel / through the pipeline</div>\n  <div>• [UNDER] 垂直正下方 ──► under construction / under the bridge</div>\n</div>\n\n[DIALOGUE_START:動詞片語會話：工地任務執行]\nForeman: We need to carry out the safety inspection before pouring concrete. | 我們在澆置混凝土之前，必須先執行安全檢查。\nWorker: Understood. I will look into the rebar spacing right away. | 收到。我會立刻仔細檢查鋼筋的間距。\nForeman: Great. Make sure everyone puts on their safety gear. | 很好。請確保每個人都穿戴好安全裝備。\nWorker: All workers have already put on their helmets and boots. | 所有工人都已經戴好安全帽並穿上安全鞋了。\n[DIALOGUE_END]",
           "table": {
             "headers": [
@@ -176,6 +180,7 @@ export const englishData: SubjectData = {
         },
         {
           "heading": "4. 構詞分析法推測生字",
+          "outlineRefs": ["EN1.3.3"],
           "body": "<p>在閱讀測驗中遇到完全沒看過的單字時，不要慌張。可以利用<span className=\"text-amber-600 font-bold\">上下文暗示</span>與<span className=\"text-amber-600 font-bold\">構詞法</span>來進行邏輯推測。</p>\n\n[DIALOGUE_START:生字推測會話：解讀新材料說明]\nAlex: This technical sheet says the panel is \"waterproof\" and \"fire-resistant\". | 這份技術規格書說這塊板材是 waterproof 而且 fire-resistant。\nBrian: Even if you have not seen the word, \"-proof\" means resistant to water! | 就算你沒看過這個字，-proof 就是指具備防水能力！\nAlex: So \"fire-resistant\" means it can withstand high temperatures without catching fire. | 所以 fire-resistant 就是指它能承受高溫且不易著火。\nBrian: Right! Context clues and word parts always give away the meaning. | 沒錯！上下文線索與單字部位總能透露出字義。\n[DIALOGUE_END]",
           "steps": [
             "步驟一：觀察該字是否有明顯的字首(如 un- [TTS:un-], in- [TTS:in-] 表示否定)。",
@@ -185,6 +190,7 @@ export const englishData: SubjectData = {
         },
         {
           "heading": "5. 數字/日期/金額英文表達",
+          "outlineRefs": ["EN1.3.2"],
           "body": "<p>在工程與生活應用中，數字、日期、長度、重量與金額的英文表達非常重要。統測常在對話或閱讀中考驗同學對這類資訊的捕捉能力。</p>\n\n[DIALOGUE_START:數字與金額會話：材料採購詢價]\nBuyer: How much does it cost for fifteen hundred bags of Portland cement? | 採購一千五百包波特蘭水泥要多少費用？\nSupplier: The total comes to twelve thousand and five hundred dollars, including delivery. | 總共是一萬兩千五百美元，包含運送費用。\nBuyer: Can you deliver the order to our construction site by October 15th? | 你們可以在十月十五日之前把貨送到我們的工地嗎？\nSupplier: Certainly. We will send the shipment on October 12th. | 當然可以。我們會在十月十二日出貨。\n[DIALOGUE_END]",
           "table": {
             "headers": [
@@ -213,6 +219,7 @@ export const englishData: SubjectData = {
         },
         {
           "heading": "6. 情緒與性格描述字彙",
+          "outlineRefs": ["EN1.3.3"],
           "body": "<p>描述人物的情緒(emotions [TTS:emotions])與性格(personality [TTS:personality])的單字經常出現在對話測驗與閱讀測驗的人物分析中。需注意<span className=\"text-rose-600 font-bold\">-ed [TTS:-ed] (感到...的)</span>與<span className=\"text-blue-600 font-bold\">-ing [TTS:-ing] (令人...的)</span>的差別。</p>\n\n[DIALOGUE_START:情緒與性格會話：團隊合作評價]\nManager: How is the new structural intern performing on the project? | 新來的結構實習生在專案上的表現如何？\nArchitect: She is extremely hardworking and patient when checking blueprint details. | 她非常認真勤奮，在校對藍圖細節時也非常有耐心。\nManager: That is wonderful to hear. A reliable engineer is essential for safety. | 太高興聽到這點了。一位可靠的工程師對安全至關重要。\nArchitect: We are very confident in her calculations for the foundation. | 我們對她做的基礎計算非常有信心。\n[DIALOGUE_END]",
           "table": {
             "headers": [
@@ -241,6 +248,7 @@ export const englishData: SubjectData = {
         },
         {
           "heading": "7. 統測高頻必考 2000 字速記",
+          "outlineRefs": ["EN1.3.3"],
           "body": "<p>教育部頒布的基礎2000字是統測英文的命題基石。針對土木與建築群，特別需要留意跨領域共用的核心字彙，如 design [TTS:design], plan [TTS:plan], measure [TTS:measure], material [TTS:material] 等。</p>\n\n[DIALOGUE_START:統測高頻單字會話：考前衝刺複習]\nDavid: Have you memorized the top 2000 vocabulary words for the exam? | 你把統測必考的前兩千個核心單字背熟了嗎？\nGrace: Yes, I review fifty words every morning using flashcards. | 背熟了，我每天早上都用單字卡複習五十個單字。\nDavid: Words like \"structure\", \"measure\", and \"estimate\" appear almost every year. | 像 structure、measure 和 estimate 這些單字幾乎每年都會出現。\nGrace: Let us quiz each other to make sure we master all their usages. | 我們來互相測驗，確保完全掌握它們的用法吧。\n[DIALOGUE_END]",
           "steps": [
             "每週進行至少一次的單字自我測驗。",
@@ -250,6 +258,7 @@ export const englishData: SubjectData = {
         },
         {
           "heading": "8. 情境會話範例",
+          "outlineRefs": ["EN2.4", "EN2.10"],
           "body": "<p>以下是兩個常見的情境會話範例，幫助同學熟悉工地與建築實務的英語交流：</p>\n\n[DIALOGUE_START:日常社交會話：工程參訪交流]\nHost: Good morning! Welcome to the Taichung National Theater site tour. | 早安！歡迎來到台中國家歌劇院的工地參訪。\nVisitor: Thank you for hosting us. The curved wall structure looks magnificent! | 謝謝你們的接待。這棟建築的曲牆結構看起來真壯觀！\nHost: Please follow me and keep your visitor badges visible at all times. | 請跟我來，並請全程將訪客證佩戴在明顯處。\nVisitor: We are excited to learn more about your 3D construction techniques. | 我們非常期待能深入了解你們的 3D 施工工法。\n[DIALOGUE_END]",
           "steps": [
             "A: Did you bring the blueprint for the new bridge? [TTS:Did you bring the blueprint for the new bridge?] (你有帶新橋的藍圖嗎？)\nB: Yes, I left it in the site office. [TTS:Yes, I left it in the site office.] (有，我把它留在工地辦公室了。)",
@@ -258,6 +267,7 @@ export const englishData: SubjectData = {
         },
         {
           "heading": "9. 統測常考易混淆字對與不規則動詞三態陷阱表",
+          "outlineRefs": ["EN1.3.3"],
           "body": "<p>統測英文第一大題單字題與克漏字中，命題委員極常放置「外觀拼寫極為相似但語義或詞性完全不同」的易混淆字作為誘答陷阱。同時，不規則動詞三態（尤其是 lie/lay 與 hang）每年必考，考前務必熟練辨別。</p>\n\n[DIALOGUE_START:易混淆字會話：材料性質辨析]\nInspector: The hot weather will definitely affect the curing speed of concrete. | 炎熱的天氣肯定會影響混凝土的養護速度。\nEngineer: Yes, extreme heat produces a negative effect on its ultimate compressive strength. | 是的，極端高溫會對其最終抗壓強度產生負面影響。\nInspector: Good distinction! \"Affect\" is the verb, while \"effect\" is the noun. | 區分得很好！affect 是動詞，而 effect 是名詞。\nEngineer: Exactly! And we should also adapt our pouring schedule to cooler morning hours. | 沒錯！而且我們也應該調整澆灌時間表以適應較涼爽的清晨時段。\n[DIALOGUE_END]",
           "table": {
             "headers": [
@@ -306,6 +316,7 @@ export const englishData: SubjectData = {
         },
         {
           "heading": "10. 名詞系統：可數／不可數與複數變化八大規則",
+          "outlineRefs": ["EN1.4.1"],
           "body": "<p>統測字彙題與非選翻譯最常扣分的地方，不是不會單字，而是<strong>名詞單複數判斷錯誤</strong>。東大總複習講義每一回都會複習名詞規則，因為它同時牽動「動詞單複數」「冠詞選用」「數量詞搭配」三個考點。以下把八大變化規則與四類不可數名詞一次整理完畢。</p>\n\n[DIALOGUE_START:名詞單複數實戰會話：工地物料清點]\nForeman: How many boxes of tiles did we receive this morning? | 今天早上我們收到幾箱磁磚？\nWorker: Twelve boxes, but two of the shelves in the storage room are still empty. | 十二箱，不過倉庫裡還有兩個層架是空的。\nForeman: We also need more equipment, not more equipments. | 我們還需要更多設備，是 equipment 不是 equipments。\nWorker: Right, equipment is uncountable, so it never takes an -s. | 對，equipment 是不可數名詞，所以永遠不加 s。\n[DIALOGUE_END]",
           "table": {
             "headers": [
@@ -366,6 +377,7 @@ export const englishData: SubjectData = {
         },
         {
           "heading": "11. 冠詞 a / an / the 與零冠詞完全判準",
+          "outlineRefs": ["EN1.4.1"],
           "body": "<p>冠詞是統測克漏字（綜合測驗）每年必挖的空格，因為它同時檢驗<strong>發音判斷</strong>與<strong>語境指涉</strong>。判斷 a 或 an 的唯一依據是「後面第一個<strong>音</strong>」，不是第一個字母；判斷用不用 the，唯一依據是「聽者是否已能鎖定是哪一個」。</p>\n\n[DIALOGUE_START:冠詞判斷會話：初次提及與再次提及]\nArchitect: We visited a construction site in Taichung last week. | 我們上週參觀了台中的一個工地。\nIntern: Was the site the one for the new opera house? | 那個工地就是新歌劇院的那個嗎？\nArchitect: Yes. Notice I said \"a site\" first, and then you said \"the site\". | 沒錯。注意我第一次說 a site，你接著說 the site。\nIntern: I see. First mention takes \"a\", and the second mention takes \"the\". | 我懂了，第一次提及用 a，第二次提及就要用 the。\n[DIALOGUE_END]",
           "table": {
             "headers": [
@@ -426,6 +438,7 @@ export const englishData: SubjectData = {
         },
         {
           "heading": "12. 統測核心 2000 字主題速記表 A：人物・身體・情緒・個性",
+          "outlineRefs": ["EN1.3.3"],
           "body": "<p>東大總複習講義每一回精選 30 個統測常見單字並補上「搭配用法＋同反義字」。以下依<strong>語意主題群</strong>重新編排統測近十年高頻字，每一列都附上實際搭配 (collocation) 與同反義字，請以「成串記憶」取代單字孤立記憶。</p>",
           "table": {
             "headers": [
@@ -484,6 +497,7 @@ export const englishData: SubjectData = {
         },
         {
           "heading": "13. 統測核心 2000 字主題速記表 B：時間・空間・交通・天氣・環境",
+          "outlineRefs": ["EN1.3.3"],
           "body": "<p>這一組是統測<strong>閱讀測驗與圖表題</strong>的骨幹字群。時程字（schedule / deadline / delay）幾乎每年出現在通知與行程表題組；環境字（sustainable / recycle / emission）則是素養題與 SDGs 題組的核心。</p>",
           "table": {
             "headers": [
@@ -542,6 +556,7 @@ export const englishData: SubjectData = {
         },
         {
           "heading": "14. 統測高頻動詞片語 60 選（依介副詞語意歸類）",
+          "outlineRefs": ["EN1.4.1"],
           "body": "<p>動詞片語不要一條一條硬記，要<strong>依介副詞的核心語意分群</strong>。掌握 up（向上／完成）、down（向下／減少）、in（進入／填入）、out（向外／耗盡）、on（持續／依靠）、off（分離／取消）六大方向感，遇到沒背過的片語也能推測語意。</p>\n\n[DIALOGUE_START:動詞片語實戰會話：工程進度會議]\nManager: We ran out of cement yesterday, so we had to call off the pour. | 我們昨天水泥用完了，所以只好取消澆置。\nEngineer: I have already come up with a backup plan and set up a new delivery. | 我已經想出備案，並安排了新的送貨。\nManager: Good. Please write down the revised schedule and hand it in by noon. | 很好。請把修訂後的時程寫下來，中午前交給我。\nEngineer: Will do. I will also go over the drawings before the inspection. | 沒問題。我也會在勘驗前把圖說再檢查一遍。\n[DIALOGUE_END]",
           "table": {
             "headers": [
@@ -601,6 +616,7 @@ export const englishData: SubjectData = {
         },
         {
           "heading": "15. 不規則動詞三態四大分類總表與致命易混淆組",
+          "outlineRefs": ["EN1.3.3"],
           "body": "<p>不規則動詞三態是統測<strong>綜合測驗、非選翻譯、句子重組</strong>的共同基礎。硬背一百個毫無章法，改用「四大變化型態」分類記憶，記憶量可壓縮到原本的三分之一。特別注意最後兩列的 lie／lay、rise／raise、hang、find／found，是命題委員年年安排的誘答陷阱。</p>",
           "table": {
             "headers": [
@@ -657,6 +673,20 @@ export const englishData: SubjectData = {
             "被動語態與完成式都用「過去分詞」，因此第三態記錯等於連帶三個文法題全錯，務必以「三態一起唸」的方式記憶。",
             "自我檢核法：隨機抽 10 個動詞，同時寫出「過去式句」與「現在完成式句」各一句，能寫對才算真正掌握。"
           ]
+        },
+        {
+          "heading": "16. 工具書與網路資源：字典、搭配詞與查證",
+          "outlineRefs": ["EN1.5.8"],
+          "body": "課綱要求能使用**工具書與網路資源**學習英文。\n**英英／英漢字典**：查一個字時，除了中文意思，還要看**詞性、可數／不可數、例句與常見搭配**。例如 equipment 為不可數名詞，不能說 an equipment 或 equipments。\n**搭配詞（collocation）**：用字典或語料庫確認哪些字常一起出現，例如 make a decision、take a photo、heavy rain，而不是 do a decision、strong rain。\n**網路資源**：線上字典可聽發音、看例句；查專業術語時，優先參考官方或專業機構網站，並交叉比對兩個以上來源。\n**判斷資料可信度**：看作者與發布單位、日期與引用來源；論壇或社群貼文只能當參考。\n⚠️ 易錯：機器翻譯常把中文語序直接翻成英文，結果文法正確卻不道地；寫完應再用字典確認搭配詞與用法。",
+          "table": {
+            "headers": ["查詢需求", "工具", "要看的資訊"],
+            "rows": [
+              ["單字意思與詞性", "英英／英漢字典", "詞性、可數性、例句"],
+              ["正確搭配", "搭配詞字典、語料庫", "make / take / do 等搭配"],
+              ["發音", "線上字典發音、音標", "重音位置與 KK 音標"],
+              ["專業術語", "官方或專業機構網站", "交叉比對兩個以上來源"]
+            ]
+          }
         }
       ],
       "practices": [
@@ -801,6 +831,7 @@ export const englishData: SubjectData = {
       "desc": "掌握英文五大基本句型、12時態（特重現在完成式）、基礎被動語態、助動詞、不定詞與動名詞之差異、比較級最高級及虛主詞 it 的應用。",
       "status": "done",
       "gradeLevel": 10,
+      "curriculumCode": "TCTE115-EN1",
       "examHitRate": 5,
       "covered_question_ids": [
         "111-english-9",
@@ -865,6 +896,7 @@ export const englishData: SubjectData = {
       "concepts": [
         {
           "heading": "英文五大基本句型",
+          "outlineRefs": ["EN1.4.1"],
           "body": "英文句子由主詞 (S)、動詞 (V)、受詞 (O)、補語 (C) 等元素組成。動詞的性質決定了句子的基本架構，土木建築常描述結構體，多用這五大句型。\n\n<div className=\"p-3 rounded-xl bg-blue-50 dark:bg-blue-950/40 border border-blue-200 dark:border-blue-800 text-xs font-mono space-y-1 my-3\">\n  <div className=\"font-bold text-blue-800 dark:text-blue-300\">📐 五大句型解構天平圖示：</div>\n  <div>• [S + V]        主詞 ──► 不及物動詞 (無受詞)</div>\n  <div>• [S + V + C]    主詞 ──► 連綴動詞 ──► 補語 (形容主詞狀態)</div>\n  <div>• [S + V + O]    主詞 ──► 及物動詞 ──► 受詞 (動作承受者)</div>\n  <div>• [S + V + IO + DO] 主詞 ──► 授與動詞 ──► 間接受詞(人) + 直接受詞(物)</div>\n  <div>• [S + V + O + OC]  主詞 ──► 動詞 ──► 受詞 ──► 受詞補語 (使役/感官)</div>\n</div>\n\n[DIALOGUE_START:五大句型會話：清楚傳達工程指令]\nArchitect: The client considers the new lobby spacious and modern. | 業主認為新的大廳既寬敞又具現代感。\nAssistant: That is an S + V + O + OC sentence pattern, right? | 那是「主詞 + 動詞 + 受詞 + 受詞補語」的句型，對吧？\nArchitect: Yes. Mastering basic sentence patterns helps you write clear reports. | 是的。掌握基本句型能幫助你寫出條理清晰的報告。\nAssistant: I will keep my project descriptions concise and accurate. | 我會讓專案說明保持簡潔且精準。\n[DIALOGUE_END]",
           "table": {
             "headers": [
@@ -903,6 +935,7 @@ export const englishData: SubjectData = {
         },
         {
           "heading": "12 時態完整剖析（重點：現在完成式）",
+          "outlineRefs": ["EN1.4.1"],
           "body": "時態表達動作發生的時間和狀態。分為現在、過去、未來，以及簡單、進行、完成、完成進行。統測最愛考現在完成式，表示從過去持續到現在的動作或經驗。\n\n<div className=\"p-3 rounded-xl bg-indigo-50 dark:bg-indigo-950/40 border border-indigo-200 dark:border-indigo-800 text-xs font-mono space-y-1 my-3\">\n  <div className=\"font-bold text-indigo-800 dark:text-indigo-300\">⏳ 動詞 12 時態時空座標軸圖解：</div>\n  <div>• [過去完成式 had + p.p.] ◄── 比過去更早發生 (By the time S+Ved, S+had p.p.)</div>\n  <div>• [過去簡單式 V-ed]       ◄── 明確過去時間點 (yesterday, in 2020, ago)</div>\n  <div>• [現在完成式 have/has p.p.] ◄── 過去持續至今 (since + 過去點, for + 一段時間)</div>\n  <div>• [現在簡單式 V / V-s]     ◄── 恆常真理、材料物理性質 (Steel expands when heated)</div>\n  <div>• [未來簡單式 will + V]     ──► 未來事件 (if/when 子句用現在式代替未來式)</div>\n</div>\n\n[DIALOGUE_START:時態會話：工程里程碑進度確認]\nInspector: Have you finished pouring the concrete for the third-floor slab? | 三樓樓板的混凝土澆置已經完成了嗎？\nSupervisor: Yes, we have just completed it, and the curing process is ongoing. | 是的，我們剛剛完成，目前正在進行養護作業。\nInspector: Good. We will inspect the compressive strength next Monday. | 很好。我們下週一會檢驗抗壓強度。\nSupervisor: We will have all laboratory test reports ready by then. | 屆時我們會準備好所有實驗室的檢驗報告。\n[DIALOGUE_END]",
           "table": {
             "headers": [
@@ -931,6 +964,7 @@ export const englishData: SubjectData = {
         },
         {
           "heading": "基礎被動語態",
+          "outlineRefs": ["EN1.4.1"],
           "body": "當我們更關注「動作的承受者」，或者「不知道/不需要說出動作的執行者」時，就會使用被動語態。在工程報告中極為常見。\n\n[DIALOGUE_START:被動語態會話：歷史建築結構介紹]\nGuide: This iconic suspension bridge was designed by a Taiwanese engineer in 1995. | 這座具代表性的斜張橋是由一位台灣工程師於 1995 年設計的。\nStudent: Why is passive voice used here instead of active voice? | 為什麼這裡使用被動語態而不是主動語態呢？\nGuide: Because the bridge itself is the main focus of our discussion. | 因為這座橋樑本身才是我們討論的焦點。\nStudent: That makes sense! The bridge was reinforced with high-strength cables. | 很有道理！這座橋也是用高強度鋼索補強的。\n[DIALOGUE_END]",
           "steps": [
             "基本公式：be 動詞 + 過去分詞 (p.p.)",
@@ -940,6 +974,7 @@ export const englishData: SubjectData = {
         },
         {
           "heading": "助動詞系統",
+          "outlineRefs": ["EN1.4.1"],
           "body": "助動詞用於表達語氣（如可能、必須、應該）。後方一律接原形動詞。\n\n[DIALOGUE_START:助動詞會話：工地安全規範落實]\nSafety Officer: All workers must wear protective helmets inside the construction zone. | 所有工人在施工區域內都必須佩戴防護安全帽。\nVisitor: May I take photographs of the steel framework? | 請問我可以拍攝鋼骨架構的照片嗎？\nSafety Officer: You can take photos, but you should stay behind the yellow warning line. | 您可以拍照，但應該保持站在黃色警戒線後方。\nVisitor: Understood. Safety should always come first. | 明白了。安全永遠應該排在第一位。\n[DIALOGUE_END]",
           "table": {
             "headers": [
@@ -968,6 +1003,7 @@ export const englishData: SubjectData = {
         },
         {
           "heading": "不定詞 vs 動名詞",
+          "outlineRefs": ["EN1.4.1"],
           "body": "有些動詞後面只能接不定詞 (to V)，有些只能接動名詞 (V-ing)，有些兩者皆可但意義不同。\n\n[DIALOGUE_START:不定詞與動名詞會話：排定施工計畫]\nProject Lead: We decided to postpone the outdoor excavation today. | 我們決定推遲今天的戶外開挖作業。\nForeman: Good idea. It kept raining heavily all morning. | 好主意。整個早上都一直在下大雨。\nProject Lead: We look forward to resuming work as soon as the weather improves. | 我們期待天氣一好轉就立刻恢復施工。\nForeman: We will prepare to cast the foundation tomorrow morning. | 我們會準備好明天早上進行基礎澆灌。\n[DIALOGUE_END]",
           "table": {
             "headers": [
@@ -996,6 +1032,7 @@ export const englishData: SubjectData = {
         },
         {
           "heading": "比較級與最高級",
+          "outlineRefs": ["EN1.4.1"],
           "body": "形容詞與副詞用於比較時的變化。常用於比較材料強度、建築高度等。\n\n[DIALOGUE_START:比較級與最高級會話：材料強度性能評估]\nEngineer A: High-performance concrete is stronger than standard concrete. | 高性能混凝土比一般標準混凝土強度更高。\nEngineer B: True, but structural steel remains the most flexible material for high-rises. | 確實，但對於高層建築來說，結構鋼材依然是韌性最好的材料。\nEngineer A: This composite design will make our tower much safer during earthquakes. | 這種複合設計會使我們的塔樓在地震時安全許多。\nEngineer B: It is indeed the best solution for this seismic zone. | 這確實是針對此地震帶的最佳解決方案。\n[DIALOGUE_END]",
           "steps": [
             "原級比較：as + 形容詞/副詞原級 + as (如：as tall as[TTS:as tall as])",
@@ -1005,6 +1042,7 @@ export const englishData: SubjectData = {
         },
         {
           "heading": "虛主詞與虛受詞句型",
+          "outlineRefs": ["EN1.4.1"],
           "body": "當真正的主詞或受詞（通常是不定詞片語或 that 子句）太長時，為了保持句子平衡，會用 it 代替，將真正的主詞/受詞移到句尾。\n\n[DIALOGUE_START:虛主詞虛受詞會話：合規檢驗重要性]\nAuditor: It is essential to verify all structural dimensions before signing the permit. | 在簽署許可證前，核對所有結構尺寸是至關重要的。\nDraftsperson: I find it necessary to double-check the elevation drawings. | 我也覺得有必要再次確認立面圖。\nAuditor: It takes time and patience to ensure zero errors in engineering. | 確保工程零失誤需要時間與耐心。\nDraftsperson: We will make it a priority to maintain the highest quality. | 我們會把維持最高品質視為第一優先。\n[DIALOGUE_END]",
           "steps": [
             "虛主詞：It is + 形容詞 + (for sb.) + to V ... (例：It is important to follow safety rules.[TTS:It is important to follow safety rules.])",
@@ -1013,6 +1051,7 @@ export const englishData: SubjectData = {
         },
         {
           "heading": "情境會話範例",
+          "outlineRefs": ["EN2.4", "EN2.10"],
           "body": "以下是兩個與本單元文法句型相關的實境對話範例，幫助同學在日常情境中靈活運用時態與句型。\n\n[DIALOGUE_START:文法綜合會話：事務所晨會簡報]\nTeam Lead: Have all revisions been incorporated into the final floor plan? | 所有的修改都已經納入最終的平面圖了嗎？\nJunior Architect: Yes, they have been updated, and the client agreed to review them today. | 是的，都已經更新完畢，業主也同意今天會進行審查。\nTeam Lead: It is important that we present the green building credentials clearly. | 我們把綠建築認證指標清楚呈現非常重要。\nJunior Architect: I will do my best to explain every detail during the meeting. | 我會在會議中盡全力解釋每一個細節。\n[DIALOGUE_END]",
           "steps": [
             "對話一：\nA: Have you finished the structural design yet?[TTS:Have you finished the structural design yet?]\nB: Not yet. I am still working on the foundation plans.[TTS:Not yet. I am still working on the foundation plans.]",
@@ -1021,6 +1060,7 @@ export const englishData: SubjectData = {
         },
         {
           "heading": "9. 主謂一致性 (Subject-Verb Agreement) 八大核心法則",
+          "outlineRefs": ["EN1.4.1"],
           "body": "<p>英文句型中，「主詞與動詞的單複數一致」是統測克漏字與文法選擇題每年必考的經典考點。很多同學看到主詞後面有一長串修飾語就忘記真正的主詞是誰，掌握以下八大公式即可秒殺破題！</p>\n\n[DIALOGUE_START:主謂一致會話：工地人員管理]\nSupervisor: Either the project manager or the site inspectors are responsible for the report. | 不是專案經理就是現場檢驗員要為這份報告負責。\nClerk: Why did you use \"are\" instead of \"is\"? | 為什麼你用 are 而不是 is 呢？\nSupervisor: Because with \"either...or...\", the verb agrees with the closer subject, which is \"inspectors\"! | 因為在 either...or... 句型中，動詞要和較靠近的主詞一致，也就是複數的 inspectors！\nClerk: I get it now! And \"The number of workers is increasing\" uses \"is\" because the subject is \"The number\". | 我現在懂了！而 The number of workers is increasing 用 is 是因為主詞是 The number。\n[DIALOGUE_END]",
           "table": {
             "headers": [
@@ -1069,6 +1109,7 @@ export const englishData: SubjectData = {
         },
         {
           "heading": "10. 代名詞系統：人稱・所有格・反身・指示",
+          "outlineRefs": ["EN1.4.1"],
           "body": "<p>代名詞是統測綜合測驗（克漏字）的<strong>常駐考點</strong>，因為它同時測驗「格位判斷」與「上文指代」。只要能回答「這個空格在句中扮演主詞還是受詞？」「它指的是上文哪個名詞？」，代名詞題幾乎可以全數答對。</p>\n\n[DIALOGUE_START:代名詞判斷會話：所有格與反身代名詞]\nSupervisor: Is this helmet yours or his? | 這頂安全帽是你的還是他的？\nWorker: It is mine. He left his in the site office. | 是我的。他把他的留在工地辦公室了。\nSupervisor: Be careful with the saw, or you might hurt yourself. | 用鋸子要小心，不然你可能會傷到自己。\nWorker: Do not worry. The architect himself taught me how to use it. | 別擔心。是建築師本人教我怎麼使用的。\n[DIALOGUE_END]",
           "table": {
             "headers": [
@@ -1128,6 +1169,7 @@ export const englishData: SubjectData = {
         },
         {
           "heading": "11. 不定代名詞完全攻略（one／another／the other／others／both／either／all）",
+          "outlineRefs": ["EN1.4.1"],
           "body": "<p>不定代名詞是統測<strong>年年必考的高頻文法</strong>，關鍵只有兩個判準：<strong>①「總數是兩個還是三個以上？」②「剩下的有沒有被講完（定或不定）？」</strong>掌握這兩個問題，八個選項瞬間只剩一個能填。</p>",
           "table": {
             "headers": [
@@ -1188,6 +1230,7 @@ export const englishData: SubjectData = {
         },
         {
           "heading": "12. 形容詞與副詞：位置、順序、-ing／-ed 與 -ly 陷阱",
+          "outlineRefs": ["EN1.4.1"],
           "body": "<p>形容詞與副詞的考點集中在三件事：<strong>①「該用形容詞還是副詞？」②「-ing 還是 -ed？」③「加了 -ly 意思會不會變？」</strong>其中 hard／hardly、late／lately、near／nearly 這三組是統測最愛的誘答陷阱。</p>\n\n[DIALOGUE_START:形容詞副詞辨析會話：連綴動詞與程度副詞]\nInspector: The surface of this concrete feels rough. | 這片混凝土的表面摸起來很粗糙。\nEngineer: Yes, and the finishing work was done carelessly. | 是的，而且收尾工作做得很草率。\nInspector: The report is confusing, so the client was confused. | 這份報告令人困惑，所以業主感到困惑。\nEngineer: I can hardly disagree. I will rewrite it tonight. | 我完全同意。我今晚就重寫。\n[DIALOGUE_END]",
           "table": {
             "headers": [
@@ -1247,6 +1290,7 @@ export const englishData: SubjectData = {
         },
         {
           "heading": "13. 數量詞與名詞搭配總表（many／much／few／little 全解）",
+          "outlineRefs": ["EN1.4.1"],
           "body": "<p>數量詞題型的解法只需兩步：<strong>①判斷後面的名詞是可數還是不可數　②判斷語氣是肯定還是否定</strong>。few／little（幾乎沒有，否定語氣）與 a few／a little（有一些，肯定語氣）的差別，是統測克漏字每年的送分題兼陷阱題。</p>",
           "table": {
             "headers": [
@@ -1306,6 +1350,7 @@ export const englishData: SubjectData = {
         },
         {
           "heading": "14. 介系詞總表：時間・地點・方向・工具・其他",
+          "outlineRefs": ["EN1.4.1"],
           "body": "<p>介系詞在統測綜合測驗中平均每份考卷出現三到五題。與其死背，不如掌握 at／on／in 的<strong>「點－線／面－立體空間」空間隱喻</strong>：這個隱喻同時適用於時間與地點兩個維度，一次記憶、兩處通用。</p>\n\n[DIALOGUE_START:介系詞實戰會話：時間與地點的 at／on／in]\nClient: When can we meet at the site? | 我們什麼時候可以在工地碰面？\nArchitect: On Monday at nine, in the meeting room on the second floor. | 星期一早上九點，在二樓的會議室。\nClient: Will the report be ready by then? | 報告到那時候會準備好嗎？\nArchitect: Yes, I will finish it in two days, well before the deadline. | 會的，我兩天內就會完成，遠早於期限。\n[DIALOGUE_END]",
           "table": {
             "headers": [
@@ -1366,6 +1411,7 @@ export const englishData: SubjectData = {
         },
         {
           "heading": "15. 祈使句・感嘆句・附加問句三大特殊句型",
+          "outlineRefs": ["EN1.4.1"],
           "body": "<p>這三種句型在統測<strong>會話題與非選句子重組</strong>中出現頻率極高。祈使句是工地安全指示與操作手冊的標準語體；感嘆句與附加問句則是會話題判斷語氣的關鍵線索。</p>\n\n[DIALOGUE_START:特殊句型會話：安全指示與確認語氣]\nForeman: Wear your helmet at all times, and never touch the live wire. | 隨時戴好安全帽，而且絕對不要碰觸帶電電線。\nWorker: Understood. What a dangerous job this is! | 了解。這工作真是危險啊！\nForeman: You have already signed the safety form, haven't you? | 你已經簽過安全切結書了，對吧？\nWorker: Yes, I have. Let us start the inspection, shall we? | 是的，我簽了。我們開始勘驗吧，好嗎？\n[DIALOGUE_END]",
           "table": {
             "headers": [
@@ -1561,6 +1607,7 @@ export const englishData: SubjectData = {
       "desc": "本章節涵蓋日常問候、校園生活、購物餐飲、電話預約等實用會話情境，並介紹英語口語中的連音與弱化現象，最後提供統測對話題的解題策略，幫助同學在考試中快速掌握語意。",
       "status": "done",
       "gradeLevel": 10,
+      "curriculumCode": "TCTE115-EN2",
       "examHitRate": 5,
       "covered_question_ids": [
         "111-english-11",
@@ -1688,26 +1735,32 @@ export const englishData: SubjectData = {
       "concepts": [
         {
           "heading": "1. 問候/道別/道謝/道歉基本句型",
+          "outlineRefs": ["EN1.4.1"],
           "body": "日常對話中最基本的交際用語，包含打招呼、結束對話的道別、表達感謝以及道歉的常見說法。\n\n**問候 (Greetings)[TTS:Greetings]:**\n- How is everything going?[TTS:How is everything going?] (最近好嗎？)\n- What's up?[TTS:What's up?] (有什麼新鮮事？)\n\n**道別 (Farewells)[TTS:Farewells]:**\n- Catch you later.[TTS:Catch you later.] (晚點見。)\n- Take care.[TTS:Take care.] (保重。)\n\n**道謝 (Thanking)[TTS:Thanking]:**\n- I really appreciate it.[TTS:I really appreciate it.] (我非常感激。)\n- Thanks a million.[TTS:Thanks a million.] (萬分感謝。)\n\n**道歉 (Apologizing)[TTS:Apologizing]:**\n- I am terribly sorry for the mistake on the blueprint.[TTS:I am terribly sorry for the mistake on the blueprint.] (非常抱歉藍圖上有錯誤。)\n- My apologies.[TTS:My apologies.] (我道歉。)\n\n[DIALOGUE_START:問候與禮儀會話：國際交流破冰]\nJason: Good morning, Mr. Smith! How was your flight to Taipei? | 早安，史密斯先生！您飛往台北的旅程還順利嗎？\nMr. Smith: It was very smooth, thank you. I am glad to meet your engineering team. | 非常順利，謝謝你。很高興能見到你們的工程團隊。\nJason: It is our pleasure. Please let me know if you need anything during your stay. | 這是我們的榮幸。您在停留期間如果有任何需要請隨時告訴我。\nMr. Smith: I appreciate your warm hospitality. | 非常感謝你們熱情的款待。\n[DIALOGUE_END]"
         },
         {
           "heading": "2. 校園生活情境對話",
+          "outlineRefs": ["EN2.2", "EN2.3"],
           "body": "在學校常發生的對話，如討論課業、考試、社團活動或借用文具器材等。對於土木建築群的學生，可能包含討論實習課或繪圖作業。\n\n**實用例句:**\n- Did you finish the drafting assignment for our architecture class?[TTS:Did you finish the drafting assignment for our architecture class?] (你完成我們建築課的製圖作業了嗎？)\n- I need to borrow your compass and ruler.[TTS:I need to borrow your compass and ruler.] (我需要借你的圓規和直尺。)\n- When is the deadline for the structural mechanics report?[TTS:When is the deadline for the structural mechanics report?] (結構力學報告的截止日期是何時？)\n\n[DIALOGUE_START:校園生活會話：專題討論分工]\nLisa: Who is going to prepare the 3D model for our architectural exhibition? | 誰要負責製作我們建築展覽的 3D 模型呢？\nEric: I can handle the SketchUp model if you take care of the structural calculations. | 如果你負責結構計算的部分，我可以來處理 SketchUp 模型。\nLisa: Sounds like a great plan. Let us meet in the computer lab after lunch. | 聽起來是很棒的分工計畫。我們午餐後在電腦教室碰面吧。\nEric: Great! I will bring all the reference drawings. | 太好了！我會把所有的參考圖說帶過去。\n[DIALOGUE_END]"
         },
         {
           "heading": "3. 購物/餐飲/交通情境",
+          "outlineRefs": ["EN2.2", "EN2.3"],
           "body": "生活必備的交易與移動情境，包含詢問價格、點餐、以及問路或搭乘交通工具。\n\n**購物 (Shopping)[TTS:Shopping]:**\n- Do you have this safety helmet in a larger size?[TTS:Do you have this safety helmet in a larger size?] (這頂安全帽有大一點的尺寸嗎？)\n- It's out of stock right now.[TTS:It's out of stock right now.] (現在缺貨。)\n\n**餐飲 (Dining)[TTS:Dining]:**\n- I'd like to order a combo meal to go.[TTS:I'd like to order a combo meal to go.] (我要點一份套餐外帶。)\n- Keep the change.[TTS:Keep the change.] (不用找零了。)\n\n**交通 (Transportation)[TTS:Transportation]:**\n- Which bus goes to the construction site?[TTS:Which bus goes to the construction site?] (哪一班公車有到工地？)\n- Get off at the next intersection.[TTS:Get off at the next intersection.] (在下一個十字路口下車。)\n\n[DIALOGUE_START:購物交通會話：前往建材展覽館]\nTourist: Excuse me, which MRT line should I take to the Nangang Exhibition Center? | 不好意思，請問我該搭哪一條捷運線去南港展覽館？\nStation Staff: Take the Blue Line directly to the terminal station. It takes about twenty minutes. | 搭乘藍線（板南線）直接坐到終點站即可。大約需要二十分鐘。\nTourist: How much is a single journey ticket? | 單程票要多少錢呢？\nStation Staff: It is thirty-five NT dollars. You can purchase it at the ticket machine. | 三十五元新台幣。您可以在自動售票機購買。\n[DIALOGUE_END]"
         },
         {
           "heading": "4. 電話/預約/求助情境",
+          "outlineRefs": ["EN2.9", "EN2.12"],
           "body": "包含打電話找人、留言、預約時間，以及在緊急或需要協助時的對話。\n\n**電話 (Telephone)[TTS:Telephone]:**\n- May I speak to the site manager, please?[TTS:May I speak to the site manager, please?] (請讓我和工地主任講話好嗎？)\n- He is not available at the moment. Can I take a message?[TTS:He is not available at the moment. Can I take a message?] (他現在沒空。需要我記下留言嗎？)\n\n**預約 (Making Appointments)[TTS:Making Appointments]:**\n- I'd like to make an appointment with the architect for next Tuesday.[TTS:I'd like to make an appointment with the architect for next Tuesday.] (我想預約下週二見建築師。)\n\n**求助 (Asking for Help)[TTS:Asking for Help]:**\n- Could you give me a hand with these heavy cement bags?[TTS:Could you give me a hand with these heavy cement bags?] (你能幫我搬這些重水泥袋嗎？)\n\n[DIALOGUE_START:電話預約會話：預約工地導覽]\nSecretary: Grand Horizon Construction, how may I direct your call? | 遠雄營造您好，請問有什麼我可以為您轉接的嗎？\nTeacher: Hello, I would like to book a site visit for twenty civil engineering students. | 您好，我想為二十位土木科學生預約一次工地現場參訪。\nSecretary: Certainly. We have availability on next Thursday morning at ten o'clock. | 好的。我們下週四上午十點有開放參訪名額。\nTeacher: That time works perfectly for our class schedule. Thank you! | 那個時間非常符合我們的課程安排。謝謝您！\n[DIALOGUE_END]"
         },
         {
           "heading": "5. 口語連音與弱化規則",
+          "outlineRefs": ["EN1.2.1"],
           "body": "在真實對話中，英語母語人士常將字詞連讀或弱化發音，了解這些規則有助於提升聽力理解。\n\n**連音 (Linking)[TTS:Linking]:**\n子音結尾遇到母音開頭，常會連在一起唸。例如：\n- look at[TTS:look at] -> loo kat[TTS:loo kat]\n- put it on[TTS:put it on] -> pu ti ton[TTS:pu ti ton]\n\n**弱化 (Reduction)[TTS:Reduction]:**\n功能詞(如介系詞、連接詞)在句子中常被弱化。例如：\n- going to[TTS:going to] -> gonna[TTS:gonna]\n- want to[TTS:want to] -> wanna[TTS:wanna]\n- let me[TTS:let me] -> lemme[TTS:lemme]\n\n[DIALOGUE_START:口語連音會話：美語自然語調練習]\nMark: What are you gonna do after finishing the drafting assignment? | 你完成製圖作業之後打算做什麼？\nJenny: I wanna check out the new BIM software tutorial in the library. | 我想去圖書館看一下最新的 BIM 軟體教學影片。\nMark: Could you tell me what you think of its parametric design features? | 你能告訴我你覺得它的參數化設計功能怎麼樣嗎？\nJenny: Sure! It makes 3D modeling so much faster and more accurate. | 當然！它讓 3D 建模變得更快而且更精確。\n[DIALOGUE_END]"
         },
         {
           "heading": "6. 統測對話題解題法",
+          "outlineRefs": ["EN2.9", "EN2.13"],
           "body": "統測對話題通常篇幅不長，關鍵在於迅速抓出對話的「情境(Context)[TTS:Context]」與說話者的「意圖(Intention)[TTS:Intention]」。\n\n**解題步驟:**\n1. **判斷角色關係:** 是朋友、師生、店員與顧客，還是工頭與工人？這會影響用語的正式程度。\n2. **尋找關鍵字:** 注意表達時間、地點、情緒或特定主題的單字。\n3. **利用刪去法:** 排除語氣不對、時態不符或與情境無關的選項。\n4. **前後呼應:** 空格處的答案必須能承接上一句，並自然地引導出下一句。\n\n[DIALOGUE_START:統測對話解題會話：捕捉關鍵轉折詞]\nTutor: In dialogue questions, always pay attention to tone shifts and polite refusals. | 在對話題型中，一定要特別注意語氣轉折與委婉拒絕。\nStudent: Like when a speaker says \"I'd love to, but I have a prior commitment\"? | 就像說話者說「我很想去，但我已經有約了」這樣嗎？\nTutor: Exactly! That indicates a polite \"no\", which usually rules out affirmative choices. | 沒錯！那代表委婉的拒絕，通常可以直接排除肯定的選項。\nStudent: Catching these conversational cues makes answering much easier! | 掌握這些對話線索讓作答變得容易多了！\n[DIALOGUE_END]",
           "table": {
             "headers": [
@@ -1758,6 +1811,7 @@ export const englishData: SubjectData = {
         },
         {
           "heading": "7. 統測高頻進階情境會話（看病醫療、飯店住宿、機場海關與委婉拒絕）",
+          "outlineRefs": ["EN2.9", "EN2.13"],
           "body": "<p>近年統測英文對話題逐漸跳脫傳統問候與天氣，大量融入「國外差旅、飯店入住、就診醫療與機場安檢海關」等成年人真實世界溝通情境。熟記各情境的關鍵觸發問句與應對回答，能助你穩拿對話題滿分！</p>\n\n[DIALOGUE_START:進階情境會話：飯店入住與商務差旅]\nReceptionist: Welcome to Grand Hyatt Taipei. How may I assist you today? | 歡迎蒞臨台北君悅酒店。今天有什麼能為您服務的嗎？\nGuest: I would like to check in, please. I have a reservation under Lin. | 我想辦理入住。我有用林先生的名字預約訂房。\nReceptionist: Certainly, Mr. Lin. Your deluxe room is ready on the 12th floor. Complimentary breakfast is served from 6:30 to 10:00 a.m. | 好的，林先生。您在 12 樓的豪華客房已經準備好了。免費早餐供應時間為上午 6:30 至 10:00。\nGuest: Wonderful! What time is check-out tomorrow? | 太棒了！請問明天幾點前需要退房？\nReceptionist: Check-out time is twelve noon. Enjoy your stay with us! | 退房時間是中午十二點整。祝您住宿愉快！\n[DIALOGUE_END]",
           "table": {
             "headers": [
@@ -1796,6 +1850,7 @@ export const englishData: SubjectData = {
         },
         {
           "heading": "8. 統測會話題必背功能句 120：同意・反對・建議・邀約・婉拒",
+          "outlineRefs": ["EN2.9", "EN2.13"],
           "body": "<p>統測會話題（第二大題）共 10 題，考的不是艱深單字，而是<strong>「功能語言」(functional language)</strong>——同一個溝通功能有哪些固定說法。把功能句依「功能別」整理成表，等於把 10 題的答案來源全部背進腦裡。</p>\n\n[DIALOGUE_START:功能句實戰會話：提出建議與婉轉拒絕]\nAmy: Why don't we visit the construction site this Friday? | 我們何不這個星期五去參觀工地？\nBen: I'd love to, but I'm afraid I have a class then. | 我很想去，但恐怕我那時候有課。\nAmy: How about Saturday morning instead? | 那改成星期六早上如何？\nBen: That sounds great. Count me in. | 聽起來很棒，算我一份。\n[DIALOGUE_END]",
           "table": {
             "headers": [
@@ -1855,6 +1910,7 @@ export const englishData: SubjectData = {
         },
         {
           "heading": "9. 生活服務情境：銀行・郵局・租屋・維修報修",
+          "outlineRefs": ["EN2.2", "EN2.3"],
           "body": "<p>統測會話題與應用文閱讀常出現「生活辦事」場景。這些情境有固定的<strong>對話腳本 (script)</strong>：櫃檯問候 → 說明需求 → 提供證件／資訊 → 確認金額或時間 → 收尾致謝。熟悉腳本，選項一看就能對號入座。</p>\n\n[DIALOGUE_START:生活服務會話：租屋看房與設備報修]\nTenant: I'm calling about the apartment listed online. Is it still available? | 我打電話是想問網路上刊登的那間公寓，還租得到嗎？\nLandlord: Yes, it is. The rent is 12,000 NT dollars a month, utilities not included. | 還有。租金是每月一萬二千元，不含水電。\nTenant: Could I make an appointment to take a look this weekend? | 我可以預約這週末去看房嗎？\nLandlord: Sure. Also, please let me know right away if anything breaks down. | 當然可以。另外，如果有東西壞掉請立刻告訴我。\n[DIALOGUE_END]",
           "table": {
             "headers": [
@@ -1914,6 +1970,7 @@ export const englishData: SubjectData = {
         },
         {
           "heading": "10. 求職與打工情境：面試、履歷與工讀溝通",
+          "outlineRefs": ["EN2.1", "EN2.4"],
           "body": "<p>技術型高中學生升學與就業並行，統測會話題與閱讀測驗因此常出現<strong>求職面試與打工</strong>場景。這些對話的重點在「自我介紹的結構」與「詢問工作條件的用語」，也是未來實際職場的必備能力。</p>\n\n[DIALOGUE_START:求職面試會話：自我介紹與詢問條件]\nInterviewer: Could you tell me a little about yourself? | 可以簡單介紹一下你自己嗎？\nApplicant: Sure. I major in architecture and I'm skilled at AutoCAD drafting. | 當然。我主修建築，並且擅長 AutoCAD 製圖。\nInterviewer: Why are you interested in this position? | 你為什麼對這個職位有興趣？\nApplicant: I'd like to gain hands-on experience on a real construction site. | 我想在真實工地上獲得實務經驗。\n[DIALOGUE_END]",
           "table": {
             "headers": [
@@ -1973,6 +2030,7 @@ export const englishData: SubjectData = {
         },
         {
           "heading": "11. 問路指路與方位指示：介系詞與祈使句的實戰整合",
+          "outlineRefs": ["EN1.4.1"],
           "body": "<p>問路指路題是統測會話題與圖表題的<strong>交叉考點</strong>：題目常搭配一張簡易街道圖，要求依對話內容找出目的地。解題關鍵是把「祈使句 ＋ 方位介系詞」的指令，逐步在地圖上轉換成路徑。</p>\n\n[DIALOGUE_START:問路指路會話：從車站走到工地辦公室]\nVisitor: Excuse me, how can I get to the site office? | 不好意思，請問工地辦公室怎麼走？\nGuard: Go straight for two blocks, then turn left at the intersection. | 直走兩個街區，然後在十字路口左轉。\nVisitor: Is it far from here? | 離這裡遠嗎？\nGuard: No, it's just across from the parking lot, next to the blue container. | 不遠，就在停車場對面，藍色貨櫃屋旁邊。\n[DIALOGUE_END]",
           "table": {
             "headers": [
@@ -2032,6 +2090,7 @@ export const englishData: SubjectData = {
         },
         {
           "heading": "12. 會話題四大誘答陷阱辨識矩陣與應答邏輯",
+          "outlineRefs": ["EN2.9", "EN2.13"],
           "body": "<p>統測會話題的錯誤選項不是隨機亂寫，而是依<strong>四種固定模式</strong>設計。認得這四種模式，即使不完全確定正解，也能靠刪去法把命中率拉到八成以上。</p>",
           "table": {
             "headers": [
@@ -2089,6 +2148,34 @@ export const englishData: SubjectData = {
             "第四步：若仍有兩個選項難分，選「較禮貌、較完整」的那一個，英語會話題偏好委婉表達。",
             "考前實戰：把近五年統測會話題的正解全部抄成一份「功能句清單」，反覆朗讀十遍，語感自然成形。"
           ]
+        },
+        {
+          "heading": "13. 公共場所廣播與教學廣播：聽懂要點並轉述",
+          "outlineRefs": ["EN1.5.3", "EN1.5.5", "EN2.8", "EN2.9"],
+          "body": "課綱的篇章類型包含**公共場所簡易廣播**（捷運、車站、機場）與**教學廣播節目**，溝通功能則要求能掌握要點並**轉述**。\n**廣播的固定結構**：注意語（Attention, please.）→ 對象（Passengers for Flight CI 102…）→ 事件（has been delayed / will depart from Gate 5）→ 時間地點 → 指示（Please proceed to…）。\n**抓要點四問**：Who（對誰說）、What（發生什麼）、Where（地點或月台）、When（時間或延誤多久）。\n**轉述技巧**：把直接引述改成間接說法，注意人稱與時態後移，例如 The announcer said that the train to Taipei would arrive ten minutes late.\n⚠️ 易錯：廣播中的 platform（月台）、gate（登機門）、transfer（轉乘）、delayed（延誤）、cancelled（取消）常是答題關鍵；轉述時別忘了 will → would、is → was。",
+          "table": {
+            "headers": ["廣播場景", "常見關鍵字", "例句", "轉述"],
+            "rows": [
+              [
+                "捷運／火車",
+                "platform, transfer, next station",
+                "The next station is Taipei Main Station. Transfer to the Blue Line.",
+                "It said we could transfer to the Blue Line at Taipei Main Station."
+              ],
+              [
+                "機場",
+                "gate, boarding, delayed, cancelled",
+                "Flight CI 102 is now boarding at Gate 5.",
+                "The announcer said Flight CI 102 was boarding at Gate 5."
+              ],
+              [
+                "校園／工地",
+                "drill, evacuate, assembly point",
+                "This is a fire drill. Please evacuate to the assembly point.",
+                "We were told to go to the assembly point for a fire drill."
+              ]
+            ]
+          }
         }
       ],
       "practices": [
@@ -2234,6 +2321,7 @@ export const englishData: SubjectData = {
       "desc": "掌握閱讀四大核心策略：略讀(Skimming)、掃讀(Scanning)、上下文猜字義(Context Clues[TTS:Context Clues])及段落結構分析。有效破解統測英文閱讀測驗中的主旨題、細節題與推論題。",
       "status": "done",
       "gradeLevel": 10,
+      "curriculumCode": "TCTE115-EN4",
       "examHitRate": 5,
       "covered_question_ids": [
         "111-english-29",
@@ -2397,30 +2485,37 @@ export const englishData: SubjectData = {
       "concepts": [
         {
           "heading": "1. 略讀 Skimming 與掃讀 Scanning",
+          "outlineRefs": ["EN4.1", "EN4.7"],
           "body": "閱讀測驗首重速度與準確度。**略讀 (Skimming)** 是快速瀏覽文章標題、第一段、各段首句與結論句，以抓出文章的主旨大意。**掃讀 (Scanning)** 則是帶著特定的目標(例如：人名、年代、特定專有名詞)在文章中快速搜尋，找到目標後再仔細閱讀該句前後文以獲得精確資訊。\n\n在建築工程領域的英文手冊中，往往需要用掃讀來尋找特定的尺寸或材料規範，這項技巧非常實用。\n\n[DIALOGUE_START:閱讀策略會話：略讀與掃讀技巧應用]\nStudy Partner A: How do you locate specific data so quickly in a 400-word passage? | 你怎麼能在四百字的文章中這麼快找到特定數據？\nStudy Partner B: I use scanning to look for capital letters, numbers, and technical terms! | 我用掃讀法 (scanning) 專門搜尋大寫字母、數字與專業術語！\nStudy Partner A: And what about finding the general topic of each paragraph? | 那要如何找出每個段落的大意呢？\nStudy Partner B: Just skim the first and last sentences of each paragraph to grasp the main idea. | 只要略讀 (skim) 每段的第一句和最後一句，就能掌握主旨了。\n[DIALOGUE_END]"
         },
         {
           "heading": "2. 上下文猜字法 (Context Clues[TTS:Context Clues])",
+          "outlineRefs": ["EN4.2"],
           "body": "遇到不懂的生字時，千萬別停下來！可以透過以下線索猜測字義：\n1. **同義字/反義字線索**：尋找 or, that is, but, however[TTS:or, that is, but, however] 等轉折或解釋字詞。\n2. **舉例線索**：透過 such as, for example[TTS:such as, for example] 後面的例子來反推前面的生字。\n3. **因果線索**：利用 because, so, therefore[TTS:because, so, therefore] 等詞推論。\n4. **構詞學**：利用字首(prefix)、字根(root)、字尾(suffix)判斷，例如看到 re- 知道是「再、重複」，-tion 知道是「名詞」。\n\n[DIALOGUE_START:上下文猜字會話：推測專業生字詞義]\nStudent: I encountered the word \"resilient\" in an article about earthquake-resistant buildings. | 我在一篇關於耐震建築的文章中看到了 resilient 這個單字。\nTeacher: Look at the surrounding words: \"absorb shock\", \"withstand shaking\", and \"recover\". | 看一下周圍的字：absorb shock (吸收震波)、withstand shaking (承受搖晃) 與 recover (復原)。\nStudent: So \"resilient\" must mean flexible, tough, and able to bounce back! | 所以 resilient 一定是指有彈性、堅韌且具備復原力的意思！\nTeacher: Perfect deduction! You do not need a dictionary when context is clear. | 完全正確的推論！當上下文很清楚時，你根本不需要字典。\n[DIALOGUE_END]"
         },
         {
           "heading": "3. 主旨題 Main Idea[TTS:Main Idea] 破解",
+          "outlineRefs": ["EN2.11"],
           "body": "主旨題常問：What is the main idea of this passage?[TTS:What is the main idea of this passage?] / What is the best title for this article?[TTS:What is the best title for this article?] \n\n**解題策略**：\n- **首尾法**：文章的主旨通常藏在第一段(引言)的最後一句，或是最後一段(結論)。\n- **頻率法**：若某個概念或單字在文章中不斷重複出現(包含其同義詞)，很可能就是主旨。\n- **避開陷阱**：太細節的選項(只提到某一段的內容)、太廣泛的選項(超出文章討論範圍)都不是正確答案。\n\n[DIALOGUE_START:主旨題破解會話：快速辨認核心論點]\nTutor: What is the main topic of this passage about sustainable construction? | 這篇關於永續建築的文章核心主旨是什麼？\nStudent: The passage explores how recycled materials reduce carbon emissions in modern buildings. | 這篇文章在探討回收材料如何降低現代建築的碳排放量。\nTutor: Correct. Avoid options that are too narrow or mention only one supporting example. | 答對了。要避開範圍太狹隘或只提到單一支持事例的干擾選項。\nStudent: The main idea should summarize the whole text, not just one paragraph. | 主旨應該總結全文，而不是只涵蓋單一段落。\n[DIALOGUE_END]"
         },
         {
           "heading": "4. 細節題與推論題解析",
+          "outlineRefs": ["EN4.2", "EN4.6"],
           "body": "細節題(Detail Questions[TTS:Detail Questions])通常問 Who, What, Where, When, Why, How[TTS:Who, What, Where, When, Why, How]。解題時直接利用題目中的關鍵字，回文章做**掃讀(Scanning)**找答案。注意，正確選項常會用**同義字(Paraphrase)**來替換文章中的字詞。\n\n推論題(Inference Questions[TTS:Inference Questions])常有 imply, suggest, infer[TTS:imply, suggest, infer] 等字眼。答案不會直接寫在文章裡，必須根據文章提供的線索進行合理的邏輯推斷，不能憑空想像或過度延伸。\n\n[DIALOGUE_START:細節推論會話：區分事實與推論]\nExaminer: Does the author explicitly state that timber buildings are cheaper to build? | 作者有明確說明木構造建築的造價比較便宜嗎？\nCandidate: No, the text only states that timber construction is faster, not cheaper. | 沒有，內文只有提到木構造施工速度較快，並沒說比較便宜。\nExaminer: Good catch. Never assume facts that are not directly supported by the text. | 抓得好。千萬不要臆測沒有被內文直接支持的事實。\nCandidate: Sticking strictly to textual evidence prevents unnecessary point loss. | 嚴格依循文本證據才能避免不必要的失分。\n[DIALOGUE_END]"
         },
         {
           "heading": "5. 生活記敘文與說明文閱讀",
+          "outlineRefs": ["EN1.5.1", "EN4.2"],
           "body": "統測英文常出現與生活息息相關的文章體裁：\n- **記敘文 (Narrative)**：著重在人事時地物(5W1H)，通常按照時間順序發展。閱讀重點在於故事的起承轉合及主角的感受變化。\n- **說明文 (Expository)**：用來解釋事物或傳遞資訊，例如：產品說明書、旅遊指南、科普文章。常見結構為「總集-分述-總結」。閱讀時要注意轉折詞與條列式的重點。\n\n[DIALOGUE_START:文本體裁會話：記敘文與說明文結構]\nTeacher: Notice how this narrative article describes the engineer's first bridge project in chronological order. | 注意這篇記敘文是如何按照時間先後順序描述工程師的第一個橋樑專案。\nStudent: Yes, whereas the expository passage uses cause-and-effect to explain structural failure. | 是的，而另一篇說明文則使用因果關係來解釋結構破壞的原因。\nTeacher: Recognizing text structure helps you anticipate where answers are hidden. | 辨識文本結構能幫你預測答案會藏在哪裡。\nStudent: I will pay attention to organizational transitions when reading. | 我在閱讀時會特別注意文章的結構轉折詞。\n[DIALOGUE_END]"
         },
         {
           "heading": "6. 段落架構：主題句→支持句→結論句",
+          "outlineRefs": ["EN1.5.1", "EN4.2"],
           "body": "英文文章的段落架構通常非常清晰，掌握這個架構能大幅提升閱讀速度：\n1. **主題句 (Topic Sentence[TTS:Topic Sentence])**：通常是段落的第一句或第二句，點出該段落的核心概念。\n2. **支持句 (Supporting Sentences[TTS:Supporting Sentences])**：提供細節、例子、數據或理由來支持主題句。佔段落的最大篇幅。\n3. **結論句 (Concluding Sentence[TTS:Concluding Sentence])**：段落的最後一句，總結該段重點或為下一段鋪路。\n\n[DIALOGUE_START:段落結構會話：主題句與支持句分析]\nPeer A: Where is the topic sentence in this paragraph about smart concrete? | 這段關於智慧混凝土的段落，主題句在哪裡？\nPeer B: It is right at the beginning: \"Self-healing concrete revolutionizes infrastructure maintenance.\" | 就在最開頭：「自癒型混凝土徹底改變了基礎設施的維護方式。」\nPeer A: And the rest of the sentences provide experimental data and real-world examples. | 而其餘的句子則提供了實驗數據與真實案例作為支持。\nPeer B: Understanding this hierarchy makes reading comprehension effortless. | 理解這種層次架構能讓閱讀理解變得輕鬆省力。\n[DIALOGUE_END]"
         },
         {
           "heading": "7. 統測閱讀四大題型攻略",
+          "outlineRefs": ["EN2.11", "EN4.2"],
           "body": "統測閱讀測驗可歸納為四大題型：\n1. **主旨題**：抓首尾段、各段主題句。\n2. **細節題**：抓題幹關鍵字回文章找同義替換。\n3. **詞義題**：回到該單字出現的段落，利用上下文線索(Context Clues[TTS:Context Clues])推敲。\n4. **推論/是非題 (True/False)**：最耗時的題型，建議將四個選項的關鍵字分別帶回文章比對。\n\n[DIALOGUE_START:閱讀題型攻略會話：時間管理與作答節奏]\nStudent: I often run out of time on the reading section of the Unified Exam. | 我在統測英文的閱讀測驗部分經常寫不完。\nAdvisor: Read the questions first before reading the article to focus your attention. | 在讀文章前先看題目，這樣能集中你的注意力。\nStudent: That way, I know exactly what keywords and details to look for! | 這樣一來我就確切知道該找哪些關鍵字與細節了！\nAdvisor: Exactly. Aim for no more than eight minutes per reading passage. | 沒錯。目標是每篇閱讀測驗不超過八分鐘。\n[DIALOGUE_END]",
           "table": {
             "headers": [
@@ -2459,6 +2554,7 @@ export const englishData: SubjectData = {
         },
         {
           "heading": "8. 指代與參照題：it／this／they 到底指誰",
+          "outlineRefs": ["EN4.2"],
           "body": "<p>指代題（reference question）是統測閱讀測驗的<strong>穩定題型</strong>，題幹常寫成「The word <strong>it</strong> in line 5 refers to ______.」。這類題目不需要理解整篇文章，只要掌握「就近、單複數一致、語意可代入」三個檢核點即可秒殺。</p>",
           "table": {
             "headers": [
@@ -2518,6 +2614,7 @@ export const englishData: SubjectData = {
         },
         {
           "heading": "9. 同義改寫 (Paraphrase) 對照表：選項為何看起來都不一樣",
+          "outlineRefs": ["EN4.4"],
           "body": "<p>統測閱讀測驗的正確選項<strong>幾乎從不照抄原文</strong>，而是把原文改寫成同義句。看不懂選項不是英文不好，而是沒認出「同一件事的另一種說法」。以下整理閱讀測驗最常見的六種改寫手法。</p>",
           "table": {
             "headers": [
@@ -2577,6 +2674,7 @@ export const englishData: SubjectData = {
         },
         {
           "heading": "10. 四大文體特徵辨識：記敘・說明・議論・應用",
+          "outlineRefs": ["EN1.5.1", "EN4.2"],
           "body": "<p>統測閱讀測驗的文章雖然主題多變，但文體只有四種。<strong>先判斷文體，就能預測題目類型與答案位置</strong>——這是頂尖考生與一般考生最大的差距。</p>",
           "table": {
             "headers": [
@@ -2636,6 +2734,7 @@ export const englishData: SubjectData = {
         },
         {
           "heading": "11. 統測英文 100 分鐘作戰配速表與作答順序",
+          "outlineRefs": ["EN4.7"],
           "body": "<p>統測英文滿分 100 分、作答時間 100 分鐘，選擇題 40 題（80 分）＋非選擇題（20 分）。許多學生不是不會，而是<strong>時間分配錯誤導致閱讀測驗來不及</strong>。以下是依題型難度與分數效益設計的標準配速表。</p>",
           "table": {
             "headers": [
@@ -2704,6 +2803,7 @@ export const englishData: SubjectData = {
         },
         {
           "heading": "12. 篇章連貫與句子插入題：段落邏輯的縫合技巧",
+          "outlineRefs": ["EN1.5.1", "EN4.2"],
           "body": "<p>「請將下列句子插入文中最適當的位置」是素養導向命題的新趨勢。這類題目考的是<strong>段落邏輯的縫合能力</strong>：判斷插入句與前後句之間的銜接訊號是否吻合。</p>",
           "table": {
             "headers": [
@@ -2760,6 +2860,25 @@ export const englishData: SubjectData = {
             "第三步：代入後完整朗讀「前句＋插入句＋後句」，檢查邏輯是否連貫、有無重複或矛盾。",
             "第四步：若兩個位置都通順，選「代名詞指涉最明確」的那一個——這是命題設計的標準答案原則。"
           ]
+        },
+        {
+          "heading": "13. 故事、漫畫與雜誌閱讀：背景、人物、事件與結局",
+          "outlineRefs": ["EN1.5.6", "EN1.5.9", "EN1.5.10"],
+          "body": "課綱篇章包含**短篇故事**與**學習雜誌、漫畫**，要能掌握故事的**背景（setting）、人物（characters）、事件（plot / conflict）與結局（ending）**。\n**故事地圖**：Setting（時間、地點）→ Characters（主角、對手、配角）→ Problem（衝突或難題）→ Events（事件經過，通常依時間順序）→ Solution / Ending（如何解決、結局如何）→ Theme（寓意）。\n**漫畫判讀**：同時看圖與對話框，注意人物表情、動作與旁白；最後一格常是笑點或轉折。\n**雜誌文章**：看標題、副標與圖片說明，先掌握主題再讀細節。\n⚠️ 易錯：問 How does the character feel? 時要找表情、動作與語氣線索，而不是只看單一形容詞；問 What is the lesson? 時要選能概括整個故事的寓意，不要選只發生在某一段的細節。",
+          "table": {
+            "headers": ["故事要素", "英文提問", "尋找線索"],
+            "rows": [
+              ["背景 Setting", "Where / When does the story take place?", "開頭段的時間、地點詞"],
+              [
+                "人物 Characters",
+                "Who is the main character? How does he feel?",
+                "名字、代名詞、表情與行為"
+              ],
+              ["事件 Plot", "What problem does the character face?", "but, however, suddenly 之後的內容"],
+              ["結局 Ending", "How does the story end?", "最後一段、in the end, finally"],
+              ["寓意 Theme", "What lesson can we learn?", "全篇共同指向的道理"]
+            ]
+          }
         }
       ],
       "practices": [
@@ -2913,6 +3032,7 @@ export const englishData: SubjectData = {
       "desc": "關於 PVQC 土木與建築類專業英文詞彙 (ESP)，涵蓋材料、結構、圖學、測量、施工與工安等常見統測與實務字彙。",
       "status": "done",
       "gradeLevel": 11,
+      "curriculumCode": "TCTE115-EN1",
       "examHitRate": 3,
       "fatalTraps": [
         {
@@ -2954,6 +3074,7 @@ export const englishData: SubjectData = {
       "concepts": [
         {
           "heading": "1. 建築與工程材料詞彙 (Construction Materials[TTS:Construction Materials])",
+          "outlineRefs": ["EN1.3.4"],
           "body": "了解基本建築與工程材料的英文詞彙，是閱讀英文施工圖與材料規範的基礎。\n\n[DIALOGUE_START:建材詞彙會話：混凝土規格討論]\nStructural Engineer: What compressive strength of reinforced concrete is specified for the shear walls? | 剪力牆所指定的鋼筋混凝土抗壓強度是多少？\nSite Supervisor: The drawings specify 35 MPa ready-mix concrete with low-heat Portland cement. | 圖說指定使用 35 MPa 的低熱波特蘭預拌混凝土。\nStructural Engineer: Make sure the slump test and cylinder samples are taken upon arrival. | 請確保混凝土車一抵達就進行坍度試驗並製作圓柱試體。\nSite Supervisor: We have our quality control team ready at the testing station. | 我們的品管團隊已經在檢驗區準備就緒了。\n[DIALOGUE_END]",
           "table": {
             "headers": [
@@ -3002,6 +3123,7 @@ export const englishData: SubjectData = {
         },
         {
           "heading": "2. 結構元件詞彙 (Structural Elements[TTS:Structural Elements])",
+          "outlineRefs": ["EN1.3.4"],
           "body": "建築物的支撐骨架是由各種結構元件組成，清楚分辨它們的英文名稱對土木建築群學生至關重要。\n\n[DIALOGUE_START:結構元件會話：梁柱與基礎載重傳遞]\nLead Architect: How does the gravitational load transfer from the roof slab down to the foundation? | 重力載重是如何從屋頂樓板一路傳遞到基礎的？\nEngineer: The slab transfers load to the beams, then to the columns, and finally to the deep pile foundation. | 樓板將載重傳給梁，梁再傳給柱，最後傳遞到深基樁基礎。\nLead Architect: Is the retaining wall strong enough to resist the lateral soil pressure? | 擋土牆有足夠的強度來抵抗側向土壓力嗎？\nEngineer: Yes, it is designed with heavy steel reinforcement and drainage pipes. | 有的，它設計了密集的鋼筋補強與排水管路。\n[DIALOGUE_END]",
           "table": {
             "headers": [
@@ -3050,6 +3172,7 @@ export const englishData: SubjectData = {
         },
         {
           "heading": "3. 設計圖學詞彙 (Design and Graphics[TTS:Design and Graphics])",
+          "outlineRefs": ["EN1.3.4"],
           "body": "識圖是工程人員的基本能力，掌握圖學相關的專業英文有助於閱讀國際規範與軟體介面 (如 AutoCAD[TTS:AutoCAD])。\n\n[DIALOGUE_START:設計圖學會話：立面圖與剖面圖檢討]\nDraftsman: Please check the cross-section detail of the exterior curtain wall. | 請核對一下外牆帷幕牆的橫剖面細部圖。\nArchitect: The scale is 1:20, and all dimension lines match the structural grid. | 比例尺是 1:20，所有尺寸標註線都與結構柱心網格相符。\nDraftsman: Should we add the waterproofing membrane specification to the elevation view? | 我們需要在立面圖中加入防水毯的規格說明嗎？\nArchitect: Yes, please include the material thickness and installation notes. | 是的，請標註材料厚度與安裝注意事項。\n[DIALOGUE_END]",
           "table": {
             "headers": [
@@ -3098,6 +3221,7 @@ export const englishData: SubjectData = {
         },
         {
           "heading": "4. 測量儀器詞彙 (Surveying Equipment[TTS:Surveying Equipment])",
+          "outlineRefs": ["EN1.3.4"],
           "body": "測量是工程的起點。以下是常用的測量儀器與相關術語的英文表達。\n\n[DIALOGUE_START:測量儀器會話：全測站放樣作業]\nSurveyor A: Have you calibrated the total station over the primary benchmark? | 你已經在主基準點上完成全測站經緯儀的校正了嗎？\nSurveyor B: Yes, the optical plummet is centered, and the prism is positioned at point B. | 校正好了，光學垂球已對準中心，反射稜鏡也已立在 B 點上。\nSurveyor A: Let us record the horizontal angle and elevation difference now. | 我們現在來記錄水平角與高程差吧。\nSurveyor B: Coordinates are locked in with millimeter precision. | 座標數據已經鎖定，精確度達到公釐等級。\n[DIALOGUE_END]",
           "table": {
             "headers": [
@@ -3146,6 +3270,7 @@ export const englishData: SubjectData = {
         },
         {
           "heading": "5. 施工工法詞彙 (Construction Methods[TTS:Construction Methods])",
+          "outlineRefs": ["EN1.3.4"],
           "body": "描述現場施工步驟時，會頻繁使用到特定的動詞與名詞。\n\n[DIALOGUE_START:施工工法會話：地下連續壁開挖工序]\nSite Engineer: We will begin the diaphragm wall excavation first thing tomorrow. | 我們明天一早就要開始進行地下連續壁的開挖作業。\nContractor: The bentonite slurry plant is operational, and the rebar cages are assembled. | 皂土泥漿拌和設備已可運作，鋼筋籠也已經組裝完成。\nSite Engineer: Ensure the tremie pipe is submerged properly during underwater concrete casting. | 特密管在進行水中混凝土澆置時務必保持適當的埋置深度。\nContractor: Our crane operators have extensive experience with deep excavation. | 我們的起重機操作手在深開挖工程方面擁有豐富經驗。\n[DIALOGUE_END]",
           "table": {
             "headers": [
@@ -3189,6 +3314,7 @@ export const englishData: SubjectData = {
         },
         {
           "heading": "6. 工地安全與PPE詞彙 (Site Safety & PPE[TTS:Site Safety & PPE])",
+          "outlineRefs": ["EN1.3.1", "EN1.5.7"],
           "body": "安全第一 (Safety First[TTS:Safety First])。PPE (Personal Protective Equipment[TTS:Personal Protective Equipment]) 是工地必備的個人防護裝備。\n\n[DIALOGUE_START:工地安全與PPE會話：防護裝備查核]\nSafety Inspector: No worker is allowed on the scaffolding without a certified safety harness. | 任何工人在沒有合格安全帶的情況下，一律不允許登上鷹架。\nSubcontractor: All team members have double lanyards attached to the lifeline. | 我們所有的班組成員都已經將雙鉤安全繩扣在母索上了。\nSafety Inspector: Remember that steel-toe boots and high-visibility vests are mandatory everywhere. | 請記住，鋼頭安全鞋與高能見度反光背心在全區都是強制佩戴的。\nSubcontractor: We inspect all personal protective equipment daily during tool-box talks. | 我們每天在工具箱晨會時都會全面檢查個人防護裝備。\n[DIALOGUE_END]",
           "table": {
             "headers": [
@@ -3237,6 +3363,7 @@ export const englishData: SubjectData = {
         },
         {
           "heading": "7. PVQC 建築類精選速記策略",
+          "outlineRefs": ["EN1.3.4"],
           "body": "PVQC 專業英文詞彙能力認證是技高的重要檢定。備考時可採用<span className=\"text-rose-600 font-bold\">字根字首法</span>與<span className=\"text-blue-600 font-bold\">圖像聯想法</span>。\n\n[DIALOGUE_START:PVQC 術語會話：建築英文快速記憶]\nStudent A: How do you memorize terms like \"cantilever beam\" and \"equilibrium\"? | 你怎麼背像 cantilever beam (懸臂梁) 和 equilibrium (平衡) 這些名詞？\nStudent B: I associate \"cantilever\" with a balcony sticking out with no columns underneath! | 我把 cantilever 聯想成底下沒有任何柱子支撐、向外突出的陽台！\nStudent A: And \"equilibrium\" comes from \"equal\", meaning all forces balance out to zero. | 而 equilibrium 來自 equal，代表所有的受力互相平衡等於零。\nStudent B: Visual mnemonics make PVQC 840 technical terms so much fun to study. | 圖像聯想法讓準備 PVQC 840 個專業詞彙變得有趣多了。\n[DIALOGUE_END]",
           "table": {
             "headers": [
@@ -3265,6 +3392,7 @@ export const englishData: SubjectData = {
         },
         {
           "heading": "8. 職場情境對話 (Workplace Conversations[TTS:Workplace Conversations])",
+          "outlineRefs": ["EN2.4", "EN2.10"],
           "body": "在真實工程環境中，專業字彙通常在溝通與指派任務時使用。以下是兩個常見的工地對話。\n\n[DIALOGUE_START:職場商務會話：工程圖說版次核發]\nProject Manager: Has revision C of the structural framing plan been approved by the building official? | 結構架構圖的 C 版修正圖已經獲得建管機關核准了嗎？\nLead Consultant: Yes, the official stamped drawings were issued this morning. | 是的，官方蓋章核可的圖說今天早上已經核發了。\nProject Manager: Please issue copies to all trade contractors and void previous versions. | 請分發圖說給所有分包商，並將先前的舊版作廢。\nLead Consultant: We will upload the latest files to the common data environment immediately. | 我們會立刻將最新檔案上傳至共通資料環境 (CDE)。\n[DIALOGUE_END]",
           "steps": [
             "A: Hey, did you check the blueprint for the new foundation?[TTS:Hey, did you check the blueprint for the new foundation?]\nB: Yes, we need to complete the rebar placement before tomorrow.[TTS:Yes, we need to complete the rebar placement before tomorrow.]\nA: Great. Don't forget your hard hat on site.[TTS:Great. Don't forget your hard hat on site.]\nB: Got it.[TTS:Got it.]",
@@ -3273,6 +3401,7 @@ export const englishData: SubjectData = {
         },
         {
           "heading": "9. 綠建築與 ESG 永續工程詞彙 (Green Building & Sustainability)",
+          "outlineRefs": ["EN3.4", "EN3.5"],
           "body": "<p>近年統測英文跨領域閱讀題與技高雙語教學中，綠建築 (Green Building)、ESG 永續指標與淨零碳排 (Net Zero) 已經成為最熱門的新興命題熱區。熟悉這些專業英文，能大幅提昇長篇科技閱讀與素養題得分率！</p>\n\n[DIALOGUE_START:綠建築與ESG會話：評估淨零建築]\nArchitect: Our new office complex is aiming for LEED Platinum certification. | 我們的新辦公大樓綜合體正朝向 LEED 白金級綠建築認證目標邁進。\nConsultant: That requires a thirty percent reduction in operational carbon footprint. | 那需要降低百分之三十的營運碳足跡。\nArchitect: We integrated solar panels, rainwater harvesting, and high-efficiency HVAC systems. | 我們整合了太陽能光電板、雨水回收系統以及高效率空調通風系統。\nConsultant: Impressive! These sustainable features will significantly lower energy consumption. | 令人印象深刻！這些永續特性將顯著降低能源消耗。\n[DIALOGUE_END]",
           "table": {
             "headers": [
@@ -3316,6 +3445,7 @@ export const englishData: SubjectData = {
         },
         {
           "heading": "10. 機電與水電設備詞彙 (MEP: Mechanical, Electrical & Plumbing)",
+          "outlineRefs": ["EN1.3.4"],
           "body": "<p>建築不只有結構體。<strong>MEP（機械、電氣、給排水）</strong>是建築後續施工與維護的核心，也是 PVQC 建築類與統測專業英文的常見取材範圍。這組字彙在職場實習與丙級技術士術科說明中同樣高頻。</p>\n\n[DIALOGUE_START:機電設備會話：管線配置協調]\nMEP Engineer: The ductwork conflicts with the beam on the third floor. | 三樓的風管與樑產生了衝突。\nArchitect: Can we reroute the pipes below the ceiling slab? | 我們可以把管線改繞到天花板板下嗎？\nMEP Engineer: Yes, but we need to check the clearance for the sprinkler system. | 可以，但我們需要確認撒水系統的淨空高度。\nArchitect: Please update the BIM model and send me the revised layout. | 請更新 BIM 模型並把修訂後的配置圖寄給我。\n[DIALOGUE_END]",
           "table": {
             "headers": [
@@ -3375,6 +3505,7 @@ export const englishData: SubjectData = {
         },
         {
           "heading": "11. 建築法規、許可與檢查詞彙 (Codes, Permits & Inspection)",
+          "outlineRefs": ["EN1.3.4", "EN1.5.7"],
           "body": "<p>建築師與工程人員的日常有一半在處理<strong>法規與行政流程</strong>。這組字彙在國際專案、外商營造與留學申請中出現頻率極高，也是統測專業英文延伸閱讀的常見主題。</p>",
           "table": {
             "headers": [
@@ -3434,6 +3565,7 @@ export const englishData: SubjectData = {
         },
         {
           "heading": "12. 專案管理與成本控制詞彙 (Project Management & Cost)",
+          "outlineRefs": ["EN1.3.4"],
           "body": "<p>營建專案的三大約束是<strong>範疇 (scope)、時程 (schedule)、成本 (cost)</strong>。這組管理字彙在工程商務 Email、會議紀錄與國際標案文件中無所不在，是統測職場英文與未來就業的共同核心。</p>\n\n[DIALOGUE_START:專案管理會話：進度落後與變更議價]\nPM: We are two weeks behind schedule and slightly over budget. | 我們進度落後兩週，並且略微超出預算。\nContractor: The delay was caused by a change order from the client. | 延誤是業主的變更指示造成的。\nPM: Then please submit a revised quotation with the extended timeline. | 那請提出含展延時程的修訂報價單。\nContractor: I will send the updated cost breakdown by Friday. | 我會在週五前寄出更新的成本明細。\n[DIALOGUE_END]",
           "table": {
             "headers": [
@@ -3493,6 +3625,7 @@ export const englishData: SubjectData = {
         },
         {
           "heading": "13. 工程英文縮寫總表：從圖說到工地的 40 個必懂代碼",
+          "outlineRefs": ["EN1.3.4"],
           "body": "<p>工程圖說與現場文件充滿縮寫。看不懂縮寫，等於看不懂圖。以下把建築土木領域最常出現的縮寫依<strong>結構、材料、圖說、管理、安全</strong>五類整理，並附上完整拼寫與中譯。</p>",
           "table": {
             "headers": [
@@ -3693,6 +3826,7 @@ export const englishData: SubjectData = {
       "desc": "本章節涵蓋統測必考的關係子句(形容詞子句)、名詞子句、副詞子句，以及分詞構句與使役/感官動詞的進階用法，幫助你掌握複雜句型結構，精準解讀建築與工程規範文件。",
       "status": "done",
       "gradeLevel": 11,
+      "curriculumCode": "TCTE115-EN1",
       "examHitRate": 4,
       "fatalTraps": [
         {
@@ -3744,6 +3878,7 @@ export const englishData: SubjectData = {
       "concepts": [
         {
           "heading": "關係代名詞與形容詞子句",
+          "outlineRefs": ["EN1.4.1"],
           "body": "<p>形容詞子句用來修飾前面的名詞（先行詞），由<span className=\"font-semibold text-blue-600\">關係代名詞 (who, whom, which, that, whose) [TTS:who, whom, which, that, whose]</span>引導。需特別注意限定與非限定（有逗號）的差別，以及介系詞移至關代前面的進階句型。在工程敘述中，常用形容詞子句來精確定義材料或工法。</p>\n\n<div className=\"p-3 rounded-xl bg-purple-50 dark:bg-purple-950/40 border border-purple-200 dark:border-purple-800 text-xs font-mono space-y-1 my-3\">\n  <div className=\"font-bold text-purple-800 dark:text-purple-300\">🌳 關係子句解剖樹狀圖解：</div>\n  <div>• [先行詞 N (人)] ──► [who / whom / whose] ──► (缺少主格/受格/所有格)</div>\n  <div>• [先行詞 N (物)] ──► [which / that / whose]  ──► (缺少主格/受格/所有格)</div>\n  <div>⚠️ 兩大禁忌：逗號後面不能用 that；介系詞後面不能用 that！</div>\n</div>\n\n[DIALOGUE_START:關係子句會話：精準修飾建築標的]\nArchitect: The tower that was constructed with recycled steel won a green building gold medal. | 那棟使用回收鋼材建造的塔樓榮獲了綠建築金獎。\nIntern: Here, \"that was constructed with recycled steel\" is an adjective clause modifying \"tower\". | 這裡 that was constructed with recycled steel 是形容詞子句，用來修飾 tower。\nArchitect: Correct. When referring to engineers, we use \"who\": \"The engineer who inspected the site is John.\" | 沒錯。指涉工程師時我們用 who：「勘查工地的工程師是約翰。」\nIntern: Relative clauses help combine multiple observations into one sophisticated sentence. | 關係子句能幫我們把多個觀察整合成一個嚴謹的高階句子。\n[DIALOGUE_END]",
           "steps": [
             "判斷先行詞是人、事、物或地方/時間。",
@@ -3788,6 +3923,7 @@ export const englishData: SubjectData = {
         },
         {
           "heading": "名詞子句與間接問句",
+          "outlineRefs": ["EN1.4.1"],
           "body": "<p>名詞子句在句子中可當作主詞、受詞或補語。常見的引導詞有 <span className=\"text-purple-600\">that [TTS:that]</span>、<span className=\"text-purple-600\">whether/if [TTS:whether/if] (是否)</span> 以及 <span className=\"text-purple-600\">wh- 疑問詞</span>。最重要的規則是：間接問句必須恢復為「<span className=\"font-bold\">直述句語序 (S + V)</span>」。</p>\n\n[DIALOGUE_START:名詞子句會話：轉述檢驗結果與疑問]\nInspector: Do you know whether the soil bearing capacity meets the minimum requirement? | 你知道土壤承載力是否符合最低要求嗎？\nGeotechnical Engineer: The test report indicates that the bedrock layer is solid enough. | 檢驗報告指出岩盤層非常堅固穩固。\nInspector: Please inform the project director how much settlement is expected. | 請告知專案主管預期的沉陷量是多少。\nGeotechnical Engineer: I will explain what measures we have taken to prevent differential settlement. | 我會解釋我們採取了哪些措施來防止不均勻沉陷。\n[DIALOGUE_END]",
           "steps": [
             "確認子句在句中扮演的角色（如 know, wonder, ask [TTS:know, wonder, ask] 後面的受詞）。",
@@ -3826,6 +3962,7 @@ export const englishData: SubjectData = {
         },
         {
           "heading": "副詞子句與從屬連接詞",
+          "outlineRefs": ["EN1.4.1"],
           "body": "<p>副詞子句用來表示時間、條件、讓步、原因或結果，由<span className=\"text-green-600\">從屬連接詞</span>引導。理解各種連接詞的語意是統測閱讀測驗與克漏字的拿分關鍵。</p>\n\n[DIALOGUE_START:副詞子句會話：時間與條件因果分析]\nSite Supervisor: Although the weather was harsh, the team finished the roofing on schedule. | 雖然天氣惡劣，團隊依然如期完成了屋頂工程。\nClient: If the rainfall continues tomorrow, will you stop the outdoor painting? | 如果明天下雨持續，你們會停止戶外塗裝作業嗎？\nSite Supervisor: Yes, because moisture damages paint adhesion, we will work indoors instead. | 是的，因為濕氣會破壞油漆附著力，所以我們會改在室內施作。\nClient: We appreciate that you never compromise on quality control. | 我們非常讚賞你們絕不在品質管制上妥協。\n[DIALOGUE_END]",
           "steps": [
             "分析前後句的邏輯關係（如因果、對比、先後順序）。",
@@ -3869,6 +4006,7 @@ export const englishData: SubjectData = {
         },
         {
           "heading": "介系詞 vs 連接詞辨析",
+          "outlineRefs": ["EN1.4.1"],
           "body": "<p>統測極常考意義相近但詞性不同的字。記住一個鐵則：<span className=\"font-bold text-rose-600\">連接詞後面接完整子句(S+V)，介系詞後面接名詞或動名詞(V-ing)</span>。</p>\n\n[DIALOGUE_START:介系詞與連接詞辨析會話：因果與讓步表達]\nWriter: Should I write \"because the storm\" or \"because of the storm\"? | 我應該寫 because the storm 還是 because of the storm？\nEditor: \"Because of\" is a preposition, so it is followed by a noun: \"because of the storm\". | because of 是介系詞，所以後面接名詞：「because of the storm」。\nWriter: What about \"despite\" vs \"although\"? | 那 despite 和 although 呢？\nEditor: \"Despite the heavy rain\" uses a noun, while \"Although it rained heavily\" uses a subject and verb. | Despite the heavy rain 接名詞，而 Although it rained heavily 則接主詞與動詞。\n[DIALOGUE_END]",
           "steps": [
             "圈出空格後的結構。",
@@ -3900,6 +4038,7 @@ export const englishData: SubjectData = {
         },
         {
           "heading": "使役動詞與感官動詞",
+          "outlineRefs": ["EN1.4.1"],
           "body": "<p>在描述工程指示或工地觀察時常會用到。<span className=\"font-bold\">使役動詞 (make, have, let) [TTS:make, have, let]</span> 表示叫某人做某事；<span className=\"font-bold\">感官動詞 (see, hear, watch, notice) [TTS:see, hear, watch, notice]</span> 表示感官的接收。需根據受詞與受詞補語的主被動關係來決定動詞型態。</p>\n\n[DIALOGUE_START:使役與感官動詞會話：現場操作督導]\nManager: I had the subcontractor submit the crane operation permit this morning. | 我今天早上讓分包商提交了起重機操作許可證。\nSafety Officer: I saw the crane lift the steel truss safely into position. | 我有看到起重機安全地將鋼桁架吊裝定位。\nManager: Make sure you let no unauthorized personnel enter the lifting radius. | 請確保絕不讓任何未經授權的人員進入吊裝迴轉半徑內。\nSafety Officer: We always keep the exclusion zone strictly cordoned off. | 我們全程將管制區嚴密拉起封鎖線。\n[DIALOGUE_END]",
           "steps": [
             "確認主要動詞是使役動詞還是感官動詞。",
@@ -3938,6 +4077,7 @@ export const englishData: SubjectData = {
         },
         {
           "heading": "分詞片語修飾 (主動 vs 被動)",
+          "outlineRefs": ["EN1.4.1"],
           "body": "<p>分詞可以當作形容詞來修飾名詞。現在分詞 (<span className=\"text-blue-600\">V-ing [TTS:V-ing]</span>) 表示<span className=\"font-bold\">主動或進行</span>；過去分詞 (<span className=\"text-rose-600\">p.p. [TTS:p.p.]</span>) 表示<span className=\"font-bold\">被動或完成</span>。此句型常用於精簡句子結構。</p>\n\n[DIALOGUE_START:分詞片語修飾會話：精簡工程描述句]\nTeacher: How do you shorten \"The workers who are wearing yellow vests are scaffolders\"? | 你要如何精簡 The workers who are wearing yellow vests are scaffolders 這句話？\nStudent: We reduce it to: \"The workers wearing yellow vests are scaffolders.\" | 我們將它簡化為：The workers wearing yellow vests are scaffolders。\nTeacher: And what about passive voice: \"The blueprints prepared by the architect\"? | 那被動語態呢：The blueprints prepared by the architect？\nStudent: The past participle \"prepared\" modifies \"blueprints\" directly! | 過去分詞 prepared 直接修飾名詞 blueprints！\n[DIALOGUE_END]",
           "steps": [
             "找出被修飾的名詞。",
@@ -3982,6 +4122,7 @@ export const englishData: SubjectData = {
         },
         {
           "heading": "對話與情境應用：討論專案進度",
+          "outlineRefs": ["EN2.4", "EN2.10"],
           "body": "<p>在工程與建築實務中，經常會運用到複雜句型來溝通專案狀況。</p>\n\n[DIALOGUE_START:專案進度對話：甘特圖里程碑追蹤]\nProject Director: According to the master schedule, when will the curtain wall installation begin? | 根據總進度表，帷幕牆安裝什麼時候會開始？\nContractor: As soon as the structural steel framework passes the bolt torque inspection. | 只要鋼骨結構架構通過螺栓扭力檢驗，就會立刻開始。\nProject Director: We need to make sure that the interior fit-out starts before the rainy season. | 我們必須確保室內裝修在雨季來臨前展開。\nContractor: We have added extra shifts to accelerate the progress. | 我們已經加派班次來加快施工進度。\n[DIALOGUE_END]",
           "steps": [
             "A: Have you checked the materials that were delivered this morning? [TTS:Have you checked the materials that were delivered this morning?] (你檢查過今天早上送來的材料了嗎？)",
@@ -3991,6 +4132,7 @@ export const englishData: SubjectData = {
         },
         {
           "heading": "對話與情境應用：工地安全指示",
+          "outlineRefs": ["EN2.4", "EN2.10"],
           "body": "<p>確保工地安全的指示也常使用副詞子句與使役動詞。</p>\n\n[DIALOGUE_START:工地安全指示對話：高空作業預防措施]\nSafety Lead: Before you climb the scaffolding, inspect whether all toe-boards are secured. | 在你爬上鷹架之前，請先檢查所有的防墜腳趾板是否牢固固定。\nWorker: I have verified that every plank is tied down firmly with wire. | 我已經確認過每塊走道板都用鐵絲牢牢綁緊了。\nSafety Lead: Never unhook your safety harness while moving across the elevated platform. | 在挑高作業平台移動時，切勿解開你的安全帶掛鉤。\nWorker: I always use the 100 percent tie-off rule with dual lanyards. | 我一向遵循雙鉤 100% 繫掛的安全防護原則。\n[DIALOGUE_END]",
           "steps": [
             "A: Do not start the excavation until the site manager gives the signal. [TTS:Do not start the excavation until the site manager gives the signal.] (在工地主任發出信號前，不要開始挖掘。)",
@@ -4000,6 +4142,7 @@ export const englishData: SubjectData = {
         },
         {
           "heading": "9. 複合關係代名詞 (what) 與關係副詞 (where, when, why) 速查大表",
+          "outlineRefs": ["EN1.4.1"],
           "body": "複合關係代名詞 <span className=\"font-bold text-blue-600\">what [TTS:what]</span> 相當於 the thing(s) which [TTS:the thing(s) which]，本身已包含先行詞，因此其前方絕對不能再有名詞先行詞，其引導之名詞子句在全句中扮演主詞、受詞或補語。<br/>而關係副詞 <span className=\"font-bold text-emerald-600\">where, when, why [TTS:where, when, why]</span> 則由「介系詞 + 關係代名詞 which」衍生而來（如 in which = where, on which = when, for which = why），修飾時間、地點、原因之先行詞，後方接「主謂受完整子句（不缺主詞或受詞）」。在統測題中是區分頂標與均標的分水嶺。\n\n[DIALOGUE_START:複合關係詞與關係副詞解析會話：工法論證]\nJunior Engineer: Should I write: \"This is the factory what produces precast panels\"? | 我應該寫 This is the factory what produces precast panels 嗎？\nSenior Engineer: No, \"what\" contains its own antecedent. Say: \"This is the factory WHICH produces...\" or \"...WHERE precast panels are made.\" | 不行，what 本身就自帶先行詞了。應該說：This is the factory which produces... 或 where precast panels are made。\nJunior Engineer: Ah! \"Where\" introduces a complete clause, whereas \"which\" acts as the subject! | 啊！where 引導主謂完整的子句，而 which 在子句中擔任主詞！\nSenior Engineer: Spot on. Remember: What you learn today guarantees construction quality tomorrow. | 一點也沒錯。記住：你今天所學的知識，確保了明天的施工品質。\n[DIALOGUE_END]",
           "table": {
             "headers": [
@@ -4051,6 +4194,7 @@ export const englishData: SubjectData = {
         },
         {
           "heading": "10. 限定用法 vs 非限定用法關係子句：一個逗號的意義",
+          "outlineRefs": ["EN1.4.1"],
           "body": "<p>關係子句最容易失分的地方，不是關代選錯，而是<strong>逗號的有無</strong>。有逗號（非限定用法）代表「補充說明，拿掉不影響句子成立」；沒逗號（限定用法）代表「界定範圍，拿掉句意就不完整」。統測近年在此設計了大量誘答選項。</p>\n\n[DIALOGUE_START:關係子句會話：逗號帶來的語意差異]\nTeacher: What is the difference between these two sentences? | 這兩個句子有什麼差別？\nStudent: The first one says \"my brother who is an architect\", so I have several brothers. | 第一句說「我那位當建築師的哥哥」，表示我有好幾個哥哥。\nTeacher: Right. And with a comma, it means you have only one brother. | 沒錯。加上逗號，就表示你只有一個哥哥。\nStudent: So the comma actually changes the meaning of the whole sentence. | 所以逗號其實改變了整句話的意思。\n[DIALOGUE_END]",
           "table": {
             "headers": [
@@ -4111,6 +4255,7 @@ export const englishData: SubjectData = {
         },
         {
           "heading": "11. 介系詞＋關係代名詞、關代省略與 that 的限用與禁用",
+          "outlineRefs": ["EN1.4.1"],
           "body": "<p>這一節處理關係子句的三個進階操作：<strong>介系詞往前移、關代省略、that 的使用時機</strong>。三者都是統測綜合測驗與非選句子重組的高頻考點，也是判斷考生程度的分水嶺。</p>",
           "table": {
             "headers": [
@@ -4171,6 +4316,7 @@ export const englishData: SubjectData = {
         },
         {
           "heading": "12. 減化關係子句：分詞化與不定詞化的四種路徑",
+          "outlineRefs": ["EN1.4.1"],
           "body": "<p>減化關係子句（Reduced Relative Clause）是把冗長的關係子句<strong>壓縮成分詞片語或不定詞片語</strong>，讓句子更精煉。這是統測「句子改寫」與閱讀長句拆解的核心技術，也是分詞構句的前置基礎。</p>\n\n[DIALOGUE_START:減化關係子句會話：把長句變精煉]\nTeacher: How can we shorten \"the workers who are wearing helmets\"? | 我們怎麼把 the workers who are wearing helmets 縮短？\nStudent: We can say \"the workers wearing helmets\" by deleting who are. | 可以刪掉 who are，說成 the workers wearing helmets。\nTeacher: Good. And \"the report which was written by Amy\"? | 很好。那 the report which was written by Amy 呢？\nStudent: That becomes \"the report written by Amy\". | 會變成 the report written by Amy。\n[DIALOGUE_END]",
           "table": {
             "headers": [
@@ -4231,6 +4377,7 @@ export const englishData: SubjectData = {
         },
         {
           "heading": "13. 對等連接詞、相關連接詞與平行結構",
+          "outlineRefs": ["EN1.4.1"],
           "body": "<p>對等連接詞（and／but／or／so／for／yet／nor）與相關連接詞（both…and、not only…but also）的考點有兩個：<strong>①連接的兩端必須詞性對稱（平行結構）②連接主詞時的動詞單複數判斷</strong>。這是統測非選寫作最常被扣分的結構問題。</p>",
           "table": {
             "headers": [
@@ -4291,6 +4438,7 @@ export const englishData: SubjectData = {
         },
         {
           "heading": "14. 結果與程度句型：so／such…that、too…to、enough to",
+          "outlineRefs": ["EN1.4.1"],
           "body": "<p>這三組句型表達「程度導致的結果」，是統測<strong>非選句子改寫題的常客</strong>。它們之間可以互相轉換，命題委員最愛考「同義改寫時的細節變化」，尤其是 too…to 轉成 so…that 時必須補上否定。</p>\n\n[DIALOGUE_START:程度句型會話：描述工地狀況]\nForeman: The noise was so loud that we had to stop the meeting. | 噪音大到我們必須中斷會議。\nEngineer: It was such a noisy morning that nobody could concentrate. | 那是個吵到沒人能專心的早上。\nForeman: The scaffolding is too weak to support the load. | 這鷹架太脆弱，無法支撐荷重。\nEngineer: Right. It isn't strong enough to hold the equipment. | 沒錯，它的強度不足以承載設備。\n[DIALOGUE_END]",
           "table": {
             "headers": [
@@ -4496,6 +4644,7 @@ export const englishData: SubjectData = {
       "desc": "about reading infographics, charts, tables, emails, notices, ads, manuals, safety signs[TTS:about reading infographics, charts, tables, emails, notices, ads, manuals, safety signs] - 素養導向統測新題型",
       "status": "done",
       "gradeLevel": 11,
+      "curriculumCode": "TCTE115-EN1",
       "examHitRate": 4,
       "fatalTraps": [
         {
@@ -4573,6 +4722,7 @@ export const englishData: SubjectData = {
       "concepts": [
         {
           "heading": "圖表閱讀三步法 (Infographics & Charts[TTS:Infographics & Charts])",
+          "outlineRefs": ["EN1.5.2", "EN4.1"],
           "body": "<p>在閱讀<span className=\"text-blue-600 font-bold\">圖表 (Charts[TTS:Charts])</span>或<span className=\"text-blue-600 font-bold\">資訊圖表 (Infographics[TTS:Infographics])</span>時，不要馬上陷入數字堆中，請遵循以下三步法快速掌握重點：</p>\n\n[DIALOGUE_START:圖表判讀會話：材料強度長條圖分析]\nEngineer A: Look at the bar chart comparing the tensile strength of three steel alloys. | 看一下這張比較三種鋼合金抗拉強度的長條圖。\nEngineer B: Alloy C shows the highest yield strength, exceeding 500 megapascals. | 合金 C 表現出最高的降伏強度，超過了 500 MPa。\nEngineer A: What does the horizontal axis represent? | 水平軸（橫軸）代表什麼？\nEngineer B: It represents the percentage of carbon content in each sample. | 它代表每個試體中碳含量的百分比。\n[DIALOGUE_END]",
           "steps": [
             "Step 1[TTS:Step 1]: 閱讀標題 (Title[TTS:Title]) - 標題通常點出圖表的主題。",
@@ -4582,6 +4732,7 @@ export const englishData: SubjectData = {
         },
         {
           "heading": "Email / Notice / Memo[TTS:Email / Notice / Memo] 判讀技巧",
+          "outlineRefs": ["EN1.5.4", "EN2.7"],
           "body": "<p>職場與校園常見的<span className=\"text-teal-600 font-bold\">應用文體</span>，重點在於快速抓取人事時地物。通常包含特定的格式，如寄件人、收件人、主旨與日期。</p>\n\n[DIALOGUE_START:商務便條會話：截稿時程與行動項目]\nCoordinator: Did you read the project memo regarding the design competition deadline? | 你看了關於設計競圖截止日期的專案備忘錄了嗎？\nArchitect: Yes, all digital renderings and cost estimates must be submitted by Friday 5 PM. | 看了，所有的 3D 渲染圖與成本估算必須在週五下午五點前送出。\nCoordinator: The memo highlights that late submissions will be automatically disqualified. | 備忘錄特別強調，逾期送件將會被自動取消資格。\nArchitect: Let us finalize our portfolio presentation today. | 那我們今天就把作品集簡報定稿吧。\n[DIALOGUE_END]",
           "steps": [
             "Subject[TTS:Subject] (主旨)：快速了解信件目的。",
@@ -4592,6 +4743,7 @@ export const englishData: SubjectData = {
         },
         {
           "heading": "廣告/海報/折價券速讀法",
+          "outlineRefs": ["EN4.1", "EN4.7"],
           "body": "<p>此類文本充滿吸引人的視覺元素，設計來快速傳遞促銷資訊。考試時，重點在於<span className=\"text-rose-600 font-bold\">條件限制與關鍵數據</span>。</p>\n\n[DIALOGUE_START:廣告折價券速讀會話：建材展優惠券核對]\nBuyer: This coupon offers a 20 percent discount on surveying laser levels. | 這張折價券提供雷射測量水平儀八折的優惠折扣。\nStore Clerk: Please note the fine print: the offer is valid only for purchases over 50,000 NT dollars. | 請注意底下的小字說明：此優惠僅適用於消費滿五萬元新台幣。\nBuyer: Does it apply to tripod accessories as well? | 這項優惠也有適用於腳架配件嗎？\nStore Clerk: Yes, all optical accessories qualify during the exhibition period. | 有的，展覽期間所有的光學配件皆符合優惠資格。\n[DIALOGUE_END]",
           "table": {
             "headers": [
@@ -4620,6 +4772,7 @@ export const englishData: SubjectData = {
         },
         {
           "heading": "操作手冊與安全標示 (Manuals & Safety Signs[TTS:Manuals & Safety Signs])",
+          "outlineRefs": ["EN1.3.1", "EN1.5.7"],
           "body": "<p>土木與建築現場常有各種<span className=\"text-orange-600 font-bold\">安全標示 (Safety Signs[TTS:Safety Signs])</span>與操作手冊。這些文本通常使用祈使句（原形動詞開頭），且帶有強烈的警告意味。</p>\n\n[DIALOGUE_START:操作手冊會話：電動切石機安全指南]\nApprentice: What does the \"DANGER\" symbol on the masonry cutter manual mean? | 切石機說明書上的 DANGER 危險符號是什麼意思？\nMaster Builder: It indicates high-voltage electrical shock hazard if water enters the motor casing. | 它表示如果水進入馬達外殼，會有高壓觸電的危險。\nApprentice: I will make sure the ground fault circuit interrupter is plugged in. | 我會確保漏電斷路插頭已確實插上。\nMaster Builder: Always wear eye goggles and ear protection before pressing the start switch. | 在按下啟動開關前，務必隨時佩戴護目鏡與耳罩。\n[DIALOGUE_END]",
           "steps": [
             "Danger[TTS:Danger] (危險)：最高等級，會造成死亡或重傷。",
@@ -4631,6 +4784,7 @@ export const englishData: SubjectData = {
         },
         {
           "heading": "數據描述常見句型",
+          "outlineRefs": ["EN1.4.1"],
           "body": "<p>圖表題中常出現描述數據變化的句型，熟悉這些句型有助於快速將文字與圖表內容對應。</p>\n\n[DIALOGUE_START:數據描述句型會話：綠建築節能趨勢]\nResearcher: The line graph illustrates a dramatic decrease in solar panel manufacturing costs. | 這張折線圖展示了太陽能板製造成本的大幅下降。\nClient: By how much did the average payback period drop over the last decade? | 在過去十年間，平均投資回收期縮短了多少？\nResearcher: According to the data, the payback time decreased significantly from twelve to five years. | 根據數據顯示，回收期從十二年顯著縮短至五年。\nClient: That makes rooftop photovoltaic systems a very sound investment. | 這使得屋頂型太陽光電系統成為非常明智的投資。\n[DIALOGUE_END]",
           "table": {
             "headers": [
@@ -4664,6 +4818,7 @@ export const englishData: SubjectData = {
         },
         {
           "heading": "多元文本交叉比對法",
+          "outlineRefs": ["EN4.4", "EN4.5"],
           "body": "<p>統測新趨勢常將兩種以上的文本合併出題（例如：<span className=\"text-indigo-600 font-bold\">Email[TTS:Email] + 價目表</span>）。這種題型稱為「多重文本題」。</p>\n\n[DIALOGUE_START:多文本交叉比對會話：核對電郵與出貨清單]\nAuditor A: The supplier's email says 500 steel beams were shipped on Tuesday. | 供應商的電子郵件表示五百支鋼樑已於週二出貨。\nAuditor B: However, the warehouse delivery receipt only lists 450 units received. | 然而，倉庫的送貨簽收單上卻只列出收到四百五十支。\nAuditor A: Let us check the packing slip attached to invoice number 108. | 我們來核對一下隨附在發票號碼 108 上的裝箱清單。\nAuditor B: Good catch! The remaining 50 units are scheduled for delivery tomorrow. | 抓得好！剩下的五十支預定於明天送達。\n[DIALOGUE_END]",
           "steps": [
             "1. 先讀題目：確定需要什麼資訊。",
@@ -4673,6 +4828,7 @@ export const englishData: SubjectData = {
         },
         {
           "heading": "素養導向統測新趨勢解析",
+          "outlineRefs": ["EN4.5", "EN4.7"],
           "body": "<p>108課綱強調「非連續性文本」的閱讀能力，也就是將圖表、表單、海報等視覺化資訊轉化為文字理解，或將文字描述對應到圖表上，這稱為<span className=\"text-green-600 font-bold\">圖文互轉能力</span>。</p>\n\n[DIALOGUE_START:非連續文本會話：圖文互轉素養題解]\nTeacher: In 108 Curriculum exams, question prompts often combine an email with a transit map. | 在 108 課綱的考題中，題幹經常將一封電子郵件與捷運地圖結合在一起。\nStudent: So I need to locate the conference venue on the map based on the email invitation! | 所以我必須根據邀請函的內容在捷運地圖上找到會議場地的位置！\nTeacher: Precisely. Synthesizing clues from different formats is key to non-continuous texts. | 完全正確。整合不同形式的線索是非連續文本的解題核心。\nStudent: I feel much more prepared for these realistic literacy questions now. | 我現在對這種貼近生活的情境素養題更有信心了。\n[DIALOGUE_END]",
           "steps": [
             "強化資訊轉換能力：平時多練習將圖表數據用文字寫出來。",
@@ -4682,6 +4838,7 @@ export const englishData: SubjectData = {
         },
         {
           "heading": "8. 時刻表・價目表・訂單表單判讀：數字與條件的交叉比對",
+          "outlineRefs": ["EN1.3.2"],
           "body": "<p>統測應用文題組最愛出「表格 ＋ 附註條件」的組合題：表格給數字，附註（Note／Remarks）給限制條件，<strong>答案永遠落在兩者的交集</strong>。只看表格不看附註，是這類題目最主要的失分原因。</p>",
           "table": {
             "headers": [
@@ -4741,6 +4898,7 @@ export const englishData: SubjectData = {
         },
         {
           "heading": "9. 圖表趨勢描述句型庫：折線圖・長條圖・圓餅圖",
+          "outlineRefs": ["EN1.4.1"],
           "body": "<p>素養導向命題大量使用圖表。要能<strong>看懂選項在描述哪一段趨勢</strong>，必須熟悉趨勢動詞、程度副詞與比較句型三組語言工具。這組句型同時可用於非選寫作的數據描述題。</p>",
           "table": {
             "headers": [
@@ -4800,6 +4958,7 @@ export const englishData: SubjectData = {
         },
         {
           "heading": "10. 標示、標籤與規格表：工地與產品英文的判讀",
+          "outlineRefs": ["EN1.3.1", "EN1.5.7"],
           "body": "<p>安全標示與產品規格表是<strong>技術型高中學生最需要、也最實用</strong>的英文閱讀能力。統測應用文題組近年頻繁取材於此，同時它也是進入職場後的第一道語言門檻。</p>\n\n[DIALOGUE_START:標示判讀會話：工地安全告示]\nSupervisor: What does this sign mean? | 這個標示是什麼意思？\nTrainee: It says \"Danger: High Voltage. Authorized Personnel Only.\" | 上面寫著「危險：高壓電，僅限授權人員進入」。\nSupervisor: Correct. And what should you wear beyond this point? | 正確。過了這個點你應該穿戴什麼？\nTrainee: A hard hat, safety goggles, and steel-toed boots. | 安全帽、護目鏡和鋼頭鞋。\n[DIALOGUE_END]",
           "table": {
             "headers": [
@@ -4859,6 +5018,7 @@ export const englishData: SubjectData = {
         },
         {
           "heading": "11. 素養題組實戰：跨圖文推論五步驟",
+          "outlineRefs": ["EN4.4", "EN4.5"],
           "body": "<p>素養導向題組的特徵是<strong>「一則情境 ＋ 兩到三種文本」</strong>：例如一張活動海報、一封報名 Email、一份費用表，要求考生整合三者做出判斷。這類題目不難，但需要一套穩定的作業流程。</p>",
           "table": {
             "headers": [
@@ -5061,6 +5221,7 @@ export const englishData: SubjectData = {
       "desc": "about cloze test strategies, transition words, pronoun references, collocations",
       "status": "done",
       "gradeLevel": 11,
+      "curriculumCode": "TCTE115-EN1",
       "examHitRate": 4,
       "fatalTraps": [
         {
@@ -5187,6 +5348,7 @@ export const englishData: SubjectData = {
       "concepts": [
         {
           "heading": "1. 克漏字三步解題法",
+          "outlineRefs": ["EN1.5.1", "EN4.2"],
           "body": "解答克漏字時，千萬不要只看空格所在的那一行。正確的做法是先快速閱讀整段文章了解主旨（Main Idea [TTS:Main Idea]），然後觀察空格前後的單字或句型結構，最後將四個選項代入，測試哪個在文法與語意上最通順。\n\n[DIALOGUE_START:克漏字解題會話：空格前後文法詞性判斷]\nStudent: How do I decide between \"increasing\" and \"increased\" in blank 22? | 我要如何決定第 22 格要選 increasing 還是 increased？\nTutor: Look after the blank: it is followed by a noun \"demand\", so you need an adjective participle! | 看空格後面：後面接著名詞 demand，所以你需要一個形容詞性質的分詞！\nStudent: And since demand is actively growing, \"increasing demand\" is the right choice. | 而且因為需求正在持續成長，所以 increasing demand 才是正確選項。\nTutor: Excellent grammatical reasoning! Always inspect both words before and after. | 非常棒的文法邏輯！一定要同時觀察空格前後的字。\n[DIALOGUE_END]",
           "steps": [
             "一、略讀全段：掌握文章背景（如建築工地安全、材料測試）。",
@@ -5196,6 +5358,7 @@ export const englishData: SubjectData = {
         },
         {
           "heading": "2. 高頻轉折語 (however/therefore/moreover)",
+          "outlineRefs": ["EN1.5.1", "EN4.2"],
           "body": "轉折語（Transition Words [TTS:Transition Words]）是篇章結構考題的常客，用來連接兩個句子或段落的邏輯關係。\n\n[DIALOGUE_START:轉折語會話：邏輯連接詞精準代入]\nEditor A: Sentence A states the project was expensive, but sentence B says it was completed. | A 句說專案造價昂貴，但 B 句說它依然完工了。\nEditor B: Then you need an adversative transition like \"Nevertheless\" or \"However\". | 那麼你需要像 Nevertheless 或 However 這樣的轉折連接詞。\nEditor A: What if sentence B explained the consequence instead? | 如果 B 句是在解釋其結果呢？\nEditor B: Then causal transitions like \"Therefore\" or \"Consequently\" would be appropriate. | 那麼像 Therefore 或 Consequently 這樣的因果轉折詞才合適。\n[DIALOGUE_END]",
           "table": {
             "headers": [
@@ -5224,6 +5387,7 @@ export const englishData: SubjectData = {
         },
         {
           "heading": "3. 段落銜接與代名詞指代",
+          "outlineRefs": ["EN1.4.1"],
           "body": "在篇章結構中，代名詞（如 it, they, this, these [TTS:it, they, this, these]）通常指代前一句出現過的名詞。追蹤代名詞所指代的對象，能幫助你在句子重組或克漏字中找到正確答案。\n\n[DIALOGUE_START:代名詞指代會話：段落銜接線索追蹤]\nTeacher: When a paragraph starts with \"These innovations\", what does \"These\" refer to? | 當一個段落以 These innovations 開頭時，These 是指什麼？\nStudent: It refers back to the 3D printing and robotic arms mentioned in the previous paragraph. | 它是指前一個段落所提到的 3D 列印與機器手臂。\nTeacher: Tracking demonstrative pronouns ensures you never lose the narrative thread. | 追蹤指示代名詞能確保你永遠不會抓丟文章的脈絡。\nStudent: Cohesion words are like bridges connecting separate paragraphs. | 篇章銜接詞就像連接不同段落的橋樑一樣。\n[DIALOGUE_END]",
           "steps": [
             "遇到代名詞時，往前尋找最近的單數或複數名詞。",
@@ -5233,10 +5397,12 @@ export const englishData: SubjectData = {
         },
         {
           "heading": "4. 篇章實戰演練",
+          "outlineRefs": ["EN1.5.1", "EN4.2"],
           "body": "實戰中，克漏字通常包含：文法題（動詞時態、分詞構句）、字彙題（相似詞辨析）、片語題與語意邏輯題。保持閱讀的連貫性是拿分的關鍵。遇到不懂的單字先略過，透過上下文猜測字義。\n\n[DIALOGUE_START:篇章實戰會話：耐震結構文章解構]\nStudy Partner A: In this article on Taipei 101's tuned mass damper, how does the argument progress? | 在這篇關於台北 101 風阻尼球的文章中，論點是如何展開的？\nStudy Partner B: It begins with typhoon challenges, explains pendulum physics, and concludes with safety records. | 開頭先講颱風帶來的挑戰，接著解釋擺錘物理原理，最後總結安全紀錄。\nStudy Partner A: Once we see the structural outline, filling in the blanks takes half the time. | 一旦看清篇章結構架構，填答克漏字空格的時間能省下一半。\nStudy Partner B: Structure awareness turns hard questions into easy points. | 結構意識能把難題轉變成輕鬆拿分的送分題。\n[DIALOGUE_END]"
         },
         {
           "heading": "5. 固定搭配 V-ing vs to V",
+          "outlineRefs": ["EN1.4.1"],
           "body": "某些動詞後方必須接動名詞（V-ing [TTS:V-ing]），如 enjoy, avoid, finish [TTS:enjoy, avoid, finish]；有些則接不定詞（to V [TTS:to V]），如 decide, plan, hope [TTS:decide, plan, hope]。特別注意介系詞後面通常接 V-ing [TTS:V-ing]。\n\n[DIALOGUE_START:固定搭配會話：動名詞與不定詞慣用語]\nLearner: Is it \"look forward to see you\" or \"look forward to seeing you\"? | 是 look forward to see you 還是 look forward to seeing you？\nInstructor: \"To\" is a preposition here, so you must use the gerund: \"look forward to seeing you\"! | 這裡的 to 是介系詞，所以後面一定要接動名詞：look forward to seeing you！\nLearner: What about \"be used to\"? | 那 be used to 呢？\nInstructor: \"Be used to V-ing\" means accustomed to, while \"used to V\" refers to past habits. | be used to V-ing 代表習慣於，而 used to V 則指過去的習慣。\n[DIALOGUE_END]",
           "steps": [
             "背誦常考搭配詞：admit, delay, deny + V-ing [TTS:admit, delay, deny + V-ing]。",
@@ -5245,10 +5411,12 @@ export const englishData: SubjectData = {
         },
         {
           "heading": "6. 冠詞與特指規則",
+          "outlineRefs": ["EN1.4.1"],
           "body": "a/an [TTS:a/an] 用於泛指某個單數可數名詞，the [TTS:the] 用於特指（雙方都知道的對象、前面提過的對象，或世上獨一無二的事物）。在工程圖說中，首次提到某個結構用 \"a column\" [TTS:\"a column\"]，再次提到就要用 \"the column\" [TTS:\"the column\"]。\n\n[DIALOGUE_START:冠詞特指會話：首次提及與特指辨析]\nProofreader: Why is it \"a bridge\" in sentence 1, but \"the bridge\" in sentence 3? | 為什麼第 1 句用 a bridge，到了第 3 句卻變成 the bridge？\nAuthor: Because \"a bridge\" introduces a new noun, while \"the bridge\" refers to the specific one already introduced. | 因為 a bridge 是首次引入新名詞，而 the bridge 則是特指前面已經介紹過的那座橋。\nProofreader: Clear distinction! Definite articles define specific reference in English. | 非常清晰的區別！定冠詞在英文中用來定義特定指涉對象。\nAuthor: Mastering articles makes technical writing natural and precise. | 掌握冠詞能讓技術寫作變得既自然又精確。\n[DIALOGUE_END]"
         },
         {
           "heading": "7. 統測四大天王轉折詞全覽矩陣 (因果、轉折、遞進、舉例) 與標點法則",
+          "outlineRefs": ["EN1.5.1", "EN4.2"],
           "body": "<p>統測克漏字每回必出 2~3 題篇章銜接轉折詞。掌握「四大天王邏輯分類」與「標點符號判斷公式」，就能在看到空格時直接用刪去法秒殺無效選項！</p>\n\n[DIALOGUE_START:四大天王轉折詞會話：克漏字標點與邏輯解密]\nTeacher: Notice the semicolon and comma in \"The material is light; however, it is brittle.\" | 注意這句話裡的分號與逗號：The material is light; however, it is brittle。\nStudent: Why can't we just use a comma like \"The material is light, however it is brittle\"? | 為什麼不能只用逗號像 The material is light, however it is brittle 這樣寫呢？\nTeacher: Because \"however\" is a conjunctive adverb, not a conjunction! It cannot join two independent clauses with only a comma. | 因為 however 是連接副詞，不是連接詞！它絕對不能只靠一個逗號連接兩個獨立子句。\nStudent: So it must be either a period or a semicolon before \"however\"! That rule eliminates half the wrong options in cloze tests! | 所以 however 前面一定要是句點或分號！這項規則能在克漏字中直接排除一半的錯誤選項！\n[DIALOGUE_END]",
           "table": {
             "headers": [
@@ -5287,6 +5455,7 @@ export const englishData: SubjectData = {
         },
         {
           "heading": "8. 綜合測驗四大空格類型判別法：先分類再作答",
+          "outlineRefs": ["EN1.5.1", "EN4.2"],
           "body": "<p>統測綜合測驗（克漏字）的每一個空格，都可歸入<strong>四種類型之一</strong>。先判斷類型，就知道該用什麼線索作答——這比從頭到尾逐句翻譯有效率得多。</p>",
           "table": {
             "headers": [
@@ -5346,6 +5515,7 @@ export const englishData: SubjectData = {
         },
         {
           "heading": "9. 克漏字中的動詞判斷：時態、語態與主動被動三層檢核",
+          "outlineRefs": ["EN1.4.1"],
           "body": "<p>克漏字裡最常出現的就是動詞空格。用<strong>三層檢核法</strong>依序判斷，可以把四個選項快速縮到一個：先問「主動還是被動」，再問「什麼時態」，最後問「主詞單複數」。</p>\n\n[DIALOGUE_START:動詞判斷會話：主動與被動的選擇]\nTeacher: Should we write \"The bridge built in 1998\" or \"was built in 1998\"? | 我們該寫 The bridge built in 1998 還是 was built in 1998？\nStudent: The bridge doesn't build itself, so it must be passive: was built. | 橋不會自己建造，所以必須用被動：was built。\nTeacher: Exactly. Now, how about \"The engineer ______ the report yesterday\"? | 完全正確。那 The engineer ______ the report yesterday 呢？\nStudent: The engineer is the doer, so it's active: submitted. | 工程師是動作者，所以用主動：submitted。\n[DIALOGUE_END]",
           "table": {
             "headers": [
@@ -5405,6 +5575,7 @@ export const englishData: SubjectData = {
         },
         {
           "heading": "10. 詞性轉換 (Word Form) 題：五大訊號判斷空格詞性",
+          "outlineRefs": ["EN1.4.1"],
           "body": "<p>詞性題是克漏字中<strong>最不需要理解文章</strong>的題型——只要看空格前後的結構訊號，兩秒即可決定答案。掌握以下五大訊號，這類題目可以做到零失分。</p>",
           "table": {
             "headers": [
@@ -5464,6 +5635,7 @@ export const englishData: SubjectData = {
         },
         {
           "heading": "11. 動詞與介系詞固定搭配 (Collocation) 高頻表",
+          "outlineRefs": ["EN1.4.1"],
           "body": "<p>固定搭配是克漏字裡<strong>沒有道理可講、只能記憶</strong>的部分，但它的範圍其實有限。統測近十年反覆出現的搭配約 60 組，依「動詞 ＋ 介系詞」「形容詞 ＋ 介系詞」「名詞 ＋ 介系詞」三類整理，一週即可完成。</p>",
           "table": {
             "headers": [
@@ -5659,6 +5831,7 @@ export const englishData: SubjectData = {
       "desc": "about subjunctive mood, participle clauses, inversion, emphasis patterns, volitional verbs[TTS:about subjunctive mood, participle clauses, inversion, emphasis patterns, volitional verbs] - 統測衝刺總複習",
       "status": "done",
       "gradeLevel": 12,
+      "curriculumCode": "TCTE115-EN1",
       "examHitRate": 5,
       "fatalTraps": [
         {
@@ -5709,6 +5882,7 @@ export const englishData: SubjectData = {
       "concepts": [
         {
           "heading": "1. 假設語氣與現在/過去事實相反",
+          "outlineRefs": ["EN1.4.1"],
           "body": "<span className=\"text-blue-600 font-bold\">假設語氣</span>的核心在於「時態退一步」。與現在相反用過去式，與過去相反用過去完成式。\n\n<div className=\"p-3 rounded-xl bg-amber-50 dark:bg-amber-950/40 border border-amber-200 dark:border-amber-800 text-xs font-mono space-y-1 my-3\">\n  <div className=\"font-bold text-amber-800 dark:text-amber-300\">⚖️ 假設語氣時態降格天平圖解：</div>\n  <div>• 與現在相反 (退一步)：If S + were/V-ed, S + would/could + 原形V</div>\n  <div>• 與過去相反 (退兩步)：If S + had p.p., S + would/could + have p.p.</div>\n  <div>• 倒裝句 (省略 If)：Had they known... / Were he here... / Should you need...</div>\n</div>\n\n[DIALOGUE_START:假設語氣會話：土質地質風險評估]\nGeotechnical Lead: If we had performed the core drilling earlier, we would have detected the underground sinkhole. | 如果我們當初早一點進行鑽探取樣，我們就能察覺到地下的岩溶空洞。\nStructural Engineer: If the bedrock were stronger, we could reduce the pile foundation depth. | 如果岩盤層更堅固一些，我們就可以縮減基樁的深度。\nGeotechnical Lead: Had we known the water table was so high, we would have installed dewatering pumps. | 要是我們早知道地下水位這麼高，我們早就安裝抽水沉水泵了。\nStructural Engineer: Let us reinforce the slurry walls immediately to prevent subsidence. | 我們立刻為連續壁進行補強，以防地層下陷。\n[DIALOGUE_END]",
           "steps": [
             "與現在事實相反：If S + were/V-ed, S + would/could/should/might + VR.[TTS:If S + were/V-ed, S + would/could/should/might + VR.]",
@@ -5737,6 +5911,7 @@ export const englishData: SubjectData = {
         },
         {
           "heading": "2. 分詞構句簡化法則",
+          "outlineRefs": ["EN1.4.1"],
           "body": "<span className=\"text-amber-600 font-bold\">分詞構句</span>的重點是找出「邏輯主詞」。省略連接詞與相同主詞後，依主被動關係改寫動詞。\n\n[DIALOGUE_START:分詞構句會話：簡化施工步驟描述]\nSenior Architect: Transform this sentence: \"After the contractor finished the framing, he inspected the welds.\" | 請改寫這句話：After the contractor finished the framing, he inspected the welds。\nJunior Associate: Using a participle clause: \"Having finished the framing, the contractor inspected the welds.\" | 使用分詞構句簡化為：Having finished the framing, the contractor inspected the welds。\nSenior Architect: What if the subject is passive: \"Because it was damaged by the earthquake, the pier was rebuilt\"? | 如果是被動語態呢：Because it was damaged by the earthquake, the pier was rebuilt？\nJunior Associate: It becomes: \"Damaged by the earthquake, the pier was rebuilt.\" | 變成：Damaged by the earthquake, the pier was rebuilt。\n[DIALOGUE_END]",
           "steps": [
             "步驟一：刪除連接詞 (when[TTS:when], because[TTS:because] 等)。",
@@ -5767,6 +5942,7 @@ export const englishData: SubjectData = {
         },
         {
           "heading": "3. 倒裝句",
+          "outlineRefs": ["EN1.4.1"],
           "body": "為了強調或修辭，將句子結構重新排列。<span className=\"text-rose-600 font-bold\">否定副詞置於句首</span>是統測最高頻考點，需將後方子句改為疑問句語序。\n\n[DIALOGUE_START:倒裝句會話：強調工程卓越表現]\nAuditor: Not only did the construction team finish under budget, but they also achieved zero accidents. | 施工團隊不僅在預算內完工，更達成了零工安事故的卓越紀錄。\nProject Director: Rarely have I seen such exceptional project coordination and safety discipline. | 我很少見到如此出色的專案協調能力與安全紀律。\nAuditor: Under no circumstances should safety protocols be compromised for speed. | 在任何情況下，都絕不應該為了追求速度而犧牲安全規範。\nProject Director: We uphold the highest construction ethics at all times. | 我們始終秉持最高標準的工程倫理。\n[DIALOGUE_END]",
           "steps": [
             "否定副詞倒裝：Never/Seldom/Hardly/Little + 助動詞/be動詞 + S + V[TTS:Never/Seldom/Hardly/Little + 助动词/be动词 + S + V]",
@@ -5795,6 +5971,7 @@ export const englishData: SubjectData = {
         },
         {
           "heading": "4. 強調句型 (分裂句)",
+          "outlineRefs": ["EN1.4.1"],
           "body": "利用 <span className=\"text-indigo-600 font-bold\">It is/was ... that ...[TTS:It is/was ... that ...]</span> 來強調句中的主詞、受詞或副詞片語。\n\n[DIALOGUE_START:分裂強調句會話：突顯關鍵檢核人]\nInspector: It was the junior surveyor that discovered the coordinate discrepancy on the grid. | 正是那位初級測量員發現了測量網格上的座標偏差。\nChief Engineer: It was because of her diligence that we avoided a major foundation misalignment. | 正是因為她的細心與負責，我們才避免了嚴重的基礎偏位錯誤。\nInspector: Cleft sentences \"It is...that...\" focus attention on the vital element. | 分裂強調句 It is...that... 能將讀者的焦點精準聚焦在關鍵要素上。\nChief Engineer: She definitely deserves our team recognition award. | 她絕對值得獲得我們團隊的表揚獎項。\n[DIALOGUE_END]",
           "steps": [
             "公式：It is/was + 強調部分 + that + 剩餘部分。[TTS:It is/was + 強調部分 + that + 剩餘部分。]",
@@ -5823,6 +6000,7 @@ export const englishData: SubjectData = {
         },
         {
           "heading": "5. 意志動詞與虛擬式",
+          "outlineRefs": ["EN1.4.1"],
           "body": "當主要子句的動詞表示<span className=\"text-teal-600 font-bold\">堅持、建議、要求、命令</span>時，其後的 that[TTS:that] 子句必須使用原形動詞 (省略 should[TTS:should])。\n\n[DIALOGUE_START:意志動詞虛擬式會話：官方督導要求]\nBuilding Official: The municipal department demands that the rebar spacing be verified by a licensed PE. | 主管機關要求鋼筋間距必須由執業專業技師親自檢核。\nSite Agent: Our structural engineer insisted that we conduct an ultrasonic weld inspection. | 我們的結構技師也堅持要求我們進行超音波銲道檢驗。\nBuilding Official: It is imperative that all test certificates be submitted prior to occupancy permit issuance. | 所有檢驗證明書在核發使用執照前都必須全數提交，這是強制要求的。\nSite Agent: We will comply with every regulatory requirement promptly. | 我們會迅速配合並遵守每一項法規要求。\n[DIALOGUE_END]",
           "steps": [
             "常見動詞：insist[TTS:insist](堅持), suggest[TTS:suggest](建議), demand[TTS:demand](要求), order[TTS:order](命令), require[TTS:require](要求)。",
@@ -5851,6 +6029,7 @@ export const englishData: SubjectData = {
         },
         {
           "heading": "6. 助動詞 + have p.p. 對過去推測",
+          "outlineRefs": ["EN1.4.1"],
           "body": "表示對過去發生的事情進行<span className=\"text-emerald-600 font-bold\">猜測或表達遺憾</span>。\n\n[DIALOGUE_START:助動詞推測會話：過去施工狀態推斷]\nForeman A: The concrete surface is already dry and hard. They must have poured it yesterday. | 混凝土表面已經乾燥硬化了。他們昨天一定就已經完成澆置了。\nForeman B: They should have covered the slab with wet burlap to prevent shrinkage cracks. | 他們本來應該要用濕麻布覆蓋樓板的，以防止產生乾縮裂縫。\nForeman A: Could the cracks have been caused by excessive water in the mix? | 這些裂縫有可能是因為拌和水中加了太多水引起的嗎？\nForeman B: We need to review the batch plant delivery tickets to be sure. | 我們需要檢視預拌廠的送貨單據才能確定。\n[DIALOGUE_END]",
           "steps": [
             "must have p.p.[TTS:must have p.p.]：過去必定 (肯定推測)。",
@@ -5881,6 +6060,7 @@ export const englishData: SubjectData = {
         },
         {
           "heading": "7. 統測 13 大文法模組速查總表",
+          "outlineRefs": ["EN1.4.1"],
           "body": "<span className=\"text-orange-600 font-bold\">總結統測常考文法要點</span>，考前務必熟記。\n\n[DIALOGUE_START:統測文法整合會話：快速辨識考點公式]\nStudent: How do I master all thirteen grammar modules before the Unified Exam? | 我要如何在統測前掌握全部十三大文法模組？\nTutor: Categorize questions into subjunctive mood, participle clauses, and inversion patterns. | 把題目歸類為假設語氣、分詞構句與倒裝句型三大核心類別。\nStudent: Once I identify the structural signal words, the answer becomes obvious. | 一旦我識別出結構提示詞，答案就變得顯而易見了。\nTutor: Practice with past exam questions to build rapid instinct. | 多用歷屆考古題練習，培養快速作答的直覺反應。\n[DIALOGUE_END]",
           "steps": [
             "時態語態：注意時間標記與主被動。",
@@ -5916,6 +6096,7 @@ export const englishData: SubjectData = {
         },
         {
           "heading": "8. 職場情境對話應用",
+          "outlineRefs": ["EN2.4", "EN2.10"],
           "body": "在工程或商務情境中，常利用假設語氣與助動詞表達推測與惋惜。\n\n[DIALOGUE_START:高階職場商務會話：跨國合約爭議協商]\nContract Director: Had the supplier notified us of the supply chain delay, we would have adjusted our schedule. | 要是供應商早點通知我們供應鏈延遲，我們早就調整工期進度了。\nLegal Counsel: We insist that the liquidated damages clause be enforced strictly according to FIDIC terms. | 我們堅持必須嚴格依據 FIDIC 國際工程合約條款執行逾期罰款機制。\nContract Director: Let us schedule a formal mediation session with their executive board. | 我們來與他們的董事會安排一場正式的調解協商會議吧。\nLegal Counsel: I will prepare all correspondence and time impact analyses as supporting evidence. | 我會準備好所有的往來函件與工期影響分析作為佐證資料。\n[DIALOGUE_END]",
           "steps": [
             "A: The project was delayed again. I should have ordered the materials earlier.[TTS:A: The project was delayed again. I should have ordered the materials earlier.] (專案又延遲了。我本應該早點訂購材料的。)",
@@ -5926,6 +6107,7 @@ export const englishData: SubjectData = {
         },
         {
           "heading": "9. 省略 If 的倒裝假設語氣三本柱與否定倒裝句",
+          "outlineRefs": ["EN1.4.1"],
           "body": "統測高階文法每年必考的封頂題型即為<span className=\"font-bold text-rose-600\">「假設語氣省略 If 之倒裝句」</span>與<span className=\"font-bold text-indigo-600\">「否定副詞置於句首之倒裝句」</span>。當 If 條件句省略 If 時，必須將助動詞或 be 動詞搬到主詞前方：(1) 與現在相反倒裝為 <span className=\"font-mono font-bold\">Were + S + to V / adj</span>；(2) 與過去相反倒裝為 <span className=\"font-mono font-bold\">Had + S + p.p.</span>；(3) 與未來相反（萬一）倒裝為 <span className=\"font-mono font-bold\">Should + S + 原形動詞</span>。此外，否定副詞（Not only, Never, Seldom, Hardly, Under no circumstances）置於句首時，語序如同一般疑問句（助動詞 + S + V）。\n\n[DIALOGUE_START:進階倒裝句與假設語氣會話：總工程師的驗收嚴審]\nChief Auditor: Had the foundation piles not been driven to bedrock, this structure would have settled unevenly! | 倘若基樁當初沒有打到岩盤，這棟結構體早就發生不均勻沉陷了！\nSite Superintendent: We followed the seismic blueprints to the millimeter, sir. | 長官，我們百分之百按耐震施工藍圖精確施作至公釐等級。\nChief Auditor: Under no circumstances should project deadlines compromise structural integrity. | 任何情況下，工程期限都絕不能犧牲結構安全與完整性。\nSite Superintendent: Absolutely. Not only do we conduct ultrasonic weld tests daily, but we also file third-party reports. | 絕對如此。我們不僅每日進行超音波焊道檢測，還由第三方機構出具正式簽證報告。\n[DIALOGUE_END]",
           "table": {
             "headers": [
@@ -5982,6 +6164,7 @@ export const englishData: SubjectData = {
         },
         {
           "heading": "10. 被動語態進階：雙被動、片語動詞被動與感官使役被動",
+          "outlineRefs": ["EN1.4.1"],
           "body": "<p>基礎被動只需要 be ＋ p.p.，但統測常考的是<strong>四種進階被動</strong>：授與動詞的雙重被動、片語動詞的被動、感官與使役動詞的被動，以及 by 以外的介系詞搭配。這些是拉開分數的關鍵細節。</p>\n\n[DIALOGUE_START:被動語態會話：工程文件的客觀陳述]\nManager: Was the revised drawing sent to the client? | 修訂圖說寄給業主了嗎？\nEngineer: Yes, it was sent yesterday, and the client was given a full explanation. | 是的，昨天已寄出，並且已向業主完整說明。\nManager: Good. Was the delay taken care of in the report? | 很好。報告中有處理延誤的部分嗎？\nEngineer: It was. The site is said to be back on schedule now. | 有。據說工地現在已回到正常進度。\n[DIALOGUE_END]",
           "table": {
             "headers": [
@@ -6042,6 +6225,7 @@ export const englishData: SubjectData = {
         },
         {
           "heading": "11. 時態進階：過去完成、未來完成、完成進行式與時態一致",
+          "outlineRefs": ["EN1.4.1"],
           "body": "<p>基礎十二時態中，真正決勝負的是<strong>「完成式家族」</strong>。它們表達的不是單純的時間點，而是「兩個時間點之間的關係」。掌握時間軸畫法，這類題目就從記憶題變成推理題。</p>",
           "table": {
             "headers": [
@@ -6102,6 +6286,7 @@ export const englishData: SubjectData = {
         },
         {
           "heading": "12. 比較句型進階：倍數、the 比較級句型與 no more than 家族",
+          "outlineRefs": ["EN1.4.1"],
           "body": "<p>比較級除了 -er／more 之外，還有一整套<strong>進階變化</strong>。這些句型在統測非選改寫與閱讀長句中頻繁出現，尤其倍數比較與「the 比較級, the 比較級」是年年可見的固定考點。</p>",
           "table": {
             "headers": [
@@ -6162,6 +6347,7 @@ export const englishData: SubjectData = {
         },
         {
           "heading": "13. 助動詞完整系統：情態、義務、推測與習慣",
+          "outlineRefs": ["EN1.4.1"],
           "body": "<p>助動詞是英文中<strong>表達語氣與態度</strong>的工具。統測會話題與克漏字大量測驗「同一件事用不同助動詞說出來，語氣有何差別」。以下依「能力、義務、推測、習慣」四大功能整理完整系統。</p>\n\n[DIALOGUE_START:助動詞會話：義務強度的層級差異]\nSupervisor: You must wear a helmet inside the site. It is a legal requirement. | 在工地內你必須戴安全帽，這是法律規定。\nWorker: Should I also wear goggles? | 我也應該戴護目鏡嗎？\nSupervisor: You'd better, especially when cutting steel. | 最好要戴，尤其在切割鋼材的時候。\nWorker: Understood. I don't have to bring my own, right? | 了解。我不需要自備，對吧？\n[DIALOGUE_END]",
           "table": {
             "headers": [
@@ -6222,6 +6408,7 @@ export const englishData: SubjectData = {
         },
         {
           "heading": "14. 動名詞與不定詞的語意差別及高頻慣用結構",
+          "outlineRefs": ["EN1.4.1"],
           "body": "<p>有一群動詞後面接 V-ing 或 to V <strong>語意完全不同</strong>——remember、forget、stop、try、regret、mean、go on。這是統測綜合測驗的固定命題點，也是許多學生反覆答錯的地方。判斷原則只有一句：<strong>V-ing 指向「已發生」，to V 指向「未發生」。</strong></p>",
           "table": {
             "headers": [
@@ -6423,6 +6610,7 @@ export const englishData: SubjectData = {
       "desc": "本章節涵蓋工地現場溝通、設計簡報、材料詢價與商務 Email、RFI 釋疑單、工程驗收缺失單（snag list），以及跨文化工作倫理等商務與實務應用英文。",
       "status": "done",
       "gradeLevel": 12,
+      "curriculumCode": "TCTE115-EN2",
       "examHitRate": 3,
       "covered_question_ids": [],
       "fatalTraps": [
@@ -6468,6 +6656,7 @@ export const englishData: SubjectData = {
       "concepts": [
         {
           "heading": "1. 工地指令與安全通報對話",
+          "outlineRefs": ["EN2.4", "EN2.10"],
           "body": "<p>在工地現場，<span className=\"text-blue-600 font-bold\">安全通報 (Safety Alerts[TTS:Safety Alerts])</span> 與 <span className=\"text-blue-600 font-bold\">進度報告 (Progress Reports[TTS:Progress Reports])</span> 是溝通的日常。必須使用簡明扼要的指令以確保安全與效率。</p>\n\n[DIALOGUE_START:工地無線電指令會話：豪雨現場緊急應變]\nSite Superintendent: Control tower, heavy rainfall is causing runoff into excavation pit B. | 管控中心，大雨正導致雨水沖刷流入 B 區開挖土坑。\nSafety Radio: Copy that. Evacuate all personnel from the pit and activate submersible pumps immediately. | 收到。立刻撤離坑內所有人員，並立即啟動沉水抽水泵。\nSite Superintendent: All workers are safe on the upper deck. Slope stability sensors remain normal. | 所有工人皆已安全撤至上層平台。邊坡穩定監測感測器目前顯示正常。\nSafety Radio: Stand by for further weather updates. Safety is our top priority. | 請待命隨時接收最新天氣動態。安全是我們的第一優先。\n[DIALOGUE_END]",
           "steps": [
             "Supervisor: \"Make sure everyone is wearing their hard hats and high-vis vest[TTS:high-vis vest]s.\"[TTS:Make sure everyone is wearing their hard hats and high-vis vest[TTS:high-vis vest]s.] (確保每個人都戴著安全帽並穿著反光背心。)",
@@ -6511,6 +6700,7 @@ export const englishData: SubjectData = {
         },
         {
           "heading": "2. 設計簡報與客戶會議英文",
+          "outlineRefs": ["EN2.4", "EN2.6"],
           "body": "<p>在向客戶進行 <span className=\"text-blue-600 font-bold\">設計簡報 (Design Presentations[TTS:Design Presentations])</span> 時，常需應對客戶的修改要求 (revision requests[TTS:revision requests])。使用 <span className=\"text-blue-600 font-bold\">委婉語 (Tactful language[TTS:Tactful language])</span> 能展現專業並維持良好關係。</p>\n\n[DIALOGUE_START:設計簡報會話：向市政評委會介紹綠建築方案]\nPrincipal Architect: Honorable committee members, our civic center design incorporates passive solar ventilation. | 各位評審委員好，我們的市民中心設計導入了被動式太陽能通風系統。\nReview Board Member: How does the green roof reduce urban heat island effects in summer? | 這座綠屋頂在夏季是如何減緩都市熱島效應的？\nPrincipal Architect: The native vegetation layer lowers surface temperature by up to eight degrees Celsius. | 原生植被層能有效降低表面溫度高達攝氏八度之多。\nReview Board Member: We are very impressed by the lifecycle energy savings calculations. | 我們對這份全生命週期的節能效益計算印象非常深刻。\n[DIALOGUE_END]",
           "steps": [
             "Architect: \"As you can see in this rendering, we propose a glass facade to maximize natural light.\"[TTS:As you can see in this rendering, we propose a glass facade to maximize natural light.] (如您在這張透視圖中所見，我們提議使用玻璃外牆以最大化自然光。)",
@@ -6554,6 +6744,7 @@ export const englishData: SubjectData = {
         },
         {
           "heading": "3. 材料詢價與供應商商務 Email",
+          "outlineRefs": ["EN1.5.4", "EN2.7"],
           "body": "<p>在採購流程中，<span className=\"text-blue-600 font-bold\">詢價單 (Inquiries[TTS:Inquiries])</span> 是第一步。信件應清楚列出 <span className=\"text-blue-600 font-bold\">規格 (Specifications[TTS:Specifications])</span> 並詢問 <span className=\"text-blue-600 font-bold\">交期 (Lead time)</span>。</p>\n\n[DIALOGUE_START:商務電郵會話：兩千噸結構鋼材詢價談判]\nProcurement Manager: We are inquiring about bulk pricing for two thousand metric tons of structural H-beams. | 我們想詢問兩千公噸結構用 H 型鋼的大宗採購報價。\nSteel Mill Rep: We can offer a 12 percent discount with mill test certificates included. | 我們可以提供八八折優惠，並附上鋼廠出廠檢驗證明書。\nProcurement Manager: Can your logistics team guarantee staggered deliveries over six months? | 貴公司的物流團隊能保證在六個月內分批按時配送嗎？\nSteel Mill Rep: Yes, we will assign a dedicated logistics coordinator to your project. | 可以的，我們會為貴專案指派專屬的物流協調專員。\n[DIALOGUE_END]",
           "steps": [
             "Subject: Inquiry regarding steel rebar pricing and lead time[TTS:lead time]",
@@ -6598,6 +6789,7 @@ export const englishData: SubjectData = {
         },
         {
           "heading": "4. 工程驗收與缺失整改",
+          "outlineRefs": ["EN1.3.4", "EN2.4"],
           "body": "<p>工程完工交接 (Handover[TTS:Handover]) 前，業主或監造會進行最終檢查 (Final inspection[TTS:Final inspection])，並列出需要修補的 <span className=\"text-blue-600 font-bold\">缺失清單 (Punch list[TTS:Punch list] / Snag list[TTS:Snag list])</span>。</p>\n\n[DIALOGUE_START:驗收與缺失整改會話：完工查驗缺失清單核對]\nClient Inspector: There are minor hairline cracks near the door frame in room 302. | 302 號房門框附近有細微的龜裂痕跡。\nGeneral Contractor: We have logged it onto the snag list and will patch and repaint within forty-eight hours. | 我們已經記錄在缺失改善清單 (snag list) 上，將在四十八小時內完成修補與重新粉刷。\nClient Inspector: All fire damper operational tests passed inspection with flying colors. | 所有的防火排煙閘門連動測試都以非常優異的成績全數通過檢驗。\nGeneral Contractor: We are preparing the final handover documentation for your sign-off. | 我們正在準備最終的竣工移交文件以供您簽署核可。\n[DIALOGUE_END]",
           "steps": [
             "Inspector: \"During the walk-through, we noticed some issues. The paint is peeling in the hallway.\"[TTS:During the walk-through, we noticed some issues. The paint is peeling in the hallway.] (在巡視時我們注意到一些問題。走廊的油漆在剝落。)",
@@ -6641,6 +6833,7 @@ export const englishData: SubjectData = {
         },
         {
           "heading": "5. 商務書信常用句型",
+          "outlineRefs": ["EN1.4.1"],
           "body": "<p>掌握專業的 <span className=\"text-blue-600 font-bold\">商務書信句型</span>，能讓你的 Email 看起來更具說服力且得體。</p>\n\n[DIALOGUE_START:商務書信常用句型會話：款項與合約確認]\nFinance Officer: I am writing to confirm receipt of milestone payment invoice number 405. | 我寫信是為了確認已收到第 405 號里程碑付款發票。\nAccountant: Please find attached the bank wire confirmation slip for your accounting records. | 請參閱隨信附上的銀行電匯水單以供貴方會計入帳存查。\nFinance Officer: We look forward to continuing our successful partnership on phase two. | 我們期待在第二期工程中繼續保持順利的合作關係。\nAccountant: Thank you for your prompt payment and professional collaboration. | 感謝貴公司的即時付款與高度專業的協同合作。\n[DIALOGUE_END]",
           "steps": [
             "開場白：I am writing to...[TTS:I am writing to...] (我寫信是為了...) / With reference to your email...[TTS:With reference to your email...] (關於您的來信...)",
@@ -6680,6 +6873,7 @@ export const englishData: SubjectData = {
         },
         {
           "heading": "6. 施工日誌與 RFI 表單英文",
+          "outlineRefs": ["EN1.3.4", "EN2.4"],
           "body": "<p>工地管理中常需填寫 <span className=\"text-blue-600 font-bold\">施工日誌 (Daily Site Log[TTS:Daily Site Log])</span> 記錄進度，若圖說不清則需發出 <span className=\"text-blue-600 font-bold\">RFI (Request for Information[TTS:Request for Information], 釋疑單)</span> 向設計單位釐清，甚至可能導致 <span className=\"text-blue-600 font-bold\">變更設計 (Change Order[TTS:Change Order])</span>。</p>\n\n[DIALOGUE_START:施工日誌與 RFI 會話：標高衝突圖說澄清]\nField Engineer: We issued an RFI regarding the clash between the HVAC duct and structural beam. | 我們發布了一份資訊請求單 (RFI)，針對空調風管與結構梁的碰撞衝突進行澄清。\nConsultant: The MEP engineer will issue an updated elevation coordinate by noon. | 機電工程師會在今天中午前核發更新的高程座標圖。\nField Engineer: I have noted the inquiry in today's daily construction log. | 我已經在今天的施工日誌中將此項問題詳加記錄。\nConsultant: Prompt RFI resolution keeps site work running seamlessly. | 及時解決 RFI 請求能讓現場施工保持順暢不中斷。\n[DIALOGUE_END]",
           "steps": [
             "Daily Log Entry: \"Weather: Heavy rain. Concrete[TTS:Concrete] pouring delayed. Crew assigned to interior framing.\" (天氣：大雨。混凝土澆灌延遲。工班分配至室內隔間。)",
@@ -6723,6 +6917,7 @@ export const englishData: SubjectData = {
         },
         {
           "heading": "7. 跨文化工作倫理與國際禮儀",
+          "outlineRefs": ["EN3.2", "EN3.7"],
           "body": "<p>在國際工程專案中，了解 <span className=\"text-blue-600 font-bold\">跨文化工作倫理 (Multicultural work ethics[TTS:Multicultural work ethics])</span> 與 <span className=\"text-blue-600 font-bold\">國際禮儀 (International etiquette[TTS:International etiquette])</span> 是建立信任的關鍵。應展現專業禮貌 (Professional courtesy[TTS:Professional courtesy]) 並尊重不同文化的溝通模式。</p>\n\n[DIALOGUE_START:跨文化國際禮儀會話：國際聯合承攬交流]\nProject Director: When collaborating with international partners, clear email etiquette and cultural respect are vital. | 與國際夥伴合作時，清晰的電子郵件禮儀與文化尊重非常關鍵。\nJunior Associate: I always use polite opening salutations and formal sign-offs in official letters. | 我在正式公文中一向使用禮貌的開頭稱謂與正式的結尾敬語。\nProject Director: Always confirm agreements in writing after international video conferences. | 跨國視訊會議結束後，務必以書面郵件再次確認雙方的決議與共識。\nJunior Associate: A written summary ensures mutual understanding across different time zones. | 書面會議摘要能確保不同時區的團隊建立一致的共識。\n[DIALOGUE_END]",
           "steps": [
             "Punctuality[TTS:Punctuality] (準時): 在多數國際商務場合，準時抵達會議是基本尊重。",
@@ -6766,6 +6961,7 @@ export const englishData: SubjectData = {
         },
         {
           "heading": "8. 電話英語與線上會議：聽不懂時怎麼辦",
+          "outlineRefs": ["EN2.9", "EN2.12"],
           "body": "<p>電話與視訊會議是職場英語最困難的場景——沒有表情、沒有肢體語言，還常有雜訊。專業人士靠的不是「聽力超強」，而是一套<strong>確認與釐清的固定句型</strong>。這組句型同時是統測會話題的高頻取材。</p>\n\n[DIALOGUE_START:電話英語會話：轉接與留言]\nReceptionist: Good morning, Chang Construction. How may I help you? | 早安，這裡是長昌營造，有什麼能為您服務的嗎？\nCaller: Could I speak to Mr. Lin in the engineering department, please? | 可以請工程部的林先生聽電話嗎？\nReceptionist: I'm afraid he's in a meeting. Would you like to leave a message? | 恐怕他正在開會。您要留言嗎？\nCaller: Yes, please ask him to call me back at 0912-345-678. | 好的，請他回電到 0912-345-678。\n[DIALOGUE_END]",
           "table": {
             "headers": [
@@ -6825,6 +7021,7 @@ export const englishData: SubjectData = {
         },
         {
           "heading": "9. 職場 Email 寫作：格式、語氣分級與常見句型庫",
+          "outlineRefs": ["EN1.4.1"],
           "body": "<p>工程商務 Email 有極為固定的<strong>五段結構</strong>與三級語氣。掌握結構與語氣分級，即使英文不完美，寫出來的信也會顯得專業可靠。這也是統測應用文閱讀最常出現的文本形式。</p>",
           "table": {
             "headers": [
@@ -6885,6 +7082,7 @@ export const englishData: SubjectData = {
         },
         {
           "heading": "10. 工程契約與請款文件英文：條款、變更與付款",
+          "outlineRefs": ["EN1.3.4", "EN2.4"],
           "body": "<p>合約英文有其獨特語體：<strong>大量使用 shall、被動語態與冗長的條件子句</strong>。看懂合約條款不只是英文能力，更是保護自己的專業能力。這組內容同時是專業英文延伸閱讀的高階素材。</p>",
           "table": {
             "headers": [
@@ -6944,6 +7142,7 @@ export const englishData: SubjectData = {
         },
         {
           "heading": "11. 工程簡報英文：結構模板與轉場訊號句",
+          "outlineRefs": ["EN2.4", "EN2.6"],
           "body": "<p>設計簡報與技術報告是建築人的核心技能。英文簡報成功的關鍵不在字彙艱深，而在<strong>結構清楚與轉場明確</strong>——讓聽眾隨時知道「我們現在在哪裡、接下來要去哪裡」。</p>\n\n[DIALOGUE_START:簡報英文會話：開場與轉場]\nPresenter: Good afternoon. Today I'd like to walk you through our design concept. | 午安。今天我想帶各位了解我們的設計概念。\nClient: How long will the presentation take? | 簡報大概需要多久？\nPresenter: About fifteen minutes, and I'll take questions at the end. | 大約十五分鐘，最後會保留提問時間。\nClient: Great. Please go ahead. | 太好了，請開始吧。\n[DIALOGUE_END]",
           "table": {
             "headers": [
@@ -7001,6 +7200,20 @@ export const englishData: SubjectData = {
             "問答時若沒聽懂，用 If I understood correctly, you're asking about… 複述確認，是專業且安全的做法。",
             "建築簡報常用語塊：design concept 設計概念｜site analysis 基地分析｜circulation 動線｜massing 量體｜façade 立面｜sustainability strategy 永續策略。"
           ]
+        },
+        {
+          "heading": "12. 多元文化與國際觀：以文化知識解決生活與職場問題",
+          "outlineRefs": ["EN3.1", "EN3.6", "EN3.8", "EN3.9"],
+          "body": "課綱「文化與習俗」強調**尊重多元文化**，並能運用文化知識解決生活與職場中的問題。\n**尊重差異**：不同文化在問候、時間觀念、飲食禁忌與宗教節日上各有習慣。例如邀請國際同事聚餐前先詢問 Do you have any dietary restrictions?；安排會議避開對方的重要節日。\n**用語保持中立**：工作中避免刻板印象與冒犯用語，使用 chairperson、firefighter 等性別中立詞彙。\n**職場情境**：與外籍移工溝通安全規定時，使用簡單句、圖示與手勢並確認理解（Do you understand? → Could you show me how you will do it?）。\n**國際觀**：閱讀國際議題文章時，留意不同國家觀點的差異，避免以單一文化標準下結論。\n⚠️ 易錯：直接問收入、年齡或宗教信仰在許多文化中被視為不禮貌；閒聊（small talk）常以天氣、交通、週末活動開場。",
+          "table": {
+            "headers": ["情境", "可能的文化差異", "合宜的英文說法"],
+            "rows": [
+              ["聚餐邀約", "飲食禁忌、宗教規範", "Do you have any dietary restrictions?"],
+              ["開會時間", "對準時的認知不同", "Let’s start at 9:00 sharp, please."],
+              ["確認理解", "不好意思說聽不懂", "Could you show me how you will do it?"],
+              ["稱呼對方", "直呼名字是否恰當", "May I call you by your first name?"]
+            ]
+          }
         }
       ],
       "practices": [
@@ -7145,6 +7358,7 @@ export const englishData: SubjectData = {
       "desc": "about advanced reading comprehension, multi-text synthesis, author's purpose/tone inference, SDGs topics, speed reading strategies",
       "status": "done",
       "gradeLevel": 12,
+      "curriculumCode": "TCTE115-EN4",
       "examHitRate": 4,
       "fatalTraps": [
         {
@@ -7191,6 +7405,7 @@ export const englishData: SubjectData = {
       "concepts": [
         {
           "heading": "長篇閱讀速讀法 Speed Reading[TTS:Speed Reading]",
+          "outlineRefs": ["EN4.1", "EN4.7"],
           "body": "統測英文的閱讀測驗篇幅較長，掌握<span className=\"text-rose-600 font-bold\">速讀(Skimming[TTS:Skimming])</span>與<span className=\"text-blue-600 font-bold\">掃讀(Scanning[TTS:Scanning])</span>技巧是拿高分的關鍵。不必逐字閱讀，重點在於計時策略與段落首末句快速掃描。\n\n[DIALOGUE_START:長篇閱讀速讀會話：技術文獻高效掃描]\nGraduate Student: How do you read a ten-page technical report on seismic retrofitting so rapidly? | 你是如何如此快速讀完一份長達十頁的耐震補強技術報告？\nSenior Researcher: I read the executive summary first, scan chart captions, and focus on concluding recommendations. | 我先讀執行摘要，掃描圖表圖說，並專注於結論中的具體建議。\nGraduate Student: That saves hours while capturing the core engineering methodology! | 這樣能在掌握核心工程方法的同時省下好幾個小時！\nSenior Researcher: Selective reading is the hallmark of an efficient engineer. | 有選擇性地閱讀是高效工程師的重要標誌。\n[DIALOGUE_END]",
           "steps": [
             "1. 先看文章標題與第一段，掌握文章主題。",
@@ -7220,6 +7435,7 @@ export const englishData: SubjectData = {
         },
         {
           "heading": "多文本整合與交叉比對",
+          "outlineRefs": ["EN4.4", "EN4.5"],
           "body": "多文本(Multi-texts[TTS:Multi-texts])是近年常考題型，通常包含Email[TTS:Email] + 公告 + 圖表同時出現的複合題型。測驗重點在於考生能否<span className=\"text-amber-600 font-bold\">整合不同來源的資訊</span>。\n\n[DIALOGUE_START:多文本整合會話：設計規範與環境評估比對]\nEnvironmental Planner: Document A outlines zoning restrictions, while Document B assesses wetland biodiversity. | 文件 A 概述了土地分區管制，而文件 B 則評估了濕地生物多樣性。\nCivil Engineer: We must synthesize both documents to determine the permissible building footprint. | 我們必須綜合兩份文件來決定合法的建築基地容許建蔽面積。\nEnvironmental Planner: The storm water retention basin must be relocated away from the protected mangrove zone. | 雨水滯洪池必須遷移遠離受保護的紅樹林生態區。\nCivil Engineer: We will update the master site layout to comply with both regulations. | 我們會更新總體配置圖以同時符合兩項法規標準。\n[DIALOGUE_END]",
           "steps": [
             "1. 快速瀏覽所有文本的標題或發信人/收信人，了解各文本的性質與關聯。",
@@ -7230,6 +7446,7 @@ export const englishData: SubjectData = {
         },
         {
           "heading": "作者語氣與立場推論",
+          "outlineRefs": ["EN4.3"],
           "body": "判斷作者的Tone[TTS:Tone](語氣)與立場(Attitude[TTS:Attitude])屬於進階題型。關鍵在於辨識文章中的<span className=\"text-indigo-600 font-bold\">形容詞、副詞與情態助動詞</span>，藉此推敲言外之意。\n\n[DIALOGUE_START:作者立場推論會話：評論文章語氣分析]\nProfessor: What tone does the author adopt regarding rapid urban development in heritage districts? | 作者對於歷史街區快速的都市開發採取什麼樣的語氣？\nStudent: The author uses words like \"shortsighted\" and \"irreversible loss\", showing a critical tone. | 作者使用了 shortsighted (短視) 與 irreversible loss (不可逆的損失)，表現出批判審慎的語氣。\nProfessor: Spotting adjective choices reveals whether the stance is objective, enthusiastic, or skeptical. | 觀察形容詞的選用能揭示立場是客觀、熱情支持還是持懷疑態度。\nStudent: Tone analysis unlocks deeper reading comprehension scores. | 掌握語氣分析是破解高階閱讀理解題目的關鍵。\n[DIALOGUE_END]",
           "steps": [
             "1. 客觀(Objective[TTS:Objective])：多使用事實陳述、數據支持，不帶個人情感。",
@@ -7264,6 +7481,7 @@ export const englishData: SubjectData = {
         },
         {
           "heading": "SDGs 永續議題閱讀",
+          "outlineRefs": ["EN3.4", "EN3.5"],
           "body": "聯合國永續發展目標(SDGs[TTS:SDGs])是熱門考題，特別是與土木建築相關的<span className=\"text-emerald-600 font-bold\">氣候變遷(Climate Change[TTS:Climate Change])</span>、海洋生態、零廢棄與<span className=\"text-emerald-600 font-bold\">綠建築(Green Building[TTS:Green Building])</span>。\n\n[DIALOGUE_START:SDGs 永續議題會話：淨零碳建築策略]\nSustainability Officer: Our latest article explores how mass timber construction aligns with UN SDG 13 on Climate Action. | 我們最新的文章探討了大型木構造如何對齊聯合國永續發展目標 SDG 13 氣候行動。\nBuilding Developer: By sequestering carbon in timber beams, the embodied carbon drops by forty percent. | 透過將碳封存在木梁結構中，建築的蘊含碳足跡降低了百分之四十。\nSustainability Officer: Moreover, circular economy principles ensure all components can be disassembled and reused. | 此外，循環經濟原則確保所有構件在未來皆可拆解並重複利用。\nBuilding Developer: Sustainable engineering transforms real estate for the future. | 永續工程正在為未來徹底重塑房地產與營造產業。\n[DIALOGUE_END]",
           "steps": [
             "1. 掌握核心單字：sustainable[TTS:sustainable](永續的)、eco-friendly[TTS:eco-friendly](環保的)、emission[TTS:emission](排放)。",
@@ -7273,6 +7491,7 @@ export const englishData: SubjectData = {
         },
         {
           "heading": "科技與公共衛生議題",
+          "outlineRefs": ["EN3.4"],
           "body": "科技發展(如人工智慧、資訊安全)與公共衛生常結合建築科技如BIM/IoT[TTS:BIM/IoT]考出跨領域文章。測驗學生對<span className=\"text-blue-500 font-bold\">專有名詞</span>的上下文推敲能力。\n\n[DIALOGUE_START:科技與健康會話：BIM 與室內空氣品質監控]\nHVAC Specialist: This technical brief details how IoT sensors communicate with our BIM model. | 這份技術簡報詳細說明了物聯網感測器如何與我們的 BIM 模型即時通訊。\nFacility Manager: When indoor carbon dioxide levels exceed 800 ppm, fresh air dampers open automatically. | 當室內二氧化碳濃度超過 800 ppm 時，外氣風門會自動開啟換氣。\nHVAC Specialist: Smart ventilation promotes student health while optimizing chiller energy efficiency. | 智慧通風在守護學生健康的同時，也能最佳化冰水主機的能源效率。\nFacility Manager: Technology and wellness merge seamlessly in modern education buildings. | 科技與健康福祉在現代教育建築中實現了無縫融合。\n[DIALOGUE_END]",
           "steps": [
             "1. 不要被專有名詞嚇到，文章通常會在後方使用同位語解釋。",
@@ -7282,6 +7501,7 @@ export const englishData: SubjectData = {
         },
         {
           "heading": "事實 vs 觀點區辨",
+          "outlineRefs": ["EN4.3"],
           "body": "在長篇閱讀中，區分<span className=\"text-amber-500 font-bold\">Fact[TTS:Fact](事實)</span>與<span className=\"text-purple-500 font-bold\">Opinion[TTS:Opinion](觀點)</span>是基礎。形容詞與情態助動詞常是觀點的線索。\n\n[DIALOGUE_START:事實與觀點區辨會話：廠商宣傳與檢驗數據]\nMaterials Inspector: The brochure claims this insulation is \"the greatest thermal barrier on earth\". | 廠商型錄宣稱這種保溫材料是「地表最強隔熱防護層」。\nLab Director: That is marketing opinion. The verified fact is its thermal conductivity R-value of 4.5 per inch. | 那是行銷宣傳觀點。經實驗室驗證的事實是其熱阻 R 值為每英吋 4.5。\nMaterials Inspector: Engineers rely strictly on quantitative test certificates, never subjective claims. | 工程師嚴格依賴量化檢驗證明書，絕不盲從主觀宣傳。\nLab Director: Objective data protects public safety and professional integrity. | 客觀數據守護公共安全與工程師的專業誠信。\n[DIALOGUE_END]",
           "steps": [
             "1. 事實(Fact[TTS:Fact])：包含具體時間、地點、數據。(例如：The Taipei 101 is 508 meters tall.[TTS:The Taipei 101 is 508 meters tall.])",
@@ -7291,6 +7511,7 @@ export const englishData: SubjectData = {
         },
         {
           "heading": "統測進階閱讀實戰演練",
+          "outlineRefs": ["EN2.11", "EN4.2"],
           "body": "結合上述技巧進行完整模擬題練習與解題步驟拆解。在作答時，請嚴格控制時間，<span className=\"text-rose-600 font-bold\">避免在單一題目卡關</span>。\n\n[DIALOGUE_START:統測進階解題實戰會話：複合題型全面破題]\nTutor: When answering multi-paragraph questions, verify each answer choice against specific lines. | 回答多段落題組時，務必將每個選項與特定行數的內文進行逐一核對。\nStudent: I underline line references in the text to prove why options A, B, and C are incorrect. | 我在內文中畫底線標註行號，以證明為什麼選項 A、B、C 是錯誤的。\nTutor: That evidence-based elimination method guarantees 100 percent accuracy. | 這種基於證據的排除法能保證百分之百的答題正確率。\nStudent: I am ready to conquer the hardest reading passages on the Unified Exam! | 我已經準備好征服統測英文中最具挑戰性的長篇閱讀題了！\n[DIALOGUE_END]",
           "steps": [
             "1. 拿到題目先花5秒看文章標題與排版，判斷文章類型。",
@@ -7301,6 +7522,7 @@ export const englishData: SubjectData = {
         },
         {
           "heading": "8. 議論文論證鏈解構：立場、論據與反駁的三層結構",
+          "outlineRefs": ["EN4.3"],
           "body": "<p>統測長篇閱讀的高難度題組多為議論文。這類文章的骨架是<strong>「立場 → 論據 → 反駁 → 再主張」</strong>的論證鏈。看懂論證鏈，作者態度題與推論題就能直接命中。</p>",
           "table": {
             "headers": [
@@ -7360,6 +7582,7 @@ export const englishData: SubjectData = {
         },
         {
           "heading": "9. 言外之意與推論題：從字面到弦外之音",
+          "outlineRefs": ["EN4.2", "EN4.6"],
           "body": "<p>推論題（inference）問的是<strong>「文中沒有直說、但可以合理推出」</strong>的內容。它與「過度推論」只有一線之隔，界線就在於：推論必須有文本依據，而非現實常識。</p>",
           "table": {
             "headers": [
@@ -7419,6 +7642,7 @@ export const englishData: SubjectData = {
         },
         {
           "heading": "10. 修辭與比喻語言辨識：字面之外的表達",
+          "outlineRefs": ["EN1.5.1"],
           "body": "<p>素養導向文本常使用<strong>比喻與修辭</strong>來增強說服力。這在字義推測題（What does ... mean in line X?）中是固定考點。認得修辭手法，就不會被字面意思誤導。</p>",
           "table": {
             "headers": [
@@ -7478,6 +7702,7 @@ export const englishData: SubjectData = {
         },
         {
           "heading": "11. 統測長篇閱讀高頻主題背景知識庫",
+          "outlineRefs": ["EN3.3", "EN3.4"],
           "body": "<p>閱讀測驗的難度有一半來自<strong>背景知識不足</strong>。統測近十年的長篇閱讀主題其實高度集中，事先建立這些主題的核心語塊與基本概念，閱讀速度可提升三成以上。</p>",
           "table": {
             "headers": [
@@ -7714,6 +7939,7 @@ export const englishData: SubjectData = {
       "desc": "針對統測非選擇題型（如翻譯填空、句子重組、中譯英）與段落寫作提供實戰策略，包含語序轉換、意群拆解、寫作架構及標點符號的精準應用。",
       "status": "done",
       "gradeLevel": 12,
+      "curriculumCode": "TCTE115-EN1",
       "examHitRate": 5,
       "fatalTraps": [
         {
@@ -7766,6 +7992,7 @@ export const englishData: SubjectData = {
       "concepts": [
         {
           "heading": "1. 中譯英語序轉換法",
+          "outlineRefs": ["EN1.4.1", "EN2.3"],
           "body": "中英文語序最大差異在於副詞與修飾語的位置。中文常將時間與地點放在動詞前，而英文通常將它們放在句尾（地方先於時間）。\n掌握「主詞 + 動詞 + 受詞 + 地方 + 時間」的黃金公式。\n\n[DIALOGUE_START:中譯英語序轉換會話：調整中文主題句型]\nTeacher: How do you translate: \"這座橋樑的建造花費了三年時間\"? | 你要如何翻譯「這座橋樑的建造花費了三年時間」？\nStudent: In English, we say: \"It took three years to construct this bridge.\" | 在英文中，我們會說：It took three years to construct this bridge。\nTeacher: Or using the gerund: \"Constructing this bridge took three years.\" | 或者使用動名詞當主詞：Constructing this bridge took three years。\nStudent: Putting the verb and subject in proper order makes the English natural and accurate. | 將主詞與動詞依英文語序排列能讓英文表達自然且精確。\n[DIALOGUE_END]",
           "steps": [
             "步驟一：劃出中文句子核心主詞與動詞。 ｜為什麼：確立英文主謂骨架 (S + V)。",
@@ -7775,6 +8002,7 @@ export const englishData: SubjectData = {
         },
         {
           "heading": "2. 字首提示填空策略",
+          "outlineRefs": ["EN1.3.3"],
           "body": "統測非選常有字首提示填空，解題時須判斷：\n1. 該空格的詞性（動詞、名詞、形容詞等）\n2. 前後文意與搭配詞（collocation[TTS:collocation]）\n3. 注意名詞單複數及動詞時態變化。\n\n[DIALOGUE_START:字首提示填空會話：鎖定詞性與時態字尾]\nTutor: The prompt is: \"The workers must i______ the foundation.\" The hint letter is \"i\". | 題目是：The workers must i______ the foundation. 提示字母是 i。\nStudent: After modal auxiliary \"must\", we need a base verb. The answer is \"inspect\"! | 在情態助動詞 must 後面需要原形動詞。答案是 inspect (檢查)！\nTutor: What if it was past tense: \"The engineer i______ the site yesterday\"? | 如果是過去式呢：The engineer i______ the site yesterday？\nStudent: Then we add \"-ed\": \"inspected\". Always check verb inflection! | 那就必須加上 -ed 變成 inspected。一定要隨時檢查動詞時態變化！\n[DIALOGUE_END]",
           "steps": [
             "步驟一：觀察空格前後單字的詞性需求（如形容詞修飾名詞、副詞修飾動詞）。 ｜為什麼：預測目標單字的詞性與字尾。",
@@ -7784,6 +8012,7 @@ export const englishData: SubjectData = {
         },
         {
           "heading": "3. 句子重組 Chunking[TTS:Chunking] 意群法",
+          "outlineRefs": ["EN1.4.1"],
           "body": "拿到打散的單字時，先尋找固定搭配（如 look forward to[TTS:look forward to]、in front of[TTS:in front of]）或 S+V[TTS:S+V] 結構，將其綁定成一個意群，再根據文法規則將意群排序，避免逐字盲目拼湊。\n\n[DIALOGUE_START:句子重組意群法會話：按語塊快速拼裝]\nPeer A: Given these scrambled chunks: [the ancient pagoda] [withstood] [the massive earthquake] [without collapsing], how do you sequence them? | 給定這些打散的意群語塊，你要如何排列順序？\nPeer B: Subject first: \"The ancient pagoda\", Verb: \"withstood\", Object: \"the massive earthquake\", Prepositional phrase: \"without collapsing\". | 主詞先行：The ancient pagoda，動詞：withstood，受詞：the massive earthquake，介系詞片語：without collapsing。\nPeer A: Chunking makes sentence unscrambling fast and error-free. | 意群切塊法讓句子重組變得迅速而且零失誤。\nPeer B: Always check that no words were accidentally skipped or misspelled. | 排完後記得檢查沒有任何單字被漏掉或拼錯。\n[DIALOGUE_END]",
           "steps": [
             "步驟一：將打散的片語依「主詞群」、「動詞片語群」、「受詞/補語群」、「修飾語群」進行語塊分組 (Chunking)。 ｜為什麼：降低句子重組的認知負荷。",
@@ -7793,6 +8022,7 @@ export const englishData: SubjectData = {
         },
         {
           "heading": "4. 段落寫作架構 (Topic-Support-Conclusion[TTS:Topic-Support-Conclusion])",
+          "outlineRefs": ["EN2.7"],
           "body": "高分段落應具備清晰的三段結構：\n1. 主題句 (Topic Sentence[TTS:Topic Sentence])：點出核心主旨。\n2. 支持句 (Supporting Sentences[TTS:Supporting Sentences])：提供細節、例子（如建築材料、施工步驟）來佐證主題。\n3. 結論句 (Concluding Sentence[TTS:Concluding Sentence])：重申主旨或提出總結。\n\n[DIALOGUE_START:段落寫作架構會話：主題句、支持句與結論句]\nWriting Coach: How should you structure your short essay on why vocational skills matter? | 你該如何構思「技職技能為什麼重要」的短文寫作架構？\nStudent: Topic sentence: Hands-on skills prepare youth for high-demand careers. Supporting details: real jobsite practice and certifications. | 主題句：實作技能幫助青年做好進入熱門職場的準備。支持細節：真實工地實習與專業證照。\nWriting Coach: And conclude with a memorable restatement: \"In conclusion, technical mastery builds a resilient future.\" | 最後用有力的總結句作結：「總之，精熟專業技術能為我們築造更具韌性的未來。」\nStudent: A clear three-part structure earns maximum points from the graders. | 清晰的三段式結構能從評分老師手中拿到最高分。\n[DIALOGUE_END]",
           "steps": [
             "步驟一：撰寫主題句 (Topic Sentence)，一句話清楚點出全段核心觀點。 ｜為什麼：為讀者建立明確的閱讀預期。",
@@ -7802,6 +8032,7 @@ export const englishData: SubjectData = {
         },
         {
           "heading": "5. 標點符號精準用法",
+          "outlineRefs": ["EN1.4.1"],
           "body": "英文標點常見錯誤：\n1. 逗號不能連接兩個獨立子句，需用連接詞 (and[TTS:and], but[TTS:but]) 或改用分號 (;)。\n2. 句尾應使用句號 (.) 而非逗號。\n3. 專有名詞（如 Taiwan[TTS:Taiwan], Taipei 101[TTS:Taipei 101]）字首必須大寫。\n\n[DIALOGUE_START:標點符號精準度會話：大小寫與標點避錯]\nProofreader: Never connect two independent sentences with only a comma; use a semicolon or period. | 切勿只用逗號連接兩個獨立子句；請使用分號或句號。\nWriter: Like this: \"The design was complex; however, the builders succeeded.\"? | 像這樣嗎：The design was complex; however, the builders succeeded.？\nProofreader: Exact syntax! Also remember to capitalize proper nouns like \"Taipei 101\" and days of the week. | 句法完全正確！同時也要記得專有名詞如 Taipei 101 與星期名稱必須大寫。\nWriter: Flawless punctuation reflects professional discipline and academic rigor. | 完美的標點符號體現了專業紀律與嚴謹的學術態度。\n[DIALOGUE_END]",
           "steps": [
             "步驟一：檢查每句話首字是否大寫，句尾是否有句號 (.)、問號 (?) 或驚嘆號 (!)。 ｜為什麼：遵守基本書寫規範。",
@@ -7811,6 +8042,7 @@ export const englishData: SubjectData = {
         },
         {
           "heading": "6. 動詞時態一致性檢核",
+          "outlineRefs": ["EN1.4.1"],
           "body": "寫作與翻譯時，務必在下筆後檢查時態是否一致。若描述過去完成的工程，整段應以過去式為主；若陳述一般建築常理或設計理念，則使用現在式。\n\n[DIALOGUE_START:動詞時態一致性會話：全文時態校驗]\nTeacher: Look at this draft: \"When we visited the site, the crane lifts the steel.\" What is wrong? | 看一下這篇草稿：When we visited the site, the crane lifts the steel. 哪裡錯了？\nStudent: \"Visited\" is past tense, so \"lifts\" must be past tense too: \"the crane lifted the steel\"! | visited 是過去式，所以 lifts 也必須改成過去式：the crane lifted the steel！\nTeacher: Always scan your completed writing to ensure all verbs stay in the same temporal frame. | 寫完文章後務必從頭到尾掃描一遍，確保所有動詞都維持在相同的時態座標中。\nStudent: Tense consistency check is my final proofreading step. | 時態一致性檢查是我最後校對的必備步驟。\n[DIALOGUE_END]",
           "steps": [
             "步驟一：通讀全文，確認整篇文章的主時態（敘事通常為過去式，論說通常為現在式）。 ｜為什麼：建立一致的時態基調。",
@@ -7819,50 +8051,26 @@ export const englishData: SubjectData = {
           ]
         },
         {
-          "heading": "7. 非選擇題 16 分搶分秘技",
-          "body": "統測非選共16分，通常包含兩題翻譯或重組（各3-4分）與其他題型。\n搶分關鍵：\n- 拼字務必正確，錯一字可能扣0.5至1分。\n- 字跡工整，避免閱卷老師誤判（如 a[TTS:a] 與 u[TTS:u], r[TTS:r] 與 v[TTS:v]）。\n- 寫完後務必檢查主動詞單複數一致 (S-V agreement[TTS:S-V agreement])。\n\n[DIALOGUE_START:非選 16 分搶分會話：黃金答題檢核清單]\nTutor: In the non-multiple-choice section, every point counts toward your dream college. | 在非選擇題的十六分中，每一分都關係到你能否錄取心目中的理想志願。\nStudent: I will follow the checklist: correct spelling, proper verb endings, capitalization, and punctuation. | 我一定會嚴格執行檢核清單：單字拼寫正確、動詞時態字尾無誤、大小寫及標點符號確實。\nTutor: Write neatly and double-check before handing in your answer sheet. | 字體書寫工整，並在交卷前進行最後複查。\nStudent: I am fully prepared to score full marks on the translation and writing section! | 我已經做好充分準備，要在非選翻譯與寫作部分拿下滿分！\n[DIALOGUE_END]",
+          "heading": "7. 非選擇題搶分秘技：填充、句子重組、中譯英（至多 20 分）",
+          "outlineRefs": ["EN1.3.3", "EN1.4.1"],
+          "body": "依 115 學年度英文科作答規定，非選擇題**至多 20 分**，固定三種題型：**填充、句子重組、中譯英**。閱卷時先給「級分」，閱卷流程結束後再換算成分數。\n• **填充**：依中文題意與提示字首，在兩個空格填入英文單字；每格正確 2 級分，兩格皆正確 4 級分。\n• **句子重組**：把分割的字詞重組成正確通順的句子，依字詞組合正確程度與拼字、字詞增減、標點錯誤給 0–4 級分；同時寫兩組答案為 0 級分。\n• **中譯英**：把中文句子譯成正確通順的英文，依是否充分表達題意及文法、標點、用字給 0–4 級分；空白或只抄題目為 0 級分。\n**搶分關鍵**：拼字正確、時態與單複數一致、句首大寫與句尾標點；字跡工整避免誤判（如 a 與 u、r 與 v）。\n\n[DIALOGUE_START:非選擇題答題檢核清單]\nTutor: In the non-multiple-choice section, every point counts. | 非選擇題的每一分都很重要。\nStudent: I will check spelling, verb forms, capitalization, and punctuation. | 我會檢查拼字、動詞形式、大小寫與標點。\nTutor: Write only one answer for the unscrambling item. | 句子重組只能寫一組答案。\nStudent: Got it. Two answers would get zero points. | 了解，寫兩組答案會得零級分。\n[DIALOGUE_END]",
           "table": {
-            "headers": [
-              "非選題型 / 寫作要項",
-              "典型考點與高頻句型",
-              "常犯致命錯誤 (扣分地雷)",
-              "滿分答題秘訣與檢查清單"
-            ],
+            "headers": ["非選題型", "給分方式（115 學年度）", "常見失分", "檢查清單"],
             "rows": [
-              [
-                "中譯英 (Translation [TTS:Translation])",
-                "S + V + O + 地方 + 時間 / It takes... to V [TTS:It takes time to complete the project.]",
-                "中文逐字硬翻、動詞時態漏寫過去式 -ed [TTS:-ed]",
-                "先抓主詞與動詞骨架，修飾語放句尾"
-              ],
-              [
-                "句子重組 (Unscrambling [TTS:Unscrambling])",
-                "固定片語 (look forward to [TTS:look forward to]) / 分詞修飾片語",
-                "漏掉單字、大小寫錯誤、漏加句號",
-                "用語塊 (Chunking [TTS:Chunking]) 先組小組件再拼主幹"
-              ],
-              [
-                "字首提示填空 (Spelling [TTS:Spelling])",
-                "名詞單複數 (-s/-es [TTS:-s or -es])、動詞三態變化",
-                "只寫單字原型忘記時態/單複數變化",
-                "看前後詞性，助動詞後用原形，進行式加 -ing [TTS:-ing]"
-              ],
-              [
-                "段落寫作 (Paragraph Writing [TTS:Paragraph Writing])",
-                "主題句 + 2~3 個支持句 (First/Second [TTS:First, Second]) + 結論句",
-                "逗號連接兩完整句子 (Comma Splice [TTS:Comma Splice])",
-                "嚴格遵守 IBC 結構，使用連接詞與轉折副詞"
-              ]
+              ["填充", "每格 2 級分，兩格 4 級分", "只寫原形、忘了 -s／-ed", "看前後文決定詞性、單複數與時態"],
+              ["句子重組", "0–4 級分", "漏字、多字、大小寫與標點錯誤；寫兩組答案", "逐一勾選題目字詞，只寫一組"],
+              ["中譯英", "0–4 級分", "逐字硬翻、時態錯誤", "先抓主幹，修飾語放句尾"]
             ]
           },
           "steps": [
-            "步驟一：先做非選擇題（翻譯與填空），趁大腦思維最清晰時搶下基礎分。 ｜為什麼：確保高投報率題目穩穩拿分。",
-            "步驟二：翻譯題先寫草稿，反覆檢核「主詞動詞單複數」與「時態」。 ｜為什麼：減少粗心失分。",
-            "步驟三：寫作留出至少 3 分鐘進行最後潤飾與錯字校對。 ｜為什麼：細節決定高分關鍵。"
+            "步驟一：先完成會寫的非選題目，確保基本級分。 ｜為什麼：空白一定是 0 級分。",
+            "步驟二：中譯英先寫出「主詞 + 動詞 + 受詞」骨架，再補時間地點等修飾語。 ｜為什麼：題意完整與文法正確是給分重點。",
+            "步驟三：交卷前留 3 分鐘逐項檢查拼字、時態、單複數、大小寫與標點。 ｜為什麼：這些都會影響級分。"
           ]
         },
         {
           "heading": "8. 統測非選擇題 20 大黃金句型大全與句子重組拆解法",
+          "outlineRefs": ["EN1.4.1"],
           "body": "統測非選擇題（翻譯與句子重組）每年占分 16 分，是決定頂標與前標的決勝戰場！分析近十年統測命題，高頻出現的句型高度集中在「虛主詞 It」、「so... that...」、「not only... but also...」、「使役與被動」、「花費時間金錢 (take/spend)」、「倒裝與假設」等核心範式。<br/>掌握以下黃金句型矩陣與意群切塊 (Chunking) 拆解法，不僅翻譯能直覺下筆，重組題目也能在 45 秒內零失誤破題。\n\n[DIALOGUE_START:非選 20 大黃金句型實戰會話：衝刺滿分]\nWriting Specialist: In non-multiple-choice translation, what is the secret to scoring full marks? | 在非選擇題翻譯中，拿到滿分的秘訣是什麼？\nHigh Achiever: I spot the golden sentence pattern first—whether it is \"It is adj to V\" or \"so... that\"—and map the chunks onto the template. | 我會先辨識出黃金句型——是 It is adj to V 還是 so... that——然後將各意群語塊套入模板。\nWriting Specialist: And how do you ensure zero points are deducted for minor errors? | 那你如何確保細微錯誤不被扣分？\nHigh Achiever: I always run my Triple-Check routine: capitalization, verb tense agreement, and final period. Precision equals full points! | 我一定會執行三重檢核程序：首字大寫、動詞時態主謂一致與句尾句號。精準就等於滿分！\n[DIALOGUE_END]",
           "table": {
             "headers": [
@@ -7926,6 +8134,7 @@ export const englishData: SubjectData = {
         },
         {
           "heading": "9. 中譯英五大萬用轉換模板：從中文思考跳到英文結構",
+          "outlineRefs": ["EN1.4.1", "EN2.3"],
           "body": "<p>中譯英失分的根源，是把中文<strong>逐字翻譯</strong>而非依英文結構重組。以下五個模板涵蓋統測非選翻譯題近十年八成以上的句型，只要辨識出中文的句式類型，就能直接套用結構。</p>",
           "table": {
             "headers": [
@@ -7985,6 +8194,7 @@ export const englishData: SubjectData = {
         },
         {
           "heading": "10. 中式英文 (Chinglish) 高頻錯誤矯正表",
+          "outlineRefs": ["EN1.4.1", "EN2.3"],
           "body": "<p>非選寫作最容易被扣分的不是艱難句型，而是<strong>直接把中文語序與詞彙搬進英文</strong>。以下整理閱卷現場最常見的中式英文錯誤，每一條都附上正確寫法與原因說明。</p>",
           "table": {
             "headers": [
@@ -8045,6 +8255,7 @@ export const englishData: SubjectData = {
         },
         {
           "heading": "11. 非選寫作自我檢查表：六個檢查點搶回失分",
+          "outlineRefs": ["EN1.3.4", "EN1.5.7"],
           "body": "<p>非選擇題佔 20 分，其中至少 3～5 分是「明明會寫卻寫錯」的失分。用一份固定的<strong>六點檢查表</strong>在交卷前掃過一遍，是投報率最高的搶分動作。</p>",
           "table": {
             "headers": [
@@ -8104,123 +8315,51 @@ export const englishData: SubjectData = {
           ]
         },
         {
-          "heading": "12. 看圖寫作與情境寫作：從圖片到成篇的四段模板",
-          "body": "<p>統測非選的情境寫作（含看圖寫作）題型要求依提示寫出<strong>結構完整的短文或段落</strong>。使用固定的四段模板，可在有限時間內穩定產出合格作品，並確保涵蓋題目要求的所有要素。</p>",
+          "heading": "12. 段落寫作與圖片描述（課綱溝通能力練習，非統測題型）",
+          "outlineRefs": ["EN2.5", "EN2.7"],
+          "body": "<p><strong>統測英文的非選擇題只有填充、句子重組與中譯英，沒有作文或看圖寫作。</strong>不過課綱的溝通功能包含「圖片描述」與「短文、書信的內容」，練習用英文描述圖片、寫出結構完整的段落，能讓句型、時態與連接詞用得更精準，對中譯英與閱讀也有幫助。</p>",
           "table": {
-            "headers": [
-              "段落",
-              "功能與句數",
-              "萬用起始句型"
-            ],
+            "headers": ["段落", "功能與句數", "萬用起始句型"],
             "rows": [
+              ["① 主題句 (Topic Sentence)", "點出全段主旨，1 句", "The picture shows…｜In my opinion, …"],
+              ["② 支持句一 (Support 1)", "第一個理由或事件，1～2 句", "First of all, …｜One reason is that…"],
+              ["③ 支持句二 (Support 2)", "第二個理由或事件，含具體例子，1～2 句", "In addition, …｜For example, …"],
+              ["④ 結論句 (Conclusion)", "總結或提出建議，1 句", "In conclusion, …｜That is why…"],
               [
-                "① 主題句 (Topic Sentence)",
-                "點出全段主旨，1 句",
-                "The picture shows…｜In my opinion, …｜There are three reasons why…"
+                "圖片描述順序",
+                "地點 → 人物 → 動作 → 推測原因或結果",
+                "In the picture, we can see…｜It seems that…"
               ],
-              [
-                "② 支持句一 (Support 1)",
-                "第一個理由或事件，1～2 句",
-                "First of all, …｜To begin with, …｜One reason is that…"
-              ],
-              [
-                "③ 支持句二 (Support 2)",
-                "第二個理由或事件，含具體例子，1～2 句",
-                "Second, …｜In addition, …｜For example, …｜What is more, …"
-              ],
-              [
-                "④ 結論句 (Conclusion)",
-                "總結或提出建議，1 句",
-                "In conclusion, …｜Therefore, …｜That is why…｜For these reasons, …"
-              ],
-              [
-                "看圖寫作：描述順序",
-                "先整體後細節：地點 → 人物 → 動作 → 推測原因或結果",
-                "In the picture, we can see…｜The man on the left is…｜It seems that…"
-              ],
-              [
-                "情境寫作：回應要素",
-                "務必逐一回應題目列出的每個提示點",
-                "題目給三個提示點就必須寫三句對應，漏一點即扣分"
-              ],
-              [
-                "連接詞工具箱",
-                "遞進：also, besides, moreover｜轉折：however, on the other hand｜因果：therefore, as a result｜舉例：for example, such as",
-                "每段至少使用一個連接詞以展現邏輯"
-              ],
-              [
-                "常見扣分點",
-                "沒有主題句、段落無結論、漏答提示點、時態混亂",
-                "寫作前先在題本上列出三個關鍵字再動筆"
-              ]
+              ["連接詞工具箱", "遞進、轉折、因果、舉例", "also, however, therefore, for example"]
             ]
           },
           "steps": [
-            "動筆前先花 1 分鐘列大綱：主旨一句 ＋ 理由兩個 ＋ 結論一句，寫作時間反而更充裕。",
-            "看圖寫作的描述順序固定為「整體 → 局部 → 動作 → 推測」，可避免東寫一句西寫一句的散亂感。",
-            "情境寫作務必逐點回應題目的提示，用手指在題目上逐一畫勾，確保沒有遺漏。",
-            "句子長短交錯（短句 ＋ 長句 ＋ 短句）能顯著提升可讀性；全篇長句反而容易出錯。",
-            "結尾句避免草率結束，用 In conclusion／For these reasons 起頭，讓段落有明確收束感。"
+            "動筆前先列大綱：主旨一句 ＋ 理由兩個 ＋ 結論一句。",
+            "描述圖片的順序固定為「整體 → 局部 → 動作 → 推測」，可避免句子散亂。",
+            "句子長短交錯（短句 ＋ 長句 ＋ 短句）能提升可讀性；全篇長句反而容易出錯。",
+            "結尾以 In conclusion／For these reasons 起頭，讓段落有明確收束。"
           ]
         },
         {
           "heading": "13. 統測非選歷屆命題結構分析與備考路徑",
-          "body": "<p>非選擇題共 20 分，題型高度穩定：<strong>字彙填空、句子重組、中譯英</strong>三大類。了解各題型的配分、評分重點與準備方法，可以把非選從「靠運氣」變成「穩定得分區」。</p>",
+          "outlineRefs": ["EN1.4.1", "EN2.3"],
+          "body": "<p>依 115 學年度英文科作答規定，非選擇題<strong>至多 20 分</strong>，題型固定為<strong>填充、句子重組、中譯英</strong>三種（統測英文沒有作文或看圖寫作）。了解各題型的給分方式與準備方法，可以把非選從「靠運氣」變成「穩定得分區」。</p>",
           "table": {
-            "headers": [
-              "題型",
-              "題數與配分（近年常態）",
-              "評分重點與準備方法"
-            ],
+            "headers": ["題型", "題目形式與給分（115 學年度）", "準備方法"],
             "rows": [
-              [
-                "① 字彙填空（首字母提示）",
-                "約 4 題，每題 1～2 分",
-                "評分：拼字完全正確才給分；詞性須與句子結構相符｜準備：熟背 2000 字並練習「看字首寫全字」"
-              ],
-              [
-                "② 句子重組",
-                "約 2 題，每題 2～3 分",
-                "評分：語序與標點完全正確；大小寫須正確｜準備：以「意群」為單位重組，先定主詞動詞再排修飾語"
-              ],
-              [
-                "③ 中譯英",
-                "約 2～4 題，每題 3～4 分",
-                "評分：語意完整、結構正確；部分分數可拿｜準備：熟練五大轉換模板與 20 大黃金句型"
-              ],
-              [
-                "④ 情境寫作（部分年度）",
-                "1 題，約 8～10 分",
-                "評分：內容切題、結構完整、文法正確｜準備：四段模板 ＋ 每週一篇限時練習"
-              ],
-              [
-                "時間分配",
-                "建議 20 分鐘完成全部非選",
-                "字彙 3 分鐘 ＋ 重組 4 分鐘 ＋ 翻譯 8 分鐘 ＋ 檢查 5 分鐘"
-              ],
-              [
-                "得分策略",
-                "不會也要寫，空白必定零分",
-                "翻譯題即使部分不會，也要把會的部分寫對，可拿部分分數"
-              ],
-              [
-                "常見零分原因",
-                "空白未作答、整句語意完全錯誤、字跡難以辨識",
-                "務必書寫清楚工整，模糊字跡可能被判錯"
-              ],
-              [
-                "備考時程建議",
-                "考前三個月啟動",
-                "第 1 個月：字彙 ＋ 句型｜第 2 個月：逐題型練習｜第 3 個月：整卷限時模擬並訂正"
-              ]
+              ["① 填充", "依中文題意與提示字首填兩個空格；每格 2 級分，兩格 4 級分", "熟背常用字並練習「看字首寫全字」"],
+              ["② 句子重組", "重組分割的字詞；0–4 級分，寫兩組答案為 0 級分", "以「意群」為單位重組，先定主詞動詞再排修飾語"],
+              ["③ 中譯英", "整句中譯英；0–4 級分", "熟練五大轉換模板與常用句型"],
+              ["級分換算", "閱卷完成後由級分換算為分數，非選合計至多 20 分", "以拿滿級分為目標，不必背換算表"],
+              ["常見零分原因", "空白、只抄題目、句子重組寫兩組答案", "書寫清楚工整，只寫一組答案"]
             ]
           },
           "steps": [
-            "非選最重要的觀念：空白一定零分，寫錯至少有機會拿部分分數，因此任何題目都必須填滿。",
-            "字彙填空的準備方法是「反向練習」：拿單字表遮住後半部，只看首字母與中文意思寫出全字。",
+            "非選最重要的觀念：空白一定是 0 級分，寫錯仍可能取得部分級分，所以每題都要作答。",
+            "填充的準備方法是「反向練習」：遮住單字表的後半部，只看首字母與中文意思寫出全字。",
             "句子重組解法：先找出動詞 → 確定主詞 → 補受詞 → 最後插入修飾語與副詞，並檢查句首大寫與句尾標點。",
-            "中譯英採「部分給分」，因此結構正確比用字華麗更重要；先確保主詞動詞正確，再求詞彙精準。",
-            "考前一個月起，每週完整寫一次非選並自行對照解析訂正，把錯誤類型記入個人錯誤矯正本。"
+            "中譯英依題意表達與文法給級分，結構正確比用字華麗更重要；先確保主詞動詞正確，再求詞彙精準。",
+            "考前一個月起，每週完整寫一次非選並對照解析訂正，把錯誤類型記入個人錯誤矯正本。"
           ]
         }
       ],

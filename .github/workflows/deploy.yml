@@ -41,6 +41,7 @@ jobs:
       - name: Build with Next.js
         run: |
           pnpm validate:content
+          pnpm validate:visuals
           pnpm validate:v6
           pnpm validate:v7-teaching
           pnpm validate:v7-goals

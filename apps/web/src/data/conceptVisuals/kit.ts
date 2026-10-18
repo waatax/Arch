@@ -710,14 +710,33 @@ function smoothPath(pts: Pt[]): string {
   return d;
 }
 
-export function legend(x: number, y: number, items: { name: string; tone: Tone; dash?: StrokeOpts['dash']; kind?: 'line' | 'box' }[], size = 12): string {
+type LegendItem = { name: string; tone: Tone; dash?: StrokeOpts['dash']; kind?: 'line' | 'box' };
+
+const legendItemWidth = (it: LegendItem, size: number) => 22 + textWidth(it.name, size) + 18;
+
+/** 圖例需要幾列才能放進 maxWidth（超出時自動換列） */
+export function legendRows(items: LegendItem[], maxWidth: number, size = 12): number {
+  let rows = 1;
+  let used = 0;
+  for (const it of items) {
+    const w = legendItemWidth(it, size);
+    if (used > 0 && used + w > maxWidth) { rows++; used = 0; }
+    used += w;
+  }
+  return rows;
+}
+
+export function legend(x: number, y: number, items: LegendItem[], size = 12, maxX = Infinity): string {
   let cx = x;
+  let cy = y;
   let s = '';
   for (const it of items) {
-    if (it.kind === 'box') s += rect(cx, y - 6, 14, 10, { tone: it.tone, fill: it.tone, soft: true, w: 1.2, rx: 2 });
-    else s += line(cx, y - 1, cx + 18, y - 1, { tone: it.tone, w: 2.4, dash: it.dash });
-    s += text(cx + 22, y + 3, it.name, { tone: 'ink', size, halo: false });
-    cx += 22 + textWidth(it.name, size) + 18;
+    const w = legendItemWidth(it, size);
+    if (cx > x && cx + w - 18 > maxX) { cx = x; cy += 17; }
+    if (it.kind === 'box') s += rect(cx, cy - 6, 14, 10, { tone: it.tone, fill: it.tone, soft: true, w: 1.2, rx: 2 });
+    else s += line(cx, cy - 1, cx + 18, cy - 1, { tone: it.tone, w: 2.4, dash: it.dash });
+    s += text(cx + 22, cy + 3, it.name, { tone: 'ink', size, halo: false });
+    cx += w;
   }
   return s;
 }
@@ -725,7 +744,10 @@ export function legend(x: number, y: number, items: { name: string; tone: Tone; 
 export function lineChart(o: LineChartOpts): string {
   const w = o.w ?? 520;
   const h = o.h ?? 300;
-  const pad = { l: 56, r: 22, t: o.legend === 'none' ? 26 : 40, b: 44, ...o.pad };
+  const showLegend = o.legend !== 'none' && o.series.length > 1;
+  const legendItems = o.series.map((se) => ({ name: se.name, tone: se.tone, dash: se.dash }));
+  const rows = showLegend ? legendRows(legendItems, w - 56 - 12) : 1;
+  const pad = { l: 56, r: 22, t: showLegend ? 54 + (rows - 1) * 17 : 32, b: 44, ...o.pad };
   const f = frame([o.x.min, o.x.max], [o.y.min, o.y.max], { left: pad.l, top: pad.t, width: w - pad.l - pad.r, height: h - pad.t - pad.b });
   let s = '';
   for (const v of o.y.ticks) s += line(f.box.left, f.Y(v), f.box.left + f.box.width, f.Y(v), { tone: 'grid', w: 1 });
@@ -746,7 +768,7 @@ export function lineChart(o: LineChartOpts): string {
     if (se.markers) for (const [x, y] of pts) s += `<circle cx="${x}" cy="${y}" r="3.4" class="cv-s-${se.tone} cv-f-paper" stroke-width="1.8"/>`;
   }
   if (o.overlay) s += o.overlay(f);
-  if (o.legend !== 'none' && o.series.length > 1) s += legend(pad.l, 18, o.series.map((se) => ({ name: se.name, tone: se.tone, dash: se.dash })));
+  if (showLegend) s += legend(pad.l, 18, legendItems, 12, w - 12);
   return svg(w, h, s);
 }
 
@@ -770,11 +792,14 @@ export function barChart(o: BarChartOpts): string {
   const w = o.w ?? 520;
   const h = o.h ?? 300;
   const multi = o.series.length > 1;
+  const legendItems = o.series.map((se) => ({ name: se.name, tone: se.tone, kind: 'box' as const }));
+  const legendX = o.horizontal ? 120 : 52;
+  const extraRows = multi ? legendRows(legendItems, w - legendX - 12) - 1 : 0;
   const yMin = o.y.min ?? 0;
   const vf = o.valueFmt ?? ((v: number) => fmt(v));
   let s = '';
   if (o.horizontal) {
-    const pad = { l: 120, r: 46, t: multi ? 40 : 18, b: 40, ...o.pad };
+    const pad = { l: 120, r: 46, t: multi ? 44 + extraRows * 17 : 18, b: 40, ...o.pad };
     const f = frame([yMin, o.y.max], [0, o.categories.length], { left: pad.l, top: pad.t, width: w - pad.l - pad.r, height: h - pad.t - pad.b });
     for (const v of o.y.ticks) {
       s += line(f.X(v), f.box.top, f.X(v), f.box.top + f.box.height, { tone: 'grid', w: 1 });
@@ -796,7 +821,7 @@ export function barChart(o: BarChartOpts): string {
     if (o.y.label) s += text(f.box.left + f.box.width, f.box.top + f.box.height + 34, o.y.label, { tone: 'ink', size: 12, anchor: 'end', weight: 'bold' });
     if (o.overlay) s += o.overlay(f);
   } else {
-    const pad = { l: 52, r: 18, t: multi ? 44 : 30, b: 46, ...o.pad };
+    const pad = { l: 52, r: 18, t: multi ? 58 + extraRows * 17 : 34, b: 46, ...o.pad };
     const f = frame([0, o.categories.length], [yMin, o.y.max], { left: pad.l, top: pad.t, width: w - pad.l - pad.r, height: h - pad.t - pad.b });
     for (const v of o.y.ticks) {
       s += line(f.box.left, f.Y(v), f.box.left + f.box.width, f.Y(v), { tone: 'grid', w: 1 });
@@ -818,7 +843,7 @@ export function barChart(o: BarChartOpts): string {
     if (o.y.label) s += text(f.box.left - 6, f.box.top - 12, o.y.label, { tone: 'ink', size: 12, weight: 'bold' });
     if (o.overlay) s += o.overlay(f);
   }
-  if (multi) s += legend(o.horizontal ? 120 : 52, 18, o.series.map((se) => ({ name: se.name, tone: se.tone, kind: 'box' as const })));
+  if (multi) s += legend(legendX, 18, legendItems, 12, w - 12);
   return svg(w, h, s);
 }
 
@@ -890,7 +915,40 @@ export function timeline(x1: number, x2: number, y: number, range: [number, numb
 
 // ───────────────────────── 外框 ─────────────────────────
 
+/**
+ * 估算字串中所有 <text> 的外框（依字級、對齊與粗體），供 svg() 自動擴張畫布，避免標籤被裁切。
+ * 旋轉文字不納入（其外框難以估算，且多為尺寸標註）。
+ */
+function textExtent(content: string): { x0: number; y0: number; x1: number; y1: number } | null {
+  let ext: { x0: number; y0: number; x1: number; y1: number } | null = null;
+  for (const m of content.matchAll(/<text([^>]*)>([\s\S]*?)<\/text>/g)) {
+    const attrs = m[1];
+    if (attrs.includes('transform="rotate')) continue;
+    const num = (k: string) => Number((attrs.match(new RegExp(` ${k}="(-?[0-9.]+)"`)) ?? [])[1]);
+    const x = num('x');
+    const y = num('y');
+    const size = num('font-size') || 13;
+    if (!Number.isFinite(x) || !Number.isFinite(y)) continue;
+    const plain = m[2].replace(/<[^>]+>/g, '').replace(/&lt;/g, '<').replace(/&gt;/g, '>').replace(/&amp;/g, '&').replace(/&quot;/g, '"');
+    const w = textWidth(plain, size) * (attrs.includes('font-weight="700"') ? 1.04 : 1);
+    const anchor = (attrs.match(/text-anchor="(\w+)"/) ?? [])[1] ?? 'start';
+    const central = attrs.includes('dominant-baseline="central"');
+    const x0 = anchor === 'middle' ? x - w / 2 : anchor === 'end' ? x - w : x;
+    const box = { x0, x1: x0 + w, y0: central ? y - size / 2 : y - size * 0.8, y1: central ? y + size / 2 : y + size * 0.22 };
+    ext = ext ? { x0: Math.min(ext.x0, box.x0), y0: Math.min(ext.y0, box.y0), x1: Math.max(ext.x1, box.x1), y1: Math.max(ext.y1, box.y1) } : box;
+  }
+  return ext;
+}
+
 export function svg(w: number, h: number, body: string | string[], label?: string): string {
   const content = Array.isArray(body) ? body.join('') : body;
-  return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${w} ${h}" width="${w}" height="${h}" class="cv-svg" role="img"${label ? ` aria-label="${esc(label)}"` : ''}>${content}</svg>`;
+  // 標籤超出設計畫布時自動擴張 viewBox（保留 4px 邊距），圖面整體等比縮小而不裁切文字
+  const ext = textExtent(content);
+  const x0 = r2(Math.min(0, (ext?.x0 ?? 0) - 8));
+  const y0 = r2(Math.min(0, (ext?.y0 ?? 0) - 4));
+  const x1 = r2(Math.max(w, (ext?.x1 ?? w) + 8));
+  const y1 = r2(Math.max(h, (ext?.y1 ?? h) + 4));
+  const vw = r2(x1 - x0);
+  const vh = r2(y1 - y0);
+  return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="${x0} ${y0} ${vw} ${vh}" width="${vw}" height="${vh}" class="cv-svg" role="img"${label ? ` aria-label="${esc(label)}"` : ''}>${content}</svg>`;
 }

@@ -9,9 +9,10 @@ export const historyData: SubjectData = {
     {
       "slug": "taiwan-history",
       "title": "1. 台灣史：建築環境演變與本土樣式",
-      "desc": "深入探索台灣歷史發展脈絡、南島語族聚落、荷西明鄭堡壘、清領漢人傳統合院與寺廟、日治近代西洋歷史式樣與市區改正，以及戰後地域現代主義轉型。\n\n🔥 V6.0 考前秒殺秘訣：此核心概念統測出題率極高，建議善用圖解與鷹架提示反覆練習！\n\n🔗 **跨學科連結**：建築不僅是空間實體，更是《地理》風土氣候適應與《公民》法規政策的綜合體現！\n\n**【比較表】統測常考對比**\n| 比較項目 | 表面記憶 | 跨域推導 |\n|---|---|---|\n| 學習方法 | 單一學科死記 | 結合歷史地理與公民 |\n| 統測得分率 | 容易在變化題失分 | 能準確破解綜合題型 |",
+      "desc": "深入探索台灣歷史發展脈絡、南島語族聚落、荷西明鄭堡壘、清領漢人傳統合院與寺廟、日治近代西洋歷史式樣與市區改正，以及戰後地域現代主義轉型。",
       "status": "done",
       "gradeLevel": 10,
+      "curriculumCode": "108-歷Db",
       "fatalTraps": [
         {
           "wrongThinking": "時代背景錯置。",
@@ -49,6 +50,7 @@ export const historyData: SubjectData = {
       "concepts": [
         {
           "heading": "一、荷西與明鄭時期的築城技術與空間佈局 (1624–1683)",
+          "outlineRefs": ["歷Da-Ⅴ-2", "歷Db-Ⅴ-1"],
           "body": "17世紀**大航海時代**，西洋海權強國荷蘭與西班牙相繼於台灣建立防衛據點，引進了<span className=\"text-rose-600 font-bold\">歐洲重商主義</span>與<span className=\"text-indigo-600 font-bold\">稜堡（<span className=\"text-indigo-600 font-bold\">Bastion Trace</span>）</span>軍事築城技術。荷蘭人在大員興建**熱蘭遮城**（Fort Zeelandia，今安平古堡），此堡壘不僅是防禦核心也是國際貿易轉運站；於台江內海東岸建立**普羅民遮城**（Fort Provintia，今赤崁樓）以處理地方行政。西班牙人則於雞籠建造**聖多明哥城**（Fort San Domingo，淡水紅毛城前身），試圖掌控北部硫磺與鹿皮貿易。明鄭時期引入漢人屯墾制度，設立承天府與天興、萬年二縣，引進傳統<span className=\"text-teal-600 font-bold\">儒家文教空間</span>，興建全臺首學「<span className=\"text-rose-600 font-bold\">**台南孔廟**</span>」，建立<span className=\"text-rose-600 font-bold\">左學右廟</span>（左側府學、右側文廟）格局，奠定漢人傳統聚落與街屋雛形。💡 **專家提示**：荷西時期的堡壘選址多靠近港口與海權控制點，而明鄭時期的空間佈局則反映了由「海權貿易」轉向「農業與文教定居」的社會轉型。",
           "steps": [
             "**荷西時期構造特徵**：採用熱帶紅磚、石灰、糯米汁、糖水與牡蠣殼灰（<span className=\"text-indigo-600 font-bold\">三合土/糯米三合土</span>）作為膠結材料，築造外突**稜堡**以消除城牆死角，形成無死角的交叉火網防禦。",
@@ -90,6 +92,7 @@ export const historyData: SubjectData = {
         },
         {
           "heading": "二、清領時期閩粵移民與漢人傳統建築形制 (1683–1895)",
+          "outlineRefs": ["歷Db-Ⅴ-1"],
           "body": "清領時期閩粵移民大量渡海來台，將祖籍地的民居與寺廟建築技術帶入台灣。台灣漢人傳統民居依規模與財力分為「<span className=\"text-rose-600 font-bold\">**單伸腿**</span>」、「<span className=\"text-rose-600 font-bold\">**三合院**（正身帶左右護龍）</span>」、「<span className=\"text-rose-600 font-bold\">**四合院**</span>」及「<span className=\"text-rose-600 font-bold\">**多落多護龍大宅**</span>」（如板橋林家花園、霧峰林家宮保第）。寺廟建築則具備高度工藝與宗教禮制，包含三川殿、正殿、後殿與過水廊，並盛行「<span className=\"text-rose-600 font-bold\"><span className=\"text-rose-600 font-bold\">對場作</span></span>」（兩組匠師分別負責左右兩側施工，相互比試技藝）。工法上區分為<span className=\"text-indigo-600 font-bold\">閩南樣式</span>（燕尾脊、馬背/鞍軒、紅磚紅瓦）與<span className=\"text-teal-600 font-bold\">客家樣式</span>（注重防禦、素雅白牆石砌）。",
           "steps": [
             "**木構棟架系統**：分為「<span className=\"text-rose-600 font-bold\">抬梁式</span>」（梁上立短柱，空間開闊適合大殿）與「<span className=\"text-indigo-600 font-bold\">穿斗式</span>」（柱直接穿檁，用料省且抗震佳，適合民居屋架）。",
@@ -132,6 +135,7 @@ export const historyData: SubjectData = {
         },
         {
           "heading": "三、日治前期市區改正與近代西洋歷史式樣 (1895–1920)",
+          "outlineRefs": ["歷Db-Ⅴ-1"],
           "body": "1895年日本統治台灣後，導入西洋近代都市計畫與衛生工程觀念，陸續頒布「<span className=\"text-rose-600 font-bold\"><span className=\"text-rose-600 font-bold\">台北市區改正計畫</span></span>」，拆除清代舊城牆並闢建寬廣的林蔭大道（三線路），建立棋盤式道路網與圓環。建築上引入**西洋歷史主義**（<span className=\"text-indigo-600 font-bold\">Historicism</span>），特別是由日本建築師辰野金吾倡導的「<span className=\"text-rose-600 font-bold\"><span className=\"text-indigo-600 font-bold\">辰野風格</span></span>」（<span className=\"text-indigo-600 font-bold\">Tatsuno Style</span>），以<span className=\"text-rose-600 font-bold\">紅磚面外牆搭配白色水平石飾帶</span>、曼薩頂（<span className=\"text-indigo-600 font-bold\">Mansard roof</span>）、塔樓與拱券為特徵。代表作品包括**台灣總督府**（今總統府）、原台南地方法院與台北驛。",
           "steps": [
             "**市區改正規範**：強制商業街屋留設<span className=\"text-teal-600 font-bold\">騎樓（亭仔腳）</span>，統一街路立面與下水道建設，提升公共衛生與公共運輸。",
@@ -168,6 +172,7 @@ export const historyData: SubjectData = {
         },
         {
           "heading": "四、日治中後期折衷主義、帝國冠帽與街屋立面演變 (1920–1945)",
+          "outlineRefs": ["歷Db-Ⅴ-1"],
           "body": "1920年代後，**現代主義**思潮席捲全球，古典歷史式樣漸被簡化。台灣建築呈現「<span className=\"text-rose-600 font-bold\"><span className=\"text-indigo-600 font-bold\">折衷主義（<span className=\"text-indigo-600 font-bold\">Eclecticism</span>）</span></span>」與「<span className=\"text-rose-600 font-bold\">**裝飾風藝術（<span className=\"text-indigo-600 font-bold\">Art Deco</span>）**</span>」，強調幾何線條、洗石子工藝與簡化哥德飾帶（如台北郵局、台南林百貨）。1930年代二戰爆發前夕，日本推行「<span className=\"text-rose-600 font-bold\"><span className=\"text-rose-600 font-bold\">帝國冠帽樣式</span></span>」（<span className=\"text-indigo-600 font-bold\">Imperial Crown Style</span>），即西洋現代鋼筋混凝土主體結構上方冠以**傳統東亞木造或琉璃大屋頂**（如原高雄市役所）。同時，民間商業街屋（**牌樓厝**）蓬勃發展，呈現泥塑巴洛克山牆與洗石子幾何紋樣裝飾。",
           "steps": [
             "**牌樓厝（街屋）演變**：從清代木構亭仔腳街屋，演變為日治洗石子<span className=\"text-rose-600 font-bold\">巴洛克山牆街屋</span>，再簡化為<span className=\"text-indigo-600 font-bold\">裝飾風幾何面磚</span>街屋。",
@@ -204,6 +209,7 @@ export const historyData: SubjectData = {
         },
         {
           "heading": "五、戰後中國宮殿樣式與現代主義轉型 (1945–1980)",
+          "outlineRefs": ["歷Db-Ⅴ-1"],
           "body": "戰後初期，政府倡導「<span className=\"text-rose-600 font-bold\"><span className=\"text-rose-600 font-bold\">中國宮殿式樣</span></span>」（如圓山大飯店、中正紀念堂），以鋼筋混凝土模擬古典木構大屋頂與斗拱彩繪，展現政治正統意象。1960年代起，王大閎、陳其寬、貝聿銘等建築師將西方**現代主義**結構概念與中國傳統空間精神融合，創作了**國父紀念館**、**東海大學路思義教堂**等經典作品，開創了<span className=\"text-indigo-600 font-bold\">中國**現代主義**</span>的新頁。",
           "steps": [
             "**宮殿樣式**：以RC結構模擬木構大屋頂、琉璃瓦與斗拱，強調<span className=\"text-rose-600 font-bold\">政治正統與紀念性</span>。",
@@ -240,6 +246,7 @@ export const historyData: SubjectData = {
         },
         {
           "heading": "六、地域性現代主義、宜蘭厝運動與當代建築 (1980–迄今)",
+          "outlineRefs": ["歷Db-Ⅴ-1"],
           "body": "1980年代後，<span className=\"text-indigo-600 font-bold\">**地域性****現代主義**（<span className=\"text-indigo-600 font-bold\">Regional Modernism</span>）</span>興起，如「<span className=\"text-rose-600 font-bold\">**宜蘭厝運動**</span>」探索亞熱帶氣候適應、本土磚石構造與綠建築設計，黃聲遠與田中央工作群更深化了建築與自然景觀的共生關係。當代台灣建築注重<span className=\"text-teal-600 font-bold\">永續綠建築</span>、氣候韌性與在地歷史紋理重組。",
           "steps": [
             "**地域現代主義**：宜蘭厝、田中央工作群，強調在地脈絡、<span className=\"text-rose-600 font-bold\">防雨遮陽</span>與環境融和。",
@@ -271,6 +278,22 @@ export const historyData: SubjectData = {
                 "雙層呼吸外牆、太陽能光電、雨水滯洪生態池",
                 "台北市立圖書館北投分館 (九典聯合)、臺大社會科學院 (伊東豊雄)"
               ]
+            ]
+          }
+        },
+        {
+          "heading": "七、如何認識過去：誰的歷史、誰留下的史料、誰寫的歷史",
+          "outlineRefs": ["歷A-Ⅴ-1"],
+          "body": "108 課綱技高歷史的**必選主題 A**提醒我們：歷史不是一套唯一的標準答案，而是依據史料重建、並不斷被重新詮釋的過去。\n**誰的歷史**：教科書與官方紀錄常以統治者或主流群體為中心，原住民族、女性、工匠、移工等人的經驗容易被忽略。\n**誰留下的史料**：官方檔案、契約、日記、報紙、照片、地圖、口述訪談與實物（建築、器物）都是史料，各有留存者與立場，也各有限制。\n**誰寫的歷史**：書寫者的身分、時代背景與目的，會影響他選擇哪些史料、如何解釋。\n**建築也是史料**：一棟老屋的構造材料、門楣題字、修建痕跡與平面配置，可以補充文字沒有記錄的生活樣貌。例如清代街屋面寬窄、進深長，反映臨街店面的商業價值；日治官廳的西洋歷史式樣，則反映統治者想展現的現代化形象。\n**判讀史料的步驟**：分辨第一手或第二手史料 → 查證作者、時間與目的 → 與其他史料交叉比對 → 提出有證據支持的詮釋。\n⚠️ 易錯：第一手史料不等於「一定正確」，它也可能帶有作者的立場；判讀時要比對多方資料。",
+          "steps": ["提問：這份史料是誰、在什麼時候、為了什麼目的留下的？", "分類：判斷是文字、圖像、口述或實物史料，屬第一手還是第二手。", "比對：找出其他來源（如地圖、照片、檔案、建築現況）互相印證。", "詮釋：說明你的結論，並指出證據與可能的限制。"],
+          "table": {
+            "headers": ["史料類型", "例子", "優點", "限制"],
+            "rows": [
+              ["官方檔案", "戶籍、土地清冊、建築執照", "系統完整、可查證", "反映統治者觀點"],
+              ["私人文書", "日記、書信、契約", "貼近個人經驗", "片段、主觀"],
+              ["圖像與地圖", "老照片、堡圖、航照", "直觀呈現空間", "拍攝或繪製者有取捨"],
+              ["口述歷史", "耆老、工匠訪談", "保留未被記錄的聲音", "記憶可能模糊或選擇性"],
+              ["實物與建築", "老屋構件、器物", "物證具體", "需專業判讀，常經改建"]
             ]
           }
         }
@@ -397,9 +420,10 @@ export const historyData: SubjectData = {
     {
       "slug": "chinese-history",
       "title": "2. 中國史：古代建築形制、工藝與《營造法式》",
-      "desc": "詳細剖析中國古代建築發展脈絡，從先秦夯土高台、唐代大木作氣魄、北宋《營造法式》材分制模組化，到明清紫禁城宮殿禮制與江南文人園林造景哲學。\n\n🔥 V6.0 考前秒殺秘訣：此核心概念統測出題率極高，建議善用圖解與鷹架提示反覆練習！",
+      "desc": "詳細剖析中國古代建築發展脈絡，從先秦夯土高台、唐代大木作氣魄、北宋《營造法式》材分制模組化，到明清紫禁城宮殿禮制與江南文人園林造景哲學。",
       "status": "done",
       "gradeLevel": 10,
+      "curriculumCode": "108-歷Da",
       "fatalTraps": [
         {
           "wrongThinking": "時代背景錯置。",
@@ -437,6 +461,7 @@ export const historyData: SubjectData = {
       "concepts": [
         {
           "heading": "一、先秦至漢唐建築發展與高台木構演變",
+          "outlineRefs": ["歷Da-Ⅴ-1"],
           "body": "中國傳統建築以木構造為核心骨幹。先秦與秦漢時期，盛行「<span className=\"text-rose-600 font-bold\">**夯土高台建築**</span>」，將建築基座築成巨大的夯土台塊，台上興建木構樓閣。隋唐時期，木構技術達到巔峰，以山西五台山**佛光寺大殿**（857年）與南禪寺大殿為代表。唐代建築特徵為：斗拱<span className=\"text-rose-600 font-bold\">雄大碩巨</span>、出檐深遠、柱子具傾斜之「<span className=\"text-rose-600 font-bold\">**側腳**</span>」與「<span className=\"text-rose-600 font-bold\">**生起**</span>」、屋頂坡度平緩舒展，呈現大氣磅礡之雄渾風格。",
           "steps": [
             "**先秦漢代**：夯土台基、高台樓閣、半穴居與干欄式建築演變。",
@@ -473,6 +498,7 @@ export const historyData: SubjectData = {
         },
         {
           "heading": "二、北宋《營造法式》與材分制模組化設計",
+          "outlineRefs": ["歷Da-Ⅴ-1", "歷Fa-Ⅴ-1"],
           "body": "北宋崇寧二年（1103年），李誡編纂出版《營造法式》，為中國古代官方頒布規範建築設計、工料預算與施工標準之集大成專著。其核心創舉為確立「<span className=\"text-rose-600 font-bold\"><span className=\"text-rose-600 font-bold\">材分制度</span></span>」（模組化/Modularity）。將大木作木材斷面標準分為一等材至八等材，以「<span className=\"text-rose-600 font-bold\">材</span>」之高度分為15「<span className=\"text-rose-600 font-bold\">分</span>」，寬度為10「<span className=\"text-rose-600 font-bold\">分</span>」（高寬比 **3:2**），所有建築構件之比例大小皆以「<span className=\"text-rose-600 font-bold\">材分</span>」為基準進行級數放大或縮小。這項創舉不僅解決了材料浪費問題，也讓複雜的木構件能大量預先製作。💡 **專家提示**：材分制的精神等同於現代建築的「BIM與預製工法」，是中國建築邁向工業化標準化管理的重要里程碑。",
           "steps": [
             "**一等材**：最高等級，用於九間以上宮殿或大殿（如皇家核心殿堂），耗材最多且結構最為雄偉。",
@@ -516,6 +542,7 @@ export const historyData: SubjectData = {
         },
         {
           "heading": "三、明清紫禁城宮殿禮制與官式建築等級劃定",
+          "outlineRefs": ["歷Da-Ⅴ-2"],
           "body": "明清時期，建築技術趨向高度規範化與符號化。清工部頒布《工程做法則例》，將宋代的材分制轉化為「<span className=\"text-rose-600 font-bold\">**斗口制**</span>」（以斗口寬度為模數）。宮殿建築嚴格遵循封建禮制，空間採嚴謹中軸對稱。屋頂形式劃分為明確的等級體系：<span className=\"text-rose-600 font-bold\">庑殿頂 > 歇山頂 > 懸山頂 > 硬山頂</span>。太和殿採用最高等級之「<span className=\"text-rose-600 font-bold\">**重檐庑殿頂**</span>」，搭配黃琉璃瓦、十隻脊獸與九五之尊間數。",
           "steps": [
             "**屋頂等級**：重檐庑殿頂 > 重檐歇山頂 > 單檐庑殿頂 > 單檐歇山頂 > 懸山頂 > 硬山頂。",
@@ -558,6 +585,7 @@ export const historyData: SubjectData = {
         },
         {
           "heading": "四、江南文人園林造景哲學與疊石理水工法",
+          "outlineRefs": ["歷Da-Ⅴ-1", "歷Fa-Ⅴ-1"],
           "body": "相對於北方皇園之宏偉對稱，江南文人私家園林（如蘇州拙政園、留園、網師園）強調「<span className=\"text-rose-600 font-bold\"><span className=\"text-rose-600 font-bold\">師法自然</span></span>」、「<span className=\"text-rose-600 font-bold\">雖由人作，宛自天開</span>」之意境。園林設計融合詩情畫意，打破嚴謹中軸對稱，運用巧於因借、精在體宜之手法。造景工藝核心包含：**疊石**（運用太湖石、黃石堆疊假山）、**理水**（曲折池岸、聚分有致）、<span className=\"text-indigo-600 font-bold\">漏窗框景</span>與**借景**（將園外景物引入園內）。",
           "steps": [
             "**借景 (Borrowing Scenery)**：將園外遠山（如遠香堂借景北寺塔）或天空景物引入視線。",
@@ -596,6 +624,7 @@ export const historyData: SubjectData = {
         },
         {
           "heading": "五、傳統民居多樣性與地域風土適應比較",
+          "outlineRefs": ["歷Da-Ⅴ-1"],
           "body": "中國廣袤土地因氣候、地形與文化差異，孕育出極具地域特色的民居形態。北方**四合院**強調日照與防風防沙；客家**土樓**（福建土樓）強調禦敵聚族而居；徽派建築以<span className=\"text-rose-600 font-bold\">馬頭牆</span>防火與白牆黑瓦為標誌；黃土高原**窯洞**則利用土層熱阻實現冬暖夏涼。",
           "steps": [
             "**北方四合院**：坐北朝南、中軸對稱、坎宅巽門、注重私密性與冬日日照。",
@@ -638,6 +667,7 @@ export const historyData: SubjectData = {
         },
         {
           "heading": "六、中國傳統建築色彩學與圖騰隱喻",
+          "outlineRefs": ["歷Da-Ⅴ-2"],
           "body": "官式建築色彩受到五行學說與等級制度嚴格約束。黃色屬土位於中央代表帝王；紅色象徵尊貴與吉祥；青綠色代表陰涼與木育。彩繪工藝分為**和璽彩繪**（最高等級，金龍金鳳）、**旋子彩繪**（官署大殿，幾何旋花）與<span className=\"text-rose-600 font-bold\">蘇式彩繪</span>（江南園林，山水花鳥圖案）。",
           "steps": [
             "**和璽彩繪**：枋心與箍頭全用金箔繪製金龍金鳳，專用於皇家主要大殿。",
@@ -669,6 +699,21 @@ export const historyData: SubjectData = {
                 "用色豐富自然，少用大面積金箔",
                 "江南園林、皇宮後苑亭台樓閣"
               ]
+            ]
+          }
+        },
+        {
+          "heading": "七、科技的歷史：從傳統營造工藝到現代營建科技",
+          "outlineRefs": ["歷Fa-Ⅴ-1", "歷Fa-Ⅴ-2"],
+          "body": "**工藝與科技的起源**：石器、陶器、冶金與木作是人類最早的技術，傳統營造多依靠匠師口傳的經驗與尺規（如魯班尺）。\n**中國古代營建技術**：榫卯木構不需鐵釘、夯土築牆、磚拱與斗拱；北宋李誡編修的《營造法式》（1103 年刊行）把材料規格、做法與工料定額加以標準化，是傳統營造知識系統化的代表。\n**科技的改變與創新**：\n• 工業革命後，鋼鐵與大片玻璃使大跨度建築成為可能，如 1851 年倫敦水晶宮。\n• 19 世紀後期鋼筋混凝土與安全電梯的發明，讓高層建築快速發展。\n• 20 世紀出現預鑄工法與帷幕牆；21 世紀則有 BIM 建築資訊模型、3D 列印、機器人施工與低碳材料。\n**科技帶來的課題**：傳統匠藝的傳承、工地安全、能源消耗與碳排放，都需要在發展科技的同時一併考量。\n⚠️ 易錯：《營造法式》是北宋官方頒行的營建規範（李誡編修），清代對應的官式規範則是《工程做法則例》，兩者時代不同。",
+          "table": {
+            "headers": ["時代", "關鍵技術", "代表成果"],
+            "rows": [
+              ["古代", "榫卯、夯土、磚拱、斗拱", "木構寺廟、城牆"],
+              ["北宋（1103）", "《營造法式》標準化", "材分制模數化設計"],
+              ["工業革命（19 世紀）", "鋼鐵、玻璃、預製構件", "水晶宮（1851）"],
+              ["19 世紀後期至 20 世紀", "鋼筋混凝土、電梯、帷幕牆", "高層建築"],
+              ["21 世紀", "BIM、3D 列印、低碳材料", "智慧與永續建築"]
             ]
           }
         }
@@ -795,9 +840,10 @@ export const historyData: SubjectData = {
     {
       "slug": "world-history",
       "title": "3. 西洋史：從古典、哥德、文藝復興到現代主義與當代建築",
-      "desc": "縱覽西洋建築史發展脈絡，從古希臘羅馬柱式與拱券突破、中世紀哥德飛扶壁與光影神聖空間、文藝復興人文主義理性、巴洛克動態戲劇張力、十九世紀工業革命新材料，到現代主義四位大師與當代數位參數化建築。\n\n🔥 V6.0 考前秒殺秘訣：此核心概念統測出題率極高，建議善用圖解與鷹架提示反覆練習！",
+      "desc": "縱覽西洋建築史發展脈絡，從古希臘羅馬柱式與拱券突破、中世紀哥德飛扶壁與光影神聖空間、文藝復興人文主義理性、巴洛克動態戲劇張力、十九世紀工業革命新材料，到現代主義四位大師與當代數位參數化建築。",
       "status": "done",
       "gradeLevel": 10,
+      "curriculumCode": "108-歷Da",
       "fatalTraps": [
         {
           "wrongThinking": "時代背景錯置。",
@@ -835,6 +881,7 @@ export const historyData: SubjectData = {
       "concepts": [
         {
           "heading": "一、古希臘與古羅馬建築：古典柱式禮制與拱券結構突破",
+          "outlineRefs": ["歷Da-Ⅴ-1", "歷Da-Ⅴ-2"],
           "body": "古希臘建築確立了西洋古典建築之基石，創立三大柱式（<span className=\"text-indigo-600 font-bold\">Order</span>）：**多立克**（Doric，雄渾樸素）、**愛奧尼**（Ionic，優雅捲渦）與**柯林斯**（Corinthian，華麗毛茛葉）。希臘建築以<span className=\"text-rose-600 font-bold\">梁柱結構（<span className=\"text-indigo-600 font-bold\">Post-and-Lintel</span>）</span>為主，強調完美的幾何黃金比例與人體尺度（如帕德嫩神殿）。古羅馬則發明了「<span className=\"text-rose-600 font-bold\"><span className=\"text-indigo-600 font-bold\">拱券結構（Arch & Vault）</span></span>」與天然混凝土（<span className=\"text-indigo-600 font-bold\">PoZZolana</span>），創造出萬神殿（Pantheon，43.3米無筋混凝土穹頂）與羅馬競技場（<span className=\"text-indigo-600 font-bold\">Colosseum</span>），實現了大跨度內部空間之革命。",
           "steps": [
             "**希臘梁柱系統**：黃金分割比 (1:1.618)、柱身微凸（Entasis）修正視覺錯覺。",
@@ -865,6 +912,7 @@ export const historyData: SubjectData = {
         },
         {
           "heading": "二、中世紀拜占庭與哥德式建築：拱頂技術與光影神聖空間",
+          "outlineRefs": ["歷Da-Ⅴ-1", "歷Da-Ⅴ-2"],
           "body": "拜占庭建築發明了「<span className=\"text-rose-600 font-bold\"><span className=\"text-rose-600 font-bold\">帆拱（<span className=\"text-indigo-600 font-bold\">Pendentive</span>）</span></span>」技術，成功將圓形穹頂架設於方形平面之上（代表作：聖索菲亞大教堂）。12世紀起源於法國的**哥德式建築**（<span className=\"text-indigo-600 font-bold\">Gothic Architecture</span>），則實現了結構力學與宗教精神之巔峰結合。哥德建築三大核心構件為：**尖拱（<span className=\"text-indigo-600 font-bold\">Pointed Arch</span>）**、**肋骨拱頂（<span className=\"text-indigo-600 font-bold\">Ribbed Vault</span>）**與外挑之**飛扶壁（<span className=\"text-indigo-600 font-bold\">Flying Buttress</span>）**。這使外牆得以解脫承重機能，開設高聳彩繪鑲嵌玻璃窗（<span className=\"text-indigo-600 font-bold\">Rose Window</span>），營造聖光降臨之神聖氛圍。",
           "steps": [
             "**帆拱技術**：轉接方形基座與圓形穹頂之三角曲面轉角構造。",
@@ -901,6 +949,7 @@ export const historyData: SubjectData = {
         },
         {
           "heading": "三、文藝復興與巴洛克/洛可可：人文主義理性與動態戲劇張力",
+          "outlineRefs": ["歷Da-Ⅴ-2"],
           "body": "15世紀義大利文藝復興（<span className=\"text-indigo-600 font-bold\">Renaissance</span>）復興古典希臘羅馬理性，Brunelleschi 建造佛羅倫斯大教堂聖母百花大教堂穹頂，Alberti 與 Palladio 確立<span className=\"text-rose-600 font-bold\">數學幾何比例與透視學規範</span>（如帕拉底歐 Villa Rotonda）。17世紀巴洛克（<span className=\"text-indigo-600 font-bold\">Baroque</span>）則打破文藝復興之靜態平衡，強調橢圓形平面、波浪狀曲面外牆、強烈明暗對比（<span className=\"text-indigo-600 font-bold\">Chiaroscuro</span>）與<span className=\"text-indigo-600 font-bold\">戲劇性空間張力</span>（如 Bernini 設計之聖彼得大教堂前廣場）。",
           "steps": [
             "**文藝復興**：靜態幾何（圓形、正方形）、古典柱式復興、人本理性。",
@@ -937,6 +986,7 @@ export const historyData: SubjectData = {
         },
         {
           "heading": "四、工業革命與新材料突破：水晶宮、艾菲爾鐵塔與鋼鐵構造",
+          "outlineRefs": ["歷Da-Ⅴ-1", "歷Fa-Ⅴ-2"],
           "body": "19世紀工業革命引爆材料與建造技術革命。鑄鐵（<span className=\"text-indigo-600 font-bold\">Cast Iron</span>）、鍛鐵（<span className=\"text-indigo-600 font-bold\">Wrought Iron</span>）、平板玻璃與鋼筋混凝土（<span className=\"text-indigo-600 font-bold\">RC</span>）相繼問世。1851年倫敦萬國博覽會「<span className=\"text-rose-600 font-bold\">水晶宮</span>」（Crystal Palace，Joseph Paxton 設計）採用預製鐵骨與玻璃構造，開啟工業預製化建築新頁。1889年巴黎世博會艾菲爾鐵塔（<span className=\"text-indigo-600 font-bold\">Eiffel Tower</span>）與機械館展示了鋼鐵之極限張力與大跨度空間力學。",
           "steps": [
             "**水晶宮創舉**：預製模組化鑄鐵柱梁 + 模組化玻璃面板，耗時僅數月即組裝完成。",
@@ -973,6 +1023,7 @@ export const historyData: SubjectData = {
         },
         {
           "heading": "五、現代主義建築四位大師與Bauhaus包浩斯學派",
+          "outlineRefs": ["歷Da-Ⅴ-2"],
           "body": "20世紀初，**現代主義**建築（<span className=\"text-indigo-600 font-bold\">Modernism</span>）全面爆發，包浩斯（Bauhaus，Walter Gropius 創立）確立「<span className=\"text-rose-600 font-bold\">藝術與技術統一</span>」、「<span className=\"text-rose-600 font-bold\">機能至上</span>」之教學體系。**現代主義**四位大師各領風騷：Le Corbusier 提出「<span className=\"text-rose-600 font-bold\">新建築五點</span>」（五點包含底層架高、屋頂花園、自由平面、橫向長窗、自由立面）與「<span className=\"text-rose-600 font-bold\">居住機器論</span>」；Mies van der Rohe 倡導「<span className=\"text-rose-600 font-bold\">Less is More（少即是多）</span>」與鋼骨玻璃帷幕大樓；Frank Lloyd Wright 主張「<span className=\"text-rose-600 font-bold\">有機建築（<span className=\"text-indigo-600 font-bold\">Organic Architecture</span>）</span>」與落水山莊；Alvar Aalto 則融合芬蘭木材工藝與人文溫情。",
           "steps": [
             "**Le Corbusier 新建築五點**：① 底層架高 (Pilotis) ② 屋頂花園 (Roof Garden) ③ 自由平面 (Free Plan) ④ 自由立面 (Free Facade) ⑤ 橫向長窗 (Ribbon Window)。",
@@ -1015,6 +1066,7 @@ export const historyData: SubjectData = {
         },
         {
           "heading": "六、後現代主義、解構主義與當代數位參數化建築",
+          "outlineRefs": ["歷Da-Ⅴ-2", "歷Fa-Ⅴ-2"],
           "body": "1970年代，後**現代主義**（Postmodernism，Robert Venturi 提出「<span className=\"text-rose-600 font-bold\">Less is a Bore</span>」）反對**現代主義**之枯燥單調，復興古典符號與隱喻（如 Michael Graves、Philip Johnson）。1980年代末，解構主義（<span className=\"text-indigo-600 font-bold\">Deconstructivism</span>）受到 Derrida 解構哲學影響，打破幾何正交秩序，展現傾斜、扭曲、碎片化與重力反叛（如 Frank Gehry、Zaha Hadid）。21世紀當代建築則全面導入 3D 參數化設計（<span className=\"text-indigo-600 font-bold\">Parametricism</span>）、BIM 與永續生態低碳技術（如 Norman Foster、Bjarke Ingels BIG）。",
           "steps": [
             "**後現代主義**：復興歷史符號、隱喻、雙重解讀、歷史折衷。",
@@ -1178,9 +1230,10 @@ export const historyData: SubjectData = {
     {
       "slug": "architectural-history",
       "title": "4. 建築思潮與歷史理論演變",
-      "desc": "深入剖析歷史主義與復古思潮、機能主義「形隨機能」、有機建築與自然融和、結構主義與解構主義哲學，以及當代批判地域主義與現象學場所精神。\n\n🔥 V6.0 考前秒殺秘訣：此核心概念統測出題率極高，建議善用圖解與鷹架提示反覆練習！",
+      "desc": "深入剖析歷史主義與復古思潮、機能主義「形隨機能」、有機建築與自然融和、結構主義與解構主義哲學，以及當代批判地域主義與現象學場所精神。",
       "status": "done",
       "gradeLevel": 10,
+      "curriculumCode": "108-歷Da",
       "fatalTraps": [
         {
           "wrongThinking": "時代背景錯置。",
@@ -1218,6 +1271,7 @@ export const historyData: SubjectData = {
       "concepts": [
         {
           "heading": "一、歷史主義與十九世紀復古思潮 (Historicism & Revivals)",
+          "outlineRefs": ["歷Da-Ⅴ-2"],
           "body": "19世紀伴隨著工業革命與民族國家崛起，建築學界掀起了「<span className=\"text-rose-600 font-bold\">歷史主義（<span className=\"text-indigo-600 font-bold\">Historicism</span>）</span>」與「<span className=\"text-rose-600 font-bold\">折衷主義（<span className=\"text-indigo-600 font-bold\">Eclecticism</span>）</span>」風潮。建築師重新發掘歷史風格，產生新古典主義（Neoclassicism，強調羅馬希臘莊嚴）、哥德復興（Gothic Revival，強調中世紀宗教虔誠與手藝）與浪漫主義。當時建築學界陷入「<span className=\"text-rose-600 font-bold\">樣式論爭（<span className=\"text-indigo-600 font-bold\">Battle of the Styles</span>）</span>」，即爭論何種歷史樣式最適合現代社會。",
           "steps": [
             "**新古典主義**：以巴黎萬神殿、柏林舊博物館為代表，追求秩序、對稱與柱式。",
@@ -1254,6 +1308,7 @@ export const historyData: SubjectData = {
         },
         {
           "heading": "二、機能主義與「形隨機能」哲學 (Form Follows Function)",
+          "outlineRefs": ["歷Da-Ⅴ-2"],
           "body": "20世紀初，Louis Sullivan 提出著名口號「<span className=\"text-rose-600 font-bold\">形隨機能（<span className=\"text-indigo-600 font-bold\">Form Follows Function</span>）</span>」，宣告建築外形應由其內部實用機能與結構傳力決定。隨後 Adolf Loos 發表《裝飾與罪惡》（<span className=\"text-indigo-600 font-bold\">Ornament and Crime</span>），極力批判冗餘裝飾。以 Bauhaus 與 CIAM（國際現代建築協會）為核心之機能主義者，將建築歸納為可量化之機能空間，推動全球樣式（<span className=\"text-indigo-600 font-bold\">International Style</span>）發展。",
           "steps": [
             "**Sullivan 主張**：有機體之形式衍生自其內部機能需求。",
@@ -1290,6 +1345,7 @@ export const historyData: SubjectData = {
         },
         {
           "heading": "三、有機建築論與環境共生哲學 (Organic Architecture)",
+          "outlineRefs": ["歷Da-Ⅴ-1"],
           "body": "法蘭克·洛伊·萊特（<span className=\"text-indigo-600 font-bold\">Frank Lloyd Wright</span>）提出「<span className=\"text-rose-600 font-bold\">有機建築（<span className=\"text-indigo-600 font-bold\">Organic Architecture</span>）</span>」理論。他主張建築不應強加於自然之上，而應如植物般從土地中自然生長出來。建築材料應展現其本真本質（<span className=\"text-indigo-600 font-bold\">Nature of Materials</span>），室內外空間應融為一體，強調水平延伸之「<span className=\"text-rose-600 font-bold\">草原學派（<span className=\"text-indigo-600 font-bold\">Prairie School</span>）</span>」與懸臂樑空間組合。",
           "steps": [
             "**地貌整合**：建築高度低矮延伸，與地平線融和。",
@@ -1322,6 +1378,7 @@ export const historyData: SubjectData = {
         },
         {
           "heading": "四、批判地域主義與風土脈絡再造 (Critical Regionalism)",
+          "outlineRefs": ["歷Da-Ⅴ-1"],
           "body": "Kenneth Frampton 於1983年提出「<span className=\"text-rose-600 font-bold\">批判地域主義（<span className=\"text-indigo-600 font-bold\">Critical Regionalism</span>）</span>」，反對全球樣式（<span className=\"text-indigo-600 font-bold\">International Style</span>）之冷漠同質化與文脈斷裂，同時反對盲目模仿傳統歷史符號。批判地域主義主張利用現代結構與施工技術，結合當地的光線、氣候、地形、風土材料與感知經驗，創造具備場所感之現代建築（如 Jørn Utzon、Alvar Aalto、Tadao Ando 安藤忠雄）。",
           "steps": [
             "**構造與風土**：採用當地材料與現代RC/鋼構結合。",
@@ -1358,6 +1415,7 @@ export const historyData: SubjectData = {
         },
         {
           "heading": "五、現象學建築：場所精神與軀體感知 (Phenomenology)",
+          "outlineRefs": ["歷Da-Ⅴ-2"],
           "body": "Christian Norberg-Schulz 引入哲學現象學，發表《場所精神》（Genius Loci: Towards a Phenomenology of Architecture），主張建築不僅是幾何與機能，更是「<span className=\"text-rose-600 font-bold\">場所（<span className=\"text-indigo-600 font-bold\">Place</span>）</span>」之締造。Juhani Pallasmaa 發表《皮膚的眼睛》（<span className=\"text-indigo-600 font-bold\">The Eyes of the Skin</span>），批判當代建築過度傾於「<span className=\"text-rose-600 font-bold\">視覺中心主義</span>」，倡導結合觸覺、聲學、氣味與溫度之多感官身體體驗建築（如 Peter Zumthor 瓦爾斯溫泉浴室）。",
           "steps": [
             "**場所三要素**：空間 (Space)、環境構造 (Character) 與存在定居 (Dwelling)。",
@@ -1394,6 +1452,7 @@ export const historyData: SubjectData = {
         },
         {
           "heading": "六、當代永續生態建築與數位參數主義 (Parametricism)",
+          "outlineRefs": ["歷Da-Ⅴ-2"],
           "body": "21世紀建築思潮呈現雙軌演進：一軌為「<span className=\"text-rose-600 font-bold\">永續生態建築（<span className=\"text-indigo-600 font-bold\">Sustainable Architecture</span>）</span>」，強調碳足跡、零碳建築、綠建築評估與氣候韌性；另一軌為 Patrick Schumacher 宣稱之「<span className=\"text-rose-600 font-bold\">參數主義（<span className=\"text-indigo-600 font-bold\">Parametricism</span>）</span>」，將所有建築要素（構造、光照、動線）設為可變參數，透過演算法生成連續流動之幾何造型。",
           "steps": [
             "**永續生態軌跡**：Life Cycle Assessment (LCA) 生命週期評估、BREEAM / LEED / EEWH 認證。",
@@ -1544,9 +1603,10 @@ export const historyData: SubjectData = {
     {
       "slug": "cultural-heritage",
       "title": "5. 文化資產保存與古蹟修復工程",
-      "desc": "深入研析文化資產保存法規體系、《威尼斯憲章》國際保存原則、古蹟調查研究與非破壞檢測、傳統木構與磚石修復工法、舊建築再利用以及古蹟防災加固工程。\n\n🔥 V6.0 考前秒殺秘訣：此核心概念統測出題率極高，建議善用圖解與鷹架提示反覆練習！",
+      "desc": "深入研析文化資產保存法規體系、《威尼斯憲章》國際保存原則、古蹟調查研究與非破壞檢測、傳統木構與磚石修復工法、舊建築再利用以及古蹟防災加固工程。",
       "status": "done",
       "gradeLevel": 10,
+      "curriculumCode": "108-歷Db",
       "fatalTraps": [
         {
           "wrongThinking": "時代背景錯置。",
@@ -1584,6 +1644,7 @@ export const historyData: SubjectData = {
       "concepts": [
         {
           "heading": "一、文化資產保存法規體系與法定等級劃定",
+          "outlineRefs": ["歷A-Ⅴ-1", "歷Db-Ⅴ-1"],
           "body": "台灣依據《**文化資產**保存法》（文資法），將有形**文化資產**劃分為：古蹟（國定、直轄市定、縣市定）、**歷史建築**、紀念建築、聚落建築群、考古遺址、史蹟與文化景觀。主管機關經法定的指定或登錄審議程序後，給予法定身分與**容積移轉**（容積獎勵）補償，保護其不被非法拆除。",
           "steps": [
             "**法定類別**：古蹟 > 歷史建築 > 紀念建築 > 聚落建築群。",
@@ -1626,6 +1687,7 @@ export const historyData: SubjectData = {
         },
         {
           "heading": "二、國際文資保存憲章：《威尼斯憲章》與《奈良真實性文件》",
+          "outlineRefs": ["歷Da-Ⅴ-2"],
           "body": "國際古蹟遺址理事會（<span className=\"text-indigo-600 font-bold\">ICOMOS</span>）於1964年頒布《威尼斯憲章》（<span className=\"text-indigo-600 font-bold\">Venice Charter</span>），確立現代古蹟保存核心原則：真實性（<span className=\"text-indigo-600 font-bold\">Authenticity</span>）、完整性（<span className=\"text-indigo-600 font-bold\">Integrity</span>）、可辨識性（<span className=\"text-indigo-600 font-bold\">Recognizability</span>）與可逆性（<span className=\"text-indigo-600 font-bold\">Reversibility</span>）。新加構件必須可與歷史構件識別，且修復工法應可被拆除恢復原狀。1994年《奈良真實性文件》（<span className=\"text-indigo-600 font-bold\">Nara Document</span>）則強調文化多樣性，承認東方木造建築定期的拆卸重組修復亦符合真實性。",
           "steps": [
             "真實性 (Authenticity)：保護原始構造材料、工藝與歷史痕跡，禁止憑空偽造。",
@@ -1664,6 +1726,7 @@ export const historyData: SubjectData = {
         },
         {
           "heading": "三、古蹟調查研究、現況測繪與非破壞檢測",
+          "outlineRefs": ["歷A-Ⅴ-1"],
           "body": "古蹟修復前必須進行嚴謹之「<span className=\"text-rose-600 font-bold\">調查研究</span>」與「<span className=\"text-rose-600 font-bold\">修復設計</span>」。調查包含文獻考證、傳統匠師口述歷史、3D雷射掃描現況測繪以及非破壞檢測（Non-Destructive Testing, NDT）。非破壞檢測利用超音波、抵抗波打擊穿透儀（<span className=\"text-indigo-600 font-bold\">Resistograph</span>）檢測木構件內部腐朽，或利用紅外線熱影像儀檢測外牆剝落與壁癌水氣。",
           "steps": [
             "**第一階段**：歷史文獻搜集、老照片對比與古蹟沿革調查。",
@@ -1702,6 +1765,7 @@ export const historyData: SubjectData = {
         },
         {
           "heading": "四、傳統木構與磚石古蹟修復工法與材料工藝",
+          "outlineRefs": ["歷Fa-Ⅴ-1"],
           "body": "傳統木構古蹟修復強調「<span className=\"text-rose-600 font-bold\">抽樑換柱</span>」與「<span className=\"text-rose-600 font-bold\">榫卯修補</span>」。當柱腳腐朽時，採用「<span className=\"text-rose-600 font-bold\">筓補</span>」或「<span className=\"text-rose-600 font-bold\">墩接（柱腳接柱）</span>」工法；大梁裂縫則採用「<span className=\"text-rose-600 font-bold\">嵌入木條</span>」與「<span className=\"text-rose-600 font-bold\">碳纖維布（<span className=\"text-indigo-600 font-bold\">CFRP</span>）</span>」包覆加固。磚石古蹟修復則需採用傳統灰漿（生石灰、白華、糯米汁、烏糖水）進行填縫與砌築，嚴禁盲目使用高強度卜特蘭水泥，避免水泥硬化強壓破壞古磚。",
           "steps": [
             "**木柱墩接工法**：將柱腳腐朽段鋸除，以相同木種透榫榫卯拼接，並加設防潮石柱珠（柱礎）。",
@@ -1738,6 +1802,7 @@ export const historyData: SubjectData = {
         },
         {
           "heading": "五、歷史建築活化再利用與新舊建築共生設計",
+          "outlineRefs": ["歷Db-Ⅴ-1"],
           "body": "**歷史建築**活化再利用（<span className=\"text-indigo-600 font-bold\">Adaptive Reuse</span>）旨在賦予舊建築現代機能（如文創園區、展覽館、圖書館），延續其生命力。設計上常採用「<span className=\"text-rose-600 font-bold\">插入式結構（<span className=\"text-indigo-600 font-bold\">Box in a Box</span>）</span>」或「<span className=\"text-rose-600 font-bold\">殘跡保存與玻璃帷幕增建</span>」，使新舊結構獨立傳力，達到歷史紋理與現代機能之的和諧共生。",
           "steps": [
             "**結構分離**：新建鋼結構或電梯井獨立於古蹟牆體之外，不對舊牆施加額外荷重。",
@@ -1774,6 +1839,7 @@ export const historyData: SubjectData = {
         },
         {
           "heading": "六、古蹟防災、防災計畫與結構耐震加固工程",
+          "outlineRefs": ["歷Fa-Ⅴ-2"],
           "body": "台灣地處地震與颱風頻繁帶，古蹟結構補強與防災至關重要。耐震加固應隱蔽進行，如採用「<span className=\"text-rose-600 font-bold\">微型樁基礎加固</span>」、「<span className=\"text-rose-600 font-bold\">隱蔽式鋼纜拉結（<span className=\"text-indigo-600 font-bold\">Tie-rod</span>）</span>」與「<span className=\"text-rose-600 font-bold\">壁體黏貼碳纖維網</span>」。防災方面需制定「<span className=\"text-rose-600 font-bold\">古蹟整體防災計畫</span>」，設置隱蔽式細水霧滅火系統與獨立火災警報器，避免水害或火災毀損古蹟。",
           "steps": [
             "**耐震補強**：於木構棟架節點安裝可撤除之隱蔽式金屬拉桿（Tie-rod）與剪力牆。",
@@ -1924,9 +1990,10 @@ export const historyData: SubjectData = {
     {
       "slug": "social-change",
       "title": "6. 社會變遷與都市形貌變革",
-      "desc": "探討工業革命與都市化潮、19世紀巴黎奧斯曼大改造、霍華德花園城市運動、台灣日治市區改正至戰後都市更新、權利變換、社區權益以及高齡化與智慧韌性都市。\n\n🔥 V6.0 考前秒殺秘訣：此核心概念統測出題率極高，建議善用圖解與鷹架提示反覆練習！",
+      "desc": "探討工業革命與都市化潮、19世紀巴黎奧斯曼大改造、霍華德花園城市運動、台灣日治市區改正至戰後都市更新、權利變換、社區權益以及高齡化與智慧韌性都市。",
       "status": "done",
       "gradeLevel": 10,
+      "curriculumCode": "108-歷E",
       "fatalTraps": [
         {
           "wrongThinking": "時代背景錯置。",
@@ -1964,6 +2031,7 @@ export const historyData: SubjectData = {
       "concepts": [
         {
           "heading": "一、工業革命、都市化潮與十九世紀奧斯曼巴黎大改造",
+          "outlineRefs": ["歷Da-Ⅴ-2", "歷Ea-Ⅴ-2"],
           "body": "19世紀工業革命引發大規模鄉村人口湧入城市，造成人口過剩、貧民窟蔓延與霍亂傳染病肆虐。1850年代，法國拿破崙三世委任奧斯曼男爵（<span className=\"text-indigo-600 font-bold\">Baron Haussmann</span>）推行巴黎大改造（<span className=\"text-indigo-600 font-bold\">Haussmannization</span>）。劃破舊中世紀擁擠巷弄，闢建放射狀寬廣林蔭大道（<span className=\"text-indigo-600 font-bold\">Boulevards</span>）、建立統一立面之幾何街廓住宅、劃設城市公園綠地，並導入現代下水道與瓦斯供氣網，奠定現代都市改造之範式。",
           "steps": [
             "**空間改造**：拆除中世紀破舊街區，打造寬 30-40m 放射狀林蔭大道。",
@@ -2001,6 +2069,7 @@ export const historyData: SubjectData = {
         },
         {
           "heading": "二、烏托邦都市思想與 Ebenezer Howard 花園城市運動",
+          "outlineRefs": ["歷Da-Ⅴ-2"],
           "body": "面對工業城市之惡劣環境，英國埃貝尼澤·霍華德（<span className=\"text-indigo-600 font-bold\">Ebenezer Howard</span>）於1898年發表《明日：條條道路通往真正改革》（后改名《明日的花園城市》），提出「<span className=\"text-rose-600 font-bold\">花園城市（<span className=\"text-indigo-600 font-bold\">Garden City</span>）</span>」理論。他設計著名的「<span className=\"text-rose-600 font-bold\">三磁鐵（<span className=\"text-indigo-600 font-bold\">Three Magnets</span>）</span>」圖解，結合城鄉優點（城市之就業機會 + 鄉村之自然環境）。花園城市採圓形圈層規劃，中央為公園，外圍為住宅與產業區，最外圍由永久農藝綠帶（<span className=\"text-indigo-600 font-bold\">Greenbelt</span>）環繞，土地歸社區公有，限制人口規模（約 32,000 人）。",
           "steps": [
             "**三磁鐵理論**：城市磁鐵（優缺點）、鄉村磁鐵（優缺點）、城鄉-花園城市磁鐵（結合兩者優點）。",
@@ -2034,6 +2103,7 @@ export const historyData: SubjectData = {
         },
         {
           "heading": "三、臺灣近代都市發展：日治市區改正至戰後都市計畫法",
+          "outlineRefs": ["歷Db-Ⅴ-1", "歷Eb-Ⅴ-1"],
           "body": "台灣現代都市計畫起源於日治初期之「<span className=\"text-rose-600 font-bold\">市區改正</span>」。1900年頒布《台北市區改正計畫》，拆除台北府城牆闢建三線路，引進正交棋盤式道路與公園圓環。1936年頒布《台灣都市計畫令》，導入土地使用分區管制（<span className=\"text-indigo-600 font-bold\">Zone</span>）與風致地區概念。戰後1964年修正頒布《都市計畫法》，確立市鎮計畫、鄉街計畫與特定區計畫三大類別，規範建蔽率與容積率。",
           "steps": [
             "**日治市區改正**：衛生公共工程、拆城牆闢林蔭大道、強制作業亭仔腳騎樓。",
@@ -2070,6 +2140,7 @@ export const historyData: SubjectData = {
         },
         {
           "heading": "四、都市更新、權利變換與社區權益保障",
+          "outlineRefs": [],
           "body": "隨著老舊城區建物老化，政府推動《都市更新條例》，採取重建、整建與維護三種方式。核心機制為「<span className=\"text-rose-600 font-bold\">權利變換（<span className=\"text-indigo-600 font-bold\">Rights Exchange</span>）</span>」，如同立體土地重劃。原屋主提供土地與舊建物折價，更新實施者（開發商）負擔重建費用，更新後依據鑑價比例分配新建物與土地持份。都更過程中必須嚴格保障少數異議戶之居住權與個案爭議處置。",
           "steps": [
             "**更新三大方式**：重建（拆除重建）、整建（結構加固/拉皮）、維護（環境整理）。",
@@ -2106,6 +2177,7 @@ export const historyData: SubjectData = {
         },
         {
           "heading": "五、高齡化、少子化與永續包容都市空間重構",
+          "outlineRefs": [],
           "body": "面對高齡化與少子化雙重人口衝擊，都市空間需進行深層重構。推行「<span className=\"text-rose-600 font-bold\">通用設計都市（<span className=\"text-indigo-600 font-bold\">Universal City</span>）</span>」與「<span className=\"text-rose-600 font-bold\">15分鐘城市（15-Minute City）</span>」，確保居民在步行或單車 15 分鐘距離內即可滿足購物、醫療、教育與休閒需求。同時，結合社會住宅推動「<span className=\"text-rose-600 font-bold\">青銀共居（<span className=\"text-indigo-600 font-bold\">Intergenerational Housing</span>）</span>」社區，促進跨世代交流與互助。",
           "steps": [
             "**15分鐘城市**：去中心化、多核心服務節點、人行與單車友善微移動網絡。",
@@ -2142,6 +2214,7 @@ export const historyData: SubjectData = {
         },
         {
           "heading": "六、智慧城市與氣候韌性都市空間演變 (Smart & Resilient Cities)",
+          "outlineRefs": ["歷Fb-Ⅴ-2"],
           "body": "當代都市形貌正邁向「<span className=\"text-rose-600 font-bold\">智慧與氣候韌性都市（Smart & Resilient City）</span>」。結合 IoT物聯網感測器、BIM/GIS 數位雙生（<span className=\"text-indigo-600 font-bold\">Digital Twin</span>）與大數據分析，即時監控都市水文、交通、空氣品質與能耗。面對極端氣候，都市設計採取「<span className=\"text-rose-600 font-bold\">海綿城市（<span className=\"text-indigo-600 font-bold\">Sponge City</span>）</span>」策略，以自然解方（Nature-based Solutions, NbS）提升都市防洪韌性。",
           "steps": [
             "數位雙生 (Digital Twin)：建立都市級 3D GIS 模型，模擬洪水淹水、熱島風道與交通疏散。",
@@ -2173,6 +2246,35 @@ export const historyData: SubjectData = {
                 "即時數據分析，自動調控智慧照明與水防淹警報",
                 "提升都市能源使用效率與應變決策速度"
               ]
+            ]
+          }
+        },
+        {
+          "heading": "七、交通的歷史：從港口、縱貫鐵路到高鐵捷運的空間變革",
+          "outlineRefs": ["歷Ea-Ⅴ-1", "歷Ea-Ⅴ-2", "歷Eb-Ⅴ-1"],
+          "body": "**交通發展與運輸工具的起源**：從人力、獸力與舟船，到工業革命後的蒸汽火車與輪船，再到內燃機汽車與飛機，每一次運輸工具的革新都縮短了時空距離，也重塑城市的位置與形態。\n**交通改良與城市**：鐵路車站成為新的市中心與商圈，港口帶動貿易城市，高速公路與機場則改變產業區位。\n**臺灣交通的變革與影響**：\n• 清代以港口與河運為主，有「一府二鹿三艋舺」之稱。\n• 清末劉銘傳興建鐵路，基隆至臺北段於 1891 年通車、延伸至新竹於 1893 年完成。\n• 日治時期縱貫鐵路於 1908 年全線通車，沿線車站周邊發展出新的市街與站前商圈。\n• 戰後十大建設的中山高速公路於 1978 年全線通車。\n• 臺灣高鐵於 2007 年通車，形成西部一日生活圈；捷運系統則帶動車站周邊的大眾運輸導向開發（TOD）。\n**對建築與都市的影響**：火車站建築與站前廣場、站前街廓、交通節點的高密度開發與立體化轉乘設施。\n⚠️ 易錯：「一府二鹿三艋舺」指的是清代依序重要的港口城市臺南府城、鹿港、艋舺，反映當時以海運與河運為主的交通型態。",
+          "table": {
+            "headers": ["年代", "交通變革", "空間影響"],
+            "rows": [
+              ["清代", "港口與河運（一府二鹿三艋舺）", "港市沿河海發展"],
+              ["1891–1893", "劉銘傳興建基隆—臺北—新竹鐵路", "北部陸運骨幹出現"],
+              ["1908", "縱貫鐵路全線通車", "站前市街與商圈興起"],
+              ["1978", "中山高速公路全線通車", "交流道周邊工業區與新市鎮"],
+              ["2007", "臺灣高鐵通車", "一日生活圈、高鐵特定區"]
+            ]
+          }
+        },
+        {
+          "heading": "八、臺灣科技產業與全球化：從加工出口區到科學園區",
+          "outlineRefs": ["歷Fb-Ⅴ-1", "歷Fb-Ⅴ-2"],
+          "body": "**臺灣現代科技產業的發展**：\n• 1966 年設立高雄加工出口區，以勞力密集的出口產業帶動工業化。\n• 1973 年成立工業技術研究院，推動技術研發與產業升級。\n• 1980 年設立新竹科學工業園區，吸引半導體與資訊電子產業聚集，之後陸續發展中部、南部科學園區，形成西部科技走廊。\n**全球化的發展**：臺灣在全球半導體供應鏈中扮演關鍵角色，產業以國際分工為基礎，也因此受到國際局勢與貿易政策影響。\n**臺灣科技與社會生活**：科技產業聚落帶動周邊住宅、交通、學校與商業設施發展，但也引發用水、用電、土地與房價等課題。無塵室與高耗能廠房的興建，推動了綠色廠房、節能空調與再生水利用等營建技術。\n⚠️ 易錯：加工出口區以「勞力密集、出口導向」為主，科學園區則以「技術密集、研發導向」為主，兩者代表不同的產業發展階段。",
+          "table": {
+            "headers": ["年代", "里程碑", "產業特色", "空間影響"],
+            "rows": [
+              ["1966", "高雄加工出口區", "勞力密集、出口導向", "港口旁工業區與勞工住宅"],
+              ["1973", "工業技術研究院成立", "技術研發與移轉", "研發機構聚集"],
+              ["1980", "新竹科學工業園區", "技術密集、半導體與電子", "園區周邊新市鎮與交通建設"],
+              ["1990 年代以後", "中科、南科陸續設立", "科技走廊成形", "用水用電與土地需求增加"]
             ]
           }
         }

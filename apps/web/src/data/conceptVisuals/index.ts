@@ -1,11 +1,35 @@
 import type { ConceptVisual, TopicVisualMap } from './types';
+import { chemistryVisuals } from './chemistry';
+import { chineseVisuals } from './chinese';
+import { civicsVisuals } from './civics';
+import { draftingVisuals } from './drafting';
+import { englishVisuals } from './english';
+import { extensionsVisuals } from './extensions';
+import { geographyVisuals } from './geography';
+import { historyVisuals } from './history';
+import { materialsVisuals } from './materials';
+import { mathCVisuals } from './math-c';
 import { mechanicsVisuals } from './mechanics';
+import { physicsVisuals } from './physics';
+import { surveyingVisuals } from './surveying';
 
 export type { ConceptVisual, ConceptVisualKind, ConceptVisualTable, TopicVisualMap } from './types';
 
 /** subjectSlug → topicSlug → visuals */
 export const conceptVisualRegistry: Record<string, TopicVisualMap> = {
   mechanics: mechanicsVisuals,
+  materials: materialsVisuals,
+  surveying: surveyingVisuals,
+  drafting: draftingVisuals,
+  chinese: chineseVisuals,
+  english: englishVisuals,
+  'math-c': mathCVisuals,
+  physics: physicsVisuals,
+  chemistry: chemistryVisuals,
+  history: historyVisuals,
+  geography: geographyVisuals,
+  civics: civicsVisuals,
+  extensions: extensionsVisuals,
 };
 
 /** 去除 HTML／Markdown 標記後的觀念標題，用於比對 ConceptVisual.concept */

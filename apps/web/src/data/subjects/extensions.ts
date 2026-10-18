@@ -12,6 +12,7 @@ export const extensionsData: SubjectData = {
       "desc": "掌握 Rhino / Grasshopper 演算法幾何生成、BIM 參數化族群、多目標空間最佳化與 AI 輔助建築競圖之全流程工作坊。",
       "status": "done",
       "gradeLevel": 11,
+      "curriculumCode": "108GR-GR2",
       "examHitRate": 4,
       "step0Prerequisites": [
         "二維向量與三維空間座標轉換 (X, Y, Z)",
@@ -46,6 +47,7 @@ export const extensionsData: SubjectData = {
       "concepts": [
         {
           "heading": "參數化設計核心概念與 Grasshopper 節點式運算",
+          "outlineRefs": ["GR2.2"],
           "body": "參數化設計 (Parametric Design) 將傳統靜態的幾何形體轉化為「參數與演算法關係鏈」。在 Rhino / Grasshopper 中，設計師定義點、線、面、向量、數列 (Series) 及區間 (Domain)，當改變滑桿數值（如遮陽板角度或跨度高度比）時，所有幾何形體與結構構件將自動即時重構。",
           "formula": "NURBS 曲線: C(u) = Σ [N_{i,p}(u) · w_i · P_i] / Σ [N_{i,p}(u) · w_i]\n遮陽最佳化: min(Solar Heat Gain) while max(Daylight Factor)",
           "table": {
@@ -85,10 +87,12 @@ export const extensionsData: SubjectData = {
         },
         {
           "heading": "性能驅動設計與遺傳演算法 (Galapagos) 空間最佳化",
+          "outlineRefs": ["GR2.1"],
           "body": "透過將建築形體連結至環境模擬外掛（如 Ladybug 日照輻射、Butterfly CFD 風場、Karamba 結構應力），利用遺傳演算法 (Genetic Algorithm, 如 Galapagos 求解器)，在數千組可能之曲面或遮陽形體中，自動搜尋滿足「全年空調耗能最低」與「採光係數最高」的最佳幾何配置。"
         },
         {
           "heading": "AI 輔助建築競圖工作流 (AI-Assisted Competition Workflow)",
+          "outlineRefs": [],
           "body": "現代建築競圖工作流結合「3D 空間白模 (Massing Model) → ControlNet 深度圖/線稿約束 → 生成式 AI 質感生成 → Photoshop 局部細修 (Inpainting) → 結合平面圖/剖面圖圖面排版」，兼顧前瞻視覺震撼力與實體空間尺度合理性。"
         }
       ],
@@ -160,6 +164,7 @@ export const extensionsData: SubjectData = {
       "desc": "解析建築與室內設計作品集 (Portfolio) 編排邏輯、空間設計論述寫作、視覺階層傳達與競圖排版 SOP。",
       "status": "done",
       "gradeLevel": 11,
+      "curriculumCode": "108GR-GR3",
       "examHitRate": 4,
       "step0Prerequisites": [
         "平面圖、立面圖、剖面圖、透視圖與軸測圖之閱讀與表現技巧",
@@ -193,6 +198,7 @@ export const extensionsData: SubjectData = {
       "concepts": [
         {
           "heading": "建築作品集核心架構與頁面節奏規劃",
+          "outlineRefs": ["GR3.1"],
           "body": "一份專業建築作品集通常包含 3~5 個精選專案。結構安排為：(1) 封面與目錄（風格定調）；(2) 履歷與個人簡介（掌握技能與軟體）；(3) 旗艦代表作（最完整、包含詳細平立剖與施工大樣，佔 6~8 頁）；(4) 次要專案（突顯特殊能力如參數化、永續低碳或都市研究，各佔 2~4 頁）；(5) 實體手繪與模型攝影（展示立體造形與動手實作能力）。",
           "formula": "視覺版面比例: 主圖 50% + 概念分析圖 30% + 精簡論述文字 20%\n網格系統: 12 欄 (12-Column Grid) 或 3x3 模矩排版",
           "table": {
@@ -232,10 +238,12 @@ export const extensionsData: SubjectData = {
         },
         {
           "heading": "設計論述 (Design Discourse) 寫作與圖文連動",
+          "outlineRefs": ["GR3.1"],
           "body": "設計論述不是抒情散文，而是「以空間解決問題的邏輯論證」。開篇以一句話提煉「設計宣言 (Design Statement)」；內文分段說明基地限制（如狹長形基地、日照不足）、設計對策（如天井採光、錯層配置）與最終效益。圖面文字標註需指涉具體空間與材料。"
         },
         {
           "heading": "圖面編排視覺階層與色彩計劃",
+          "outlineRefs": ["GR3.1"],
           "body": "避免全書色彩過度雜亂。建議全書設定 1~2 種主色調（如工程藍或石墨灰），搭配單一強調色標示動線或概念分析。線條粗細需分明（剖面地盤線最粗、牆體中粗、尺寸與引線最細），確保列印與螢幕瀏覽皆清晰銳利。"
         }
       ],
@@ -303,9 +311,10 @@ export const extensionsData: SubjectData = {
     {
       "slug": "spatial-design",
       "title": "1. 空間設計與觀察",
-      "desc": "人體工學與空間尺度、空間機能與動線規劃、基地微氣候觀察分析、無障礙通用設計規範與空間型態學。\n\n🔥 V6.0 考前秒殺秘訣：此核心概念統測出題率極高，建議善用圖解與鷹架提示反覆練習！",
+      "desc": "人體工學與空間尺度、空間機能與動線規劃、基地微氣候觀察分析、無障礙通用設計規範與空間型態學。",
       "status": "done",
       "gradeLevel": 12,
+      "curriculumCode": "108GR-GR2",
       "examHitRate": 3,
       "fatalTraps": [
         {
@@ -352,6 +361,7 @@ export const extensionsData: SubjectData = {
       "concepts": [
         {
           "heading": "一、人體工學與空間尺度 (Ergonomics & Dimensions)",
+          "outlineRefs": ["GR2.1"],
           "body": "建築空間設計的核心在於符合<span className=\"text-rose-600 font-bold\">人體活動的自然尺度</span>與生理行為需求。常見的**人體工學數據**包含立姿通廓、坐姿作業空間、雙人交會淨寬，以及階梯與家具的標準工程學維度。掌握這些數據是進行合理空間配置的先決條件。",
           "steps": [
             "**單人走道**：淨寬 ≥ 90 cm，確保單人通行無礙。",
@@ -395,6 +405,7 @@ export const extensionsData: SubjectData = {
         },
         {
           "heading": "二、空間機能與動線規劃 (Space Function & Circulation)",
+          "outlineRefs": ["GR2.1"],
           "body": "<span className=\"text-rose-600 font-bold\">動線 (Circulation)</span> 是指使用者在空間中移動的軌跡與時間流動路徑。設計時應貫徹 Louis Kahn 的<span className=\"text-indigo-600 font-bold\">「服務空間」與「被服務空間」</span>分區理論，實現短捷、順暢、無干擾的空間體系。",
           "steps": [
             "**使用者行為分析**：調研不同使用者（訪客、住戶、後勤維護員）的活動時序與需求。",
@@ -406,6 +417,7 @@ export const extensionsData: SubjectData = {
         },
         {
           "heading": "三、基地環境觀察與微氣候分析 (Site & Microclimate Analysis)",
+          "outlineRefs": ["GR2.1"],
           "body": "建築必須與其所在的物理環境產生深刻的對話。基地分析涵蓋四大要素：太陽軌跡（日照角與遮陽需求）、四季風向（夏季季風通風與冬季防風）、週邊視覺景觀視線（Sightlines）以及環境噪音與交通動線。",
           "table": {
             "headers": [
@@ -439,6 +451,7 @@ export const extensionsData: SubjectData = {
         },
         {
           "heading": "四、無障礙通用設計規範 (Universal Design & Accessibility)",
+          "outlineRefs": ["GR2.1"],
           "body": "依據台灣《建築物無障礙設施設計規範》，<span className=\"text-rose-600 font-bold\">無障礙設計 (Universal Design)</span> 旨在確保高齡者、身心障礙者與幼童皆能獨立安全使用建築。關鍵項目包含坡道坡度、無障礙通路淨寬與廁所空間規格。",
           "formula": "<span className=\"text-indigo-600 font-bold\">坡道坡度公式</span>：坡度 S = 高差 H / 水平長度 L (**標準需 ≤ 1:12**，當高差 H ≤ 20cm 時得放寬至 ≤ 1:10)",
           "steps": [
@@ -449,6 +462,7 @@ export const extensionsData: SubjectData = {
         },
         {
           "heading": "五、建築空間組構與型態學 (Spatial Organization & Form)",
+          "outlineRefs": ["GR2.1"],
           "body": "建築空間的形態組構方式決定了建築的整體視覺層次與空間體驗。常見的幾何組構模式包含線形、輻射形、集中形、網格形與群聚形。了解這些型態有助於在設計初期快速確立量體配置與動線邏輯。",
           "steps": [
             "**集中形 (Centralized)**：適合強調權威、神聖感或向心力的空間，如紀念堂、圖書館中庭。**💡 專家提示**：這類空間通常具備對稱性，核心空間體積最大且最具象徵意義。",
@@ -487,6 +501,7 @@ export const extensionsData: SubjectData = {
         },
         {
           "heading": "六、建築虛實對比與光影空間現象學",
+          "outlineRefs": ["GR2.1"],
           "body": "建築空間質感取決於虛實對比（Solid-Void Ratio）與天然光影之演繹。光線不僅是物理採光，更是形塑空間神聖感與情緒張力之介質。安藤忠雄「光之教堂」與 Louis Kahn「金貝爾藝術博物館」展現了光線切割混凝土軀體之經典工法。",
           "steps": [
             "虛實量體切削：透過中庭、天井與挑空，將光線深度引入地下層或建築核心。",
@@ -636,9 +651,10 @@ export const extensionsData: SubjectData = {
     {
       "slug": "construction-methods",
       "title": "2. 營造工法與建築構造細部",
-      "desc": "詳細剖析鋼筋混凝土 (RC)、鋼骨 (SC) 與鋼骨鋼筋混凝土 (SRC) 構造體系比較，開挖與基礎工法、軀體防水隔熱、門窗帷幕牆細部與裝配式預製工法。\n\n🔥 V6.0 考前秒殺秘訣：此核心概念統測出題率極高，建議善用圖解與鷹架提示反覆練習！",
+      "desc": "詳細剖析鋼筋混凝土 (RC)、鋼骨 (SC) 與鋼骨鋼筋混凝土 (SRC) 構造體系比較，開挖與基礎工法、軀體防水隔熱、門窗帷幕牆細部與裝配式預製工法。",
       "status": "done",
       "gradeLevel": 12,
+      "curriculumCode": "108GR-GR1",
       "examHitRate": 3,
       "fatalTraps": [
         {
@@ -685,6 +701,7 @@ export const extensionsData: SubjectData = {
       "concepts": [
         {
           "heading": "一、RC、SC 與 SRC 三大主體結構體系比較",
+          "outlineRefs": ["GR1.2"],
           "body": "建築結構依材料分為：<span className=\"text-rose-600 font-bold\">鋼筋混凝土 (RC)</span>、<span className=\"text-rose-600 font-bold\">純鋼骨構造 (SC)</span> 與<span className=\"text-rose-600 font-bold\">鋼骨鋼筋混凝土 (SRC)</span>。RC 剛度大但自重大；SC 自重輕、韌性極佳但需噴覆防火漆，適用超高層；SRC 結合兩者優點，具備極高的抗震與耐火性能。",
           "steps": [
             "**RC 構造**：混凝土抗壓 + 鋼筋抗拉，**剛度高，自重大**。",
@@ -726,6 +743,7 @@ export const extensionsData: SubjectData = {
         },
         {
           "heading": "二、地下室開挖與基礎工法 (Excavation & Foundations)",
+          "outlineRefs": ["GR1.2"],
           "body": "建築基礎承載全棟自重與活載重傳至堅硬岩盤。基礎型式分為獨立基礎、條形基礎、筏式基礎 (Raft Foundation，抗震抗差異沉陷最佳) 與樁基礎 (Pile Foundation)。深基坑開挖擋土工法包含連續壁 (Diaphragm Wall)、鋼板樁與預力地錨。",
           "steps": [
             "筏式基礎：全基地澆置整體鋼筋混凝土底板，將載重均勻分散，防止地震差異沉陷。",
@@ -758,6 +776,7 @@ export const extensionsData: SubjectData = {
         },
         {
           "heading": "三、建築外牆、屋頂防水與隔熱軀體細部",
+          "outlineRefs": ["GR1.2", "GR2.4"],
           "body": "建築滲漏水與<span className=\"text-rose-600 font-bold\">熱橋效應 (Thermal Bridge)</span> 是構造失效的主因。屋頂防水包含塗膜防水與瀝青防水毯。屋頂隔熱採用高密度聚苯乙烯 (XPS) 隔熱板。外牆開口處需設置**滴水線 (Drip Groove)** 與止水帶，防止雨水沿牆面逆流。",
           "steps": [
             "**屋頂防水層順序**：結構層 -> 水泥砂漿找平層 -> 防水層 -> 隔熱層 (XPS) -> 保護層 (磨石子磚)。",
@@ -790,6 +809,7 @@ export const extensionsData: SubjectData = {
         },
         {
           "heading": "四、門窗與玻璃帷幕牆構造細部 (Curtain Wall Systems)",
+          "outlineRefs": ["GR1.2", "GR2.4"],
           "body": "玻璃帷幕牆 (Curtain Wall) 為不承重之外牆包裹體系，自重與風壓透過錨固件 (Anchor) 傳遞至主體鋼骨柱梁。分為單元式 (Unitized System，工廠預製裝配速度快) 與直欞式 (Stick System)。帷幕牆需通過水密性、氣密性、抗風壓與層間變位四項嚴格性能測試。",
           "steps": [
             "單元式帷幕牆：於工廠將玻璃、鋁框與密封膠預組裝成單元板塊，現場直接吊掛於結構層。",
@@ -822,6 +842,7 @@ export const extensionsData: SubjectData = {
         },
         {
           "heading": "五、裝配式建築與預製混凝土工法 (Prefabrication & PC)",
+          "outlineRefs": ["GR1.2"],
           "body": "預製混凝土工法 (Precast Concrete, PC) 主張將梁、柱、樓板、外牆面磚在自動化預製廠製造完成，運至現場如積木般吊裝拼接。結合整體衛浴 (Unit Bathroom, UB) 與 ALC 輕質氣泡混凝土隔間板，能大幅縮短工期、減少工地粉塵與廢棄物。",
           "steps": [
             "PC 外牆吊裝：PC 牆板預先貼好磁磚與窗框，現場吊掛並以高強度灌漿套筒 (Grout Sleeve) 鎖固。",
@@ -854,6 +875,7 @@ export const extensionsData: SubjectData = {
         },
         {
           "heading": "六、建築聲學與樓板衝擊音隔音構造細部",
+          "outlineRefs": ["GR1.2"],
           "body": "為解決集合住宅上下層樓板噪音干擾，台灣《建築技術規則》實施「樓板衝擊音隔音法規」。規範連棟住宅分界樓板衝擊音降低量必須達 17 分貝 (dB) 以上。構造工法採用「浮動地板 (Floating Floor)」，於 RC 結構樓板上方鋪設隔音墊 (如橡膠隔音墊、EVA墊)，再澆置水泥砂漿壓重層。",
           "steps": [
             "浮動地板施工順序：RC結構樓板 -> 鋪設防潮薄膜 -> 鋪設高密度隔音墊（牆角回捲 5cm）-> 澆置 5cm 水泥砂漿 -> 鋪設地磚/木地板。",
@@ -1005,9 +1027,10 @@ export const extensionsData: SubjectData = {
     {
       "slug": "cad-bim",
       "title": "3. 電腦輔助設計與 BIM 應用",
-      "desc": "掌握 AutoCAD 2D 製圖圖層與 CNS 標準、Revit BIM 建築資訊模型建立、3D 視覺化渲染、BIM 4D/5D 專案管理與參數化設計。\n\n🔥 V6.0 考前秒殺秘訣：此核心概念統測出題率極高，建議善用圖解與鷹架提示反覆練習！",
+      "desc": "掌握 AutoCAD 2D 製圖圖層與 CNS 標準、Revit BIM 建築資訊模型建立、3D 視覺化渲染、BIM 4D/5D 專案管理與參數化設計。",
       "status": "done",
       "gradeLevel": 12,
+      "curriculumCode": "108GR-GR2",
       "examHitRate": 3,
       "fatalTraps": [
         {
@@ -1054,6 +1077,7 @@ export const extensionsData: SubjectData = {
       "concepts": [
         {
           "heading": "一、AutoCAD 2D 建築繪製標準與 CNS 出圖規範",
+          "outlineRefs": ["GR2.2"],
           "body": "AutoCAD 為建築 2D 平面、立面與剖面圖繪製之基石。繪圖必須嚴格遵循台灣國家標準 (CNS 11567 建築製圖)，實施圖層 (Layer) 分色分類管理（如 WALL 牆體、DOOR 門窗、DIM 尺寸標註、TEXT 文字）。線寬管理分為粗線 (0.5-0.7mm 牆體剖面)、中線 (0.3-0.35mm 家具柱位) 與細線 (0.13-0.18mm 尺寸線/剖面線)。",
           "steps": [
             "圖層分色管理：以不同顏色代表不同出圖線寬（Red=細線0.18mm, Yellow=中線0.35mm, Cyan/Green=粗線0.5-0.7mm）。",
@@ -1096,6 +1120,7 @@ export const extensionsData: SubjectData = {
         },
         {
           "heading": "二、BIM (Building Information Modeling) 參數化物件模型",
+          "outlineRefs": ["GR2.2"],
           "body": "<span className=\"text-rose-600 font-bold\">BIM (建築資訊模型)</span> 超越傳統 2D 線條繪圖，採用<span className=\"text-indigo-600 font-bold\">「參數化 3D 元件」</span>。元件不僅具備三維幾何形體，更蘊含材料、成本等屬性資訊。修改 3D 模型時，所有圖面與明細表會自動即時同步更新。",
           "steps": [
             "**單一資訊源 (Single Source of Truth)**：所有圖面與明細表均擷取自同一 3D 參數化模型庫。**💡 專家提示**：這代表「連動性修改」，當你在平面圖移動一扇門，立面圖、剖面圖及門窗表皆會自動更新，徹底杜絕圖面不一致的致命錯誤。",
@@ -1134,6 +1159,7 @@ export const extensionsData: SubjectData = {
         },
         {
           "heading": "三、BIM 3D 衝突檢測 (Clash Detection) 與協同設計",
+          "outlineRefs": ["GR2.2"],
           "body": "在大型工程中，建築 (Arc)、結構 (Str) 與機電管線 (MEP) 常發生空間碰撞。透過 Navisworks 或 Revit 進行 BIM 衝突檢測（Clash Detection），能在施工前發現硬衝突（Hard Clash，如風管穿過 RC 承重梁）與軟衝突（Soft Clash，如檢修維修空間不足），大幅減少工地現場拆除重做之成本浪費。",
           "steps": [
             "整合模型：將 Arc, Str, MEP 三大專業 3D 模型匯入 Navisworks 進行座標對位。",
@@ -1171,6 +1197,7 @@ export const extensionsData: SubjectData = {
         },
         {
           "heading": "四、數位 3D 渲染、光影模擬與 VR/AR 沉浸體驗",
+          "outlineRefs": ["GR2.2"],
           "body": "當代建築表達結合 3D 建模（Rhino, SketchUp, Revit）與即時渲染引擎（Lumion, Enscape, Twinmotion, V-Ray）。利用物理真實光照 (PBR Materials)、太陽路徑光影模擬與 HDRI 天空，產出相片級擬真效果圖。進一步導出 VR 虛擬實境 (Virtual Reality) 與 AR 擴增實境，讓業主在未施工前即沉浸體驗空間體驗。",
           "steps": [
             "PBR 貼圖設定：設定材料之 反射率 (Roughness)、金屬度 (Metallic) 與法線貼圖 (Normal Map)。",
@@ -1203,6 +1230,7 @@ export const extensionsData: SubjectData = {
         },
         {
           "heading": "五、參數化設計 (Parametric Design) 與演算法組構",
+          "outlineRefs": ["GR2.2"],
           "body": "<span className=\"text-rose-600 font-bold\">參數化設計</span>將幾何圖形轉化為演算法邏輯（Node-based Visual Programming）。透過改變數值輸入，演算法能自動生成極度複雜的流體曲面、幾何遮陽外牆與最佳化結構骨架。",
           "steps": [
             "**邏輯鏈建立**：點 -> 線 -> 向量 -> 演算法面板 -> 3D 實體。",
@@ -1230,6 +1258,7 @@ export const extensionsData: SubjectData = {
         },
         {
           "heading": "六、CDE 共通資料環境與 IFC 跨平台開放標準",
+          "outlineRefs": ["GR2.2"],
           "body": "BIM 協同設計依賴共通資料環境（CDE, Common Data Environment）。為打破不同軟體間之檔案壁壘，國際 buildingSMART 組織推行 IFC (Industry Foundation Classes) 開放格式與 BCF (BIM Collaboration Format) 協同通訊協定，實現不同專業（Revit, ArchiCAD, Tekla）軟體數據無縫互通。",
           "steps": [
             "IFC 匯出設定：將 Revit 3D 模型導出為 IFC4 格式，保留所有幾何與材料屬性。",
@@ -1374,9 +1403,10 @@ export const extensionsData: SubjectData = {
     {
       "slug": "portfolio-models",
       "title": "4. 作品集製作與模型表達",
-      "desc": "作品集視覺排版與敘事邏輯、建築實體模型製作技巧與材料運用、圖表 Diagramming 視覺表達、透視圖攝影與簡報評圖術。\n\n🔥 V6.0 考前秒殺秘訣：此核心概念統測出題率極高，建議善用圖解與鷹架提示反覆練習！",
+      "desc": "作品集視覺排版與敘事邏輯、建築實體模型製作技巧與材料運用、圖表 Diagramming 視覺表達、透視圖攝影與簡報評圖術。",
       "status": "done",
       "gradeLevel": 12,
+      "curriculumCode": "108GR-GR3",
       "examHitRate": 3,
       "fatalTraps": [
         {
@@ -1423,6 +1453,7 @@ export const extensionsData: SubjectData = {
       "concepts": [
         {
           "heading": "一、作品集視覺排版、Grid System 與設計敘事邏輯",
+          "outlineRefs": ["GR3.1"],
           "body": "建築作品集 (Portfolio) 是展現設計能力與個人風格的關鍵。排版應採用<span className=\"text-rose-600 font-bold\">網格系統 (Grid System)</span>，控制邊界版口與視覺層級。內容敘事應遵從<span className=\"text-indigo-600 font-bold\">「設計故事線 (Storyline)」</span>。",
           "steps": [
             "**網格系統 (Grid)**：使用 InDesign 設定網格，確保跨頁 (Spread) 視覺秩序一致。",
@@ -1465,6 +1496,7 @@ export const extensionsData: SubjectData = {
         },
         {
           "heading": "二、建築實體模型 (Physical Model) 製作與材料運用",
+          "outlineRefs": ["GR2.1"],
           "body": "實體模型是探索三維空間最真實之工具。依設計階段分為：概念塊體模型 (Massing Model)、草圖模型 (Study Model) 與最終呈現模型 (Presentation Model)。材料選擇極為多元：風扣板 (Foam Board)、風琴紙、椴木板 (Basswood)、灰卡紙、壓克力板與 3D 列印 PLA。利用雷射切割機 (Laser Cutter) 進行毫米級精確裁切。",
           "steps": [
             "概念模型：使用黃色模型泡綿或卡紙快速切削，探索量體幾何與比例。",
@@ -1507,6 +1539,7 @@ export const extensionsData: SubjectData = {
         },
         {
           "heading": "三、圖表視覺表達 (Architectural Diagramming)",
+          "outlineRefs": ["GR3.1"],
           "body": "Diagram（分析圖表）是當代建築表達的靈魂，能將複雜的空間概念簡化為一目了然的圖形。著名事務所（如 BIG）倡導「圖表即建築 (Diagrammatic Architecture)」。常見 Diagram 類型包含：爆炸軸測圖 (Exploded Axonometric)、動線分析圖、氣候光影圖與機能切削圖。利用 Illustrator (AI) 與 Photoshop (PS) 進行向量線條與紋理繪製。",
           "steps": [
             "爆炸軸測圖：將建築之屋頂、結構層、牆面、地基沿 Z 軸拉開，展現構造組裝關係。",
@@ -1539,6 +1572,7 @@ export const extensionsData: SubjectData = {
         },
         {
           "heading": "四、建築透視圖攝影與照片後製合成 (Post-Processing)",
+          "outlineRefs": ["GR3.1"],
           "body": "效果圖表達分為相片級擬真 (Photorealistic) 與寫意拼貼風 (Collage/Illustrative)。後製合成 (Post-Processing) 利用 Photoshop 進行人物 (Cutout People)、植物綠化、天空與水泥/木材紋理拼貼，並透過 Camera Raw 調整色調與明暗對比，賦予畫面故事氛圍感。",
           "steps": [
             "透視兩點透視修正：確保所有垂直建築線條完全垂直地平面（消除三點透視之傾斜感）。",
@@ -1571,6 +1605,7 @@ export const extensionsData: SubjectData = {
         },
         {
           "heading": "五、評圖簡報、口語表達術與設計邏輯防禦",
+          "outlineRefs": ["GR3.1"],
           "body": "評圖 (Design Review) 是建築教育與競圖的核心環節。簡報應在 5-10 分鐘內精準傳達設計核心。口語表達結構為：痛點問題 (Problem) -> 概念對策 (Concept) -> 空間實踐 (Spatial Strategy) -> 結論效益 (Outcome)。態度需保持自信、專業且對評委建議保持開放與邏輯反駁防禦。",
           "steps": [
             "簡報開場：30秒內講出設計提案之「核心一句話 (Elevator Pitch)」。",
@@ -1608,6 +1643,7 @@ export const extensionsData: SubjectData = {
         },
         {
           "heading": "六、數位作品集網站與線上展示平台 (Digital Portfolio Hub)",
+          "outlineRefs": ["GR3.1"],
           "body": "當代作品集不僅限於 PDF 印本，更延伸至線上互動網站（如 Issuu、Behance、Personal Website）。數位作品集需考量響應式網頁設計 (RWD)，確保在手機與平板上皆具備最佳閱讀體驗，並可嵌入 3D 互動模型與動態動畫。",
           "steps": [
             "匯出 PDF 設定：InDesign 匯出雙頁無損 PDF，檔案大小控制於 20-50MB 內以便電郵傳輸。",
@@ -1752,9 +1788,10 @@ export const extensionsData: SubjectData = {
     {
       "slug": "certification",
       "title": "5. 建築科升學與證照檢定",
-      "desc": "建築製圖應用丙/乙級檢定攻防、統測專一專二備考策略、科大/大學建築系選填與面試作品集輔導、建築師國考與技師職涯規劃。\n\n🔥 V6.0 考前秒殺秘訣：此核心概念統測出題率極高，建議善用圖解與鷹架提示反覆練習！",
+      "desc": "建築製圖應用丙/乙級檢定攻防、統測專一專二備考策略、科大/大學建築系選填與面試作品集輔導、建築師國考與技師職涯規劃。",
       "status": "done",
       "gradeLevel": 12,
+      "curriculumCode": "108GR-GR3",
       "examHitRate": 3,
       "fatalTraps": [
         {
@@ -1801,66 +1838,41 @@ export const extensionsData: SubjectData = {
       "concepts": [
         {
           "heading": "一、建築製圖應用技能檢定 (丙級與乙級) 規範與技巧",
+          "outlineRefs": ["GR2.3"],
           "body": "勞動部「建築製圖應用技能檢定」分為電腦繪圖與手繪圖。丙級檢定考察基本平面圖、立面圖與繪圖環境設定；乙級檢定則提升至完整施工圖套圖、大樣圖（如屋頂防水細部、樓梯大樣圖）與 3D 繪圖表達。通過檢定是取得技術士證照與技優升學加分之重要依據。",
           "steps": [
             "丙級檢定重點：掌握圖層設定、CNS 符號、門窗標註與正交視角出圖。",
             "乙級檢定重點：掌握剖面大樣圖（比例尺 1:10 至 1:30）之防水隔熱構造標註與結構筋數量算量。"
           ],
           "table": {
-            "headers": [
-              "檢定等級",
-              "檢定項目與範疇",
-              " key 技術考核要點",
-              "升學與職涯效益"
-            ],
+            "headers": ["檢定等級", "檢定項目與範疇", "技術考核要點", "升學與職涯效益"],
             "rows": [
-              [
-                "建築製圖應用 丙級",
-                "手繪 / CAD 電腦繪圖",
-                "標準平面圖、立面圖繪製、圖層與尺寸標註",
-                "高職畢業門檻、四技二專技優甄審加分 5%"
-              ],
-              [
-                "建築製圖應用 乙級",
-                "CAD 施工圖套圖 / 剖面大樣",
-                "樓梯大樣圖、屋頂防水細部圖、建築剖面大樣",
-                "四技二專技優甄審加分 15%、具備營造業技術員資格"
-              ]
+              ["建築製圖應用 丙級", "手繪或電腦繪圖", "標準平面圖、立面圖繪製、圖層與尺寸標註", "證明基本製圖能力；可作為甄選入學的採計或加分依據（比例依當年度簡章）"],
+              ["建築製圖應用 乙級", "施工圖、剖面大樣", "樓梯大樣圖、屋頂防水細部、建築剖面大樣", "技優甄審等管道的重要條件（依當年度簡章）；職場能力證明"]
             ]
           }
         },
         {
           "heading": "二、四技二專統測 (專一與專二) 備考策略",
-          "body": "考取科技大學主要依賴統測。**專業科目一 (專一)** 包含工程力學與建築構造；**專業科目二 (專二)** 包含建築製圖實習與空間設計手繪繪圖。備考需兼顧<span className=\"text-rose-600 font-bold\">力學計算</span>與<span className=\"text-indigo-600 font-bold\">手繪速寫</span>能力。",
+          "outlineRefs": ["GR3.2"],
+          "body": "考取科技大學主要依賴四技二專統一入學測驗（統測）。依 115 學年度考試大綱，06 土木與建築群的專業科目為：**專業科目（一）＝基礎工程力學＋材料與試驗**；**專業科目（二）＝測量實習＋製圖實習**。兩科都是紙筆測驗的選擇題，重點在觀念理解與計算判讀，**不是現場手繪**。\n備考時以官方考試大綱為清單逐項檢核，再搭配歷屆試題練習：力學熟練自由體圖、桁架、剪力彎矩圖與應力應變計算；材料熟記水泥、混凝土、鋼材等試驗方法與規範；測量熟練水準、角度、導線與坐標計算；製圖熟練投影、剖面、尺度標註與透視原理。\n共同科目國文（含寫作測驗）、英文（含非選擇題）、數學(C) 同樣重要；各校系的採計科目與加權方式以當年度招生簡章為準。",
           "steps": [
-            "**專一備考**：精通靜力學（桁架受力、彎矩圖 SFD/BMD）與建築構造材料題庫。",
-            "**專二備考**：練就 3 小時內完成基地分析、平立剖與透視圖速寫之手繪功力。"
+            "**專一備考**：力學以自由體圖與平衡方程式為核心，材料以試驗步驟與規範數值為核心，搭配本站工程力學、材料與試驗科目頁。",
+            "**專二備考**：測量重計算（高程、方位角、坐標、面積與誤差），製圖重判讀（第三角法視圖、剖面、尺度與符號），搭配本站測量實習、製圖實習科目頁。",
+            "**歷屆試題**：依大綱單元分類練習，訂正時回到對應的觀念頁補強，並記錄錯誤類型。"
           ],
           "table": {
-            "headers": [
-              "統測專業科目",
-              "涵蓋課程單元",
-              "考試型態",
-              "備考與答題勝出策略"
-            ],
+            "headers": ["統測專業科目", "115 學年度考試大綱涵蓋科目", "考試型態", "備考重點"],
             "rows": [
-              [
-                "專業科目一 (專一)",
-                "工程力學、結構學、建築構造",
-                "單選選擇題 (量化計算與概念選擇)",
-                "熟記力學公式、反覆刷歷屆試題、精通靜定桁架與梁彎矩計算"
-              ],
-              [
-                "專業科目二 (專二)",
-                "建築製圖實習、手繪空間設計",
-                "術科現場繪圖 (麥克筆/彩色鉛筆手繪)",
-                "練就 180 分鐘完成平立剖與兩點透視速寫、控制色調與文字說明"
-              ]
+              ["專業科目（一）", "基礎工程力學（13 單元）＋材料與試驗（8 單元）", "紙筆測驗（選擇題）", "力系平衡、桁架、梁的剪力彎矩、應力應變；水泥、混凝土、鋼材試驗與規範"],
+              ["專業科目（二）", "測量實習（6 單元）＋製圖實習（11 單元）", "紙筆測驗（選擇題）", "水準、角度、導線與坐標計算；正投影、剖面、尺度標註、透視判讀"],
+              ["共同科目", "國文、英文、數學(C)", "國文含寫作測驗；英文含非選擇題", "依各科考試大綱準備"]
             ]
           }
         },
         {
           "heading": "三、大學與科大建築系甄試選填與面試輔導",
+          "outlineRefs": ["GR3.2"],
           "body": "申請大學（如成大、東海、中原、淡江）或科大（如臺科大、北科大、雲科大）建築系，重點在於「學習歷程檔案」與「第二階段現場面試/實作」。面試官看重學生之空間敏感度、批判思考能力、對生活環境之觀察力，而非單純之繪圖技巧。",
           "steps": [
             "學習歷程準備：強調設計思考過程（從觀察痛點到提出手繪方案），呈現失敗與修正之反思。",
@@ -1891,36 +1903,26 @@ export const extensionsData: SubjectData = {
         },
         {
           "heading": "四、建築師國家考試 (國考) 與技師考試職涯規劃",
-          "body": "台灣專門職業及技術人員高等考試「建築師考試」為建築人職涯發展之里程碑。考試科目包含六科：建築結構、建築構造與施工、建築設備、建築環境控制、建築設計（12小時手繪繪圖）與建築敷地計畫。考取建築師執照後具備法定開業簽證權利。",
+          "outlineRefs": ["GR3.2"],
+          "body": "專門職業及技術人員高等考試「建築師考試」是建築人職涯的重要里程碑。依考試院發布的《專門職業及技術人員高等考試建築師考試規則》，應試科目共六科：**建築計畫與設計、敷地計畫與都市設計、營建法規與實務、建築結構、建築構造與施工、建築環境控制**。其中兩科設計類採申論式（手繪設計），營建法規與實務、建築構造與施工採測驗式，建築結構與建築環境控制採申論與測驗混合式。\n考試採**科別及格制**：各科滿 60 分為及格，及格科目的成績自榜示之日起**保留三年**。取得建築師證書並依法開業後，才能從事建築物設計與監造的簽證業務。",
           "steps": [
-            "國考科目：四科選擇與申論題 + 兩科 12 小時手繪繪圖大考（建築設計與敷地計畫）。",
-            "滾動式科別及格制：各科及格成績保留 3 年，需於期限內全數通過。"
+            "應試科目：建築計畫與設計、敷地計畫與都市設計（申論式）；營建法規與實務、建築構造與施工（測驗式）；建築結構、建築環境控制（混合式）。",
+            "科別及格制：各科滿 60 分及格，及格成績保留三年，需在期限內通過全部科目。",
+            "應考資格、考試時間與科目細節以考選部當年度公告為準。"
           ],
           "table": {
-            "headers": [
-              "考試類別",
-              "法定應考資格範疇",
-              "關鍵考試科目",
-              "取得執照後之執業權限"
-            ],
+            "headers": ["考試類別", "應試科目", "試題題型", "取得證書後"],
             "rows": [
-              [
-                "專技高考 建築師",
-                "建築學系/研究所畢業，修滿指定學分",
-                "建築設計 (12小時)、敷地計畫、結構、構造、環控、設備",
-                "具備建築物設計與監造簽證之獨佔法定權利 (開建築師事務所)"
-              ],
-              [
-                "專技高考 結構技師",
-                "土木/結構工程學系畢業",
-                "結構力學、鋼筋混凝土設計、鋼結構設計、耐震設計",
-                "負責大型建築結構計算書簽證與結構耐震安全審查"
-              ]
+              ["建築師（專技高考）", "建築計畫與設計、敷地計畫與都市設計", "申論式（設計）", "依法開業後可從事建築物設計、監造簽證"],
+              ["建築師（專技高考）", "營建法規與實務、建築構造與施工", "測驗式", "同上"],
+              ["建築師（專技高考）", "建築結構、建築環境控制", "申論式與測驗式混合", "同上"],
+              ["結構技師、土木技師（專技高考）", "依各類科考試規則", "依考選部公告", "辦理結構與土木工程相關簽證"]
             ]
           }
         },
         {
           "heading": "五、永續與 BIM 國際專業證照展望 (LEED, BREEAM, Revit Cert)",
+          "outlineRefs": ["GR3.2"],
           "body": "面對全球化競爭，除了國內建築師執照，國際專業證照成為加薪與跨國事務所求職之利器。熱門國際證照包含：Autodesk Revit Certified Professional (BIM 專家認證)、USGBC LEED AP (美國綠建築專業人員認證) 與 WELL AP (健康建築認證)。",
           "steps": [
             "Revit 國際認證：考核 3D 參數化建模、族群建立、衝突檢測與出圖管理。",
@@ -1957,6 +1959,7 @@ export const extensionsData: SubjectData = {
         },
         {
           "heading": "六、建築科學生職涯發展地圖 (Career Map)",
+          "outlineRefs": ["GR1.1", "GR3.2"],
           "body": "建築科系畢業後之職涯發展極為廣闊，不限於建築師事務所。職涯路徑包含：建築師事務所 (設計/繪圖/監造)、營造廠/建設公司 (工程師/專案經理)、BIM 技術顧問公司、室內設計事務所、政府公務人員 (高考建築工程) 以及 3D 視覺化渲染藝術家。",
           "steps": [
             "設計路徑：建築師事務所 -> 考取建築師執照 -> 開業主持人。",
@@ -2017,20 +2020,19 @@ export const extensionsData: SubjectData = {
         },
         {
           "difficulty": "中等",
-          "question": "在四技二專統測「專業科目二 (專二)」術科手繪考試中，要在 180 分鐘內完成基地分析、平面圖與兩點透視圖速寫，應如何合理分配考試時間與時間管理策略？",
+          "question": "四技二專統測 06 土木與建築群的「專業科目（二）」包含哪兩個科目？考試型態為何？準備時應如何分配心力？",
           "steps": [
-            "步驟一：前 30 分鐘（審題與概念）。閱讀題目需求、計算建蔽率容積率，繪製氣泡圖與手繪草圖。",
-            "步驟二：中間 90 分鐘（正圖繪製）。使用針筆與直尺快速繪製精確之平面圖與剖面圖，標註關鍵尺寸。",
-            "步驟三：後 40 分鐘（透視圖與麥克筆上色）。繪製兩點透視圖，使用麥克筆進行快速陰影與材質著色。",
-            "步驟四：最後 20 分鐘（文字說明與檢查）。補齊設計說明文字、圖名與比例尺，檢查有無漏繪。"
+            "步驟一：查 115 學年度統測考試大綱，專業科目（二）＝測量實習＋製圖實習；專業科目（一）則是基礎工程力學＋材料與試驗。",
+            "步驟二：確認考試型態——專業科目為紙筆測驗的選擇題，考的是觀念、計算與圖面判讀，不是現場手繪作品。",
+            "步驟三：測量實習偏重計算（高程、方位角、坐標、面積、誤差），製圖實習偏重判讀（第三角法三視圖、剖面、尺度標註、透視），依大綱單元逐一練習歷屆試題。"
           ],
-          "answer": "時間分配為：前30分鐘審題與概念；中間90分鐘繪製平立剖正圖；後40分鐘繪透視圖與麥克筆上色；最後20分鐘補齊文字與檢查。",
+          "answer": "專業科目（二）＝測量實習＋製圖實習，為紙筆選擇題；測量著重計算、製圖著重視圖與圖面判讀，應依考試大綱單元分配練習。",
           "hints": [
-            "分析題目測量幾何條件或前瞻建築科技規範要求",
-            "列出計算式或正投影三視圖/CNS 製圖規則進行推導"
+            "先回想統測專一、專二各包含哪兩科",
+            "注意統測專業科目是紙筆測驗，不是術科實作"
           ],
-          "commonMistake": "容易在正負號閉合差分配、視圖虛線對齊或比例尺換算時產生失誤。",
-          "eliteShortcut": "工程圖表秒殺法：抓住幾何基準線與規範關鍵字，直接鎖定正確數值或投影特徵！"
+          "commonMistake": "把統測專業科目誤認為建築製圖技能檢定（術科實作），或把專一、專二的科目組合記錯。",
+          "eliteShortcut": "口訣：專一「力材」（力學＋材料），專二「測製」（測量＋製圖）。"
         },
         {
           "difficulty": "進階",

@@ -12,6 +12,7 @@ export const draftingData: SubjectData = {
       "desc": "掌握建築資訊模型 (Building Information Modeling, BIM) 核心概念、LOD 發展等級、IFC 跨平台標準、Revit 構件族群與管線碰撞衝突檢討 (Clash Detection)。",
       "status": "done",
       "gradeLevel": 11,
+      "curriculumCode": "TCTE115-DR-EXT",
       "examHitRate": 4,
       "step0Prerequisites": [
         "二維 CAD 施工圖與三維空間幾何對應關係",
@@ -45,6 +46,7 @@ export const draftingData: SubjectData = {
       "concepts": [
         {
           "heading": "BIM 核心架構與參數化元件 (Families) 屬性管理",
+          "outlineRefs": [],
           "body": "BIM (Building Information Modeling) 以物件導向技術將門、窗、梁、柱、風管等構件定義為參數化族群 (Family)。當調整牆體厚度或樓層高度時，關聯之平面圖、剖面圖、門窗數量清單與工程預算表將自動即時同步更新，達成「一處修改、處處連動」的無縫關聯。",
           "formula": "BIM 維度拓展: 3D 空間幾何 + 4D 施工時程排程 + 5D 成本造價預算 + 6D 永續節能 + 7D 設施維護營運",
           "table": {
@@ -96,10 +98,12 @@ export const draftingData: SubjectData = {
         },
         {
           "heading": "LOD 模型發展等級與 IFC 國際開放標準",
+          "outlineRefs": [],
           "body": "依據 AIA 規範，LOD (Level of Development) 分為：LOD 100（概念體積）、LOD 200（近似尺寸幾何）、LOD 300（精確幾何與施工圖定位）、LOD 400（製造與加工預製組裝細節）、LOD 500（現場竣工實測驗收）。跨軟體協同作業則仰賴 buildingSMART 制定的 IFC (Industry Foundation Classes) 開放格式進行無損交換。"
         },
         {
           "heading": "管線綜合 (CSD/SEM) 與自動碰撞衝突檢討 (Clash Detection)",
+          "outlineRefs": [],
           "body": "在複雜建築中，透過 Navisworks 或 Revit 執行自動碰撞檢核，將機電風管、消防水管、強弱電梯架與結構梁柱進行空間干涉檢查，提前在電腦中排除「管穿梁無套管」、「風管打架壓低天花板淨高」等現場衝突，大幅降低打除重做成本。"
         }
       ],
@@ -170,6 +174,7 @@ export const draftingData: SubjectData = {
       "desc": "深入掌握建蔽率、容積率、免計容積與路寬退縮法規，準確計算基地最大開發量體與空間配置。",
       "status": "done",
       "gradeLevel": 11,
+      "curriculumCode": "TCTE115-DR-EXT",
       "examHitRate": 5,
       "step0Prerequisites": [
         "建蔽率定義：(建築面積 / 基地面積) × 100% (控制地面保留空地與日照通風)",
@@ -204,6 +209,7 @@ export const draftingData: SubjectData = {
       "concepts": [
         {
           "heading": "建蔽率與容積率的法規定義與空間管制原理",
+          "outlineRefs": [],
           "body": "建蔽率 (Building Coverage Ratio, BCR) 是指建築物在基地上的水平投影面積（建築面積）佔基地面積之百分比，目的在於保留空地，確保日照、通風、防火與都市防災間隔；容積率 (Floor Area Ratio, FAR) 是指建築物各層總樓地板面積佔基地面積之百分比，用以管制都市土地開發強度與公共設施承載力。",
           "formula": "建蔽率 BCR = (建築面積 / 基地面積) × 100%\n容積率 FAR = (總樓地板面積 / 基地面積) × 100%",
           "table": {
@@ -243,10 +249,12 @@ export const draftingData: SubjectData = {
         },
         {
           "heading": "免計容積與容積獎勵機制 (建築技術規則第 162 條)",
+          "outlineRefs": [],
           "body": "依據《建築技術規則》建築設計施工編第 162 條，為鼓勵生活品質與防災機能，特定空間如地下層作為防空避難或停車空間、法定屋頂突出物、機電設備空間、梯廳及未超過該層 10% 之陽台，符合法定標準者得不計入容積樓地板面積。此外，配合綠建築標章、都市更新、開放空間或危老重建，得依法申請容積獎勵。"
         },
         {
           "heading": "道路寬度、建築高度與路角截角限制",
+          "outlineRefs": [],
           "body": "建築物高度受路寬比與日照陰影限制。一般規定建築物高度不得超過鄰接道路寬度之 1.5 倍加 6 公尺；在轉角街廓需依道路夾角進行基地截角退縮（一般退縮 3~5 公尺），確保路口行車視距安全。"
         }
       ],
@@ -315,6 +323,7 @@ export const draftingData: SubjectData = {
       "desc": "補齊圖紙規格、標題欄、折疊、圖面種類、版本管理與標準化判讀。",
       "status": "done",
       "gradeLevel": 10,
+      "curriculumCode": "TCTE115-DR1",
       "examHitRate": 4,
       "step0Prerequisites": [
         "CNS 11567 建築製圖規範標準圖紙尺寸 (A0~A4)",
@@ -343,6 +352,7 @@ export const draftingData: SubjectData = {
       "concepts": [
         {
           "heading": "工程圖的溝通功能",
+          "outlineRefs": ["DR1.1", "DR1.2"],
           "body": "工程圖以標準化線條、符號、尺度與註記傳遞設計及施工資訊；<span className=\"text-indigo-600 font-bold\">清晰、一致、可追溯</span>比藝術化表現更重要。",
           "table": {
             "headers": [
@@ -387,11 +397,13 @@ export const draftingData: SubjectData = {
         },
         {
           "heading": "A 系列圖紙與折疊",
+          "outlineRefs": ["DR1.3"],
           "body": "A 系列長寬比為 <span className=\"text-rose-600 font-bold\">√2:1</span>，對半裁切仍保持同一比例。折疊歸檔後應讓**標題欄位於正面右下**並可直接識別。",
           "formula": "<span className=\"text-indigo-600 font-bold\">A0 面積 = 1 m²</span>；長寬比 = √2 : 1"
         },
         {
           "heading": "圖面階段與版本",
+          "outlineRefs": ["DR1.2", "DR1.5"],
           "body": "概念圖說明構想，設計圖確立方案，施工圖提供尺寸與做法，竣工圖反映完成現況；修訂需留下<span className=\"text-rose-600 font-bold\">日期、版次與修訂內容</span>。"
         }
       ],
@@ -496,6 +508,7 @@ export const draftingData: SubjectData = {
       "desc": "把基地、平面、立面、剖面、結構與施工詳圖串成同一套圖說的交叉查核流程。",
       "status": "done",
       "gradeLevel": 10,
+      "curriculumCode": "TCTE115-DR11",
       "examHitRate": 4,
       "step0Prerequisites": [
         "建築與土木結構圖說跨專業分工 (A-圖、S-圖、C-圖)",
@@ -524,6 +537,7 @@ export const draftingData: SubjectData = {
       "concepts": [
         {
           "heading": "圖說之間如何互證",
+          "outlineRefs": ["DR11.1"],
           "body": "平面圖確認水平位置，立面圖確認外觀與高度，剖面圖確認垂直構造，詳圖放大接合做法；同一構件的<span className=\"text-rose-600 font-bold\">編號、尺寸與高程必須一致</span>。\n\n**🔄 跨科連結：** 這些圖說上的尺寸與高程，必須依賴《測量實習》的放樣技術才能在工地現場準確落實，測量與製圖是工程的一體兩面。",
           "table": {
             "headers": [
@@ -562,10 +576,12 @@ export const draftingData: SubjectData = {
         },
         {
           "heading": "建築圖與結構圖",
+          "outlineRefs": ["DR11.1", "DR6.11"],
           "body": "建築圖重空間、門窗、裝修與法規；結構圖重柱梁版牆、配筋與基礎。判讀時先用<span className=\"text-indigo-600 font-bold\">軸線與樓層定位</span>，再比對構件編號。"
         },
         {
           "heading": "施工圖查核順序",
+          "outlineRefs": ["DR11.2", "DR11.3", "DR11.4"],
           "body": "先讀圖名、比例、北向與版次，再查軸線及高程，接著追索<span className=\"text-rose-600 font-bold\">剖面索引與詳圖索引</span>，最後檢查尺寸閉合及跨圖衝突。"
         }
       ],
@@ -683,9 +699,10 @@ export const draftingData: SubjectData = {
     {
       "slug": "lines-and-lettering",
       "title": "1. 線條種類與字法",
-      "desc": "深入掌握 CNS 11567 建築與工程製圖規範，包含線條分類、線寬階級、工程字體級距、圖紙圖頭規格與 CAD 線型管理。\n\n🔥 V6.0 考前秒殺秘訣：此核心概念統測出題率極高，建議善用圖解與鷹架提示反覆練習！",
+      "desc": "深入掌握 CNS 11567 建築與工程製圖規範，包含線條分類、線寬階級、工程字體級距、圖紙圖頭規格與 CAD 線型管理。",
       "status": "done",
       "gradeLevel": 11,
+      "curriculumCode": "TCTE115-DR3",
       "examHitRate": 4,
       "step0Prerequisites": [
         "CNS 3 製圖線型分類（實線、虛線、鏈線）",
@@ -769,6 +786,7 @@ export const draftingData: SubjectData = {
       "concepts": [
         {
           "heading": "CNS 建築與工程圖線條分類與粗細規範 (CNS 11567 / CNS 3)",
+          "outlineRefs": ["DR3.1", "DR3.2", "DR3.4"],
           "body": "在工程圖學中，不同線型與線寬代表明確的幾何意義與施工指示。**CNS** 規範將工程圖面線條分為粗線、中線、細線三種級距，比例通常為 <span className=\"text-rose-600 font-bold\">4:2:1</span> (如 0.5mm / 0.35mm / 0.25mm)。當多種線條在同一位置重疊時，必須嚴格遵守相交與繪製優先順序。",
           "steps": [
             "<span className=\"text-rose-600 font-bold\">輪廓線</span>/實線 (**Visible Outline**) 優先級最高，不可被其他線條覆蓋。",
@@ -827,6 +845,7 @@ export const draftingData: SubjectData = {
         },
         {
           "heading": "工程字體與中文字規範 (CNS Lettering Standards)",
+          "outlineRefs": ["DR3.5", "DR3.6", "DR3.7", "DR3.8"],
           "body": "工程圖面上的文字說明、圖名與尺寸數字必須清晰、勻稱，避免手寫混淆造成施工錯誤。**CNS** 規定中文採用仿宋體或等線體，字高與字寬有標準級距。",
           "steps": [
             "中文字體：採用 **CNS** 規定之仿宋體或等線體 (**Gothic**)，筆畫粗細一致，結構方正。",
@@ -837,6 +856,7 @@ export const draftingData: SubjectData = {
         },
         {
           "heading": "圖紙規格與圖號圖頭規範 (Drawing Title Block & Sheet Specs)",
+          "outlineRefs": ["DR1.3", "DR1.5"],
           "body": "**CNS** 建築製圖規定圖紙尺寸採用 A 系列標準（長寬比為 1:√2），圖紙右下角必須設置圖頭 (**Title Block**) 以標明工程名稱、圖名、圖號、比例、設計者及日期等關鍵資訊。",
           "table": {
             "headers": [
@@ -881,6 +901,7 @@ export const draftingData: SubjectData = {
         },
         {
           "heading": "AutoCAD 線型與線寬管理指令表",
+          "outlineRefs": [],
           "body": "在電腦輔助設計 (**AutoCAD**) 中，線型與線寬通常透過圖層 (**Layer**) 或 CTB 出圖樣式表管理，熟練掌握相關設定指令是專業繪圖必備技能。",
           "table": {
             "headers": [
@@ -919,6 +940,7 @@ export const draftingData: SubjectData = {
         },
         {
           "heading": "線條相交與畫法特別原則",
+          "outlineRefs": ["DR3.3"],
           "body": "依據 CNS 3 建築製圖規範，隱藏線（虛線）與可見輪廓線（粗實線）或中心線相交接時，必須嚴格遵循端點接觸與間隙斷開法則，以確保圖紙線條層次分明，防止工程施作人員產生空間幾何誤判或讀圖歧義。",
           "steps": [
             "虛線與實線垂直或相交時，虛線的劃線部分應與實線相接（不可留有間隙）。",
@@ -926,6 +948,20 @@ export const draftingData: SubjectData = {
             "兩虛線相交時，應在實線段處相交（形成十或丁字形），不可交叉在間隙處。",
             "中心線超越物件<span className=\"text-rose-600 font-bold\">輪廓線</span>之長度應為 2 ~ 5 mm，且不得終止於<span className=\"text-rose-600 font-bold\">輪廓線</span>上。"
           ]
+        },
+        {
+          "heading": "筆觸與軌線：運筆方向、轉筆與線條品質",
+          "outlineRefs": ["DR3.3", "DR3.9"],
+          "body": "**運筆方向**：水平線由左向右畫，垂直線由下往上畫（右手使用者）；筆桿沿運筆方向傾斜約 60°，筆尖貼緊平行尺或三角板邊緣。\n**轉筆**：畫線時一面移動一面緩慢轉動筆桿，讓筆芯均勻磨耗，整條線的粗細與濃淡才會一致。\n**軌線（導線、底稿線）**：用 2H、H 等硬鉛筆輕畫的引導線，用來定出字高、字距與圖形位置；完稿時再依線型以 F、HB 加深，軌線輕到幾乎不影響圖面。\n**筆觸要求**：線條起訖要乾淨俐落、粗細均勻、濃黑一致；不可來回塗描或分段補畫。\n⚠️ 易錯：完稿線條若「先畫細再描粗」容易產生雙線；應一次以適當力道與筆芯畫成。",
+          "table": {
+            "headers": ["項目", "正確做法", "目的"],
+            "rows": [
+              ["水平線", "由左向右，筆桿傾向運筆方向", "視線不被手遮住，線條平直"],
+              ["垂直線", "由下往上，配合三角板", "穩定施力"],
+              ["轉筆", "邊畫邊緩慢轉動筆桿", "筆芯均勻磨耗，粗細一致"],
+              ["軌線", "2H／H 輕畫，完稿不擦除也不明顯", "控制字高與圖形位置"]
+            ]
+          }
         }
       ],
       "practices": [
@@ -995,9 +1031,10 @@ export const draftingData: SubjectData = {
     {
       "slug": "scale",
       "title": "2. 比例與尺度",
-      "desc": "掌握圖面比例換算、三稜比例尺讀取、建築工程常用比例選用表 (1/100, 1/50, 1/20) 及 CAD 出圖比例設定。\n\n🔥 V6.0 考前秒殺秘訣：此核心概念統測出題率極高，建議善用圖解與鷹架提示反覆練習！",
+      "desc": "掌握圖面比例換算、三稜比例尺讀取、建築工程常用比例選用表 (1/100, 1/50, 1/20) 及 CAD 出圖比例設定。",
       "status": "done",
       "gradeLevel": 11,
+      "curriculumCode": "TCTE115-DR1",
       "examHitRate": 4,
       "step0Prerequisites": [
         "幾何相似形縮放比例定律",
@@ -1054,6 +1091,7 @@ export const draftingData: SubjectData = {
       "concepts": [
         {
           "heading": "比例的定義與 CNS 分類標準",
+          "outlineRefs": ["DR1.4"],
           "body": "比例 (**Scale**) 為圖紙上圖形尺寸與實物實際尺寸之比值。表示法為「圖面尺寸 : 實物尺寸」。工程圖學中依據實物大小與圖紙限制分為原尺、縮尺與放大尺。",
           "formula": "比例 = 圖式長度 / 實物實際長度\n實物實際長度 = 圖式長度 × 比例分母",
           "table": {
@@ -1087,6 +1125,7 @@ export const draftingData: SubjectData = {
         },
         {
           "heading": "建築常用比例尺選用表 (1/100, 1/50, 1/20 等)",
+          "outlineRefs": ["DR1.4"],
           "body": "建築工程圖依據圖面表達之精細程度與空間涵蓋範圍，對應嚴格的比例選用原則。專業建築圖集必須在圖頭中明確標記比例。\n\n**🔄 跨科連結：** 放樣時圖面比例的縮放，必須依賴《測量實習》中所測得之現場真實距離。測量控制點之精度決定了圖面放樣至工地的正確性。",
           "table": {
             "headers": [
@@ -1131,6 +1170,7 @@ export const draftingData: SubjectData = {
         },
         {
           "heading": "三稜比例尺 (Triangular Scale Ruler) 正確操作步驟",
+          "outlineRefs": ["DR2.7"],
           "body": "建築師與繪圖員使用三稜**比例尺**（包含 1:100, 1:200, 1:300, 1:400, 1:500, 1:600 或 1:30, 1:40, 1:50 等刻度）進行精確量測與圖面繪製。",
           "steps": [
             "步驟 1：核對圖面標題欄（Title Block）所記載之比例（例如 1:50）。",
@@ -1142,6 +1182,7 @@ export const draftingData: SubjectData = {
         },
         {
           "heading": "AutoCAD 模型空間與圖紙空間出圖比例設定",
+          "outlineRefs": [],
           "body": "在現代 CAD 工作流中，模型空間 (**Model Space**) 一律以 1:1 實物尺寸繪製 (單位通常為 cm 或 mm)，而在圖紙空間 (**Layout**) 透過視埠 (**Viewport**) 設定輸出比例。",
           "table": {
             "headers": [
@@ -1180,6 +1221,7 @@ export const draftingData: SubjectData = {
         },
         {
           "heading": "比例轉換與圖形面積比例換算",
+          "outlineRefs": ["DR1.4"],
           "body": "長度比例與面積比例為二次方關係，體積比例為三次方關係，這在計算建築基地面積、建蔽率與容積率時極為重要。",
           "formula": "長度比 = 1 : N\n面積比 = 1 : N²\n實物實際面積 = 圖面面積 × N²"
         }
@@ -1253,9 +1295,10 @@ export const draftingData: SubjectData = {
     {
       "slug": "orthographic-projection",
       "title": "3. 正投影視圖",
-      "desc": "理解正投影原理、第一角法與第三角法嚴格比較、三視圖「長對正、高平齊、寬相等」與輔助視圖繪製。\n\n🔥 V6.0 考前秒殺秘訣：此核心概念統測出題率極高，建議善用圖解與鷹架提示反覆練習！",
+      "desc": "理解正投影原理、第一角法與第三角法嚴格比較、三視圖「長對正、高平齊、寬相等」與輔助視圖繪製。",
       "status": "done",
       "gradeLevel": 11,
+      "curriculumCode": "TCTE115-DR6",
       "examHitRate": 4,
       "step0Prerequisites": [
         "空間四個象限角幾何定義",
@@ -1325,6 +1368,7 @@ export const draftingData: SubjectData = {
       "concepts": [
         {
           "heading": "正投影基本幾何原理與投影面",
+          "outlineRefs": ["DR5.1", "DR5.2", "DR6.1"],
           "body": "**正投影** (**Orthographic Projection**) 係指觀察者之視線平行且垂直於投影面之投影方法。工程圖學利用三個互相垂直的直角投影面（V面:直立面、H面:水平面、W面:側立面）來完整表達三維物體之幾何形狀。",
           "steps": [
             "前視圖/正視圖 (**Front View**)：由物體前方往後投影至 V 面，顯示物體之長度與高度。",
@@ -1334,6 +1378,7 @@ export const draftingData: SubjectData = {
         },
         {
           "heading": "第一角法與第三角法嚴格比較",
+          "outlineRefs": ["DR5.3", "DR5.7", "DR5.8"],
           "body": "依據物體在空間四個象限中的放置位置，分為<span className=\"text-rose-600 font-bold\">第一角法</span>（歐洲常用）與<span className=\"text-rose-600 font-bold\">第三角法</span>（台灣 **CNS**、美國、日本常用）。兩者投影視圖之相對排列位置截然不同。",
           "table": {
             "headers": [
@@ -1383,11 +1428,13 @@ export const draftingData: SubjectData = {
         },
         {
           "heading": "三視圖對齊原理與「長對正、高平齊、寬相等」",
+          "outlineRefs": ["DR6.2", "DR6.5", "DR6.6"],
           "body": "正投影三視圖是工程圖學的共通語言。為在二維圖紙上完整無誤地還原三維立體幾何空間，前視圖、俯視圖與側視圖之間必須嚴格遵守三大空間對應定律：長對正、高平齊、寬相等。",
           "formula": "前視圖與俯視圖：長度對正 (X 軸對齊)\n前視圖與側視圖：高度平齊 (Z 軸對齊)\n俯視圖與側視圖：寬度相等 (Y 軸透過 45° 輔助線旋轉轉換)"
         },
         {
           "heading": "斜面與輔助視圖 (Auxiliary Views) 繪製",
+          "outlineRefs": ["DR9.1"],
           "body": "當物體具有不平行於主要投影面的斜面時，在主要三視圖上該斜面會產生縮小畸變。需建立平行於斜面的「輔助投影面」以獲得實形 (**True Shape**)。",
           "steps": [
             "步驟 1：在主要視圖上找出斜面的積聚線（線視圖，Line view）。",
@@ -1398,6 +1445,7 @@ export const draftingData: SubjectData = {
         },
         {
           "heading": "AutoCAD 三視圖構圖與正交/物件鎖點指令",
+          "outlineRefs": [],
           "body": "在 AutoCAD 數位製圖環境中，繪製正投影三視圖主要仰賴建構線 (XLINE)、正交模式 (F8) 與物件鎖點追蹤 (F11)。透過精確抓取前視圖端點向上延伸至俯視圖、向右延伸至側視圖，達成零誤差之三視圖投影幾何對齊。",
           "table": {
             "headers": [
@@ -1431,6 +1479,47 @@ export const draftingData: SubjectData = {
                 "POLAR",
                 "設定 45 度追蹤角，實現俯視圖與側視圖寬度快速轉移"
               ]
+            ]
+          }
+        },
+        {
+          "heading": "點、直線、平面的投影與象限規定",
+          "outlineRefs": ["DR5.3", "DR5.4", "DR5.5", "DR5.6"],
+          "body": "**象限規定**：直立投影面 V 與水平投影面 H 相交於基線 GL，把空間分成四個象限。第一象限是物體位於 V 之前、H 之上，物體在觀察者與投影面之間；第三象限則是投影面在觀察者與物體之間。工程製圖只使用第一角法與第三角法。\n**點的投影**：空間點 A 在 V 面的投影 aᵛ（前視）與在 H 面的投影 aʰ（俯視），展開後位於同一條垂直於 GL 的投影線上。aᵛ 到 GL 的距離等於 A 點到 H 面的距離（高度），aʰ 到 GL 的距離等於 A 點到 V 面的距離（深度）。\n**直線的投影**：平行於投影面時投影為**實長**；垂直於投影面時**積聚成一點**；傾斜時投影**縮短**（L′ = L·cosθ）。\n**平面的投影**：平行於投影面時投影為**實形**；垂直於投影面時**積聚成一直線**（邊視圖）；傾斜時投影為縮小變形的**類似形**。\n⚠️ 易錯：一條直線在某視圖中呈實長，代表它平行於「該視圖的投影面」，而不是平行於所有投影面。",
+          "table": {
+            "headers": ["元素與投影面的關係", "直線的投影", "平面的投影"],
+            "rows": [
+              ["平行", "實長", "實形"],
+              ["垂直", "積聚成一點", "積聚成一直線（邊視圖）"],
+              ["傾斜", "縮短（L·cosθ）", "縮小變形（類似形）"]
+            ]
+          }
+        },
+        {
+          "heading": "側投影、線條優先順序與視圖選擇",
+          "outlineRefs": ["DR6.3", "DR6.4", "DR6.5"],
+          "body": "**側投影**：在側投影面上投影得到側視圖。第三角法的右側視圖放在前視圖右方，第一角法的左側視圖放在前視圖右方，所以判讀時必須先看投影符號。\n**線條優先順序**：不同線條在視圖中重疊時，只畫優先者：**可見輪廓線（粗實線）＞ 隱藏線（虛線）＞ 中心線（細鏈線）＞ 尺寸線與延伸線**。例：孔的中心線與物體外輪廓重疊時，畫外輪廓實線。\n**視圖選擇**：(1) 以最能表現形狀特徵的一面作為前視圖；(2) 虛線越少越好；(3) 視圖數量以能完整表達為度，簡單對稱物件常只需兩個視圖。\n⚠️ 易錯：虛線與實線重疊時應畫實線；虛線與中心線重疊時應畫虛線。",
+          "table": {
+            "headers": ["優先順序", "線條種類", "CNS 線型"],
+            "rows": [
+              ["1", "可見輪廓線", "粗實線"],
+              ["2", "隱藏線", "中虛線"],
+              ["3", "中心線、對稱線", "細鏈線"],
+              ["4", "尺寸線、延伸線、剖面線", "細實線"]
+            ]
+          }
+        },
+        {
+          "heading": "立體圖：等角圖、斜投影與徒手畫",
+          "outlineRefs": ["DR6.7", "DR6.8", "DR6.9", "DR6.10"],
+          "body": "立體圖讓人一眼看出物體的三維形狀，常與正投影多視圖搭配使用。\n**立體正投影（軸測投影）**：把物體斜置，使三個面同時投影在一個視圖上，分為等角、二等角、不等角投影。**等角投影**的三軸互成 120°，寬、深軸與水平線成 30°；三軸尺寸都按實長畫稱為**等角圖**（比真正的等角投影大約 1.22 倍，但作圖方便）。\n**斜投影**：物體正面平行畫面，正面按實形畫，退縮軸與水平線常成 30°、45° 或 60°。退縮軸按實長畫稱**騎士斜投影**（深度看起來偏長）；按 1/2 畫稱**櫥櫃斜投影**（較接近視覺）。正面有圓或曲線時，用斜投影最方便。\n**徒手畫**：先輕畫外框與中心線，再分割比例、畫出主要輪廓，最後加深。工地溝通與設計構想常用徒手畫快速表達。\n⚠️ 易錯：等角圖中與三軸不平行的斜線不能直接量取實長，必須先找出兩端點的位置再連線。",
+          "table": {
+            "headers": ["立體圖法", "軸角", "退縮軸尺寸", "特點"],
+            "rows": [
+              ["等角圖", "三軸互成 120°，與水平成 30°", "三軸皆按實長", "三面同等表現，圓變成橢圓"],
+              ["騎士斜投影", "退縮軸常用 45°", "1 : 1", "正面為實形，深度看起來過長"],
+              ["櫥櫃斜投影", "退縮軸常用 45°", "1 : 2", "正面為實形，比例較自然"],
+              ["徒手畫", "依觀察與比例", "目測", "快速溝通與構想表達"]
             ]
           }
         }
@@ -1503,9 +1592,10 @@ export const draftingData: SubjectData = {
     {
       "slug": "sectional-views",
       "title": "4. 剖面圖判讀",
-      "desc": "掌握剖面圖切割原理、割面線符號、五大剖面類型、CNS 45° 剖面線規範及實心軸與螺栓「不剖」標準。\n\n🔥 V6.0 考前秒殺秘訣：此核心概念統測出題率極高，建議善用圖解與鷹架提示反覆練習！",
+      "desc": "掌握剖面圖切割原理、割面線符號、五大剖面類型、CNS 45° 剖面線規範及實心軸與螺栓「不剖」標準。",
       "status": "done",
       "gradeLevel": 11,
+      "curriculumCode": "TCTE115-DR7",
       "examHitRate": 4,
       "step0Prerequisites": [
         "剖切面切割位置線與視線箭頭方向標示",
@@ -1576,6 +1666,7 @@ export const draftingData: SubjectData = {
       "concepts": [
         {
           "heading": "剖面圖目的與割面線 (Cutting Plane Line) 符號",
+          "outlineRefs": ["DR7.1", "DR7.4"],
           "body": "為表達物體內部複雜構造，假想以割面將物體切開，移去靠近觀察者的部分後繪製視圖。<span className=\"text-rose-600 font-bold\">割面線</span>用以指示切割位置與觀察方向。",
           "steps": [
             "<span className=\"text-rose-600 font-bold\">割面線</span>線型：採用粗長雙短劃線或兩端加粗之長單點劃線。",
@@ -1585,6 +1676,7 @@ export const draftingData: SubjectData = {
         },
         {
           "heading": "五大剖面視圖類型與適用時機",
+          "outlineRefs": ["DR7.1"],
           "body": "根據切割範圍與方式的不同，<span className=\"text-indigo-600 font-bold\">剖面圖</span>分為全剖、半剖、局部剖、旋轉剖與移轉剖，用以應對不同幾何零件。",
           "table": {
             "headers": [
@@ -1629,6 +1721,7 @@ export const draftingData: SubjectData = {
         },
         {
           "heading": "CNS 剖面線 (Hatching) 畫法規範",
+          "outlineRefs": ["DR7.3"],
           "body": "被割面切到之實體材質部分必須繪製<span className=\"text-indigo-600 font-bold\">剖面線</span>，其線型、角度與間距必須嚴格遵守 **CNS** 規定。",
           "formula": "<span className=\"text-indigo-600 font-bold\">剖面線</span>角度：與主要<span className=\"text-rose-600 font-bold\">輪廓線</span>或圖紙基線成 45° 角\n<span className=\"text-indigo-600 font-bold\">剖面線</span>線型：細實線 (0.18 ~ 0.25mm)\n間距：均勻一致，通常為 1.5mm ~ 3.0mm (依圖形大小調整)",
           "steps": [
@@ -1639,6 +1732,7 @@ export const draftingData: SubjectData = {
         },
         {
           "heading": "剖切時「不剖 (Not Sectioned)」之標準物件規定",
+          "outlineRefs": ["DR7.3"],
           "body": "**CNS** 規範中，某些實心零件或薄板構造若沿其軸向/縱向剖切時，習慣上「不畫<span className=\"text-indigo-600 font-bold\">剖面線</span>」（保持實心外觀），以維護圖面清晰。",
           "table": {
             "headers": [
@@ -1667,6 +1761,7 @@ export const draftingData: SubjectData = {
         },
         {
           "heading": "AutoCAD 剖面填充 (HATCH) 指令管理表",
+          "outlineRefs": [],
           "body": "在 CAD 中利用 HATCH 指令填充<span className=\"text-indigo-600 font-bold\">剖面圖</span>案，並管理邊界與圖案縮放比例。",
           "table": {
             "headers": [
@@ -1764,9 +1859,10 @@ export const draftingData: SubjectData = {
     {
       "slug": "architectural-plan",
       "title": "5. 建築平面圖",
-      "desc": "掌握建築平面圖水平切面高、牆體構造與厚度標示、門窗編號圖例、建築設備及 CAD 高效繪圖指令。\n\n🔥 V6.0 考前秒殺秘訣：此核心概念統測出題率極高，建議善用圖解與鷹架提示反覆練習！",
+      "desc": "掌握建築平面圖水平切面高、牆體構造與厚度標示、門窗編號圖例、建築設備及 CAD 高效繪圖指令。",
       "status": "done",
       "gradeLevel": 11,
+      "curriculumCode": "TCTE115-DR11",
       "examHitRate": 4,
       "step0Prerequisites": [
         "建築技術規則平面圖標準內容",
@@ -1839,6 +1935,7 @@ export const draftingData: SubjectData = {
       "concepts": [
         {
           "heading": "建築平面圖定義與水平切面高",
+          "outlineRefs": ["DR7.2", "DR11.2"],
           "body": "建築**平面圖** (**Architectural Floor Plan**) 實質上為「水平<span className=\"text-indigo-600 font-bold\">剖面圖</span>」。係假想以一水平割面將建築物切開，移去上方部分後向下**正投影**所獲得之俯視圖。",
           "steps": [
             "假想割面位置：設定於當層地板面 (**FL**) 上方約 1.2 m ~ 1.5 m 處（即高於窗台高度）。",
@@ -1848,6 +1945,7 @@ export const draftingData: SubjectData = {
         },
         {
           "heading": "牆體厚度與構造劃分 (RC牆與磚牆)",
+          "outlineRefs": ["DR7.3", "DR11.2"],
           "body": "建築平面圖中的牆體是界定室內空間與承載結構荷載的核心要素。製圖時必須依據構造材質（如鋼筋混凝土 RC 承重牆、1B 磚牆、1/2B 隔間牆及輕鋼架輕隔間）繪出標準厚度與專屬剖面填充圖例，嚴格區分結構耐震牆體與二次施工隔間。",
           "table": {
             "headers": [
@@ -1892,6 +1990,7 @@ export const draftingData: SubjectData = {
         },
         {
           "heading": "門窗符號、開口與門窗表 (Door & Window Schedules)",
+          "outlineRefs": ["DR11.1"],
           "body": "**平面圖**上門窗必須標明編號（如 D1, D2, W1, W2）並繪製正確圖例與開啟軌跡。門窗表是建築圖集中不可或缺的附表，詳細記載各編號之規格與材質。",
           "steps": [
             "【編號原則】：通常 D 代表門 (Door)，W 代表窗 (Window)，SD 代表拉門 (Sliding Door)。",
@@ -1941,6 +2040,7 @@ export const draftingData: SubjectData = {
         },
         {
           "heading": "建築設備、樓梯與高程標示規範",
+          "outlineRefs": ["DR11.1"],
           "body": "建築平面圖需完整表達垂直動線與生活機能配置。樓梯必須繪製清晰之上下行箭頭、踏面級數與水平剖斷線（約在 1.2m 視高處切斷），並於地坪明確標註相對設計基準 (FL) 之絕對或相對高程符號，確保施工與垂直動線順暢。",
           "steps": [
             "衛浴設備：馬桶 (**WC**)、洗臉盆 (**LAV**)、浴缸 (**BATHTUB**) 需繪製標準 1:50 或 1:100 圖例。",
@@ -1950,6 +2050,7 @@ export const draftingData: SubjectData = {
         },
         {
           "heading": "AutoCAD 建築平面圖高效繪製快捷指令表",
+          "outlineRefs": [],
           "body": "CAD 建築平面圖高效繪製技法：建立專屬圖層（WALL 牆體、WINDOW 門窗、DIM 標註、TEXT 文字、AXIS 軸線）；利用 MLINE (複線) 或 MLINE/OFFSET 快速生成雙線牆體；利用 BLOCK (圖塊) 建立標準門窗與衛浴圖例庫，實現模組化調用與批量統計。",
           "table": {
             "headers": [
@@ -2058,9 +2159,10 @@ export const draftingData: SubjectData = {
     {
       "slug": "architectural-elevation",
       "title": "6. 建築立面圖",
-      "desc": "掌握立面圖正投影原理、方位與軸線命名法、高程系統符號 (GL, FL, RF, PAR)、外牆材質圖例與陰影表現。\n\n🔥 V6.0 考前秒殺秘訣：此核心概念統測出題率極高，建議善用圖解與鷹架提示反覆練習！",
+      "desc": "掌握立面圖正投影原理、方位與軸線命名法、高程系統符號 (GL, FL, RF, PAR)、外牆材質圖例與陰影表現。",
       "status": "done",
       "gradeLevel": 11,
+      "curriculumCode": "TCTE115-DR11",
       "examHitRate": 4,
       "step0Prerequisites": [
         "地盤線 (Ground Line, GL) 與建築立面輪廓線定義",
@@ -2124,6 +2226,7 @@ export const draftingData: SubjectData = {
       "concepts": [
         {
           "heading": "建築立面圖功能與命名原則",
+          "outlineRefs": ["DR11.3"],
           "body": "建築**立面圖** (**Architectural Elevation**) 係將建築物各外牆面**正投影**至垂直投影面上之圖樣，主要表達建築外觀造型、門窗開口比例、外牆材質與垂直高度關係。",
           "table": {
             "headers": [
@@ -2152,6 +2255,7 @@ export const draftingData: SubjectData = {
         },
         {
           "heading": "標高系統與高程符號 (GL, FL, RF, PAR)",
+          "outlineRefs": ["DR8.3", "DR11.1"],
           "body": "建築立面圖最關鍵的工程資訊即為建築垂直空間的控制尺寸。圖面左側或右側必須建立完整的高程系統，以戶外基地地平 (GL ±0.00) 為絕對基準，繪製黑白相間圓形高程符號或倒三角高程箭頭，逐層標註室內地坪完成面 (FL)、梁底高、窗台高、屋頂樓板 (RF) 及女兒牆 (PAR) 之垂直標高。",
           "table": {
             "headers": [
@@ -2190,6 +2294,7 @@ export const draftingData: SubjectData = {
         },
         {
           "heading": "外牆材質圖例與表現法 (Exterior Finishes & Textures)",
+          "outlineRefs": ["DR11.1"],
           "body": "立面圖外牆材料圖面表現：石材帷幕以分格線標示分割尺寸；清水混凝土以點狀與螺栓孔圖例表達；二丁掛磁磚以橫向密排細線表現；玻璃帷幕以 45° 雙斜線反光圖例表現；金屬格柵以等距細實線繪製，並於圖面外引線標註材料規格與色號。",
           "table": {
             "headers": [
@@ -2228,6 +2333,7 @@ export const draftingData: SubjectData = {
         },
         {
           "heading": "立面深度、陰影與線條層次感",
+          "outlineRefs": ["DR3.4", "DR11.3"],
           "body": "**立面圖**為 2D 投影圖，為表達建築物體塊的前後進退深度，必須善用「線寬階級」與「45° 陰影線」。",
           "steps": [
             "最前景線條（如最靠近觀察者的陽台、柱）：採用最粗實線 (0.5 ~ 0.7mm)。",
@@ -2238,6 +2344,7 @@ export const draftingData: SubjectData = {
         },
         {
           "heading": "AutoCAD 立面圖繪製與對齊快捷指令表",
+          "outlineRefs": [],
           "body": "在 CAD 繪圖實務中，立面圖必須藉由平面圖直接引線對齊生成。利用建構線垂直模式 (XLINE V) 抓取平面圖之柱軸線、外牆轉角及門窗開口，配合樓層高程水平偏移線 (OFFSET)，即可確保平面與立面 100% 幾何對應無錯位。",
           "table": {
             "headers": [
@@ -2343,9 +2450,10 @@ export const draftingData: SubjectData = {
     {
       "slug": "dimensioning-and-symbols",
       "title": "7. 尺寸標註與圖例",
-      "desc": "掌握 CNS 11567 尺寸標註四大要素、符號前綴 (R, Ø, t, □)、建築外圍三階層標註原則、標準圖頭規格與 CAD 標註管理。\n\n🔥 V6.0 考前秒殺秘訣：此核心概念統測出題率極高，建議善用圖解與鷹架提示反覆練習！",
+      "desc": "掌握 CNS 11567 尺寸標註四大要素、符號前綴 (R, Ø, t, □)、建築外圍三階層標註原則、標準圖頭規格與 CAD 標註管理。",
       "status": "done",
       "gradeLevel": 11,
+      "curriculumCode": "TCTE115-DR8",
       "examHitRate": 4,
       "step0Prerequisites": [
         "尺寸界線、尺寸線、起訖點符號（箭頭/45°斜短線）與尺寸數字規則",
@@ -2410,6 +2518,7 @@ export const draftingData: SubjectData = {
       "concepts": [
         {
           "heading": "CNS 11567 尺寸標註四大要素",
+          "outlineRefs": ["DR8.1", "DR8.2"],
           "body": "工程尺寸標註四大構成要素：(1) 尺寸界線 (Extension Line)：由輪廓線引出之細實線，起點留空隙 1~2 mm，尾端突出 2~3 mm；(2) 尺寸線 (Dimension Line)：與測量方向平行之細實線；(3) 尺寸起訖點符號：CNS 採用實心箭頭、細斜線 (45°) 或黑圓點；(4) 尺寸數字：標註於尺寸線上方中央，字頭朝上或朝左。",
           "steps": [
             "<span className=\"text-rose-600 font-bold\">尺寸界線</span> (**Extension Line**)：由圖形特徵點引出之細實線，需垂直於被標註線段，超出<span className=\"text-rose-600 font-bold\">尺寸線</span>約 2 ~ 3 mm。",
@@ -2420,6 +2529,7 @@ export const draftingData: SubjectData = {
         },
         {
           "heading": "常見製圖符號與前綴代號總表",
+          "outlineRefs": ["DR8.3", "DR11.1"],
           "body": "常用幾何特徵標註符號：直徑以「φ」表示（如 φ20）；半徑以「R」表示（如 R15）；球面直徑以「Sφ」表示；球面半徑以「SR」表示；正方形以「□」表示（如 □100）；板厚以「t」表示（如 t=12）；倒角以「C」表示（如 C5）；坡度以斜三角形或「1:N / i=%」標示。",
           "table": {
             "headers": [
@@ -2470,6 +2580,7 @@ export const draftingData: SubjectData = {
         },
         {
           "heading": "建築平面尺寸標註「三階層原則」 (Three-tier Dimensioning)",
+          "outlineRefs": ["DR8.2"],
           "body": "建築平面施工圖的外部尺寸標註必須遵循 CNS 標準「由外而內三道尺寸線」原則：最外層為建築物總尺寸、中層為結構柱列軸線跨距、最內層為門窗開口與垛牆細部尺寸，由大至小排列整齊，杜絕尺寸界線交叉混亂。",
           "table": {
             "headers": [
@@ -2502,6 +2613,7 @@ export const draftingData: SubjectData = {
         },
         {
           "heading": "標準圖頭 (Title Block) 規格與圖紙留白 margins",
+          "outlineRefs": ["DR1.5"],
           "body": "工程圖頭（標題欄 Title Block）是整張圖紙的法定身分證明。依據 CNS 11567 建築製圖規定，標題欄固定繪製於圖面右下角，載明工程名稱、業主、建築師簽證欄、圖名、圖號、比例尺與最新繪製修訂日期，圖紙左緣並保留 25mm 裝訂留白邊。",
           "table": {
             "headers": [
@@ -2528,6 +2640,7 @@ export const draftingData: SubjectData = {
         },
         {
           "heading": "AutoCAD 尺寸標註管理指令與變數 (DIMSTYLE)",
+          "outlineRefs": [],
           "body": "在 AutoCAD 專業製圖環境中，尺寸標註型式 (DIMSTYLE) 是控制圖面標準化輸出的樞紐。透過預先設定建築斜線標記 (Architectural Tick)、文字高度 (通常出圖 2.5~3.0mm)、延伸線起點偏移量及整體標註比例 (DIMSCALE)，確保跨圖紙比例輸出時尺寸符號大小一致。",
           "table": {
             "headers": [
@@ -2567,6 +2680,20 @@ export const draftingData: SubjectData = {
                 "基線標註",
                 "以同一基準點平行拉出階梯狀尺寸"
               ]
+            ]
+          }
+        },
+        {
+          "heading": "主要工業國家尺度標註差異與註解的重要性",
+          "outlineRefs": ["DR8.4", "DR8.5"],
+          "body": "各國製圖標準大方向相近，但在單位、投影法與數字方向上有差異，閱讀國外圖說或與國外廠商合作時必須注意：\n• **長度單位**：CNS、ISO、JIS 以 mm 為單位且圖上不註單位；美國 ANSI 常用 inch，建築圖常以呎吋表示（如 12′-6″）。\n• **投影法**：臺灣 CNS、日本 JIS、美國 ANSI 以第三角法為主；歐洲與 ISO 體系常見第一角法，圖上應以投影符號標示。\n• **尺寸數字方向**：CNS 採**對齊式**（數字沿尺寸線方向書寫，由下方或右方閱讀）；美國機械圖常用**單向式**（數字一律水平書寫）。\n• **尺寸線終端**：機械圖多用箭頭；建築圖常用短斜線或圓點，同一張圖應統一。\n**註解的重要性**：材料、表面處理、施工方法、規範依據等無法用尺寸表達的資訊，要以文字註解或附註補足；尺寸與註解不清，會直接造成施工錯誤與爭議。\n⚠️ 易錯：看到沒有單位的尺寸數字，在臺灣圖面上預設為 mm；但閱讀美國圖說時要先確認是否為英制。",
+          "table": {
+            "headers": ["項目", "CNS（臺灣）", "歐洲／ISO 體系", "美國 ANSI"],
+            "rows": [
+              ["長度單位", "mm，不註單位", "mm", "inch；建築常用 ft-in"],
+              ["常用投影法", "第三角法為主", "常見第一角法", "第三角法"],
+              ["數字方向", "對齊式", "對齊式", "常用單向式"],
+              ["建築圖尺寸終端", "箭頭、斜線或圓點", "斜線或箭頭", "斜線（tick）或圓點"]
             ]
           }
         }
@@ -2637,9 +2764,10 @@ export const draftingData: SubjectData = {
     {
       "slug": "cad-basics",
       "title": "8. CAD 繪圖基礎",
-      "desc": "掌握 AutoCAD 座標系統、圖層管理 (ByLayer)、狀態列關鍵功能鍵 (OSNAP, ORTHO)、常用 20 大快捷鍵指令及 Viewport 出圖設定。\n\n🔥 V6.0 考前秒殺秘訣：此核心概念統測出題率極高，建議善用圖解與鷹架提示反覆練習！",
+      "desc": "掌握 AutoCAD 座標系統、圖層管理 (ByLayer)、狀態列關鍵功能鍵 (OSNAP, ORTHO)、常用 20 大快捷鍵指令及 Viewport 出圖設定。",
       "status": "done",
       "gradeLevel": 11,
+      "curriculumCode": "TCTE115-DR-EXT",
       "examHitRate": 4,
       "step0Prerequisites": [
         "AutoCAD 常用二維繪圖與編輯指令 (Line, Circle, Trim, Offset, Fillet)",
@@ -2690,6 +2818,7 @@ export const draftingData: SubjectData = {
       "concepts": [
         {
           "heading": "AutoCAD 座標系統與三種點輸入方式",
+          "outlineRefs": [],
           "body": "AutoCAD 數位繪圖以笛卡兒直角坐標系為基礎。精確建立工程幾何形狀時，必須熟練掌握三種點輸入方式：絕對直角坐標 (X,Y)、相對直角坐標 (@ΔX,ΔY) 及相對極坐標 (@距離<角度)，靈活運用於定位基準原點、繪製矩形開口及傾斜構件。",
           "table": {
             "headers": [
@@ -2722,6 +2851,7 @@ export const draftingData: SubjectData = {
         },
         {
           "heading": "圖層 (Layer) 管理與色彩線型控制 (ByLayer 原則)",
+          "outlineRefs": [],
           "body": "圖層為 CAD 圖紙管理之核心。建議所有物件之顏色 (**Color**)、線型 (**Linetype**)、線寬 (**Lineweight**) 一律設定為「ByLayer」(隨層)。",
           "table": {
             "headers": [
@@ -2779,6 +2909,7 @@ export const draftingData: SubjectData = {
         },
         {
           "heading": "繪圖輔助工具與狀態列開關 (Function Keys)",
+          "outlineRefs": [],
           "body": "在電腦輔助製圖實務中，熟練掌握狀態列功能鍵（如 F3 物件鎖點、F8 正交約束、F10 極軸追蹤、F11 物件鎖點追蹤）是擺脫繁瑣滑鼠選單、達成盲打直覺操作與毫秒級快速精確鎖點的高效關鍵。",
           "table": {
             "headers": [
@@ -2817,6 +2948,7 @@ export const draftingData: SubjectData = {
         },
         {
           "heading": "AutoCAD 最常用 20 大快捷指令總表",
+          "outlineRefs": [],
           "body": "CAD 核心高頻單雙字母快捷鍵：L (Line 直線)、C (Circle 圓)、REC (Rectangle 矩形)、PL (Polyline 聚合線)、M (Move 移動)、CO/CP (Copy 複製)、RO (Rotate 旋轉)、TR (Trim 修剪)、EX (Extend 延伸)、O (Offset 偏移)、F (Fillet 圓角)、MI (Mirror 鏡射)、H (Hatch 剖面線)、DI (Dist 量距)。",
           "table": {
             "headers": [
@@ -2873,6 +3005,7 @@ export const draftingData: SubjectData = {
         },
         {
           "heading": "模型空間與圖紙空間 Viewport (視埠) 出圖流程",
+          "outlineRefs": [],
           "body": "CAD 佈局出圖標準流程：在「模型空間 (Model Space)」以 1:1 真實尺寸 (單位 mm) 繪製幾何物件；在「配置/圖紙空間 (Paper/Layout Space)」插入標準圖框，建立浮動視埠 (Viewport) 並指定出圖比例（如 1:100）；鎖定視埠後使用專屬出圖型式表 (CTB) 指定筆寬與顏色輸出為 PDF。",
           "table": {
             "headers": [
@@ -2917,6 +3050,7 @@ export const draftingData: SubjectData = {
         },
         {
           "heading": "CNS 11567 建築出圖線寬規範與技能檢定 180 分鐘防錯 SOP",
+          "outlineRefs": ["DR3.2"],
           "body": "依據經濟部 CNS 11567《建築製圖》與勞動部技能檢定規範，圖紙輸出嚴格要求維持粗中細線條比例 (4:2:1)。實務檢定計時 180 分鐘，繪圖者必須遵循開檔模板化、圖元一律 ByLayer、圖紙空間鎖定視埠比例尺及關閉自動縮放 (Fit to Paper) 之防呆紀律，杜絕 0 分出圖判定。",
           "table": {
             "headers": [
@@ -3025,9 +3159,10 @@ export const draftingData: SubjectData = {
     {
       "slug": "drafting-instruments",
       "title": "8. 製圖儀器之使用與維護",
-      "desc": "熟練掌握工程製圖板、鉛筆與筆芯硬度階級、平行尺、三角板、圓規、分規與比例尺之正確使用技巧與儀器維護注意事項。\n\n🔥 V6.0 考前秒殺秘訣：此核心概念統測出題率極高，建議善用圖解與鷹架提示反覆練習！",
+      "desc": "熟練掌握工程製圖板、鉛筆與筆芯硬度階級、平行尺、三角板、圓規、分規與比例尺之正確使用技巧與儀器維護注意事項。",
       "status": "done",
       "gradeLevel": 11,
+      "curriculumCode": "TCTE115-DR2",
       "examHitRate": 4,
       "step0Prerequisites": [
         "製圖桌、丁字尺、平行尺、三角板 (45°-45° 與 30°-60°) 構造與使用法",
@@ -3083,6 +3218,7 @@ export const draftingData: SubjectData = {
       "concepts": [
         {
           "heading": "製圖板、平行尺與張紙固定規範 (Drafting Board & T-Square Rules)",
+          "outlineRefs": ["DR2.1", "DR2.3", "DR2.4"],
           "body": "工程製圖需使用平整無瑕疵之製圖板與水平滑動之平行尺。張貼圖紙時，必須先將圖紙上緣對齊平行尺上緣，再使用工程膠帶依「左上 -> 右下 -> 右上 -> 左下」之對角順序貼牢，防止圖紙氣泡或歪斜。",
           "steps": [
             "圖紙對齊：將圖紙放置於製圖板上，靠緊平行尺上邊緣校正水平。",
@@ -3092,6 +3228,7 @@ export const draftingData: SubjectData = {
         },
         {
           "heading": "工程鉛筆硬度階級與選用原則 (Pencil Hardness Grades)",
+          "outlineRefs": ["DR2.2"],
           "body": "工程鉛筆筆芯依硬度與顏色深淺分為 9H 至 6B。H 代表 Hardness（硬），B 代表 Blackness（黑），F 代表 Fine Point（精細）。硬筆芯筆觸淺淡硬挺，軟筆芯筆觸濃黑易磨損。",
           "table": {
             "headers": [
@@ -3130,12 +3267,27 @@ export const draftingData: SubjectData = {
         },
         {
           "heading": "圓規、分規與三稜比例尺使用原則 (Compass, Dividers & Scale Rule)",
+          "outlineRefs": ["DR2.5", "DR2.7", "DR2.9"],
           "body": "圓規繪製圓弧時，鋼針長度應調整為比鉛筆芯長約 0.5 mm（以便鋼針刺入圖紙固定）；筆芯斜切面應朝外放置。分規專用於線段等分與尺寸精確轉移。三稜**比例尺**具備 6 種常見縮尺（1/100, 1/200, 1/300, 1/400, 1/500, 1/600 等），嚴禁當作直尺壓劃線條以防刻度受損。",
           "steps": [
             "圓規畫圓：筆芯應削成內平外斜之單斜面，順時針方向微向前傾斜旋轉畫圓。",
             "分規轉移：利用兩尖端精確量取圖面距離，於另一線段上記下連續等分點。",
             "**比例尺**量測：視線需垂直俯視刻度線以防視差；量測時直接於圖紙下記點標註。"
           ]
+        },
+        {
+          "heading": "曲線板、曲線規與家具模板的使用",
+          "outlineRefs": ["DR2.6", "DR2.8", "DR2.9"],
+          "body": "**曲線板（雲形規）**：用來連接非圓弧的不規則曲線。先用鉛筆輕輕徒手把各點連成順暢曲線，再找曲線板上能**同時吻合至少三點**的一段描線；每次只描中間一段，下一段與上一段重疊銜接，曲線才不會出現折角。\n**曲線規（蛇形尺）**：可彎曲成需要的形狀並保持，適合較長、曲率變化平緩的曲線，例如道路線形或景觀步道。\n**模板（家具板、圓圈板、橢圓板、衛浴設備板）**：可快速畫出標準尺寸的圓、橢圓、門窗、家具與衛浴設備符號。使用時要注意模板比例（1/50 與 1/100 不可混用），筆桿保持垂直並貼齊模板邊緣。\n**儀器使用注意事項**：使用前擦拭乾淨避免弄髒圖面；三角板與平行尺不可當切割尺；圓規針尖應略長於筆芯；用畢清潔收納、避免日曬變形。\n⚠️ 易錯：描曲線時若每段都畫到頭尾，接點容易出現小轉折；正確做法是「只描中段、重疊接續」。",
+          "table": {
+            "headers": ["儀器", "用途", "操作要領", "常見錯誤"],
+            "rows": [
+              ["曲線板", "不規則曲線", "先徒手輕連，再取吻合三點以上的一段描線", "每段畫到端點，接頭出現折角"],
+              ["曲線規", "長而平順的曲線", "彎成所需形狀後壓穩再描", "曲線規未固定，描線時走位"],
+              ["家具／設備模板", "標準符號與家具配置", "確認比例，筆桿垂直貼邊", "比例混用、筆斜造成線條偏移"],
+              ["圓圈板", "小圓、孔與符號", "對準十字中心線再描", "未對中心，圓位置偏移"]
+            ]
+          }
         }
       ],
       "practices": [
@@ -3200,9 +3352,10 @@ export const draftingData: SubjectData = {
     {
       "slug": "geometric-constructions",
       "title": "9. 幾何畫法與平面幾何應用",
-      "desc": "深入掌握平面幾何基本圖形繪製、垂直線與平行線作圖、切線與切點求法、線段與角度等分法、正多邊形畫法及建築常用幾何曲線。\n\n🔥 V6.0 考前秒殺秘訣：此核心概念統測出題率極高，建議善用圖解與鷹架提示反覆練習！",
+      "desc": "深入掌握平面幾何基本圖形繪製、垂直線與平行線作圖、切線與切點求法、線段與角度等分法、正多邊形畫法及建築常用幾何曲線。",
       "status": "done",
       "gradeLevel": 11,
+      "curriculumCode": "TCTE115-DR4",
       "examHitRate": 4,
       "step0Prerequisites": [
         "尺規作圖公理（垂直平分線、角平分線、平行線）",
@@ -3258,6 +3411,7 @@ export const draftingData: SubjectData = {
       "concepts": [
         {
           "heading": "線段、角度與中垂線幾何等分法 (Geometric Bisection & Division)",
+          "outlineRefs": ["DR4.1", "DR4.2", "DR4.5"],
           "body": "平面幾何作圖仰賴圓規與直尺。中垂線（垂直平分線）可同時平分線段並求出 90° 垂直方向；角平分線利用以頂點為圓心作弧、交兩邊後再交叉作弧求得。",
           "steps": [
             "線段中垂線：分別以線段兩端點為圓心，大於半線段長度為半徑畫弧，兩弧相交兩點連線即為中垂線。",
@@ -3267,6 +3421,7 @@ export const draftingData: SubjectData = {
         },
         {
           "heading": "正多邊形（正五、六、八邊形）畫法與黃金分割 (Regular Polygons & Golden Ratio)",
+          "outlineRefs": ["DR4.6"],
           "body": "建築圖中常用正多邊形與黃金分割比例 (1 : 1.618)。正六邊形內角為 120°，邊長等於外接圓半徑 R，可直接用圓規在圓周上連續截取；正八邊形可由正方形四角以頂點至圓心半徑畫弧截割而成。",
           "table": {
             "headers": [
@@ -3305,12 +3460,19 @@ export const draftingData: SubjectData = {
         },
         {
           "heading": "切線、切點與建築幾何曲線 (Tangents & Architectural Curves)",
+          "outlineRefs": ["DR4.3", "DR4.4", "DR4.9"],
           "body": "直線與圓相切時，切線必垂直於切點與圓心之連線（法線）；兩圓弧相切時，外切兩圓心距離等於半徑和 (R1 + R2)，內切兩圓心距離等於半徑差 (R1 - R2)。橢圓、漸開線與擺線經常用於拱橋與螺旋樓梯。",
           "steps": [
             "過圓外一點作圓切線：連點與圓心，作連線中點，以中點為圓心、半中點長為半徑作弧交圓於切點。",
             "圓弧連接兩直線：求兩直線平行距離 R 之交點為圓心，自圓心向兩直線引垂線即得精確切點。",
             "橢圓四點圓弧近似畫法：利用長軸與短軸作幾何圓弧切接，取代繁雜之點繪法。"
           ]
+        },
+        {
+          "heading": "圖形的遷移與化圓弧為等長線段",
+          "outlineRefs": ["DR4.7", "DR4.8"],
+          "body": "**圖形的遷移**：把已知圖形複製到新位置或轉動方向。常用方法：\n• 三角形法：以圖形上兩已知點為基準，用圓規分別量取第三點到兩點的距離，在新位置交會出對應點，逐點複製。\n• 方格法：在原圖畫方格，新位置畫同數量（可放大或縮小）的方格，逐格對應描繪。\n• 坐標法：量各點對基準線的水平與垂直距離，在新位置以同樣距離定點。\n**與圓弧等長之線段（化弧為直）**：\n• 分規分段法：用分規把圓弧分成許多小段（每段弦長近似弧長），再在直線上逐段移量，段數越多越精確。\n• 計算驗證：弧長 s = r·θ（θ 以弧度計）= 2πr × (θ / 360°)。例：r = 30 mm、θ = 60° 的圓弧，s = 2π × 30 × 60 / 360 ≈ 31.4 mm。\n⚠️ 易錯：分規分段時每段不宜過大（弦長會明顯短於弧長），通常把 60° 以內的弧再細分數段。",
+          "formula": "弧長 s = r · θ（θ：rad）= 2πr × θ / 360°"
         }
       ],
       "practices": [
@@ -3376,9 +3538,10 @@ export const draftingData: SubjectData = {
     {
       "slug": "auxiliary-views",
       "title": "10. 輔助視圖與斜面真形圖法",
-      "desc": "掌握單斜面與複斜面之輔助視圖繪製原理、輔助基準線（Reference Line/Fold Line）畫法、斜面實大形與線段實長（True Length and True Shape）求法。\n\n🔥 V6.0 考前秒殺秘訣：此核心概念統測出題率極高，建議善用圖解與鷹架提示反覆練習！",
+      "desc": "掌握單斜面與複斜面之輔助視圖繪製原理、輔助基準線（Reference Line/Fold Line）畫法、斜面實大形與線段實長（True Length and True Shape）求法。",
       "status": "done",
       "gradeLevel": 11,
+      "curriculumCode": "TCTE115-DR9",
       "examHitRate": 4,
       "step0Prerequisites": [
         "空間直線投影特性（實長 TL、縮短短長、縮成一點 Point View）",
@@ -3434,6 +3597,7 @@ export const draftingData: SubjectData = {
       "concepts": [
         {
           "heading": "輔助視圖之幾何需求與分類 (Purpose & Types of Auxiliary Views)",
+          "outlineRefs": ["DR9.1", "DR9.2"],
           "body": "當物體具備不平行於三主要投影面 (H, F, W) 之斜面時，主要視圖上的斜面投影會產生縮小變形。為了精確顯示斜面上孔洞、扣件與實大幾何，必須引進垂直俯視斜面之「輔助投影面」。",
           "steps": [
             "單斜面 (**Single Inclined Plane**)：斜面僅傾斜於一個主要投影面，於另一投影面上呈直線 (**Edge View**)。只需一次輔助投影即可求得實大形。",
@@ -3443,6 +3607,7 @@ export const draftingData: SubjectData = {
         },
         {
           "heading": "輔助基準線與距離轉移法則 (Fold Lines & Distance Transfer)",
+          "outlineRefs": ["DR9.3", "DR9.4"],
           "body": "折線/基準線 (Fold Line H-F, F-1, 1-2) 代表相鄰投影面的交線。輔助視圖作圖核心為「隔一視圖距離相等」法則：新輔助視圖上點至基準線之距離，必定等於原視圖隔一個視圖前對應點至其基準線之距離。",
           "table": {
             "headers": [
@@ -3475,12 +3640,19 @@ export const draftingData: SubjectData = {
         },
         {
           "heading": "線段實長與斜面邊緣視圖求法 (True Length & Edge View)",
+          "outlineRefs": ["DR9.4"],
           "body": "求傾斜線實長 (True Length, TL) 是求斜面實大形的前置步驟。當視線方向垂直於傾斜線段時，投射出之視圖即為實長 TL；當視線方向平行於實長線段時，投射出之視圖即為點視圖 (**Point View**)，此時該斜面形成邊線 Edge View。",
           "steps": [
             "求實長 TL：平行於該傾斜線作基準線 F-1，投射出之線長即為 True Length。",
             "求 Edge View：沿實長線 TL 之延伸方向引視線，投射出的視圖中斜面縮為一條直線。",
             "求 True Shape：垂直於 Edge View 引視線作第二輔助視圖，即得斜面實大形。"
           ]
+        },
+        {
+          "heading": "複斜面的法線視圖與旋轉視圖（二次輔助視圖）",
+          "outlineRefs": ["DR9.3", "DR9.5", "DR9.6"],
+          "body": "**單斜面**只與一個主投影面垂直，在該主視圖中積聚成一條斜線（邊視圖），只要沿垂直於這條線的方向投影一次（第一輔助視圖）就能得到實形。\n**複斜面**與三個主投影面都傾斜，任何主視圖都看不到它的邊視圖，必須投影兩次：\n(1) 在複斜面上找一條平行於某主投影面的直線，它在該視圖中呈實長；\n(2) 沿這條實長線方向作第一輔助視圖，複斜面在此積聚成一直線（邊視圖）；\n(3) 垂直於邊視圖再作第二輔助視圖，即得複斜面的**實形**（法線視圖）。\n**旋轉視圖法**：不改變觀察方向，而把物體繞垂直於投影面的軸旋轉，使斜面轉到平行於投影面的位置，再投影得實形。單斜面旋轉一次，複斜面需旋轉兩次。\n⚠️ 易錯：第一輔助視圖必須沿「實長線」方向投影，複斜面才會積聚成直線；若選錯方向，第二次投影仍不是實形。",
+          "steps": ["在主視圖中找出複斜面上平行於某投影面的邊，確認它在相鄰視圖中為實長。", "沿實長線方向畫第一輔助投影線與基準線，轉移深度距離，使複斜面積聚為一直線。", "垂直於該直線畫第二輔助基準線，再次轉移距離。", "連接各點得複斜面的實形，並檢查邊長與角度是否與實物一致。"]
         }
       ],
       "practices": [
@@ -3545,9 +3717,10 @@ export const draftingData: SubjectData = {
     {
       "slug": "perspective-projection",
       "title": "11. 透視圖投影與陰影求法",
-      "desc": "深入研習透視圖投影原理、畫面 PP、視點 EP、消失點 VP 幾何關係、一點/兩點/三點透視作圖法及透視陰影繪製技巧。\n\n🔥 V6.0 考前秒殺秘訣：此核心概念統測出題率極高，建議善用圖解與鷹架提示反覆練習！",
+      "desc": "深入研習透視圖投影原理、畫面 PP、視點 EP、消失點 VP 幾何關係、一點/兩點/三點透視作圖法及透視陰影繪製技巧。",
       "status": "done",
       "gradeLevel": 11,
+      "curriculumCode": "TCTE115-DR10",
       "examHitRate": 4,
       "step0Prerequisites": [
         "透視投影幾何名詞：視點 (SP)、畫面 (PP)、基線 (GL)、視平線 (HL)、消點 (VP)",
@@ -3603,6 +3776,7 @@ export const draftingData: SubjectData = {
       "concepts": [
         {
           "heading": "透視圖基本幾何要素與名詞 (Elements of Perspective Projection)",
+          "outlineRefs": ["DR10.1", "DR10.2"],
           "body": "透視圖 (**Perspective**) 模擬人眼近大遠小之中心投影視覺效果。其空間系統由基面 GP、畫面 PP、視點 EP、視線 SL、基線 GL、地平線 HL 與消失點 VP 組成。",
           "steps": [
             "基面 (Ground Plane, GP) 與畫面 (Picture Plane, PP)：物體站立之水平面為 GP，立體投影成像之垂直透明平面為 PP。",
@@ -3613,6 +3787,7 @@ export const draftingData: SubjectData = {
         },
         {
           "heading": "透視圖種類與應用場景 (Types of Perspective Drawings)",
+          "outlineRefs": ["DR10.2"],
           "body": "依物體三個主軸與畫面 PP 之相對傾斜關係，透視圖分為一點透視（平行透視）、兩點透視（成角透視）與三點透視（傾斜透視）。",
           "table": {
             "headers": [
@@ -3649,12 +3824,27 @@ export const draftingData: SubjectData = {
         },
         {
           "heading": "視線法作圖與透視陰影原理 (Ray Method & Perspective Shadows)",
+          "outlineRefs": ["DR10.3", "DR10.4", "DR10.6"],
           "body": "視線法 (**Ray Method**) 透過將視點 EP 與俯視圖物體各頂點連線，求出視線穿過畫面 PP 之交點交於透視圖面上。透視陰影則需結合光源位置 S 與光源地面投影 S' 繪製。",
           "steps": [
             "俯視圖交點：在俯視圖中引 EP 至各頂點之視線，記錄其與 PP 之交點。",
             "正視圖高度轉移：將 PP 交點垂直引向下至透視圖區，與高度線發散至 VP 之控制線相交。",
             "透視陰影：太陽日光光線視為平行光，其消失點位于 HL 上下；人工點光源光線則直接自光源點 S 向外發散作圖。"
           ]
+        },
+        {
+          "heading": "光源的性質：平行光（日光）與點光源（燈光）的陰影",
+          "outlineRefs": ["DR10.5", "DR10.6"],
+          "body": "**光源分類**：太陽距離極遠，光線可視為彼此平行，稱**平行光源**；燈泡等由一點向四周放射，稱**點光源**。\n**平行光的陰影**：所有光線方向相同，影子大小與物體相同比例。建築立面圖常採「光線由左上方以 45° 射入」的慣例，使陰影寬度等於凸出物的凸出深度，方便量測。透視圖中的平行光線會消失於同一個光線消失點。\n**點光源的陰影**：光線由光源點經過物體頂點放射，影子會隨距離光源越遠而放大，室內燈光與夜景透視常用。\n**陰與影**：物體本身背光的面稱為「陰」，物體投射到地面或其他面上的暗區稱為「影」，作圖時應分開表現。\n**作圖步驟**：決定光線方向 → 求物體各頂點的影點 → 連接影點得影子輪廓 → 區分陰面與影區並加上明暗。\n⚠️ 易錯：平行光下互相平行的物體邊線，投在同一平面上的影子邊線也互相平行；點光源則不成立。",
+          "table": {
+            "headers": ["項目", "平行光源", "點光源"],
+            "rows": [
+              ["代表", "太陽光", "燈泡、路燈"],
+              ["光線關係", "彼此平行", "由一點放射"],
+              ["影子大小", "與物體成固定比例", "距光源越遠越大"],
+              ["常見用途", "建築立面陰影（45° 光線）、日照透視", "室內、夜景透視"]
+            ]
+          }
         }
       ],
       "practices": [

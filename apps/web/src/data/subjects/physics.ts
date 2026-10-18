@@ -9,9 +9,10 @@ export const physicsData: SubjectData = {
     {
       "slug": "mechanics-motion",
       "title": "1. ⚙️ 力學與運動 (Structural Kinematics & Static Equilibrium)",
-      "desc": "建築運動學基礎、牛頓三大運動定律、<span className='text-rose-600 font-bold'>靜力平衡</span>條件、斜面摩擦、桁架與樑構件內力及高空落體防護。",
+      "desc": "建築運動學基礎、牛頓三大運動定律、靜力平衡條件、斜面摩擦、桁架與樑構件內力及高空落體防護。",
       "status": "done",
       "gradeLevel": 10,
+      "curriculumCode": "108-PEb",
       "covered_question_ids": [],
       "worked_examples": [
         {
@@ -42,17 +43,27 @@ export const physicsData: SubjectData = {
       ],
       "concepts": [
         {
-          "heading": "牛頓三大運動定律與建築地震<span className='text-rose-600 font-bold'>慣性力</span> (Newton's Laws & Seismic Inertia)",
-          "body": "物體運動狀態的改變源於外力作用。在建築結構工程中，<span className='text-indigo-600 font-bold'>牛頓第二定律</span> F = m·a 是地震工程學的基礎：當地面發生地震加速度 a 時，建築物自重質量 m 會產生相對應的水平<span className='text-rose-600 font-bold'>慣性力</span> (Inertia Force)。台北101大樓頂層擺設的 660 公噸風阻尼器 (TMD)，即是利用慣性反向運動來吸收強風與地震造成的結構擺<span className='text-rose-600 font-bold'>動能</span>量。\n\n⚠️ **統測陷阱**：計算 F=ma 時，務必注意「質量」與「重量」的差別！質量 m 單位為 kg，重量 W = mg 單位為 N。題目給公噸(t)必須先換算為 kg。\n\n🔗 **跨領域連結**：與【數學 C：平面向量】連結，地震力與風力往往需要拆解為 X 與 Y 方向的向量正交分量，以分析結構柱的受力。\n\n| 定律 | 核心精神 | 建築應用範例 |\n| :--- | :--- | :--- |\n| 第一定律 (慣性) | 合力為零，靜者恆靜 | 建築結構靜力平衡，靜止不動 |\n| 第二定律 (F=ma) | 力產生加速度 | 地震水平慣性力計算 (基底剪力) |\n| 第三定律 (作用與反作用) | 力成對出現，大小相等方向相反 | 柱底傳遞至基礎的承載力與地盤反力 |",
+          "heading": "牛頓三大運動定律與建築地震慣性力 (Newton's Laws & Seismic Inertia)",
+          "outlineRefs": ["PEb-V.2-7", "PEb-V.2-8"],
+          "body": "物體運動狀態的改變源於外力作用。在建築結構工程中，<span className='text-indigo-600 font-bold'>牛頓第二定律</span> F = m·a 是地震工程學的基礎：當地面發生地震加速度 a 時，建築物自重質量 m 會產生相對應的水平<span className='text-rose-600 font-bold'>慣性力</span> (Inertia Force)。台北101大樓頂層擺設的 660 公噸風阻尼器 (TMD)，即是利用慣性反向運動來吸收強風與地震造成的結構擺<span className='text-rose-600 font-bold'>動能</span>量。\n\n⚠️ **統測陷阱**：計算 F=ma 時，務必注意「質量」與「重量」的差別！質量 m 單位為 kg，重量 W = mg 單位為 N。題目給公噸(t)必須先換算為 kg。\n\n🔗 **跨領域連結**：與【數學 C：平面向量】連結，地震力與風力往往需要拆解為 X 與 Y 方向的向量正交分量，以分析結構柱的受力。",
           "formula": "<span className=\"text-indigo-600 font-bold\">F = m · a</span>\n<span className=\"text-indigo-600 font-bold\">F_inertia = - m · a_ground</span>",
           "steps": [
             "牛頓第一定律 (慣性定律)：若物體不受外力或受合力為零，靜者恆靜，動者恆作等速度直線運動。",
             "牛頓第二定律 (運動定律)：加速度與合力成正比，與質量成反比。結構力學中地表加速度 <span className='text-rose-600 font-bold'>PGA</span> (Peak Ground Acceleration) 直接決定地震力大小。",
             "牛頓第三定律 (作用力與反作用力)：兩物體間的作用力與反作用力大小相等、方向相反且作用於同一直線上。例如建築物柱腳對基礎施加壓力，基礎反施加等大向上之<span className='text-rose-600 font-bold'>支承反力</span>。"
-          ]
+          ],
+          "table": {
+            "headers": ["定律", "核心精神", "建築應用範例"],
+            "rows": [
+              ["第一定律 (慣性)", "合力為零，靜者恆靜", "建築結構靜力平衡，靜止不動"],
+              ["第二定律 (F=ma)", "力產生加速度", "地震水平慣性力計算 (基底剪力)"],
+              ["第三定律 (作用與反作用)", "力成對出現，大小相等方向相反", "柱底傳遞至基礎的承載力與地盤反力"]
+            ]
+          }
         },
         {
-          "heading": "剛體<span className='text-rose-600 font-bold'>靜力平衡</span>條件 (Static Equilibrium of Rigid Bodies)",
+          "heading": "剛體靜力平衡條件 (Static Equilibrium of Rigid Bodies)",
+          "outlineRefs": ["PEb-V.2-7"],
           "body": "建築結構物（如樑、柱、桁架、板）於靜止狀態下必須滿足三維或二維<span className='text-rose-600 font-bold'>靜力平衡</span>。若合力或合力矩不為零，結構將發生剛體位移或旋轉倒塌。二維平面力系下，<span className='text-rose-600 font-bold'>靜力平衡</span>條件包含三個獨立代數方程式。\n💡 **進階概念與實務**：\n- **靜定結構 (Statically Determinate)**：當未知支承反力的數量恰好等於平衡方程式數量 (二維為 3) 時，可直接解出所有反力，如簡支樑與懸臂樑。\n- **超靜定結構 (Statically Indeterminate)**：若支承反力數量超過方程式數量，需依賴材料變形協調條件才能求解，這類結構（如連續樑）在建築中更常見，因其具備多餘的冗餘度 (Redundancy)，遇局部破壞時不易產生連鎖崩塌。\n👷‍♂️ **專家提示**：在分析複雜構架時，善用「力矩平衡點選取法」能大幅簡化計算。將力矩中心選在最多未知力作用的節點，可直接消除這些未知力的力矩項，快速求得解答。",
           "formula": "<span className=\"text-indigo-600 font-bold\">ΣFx = 0 (水平合力為零)</span>\n<span className=\"text-indigo-600 font-bold\">ΣFy = 0 (垂直合力為零)</span>\n<span className=\"text-indigo-600 font-bold\">ΣM_O = 0 (對任意點 O 之合力矩為零)</span>",
           "steps": [
@@ -63,6 +74,7 @@ export const physicsData: SubjectData = {
         },
         {
           "heading": "運動學公式與建築高空施工落體防護 (Kinematics & Fall Protection)",
+          "outlineRefs": ["PEb-V.2-1", "PEb-V.2-2", "PEb-V.2-3"],
           "body": "等加速度直線運動為描述物體落體與減震運動的基本數學模型。建築施工現場高空作業時，防墜網與安全帶的減震緩衝長度計算，均依據運動學與加速度限制規範，以防止作業人員承受過大衝擊 <span className='text-rose-600 font-bold'>g 值</span>。",
           "formula": "<span className=\"text-indigo-600 font-bold\">v = v₀ + a · t</span>\n<span className=\"text-indigo-600 font-bold\">s = v₀ · t + ½ · a · t²</span>\n<span className=\"text-indigo-600 font-bold\">v² = v₀² + 2 · a · s</span>",
           "steps": [
@@ -72,6 +84,7 @@ export const physicsData: SubjectData = {
         },
         {
           "heading": "摩擦力與建築斜面鋪面設計 (Friction Force & Ramp Safety)",
+          "outlineRefs": ["PEb-V.2-9"],
           "body": "摩擦力為兩接觸面阻止相對滑動之阻力。建築無障礙斜坡、地下停車場車道鋪面以及樓梯踏階，必須滿足法規規定的<span className='text-rose-600 font-bold'>靜摩擦係數</span> (μs)，以防止行人滑倒或車輛煞車失靈下滑。\n📐 **力學解析與臨界角**：\n當物體放置於傾角為 θ 的斜面上時，重力的下滑分力與靜摩擦力抗衡。當斜面傾角達到「臨界角」時，物體即將下滑，此時滿足關係式：tan(θ) = μs。這意味著坡道的最大安全坡度完全取決於材料表面的靜摩擦係數。\n🛠️ **防滑工程處理**：\n在實務上，為提升濕滑環境（如浴室、戶外車道）的安全性，常採用以下處理：\n1. **表面粗糙化**：洗石子、斬石子或拉毛處理。\n2. **防滑貼條與開槽**：在樓梯踏步前緣鑲嵌金屬或橡膠防滑條，或於車道表面切割橫向溝槽 (Grooving) 以增加咬合力並加速排水。",
           "formula": "<span className=\"text-indigo-600 font-bold\">f_s ≤ f_s,max = μ_s · N</span>\n<span className=\"text-indigo-600 font-bold\">f_k = μ_k · N</span>",
           "table": {
@@ -111,6 +124,7 @@ export const physicsData: SubjectData = {
         },
         {
           "heading": "力學物理量與工程單位換算表 (Mechanics Unit Conversions)",
+          "outlineRefs": ["PEa-V.2-1"],
           "body": "在土木與建築力學計算中，精確掌握 SI 國際制單位（牛頓 N、帕斯卡 Pa）與傳統工程重力制單位（公斤重 kgf、公噸重 tf）之間的物理轉換因數，是杜絕結構配筋與截面應力算錯十倍百倍致命失誤的根本防線。",
           "table": {
             "headers": [
@@ -155,6 +169,7 @@ export const physicsData: SubjectData = {
         },
         {
           "heading": "靜定樑與桁架內力分析 (Internal Forces in Beams & Trusses)",
+          "outlineRefs": [],
           "body": "建築結構受外力作用時，構件內部會產生<span className='text-rose-600 font-bold'>剪力</span> V (Shear Force) 與<span className='text-rose-600 font-bold'>彎矩</span> M (Bending Moment)。微分關係方程 dV/dx = -w(x) 及 dM/dx = V(x) 是繪製<span className='text-rose-600 font-bold'>剪力</span>圖與<span className='text-rose-600 font-bold'>彎矩</span>圖的力學基礎。在平面桁架中，利用節點法 (Method of Joints) 與剖面法 (Method of Sections) 可快速求解各桿件軸力 (拉力與壓力)。",
           "formula": "<span className=\"text-indigo-600 font-bold\">dV / dx = - w(x)</span>\n<span className=\"text-indigo-600 font-bold\">dM / dx = V(x)</span>\n<span className=\"text-indigo-600 font-bold\">Σ F_x,joint = 0, Σ F_y,joint = 0</span>",
           "steps": [
@@ -164,7 +179,8 @@ export const physicsData: SubjectData = {
           ]
         },
         {
-          "heading": "虎克定律與材料<span className='text-rose-600 font-bold'>應力</span>應變關係 (Hooke's Law & Stress-Strain Dynamics)",
+          "heading": "虎克定律與材料應力應變關係 (Hooke's Law & Stress-Strain Dynamics)",
+          "outlineRefs": ["PEb-V.2-7"],
           "body": "在彈性限度內，材料受拉伸或壓縮時，<span className='text-rose-600 font-bold'>應力</span> σ (Stress) 與<span className='text-rose-600 font-bold'>應變</span> ε (Strain) 成正比，比例常數為<span className='text-rose-600 font-bold'>彈性模數</span> E (Young's Modulus)。材料受到軸向拉力時，橫向會發生收縮，橫向<span className='text-rose-600 font-bold'>應變</span>與縱向<span className='text-rose-600 font-bold'>應變</span>之比值即為<span className='text-rose-600 font-bold'>波松比</span> ν (Poisson's Ratio)。",
           "formula": "<span className=\"text-indigo-600 font-bold\">σ = E · ε</span>\n<span className=\"text-indigo-600 font-bold\">ε = ΔL / L₀</span>\n<span className=\"text-indigo-600 font-bold\">ν = - ε_transverse / ε_longitudinal</span>\n<span className=\"text-indigo-600 font-bold\">ΔL = (P · L₀) / (A · E)</span>",
           "table": {
@@ -208,7 +224,8 @@ export const physicsData: SubjectData = {
           }
         },
         {
-          "heading": "剛體<span className='text-rose-600 font-bold'>轉動慣量</span>與斷面幾何特性 (Moment of Inertia & Section Modulus)",
+          "heading": "剛體轉動慣量與斷面幾何特性 (Moment of Inertia & Section Modulus)",
+          "outlineRefs": [],
           "body": "樑與柱構件抗彎與抗挫屈的能力不僅取決於材料強弱，更取決於斷面幾何形狀。斷面二次矩 / <span className='text-rose-600 font-bold'>轉動慣量</span> I (Moment of Inertia) 描述斷面面積對於中立軸的分布狀況。<span className='text-rose-600 font-bold'>斷面模數</span> Z = I / y_max 直接決定樑斷面彎曲<span className='text-rose-600 font-bold'>應力</span> σ_max = M / Z。",
           "formula": "<span className=\"text-indigo-600 font-bold\">I_x = ∫ y² dA</span>\n<span className=\"text-indigo-600 font-bold\">I_rectangle = (b · h³) / 12</span>\n<span className=\"text-indigo-600 font-bold\">Z = I / (h / 2) = (b · h²) / 6</span>\n<span className=\"text-indigo-600 font-bold\">σ_max = M / Z ≤ f_allowable</span>",
           "steps": [
@@ -216,6 +233,50 @@ export const physicsData: SubjectData = {
             "**第二步（平行軸定理）**：若次圖形形心軸不與整體形心軸重合，採用平行軸定理 I = I_g + A · d² 疊加總<span className='text-rose-600 font-bold'>轉動慣量</span>。",
             "**第三步（驗算彎曲<span className='text-rose-600 font-bold'>應力</span>）**：將最大<span className='text-rose-600 font-bold'>彎矩</span> M 代入 σ = M / Z，確保最大邊緣<span className='text-rose-600 font-bold'>應力</span>不超過材料允許抗彎<span className='text-rose-600 font-bold'>應力</span>。"
           ]
+        },
+        {
+          "heading": "平面向量、拋體運動與等速率圓周運動 (Vectors, Projectile & Circular Motion)",
+          "outlineRefs": ["PEb-V.2-4", "PEb-V.2-5", "PEb-V.2-6"],
+          "body": "**平面向量**：位移、速度、加速度與力都同時有大小與方向，合成時用平行四邊形法，計算時分解成 x、y 分量再分別相加。\n**拋體運動**（忽略空氣阻力）：水平方向不受力 → 等速度；鉛直方向只受重力 → 等加速度（a = −g）。\n• 水平拋射：飛行時間只由高度決定 t = √(2h / g)，水平射程 R = v₀·t。\n• 斜向拋射：同高度起落時射程 R = v₀²·sin2θ / g，θ = 45° 射程最大。\n**等速率圓周運動**：速率不變但方向一直改變，所以有指向圓心的**向心加速度** a = v² / r，所需的**向心力** F = m·v² / r。週期 T = 2πr / v。\n🏗️ 情境：工具自 19.6 m 高的屋頂邊緣以 5 m/s 水平滑落，t = √(2 × 19.6 / 9.8) = 2 s，水平飛出 5 × 2 = 10 m，地面警戒範圍至少要涵蓋 10 m。\n⚠️ 易錯：拋體在最高點時鉛直速度為 0，但水平速度仍是 v₀cosθ，所以速度不為 0；加速度在整個過程都是 g 向下。",
+          "formula": "水平：x = v₀ cosθ · t\n鉛直：y = v₀ sinθ · t − ½ g t²\n射程 R = v₀² sin 2θ / g\n向心加速度 a = v² / r，向心力 F = m v² / r",
+          "table": {
+            "headers": ["運動類型", "水平方向", "鉛直方向", "重要結論"],
+            "rows": [
+              ["自由落體", "無", "等加速度 g", "h = ½gt²、v = gt"],
+              ["水平拋射", "等速度 v₀", "自由落體", "落地時間只由高度決定"],
+              ["斜向拋射", "等速度 v₀cosθ", "初速 v₀sinθ 的等加速度", "45° 射程最大（同高起落）"],
+              ["等速率圓周", "速率不變、方向改變", "—", "向心力 mv²/r 指向圓心"]
+            ]
+          }
+        },
+        {
+          "heading": "動量、衝量與動量守恆（碰撞） (Momentum, Impulse & Collisions)",
+          "outlineRefs": ["PEb-V.2-10", "PEb-V.2-11", "PEb-V.2-12"],
+          "body": "**動量** p = m·v（向量，單位 kg·m/s）。**衝量** J = F·Δt，等於動量的變化量 Δp（衝量–動量定理）。\n同樣的動量變化，**延長作用時間 Δt 就能降低平均衝擊力 F**：安全帽內襯、安全網、緩衝氣墊、汽車潰縮區都是這個原理。\n例：2 kg 的鐵鎚以 10 m/s 落在安全網上，0.5 s 內停止，平均力 F = Δp / Δt = 20 / 0.5 = 40 N；若直接撞擊硬地面在 0.01 s 內停止，F = 20 / 0.01 = 2000 N，作用時間縮短 50 倍，衝擊力放大 50 倍。\n**動量守恆**：系統不受外力（或外力合力為零）時，總動量不變：m₁v₁ + m₂v₂ = m₁v₁′ + m₂v₂′。\n**碰撞**：彈性碰撞（動量、動能都守恆）、非彈性碰撞（動量守恆、動能有損失）、完全非彈性碰撞（碰後黏在一起，動能損失最多）。\n⚠️ 易錯：碰撞中「動量」一定守恆（外力可忽略時），「動能」不一定守恆；動量是向量，方向相反要帶負號。",
+          "formula": "p = m · v\nJ = F · Δt = Δp\nm₁v₁ + m₂v₂ = m₁v₁′ + m₂v₂′",
+          "table": {
+            "headers": ["碰撞類型", "動量", "動能", "例子"],
+            "rows": [
+              ["彈性碰撞", "守恆", "守恆", "撞球（近似）、氣體分子碰撞"],
+              ["非彈性碰撞", "守恆", "部分損失（轉成熱、聲、變形）", "一般車輛碰撞"],
+              ["完全非彈性碰撞", "守恆", "損失最多，碰後共同運動", "打樁機錘頭與樁一起下沉"]
+            ]
+          }
+        },
+        {
+          "heading": "萬有引力定律與四種基本交互作用 (Universal Gravitation)",
+          "outlineRefs": ["PKb-V.2-1", "PKe-V.2-1"],
+          "body": "**萬有引力定律**：任兩質點間有互相吸引的力 F = G·m₁m₂ / r²，G = 6.67 × 10⁻¹¹ N·m²/kg²。力與質量乘積成正比、與距離平方成反比。\n**重力加速度**：地表附近 g = G·M / R² ≈ 9.8 m/s²；離地心越遠 g 越小（g ∝ 1/r²）。在離地面高度等於地球半徑處（r = 2R），g′ = g / 4 ≈ 2.45 m/s²。物體的**重量 W = m·g** 就是地球對它的萬有引力。\n**四種基本交互作用**：重力、電磁力、強力、弱力。日常生活中的正向力、摩擦力、張力、彈力，本質上都是原子間的電磁力。\n⚠️ 易錯：質量是物體本身的量（kg），在月球上不變；重量是受到的重力（N），在月球上約為地球的 1/6。",
+          "formula": "F = G · m₁m₂ / r²\ng = G · M / R²\nW = m · g",
+          "table": {
+            "headers": ["基本交互作用", "作用對象", "作用範圍", "例子"],
+            "rows": [
+              ["重力", "所有有質量的物體", "無限遠（隨 1/r² 減弱）", "重量、行星運行、潮汐"],
+              ["電磁力", "帶電粒子", "無限遠（隨 1/r² 減弱）", "摩擦力、正向力、化學鍵、電與磁"],
+              ["強力", "原子核內的核子", "約 10⁻¹⁵ m", "使原子核結合"],
+              ["弱力", "基本粒子", "比原子核更小", "放射性 β 衰變"]
+            ]
+          }
         }
       ],
       "practices": [
@@ -357,9 +418,10 @@ export const physicsData: SubjectData = {
     {
       "slug": "work-energy",
       "title": "2. 📐 功與能量 (Work, Energy & Green Building Thermodynamics)",
-      "desc": "功與功率、<span className='text-rose-600 font-bold'>動能</span>與<span className='text-rose-600 font-bold'>重力位能</span>、<span className='text-indigo-600 font-bold'>能量守恆定律</span>、綠建築<span className='text-indigo-600 font-bold'>熱功當量</span>、水泵/風機定律與蓄能技術。",
+      "desc": "功與功率、動能與重力位能、能量守恆定律、綠建築熱功當量、水泵/風機定律與蓄能技術。",
       "status": "done",
       "gradeLevel": 10,
+      "curriculumCode": "108-PBa",
       "covered_question_ids": [],
       "worked_examples": [
         {
@@ -391,6 +453,7 @@ export const physicsData: SubjectData = {
       "concepts": [
         {
           "heading": "功與電力功率定義 (Work & Electric Power)",
+          "outlineRefs": ["PBa-V.2-1"],
           "body": "當力作用於物體並使其在力的方向上產生位移時，稱為對該物體作功 (W = F · d · cosθ)。功率 (Power, P) 則為單位時間內所作的功或能量消耗速率 (P = W / t)。在建築機電工程中，抽水馬達、電梯主機與空調水泵的規格均以功率 (kW 或 HP) 標示。",
           "formula": "<span className=\"text-indigo-600 font-bold\">W = F · d · cos(θ)</span>\n<span className=\"text-indigo-600 font-bold\">P = W / t = F · v</span>",
           "steps": [
@@ -400,22 +463,26 @@ export const physicsData: SubjectData = {
           ]
         },
         {
-          "heading": "動能與<span className='text-rose-600 font-bold'>重力位能</span> (Kinetic & Gravitational Potential Energy)",
+          "heading": "動能與重力位能 (Kinetic & Gravitational Potential Energy)",
+          "outlineRefs": ["PBa-V.2-2"],
           "body": "物體因運動而具有的能量稱為<span className='text-rose-600 font-bold'>動能</span> (Ek = ½ m v²)；因位置高度而具有的能量稱為<span className='text-rose-600 font-bold'>重力位能</span> (Ep = m g h)。高層建築屋頂高位水塔儲存大量位能，向下給水時位能轉換為<span className='text-rose-600 font-bold'>動能</span>與水壓（每 10 公尺水頭產生約 1 kgf/cm² 或 0.1 MPa 靜水壓）。",
           "formula": "<span className=\"text-indigo-600 font-bold\">E_k = ½ · m · v²</span>\n<span className=\"text-indigo-600 font-bold\">E_p = m · g · h</span>"
         },
         {
           "heading": "能量守恆定律與建築力能回收 (Law of Conservation of Energy)",
+          "outlineRefs": ["PBa-V.2-2", "PBa-V.2-3"],
           "body": "在封閉系統中，能量既不能被創造，也不能被消滅，只能從一種形式轉換為另一種形式，總能量保持恆定。現代綠建築電梯配備再生煞車電力回饋系統 (Regenerative Braking)，將電梯下行或重載上行時減速的<span className='text-rose-600 font-bold'>重力位能</span>轉化為電能供大樓照明使用。",
           "formula": "<span className=\"text-indigo-600 font-bold\">E_total = E_k + E_p + W_loss = Constant</span>"
         },
         {
           "heading": "熱功當量與綠建築節能 (Joule's Equivalent & Energy Conservation)",
+          "outlineRefs": ["PBa-V.2-3", "PBb-V.2-2"],
           "body": "焦耳透過實驗證實機械功與熱能可以等量轉換，確立了<span className='text-indigo-600 font-bold'>熱功當量</span>：1 cal ≒ 4.186 J。建築空調冷凍噸 (Refrigeration Ton, RT) 與千瓦 (kW) 的換算，是計算建築外殼耗能 (ENVLOAD) 與選擇高效能變頻主機的理學依據。",
           "formula": "<span className=\"text-indigo-600 font-bold\">1 cal = 4.186 J</span>\n<span className=\"text-indigo-600 font-bold\">1 RT (美制冷凍噸) ≒ 3.517 kW ≒ 3024 kcal/h</span>"
         },
         {
           "heading": "能量與功率單位換算對照表 (Energy & Power Unit Conversions)",
+          "outlineRefs": ["PEa-V.2-1", "PBa-V.2-1"],
           "body": "在建築設備、綠建築能源模擬與暖通空調 (HVAC) 系統規劃中，能量（焦耳、千瓦小時 kWh、千卡 kcal）與功率（瓦特 W、馬力 HP、冷凍噸 RT）之間的精確換算是計算空調節能效率比 (COP / CSPF) 與建築耗電密度的基本功。",
           "table": {
             "headers": [
@@ -466,6 +533,7 @@ export const physicsData: SubjectData = {
         },
         {
           "heading": "流體機械功率與水泵/風機定律 (Pump & Fan Affinity Laws)",
+          "outlineRefs": [],
           "body": "在 HVAC 空調冰水與冰膽系統中，水泵與風機是主要耗能設備。水泵水功率 P_water = Q · ΔP (流量乘以壓差)。當調整馬達轉速 N 時，遵循<span className='text-indigo-600 font-bold'>風機水泵比例定律</span> (Affinity Laws)：流量與轉速成正比，揚程與轉速平方成正比，而消耗功率與轉速立方成正比 (P ∝ N³)。變頻控制 (VFD) 因此具有極高的節能效益。",
           "formula": "<span className=\"text-indigo-600 font-bold\">Q₂ / Q₁ = N₂ / N₁</span>\n<span className=\"text-indigo-600 font-bold\">H₂ / H₁ = (N₂ / N₁)²</span>\n<span className=\"text-indigo-600 font-bold\">P₂ / P₁ = (N₂ / N₁)³</span>",
           "steps": [
@@ -476,6 +544,7 @@ export const physicsData: SubjectData = {
         },
         {
           "heading": "建築電梯平衡配重與機械效率 (Elevator Counterweight Dynamics)",
+          "outlineRefs": ["PBa-V.2-2", "PMc-V.2-1"],
           "body": "電梯系統利用對重塊 (Counterweight) 來抵銷客廂自重與部分載重。對重塊質量通常設計為：客廂空重 m_car + (0.4 ~ 0.5) × 額定載重 m_capacity。如此設計能使馬達在電梯半載運轉時所需提供的淨拉力幾乎為零，極大地降低了升降過程的能量消耗。",
           "formula": "<span className=\"text-indigo-600 font-bold\">m_counterweight = m_car + 0.45 · m_capacity</span>\n<span className=\"text-indigo-600 font-bold\">ΔF_net = (m_total_up - m_total_down) · g</span>\n<span className=\"text-indigo-600 font-bold\">P_motor = (ΔF_net · v) / η</span>",
           "table": {
@@ -514,7 +583,8 @@ export const physicsData: SubjectData = {
           }
         },
         {
-          "heading": "冰蓄冷空調系統與<span className='text-rose-600 font-bold'>潛熱</span>儲能 (Thermal Energy Storage & Ice Storage)",
+          "heading": "冰蓄冷空調系統與潛熱儲能 (Thermal Energy Storage & Ice Storage)",
+          "outlineRefs": ["PBb-V.2-3"],
           "body": "冰蓄冷 (Ice Thermal Storage) 利用夜間離峰低價電力運轉冰水主機，將水結成冰儲存熔化<span className='text-rose-600 font-bold'>潛熱</span> (Latent Heat of Fusion L_f ≈ 334 kJ/kg)。日間尖峰時段關閉或低速運轉冰水主機，融冰釋放冷量供建築空調使用，達成電力「移峰填谷」與降低契約容量負擔。",
           "formula": "<span className=\"text-indigo-600 font-bold\">Q_storage = m_ice · L_f + m_water · c_w · ΔT</span>\n<span className=\"text-indigo-600 font-bold\">1 kg 冰融化可吸收 334 kJ <span className='text-rose-600 font-bold'>潛熱</span> (相當於將 1kg 水降溫 80°C)</span>",
           "steps": [
@@ -522,6 +592,21 @@ export const physicsData: SubjectData = {
             "白天融冰融冷期 (09:00 ~ 17:00)：循環乙二醇流經蓄冰槽融冰，提供 5°C 冰水給空調箱 (AHU)。",
             "效益：顯著降低日間高額尖峰電費與契約電價。"
           ]
+        },
+        {
+          "heading": "靜止液體的壓力、浮力、帕斯卡原理與大氣壓力 (Fluid Statics)",
+          "outlineRefs": ["PEb-V.2-13", "PEb-V.2-14", "PEb-V.2-15"],
+          "body": "**壓力** P = F / A，單位帕（Pa = N/m²）。\n**液體壓力** P = ρ·g·h：只與液體密度與深度有關，與容器形狀無關。每 10 m 水柱約 98 kPa（約 1 kgf/cm²），所以頂樓水塔越高，低樓層水龍頭的水壓越大。\n**浮力（阿基米德原理）**：物體在液體中所受浮力 B = ρ液·g·V排，等於排開液體的重量。地下室或筏式基礎在地下水位以下時，必須檢討**上浮力**。\n**帕斯卡原理**：密閉液體中任一點的壓力變化，會等量傳到液體各處及容器壁。液壓千斤頂：F₁ / A₁ = F₂ / A₂。例：小活塞 2 cm²、大活塞 200 cm²，施力 100 N 可舉起 10,000 N。\n**大氣壓力**：1 atm ≈ 1.013 × 10⁵ Pa ≈ 76 cmHg ≈ 10.3 m 水柱；因此抽水機靠吸力最多只能把水吸高約 10 m（實際更低），高樓供水要用加壓泵。\n⚠️ 易錯：浮力只和「排開液體的體積」有關，與物體本身的材質、深度（完全浸沒後）無關。",
+          "formula": "P = F / A\nP = ρ g h\nB = ρ液 g V排\nF₁ / A₁ = F₂ / A₂",
+          "table": {
+            "headers": ["原理", "公式", "建築與工程應用"],
+            "rows": [
+              ["液體壓力", "P = ρgh", "水塔高度與給水壓力、擋水牆設計"],
+              ["阿基米德浮力", "B = ρ液 g V排", "地下室抗浮檢討、浮動式施工平台"],
+              ["帕斯卡原理", "F₁/A₁ = F₂/A₂", "液壓千斤頂、液壓電梯、預力千斤頂"],
+              ["大氣壓力", "1 atm ≈ 10.3 m 水柱", "抽水機吸水高度限制、真空吸盤"]
+            ]
+          }
         }
       ],
       "practices": [
@@ -659,9 +744,10 @@ export const physicsData: SubjectData = {
     {
       "slug": "thermodynamics",
       "title": "3. 🌟 熱學與建築熱環境 (Building Thermodynamics & HVAC)",
-      "desc": "熱傳導/對流/輻射、外牆<span className='text-rose-600 font-bold'>熱傳透率</span> U 值與<span className='text-rose-600 font-bold'>熱阻</span> R 值、<span className='text-rose-600 font-bold'>顯熱</span>與<span className='text-rose-600 font-bold'>潛熱</span>、<span className='text-rose-600 font-bold'>焓濕圖</span>與冰水主機 <span className='text-rose-600 font-bold'>COP</span> 性能係數。",
+      "desc": "熱傳導/對流/輻射、外牆熱傳透率 U 值與熱阻 R 值、顯熱與潛熱、焓濕圖與冰水主機 COP 性能係數。",
       "status": "done",
       "gradeLevel": 10,
+      "curriculumCode": "108-PBb",
       "covered_question_ids": [],
       "worked_examples": [
         {
@@ -693,6 +779,7 @@ export const physicsData: SubjectData = {
       "concepts": [
         {
           "heading": "熱傳遞三大機制 (Mechanisms of Heat Transfer)",
+          "outlineRefs": ["PBb-V.2-1"],
           "body": "熱量由高溫處傳向低溫處，共有傳導、對流與輻射三種途徑。建築外殼的隔熱設計即是在這三種傳遞途徑上加設阻礙（如真空層、Low-E 膜、反射塗料與低導熱材質）。",
           "formula": "<span className=\"text-indigo-600 font-bold\">Q_conduction / t = k · A · (T_hot - T_cold) / d</span>\n<span className=\"text-indigo-600 font-bold\">Q_convection / t = h · A · ΔT</span>\n<span className=\"text-indigo-600 font-bold\">Q_radiation / t = ε · σ · A · (T₁⁴ - T₂⁴)</span>",
           "steps": [
@@ -702,21 +789,25 @@ export const physicsData: SubjectData = {
           ]
         },
         {
-          "heading": "熱阻 R 值與<span className='text-rose-600 font-bold'>熱傳透率</span> U 值 (Thermal Resistance & Transmittance)",
+          "heading": "熱阻 R 值與熱傳透率 U 值 (Thermal Resistance & Transmittance)",
+          "outlineRefs": [],
           "body": "建築外牆與屋頂由多層材料組合成。單一材料<span className='text-rose-600 font-bold'>熱阻</span> R = d / k (厚度除以<span className='text-rose-600 font-bold'>熱傳導</span>率)。多層構造之總<span className='text-rose-600 font-bold'>熱阻</span> ΣR 為各層<span className='text-rose-600 font-bold'>熱阻</span>與內外表面熱傳阻 (R_si, R_se) 之代數和。<span className='text-rose-600 font-bold'>熱傳透率</span> U 值則為總<span className='text-rose-600 font-bold'>熱阻</span>之倒數 (U = 1 / ΣR)。U 值越低，代表構造之隔熱性能越佳。",
           "formula": "<span className=\"text-indigo-600 font-bold\">R = d / k</span>\n<span className=\"text-indigo-600 font-bold\">ΣR = R_se + Σ(d_i / k_i) + R_si</span>\n<span className=\"text-indigo-600 font-bold\">U = 1 / ΣR</span>\n<span className=\"text-indigo-600 font-bold\">Q = U · A · ΔT</span>"
         },
         {
-          "heading": "顯熱、<span className='text-rose-600 font-bold'>潛熱</span>與建築空調負荷 (Sensible Heat, Latent Heat & HVAC Load)",
+          "heading": "顯熱、潛熱與建築空調負荷 (Sensible Heat, Latent Heat & HVAC Load)",
+          "outlineRefs": ["PBb-V.2-2", "PBb-V.2-3"],
           "body": "顯熱 (Sensible Heat) 會引致物質溫度改變而不改變其相態 (Q = m c ΔT)；<span className='text-rose-600 font-bold'>潛熱</span> (Latent Heat) 則在物質發生相變（如水蒸發為水蒸氣或冰熔化）時吸收或釋放熱量，溫度保持不變 (Q = m L)。台灣夏季氣候高溫高濕，建築空調總熱負荷中包含龐大的<span className='text-rose-600 font-bold'>潛熱</span>除濕負荷。",
           "formula": "<span className=\"text-indigo-600 font-bold\">Q_sensible = m · c · ΔT</span>\n<span className=\"text-indigo-600 font-bold\">Q_latent = m · L_v</span>"
         },
         {
           "heading": "建築外皮節能指標與 Thermal Mass 蓄熱效應",
+          "outlineRefs": ["PBb-V.2-2"],
           "body": "高熱容量材料（如厚重混凝土牆、水牆）具有熱滯後 (Thermal Lag) 效應，能延緩夏季白天的太陽輻射熱傳入室內，並於夜間降溫時慢慢釋放熱量。搭配外牆通氣層與遮陽板，可大幅降低 HVAC 空調冰水主機之尖峰負荷。"
         },
         {
           "heading": "熱學物理量與隔熱參數換算表 (Thermal Parameters & Units)",
+          "outlineRefs": ["PEa-V.2-1"],
           "body": "建築工程常見之<span className='text-rose-600 font-bold'>熱傳導</span>率 k、<span className='text-rose-600 font-bold'>熱阻</span> R、<span className='text-rose-600 font-bold'>熱傳透率</span> U 及空調能力單位。",
           "table": {
             "headers": [
@@ -760,7 +851,8 @@ export const physicsData: SubjectData = {
           }
         },
         {
-          "heading": "濕空氣性質與<span className='text-rose-600 font-bold'>焓濕圖</span>分析 (Psychrometrics & Air Conditioning)",
+          "heading": "濕空氣性質與焓濕圖分析 (Psychrometrics & Air Conditioning)",
+          "outlineRefs": [],
           "body": "建築空調工程的核心在於濕空氣的狀態調節。空氣由乾空氣與水蒸氣組成。乾球溫度 (DBT)、濕球溫度 (WBT)、露點溫度 (DPT)、相對濕度 (RH%) 及含濕量 (Absolute Humidity x) 在<span className='text-rose-600 font-bold'>焓濕圖</span> (Psychrometric Chart) 上唯一確定空氣狀態。當空氣降溫至露點以下時，水蒸氣凝結成水滴，此即空調除濕原理。",
           "formula": "<span className=\"text-indigo-600 font-bold\">RH% = (P_v / P_vsat) × 100%</span>\n<span className=\"text-indigo-600 font-bold\">h = 1.006 · t + x · (2501 + 1.86 · t) (kJ/kg)</span>",
           "steps": [
@@ -770,7 +862,8 @@ export const physicsData: SubjectData = {
           ]
         },
         {
-          "heading": "冷凍循環與冰水主機性能指標 <span className='text-rose-600 font-bold'>COP</span> / EER / kW/RT",
+          "heading": "冷凍循環與冰水主機性能指標 COP / EER / kW/RT",
+          "outlineRefs": ["PBb-V.2-5"],
           "body": "蒸汽壓縮式冷凍循環包含壓縮機、凝結器、膨脹閥與蒸發器四大元件。冰水主機性能指標包括：性能係數 (<span className='text-rose-600 font-bold'>COP</span> = Q_cool / W_elect)、能源效率比 (EER, BTU/h·W) 以及耗電率 (kW/RT)。卡諾逆循環決定了理論最高 <span className='text-rose-600 font-bold'>COP</span> = T_L / (T_H - T_L)。",
           "formula": "<span className=\"text-indigo-600 font-bold\">COP = Q_cooling (kW) / W_power (kW)</span>\n<span className=\"text-indigo-600 font-bold\">kW / RT = 3.517 / COP</span>\n<span className=\"text-indigo-600 font-bold\">EER (W/W) = <span className='text-rose-600 font-bold'>COP</span> = 3.412 · EER (BTU/h·W)</span>",
           "table": {
@@ -814,13 +907,43 @@ export const physicsData: SubjectData = {
           }
         },
         {
-          "heading": "自然通風熱壓 (<span className='text-rose-600 font-bold'>煙囪效應</span>) 計算 (Stack Effect & Thermal Buoyancy)",
+          "heading": "自然通風熱壓 (煙囪效應) 計算 (Stack Effect & Thermal Buoyancy)",
+          "outlineRefs": ["PEb-V.2-13"],
           "body": "高層建築管道間、中庭 (Atrium) 與採光井中，室內外溫差會導致空氣密度差異。熱空氣密度低而上升，由頂部排氣窗逸出，底部引進室外涼爽空氣，此現象稱為熱壓通風或<span className='text-rose-600 font-bold'>煙囪效應</span> (Stack Effect)。",
           "formula": "<span className=\"text-indigo-600 font-bold\">ΔP_stack = ρ₀ · g · h · (1/T_out - 1/T_in) · T₀</span>\n<span className=\"text-indigo-600 font-bold\">Q_stack = C_d · A · √( 2 · g · h · ΔT / T_in )</span>",
           "steps": [
             "**第一步（求取熱壓差 ΔP）**：根據中庭開窗高度差 h 與室內外絕對溫度 (T_in, T_out, K) 計算驅動壓差。",
             "**第二步（計算通風量 Q）**：代入開窗有效面積 A 與流量係數 Cd (通常取 0.6~0.65) 求出自然換氣量 m³/s。"
           ]
+        },
+        {
+          "heading": "溫度、熱平衡、比熱與熱膨脹 (Temperature, Specific Heat & Thermal Expansion)",
+          "outlineRefs": ["PBb-V.2-1", "PBb-V.2-2", "PBb-V.2-4"],
+          "body": "**溫度**表示物體冷熱的程度，常用攝氏（℃）與絕對溫度（K）：T(K) = t(℃) + 273。\n**熱平衡**：兩物體接觸時，熱由高溫流向低溫，直到兩者溫度相同。溫度計能量測溫度就是靠熱平衡。\n**比熱與熱容量**：熱量 Q = m·s·ΔT，s 為比熱（水約 4186 J/kg·℃，即 1 cal/g·℃）；熱容量 C = m·s。比熱大的物質溫度變化慢，所以濱海地區溫差小、水常當冷卻劑。混合問題：高溫物放熱 = 低溫物吸熱。\n**熱膨脹**：線膨脹 ΔL = α·L₀·ΔT。鋼的 α 約 1.2 × 10⁻⁵ /℃、混凝土約 1.0 × 10⁻⁵ /℃，兩者相近，鋼筋與混凝土才能共同作用而不易脫離。\n🏗️ 情境：50 m 長的鋼梁溫差 30 ℃，ΔL = 1.2 × 10⁻⁵ × 50 × 30 = 0.018 m = 18 mm，因此長建築物與橋梁需設置**伸縮縫**。\n⚠️ 易錯：溫度「差」1 ℃ 等於 1 K，所以計算 ΔT 時用 ℃ 或 K 結果相同；但氣體定律中的 T 必須用 K。",
+          "formula": "T(K) = t(℃) + 273\nQ = m · s · ΔT\nΔL = α · L₀ · ΔT",
+          "table": {
+            "headers": ["材料", "比熱（約，J/kg·℃）", "線膨脹係數（約，/℃）", "工程意義"],
+            "rows": [
+              ["水", "4186", "—", "比熱最大之一，蓄熱與冷卻"],
+              ["混凝土", "880", "1.0 × 10⁻⁵", "熱容量大，可作蓄熱體"],
+              ["鋼", "460", "1.2 × 10⁻⁵", "與混凝土膨脹係數相近"],
+              ["鋁", "900", "2.3 × 10⁻⁵", "鋁窗框需預留伸縮間隙"]
+            ]
+          }
+        },
+        {
+          "heading": "熱力學定律與熱機、冷氣的效率 (Laws of Thermodynamics)",
+          "outlineRefs": ["PBb-V.2-5"],
+          "body": "**熱力學第一定律（能量守恆）**：系統內能的變化 ΔU = Q − W（Q 為系統吸收的熱，W 為系統對外作的功）。能量只會轉換形式，不會憑空產生或消失。\n**熱力學第二定律**：熱不會自發地由低溫流向高溫；熱機不可能把吸收的熱全部轉換成功，效率一定小於 100%。\n**熱機效率** η = W / Q_H = 1 − Q_C / Q_H；理想卡諾熱機的效率上限 η = 1 − T_C / T_H（溫度用 K）。例：T_H = 600 K、T_C = 300 K，η_max = 50%。\n**冷氣與熱泵**：消耗電功 W，把熱由低溫的室內搬到高溫的室外。性能係數 COP = Q_C / W，室內外溫差越小 COP 越高，所以冷氣設定 26–28 ℃ 較省電。\n⚠️ 易錯：冷氣「搬運」的熱可以大於消耗的電功（COP > 1），這並不違反能量守恆，因為熱是被搬走而不是被製造出來的。（本觀念為課綱進階教材）",
+          "formula": "ΔU = Q − W\n熱機效率 η = W / Q_H = 1 − Q_C / Q_H\n卡諾效率 η = 1 − T_C / T_H\n冷氣 COP = Q_C / W",
+          "table": {
+            "headers": ["定律", "內容", "生活與工程應用"],
+            "rows": [
+              ["第零定律", "兩物與第三物熱平衡，則彼此熱平衡", "溫度計"],
+              ["第一定律", "能量守恆：ΔU = Q − W", "引擎、發電機的能量計算"],
+              ["第二定律", "熱不會自發由低溫流向高溫；熱機效率 < 100%", "冷氣需耗電、熱機必有廢熱"]
+            ]
+          }
         }
       ],
       "practices": [
@@ -966,9 +1089,10 @@ export const physicsData: SubjectData = {
     {
       "slug": "waves-acoustics",
       "title": "4. 🏗️ 波動與建築聲學 (Building Waves & Acoustics)",
-      "desc": "波動物理、聲速與<span className='text-rose-600 font-bold'>聲壓級</span> dB(A)、賽賓<span className='text-rose-600 font-bold'>殘響時間</span> RT60、隔音等級 <span className='text-rose-600 font-bold'>STC</span>、樓板衝擊音與交通噪音衰減。",
+      "desc": "波動物理、聲速與聲壓級 dB(A)、賽賓殘響時間 RT60、隔音等級 STC、樓板衝擊音與交通噪音衰減。",
       "status": "done",
       "gradeLevel": 10,
+      "curriculumCode": "108-PKa",
       "covered_question_ids": [],
       "worked_examples": [
         {
@@ -1000,11 +1124,13 @@ export const physicsData: SubjectData = {
       "concepts": [
         {
           "heading": "聲波性質與空氣中聲速 (Sound Wave Speed & Frequency)",
+          "outlineRefs": ["PKa-V.2-3", "PKa-V.2-5"],
           "body": "聲波為縱波（疏密波），在介質中傳播。波速 v 等於頻率 f 乘以波長 λ (v = f · λ)。空氣中聲速隨攝氏溫度 t 上升而增大。人耳可聽頻率範圍約為 20 Hz ~ 20,000 Hz，建築防音設計重點關注 125 Hz ~ 4000 Hz 音頻。",
           "formula": "<span className=\"text-indigo-600 font-bold\">v = 331 + 0.6 · t (m/s)</span>\n<span className=\"text-indigo-600 font-bold\">v = f · λ</span>"
         },
         {
           "heading": "聲強級與分貝 dB(A) 算術疊加 (Sound Level & Decibel Addition)",
+          "outlineRefs": ["PKa-V.2-5"],
           "body": "人耳對聲音強弱的感知呈對數關係。聲強級 L_p 以分貝 (dB) 標記。當多個獨立聲源同時發聲時，分貝數不能直接代數相加，必須將分貝轉換回能量強度相加後再求對數。兩個相同分貝的獨立聲源疊加，總<span className='text-rose-600 font-bold'>聲壓級</span>僅增加 3 dB。",
           "formula": "<span className=\"text-indigo-600 font-bold\">L_p = 10 · log₁₀(I / I₀) = 20 · log₁₀(P / P₀)</span>\n<span className=\"text-indigo-600 font-bold\">L_total = 10 · log₁₀( Σ 10^(L_i / 10) )</span>",
           "steps": [
@@ -1014,7 +1140,8 @@ export const physicsData: SubjectData = {
           ]
         },
         {
-          "heading": "空間吸音與賽賓<span className='text-rose-600 font-bold'>殘響時間</span>公式 (Sabine's Reverberation Time RT60)",
+          "heading": "空間吸音與賽賓殘響時間公式 (Sabine's Reverberation Time RT60)",
+          "outlineRefs": ["PKa-V.2-3"],
           "body": "殘響時間 (RT60) 指聲源停止發聲後，室內聲能密度衰減 60 dB (至原能量之百萬分之一) 所需的時間。<span className='text-indigo-600 font-bold'>賽賓公式</span> (Sabine Formula) 為音樂廳、演講廳與教堂聲學設計的核心工具。<span className='text-rose-600 font-bold'>殘響時間</span>過長會降低言語清晰度，過短則使音樂顯得乾澀無生氣。",
           "formula": "<span className=\"text-indigo-600 font-bold\">RT₆₀ = 0.161 · V / A_total</span>\n<span className=\"text-indigo-600 font-bold\">A_total = Σ (S_i · α_i)</span>",
           "steps": [
@@ -1024,12 +1151,14 @@ export const physicsData: SubjectData = {
           ]
         },
         {
-          "heading": "建築隔音與聲音透射損失 TL / <span className='text-rose-600 font-bold'>STC</span> rating",
+          "heading": "建築隔音與聲音透射損失 TL / STC rating",
+          "outlineRefs": [],
           "body": "建築隔音主要阻止聲音穿透牆體或樓板。透射損失 (Transmission Loss, TL) 代表牆體減弱聲能的分貝數。單層牆體的隔音量遵循「<span className='text-rose-600 font-bold'>質量定律</span>」(Mass Law)：面密度 m (kg/m²) 或聲波頻率 f 增加一倍，隔音量約增加 6 dB。雙層分開構架隔音牆可突破<span className='text-rose-600 font-bold'>質量定律</span>限制。",
           "formula": "<span className=\"text-indigo-600 font-bold\">TL = 10 · log₁₀(1 / τ) (dB)</span>\n<span className=\"text-indigo-600 font-bold\">TL_MassLaw ≒ 20 · log₁₀(m · f) - 48 (dB)</span>"
         },
         {
           "heading": "聲學物理量與建築材料吸音/隔音參數對照表 (Acoustics Parameters)",
+          "outlineRefs": [],
           "body": "建築常見聲學量度單位、吸音係數 α 與 <span className='text-rose-600 font-bold'>STC</span> 隔音等級對照。",
           "table": {
             "headers": [
@@ -1074,6 +1203,7 @@ export const physicsData: SubjectData = {
         },
         {
           "heading": "樓板衝擊音 (Impact Sound Insulation) 與浮動地板機制",
+          "outlineRefs": [],
           "body": "樓板衝擊音源於腳步聲、物品墜落等直接撞擊結構引致的固體傳播聲 (Structure-borne Noise)。台灣建築法規規定分戶樓板連同鋪面衝擊音降低量需達 17 dB 以上 (或 L'n,w ≤ 58 dB)。浮動地板 (Floating Floor) 透過在結構樓板與水泥砂漿壓造型層之間鋪設高彈性防音墊 (如 EVA、橡膠防音墊)，阻斷振<span className='text-rose-600 font-bold'>動能</span>量傳遞。",
           "formula": "<span className=\"text-indigo-600 font-bold\">ΔL_w = L'n,w,bare - L'n,w,floating ≥ 17 dB</span>",
           "steps": [
@@ -1084,6 +1214,7 @@ export const physicsData: SubjectData = {
         },
         {
           "heading": "戶外道路交通噪音距離衰減模型 (Noise Propagation & Distance Decay)",
+          "outlineRefs": ["PKa-V.2-5"],
           "body": "點聲源（如單一機械）與線聲源（如連續高速公路車流）的幾何擴散衰減特性不同。點聲源遵從球面積分，距離加倍衰減 6 dB；線聲源遵從圓柱面積分，距離加倍衰減 3 dB。建築退縮與臨路防音牆是都市抗噪的主要手段。",
           "formula": "<span className=\"text-indigo-600 font-bold\">L_p(r₂) = L_p(r₁) - 20 · log₁₀(r₂ / r₁) (點聲源)</span>\n<span className=\"text-indigo-600 font-bold\">L_p(r₂) = L_p(r₁) - 10 · log₁₀(r₂ / r₁) (無限長線聲源)</span>",
           "table": {
@@ -1117,12 +1248,28 @@ export const physicsData: SubjectData = {
         },
         {
           "heading": "聲波干涉、繞射與房間駐波共振 (Room Modes & Interference)",
+          "outlineRefs": ["PKa-V.2-3", "PKa-V.2-4"],
           "body": "當聲波波長與房間尺寸相當（低頻音）時，反射波與入射波重疊會在平行牆面間形成駐波 (Standing Waves)，產生特定的房間簡正頻率 (Room Modes / Axials Modes)。這會導致室內某些位置低音異常過強（聲壓極大值），某些位置則幾乎聽不到低音（聲壓極小值）。",
           "formula": "<span className=\"text-indigo-600 font-bold\">f_mode = (v / 2) · √[ (n_x / L)² + (n_y / W)² + (n_z / H)² ]</span>",
           "steps": [
             "**第一步（頻率計算）**：對矩形房間求出一階軸向模態頻率 f = v / (2L)。",
             "**第二步（防範措施）**：避免房間長寬高呈簡單整數比 (如 1:1:1 或 1:2:4)。採用黃金比例 (如 1 : 1.14 : 1.39) 或設置低頻陷阱 (Bass Trap) 吸收低頻駐波能量。"
           ]
+        },
+        {
+          "heading": "振動與波：週期、頻率、波速與繩波的反射和透射 (Vibration & Waves)",
+          "outlineRefs": ["PKa-V.2-1", "PKa-V.2-2", "PKa-V.2-3"],
+          "body": "**振動**：物體在平衡位置附近往復運動。完成一次振動的時間為週期 T，每秒振動次數為頻率 f = 1 / T（Hz）。\n**波**：振動在介質中的傳播，傳遞的是**能量**，介質本身只在原地振動。\n• 橫波：振動方向與傳播方向垂直，如繩波、電磁波。\n• 縱波：振動方向與傳播方向平行，如聲波（疏密波）。\n**波速** v = f·λ。波速由介質決定；同一個波進入不同介質時**頻率不變**，波速與波長改變。\n**繩波的反射與透射**：\n• 固定端反射：反射波上下顛倒（相位反轉）；自由端反射：不顛倒。\n• 由細繩傳到粗繩（波速變慢）：部分透射、部分反射，反射波顛倒；由粗繩傳到細繩：反射波不顛倒。透射波都不顛倒。\n**波的特性**：反射、折射、干涉、繞射，聲波與光波都有這些現象。\n⚠️ 易錯：波傳到另一介質時「頻率由波源決定、不會改變」，改變的是波速與波長。",
+          "formula": "f = 1 / T\nv = f · λ",
+          "table": {
+            "headers": ["反射情況", "反射波", "透射波"],
+            "rows": [
+              ["固定端", "顛倒（相位差 180°）", "無"],
+              ["自由端", "不顛倒", "無"],
+              ["細繩 → 粗繩（波速變慢）", "顛倒", "不顛倒，波長變短"],
+              ["粗繩 → 細繩（波速變快）", "不顛倒", "不顛倒，波長變長"]
+            ]
+          }
         }
       ],
       "practices": [
@@ -1258,6 +1405,7 @@ export const physicsData: SubjectData = {
       "desc": "光的折射與反射、照度距離平方反比定律、利用係數法燈具規劃、採光係數 DF 與防眩光 UGR。",
       "status": "done",
       "gradeLevel": 10,
+      "curriculumCode": "108-PKa",
       "covered_question_ids": [],
       "worked_examples": [
         {
@@ -1289,11 +1437,13 @@ export const physicsData: SubjectData = {
       "concepts": [
         {
           "heading": "光的反射、折射與全反射 (Reflection, Refraction & Snell's Law)",
+          "outlineRefs": ["PKa-V.2-6", "PKa-V.2-7"],
           "body": "光在不同介質界面會發生反射與折射。折射遵循折射定律 (Snell's Law: n₁ sinθ₁ = n₂ sinθ₂)。當光由光密介質（如玻璃 n=1.5）射向光疏介質（如空氣 n=1.0）且入射角大於臨界角 θc 時，會發生全反射。建築導光管系統 (Tubular Daylighting Device, TDD) 即利用光纖全反射將屋頂陽光引入無窗地下室。",
           "formula": "<span className=\"text-indigo-600 font-bold\">n₁ · sin(θ₁) = n₂ · sin(θ₂)</span>\n<span className=\"text-indigo-600 font-bold\">sin(θ_c) = n₂ / n₁ (當 n₁ > n₂)</span>"
         },
         {
           "heading": "核心光度學物理量：光通量、發光強度、照度與亮度 (Photometric Quantities)",
+          "outlineRefs": [],
           "body": "照明設計四要素：光通量 Φ (Lumen, lm，光源發出的總光量)；發光強度 I (Candela, cd，特定方向之光通量密度)；照度 E (Lux, lx，受照面單位面積接受的光通量 E = Φ / A)；亮度 L (Nit 或 cd/m²，人眼感受到的表面發光或反射強度)。",
           "formula": "<span className=\"text-indigo-600 font-bold\">E = Φ / A</span>\n<span className=\"text-indigo-600 font-bold\">E = (I / r²) · cos(θ) (逐點照度與距離平方反比定律)</span>",
           "steps": [
@@ -1303,6 +1453,7 @@ export const physicsData: SubjectData = {
         },
         {
           "heading": "室內平均照度計算：利用係數法 (Zonal Cavity Lumen Method)",
+          "outlineRefs": [],
           "body": "建築室內整體照明設計採用利用係數法計算均勻照度。公式整合了燈具總光通量、房間利用係數 (Utilization Factor, UF，考慮牆面反射率與空間幾何比例) 以及維護係數 (Maintenance Factor, MF，考慮燈具老化與粉塵光衰)。",
           "formula": "<span className=\"text-indigo-600 font-bold\">E_avg = (N · n · Φ · UF · MF) / A</span>\n<span className=\"text-indigo-600 font-bold\">N = (E_avg · A) / (n · Φ · UF · MF)</span>",
           "steps": [
@@ -1313,11 +1464,13 @@ export const physicsData: SubjectData = {
         },
         {
           "heading": "自然採光與採光係數 (Daylight Factor, DF)",
+          "outlineRefs": [],
           "body": "採光係數 (DF) 指全陰天條件下，室內某一點的照度 E_in 與室外無遮蔽水平面總全天空照度 E_out 之百分比。台灣綠建築標章規定的居室採光標準，要求主要居住空間採光係數 DF ≥ 2%。Low-E 複層玻璃能在維持高可見光透射率 (VLT > 60%) 的同時，阻絕太陽<span className='text-rose-600 font-bold'>熱輻射</span> (SHGC < 0.4)。",
           "formula": "<span className=\"text-indigo-600 font-bold\">DF = (E_in / E_out) × 100%</span>"
         },
         {
           "heading": "光學與照明單位對照及 CNS 照度標準規範表 (Lighting Standards Table)",
+          "outlineRefs": [],
           "body": "依據台灣國家標準 CNS 12112（室內工作場所照明）規範，光通量 (流明 lm)、發光強度 (坎德拉 cd)、照度 (勒克斯 lx) 與亮度 (cd/m²) 構成建築光環境量化體系，直接決定製圖教室、辦公室及展示空間的視覺舒適度與節能表現。",
           "table": {
             "headers": [
@@ -1362,6 +1515,7 @@ export const physicsData: SubjectData = {
         },
         {
           "heading": "統一眩光指數 (UGR) 與人眼舒適度防眩設計",
+          "outlineRefs": [],
           "body": "眩光 (Glare) 是指視野內過高之亮度或過大之亮度對比，引致眼睛不適或視力低下。統一眩光指數 (Unified Glare Rating, UGR) 為評估室內不舒適眩光的指標。國家標準規定辦公室與教室 UGR 必須 ≤ 19。",
           "formula": "<span className=\"text-indigo-600 font-bold\">UGR = 8 · log₁₀ [ (0.25 / L_b) · Σ (L² · Ω / p²) ]</span>",
           "steps": [
@@ -1372,6 +1526,7 @@ export const physicsData: SubjectData = {
         },
         {
           "heading": "演色性 (CRI / Ra) 與相關色溫 (CCT) 人因照明",
+          "outlineRefs": [],
           "body": "光源之演色性指數 (CRI, Ra) 代表該光源照射下物體呈現真實色彩的能力 (太陽光 Ra = 100)。相關色溫 (CCT, K) 則代表光色的冷暖。人因照明 (Human Centric Lighting, HCL) 根據日夜節律調整色溫：白天高色溫 (5000K~6500K 藍光成分高) 抑制褪黑激素提升專注；夜間低色溫 (2700K~3000K 暖光) 促進放鬆睡眠。",
           "table": {
             "headers": [
@@ -1404,8 +1559,38 @@ export const physicsData: SubjectData = {
         },
         {
           "heading": "照明功率密度 (LPD) 與晝光感應節能控制",
+          "outlineRefs": [],
           "body": "照明功率密度 (Lighting Power Density, LPD, W/m²) 為綠建築指標 (EEWH / LEED) 的強制檢核項目。結合動態 DALI / 0-10V 調光驅動器與晝光感應器 (Daylight Sensor)，當靠窗區自然光充足時自動降低 LED 功率，節能可達 30%~50%。",
           "formula": "<span className=\"text-indigo-600 font-bold\">LPD = P_total_lighting (W) / A_floor (m²) ≤ LPD_baseline (如 9.0 W/m²)</span>"
+        },
+        {
+          "heading": "光的干涉與繞射 (Interference & Diffraction of Light)",
+          "outlineRefs": ["PKa-V.2-8", "PKa-V.2-9"],
+          "body": "光是一種電磁波，會發生干涉與繞射，證明了光的波動性。\n**楊氏雙狹縫干涉**：兩狹縫作為同調光源，到屏幕上某點的光程差 Δ = d·sinθ。Δ = nλ 時為亮紋（建設性干涉），Δ = (n + ½)λ 時為暗紋（破壞性干涉）。相鄰亮紋間距 Δy = λ·L / d。例：λ = 600 nm、d = 0.3 mm、L = 2 m，Δy = 600 × 10⁻⁹ × 2 / (0.3 × 10⁻³) = 4 × 10⁻³ m = 4 mm。\n**薄膜干涉**：肥皂泡、水面油膜的彩色條紋；相機鏡頭與太陽能板的**抗反射鍍膜**利用薄膜干涉減少反射。\n**繞射**：光通過狹縫或障礙物邊緣時偏離直線前進；狹縫寬度與波長接近時最明顯。單狹縫繞射的中央亮紋寬度是其他亮紋的 2 倍。（繞射為課綱進階教材）\n⚠️ 易錯：雙狹縫間距 d 越小，亮紋間距 Δy 越大；波長越長（紅光）條紋越寬。",
+          "formula": "亮紋：d sinθ = nλ\n暗紋：d sinθ = (n + ½)λ\n亮紋間距 Δy = λL / d",
+          "table": {
+            "headers": ["現象", "發生條件", "生活與工程例子"],
+            "rows": [
+              ["雙狹縫干涉", "同調光源、光程差", "測量光的波長"],
+              ["薄膜干涉", "膜的上下表面反射光疊加", "肥皂泡色彩、抗反射鍍膜"],
+              ["單狹縫繞射", "狹縫寬與波長相近", "光碟的彩色條紋、光學儀器解析度限制"]
+            ]
+          }
+        },
+        {
+          "heading": "近代物理：量子論、光電效應、原子光譜與波粒二象性 (Modern Physics)",
+          "outlineRefs": ["PKd-V.2-1", "PKd-V.2-2", "PKd-V.2-3", "PKd-V.2-4", "PKd-V.2-5"],
+          "body": "**量子論**：普朗克提出能量是一份一份不連續的「量子」。光的能量以光子為單位，E = h·f，h = 6.63 × 10⁻³⁴ J·s。\n**光電效應**：光照射金屬表面能打出電子。能否打出電子由光的**頻率**決定（必須高於底限頻率），與光的強度無關；光強度只影響打出的電子數目。愛因斯坦光電方程式 K_max = h·f − W（W 為功函數）。應用：太陽能電池、光感測器、自動門。\n**原子光譜**：每種元素只能吸收或放出特定頻率的光，形成**線光譜**，因為原子中電子的能階不連續，ΔE = h·f。霓虹燈與鈉燈的顏色就是來自特定元素的光譜。\n**波粒二象性**：光在干涉、繞射時表現波動性，在光電效應時表現粒子性。電子等物質粒子也具有波動性，物質波波長 λ = h / p（電子顯微鏡的原理，為進階教材）。\n⚠️ 易錯：增加光的強度不能讓低於底限頻率的光打出電子；要打出電子必須提高頻率（如改用紫外光）。",
+          "formula": "光子能量 E = h f\n光電方程式 K_max = h f − W\n能階躍遷 ΔE = h f\n物質波 λ = h / p",
+          "table": {
+            "headers": ["現象", "證明了", "應用"],
+            "rows": [
+              ["光的干涉、繞射", "光的波動性", "光學儀器、雷射干涉測距"],
+              ["光電效應", "光的粒子性（光子）", "太陽能電池、光感測器"],
+              ["原子線光譜", "電子能階不連續", "霓虹燈、光譜分析、LED 色光"],
+              ["電子繞射", "物質的波動性", "電子顯微鏡"]
+            ]
+          }
         }
       ],
       "practices": [
@@ -1546,6 +1731,7 @@ export const physicsData: SubjectData = {
       "desc": "歐姆定律、電功率與焦耳熱、交流電功率因數 cos φ、無熔絲開關 NFB、三相配電與接地保護。",
       "status": "done",
       "gradeLevel": 10,
+      "curriculumCode": "108-PKc",
       "covered_question_ids": [],
       "worked_examples": [
         {
@@ -1577,6 +1763,7 @@ export const physicsData: SubjectData = {
       "concepts": [
         {
           "heading": "歐姆定律與串並聯電路分析 (Ohm's Law & Series-Parallel Circuits)",
+          "outlineRefs": ["PKc-V.2-7", "PKc-V.2-8"],
           "body": "歐姆定律 (V = I · R) 為電路學核心。建築室內配電一律採用並聯電路 (Parallel Circuit)，確保各電器均承受額定標準電壓 (如 110V 或 220V)，且單一電器開關或故障不致影響其他迴路運作。",
           "formula": "<span className=\"text-indigo-600 font-bold\">V = I · R</span>\n<span className=\"text-indigo-600 font-bold\">R_series = R₁ + R₂ + ... + R_n</span>\n<span className=\"text-indigo-600 font-bold\">1 / R_parallel = 1/R₁ + 1/R₂ + ... + 1/R_n</span>",
           "steps": [
@@ -1586,21 +1773,25 @@ export const physicsData: SubjectData = {
         },
         {
           "heading": "電功率與纜線焦耳熱損耗 (Electric Power & Joule Heating)",
+          "outlineRefs": ["PKc-V.2-9"],
           "body": "電器消耗電能的速率為電功率 (P = V · I = I² R)。電流通過具電阻的導線時會產生焦耳熱 (Q = I² R t)。若迴路電流超過電線載流量 (Ampacity)，導線絕緣層將因高溫熔毀引發走火。建築配電設計必須依照《用戶用電設備裝置規則》計算導線截面積與熱壓降。",
           "formula": "<span className=\"text-indigo-600 font-bold\">P = V · I = I² · R = V² / R</span>\n<span className=\"text-indigo-600 font-bold\">P_loss = I² · R_wire</span>"
         },
         {
           "heading": "交流電 (AC)、虛功率與功率因數 cos φ (AC Power & Power Factor)",
+          "outlineRefs": ["PKc-V.2-17"],
           "body": "建築電力系統為單相或三相交流電 (AC)。包含視在功率 S (kVA)、實功率 P (kW) 與虛功率 Q (kVAR)。功率因數 (Power Factor, cos φ = P / S) 代表電能有效利用的比例。電感性負載（如冷氣壓縮機、水泵馬達）會降低功率因數，需在配電箱加裝電容器 (Capacitor) 進行功率因數改善至 95% 以上，以避免台電罰款。",
           "formula": "<span className=\"text-indigo-600 font-bold\">S = V · I (單相視在功率, VA)</span>\n<span className=\"text-indigo-600 font-bold\">P = V · I · cos(φ) (單相實功率, W)</span>\n<span className=\"text-indigo-600 font-bold\">P_3phase = √3 · V_line · I_line · cos(φ) (三相實功率, W)</span>"
         },
         {
           "heading": "建築用電安全、NFB 無熔絲開關與接地保護 (Electrical Safety & Grounding)",
+          "outlineRefs": ["PKc-V.2-10"],
           "body": "建築幹線與分路配電箱設有無熔絲開關 (No-Fuse Breaker, NFB)，當迴路發生過載或短路時自動跳脫 (Trip) 斷電。浴室、陽台等潮濕場所依法必須加裝漏電斷路器 (ELCB)，動作敏感電流通常為 30 mA / 0.1 秒內。第 3 種接地系統要求接地電阻 R ≤ 50 Ω，防止設備漏電造成人體觸電。",
           "formula": "<span className=\"text-indigo-600 font-bold\">I_trip ≥ 1.25 · I_continuous (NFB 額定容量選擇原則)</span>"
         },
         {
           "heading": "電學單位與建築纜線規格對照表 (Electrical Parameters & Gauge)",
+          "outlineRefs": ["PKc-V.2-7"],
           "body": "建築電氣基礎與安全配線規範：電壓 V (伏特)、電流 I (安培)、電阻 R (歐姆)，歐姆定律 V = I·R；單相交流電功率 P = V·I·cosφ (W)；三相交流電功率 P = √3·V·I·cosφ；依據《用戶用電設備裝置規則》，1.6 mm 實心銅線安全載流量為 15 A，2.0 mm 為 19 A，5.5 mm² 絞線為 25 A，需嚴格搭配無熔線斷路器 (NFB) 防止過載走火。",
           "table": {
             "headers": [
@@ -1645,6 +1836,7 @@ export const physicsData: SubjectData = {
         },
         {
           "heading": "三相四線制配電系統 (3-Phase 4-Wire System)",
+          "outlineRefs": [],
           "body": "商業與高層建築主幹線普遍採用三相四線制 380V / 220V 配電。三條火線 (L1, L2, L3) 之間相位角相差 120°。線電壓 V_line 為任意兩火線間電壓 (380V)；相電壓 V_phase 為任一火線對中性線 N 之電壓 (220V)。關係為 V_line = √3 · V_phase (380 ≈ 1.732 × 220)。",
           "formula": "<span className=\"text-indigo-600 font-bold\">V_line = √3 · V_phase</span>\n<span className=\"text-indigo-600 font-bold\">P_total_3phase = √3 · V_line · I_line · cos(φ)</span>",
           "steps": [
@@ -1654,6 +1846,7 @@ export const physicsData: SubjectData = {
         },
         {
           "heading": "變壓器原理與配電變壓器效率 (Transformer & Power Distribution)",
+          "outlineRefs": ["PKc-V.2-16"],
           "body": "變壓器利用法拉第電磁感應定律 (Faraday's Law) 將高壓電降壓至建築使用電壓。變壓器一、二次側電壓比與線圈匝數成正比，電流比與匝數成反比。變壓器鐵心損耗 (鐵損) 與銅線電阻發熱 (銅損) 決定其總效率 (通常達 97%~99%)。",
           "formula": "<span className=\"text-indigo-600 font-bold\">V₁ / V₂ = N₁ / N₂ = I₂ / I₁</span>\n<span className=\"text-indigo-600 font-bold\">P_in = P_out + P_iron + P_copper</span>",
           "steps": [
@@ -1663,6 +1856,7 @@ export const physicsData: SubjectData = {
         },
         {
           "heading": "不斷電系統 (UPS) 與緊急備用發電機容量規劃",
+          "outlineRefs": ["PKc-V.2-17"],
           "body": "建築消防設備（排煙風機、消防水泵、緊急電梯）與數據中心伺服器，依法必須配置緊急柴油發電機組與不斷電系統 (UPS)。UPS 提供毫秒級 (ms) 電源切換，備用發電機則在 10 秒內起動接管總負載。",
           "formula": "<span className=\"text-indigo-600 font-bold\">S_generator (kVA) = (Σ P_load / η) / cos(φ) · K_safety (K_safety ≒ 1.25)</span>",
           "table": {
@@ -1691,6 +1885,67 @@ export const physicsData: SubjectData = {
                 "市電 / 發電機雙迴路切換",
                 "配電箱幹線電源切換"
               ]
+            ]
+          }
+        },
+        {
+          "heading": "靜電、電場、電位與電容 (Electrostatics & Capacitance)",
+          "outlineRefs": ["PKc-V.2-1", "PKc-V.2-2", "PKc-V.2-3", "PKc-V.2-4", "PKc-V.2-5", "PKc-V.2-6"],
+          "body": "**靜電**：摩擦起電、感應起電；同性電荷相斥、異性相吸。**庫侖定律** F = k·q₁q₂ / r²（k = 9 × 10⁹ N·m²/C²）。\n**電場** E = F / q（N/C）。電力線由正電荷出發、終止於負電荷，越密代表電場越強。\n**電位與電位差**：電位 V（伏特，V = J/C）；把電荷 q 由 A 移到 B 所做的功 W = q·ΔV；電位能 U = q·V。\n**平行板電容器**：兩板間為均勻電場 E = V / d。例：間距 2 mm、電壓 12 V，E = 12 / 0.002 = 6000 V/m。\n**電容** C = Q / V（法拉 F），平行板 C = ε·A / d；儲存的電能 U = ½·C·V²。（電容為進階教材）\n應用：避雷針（尖端放電）、靜電除塵、電容式觸控螢幕；加油站與易燃粉塵場所要防止靜電火花。\n⚠️ 易錯：電場是向量（有方向），電位是純量；電場越強的地方電位不一定越高。",
+          "formula": "F = k q₁q₂ / r²\nE = F / q，平行板 E = V / d\nW = q ΔV\nC = Q / V，U = ½ C V²",
+          "table": {
+            "headers": ["物理量", "定義", "單位", "純量／向量"],
+            "rows": [
+              ["電場 E", "單位正電荷受的電力", "N/C 或 V/m", "向量"],
+              ["電位 V", "單位正電荷具有的電位能", "V（J/C）", "純量"],
+              ["電位差 ΔV", "兩點電位的差，即「電壓」", "V", "純量"],
+              ["電容 C", "每單位電壓可儲存的電量", "F（C/V）", "純量"]
+            ]
+          }
+        },
+        {
+          "heading": "電流的磁效應與載流導線在磁場中受力 (Magnetic Effects of Current)",
+          "outlineRefs": ["PKc-V.2-11", "PKc-V.2-12", "PKc-V.2-13", "PKc-V.2-14"],
+          "body": "**電流的磁效應**：厄斯特發現電流周圍會產生磁場。\n• 長直導線：磁場繞導線成同心圓，方向用**安培右手定則**（拇指指電流方向，四指彎曲方向為磁場方向），B = μ₀·I / (2πr)，離導線越遠越弱。\n• 螺線管：內部接近均勻磁場 B = μ₀·n·I，可做成**電磁鐵**，應用於電鈴、電磁門鎖、電梯煞車。\n**載流導線在磁場中受力**：F = I·L·B·sinθ，方向用右手開掌定則判斷。線圈在磁場中受力而轉動，就是**馬達**的原理（電梯曳引機、抽水馬達、電扇）。\n**帶電質點在磁場中運動**：受勞侖茲力 F = q·v·B，力與速度垂直，使帶電粒子作圓周運動（質譜儀原理，為進階教材）。\n⚠️ 易錯：導線與磁場平行（θ = 0°）時不受力；垂直（θ = 90°）時受力最大。",
+          "formula": "長直導線 B = μ₀ I / (2πr)\n螺線管 B = μ₀ n I\n導線受力 F = I L B sinθ\n帶電質點 F = q v B sinθ",
+          "table": {
+            "headers": ["現象", "判斷方法", "應用"],
+            "rows": [
+              ["直導線磁場", "安培右手定則", "電線附近的磁場"],
+              ["螺線管磁場", "右手握螺線管，四指沿電流、拇指指 N 極", "電磁鐵、電磁門鎖、繼電器"],
+              ["導線在磁場中受力", "右手開掌定則", "馬達、喇叭"]
+            ]
+          }
+        },
+        {
+          "heading": "電磁感應：法拉第定律、冷次定律、發電機與電磁波 (Electromagnetic Induction)",
+          "outlineRefs": ["PKc-V.2-15", "PKc-V.2-17", "PKc-V.2-18"],
+          "body": "**法拉第電磁感應定律**：通過線圈的磁通量發生變化時，線圈會產生感應電動勢 ε = −N·ΔΦ / Δt。磁通量變化越快、線圈匝數越多，感應電動勢越大。\n**冷次定律**：感應電流產生的磁場，總是**反抗**原磁通量的變化（公式中負號的意義），這也是能量守恆的結果。\n**發電機**：線圈在磁場中轉動，使磁通量週期性變化而產生交流電；臺灣電力系統的頻率為 60 Hz。發電機與馬達互為逆過程。**渦電流**應用於電磁爐與電磁煞車。（發電機與交流電為進階教材）\n**電磁波**：變動的電場與磁場互相感應而向外傳播，真空中速度 c = 3 × 10⁸ m/s。依波長由長到短：無線電波、微波、紅外線、可見光、紫外線、X 射線、γ 射線。\n⚠️ 易錯：磁鐵靜止放在線圈中不會產生感應電流，必須有「磁通量的變化」（相對運動或電流改變）。",
+          "formula": "ε = −N ΔΦ / Δt\nΦ = B A cosθ\nc = f λ = 3 × 10⁸ m/s",
+          "table": {
+            "headers": ["電磁波", "波長範圍（約）", "建築與生活應用"],
+            "rows": [
+              ["無線電波", "> 1 m", "廣播、手機與 Wi-Fi 訊號（建築需考慮遮蔽）"],
+              ["微波", "1 mm – 1 m", "微波爐、雷達"],
+              ["紅外線", "700 nm – 1 mm", "紅外線熱像儀檢測外牆空鼓、漏水"],
+              ["可見光", "400 – 700 nm", "採光與照明"],
+              ["紫外線", "10 – 400 nm", "殺菌燈；使塗料與塑膠老化"],
+              ["X 射線、γ 射線", "< 10 nm", "非破壞檢測、醫療影像"]
+            ]
+          }
+        },
+        {
+          "heading": "核能與物理學發展簡史 (Nuclear Energy & History of Physics)",
+          "outlineRefs": ["PNc-V.2-1", "PMa-V.2-1", "PMb-V.2-1"],
+          "body": "**核能**：原子核分裂（重核如鈾-235 吸收中子後分裂成較輕的核並放出中子與能量）或核融合（輕核結合）。依愛因斯坦質能關係 E = m·c²，極少量的質量虧損就能放出巨大能量。\n**核分裂發電**：控制連鎖反應產生的熱，使水沸騰推動汽輪機發電；發電過程不直接排放 CO₂，但須面對放射性廢料處置與安全課題。\n**輻射防護三原則**：縮短時間、增加距離、加強屏蔽（混凝土、鉛）。\n**物理學發展簡史**：伽利略（實驗方法、落體研究）→ 牛頓（運動定律、萬有引力，古典力學）→ 焦耳、克勞修斯（熱力學）→ 法拉第、馬克士威（電磁學、電磁波）→ 普朗克、愛因斯坦（量子論、相對論）→ 近代核物理與粒子物理。\n**物理與其他科學**：物理提供化學的原子結構、地球科學的地震波與氣象原理、生物的能量觀念，也是結構力學、建築聲學與照明等工程的基礎。\n⚠️ 易錯：核分裂與核融合都會放出能量；目前商業核電廠使用的是核分裂。",
+          "formula": "E = m c²",
+          "table": {
+            "headers": ["時期", "代表人物", "主要貢獻", "對工程的影響"],
+            "rows": [
+              ["17 世紀", "伽利略、牛頓", "實驗方法、運動定律、萬有引力", "靜力學與結構力學基礎"],
+              ["19 世紀", "焦耳、克勞修斯", "能量守恆、熱力學定律", "熱機、空調與建築熱環境"],
+              ["19 世紀", "法拉第、馬克士威", "電磁感應、電磁波", "發電機、馬達、無線通訊"],
+              ["20 世紀", "普朗克、愛因斯坦", "量子論、相對論、質能關係", "太陽能電池、雷射、核能"]
             ]
           }
         }

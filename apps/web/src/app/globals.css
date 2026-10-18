@@ -1238,6 +1238,16 @@ html.arch-lite .bg-blueprint-subtle {
   }
 }
 
+/* Concept body sub-headings rendered from "### …" lines (MathText) */
+.concept-subhead {
+  display: block;
+  margin-top: 0.6rem;
+  margin-bottom: 0.15rem;
+  font-weight: 700;
+  color: var(--color-ink-900);
+}
+.dark .concept-subhead { color: #f1f5f9; }
+
 /* ══════════════════════════════════════════════════════
    CONCEPT VISUALS 概念圖解（data/conceptVisuals → <ConceptFigure>）
    圖中只使用 cv-* 類別，色票隨主題（淺色／深色／護眼／OLED）與列印自動切換。

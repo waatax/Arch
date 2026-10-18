@@ -680,7 +680,7 @@ export default function TopicInfographicSvgViewer({
           xmlns="http://www.w3.org/2000/svg"
           aria-label={`${title} 向量圖解`}
         >
-          <title>{title} - {subjectSlug}/{topicSlug}</title>
+          <title>{`${title} - ${subjectSlug}/${topicSlug}`}</title>
           {renderDefs()}
           {/* Blueprint Grid Background if enabled */}
           {viewMode === 'blueprint' && (

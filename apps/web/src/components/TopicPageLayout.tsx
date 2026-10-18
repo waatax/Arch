@@ -42,6 +42,7 @@ import TopicActiveRecallDrawer from '@/components/pedagogy/TopicActiveRecallDraw
 import TopicCompletionCelebration from '@/components/pedagogy/TopicCompletionCelebration';
 import ConceptFigure from '@/components/pedagogy/ConceptFigure';
 import CurricularLicensureMatrix from '@/components/pedagogy/CurricularLicensureMatrix';
+import CurriculumAlignmentPanel, { ConceptOutlineChips } from '@/components/pedagogy/CurriculumAlignmentPanel';
 import TopicProgressiveHintDeck from '@/components/pedagogy/TopicProgressiveHintDeck';
 import { groupVisualsByConcept, type ConceptVisual } from '@/data/conceptVisuals';
 import {
@@ -445,7 +446,10 @@ export default function TopicPageLayout({ subject, topic, mappedExamQuestions, c
             <Step0Tooltip prerequisites={topic.step0Prerequisites} subjectSlug={subject.slug} />
           )}
 
-          {/* 108 課綱核心素養與專技高考考科對齊矩陣 */}
+          {/* 官方課綱／統測考試大綱對照（data/curriculum/officialOutlines） */}
+          <CurriculumAlignmentPanel subject={subject} topic={topic} />
+
+          {/* 與專技高考考科的關聯 */}
           <div className="print:hidden">
             <CurricularLicensureMatrix subject={subject} topic={topic} />
           </div>
@@ -1248,18 +1252,80 @@ export default function TopicPageLayout({ subject, topic, mappedExamQuestions, c
 
       {/* === Core Concepts List === */}
       <div id="principles" className="lesson-deferred-section scroll-mt-24 space-y-6">
-        <div className="flex items-center justify-between">
+        <div className="flex flex-wrap items-center justify-between gap-2">
           <h2 className="font-serif text-2xl font-bold text-slate-900 dark:text-white flex items-center gap-2">
             <span>核心觀念與名詞精講</span>
             <span className="text-xs font-mono font-normal text-slate-500">
               (點擊「標記為理解」記錄學習進度)
             </span>
           </h2>
+          <div className="flex flex-wrap items-center gap-1.5 text-[11px] font-mono">
+            <span className="rounded-full bg-blue-50 dark:bg-sky-950/60 border border-blue-200 dark:border-sky-800 px-2.5 py-0.5 font-bold text-blue-700 dark:text-sky-300">
+              📐 插圖 {conceptVisuals.filter((v) => v.kind === 'diagram').length}
+            </span>
+            <span className="rounded-full bg-teal-50 dark:bg-teal-950/60 border border-teal-200 dark:border-teal-800 px-2.5 py-0.5 font-bold text-teal-700 dark:text-teal-300">
+              📈 統計圖表 {conceptVisuals.filter((v) => v.kind === 'chart').length}
+            </span>
+            <span className="rounded-full bg-indigo-50 dark:bg-indigo-950/60 border border-indigo-200 dark:border-indigo-800 px-2.5 py-0.5 font-bold text-indigo-700 dark:text-indigo-300">
+              📊 對照表格 {conceptTableCount + conceptVisuals.filter((v) => v.kind === 'table' || (v.kind === 'chart' && v.table)).length}
+            </span>
+          </div>
         </div>
+
+        {/* Visual & Table Atlas Quick-Jump Strip */}
+        {(conceptVisuals.length > 0 || conceptTableCount > 0) && (
+          <div
+            className="rounded-2xl border border-slate-200/90 dark:border-slate-800 bg-slate-50/70 dark:bg-slate-900/60 p-3.5 sm:p-4 space-y-2.5 print:hidden"
+            aria-label="本章插圖、數據圖表與對照表格快速導覽"
+          >
+            <div className="flex items-center justify-between gap-2 text-xs">
+              <span className="font-mono font-bold text-slate-700 dark:text-slate-200 flex items-center gap-1.5">
+                <span>🗺️</span>
+                <span>本章插圖・數據圖表・對照表格視覺速覽（點擊直接跳轉該圖表）</span>
+              </span>
+              <span className="text-[11px] font-mono text-slate-500 dark:text-slate-400 hidden sm:inline">
+                雙重編碼 (Dual-Coding) 視覺輔助教學
+              </span>
+            </div>
+            <div className="flex flex-wrap gap-1.5">
+              {topic.concepts.map((c, cIdx) => {
+                const visuals = visualsByConcept[cIdx] ?? [];
+                return visuals.map((v, vIdx) => {
+                  const figNo = `${cIdx + 1}-${vIdx + 1}`;
+                  const badgeTone =
+                    v.kind === 'diagram'
+                      ? 'border-blue-200 bg-white text-blue-800 hover:bg-blue-50 dark:border-sky-800/80 dark:bg-slate-900 dark:text-sky-300 dark:hover:bg-sky-950/60'
+                      : v.kind === 'chart'
+                      ? 'border-teal-200 bg-white text-teal-800 hover:bg-teal-50 dark:border-teal-800/80 dark:bg-slate-900 dark:text-teal-300 dark:hover:bg-teal-950/60'
+                      : 'border-indigo-200 bg-white text-indigo-800 hover:bg-indigo-50 dark:border-indigo-800/80 dark:bg-slate-900 dark:text-indigo-300 dark:hover:bg-indigo-950/60';
+                  const icon = v.kind === 'diagram' ? '📐 圖解' : v.kind === 'chart' ? '📈 圖表' : '📊 表格';
+                  return (
+                    <button
+                      key={`${figNo}-${v.title}`}
+                      type="button"
+                      onClick={() => jumpTo(`figure-${figNo}`)}
+                      className={`inline-flex items-center gap-1.5 rounded-lg border px-2.5 py-1 text-xs font-medium transition-colors shadow-2xs cursor-pointer ${badgeTone}`}
+                      title={`跳轉至 ${icon} ${figNo}：${v.title}`}
+                    >
+                      <span className="font-mono font-bold text-[10px] opacity-85">
+                        {icon} {figNo}
+                      </span>
+                      <span className="truncate max-w-[14rem] sm:max-w-[18rem]">{v.title}</span>
+                    </button>
+                  );
+                });
+              })}
+            </div>
+          </div>
+        )}
 
         {topic.concepts.map((concept, index) => {
           const isChecked = !!completedConcepts[index];
           const isHighlighted = !!highlightedMap[index];
+          const attachedVisuals = visualsByConcept[index] ?? [];
+          const hasDiagramVisual = attachedVisuals.some((v) => v.kind === 'diagram') || Boolean(concept.diagram);
+          const hasChartVisual = attachedVisuals.some((v) => v.kind === 'chart');
+          const hasTableVisual = attachedVisuals.some((v) => v.kind === 'table') || Boolean(concept.table);
           return (
             <section
               key={concept.heading}
@@ -1299,12 +1365,22 @@ export default function TopicPageLayout({ subject, topic, mappedExamQuestions, c
                     </div>
                     <h3 className="font-serif text-xl font-bold text-slate-900 dark:text-white mt-0.5 flex flex-wrap items-center gap-2">
                       <span>{concept.heading}</span>
+                      {hasDiagramVisual && (
+                        <span className="rounded-md bg-blue-100/70 dark:bg-sky-950/60 px-2 py-0.5 text-[10px] font-mono text-blue-800 dark:text-sky-300 border border-blue-300/60 dark:border-sky-800">
+                          📐 向量圖解
+                        </span>
+                      )}
+                      {hasChartVisual && (
+                        <span className="rounded-md bg-teal-100/70 dark:bg-teal-950/60 px-2 py-0.5 text-[10px] font-mono text-teal-800 dark:text-teal-300 border border-teal-300/60 dark:border-teal-800">
+                          📈 數據圖表
+                        </span>
+                      )}
                       {concept.formula && (
                         <span className="rounded-md bg-amber-100/70 dark:bg-amber-950/60 px-2 py-0.5 text-[10px] font-mono text-amber-800 dark:text-amber-300 border border-amber-300/60 dark:border-amber-800">
                           📐 核心公式
                         </span>
                       )}
-                      {concept.table && (
+                      {hasTableVisual && (
                         <span className="rounded-md bg-indigo-100/70 dark:bg-indigo-950/60 px-2 py-0.5 text-[10px] font-mono text-indigo-800 dark:text-indigo-300 border border-indigo-300/60 dark:border-indigo-800">
                           📊 重點矩陣
                         </span>
@@ -1315,6 +1391,9 @@ export default function TopicPageLayout({ subject, topic, mappedExamQuestions, c
                         </span>
                       )}
                     </h3>
+                    <div className="mt-1.5">
+                      <ConceptOutlineChips subjectSlug={subject.slug} refs={concept.outlineRefs} />
+                    </div>
                   </div>
                 </div>
 

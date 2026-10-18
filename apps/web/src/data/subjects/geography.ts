@@ -9,9 +9,10 @@ export const geographyData: SubjectData = {
     {
       "slug": "environment-terrain",
       "title": "1. ✨ 地理環境與地形建築選址",
-      "desc": "探討內外營力地形、<span className='text-rose-600 font-bold'>順向坡</span>、<span className='text-rose-600 font-bold'>土壤液化</span>、斷層退縮、喀斯特溶洞及山坡地開發之地質評估與建築安全選址策略。\n\n🔗 **跨學科連結**：建築不僅是空間實體，更是《地理》風土氣候適應與《公民》法規政策的綜合體現！\n\n**【比較表】統測常考對比**\n| 比較項目 | 表面記憶 | 跨域推導 |\n|---|---|---|\n| 學習方法 | 單一學科死記 | 結合歷史地理與公民 |\n| 統測得分率 | 容易在變化題失分 | 能準確破解綜合題型 |",
+      "desc": "探討內外營力地形、順向坡、土壤液化、斷層退縮、喀斯特溶洞及山坡地開發之地質評估與建築安全選址策略。",
       "status": "done",
       "gradeLevel": 10,
+      "curriculumCode": "108-地Ba",
       "fatalTraps": [
         {
           "wrongThinking": "忽略空間尺度與環境成因。",
@@ -50,6 +51,7 @@ export const geographyData: SubjectData = {
       "concepts": [
         {
           "heading": "內營力與地質構造：建築選址的基石",
+          "outlineRefs": ["地Ba-Ⅴ-1"],
           "body": "地球內部熱能驅動的**板塊運動**、**褶皺**與**斷層作用**，奠定了大地構造的基礎。在進行建築選址時，<span className=\"text-rose-600 font-bold\">活動斷層帶</span>（如台灣的車籠埔斷層及相關破碎帶）存在極高的**地表撕裂**與<span className=\"text-rose-600 font-bold\">強震風險</span>。由於斷層錯動瞬間產生的剪切力極大，任何剛性結構都難以完全抵抗地表的直接撕裂，因此必須嚴格執行**法規退縮**，並落實地質敏感區的深度評估（例如槽溝開挖調查），確保建築基座跨出危險破碎帶。💡 **專家提示**：除了斷層退縮外，建築結構設計也可藉由加裝『隔震墊』與『阻尼器』來吸收強震能量，提升建築韌性。",
           "formula": "<span className=\"text-indigo-600 font-bold\">核心公式：</span> **斷層退縮安全距離: D_safe = D_base + k · (M_w - 6.0)**",
           "table": {
@@ -82,7 +84,8 @@ export const geographyData: SubjectData = {
           }
         },
         {
-          "heading": "外營力作用與微地形演變：建築**承載力**評估",
+          "heading": "外營力作用與微地形演變：建築承載力評估",
+          "outlineRefs": ["地Ba-Ⅴ-1"],
           "body": "由**太陽能**與**重力**驅動的風化、侵蝕、搬運及堆積作用，形塑了河流沖積扇、三角洲、海崖及沙洲等多元微地形。建築選址時，必須深入分析<span className=\"text-rose-600 font-bold\">地表水文</span>與堆積層的**承載力**，以防範地層下陷與<span className='text-rose-600 font-bold'>土壤液化</span>。",
           "steps": [
             "河流沖積扇頂部：顆粒粗大、排水良好但受洪水與土石沖刷風險高，建築應避開扇頂主幹道或加強擋土護岸設施。",
@@ -92,7 +95,8 @@ export const geographyData: SubjectData = {
           ]
         },
         {
-          "heading": "山坡地開發限制與<span className='text-rose-600 font-bold'>順向坡</span>建築防護",
+          "heading": "山坡地開發限制與順向坡建築防護",
+          "outlineRefs": ["地Ba-Ⅴ-2"],
           "body": "山坡地開發受到**坡度**與**地層構造**的嚴格法規限制。特別是在<span className=\"text-rose-600 font-bold\">順向坡 (Dip Slope)</span> 區域，當坡腳因工程開挖被切斷（即**坡腳切割**）且缺乏有效支撐時，極易沿地層層面引發大規模的<span className=\"text-rose-600 font-bold\">順向坡滑移</span>（地滑），造成毀滅性災難。",
           "formula": "<span className=\"text-indigo-600 font-bold\">核心公式：</span> **坡度百分比: Slope (%) = (高差 h / 水平距離 L) × 100%**",
           "table": {
@@ -126,6 +130,7 @@ export const geographyData: SubjectData = {
         },
         {
           "heading": "河流與海岸微地形的防洪選址策略",
+          "outlineRefs": ["地Ba-Ⅴ-2"],
           "body": "在河畔與沿海等**水文地形變化劇烈**的地區，氾濫平原與古河道沖積區被列為<span className=\"text-rose-600 font-bold\">水患高風險區</span>。建築設計必須採取**防洪高程抬高**或**高床式**（高腳屋/架高基座）等避災策略，以確保居住安全。",
           "steps": [
             "**第一步（水文史調查）：** 調閱百年重現期洪水位紀錄與古河道疊圖分析。",
@@ -136,6 +141,7 @@ export const geographyData: SubjectData = {
         },
         {
           "heading": "台灣五大山脈與平原地形之區域微氣候與空間分布",
+          "outlineRefs": ["地Ba-Ⅴ-1"],
           "body": "台灣由歐亞板塊與菲律賓海板塊擠壓形成，南北縱走之中央山脈、雪山山脈、玉山山脈、阿里山山脈及海岸山脈形成天然屏障，顯著影響區域局地氣流（如落山風、山谷風、焚風）。",
           "table": {
             "headers": [
@@ -174,6 +180,7 @@ export const geographyData: SubjectData = {
         },
         {
           "heading": "活動斷層地質敏感區與地震工程退縮規定",
+          "outlineRefs": ["地Ba-Ⅴ-2"],
           "body": "活動斷層 (Active Fault) 指過去 10 萬年內曾發生錯動、未來可能再度活動的斷層。地質法規定活動斷層兩側一定範圍劃設為地質敏感區。在該區域內興建建築，嚴禁跨越斷層跡線，且需執行高標準的地化鑽探與耐震構造設計。",
           "steps": [
             "**第一步（圖資比對）：** 調閱中央地質調查所 (CGS) 活動斷層圖與基地地籍圖。",
@@ -182,7 +189,8 @@ export const geographyData: SubjectData = {
           ]
         },
         {
-          "heading": "石灰岩<span className='text-rose-600 font-bold'>喀斯特地形</span> (Karst Topology) 與地下溶洞地基安全",
+          "heading": "石灰岩喀斯特地形 (Karst Topology) 與地下溶洞地基安全",
+          "outlineRefs": ["地Ba-Ⅴ-1"],
           "body": "<span className='text-rose-600 font-bold'>喀斯特地形</span> (Karst) 源於地下水對可溶性碳酸鹽岩 (如石灰石 CaCO₃) 的長期化學溶蝕作用，形成地下溶洞 (Caves) 與伏流。若建築基地下方隱藏未探明之溶洞，在上方建築載重作用下易發生突然坍塌陷落 (Sinkhole)。",
           "table": {
             "headers": [
@@ -343,9 +351,10 @@ export const geographyData: SubjectData = {
     {
       "slug": "climate-environment",
       "title": "2. 💡 氣候環境與氣候應答建築",
-      "desc": "分析氣候要素與控制因子、<span className='text-rose-600 font-bold'>被動式太陽能</span>、遮陽深寬比、微氣候通風、都市熱島減熱與太陽軌跡遮陽幾何。",
+      "desc": "分析氣候要素與控制因子、被動式太陽能、遮陽深寬比、微氣候通風、都市熱島減熱與太陽軌跡遮陽幾何。",
       "status": "done",
       "gradeLevel": 10,
+      "curriculumCode": "108-地Ba",
       "fatalTraps": [
         {
           "wrongThinking": "忽略空間尺度與環境成因。",
@@ -384,6 +393,7 @@ export const geographyData: SubjectData = {
       "concepts": [
         {
           "heading": "全球氣候分類與氣候控制因子",
+          "outlineRefs": ["地Ba-Ⅴ-1"],
           "body": "氣候深受**緯度**、**海陸分布**、**地形**、**洋流**及**風帶**等控制因子形塑。傳統<span className=\"text-rose-600 font-bold\">風土建築 (Vernacular Architecture)</span> 展現了人類面對極端或在地微氣候的智慧與**應答設計**。",
           "table": {
             "headers": [
@@ -421,7 +431,8 @@ export const geographyData: SubjectData = {
           }
         },
         {
-          "heading": "氣候應答建築與<span className='text-rose-600 font-bold'>被動式太陽能</span>設計",
+          "heading": "氣候應答建築與被動式太陽能設計",
+          "outlineRefs": ["地Be-Ⅴ-1"],
           "body": "<span className=\"text-rose-600 font-bold\">被動式太陽能設計 (Passive Solar Design)</span> 巧妙利用建築方位、開窗率、**熱質量 (Thermal Mass)** 與遮陽構件，在不消耗額外機械能的前提下，實現**冬暖夏涼**的低碳舒適環境。",
           "formula": "<span className=\"text-indigo-600 font-bold\">核心公式：</span> **正南向開窗遮陽出簷深度: L = H · cot(α_summer)**",
           "steps": [
@@ -433,6 +444,7 @@ export const geographyData: SubjectData = {
         },
         {
           "heading": "局地風場、微氣候與建築自然通風",
+          "outlineRefs": ["地Ba-Ⅴ-1"],
           "body": "透過**風壓 (Wind-driven)** 與**熱壓 (Stack-driven)** 原理引導自然風穿透建築，不僅能顯著降低空調耗能，更能有效排除室內濕氣，提升<span className=\"text-rose-600 font-bold\">熱舒適度</span>。",
           "formula": "<span className=\"text-indigo-600 font-bold\">核心公式：</span> **熱壓通風換氣量: Q = C_d · A · √(2 · g · h · (T_in - T_out) / T_in)**",
           "table": {
@@ -465,7 +477,8 @@ export const geographyData: SubjectData = {
           }
         },
         {
-          "heading": "<span className='text-rose-600 font-bold'>都市熱島效應</span> (UHI) 與綠建築降溫對策",
+          "heading": "都市熱島效應 (UHI) 與綠建築降溫對策",
+          "outlineRefs": ["地Ba-Ⅴ-2"],
           "body": "都市密集的混凝土與瀝青鋪面具有高蓄熱與高吸收率，加上人工排熱與建築阻風，導致都市中心氣溫顯著高於郊區。綠建築透過綠化與高反射鋪面予以緩解。",
           "formula": "<span className=\"text-indigo-600 font-bold\">核心公式：</span> **反射率 (Albedo) 減熱效應: ΔT_surface ∝ (1 - Albedo) · I_solar**",
           "steps": [
@@ -477,6 +490,7 @@ export const geographyData: SubjectData = {
         },
         {
           "heading": "建築熱舒適度指標與濕熱氣候應對",
+          "outlineRefs": ["地Be-Ⅴ-1"],
           "body": "熱舒適度受氣候六大要素（氣溫、平均輻射溫度、風速、相對濕度、衣著量、代謝率）共同決定。台灣屬熱帶與副熱帶濕熱氣候，除控溫外，降濕與增加氣流感為設計核心。",
           "table": {
             "headers": [
@@ -509,6 +523,7 @@ export const geographyData: SubjectData = {
         },
         {
           "heading": "太陽軌跡幾何、太陽高度角 α 與方位角 β 計算",
+          "outlineRefs": ["地Ba-Ⅴ-1"],
           "body": "太陽在天空中的位置由高度角 α (Elevation Angle) 與方位角 β (Azimuth Angle) 在三維座標中唯一定位。夏至正午太陽高度角 α_summer 最高 (正午直射頭頂)，冬至正午太陽高度角 α_winter 最低 (斜射)。",
           "formula": "<span className=\"text-indigo-600 font-bold\">核心公式：</span> **α_noon = 90° - Latitude + Declination\nDeclination: 夏至 +23.5°, 冬至 -23.5°, 春分/秋分 0°**",
           "steps": [
@@ -519,6 +534,7 @@ export const geographyData: SubjectData = {
         },
         {
           "heading": "高樓風切效應 (Wind Tunnel Effect) 與都市微氣候風場控制",
+          "outlineRefs": ["地Ba-Ⅴ-2"],
           "body": "高層大樓迎風時，上空高風速強風受建築立面阻擋向下吹撫，在地面行人層形成強烈的「下吹風 (Downwash)」與轉角「狹管效應風切 (Corner Venturi Effect)」，影響行人安全與熱舒適。",
           "table": {
             "headers": [
@@ -679,9 +695,10 @@ export const geographyData: SubjectData = {
     {
       "slug": "population-urban",
       "title": "3. 🔍 人口結構與都市空間結構",
-      "desc": "探討人口轉型、<span className='text-rose-600 font-bold'>高齡化</span>通用設計、<span className='text-rose-600 font-bold'>中心地方理論</span>、都市內部空間結構模型、<span className='text-rose-600 font-bold'>TOD</span> <span className='text-rose-600 font-bold'>大眾運輸導向開發</span>與<span className='text-rose-600 font-bold'>土地競價</span>理論。",
+      "desc": "探討人口轉型、高齡化通用設計、中心地方理論、都市內部空間結構模型、TOD 大眾運輸導向開發與土地競價理論。",
       "status": "done",
       "gradeLevel": 10,
+      "curriculumCode": "108-地Ca",
       "fatalTraps": [
         {
           "wrongThinking": "建蔽率越高代表開放綠地空間越大。",
@@ -719,7 +736,8 @@ export const geographyData: SubjectData = {
       ],
       "concepts": [
         {
-          "heading": "人口轉型理論與<span className='text-rose-600 font-bold'>高齡化</span>社會之空間衝擊",
+          "heading": "人口轉型理論與高齡化社會之空間衝擊",
+          "outlineRefs": ["地Be-Ⅴ-1"],
           "body": "人口轉型理論描述區域由「高出生高死亡」轉變為「低出生低死亡」之歷程。台灣現已進入<span className='text-rose-600 font-bold'>高齡化</span>與少子化階段，引發扶養比劇變，建築與都市空間急需無障礙通用設計 (Universal Design) 與公共設施機能轉型。",
           "formula": "<span className=\"text-indigo-600 font-bold\">核心公式：</span> **總扶養比 = ((幼年人口 0-14歲 + 高齡人口 65歲以上) / 壯年人口 15-64歲) × 100%**",
           "table": {
@@ -752,7 +770,8 @@ export const geographyData: SubjectData = {
           }
         },
         {
-          "heading": "<span className='text-rose-600 font-bold'>中心地方理論</span>與都市階層體系",
+          "heading": "中心地方理論與都市階層體系",
+          "outlineRefs": ["地Ca-Ⅴ-3"],
           "body": "克里斯塔勒 (Christaller) <span className='text-rose-600 font-bold'>中心地方理論</span> (Central Place Theory) 以商品圈 (Range) 與門檻值 (Threshold) 解釋都市階層與商業機能分布。高階都市數量少、距離遠、服務範圍廣；低階都市則相反。",
           "formula": "<span className=\"text-indigo-600 font-bold\">核心公式：</span> **中心地方營運可行條件: 商品圈 Range ≥ 門檻值 Threshold**",
           "steps": [
@@ -764,6 +783,7 @@ export const geographyData: SubjectData = {
         },
         {
           "heading": "都市內部空間結構模型演變",
+          "outlineRefs": ["地Ca-Ⅴ-3"],
           "body": "都市土地利用受地價、交通可達性與<span className='text-rose-600 font-bold'>土地競價</span> (Bid-Rent) 驅動。經典空間模型展現了都市由單核心向多核心與軸向發展之演化。",
           "table": {
             "headers": [
@@ -795,7 +815,8 @@ export const geographyData: SubjectData = {
           }
         },
         {
-          "heading": "<span className='text-rose-600 font-bold'>大眾運輸導向開發</span> (<span className='text-rose-600 font-bold'>TOD</span>) 與**都市蔓延**應對",
+          "heading": "大眾運輸導向開發 (TOD) 與都市蔓延應對",
+          "outlineRefs": ["地Cb-Ⅴ-1"],
           "body": "<span className='text-rose-600 font-bold'>大眾運輸導向開發</span> (Transit-Oriented Development, <span className='text-rose-600 font-bold'>TOD</span>) 透過在捷運/鐵路站點周邊 500~800 公尺（步行 5~10 分鐘）範圍內實施高密度、混合機能開發，有效遏止汽車導向之**都市蔓延** (Urban Sprawl)。",
           "formula": "<span className=\"text-indigo-600 font-bold\">核心公式：</span> **站點周邊開發強度: **容積率** FAR ∝ 1 / (距軌道站點距離 D)**",
           "steps": [
@@ -806,7 +827,8 @@ export const geographyData: SubjectData = {
           ]
         },
         {
-          "heading": "都市更新、<span className='text-rose-600 font-bold'>紳士化</span>與<span className='text-rose-600 font-bold'>空間正義</span>",
+          "heading": "都市更新、紳士化與空間正義",
+          "outlineRefs": ["地Be-Ⅴ-1"],
           "body": "都市老舊核心區面臨設施老舊與人口流失，透過都市更新（重建、整建、維護）活化土地。但資本注入常引發地價房價上漲，使原中低收入居民迫離，此現象稱為<span className='text-rose-600 font-bold'>紳士化</span> (Gentrification)。",
           "table": {
             "headers": [
@@ -838,7 +860,8 @@ export const geographyData: SubjectData = {
           }
         },
         {
-          "heading": "<span className='text-rose-600 font-bold'>土地競價</span>理論 (Bid-Rent Theory) 與**容積率**梯度變化",
+          "heading": "土地競價理論 (Bid-Rent Theory) 與容積率梯度變化",
+          "outlineRefs": ["地Bc-Ⅴ-1"],
           "body": "杜能與阿隆索 (Alonso) <span className='text-rose-600 font-bold'>土地競價</span>理論指出，不同產業與土地利用對都市中心 (CBD) 的可達性出價能力不同。商業出價斜率最陡，住宅次之，工業與農業最平緩。地價與建築**容積率**由 CBD 向外呈現指數衰減梯度。",
           "formula": "<span className=\"text-indigo-600 font-bold\">核心公式：</span> **R(d) = N · [ P - C - t · d ]**",
           "steps": [
@@ -849,6 +872,7 @@ export const geographyData: SubjectData = {
         },
         {
           "heading": "通用設計 (Universal Design) 與高齡友善無障礙都市空間",
+          "outlineRefs": ["地Be-Ⅴ-1"],
           "body": "面對超高齡社會，建築與都市空間規劃需導入通用設計七大原則（公平使用、彈性使用、簡單直覺、顯明資訊、容錯空間、省力操作、適當尺寸與空間）。無障礙斜坡 (坡度 ≤ 1:12)、全平坦無障礙步道與電梯點位配置為法定強制規範。",
           "table": {
             "headers": [
@@ -876,6 +900,33 @@ export const geographyData: SubjectData = {
                 "門檻高差 ≤ 0.5 cm",
                 "預防高齡者跌倒，利於輔具進出"
               ]
+            ]
+          }
+        },
+        {
+          "heading": "文化資產與世界文化遺產：有形與無形資產的保存與活化",
+          "outlineRefs": ["地Bd-Ⅴ-1", "地Bd-Ⅴ-2", "地Bd-Ⅴ-3", "地Ca-Ⅴ-1"],
+          "body": "**有形與無形的文化資產**（依《文化資產保存法》）：\n• 有形：古蹟、歷史建築、紀念建築、聚落建築群、考古遺址、史蹟、文化景觀、古物、自然地景及自然紀念物。\n• 無形：傳統表演藝術、傳統工藝、口述傳統、民俗、傳統知識與實踐。\n**保存與活化**：修復時應保存原有形貌、材料與工法，再利用為展覽、餐飲、文創或社區空間，同時確保結構安全與防災。例如臺北松山文創園區（原松山菸廠）、臺中審計新村、臺南林百貨。\n**世界文化遺產**：依聯合國教科文組織（UNESCO）《世界遺產公約》登錄，分為文化遺產、自然遺產與複合遺產，必須具有「突出普世價值」。臺灣雖非公約締約國，文化部另選出「臺灣世界遺產潛力點」，如阿里山森林鐵路、金門戰地文化、淡水紅毛城及其周遭歷史建築群。\n**問題探究**：踏查學校所在地的文化資產，討論活化利用的行動方案。\n⚠️ 易錯：「活化再利用」不等於拆掉重建；過度商業化而破壞原有價值，也違背文化資產保存的目的。",
+          "table": {
+            "headers": ["類別", "例子", "保存重點"],
+            "rows": [
+              ["古蹟", "城門、廟宇、官廳", "原貌、原材料、原工法"],
+              ["歷史建築再利用", "松山菸廠、審計新村", "新用途與結構安全兼顧"],
+              ["無形文化資產", "傳統工藝、民俗祭典", "傳承人與技藝延續"],
+              ["臺灣世界遺產潛力點", "阿里山森林鐵路、淡水紅毛城", "突出普世價值與整體保存"]
+            ]
+          }
+        },
+        {
+          "heading": "世界都市、強權競合與生活世界的地理想像",
+          "outlineRefs": ["地Ca-Ⅴ-2", "地Ca-Ⅴ-3", "地Be-Ⅴ-2", "地Be-Ⅴ-3"],
+          "body": "**世界都市**：在全球經濟中扮演指揮與控制中心的城市，聚集跨國企業總部、金融、資訊與航空樞紐，例如紐約、倫敦、東京。世界都市之間形成階層網絡，彼此的連結往往比與本國其他城市更緊密。\n**世界強權的競合與區域發展**：大國在貿易、科技、能源與航道上的競爭與合作，影響區域產業布局，例如供應鏈重組、產業移轉與區域經濟整合。\n**生活世界的地理想像**：藝術、文學、戲劇、歌謠、電影與遊戲塑造了人們對地方的印象。例如歌謠〈港都夜雨〉讓人聯想到港都的雨夜；電影取景地常吸引觀光人潮；建築師也透過空間設計傳達地方的意象。\n**問題探究**：配合群科特色設計具有地理想像的活動，例如以校園或社區建築為主題，製作導覽地圖或短片。\n⚠️ 易錯：世界都市的判斷依據是「全球經濟功能與連結程度」，不是人口數；人口多的城市不一定是世界都市。",
+          "table": {
+            "headers": ["主題", "關鍵概念", "例子"],
+            "rows": [
+              ["世界都市", "全球指揮與控制中心", "紐約、倫敦、東京"],
+              ["強權競合", "貿易、科技、能源的競爭與合作", "供應鏈重組"],
+              ["地理想像", "文藝作品建構的地方意象", "歌謠、電影取景地、建築意象"]
             ]
           }
         }
@@ -1010,9 +1061,10 @@ export const geographyData: SubjectData = {
     {
       "slug": "regional-development",
       "title": "4. ⚙️ 區域發展與產業區位選址",
-      "desc": "分析韋伯工業區位理論、<span className='text-rose-600 font-bold'>區位商數</span> LQ、<span className='text-rose-600 font-bold'>成長極</span>理論、<span className='text-rose-600 font-bold'>生態工業園區</span>與半導體科技廊帶選址。",
+      "desc": "分析韋伯工業區位理論、區位商數 LQ、成長極理論、生態工業園區與半導體科技廊帶選址。",
       "status": "done",
       "gradeLevel": 10,
+      "curriculumCode": "108-地Bc",
       "fatalTraps": [
         {
           "wrongThinking": "忽略空間尺度與環境成因。",
@@ -1051,6 +1103,7 @@ export const geographyData: SubjectData = {
       "concepts": [
         {
           "heading": "韋伯工業區位理論與運費最小化",
+          "outlineRefs": ["地Bc-Ⅴ-1"],
           "body": "阿爾弗雷德·韋伯 (Alfred Weber) 提出的工業區位理論，假設企業以追求「總運輸成本最小」為核心目標。依據原料失重程度將產業分為原料區位、市場區位與自由區位。",
           "formula": "<span className=\"text-indigo-600 font-bold\">核心公式：</span> **原料指數 Material Index (MI) = 局地原料重量 W_m / 最終產品重量 W_p**",
           "table": {
@@ -1084,6 +1137,7 @@ export const geographyData: SubjectData = {
         },
         {
           "heading": "區位集聚與集聚不經濟",
+          "outlineRefs": ["地Bc-Ⅴ-3"],
           "body": "廠商向同一空間集中能共享公共設施、勞動市場與技術溢出（外部規模經濟）。然而當集聚過度時，將引發地價飆漲、交通壅塞與環境污染，形成集聚不經濟 (Agglomeration Diseconomies)。",
           "steps": [
             "集聚效益一（共享基礎設施）：共同使用高壓電網、污水處理廠與專用貨運碼頭。",
@@ -1093,7 +1147,8 @@ export const geographyData: SubjectData = {
           ]
         },
         {
-          "heading": "區域發展不對等與<span className='text-rose-600 font-bold'>成長極</span>理論",
+          "heading": "區域發展不對等與成長極理論",
+          "outlineRefs": ["地Ca-Ⅴ-2"],
           "body": "佩魯 (Perroux) <span className='text-rose-600 font-bold'>成長極</span>理論指出，經濟成長並非同時出現在所有地方，而是先在主導產業集中的「<span className='text-rose-600 font-bold'>成長極</span>」發生，再透過擴散效應 (Spread Effect) 或回流效應 (Backwash Effect) 影響周邊。",
           "table": {
             "headers": [
@@ -1119,7 +1174,8 @@ export const geographyData: SubjectData = {
           }
         },
         {
-          "heading": "綠色供應鏈與永續<span className='text-rose-600 font-bold'>生態工業園區</span>",
+          "heading": "綠色供應鏈與永續生態工業園區",
+          "outlineRefs": ["地Bb-Ⅴ-2", "地Bc-Ⅴ-3"],
           "body": "現代產業園區規劃超越傳統單向生產，強調工業生態學 (Industrial Ecology)。<span className='text-rose-600 font-bold'>生態工業園區</span> (Eco-Industrial Park) 將一工廠之廢棄物或餘熱作為另一工廠之原料與能源。",
           "formula": "<span className=\"text-indigo-600 font-bold\">核心公式：</span> **資源循環利用率 = (循環再生原料總量 / 總投入原料總量) × 100%**",
           "steps": [
@@ -1130,6 +1186,7 @@ export const geographyData: SubjectData = {
         },
         {
           "heading": "地理條件對物流、水資源與能源基建之影響",
+          "outlineRefs": ["地Bc-Ⅴ-2"],
           "body": "大型工業與科技園區選址高度依賴天然環境條件。強震帶、<span className='text-rose-600 font-bold'>土壤液化</span>區、缺乏穩定水源或高壓電網缺口皆為園區選址之致命限制。",
           "table": {
             "headers": [
@@ -1161,7 +1218,8 @@ export const geographyData: SubjectData = {
           }
         },
         {
-          "heading": "<span className='text-rose-600 font-bold'>區位商數</span> (Location Quotient, LQ) 與地方特色產業鑑定",
+          "heading": "區位商數 (Location Quotient, LQ) 與地方特色產業鑑定",
+          "outlineRefs": ["地Bc-Ⅴ-1"],
           "body": "<span className='text-rose-600 font-bold'>區位商數</span> (Location Quotient, LQ) 為區域經濟學評估特定地區某產業集聚與專業化程度的指標。若 LQ > 1.0，代表該產業在該地區具備相對優勢，屬於外銷導向主導產業。",
           "formula": "<span className=\"text-indigo-600 font-bold\">核心公式：</span> **LQ = (e_i / e_total) / (E_i / E_total)**",
           "steps": [
@@ -1172,6 +1230,7 @@ export const geographyData: SubjectData = {
         },
         {
           "heading": "半導體高科技廊帶選址與基礎設施防禦幾何",
+          "outlineRefs": ["地Bc-Ⅴ-2", "地Bc-Ⅴ-3"],
           "body": "半導體先進製程晶圓廠 (Fab) 選址是地理與工程交集的極致。晶圓微影機台 (EU V) 對微震動極度敏感（振動位移需 < 微米級），對停電或壓降零容忍。竹科、中科、南科形成了完整的台灣西部半導體科技廊帶。",
           "table": {
             "headers": [
@@ -1199,6 +1258,20 @@ export const geographyData: SubjectData = {
                 "跳電致全廠晶圓廢棄",
                 "雙超高壓 (345kV) 專線雙迴路供電 + 氣渦輪發電機"
               ]
+            ]
+          }
+        },
+        {
+          "heading": "全球化與在地化：交通革新、全球在地化與在地全球化",
+          "outlineRefs": ["地Bc-Ⅴ-2", "地Ca-Ⅴ-4", "地Cb-Ⅴ-1", "地Cb-Ⅴ-2", "地Cb-Ⅴ-3"],
+          "body": "**交通革新與全球化**：貨櫃輪、航空與網際網路大幅縮短時空距離，使商品、資本、人員與資訊在國家之間快速流動，形成全球化。企業依各地的成本、技術與市場進行**跨國產銷布局**，例如半導體的設計、製造與封裝測試分布在不同國家。\n**大航海時代以來的人口與物產流動**：15–17 世紀歐洲航海帶動香料、白銀與蔗糖貿易，荷蘭與西班牙曾在臺灣建立據點；當代則有國際移工、新住民與跨國求學的人口流動。\n**全球在地化**：跨國企業依各地文化調整產品與服務，例如國際連鎖餐廳推出在地口味。\n**在地全球化**：在地特色走向全球市場，例如臺灣的珍珠奶茶、鳳梨酥與文創品牌。\n**建築上的呈現**：國際風格的玻璃帷幕大樓在世界各地相似，地域主義建築則回應在地氣候、材料與文化。\n**問題探究**：運用照片或短影音呈現生活中的全球在地化與在地全球化現象，並說明其意義。\n⚠️ 易錯：「全球在地化」是全球品牌適應地方，「在地全球化」是地方特色推向全球，方向相反。",
+          "table": {
+            "headers": ["概念", "方向", "例子"],
+            "rows": [
+              ["全球化", "世界各地的連結與流動增加", "國際分工、跨國供應鏈"],
+              ["全球在地化", "全球 → 在地調整", "國際連鎖店的在地口味"],
+              ["在地全球化", "在地 → 推向全球", "珍珠奶茶、臺灣文創品牌"],
+              ["人口流動", "跨國移動", "國際移工、新住民"]
             ]
           }
         }
@@ -1332,9 +1405,10 @@ export const geographyData: SubjectData = {
     {
       "slug": "environmental-issues",
       "title": "5. 🏗️ 環境議題與災害防救工程",
-      "desc": "探討全球氣候變遷、淹水高程計算、土石流防災退縮、<span className='text-rose-600 font-bold'>土壤液化</span>防護、海綿城市 LID 與環境影響評估 EIA。",
+      "desc": "探討全球氣候變遷、淹水高程計算、土石流防災退縮、土壤液化防護、海綿城市 LID 與環境影響評估 EIA。",
       "status": "done",
       "gradeLevel": 10,
+      "curriculumCode": "108-地Ba",
       "fatalTraps": [
         {
           "wrongThinking": "忽略空間尺度與環境成因。",
@@ -1373,6 +1447,7 @@ export const geographyData: SubjectData = {
       "concepts": [
         {
           "heading": "全球氣候變遷與海平面上升防護",
+          "outlineRefs": ["地Ba-Ⅴ-2"],
           "body": "全球暖化導致極端暴雨頻率大增與海平面上升。沿海與低窪都市建築需調升計畫防洪高程，並引進氣候適應性結構（防洪閘門、防水閘板、架高基座）。",
           "formula": "<span className=\"text-indigo-600 font-bold\">核心公式：</span> **計畫防洪高程: H_flood = H_tide + H_surge + ΔH_sea + h_safety**",
           "table": {
@@ -1406,6 +1481,7 @@ export const geographyData: SubjectData = {
         },
         {
           "heading": "坡地地質災害：土石流與地滑工程防治",
+          "outlineRefs": ["地Ba-Ⅴ-2"],
           "body": "土石流為鬆散土石、水與空氣之混合物沿溝谷快速流動現象。發生需三要素：豐富鬆散土石、充沛雨水與足夠坡度 (15°~30°)。建築選址需避開土石流潛勢溪流扇針區。",
           "steps": [
             "工程防治一（沉砂池與梳子壩）：在溪流上游興建梳子壩攔截大塊巨石，下游設沉砂池減緩流速。",
@@ -1415,7 +1491,8 @@ export const geographyData: SubjectData = {
           ]
         },
         {
-          "heading": "<span className='text-rose-600 font-bold'>土壤液化</span>與地層下陷地質防護",
+          "heading": "土壤液化與地層下陷地質防護",
+          "outlineRefs": ["地Ba-Ⅴ-2"],
           "body": "飽和鬆散砂質土壤在強烈地震搖晃下，超額孔隙水壓迅速上升使有效應力歸零，土壤失去**承載力**呈液態化，致使建築傾斜或沉陷；地層下陷則源自過度抽取地下水。",
           "table": {
             "headers": [
@@ -1442,6 +1519,7 @@ export const geographyData: SubjectData = {
         },
         {
           "heading": "海綿城市與低衝擊開發 (LID) 工法",
+          "outlineRefs": ["地Bb-Ⅴ-2"],
           "body": "低衝擊開發 (Low Impact Development, LID) 透過分散式小規模綠色工法，模擬天然水文條件，達到「滲透、滯留、蓄留、淨化、利用、排放」之海綿城市目標。",
           "formula": "<span className=\"text-indigo-600 font-bold\">核心公式：</span> **合理化公式計算地表逕流量: Q = C · I · A (C 為逕流係數 0~1)**",
           "steps": [
@@ -1453,6 +1531,7 @@ export const geographyData: SubjectData = {
         },
         {
           "heading": "環境影響評估 (EIA) 與建築碳足跡生命週期",
+          "outlineRefs": ["地Ba-Ⅴ-2"],
           "body": "環境影響評估 (EIA) 預先評估開發案對大氣、水文、生態與社會之衝擊。建築生命週期 (LCA) 則評估建材開採（隱含碳 Embodied Carbon）與營運耗能（營運碳 Operational Carbon）之總碳足跡。",
           "table": {
             "headers": [
@@ -1481,6 +1560,7 @@ export const geographyData: SubjectData = {
         },
         {
           "heading": "地下滯洪池容量計算與雨水貯留再利用",
+          "outlineRefs": ["地Ba-Ⅴ-2"],
           "body": "建築基地綠建築指標強制要求「雨水貯留與滯洪設施」。滯洪池蓄水容量設計需滿足基地開發後增加之暴雨逕流量 ΔV (m³)。貯留之雨水經沙濾處理後可用於景觀澆灌與馬桶沖洗。",
           "formula": "<span className=\"text-indigo-600 font-bold\">核心公式：</span> **V_retention = (C_new - C_orig) · I_design · A_site · t_storm**",
           "steps": [
@@ -1490,6 +1570,7 @@ export const geographyData: SubjectData = {
         },
         {
           "heading": "集水區水資源保護區與水源特定區建築開發限制",
+          "outlineRefs": ["地Bb-Ⅴ-2"],
           "body": "為保護自來水水質，政府劃設「水質水量保護區」與「飲用水水源水質保護區」。在該特定區內，嚴禁設廠製造有害物質，建築開發受嚴格**容積率**管制與建蔽率限制，且必須配置二級以上污水處理設施達到零污染排放。",
           "table": {
             "headers": [
@@ -1517,6 +1598,20 @@ export const geographyData: SubjectData = {
                 "限制大規模挖方填方，開發需做 EIA 與水保計畫",
                 "留設 40% 以上天然綠地與水土保持滯洪池"
               ]
+            ]
+          }
+        },
+        {
+          "heading": "生態景觀的經營管理與生態體驗",
+          "outlineRefs": ["地Bb-Ⅴ-1", "地Bb-Ⅴ-2", "地Bb-Ⅴ-3"],
+          "body": "**自然與人文生態景觀**：自然景觀如森林、濕地、河川、海岸；人文生態景觀如梯田、埤塘、老街與傳統聚落，是人與環境長期互動形成的地景。\n**經營管理原則**：保育優先、分區管理（核心區、緩衝區、永續利用區）、控制遊客承載量、社區參與及發展生態旅遊。\n**案例**：桃園的埤塘兼具灌溉水利與生態棲地功能；關渡自然公園保育濕地生態；宜蘭冬山河的整治結合親水空間與生態工法。\n**生態工法**：以石籠、木樁、植生等近自然材料取代混凝土護岸，兼顧防洪安全與生物棲地。\n**問題探究**：規劃一個符合「生態體驗」的活動，例如校園周邊溪流的生態觀察路線，並遵守無痕山林（LNT）原則。\n⚠️ 易錯：生態旅遊不是「到自然地區旅遊」就算，必須以保育為前提、控制人數，並讓在地社區受益。",
+          "steps": ["設定活動目標：例如認識溪流魚類與水質。", "選擇場域並蒐集資料：地圖、生態調查、安全風險。", "規劃路線與人數上限，安排解說點。", "設計解說與互動內容，提醒無痕山林原則。", "活動後回饋與檢討，評估對環境的影響。"],
+          "table": {
+            "headers": ["管理分區", "功能", "可進行的活動"],
+            "rows": [
+              ["核心區", "嚴格保護生態", "僅限研究與監測"],
+              ["緩衝區", "降低外界干擾", "有限度的環境教育、解說步道"],
+              ["永續利用區", "兼顧利用與保育", "生態旅遊、遊憩設施"]
             ]
           }
         }
@@ -1657,6 +1752,7 @@ export const geographyData: SubjectData = {
       "desc": "介紹向量/網格/BIM 整合、疊圖與環域選址演算、視域與日照權分析、網路路徑、IDW/Kriging 內插與數位雙生 3D GIS。",
       "status": "done",
       "gradeLevel": 10,
+      "curriculumCode": "108-地Ab",
       "fatalTraps": [
         {
           "wrongThinking": "忽略空間尺度與環境成因。",
@@ -1695,6 +1791,7 @@ export const geographyData: SubjectData = {
       "concepts": [
         {
           "heading": "GIS 資料結構與 BIM-GIS 系統整合",
+          "outlineRefs": ["地Ab-Ⅴ-1"],
           "body": "地理資訊系統 (GIS) 處理空間資料主要分為向量 (Vector) 與網格 (Raster) 模式。現代建築與都市規劃進一步將微觀之建築資訊模型 (BIM/IFC) 與宏觀之地理資訊系統 (GIS/CityGML) 無縫整合。",
           "table": {
             "headers": [
@@ -1727,6 +1824,7 @@ export const geographyData: SubjectData = {
         },
         {
           "heading": "經典 GIS 空間分析與建築選址演算",
+          "outlineRefs": ["地Ab-Ⅴ-2"],
           "body": "GIS 透過多條件疊圖 (Overlay) 與環域分析 (Buffer) 進行複雜之空間決策支援 (MCDA)。",
           "steps": [
             "環域分析 (Buffer)：以點、線、面為中心向外擴展指定距離（如：斷層線外擴 50m 作為禁建區；捷運站外擴 500m 為 <span className='text-rose-600 font-bold'>TOD</span> 區）。",
@@ -1737,6 +1835,7 @@ export const geographyData: SubjectData = {
         },
         {
           "heading": "視域分析與都市天際線/日照權評估",
+          "outlineRefs": ["地Ab-Ⅴ-2"],
           "body": "三維 GIS 利用數位表面模型 (DSM) 進行視域分析 (Viewshed Analysis)，判定觀景台視野覆蓋率，並可模擬太陽軌跡計算擬建高樓對周邊鄰房之日照遮蔽時間（日照權評估）。",
           "formula": "<span className=\"text-indigo-600 font-bold\">核心公式：</span> **視線遮蔽判定: 若點 k 之高程 Z_k > Z_line(k)，則目標點被遮蔽**",
           "table": {
@@ -1764,6 +1863,7 @@ export const geographyData: SubjectData = {
         },
         {
           "heading": "網路分析與緊急疏散/物流路徑規劃",
+          "outlineRefs": ["地Ab-Ⅴ-2", "地Ab-Ⅴ-3"],
           "body": "網路分析 (Network Analysis) 基於線型拓樸網路（如道路網、水管網）。利用戴克斯特拉 (Dijkstra) 最短路徑演算法演算消防車抵達時程與避難疏散服務區。",
           "formula": "<span className=\"text-indigo-600 font-bold\">核心公式：</span> **最短路徑阻抗: Impedance = ∑ (Length_i / Speed_i) + Delay_intersections**",
           "steps": [
@@ -1774,6 +1874,7 @@ export const geographyData: SubjectData = {
         },
         {
           "heading": "空間內插與環境氣候微氣候估算",
+          "outlineRefs": ["地Ab-Ⅴ-2"],
           "body": "當氣象觀測站點數量有限時，GIS 透過空間內插 (Spatial Interpolation) 技術（如反比距離加權法 IDW、克里金法 Kriging）推算未測量點之環境參數（如氣溫、噪音、降雨量）。",
           "formula": "<span className=\"text-indigo-600 font-bold\">核心公式：</span> **IDW 內插估算公式: z_hat(x_0) = (∑ (z_i / d_i^p)) / (∑ (1 / d_i^p))**",
           "table": {
@@ -1801,6 +1902,7 @@ export const geographyData: SubjectData = {
         },
         {
           "heading": "三維地理資訊系統 (3D GIS) 與智慧城市數位雙生 (Digital Twin)",
+          "outlineRefs": ["地Ab-Ⅴ-1"],
           "body": "三維 GIS 將 CityGML (City Geography Markup Language) 幾何模型分為 LOD0 至 LOD4 五個細節等級。結合 IoT 感測器數據（如即時車流、淹水水位、空氣品質），構建都市規模的數位雙生 (Digital Twin) 平台，進行即時防災防洪應變。",
           "table": {
             "headers": [
@@ -1839,8 +1941,30 @@ export const geographyData: SubjectData = {
         },
         {
           "heading": "衛星遙測 (Remote Sensing, RS) NDVI 指數與都市熱島監測",
+          "outlineRefs": ["地Ab-Ⅴ-1", "地Ab-Ⅴ-2"],
           "body": "遙測衛星（如 Landsat、Sentinel）利用紅光 (RED) 與近紅外光 (NIR) 波段反射率計算歸一化植被指數 (NDVI = (NIR - RED) / (NIR + RED))，並利用熱紅外線波段 (TIR) 反演地表溫度 (LST)，精確監測都市熱島 (UHI) 與植被綠化率變化。",
           "formula": "<span className=\"text-indigo-600 font-bold\">核心公式：</span> **NDVI = (NIR - RED) / (NIR + RED) (-1 ~ +1)\nLST = T_b / [ 1 + (λ · T_b / ρ) · ln(ε) ]**"
+        },
+        {
+          "heading": "地圖的本質與要素：比例尺、方位、圖例、座標與古今地圖",
+          "outlineRefs": ["地Aa-Ⅴ-1", "地Aa-Ⅴ-2", "地Aa-Ⅴ-3", "地Aa-Ⅴ-4", "地Ba-Ⅴ-3"],
+          "body": "**地圖的本質**：依一定比例，經過選擇與簡化，用符號把地表現象表示在平面上的圖。\n**地圖要素**：圖名、比例尺（數字式如 1:25,000、線段式、文字式）、方位（指北針）、圖例、座標（經緯度或 TWD97）、資料來源與年代。\n**比例尺**：實際距離 = 圖上距離 × 比例尺分母。1:25,000 地圖上 4 cm 代表 4 × 25,000 = 100,000 cm = 1 km。大比例尺（如 1:1,000）範圍小、內容詳細；小比例尺範圍大、內容概略。\n**古地圖與現代地圖**：清代古地圖多採山水畫式，方位與比例不精確，但記錄了當時的聚落與交通；日治時期以三角測量繪製的《臺灣堡圖》（1904）已具現代精度；現代地圖則以航照、衛星影像與 GIS 持續更新。\n**日常生活常用的地圖**：地形圖、都市計畫圖、地籍圖、道路與大眾運輸路線圖、災害潛勢地圖（淹水、土壤液化）。\n**問題探究**：利用「臺灣百年歷史地圖」等平台套疊古今地圖，觀察學校周邊河道、聚落與土地利用的變遷；或繪製「校園周邊危險路口」主題地圖，討論分布特性與成因。\n⚠️ 易錯：比例尺「分母越大」代表縮小越多，是小比例尺地圖。",
+          "formula": "實際距離 = 圖上距離 × 比例尺分母",
+          "table": {
+            "headers": ["地圖", "常見比例尺", "主要內容", "用途"],
+            "rows": [
+              ["地形圖", "1:5,000 – 1:50,000", "等高線、水系、道路、聚落", "選址、登山、規劃"],
+              ["地籍圖", "1:500 – 1:1,200", "地號、地界", "土地登記、建築基地"],
+              ["都市計畫圖", "1:1,000 – 1:5,000", "土地使用分區、道路", "建築管制、開發"],
+              ["災害潛勢圖", "依區域", "淹水、液化、坡地災害範圍", "防災與避難規劃"]
+            ]
+          }
+        },
+        {
+          "heading": "田野實察：田野在哪裡、察什麼、從何察起",
+          "outlineRefs": ["地Ac-Ⅴ-1", "地Ac-Ⅴ-2", "地Ac-Ⅴ-3", "地Ac-Ⅴ-4", "地Bc-Ⅴ-4"],
+          "body": "**田野在哪裡**：就在我們身邊的真實地方——校園、社區、老街、河岸、工地與產業聚落。\n**察什麼**：自然環境（地形、水文、氣候、植被）、人文活動（土地利用、交通、產業、建築）以及兩者的互動與問題。\n**從何察起**：先提出一個具體問題，再決定要觀察與蒐集哪些資料。\n**問題探究**：以校園或社區為田野進行實察，提出改善建議；或訪問學校附近某項產業的經營者，認識該產業的發展機會與挑戰。\n**安全與倫理**：結伴同行、注意交通與天候；訪談前先說明目的並取得同意，尊重受訪者的隱私與意願。\n⚠️ 易錯：田野實察不是到處拍照而已，要有明確的問題、可比較的紀錄（時間、地點、數據）與根據資料提出的結論。",
+          "steps": ["提出問題：例如「學校周邊為什麼一下大雨就積水？」", "蒐集二手資料：地形圖、淹水潛勢圖、新聞、統計資料。", "規劃路線與觀察項目，準備地圖、相機、測距輪、溫度計、記錄表。", "現地觀察、測量與訪談，記錄時間、地點與數據。", "整理資料並繪製主題地圖，分析成因。", "提出改善建議並發表，接受同學與老師回饋。"]
         }
       ],
       "practices": [

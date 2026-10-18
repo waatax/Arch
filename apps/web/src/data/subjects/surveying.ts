@@ -12,6 +12,7 @@ export const surveyingData: SubjectData = {
       "desc": "建立測量基準、單位、精度、有效數字、誤差與工作倫理的完整起點。",
       "status": "done",
       "gradeLevel": 10,
+      "curriculumCode": "TCTE115-SV1",
       "examHitRate": 4,
       "step0Prerequisites": [
         "測量誤差分類：系統誤差（規律可改正）vs 偶然誤差（隨機遵循常態分佈）",
@@ -40,6 +41,7 @@ export const surveyingData: SubjectData = {
       "concepts": [
         {
           "heading": "測量工作與基準",
+          "outlineRefs": ["SV1.1", "SV1.3", "SV1.4"],
           "body": "測量以距離、角度與高差觀測建立點位。小區域可採<span className=\"text-indigo-600 font-bold\">平面測量假設</span>；範圍擴大時必須考慮地球曲率、坐標系與高程基準。",
           "table": {
             "headers": [
@@ -78,12 +80,28 @@ export const surveyingData: SubjectData = {
         },
         {
           "heading": "誤差、錯誤與精度",
+          "outlineRefs": ["SV1.5"],
           "body": "**錯誤**應查明剔除；**系統誤差**依規律改正；**偶然誤差**以重複觀測及統計降低。<span className=\"text-rose-600 font-bold\">精密度</span>描述彼此接近，<span className=\"text-rose-600 font-bold\">準確度</span>描述接近真值。"
         },
         {
           "heading": "有效數字與單位",
+          "outlineRefs": ["SV1.4", "SV1.9"],
           "body": "中間計算保留至少一位<span className=\"text-indigo-600 font-bold\">保護位</span>，最後依觀測精度修約；角度的度分秒與十進位度不可直接混算。",
           "formula": "1°=60′=3600″；<span className=\"text-rose-600 font-bold\">相對精度 = |誤差|/測線長</span>"
+        },
+        {
+          "heading": "測量作業基本程序、任務編組與工作安全",
+          "outlineRefs": ["SV1.2", "SV1.6", "SV1.7"],
+          "body": "**基本程序**：(1) 計畫與踏勘 → (2) 選點、埋設控制點 → (3) 儀器檢點與校正 → (4) 外業觀測與手簿記錄 → (5) 內業計算、平差與檢核 → (6) 成果製圖與報告。整體原則是「**由整體到局部、先控制後碎部、步步有檢核**」。\n**任務編組**：組長（規劃與檢核）、觀測手（操作儀器）、記錄手（填寫手簿並即時複誦數據）、持尺或持稜鏡手、交通與安全警戒。記錄手複誦讀數可及早發現讀錯、記錯的過失。\n**工作安全**：道路作業須擺放交通錐並穿反光背心；高壓電線附近不可豎立金屬標尺或鋁梯；遇雷雨立即停止；儀器架設後不可離人，腳架須踩實；夏季注意防曬補水。\n**基本觀測量**：測量最基本的觀測量只有三種——**距離、角度（水平角、垂直角）、高差**，所有點位與面積都由它們計算而來。\n⚠️ 易錯：過失（讀錯、記錯）不是誤差，不能用平差消除，只能靠檢核發現後重測。",
+          "table": {
+            "headers": ["基本觀測量", "代表儀器", "常用單位", "觀測要點"],
+            "rows": [
+              ["距離", "捲尺、電子測距儀、全站儀", "m", "捲尺需做尺長、溫度、傾斜等改正"],
+              ["水平角", "經緯儀、全站儀", "度分秒 (° ′ ″)", "正倒鏡觀測取平均"],
+              ["垂直角／天頂距", "經緯儀、全站儀", "度分秒", "正倒鏡求指標差"],
+              ["高差", "水準儀、水準尺", "m", "前後視距離盡量相等"]
+            ]
+          }
         }
       ],
       "worked_examples": [
@@ -187,6 +205,7 @@ export const surveyingData: SubjectData = {
       "desc": "整合視距、三角高程與不可達距離，從觀測量判斷該用水平距離、高差或斜距公式。",
       "status": "done",
       "gradeLevel": 10,
+      "curriculumCode": "TCTE115-SV5",
       "examHitRate": 4,
       "step0Prerequisites": [
         "視距測量水平距公式：H = K · s · cos²(α)",
@@ -215,6 +234,7 @@ export const surveyingData: SubjectData = {
       "concepts": [
         {
           "heading": "視距測量",
+          "outlineRefs": ["SV5.1", "SV5.2"],
           "body": "標尺垂直且視線有垂直角 α 時，水平距離包含<span className=\"text-indigo-600 font-bold\">乘常數項</span>與<span className=\"text-indigo-600 font-bold\">加常數項</span>；題目若只給上下絲讀數，視距間隔 s 為**兩者之差**。",
           "formula": "<span className=\"text-rose-600 font-bold\">H = K s cos²α + C cosα</span>",
           "table": {
@@ -254,13 +274,21 @@ export const surveyingData: SubjectData = {
         },
         {
           "heading": "三角高程",
+          "outlineRefs": ["SV5.4"],
           "body": "由已知點儀器高、垂直角與水平距離推求未知點高程；必須把**目標高**納入，並統一<span className=\"text-rose-600 font-bold\">仰角正、俯角負</span>。",
           "formula": "<span className=\"text-indigo-600 font-bold\">H_B = H_A + i + D tanα - v</span>"
         },
         {
           "heading": "不可達距離策略",
+          "outlineRefs": ["SV2.5"],
           "body": "先建立可量基線，再觀測角度形成三角形，以<span className=\"text-rose-600 font-bold\">正弦定理</span>求不可直接丈量的邊；先畫幾何圖可避免角與對邊錯配。",
           "formula": "<span className=\"text-indigo-600 font-bold\">a/sin A = b/sin B = c/sin C</span>"
+        },
+        {
+          "heading": "雙高法：照準標尺上兩個高度求水平距離與高差",
+          "outlineRefs": ["SV5.3"],
+          "body": "當無法直接量距時，可在測站以經緯儀照準目標標尺上**兩個已知高度**的點（覘標高 v₁、v₂，例如 1.000 m 與 3.000 m），分別讀得垂直角 α₁、α₂。兩點高差 v₂ − v₁ = D·(tanα₂ − tanα₁)，因此可同時解出水平距離 D 與兩點高差。\n例：v₁ = 1.000 m、v₂ = 3.000 m、α₁ = 2°00′、α₂ = 3°00′、儀器高 i = 1.500 m。tan2° = 0.03492、tan3° = 0.05241，D = 2.000 / (0.05241 − 0.03492) ≈ 114.4 m；高差 h = D·tanα₁ + i − v₁ ≈ 3.994 + 1.500 − 1.000 ≈ 4.49 m。\n此法不需讀取視距絲，只要兩個垂直角與已知的標尺高度差，適合跨越河溝或障礙時使用；兩垂直角相差越大，求得的距離越可靠。\n📌 不同教材對雙高法的記號與觀測安排略有差異，原理都是利用「已知的高度差 + 兩個垂直角」消去未知距離。",
+          "formula": "D = (v₂ − v₁) / (tanα₂ − tanα₁)\nh = D · tanα₁ + i − v₁"
         }
       ],
       "worked_examples": [
@@ -362,9 +390,10 @@ export const surveyingData: SubjectData = {
     {
       "slug": "distance-and-angle",
       "title": "1. 距離與角度測量",
-      "desc": "鋼卷尺距離修正量計算法則、光電測距 (EDM) 原理、經緯儀角度測量與正倒鏡觀測消除儀器系統誤差。\n\n🔥 V6.0 考前秒殺秘訣：此核心概念統測出題率極高，建議善用圖解與鷹架提示反覆練習！",
+      "desc": "鋼卷尺距離修正量計算法則、光電測距 (EDM) 原理、經緯儀角度測量與正倒鏡觀測消除儀器系統誤差。",
       "status": "done",
       "gradeLevel": 11,
+      "curriculumCode": "TCTE115-SV2",
       "covered_question_ids": [
         "111-2-7",
         "111-2-12",
@@ -419,6 +448,7 @@ export const surveyingData: SubjectData = {
       "concepts": [
         {
           "heading": "距離測量方法與鋼卷尺五大修正公式",
+          "outlineRefs": ["SV2.1", "SV2.2", "SV2.3"],
           "body": "距離測量為測量學中**最基本的要素之一**。鋼卷尺直接量距受到<span className=\"text-rose-600 font-bold\">溫度、拉力、垂降、斜率及海平面投影</span>等物理因素影響，必須施加**五大系統誤差修正**，才能求得標準水平距離。掌握這五個公式的物理意義是統測必考關鍵。\n\n**🔄 跨科連結：** 此處求得的精確水平距離，將直接應用於《製圖實習》中建築平面圖放樣（如 1:100 比例尺縮放），製圖的精準度完全依賴測量數據的可靠性。",
           "formula": "溫度修正: Ct = α · L · (T - T0)\n拉力修正: Cp = (P - P0) · L / (A · E)\n垂降修正: Cs = - (w² · L³) / (24 · P²)\n斜率修正: Ch = - h² / (2 · L)\n海平面修正: Cg = - L · H / R",
           "steps": [
@@ -432,6 +462,7 @@ export const surveyingData: SubjectData = {
         },
         {
           "heading": "光電測距儀 (EDM) & 全測站儀原理與加乘常數",
+          "outlineRefs": ["SV2.4", "SV6.4"],
           "body": "光電測距 (EDM) 利用紅外線或雷射調幅波在兩點間往返傳播之<span className=\"text-indigo-600 font-bold\">相位差</span>或<span className=\"text-indigo-600 font-bold\">飛行時間 (Time-of-Flight)</span> 來計算距離。儀器內部存在光學中心與幾何中心不重合之**加常數 (K)** 以及頻率漂移產生之**乘常數 (S)**。為了確保量測精度，定期在已知長度的基準線上進行檢定是必要的。",
           "formula": "D = K + S · D' + D_phase\n(D為真實距離，D'為儀器測量距離)",
           "steps": [
@@ -470,6 +501,7 @@ export const surveyingData: SubjectData = {
         },
         {
           "heading": "經緯儀角度測量原理與觀測方法 SOP",
+          "outlineRefs": ["SV4.3", "SV4.5"],
           "body": "水平角為空間兩方向線在水平面上<span className=\"text-rose-600 font-bold\">投影線之夾角</span>。觀測方法主要有**單角法**、**方向法 (Direction Method)** 與**複測法 (Repetition Method)**，其中方向法最常用於多目標測量。",
           "steps": [
             "**方向法 SOP Step 1**：將經緯儀在測站 O 嚴格<span className=\"text-indigo-600 font-bold\">定心與定平</span>。",
@@ -480,6 +512,7 @@ export const surveyingData: SubjectData = {
         },
         {
           "heading": "正鏡與倒鏡觀測消差原理 (儀器誤差消除機制)",
+          "outlineRefs": ["SV4.7", "SV4.8"],
           "body": "經緯儀內部存在三條主要幾何軸線：**豎軸 (VV')**、**橫軸 (HH')**、**視準軸 (ZZ')**。透過<span className=\"text-rose-600 font-bold\">正鏡 (Face Left) 與倒鏡 (Face Right) 觀測取平均</span>，可完全消除多項儀器系統誤差，這是測量學極為核心的消差手段。",
           "table": {
             "headers": [
@@ -518,7 +551,8 @@ export const surveyingData: SubjectData = {
         },
         {
           "heading": "角度與距離測量之系統誤差與偶然誤差綜合分析",
-          "body": "測量作業中之誤差按其性質可分為<span className=\"text-indigo-600 font-bold\">系統誤差 (Systematic Errors)</span> 與<span className=\"text-rose-600 font-bold\">偶然誤差 (Random Errors)</span>。系統誤差具備固定物理規律可公式消去；偶然誤差符合常態分布，需透過統計平差。\n\n| 誤差特性 | 系統誤差 (Systematic Error) | 偶然誤差 (Random Error) |\n| :--- | :--- | :--- |\n| **發生規律** | 具備一定大小與方向的物理規律 | 大小與符號隨機，正負機率相等 |\n| **累積性質** | 隨測量次數成正比累積 | 隨測量次數的平方根 (√n) 累積 |\n| **消除方法** | 公式修正、正倒鏡觀測對消 | 增加觀測次數、最小平方法 |\n| **常見範例** | 鋼尺熱脹冷縮、儀器指標差 | 估讀尾數誤差、微風吹動 |",
+          "outlineRefs": ["SV1.5", "SV4.8"],
+          "body": "測量作業中之誤差按其性質可分為<span className=\"text-indigo-600 font-bold\">系統誤差 (Systematic Errors)</span> 與<span className=\"text-rose-600 font-bold\">偶然誤差 (Random Errors)</span>。系統誤差具備固定物理規律可公式消去；偶然誤差符合常態分布，需透過統計平差。\n\n• 發生規律：系統誤差－具備一定大小與方向的物理規律；偶然誤差－大小與符號隨機，正負機率相等\n• 累積性質：系統誤差－隨測量次數成正比累積；偶然誤差－隨測量次數的平方根 (√n) 累積\n• 消除方法：系統誤差－公式修正、正倒鏡觀測對消；偶然誤差－增加觀測次數、最小平方法\n• 常見範例：系統誤差－鋼尺熱脹冷縮、儀器指標差；偶然誤差－估讀尾數誤差、微風吹動",
           "table": {
             "headers": [
               "誤差類別",
@@ -559,6 +593,42 @@ export const surveyingData: SubjectData = {
               ]
             ]
           }
+        },
+        {
+          "heading": "角度測量之認識與直線定向：真北、磁北、方格北",
+          "outlineRefs": ["SV4.1", "SV4.2"],
+          "body": "**角度種類**：水平角（兩方向在水平面上的夾角）、垂直角（視線與水平面的夾角，仰角為正、俯角為負）、天頂距（視線與天頂方向的夾角，Z = 90° − α）。\n**直線定向**：以某基準方向量測直線方向。三種基準北：\n• **真北**（地理北）：沿經線指向地球北極。\n• **磁北**：磁針所指方向。磁北偏離真北的角度稱**磁偏角 δ**，會因地點與年份而變化。\n• **方格北**（製圖北、坐標北）：平面坐標格網的縱軸方向。方格北與真北的夾角稱**子午線收斂角 γ**，在橫麥卡托投影的中央經線上為 0，離中央經線越遠越大。\n**換算**：真方位角 = 磁方位角 + δ（磁北偏東取 +、偏西取 −）。例：磁方位角 120°，磁偏角為西偏 4°，真方位角 = 120° − 4° = 116°。\n⚠️ 易錯：方位角一律由北方順時針量 0°–360°；象限角則由北或南向東或西量 0°–90°，兩者換算時要先判斷象限。",
+          "formula": "真方位角 = 磁方位角 + δ（東偏 +、西偏 −）\n天頂距 Z = 90° − 垂直角 α",
+          "table": {
+            "headers": ["基準方向", "定義", "測定方式", "主要用途"],
+            "rows": [
+              ["真北", "經線指向地理北極的方向", "天文觀測、GNSS", "大地測量、地圖經緯度"],
+              ["磁北", "磁針靜止時所指的方向", "羅盤", "野外概略定向，需做磁偏角改正"],
+              ["方格北", "平面坐標系縱軸（N 軸）方向", "由坐標反算", "工程放樣、地籍與導線計算（TWD97）"]
+            ]
+          }
+        },
+        {
+          "heading": "垂直角測量：天頂距、指標差與正倒鏡計算",
+          "outlineRefs": ["SV4.6"],
+          "body": "現代經緯儀與全站儀的垂直度盤多以**天頂距 Z** 讀數：望遠鏡水平時，正鏡讀 90°、倒鏡讀 270°。理論上正鏡讀數 L 與倒鏡讀數 R 之和應為 360°，偏差的一半就是**指標差 i**。\n例：L = 85°12′20″、R = 274°47′50″，L + R = 360°00′10″，指標差 i = +5″。正確天頂距 Z = (L − R + 360°) / 2 = 85°12′15″，垂直角 α = 90° − Z = 4°47′45″（仰角）。\n求得垂直角後即可用於三角高程：高差 h = D·tanα + i儀 − v（D 為水平距離、i儀 為儀器高、v 為目標高）。\n⚠️ 易錯：只用正鏡讀數會把指標差帶入垂直角；正倒鏡取平均可消除指標差，這也是垂直角必須正倒鏡觀測的原因。",
+          "formula": "指標差 i = (L + R − 360°) / 2\n天頂距 Z = (L − R + 360°) / 2\n垂直角 α = 90° − Z",
+          "table": {
+            "headers": ["項目", "數值", "計算"],
+            "rows": [
+              ["正鏡讀數 L", "85°12′20″", "觀測值"],
+              ["倒鏡讀數 R", "274°47′50″", "觀測值"],
+              ["指標差 i", "+5″", "(360°00′10″ − 360°) / 2"],
+              ["天頂距 Z", "85°12′15″", "(L − R + 360°) / 2"],
+              ["垂直角 α", "+4°47′45″（仰角）", "90° − Z"]
+            ]
+          }
+        },
+        {
+          "heading": "稜鏡加常數之測定（三點法）",
+          "outlineRefs": ["SV2.4", "SV6.4"],
+          "body": "電子測距儀與全站儀量測時，電磁波在稜鏡內的光程與稜鏡的對中點並不一致，使每次測得的距離都差一個固定值，稱為**稜鏡常數（加常數）K**。稜鏡常數需依稜鏡規格輸入儀器（常見 0 mm 或 −30 mm 等），也可在現場測定。\n**三點法**：在一直線上設 A、B、C 三點（B 位於 A、C 之間），分別測得 d_AB、d_BC、d_AC。每段都含同一個常數，真值滿足 (d_AB + K) + (d_BC + K) = d_AC + K，故 **K = d_AC − d_AB − d_BC**。\n例：d_AB = 50.012 m、d_BC = 70.015 m、d_AC = 120.000 m，K = 120.000 − 50.012 − 70.015 = −0.027 m = −27 mm，表示每次測距須加上 −27 mm。\n⚠️ 易錯：三點必須嚴格位於同一直線且 B 在中間；稜鏡更換型號後要重新設定常數，否則所有距離都會帶入相同的系統誤差。",
+          "formula": "K = d_AC − d_AB − d_BC\n改正後距離 D = d + K"
         }
       ],
       "practices": [
@@ -652,9 +722,10 @@ export const surveyingData: SubjectData = {
     {
       "slug": "elevation-and-leveling",
       "title": "2. 高程測量與水準儀",
-      "desc": "水準測量幾何原理、視線高法 (HI) 與高差法 (Rise & Fall) 水準表記錄規範、地球曲率與大氣折光修正、水準儀兩點法檢驗與校正。\n\n🔥 V6.0 考前秒殺秘訣：此核心概念統測出題率極高，建議善用圖解與鷹架提示反覆練習！",
+      "desc": "水準測量幾何原理、視線高法 (HI) 與高差法 (Rise & Fall) 水準表記錄規範、地球曲率與大氣折光修正、水準儀兩點法檢驗與校正。",
       "status": "done",
       "gradeLevel": 11,
+      "curriculumCode": "TCTE115-SV3",
       "covered_question_ids": [
         "111-2-1",
         "111-2-4",
@@ -736,6 +807,7 @@ export const surveyingData: SubjectData = {
       "concepts": [
         {
           "heading": "水準測量基本幾何原理與水準尺讀數",
+          "outlineRefs": ["SV3.1", "SV3.2", "SV3.3"],
           "body": "水準測量利用水準儀提供一條**絕對水平視線**，透過放置在已知高程水準點 (BM) 或待測點上的水準尺，讀取<span className=\"text-indigo-600 font-bold\">後視 (BS)</span> 與<span className=\"text-rose-600 font-bold\">前視 (FS)</span> 讀數，推算兩點間高差與待測點高程。",
           "formula": "高差 Δh_AB = 後視讀數 (BS_A) - 前視讀數 (FS_B)\n未知點高程 Elev_B = 已知點高程 Elev_A + Δh_AB",
           "steps": [
@@ -753,6 +825,7 @@ export const surveyingData: SubjectData = {
         },
         {
           "heading": "水準測量記錄表：視線高法 (HI Method) 完整計算與檢核",
+          "outlineRefs": ["SV3.5"],
           "body": "視線高法 (Height of Instrument Method) 先求算儀器視線高程 (HI)，再減去各前視或中間視讀數以求解高程。適合同一站需觀測多個細部點高程之工程放樣與地形測量。",
           "formula": "HI = 已知點高程 + BS\n待測點高程 = HI - FS (或 HI - IFS)\n算術檢核公式: ∑ BS - ∑ FS = 末點高程 - 起點高程",
           "table": {
@@ -816,6 +889,7 @@ export const surveyingData: SubjectData = {
         },
         {
           "heading": "水準測量記錄表：高差法 (Rise & Fall Method) 雙重算術檢核",
+          "outlineRefs": ["SV3.5"],
           "body": "高差法 (Rise and Fall Method) 逐一計算相鄰兩觀測點間之高差 (升 Rise 為正，降 Fall 為負)，具備對每一個點（含中間視）進行嚴謹計算檢核之優點。",
           "formula": "高差 Δh = 前點讀數 - 後點讀數 (正數填入 Rise，負數填入 Fall)\n後點高程 = 前點高程 + Rise (或 - Fall)\n算術檢核公式: ∑ BS - ∑ FS = ∑ Rise - ∑ Fall = 末點高程 - 起點高程",
           "table": {
@@ -884,6 +958,7 @@ export const surveyingData: SubjectData = {
         },
         {
           "heading": "地球曲率 (Curvature) 與大氣折光 (Refraction) 聯合修正量",
+          "outlineRefs": ["SV3.4"],
           "body": "因地球表面為曲面使視線隨距離升高 (**曲率影響**)，大氣密度不均使光線向下彎曲 (**折光影響**)。兩者聯合修正量 h_cr 隨<span className=\"text-indigo-600 font-bold\">視距 K 之平方遞增</span>。<span className=\"text-rose-600 font-bold\">前後視距等長</span>可完全消除 C&R 影響，這是水準測量最重要的消差法則。實務上遇到無法等長的情況（如跨河測量），必須採用「對向觀測法」來消去此誤差。",
           "formula": "地球曲率修正: hc = D² / (2R) = 0.0785 · K² (m)\n大氣折光修正: hr = 0.0110 · K² (m)\n聯合修正量: hcr = hc - hr = 0.0675 · K² (m)  (K 單位為 km)",
           "steps": [
@@ -894,6 +969,7 @@ export const surveyingData: SubjectData = {
         },
         {
           "heading": "水準儀 i 角誤差 (視準軸不平行水準管軸) 兩點法 (Peg Test) 檢驗與校正",
+          "outlineRefs": ["SV3.6"],
           "body": "當水準儀之水準管氣泡居中時，若視準軸不平行於水準管軸，會產生夾角 i (**i 角誤差**)。**兩點法 (Peg Test)** 透過在中點與近端兩次觀測，利用幾何關係精確求解並校正 i 角。",
           "steps": [
             "Step 1 中點觀測：在相距 D (如 60 m) 之 A、B 兩點正中央 C 架設水準儀。因前後視距相等 (D/2)，i 角誤差完全消去，求得真實高差 Δh_true = a1 - b1。",
@@ -902,6 +978,46 @@ export const surveyingData: SubjectData = {
             "Step 4 單位距離偏角：tan(i) = e / D。計算遠端 B 尺之正確讀數 b2_correct = b2 - e_B。",
             "Step 5 校正：微調水準管校正螺絲或交叉絲十字線，使 B 尺讀數恰為 b2_correct。"
           ]
+        },
+        {
+          "heading": "對向水準測量：跨越河谷的高差觀測",
+          "outlineRefs": ["SV3.7"],
+          "body": "水準路線遇到河流、深谷時，無法使前視與後視距離相等，視準軸誤差（i 角）與地球曲率、大氣折光（兩差）都無法抵消。此時採**對向水準測量**：在 A 岸近處設站，讀 A 尺（近）與 B 尺（遠）；再到 B 岸近處設站，讀 A 尺（遠）與 B 尺（近）。兩次觀測中，誤差對高差的影響**大小相近、符號相反**，取兩次高差的**平均值**即可消除。\n例：A 岸設站，A 尺讀 1.523 m、B 尺讀 1.204 m，Δh₁ = 1.523 − 1.204 = +0.319 m；B 岸設站，A 尺讀 1.785 m、B 尺讀 1.472 m，Δh₂ = 1.785 − 1.472 = +0.313 m。B 點比 A 點高 ΔH = (0.319 + 0.313) / 2 = +0.316 m。\n兩次高差的差值（0.006 m）反映了 i 角與兩差的影響。\n⚠️ 易錯：每一站都要用「後視 − 前視」並固定以 A 尺為後視，兩次高差的符號才會一致，才能直接平均。",
+          "formula": "ΔH_AB = [(a₁ − b₁) + (a₂ − b₂)] / 2\n（a：A 尺讀數，b：B 尺讀數）",
+          "steps": [
+            "在 A 岸近處（距 A 尺約 10 m 內）架設水準儀，讀 A 尺 a₁ 與 B 尺 b₁。",
+            "在 B 岸近處架設水準儀，讀 A 尺 a₂ 與 B 尺 b₂；兩站儀器到近尺的距離應大致相同。",
+            "分別計算 Δh₁ = a₁ − b₁、Δh₂ = a₂ − b₂。",
+            "取平均 ΔH = (Δh₁ + Δh₂) / 2，即消除 i 角與地球曲率、大氣折光後的高差。"
+          ]
+        },
+        {
+          "heading": "方格水準測量與挖填土方計算",
+          "outlineRefs": ["SV3.8"],
+          "body": "整地工程常把基地劃分成邊長 a 的方格（例如 10 m × 10 m），用水準儀測出各方格角點的地盤高程，與計畫高程比較得出各點的挖深（+）或填高（−）h，再以**角點法**計算土方量。\n每個角點被幾個方格共用，就乘幾倍：只屬於 1 個方格的角點乘 1，屬於 2 個方格的邊點乘 2，屬於 3 個方格的轉角點乘 3，屬於 4 個方格的內點乘 4。\n例：兩個相鄰的 10 m 方格，上排挖深 1.2、0.9、0.8 m，下排 1.0、0.7、0.6 m。四個外角各屬 1 格：Σh₁ = 1.2 + 0.8 + 1.0 + 0.6 = 3.6；中間兩點各屬 2 格：Σh₂ = 0.9 + 0.7 = 1.6。V = (100 / 4) × (3.6 + 2 × 1.6) = 25 × 6.8 = 170 m³。\n驗算：左格平均 (1.2 + 0.9 + 1.0 + 0.7) / 4 = 0.95 m → 95 m³；右格平均 0.75 m → 75 m³；合計 170 m³ ✓。\n⚠️ 易錯：計算前要先統一挖、填符號；挖填交界的方格需分開計算，不能把正負直接相加後當成總土方量。",
+          "formula": "V = (a² / 4)(Σh₁ + 2Σh₂ + 3Σh₃ + 4Σh₄)",
+          "table": {
+            "headers": ["角點類型", "共用方格數", "權重", "本例數值"],
+            "rows": [
+              ["外角點", "1", "× 1", "1.2、0.8、1.0、0.6（合計 3.6）"],
+              ["邊點", "2", "× 2", "0.9、0.7（合計 1.6）"],
+              ["轉角點（L 形基地內凹處）", "3", "× 3", "本例無"],
+              ["內點", "4", "× 4", "本例無"]
+            ]
+          }
+        },
+        {
+          "heading": "旋轉雷射儀與雷射墨線儀：原理與工地應用",
+          "outlineRefs": ["SV3.9", "SV6.4"],
+          "body": "**旋轉雷射儀**：雷射頭高速旋轉，投射出一個**水平（或設定坡度）的雷射基準面**。工作人員把接收器裝在標尺上，上下移動到接收器發出「對準」訊號，即可讀出該點相對於雷射面的高差。適用於整地高程控制、樓板與模板高程、排水管坡度放樣，多具自動整平功能，可**單人作業**。\n**雷射墨線儀**：投射可見的水平線、垂直線或十字線，用於室內裝修放樣，例如天花板高度、牆面垂直、隔間與門框定位，可取代傳統彈墨線。\n**操作流程**：架設於穩固處 → 開機自動整平 → 設定水平或坡度 → 在已知水準點（BM）上讀數作為基準 → 移至各點讀數得高差 → 作業中途回 BM 檢查。\n⚠️ 易錯：雷射儀的精度依機型標示，使用前要檢校；若儀器被碰撞或腳架下陷，自動整平可能失效，必須回到 BM 重新檢核。",
+          "table": {
+            "headers": ["儀器", "投射形式", "主要用途", "注意事項"],
+            "rows": [
+              ["旋轉雷射儀", "旋轉形成水平面或坡度面", "整地、樓板高程、管線坡度", "接收器配合標尺讀數；定期回 BM 檢核"],
+              ["雷射墨線儀", "水平線、垂直線、十字線", "室內裝修、隔間、天花板放樣", "強光下不易看見，可配合接收器"],
+              ["自動水準儀（比較）", "光學視線", "精密水準測量", "需人工讀尺，精度高"]
+            ]
+          }
         }
       ],
       "practices": [
@@ -995,9 +1111,10 @@ export const surveyingData: SubjectData = {
     {
       "slug": "instrument-setup",
       "title": "3. 儀器操作與整置",
-      "desc": "經緯儀/全測站儀與水準儀之光學/雷射對中、腳架調整、三螺絲/兩螺絲精平操作 SOP 與儀器三軸檢核。\n\n🔥 V6.0 考前秒殺秘訣：此核心概念統測出題率極高，建議善用圖解與鷹架提示反覆練習！",
+      "desc": "經緯儀/全測站儀與水準儀之光學/雷射對中、腳架調整、三螺絲/兩螺絲精平操作 SOP 與儀器三軸檢核。",
       "status": "done",
       "gradeLevel": 11,
+      "curriculumCode": "TCTE115-SV4",
       "covered_question_ids": [
         "111-2-3",
         "111-2-5",
@@ -1039,6 +1156,7 @@ export const surveyingData: SubjectData = {
       "concepts": [
         {
           "heading": "儀器整置三大核心步驟 (對中、粗平、精平) SOP",
+          "outlineRefs": ["SV3.3", "SV4.4"],
           "body": "測量儀器在進行角度或距離觀測前，必須嚴格進行**「整置」**作業。整置包含<span className=\"text-indigo-600 font-bold\">「定心 (對中)」</span>與<span className=\"text-indigo-600 font-bold\">「定平」</span>兩大核心步驟，確保儀器**豎軸完全鉛垂**且確切通過地面測站點標誌。",
           "steps": [
             "Step 1 架設腳架：張開三腳架至胸口高度，踩實腳架腳尖，使腳架頂面大致水平，中心孔對準地面測點標誌。",
@@ -1050,6 +1168,7 @@ export const surveyingData: SubjectData = {
         },
         {
           "heading": "雙腳螺絲「左手大拇指法則」與三螺絲精平操作邏輯",
+          "outlineRefs": ["SV4.4"],
           "body": "精平利用正交幾何原理進行。旋轉腳螺絲時，氣泡移動之方向永遠與<span className=\"text-rose-600 font-bold\">「左手大拇指旋轉方向」</span>一致。這是實務操作中最直覺的記憶口訣。",
           "steps": [
             "階段一 (平行雙螺絲)：旋轉照準部使長管水準器長軸平行於腳螺絲 A、B 之連線。雙手同時相向 (同時向內) 或相背 (同時向外) 旋轉 A、B 腳螺絲，使氣泡精確居中。",
@@ -1059,6 +1178,7 @@ export const surveyingData: SubjectData = {
         },
         {
           "heading": "經緯儀與全測站儀幾何三軸關係與檢驗條件",
+          "outlineRefs": ["SV4.3", "SV4.7"],
           "body": "經緯儀內部包含四條幾何軸線：**豎軸 (VV')**、**橫軸 (HH')**、**視準軸 (ZZ')** 及**管水準軸 (LL')**。四軸間必須符合嚴格之<span className=\"text-indigo-600 font-bold\">垂直正交關係</span>，否則將產生系統誤差。",
           "table": {
             "headers": [
@@ -1097,6 +1217,7 @@ export const surveyingData: SubjectData = {
         },
         {
           "heading": "全測站儀 (Total Station) 雙軸自動補償器 (Dual-Axis Compensator) 技術",
+          "outlineRefs": ["SV4.3", "SV6.4"],
           "body": "現代全測站儀內建電子光電**雙軸傾斜傳感器 (Dual-Axis Tilt Sensor)**。當儀器豎軸未能完全鉛垂時，傳感器自動感測出 X 軸與 Y 軸之傾角值，並在微電腦中<span className=\"text-rose-600 font-bold\">即時對水平角與垂直角進行數位化數值修偏</span>。",
           "formula": "修正後水平角: β_corr = β_raw + Y_tilt · tan(α) · sin(β)\n修正後天頂角: Z_corr = Z_raw + X_tilt",
           "steps": [
@@ -1195,9 +1316,10 @@ export const surveyingData: SubjectData = {
     {
       "slug": "traverse-surveying",
       "title": "4. 導線測量",
-      "desc": "導線佈設型式與幾何條件、多邊形內角和與外角和閉合差、正反方位角推算 SOP、角度閉合差分配。\n\n🔥 V6.0 考前秒殺秘訣：此核心概念統測出題率極高，建議善用圖解與鷹架提示反覆練習！",
+      "desc": "導線佈設型式與幾何條件、多邊形內角和與外角和閉合差、正反方位角推算 SOP、角度閉合差分配。",
       "status": "done",
       "gradeLevel": 11,
+      "curriculumCode": "TCTE115-SV6",
       "covered_question_ids": [
         "111-2-6",
         "111-2-16",
@@ -1250,6 +1372,7 @@ export const surveyingData: SubjectData = {
       "concepts": [
         {
           "heading": "導線佈設型式與幾何檢核條件比較",
+          "outlineRefs": ["SV6.3"],
           "body": "導線測量 (Traverse Surveying) 為將一系列測點以折線連接，並觀測各邊邊長及相交角度，以求解各點平面座標之方法。依幾何結構可分為<span className=\"text-indigo-600 font-bold\">閉合導線</span>、<span className=\"text-indigo-600 font-bold\">附合導線</span>與<span className=\"text-indigo-600 font-bold\">展開導線</span>三大類型。",
           "table": {
             "headers": [
@@ -1286,6 +1409,7 @@ export const surveyingData: SubjectData = {
         },
         {
           "heading": "多邊形多角形內角和與外角和理論公式",
+          "outlineRefs": ["SV6.2"],
           "body": "在 n 邊形閉合導線中，平面幾何幾何定理規定內部折轉角和與外部折轉角和之固定值。角度閉合差小於容許限差時方可進行分配。",
           "formula": "理論內角和: ∑θ_in = (n - 2) · 180°\n理論外角和: ∑θ_out = (n + 2) · 180°\n角度閉合差: wθ = 實測角度和 - 理論角度和\n容許角度閉合差: Wmax = ± a · √n  (例如圖根導線 a 取 30\" ~ 60\")",
           "steps": [
@@ -1296,6 +1420,7 @@ export const surveyingData: SubjectData = {
         },
         {
           "heading": "正方位角 (Forward Azimuth) 與反方位角 (Back Azimuth) 關係",
+          "outlineRefs": ["SV4.2"],
           "body": "**方位角 (Azimuth, φ)** 為自<span className=\"text-rose-600 font-bold\">正北方向線</span>起**順時針**旋轉至目標線之夾角 (範圍 0° ~ 360°)。直線 AB 之正方位角 φ_AB 與反方位角 φ_BA 差值<span className=\"text-rose-600 font-bold\">恰為 180°</span>。",
           "formula": "φ_BA = φ_AB + 180°  (當 φ_AB < 180° 時)\nφ_BA = φ_AB - 180°  (當 φ_AB ≥ 180° 時)",
           "steps": [
@@ -1306,6 +1431,7 @@ export const surveyingData: SubjectData = {
         },
         {
           "heading": "方位角連續推算法則 SOP (右角法與左角法)",
+          "outlineRefs": ["SV6.2"],
           "body": "導線測量中，各測站之坐標方位角推算依循「前進邊方位角等於前一邊反方位角加上轉折角」之幾何定則。外業觀測分為順時針右角法與逆時針左角法，連續推算過程中需隨時檢核是否跨越 360° 圓周以維持方位角在 0° 至 360° 正確區間。",
           "formula": "右角法 (Right Angle): φ_next = φ_prev + 180° - β_R  (或 φ_prev + β_R ± 180°)\n左角法 (Left Angle): φ_next = φ_prev + β_L - 180°",
           "steps": [
@@ -1317,6 +1443,7 @@ export const surveyingData: SubjectData = {
         },
         {
           "heading": "角度閉合差平均分配與改正方位角計算步驟",
+          "outlineRefs": ["SV6.2"],
           "body": "閉合多邊形或附合導線實測角度總和與幾何理論值之差即為角度閉合差 wθ。在確認 wθ 未超出法規容許限差 (如 ± c√n) 的前提下，採等精度反符號平均分配原則計算各內角之改正數，確保平差後幾何圖形完全閉合。",
           "steps": [
             "Step 1：計算角度閉合差 wθ = ∑θ_obs - ∑θ_theory。",
@@ -1416,9 +1543,10 @@ export const surveyingData: SubjectData = {
     {
       "slug": "coordinate-computation",
       "title": "5. 座標計算與閉合差",
-      "desc": "縱橫距計算、位置閉合差與相對精度、羅盤儀法則 (Bowditch Rule) 與經緯儀法則平差、導線計算表。\n\n🔥 V6.0 考前秒殺秘訣：此核心概念統測出題率極高，建議善用圖解與鷹架提示反覆練習！",
+      "desc": "縱橫距計算、位置閉合差與相對精度、羅盤儀法則 (Bowditch Rule) 與經緯儀法則平差、導線計算表。",
       "status": "done",
       "gradeLevel": 11,
+      "curriculumCode": "TCTE115-SV6",
       "covered_question_ids": [
         "113-2-6",
         "113-2-16",
@@ -1457,6 +1585,7 @@ export const surveyingData: SubjectData = {
       "concepts": [
         {
           "heading": "緯距 (ΔN) 與經距 (ΔE) 正反算公式",
+          "outlineRefs": ["SV1.8", "SV6.1"],
           "body": "已知導線邊長 L 與方位角 φ，可正算求解**縱距 (緯距 ΔN 或 ΔY)** 與**橫距 (經距 ΔE 或 ΔX)**；反之已知兩點座標，可反算距離 L 與方位角 φ。這牽涉到測量座標系與數學座標系的轉換。",
           "formula": "正算公式: 緯距 ΔN = L · cos(φ) , 經距 ΔE = L · sin(φ)\n反算公式: 距離 L = √(ΔN² + ΔE²) , 方位角 φ = tan⁻¹(|ΔE / ΔN|)",
           "steps": [
@@ -1466,6 +1595,7 @@ export const surveyingData: SubjectData = {
         },
         {
           "heading": "閉合導線位置閉合差 (Closure Error) 與相對閉合差",
+          "outlineRefs": ["SV6.2"],
           "body": "由於量距與測角誤差，閉合導線繞行一圈後，理論緯距和與經距和應為 0。實際積累之不閉合偏差稱為<span className=\"text-indigo-600 font-bold\">緯距閉合差 Wy</span> 與<span className=\"text-indigo-600 font-bold\">經距閉合差 Wx</span>。",
           "formula": "緯距閉合差: Wy = ∑ ΔN\n經距閉合差: Wx = ∑ ΔE\n位置閉合差: EK = √(Wx² + Wy²)\n相對閉合差: Ratio = EK / ∑ L = 1 / K  (K = ∑ L / EK)",
           "steps": [
@@ -1475,6 +1605,7 @@ export const surveyingData: SubjectData = {
         },
         {
           "heading": "羅盤儀法則 (Bowditch / Compass Rule) 嚴謹平差計算",
+          "outlineRefs": ["SV6.2"],
           "body": "**羅盤儀法則 (Bowditch Rule)** 假設<span className=\"text-rose-600 font-bold\">距離測量誤差與角度測量誤差對位置之影響相等</span>。各邊縱橫距之改正數按該邊**邊長占總邊長之比例**進行分配。",
           "formula": "經距改正數: Cx_i = - Wx · (L_i / ∑ L)\n緯距改正數: Cy_i = - Wy · (L_i / ∑ L)\n修正後經距: ΔE'_i = ΔE_i + Cx_i\n修正後緯距: ΔN'_i = ΔN_i + Cy_i",
           "steps": [
@@ -1484,6 +1615,7 @@ export const surveyingData: SubjectData = {
         },
         {
           "heading": "經緯儀法則 (Transit Rule) 與羅盤儀法則比較",
+          "outlineRefs": ["SV6.2"],
           "body": "**經緯儀法則 (Transit Rule)** 假設<span className=\"text-rose-600 font-bold\">角度測量精度高於距離測量精度</span>。各邊縱橫距之改正數分別按「該邊**經距或緯距之絕對值**」比例進行獨立分配。",
           "formula": "經緯儀法則經距改正數: Cx_i = - Wx · ( |ΔE_i| / ∑|ΔE| )\n經緯儀法則緯距改正數: Cy_i = - Wy · ( |ΔN_i| / ∑|ΔN| )",
           "table": {
@@ -1518,6 +1650,7 @@ export const surveyingData: SubjectData = {
         },
         {
           "heading": "導線計算表 (Traverse Table) 7 步驟 SOP 實務",
+          "outlineRefs": ["SV1.9", "SV6.2"],
           "body": "導線座標平差標準計算步驟：(1) 計算各邊之緯距 (ΔX = S·cosα) 與經距 (ΔY = S·sinα)；(2) 計算閉合差 fx = ΣΔX, fy = ΣΔY 及總閉合差 f = √(fx² + fy²)；(3) 依羅盤儀法 (Compass Rule) 按邊長比例分配經緯距改正數；(4) 累加改正後之經緯距逐點推求各控制點之平面坐標 (X, Y)。",
           "table": {
             "headers": [
@@ -1577,6 +1710,13 @@ export const surveyingData: SubjectData = {
               ]
             ]
           }
+        },
+        {
+          "heading": "控制點的應用：極坐標法點位測設（放樣）",
+          "outlineRefs": ["SV6.1", "SV6.3"],
+          "body": "工程放樣是「由坐標找現地位置」，正好是測量的反向工作。已知控制點 A 與後視點 B，欲測設設計點 P：\n(1) 由坐標反算：ΔN = N_P − N_A、ΔE = E_P − E_A，距離 D_AP = √(ΔN² + ΔE²)，方位角 φ_AP = tan⁻¹(ΔE / ΔN)（依 ΔN、ΔE 正負判斷象限）。\n(2) 在 A 架設全站儀，照準 B 並設定方位角 φ_AB（或歸零）。\n(3) 旋轉至方位角 φ_AP，沿視線方向由持鏡手前後移動，直到測得距離等於 D_AP，即釘下 P 點。\n(4) 由另一控制點檢核 P 的坐標，誤差在容許範圍內才完成。\n例：A(1000.000, 2000.000)、P(1030.000, 2040.000)（N, E）。ΔN = 30、ΔE = 40，D = 50.000 m，φ = tan⁻¹(40/30) = 53°07′48″。若後視 B 在 A 正北方（φ_AB = 0°），則順時針旋轉 53°07′48″ 後量 50.000 m 即得 P。\n⚠️ 易錯：方位角是以 N 軸為基準、tan⁻¹(ΔE / ΔN)，不要寫成數學坐標系習慣的 tan⁻¹(Δy / Δx)。",
+          "formula": "D = √(ΔN² + ΔE²)\nφ = tan⁻¹(ΔE / ΔN)（依象限修正）",
+          "steps": ["以設計坐標與控制點坐標反算距離 D 與方位角 φ。", "在控制點架設全站儀，對中整平後照準後視點並設定方位角。", "轉至計算的方位角，指揮持鏡手沿視線移動到距離 D 處定點。", "以第二個控制點或已知點檢核，記錄放樣成果。"]
         }
       ],
       "practices": [
@@ -1674,9 +1814,10 @@ export const surveyingData: SubjectData = {
     {
       "slug": "area-and-error",
       "title": "6. 面積計算與誤差處理",
-      "desc": "座標斜乘法/鞋帶公式 (Shoelace Formula)、倍經距法 (DMD)、測量誤差三大分類、最妥值與中誤差、誤差傳播定律。\n\n🔥 V6.0 考前秒殺秘訣：此核心概念統測出題率極高，建議善用圖解與鷹架提示反覆練習！",
+      "desc": "座標斜乘法/鞋帶公式 (Shoelace Formula)、倍經距法 (DMD)、測量誤差三大分類、最妥值與中誤差、誤差傳播定律。",
       "status": "done",
       "gradeLevel": 11,
+      "curriculumCode": "TCTE115-SV6",
       "covered_question_ids": [
         "111-2-2",
         "111-2-15",
@@ -1730,6 +1871,7 @@ export const surveyingData: SubjectData = {
       "concepts": [
         {
           "heading": "座標法 (Shoelace Formula / 鞋帶公式) 幾何原理與推導",
+          "outlineRefs": ["SV6.2"],
           "body": "已知任意多邊形各頂點之平面座標 (E_i, N_i)，將各點依順時針或逆時針方向依次排列並閉合，利用<span className=\"text-indigo-600 font-bold\">矩陣行列式交叉斜乘相減</span>計算封閉區域總面積 A，此法稱為**鞋帶公式 (Shoelace Formula)**。",
           "formula": "A = 0.5 · | ∑ (E_i · N_{i+1} - E_{i+1} · N_i) |\n2A = | (E1·N2 + E2·N3 + ... + En·N1) - (N1·E2 + N2·E3 + ... + Nn·E1) |",
           "table": {
@@ -1781,6 +1923,7 @@ export const surveyingData: SubjectData = {
         },
         {
           "heading": "倍經距法 (Double Meridian Distance, DMD Method) 面積計算",
+          "outlineRefs": ["SV6.2"],
           "body": "**倍經距法 (DMD Method)** 為導線平差後計算閉合區域面積的經典方法。定義任一邊之倍經距 (DMD) 為該邊兩端點至<span className=\"text-rose-600 font-bold\">參考子午線 (Meridian)</span> 距離之和。",
           "formula": "DMD_1 = ΔE_1\nDMD_i = DMD_{i-1} + ΔE_{i-1} + ΔE_i\n雙倍面積 2A = ∑ (DMD_i · ΔN_i)\n面積 A = 0.5 · |2A|",
           "steps": [
@@ -1793,6 +1936,7 @@ export const surveyingData: SubjectData = {
         },
         {
           "heading": "辛普森法 (Simpson's 1/3 Rule) 不規則邊界面積計算",
+          "outlineRefs": ["SV6.2"],
           "body": "當土地邊界為不規則拋物線或彎曲曲線時，使用辛普森一分之三法則計算面積精度最高。適用條件為必須有奇數個偏移距 (即偶數個等距離分段)。",
           "formula": "A = (d / 3) · [ (y₀ + y_n) + 4 · ∑ y_奇 + 2 · ∑ y_偶 ]\n(其中 d 為等間距長度，y₀ 與 y_n 為首尾偏移距，y_奇 為第 1, 3, 5... 偏移距，y_偶 為第 2, 4, 6... 偏移距)",
           "table": {
@@ -1826,6 +1970,7 @@ export const surveyingData: SubjectData = {
         },
         {
           "heading": "測量誤差之三大來源與三大分類 (過失、系統誤差、偶然誤差)",
+          "outlineRefs": ["SV1.5"],
           "body": "觀測數據中包含之誤差按其產生機制與統計特性分為三大類：過失 (Blunders)、系統誤差 (Systematic Errors) 與偶然誤差 (Random Errors)。",
           "table": {
             "headers": [
@@ -1858,6 +2003,7 @@ export const surveyingData: SubjectData = {
         },
         {
           "heading": "等精度獨立觀測值之最妥值 (MPV) 與中誤差 (Standard Error σ)",
+          "outlineRefs": ["SV1.5"],
           "body": "對同一物理量進行 n 次同精度獨立觀測 x1, x2, ..., xn。統計學證明算術平均值為該物理量之最妥值 (Most Probable Value, MPV)。",
           "formula": "最妥值 (平均值): x̄ = (∑ xi) / n\n殘差 (Residual): vi = xi - x̄  (滿足 ∑ vi = 0)\n單次觀測值中誤差: σ = √[ (∑ vi²) / (n - 1) ]\n最妥值 (平均值) 中誤差: σ_x̄ = σ / √n = √[ (∑ vi²) / (n(n - 1)) ]",
           "steps": [
@@ -1867,6 +2013,7 @@ export const surveyingData: SubjectData = {
         },
         {
           "heading": "誤差傳播定律 (Law of Error Propagation) 通式與常見應用",
+          "outlineRefs": ["SV1.5"],
           "body": "當待求物理量 Z 為多個獨立觀測量 x, y, z 之函數 Z = f(x, y, z) 時，各觀測量之中誤差對 Z 之綜合影響由<span className=\"text-indigo-600 font-bold\">誤差傳播定律 (Law of Error Propagation)</span> 決定。其核心概念為偏導數平方之和的平方根。",
           "formula": "通用公式: σZ = √[ (∂f/∂x)² · σx² + (∂f/∂y)² · σy² + (∂f/∂z)² · σz² ]\n加減法 Z = X ± Y  =>  σZ = √(σx² + σy²)\n倍數法 Z = a · X  =>  σZ = a · σx\n矩形面積 A = X · Y  =>  σA = √(Y² · σx² + X² · σy²)",
           "steps": [

@@ -154,6 +154,8 @@ export default function MathText({ content, className }: { content?: string | nu
                     // string is injected as raw HTML, where the browser ignores `className` and
                     // the emphasis colouring silently disappears. Normalise it to `class`.
                     htmlContent = htmlContent.replace(/\sclassName=/g, ' class=');
+                    // Markdown-style sub-headings inside a concept body (e.g. "### 🚨 統測陷阱")
+                    htmlContent = htmlContent.replace(/(^|\n)#{2,4}[ \t]+([^\n]+)\n?/g, '$1<span class="concept-subhead">$2</span>');
                     htmlContent = htmlContent.replace(/\n/g, '<br />');
 
                     // If subPart contains obvious raw LaTeX math commands and no HTML tags,

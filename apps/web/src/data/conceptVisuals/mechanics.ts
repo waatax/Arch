@@ -1,8 +1,8 @@
 import type { TopicVisualMap } from './types';
 import {
-  angle, area, arrow, arrowAt, arrowTo, axes, barChart, box, circle, dim, distLoad, dot, ellipse, fixed, fmt, frame,
-  ground, hatchRect, line, lineChart, lines, moment, node, oblique, path, pill, pin, point, polar, polygon,
-  polyline, rect, rightAngle, roller, signedFill, svg, text, wall, type Pt,
+  angle, arcPath, area, arrow, arrowAt, arrowTo, axes, barChart, box, circle, dim, distLoad, dot, ellipse,
+  fixed, fmt, frame, ground, hatchRect, line, lineChart, lines, moment, node, oblique, path, pill, pin, point,
+  polar, polygon, polyline, rect, rightAngle, roller, signedFill, svg, text, wall, type Pt,
 } from './kit';
 
 // ───────────────────────── 共用小零件 ─────────────────────────
@@ -225,6 +225,34 @@ export const mechanicsVisuals: TopicVisualMap = {
         '強梁弱柱：塑性鉸集中在同一層柱的上下端，形成「層機構」，該層瞬間壓垮 (pancake collapse)。',
       ],
     },
+    {
+      concept: '安全係數 (FS) 與強柱弱梁',
+      kind: 'chart',
+      title: '四種支承條件下尤拉柱的相對挫屈臨界載重倍率',
+      caption: '以兩端鉸接柱 (K = 1.0) 的臨界載重 P₀ 為基準 1.0 倍，比較不同支承條件的承載力。',
+      svg: barChart({
+        w: 520,
+        h: 250,
+        categories: ['兩端固定 (K=0.5)', '一固定一鉸 (K=0.7)', '兩端鉸接 (K=1.0)', '一固定一自由 (K=2.0)'],
+        series: [{ name: 'P_cr / P₀ 倍率', tone: 'blue', values: [4.0, 2.04, 1.0, 0.25] }],
+        y: { max: 4.5, ticks: [0, 1, 2, 3, 4], label: '相對臨界載重 P_cr / P₀', fmt: (v) => fmt(v, 1) },
+        values: true,
+        valueFmt: (v) => `${fmt(v, 2)}×`,
+      }),
+      table: {
+        headers: ['支承條件', '有效長度係數 K', '相對臨界載重 1/K²', '工程常見情境'],
+        rows: [
+          ['兩端固定', '0.5', '4.00 倍', '剛接框架內柱（無側移）'],
+          ['一端固定一端鉸接', '0.7', '2.04 倍', '柱底固定、柱頂鉸接於屋架'],
+          ['兩端鉸接', '1.0', '1.00 倍（基準）', '理想標準簡支壓桿'],
+          ['一端固定一端自由', '2.0', '0.25 倍', '獨立招牌柱、懸臂柱'],
+        ],
+      },
+      takeaways: [
+        '$P_{cr} \\propto 1/K^2$：把懸臂柱 ($K=2.0$) 頂端加上水平拉桿變成兩端鉸接 ($K=1.0$)，抗挫屈能力直接提升 **4 倍**。',
+        '統測常考比例題：先背熟 $K = 1.0,\\;0.5,\\;0.7,\\;2.0$，再平方倒數即可秒殺。',
+      ],
+    },
   ],
 
   'parallel-force-systems': [
@@ -317,6 +345,35 @@ export const mechanicsVisuals: TopicVisualMap = {
       takeaways: [
         '對 A 取矩可一次消去 A 點的兩個未知反力，直接解出 $R_B$。',
         '驗算：改對 B 取矩，$6R_A - 54 \\times 2 = 0 \\Rightarrow R_A = 18$ kN，兩條獨立方程結果一致才算完成。',
+      ],
+    },
+    {
+      concept: '均布與三角形載重',
+      kind: 'chart',
+      title: '不同分布載重下簡支梁左、右支承反力分配比 (總載重 W = 60 kN)',
+      caption: '總載重皆為 60 kN 時，載重重心越靠近 B 端，R_B 分擔的比例越高。',
+      svg: barChart({
+        w: 520,
+        h: 250,
+        categories: ['均布載重', '三角形(大端在B)', '梯形(10→30)'],
+        series: [
+          { name: '左支承 R_A (kN)', tone: 'blue', values: [30, 20, 25] },
+          { name: '右支承 R_B (kN)', tone: 'green', values: [30, 40, 35] },
+        ],
+        y: { max: 50, ticks: [0, 10, 20, 30, 40], label: '反力 (kN)' },
+        values: true,
+      }),
+      table: {
+        headers: ['載重型式 (總重 60 kN)', '合力作用位置 x_R', '左反力 R_A (kN)', '右反力 R_B (kN)'],
+        rows: [
+          ['均布載重 (w = 10 kN/m, L = 6m)', '0.50 L = 3.0 m', '30 kN (50%)', '30 kN (50%)'],
+          ['三角形載重 (0 → 20 kN/m)', '0.67 L = 4.0 m', '20 kN (33.3%)', '40 kN (66.7%)'],
+          ['梯形載重 (5 → 15 kN/m)', '0.583 L = 3.5 m', '25 kN (41.7%)', '35 kN (58.3%)'],
+        ],
+      },
+      takeaways: [
+        '兩支承反力比與「合力到兩支承距離」成反比：$R_A : R_B = (L - x_R) : x_R$。',
+        '三角形載重合力在 $2L/3$ 處，因此大端支承分擔 $2/3$ 總重、尖端支承分擔 $1/3$ 總重。',
       ],
     },
   ],
@@ -413,6 +470,33 @@ export const mechanicsVisuals: TopicVisualMap = {
       takeaways: [
         '斜向力先正交分解；力偶 $M_0$ 在 ΣM 中直接加入（順時針取負），在 ΣF 中不出現。',
         '取矩點選在 A（兩個未知反力交會處），一條方程就解出 $B_y$。',
+      ],
+    },
+    {
+      concept: '支承反力辨識',
+      kind: 'chart',
+      title: '常見平面支承的反力分量數與限制自由度統計',
+      caption: '平面剛體共 3 個自由度（水平、鉛直、轉動）；反力數總和 = 3 時為靜定結構。',
+      svg: barChart({
+        w: 520,
+        h: 240,
+        categories: ['光滑接觸/繩索', '滾支承 Roller', '鉸支承 Pin', '定向支承 Guide', '固定端 Fixed'],
+        series: [{ name: '反力（含反力矩）總數 r', tone: 'blue', values: [1, 1, 2, 2, 3] }],
+        y: { max: 3.5, ticks: [0, 1, 2, 3], label: '未知反力數 r' },
+        values: true,
+      }),
+      table: {
+        headers: ['支承種類', '未知反力數 r', '限制運動方向', '允許運動方向'],
+        rows: [
+          ['滾支承 / 光滑面 / 柔索', '1', '垂直於支承面之位移', '沿支承面滑動、自由轉動'],
+          ['固定鉸支承 (Pin)', '2 (R_x, R_y)', '水平與鉛直位移', '繞鉸點自由轉動'],
+          ['定向支承 (Guided)', '2 (R_n, M)', '一方向位移與轉動', '沿導槽方向自由滑動'],
+          ['固定端 (Fixed)', '3 (R_x, R_y, M)', '水平、鉛直位移與轉動全鎖死', '無（完全約束）'],
+        ],
+      },
+      takeaways: [
+        '單一剛體平面靜定條件：$r = 3$ 且反力作用線不可全交於一點或全平行。',
+        '遇到「定向支承 (滑槽)」要注意：它提供 1 個力 + 1 個反力矩，共 2 個未知數。',
       ],
     },
   ],
@@ -599,11 +683,123 @@ export const mechanicsVisuals: TopicVisualMap = {
         s += text(P(0, 2, 0)[0], P(0, 2, 0)[1] + 16, '4', { tone: 'blue', weight: 'bold', size: 12 });
         s += text(P(3, 4, 6)[0] + 8, P(3, 4, 6)[1], '12', { tone: 'blue', weight: 'bold', size: 12 });
         s += lines(370, 60, ['L = √(3² + 4² + 12²) = 13 m', 'cos α = 3/13', 'cos β = 4/13', 'cos γ = 12/13', 'cos²α + cos²β + cos²γ = 1', '', 'T = 130 kN 時：', 'T_x : T_y : T_z = 30 : 40 : 120'], { size: 12.5, lh: 20 });
-        return svg(560, 270, s);
+        return svg(560, 312, s);
       })(),
       takeaways: [
         '位置向量 = 終點座標 − 起點座標；單位向量 $\\lambda = (d_x, d_y, d_z)/L$。',
         '力向量 = 力的大小 × 單位向量，各分量與座標差成正比，三個方向餘弦平方和恆為 1。',
+      ],
+    },
+    {
+      concept: '平面向量的正交分解與合成',
+      kind: 'chart',
+      title: '兩等大共點力 F = 100 N 在不同夾角 θ 下的合力大小 R',
+      caption: '由餘弦定理 R = 2F cos(θ/2)：夾角越小合力越大，夾角 120° 時合力恰等於分力 F。',
+      svg: lineChart({
+        w: 520,
+        h: 250,
+        x: { min: 0, max: 180, ticks: [0, 60, 90, 120, 180], label: '兩力夾角 θ (度)' },
+        y: { min: 0, max: 220, ticks: [0, 50, 100, 141, 173, 200], label: '合力 R (N)' },
+        series: [
+          {
+            name: '合力 R = 200 cos(θ/2)',
+            tone: 'blue',
+            points: [
+              [0, 200],
+              [60, 173.2],
+              [90, 141.4],
+              [120, 100],
+              [180, 0],
+            ],
+            markers: true,
+            smooth: true,
+          },
+        ],
+      }),
+      table: {
+        headers: ['兩力夾角 θ', '合力公式 R', 'F = 100 N 時之合力 R', '幾何特徵'],
+        rows: [
+          ['0°（同向共線）', '2F', '200.0 N（最大）', '算術相加 R_max = F₁ + F₂'],
+          ['60°', '√3 F ≈ 1.732 F', '173.2 N', '菱形長對角線'],
+          ['90°（正交垂直）', '√2 F ≈ 1.414 F', '141.4 N', '畢氏定理正方形對角線'],
+          ['120°', '1.0 F', '100.0 N', '合力與分力構成正三角形'],
+          ['180°（反向共線）', '0', '0 N（最小）', '兩力完全抵消 R_min = |F₁ − F₂|'],
+        ],
+      },
+      takeaways: [
+        '合力範圍恆滿足 $|F_1 - F_2| \\le R \\le F_1 + F_2$。',
+        '統測秒殺特例：兩等大之力夾 **120°** 時，合力大小**等於原分力** $R = F$。',
+      ],
+    },
+    {
+      concept: '質點、剛體與力的三要素',
+      kind: 'diagram',
+      title: '力的可傳性：沿作用線移動作用點，外效應不變',
+      caption: '左：同一作用線上「在 A 點推」與「在 B 點拉」對剛體的外效應相同；右：把力平移到作用線以外，必須附加力偶 M = F·d 才等效。',
+      svg: (() => {
+        let s = '';
+        s += text(140, 24, '沿作用線移動 → 等效', { anchor: 'middle', weight: 'bold', size: 14, tone: 'green' });
+        s += line(14, 130, 266, 130, { tone: 'muted', w: 1, dash: 'dash' });
+        s += rect(70, 90, 140, 80, { tone: 'ink', fill: 'muted', soft: true, w: 1.6, rx: 4 });
+        s += text(140, 116, '剛體', { anchor: 'middle', weight: 'bold' });
+        s += arrow(18, 130, 70, 130, { tone: 'red', w: 2.6 });
+        s += text(18, 118, '推 F（A 點）', { tone: 'red', size: 12, weight: 'bold' });
+        s += dot(70, 130, 3.6, 'red');
+        s += arrow(210, 130, 262, 130, { tone: 'blue', w: 2.6 });
+        s += text(264, 118, '拉 F（B 點）', { tone: 'blue', size: 12, weight: 'bold', anchor: 'end' });
+        s += dot(210, 130, 3.6, 'blue');
+        s += text(140, 196, '作用線相同 → 移動、轉動效果相同', { anchor: 'middle', size: 12, tone: 'muted' });
+        s += text(420, 24, '平移到作用線外 → 需加力偶', { anchor: 'middle', weight: 'bold', size: 14, tone: 'red' });
+        s += rect(350, 90, 140, 80, { tone: 'ink', fill: 'muted', soft: true, w: 1.6, rx: 4 });
+        s += line(310, 104, 530, 104, { tone: 'muted', w: 1, dash: 'dash' });
+        s += arrow(312, 104, 350, 104, { tone: 'muted', w: 2, dash: 'dash', label: '原作用線', labelPos: 'start', labelOffset: [0, -10] });
+        s += arrow(312, 156, 350, 156, { tone: 'red', w: 2.6, label: 'F', labelPos: 'start', labelOffset: [0, 18] });
+        s += moment(420, 132, 18, 'cw', { tone: 'violet', from: -40, span: 260 });
+        s += text(420, 137, 'M', { tone: 'violet', weight: 'bold', anchor: 'middle', size: 12 });
+        s += line(515, 104, 515, 156, { tone: 'muted', w: 1 }) + text(522, 134, 'd', { tone: 'muted', weight: 'bold' });
+        s += text(505, 84, 'M = F·d', { tone: 'violet', weight: 'bold', anchor: 'end', size: 12 });
+        s += text(420, 196, '力 F 下移 d，需補上 M = F·d', { anchor: 'middle', size: 12, tone: 'muted' });
+        return svg(560, 212, s);
+      })(),
+      takeaways: [
+        '可傳性只適用於**剛體的外效應**：力可沿作用線前後移動，但不能偏離作用線。',
+        '把力平移到另一條平行線上時，必須同時加上一個力偶 M = F·d（d 為兩作用線的距離），這就是「力之平移」。',
+      ],
+    },
+    {
+      concept: '牛頓三大運動定律與力的國際單位',
+      kind: 'diagram',
+      title: '牛頓三大運動定律在工程力學中的角色',
+      caption: '第一定律提供平衡條件 ΣF = 0；第二定律 F = m·a 連結力與加速度；第三定律說明柱與基礎之間的作用力與反作用力。',
+      svg: (() => {
+        let s = '';
+        // 第一定律
+        s += text(95, 24, '第一定律：ΣF = 0', { anchor: 'middle', weight: 'bold', tone: 'blue' });
+        s += rect(60, 90, 70, 50, { tone: 'ink', fill: 'muted', soft: true, rx: 4 });
+        s += arrow(130, 115, 175, 115, { tone: 'red', w: 2.4, label: 'F', labelOffset: [4, -8] });
+        s += arrow(60, 115, 15, 115, { tone: 'red', w: 2.4, label: 'F', labelOffset: [-4, -8] });
+        s += text(95, 168, '合力為零 → 保持靜止', { anchor: 'middle', size: 12, tone: 'muted' });
+        // 第二定律
+        s += text(280, 24, '第二定律：F = m·a', { anchor: 'middle', weight: 'bold', tone: 'green' });
+        s += rect(240, 90, 70, 50, { tone: 'ink', fill: 'muted', soft: true, rx: 4 });
+        s += text(275, 120, 'm', { anchor: 'middle', weight: 'bold', size: 15 });
+        s += arrow(310, 115, 365, 115, { tone: 'red', w: 2.6, label: 'F', labelOffset: [4, -8] });
+        s += arrow(240, 70, 300, 70, { tone: 'green', w: 1.8, label: 'a', labelOffset: [6, 4] });
+        s += text(280, 168, '1 N = 1 kg·m/s²', { anchor: 'middle', size: 12, tone: 'muted' });
+        // 第三定律
+        s += text(465, 24, '第三定律：作用與反作用', { anchor: 'middle', weight: 'bold', tone: 'violet' });
+        s += rect(450, 50, 30, 80, { tone: 'ink', fill: 'muted', soft: true, rx: 2 });
+        s += text(465, 94, '柱', { anchor: 'middle', size: 12, weight: 'bold' });
+        s += rect(415, 130, 100, 26, { tone: 'ink', fill: 'amber', soft: true, rx: 2 });
+        s += text(465, 148, '基礎', { anchor: 'middle', size: 12, weight: 'bold' });
+        s += arrow(432, 96, 432, 130, { tone: 'red', w: 2.2, label: '柱壓基礎', labelPos: 'start', labelOffset: [-4, -6] });
+        s += arrow(498, 130, 498, 96, { tone: 'blue', w: 2.2, label: '基礎推柱', labelPos: 'end', labelOffset: [4, -6] });
+        s += text(465, 180, '等大、反向、共線，作用在不同物體', { anchor: 'middle', size: 12, tone: 'muted' });
+        return svg(560, 196, s);
+      })(),
+      takeaways: [
+        '靜力學的平衡方程式 ΣFx = 0、ΣFy = 0 來自第一定律；重量 W = m·g 來自第二定律。',
+        '作用力與反作用力作用在**不同物體**上，所以不會互相抵消；畫自由體圖時只畫作用在「被分析物體」上的那一個。',
       ],
     },
   ],
@@ -690,13 +886,13 @@ export const mechanicsVisuals: TopicVisualMap = {
       svg: (() => {
         let s = '';
         // 二力構件
-        s += text(110, 24, '二力構件', { anchor: 'middle', weight: 'bold', size: 14 });
-        s += line(40, 170, 180, 70, { w: 5 });
-        s += node(40, 170) + node(180, 70);
-        s += arrowAt(180, 70, 54, 35.5, { tone: 'red', w: 2.4, label: 'F', labelOffset: [6, 0] });
-        s += arrowAt(40, 170, 54, 215.5, { tone: 'red', w: 2.4, label: 'F', labelOffset: [-14, 14] });
-        s += text(110, 214, '兩力等大、反向、共線', { anchor: 'middle', size: 12, tone: 'muted' });
-        s += text(110, 232, '（只受軸力：拉或壓）', { anchor: 'middle', size: 12, tone: 'muted' });
+        s += text(135, 24, '二力構件', { anchor: 'middle', weight: 'bold', size: 14 });
+        s += line(65, 170, 205, 70, { w: 5 });
+        s += node(65, 170) + node(205, 70);
+        s += arrowAt(205, 70, 54, 35.5, { tone: 'red', w: 2.4, label: 'F', labelOffset: [6, 0] });
+        s += arrowAt(65, 170, 54, 215.5, { tone: 'red', w: 2.4, label: 'F', labelOffset: [-14, 14] });
+        s += text(135, 214, '兩力等大、反向、共線', { anchor: 'middle', size: 12, tone: 'muted' });
+        s += text(135, 232, '（只受軸力：拉或壓）', { anchor: 'middle', size: 12, tone: 'muted' });
         // 三力構件
         const A: Pt = [300, 210];
         const L = 180;
@@ -720,6 +916,74 @@ export const mechanicsVisuals: TopicVisualMap = {
         '桁架桿件、兩端鉸接且中間不受力的斜撐都是二力構件：力一定沿兩鉸點連線。',
         '三個不平行力平衡時，作用線必交於一點：先找出兩力交點，第三力的方向就確定了。',
         '桿件若要計入自重（中間有力），就**不是**二力構件。',
+      ],
+    },
+    {
+      concept: '平面一般力系平衡方程式',
+      kind: 'chart',
+      title: '對稱雙索懸吊重物 (W = 1000 N)：繩與水平夾角 θ 對繩張力 T 的影響',
+      caption: '由 2T sinθ = W 得 T = W / (2 sinθ)：繩索拉得越平（θ 越小），繩張力暴增越快！',
+      svg: lineChart({
+        w: 520,
+        h: 250,
+        x: { min: 15, max: 90, ticks: [15, 30, 45, 60, 90], label: '繩與水平面夾角 θ (度)' },
+        y: { min: 0, max: 2000, ticks: [0, 500, 1000, 1500, 2000], label: '單繩張力 T (N)' },
+        series: [
+          {
+            name: '繩張力 T = W / (2 sinθ)',
+            tone: 'red',
+            points: [
+              [15, 1932],
+              [30, 1000],
+              [45, 707],
+              [60, 577],
+              [90, 500],
+            ],
+            markers: true,
+            smooth: true,
+          },
+        ],
+      }),
+      table: {
+        headers: ['繩與水平夾角 θ', '兩繩頂角 (180°−2θ)', '單繩張力 T (W=1000N)', '工程吊掛安全評估'],
+        rows: [
+          ['90°（鉛直雙索）', '0°', '500 N (0.50 W)', '最省力，每條分擔一半重量'],
+          ['60°', '60°', '577 N (0.58 W)', '標準安全吊掛角（頂角 ≤ 60°）'],
+          ['45°', '90°', '707 N (0.71 W)', '常見吊裝極限角（頂角 90°）'],
+          ['30°', '120°', '1000 N (1.00 W)', '張力已等於物重 W（警戒線）'],
+          ['15°（過於平緩）', '150°', '1932 N (1.93 W)', '危險！張力接近物重 2 倍易斷索'],
+        ],
+      },
+      takeaways: [
+        '吊索與水平夾角 $\\theta = 30°$（兩索夾角 120°）時，單索張力 $T = W$；若再拉平（$\\theta \\to 0°$），$T \\to \\infty$。',
+        '這解釋了為何工地吊裝規範嚴禁吊索張角過大，以及晒衣繩永遠無法真正拉成水平直線。',
+      ],
+    },
+    {
+      concept: '共線力系與共點力系之合成',
+      kind: 'diagram',
+      title: '力多邊形法：三力首尾相接，起點連終點即為合力',
+      caption: 'F₁ = 50（0°）、F₂ = 40（60°）、F₃ = 30（150°）首尾相接；解析法得 Rx = 44.0、Ry = 49.6、R ≈ 66.4、θ ≈ 48.4°，與圖解結果一致。',
+      svg: (() => {
+        let s = '';
+        const k = 2.2;
+        const O: [number, number] = [60, 200];
+        const A = polar(O[0], O[1], 50 * k, 0);
+        const B = polar(A[0], A[1], 40 * k, 60);
+        const C = polar(B[0], B[1], 30 * k, 150);
+        s += arrow(O[0], O[1], A[0], A[1], { tone: 'blue', w: 2.4, label: 'F₁ = 50', labelPos: 'mid', labelOffset: [0, 18] });
+        s += arrow(A[0], A[1], B[0], B[1], { tone: 'green', w: 2.4, label: 'F₂ = 40', labelPos: 'mid', labelOffset: [10, 4] });
+        s += arrow(B[0], B[1], C[0], C[1], { tone: 'amber', w: 2.4, label: 'F₃ = 30', labelPos: 'mid', labelOffset: [0, -10] });
+        s += arrow(O[0], O[1], C[0], C[1], { tone: 'red', w: 3, label: 'R ≈ 66.4', labelPos: 'mid', labelOffset: [-12, -6] });
+        s += angle(O[0], O[1], 34, 0, 48.4, 'θ ≈ 48.4°', { tone: 'red', labelR: 58 });
+        s += dot(O[0], O[1], 3.6);
+        s += box(320, 40, 220, 150, ['解析法（分量相加）', 'Rx = 50 + 40cos60° + 30cos150°', '　 = 50 + 20 − 26.0 = 44.0', 'Ry = 0 + 40sin60° + 30sin150°', '　 = 34.6 + 15 = 49.6', 'R = √(44.0² + 49.6²) ≈ 66.4'], { tone: 'violet', size: 12 });
+        s += text(430, 214, '首尾閉合（R = 0）⇔ 共點力系平衡', { anchor: 'middle', size: 12, tone: 'muted' });
+        return svg(560, 228, s);
+      })(),
+      takeaways: [
+        '畫力多邊形時，各力的**方向與長度必須照比例**，順序可以任意交換，合力不變。',
+        '若力多邊形最後回到起點（閉合），合力 R = 0，共點力系平衡——這就是拉密定理與三力平衡的圖解依據。',
       ],
     },
   ],
@@ -846,6 +1110,63 @@ export const mechanicsVisuals: TopicVisualMap = {
         '用途：圓頂、水塔、儲槽等旋轉體的快速算量；前提是軸不可穿過該面積。',
       ],
     },
+    {
+      concept: '平行軸定理',
+      kind: 'chart',
+      title: '相同截面積 (A = 112 cm²) 下不同斷面形狀的抗彎慣性矩 I_x 比較',
+      caption: '材料離中性軸越遠（如 H 型鋼與箱型斷面），Ad² 貢獻越大，抗彎效率遠高於實心圓或正方形。',
+      svg: barChart({
+        w: 520,
+        h: 250,
+        categories: ['實心圓形', '實心正方形', '實心矩形(1:2)', '箱型中空管', 'H型鋼(工字斷面)'],
+        series: [{ name: '形心慣性矩 I_x (×10³ cm⁴)', tone: 'blue', values: [1.0, 1.05, 2.09, 4.8, 7.19] }],
+        y: { max: 8.0, ticks: [0, 2, 4, 6, 8], label: 'I_x (×10³ cm⁴)' },
+        values: true,
+      }),
+      table: {
+        headers: ['斷面型式 (面積皆約 112 cm²)', '形心慣性矩 I_x', '相對抗彎剛度倍率', '結構工程最佳用途'],
+        rows: [
+          ['實心圓形', '1.00 × 10³ cm⁴', '1.00×（基準）', '軸向拉桿、銷釘'],
+          ['實心正方形', '1.05 × 10³ cm⁴', '1.05×', '短柱、木柱'],
+          ['高窄矩形 (寬高比 1:2)', '2.09 × 10³ cm⁴', '2.09×', 'RC 矩形梁（立放）'],
+          ['箱型中空方管', '4.80 × 10³ cm⁴', '4.80×', '雙向受彎柱、抗扭箱梁'],
+          ['H 型鋼（工字形）', '7.19 × 10³ cm⁴', '7.19×', '大跨度主梁（單向抗彎最強）'],
+        ],
+      },
+      takeaways: [
+        '矩形梁「立放 ($bh^3/12$)」比「平放 ($hb^3/12$)」的慣性矩大 $(h/b)^2$ 倍：寬高比 1:2 時立放剛度是平放的 **4 倍**。',
+        'H 型鋼利用平行軸定理將多數面積配置在上下翼板，以最小自重換取最大 $I_x$。',
+      ],
+    },
+    {
+      concept: '極慣性矩 J、斷面模數 S 與迴轉半徑 k',
+      kind: 'chart',
+      title: '20 cm × 40 cm 矩形梁：直放與平放的 I 與 S 比較',
+      caption: '同一根梁，直放（h = 40 cm）時 I 是平放的 4 倍、S 是平放的 2 倍；所以梁要「立著放」才能發揮抗彎能力。',
+      svg: barChart({
+        w: 520,
+        h: 260,
+        categories: ['慣性矩 I（萬 cm⁴）', '斷面模數 S（千 cm³）'],
+        series: [
+          { name: '直放 b = 20、h = 40', tone: 'blue', values: [10.67, 5.33] },
+          { name: '平放 b = 40、h = 20', tone: 'amber', values: [2.67, 2.67] },
+        ],
+        y: { max: 12, ticks: [0, 3, 6, 9, 12] },
+        values: true,
+      }),
+      table: {
+        headers: ['放置方式', 'I = b·h³ / 12 (cm⁴)', 'S = b·h² / 6 (cm³)'],
+        rows: [
+          ['直放（b = 20, h = 40）', '106,667', '5,333'],
+          ['平放（b = 40, h = 20）', '26,667', '2,667'],
+          ['比值（直放 / 平放）', '4 倍', '2 倍'],
+        ],
+      },
+      takeaways: [
+        'I 與 h³ 成正比、S 與 h² 成正比，增加梁深比增加梁寬有效得多。',
+        '最大彎曲應力 σmax = M / S：同樣彎矩下，直放梁的應力只有平放的一半。',
+      ],
+    },
   ],
 
   friction: [
@@ -885,7 +1206,7 @@ export const mechanicsVisuals: TopicVisualMap = {
       svg: (() => {
         let s = '';
         const th = 30;
-        const A: Pt = [60, 220];
+        const A: Pt = [60, 240];
         const Bp = polar(A[0], A[1], 380, th);
         s += polygon([A, [Bp[0], A[1]], Bp], { tone: 'muted', fill: 'muted', soft: true, w: 1.6 });
         s += angle(A[0], A[1], 52, 0, th, 'θ', { labelR: 66 });
@@ -909,8 +1230,8 @@ export const mechanicsVisuals: TopicVisualMap = {
         s += arrow(S[0], S[1], S[0], S[1] - 92.4, { tone: 'blue', w: 2.8, dash: 'dash' });
         s += text(S[0] + 6, S[1] - 96, 'R（合力）', { tone: 'blue', weight: 'bold' });
         s += angle(S[0], S[1], 44, 90, nn, 'φ', { tone: 'violet', labelR: 56 });
-        s += lines(330, 60, ['tan φ_s = f_max / N = μ_s', '臨界：θ = φ_s', 'θ ≤ φ_s ⇒ 自鎖（不滑動）'], { size: 13, lh: 22, weight: 'bold' });
-        return svg(560, 240, s);
+        s += lines(330, 80, ['tan φ_s = f_max / N = μ_s', '臨界：θ = φ_s', 'θ ≤ φ_s ⇒ 自鎖（不滑動）'], { size: 13, lh: 22, weight: 'bold' });
+        return svg(560, 262, s);
       })(),
       takeaways: [
         '摩擦角定義：$\\tan\\phi_s = \\mu_s$；把 N 與 f 合成一個力 R，摩擦問題就變成三力平衡。',
@@ -965,6 +1286,30 @@ export const mechanicsVisuals: TopicVisualMap = {
       takeaways: [
         '多繞一圈，能撐住的張力比就再乘一次 $e^{2\\pi\\mu}$，所以船纜繞樁幾圈就能拉住大船。',
         '例：μ = 0.2、β = π、T₁ = 100 N ⇒ $T_2 = 100e^{0.628} \\approx 187.5$ N。',
+      ],
+    },
+    {
+      concept: '摩擦角與靜止角',
+      kind: 'chart',
+      title: '靜止角 α 與靜摩擦係數 μs = tan α 的關係',
+      caption: '把物體放在斜面上逐漸加大傾角，恰要下滑時的角度即靜止角；μs 隨 α 呈正切曲線增加，α = 30° 時 μs ≈ 0.577。',
+      svg: lineChart({
+        w: 520,
+        h: 260,
+        x: { min: 0, max: 60, ticks: [0, 15, 30, 45, 60], label: '靜止角 α (°)', fmt: (v) => `${v}°` },
+        y: { min: 0, max: 1.8, ticks: [0, 0.3, 0.6, 0.9, 1.2, 1.5, 1.8], label: 'μs = tan α' },
+        series: [{ name: 'μs = tan α', tone: 'blue', points: Array.from({ length: 13 }, (_, i) => [i * 5, Math.round(Math.tan((i * 5 * Math.PI) / 180) * 1000) / 1000] as [number, number]), smooth: true, markers: true }],
+        overlay: (f) => line(f.X(30), f.Y(0), f.X(30), f.Y(0.577), { tone: 'red', w: 1.2, dash: 'dash' }) +
+          line(f.X(0), f.Y(0.577), f.X(30), f.Y(0.577), { tone: 'red', w: 1.2, dash: 'dash' }) +
+          text(f.X(30) + 6, f.Y(0.577) - 6, 'α = 30° → μs ≈ 0.577', { tone: 'red', size: 11, weight: 'bold' }),
+      }),
+      table: {
+        headers: ['靜止角 α', 'μs = tan α'],
+        rows: [['15°', '0.268'], ['30°', '0.577'], ['35°', '0.700'], ['45°', '1.000'], ['60°', '1.732']],
+      },
+      takeaways: [
+        '靜止角與物體重量無關，只由接觸面的 μs 決定；實驗測得 α 即可求 μs。',
+        '摩擦角 φ 與靜止角 α 的正切都等於 μs，所以兩者相等。',
       ],
     },
   ],
@@ -1085,6 +1430,34 @@ export const mechanicsVisuals: TopicVisualMap = {
         '兩者相加為零 ⇒ $F_{BC} = -120$ kN，負號表示實際為**壓力**：簡支桁架受向下載重時頂弦受壓、底弦受拉。',
       ],
     },
+    {
+      concept: '剖面法',
+      kind: 'chart',
+      title: 'Pratt 簡支桁架（跨中 120 kN）各部位桿件內力大小比較',
+      caption: '頂弦 BC 承受最大壓力 120 kN；斜腹桿 AB 承受 84.9 kN 壓力，底弦 AG 承受 60 kN 拉力。',
+      svg: barChart({
+        w: 520,
+        h: 250,
+        categories: ['底弦 AG (拉)', '端斜桿 AB (壓)', '內斜桿 BH (拉)', '頂弦 BC (壓)'],
+        series: [{ name: '桿力絕對值 |F| (kN)', tone: 'blue', values: [60, 84.9, 84.9, 120] }],
+        y: { max: 140, ticks: [0, 30, 60, 90, 120], label: '|F| (kN)' },
+        values: true,
+        valueFmt: (v) => fmt(v, 1),
+      }),
+      table: {
+        headers: ['桿件位置', '受力性質', '內力大小 |F| (kN)', '建議求解方法'],
+        rows: [
+          ['底弦桿 AG、GH', '拉力 (T)', '60.0 kN', '節點法（A 點 ΣFx = 0）'],
+          ['端斜桿 AB', '壓力 (C)', '60√2 ≈ 84.9 kN', '節點法（A 點 ΣFy = 0）'],
+          ['內斜腹桿 BH', '拉力 (T)', '60√2 ≈ 84.9 kN', '剖面法（切面 ΣFy = 0）'],
+          ['跨中頂弦桿 BC', '壓力 (C)', '120.0 kN', '剖面法（對 H 點 ΣM_H = 0）'],
+        ],
+      },
+      takeaways: [
+        '簡支桁架受向下載重時，整體如同簡支梁：**上弦受壓、下弦受拉**，且越靠近跨中弦桿力越大。',
+        'Pratt 桁架的斜腹桿設計成在向下設計載重下主要受拉（端斜桿除外），避免長斜桿受壓挫屈。',
+      ],
+    },
   ],
 
   beam: [
@@ -1109,7 +1482,7 @@ export const mechanicsVisuals: TopicVisualMap = {
         s += row(y, '外伸梁：伸出支承外', beam(120, 500, y, 8) + pin(150, y + 4, 11) + roller(390, y + 4, 11) +
           path(`M120,${y + 6} Q255,${y + 52} 390,${y} Q450,${y - 26} 500,${y - 30}`, { tone: 'violet', w: 2, dash: 'dash' }) +
           text(255, y + 42, '跨內正彎矩', { anchor: 'middle', tone: 'blue', size: 12 }) + text(445, y - 32, '支承處負彎矩', { anchor: 'middle', tone: 'red', size: 12 }));
-        return svg(560, 320, s);
+        return svg(560, 338, s);
       })(),
       takeaways: [
         '三種梁的未知反力都是 3 個，用 ΣFx、ΣFy、ΣM 即可解出，故稱靜定梁。',
@@ -1143,7 +1516,7 @@ export const mechanicsVisuals: TopicVisualMap = {
         s += text(L0 - 44, fm.Y(0) + 4, 'M', { weight: 'bold', italic: true, size: 14 });
         s += lines(486, 130, ['dV/dx = −w', '斜直線'], { size: 12, lh: 17, tone: 'muted' });
         s += lines(486, 250, ['dM/dx = V', '拋物線', '（正彎矩畫在下方）'], { size: 12, lh: 17, tone: 'muted' });
-        return svg(560, 330, s);
+        return svg(560, 414, s);
       })(),
       takeaways: [
         '剪力圖斜率 = −載重集度；均布載重 ⇒ 剪力圖為斜直線、彎矩圖為二次拋物線。',
@@ -1187,6 +1560,36 @@ export const mechanicsVisuals: TopicVisualMap = {
         '剪力過零點 x = 2 m 處是跨內最大正彎矩：$M = \\tfrac12 \\times 2 \\times 20 = 20$ kN·m。',
         'B 點剪力由 −40 跳到 +30（跳躍量 = $R_B$ = 70），彎矩在 B 為 $-30 \\times 2 = -60$ kN·m。',
         '彎矩由正轉負的位置 $20x - 5x^2 = 0 \\Rightarrow x = 4$ m 為反曲點，配筋時上下層鋼筋在此附近切換。',
+      ],
+    },
+    {
+      concept: '載重、剪力與彎矩之微積分與面積關係',
+      kind: 'chart',
+      title: '四大必背靜定梁標準載重案例之最大彎矩 M_max 比較 (L = 6m, 總重 W = 60 kN)',
+      caption: '相同跨度 L = 6 m、相同總載重 W = 60 kN 下，懸臂梁自由端集中載重產生的彎矩是簡支梁均布載重的 8 倍。',
+      svg: barChart({
+        w: 520,
+        h: 250,
+        categories: ['簡支+均布(wL²/8)', '簡支+中央P(PL/4)', '懸臂+均布(wL²/2)', '懸臂+端點P(PL)'],
+        series: [
+          { name: '最大剪力 |V|_max (kN)', tone: 'blue', values: [30, 30, 60, 60] },
+          { name: '最大彎矩 |M|_max (kN·m)', tone: 'red', values: [45, 90, 180, 360] },
+        ],
+        y: { max: 400, ticks: [0, 90, 180, 270, 360], label: 'kN 或 kN·m' },
+        values: true,
+      }),
+      table: {
+        headers: ['梁型與載重 (總重 W = 60 kN, L = 6m)', '最大剪力 |V|_max', '最大彎矩 |M|_max 公式', '數值 (kN·m)'],
+        rows: [
+          ['簡支梁 + 均布載重 w = 10 kN/m', 'wL/2 = 30 kN', '+wL²/8 = +WL/8', '+45 kN·m (跨中)'],
+          ['簡支梁 + 跨中集中載重 P = 60 kN', 'P/2 = 30 kN', '+PL/4 = +WL/4', '+90 kN·m (跨中)'],
+          ['懸臂梁 + 均布載重 w = 10 kN/m', 'wL = 60 kN', '−wL²/2 = −WL/2', '−180 kN·m (固定端)'],
+          ['懸臂梁 + 自由端集中載重 P = 60 kN', 'P = 60 kN', '−PL = −WL', '−360 kN·m (固定端)'],
+        ],
+      },
+      takeaways: [
+        '四大彎矩公式倍率關係（同總重 $W$）：$\\frac{WL}{8} : \\frac{WL}{4} : \\frac{WL}{2} : WL = 1 : 2 : 4 : 8$。',
+        '懸臂梁固定端承受極大負彎矩，因此陽台或雨遮懸挑鋼筋必須配置於**上層**並確實錨定入柱內。',
       ],
     },
   ],
@@ -1404,6 +1807,46 @@ export const mechanicsVisuals: TopicVisualMap = {
         '剪應力分布與彎曲應力剛好相反：中性軸最大、上下緣為零。',
       ],
     },
+    {
+      concept: '梁內應力：中立面、中立軸與彈性曲線',
+      kind: 'diagram',
+      title: '正彎矩下的梁：中立面長度不變，彎曲應力沿梁深直線分佈',
+      caption: '左：梁受正彎矩彎成弧形，上緣縮短、下緣伸長，中立面（虛線）長度不變，曲率半徑 ρ；右：斷面上 σ = M·y / I，中立軸處為零、上下緣最大。',
+      svg: (() => {
+        let s = '';
+        const cx = 160;
+        const cy = -230;
+        s += path(arcPath(cx, cy, 300, -112, -68), { tone: 'red', w: 2.4 });
+        s += path(arcPath(cx, cy, 330, -112, -68), { tone: 'muted', w: 1.4, dash: 'dash' });
+        s += path(arcPath(cx, cy, 360, -112, -68), { tone: 'blue', w: 2.4 });
+        const tl = polar(cx, cy, 300, -112);
+        const bl = polar(cx, cy, 360, -112);
+        const tr = polar(cx, cy, 300, -68);
+        const br = polar(cx, cy, 360, -68);
+        s += line(tl[0], tl[1], bl[0], bl[1], { w: 2 }) + line(tr[0], tr[1], br[0], br[1], { w: 2 });
+        s += text(cx, 84, '上緣縮短（受壓）', { anchor: 'middle', size: 12, tone: 'red', weight: 'bold' });
+        s += text(cx, 104, '中立面（長度不變）', { anchor: 'middle', size: 11.5, tone: 'muted' });
+        s += text(cx, 150, '下緣伸長（受拉）', { anchor: 'middle', size: 12, tone: 'blue', weight: 'bold' });
+        s += moment(tl[0] - 10, (tl[1] + bl[1]) / 2, 18, 'cw', { tone: 'violet', label: 'M', labelDeg: 180, from: 40, span: 220 });
+        s += moment(tr[0] + 10, (tr[1] + br[1]) / 2, 18, 'ccw', { tone: 'violet', label: 'M', labelDeg: 0, from: -80, span: 220 });
+        s += text(cx, 190, '曲率 1/ρ = M / (E·I)', { anchor: 'middle', weight: 'bold', size: 13 });
+        // 斷面應力分佈
+        const x0 = 430;
+        s += line(x0, 60, x0, 180, { w: 2 });
+        s += line(370, 120, 520, 120, { tone: 'muted', w: 1, dash: 'dash' });
+        s += text(522, 116, '中立軸 σ = 0', { tone: 'muted', size: 11, anchor: 'end' });
+        s += polygon([[x0, 60], [x0 - 55, 60], [x0, 120]], { tone: 'red', fill: 'red', soft: true, w: 1.4 });
+        s += polygon([[x0, 120], [x0 + 55, 180], [x0, 180]], { tone: 'blue', fill: 'blue', soft: true, w: 1.4 });
+        s += text(x0 - 58, 54, '壓 σmax', { tone: 'red', size: 12, weight: 'bold', anchor: 'end' });
+        s += text(x0 + 58, 194, '拉 σmax', { tone: 'blue', size: 12, weight: 'bold' });
+        s += text(x0, 214, 'σ = M·y / I', { anchor: 'middle', weight: 'bold' });
+        return svg(560, 226, s);
+      })(),
+      takeaways: [
+        '中立軸通過斷面形心；彎曲應力與距中立軸的距離 y 成正比，上下緣最大。',
+        '撓曲剛度 E·I 越大，同樣彎矩下的曲率越小，梁越不容易彎。',
+      ],
+    },
   ],
 
   'spatial-force-systems': [
@@ -1432,7 +1875,7 @@ export const mechanicsVisuals: TopicVisualMap = {
         s += text(P(2, 3, 3)[0] + 8, P(2, 3, 3)[1], 'F_z = 600 N', { tone: 'amber', weight: 'bold', size: 12 });
         s += text(P(0, 0, 0)[0] - 8, P(0, 0, 0)[1] - 6, 'O', { anchor: 'end', weight: 'bold', italic: true });
         s += lines(380, 70, ['F = 700 N，d = 7 m', 'F_x = 700 × 2/7 = 200 N', 'F_y = 700 × 3/7 = 300 N', 'F_z = 700 × 6/7 = 600 N', 'cos α = 2/7 ≈ 0.286'], { size: 12.5, lh: 21 });
-        return svg(560, 270, s);
+        return svg(560, 306, s);
       })(),
       takeaways: [
         '方向餘弦就是單位向量的三個分量：$\\cos\\alpha = F_x/F = d_x/d$。',
@@ -1461,7 +1904,7 @@ export const mechanicsVisuals: TopicVisualMap = {
         s += arrow(top[0], top[1] + 6, top[0], top[1] + 60, { tone: 'red', w: 2.6, label: 'W = 1200 N', labelOffset: [8, -4] });
         s += dim(...Pj(0, 0, 0), ...Pj(0, 0, 4), '4 m', { offset: -80, tone: 'muted' });
         s += lines(380, 60, ['每索 L = √(3² + 4²) = 5 m', '鉛直分量 = T × 4/5 = 0.8T', 'ΣF_z = 0：3(0.8T) = 1200', '⇒ T = 500 N'], { size: 12.5, lh: 21, weight: 'bold' });
-        return svg(560, 260, s);
+        return svg(560, 276, s);
       })(),
       takeaways: [
         '對稱配置時水平分量自動互相抵消，只需列 ΣF_z = 0。',
@@ -1499,6 +1942,36 @@ export const mechanicsVisuals: TopicVisualMap = {
       takeaways: [
         '空間剛體有 6 個自由度（3 平移 + 3 轉動），故有 6 條平衡方程。',
         '空間平行力系（全部平行 z 軸）只剩 ΣFz、ΣMx、ΣMy 三條，ΣMz ≡ 0 自動滿足。',
+      ],
+    },
+    {
+      concept: '空間剛體六個平衡方程與三維支承',
+      kind: 'chart',
+      title: '平面力系 vs. 空間力系之獨立平衡方程數與支承反力數對照',
+      caption: '由二維進入三維空間，剛體獨立平衡方程式由 3 條倍增為 6 條（3 力 + 3 力矩）。',
+      svg: barChart({
+        w: 520,
+        h: 250,
+        categories: ['共點力系', '平行力系', '一般剛體力系', '球窩/鉸支承反力', '固定端反力'],
+        series: [
+          { name: '二維平面 (2D)', tone: 'blue', values: [2, 2, 3, 2, 3] },
+          { name: '三維空間 (3D)', tone: 'green', values: [3, 3, 6, 3, 6] },
+        ],
+        y: { max: 7, ticks: [0, 2, 3, 4, 6], label: '方程式 / 反力數' },
+        values: true,
+      }),
+      table: {
+        headers: ['力系或支承類型', '二維平面 (2D)', '三維空間 (3D)', '空間平衡條件式'],
+        rows: [
+          ['共點力系', '2 條 (ΣFx, ΣFy)', '3 條', 'ΣFx = 0, ΣFy = 0, ΣFz = 0'],
+          ['平行力系 (平行 z 軸)', '2 條 (ΣFz, ΣM)', '3 條', 'ΣFz = 0, ΣMx = 0, ΣMy = 0'],
+          ['一般剛體力系', '3 條 (2 力 + 1 矩)', '6 條 (3 力 + 3 矩)', 'ΣFx=ΣFy=ΣFz=0, ΣMx=ΣMy=ΣMz=0'],
+          ['球窩關節 vs. 平面鉸支承', '2 個反力', '3 個反力 (Rx,Ry,Rz)', '限制三軸平移、允許三軸自由轉動'],
+        ],
+      },
+      takeaways: [
+        '統測常考各力系的**獨立平衡方程式數目**：平面共點 2、平面平行 2、平面一般 3；空間共點 3、空間平行 3、空間一般 6。',
+        '空間固定端（如獨立柱基礎或三維懸臂梁）共有 3 個反力 + 3 個反力矩 = 6 個未知數。',
       ],
     },
   ],
@@ -1594,6 +2067,32 @@ export const mechanicsVisuals: TopicVisualMap = {
         '圓心 $C = (\\sigma_x + \\sigma_y)/2 = 20$ MPa，半徑 $R = \\sqrt{40^2 + 30^2} = 50$ MPa（3-4-5 三角形）。',
         '$\\sigma_1 = 70$、$\\sigma_2 = -30$ MPa；由 X 點轉 $2\\theta_p = 36.87°$ 到 σ₁，元素實際轉 $\\theta_p = 18.43°$。',
         '若 σ₁、σ₂ 同號，絕對最大剪應力要把面外主應力 σ₃ = 0 一起考慮：$\\tau_{abs} = \\sigma_{max}/2$。',
+      ],
+    },
+    {
+      concept: '合成應力：斜截面上正交應力與剪應力的合成',
+      kind: 'chart',
+      title: '單軸拉伸 σx = 100 MPa 時，斜面角 θ 對 σn、τn 與合成應力 p 的影響',
+      caption: 'σn = σx·cos²θ 隨 θ 遞減；τn = (σx/2)·sin2θ 在 45° 達最大 50 MPa；合成應力 p = √(σn² + τn²) = σx·cosθ。',
+      svg: lineChart({
+        w: 520,
+        h: 270,
+        x: { min: 0, max: 90, ticks: [0, 15, 30, 45, 60, 75, 90], label: '斜面角 θ (°)', fmt: (v) => `${v}°` },
+        y: { min: 0, max: 100, ticks: [0, 25, 50, 75, 100], label: '應力 (MPa)' },
+        series: [
+          { name: '正交應力 σn', tone: 'blue', points: [0, 15, 30, 45, 60, 75, 90].map((d) => [d, Math.round(100 * Math.cos((d * Math.PI) / 180) ** 2 * 10) / 10] as [number, number]), smooth: true, markers: true },
+          { name: '剪應力 τn', tone: 'red', points: [0, 15, 30, 45, 60, 75, 90].map((d) => [d, Math.round(50 * Math.sin((2 * d * Math.PI) / 180) * 10) / 10] as [number, number]), smooth: true, markers: true },
+          { name: '合成應力 p', tone: 'violet', dash: 'dash', points: [0, 15, 30, 45, 60, 75, 90].map((d) => [d, Math.round(100 * Math.cos((d * Math.PI) / 180) * 10) / 10] as [number, number]), smooth: true },
+        ],
+        overlay: (f) => text(f.X(45), f.Y(50) - 10, 'τmax = 50', { tone: 'red', size: 11, weight: 'bold', anchor: 'middle' }),
+      }),
+      table: {
+        headers: ['θ', 'σn (MPa)', 'τn (MPa)', 'p (MPa)'],
+        rows: [['0°', '100', '0', '100'], ['30°', '75', '43.3', '86.6'], ['45°', '50', '50', '70.7'], ['60°', '25', '43.3', '50'], ['90°', '0', '0', '0']],
+      },
+      takeaways: [
+        '合成應力是 σn 與 τn 的向量和，不能直接相加。',
+        '單軸拉伸時最大剪應力發生在 45° 斜面，大小為 σx / 2。',
       ],
     },
   ],
