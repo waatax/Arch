@@ -513,7 +513,7 @@ export const surveyingVisuals: TopicVisualMap = {
         s += polygon([[20, 195], [140, 178], [290, 142], [430, 114], [540, 102], [540, 218], [20, 218]], { tone: 'muted', fill: 'muted', soft: true, w: 1.5 });
         // 海平面基準線 H = 0
         s += line(20, 218, 540, 218, { tone: 'blue', w: 2 });
-        s += text(28, 213, '高程基準面 (TWVD2001 基隆平均海水面 H = 0 m)', { size: 10.5, tone: 'blue', weight: 'bold' });
+        s += text(532, 211, '高程基準面 (TWVD2001 基隆平均海水面 H = 0 m)', { anchor: 'end', size: 10.5, tone: 'blue', weight: 'bold' });
 
         // BM1 (A點)、TP1 (B點轉點)、BM2 (C點)
         const ax = 68, ay = 186;
@@ -551,7 +551,7 @@ export const surveyingVisuals: TopicVisualMap = {
         return svg(560, 232, s);
       })(),
       takeaways: [
-        '直接水準測量核心公式：**後視減前視等於高程差 ($\\Delta h = BS - FS = H_{前} - H_{後}$)**；總高程差 $\\Sigma BS - \\Sigma FS = H_{終} - H_{始}$。',
+        '直接水準測量核心公式：**後視減前視等於高程差 ($\\Delta h = BS - FS = H_{\\text{前}} - H_{\\text{後}}$)**；總高程差 $\\Sigma BS - \\Sigma FS = H_{\\text{終}} - H_{\\text{始}}$。',
         '**轉點 (Turning Point, TP)** 是傳遞高程的中繼樞紐，該點必須**先作為前視 (FS) 讀尺，待儀器搬站後再於同一點作為後視 (BS) 讀尺**，現場必須放置堅固的**尺墊（龜殼鈑）**防下陷。',
         '**間視點 (Intermediate Sight, IS / IFS)** 僅供測繪地形碎部高程，不參與傳遞高程，因此**不列入 $\\Sigma BS - \\Sigma FS$ 之算術檢核**。',
       ],
@@ -605,7 +605,7 @@ export const surveyingVisuals: TopicVisualMap = {
         ],
       },
       takeaways: [
-        '高程閉合差計算：**閉合水準路線 $f_h = \\Sigma BS - \\Sigma FS$**（理論值為 $0$）；**附合水準路線 $f_h = (\\Sigma BS - \\Sigma FS) - (H_{終知} - H_{始知})$**。',
+        '高程閉合差計算：**閉合水準路線 $f_h = \\Sigma BS - \\Sigma FS$**（理論值為 $0$）；**附合水準路線 $f_h = (\\Sigma BS - \\Sigma FS) - (H_{\\text{終知}} - H_{\\text{始知}})$**。',
         '平差分配原則：水準測量誤差與距離（或測站數）成正比，故各測段改正數 **$v_i = -f_h \\times \\frac{L_i}{\\Sigma L}$**（或 $-f_h \\times \\frac{n_i}{\\Sigma n}$）。',
       ],
     },
@@ -879,7 +879,7 @@ export const surveyingVisuals: TopicVisualMap = {
         s += angle(bx, by, 54, -21, 90, 'φ_BC', { tone: 'red', labelR: 68 });
 
         s += box(282, 184, 262, 38, [
-          '方位角推算通式：φ_前 = φ_後 ± 180° + β_左 (或 − β_右)',
+          '方位角推算通式：φ前 = φ後 ± 180° + β左（或 − β右）',
           '等同於：前邊方位角 = 後邊反方位角 + 左角 (− 右角)',
         ], { tone: 'amber', size: 10.5 });
 
@@ -887,8 +887,8 @@ export const surveyingVisuals: TopicVisualMap = {
       })(),
       takeaways: [
         '正反方位角換算：**$\\phi_{BA} = \\phi_{AB} \\pm 180^\\circ$**（小於 $180^\\circ$ 加 $180^\\circ$，大於 $180^\\circ$ 減 $180^\\circ$）。',
-        '方位角連續推算必背公式：**$\\phi_{BC} = \\phi_{AB} \\pm 180^\\circ + \\beta_{左}$（左角相加）** 或 **$\\phi_{BC} = \\phi_{AB} \\pm 180^\\circ - \\beta_{右}$（右角相減）**；若算出結果 $< 0^\\circ$ 則 $+ 360^\\circ$，若 $\\ge 360^\\circ$ 則 $- 360^\\circ$。',
-        '若題目給的是**偏角 $\\gamma$（前視邊偏離後視延長線之夾角，右偏為 $+$、左偏為 $-$）**，則直接 **$\\phi_{BC} = \\phi_{AB} + \\gamma_{右} - \\gamma_{左}$**（不必加 $180^\\circ$！）。',
+        '方位角連續推算必背公式：**$\\phi_{BC} = \\phi_{AB} \\pm 180^\\circ + \\beta_{\\text{左}}$（左角相加）** 或 **$\\phi_{BC} = \\phi_{AB} \\pm 180^\\circ - \\beta_{\\text{右}}$（右角相減）**；若算出結果 $< 0^\\circ$ 則 $+ 360^\\circ$，若 $\\ge 360^\\circ$ 則 $- 360^\\circ$。',
+        '若題目給的是**偏角 $\\gamma$（前視邊偏離後視延長線之夾角，右偏為 $+$、左偏為 $-$）**，則直接 **$\\phi_{BC} = \\phi_{AB} + \\gamma_{\\text{右}} - \\gamma_{\\text{左}}$**（不必加 $180^\\circ$！）。',
       ],
     },
     {
@@ -918,7 +918,7 @@ export const surveyingVisuals: TopicVisualMap = {
         ],
       },
       takeaways: [
-        '角度閉合差定義：**$f_\\beta = \\Sigma\\beta_{實測} - \\Sigma\\beta_{理論}$**；若在容許範圍 $\\pm C\\sqrt{n}$ 內，每個角度分配相等的改正數 **$v_\\beta = -\\frac{f_\\beta}{n}$（與邊長無關，平均分配！）**。',
+        '角度閉合差定義：**$f_\\beta = \\Sigma\\beta_{\\text{實測}} - \\Sigma\\beta_{\\text{理論}}$**；若在容許範圍 $\\pm C\\sqrt{n}$ 內，每個角度分配相等的改正數 **$v_\\beta = -\\frac{f_\\beta}{n}$（與邊長無關，平均分配！）**。',
         '順時針前進的閉合導線，觀測「左角」即為多邊形**內角**；逆時針前進的閉合導線，觀測「右角」亦為**內角**。',
       ],
     },
@@ -1097,7 +1097,7 @@ export const surveyingVisuals: TopicVisualMap = {
         s += dot(p2[0], p2[1], 4, 'red') + text(p2[0], p2[1] - 8, '2(E₂,N₂)', { anchor: 'middle', size: 10.5, weight: 'bold' });
         s += dot(p3[0], p3[1], 4, 'red') + text(p3[0] + 6, p3[1] - 6, '3(E₃,N₃)', { size: 10.5, weight: 'bold' });
         s += text(155, 112, '面積 A', { anchor: 'middle', size: 12, weight: 'bold', tone: 'blue' });
-        s += text(148, 218, '2A = |Σ(E_i·N_{i+1} − E_{i+1}·N_i)|', { anchor: 'middle', size: 11, weight: 'bold' });
+        s += text(148, 236, '2A = |Σ(E_i·N_{i+1} − E_{i+1}·N_i)|', { anchor: 'middle', size: 11, weight: 'bold' });
 
         // 右側：辛普森 1/3 法則 (偶數區間 n=4, 5條支距 h0~h4)
         const sx = 304, sy = 176, dx = 52;
@@ -1123,7 +1123,7 @@ export const surveyingVisuals: TopicVisualMap = {
       takeaways: [
         '**鞋帶公式（座標法）**：將多邊形頂點依順時針或逆時針順序排列並**把第 1 點重抄於最末列**，則**兩倍面積 $2A = |\\Sigma(E_i N_{i+1} - E_{i+1} N_i)| = |\\Sigma N_i(E_{i+1} - E_{i-1})|$**。',
         '**辛普森 1/3 法則 (Simpson\'s Rule)** 以二次拋物線逼近曲線邊界，精度高於梯形法，但**等分區間數 $n$ 必須為偶數（即支距線條數為奇數）**！係數口訣：**「頭尾 1、奇數 4、偶數 2，再乘 $d/3$」**。',
-        '若區間數 $n$ 為奇數，前 $(n-1)$ 個偶數區間用辛普森法，最後 $1$ 個區間單獨用**梯形法 $A_{末} = \\frac{h_{n-1} + h_n}{2} \\cdot d$** 補齊。',
+        '若區間數 $n$ 為奇數，前 $(n-1)$ 個偶數區間用辛普森法，最後 $1$ 個區間單獨用**梯形法 $A_{\\text{末}} = \\frac{h_{n-1} + h_n}{2} \\cdot d$** 補齊。',
       ],
     },
     {

@@ -202,7 +202,7 @@ export const geographyVisuals: TopicVisualMap = {
         s += arrow(ox, oy, 290, oy, { tone: 'ink', w: 1.6, head: 7 });
         s += arrow(ox, oy, ox, 36, { tone: 'ink', w: 1.6, head: 7 });
         s += text(42, 42, '地租', { anchor: 'end', size: 11, weight: 'bold' });
-        s += text(285, 198, '距 CBD 距離 d', { anchor: 'end', size: 11, weight: 'bold' });
+        s += text(285, 214, '距 CBD 距離 d', { anchor: 'end', size: 11, weight: 'bold' });
         // 三條競租斜線
         s += line(ox, 44, 125, oy, { tone: 'red', w: 2.4 });
         s += line(ox, 90, 195, oy, { tone: 'amber', w: 2.2 });
@@ -382,7 +382,8 @@ export const geographyVisuals: TopicVisualMap = {
         catSize: 10.5,
         overlay: (f) =>
           line(f.box.left, f.Y(1.0), f.box.left + f.box.width, f.Y(1.0), { tone: 'red', w: 1.8, dash: 'dash' }) +
-          text(f.box.left + f.box.width - 8, f.Y(1.0) - 6, 'MI = 1.0 分界線（上：原料指向 ／ 下：市場指向）', { anchor: 'end', size: 10.5, weight: 'bold', tone: 'red' }),
+          text(f.box.left + f.box.width - 4, f.Y(1.0) - 26, 'MI = 1.0 分界線', { anchor: 'end', size: 10.5, weight: 'bold', tone: 'red' }) +
+          text(f.box.left + f.box.width - 4, f.Y(1.0) - 12, '上：原料指向／下：市場指向', { anchor: 'end', size: 10, tone: 'red' }),
       }),
       table: {
         headers: ['建材與工程產業', '原料指數 MI', '區位指向類型', '區位選址核心理由'],

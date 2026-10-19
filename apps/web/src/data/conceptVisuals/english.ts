@@ -618,7 +618,7 @@ export const englishVisuals: TopicVisualMap = {
         for (const [x, y] of pts) s += dot(x, y, 4, 'blue');
         s += pill(115, 122, 'rise steadily', 'green', 10.5);
         s += pill(225, 34, 'reach a peak (顛峰)', 'amber', 10.5);
-        s += pill(280, 96, 'plummet / plunge (暴跌)', 'red', 10.5);
+        s += pill(300, 170, 'plummet / plunge (暴跌)', 'red', 10.5);
         s += pill(365, 96, 'fluctuate (波動)', 'violet', 10.5);
         s += pill(475, 110, 'level off / remain stable', 'blue', 10.5);
         s += text(280, 212, '比例佔比必考詞：account for = make up = represent + X%（占百分之…）', { anchor: 'middle', size: 11.5, weight: 'bold', tone: 'ink' });
@@ -674,7 +674,7 @@ export const englishVisuals: TopicVisualMap = {
         ],
       },
       takeaways: [
-        '折扣計算鐵則：**`X% off = 減去 X%`**（如 `$100` 商品 `30% off` 實付 `$70`）；且須檢查是否有限定 `weekdays only`（僅限平日）或 `cannot be combined with other offers`（不可與其他優惠併用）。',
+        '折扣計算鐵則：**`X% off = 減去 X%`**（如 `USD 100` 商品 `30% off` 實付 `USD 70`）；且須檢查是否有限定 `weekdays only`（僅限平日）或 `cannot be combined with other offers`（不可與其他優惠併用）。',
         '`complimentary`（i：免費贈送的，= `free of charge`）vs. `complementary`（e：互補的），為統測字彙與閱讀雙料常客。',
       ],
     },

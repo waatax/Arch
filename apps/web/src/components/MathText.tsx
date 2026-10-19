@@ -4,6 +4,24 @@ import React from 'react';
 import { InlineMath, BlockMath } from 'react-katex';
 import InteractiveDialogue, { DialogueLine } from '@/components/InteractiveDialogue';
 
+const TTS_BUTTON_CLASS =
+  'inline-flex items-center gap-1 bg-sky-100 dark:bg-sky-950/80 text-sky-700 dark:text-sky-300 hover:bg-sky-200 dark:hover:bg-sky-900 border border-sky-200 dark:border-sky-800 rounded-md px-1.5 py-0.5 text-[11px] font-mono mx-1 cursor-pointer transition-all translate-y-[-1px] active:scale-95 shadow-2xs';
+const TTS_TITLE = '播放英文發音 (Listen to English Pronunciation)';
+
+/** Raw teaching-data markup → HTML string (bold, className→class, ### sub-headings, line breaks). */
+function toHtml(raw: string) {
+  let html = raw.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
+  // Teaching data authors JSX-style `className=` inside body HTML, but this
+  // string is injected as raw HTML, where the browser ignores `className` and
+  // the emphasis colouring silently disappears. Normalise it to `class`.
+  html = html.replace(/\sclassName=/g, ' class=');
+  // Markdown-style sub-headings inside a concept body (e.g. "### 🚨 統測陷阱")
+  html = html.replace(/(^|\n)#{2,4}[ \t]+([^\n]+)\n?/g, '$1<span class="concept-subhead">$2</span>');
+  return html.replace(/\n/g, '<br />');
+}
+
+const escapeAttr = (s: string) => s.replace(/&/g, '&amp;').replace(/"/g, '&quot;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+
 export default function MathText({ content, className }: { content?: string | null; className?: string }) {
   if (!content) return null;
 
@@ -128,6 +146,27 @@ export default function MathText({ content, className }: { content?: string | nu
                 );
               }
 
+              // HTML with [TTS:...] markers inside its elements (e.g. `<span>-ed [TTS:-ed] (感到…的)</span>`) must stay
+              // one HTML string: split at the markers, each fragment would hold unbalanced tags, which the server stream
+              // and the client's per-span innerHTML parse into different trees (hydration error #418).
+              if (/<[a-zA-Z]/.test(part) && /\[TTS:[^\]]+\]/.test(part)) {
+                const html = toHtml(part).replace(
+                  /\[TTS:([^\]]+)\]/g,
+                  (_, text: string) =>
+                    `<button type="button" data-tts="${escapeAttr(text)}" class="${TTS_BUTTON_CLASS}" title="${TTS_TITLE}"><span>🔊</span><span>發音</span></button>`,
+                );
+                return (
+                  <span
+                    key={index}
+                    onClick={(e) => {
+                      const button = (e.target as HTMLElement).closest<HTMLElement>('[data-tts]');
+                      if (button?.dataset.tts) handlePlayTTS(button.dataset.tts);
+                    }}
+                    dangerouslySetInnerHTML={{ __html: html }}
+                  />
+                );
+              }
+
               // Match [TTS:...] for Text-to-Speech
               const subParts = part.split(/(\[TTS:[^\]]+\])/g);
               return (
@@ -140,8 +179,8 @@ export default function MathText({ content, className }: { content?: string | nu
                           key={subIndex}
                           type="button"
                           onClick={() => handlePlayTTS(text)}
-                          className="inline-flex items-center gap-1 bg-sky-100 dark:bg-sky-950/80 text-sky-700 dark:text-sky-300 hover:bg-sky-200 dark:hover:bg-sky-900 border border-sky-200 dark:border-sky-800 rounded-md px-1.5 py-0.5 text-[11px] font-mono mx-1 cursor-pointer transition-all translate-y-[-1px] active:scale-95 shadow-2xs"
-                          title="播放英文發音 (Listen to English Pronunciation)"
+                          className={TTS_BUTTON_CLASS}
+                          title={TTS_TITLE}
                         >
                           <span>🔊</span>
                           <span>發音</span>
@@ -149,14 +188,7 @@ export default function MathText({ content, className }: { content?: string | nu
                       );
                     }
 
-                    let htmlContent = subPart.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
-                    // Teaching data authors JSX-style `className=` inside body HTML, but this
-                    // string is injected as raw HTML, where the browser ignores `className` and
-                    // the emphasis colouring silently disappears. Normalise it to `class`.
-                    htmlContent = htmlContent.replace(/\sclassName=/g, ' class=');
-                    // Markdown-style sub-headings inside a concept body (e.g. "### 🚨 統測陷阱")
-                    htmlContent = htmlContent.replace(/(^|\n)#{2,4}[ \t]+([^\n]+)\n?/g, '$1<span class="concept-subhead">$2</span>');
-                    htmlContent = htmlContent.replace(/\n/g, '<br />');
+                    const htmlContent = toHtml(subPart);
 
                     // If subPart contains obvious raw LaTeX math commands and no HTML tags,
                     // attempt safe KaTeX rendering with automatic graceful fallback to HTML.

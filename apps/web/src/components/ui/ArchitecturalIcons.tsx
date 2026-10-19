@@ -200,7 +200,6 @@ export function IconSlumpCone({ className, size = 24, strokeWidth = 1.75, ...pro
       <line x1="8.5" y1="5" x2="4.5" y2="19" />
       <line x1="15.5" y1="5" x2="19.5" y2="19" />
       {/* 提手握把 (兩側 Handles) */}
-      <path d="M7.5" y="9.5" />
       <path d="M5.5 10c-1.5 0-2.5 1-2.5 2.5s1 2.5 2.5 2.5" />
       <path d="M18.5 10c1.5 0 2.5 1 2.5 2.5s-1 2.5-2.5 2.5" />
       {/* 標準 16mm 圓頭搗棒 */}

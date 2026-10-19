@@ -33,7 +33,7 @@ function mohr(sx: number, sy: number, txy: number, opts: { w?: number; h?: numbe
   let s = '';
   s += arrow(X(Math.min(s2, 0)) - 30, oy, X(Math.max(s1, 0)) + 40, oy, { tone: 'ink', w: 1.4, head: 8 });
   s += arrow(ox, oy - R * k - 34, ox, oy + R * k + 34, { tone: 'ink', w: 1.4, head: 8 });
-  s += text(X(Math.max(s1, 0)) + 40, oy - 9, 'σ (MPa)', { anchor: 'end', size: 12, weight: 'bold', italic: true });
+  s += text(X(Math.max(s1, 0)) + 40, oy + 20, 'σ (MPa)', { anchor: 'end', size: 12, weight: 'bold', italic: true });
   s += text(ox + 8, oy + R * k + 32, 'τ（向下為正）', { size: 12, weight: 'bold' });
   for (const t of opts.ticks) {
     if (t === 0) continue;
@@ -85,8 +85,8 @@ export const mechanicsVisuals: TopicVisualMap = {
           { x: 345, K: '0.7', name: '一端固定一端鉸接', top: 'pin', bot: 'fix', shape: (t: number) => Math.sin(Math.PI * Math.pow(t, 1.45)) },
           { x: 480, K: '2.0', name: '一端固定一端自由', top: 'free', bot: 'fix', shape: (t: number) => 1 - Math.cos((Math.PI * t) / 2) },
         ];
-        const yTop = 58;
-        const yBot = 208;
+        const yTop = 74;
+        const yBot = 224;
         let s = '';
         for (const c of cols) {
           s += line(c.x, yTop, c.x, yBot, { tone: 'muted', w: 1, dash: 'dash' });
@@ -106,11 +106,11 @@ export const mechanicsVisuals: TopicVisualMap = {
           }
           s += arrow(topX, yTop - (c.top === 'free' ? 34 : 46), topX, yTop - (c.top === 'free' ? 2 : 14), { tone: 'red', w: 2.2, head: 9 });
           s += text(topX + 7, yTop - (c.top === 'free' ? 22 : 34), 'P', { tone: 'red', weight: 'bold', italic: true });
-          s += text(c.x, 238, `K = ${c.K}`, { anchor: 'middle', weight: 'bold', size: 14, tone: 'blue' });
-          s += text(c.x, 256, c.name, { anchor: 'middle', size: 12, tone: 'muted' });
+          s += text(c.x, 254, `K = ${c.K}`, { anchor: 'middle', weight: 'bold', size: 14, tone: 'blue' });
+          s += text(c.x, 272, c.name, { anchor: 'middle', size: 12, tone: 'muted' });
         }
         s += text(8, 22, 'P_cr = π²EI / (KL)²', { size: 14, weight: 'bold', tone: 'ink' });
-        return svg(560, 266, s);
+        return svg(560, 282, s);
       })(),
       takeaways: [
         '$P_{cr}$ 與 $(KL)^2$ 成反比：兩端鉸接 (K = 1.0) 改成兩端固定 (K = 0.5)，有效長度減半，臨界載重變為 **4 倍**。',
@@ -273,8 +273,8 @@ export const mechanicsVisuals: TopicVisualMap = {
         s += dim(X(0), y, X(1), y, '1 m', { offset: -24 });
         s += dim(X(0), y, X(4), y, '4 m', { offset: -132 });
         s += dim(X(0), y, X(3), y, 'x_R = 3 m', { offset: 30, tone: 'red' });
-        s += text(300, 236, 'ΣM_O：10×1 + 20×4 = 90 = 30 × x_R ⇒ x_R = 3 m', { anchor: 'middle', size: 13, weight: 'bold' });
-        return svg(560, 250, s);
+        s += text(300, 262, 'ΣM_O：10×1 + 20×4 = 90 = 30 × x_R ⇒ x_R = 3 m', { anchor: 'middle', size: 13, weight: 'bold' });
+        return svg(560, 276, s);
       })(),
       takeaways: [
         '合力大小 = 各力代數和：$R = 10 + 20 = 30$ kN。',
@@ -609,8 +609,8 @@ export const mechanicsVisuals: TopicVisualMap = {
         let s = '';
         s += arrow(O[0] - 20, O[1], O[0] + 280, O[1], { tone: 'muted', w: 1.2, head: 7 }) + text(O[0] + 284, O[1] + 4, 'x', { italic: true, tone: 'muted' });
         s += line(O[0], O[1] + 10, O[0], O[1] - 220, { tone: 'muted', w: 1.2, dash: 'dash' }) + text(O[0] - 8, O[1] - 214, 'v (y)', { anchor: 'end', tone: 'muted', italic: true });
-        s += line(...polar(O[0], O[1], -20, 30), ...polar(O[0], O[1], 270, 30), { tone: 'muted', w: 1.2, dash: 'dash' });
-        s += text(...polar(O[0], O[1], 275, 30), 'u', { tone: 'muted', italic: true, size: 14 });
+        s += line(...polar(O[0], O[1], -20, 30), ...polar(O[0], O[1], 232, 30), { tone: 'muted', w: 1.2, dash: 'dash' });
+        s += text(...polar(O[0], O[1], 238, 30), 'u', { tone: 'muted', italic: true, size: 14 });
         s += line(Fu[0], Fu[1], F[0], F[1], { tone: 'muted', w: 1.2, dash: 'dot' });
         s += line(Fv[0], Fv[1], F[0], F[1], { tone: 'muted', w: 1.2, dash: 'dot' });
         s += arrow(O[0], O[1], Fu[0], Fu[1], { tone: 'blue', w: 2.6 });
@@ -1010,7 +1010,7 @@ export const mechanicsVisuals: TopicVisualMap = {
         s += text(ox + 100 * k + 18, oy - yc * k + 4, 'ȳ = 67.78 mm', { tone: 'red', weight: 'bold' });
         s += dim(ox, oy - 100 * k, ox + 100 * k, oy - 100 * k, '100', { offset: 18 });
         s += dim(ox + 60 * k, oy, ox + 60 * k, oy - 80 * k, '80', { offset: -34 });
-        s += lines(ox + 100 * k + 18, 70, ['ȳ = (A₁y₁ + A₂y₂) / (A₁ + A₂)', '= (2000×90 + 1600×40) / 3600', '= 244000 / 3600', '≈ 67.78 mm'], { size: 12.5, lh: 20 });
+        s += lines(330, 178, ['ȳ = (A₁y₁ + A₂y₂) / (A₁ + A₂)', '= (2000×90 + 1600×40) / 3600', '= 244000 / 3600', '≈ 67.78 mm'], { size: 12.5, lh: 20 });
         return svg(560, 250, s);
       })(),
       takeaways: [
@@ -1230,7 +1230,7 @@ export const mechanicsVisuals: TopicVisualMap = {
         s += arrow(S[0], S[1], S[0], S[1] - 92.4, { tone: 'blue', w: 2.8, dash: 'dash' });
         s += text(S[0] + 6, S[1] - 96, 'R（合力）', { tone: 'blue', weight: 'bold' });
         s += angle(S[0], S[1], 44, 90, nn, 'φ', { tone: 'violet', labelR: 56 });
-        s += lines(330, 80, ['tan φ_s = f_max / N = μ_s', '臨界：θ = φ_s', 'θ ≤ φ_s ⇒ 自鎖（不滑動）'], { size: 13, lh: 22, weight: 'bold' });
+        s += lines(20, 30, ['tan φ_s = f_max / N = μ_s', '臨界：θ = φ_s', 'θ ≤ φ_s ⇒ 自鎖（不滑動）'], { size: 13, lh: 22, weight: 'bold' });
         return svg(560, 262, s);
       })(),
       takeaways: [
@@ -1609,7 +1609,7 @@ export const mechanicsVisuals: TopicVisualMap = {
         s += arrow(229, 110, 275, 110, { tone: 'ink', w: 2.6, label: 'P', labelOffset: [-4, -10] });
         for (let y = 96; y <= 124; y += 7) s += arrow(229, y, 248, y, { tone: 'red', w: 1.2, head: 5 });
         s += text(150, 60, '正應力 σ = P / A', { anchor: 'middle', weight: 'bold', size: 14, tone: 'red' });
-        s += text(150, 160, '截面積 A ⟂ 受力方向', { anchor: 'middle', size: 12, tone: 'muted' });
+        s += text(150, 82, '截面積 A ⟂ 受力方向', { anchor: 'middle', size: 12, tone: 'muted' });
         s += dim(60, 130, 230, 130, 'L → L + δ，ε = δ / L', { offset: 44, size: 12 });
         // 剪力方塊
         const x = 360, y = 160, a = 90, g = 22;
@@ -1637,13 +1637,13 @@ export const mechanicsVisuals: TopicVisualMap = {
         const f = frame([0, 10], [0, 10], { left: 70, top: 30, width: 420, height: 210 });
         let s = axes(f, { xLabel: 'ε', yLabel: 'σ', origin: true });
         s += path(`M${f.X(0)},${f.Y(0)} L${f.X(1)},${f.Y(6)} Q${f.X(1.12)},${f.Y(6.6)} ${f.X(1.18)},${f.Y(6.5)} L${f.X(1.3)},${f.Y(6.1)} L${f.X(3)},${f.Y(6.15)} C${f.X(4)},${f.Y(7.3)} ${f.X(5.5)},${f.Y(8.9)} ${f.X(7.4)},${f.Y(9.1)} C${f.X(8.2)},${f.Y(9.05)} ${f.X(8.9)},${f.Y(8)} ${f.X(9.4)},${f.Y(7)}`, { tone: 'blue', w: 2.8 });
-        s += point(f, 1, 6, 'A 比例限度', { tone: 'green', dx: -8, dy: -2, anchor: 'end' });
+        s += point(f, 1, 6, 'A 比例限度', { tone: 'green', dx: -30, dy: -14, anchor: 'end' });
         s += point(f, 1.18, 6.5, 'B 上降伏點', { tone: 'amber', dx: 0, dy: -12, anchor: 'middle' });
         s += text(f.X(2.15), f.Y(6.15) + 18, '降伏平台', { anchor: 'middle', size: 12, tone: 'muted' });
         s += point(f, 7.4, 9.1, 'C 極限強度 f_u', { tone: 'red', dx: 0, dy: -12, anchor: 'middle' });
         s += dot(f.X(9.4), f.Y(7), 4.5, 'ink') + text(f.X(9.4) + 6, f.Y(7) + 16, 'D 斷裂', { size: 12, weight: 'bold' });
         s += text(f.X(5.2), f.Y(7.2) + 2, '應變硬化', { anchor: 'middle', size: 12, tone: 'muted', rotate: -30 });
-        s += text(f.X(8.4), f.Y(9.3) - 4, '頸縮', { anchor: 'middle', size: 12, tone: 'muted' });
+        s += text(f.X(8.9) + 10, f.Y(8.2), '頸縮', { size: 12, tone: 'muted' });
         s += angle(f.X(0), f.Y(0), 40, 0, 72, 'E = σ/ε', { tone: 'violet', labelR: 64 });
         s += line(f.X(0), f.Y(6.15), f.X(1.3), f.Y(6.15), { tone: 'muted', w: 1, dash: 'dash' });
         s += text(f.X(0) - 6, f.Y(6.15) + 4, 'f_y', { anchor: 'end', tone: 'amber', weight: 'bold', size: 12 });
@@ -2014,7 +2014,7 @@ export const mechanicsVisuals: TopicVisualMap = {
         s += line(c2[0], c2[1], c2[0] + 90, c2[1], { tone: 'muted', w: 1, dash: 'dash' });
         s += line(c2[0], c2[1], ...polar(c2[0], c2[1], 90, th), { tone: 'muted', w: 1, dash: 'dash' });
         s += angle(c2[0], c2[1], 54, 0, th, 'θ', { labelR: 66 });
-        s += text(...polar(c2[0], c2[1], 100, th), "x′", { tone: 'muted', italic: true });
+        s += text(...polar(c2[0], c2[1], 92, th + 14), "x′", { tone: 'muted', italic: true });
         s += text(400, 24, '旋轉 θ 後', { anchor: 'middle', weight: 'bold' });
         return svg(560, 260, s);
       })(),

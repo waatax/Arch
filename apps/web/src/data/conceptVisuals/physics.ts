@@ -36,7 +36,7 @@ export const physicsVisuals: TopicVisualMap = {
           s += rect(gx + sway[i] - 4, y1 - 5, bw + 8, 10, { tone: 'blue', fill: 'blue', soft: true, w: 1.6 });
           const fLen = 22 + i * 16;
           s += arrow(gx + bw + sway[i] + fLen, y1, gx + bw + sway[i] + 6, y1, { tone: 'red', w: 2.2 });
-          s += text(gx + bw + sway[i] + fLen + 6, y1 + 4, `F_${i} = m_${i}a_${i}`, { tone: 'red', size: 11.5, weight: 'bold' });
+          s += text(gx + bw + sway[i] + 6 + fLen / 2, y1 - 9, `F_${i} = m_${i}a_${i}`, { tone: 'red', size: 11.5, weight: 'bold', anchor: 'middle' });
         }
         s += arrow(gx, gy - 8, gx + 55, gy - 8, { tone: 'green', w: 2.6, label: '基底剪力 V = ΣF_i = C·W', labelPos: 'end', labelOffset: [6, 4] });
         s += box(330, 22, 212, 82, ['牛頓第二運動定律 F = ma', '1 N = 1 kg·m/s²；1 kgf = 9.8 N', '地震慣性力與建築總重 W 成正比'], { tone: 'blue', size: 11.5 });
@@ -299,7 +299,8 @@ export const physicsVisuals: TopicVisualMap = {
         s += polyline([[35, 52], [70, 62], [98, 70], [170, 92], [218, 145], [240, 152], [275, 160]], { tone: 'red', w: 2.6 });
         s += dot(35, 52, 4, 'red') + dot(275, 160, 4, 'blue');
         s += text(35, 42, '室外 T_o = 35℃', { tone: 'red', size: 11.5, weight: 'bold' });
-        s += text(255, 178, '室內 T_i = 25℃', { tone: 'blue', size: 11.5, weight: 'bold' });
+        s += text(272, 130, '室內', { tone: 'blue', size: 11.5, weight: 'bold', anchor: 'middle' });
+        s += text(272, 145, 'T_i = 25℃', { tone: 'blue', size: 11.5, weight: 'bold', anchor: 'middle' });
         s += arrow(22, 110, 64, 110, { tone: 'red', w: 2.2, label: '熱流 q', labelPos: 'start', labelOffset: [0, -8] });
         s += text(84, y0 + h + 16, '外磚', { anchor: 'middle', size: 11 });
         s += text(134, y0 + h + 16, 'RC 牆 (15cm)', { anchor: 'middle', size: 11 });
@@ -438,7 +439,7 @@ export const physicsVisuals: TopicVisualMap = {
         // 反射音 R
         s += arrow(200, 78, 82, 36, { tone: 'blue', w: 2, label: '反射 R (殘響)', labelPos: 'mid', labelOffset: [8, -8] });
         // 吸音 α (在多孔材料內轉為熱)
-        s += text(162, 148, '吸音係數 α = (E_吸 + E_透)/I', { tone: 'green', size: 11.5, weight: 'bold', anchor: 'end' });
+        s += text(162, 148, '吸音係數 α = (E吸 + E透) / I', { tone: 'green', size: 11.5, weight: 'bold', anchor: 'end' });
         s += arrow(200, 78, 224, 108, { tone: 'green', w: 2 });
         // 透射音 τ
         s += arrow(238, 108, 305, 128, { tone: 'amber', w: 2, label: '透射 τ (隔音 TL)', labelPos: 'end', labelOffset: [-30, 18] });

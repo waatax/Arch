@@ -1,8 +1,14 @@
 import type { PracticeItem } from '@/data/types';
 
+// Strip inline HTML / bold markers before truncating: cutting inside a tag ("<span class='…") leaves an unclosed
+// attribute that swallows the following list items when the HTML is parsed, and breaks hydration.
 function compact(text: string, max = 88) {
-  const value = text.replace(/\s+/g, ' ').trim();
-  return value.length > max ? `${value.slice(0, max)}…` : value;
+  const value = text.replace(/<[^>]*>/g, '').replace(/\*\*/g, '').replace(/\s+/g, ' ').trim();
+  if (value.length <= max) return value;
+  let cut = value.slice(0, max);
+  // Never leave an unpaired $ that would open KaTeX math mid-sentence.
+  if ((cut.match(/\$/g) ?? []).length % 2) cut = cut.slice(0, cut.lastIndexOf('$'));
+  return `${cut.trimEnd()}…`;
 }
 
 function isCalculation(question: string) {

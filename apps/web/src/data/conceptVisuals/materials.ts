@@ -1355,7 +1355,7 @@ export const materialsVisuals: TopicVisualMap = {
       svg: barChart({
         w: 520,
         h: 260,
-        categories: ['F1 最高等級 (綠建材 E1)', 'F2 中高等級 (綠建材 E2)', 'F3 基本法規合格門檻', '未改良傳統尿素膠板 (禁用)'],
+        categories: ['F1（E1）', 'F2（E2）', 'F3 法規門檻', '傳統尿素膠板'],
         series: [
           { name: '甲醛平均釋出量上限 (mg/L)', tone: 'green', values: [0.3, 0.5, 1.5, 3.2] },
         ],

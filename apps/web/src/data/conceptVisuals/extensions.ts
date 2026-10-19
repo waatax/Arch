@@ -126,16 +126,16 @@ export const extensionsVisuals: TopicVisualMap = {
           16,
           36,
           [
-            ['P1 扉頁與目錄', '個人設計宣言\n視覺索引縮圖'],
-            ['P2–5 主力專案 I', 'Hero Project\n完整平立剖與大樣'],
-            ['P6–8 核心專案 II', '數位參數或構造\n展現技術廣度'],
-            ['P9–10 實構築/手繪', '模型・競圖・速寫\n展現手作熱情'],
+            ['P1 扉頁與目錄', '個人設計宣言', '視覺索引縮圖'],
+            ['P2–5 主力專案 I', 'Hero Project', '完整平立剖與大樣'],
+            ['P6–8 核心專案 II', '數位參數或構造', '展現技術廣度'],
+            ['P9–10 實構築/手繪', '模型・競圖・速寫', '展現手作熱情'],
           ],
-          { w: 116, h: 58, gap: 20, tones: ['blue', 'red', 'amber', 'green'], size: 11.5 },
+          { w: 116, h: 64, gap: 20, tones: ['blue', 'red', 'amber', 'green'], size: 11 },
         );
         // 下方：單一專案內部版面構成
-        s += rect(20, 120, 520, 76, { tone: 'muted', fill: 'paper', w: 1.4, rx: 6 });
-        s += text(280, 138, '單一建築設計專案「四幕劇」跨頁構成法則 (Spread Rhythm)', { anchor: 'middle', weight: 'bold', size: 12.5, tone: 'ink' });
+        s += rect(20, 122, 520, 76, { tone: 'muted', fill: 'paper', w: 1.4, rx: 6 });
+        s += text(280, 140, '單一建築設計專案「四幕劇」跨頁構成法則 (Spread Rhythm)', { anchor: 'middle', weight: 'bold', size: 12.5, tone: 'ink' });
         s += pill(85, 168, '1. 基地問題與概念', 'blue', 11.5);
         s += arrow(150, 168, 172, 168, { tone: 'muted', w: 1.5, head: 6 });
         s += pill(232, 168, '2. 量體演變 Diagram', 'violet', 11.5);

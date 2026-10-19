@@ -1624,7 +1624,10 @@ export default function TopicPageLayout({ subject, topic, mappedExamQuestions, c
                     <TopicProgressiveHintDeck
                       example={we}
                       topicTitle={topic.title}
-                      questionExcerpt={we.question.slice(0, 50) + (we.question.length > 50 ? '...' : '')}
+                      questionExcerpt={(() => {
+                        const plain = we.question.replace(/<[^>]*>/g, '').replace(/\*\*/g, '').replace(/\s+/g, ' ').trim();
+                        return plain.length > 50 ? `${plain.slice(0, 50)}...` : plain;
+                      })()}
                     />
                   </div>
 
@@ -1711,21 +1714,30 @@ export default function TopicPageLayout({ subject, topic, mappedExamQuestions, c
                   key={index}
                   className="group rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 p-5 sm:p-6 shadow-xs"
                 >
-                  <button
-                    type="button"
-                    onClick={() => setShowPracticeAnswers((prev) => ({ ...prev, [index]: !prev[index] }))}
-                    className="print-keep w-full text-left font-bold leading-relaxed text-slate-900 dark:text-white flex items-start gap-2.5 cursor-pointer focus:outline-hidden"
+                  {/* Not a <button>: the question may contain MathText TTS buttons, and a button inside a button is
+                      re-parented by the HTML parser (hydration error #418). The explicit toggle below serves keyboards. */}
+                  <div
+                    onClick={(e) => {
+                      if ((e.target as HTMLElement).closest('button')) return;
+                      setShowPracticeAnswers((prev) => ({ ...prev, [index]: !prev[index] }));
+                    }}
+                    className="print-keep w-full text-left font-bold leading-relaxed text-slate-900 dark:text-white flex items-start gap-2.5 cursor-pointer"
                   >
                     <span className="mt-0.5 shrink-0 rounded-md bg-emerald-600 px-2 py-0.5 text-xs text-white shadow-2xs font-mono">
                       自我檢測 {index + 1}
                     </span>
                     <div className="flex-1">
                       <MathText content={practice.question} />
-                      <span className={`print:hidden ml-2 text-xs font-normal text-slate-500 dark:text-slate-400 ${isPracticeShown ? 'hidden' : ''}`}>
-                        (點擊展開看解析與答案)
-                      </span>
+                      <button
+                        type="button"
+                        onClick={() => setShowPracticeAnswers((prev) => ({ ...prev, [index]: !prev[index] }))}
+                        aria-expanded={isPracticeShown}
+                        className="print:hidden ml-2 text-xs font-normal text-slate-500 hover:underline dark:text-slate-400 cursor-pointer"
+                      >
+                        {isPracticeShown ? '(收合解析)' : '(點擊展開看解析與答案)'}
+                      </button>
                     </div>
-                  </button>
+                  </div>
 
                   {/* Print-only blank answer area (練習卷模式) */}
                   <div className="print-answer-box" aria-hidden="true" />

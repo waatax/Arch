@@ -357,9 +357,10 @@ export default function TopicInfographicSvgViewer({
         <line x1="80" y1="180" x2="88" y2="173" stroke="currentColor" strokeWidth="2" className="text-rose-600" markerEnd="url(#arrow-rose)" />
         <text x="96" y="175" className="fill-rose-600 text-[9px] font-mono font-bold">閉合差 ΔW</text>
 
-        <text x="20" y="230" className="fill-slate-600 dark:text-slate-400 text-[10px] leading-relaxed">
-          ★ 角度閉合條件：Σ內角 = (n - 2) × 180°<br />
-          ★ 坐標閉合差：閉合比數 = 1 / (Σ邊長 / √(ΔN² + ΔE²))
+        {/* SVG text has no <br>: an HTML <br> inside <svg> breaks the parser out of SVG and causes a hydration mismatch */}
+        <text x="20" y="230" className="fill-slate-600 dark:fill-slate-400 text-[10px]">
+          <tspan x="20">★ 角度閉合條件：Σ內角 = (n - 2) × 180°</tspan>
+          <tspan x="20" dy="14">★ 坐標閉合差：閉合比數 = 1 / (Σ邊長 / √(ΔN² + ΔE²))</tspan>
         </text>
       </g>
     </g>
@@ -503,8 +504,8 @@ export default function TopicInfographicSvgViewer({
           <rect width="220" height="70" rx="12" className="fill-purple-500/15 stroke-purple-600 dark:stroke-purple-400" strokeWidth="2" />
           <text x="110" y="24" textAnchor="middle" className="fill-purple-900 dark:fill-purple-100 text-xs font-bold font-sans">步驟 3：量綱與常識反算</text>
           <text x="110" y="42" textAnchor="middle" className="fill-purple-700 dark:fill-purple-300 text-[10px] font-mono font-bold">
-            1. 單位統一 (N/mm² = MPa)<br />
-            2. 正負號檢核 (拉+, 壓-)
+            <tspan x="110">1. 單位統一 (N/mm² = MPa)</tspan>
+            <tspan x="110" dy="14">2. 正負號檢核 (拉+, 壓-)</tspan>
           </text>
         </g>
       </g>

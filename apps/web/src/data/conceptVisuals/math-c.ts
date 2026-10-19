@@ -681,7 +681,7 @@ export const mathCVisuals: TopicVisualMap = {
         s += curve(f, (x) => Math.pow(2, x), { tone: 'blue', w: 2.3, to: 2.2 });
         s += curve(f, (x) => Math.log2(x), { tone: 'red', w: 2.3, from: 0.18, to: 4.4 });
         s += point(f, 0, 1, '(0, 1)', { tone: 'blue', dx: -36, dy: -6 });
-        s += point(f, 1, 0, '(1, 0)', { tone: 'red', dx: 6, dy: 14 });
+        s += point(f, 1, 0, '(1, 0)', { tone: 'red', dx: 6, dy: -8 });
         s += point(f, 2, 4, '(2, 4)', { tone: 'blue', dx: 6, dy: -4 });
         s += point(f, 4, 2, '(4, 2)', { tone: 'red', dx: -10, dy: -8 });
         s += text(f.X(3.5), f.Y(3.7), 'y = x', { tone: 'muted', size: 11.5, weight: 'bold' });
@@ -931,7 +931,7 @@ export const mathCVisuals: TopicVisualMap = {
         // 目標函數平行線 2x + y = k
         s += curve(f, (x) => 4 - 2 * x, { tone: 'red', w: 1.4, dash: 'dash', from: -0.3, to: 2.3 });
         s += curve(f, (x) => 7 - 2 * x, { tone: 'red', w: 2.2, from: 0.7, to: 3.8 });
-        s += point(f, 0, 0, 'O(0,0)', { tone: 'ink', dx: -34, dy: 14 });
+        s += point(f, 0, 0, undefined, { tone: 'ink' });
         s += point(f, 3, 0, 'A(3,0)', { tone: 'blue', dx: 6, dy: -8 });
         s += point(f, 2, 3, 'B(2,3) 最大值 7', { tone: 'red', dx: 8, dy: -6 });
         s += point(f, 0, 4, 'C(0,4)', { tone: 'blue', dx: 8, dy: -4 });
@@ -1200,7 +1200,7 @@ export const mathCVisuals: TopicVisualMap = {
         }
         s += curve(f1, fn1, { tone: 'red', w: 2.3, from: 0.2, to: 3.8 });
         s += axes(f1, { xTicks: [0.5, 3.5], xTickLabel: (v) => (v === 0.5 ? 'a' : 'b'), yTicks: [], xLabel: 'x', yLabel: 'y' });
-        s += text(146, 16, '黎曼和 lim Σ f(x_k)Δx = ∫_a^b f(x)dx', { anchor: 'middle', weight: 'bold', size: 12 });
+        s += text(146, 4, '黎曼和 lim Σ f(x_k)Δx = ∫_a^b f(x)dx', { anchor: 'middle', weight: 'bold', size: 12 });
         // 右：定積分正負號與實際面積
         const f2 = frame([0, 4], [-2.5, 2.5], { left: 305, top: 22, width: 225, height: 178 });
         const pts: Pt[] = [];
@@ -1212,7 +1212,7 @@ export const mathCVisuals: TopicVisualMap = {
         s += axes(f2, { xTicks: [], yTicks: [], xLabel: 'x', yLabel: 'y' });
         s += text(f2.X(1.15), f2.Y(0.9), '+A₁', { tone: 'blue', weight: 'bold', size: 13, anchor: 'middle' });
         s += text(f2.X(2.85), f2.Y(-0.9), '-A₂', { tone: 'red', weight: 'bold', size: 13, anchor: 'middle' });
-        s += text(418, 16, '定積分 = A₁ - A₂；總面積 = A₁ + |A₂|', { anchor: 'middle', weight: 'bold', size: 12 });
+        s += text(418, 4, '定積分 = A₁ - A₂；總面積 = A₁ + |A₂|', { anchor: 'middle', weight: 'bold', size: 12 });
         return svg(560, 230, s);
       })(),
       takeaways: [

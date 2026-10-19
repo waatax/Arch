@@ -385,11 +385,11 @@ export const draftingVisuals: TopicVisualMap = {
       concept: '工程字體與中文字規範',
       kind: 'chart',
       title: 'CNS 3 工程字體（長形、方形、寬形）字寬與字高比例比較圖',
-      caption: '設定基準字高 h = 100% 時，比較三種中文字體之字寬比，以及拉丁字母筆畫粗細與行距規範。',
+      caption: '設定基準字高 h = 100% 時，比較三種中文字體之字寬比；最後兩項為最小字高，以 mm × 10 顯示（3.5 mm、2.5 mm）。',
       svg: barChart({
         w: 520,
         h: 255,
-        categories: ['長形中文字寬', '方形中文字寬', '寬形中文字寬', '中文字最小字高(mm×10)', '拉丁字母最小字高(mm×10)'],
+        categories: ['長形字寬', '方形字寬', '寬形字寬', '中文最小字高', '拉丁最小字高'],
         series: [
           { name: '相對於字高 h 之百分比 (%) 或 10倍mm值', tone: 'blue', values: [75, 100, 133, 35, 25] },
         ],
@@ -1071,7 +1071,7 @@ export const draftingVisuals: TopicVisualMap = {
       })(),
       takeaways: [
         '遵循「**小尺寸在內、大尺寸在外**」鐵律，避免較長尺寸的延伸線切穿較短的尺寸線。',
-        '三層尺寸必須滿足算術閉合：$\sum \text{第一層細部尺寸} = \sum \text{第二層軸線跨距} = \text{第三層總尺寸}$。',
+        '三層尺寸必須滿足算術閉合：$\\sum \\text{第一層細部尺寸} = \\sum \\text{第二層軸線跨距} = \\text{第三層總尺寸}$。',
       ],
     },
     {
@@ -1119,7 +1119,7 @@ export const draftingVisuals: TopicVisualMap = {
         ],
       },
       takeaways: [
-        '半徑符號 **$R$** 絕對不可省略，且尺寸線只有指向圓弧的一端有箭頭；直徑 **$⌀$** 則兩端皆有箭頭。',
+        '半徑符號 **$R$** 絕對不可省略，且尺寸線只有指向圓弧的一端有箭頭；直徑 **⌀** 則兩端皆有箭頭。',
         '倒角符號 **$C$**（Chamfer）僅限用於 **45°** 倒角（如 `C3` = $3 \times 45^\circ$）；若為 $30^\circ$ 倒角則必須明確標出長度與 $30^\circ$ 角度。',
       ],
     },
@@ -1401,7 +1401,7 @@ export const draftingVisuals: TopicVisualMap = {
         s += path(`M${gx + a},${gy} A${r2(rArc)},${r2(rArc)} 0 0 1 ${r2(gx + a * phi)},${my}`, { tone: 'red', w: 1.8 });
         s += dim(gx, gy, gx + a, gy, '1', { offset: -14, tone: 'green' });
         s += dim(gx + a, gy, gx + a * phi, gy, '0.618', { offset: -14, tone: 'amber' });
-        s += text(gx + (a * phi) / 2, 26, '黃金矩形 1 : φ (φ = (1+√5)/2 ≈ 1.618)', { anchor: 'middle', weight: 'bold', size: 13 });
+        s += text(gx + (a * phi) / 2, 16, '黃金矩形 1 : φ (φ = (1+√5)/2 ≈ 1.618)', { anchor: 'middle', weight: 'bold', size: 13 });
         return svg(560, 224, s);
       })(),
       takeaways: [
@@ -1538,7 +1538,7 @@ export const draftingVisuals: TopicVisualMap = {
         const f1A: Pt = [pA[0] + nx * 32, pA[1] + ny * 32];
         const f1B: Pt = [pB[0] + nx * 32, pB[1] + ny * 32];
         s += line(f1A[0] - 12, f1A[1] - 8, f1B[0] + 12, f1B[1] + 8, { tone: 'amber', dash: 'center', w: 1.8 });
-        s += text(f1A[0] - 8, f1A[1] - 12, '基準線 H/A', { tone: 'amber', size: 11.5, weight: 'bold' });
+        s += text(f1B[0] + 16, f1B[1] + 16, '基準線 H/A', { tone: 'amber', size: 11.5, weight: 'bold' });
 
         // 輔助視圖矩形（真形 True Shape）：沿法向推 52 與 52+48(W)
         const a1: Pt = [pA[0] + nx * 52, pA[1] + ny * 52];
