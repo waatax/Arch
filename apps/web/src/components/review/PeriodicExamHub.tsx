@@ -21,7 +21,8 @@ import {
   Compass, 
   Layers, 
   Target, 
-  Trophy
+  Trophy,
+  FileText
 } from 'lucide-react';
 
 export default function PeriodicExamHub() {
@@ -189,6 +190,85 @@ export default function PeriodicExamHub() {
         </div>
       </section>
 
+      {/* ── 🖨️ 整理完畢・A4 實體可列印段考複習講義下載與速覽專區 ── */}
+      <section className="rounded-3xl border-2 border-blue-200 dark:border-blue-800/80 bg-white dark:bg-slate-900 p-6 sm:p-8 space-y-5 shadow-sm">
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-slate-200 dark:border-slate-800 pb-4">
+          <div className="space-y-1">
+            <div className="flex flex-wrap items-center gap-2">
+              <span className="rounded-full bg-blue-600 px-3 py-0.5 text-xs font-mono font-bold text-white">
+                出版級 A4 紙本排版
+              </span>
+              <span className="text-xs font-bold text-blue-600 dark:text-blue-400">
+                可直接瀏覽 / 存為 PDF / 下載離線 HTML
+              </span>
+            </div>
+            <h2 className="font-serif text-xl sm:text-2xl font-bold text-slate-900 dark:text-white flex items-center gap-2">
+              <span>🖨️ 整理完畢・全科可列印段考衝刺講義下載與速覽專區</span>
+            </h2>
+            <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-300">
+              每份講義均符合實體出版標準：具備<strong>學生填寫欄、考前破題心法、核心概念與向量圖解、逐步 SOP 示範題、名校段考真題、公式卡、均一檢核點與手寫錯題筆記欄</strong>。
+            </p>
+          </div>
+          
+          <button
+            onClick={handlePrint}
+            className="inline-flex items-center gap-2 rounded-xl bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 text-xs font-bold transition-all shadow-xs self-start sm:self-auto"
+          >
+            <Printer className="h-4 w-4" />
+            <span>批次列印當前段考講義</span>
+          </button>
+        </div>
+
+        {/* 快速導覽卡片格點 */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3.5">
+          {gradePlans.slice(0, 9).map((plan) => (
+            <div
+              key={plan.id}
+              className="rounded-2xl border border-slate-200 dark:border-slate-800 bg-slate-50/70 dark:bg-slate-800/40 p-4 space-y-3 hover:border-blue-400 dark:hover:border-blue-500 transition-all flex flex-col justify-between"
+            >
+              <div className="space-y-1.5">
+                <div className="flex items-center justify-between text-xs">
+                  <span className="rounded-md bg-blue-100 dark:bg-blue-900/60 text-blue-800 dark:text-blue-200 font-mono font-bold px-2 py-0.5 text-[11px]">
+                    {plan.subjectName}
+                  </span>
+                  <span className="text-slate-500 font-mono text-[11px]">
+                    {plan.periodName.replace('（期中考一）', '').replace('（期中考二）', '').replace('（期末考）', '')}
+                  </span>
+                </div>
+                <h3 className="font-serif font-bold text-sm text-slate-900 dark:text-white line-clamp-1">
+                  {plan.subjectName} {plan.periodName}
+                </h3>
+                <p className="text-[11px] text-slate-500 dark:text-slate-400 line-clamp-2 leading-relaxed">
+                  {plan.examScope}
+                </p>
+                <div className="flex items-center gap-2 text-[10px] font-mono text-slate-400">
+                  <span>{plan.knowledgePoints.length} 個圖解概念</span>
+                  <span>·</span>
+                  <span>{plan.crossReferencedQuestions.length} 道 SOP 示範題</span>
+                </div>
+              </div>
+
+              <div className="pt-2 border-t border-slate-200/60 dark:border-slate-700/60 flex items-center gap-2">
+                <Link
+                  href={`/review/periodic-exams/${plan.id}/`}
+                  className="flex-1 inline-flex items-center justify-center gap-1.5 rounded-xl bg-white dark:bg-slate-900 hover:bg-blue-50 dark:hover:bg-blue-950/40 text-blue-700 dark:text-blue-300 border border-slate-300 dark:border-slate-700 px-3 py-1.5 text-xs font-bold transition-all"
+                >
+                  <FileText className="h-3.5 w-3.5" />
+                  <span>📄 開啟 A4 實體講義</span>
+                </Link>
+                <Link
+                  href={`/review/periodic-exams/${plan.id}/`}
+                  className="inline-flex items-center justify-center gap-1 rounded-xl bg-blue-600 hover:bg-blue-700 text-white px-2.5 py-1.5 text-xs font-bold transition-all shadow-2xs"
+                  title="前往該頁面直接列印或另存為 A4 PDF"
+                >
+                  <Printer className="h-3.5 w-3.5" />
+                </Link>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
       {/* ── 篩選過濾列 ── */}
       <section className="space-y-4">
         {/* 年級選擇標籤 */}
@@ -298,22 +378,30 @@ export default function PeriodicExamHub() {
               type="text"
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              placeholder="搜尋段考知識點、公式、考題..."
-              className="w-full rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 pl-9 pr-4 py-2 text-xs focus:outline-hidden focus:ring-2 focus:ring-blue-500"
+              placeholder="搜尋段考知識點、真題關鍵字..."
+              className="w-full rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 pl-9 pr-4 py-2 text-xs focus:border-blue-500 focus:outline-hidden dark:text-white"
             />
           </div>
 
-          <div className="flex flex-wrap items-center gap-1.5 w-full text-xs">
-            <span className="text-slate-400 font-mono text-[11px] mr-1">科目:</span>
+          <div className="flex flex-wrap items-center gap-1.5 w-full">
+            <button
+              onClick={() => setSelectedSubject('all')}
+              className={`rounded-xl px-2.5 py-1 text-[11px] transition-colors ${
+                selectedSubject === 'all'
+                  ? 'bg-blue-600 text-white font-bold'
+                  : 'bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400 hover:bg-slate-200'
+              }`}
+            >
+              全部科目
+            </button>
             {[
-              { slug: 'all', name: '全科' },
-              { slug: 'materials', name: '材料與試驗 (專一)' },
-              { slug: 'surveying', name: '測量實習 (專二)' },
+              { slug: 'materials', name: '材料與試驗' },
+              { slug: 'surveying', name: '工程測量實習' },
               { slug: 'math-c', name: '數學 C' },
-              { slug: 'english', name: '英語文' },
-              { slug: 'chinese', name: '國語文' },
               { slug: 'mechanics', name: '工程力學' },
-              { slug: 'drafting', name: '製圖實習' },
+              { slug: 'drafting', name: '建築製圖' },
+              { slug: 'english', name: '英文' },
+              { slug: 'chinese', name: '國文' },
             ].map((sub) => (
               <button
                 key={sub.slug}
@@ -371,11 +459,11 @@ export default function PeriodicExamHub() {
 
                   <div className="flex flex-wrap items-center gap-2 self-end sm:self-center">
                     <Link
-                      href={`/review/periodic-exams/${plan.id}`}
-                      className="inline-flex items-center gap-1.5 rounded-xl bg-blue-600 hover:bg-blue-700 text-white px-3 py-1.5 text-xs font-bold transition-all shadow-xs"
+                      href={`/review/periodic-exams/${plan.id}/`}
+                      className="inline-flex items-center gap-1.5 rounded-xl bg-blue-600 hover:bg-blue-700 text-white px-3.5 py-1.5 text-xs font-bold transition-all shadow-xs"
                     >
-                      <BookOpen className="h-3.5 w-3.5" />
-                      <span>全篇圖解講義 ➜</span>
+                      <FileText className="h-3.5 w-3.5" />
+                      <span>🖨️ A4 實體可列印講義 (PDF) ➜</span>
                     </Link>
                     <span className="text-[11px] font-mono text-indigo-600 dark:text-indigo-400 bg-indigo-50 dark:bg-indigo-950/60 px-2.5 py-1 rounded-xl border border-indigo-200 dark:border-indigo-800/60 hidden sm:inline-block">
                       {plan.targetSchool}
