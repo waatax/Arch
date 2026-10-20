@@ -887,3 +887,507 @@ export function findOutlineItemBySubject(subjectSlug: string, code: string): { o
   const hit = findOutlineItem(outline, code);
   return hit ? { outline, ...hit } : null;
 }
+
+/** 108 課綱核心素養三面向九項目定義 */
+export interface CompetencyItem {
+  code: string;
+  label: string;
+  application: string;
+}
+
+export interface CompetencyAspect {
+  code: 'A' | 'B' | 'C';
+  title: string;
+  items: CompetencyItem[];
+}
+
+export interface Subject108Competency {
+  subjectSlug: string;
+  subjectTitle: string;
+  inquiryRole: string;
+  aspects: CompetencyAspect[];
+  learningPerformances: string[];
+  evaluationFocus: string[];
+}
+
+export const SUBJECT_108_COMPETENCIES: Record<string, Subject108Competency> = {
+  mechanics: {
+    subjectSlug: 'mechanics',
+    subjectTitle: '工程力學',
+    inquiryRole: '結構安全與物理平衡之數學模型建構者',
+    aspects: [
+      {
+        code: 'A',
+        title: '自主行動',
+        items: [
+          { code: 'A2', label: '系統思考與問題解決', application: '自自由體圖抽象出平衡方程式，解析靜定梁、桁架與複合應力狀態。' },
+          { code: 'A3', label: '規劃執行與創新應變', application: '針對非對稱斷面與偏心受壓構件，規劃合適計算路徑並評估破壞極限。' },
+        ],
+      },
+      {
+        code: 'B',
+        title: '溝通互動',
+        items: [
+          { code: 'B1', label: '符號運用與溝通表達', application: '精準使用向量分解、剪力圖 (SFD) 與彎矩圖 (BMD) 表達內力分布。' },
+        ],
+      },
+      {
+        code: 'C',
+        title: '社會參與',
+        items: [
+          { code: 'C1', label: '道德實踐與公民意識', application: '深刻理解安全係數背後的人命責任，落實結構耐震安全法規要求。' },
+        ],
+      },
+    ],
+    learningPerformances: [
+      '能依據真實結構受力繪製正確無遺漏之自由體圖 (FBD)。',
+      '能建立聯立平衡方程組並準確求解支承反力與桿件內力。',
+      '能運用微積分斜率與面積法快速繪製剪力與彎矩圖。',
+    ],
+    evaluationFocus: [
+      '統測情境化力學題：非單純公式套用，重在幾何關係辨識與方向正負號判定。',
+      '跨概念整合：斷面幾何性質 (I, Q, S) 與梁內應力分布 (σ, τ) 之連鎖推導。',
+    ],
+  },
+  materials: {
+    subjectSlug: 'materials',
+    subjectTitle: '工程材料',
+    inquiryRole: '微觀物理化學構造至巨觀工程品質之把關者',
+    aspects: [
+      {
+        code: 'A',
+        title: '自主行動',
+        items: [
+          { code: 'A2', label: '系統思考與問題解決', application: '建立「配比—水化反應—孔隙微觀—強度耐久性」因果關係鏈。' },
+        ],
+      },
+      {
+        code: 'B',
+        title: '溝通互動',
+        items: [
+          { code: 'B2', label: '科技資訊與數據分析', application: '解讀 CNS/ASTM 檢驗報告、骨材級配曲線與應力應變統計圖表。' },
+        ],
+      },
+      {
+        code: 'C',
+        title: '社會參與',
+        items: [
+          { code: 'C1', label: '道德實踐與公民意識', application: '掌握循環經濟與低碳水泥、再生綠建材評估，推動營建減碳。' },
+        ],
+      },
+    ],
+    learningPerformances: [
+      '能依據工程環境選擇適當的水泥種類、外加劑與配比參數。',
+      '能熟練敘述坍度、抗壓、凝結時間等 CNS 國家標準檢驗步驟與容許誤差。',
+      '能診斷混凝土裂縫、白華、鋼筋腐蝕與中性化之成因與預防對策。',
+    ],
+    evaluationFocus: [
+      '標準試驗程序與儀器規格細節（維卡儀、坍度錐、洛杉磯磨損機）。',
+      '材料性能與環境耐久性配對題，強調因果機制而非硬背數據。',
+    ],
+  },
+  surveying: {
+    subjectSlug: 'surveying',
+    subjectTitle: '測量實習',
+    inquiryRole: '空間幾何數據獲取、誤差平差與工程放樣之實踐者',
+    aspects: [
+      {
+        code: 'A',
+        title: '自主行動',
+        items: [
+          { code: 'A3', label: '規劃執行與精準度控管', application: '規劃導線與水準測線網，控制閉合比數與觀測誤差傳播。' },
+        ],
+      },
+      {
+        code: 'B',
+        title: '溝通互動',
+        items: [
+          { code: 'B1', label: '符號運用與坐標轉譯', application: '運用方位角、象限角與坐標正反算，實現二維及三維空間數據轉換。' },
+        ],
+      },
+      {
+        code: 'C',
+        title: '社會參與',
+        items: [
+          { code: 'C2', label: '人際關係與團隊合作', application: '外業觀測團隊分工（觀測手、記錄手、標尺手），確保數據零抄錯。' },
+        ],
+      },
+    ],
+    learningPerformances: [
+      '能熟練操作水準儀、經緯儀、全測站儀並完成校正檢驗。',
+      '能計算高程閉合差並運用距離比例法進行水準測量平差。',
+      '能編製導線計算表，依經緯儀法或羅盤儀法平差並計算坐標面積。',
+    ],
+    evaluationFocus: [
+      '水準與導線計算表實作題：連續計算法、誤差分配正負號與有效位數。',
+      '儀器三軸誤差（視準軸、橫軸、水準管軸）檢驗與正倒鏡消差原理。',
+    ],
+  },
+  drafting: {
+    subjectSlug: 'drafting',
+    subjectTitle: '製圖實習',
+    inquiryRole: '空間想像表徵、CNS 工程標準與 BIM 數位模型之表達者',
+    aspects: [
+      {
+        code: 'A',
+        title: '自主行動',
+        items: [
+          { code: 'A2', label: '系統思考與空間表徵', application: '掌握立體物在第三角投影視圖間之「長對正、高平齊、寬相等」。' },
+        ],
+      },
+      {
+        code: 'B',
+        title: '溝通互動',
+        items: [
+          { code: 'B1', label: '符號運用與圖面溝通', application: '落實 CNS 11567 建築製圖規範，精準標註尺寸層級與材料圖例。' },
+          { code: 'B3', label: '藝術涵養與美感素養', application: '掌握建築圖面線條粗細韻律、版面留白與一點/兩點透視構圖美感。' },
+        ],
+      },
+      {
+        code: 'C',
+        title: '社會參與',
+        items: [
+          { code: 'C2', label: '人際關係與團隊合作', application: '依循建築技術規則與施工圖繪製規範，提供工地無歧義施工依據。' },
+        ],
+      },
+    ],
+    learningPerformances: [
+      '能依據平面圖、立面圖互求剖面圖，並正確繪出梁柱門窗粉刷線。',
+      '能熟練標註總尺寸、軸線尺寸與細部開口尺寸之三階層標註系統。',
+      '能運用一點透視與兩點透視作圖法，繪製建築室內外透視圖。',
+    ],
+    evaluationFocus: [
+      'CNS 11567 線型、線寬、圖例代碼與門窗符號開啟方向判讀。',
+      '視圖投影補線、剖面圖構造切面線與可見輪廓線之深淺層次。',
+    ],
+  },
+  'math-c': {
+    subjectSlug: 'math-c',
+    subjectTitle: '數學 (C)',
+    inquiryRole: '工程量化分析、邏輯推理與跨領域問題解決之數理核心',
+    aspects: [
+      {
+        code: 'A',
+        title: '自主行動',
+        items: [
+          { code: 'A2', label: '系統思考與問題解決', application: '將幾何、三角、坐標、向量與微積分模型相互融會貫通。' },
+        ],
+      },
+      {
+        code: 'B',
+        title: '溝通互動',
+        items: [
+          { code: 'B1', label: '符號運用與代數圖形轉譯', application: '在代數式、函數圖形、向量坐標與數值表間進行無障礙雙向轉譯。' },
+        ],
+      },
+      {
+        code: 'C',
+        title: '社會參與',
+        items: [
+          { code: 'C1', label: '理性思維與實事求是', application: '以嚴謹之充要條件與判別式，檢驗最佳化工程方案之可行性。' },
+        ],
+      },
+    ],
+    learningPerformances: [
+      '能運用正弦定理、餘弦定理與和差角公式求解任意三角形與力三角形。',
+      '能運用向量內積、正射影與柯西不等式解決長度、夾角與極值問題。',
+      '能透過導數切線斜率判斷函數單調性與極值，並用定積分計算面積。',
+    ],
+    evaluationFocus: [
+      '統測跨單元素養題：三角函數結合向量、二次曲線結合切線方程。',
+      '幾何圖形與代數條件之轉譯，避免公式盲目套用，注重圖形幾何意義。',
+    ],
+  },
+  physics: {
+    subjectSlug: 'physics',
+    subjectTitle: '物理',
+    inquiryRole: '物質運動規律、熱聲光電建築物理環境之科學探究者',
+    aspects: [
+      {
+        code: 'A',
+        title: '自主行動',
+        items: [
+          { code: 'A2', label: '系統思考與因果分析', application: '運用牛頓定律、能量守恆與動量守恆解析結構震動與衝擊現象。' },
+        ],
+      },
+      {
+        code: 'B',
+        title: '溝通互動',
+        items: [
+          { code: 'B1', label: '符號運用與量綱檢核', application: '運用物理單位量綱分析 (SI Units) 驗證推導結果之合理性。' },
+        ],
+      },
+      {
+        code: 'C',
+        title: '社會參與',
+        items: [
+          { code: 'C1', label: '環境意識與永續發展', application: '分析建築熱傳導、熱阻 R 值與室內節能採光之物理策略。' },
+        ],
+      },
+    ],
+    learningPerformances: [
+      '能分析外力與物體運動之關係，計算摩擦力、斜面運動與簡諧震動。',
+      '能解釋建築熱傳遞三方式（傳導、對流、輻射）並計算複合牆熱流密度。',
+      '能運用光線折射定律與聲波反射原理解析室內採光與殘響時間。',
+    ],
+    evaluationFocus: [
+      '生活與工程物理情境題，考驗現象因果解釋與變因控制思維。',
+    ],
+  },
+  chemistry: {
+    subjectSlug: 'chemistry',
+    subjectTitle: '化學',
+    inquiryRole: '材料微觀分子、化學反應速率與環境耐久性之分子工程師',
+    aspects: [
+      {
+        code: 'A',
+        title: '自主行動',
+        items: [
+          { code: 'A2', label: '微觀粒子與巨觀現象連結', application: '由原子核外電子排布與化學鍵，解釋建材之物理與化學穩定性。' },
+        ],
+      },
+      {
+        code: 'B',
+        title: '溝通互動',
+        items: [
+          { code: 'B2', label: '科技資訊與安全規範', application: '辨識建材 SDS 安全資料表、VOC 揮發性有機物逸散與法規限量。' },
+        ],
+      },
+      {
+        code: 'C',
+        title: '社會參與',
+        items: [
+          { code: 'C1', label: '環境保護與永續化學', application: '掌握混凝土碳化中性化機制與鋼筋陰極電化學防蝕工程原理。' },
+        ],
+      },
+    ],
+    learningPerformances: [
+      '能寫出水泥水化主要熟料化合物之反應式並解釋 C-S-H 膠體硬化。',
+      '能解析電化學氧化還原反應，說明鋼筋鏽蝕電池反應與陰極保護法。',
+      '能解釋高分子材料之交聯結構、玻璃轉移溫度與耐候老化機制。',
+    ],
+    evaluationFocus: [
+      '生活建材化學、綠建材甲醛與 TVOC 檢測標準、大氣腐蝕環境防護。',
+    ],
+  },
+  chinese: {
+    subjectSlug: 'chinese',
+    subjectTitle: '國語文',
+    inquiryRole: '文本批判思辨、文化空間語意與專業工程溝通之素養展現者',
+    aspects: [
+      {
+        code: 'A',
+        title: '自主行動',
+        items: [
+          { code: 'A1', label: '身心素質與自我省思', application: '透過經典文學空間描寫與人文哲思，培養細膩的人文關懷情操。' },
+        ],
+      },
+      {
+        code: 'B',
+        title: '溝通互動',
+        items: [
+          { code: 'B1', label: '符號運用與精準表意', application: '熟練公文函件「主旨、說明、辦法」三段式結構與工程契約語彙。' },
+          { code: 'B3', label: '藝術涵養與美學體驗', application: '品味傳統園林借景、對景之文學造境與東方空間美學哲學。' },
+        ],
+      },
+      {
+        code: 'C',
+        title: '社會參與',
+        items: [
+          { code: 'C3', label: '多元文化與當代思辨', application: '從古今文獻中提取批判思維，針對當代居住權與文資保存展開論述。' },
+        ],
+      },
+    ],
+    learningPerformances: [
+      '能讀懂並分析非連續性文本（圖表、規範、契約條款）之關鍵資訊。',
+      '能撰寫合乎國家公文格式標準之工程公務函與簽呈。',
+      '能運用條理分明之論說文「正反合」架構進行建築專案申述。',
+    ],
+    evaluationFocus: [
+      '統測閱讀理解長文、非連續文本圖表題、實用公文與邏輯推理。',
+    ],
+  },
+  english: {
+    subjectSlug: 'english',
+    subjectTitle: '英語文',
+    inquiryRole: '國際工程接軌、雙語圖說檢索與跨文化工程合作之橋樑',
+    aspects: [
+      {
+        code: 'A',
+        title: '自主行動',
+        items: [
+          { code: 'A2', label: '系統思考與語境推理', application: '由上下文線索 (Context Clues) 與邏輯轉折詞快速推論篇章主旨。' },
+        ],
+      },
+      {
+        code: 'B',
+        title: '溝通互動',
+        items: [
+          { code: 'B1', label: '符號運用與雙語轉譯', application: '掌握構詞法 (Prefix/Root/Suffix)，精準掌握建築工程專業術語。' },
+          { code: 'B2', label: '科技資訊與國際規格查閱', application: '讀懂國際工程圖說標籤、建築規範與商務工程 Email/RFI。' },
+        ],
+      },
+      {
+        code: 'C',
+        title: '社會參與',
+        items: [
+          { code: 'C3', label: '國際理解與全球公民', application: '理解跨國建築團隊溝通禮儀、永續綠建築 LEED 國際認證準則。' },
+        ],
+      },
+    ],
+    learningPerformances: [
+      '能靈活運用統測核心 4500 單字及建築營建高頻專業名詞。',
+      '能運用掠讀 (Skimming) 與掃讀 (Scanning) 迅速擷取技術文本數據。',
+      '能完成非選擇題之英漢互譯，語序通順且動詞時態與被動態精確。',
+    ],
+    evaluationFocus: [
+      '統測圖表題、科技生活情境閱讀題、職場工程對話與非選翻譯。',
+    ],
+  },
+  history: {
+    subjectSlug: 'history',
+    subjectTitle: '歷史',
+    inquiryRole: '時空演變脈絡、文化資產價值與地域建築風貌之歷史鑑賞家',
+    aspects: [
+      {
+        code: 'A',
+        title: '自主行動',
+        items: [
+          { code: 'A2', label: '歷史因果與時空變遷', application: '分析政權更迭、產業經濟與防衛需求對城市與建築構造之塑造。' },
+        ],
+      },
+      {
+        code: 'B',
+        title: '溝通互動',
+        items: [
+          { code: 'B1', label: '史料判讀與證據鏈', application: '解讀古地圖、老照片、測繪圖面與碑文，還原空間歷史原貌。' },
+        ],
+      },
+      {
+        code: 'C',
+        title: '社會參與',
+        items: [
+          { code: 'C1', label: '文化資產保存與傳承', application: '深化文化資產保存法四階段工序，平衡現代開發與歷史記憶。' },
+        ],
+      },
+    ],
+    learningPerformances: [
+      '能辨析台灣六大歷史時期之建築風格與構造特徵（荷西、清領、日治至戰後）。',
+      '能說明中國傳統木構造大木作、斗拱與材分制之力學與禮制特點。',
+      '能概述西洋古典柱式、哥德尖拱飛扶壁至現代主義形隨機能之演進。',
+    ],
+    evaluationFocus: [
+      '空間史料判讀題、建築風格辨析與歷史因果脈絡推論。',
+    ],
+  },
+  geography: {
+    subjectSlug: 'geography',
+    subjectTitle: '地理',
+    inquiryRole: '人地互動關係、空間地理資訊與環境風土選址之規劃師',
+    aspects: [
+      {
+        code: 'A',
+        title: '自主行動',
+        items: [
+          { code: 'A2', label: '空間分析與系統思考', application: '連結氣候地形、水文地質與微氣候，進行被動式綠建築適地規劃。' },
+        ],
+      },
+      {
+        code: 'B',
+        title: '溝通互動',
+        items: [
+          { code: 'B2', label: 'GIS 圖資與地圖判讀', application: '操作 GIS 向量網格疊圖與環域分析，評估基地淹水與斷層坡地風險。' },
+        ],
+      },
+      {
+        code: 'C',
+        title: '社會參與',
+        items: [
+          { code: 'C1', label: '國土計畫與國土永續', application: '依循國土計畫四大功能分區，推動低衝擊開發 (LID) 與海綿城市。' },
+        ],
+      },
+    ],
+    learningPerformances: [
+      '能運用等高線圖判讀地形起伏、山脊山谷走向與坡度計算。',
+      '能說明都市土地利用模式（同心圓、扇形、多核心）與競租曲線。',
+      '能結合太陽仰角與日照軌跡，計算建築適當遮陽板深度與開口朝向。',
+    ],
+    evaluationFocus: [
+      '地圖圖表判讀、空間區位決策推論與自然災害環境調適策略。',
+    ],
+  },
+  civics: {
+    subjectSlug: 'civics',
+    subjectTitle: '公民與社會',
+    inquiryRole: '法規制度階層、居住正義思辨與營建職場倫理之公民實踐者',
+    aspects: [
+      {
+        code: 'A',
+        title: '自主行動',
+        items: [
+          { code: 'A2', label: '制度誘因與法律思維', application: '釐清憲法、法律、法規命令之效力層級，掌握建築法規體系。' },
+        ],
+      },
+      {
+        code: 'B',
+        title: '溝通互動',
+        items: [
+          { code: 'B1', label: '公共溝通與利益衡平', application: '在都市更新與公共工程公聽會中，理性論述公益與私益之衡平。' },
+        ],
+      },
+      {
+        code: 'C',
+        title: '社會參與',
+        items: [
+          { code: 'C1', label: '職場安全與工程倫理', application: '落實營造工程職業安全衛生法規，恪遵監造查驗與專業倫理。' },
+          { code: 'C2', label: '社會正義與人權保障', application: '實踐無障礙通用設計規範，保障身心障礙者與高齡者之空間平權。' },
+        ],
+      },
+    ],
+    learningPerformances: [
+      '能解釋行政程序法在建照申請、拆除執照與罰鍰處分中之應用。',
+      '能分析營建工程合約之民法承攬關係、保固責任與爭議處理程序。',
+      '能評析我國 2050 淨零碳排路徑中建築能效與碳定價政策措施。',
+    ],
+    evaluationFocus: [
+      '法規權利義務關係情境題、工程爭議仲裁與公共政策公民思辨。',
+    ],
+  },
+  extensions: {
+    subjectSlug: 'extensions',
+    subjectTitle: '建築科延伸與作品集',
+    inquiryRole: '專案實作整合、參數化設計與大學建築系生涯銜接之領航者',
+    aspects: [
+      {
+        code: 'A',
+        title: '自主行動',
+        items: [
+          { code: 'A3', label: '規劃執行與專題探究', application: '自主完成從概念發想、基地調查、方案設計到實體模型之完整週期。' },
+        ],
+      },
+      {
+        code: 'B',
+        title: '溝通互動',
+        items: [
+          { code: 'B3', label: '作品集編排與設計論述', application: '編排高說服力之建築作品集，融合手繪草圖、CAD/BIM 圖面與論述。' },
+        ],
+      },
+      {
+        code: 'C',
+        title: '社會參與',
+        items: [
+          { code: 'C2', label: '跨領域協同設計', application: '結合結構工程、環境永續與社會人文需求，發展全方位的建築解方。' },
+        ],
+      },
+    ],
+    learningPerformances: [
+      '能運用 Grasshopper 或 3D 參數化工具進行日光百葉與形態生成演算。',
+      '能撰寫具備批判意識之建築設計概念說明書 (Design Statement)。',
+      '能規劃建築師與土木技師專技高考歷程，樹立終身專業學習目標。',
+    ],
+    evaluationFocus: [
+      '專題實作表現、作品集圖文編排邏輯、跨領域概念整合與口頭簡報表達。',
+    ],
+  },
+};
+

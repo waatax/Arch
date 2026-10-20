@@ -293,6 +293,18 @@ export default function TopicPageLayout({ subject, topic, mappedExamQuestions, c
     setShowSolutionSteps((prev) => ({ ...prev, [index]: !prev[index] }));
   };
 
+  const [completedIterations, setCompletedIterations] = useState<Record<number, boolean>>({});
+  const toggleIterationProgress = (r: number) => {
+    setCompletedIterations((prev) => {
+      const next = { ...prev, [r]: !prev[r] };
+      if (next[r]) {
+        if (soundEnabled) soundEngine.playCorrectChime();
+        addExp(15);
+      }
+      return next;
+    });
+  };
+
   const jumpTo = (id: string) => {
     document.getElementById(id)?.scrollIntoView({ behavior: 'smooth', block: 'start' });
   };
@@ -1186,50 +1198,137 @@ export default function TopicPageLayout({ subject, topic, mappedExamQuestions, c
 
       <section id="seven-iterations" className="lesson-deferred-section scroll-mt-24 space-y-5" aria-labelledby="seven-iterations-title">
         <div className="space-y-2">
-          <div className="flex flex-wrap items-center gap-2">
-            <span className="rounded-full bg-violet-600 px-3 py-1 text-xs font-bold text-white">七輪深度精熟</span>
-            <span className="rounded-full border border-emerald-300 bg-emerald-50 px-3 py-1 text-xs font-bold text-emerald-800 dark:border-emerald-800 dark:bg-emerald-950/50 dark:text-emerald-200">每輪新增教學單元 ≥ 10%</span>
-            <span className="rounded-full border border-blue-300 bg-blue-50 px-3 py-1 text-xs font-bold text-blue-800 dark:border-blue-800 dark:bg-blue-950/50 dark:text-blue-200">每輪 5 項品質優化</span>
+          <div className="flex flex-wrap items-center justify-between gap-2">
+            <div className="flex flex-wrap items-center gap-2">
+              <span className="rounded-full bg-violet-600 px-3 py-1 text-xs font-bold text-white">七輪深度精熟</span>
+              <span className="rounded-full border border-emerald-300 bg-emerald-50 px-3 py-1 text-xs font-bold text-emerald-800 dark:border-emerald-800 dark:bg-emerald-950/50 dark:text-emerald-200">每輪新增教學單元 ≥ 10%</span>
+              <span className="rounded-full border border-blue-300 bg-blue-50 px-3 py-1 text-xs font-bold text-blue-800 dark:border-blue-800 dark:bg-blue-950/50 dark:text-blue-200">每輪 5 項品質優化</span>
+            </div>
+            <span className="font-mono text-xs font-bold text-violet-700 dark:text-violet-300 bg-violet-50 dark:bg-violet-950/60 border border-violet-200 dark:border-violet-800 px-3 py-1 rounded-full">
+              七輪進度：{Object.values(completedIterations).filter(Boolean).length} / 7 輪完成
+            </span>
           </div>
           <h2 id="seven-iterations-title" className="font-serif text-2xl font-bold text-slate-900 dark:text-white">從看懂到能遷移：七次有證據的深化</h2>
           <p className="max-w-3xl text-sm leading-7 text-slate-600 dark:text-slate-400">
             七輪不是重複複習：依序補先備知識、概念網、推導、多重表徵、錯誤診斷、歷屆題變式與長期精熟。每輪皆有新增知識、引導問題及五項品質檢核。
           </p>
         </div>
+
+        {/* PDCA 雙軌品質循環卡 (Plan-Do-Check-Act 閉環自律學習系統) */}
+        <div className="rounded-2xl border border-violet-200/90 dark:border-violet-900/60 bg-gradient-to-r from-violet-50/60 via-white to-blue-50/40 dark:from-violet-950/20 dark:via-slate-900 dark:to-blue-950/20 p-4 sm:p-5 space-y-3">
+          <div className="flex flex-wrap items-center justify-between gap-2 border-b border-violet-100 dark:border-violet-900/40 pb-2.5">
+            <span className="text-xs font-mono font-bold text-violet-800 dark:text-violet-300 flex items-center gap-1.5">
+              <span>🔄</span> PDCA 雙軌品質精進循環（從 108 課綱條目到統測高階遷移）
+            </span>
+            <span className="text-[11px] font-mono text-slate-500 dark:text-slate-400">Plan ➜ Do ➜ Check ➜ Act</span>
+          </div>
+          <div className="grid gap-2.5 sm:grid-cols-4 text-xs">
+            <div className="rounded-xl bg-white/90 dark:bg-slate-900/90 p-3 border border-slate-200 dark:border-slate-800 space-y-1">
+              <span className="font-mono font-bold text-blue-700 dark:text-blue-300 block">P · Plan 計畫輸入</span>
+              <p className="text-slate-600 dark:text-slate-400">R1 先備知識精確定義 ➜ R2 概念機制因果網。</p>
+            </div>
+            <div className="rounded-xl bg-white/90 dark:bg-slate-900/90 p-3 border border-slate-200 dark:border-slate-800 space-y-1">
+              <span className="font-mono font-bold text-teal-700 dark:text-teal-300 block">D · Do 執行建模</span>
+              <p className="text-slate-600 dark:text-slate-400">R3 原理逐步推導 ➜ R4 多重表徵（插圖/圖表/對照表）。</p>
+            </div>
+            <div className="rounded-xl bg-white/90 dark:bg-slate-900/90 p-3 border border-slate-200 dark:border-slate-800 space-y-1">
+              <span className="font-mono font-bold text-amber-700 dark:text-amber-300 block">C · Check 檢核診斷</span>
+              <p className="text-slate-600 dark:text-slate-400">R5 認知錯誤分類、最小反例校正與陷阱防禦。</p>
+            </div>
+            <div className="rounded-xl bg-white/90 dark:bg-slate-900/90 p-3 border border-slate-200 dark:border-slate-800 space-y-1">
+              <span className="font-mono font-bold text-rose-700 dark:text-rose-300 block">A · Act 校正遷移</span>
+              <p className="text-slate-600 dark:text-slate-400">R6 歷屆變式題型 ➜ R7 跨概念綜合遷移與長期精熟。</p>
+            </div>
+          </div>
+        </div>
+
         <div className="space-y-3">
-          {iterationPacks.map((pack) => (
-            <details key={pack.iteration} className="group rounded-2xl border border-violet-200 bg-white shadow-xs open:border-violet-400 dark:border-violet-900 dark:bg-slate-900">
-              <summary className="flex min-h-14 cursor-pointer list-none items-center gap-3 p-4 sm:p-5">
-                <span className="flex size-9 shrink-0 items-center justify-center rounded-xl bg-violet-600 font-mono text-sm font-bold text-white">R{pack.iteration}</span>
-                <span className="min-w-0 flex-1">
-                  <span className="block font-bold text-slate-900 dark:text-white">{pack.title}</span>
-                  <span className="mt-0.5 block text-xs leading-5 text-slate-500 dark:text-slate-400">{pack.purpose}</span>
-                </span>
-                <span className="hidden rounded-full bg-emerald-100 px-2.5 py-1 text-[11px] font-bold text-emerald-800 dark:bg-emerald-950 dark:text-emerald-200 sm:inline">新增 {pack.addedUnits} 單元／門檻 {pack.requiredUnits}</span>
-                <span className="text-violet-600 transition-transform group-open:rotate-180" aria-hidden="true">⌄</span>
-              </summary>
-              <div className="grid gap-4 border-t border-violet-100 p-4 sm:p-5 lg:grid-cols-[1.2fr_0.8fr] dark:border-violet-950">
-                <div className="space-y-3">
-                  <h3 className="text-sm font-bold text-violet-800 dark:text-violet-200">本輪新增知識</h3>
-                  <ol className="space-y-2 text-sm leading-7 text-slate-700 dark:text-slate-300">
-                    {pack.knowledgePoints.map((point, index) => <li key={point} className="flex gap-2"><span className="font-mono font-bold text-violet-600">{index + 1}.</span><span>{point}</span></li>)}
-                  </ol>
-                  <div className="rounded-xl bg-amber-50 p-4 dark:bg-amber-950/30">
-                    <h3 className="mb-2 text-xs font-bold text-amber-900 dark:text-amber-200">引導問題</h3>
-                    <ul className="space-y-2 text-sm leading-6 text-amber-950 dark:text-amber-100">
-                      {pack.guidedQuestions.map((question) => <li key={question}>• {question}</li>)}
-                    </ul>
+          {iterationPacks.map((pack) => {
+            const isDone = !!completedIterations[pack.iteration];
+            return (
+              <details key={pack.iteration} className="group rounded-2xl border border-violet-200 bg-white shadow-xs open:border-violet-400 dark:border-violet-900 dark:bg-slate-900">
+                <summary className="flex min-h-14 cursor-pointer list-none items-center gap-3 p-4 sm:p-5">
+                  <span className={`flex size-9 shrink-0 items-center justify-center rounded-xl font-mono text-sm font-bold text-white transition-colors ${isDone ? 'bg-emerald-600' : 'bg-violet-600'}`}>
+                    {isDone ? '✓' : `R${pack.iteration}`}
+                  </span>
+                  <span className="min-w-0 flex-1">
+                    <span className="flex items-center gap-2 font-bold text-slate-900 dark:text-white">
+                      <span>{pack.title}</span>
+                      {isDone && (
+                        <span className="rounded bg-emerald-100 dark:bg-emerald-900/60 px-2 py-0.5 text-[10px] font-bold text-emerald-800 dark:text-emerald-200">
+                          已精熟
+                        </span>
+                      )}
+                    </span>
+                    <span className="mt-0.5 block text-xs leading-5 text-slate-500 dark:text-slate-400">{pack.purpose}</span>
+                  </span>
+                  <button
+                    type="button"
+                    onClick={(e) => {
+                      e.preventDefault();
+                      e.stopPropagation();
+                      toggleIterationProgress(pack.iteration);
+                    }}
+                    className={`hidden sm:inline-flex items-center gap-1 px-2.5 py-1 rounded-lg text-xs font-mono font-bold transition-all cursor-pointer ${
+                      isDone
+                        ? 'bg-emerald-100 text-emerald-800 border border-emerald-300 dark:bg-emerald-950 dark:text-emerald-300 dark:border-emerald-700'
+                        : 'bg-slate-100 text-slate-600 border border-slate-300 hover:bg-violet-50 hover:text-violet-700 dark:bg-slate-800 dark:text-slate-300 dark:border-slate-700'
+                    }`}
+                  >
+                    {isDone ? '✓ 已完成本輪' : '標記完成本輪'}
+                  </button>
+                  <span className="hidden rounded-full bg-emerald-100 px-2.5 py-1 text-[11px] font-bold text-emerald-800 dark:bg-emerald-950 dark:text-emerald-200 sm:inline">新增 {pack.addedUnits} 單元／門檻 {pack.requiredUnits}</span>
+                  <span className="text-violet-600 transition-transform group-open:rotate-180" aria-hidden="true">⌄</span>
+                </summary>
+                <div className="grid gap-4 border-t border-violet-100 p-4 sm:p-5 lg:grid-cols-[1.2fr_0.8fr] dark:border-violet-950">
+                  <div className="space-y-3">
+                    <div className="flex items-center justify-between">
+                      <h3 className="text-sm font-bold text-violet-800 dark:text-violet-200">本輪新增知識</h3>
+                      <button
+                        type="button"
+                        onClick={() => toggleIterationProgress(pack.iteration)}
+                        className="sm:hidden text-xs font-bold text-violet-600 dark:text-violet-400"
+                      >
+                        {isDone ? '✓ 已完成' : '點擊標記完成'}
+                      </button>
+                    </div>
+                    <ol className="space-y-2 text-sm leading-7 text-slate-700 dark:text-slate-300">
+                      {pack.knowledgePoints.map((point, index) => <li key={point} className="flex gap-2"><span className="font-mono font-bold text-violet-600">{index + 1}.</span><span>{point}</span></li>)}
+                    </ol>
+
+                    {/* Dual-Coding Fast Access for R4 and R2 */}
+                    {(pack.iteration === 4 || pack.iteration === 2) && conceptVisuals.length > 0 && (
+                      <div className="rounded-xl border border-blue-200 bg-blue-50/70 dark:border-blue-900/60 dark:bg-blue-950/30 p-3 text-xs flex items-center justify-between gap-2">
+                        <span className="text-blue-900 dark:text-blue-200 font-bold">
+                          📐 本章具備 {conceptVisuals.length} 幅專屬工程向量圖解、統計圖表與規格對照表
+                        </span>
+                        <button
+                          type="button"
+                          onClick={() => jumpTo('principles')}
+                          className="shrink-0 rounded-lg bg-blue-600 hover:bg-blue-700 text-white font-mono font-bold px-2.5 py-1 transition cursor-pointer"
+                        >
+                          跳至圖表專區 →
+                        </button>
+                      </div>
+                    )}
+
+                    <div className="rounded-xl bg-amber-50 p-4 dark:bg-amber-950/30">
+                      <h3 className="mb-2 text-xs font-bold text-amber-900 dark:text-amber-200">引導問題</h3>
+                      <ul className="space-y-2 text-sm leading-6 text-amber-950 dark:text-amber-100">
+                        {pack.guidedQuestions.map((question) => <li key={question}>• {question}</li>)}
+                      </ul>
+                    </div>
                   </div>
+                  <aside className="rounded-xl border border-blue-200 bg-blue-50/60 p-4 dark:border-blue-900 dark:bg-blue-950/30">
+                    <h3 className="mb-2 text-xs font-bold text-blue-900 dark:text-blue-200">本輪 5%＋品質校正</h3>
+                    <ul className="space-y-2 text-xs leading-6 text-blue-950 dark:text-blue-100">
+                      {pack.qualityUpgrades.map((upgrade) => <li key={upgrade} className="flex gap-2"><span aria-hidden="true">✓</span><span>{upgrade}</span></li>)}
+                    </ul>
+                  </aside>
                 </div>
-                <aside className="rounded-xl border border-blue-200 bg-blue-50/60 p-4 dark:border-blue-900 dark:bg-blue-950/30">
-                  <h3 className="mb-2 text-xs font-bold text-blue-900 dark:text-blue-200">本輪 5%＋品質校正</h3>
-                  <ul className="space-y-2 text-xs leading-6 text-blue-950 dark:text-blue-100">
-                    {pack.qualityUpgrades.map((upgrade) => <li key={upgrade} className="flex gap-2"><span aria-hidden="true">✓</span><span>{upgrade}</span></li>)}
-                  </ul>
-                </aside>
-              </div>
-            </details>
-          ))}
+              </details>
+            );
+          })}
         </div>
       </section>
 
