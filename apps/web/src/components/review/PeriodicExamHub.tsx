@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState, useMemo } from 'react';
+import Link from 'next/link';
 import { 
   allPeriodicExamPlans, 
   GradeLevel, 
@@ -368,8 +369,15 @@ export default function PeriodicExamHub() {
                     </p>
                   </div>
 
-                  <div className="flex items-center gap-2 self-end sm:self-center">
-                    <span className="text-[11px] font-mono text-indigo-600 dark:text-indigo-400 bg-indigo-50 dark:bg-indigo-950/60 px-2.5 py-1 rounded-xl border border-indigo-200 dark:border-indigo-800/60">
+                  <div className="flex flex-wrap items-center gap-2 self-end sm:self-center">
+                    <Link
+                      href={`/review/periodic-exams/${plan.id}`}
+                      className="inline-flex items-center gap-1.5 rounded-xl bg-blue-600 hover:bg-blue-700 text-white px-3 py-1.5 text-xs font-bold transition-all shadow-xs"
+                    >
+                      <BookOpen className="h-3.5 w-3.5" />
+                      <span>全篇圖解講義 ➜</span>
+                    </Link>
+                    <span className="text-[11px] font-mono text-indigo-600 dark:text-indigo-400 bg-indigo-50 dark:bg-indigo-950/60 px-2.5 py-1 rounded-xl border border-indigo-200 dark:border-indigo-800/60 hidden sm:inline-block">
                       {plan.targetSchool}
                     </span>
                     <button

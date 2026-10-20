@@ -20,6 +20,8 @@ export const taichungArchG11ExamPlans: PeriodicExamPlan[] = [
     schoolContextNotes: '台中高工高二建築科上學期第 1~6 週進度。考試著重材料密度定義辨析、孔隙率計算，以及波特蘭水泥四大熟料礦物的水化速率與發熱量排序，選擇題佔 70%，計算題佔 30%。',
     scoreWeight: '佔學期學業成績 20%',
     handoutSummary: '材料之比重、密度與含水狀態是所有配合設計的基石；四大熟料礦物（C3S、C2S、C3A、C4AF）之水化熱與早期晚期強度發展特性，更是統測與段考每年 100% 必考焦點。',
+    beginnerMindset: '材料這門課看似公式名詞繁多，但其實每一條背後都是生活常理！只要看懂「海綿蛋糕比重模型」與「水泥四兄弟接力賽」，你就不需要死記硬背，段考輕鬆拿下高分。',
+    downloadablePdfFilename: 'Arch-Taichung-G11-Materials-S1-M1.pdf',
     knowledgePoints: [
       {
         id: 'mat-g11-s1-m1-01',
@@ -27,6 +29,7 @@ export const taichungArchG11ExamPlans: PeriodicExamPlan[] = [
         curriculumCode: '115-專一-材料-01',
         importance: 5,
         textbookChapter: '全華/科友 材料與試驗 第一章 材料的基本性質',
+        intuitiveAnalogy: '【零基礎秒懂比喻】想像一塊海綿蛋糕：把蛋糕裡的氣孔完全捏扁、只剩純麵粉的體積叫「真實體積」；包含麵粉和捏不扁的封閉小氣室叫「表觀體積」；擺在桌上看到的一整塊蓬鬆外觀叫「總體體積」。因為分母越來越大（真實 < 表觀 < 總體），算出來的比重一定是「真實比重 > 表觀比重 > 總體比重」！孔隙率就是「氣孔佔了整塊蛋糕的百分比」。',
         summary: '固體材料體積可分為絕對真實體積 (Vs)、閉孔積 (Vc) 與開孔積 (Vo)。絕對比重＝乾燥質量 / 絕對真實體積；表觀比重＝乾燥質量 / (Vs + Vc)；總體比重＝乾燥質量 / 總體積。孔隙率 n = (Vo + Vc)/V = 1 - (總體密度 / 真實密度)。',
         keyFormulaOrRule: '孔隙率 n = 1 - (D_bulk / D_true)；吸水率 w = [(W_sat - W_dry) / W_dry] × 100%',
         cramTips: [
@@ -43,6 +46,7 @@ export const taichungArchG11ExamPlans: PeriodicExamPlan[] = [
         curriculumCode: '115-專一-材料-02',
         importance: 5,
         textbookChapter: '全華/科友 材料與試驗 第二章 水泥與水化作用',
+        intuitiveAnalogy: '【零基礎秒懂比喻】水泥熟料四兄弟就像一支配速接力隊：C3A 是暴躁短跑選手（水化最快、發熱像火山噴發，但最怕鹽酸腐蝕）；C3S 是主力衝刺選手（前 28 天拚命發力搶下早期強度）；C2S 是馬拉松耐力選手（起步最慢、幾乎不發熱，但 28 天後持續發力、後期強度最高）；C4AF 是低調苦力（貢獻深灰色外觀與耐蝕）。如果熟料磨粉時不加「石膏煞車」，C3A 一碰到水幾分鐘就直接急凝報廢！',
         summary: '矽酸三鈣 (C3S, 占 50~70%) 水化快，提供「早期強度（7~28天）」；矽酸二鈣 (C2S, 占 15~30%) 水化慢，提供「晚期強度（28天以後）」；鋁酸三鈣 (C3A, 占 5~10%) 水化最快、發熱量最高、最不耐硫酸鹽；鐵鋁酸四鈣 (C4AF, 占 5~15%) 賦予水泥深灰色，耐硫酸鹽性佳但強度貢獻最低。',
         keyFormulaOrRule: '水化熱排序：C3A (最高 867 J/g) > C3S > C4AF > C2S (最低 260 J/g)；早期強度：C3S > C2S；晚期強度：C2S 持續超越。',
         cramTips: [
@@ -59,6 +63,7 @@ export const taichungArchG11ExamPlans: PeriodicExamPlan[] = [
         curriculumCode: '115-專一-材料-03',
         importance: 4,
         textbookChapter: '全華/科友 材料與試驗 第三章 骨材試驗',
+        intuitiveAnalogy: '【零基礎秒懂比喻】想像吸滿水但表面擦乾的一塊抹布：這叫「面乾內飽和 (SSD)」，它是所有配合設計的標準零點！如果抹布太濕（濕潤態有表面水），拌水泥時水會太多，必須「從配方中扣除多餘水」；如果抹布曬得太乾（氣乾態），它會偷偷把水泥裡的水吸走，所以必須「額外補足水分」！',
         summary: '骨材四態：烘乾狀態 (Oven-dry)、氣乾狀態 (Air-dry)、飽和面乾狀態 (SSD, Saturated Surface-Dry)、濕潤狀態 (Wet)。配合設計之基準一律以 SSD 為計算基底。表面含水量 (Free water) = 濕潤含水量 - 吸水量。',
         keyFormulaOrRule: '表面水率 = [(W_wet - W_ssd) / W_ssd] × 100%；有效吸水量 = 吸水率 - 氣乾含水率。',
         cramTips: [
@@ -520,6 +525,8 @@ export const taichungArchG11ExamPlans: PeriodicExamPlan[] = [
     schoolContextNotes: '台中高工高二建築科上學期第 1~6 週進度。段考必考中誤差公式、誤差傳播定律計算，以及鋼卷尺尺長、溫度、拉力與垂度四項改正計算。計算題比重達 40%。',
     scoreWeight: '佔學期學業成績 20%',
     handoutSummary: '測量是土木建築的眼睛，無誤差即非測量。系統誤差可由公式校正抵消，偶然誤差服從常態分配定理；中誤差與權重的反比平方關係是歷屆大考必勝基石。',
+    beginnerMindset: '很多同學第一次看到「中誤差」跟「根號 n - 1」就頭皮發麻，其實測量統計的核心只有一句話：量越多次越準！把殘差平方加起來開根號，就是在算這組數據的平均抖動幅度。',
+    downloadablePdfFilename: 'Arch-Taichung-G11-Surveying-S1-M1.pdf',
     knowledgePoints: [
       {
         id: 'sur-g11-s1-m1-01',
@@ -527,6 +534,7 @@ export const taichungArchG11ExamPlans: PeriodicExamPlan[] = [
         curriculumCode: '115-專二-測量-01',
         importance: 5,
         textbookChapter: '全華/科友 測量實習 第一章 測量誤差理論',
+        intuitiveAnalogy: '【零基礎秒懂比喻】想像玩飛鏢投靶：如果每次都偏右上角 5 公分，這是「系統誤差」（照門歪了，修正瞄準點就能抵消）；如果手微抖、有時偏左有時偏右但圍繞著紅心，這叫「偶然誤差」（投 100 次的平均點必定無限接近紅心）；如果直接把飛鏢丟到隔壁靶去，這叫「粗差」（抄錯數字，直接整筆作廢）！',
         summary: '誤差分三類：1. 粗差（Blunder）：人為疏忽讀錯記錯，不可容許，發現即刪除；2. 系統誤差（Systematic error）：遵循物理或幾何定律，大小符號具固定趨勢，可藉由公式或觀測程序（如正倒鏡、前後等距）消除；3. 偶然誤差（Accidental/Random error）：不可避免之微小隨機變動，服從常態高斯分佈。偶然誤差四大特性：有界性（大誤差出現機率小）、對稱性（正負誤差機率相等）、單峰性（小誤差出現機率大）、補償性（隨觀測次數增加，總和代數和趨近於零）。',
         keyFormulaOrRule: '最合理值（算術平均值）x̄ = (Σx_i) / n；殘差 v_i = x_i - x̄；中誤差 σ = √[ Σ(v_i²) / (n - 1) ]；算術平均值中誤差 σ_x̄ = σ / √n。',
         cramTips: [
@@ -542,6 +550,7 @@ export const taichungArchG11ExamPlans: PeriodicExamPlan[] = [
         curriculumCode: '115-專二-測量-02',
         importance: 4,
         textbookChapter: '全華/科友 測量實習 第二章 距離測量與工具',
+        intuitiveAnalogy: '【零基礎秒懂比喻】用鋼卷尺量距離就像拿一根有彈性的金屬拉力繩：天氣熱金屬膨脹，尺變長量出來數字會變小（所以要加上熱脹改正）；雙手懸空拉尺時，尺一定會受重力下垂變成弧線，讓兩端直線距離被拉長，所以「垂度改正數永遠是負值（減去弧線灌水的距離）」！',
         summary: '鋼卷尺名義長度量測後需進行四項改正：1. 尺長改正 Cl = (L / l_0) × Δl（實長大於名義長則加，實長小於則減）；2. 溫度改正 Ct = α × L × (T - T0)（熱脹冷縮，高溫加、低溫減，鋼材熱膨脹係數 α ≈ 0.000012 /℃）；3. 拉力改正 Cp = [(P - P0) × L] / (A × E)（拉力大於標準則伸長為正）；4. 垂度改正 Cs = - [W² × L] / [24 × P²]（懸空量測必下垂成懸鏈線，使讀數偏大，改正數「永遠為負」）。',
         keyFormulaOrRule: '改正總長度 L_true = L_measured + Cl + Ct + Cp + Cs（垂度改正 Cs 永遠小於零）。',
         cramTips: [
@@ -679,6 +688,8 @@ export const taichungArchG11ExamPlans: PeriodicExamPlan[] = [
     schoolContextNotes: '台中高工高二建築科上學期共同科目首場段考。建築科需深度應用 3D 空間幾何概念（日照角度、結構斜桿空間受力），題目包含向量正射影與建築空間斜交夾角計算。',
     scoreWeight: '佔學期學業成績 20%',
     handoutSummary: '從 2D 平面躍升到 3D 空間，坐標軸多了 Z 軸；向量內積 a·b = |a||b|cosθ 是求空間結構桿件夾角與日照法向量的最強武器。',
+    beginnerMindset: '從高一 2D 平面走入高二 3D 空間，想像你正坐在教室裡：地板是 xy 平面，牆壁是 yz 平面，天花板高度就是 z 坐標。空間向量內積不過就是 x乘x、y乘y、z乘z 再加起來，規律極度整齊！',
+    downloadablePdfFilename: 'Arch-Taichung-G11-MathC-S1-M1.pdf',
     knowledgePoints: [
       {
         id: 'math-g11-s1-m1-01',
@@ -686,6 +697,7 @@ export const taichungArchG11ExamPlans: PeriodicExamPlan[] = [
         curriculumCode: '115-數C-07',
         importance: 5,
         textbookChapter: '龍騰/東大/南一 數學 C 第三冊 第一章 空間坐標與向量',
+        intuitiveAnalogy: '【零基礎秒懂比喻】投影就像正上方打下一束聚光燈：照到地板 (xy平面)，高度 z 被壓扁成 0，坐標變成 (a, b, 0)；對稱就像一面平鋪在地板的穿衣鏡：鏡中倒影只是跑到地下負樓層，所以只有 z 坐標加負號 (a, b, -c)！八字神訣「投誰誰留，對誰誰不變」直接秒殺。',
         summary: '空間點 P(a, b, c)：1. 投影到 xy 平面為 (a, b, 0)，投影到 x 軸為 (a, 0, 0)；2. 對 xy 平面對稱為 (a, b, -c)（投在哪個平面，那兩個坐標不變，剩餘變號）；3. 對 x 軸對稱為 (a, -b, -c)（對哪個軸對稱，該坐標不變，其餘變號）；4. 對原點對稱為 (-a, -b, -c)；5. 點 P 到 xy 平面之距離 = |c|；點 P 到 x 軸之距離 = √(b² + c²)。',
         keyFormulaOrRule: '兩點距離 d = √[(x2 - x1)² + (y2 - y1)² + (z2 - z1)²]；點 P(a,b,c) 到 x 軸距離 = √(b² + c²)。',
         cramTips: [
@@ -701,6 +713,7 @@ export const taichungArchG11ExamPlans: PeriodicExamPlan[] = [
         curriculumCode: '115-數C-08',
         importance: 5,
         textbookChapter: '龍騰/東大/南一 數學 C 第三冊 第一章 空間向量的運算',
+        intuitiveAnalogy: '【零基礎秒懂比喻】想像拿手電筒垂直照射向量 a 到地面向量 b 上：地面上出現的影子就是「正射影」！如果兩根桿子互相垂直（90度），影子長度縮成一個點（長度為 0），所以垂直時內積 a·b 永遠等於 0！',
         summary: '向量 a = (a1, a2, a3)，b = (b1, b2, b3)。內積 a·b = a1b1 + a2b2 + a3b3 = |a||b|cosθ。正射影長度 = |a·b| / |b|；a 在 b 上的正射影向量 proj_b(a) = [ (a·b) / |b|² ] b。垂直條件：a ⊥ b ⇔ a·b = 0。空間柯西不等式：(a1² + a2² + a3²)(b1² + b2² + b3²) ≥ (a1b1 + a2b2 + a3b3)²，等號成立時 a1/b1 = a2/b2 = a3/b3。',
         keyFormulaOrRule: '正射影向量 = [ (a·b) / |b|² ] b；柯西不等式：(模長平方和之積) ≥ (內積之平方)。',
         cramTips: [
@@ -762,6 +775,8 @@ export const taichungArchG11ExamPlans: PeriodicExamPlan[] = [
     schoolContextNotes: '台中高工高二建築科上學期第一次段考。考卷涵蓋建築工程情境字彙（structure, foundation, sustainable, durable），文法大題必考關係代名詞克漏字與改錯。',
     scoreWeight: '佔學期學業成績 20%',
     handoutSummary: '關係代名詞是英文長難句的骨架，兼具「代名詞」與「連接詞」雙重功能；掌握 that 的三大禁忌（逗號後不用、介系詞後不用、所有格不用），段考文法題直拿滿分。',
+    beginnerMindset: '關係代名詞就是「把兩節火車車廂掛在一起的掛鉤」！先看前面的先行詞是人還是物，再看後面句子有沒有缺主詞或受詞，記住 that 兩大禁忌，3 秒就能秒殺。',
+    downloadablePdfFilename: 'Arch-Taichung-G11-English-S1-M1.pdf',
     knowledgePoints: [
       {
         id: 'eng-g11-s1-m1-01',
@@ -769,6 +784,7 @@ export const taichungArchG11ExamPlans: PeriodicExamPlan[] = [
         curriculumCode: '115-共同-英文-03',
         importance: 5,
         textbookChapter: '東大/三民/龍騰 高職英文 第三冊 Unit 1-3 關係代名詞',
+        intuitiveAnalogy: '【零基礎秒懂比喻】關係代名詞就像火車車廂的「自動聯結掛鉤」：前面車廂叫先行詞，後面車廂叫關係子句。如果掛鉤掛在『逗號後面』或『介系詞後面』，那是危險區域，規格嚴格規定『不准使用 that 掛鉤』！記住這個物理規律，直接在考卷上劃掉 that！',
         summary: '關代三大禁忌：1. 逗號之後（非限定用法）「絕不可用 that」！必須用 who/whom/which；2. 介系詞之後「絕不可用 that」！必須用 whom 或 which（例如 in which, with whom）；3. whose 表所有格不可用 that 代替。that 必用時機：先行詞同時有人有物時、先行詞有最高級或 the only, the first, all, no, any 修飾時。',
         keyFormulaOrRule: '逗號後無 that、介系詞後無 that；先行詞有人有物必用 that。',
         cramTips: [
@@ -830,6 +846,8 @@ export const taichungArchG11ExamPlans: PeriodicExamPlan[] = [
     schoolContextNotes: '台中高工高二建築科上學期國文第一次段考。考題結合古文空間景觀書寫（赤壁之山川形勝、清風明月美學），並以非連續性圖表文本考核主客問答邏輯架構。',
     scoreWeight: '佔學期學業成績 20%',
     handoutSummary: '蘇軾〈赤壁賦〉是 108 課綱 15 篇核心古文之冠；透過「樂 ➜ 悲 ➜ 喜」的情感折轉與「變 vs 不變」的水月哲理，主客問答展現文人面對時空浩渺的超然心境。',
+    beginnerMindset: '讀古文不要死背注釋！蘇軾被貶官到黃州，夜裡泛舟赤壁。想像你面對浩瀚星空感到自己無比渺小時，蘇軾用流水與明月開導你：懂得欣賞清風明月，你就能超脫得失。',
+    downloadablePdfFilename: 'Arch-Taichung-G11-Chinese-S1-M1.pdf',
     knowledgePoints: [
       {
         id: 'chi-g11-s1-m1-01',
@@ -837,6 +855,7 @@ export const taichungArchG11ExamPlans: PeriodicExamPlan[] = [
         curriculumCode: '115-共同-國文-01',
         importance: 5,
         textbookChapter: '三民/東大 高職國文 第三冊 第一課 赤壁賦',
+        intuitiveAnalogy: '【零基礎秒懂比喻】想像兩個人在河邊聊天：客人嘆氣說『我們人生只有幾十年，長江卻流了幾萬年，真無奈』；蘇軾笑著說：『你看江水一直在流，但長江從來沒乾涸過；月亮有圓有缺，但天上的月亮一直都在。從變的角度看，連一秒鐘都留不住；但從大自然永恆的角度看，天地萬物和我都是無窮無盡的！』這就是著名的水月哲學！',
         summary: '主旨與脈絡：全文以月夜泛舟遊赤壁為引，經歷「遊江之樂 ➜ 客簫之悲 ➜ 蘇子說理之喜」三大情感轉折。主客問答：客感傷人生短暫「寄蜉蝣於天地，渺滄海之一粟」，哀英雄安在；蘇軾以「逝者如斯，而未嘗往也；盈虛者如彼，而卒莫消長也」破題，從「變的角度」看天地無一瞬不變，從「不變的角度」作物我皆無盡，展現儒道融合、物各有所屬之曠達胸襟。',
         keyFormulaOrRule: '水月比喻：水流動象徵「逝者（變）」；月盈虧象徵「永恆（不變）」。',
         cramTips: [
