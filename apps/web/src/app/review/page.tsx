@@ -1,7 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
 import { Metadata } from 'next';
-import { Printer, ArrowRight } from 'lucide-react';
+import { Printer, ArrowRight, BookOpen } from 'lucide-react';
 import { allSubjectSemestersMeta, allSemesterReviews } from '@/data/semesterReviews';
 
 export const metadata: Metadata = {
@@ -62,6 +62,42 @@ export default function ReviewIndexPage() {
           </div>
         </div>
       </header>
+
+      {/* ── 高工段考衝刺預備講義專屬導引卡片 ── */}
+      <section className="relative overflow-hidden rounded-3xl border border-indigo-200 dark:border-indigo-900/60 bg-gradient-to-r from-indigo-50/90 via-blue-50/60 to-purple-50/40 dark:from-indigo-950/40 dark:via-blue-950/30 dark:to-purple-950/20 p-6 sm:p-8 shadow-xs">
+        <div className="flex flex-col md:flex-row md:items-center justify-between gap-6">
+          <div className="space-y-3 max-w-2xl">
+            <div className="flex flex-wrap items-center gap-2">
+              <span className="rounded-full bg-indigo-600 px-3 py-1 text-xs font-mono font-bold text-white shadow-xs">
+                ⭐ 高工段考實戰必備
+              </span>
+              <span className="rounded-full bg-blue-600/10 px-3 py-1 text-xs font-mono font-bold text-blue-700 dark:text-blue-300 border border-blue-600/20">
+                國立台中高工建築科指標對照
+              </span>
+              <span className="rounded-full bg-emerald-600/10 px-3 py-1 text-xs font-mono font-bold text-emerald-700 dark:text-emerald-300 border border-emerald-600/20">
+                均一階梯精熟檢核
+              </span>
+            </div>
+            <h2 className="font-serif text-2xl sm:text-3xl font-bold text-slate-900 dark:text-white">
+              高一至高三 各科段考衝刺預備講義與真題對照庫
+            </h2>
+            <p className="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+              專門對焦高工學期三次段考（第一次段考、第二次段考、期末考）。收錄<strong>材料與試驗、測量實習、數學 C、英語文、國語文</strong>之教材知識點精講、考前 10 分鐘公式卡、名校考卷真題交叉比對與 SOP 解題步驟。
+            </p>
+          </div>
+
+          <div className="flex-shrink-0">
+            <Link
+              href="/review/periodic-exams"
+              className="inline-flex items-center gap-2.5 rounded-2xl bg-indigo-600 px-6 py-3.5 text-sm font-bold text-white shadow-md hover:bg-indigo-700 hover:shadow-lg transition-all"
+            >
+              <BookOpen className="h-4 w-4" />
+              <span>進入高工段考衝刺專區</span>
+              <ArrowRight className="h-4 w-4" />
+            </Link>
+          </div>
+        </div>
+      </section>
 
       {/* Categories & Subject Semesters Grid */}
       <div className="space-y-12">

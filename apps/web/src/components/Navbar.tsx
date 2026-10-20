@@ -92,6 +92,13 @@ const navGroups: NavGroup[] = [
         desc: '高一至高三各學期單元重難點手冊與 A4 複習筆記',
         icon: IconFastFormula,
       },
+      {
+        href: '/review/periodic-exams',
+        label: '高工各科段考衝刺',
+        desc: '台中高工建築科指標進度、三次段考預備講義與真題比對',
+        icon: IconExamLicense,
+        badge: '段考首選',
+      },
     ],
   },
   {
