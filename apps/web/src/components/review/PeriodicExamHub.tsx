@@ -22,8 +22,86 @@ import {
   Layers, 
   Target, 
   Trophy,
-  FileText
+  FileText,
+  Image as ImageIcon
 } from 'lucide-react';
+import PeriodicExamSvgIllustration from './PeriodicExamSvgIllustrations';
+
+// 映射高解析純向量 SVG 圖解類型
+function getSvgType(subjectSlug: string, pointId: string): string {
+  if (subjectSlug === 'mechanics') {
+    if (pointId.includes('mohr') || pointId.includes('mock-02')) return 'mechanics-mohr-circle';
+    if (pointId.includes('inertia') || pointId.includes('parallel') || pointId.includes('s2-final')) return 'mechanics-inertia-parallel';
+    if (pointId.includes('vm') || pointId.includes('shear-moment') || pointId.includes('s2-m2')) return 'mechanics-vm-diagram';
+    if (pointId.includes('truss') || pointId.includes('zeroforce') || pointId.includes('s2-m1') || pointId.includes('mock-01')) return 'mechanics-truss-zeroforce';
+    if (pointId.includes('centroid') || pointId.includes('friction') || pointId.includes('s1-final')) return 'mechanics-centroid-friction';
+    if (pointId.includes('moment') || pointId.includes('varignon') || pointId.includes('s1-m2')) return 'mechanics-moment-varignon';
+    return 'mechanics-coplanar-forces';
+  }
+  if (subjectSlug === 'drafting') {
+    if (pointId.includes('stair') || pointId.includes('code')) return 'drafting-staircase-code';
+    if (pointId.includes('section') || pointId.includes('s1-final')) return 'drafting-section-views';
+    if (pointId.includes('third-angle') || pointId.includes('s1-m2')) return 'drafting-third-angle-proj';
+    return 'drafting-cns-sheets-lines';
+  }
+  if (subjectSlug === 'construction') {
+    return 'arch-eewh-green-building';
+  }
+  if (subjectSlug === 'materials') {
+    if (pointId.includes('asphalt') || pointId.includes('s2-final-02')) return 'materials-asphalt-penetration';
+    if (pointId.includes('rebar') || pointId.includes('s2-m2-02')) return 'materials-rebar-tensile';
+    if (pointId.includes('abrams') || pointId.includes('s2-m1-02')) return 'materials-abrams-law';
+    if (pointId.includes('wood') || pointId.includes('fsp') || pointId.includes('s2-final-01')) return 'materials-wood-fsp';
+    if (pointId.includes('mix') || pointId.includes('aci') || pointId.includes('s2-m2-01')) return 'materials-aci-mix';
+    if (pointId.includes('slump') || pointId.includes('1176') || pointId.includes('s2-m1-01')) return 'materials-slump';
+    if (pointId.includes('sieve') || pointId.includes('aggregate') || pointId.includes('s1-final-02')) return 'materials-aggregate-sieve';
+    if (pointId.includes('chloride') || pointId.includes('3090') || pointId.includes('s1-final-01')) return 'materials-chloride-limits';
+    if (pointId.includes('vicat') || pointId.includes('786') || pointId.includes('s1-m2-02')) return 'materials-vicat-test';
+    if (pointId.includes('cns61') || pointId.includes('types') || pointId.includes('s1-m2-01')) return 'materials-cement-types';
+    if (pointId.includes('moisture') || pointId.includes('water') || pointId.includes('s1-m1-03')) return 'materials-moisture-states';
+    if (pointId.includes('clinker') || pointId.includes('s1-m1-02')) return 'materials-clinker';
+    return 'materials-porosity';
+  }
+  if (subjectSlug === 'surveying') {
+    if (pointId.includes('mock-sur') || pointId.includes('stair')) return 'drafting-staircase-code';
+    if (pointId.includes('precision') || pointId.includes('s2-m2-02')) return 'surveying-traverse-precision';
+    if (pointId.includes('earthwork') || pointId.includes('simpson') || pointId.includes('s2-final-02')) return 'surveying-earthwork-simpson';
+    if (pointId.includes('repetition') || pointId.includes('s2-m1-02')) return 'surveying-theodolite-repetition';
+    if (pointId.includes('collimation') || pointId.includes('hi') || pointId.includes('s1-final-02')) return 'surveying-level-collimation';
+    if (pointId.includes('shoelace') || pointId.includes('area') || pointId.includes('s2-final-01')) return 'surveying-shoelace-area';
+    if (pointId.includes('traverse') || pointId.includes('loop') || pointId.includes('s2-m2-01')) return 'surveying-traverse-loop';
+    if (pointId.includes('theodolite') || pointId.includes('axes') || pointId.includes('s2-m1-01')) return 'surveying-theodolite-axes';
+    if (pointId.includes('level') || pointId.includes('balance') || pointId.includes('s1-final-01')) return 'surveying-level-balance';
+    if (pointId.includes('tape') || pointId.includes('correction') || pointId.includes('s1-m1-02')) return 'surveying-tape-corrections';
+    return 'surveying-error-normal';
+  }
+  if (subjectSlug === 'math-c') {
+    if (pointId.includes('asymptote') || pointId.includes('s2-m2-02')) return 'math-hyperbola-asymptote';
+    if (pointId.includes('reflection') || pointId.includes('tangent') || pointId.includes('s2-m1-02')) return 'math-parabola-reflection';
+    if (pointId.includes('skew') || pointId.includes('distance') || pointId.includes('s1-m2-02')) return 'math-skew-lines-distance';
+    if (pointId.includes('ellipse') || pointId.includes('hyperbola') || pointId.includes('s2-m2-01')) return 'math-ellipse-hyperbola';
+    if (pointId.includes('parabola') || pointId.includes('s2-m1-01')) return 'math-parabola-geometry';
+    if (pointId.includes('cross') || pointId.includes('plane') || pointId.includes('s1-m2-01')) return 'math-cross-product-plane';
+    return 'math-space-projection';
+  }
+  if (subjectSlug === 'english') {
+    if (pointId.includes('full-inversion') || pointId.includes('s2-m2-02')) return 'english-full-inversion';
+    if (pointId.includes('adverbs') || pointId.includes('s1-m1-02')) return 'english-relative-adverbs';
+    if (pointId.includes('participle') || pointId.includes('s2-m1-02')) return 'english-participle-clauses';
+    if (pointId.includes('inversion') || pointId.includes('s2-m2-01')) return 'english-inversion-grammar';
+    if (pointId.includes('subjunctive') || pointId.includes('s2-m1-01')) return 'english-subjunctive-mood';
+    return 'english-relative-pronoun';
+  }
+  if (subjectSlug === 'chinese') {
+    if (pointId.includes('tangsang') || pointId.includes('s2-m1-02')) return 'chinese-tangsang-prose';
+    if (pointId.includes('fu-evolution') || pointId.includes('s1-m1-02')) return 'chinese-fu-evolution';
+    if (pointId.includes('quanxue') || pointId.includes('s1-m2-02')) return 'chinese-quanxue-structure';
+    if (pointId.includes('xiangjixuan') || pointId.includes('s2-m1-01')) return 'chinese-xiangjixuan-space';
+    if (pointId.includes('shishuo') || pointId.includes('s1-m2-01')) return 'chinese-shishuo-contrasts';
+    return 'chinese-chibi-philosophy';
+  }
+  return 'default';
+}
 
 export default function PeriodicExamHub() {
   const [selectedGrade, setSelectedGrade] = useState<GradeLevel>(11);
@@ -40,7 +118,7 @@ export default function PeriodicExamHub() {
       return {};
     }
   });
-  const [activeViewMode, setActiveViewMode] = useState<'all' | 'handout' | 'cross-exam' | 'formulas'>('all');
+  const [activeViewMode, setActiveViewMode] = useState<'all' | 'handout' | 'cross-exam' | 'formulas' | 'infographics'>('all');
 
   const toggleCheckItem = (id: string) => {
     const next = { ...checkedItems, [id]: !checkedItems[id] };
@@ -367,6 +445,14 @@ export default function PeriodicExamHub() {
             >
               ⚡ 考前公式卡
             </button>
+            <button
+              onClick={() => setActiveViewMode('infographics')}
+              className={`rounded-xl px-2.5 py-1 transition-colors ${
+                activeViewMode === 'infographics' ? 'bg-white dark:bg-slate-900 font-bold text-indigo-600 shadow-xs' : 'text-slate-600'
+              }`}
+            >
+              🖼️ Infograph 圖解畫廊
+            </button>
           </div>
         </div>
 
@@ -496,12 +582,12 @@ export default function PeriodicExamHub() {
                     </div>
 
                     {/* 1. 知識點精講清單 */}
-                    {(activeViewMode === 'all' || activeViewMode === 'handout') && (
+                    {(activeViewMode === 'all' || activeViewMode === 'handout' || activeViewMode === 'infographics') && (
                       <div className="space-y-4">
                         <div className="flex items-center justify-between border-b border-slate-100 dark:border-slate-800 pb-2">
                           <h3 className="font-serif text-lg font-bold text-slate-900 dark:text-white flex items-center gap-2">
                             <BookOpen className="h-5 w-5 text-indigo-600 dark:text-indigo-400" />
-                            <span>108 課綱段考知識點預備講義精解</span>
+                            <span>108 課綱段考知識點預備講義精解 (含純向量圖解)</span>
                           </h3>
                           <span className="text-xs font-mono text-slate-400">
                             共 {plan.knowledgePoints.length} 個核心單元
@@ -537,6 +623,14 @@ export default function PeriodicExamHub() {
                               <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
                                 {point.summary}
                               </p>
+
+                              {/* 專屬高清純向量圖解 INFOGRAPH */}
+                              <div className="rounded-xl border border-slate-200 dark:border-slate-800 overflow-hidden bg-slate-50 dark:bg-slate-900/50 p-2 sm:p-3 text-center my-2 shadow-2xs">
+                                <PeriodicExamSvgIllustration type={getSvgType(plan.subjectSlug, point.id)} />
+                                <div className="text-[11px] font-mono text-slate-500 dark:text-slate-400 py-1 border-t border-slate-200 dark:border-slate-800 mt-2">
+                                  ▲ {point.title} 核心幾何構造與規範圖解
+                                </div>
+                              </div>
 
                               {/* 公式或核心法則卡 */}
                               {point.keyFormulaOrRule && (

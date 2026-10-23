@@ -1153,6 +1153,1565 @@ export default function PeriodicExamSvgIllustration({ type, className = 'w-full 
         </svg>
       );
 
+    // 27. 力學 共點力平衡與拉密定理
+    case 'mechanics-coplanar-forces':
+      return (
+        <svg viewBox="0 0 540 220" className={className} xmlns="http://www.w3.org/2000/svg" aria-label="共點力系平衡與拉密定理圖解">
+          <rect width="540" height="220" fill="#f8fafc" rx="12" />
+          <rect x="20" y="15" width="500" height="190" fill="#ffffff" stroke="#cbd5e1" strokeWidth="1.5" rx="8" />
+          <text x="270" y="34" textAnchor="middle" fontSize="13" fontWeight="bold" fill="#0f172a">
+            平面共點力系平衡條件與拉密定理 (Lami's Theorem)
+          </text>
+
+          {/* 左圖：三力匯交於 O 點 */}
+          <g transform="translate(45, 55)">
+            <circle cx="80" cy="65" r="5" fill="#0f172a" />
+            <text x="80" y="80" textAnchor="middle" fontSize="10" fontWeight="bold" fill="#0f172a">O (共點)</text>
+            
+            {/* 力 P (向上偏右) */}
+            <path d="M 80,65 L 125,15" stroke="#ef4444" strokeWidth="2.5" markerEnd="url(#arrow-red)" />
+            <text x="135" y="20" fontSize="11" fontWeight="bold" fill="#b91c1c">P</text>
+
+            {/* 力 Q (向左上) */}
+            <path d="M 80,65 L 20,40" stroke="#3b82f6" strokeWidth="2.5" />
+            <text x="10" y="40" fontSize="11" fontWeight="bold" fill="#1d4ed8">Q</text>
+
+            {/* 力 R (向下偏右) */}
+            <path d="M 80,65 L 95,125" stroke="#10b981" strokeWidth="2.5" />
+            <text x="105" y="130" fontSize="11" fontWeight="bold" fill="#047857">R</text>
+
+            {/* 夾角弧線標示 */}
+            <path d="M 100,45 A 25 25 0 0 0 55,50" fill="none" stroke="#64748b" strokeWidth="1.2" strokeDasharray="2 2" />
+            <text x="80" y="42" textAnchor="middle" fontSize="9" fill="#475569">γ</text>
+
+            <path d="M 50,55 A 30 30 0 0 0 85,95" fill="none" stroke="#64748b" strokeWidth="1.2" strokeDasharray="2 2" />
+            <text x="55" y="85" textAnchor="middle" fontSize="9" fill="#475569">β</text>
+
+            <path d="M 90,95 A 30 30 0 0 0 110,45" fill="none" stroke="#64748b" strokeWidth="1.2" strokeDasharray="2 2" />
+            <text x="110" y="85" textAnchor="middle" fontSize="9" fill="#475569">α</text>
+          </g>
+
+          {/* 右圖：首尾相接封閉三角形 */}
+          <g transform="translate(230, 50)">
+            <rect x="0" y="0" width="270" height="105" fill="#f1f5f9" stroke="#cbd5e1" rx="6" />
+            <text x="135" y="20" textAnchor="middle" fontSize="11" fontWeight="bold" fill="#1e293b">三力平衡向量三角形必封閉</text>
+            
+            <path d="M 40,80 L 100,25 L 140,80 Z" fill="#dbeafe" stroke="#2563eb" strokeWidth="2" />
+            <text x="60" y="45" fontSize="10" fontWeight="bold" fill="#1e40af">Q</text>
+            <text x="125" y="50" fontSize="10" fontWeight="bold" fill="#ef4444">P</text>
+            <text x="90" y="95" fontSize="10" fontWeight="bold" fill="#10b981">R</text>
+
+            <rect x="155" y="30" width="105" height="60" fill="#ffffff" stroke="#93c5fd" rx="4" />
+            <text x="207" y="48" textAnchor="middle" fontSize="10" fontWeight="bold" fill="#1e3a8a">拉密定理公式</text>
+            <text x="207" y="65" textAnchor="middle" fontSize="9" fontWeight="bold" fill="#b91c1c">P / sin α</text>
+            <text x="207" y="78" textAnchor="middle" fontSize="9" fontWeight="bold" fill="#1e40af">= Q / sin β = R / sin γ</text>
+          </g>
+
+          <rect x="35" y="165" width="470" height="26" fill="#fef3c7" stroke="#fde047" rx="4" />
+          <text x="270" y="182" textAnchor="middle" fontSize="10" fontWeight="bold" fill="#854d0e">
+            充要條件：合力 R = 0 (ΣFx = 0, ΣFy = 0) ｜ 剛體受三力平衡時，三力作用線必「共點」或「互相平行」！
+          </text>
+        </svg>
+      );
+
+    // 28. 力學 伐里農力矩定理與力偶特性
+    case 'mechanics-moment-varignon':
+      return (
+        <svg viewBox="0 0 540 220" className={className} xmlns="http://www.w3.org/2000/svg" aria-label="伐里農力矩定理與力偶圖解">
+          <rect width="540" height="220" fill="#f8fafc" rx="12" />
+          <rect x="20" y="15" width="500" height="190" fill="#ffffff" stroke="#cbd5e1" strokeWidth="1.5" rx="8" />
+          <text x="270" y="34" textAnchor="middle" fontSize="13" fontWeight="bold" fill="#0f172a">
+            力矩 Mo = F·d、伐里農定理與力偶矩之自由向量特性
+          </text>
+
+          {/* 左側：伐里農分力取矩 */}
+          <g transform="translate(35, 48)">
+            <rect x="0" y="0" width="225" height="110" fill="#f8fafc" stroke="#cbd5e1" rx="6" />
+            <text x="112" y="18" textAnchor="middle" fontSize="10" fontWeight="bold" fill="#0369a1">伐里農定理：分力之矩代數和</text>
+
+            <line x1="30" y1="90" x2="195" y2="90" stroke="#94a3b8" strokeWidth="1" />
+            <line x1="30" y1="90" x2="30" y2="25" stroke="#94a3b8" strokeWidth="1" />
+            <circle cx="30" cy="90" r="4" fill="#0f172a" />
+            <text x="20" y="102" fontSize="9" fontWeight="bold" fill="#0f172a">O</text>
+
+            {/* 斜力 F 及分力 */}
+            <line x1="30" y1="90" x2="160" y2="40" stroke="#cbd5e1" strokeDasharray="3 3" />
+            <path d="M 160,40 L 195,20" stroke="#ef4444" strokeWidth="2.5" />
+            <text x="180" y="18" fontSize="10" fontWeight="bold" fill="#ef4444">F (斜向)</text>
+
+            <path d="M 160,40 L 195,40" stroke="#3b82f6" strokeWidth="2" strokeDasharray="2 2" />
+            <text x="175" y="52" fontSize="9" fontWeight="bold" fill="#2563eb">Fx</text>
+
+            <path d="M 160,40 L 160,20" stroke="#10b981" strokeWidth="2" strokeDasharray="2 2" />
+            <text x="145" y="30" fontSize="9" fontWeight="bold" fill="#059669">Fy</text>
+
+            <rect x="35" y="65" width="165" height="36" fill="#ffffff" stroke="#93c5fd" rx="4" />
+            <text x="117" y="80" textAnchor="middle" fontSize="9" fontWeight="bold" fill="#1e3a8a">Mo = Fy · x - Fx · y</text>
+            <text x="117" y="93" textAnchor="middle" fontSize="8" fill="#475569">分力乘正交坐標，避免算斜臂 d！</text>
+          </g>
+
+          {/* 右側：純力偶之自由向量 */}
+          <g transform="translate(280, 48)">
+            <rect x="0" y="0" width="225" height="110" fill="#f8fafc" stroke="#cbd5e1" rx="6" />
+            <text x="112" y="18" textAnchor="middle" fontSize="10" fontWeight="bold" fill="#9333ea">力偶矩 M = F · d (全場等效)</text>
+
+            <path d="M 40,40 L 110,40" stroke="#8b5cf6" strokeWidth="2.5" />
+            <text x="115" y="44" fontSize="10" fontWeight="bold" fill="#7c3aed">F</text>
+
+            <path d="M 110,80 L 40,80" stroke="#8b5cf6" strokeWidth="2.5" />
+            <text x="25" y="84" fontSize="10" fontWeight="bold" fill="#7c3aed">F</text>
+
+            <line x1="75" y1="40" x2="75" y2="80" stroke="#64748b" strokeWidth="1.2" strokeDasharray="2 2" />
+            <text x="82" y="63" fontSize="9" fontWeight="bold" fill="#64748b">臂長 d</text>
+
+            {/* 旋轉指示箭頭 */}
+            <path d="M 155,50 A 20 20 0 1 1 155,75" fill="none" stroke="#ec4899" strokeWidth="2" />
+            <text x="185" y="65" fontSize="10" fontWeight="bold" fill="#db2777">M = F·d</text>
+
+            <rect x="20" y="92" width="185" height="15" fill="#f3e8ff" rx="3" />
+            <text x="112" y="103" textAnchor="middle" fontSize="8" fontWeight="bold" fill="#6b21a8">自由向量：對平面任意點之力矩均相同！</text>
+          </g>
+
+          <rect x="35" y="165" width="470" height="26" fill="#eff6ff" stroke="#bfdbfe" rx="4" />
+          <text x="270" y="182" textAnchor="middle" fontSize="10" fontWeight="bold" fill="#1e40af">
+            右手定則：逆時鐘力矩為正 (+) ｜ 剛架求支承反力：優先對「未知力交點」取矩 (ΣM = 0) 一式秒殺！
+          </text>
+        </svg>
+      );
+
+    // 29. 力學 組合截面形心與摩擦自鎖
+    case 'mechanics-centroid-friction':
+      return (
+        <svg viewBox="0 0 540 220" className={className} xmlns="http://www.w3.org/2000/svg" aria-label="截面形心與摩擦角自鎖圖解">
+          <rect width="540" height="220" fill="#f8fafc" rx="12" />
+          <rect x="20" y="15" width="500" height="190" fill="#ffffff" stroke="#cbd5e1" strokeWidth="1.5" rx="8" />
+          <text x="270" y="34" textAnchor="middle" fontSize="13" fontWeight="bold" fill="#0f172a">
+            組合截面形心幾何法 (ȳ = ΣAy/ΣA) 與摩擦自鎖角臨界
+          </text>
+
+          {/* 左圖：T型截面形心加權 */}
+          <g transform="translate(45, 48)">
+            <rect x="0" y="0" width="205" height="110" fill="#f8fafc" stroke="#cbd5e1" rx="6" />
+            <text x="102" y="16" textAnchor="middle" fontSize="10" fontWeight="bold" fill="#0f172a">T 型梁組合截面形心</text>
+
+            {/* 翼緣 */}
+            <rect x="40" y="25" width="125" height="20" fill="#bfdbfe" stroke="#2563eb" strokeWidth="1.5" />
+            <text x="102" y="38" textAnchor="middle" fontSize="8" fontWeight="bold" fill="#1e3a8a">翼緣 A2 (y2=45)</text>
+
+            {/* 腹板 */}
+            <rect x="80" y="45" width="45" height="50" fill="#fed7aa" stroke="#ea580c" strokeWidth="1.5" />
+            <text x="102" y="73" textAnchor="middle" fontSize="8" fontWeight="bold" fill="#9a3412">腹板 A1 (y1=20)</text>
+
+            {/* 形心紅線 */}
+            <line x1="25" y1="60" x2="180" y2="60" stroke="#dc2626" strokeWidth="1.8" strokeDasharray="4 2" />
+            <circle cx="102" cy="60" r="3.5" fill="#dc2626" />
+            <text x="145" y="56" fontSize="9" fontWeight="bold" fill="#dc2626">形心 C (ȳ=30.7)</text>
+            <text x="102" y="103" textAnchor="middle" fontSize="8" fontWeight="bold" fill="#334155">ȳ = (A1·y1 + A2·y2) / (A1 + A2)</text>
+          </g>
+
+          {/* 右圖：斜面摩擦自鎖 */}
+          <g transform="translate(275, 48)">
+            <rect x="0" y="0" width="230" height="110" fill="#f8fafc" stroke="#cbd5e1" rx="6" />
+            <text x="115" y="16" textAnchor="middle" fontSize="10" fontWeight="bold" fill="#166534">斜面摩擦角與自鎖條件</text>
+
+            {/* 斜坡 */}
+            <path d="M 30,95 L 170,95 L 170,35 Z" fill="#e2e8f0" stroke="#64748b" strokeWidth="1.5" />
+            <text x="55" y="90" fontSize="9" fill="#475569">θ (傾角)</text>
+
+            {/* 滑塊與受力 */}
+            <rect x="90" y="50" width="35" height="20" transform="rotate(-23 90 50)" fill="#bbf7d0" stroke="#16a34a" strokeWidth="1.5" />
+            <line x1="95" y1="50" x2="95" y2="80" stroke="#dc2626" strokeWidth="2" />
+            <text x="100" y="75" fontSize="8" fontWeight="bold" fill="#dc2626">W (重力)</text>
+
+            <rect x="135" y="30" width="85" height="65" fill="#ffffff" stroke="#86efac" rx="4" />
+            <text x="177" y="45" textAnchor="middle" fontSize="9" fontWeight="bold" fill="#15803d">摩擦力三大律</text>
+            <text x="177" y="60" textAnchor="middle" fontSize="8" fill="#1e293b">fs = μs · N (極限)</text>
+            <text x="177" y="73" textAnchor="middle" fontSize="8" fill="#1e293b">tan φs = μs (摩擦角)</text>
+            <text x="177" y="87" textAnchor="middle" fontSize="8" fontWeight="bold" fill="#b91c1c">θ ≤ φs ➜ 自鎖不滑</text>
+          </g>
+
+          <rect x="35" y="165" width="470" height="26" fill="#fef2f2" stroke="#fecaca" rx="4" />
+          <text x="270" y="182" textAnchor="middle" fontSize="10" fontWeight="bold" fill="#991b1b">
+            挖空開孔一律以「負面積 (-A)」代入 ｜ 靜止未動時摩擦力 f 永遠等於「外加推力 P」！
+          </text>
+        </svg>
+      );
+
+    // 30. 力學 桁架分析與零力桿速判
+    case 'mechanics-truss-zeroforce':
+      return (
+        <svg viewBox="0 0 540 220" className={className} xmlns="http://www.w3.org/2000/svg" aria-label="桁架分析與零力桿圖解">
+          <rect width="540" height="220" fill="#f8fafc" rx="12" />
+          <rect x="20" y="15" width="500" height="190" fill="#ffffff" stroke="#cbd5e1" strokeWidth="1.5" rx="8" />
+          <text x="270" y="34" textAnchor="middle" fontSize="13" fontWeight="bold" fill="#0f172a">
+            桁架靜定判別 (m = 2j - 3)、截面法一刀切與零力桿速判兩鐵律
+          </text>
+
+          {/* 零力桿兩鐵律 */}
+          <g transform="translate(35, 48)">
+            <rect x="0" y="0" width="225" height="110" fill="#eff6ff" stroke="#93c5fd" rx="6" />
+            <text x="112" y="18" textAnchor="middle" fontSize="10" fontWeight="bold" fill="#1e40af">零力桿 (Zero-Force) 兩大速判鐵律</text>
+
+            {/* 鐵律一：兩桿不共線無外力 */}
+            <g transform="translate(15, 28)">
+              <circle cx="20" cy="25" r="4" fill="#ef4444" />
+              <line x1="20" y1="25" x2="60" y2="10" stroke="#dc2626" strokeWidth="2" strokeDasharray="3 2" />
+              <line x1="20" y1="25" x2="20" y2="60" stroke="#dc2626" strokeWidth="2" strokeDasharray="3 2" />
+              <text x="65" y="30" fontSize="8" fontWeight="bold" fill="#991b1b">鐵律 ①：兩桿不共線無外力</text>
+              <text x="65" y="45" fontSize="8" fill="#1e293b">➜ 兩桿內力「皆為零」！</text>
+            </g>
+
+            {/* 鐵律二：三桿兩共線無外力 */}
+            <g transform="translate(15, 70)">
+              <line x1="5" y1="25" x2="65" y2="25" stroke="#2563eb" strokeWidth="2" />
+              <circle cx="35" cy="25" r="4" fill="#0f172a" />
+              <line x1="35" y1="25" x2="35" y2="0" stroke="#dc2626" strokeWidth="2" strokeDasharray="3 2" />
+              <text x="75" y="18" fontSize="8" fontWeight="bold" fill="#1e40af">鐵律 ②：三桿兩共線無外力</text>
+              <text x="75" y="32" fontSize="8" fill="#1e293b">➜ 獨立斜桿「必為零桿」！</text>
+            </g>
+          </g>
+
+          {/* 截面法一刀切平衡 */}
+          <g transform="translate(280, 48)">
+            <rect x="0" y="0" width="225" height="110" fill="#f8fafc" stroke="#cbd5e1" rx="6" />
+            <text x="112" y="18" textAnchor="middle" fontSize="10" fontWeight="bold" fill="#047857">截面法 (Method of Sections)</text>
+
+            <path d="M 20,85 L 70,30 L 120,85 L 170,30 L 205,85" fill="none" stroke="#64748b" strokeWidth="2" />
+            <line x1="20" y1="85" x2="205" y2="85" stroke="#64748b" strokeWidth="2" />
+            <line x1="70" y1="30" x2="170" y2="30" stroke="#64748b" strokeWidth="2" />
+
+            {/* 紅色切面線 */}
+            <line x1="90" y1="15" x2="105" y2="95" stroke="#ef4444" strokeWidth="2" strokeDasharray="4 2" />
+            <text x="115" y="25" fontSize="9" fontWeight="bold" fill="#dc2626">一刀切開 (≤3桿)</text>
+
+            <rect x="25" y="88" width="175" height="18" fill="#dcfce7" rx="3" />
+            <text x="112" y="100" textAnchor="middle" fontSize="8" fontWeight="bold" fill="#15803d">
+              對另外兩桿交點取矩 (ΣM=0)，一式秒殺！
+            </text>
+          </g>
+
+          <rect x="35" y="165" width="470" height="26" fill="#fef3c7" stroke="#fde047" rx="4" />
+          <text x="270" y="182" textAnchor="middle" fontSize="10" fontWeight="bold" fill="#854d0e">
+            符號鐵律：背離節點為拉力 (+T)，指向節點為壓力 (-C) ｜ 理想桁架無彎矩剪力，僅承受軸向力！
+          </text>
+        </svg>
+      );
+
+    // 31. 力學 梁剪力彎矩 V-M 圖微分幾何關係
+    case 'mechanics-vm-diagram':
+      return (
+        <svg viewBox="0 0 540 220" className={className} xmlns="http://www.w3.org/2000/svg" aria-label="梁剪力與彎矩圖圖解">
+          <rect width="540" height="220" fill="#f8fafc" rx="12" />
+          <rect x="20" y="15" width="500" height="190" fill="#ffffff" stroke="#cbd5e1" strokeWidth="1.5" rx="8" />
+          <text x="270" y="32" textAnchor="middle" fontSize="13" fontWeight="bold" fill="#0f172a">
+            簡支梁載重、剪力圖 (SFD) 與彎矩圖 (BMD) 微分面積幾何
+          </text>
+
+          {/* 三層圖解架構 */}
+          <g transform="translate(50, 42)">
+            {/* 1. 簡支梁載重 */}
+            <rect x="40" y="0" width="240" height="6" fill="#64748b" />
+            {/* 均佈載重向下箭頭 */}
+            <path d="M 40,-8 L 280,-8 M 60,-8 L 60,-1 M 110,-8 L 110,-1 M 160,-8 L 160,-1 M 210,-8 L 210,-1 M 260,-8 L 260,-1" stroke="#ef4444" strokeWidth="1.5" />
+            <text x="160" y="-12" textAnchor="middle" fontSize="9" fontWeight="bold" fill="#ef4444">均佈載重 w (kN/m)</text>
+            <circle cx="40" cy="8" r="4" fill="#0f172a" />
+            <circle cx="280" cy="8" r="4" fill="#0f172a" />
+            <text x="30" y="20" fontSize="8" fontWeight="bold" fill="#0f172a">RA=wL/2</text>
+            <text x="275" y="20" fontSize="8" fontWeight="bold" fill="#0f172a">RB=wL/2</text>
+
+            {/* 2. 剪力圖 SFD */}
+            <line x1="40" y1="45" x2="280" y2="45" stroke="#94a3b8" strokeWidth="1" strokeDasharray="3 2" />
+            <polygon points="40,30 160,45 40,45" fill="#bfdbfe" />
+            <polygon points="160,45 280,60 280,45" fill="#fecaca" />
+            <line x1="40" y1="30" x2="280" y2="60" stroke="#2563eb" strokeWidth="2" />
+            <text x="5" y="38" fontSize="8" fontWeight="bold" fill="#2563eb">SFD (+)</text>
+            <text x="5" y="58" fontSize="8" fontWeight="bold" fill="#ef4444">SFD (-)</text>
+            <circle cx="160" cy="45" r="3" fill="#dc2626" />
+            <text x="160" y="40" textAnchor="middle" fontSize="8" fontWeight="bold" fill="#dc2626">V = 0 點</text>
+
+            {/* 3. 彎矩圖 BMD */}
+            <line x1="40" y1="95" x2="280" y2="95" stroke="#94a3b8" strokeWidth="1" strokeDasharray="3 2" />
+            <path d="M 40,95 Q 160,65 280,95 Z" fill="#dcfce7" stroke="#16a34a" strokeWidth="2" />
+            <text x="5" y="85" fontSize="8" fontWeight="bold" fill="#15803d">BMD</text>
+            <text x="160" y="78" textAnchor="middle" fontSize="9" fontWeight="bold" fill="#15803d">Mmax = wL² / 8</text>
+          </g>
+
+          {/* 右側：微分定理與面積法 */}
+          <g transform="translate(370, 48)">
+            <rect x="0" y="0" width="135" height="105" fill="#f8fafc" stroke="#cbd5e1" rx="6" />
+            <text x="67" y="18" textAnchor="middle" fontSize="10" fontWeight="bold" fill="#1e293b">核心微分定律</text>
+            <text x="12" y="38" fontSize="9" fontWeight="bold" fill="#2563eb">① dV/dx = -w</text>
+            <text x="12" y="55" fontSize="9" fontWeight="bold" fill="#16a34a">② dM/dx = V</text>
+            <text x="12" y="72" fontSize="8" fill="#475569">剪力面積 = 彎矩差</text>
+            <rect x="8" y="80" width="120" height="20" fill="#fef3c7" rx="3" />
+            <text x="67" y="93" textAnchor="middle" fontSize="8" fontWeight="bold" fill="#854d0e">V=0 處 ➜ M 最大！</text>
+          </g>
+
+          <rect x="35" y="165" width="470" height="26" fill="#f0fdf4" stroke="#bbf7d0" rx="4" />
+          <text x="270" y="182" textAnchor="middle" fontSize="10" fontWeight="bold" fill="#166534">
+            集中載重處剪力產生「垂直跳躍」｜ 集中力偶在 SFD 無反應，僅在 BMD 產生跳變！
+          </text>
+        </svg>
+      );
+
+    // 32. 力學 截面慣性矩與平行軸定理
+    case 'mechanics-inertia-parallel':
+      return (
+        <svg viewBox="0 0 540 220" className={className} xmlns="http://www.w3.org/2000/svg" aria-label="截面慣性矩與平行軸定理圖解">
+          <rect width="540" height="220" fill="#f8fafc" rx="12" />
+          <rect x="20" y="15" width="500" height="190" fill="#ffffff" stroke="#cbd5e1" strokeWidth="1.5" rx="8" />
+          <text x="270" y="34" textAnchor="middle" fontSize="13" fontWeight="bold" fill="#0f172a">
+            矩形截面二次軸矩 (Ixo = bh³/12) 與平行軸定理 (Ix = Ixo + A·d²)
+          </text>
+
+          {/* 左圖：矩形慣性矩與抗彎剛度 */}
+          <g transform="translate(45, 48)">
+            <rect x="0" y="0" width="215" height="110" fill="#f8fafc" stroke="#cbd5e1" rx="6" />
+            <text x="107" y="16" textAnchor="middle" fontSize="10" fontWeight="bold" fill="#0369a1">矩形立放 vs 臥放慣性矩</text>
+
+            <rect x="30" y="25" width="35" height="70" fill="#bfdbfe" stroke="#2563eb" strokeWidth="1.5" />
+            <text x="47" y="63" textAnchor="middle" fontSize="9" fontWeight="bold" fill="#1e3a8a">立放</text>
+            <text x="47" y="103" textAnchor="middle" fontSize="8" fill="#475569">h 大 ➜ 剛度大</text>
+
+            <rect x="110" y="55" width="75" height="20" fill="#fed7aa" stroke="#ea580c" strokeWidth="1.5" />
+            <text x="147" y="68" textAnchor="middle" fontSize="9" fontWeight="bold" fill="#9a3412">臥放</text>
+            <text x="147" y="90" textAnchor="middle" fontSize="8" fill="#475569">h 小 ➜ 易凹陷</text>
+
+            <line x1="15" y1="60" x2="80" y2="60" stroke="#dc2626" strokeWidth="1.5" strokeDasharray="3 2" />
+            <text x="22" y="55" fontSize="8" fontWeight="bold" fill="#dc2626">xc</text>
+          </g>
+
+          {/* 右圖：平行軸定理移軸幾何 */}
+          <g transform="translate(280, 48)">
+            <rect x="0" y="0" width="225" height="110" fill="#f8fafc" stroke="#cbd5e1" rx="6" />
+            <text x="112" y="16" textAnchor="middle" fontSize="10" fontWeight="bold" fill="#7c3aed">平行軸定理 (移軸加 Ad²)</text>
+
+            {/* 形心軸與平行軸 */}
+            <line x1="20" y1="35" x2="205" y2="35" stroke="#ef4444" strokeWidth="2" strokeDasharray="4 2" />
+            <text x="180" y="30" fontSize="8" fontWeight="bold" fill="#ef4444">形心軸 xo</text>
+
+            <line x1="20" y1="80" x2="205" y2="80" stroke="#2563eb" strokeWidth="2" />
+            <text x="180" y="75" fontSize="8" fontWeight="bold" fill="#2563eb">平行軸 x</text>
+
+            <line x1="60" y1="35" x2="60" y2="80" stroke="#0f172a" strokeWidth="1.5" />
+            <text x="68" y="60" fontSize="9" fontWeight="bold" fill="#0f172a">距離 d</text>
+
+            <rect x="90" y="45" width="125" height="48" fill="#f3e8ff" stroke="#c084fc" rx="4" />
+            <text x="152" y="60" textAnchor="middle" fontSize="9" fontWeight="bold" fill="#6b21a8">Ix = Ixo + A · d²</text>
+            <text x="152" y="73" textAnchor="middle" fontSize="8" fill="#1e293b">底邊軸: bh³/3 (4倍大)</text>
+            <text x="152" y="85" textAnchor="middle" fontSize="8" fill="#1e293b">極慣性矩: J = Ix + Iy</text>
+          </g>
+
+          <rect x="35" y="165" width="470" height="26" fill="#eff6ff" stroke="#bfdbfe" rx="4" />
+          <text x="270" y="182" textAnchor="middle" fontSize="10" fontWeight="bold" fill="#1e40af">
+            移軸鐵律：中繼站必為「形心軸」，由形心移外必定加上 A·d²，慣性矩永遠越移越大！
+          </text>
+        </svg>
+      );
+
+    // 33. 力學 莫爾圓 (Mohr's Circle) 平面應力轉換
+    case 'mechanics-mohr-circle':
+      return (
+        <svg viewBox="0 0 540 220" className={className} xmlns="http://www.w3.org/2000/svg" aria-label="莫爾圓應力轉換圖解">
+          <rect width="540" height="220" fill="#f8fafc" rx="12" />
+          <rect x="20" y="15" width="500" height="190" fill="#ffffff" stroke="#cbd5e1" strokeWidth="1.5" rx="8" />
+          <text x="270" y="34" textAnchor="middle" fontSize="13" fontWeight="bold" fill="#0f172a">
+            平面應力狀態與莫爾圓 (Mohr's Circle) 幾何主應力速解
+          </text>
+
+          {/* 莫爾圓幾何大圖 */}
+          <g transform="translate(60, 48)">
+            {/* 坐標軸 */}
+            <line x1="20" y1="65" x2="260" y2="65" stroke="#64748b" strokeWidth="1.5" />
+            <text x="265" y="68" fontSize="10" fontWeight="bold" fill="#0f172a">σ (正應力)</text>
+
+            <line x1="120" y1="10" x2="120" y2="105" stroke="#64748b" strokeWidth="1.5" />
+            <text x="120" y="5" textAnchor="middle" fontSize="10" fontWeight="bold" fill="#0f172a">τ (剪應力)</text>
+
+            {/* 圓體 */}
+            <circle cx="160" cy="65" r="45" fill="#eff6ff" stroke="#2563eb" strokeWidth="2" />
+            <circle cx="160" cy="65" r="3" fill="#dc2626" />
+            <text x="160" y="60" textAnchor="middle" fontSize="8" fontWeight="bold" fill="#dc2626">C(σavg, 0)</text>
+
+            {/* 最大主應力 σ1 與最小主應力 σ2 */}
+            <circle cx="205" cy="65" r="3" fill="#16a34a" />
+            <text x="215" y="60" fontSize="9" fontWeight="bold" fill="#15803d">σ1 (最大)</text>
+
+            <circle cx="115" cy="65" r="3" fill="#16a34a" />
+            <text x="95" y="60" fontSize="9" fontWeight="bold" fill="#15803d">σ2</text>
+
+            {/* 最大剪應力頂點 */}
+            <circle cx="160" cy="20" r="3" fill="#9333ea" />
+            <line x1="160" y1="65" x2="160" y2="20" stroke="#9333ea" strokeWidth="1.5" strokeDasharray="2 2" />
+            <text x="180" y="25" fontSize="9" fontWeight="bold" fill="#7e22ce">τmax = 半徑 R</text>
+          </g>
+
+          {/* 右側：計算公式卡 */}
+          <g transform="translate(345, 48)">
+            <rect x="0" y="0" width="160" height="105" fill="#f8fafc" stroke="#cbd5e1" rx="6" />
+            <text x="80" y="16" textAnchor="middle" fontSize="10" fontWeight="bold" fill="#1e3a8a">莫爾圓速算三公式</text>
+            <text x="10" y="34" fontSize="8" fontWeight="bold" fill="#dc2626">圓心: σavg = (σx+σy)/2</text>
+            <text x="10" y="50" fontSize="8" fontWeight="bold" fill="#7e22ce">半徑: R = √[((σx-σy)/2)² + τ²]</text>
+            <text x="10" y="66" fontSize="8" fontWeight="bold" fill="#15803d">主應力: σ1,2 = σavg ± R</text>
+            <text x="10" y="82" fontSize="8" fontWeight="bold" fill="#b45309">最大剪: τmax = R</text>
+            <text x="10" y="98" fontSize="8" fill="#475569">主平面上剪應力恆為 0！</text>
+          </g>
+
+          <rect x="35" y="165" width="470" height="26" fill="#fdf4ff" stroke="#f0abfc" rx="4" />
+          <text x="270" y="182" textAnchor="middle" fontSize="10" fontWeight="bold" fill="#a21caf">
+            不變量鐵律：正應力總和恆定 σ1 + σ2 = σx + σy ｜ 莫爾圓上旋轉 2θ 對應實體旋轉 θ！
+          </text>
+        </svg>
+      );
+
+    // 34. 製圖 CNS 3 圖紙尺度與線型規範
+    case 'drafting-cns-sheets-lines':
+      return (
+        <svg viewBox="0 0 540 220" className={className} xmlns="http://www.w3.org/2000/svg" aria-label="CNS 3 圖紙與標準線型圖解">
+          <rect width="540" height="220" fill="#f8fafc" rx="12" />
+          <rect x="20" y="15" width="500" height="190" fill="#ffffff" stroke="#cbd5e1" strokeWidth="1.5" rx="8" />
+          <text x="270" y="34" textAnchor="middle" fontSize="13" fontWeight="bold" fill="#0f172a">
+            CNS 3 建築圖紙 A 系列對折比例 (1:√2) 與工程標準線型層級
+          </text>
+
+          {/* 左圖：A 系列圖紙對折 */}
+          <g transform="translate(45, 48)">
+            <rect x="0" y="0" width="190" height="110" fill="#f8fafc" stroke="#cbd5e1" rx="6" />
+            <text x="95" y="16" textAnchor="middle" fontSize="10" fontWeight="bold" fill="#0f172a">A0~A4 圖紙對折體系</text>
+
+            <rect x="25" y="25" width="140" height="75" fill="#eff6ff" stroke="#2563eb" strokeWidth="1.5" />
+            <text x="95" y="45" textAnchor="middle" fontSize="8" fontWeight="bold" fill="#1e40af">A1 (594 × 841)</text>
+
+            {/* 對折線 */}
+            <line x1="95" y1="25" x2="95" y2="100" stroke="#ef4444" strokeWidth="1.5" strokeDasharray="3 2" />
+            <rect x="95" y="25" width="70" height="75" fill="#dbeafe" opacity="0.6" />
+            <text x="130" y="65" textAnchor="middle" fontSize="8" fontWeight="bold" fill="#1d4ed8">A2 (420×594)</text>
+
+            <line x1="95" y1="62" x2="165" y2="62" stroke="#ef4444" strokeWidth="1.5" strokeDasharray="3 2" />
+            <text x="130" y="85" textAnchor="middle" fontSize="7" fontWeight="bold" fill="#b91c1c">A3 ➜ A4 (210×297)</text>
+          </g>
+
+          {/* 右圖：線型重疊優先序 */}
+          <g transform="translate(255, 48)">
+            <rect x="0" y="0" width="250" height="110" fill="#f8fafc" stroke="#cbd5e1" rx="6" />
+            <text x="125" y="16" textAnchor="middle" fontSize="10" fontWeight="bold" fill="#047857">同一直線重疊繪出優先順序</text>
+
+            <line x1="20" y1="35" x2="90" y2="35" stroke="#0f172a" strokeWidth="3" />
+            <text x="100" y="38" fontSize="8" fontWeight="bold" fill="#0f172a">1. 外形輪廓線 (粗實線) ★最優先</text>
+
+            <line x1="20" y1="55" x2="90" y2="55" stroke="#2563eb" strokeWidth="2" strokeDasharray="4 2" />
+            <text x="100" y="58" fontSize="8" fontWeight="bold" fill="#2563eb">2. 隱藏線 (中虛線)</text>
+
+            <line x1="20" y1="75" x2="90" y2="75" stroke="#ef4444" strokeWidth="1.5" strokeDasharray="8 2 2 2" />
+            <text x="100" y="78" fontSize="8" fontWeight="bold" fill="#ef4444">3. 中心線/軸心線 (細鏈線)</text>
+
+            <line x1="20" y1="95" x2="90" y2="95" stroke="#64748b" strokeWidth="1" />
+            <text x="100" y="98" fontSize="8" fill="#475569">4. 尺寸界線/剖面線 (細實線)</text>
+          </g>
+
+          <rect x="35" y="165" width="470" height="26" fill="#fef3c7" stroke="#fde047" rx="4" />
+          <text x="270" y="182" textAnchor="middle" fontSize="10" fontWeight="bold" fill="#854d0e">
+            A4 尺度 210 × 297 mm ｜ 粗細比 4 : 2 : 1 (粗 0.7mm, 中 0.35mm, 細 0.18mm) ｜ 實線壓虛線，虛線壓中心！
+          </text>
+        </svg>
+      );
+
+    // 35. 製圖 第三角法三視圖與 45° 投射
+    case 'drafting-third-angle-proj':
+      return (
+        <svg viewBox="0 0 540 220" className={className} xmlns="http://www.w3.org/2000/svg" aria-label="第三角法正投影三視圖展開圖解">
+          <rect width="540" height="220" fill="#f8fafc" rx="12" />
+          <rect x="20" y="15" width="500" height="190" fill="#ffffff" stroke="#cbd5e1" strokeWidth="1.5" rx="8" />
+          <text x="270" y="34" textAnchor="middle" fontSize="13" fontWeight="bold" fill="#0f172a">
+            第三角投影法三視圖展開與「長對正、高平齊、寬相等」投射
+          </text>
+
+          {/* 三視圖排列 */}
+          <g transform="translate(60, 48)">
+            {/* 俯視圖 (左上) */}
+            <rect x="30" y="0" width="80" height="40" fill="#dbeafe" stroke="#2563eb" strokeWidth="1.5" />
+            <text x="70" y="24" textAnchor="middle" fontSize="9" fontWeight="bold" fill="#1e40af">俯視圖 (Top)</text>
+
+            {/* 前視圖 (左下) */}
+            <rect x="30" y="60" width="80" height="45" fill="#bbf7d0" stroke="#16a34a" strokeWidth="1.5" />
+            <text x="70" y="87" textAnchor="middle" fontSize="9" fontWeight="bold" fill="#166534">前視圖 (Front)</text>
+
+            {/* 右側視圖 (右下) */}
+            <rect x="150" y="60" width="40" height="45" fill="#fed7aa" stroke="#ea580c" strokeWidth="1.5" />
+            <text x="170" y="87" textAnchor="middle" fontSize="9" fontWeight="bold" fill="#9a3412">右側視圖</text>
+
+            {/* 45° 投射線 (右上) */}
+            <line x1="110" y1="0" x2="150" y2="40" stroke="#ef4444" strokeWidth="2" />
+            <text x="135" y="15" fontSize="8" fontWeight="bold" fill="#dc2626">45° 線</text>
+
+            {/* 對正輔助線 */}
+            <line x1="30" y1="40" x2="30" y2="60" stroke="#94a3b8" strokeWidth="1" strokeDasharray="2 2" />
+            <line x1="110" y1="40" x2="110" y2="60" stroke="#94a3b8" strokeWidth="1" strokeDasharray="2 2" />
+            <text x="70" y="53" textAnchor="middle" fontSize="8" fill="#64748b">長對正 ↕</text>
+
+            <line x1="110" y1="80" x2="150" y2="80" stroke="#94a3b8" strokeWidth="1" strokeDasharray="2 2" />
+            <text x="130" y="75" textAnchor="middle" fontSize="8" fill="#64748b">高平齊 ⟷</text>
+          </g>
+
+          {/* 右側：三大鐵律 */}
+          <g transform="translate(320, 48)">
+            <rect x="0" y="0" width="180" height="110" fill="#f8fafc" stroke="#cbd5e1" rx="6" />
+            <text x="90" y="18" textAnchor="middle" fontSize="10" fontWeight="bold" fill="#1e3a8a">第三角法三大準則</text>
+
+            <rect x="15" y="30" width="150" height="20" fill="#eff6ff" rx="3" />
+            <text x="90" y="44" textAnchor="middle" fontSize="9" fontWeight="bold" fill="#1e40af">長對正：前視圖與俯視圖</text>
+
+            <rect x="15" y="55" width="150" height="20" fill="#f0fdf4" rx="3" />
+            <text x="90" y="69" textAnchor="middle" fontSize="9" fontWeight="bold" fill="#166534">高平齊：前視圖與右側圖</text>
+
+            <rect x="15" y="80" width="150" height="20" fill="#fff7ed" rx="3" />
+            <text x="90" y="94" textAnchor="middle" fontSize="9" fontWeight="bold" fill="#ea580c">寬相等：俯視圖與右側圖 (45°)</text>
+          </g>
+
+          <rect x="35" y="165" width="470" height="26" fill="#fef2f2" stroke="#fecaca" rx="4" />
+          <text x="270" y="182" textAnchor="middle" fontSize="10" fontWeight="bold" fill="#991b1b">
+            空間相對關係：人 ➜ 投影面 ➜ 物體 ｜ 台灣 CNS 建築製圖一律採用「第三角法」！
+          </text>
+        </svg>
+      );
+
+    // 36. 製圖 剖面圖分類與割面線符號
+    case 'drafting-section-views':
+      return (
+        <svg viewBox="0 0 540 220" className={className} xmlns="http://www.w3.org/2000/svg" aria-label="剖面圖種類與割面線圖解">
+          <rect width="540" height="220" fill="#f8fafc" rx="12" />
+          <rect x="20" y="15" width="500" height="190" fill="#ffffff" stroke="#cbd5e1" strokeWidth="1.5" rx="8" />
+          <text x="270" y="34" textAnchor="middle" fontSize="13" fontWeight="bold" fill="#0f172a">
+            CNS 剖面圖分類（全剖/半剖/局部剖）與割面線剖面線規範
+          </text>
+
+          {/* 半剖面圖實例 */}
+          <g transform="translate(45, 48)">
+            <rect x="0" y="0" width="220" height="110" fill="#f8fafc" stroke="#cbd5e1" rx="6" />
+            <text x="110" y="16" textAnchor="middle" fontSize="10" fontWeight="bold" fill="#1e40af">半剖面圖 (對稱機件專用)</text>
+
+            {/* 左側外觀 */}
+            <rect x="30" y="30" width="45" height="60" fill="#ffffff" stroke="#0f172a" strokeWidth="1.8" />
+            <text x="52" y="65" textAnchor="middle" fontSize="8" fontWeight="bold" fill="#475569">外觀半側</text>
+            <text x="52" y="78" textAnchor="middle" fontSize="7" fill="#ef4444">(省略虛線)</text>
+
+            {/* 中央中心線 */}
+            <line x1="75" y1="20" x2="75" y2="100" stroke="#ef4444" strokeWidth="1.5" strokeDasharray="6 2 2 2" />
+
+            {/* 右側剖面實體 */}
+            <rect x="75" y="30" width="45" height="60" fill="#ffffff" stroke="#0f172a" strokeWidth="1.8" />
+            {/* 45° 剖面線 */}
+            <line x1="75" y1="50" x2="95" y2="30" stroke="#2563eb" strokeWidth="1.2" />
+            <line x1="75" y1="70" x2="115" y2="30" stroke="#2563eb" strokeWidth="1.2" />
+            <line x1="75" y1="90" x2="120" y2="45" stroke="#2563eb" strokeWidth="1.2" />
+            <line x1="90" y1="90" x2="120" y2="60" stroke="#2563eb" strokeWidth="1.2" />
+            <text x="160" y="55" fontSize="8" fontWeight="bold" fill="#1d4ed8">剖面實體</text>
+            <text x="160" y="68" fontSize="8" fill="#475569">45° 細實線</text>
+          </g>
+
+          {/* 割面線符號與局部剖 */}
+          <g transform="translate(280, 48)">
+            <rect x="0" y="0" width="225" height="110" fill="#f8fafc" stroke="#cbd5e1" rx="6" />
+            <text x="112" y="16" textAnchor="middle" fontSize="10" fontWeight="bold" fill="#b45309">割面線與不剖構件</text>
+
+            {/* 割面線 */}
+            <line x1="20" y1="40" x2="40" y2="40" stroke="#0f172a" strokeWidth="3" />
+            <line x1="40" y1="40" x2="140" y2="40" stroke="#64748b" strokeWidth="1.2" strokeDasharray="8 2" />
+            <line x1="140" y1="40" x2="160" y2="40" stroke="#0f172a" strokeWidth="3" />
+            <path d="M 20,40 L 20,25" stroke="#0f172a" strokeWidth="2.5" markerEnd="url(#arrow)" />
+            <path d="M 160,40 L 160,25" stroke="#0f172a" strokeWidth="2.5" />
+            <text x="25" y="22" fontSize="9" fontWeight="bold" fill="#0f172a">A</text>
+            <text x="165" y="22" fontSize="9" fontWeight="bold" fill="#0f172a">A</text>
+            <text x="90" y="32" textAnchor="middle" fontSize="7" fill="#64748b">箭頭指示視向</text>
+
+            <rect x="15" y="55" width="195" height="45" fill="#fef3c7" stroke="#fde047" rx="4" />
+            <text x="112" y="70" textAnchor="middle" fontSize="8" fontWeight="bold" fill="#92400e">縱向剖面「一律不打剖面線」之構件：</text>
+            <text x="112" y="85" textAnchor="middle" fontSize="8" fill="#78350f">實心螺栓、螺帽、鉚釘、實心軸、肋條、鍵</text>
+          </g>
+
+          <rect x="35" y="165" width="470" height="26" fill="#f0fdf4" stroke="#bbf7d0" rx="4" />
+          <text x="270" y="182" textAnchor="middle" fontSize="10" fontWeight="bold" fill="#166534">
+            半剖面圖外側省略所有虛線 ｜ 局部剖面使用「徒手波浪線」破斷 ｜ 剖面線間距約 1.5~3 mm！
+          </text>
+        </svg>
+      );
+
+    // 37. 建築概論 綠建築 EEWH 四範疇九指標
+    case 'arch-eewh-green-building':
+      return (
+        <svg viewBox="0 0 540 220" className={className} xmlns="http://www.w3.org/2000/svg" aria-label="台灣綠建築 EEWH 指標圖解">
+          <rect width="540" height="220" fill="#f8fafc" rx="12" />
+          <rect x="20" y="15" width="500" height="190" fill="#ffffff" stroke="#cbd5e1" strokeWidth="1.5" rx="8" />
+          <text x="270" y="34" textAnchor="middle" fontSize="13" fontWeight="bold" fill="#0f172a">
+            台灣綠建築標章 (EEWH) 四大範疇、九大評估指標與五大等級
+          </text>
+
+          {/* 四大範疇卡片 */}
+          <g transform="translate(35, 48)">
+            {/* 1. 生態 Ecology */}
+            <rect x="0" y="0" width="112" height="105" fill="#f0fdf4" stroke="#86efac" rx="6" />
+            <text x="56" y="18" textAnchor="middle" fontSize="10" fontWeight="bold" fill="#166534">E · 生態 (Ecology)</text>
+            <text x="10" y="38" fontSize="8" fill="#15803d">1. 生物多樣性</text>
+            <text x="10" y="55" fontSize="8" fill="#15803d">2. 綠化量指標</text>
+            <text x="10" y="72" fontSize="8" fill="#15803d">3. 基地保水指標</text>
+            <text x="56" y="94" textAnchor="middle" fontSize="7" fontWeight="bold" fill="#047857">營造戶外生態系</text>
+
+            {/* 2. 節能 Energy */}
+            <rect x="120" y="0" width="112" height="105" fill="#eff6ff" stroke="#93c5fd" rx="6" />
+            <text x="176" y="18" textAnchor="middle" fontSize="10" fontWeight="bold" fill="#1e40af">E · 節能 (Energy)</text>
+            <rect x="125" y="28" width="102" height="30" fill="#bfdbfe" rx="3" />
+            <text x="176" y="42" textAnchor="middle" fontSize="8" fontWeight="bold" fill="#1e3a8a">4. 日常節能指標 ★</text>
+            <text x="176" y="52" textAnchor="middle" fontSize="7" fill="#1e40af">(外殼/空調/照明)</text>
+            <text x="176" y="80" textAnchor="middle" fontSize="8" fontWeight="bold" fill="#dc2626">【絕對必要門檻】</text>
+            <text x="176" y="94" textAnchor="middle" fontSize="7" fill="#64748b">佔節能比重最高</text>
+
+            {/* 3. 減廢 Waste */}
+            <rect x="240" y="0" width="112" height="105" fill="#fef3c7" stroke="#fde047" rx="6" />
+            <text x="296" y="18" textAnchor="middle" fontSize="10" fontWeight="bold" fill="#854d0e">W · 減廢 (Waste)</text>
+            <text x="250" y="42" fontSize="8" fill="#92400e">5. CO2 減量指標</text>
+            <text x="250" y="60" fontSize="8" fill="#92400e">6. 廢棄物減量指標</text>
+            <text x="296" y="94" textAnchor="middle" fontSize="7" fill="#78350f">減少建材生命週期碳</text>
+
+            {/* 4. 健康 Health */}
+            <rect x="360" y="0" width="112" height="105" fill="#faf5ff" stroke="#d8b4fe" rx="6" />
+            <text x="416" y="18" textAnchor="middle" fontSize="10" fontWeight="bold" fill="#6b21a8">H · 健康 (Health)</text>
+            <text x="370" y="38" fontSize="8" fill="#7e22ce">7. 室內環境指標</text>
+            <rect x="365" y="46" width="102" height="20" fill="#e9d5ff" rx="3" />
+            <text x="416" y="60" textAnchor="middle" fontSize="8" fontWeight="bold" fill="#581c87">8. 水資源指標 ★</text>
+            <text x="370" y="80" fontSize="8" fill="#7e22ce">9. 污水垃圾改善</text>
+            <text x="416" y="96" textAnchor="middle" fontSize="7" fontWeight="bold" fill="#dc2626">省水器具必過門檻</text>
+          </g>
+
+          <rect x="35" y="165" width="470" height="26" fill="#f1f5f9" stroke="#cbd5e1" rx="4" />
+          <text x="270" y="182" textAnchor="middle" fontSize="10" fontWeight="bold" fill="#0f172a">
+            五大評定等級：鑽石級 (最高) ➜ 黃金級 ➜ 銀級 ➜ 銅級 ➜ 合格級 ｜ 絕無「白金級」！
+          </text>
+        </svg>
+      );
+
+    // 38. 建築製圖 樓梯尺度構造法規剖面
+    case 'drafting-staircase-code':
+      return (
+        <svg viewBox="0 0 540 220" className={className} xmlns="http://www.w3.org/2000/svg" aria-label="建築技術規則樓梯構造圖解">
+          <rect width="540" height="220" fill="#f8fafc" rx="12" />
+          <rect x="20" y="15" width="500" height="190" fill="#ffffff" stroke="#cbd5e1" strokeWidth="1.5" rx="8" />
+          <text x="270" y="34" textAnchor="middle" fontSize="13" fontWeight="bold" fill="#0f172a">
+            建築技術規則第 33 條樓梯級高 (R)、踏面 (T) 法規與人體工學剖面
+          </text>
+
+          {/* 樓梯剖面構造圖 */}
+          <g transform="translate(50, 48)">
+            <path d="M 20,95 L 60,95 L 60,70 L 100,70 L 100,45 L 140,45 L 140,20 L 180,20" fill="none" stroke="#0f172a" strokeWidth="2.5" />
+            <path d="M 20,110 L 75,110 L 195,35 L 205,35" fill="none" stroke="#64748b" strokeWidth="1.5" strokeDasharray="3 2" />
+
+            {/* 踏面 T 與 級高 R 標註 */}
+            <line x1="60" y1="65" x2="100" y2="65" stroke="#2563eb" strokeWidth="1.8" />
+            <text x="80" y="60" textAnchor="middle" fontSize="9" fontWeight="bold" fill="#2563eb">踏面 T ≥ 24 cm</text>
+
+            <line x1="105" y1="70" x2="105" y2="45" stroke="#ef4444" strokeWidth="1.8" />
+            <text x="125" y="60" fontSize="9" fontWeight="bold" fill="#dc2626">R ≤ 20 cm</text>
+
+            {/* 樓梯淨高 */}
+            <line x1="80" y1="70" x2="80" y2="10" stroke="#16a34a" strokeWidth="1.5" strokeDasharray="2 2" />
+            <text x="80" y="5" textAnchor="middle" fontSize="8" fontWeight="bold" fill="#166534">淨高 H ≥ 2.1 m</text>
+          </g>
+
+          {/* 右側：法規數值矩陣 */}
+          <g transform="translate(265, 48)">
+            <rect x="0" y="0" width="240" height="110" fill="#f8fafc" stroke="#cbd5e1" rx="6" />
+            <text x="120" y="16" textAnchor="middle" fontSize="10" fontWeight="bold" fill="#0f172a">建築技術規則第 33 條標準</text>
+
+            <rect x="10" y="25" width="220" height="22" fill="#eff6ff" rx="3" />
+            <text x="20" y="40" fontSize="8" fontWeight="bold" fill="#1e40af">一般住宅：級高 R ≤ 20 cm ｜ 踏面 T ≥ 24 cm</text>
+
+            <rect x="10" y="50" width="220" height="22" fill="#f0fdf4" rx="3" />
+            <text x="20" y="65" fontSize="8" fontWeight="bold" fill="#166534">公用建築：級高 R ≤ 16 cm ｜ 踏面 T ≥ 26 cm</text>
+
+            <rect x="10" y="75" width="220" height="30" fill="#fef3c7" stroke="#fde047" rx="3" />
+            <text x="120" y="89" textAnchor="middle" fontSize="8" fontWeight="bold" fill="#854d0e">步幅工學黃金公式：58 ≤ 2R + T ≤ 64 cm</text>
+            <text x="120" y="100" textAnchor="middle" fontSize="7" fill="#b45309">★ 踏面塊數 (Treads) 永遠等於 階數 (Risers) 減 1！</text>
+          </g>
+
+          <rect x="35" y="165" width="470" height="26" fill="#fef2f2" stroke="#fecaca" rx="4" />
+          <text x="270" y="182" textAnchor="middle" fontSize="10" fontWeight="bold" fill="#991b1b">
+            樓梯寬度 ≥ 90 cm (住宅) / 120 cm (公共) ｜ 樓梯平台深度不得小於樓梯寬度！
+          </text>
+        </svg>
+      );
+
+    // 39. 材料 混凝土波羅米水灰比強度定律 (Abrams' Law)
+    case 'materials-abrams-law':
+      return (
+        <svg viewBox="0 0 540 220" className={className} xmlns="http://www.w3.org/2000/svg" aria-label="波羅米水灰比強度定律圖解">
+          <rect width="540" height="220" fill="#f8fafc" rx="12" />
+          <rect x="20" y="15" width="500" height="190" fill="#ffffff" stroke="#cbd5e1" strokeWidth="1.5" rx="8" />
+          <text x="270" y="34" textAnchor="middle" fontSize="13" fontWeight="bold" fill="#0f172a">
+            波羅米水灰比強度定律 (Abrams' Law) 與混凝土 7/28 天強度發展曲線
+          </text>
+
+          {/* 左圖：反比曲線圖 */}
+          <g transform="translate(45, 48)">
+            <line x1="30" y1="95" x2="200" y2="95" stroke="#64748b" strokeWidth="1.5" />
+            <text x="205" y="98" fontSize="9" fontWeight="bold" fill="#0f172a">W/C (水灰比)</text>
+
+            <line x1="30" y1="95" x2="30" y2="15" stroke="#64748b" strokeWidth="1.5" />
+            <text x="30" y="10" textAnchor="middle" fontSize="9" fontWeight="bold" fill="#0f172a">fc (抗壓強度)</text>
+
+            {/* 波羅米曲線 */}
+            <path d="M 45,25 Q 75,70 190,88" fill="none" stroke="#2563eb" strokeWidth="2.5" />
+            <circle cx="75" cy="55" r="3.5" fill="#16a34a" />
+            <text x="85" y="52" fontSize="8" fontWeight="bold" fill="#15803d">常規 W/C 0.45</text>
+
+            <circle cx="150" cy="82" r="3.5" fill="#ef4444" />
+            <text x="140" y="75" fontSize="8" fontWeight="bold" fill="#b91c1c">W/C &gt; 0.65 (多孔弱化)</text>
+
+            <rect x="40" y="102" width="160" height="14" fill="#eff6ff" rx="2" />
+            <text x="120" y="112" textAnchor="middle" fontSize="7.5" fontWeight="bold" fill="#1d4ed8">fc = A / B^(1.5·W/C) 強度與水灰比成反比</text>
+          </g>
+
+          {/* 右圖：齡期強度發展條形圖 */}
+          <g transform="translate(265, 48)">
+            <rect x="0" y="0" width="240" height="110" fill="#f8fafc" stroke="#cbd5e1" rx="6" />
+            <text x="120" y="16" textAnchor="middle" fontSize="10" fontWeight="bold" fill="#047857">標準養護齡期強度矩陣 (23±2°C)</text>
+
+            {/* 7 天 */}
+            <rect x="20" y="30" width="130" height="18" fill="#93c5fd" rx="3" />
+            <text x="25" y="43" fontSize="8" fontWeight="bold" fill="#1e3a8a">7 天齡期強度 ≈ 65~70% f'c</text>
+
+            {/* 28 天 */}
+            <rect x="20" y="55" width="190" height="18" fill="#3b82f6" rx="3" />
+            <text x="25" y="68" fontSize="8" fontWeight="bold" fill="#ffffff">28 天齡期強度 ＝ 100% f'c (設計標準)</text>
+
+            {/* 90 天 */}
+            <rect x="20" y="80" width="205" height="18" fill="#1d4ed8" rx="3" />
+            <text x="25" y="93" fontSize="8" fontWeight="bold" fill="#ffffff">90 天~1 年晚期強度 (C2S 水化超越)</text>
+          </g>
+
+          <rect x="35" y="165" width="470" height="26" fill="#fef3c7" stroke="#fde047" rx="4" />
+          <text x="270" y="182" textAnchor="middle" fontSize="10" fontWeight="bold" fill="#854d0e">
+            金科玉律：水灰比決定「強度」，用水量決定「坍度 (工作性)」 ｜ 工地嚴禁私自加水！
+          </text>
+        </svg>
+      );
+
+    // 40. 材料 CNS 560 鋼筋拉伸應力應變與標記
+    case 'materials-rebar-tensile':
+      return (
+        <svg viewBox="0 0 540 220" className={className} xmlns="http://www.w3.org/2000/svg" aria-label="鋼筋應力應變與軋印圖解">
+          <rect width="540" height="220" fill="#f8fafc" rx="12" />
+          <rect x="20" y="15" width="500" height="190" fill="#ffffff" stroke="#cbd5e1" strokeWidth="1.5" rx="8" />
+          <text x="270" y="34" textAnchor="middle" fontSize="13" fontWeight="bold" fill="#0f172a">
+            CNS 560 鋼筋拉伸應力應變曲線 (σ-ε) 與竹節鋼筋表面軋印標記
+          </text>
+
+          {/* 左圖：應力應變曲線 */}
+          <g transform="translate(45, 48)">
+            <line x1="25" y1="95" x2="200" y2="95" stroke="#64748b" strokeWidth="1.5" />
+            <text x="205" y="98" fontSize="8" fontWeight="bold" fill="#0f172a">ε (應變)</text>
+
+            <line x1="25" y1="95" x2="25" y2="15" stroke="#64748b" strokeWidth="1.5" />
+            <text x="25" y="10" textAnchor="middle" fontSize="8" fontWeight="bold" fill="#0f172a">σ (應力)</text>
+
+            {/* 曲線本體 */}
+            <path d="M 25,95 L 60,45 L 85,45 Q 130,20 160,25 Q 180,30 190,55" fill="none" stroke="#dc2626" strokeWidth="2.5" />
+            <circle cx="60" cy="45" r="3" fill="#2563eb" />
+            <text x="40" y="40" fontSize="7.5" fontWeight="bold" fill="#1d4ed8">降伏 fy</text>
+
+            <circle cx="160" cy="25" r="3" fill="#16a34a" />
+            <text x="155" y="18" fontSize="7.5" fontWeight="bold" fill="#15803d">抗拉極限 fu</text>
+
+            <line x1="25" y1="45" x2="60" y2="45" stroke="#2563eb" strokeDasharray="2 2" />
+            <text x="10" y="48" fontSize="7" fill="#2563eb">fy</text>
+          </g>
+
+          {/* 右圖：竹節鋼筋軋印 */}
+          <g transform="translate(265, 48)">
+            <rect x="0" y="0" width="240" height="110" fill="#f8fafc" stroke="#cbd5e1" rx="6" />
+            <text x="120" y="16" textAnchor="middle" fontSize="10" fontWeight="bold" fill="#0f172a">竹節鋼筋表面 CNS 標示</text>
+
+            {/* 鋼筋外形 */}
+            <rect x="20" y="28" width="200" height="30" fill="#e2e8f0" stroke="#475569" strokeWidth="2" rx="4" />
+            {/* 竹節肋紋 */}
+            <line x1="45" y1="28" x2="55" y2="58" stroke="#334155" strokeWidth="3" />
+            <line x1="75" y1="28" x2="85" y2="58" stroke="#334155" strokeWidth="3" />
+            <line x1="105" y1="28" x2="115" y2="58" stroke="#334155" strokeWidth="3" />
+            <line x1="135" y1="28" x2="145" y2="58" stroke="#334155" strokeWidth="3" />
+            <line x1="165" y1="28" x2="175" y2="58" stroke="#334155" strokeWidth="3" />
+            <line x1="195" y1="28" x2="205" y2="58" stroke="#334155" strokeWidth="3" />
+
+            <text x="60" y="47" fontSize="11" fontWeight="bold" fill="#b91c1c">T</text>
+            <text x="90" y="47" fontSize="11" fontWeight="bold" fill="#1e3a8a">W</text>
+            <text x="120" y="47" fontSize="11" fontWeight="bold" fill="#047857">D25</text>
+
+            <rect x="15" y="68" width="210" height="34" fill="#ffffff" stroke="#93c5fd" rx="3" />
+            <text x="120" y="80" textAnchor="middle" fontSize="8" fill="#1e3a8a">廠標 (T) ｜ 鋼種 (W:可銲, S:耐震) ｜ 號數 (D25)</text>
+            <text x="120" y="94" textAnchor="middle" fontSize="8" fontWeight="bold" fill="#dc2626">耐震結構要求：實測 fu / 實測 fy ≥ 1.25！</text>
+          </g>
+
+          <rect x="35" y="165" width="470" height="26" fill="#eff6ff" stroke="#bfdbfe" rx="4" />
+          <text x="270" y="182" textAnchor="middle" fontSize="10" fontWeight="bold" fill="#1e40af">
+            結構設計唯一基準：降伏強度 (SD280: 280 N/mm² ｜ SD420: 420 N/mm²) ｜ 冷彎無裂紋為合格！
+          </text>
+        </svg>
+      );
+
+    // 41. 材料 瀝青針入度 CNS 2260 與防水工法
+    case 'materials-asphalt-penetration':
+      return (
+        <svg viewBox="0 0 540 220" className={className} xmlns="http://www.w3.org/2000/svg" aria-label="瀝青針入度與防水層圖解">
+          <rect width="540" height="220" fill="#f8fafc" rx="12" />
+          <rect x="20" y="15" width="500" height="190" fill="#ffffff" stroke="#cbd5e1" strokeWidth="1.5" rx="8" />
+          <text x="270" y="34" textAnchor="middle" fontSize="13" fontWeight="bold" fill="#0f172a">
+            CNS 2260 瀝青針入度試驗條件 (25°C/100g/5s) 與屋頂多層防水工法
+          </text>
+
+          {/* 左圖：針入度試驗儀示意 */}
+          <g transform="translate(45, 48)">
+            <rect x="0" y="0" width="210" height="110" fill="#f8fafc" stroke="#cbd5e1" rx="6" />
+            <text x="105" y="16" textAnchor="middle" fontSize="10" fontWeight="bold" fill="#0f172a">針入度測定 (0.1 mm = 1度)</text>
+
+            {/* 瀝青皿 */}
+            <rect x="55" y="70" width="100" height="30" fill="#1e293b" rx="2" />
+            <text x="105" y="88" textAnchor="middle" fontSize="8" fontWeight="bold" fill="#ffffff">瀝青試樣 (25°C 水浴)</text>
+
+            {/* 標準針與配重 */}
+            <rect x="95" y="25" width="20" height="15" fill="#f59e0b" stroke="#d97706" />
+            <text x="105" y="36" textAnchor="middle" fontSize="7" fontWeight="bold" fill="#ffffff">100g</text>
+            <line x1="105" y1="40" x2="105" y2="76" stroke="#ef4444" strokeWidth="2.5" />
+            <text x="125" y="60" fontSize="8" fontWeight="bold" fill="#dc2626">貫入 5 秒</text>
+
+            <text x="105" y="105" textAnchor="middle" fontSize="7.5" fill="#475569">針入度數值大 ➜ 瀝青愈軟</text>
+          </g>
+
+          {/* 右圖：五層防水油氈構造剖面 */}
+          <g transform="translate(275, 48)">
+            <rect x="0" y="0" width="230" height="110" fill="#f8fafc" stroke="#cbd5e1" rx="6" />
+            <text x="115" y="16" textAnchor="middle" fontSize="10" fontWeight="bold" fill="#047857">屋頂多層瀝青油氈防水剖面</text>
+
+            <rect x="25" y="26" width="180" height="8" fill="#475569" />
+            <text x="115" y="33" textAnchor="middle" fontSize="6.5" fill="#ffffff">面層：碎石保護層 / 隔熱磚</text>
+
+            <rect x="25" y="37" width="180" height="6" fill="#1e293b" />
+            <text x="115" y="42" textAnchor="middle" fontSize="6.5" fill="#ffffff">熱瀝青塗層 ＋ 第二層防水油氈</text>
+
+            <rect x="25" y="46" width="180" height="6" fill="#1e293b" />
+            <text x="115" y="51" textAnchor="middle" fontSize="6.5" fill="#ffffff">熱瀝青塗層 ＋ 第一層防水油氈</text>
+
+            <rect x="25" y="55" width="180" height="5" fill="#d97706" />
+            <text x="115" y="59" textAnchor="middle" fontSize="6.5" fill="#ffffff">底層：透水瀝青底油 Primer</text>
+
+            <rect x="25" y="63" width="180" height="15" fill="#cbd5e1" />
+            <text x="115" y="73" textAnchor="middle" fontSize="8" fontWeight="bold" fill="#334155">RC 結構樓地板層 (洩水坡度 ≥ 1/100)</text>
+
+            <rect x="20" y="85" width="190" height="18" fill="#fef3c7" rx="3" />
+            <text x="115" y="97" textAnchor="middle" fontSize="8" fontWeight="bold" fill="#92400e">油氈搭接規範：長向 ≥ 10 cm ｜ 短向 ≥ 15 cm</text>
+          </g>
+
+          <rect x="35" y="165" width="470" height="26" fill="#f1f5f9" stroke="#cbd5e1" rx="4" />
+          <text x="270" y="182" textAnchor="middle" fontSize="10" fontWeight="bold" fill="#0f172a">
+            瀝青三大試驗：針入度 (稠度) ｜ 軟化點 (環球法耐熱) ｜ 延度 (低溫拉伸不斷)
+          </text>
+        </svg>
+      );
+
+    // 42. 測量 水準測量儀高法與高差法 (消視準軸誤差)
+    case 'surveying-level-collimation':
+      return (
+        <svg viewBox="0 0 540 220" className={className} xmlns="http://www.w3.org/2000/svg" aria-label="水準測量儀高法與等距消差圖解">
+          <rect width="540" height="220" fill="#f8fafc" rx="12" />
+          <rect x="20" y="15" width="500" height="190" fill="#ffffff" stroke="#cbd5e1" strokeWidth="1.5" rx="8" />
+          <text x="270" y="34" textAnchor="middle" fontSize="13" fontWeight="bold" fill="#0f172a">
+            水準測量儀高法 (IH = Elev + BS)、高差法與前後視等距消差幾何
+          </text>
+
+          {/* 幾何測站圖 */}
+          <g transform="translate(45, 48)">
+            {/* 地面起伏線 */}
+            <path d="M 10,95 Q 120,105 240,75 T 460,50" fill="none" stroke="#64748b" strokeWidth="2" />
+            <text x="25" y="108" fontSize="8" fontWeight="bold" fill="#0f172a">基準點 A (已知高程)</text>
+            <text x="430" y="65" fontSize="8" fontWeight="bold" fill="#0f172a">前測點 B</text>
+
+            {/* 水準儀與視線 */}
+            <rect x="220" y="45" width="25" height="15" fill="#3b82f6" rx="2" />
+            <line x1="232" y1="60" x2="225" y2="85" stroke="#1e293b" strokeWidth="2" />
+            <line x1="232" y1="60" x2="240" y2="85" stroke="#1e293b" strokeWidth="2" />
+
+            {/* 水平視線 (紅虛線) */}
+            <line x1="30" y1="48" x2="445" y2="48" stroke="#ef4444" strokeWidth="2" strokeDasharray="4 2" />
+            <text x="232" y="40" textAnchor="middle" fontSize="9" fontWeight="bold" fill="#dc2626">水平視線 (儀高 IH)</text>
+
+            {/* 後視標尺 BS */}
+            <rect x="25" y="35" width="8" height="60" fill="#e2e8f0" stroke="#0f172a" />
+            <line x1="15" y1="48" x2="25" y2="48" stroke="#ef4444" strokeWidth="2" />
+            <text x="12" y="42" fontSize="8" fontWeight="bold" fill="#2563eb">BS (後視加)</text>
+
+            {/* 前視標尺 FS */}
+            <rect x="440" y="15" width="8" height="40" fill="#e2e8f0" stroke="#0f172a" />
+            <line x1="440" y1="48" x2="455" y2="48" stroke="#ef4444" strokeWidth="2" />
+            <text x="410" y="42" fontSize="8" fontWeight="bold" fill="#16a34a">FS (前視減)</text>
+
+            {/* 等距箭頭 */}
+            <line x1="30" y1="115" x2="230" y2="115" stroke="#64748b" strokeWidth="1" markerEnd="url(#arrow)" />
+            <text x="130" y="112" textAnchor="middle" fontSize="8" fill="#475569">後視距 D_bs</text>
+
+            <line x1="235" y1="115" x2="445" y2="115" stroke="#64748b" strokeWidth="1" />
+            <text x="340" y="112" textAnchor="middle" fontSize="8" fill="#475569">前視距 D_fs</text>
+          </g>
+
+          <rect x="35" y="165" width="470" height="26" fill="#f0fdf4" stroke="#bbf7d0" rx="4" />
+          <text x="270" y="182" textAnchor="middle" fontSize="10" fontWeight="bold" fill="#166534">
+            消除 i 角誤差鐵律：前後視距保持相等 (D_bs = D_fs) ｜ 檢核式：ΣBS － ΣFS ＝ 終點高程 － 起點高程！
+          </text>
+        </svg>
+      );
+
+    // 43. 測量 經緯儀測回法盤左盤右與消差機制
+    case 'surveying-theodolite-repetition':
+      return (
+        <svg viewBox="0 0 540 220" className={className} xmlns="http://www.w3.org/2000/svg" aria-label="經緯儀測回法圖解">
+          <rect width="540" height="220" fill="#f8fafc" rx="12" />
+          <rect x="20" y="15" width="500" height="190" fill="#ffffff" stroke="#cbd5e1" strokeWidth="1.5" rx="8" />
+          <text x="270" y="34" textAnchor="middle" fontSize="13" fontWeight="bold" fill="#0f172a">
+            經緯儀測回法 (Repetition Method) 正倒鏡幾何與三軸誤差消除矩陣
+          </text>
+
+          {/* 左圖：測回法操作 */}
+          <g transform="translate(45, 48)">
+            <rect x="0" y="0" width="220" height="110" fill="#f8fafc" stroke="#cbd5e1" rx="6" />
+            <text x="110" y="16" textAnchor="middle" fontSize="10" fontWeight="bold" fill="#0f172a">半測回正倒鏡操作</text>
+
+            <circle cx="50" cy="55" r="16" fill="#dbeafe" stroke="#2563eb" strokeWidth="1.5" />
+            <text x="50" y="58" textAnchor="middle" fontSize="8" fontWeight="bold" fill="#1e40af">盤左 (L)</text>
+            <text x="50" y="85" textAnchor="middle" fontSize="7.5" fill="#475569">順時針照準 A➜B</text>
+
+            <path d="M 75,55 L 120,55" stroke="#ef4444" strokeWidth="2" markerEnd="url(#arrow)" />
+            <text x="98" y="48" textAnchor="middle" fontSize="8" fontWeight="bold" fill="#dc2626">倒鏡 180°</text>
+
+            <circle cx="150" cy="55" r="16" fill="#fef3c7" stroke="#d97706" strokeWidth="1.5" />
+            <text x="150" y="58" textAnchor="middle" fontSize="8" fontWeight="bold" fill="#b45309">盤右 (R)</text>
+            <text x="150" y="85" textAnchor="middle" fontSize="7.5" fill="#475569">逆時針照準 B➜A</text>
+
+            <rect x="15" y="93" width="190" height="14" fill="#eff6ff" rx="2" />
+            <text x="110" y="103" textAnchor="middle" fontSize="8" fontWeight="bold" fill="#1d4ed8">一測回角值 β ＝ (β_盤左 ＋ β_盤右) ÷ 2</text>
+          </g>
+
+          {/* 右圖：消差清單 */}
+          <g transform="translate(280, 48)">
+            <rect x="0" y="0" width="225" height="110" fill="#f8fafc" stroke="#cbd5e1" rx="6" />
+            <text x="112" y="16" textAnchor="middle" fontSize="10" fontWeight="bold" fill="#166534">正倒鏡平均消差成果對照</text>
+
+            <rect x="15" y="26" width="195" height="20" fill="#dcfce7" rx="3" />
+            <text x="25" y="39" fontSize="8" fontWeight="bold" fill="#15803d">✔ 視準軸誤差 (c 誤差) ➜ 完全消除！</text>
+
+            <rect x="15" y="49" width="195" height="20" fill="#dcfce7" rx="3" />
+            <text x="25" y="62" fontSize="8" fontWeight="bold" fill="#15803d">✔ 橫軸傾斜誤差 (i 誤差) ➜ 完全消除！</text>
+
+            <rect x="15" y="72" width="195" height="20" fill="#fee2e2" stroke="#fca5a5" rx="3" />
+            <text x="25" y="85" fontSize="8" fontWeight="bold" fill="#b91c1c">✖ 豎軸傾斜誤差 (v 誤差) ➜ 【絕對無法消除】！</text>
+          </g>
+
+          <rect x="35" y="165" width="470" height="26" fill="#fef2f2" stroke="#fecaca" rx="4" />
+          <text x="270" y="182" textAnchor="middle" fontSize="10" fontWeight="bold" fill="#991b1b">
+            考題地雷：豎軸傾斜誤差無法靠盤左盤右平均消除，唯一解法為「水準氣泡嚴格居中」！
+          </text>
+        </svg>
+      );
+
+    // 44. 測量 土方計算平均端面法 vs 辛普森稜鏡擬柱體公式
+    case 'surveying-earthwork-simpson':
+      return (
+        <svg viewBox="0 0 540 220" className={className} xmlns="http://www.w3.org/2000/svg" aria-label="土方計算公式圖解">
+          <rect width="540" height="220" fill="#f8fafc" rx="12" />
+          <rect x="20" y="15" width="500" height="190" fill="#ffffff" stroke="#cbd5e1" strokeWidth="1.5" rx="8" />
+          <text x="270" y="34" textAnchor="middle" fontSize="13" fontWeight="bold" fill="#0f172a">
+            土方體積計算：平均端面法 (偏大) vs 辛普森稜鏡擬柱體公式 (精準)
+          </text>
+
+          {/* 左圖：土方擬柱體幾何立體 */}
+          <g transform="translate(45, 48)">
+            <path d="M 30,30 L 15,90 L 70,90 L 75,30 Z" fill="#dbeafe" stroke="#2563eb" strokeWidth="1.5" />
+            <text x="45" y="65" textAnchor="middle" fontSize="9" fontWeight="bold" fill="#1e40af">端面 A1</text>
+
+            <path d="M 170,20 L 140,95 L 210,95 L 220,20 Z" fill="#bbf7d0" stroke="#16a34a" strokeWidth="1.5" />
+            <text x="180" y="65" textAnchor="middle" fontSize="9" fontWeight="bold" fill="#166534">端面 A2</text>
+
+            {/* 中間斷面 Am */}
+            <path d="M 100,25 L 80,92 L 140,92 L 148,25 Z" fill="none" stroke="#ef4444" strokeWidth="2" strokeDasharray="3 2" />
+            <text x="115" y="55" textAnchor="middle" fontSize="8" fontWeight="bold" fill="#dc2626">中間斷面 Am</text>
+
+            {/* 跨距 L */}
+            <line x1="50" y1="102" x2="175" y2="102" stroke="#64748b" strokeWidth="1.5" />
+            <text x="115" y="112" textAnchor="middle" fontSize="8" fill="#475569">距離長度 L</text>
+          </g>
+
+          {/* 右圖：兩大公式對比 */}
+          <g transform="translate(275, 48)">
+            <rect x="0" y="0" width="230" height="110" fill="#f8fafc" stroke="#cbd5e1" rx="6" />
+            <text x="115" y="16" textAnchor="middle" fontSize="10" fontWeight="bold" fill="#0f172a">土方兩大計算法則對比</text>
+
+            <rect x="10" y="26" width="210" height="34" fill="#eff6ff" rx="3" />
+            <text x="15" y="38" fontSize="8" fontWeight="bold" fill="#1e40af">1. 平均端面法：V = (A1 + A2) · L / 2</text>
+            <text x="15" y="52" fontSize="7.5" fill="#64748b">計算簡便但體積「恆偏大 (高估土方)」</text>
+
+            <rect x="10" y="65" width="210" height="38" fill="#f0fdf4" stroke="#86efac" rx="3" />
+            <text x="15" y="78" fontSize="8" fontWeight="bold" fill="#15803d">2. 稜鏡公式：V = (L / 6) · (A1 + 4Am + A2)</text>
+            <text x="15" y="93" fontSize="7.5" fontWeight="bold" fill="#b91c1c">★ Am 是中間幾何尺度算出的截面積！</text>
+          </g>
+
+          <rect x="35" y="165" width="470" height="26" fill="#fef3c7" stroke="#fde047" rx="4" />
+          <text x="270" y="182" textAnchor="middle" fontSize="10" fontWeight="bold" fill="#854d0e">
+            重要陷阱：Am 絕不是 (A1+A2)/2！若把面積平均代入，公式直接退化為平均端面法！
+          </text>
+        </svg>
+      );
+
+    // 45. 數學 C 空間兩歪斜線公垂線距離與體積
+    case 'math-skew-lines-distance':
+      return (
+        <svg viewBox="0 0 540 220" className={className} xmlns="http://www.w3.org/2000/svg" aria-label="空間歪斜線距離圖解">
+          <rect width="540" height="220" fill="#f8fafc" rx="12" />
+          <rect x="20" y="15" width="500" height="190" fill="#ffffff" stroke="#cbd5e1" strokeWidth="1.5" rx="8" />
+          <text x="270" y="34" textAnchor="middle" fontSize="13" fontWeight="bold" fill="#0f172a">
+            空間兩歪斜線公垂向量 (n = v1 × v2) 與最短距離公式幾何
+          </text>
+
+          {/* 左圖：歪斜線與平行六面體 */}
+          <g transform="translate(50, 48)">
+            {/* 直線 L1 */}
+            <line x1="20" y1="35" x2="160" y2="35" stroke="#2563eb" strokeWidth="2.5" />
+            <text x="165" y="38" fontSize="9" fontWeight="bold" fill="#1d4ed8">L1 (方向 v1)</text>
+            <circle cx="60" cy="35" r="3.5" fill="#2563eb" />
+            <text x="55" y="28" fontSize="8" fontWeight="bold" fill="#1e40af">P</text>
+
+            {/* 直線 L2 */}
+            <line x1="30" y1="95" x2="180" y2="65" stroke="#16a34a" strokeWidth="2.5" />
+            <text x="185" y="70" fontSize="9" fontWeight="bold" fill="#15803d">L2 (方向 v2)</text>
+            <circle cx="120" cy="78" r="3.5" fill="#16a34a" />
+            <text x="125" y="90" fontSize="8" fontWeight="bold" fill="#166534">Q</text>
+
+            {/* 公垂線 (垂直雙方) */}
+            <line x1="90" y1="35" x2="90" y2="83" stroke="#ef4444" strokeWidth="2.5" />
+            <text x="96" y="62" fontSize="9" fontWeight="bold" fill="#dc2626">公垂線 d</text>
+            <rect x="85" y="35" width="5" height="5" fill="none" stroke="#dc2626" />
+            <rect x="85" y="78" width="5" height="5" fill="none" stroke="#dc2626" />
+          </g>
+
+          {/* 右圖：外積公式卡 */}
+          <g transform="translate(275, 48)">
+            <rect x="0" y="0" width="230" height="110" fill="#f8fafc" stroke="#cbd5e1" rx="6" />
+            <text x="115" y="16" textAnchor="middle" fontSize="10" fontWeight="bold" fill="#7c3aed">公垂線距離兩大公式</text>
+
+            <rect x="10" y="26" width="210" height="34" fill="#f3e8ff" rx="3" />
+            <text x="15" y="38" fontSize="8" fontWeight="bold" fill="#6b21a8">歪斜線最短距離 d：</text>
+            <text x="15" y="52" fontSize="8" fontWeight="bold" fill="#1e3a8a">d = |PQ · (v1 × v2)| ÷ |v1 × v2|</text>
+
+            <rect x="10" y="65" width="210" height="38" fill="#eff6ff" rx="3" />
+            <text x="15" y="78" fontSize="8" fontWeight="bold" fill="#1d4ed8">點到平面距離：</text>
+            <text x="15" y="93" fontSize="8" fill="#1e3a8a">d = |ax0 + by0 + cz0 + d| ÷ √(a² + b² + c²)</text>
+          </g>
+
+          <rect x="35" y="165" width="470" height="26" fill="#fdf4ff" stroke="#f0abfc" rx="4" />
+          <text x="270" y="182" textAnchor="middle" fontSize="10" fontWeight="bold" fill="#a21caf">
+            幾何意義：以向量 PQ, v1, v2 張成之平行六面體體積除以底面平行四邊形面積！
+          </text>
+        </svg>
+      );
+
+    // 46. 國文 荀子〈勸學〉連珠設喻立論架構
+    case 'chinese-quanxue-structure':
+      return (
+        <svg viewBox="0 0 540 220" className={className} xmlns="http://www.w3.org/2000/svg" aria-label="荀子勸學架構圖解">
+          <rect width="540" height="220" fill="#f8fafc" rx="12" />
+          <rect x="20" y="15" width="500" height="190" fill="#ffffff" stroke="#cbd5e1" strokeWidth="1.5" rx="8" />
+          <text x="270" y="34" textAnchor="middle" fontSize="13" fontWeight="bold" fill="#0f172a">
+            荀子〈勸學〉「學不可以已」立論架構與四大連珠設喻系統
+          </text>
+
+          {/* 四大設喻階段 */}
+          <g transform="translate(35, 48)">
+            <rect x="0" y="0" width="112" height="105" fill="#eff6ff" stroke="#93c5fd" rx="6" />
+            <text x="56" y="18" textAnchor="middle" fontSize="9" fontWeight="bold" fill="#1e40af">① 質性轉化</text>
+            <text x="8" y="38" fontSize="7.5" fill="#1e3a8a">青出於藍而青於藍</text>
+            <text x="8" y="55" fontSize="7.5" fill="#1e3a8a">冰水為之而寒於水</text>
+            <text x="8" y="72" fontSize="7.5" fill="#1e3a8a">木受繩則直金就礪</text>
+            <text x="56" y="93" textAnchor="middle" fontSize="7" fontWeight="bold" fill="#2563eb">後天改造天性</text>
+
+            <rect x="120" y="0" width="112" height="105" fill="#f0fdf4" stroke="#86efac" rx="6" />
+            <text x="176" y="18" textAnchor="middle" fontSize="9" fontWeight="bold" fill="#166534">② 善假於物</text>
+            <text x="128" y="38" fontSize="7.5" fill="#15803d">吾嘗終日而思矣</text>
+            <text x="128" y="55" fontSize="7.5" fill="#15803d">登高而招順風而呼</text>
+            <text x="128" y="72" fontSize="7.5" fill="#15803d">假輿馬致千里</text>
+            <text x="176" y="93" textAnchor="middle" fontSize="7" fontWeight="bold" fill="#16a34a">藉外在工具助益</text>
+
+            <rect x="240" y="0" width="112" height="105" fill="#fef3c7" stroke="#fde047" rx="6" />
+            <text x="296" y="18" textAnchor="middle" fontSize="9" fontWeight="bold" fill="#854d0e">③ 積漸堅持</text>
+            <text x="248" y="38" fontSize="7.5" fill="#92400e">積土成山風雨興</text>
+            <text x="248" y="55" fontSize="7.5" fill="#92400e">不積跬步無以千里</text>
+            <text x="248" y="72" fontSize="7.5" fill="#92400e">騏驥一躍駑馬十駕</text>
+            <text x="296" y="93" textAnchor="middle" fontSize="7" fontWeight="bold" fill="#ea580c">成功在於不舍</text>
+
+            <rect x="360" y="0" width="112" height="105" fill="#faf5ff" stroke="#d8b4fe" rx="6" />
+            <text x="416" y="18" textAnchor="middle" fontSize="9" fontWeight="bold" fill="#6b21a8">④ 專心致志</text>
+            <text x="368" y="38" fontSize="7.5" fill="#7e22ce">蚓無爪牙用心一也</text>
+            <text x="368" y="55" fontSize="7.5" fill="#7e22ce">蟹六跪螯用心躁也</text>
+            <text x="368" y="72" fontSize="7.5" fill="#7e22ce">正反鮮明強烈對比</text>
+            <text x="416" y="93" textAnchor="middle" fontSize="7" fontWeight="bold" fill="#9333ea">專注勝於浮躁</text>
+          </g>
+
+          <rect x="35" y="165" width="470" height="26" fill="#f0fdf4" stroke="#bbf7d0" rx="4" />
+          <text x="270" y="182" textAnchor="middle" fontSize="10" fontWeight="bold" fill="#166534">
+            全篇核心文眼：君子博學而日參省乎己，則知明而行無過矣 ｜ 性惡論之學習救贖！
+          </text>
+        </svg>
+      );
+
+    // 47. 英文 分詞構句 (Participle Clauses) 簡化規則
+    case 'english-participle-clauses':
+      return (
+        <svg viewBox="0 0 540 220" className={className} xmlns="http://www.w3.org/2000/svg" aria-label="分詞構句圖解">
+          <rect width="540" height="220" fill="#f8fafc" rx="12" />
+          <rect x="20" y="15" width="500" height="190" fill="#ffffff" stroke="#cbd5e1" strokeWidth="1.5" rx="8" />
+          <text x="270" y="34" textAnchor="middle" fontSize="13" fontWeight="bold" fill="#0f172a">
+            分詞構句 (Participle Clauses) 簡化三步驟與主動 V-ing / 被動 p.p. 判定
+          </text>
+
+          {/* 簡化步序流程 */}
+          <g transform="translate(35, 48)">
+            <rect x="0" y="0" width="225" height="110" fill="#eff6ff" stroke="#93c5fd" rx="6" />
+            <text x="112" y="16" textAnchor="middle" fontSize="10" fontWeight="bold" fill="#1e40af">簡化子句三大 SOP</text>
+
+            <rect x="10" y="26" width="205" height="22" fill="#ffffff" stroke="#bfdbfe" rx="3" />
+            <text x="15" y="40" fontSize="8" fontWeight="bold" fill="#1e3a8a">步驟 1：刪除從屬連接詞 (When, Because)</text>
+
+            <rect x="10" y="52" width="205" height="22" fill="#ffffff" stroke="#bfdbfe" rx="3" />
+            <text x="15" y="66" fontSize="8" fontWeight="bold" fill="#1e3a8a">步驟 2：主詞相同時，刪除從屬子句主詞</text>
+
+            <rect x="10" y="78" width="205" height="24" fill="#ffffff" stroke="#bfdbfe" rx="3" />
+            <text x="15" y="90" fontSize="8" fontWeight="bold" fill="#dc2626">步驟 3：動詞改分詞 (主動 V-ing / 被動 p.p.)</text>
+          </g>
+
+          {/* 實戰範例對照 */}
+          <g transform="translate(280, 48)">
+            <rect x="0" y="0" width="225" height="110" fill="#f8fafc" stroke="#cbd5e1" rx="6" />
+            <text x="112" y="16" textAnchor="middle" fontSize="10" fontWeight="bold" fill="#047857">主動 vs 被動真題對照</text>
+
+            <rect x="10" y="26" width="205" height="34" fill="#f0fdf4" rx="3" />
+            <text x="15" y="38" fontSize="8" fontWeight="bold" fill="#166534">【主動 V-ing】Seeing the police, he ran away.</text>
+            <text x="15" y="51" fontSize="7" fill="#64748b">(原: When he saw the police, he ran away.)</text>
+
+            <rect x="10" y="65" width="205" height="36" fill="#fef2f2" stroke="#fecaca" rx="3" />
+            <text x="15" y="78" fontSize="8" fontWeight="bold" fill="#991b1b">【被動 p.p.】Built in 1980, the bridge is old.</text>
+            <text x="15" y="91" fontSize="7" fill="#64748b">(原: Because it was built in 1980, the bridge ...)</text>
+          </g>
+
+          <rect x="35" y="165" width="470" height="26" fill="#fef3c7" stroke="#fde047" rx="4" />
+          <text x="270" y="182" textAnchor="middle" fontSize="10" fontWeight="bold" fill="#854d0e">
+            秒殺鐵律：看主要子句主詞！做動作選 V-ing，被動受格選 p.p. ｜ 嚴防懸垂分詞 (Dangling Participle)！
+          </text>
+        </svg>
+      );
+
+    // 48. 測量實習：導線閉合差精度評定與羅盤儀平差向量幾何圖
+    case 'surveying-traverse-precision':
+      return (
+        <svg viewBox="0 0 540 200" className={className} xmlns="http://www.w3.org/2000/svg" aria-label="導線閉合差精度評定圖解">
+          <rect width="540" height="200" fill="#f8fafc" rx="10" />
+          <rect x="12" y="12" width="516" height="176" fill="#ffffff" stroke="#cbd5e1" strokeWidth="1.2" rx="8" />
+
+          {/* 標題橫幅 */}
+          <rect x="12" y="12" width="516" height="28" fill="#ecfdf5" rx="8" />
+          <text x="270" y="30" textAnchor="middle" fontSize="11" fontWeight="bold" fill="#065f46">
+            閉合導線坐標閉合差直角幾何向量與精度比 (1/K) 評定矩陣
+          </text>
+
+          {/* 左圖：閉合差向量分解 */}
+          <g transform="translate(30, 48)">
+            <rect x="0" y="0" width="220" height="110" fill="#f0fdf4" stroke="#bbf7d0" rx="6" />
+            <text x="110" y="16" textAnchor="middle" fontSize="9.5" fontWeight="bold" fill="#166534">總位置閉合差向量分解</text>
+
+            {/* 導線路徑 */}
+            <path d="M 25,90 L 70,35 L 140,40 L 180,85" fill="none" stroke="#64748b" strokeWidth="2" strokeDasharray="3,3" />
+            <circle cx="25" cy="90" r="3.5" fill="#2563eb" />
+            <text x="25" y="103" textAnchor="middle" fontSize="8" fontWeight="bold" fill="#1e40af">起點 A</text>
+
+            <circle cx="180" cy="85" r="3.5" fill="#dc2626" />
+            <text x="180" y="98" textAnchor="middle" fontSize="8" fontWeight="bold" fill="#991b1b">推算 A'</text>
+
+            {/* 閉合差直角三角形 */}
+            <line x1="25" y1="90" x2="180" y2="90" stroke="#059669" strokeWidth="1.5" strokeDasharray="2,2" />
+            <line x1="180" y1="90" x2="180" y2="85" stroke="#059669" strokeWidth="1.5" strokeDasharray="2,2" />
+            <line x1="25" y1="90" x2="180" y2="85" stroke="#dc2626" strokeWidth="2" />
+
+            <rect x="40" y="65" width="120" height="18" fill="#ffffff" stroke="#cbd5e1" rx="3" />
+            <text x="100" y="78" textAnchor="middle" fontSize="8" fontWeight="bold" fill="#dc2626">K = √(fx² + fy²)</text>
+          </g>
+
+          {/* 右圖：精度評等與平差規則 */}
+          <g transform="translate(265, 48)">
+            <rect x="0" y="0" width="245" height="110" fill="#f8fafc" stroke="#cbd5e1" rx="6" />
+            <text x="122" y="16" textAnchor="middle" fontSize="9.5" fontWeight="bold" fill="#1e3a8a">工程導線精度等級規範 (K / ΣD)</text>
+
+            <rect x="10" y="26" width="225" height="22" fill="#eff6ff" stroke="#bfdbfe" rx="3" />
+            <text x="16" y="40" fontSize="8" fontWeight="bold" fill="#1e40af">一級導線：精度 ≧ 1/10000 ｜ 城市高精度網</text>
+
+            <rect x="10" y="52" width="225" height="22" fill="#f0fdf4" stroke="#bbf7d0" rx="3" />
+            <text x="16" y="66" fontSize="8" fontWeight="bold" fill="#15803d">二級導線：精度 ≧ 1/5000 ｜ 一般建築工程控制網</text>
+
+            <rect x="10" y="78" width="225" height="24" fill="#fffbeb" stroke="#fde68a" rx="3" />
+            <text x="16" y="94" fontSize="7.5" fontWeight="bold" fill="#92400e">平差分配律：C_xi = -fx × (di / ΣD) (邊長反號正比)</text>
+          </g>
+
+          <rect x="30" y="165" width="480" height="26" fill="#f0fdf4" stroke="#86efac" rx="4" />
+          <text x="270" y="182" textAnchor="middle" fontSize="9.5" fontWeight="bold" fill="#166534">
+            記憶神技：精度分數分母越大越精密！閉合差反號！原和為正，改正數必為負！
+          </text>
+        </svg>
+      );
+
+    // 49. 數學 C：拋物線光學性質反射定律與切線幾何圖
+    case 'math-parabola-reflection':
+      return (
+        <svg viewBox="0 0 540 200" className={className} xmlns="http://www.w3.org/2000/svg" aria-label="拋物線光學性質與切線幾何圖解">
+          <rect width="540" height="200" fill="#f8fafc" rx="10" />
+          <rect x="12" y="12" width="516" height="176" fill="#ffffff" stroke="#cbd5e1" strokeWidth="1.2" rx="8" />
+
+          {/* 標題橫幅 */}
+          <rect x="12" y="12" width="516" height="28" fill="#eff6ff" rx="8" />
+          <text x="270" y="30" textAnchor="middle" fontSize="11" fontWeight="bold" fill="#1e40af">
+            拋物線光學性質（反射定律）、切線方程式與焦半徑幾何
+          </text>
+
+          {/* 左圖：光學性質幾何光路 */}
+          <g transform="translate(30, 48)">
+            <rect x="0" y="0" width="220" height="110" fill="#f8fafc" stroke="#cbd5e1" rx="6" />
+            <text x="110" y="15" textAnchor="middle" fontSize="9" fontWeight="bold" fill="#2563eb">光學反射性質（探照燈與天線）</text>
+
+            {/* 拋物線 */}
+            <path d="M 190,20 Q 50,60 190,100" fill="none" stroke="#3b82f6" strokeWidth="2.5" />
+            {/* 對稱軸 */}
+            <line x1="20" y1="60" x2="200" y2="60" stroke="#94a3b8" strokeWidth="1" strokeDasharray="3,3" />
+
+            {/* 焦點 F */}
+            <circle cx="95" cy="60" r="3.5" fill="#dc2626" />
+            <text x="95" y="52" textAnchor="middle" fontSize="8" fontWeight="bold" fill="#b91c1c">焦點 F(c,0)</text>
+
+            {/* 射入光線與反射光線 */}
+            <line x1="190" y1="35" x2="115" y2="35" stroke="#eab308" strokeWidth="1.5" />
+            <line x1="115" y1="35" x2="95" y2="60" stroke="#eab308" strokeWidth="1.5" />
+            <line x1="190" y1="85" x2="115" y2="85" stroke="#eab308" strokeWidth="1.5" />
+            <line x1="115" y1="85" x2="95" y2="60" stroke="#eab308" strokeWidth="1.5" />
+
+            <text x="110" y="103" textAnchor="middle" fontSize="7.5" fill="#64748b">平行對稱軸射入光線 ➜ 100% 反射匯聚於焦點！</text>
+          </g>
+
+          {/* 右圖：焦半徑與切線公式 */}
+          <g transform="translate(265, 48)">
+            <rect x="0" y="0" width="245" height="110" fill="#f8fafc" stroke="#cbd5e1" rx="6" />
+            <text x="122" y="15" textAnchor="middle" fontSize="9" fontWeight="bold" fill="#047857">標準式切線公式與焦半徑</text>
+
+            <rect x="10" y="24" width="225" height="24" fill="#eff6ff" rx="3" />
+            <text x="16" y="38" fontSize="8" fontWeight="bold" fill="#1e40af">標準切線式：y² = 4cx 上一點 P(x0, y0)</text>
+            <text x="16" y="47" fontSize="7.5" fill="#2563eb">➜ 切線方程式：y·y0 = 2c(x + x0)</text>
+
+            <rect x="10" y="52" width="225" height="24" fill="#f0fdf4" rx="3" />
+            <text x="16" y="66" fontSize="8" fontWeight="bold" fill="#15803d">焦半徑定理：動點 P 到焦點距離</text>
+            <text x="16" y="74" fontSize="7.5" fill="#166534">➜ r = |x0 + c|（等於到準線距離 d(P, L)）</text>
+
+            <rect x="10" y="80" width="225" height="22" fill="#fffbeb" rx="3" />
+            <text x="16" y="95" fontSize="7.5" fontWeight="bold" fill="#92400e">斜率 m 切線式：y = mx + c/m (m ≠ 0)</text>
+          </g>
+
+          <rect x="30" y="165" width="480" height="26" fill="#eff6ff" stroke="#93c5fd" rx="4" />
+          <text x="270" y="182" textAnchor="middle" fontSize="9.5" fontWeight="bold" fill="#1e40af">
+            秒殺口訣：二次拆乘積、一次拆平均！焦半徑等於準線距，探照天線全靠焦點！
+          </text>
+        </svg>
+      );
+
+    // 50. 數學 C：雙曲線漸近線、焦點矩形與共軛雙曲線圖
+    case 'math-hyperbola-asymptote':
+      return (
+        <svg viewBox="0 0 540 200" className={className} xmlns="http://www.w3.org/2000/svg" aria-label="雙曲線漸近線與共軛矩形圖解">
+          <rect width="540" height="200" fill="#f8fafc" rx="10" />
+          <rect x="12" y="12" width="516" height="176" fill="#ffffff" stroke="#cbd5e1" strokeWidth="1.2" rx="8" />
+
+          {/* 標題橫幅 */}
+          <rect x="12" y="12" width="516" height="28" fill="#fdf2f8" rx="8" />
+          <text x="270" y="30" textAnchor="middle" fontSize="11" fontWeight="bold" fill="#9d174d">
+            雙曲線中央矩形 (2a × 2b)、兩條對角漸近線與等軸雙曲線
+          </text>
+
+          {/* 左圖：中央矩形與漸近線幾何 */}
+          <g transform="translate(30, 48)">
+            <rect x="0" y="0" width="220" height="110" fill="#fdf2f8" stroke="#fbcfe8" rx="6" />
+            <text x="110" y="15" textAnchor="middle" fontSize="9" fontWeight="bold" fill="#be185d">中央矩形與漸近線幾何骨架</text>
+
+            {/* 坐標軸 */}
+            <line x1="20" y1="60" x2="200" y2="60" stroke="#94a3b8" strokeWidth="1" />
+            <line x1="110" y1="18" x2="110" y2="102" stroke="#94a3b8" strokeWidth="1" />
+
+            {/* 中央矩形 2a x 2b */}
+            <rect x="75" y="35" width="70" height="50" fill="none" stroke="#db2777" strokeWidth="1.2" strokeDasharray="2,2" />
+
+            {/* 兩漸近線 */}
+            <line x1="45" y1="15" x2="175" y2="105" stroke="#e11d48" strokeWidth="1.5" />
+            <line x1="45" y1="105" x2="175" y2="15" stroke="#e11d48" strokeWidth="1.5" />
+
+            {/* 雙曲線 */}
+            <path d="M 60,25 Q 75,60 60,95" fill="none" stroke="#2563eb" strokeWidth="2" />
+            <path d="M 160,25 Q 145,60 160,95" fill="none" stroke="#2563eb" strokeWidth="2" />
+
+            <circle cx="75" cy="60" r="2.5" fill="#2563eb" />
+            <circle cx="145" cy="60" r="2.5" fill="#2563eb" />
+            <text x="110" y="103" textAnchor="middle" fontSize="7.5" fill="#475569">漸近線: y = ± (b/a)x ｜ c² = a² + b²</text>
+          </g>
+
+          {/* 右圖：漸近線速求神技與等軸雙曲 */}
+          <g transform="translate(265, 48)">
+            <rect x="0" y="0" width="245" height="110" fill="#f8fafc" stroke="#cbd5e1" rx="6" />
+            <text x="122" y="15" textAnchor="middle" fontSize="9" fontWeight="bold" fill="#1e3a8a">漸近線速算法與共軛雙曲</text>
+
+            <rect x="10" y="24" width="225" height="24" fill="#eff6ff" rx="3" />
+            <text x="16" y="38" fontSize="8" fontWeight="bold" fill="#1e40af">令常數 1 變 0 神技：</text>
+            <text x="16" y="46" fontSize="7.5" fill="#2563eb">x²/a² - y²/b² = 0 ➜ (x/a - y/b)(x/a + y/b) = 0</text>
+
+            <rect x="10" y="52" width="225" height="24" fill="#fdf2f8" rx="3" />
+            <text x="16" y="66" fontSize="8" fontWeight="bold" fill="#be185d">共軛雙曲線：右側常數換成 -1</text>
+            <text x="16" y="74" fontSize="7.5" fill="#9d174d">共用同一組漸近線！四焦點共圓！</text>
+
+            <rect x="10" y="80" width="225" height="22" fill="#fffbeb" rx="3" />
+            <text x="16" y="95" fontSize="7.5" fontWeight="bold" fill="#92400e">等軸雙曲線：a = b，漸近線正交 (垂直相交 90°)</text>
+          </g>
+
+          <rect x="30" y="165" width="480" height="26" fill="#fdf2f8" stroke="#f472b6" rx="4" />
+          <text x="270" y="182" textAnchor="middle" fontSize="9.5" fontWeight="bold" fill="#9d174d">
+            秒殺口訣：雙曲漸近令右為零，貫軸共軛對角延伸，等軸 a=b 漸近垂直！
+          </text>
+        </svg>
+      );
+
+    // 51. 英文：關係代名詞 vs 關係副詞轉換文法圖
+    case 'english-relative-adverbs':
+      return (
+        <svg viewBox="0 0 540 200" className={className} xmlns="http://www.w3.org/2000/svg" aria-label="關係代名詞與關係副詞圖解">
+          <rect width="540" height="200" fill="#f8fafc" rx="10" />
+          <rect x="12" y="12" width="516" height="176" fill="#ffffff" stroke="#cbd5e1" strokeWidth="1.2" rx="8" />
+
+          {/* 標題橫幅 */}
+          <rect x="12" y="12" width="516" height="28" fill="#eff6ff" rx="8" />
+          <text x="270" y="30" textAnchor="middle" fontSize="11" fontWeight="bold" fill="#1d4ed8">
+            關係代名詞 (who/which) vs 關係副詞 (where/when/why) 結構判定天平
+          </text>
+
+          {/* 左圖：子句完整性天平 */}
+          <g transform="translate(30, 48)">
+            <rect x="0" y="0" width="220" height="110" fill="#f8fafc" stroke="#cbd5e1" rx="6" />
+            <text x="110" y="15" textAnchor="middle" fontSize="9" fontWeight="bold" fill="#1e40af">子句完整度速判天平</text>
+
+            <rect x="10" y="24" width="200" height="36" fill="#eff6ff" stroke="#bfdbfe" rx="3" />
+            <text x="16" y="38" fontSize="8" fontWeight="bold" fill="#1e40af">【缺主詞 / 受詞 ➜ 選關係代名詞】</text>
+            <text x="16" y="50" fontSize="7" fill="#2563eb">The site which we visited (缺 visited 受詞)</text>
+
+            <rect x="10" y="66" width="200" height="36" fill="#ecfdf5" stroke="#a7f3d0" rx="3" />
+            <text x="16" y="80" fontSize="8" fontWeight="bold" fill="#065f46">【主受完整 ➜ 選關係副詞 / 介+which】</text>
+            <text x="16" y="92" fontSize="7" fill="#059669">The site where we worked (完整子句)</text>
+          </g>
+
+          {/* 右圖：等價轉換公式 */}
+          <g transform="translate(265, 48)">
+            <rect x="0" y="0" width="245" height="110" fill="#f8fafc" stroke="#cbd5e1" rx="6" />
+            <text x="122" y="15" textAnchor="middle" fontSize="9" fontWeight="bold" fill="#047857">關係副詞 ＝ 介系詞 ＋ which</text>
+
+            <rect x="10" y="24" width="225" height="22" fill="#f0fdf4" rx="3" />
+            <text x="16" y="38" fontSize="8" fontWeight="bold" fill="#166534">地點：where ＝ in / at / on which</text>
+
+            <rect x="10" y="48" width="225" height="22" fill="#eff6ff" rx="3" />
+            <text x="16" y="62" fontSize="8" fontWeight="bold" fill="#1e40af">時間：when ＝ at / in / on which</text>
+
+            <rect x="10" y="72" width="225" height="22" fill="#fffbeb" rx="3" />
+            <text x="16" y="86" fontSize="8" fontWeight="bold" fill="#92400e">理由：why ＝ for which</text>
+
+            <text x="122" y="103" textAnchor="middle" fontSize="7.5" fontWeight="bold" fill="#dc2626">★ 複合關代 what ＝ the thing which (前無先行詞！)</text>
+          </g>
+
+          <rect x="30" y="165" width="480" height="26" fill="#eff6ff" stroke="#93c5fd" rx="4" />
+          <text x="270" y="182" textAnchor="middle" fontSize="9.5" fontWeight="bold" fill="#1e40af">
+            秒殺口訣：缺主受是關代，完整句子選關副；前面已有先行詞，絕對嚴禁選 what！
+          </text>
+        </svg>
+      );
+
+    // 52. 英文：完全倒裝 vs 部分倒裝句型結構圖
+    case 'english-full-inversion':
+      return (
+        <svg viewBox="0 0 540 200" className={className} xmlns="http://www.w3.org/2000/svg" aria-label="英文倒裝句型圖解">
+          <rect width="540" height="200" fill="#f8fafc" rx="10" />
+          <rect x="12" y="12" width="516" height="176" fill="#ffffff" stroke="#cbd5e1" strokeWidth="1.2" rx="8" />
+
+          {/* 標題橫幅 */}
+          <rect x="12" y="12" width="516" height="28" fill="#fef2f2" rx="8" />
+          <text x="270" y="30" textAnchor="middle" fontSize="11" fontWeight="bold" fill="#991b1b">
+            完全倒裝 (Full Inversion) vs 部分倒裝 (Partial Inversion) 雙軌語序
+          </text>
+
+          {/* 左圖：完全倒裝 (動詞全搬) */}
+          <g transform="translate(30, 48)">
+            <rect x="0" y="0" width="220" height="110" fill="#fef2f2" stroke="#fecaca" rx="6" />
+            <text x="110" y="15" textAnchor="middle" fontSize="9" fontWeight="bold" fill="#b91c1c">完全倒裝：地方副詞置首 (V + S)</text>
+
+            <rect x="10" y="24" width="200" height="34" fill="#ffffff" stroke="#fca5a5" rx="3" />
+            <text x="16" y="37" fontSize="7.5" fontWeight="bold" fill="#991b1b">地方副詞/介系詞片語 + 動詞 + 名詞主詞</text>
+            <text x="16" y="49" fontSize="7" fill="#64748b">Ex: On the hill stands a wooden house.</text>
+
+            <rect x="10" y="64" width="200" height="38" fill="#fff1f2" stroke="#fecdd3" rx="3" />
+            <text x="16" y="78" fontSize="7.5" fontWeight="bold" fill="#e11d48">★ 致命陷阱：代名詞不倒裝！</text>
+            <text x="16" y="90" fontSize="7" fill="#be123c">Here comes the bus (O) vs Here it comes (O, 不倒裝)</text>
+          </g>
+
+          {/* 右圖：部分倒裝 (助動詞搬移) */}
+          <g transform="translate(265, 48)">
+            <rect x="0" y="0" width="245" height="110" fill="#f8fafc" stroke="#cbd5e1" rx="6" />
+            <text x="122" y="15" textAnchor="middle" fontSize="9" fontWeight="bold" fill="#1e40af">部分倒裝：否定詞置首 (Aux + S + V)</text>
+
+            <rect x="10" y="24" width="225" height="34" fill="#eff6ff" stroke="#bfdbfe" rx="3" />
+            <text x="16" y="37" fontSize="7.5" fontWeight="bold" fill="#1e40af">否定詞 + 助動詞 (do/did/have) + 主詞 + 原形動詞</text>
+            <text x="16" y="49" fontSize="7" fill="#2563eb">Ex: Never did he imagine such structure.</text>
+
+            <rect x="10" y="64" width="225" height="38" fill="#f0fdf4" stroke="#bbf7d0" rx="3" />
+            <text x="16" y="78" fontSize="7.5" fontWeight="bold" fill="#15803d">So / Neither 附和簡答倒裝：</text>
+            <text x="16" y="90" fontSize="7" fill="#166534">A loves architecture. ➜ So do I. / Neither do I.</text>
+          </g>
+
+          <rect x="30" y="165" width="480" height="26" fill="#fef2f2" stroke="#fca5a5" rx="4" />
+          <text x="270" y="182" textAnchor="middle" fontSize="9.5" fontWeight="bold" fill="#991b1b">
+            秒殺口訣：地方副詞全倒裝（名詞倒、代名詞不倒）；否定置首疑問句排（助動搬前動還原）！
+          </text>
+        </svg>
+      );
+
+    // 53. 國語文：中國歷代賦體演變時序軸
+    case 'chinese-fu-evolution':
+      return (
+        <svg viewBox="0 0 540 200" className={className} xmlns="http://www.w3.org/2000/svg" aria-label="賦體文學流變圖解">
+          <rect width="540" height="200" fill="#f8fafc" rx="10" />
+          <rect x="12" y="12" width="516" height="176" fill="#ffffff" stroke="#cbd5e1" strokeWidth="1.2" rx="8" />
+
+          {/* 標題橫幅 */}
+          <rect x="12" y="12" width="516" height="28" fill="#fffbeb" rx="8" />
+          <text x="270" y="30" textAnchor="middle" fontSize="11" fontWeight="bold" fill="#92400e">
+            中國歷代賦體演變光譜（古賦 ➜ 漢賦 ➜ 俳賦 ➜ 文賦 ➜ 律賦）
+          </text>
+
+          {/* 時間軸進階 */}
+          <g transform="translate(30, 48)">
+            <rect x="0" y="0" width="480" height="110" fill="#fefce8" stroke="#fef08a" rx="6" />
+
+            {/* 5 階段階梯 */}
+            <g transform="translate(10, 16)">
+              {/* 騷賦 */}
+              <rect x="0" y="0" width="85" height="75" fill="#ffffff" stroke="#eab308" rx="4" />
+              <text x="42" y="16" textAnchor="middle" fontSize="8.5" fontWeight="bold" fill="#854d0e">① 騷賦 (戰國)</text>
+              <text x="42" y="32" textAnchor="middle" fontSize="7" fill="#64748b">屈原〈離騷〉</text>
+              <text x="42" y="46" textAnchor="middle" fontSize="7" fill="#713f12">多「兮」字</text>
+              <text x="42" y="60" textAnchor="middle" fontSize="7" fill="#713f12">主抒情言志</text>
+
+              {/* 箭頭 */}
+              <text x="92" y="40" fontSize="11" fill="#ca8a04">→</text>
+
+              {/* 漢大賦 */}
+              <rect x="100" y="0" width="85" height="75" fill="#ffffff" stroke="#eab308" rx="4" />
+              <text x="142" y="16" textAnchor="middle" fontSize="8.5" fontWeight="bold" fill="#854d0e">② 古賦 (漢大賦)</text>
+              <text x="142" y="32" textAnchor="middle" fontSize="7" fill="#64748b">司馬相如〈子虛〉</text>
+              <text x="142" y="46" textAnchor="middle" fontSize="7" fill="#713f12">鋪採摛文</text>
+              <text x="142" y="60" textAnchor="middle" fontSize="7" fill="#713f12">勸百諷一</text>
+
+              <text x="192" y="40" fontSize="11" fill="#ca8a04">→</text>
+
+              {/* 俳賦 */}
+              <rect x="200" y="0" width="85" height="75" fill="#ffffff" stroke="#eab308" rx="4" />
+              <text x="242" y="16" textAnchor="middle" fontSize="8.5" fontWeight="bold" fill="#854d0e">③ 俳賦 (六朝)</text>
+              <text x="242" y="32" textAnchor="middle" fontSize="7" fill="#64748b">鮑照〈蕪城賦〉</text>
+              <text x="242" y="46" textAnchor="middle" fontSize="7" fill="#713f12">講究四六駢偶</text>
+              <text x="242" y="60" textAnchor="middle" fontSize="7" fill="#713f12">對仗聲律嚴苛</text>
+
+              <text x="292" y="40" fontSize="11" fill="#ca8a04">→</text>
+
+              {/* 文賦 */}
+              <rect x="300" y="0" width="85" height="75" fill="#f0fdf4" stroke="#16a34a" strokeWidth="1.5" rx="4" />
+              <text x="342" y="16" textAnchor="middle" fontSize="8.5" fontWeight="bold" fill="#15803d">④ 文賦 (唐宋)</text>
+              <text x="342" y="32" textAnchor="middle" fontSize="7" fontWeight="bold" fill="#166534">蘇軾〈赤壁賦〉</text>
+              <text x="342" y="46" textAnchor="middle" fontSize="7" fill="#166534">★ 化賦為文</text>
+              <text x="342" y="60" textAnchor="middle" fontSize="7" fill="#166534">駢散相間哲理深</text>
+
+              <text x="392" y="40" fontSize="11" fill="#ca8a04">→</text>
+
+              {/* 律賦 */}
+              <rect x="400" y="0" width="65" height="75" fill="#ffffff" stroke="#94a3b8" rx="4" />
+              <text x="432" y="16" textAnchor="middle" fontSize="8.5" fontWeight="bold" fill="#475569">⑤ 律賦</text>
+              <text x="432" y="32" textAnchor="middle" fontSize="7" fill="#64748b">科舉考試</text>
+              <text x="432" y="46" textAnchor="middle" fontSize="7" fill="#64748b">限制韻腳</text>
+              <text x="432" y="60" textAnchor="middle" fontSize="7" fill="#64748b">僵化束縛</text>
+            </g>
+          </g>
+
+          <rect x="30" y="165" width="480" height="26" fill="#fffbeb" stroke="#fde047" rx="4" />
+          <text x="270" y="182" textAnchor="middle" fontSize="9.5" fontWeight="bold" fill="#854d0e">
+            必考核心：蘇軾〈赤壁賦〉絕非駢賦或律賦，而是突破聲律拘束、吸納古文筆調之「宋代文賦」！
+          </text>
+        </svg>
+      );
+
+    // 54. 國語文：明代散文流派與歸有光借物抒情心智圖
+    case 'chinese-tangsang-prose':
+      return (
+        <svg viewBox="0 0 540 200" className={className} xmlns="http://www.w3.org/2000/svg" aria-label="明代散文流派與項脊軒志圖解">
+          <rect width="540" height="200" fill="#f8fafc" rx="10" />
+          <rect x="12" y="12" width="516" height="176" fill="#ffffff" stroke="#cbd5e1" strokeWidth="1.2" rx="8" />
+
+          {/* 標題橫幅 */}
+          <rect x="12" y="12" width="516" height="28" fill="#f0fdf4" rx="8" />
+          <text x="270" y="30" textAnchor="middle" fontSize="11" fontWeight="bold" fill="#166534">
+            明代散文流派論爭與歸有光「不事雕琢、自有風致」借物抒情技法
+          </text>
+
+          {/* 左圖：明代散文三大流派對比 */}
+          <g transform="translate(30, 48)">
+            <rect x="0" y="0" width="220" height="110" fill="#f8fafc" stroke="#cbd5e1" rx="6" />
+            <text x="110" y="15" textAnchor="middle" fontSize="9" fontWeight="bold" fill="#1e3a8a">明代三大散文流派對壘</text>
+
+            <rect x="10" y="24" width="200" height="24" fill="#fef2f2" stroke="#fecaca" rx="3" />
+            <text x="16" y="38" fontSize="7.5" fontWeight="bold" fill="#991b1b">前後七子：文必秦漢、詩必盛唐 (擬古剽竊)</text>
+
+            <rect x="10" y="52" width="200" height="26" fill="#ecfdf5" stroke="#a7f3d0" strokeWidth="1.5" rx="3" />
+            <text x="16" y="66" fontSize="8" fontWeight="bold" fill="#065f46">★ 唐宋派 (歸有光)：宗韓柳歐三蘇、重真情</text>
+            <text x="16" y="74" fontSize="7" fill="#047857">「不事雕琢而自有風致，開清代桐城派先河」</text>
+
+            <rect x="10" y="82" width="200" height="22" fill="#eff6ff" stroke="#bfdbfe" rx="3" />
+            <text x="16" y="96" fontSize="7.5" fontWeight="bold" fill="#1e40af">公安派 (三袁)：獨抒性靈、不拘格套</text>
+          </g>
+
+          {/* 右圖：項脊軒托物寄情三大意象 */}
+          <g transform="translate(265, 48)">
+            <rect x="0" y="0" width="245" height="110" fill="#f0fdf4" stroke="#bbf7d0" rx="6" />
+            <text x="122" y="15" textAnchor="middle" fontSize="9" fontWeight="bold" fill="#166534">項脊軒四大托物寄情意象</text>
+
+            <rect x="10" y="24" width="225" height="24" fill="#ffffff" stroke="#86efac" rx="3" />
+            <text x="16" y="38" fontSize="8" fontWeight="bold" fill="#15803d">① 方丈之室 ➜ 修葺借天光植蘭桂 (讀書清樂)</text>
+
+            <rect x="10" y="52" width="225" height="24" fill="#ffffff" stroke="#86efac" rx="3" />
+            <text x="16" y="66" fontSize="8" fontWeight="bold" fill="#15803d">② 小門隔牆 ➜ 牆往往而是客踰庖 (家族分崩)</text>
+
+            <rect x="10" y="80" width="225" height="24" fill="#ffffff" stroke="#86efac" rx="3" />
+            <text x="16" y="94" fontSize="8" fontWeight="bold" fill="#15803d">③ 庭前枇杷 ➜ 亭亭如蓋手植樹 (悼念亡妻)</text>
+          </g>
+
+          <rect x="30" y="165" width="480" height="26" fill="#f0fdf4" stroke="#86efac" rx="4" />
+          <text x="270" y="182" textAnchor="middle" fontSize="9.5" fontWeight="bold" fill="#166534">
+            秒殺口訣：歸有光屬唐宋派，借生活瑣事寄深情，枇杷手植悼亡妻，開桐城派雅正先聲！
+          </text>
+        </svg>
+      );
+
     // 預設幾何框
     default:
       return (
