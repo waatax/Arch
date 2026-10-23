@@ -22,8 +22,7 @@ import {
   Layers, 
   Target, 
   Trophy,
-  FileText,
-  Image as ImageIcon
+  FileText
 } from 'lucide-react';
 import PeriodicExamSvgIllustration from './PeriodicExamSvgIllustrations';
 

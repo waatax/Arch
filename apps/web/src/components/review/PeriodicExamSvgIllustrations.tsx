@@ -1160,7 +1160,7 @@ export default function PeriodicExamSvgIllustration({ type, className = 'w-full 
           <rect width="540" height="220" fill="#f8fafc" rx="12" />
           <rect x="20" y="15" width="500" height="190" fill="#ffffff" stroke="#cbd5e1" strokeWidth="1.5" rx="8" />
           <text x="270" y="34" textAnchor="middle" fontSize="13" fontWeight="bold" fill="#0f172a">
-            平面共點力系平衡條件與拉密定理 (Lami's Theorem)
+            平面共點力系平衡條件與拉密定理 (Lami&apos;s Theorem)
           </text>
 
           {/* 左圖：三力匯交於 O 點 */}
@@ -1516,7 +1516,7 @@ export default function PeriodicExamSvgIllustration({ type, className = 'w-full 
           <rect width="540" height="220" fill="#f8fafc" rx="12" />
           <rect x="20" y="15" width="500" height="190" fill="#ffffff" stroke="#cbd5e1" strokeWidth="1.5" rx="8" />
           <text x="270" y="34" textAnchor="middle" fontSize="13" fontWeight="bold" fill="#0f172a">
-            平面應力狀態與莫爾圓 (Mohr's Circle) 幾何主應力速解
+            平面應力狀態與莫爾圓 (Mohr&apos;s Circle) 幾何主應力速解
           </text>
 
           {/* 莫爾圓幾何大圖 */}
@@ -1846,9 +1846,9 @@ export default function PeriodicExamSvgIllustration({ type, className = 'w-full 
           <rect width="540" height="220" fill="#f8fafc" rx="12" />
           <rect x="20" y="15" width="500" height="190" fill="#ffffff" stroke="#cbd5e1" strokeWidth="1.5" rx="8" />
           <text x="270" y="34" textAnchor="middle" fontSize="13" fontWeight="bold" fill="#0f172a">
-            波羅米水灰比強度定律 (Abrams' Law) 與混凝土 7/28 天強度發展曲線
+            波羅米水灰比強度定律 (Abrams&apos; Law) 與混凝土 7/28 天強度發展曲線
           </text>
-
+          
           {/* 左圖：反比曲線圖 */}
           <g transform="translate(45, 48)">
             <line x1="30" y1="95" x2="200" y2="95" stroke="#64748b" strokeWidth="1.5" />
@@ -1876,11 +1876,11 @@ export default function PeriodicExamSvgIllustration({ type, className = 'w-full 
 
             {/* 7 天 */}
             <rect x="20" y="30" width="130" height="18" fill="#93c5fd" rx="3" />
-            <text x="25" y="43" fontSize="8" fontWeight="bold" fill="#1e3a8a">7 天齡期強度 ≈ 65~70% f'c</text>
+            <text x="25" y="43" fontSize="8" fontWeight="bold" fill="#1e3a8a">7 天齡期強度 ≈ 65~70% f&apos;c</text>
 
             {/* 28 天 */}
             <rect x="20" y="55" width="190" height="18" fill="#3b82f6" rx="3" />
-            <text x="25" y="68" fontSize="8" fontWeight="bold" fill="#ffffff">28 天齡期強度 ＝ 100% f'c (設計標準)</text>
+            <text x="25" y="68" fontSize="8" fontWeight="bold" fill="#ffffff">28 天齡期強度 ＝ 100% f&apos;c (設計標準)</text>
 
             {/* 90 天 */}
             <rect x="20" y="80" width="205" height="18" fill="#1d4ed8" rx="3" />
@@ -2335,7 +2335,7 @@ export default function PeriodicExamSvgIllustration({ type, className = 'w-full 
             <text x="25" y="103" textAnchor="middle" fontSize="8" fontWeight="bold" fill="#1e40af">起點 A</text>
 
             <circle cx="180" cy="85" r="3.5" fill="#dc2626" />
-            <text x="180" y="98" textAnchor="middle" fontSize="8" fontWeight="bold" fill="#991b1b">推算 A'</text>
+            <text x="180" y="98" textAnchor="middle" fontSize="8" fontWeight="bold" fill="#991b1b">推算 A&apos;</text>
 
             {/* 閉合差直角三角形 */}
             <line x1="25" y1="90" x2="180" y2="90" stroke="#059669" strokeWidth="1.5" strokeDasharray="2,2" />
