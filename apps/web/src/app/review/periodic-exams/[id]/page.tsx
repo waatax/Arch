@@ -20,7 +20,7 @@ export async function generateMetadata({
   if (!plan) return { title: 'Exam Handout Not Found' };
 
   return {
-    title: `${plan.subjectName} ${plan.periodName} 考前衝刺預備講義與真題對照手冊 (A4 PDF) ｜ Arch V9.00`,
+    title: `${plan.subjectName} ${plan.periodName} 考前衝刺預備講義與真題對照手冊 (A4 PDF) ｜ Arch V10.00`,
     description: `${plan.targetSchool}。範圍：${plan.examScope}。收錄核心觀念圖解、考前 10 分鐘速記公式卡、名校段考真題逐步 SOP 詳解。`,
   };
 }

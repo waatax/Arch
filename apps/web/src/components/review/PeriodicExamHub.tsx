@@ -29,21 +29,34 @@ import PeriodicExamSvgIllustration from './PeriodicExamSvgIllustrations';
 // 映射高解析純向量 SVG 圖解類型
 function getSvgType(subjectSlug: string, pointId: string): string {
   if (subjectSlug === 'mechanics') {
+    if (pointId.includes('mock-01-02') || pointId.includes('pulley')) return 'mechanics-pulley-system';
+    if (pointId.includes('mock-02-02') || pointId.includes('thermal') || pointId.includes('axial')) return 'mechanics-axial-thermal-stress';
     if (pointId.includes('mohr') || pointId.includes('mock-02')) return 'mechanics-mohr-circle';
+    if (pointId.includes('radius') || pointId.includes('gyration') || pointId.includes('s2-final-02')) return 'mechanics-radius-gyration';
     if (pointId.includes('inertia') || pointId.includes('parallel') || pointId.includes('s2-final')) return 'mechanics-inertia-parallel';
+    if (pointId.includes('cantilever') || pointId.includes('differential') || pointId.includes('s2-m2-02')) return 'mechanics-vm-cantilever';
     if (pointId.includes('vm') || pointId.includes('shear-moment') || pointId.includes('s2-m2')) return 'mechanics-vm-diagram';
+    if (pointId.includes('section') || pointId.includes('s2-m1-02')) return 'mechanics-method-of-sections';
     if (pointId.includes('truss') || pointId.includes('zeroforce') || pointId.includes('s2-m1') || pointId.includes('mock-01')) return 'mechanics-truss-zeroforce';
+    if (pointId.includes('tipping') || pointId.includes('friction-angle') || pointId.includes('s1-final-02')) return 'mechanics-friction-angle';
     if (pointId.includes('centroid') || pointId.includes('friction') || pointId.includes('s1-final')) return 'mechanics-centroid-friction';
+    if (pointId.includes('couple') || pointId.includes('s1-m2-02')) return 'mechanics-varignon-couple';
     if (pointId.includes('moment') || pointId.includes('varignon') || pointId.includes('s1-m2')) return 'mechanics-moment-varignon';
+    if (pointId.includes('transmissibility') || pointId.includes('s1-m1-02')) return 'mechanics-coplanar-forces';
     return 'mechanics-coplanar-forces';
   }
   if (subjectSlug === 'drafting') {
+    if (pointId.includes('staircase-dim') || pointId.includes('mock-sur-02') || pointId.includes('stair-dim')) return 'drafting-staircase-dimensioning';
     if (pointId.includes('stair') || pointId.includes('code')) return 'drafting-staircase-code';
+    if (pointId.includes('auxiliary') || pointId.includes('s1-final-02')) return 'drafting-auxiliary-views';
     if (pointId.includes('section') || pointId.includes('s1-final')) return 'drafting-section-views';
+    if (pointId.includes('lines-priority') || pointId.includes('s1-m2-02')) return 'drafting-lines-priority';
     if (pointId.includes('third-angle') || pointId.includes('s1-m2')) return 'drafting-third-angle-proj';
+    if (pointId.includes('dimension') || pointId.includes('scale') || pointId.includes('s1-m1-02')) return 'drafting-dimensioning-rules';
     return 'drafting-cns-sheets-lines';
   }
   if (subjectSlug === 'construction') {
+    if (pointId.includes('structure-types') || pointId.includes('s2-m1-02')) return 'arch-building-structure-types';
     return 'arch-eewh-green-building';
   }
   if (subjectSlug === 'materials') {
@@ -62,7 +75,8 @@ function getSvgType(subjectSlug: string, pointId: string): string {
     return 'materials-porosity';
   }
   if (subjectSlug === 'surveying') {
-    if (pointId.includes('mock-sur') || pointId.includes('stair')) return 'drafting-staircase-code';
+    if (pointId.includes('mock-sur-02') || pointId.includes('stair')) return 'drafting-staircase-dimensioning';
+    if (pointId.includes('mock-sur') || pointId.includes('staircase')) return 'drafting-staircase-code';
     if (pointId.includes('precision') || pointId.includes('s2-m2-02')) return 'surveying-traverse-precision';
     if (pointId.includes('earthwork') || pointId.includes('simpson') || pointId.includes('s2-final-02')) return 'surveying-earthwork-simpson';
     if (pointId.includes('repetition') || pointId.includes('s2-m1-02')) return 'surveying-theodolite-repetition';

@@ -7,7 +7,7 @@ const __dirname = path.dirname(__filename);
 const root = path.resolve(__dirname, '..');
 const webRoot = path.join(root, 'apps', 'web');
 
-console.log('🏛️  啟動 Arch V9.00「七十個七次」（490 重真實品質閘門）全自動化嚴格檢驗...\n');
+console.log('🏛️  啟動 Arch V10.00 Apex Mastery「七十個七次」（490 重真實品質閘門）全自動化嚴格檢驗...\n');
 
 let passCount = 0;
 let failCount = 0;

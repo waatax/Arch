@@ -3,7 +3,7 @@ import coverage from '../../../../../data/registry/exam-coverage.json';
 import common from '../../../../../data/registry/common-exam-questions.json';
 
 export const metadata = {
-  title: '過去七年大考全科目題庫與 108 課綱對齊教學｜Arch V9.00',
+  title: '過去七年大考全科目題庫與 108 課綱對齊教學｜Arch V10.00',
   description: '109 至 115 學年度國文、英文、數學(C)及土木與建築群專業科目，收錄過去七年大考官方試題、標準答案與對應 108 課綱 120 主題教學對照。',
 };
 
@@ -128,7 +128,7 @@ export function ExamsContent({ embedded = false }: { embedded?: boolean }) {
         <div>
           <div className="flex flex-wrap items-center gap-2">
             <p className="text-xs font-mono uppercase tracking-[0.2em] text-blue-600 dark:text-blue-400 font-bold">
-              Arch V9.00 · 108 Curriculum
+              Arch V10.00 · 108 Curriculum
             </p>
             <span className="rounded-full bg-emerald-100 px-2.5 py-0.5 text-[10px] font-bold text-emerald-800 dark:bg-emerald-950/80 dark:text-emerald-300">
               過去 7 年（109–115）歷屆全備

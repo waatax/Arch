@@ -85,7 +85,7 @@ export default function CurriculumPage() {
           <div className="space-y-2">
             <div className="flex items-center gap-2">
               <span className="text-xs font-mono text-blue-600 dark:text-blue-400 uppercase tracking-[0.2em] block font-bold">
-                Arch V9.00 Curriculum
+                Arch V10.00 Curriculum
               </span>
               <span className="rounded-md bg-blue-700/10 text-blue-700 dark:text-blue-300 text-[10px] font-mono font-bold px-2 py-0.5 border border-blue-700/20">
                 108 課綱完整對齊

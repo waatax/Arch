@@ -370,7 +370,7 @@ export default function ArchitecturePathwayPage() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="flex flex-wrap items-center gap-2 text-xs font-mono font-bold tracking-wider mb-4">
             <span className="rounded-full bg-blue-700 px-3 py-1 text-white shadow-xs">
-              ARCH V9.00
+              ARCH V10.00
             </span>
             <span className="text-blue-700 dark:text-blue-400">
               從高工建築科到 5 年制 B.Arch 建築學士與國家建築師

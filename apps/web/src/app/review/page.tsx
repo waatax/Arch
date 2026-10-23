@@ -5,7 +5,7 @@ import { Printer, ArrowRight, BookOpen } from 'lucide-react';
 import { allSubjectSemestersMeta, allSemesterReviews } from '@/data/semesterReviews';
 
 export const metadata: Metadata = {
-  title: '科目學期考前筆記大複習與 PDF 下載手冊 ｜ Arch V9.00',
+  title: '科目學期考前筆記大複習與 PDF 下載手冊 ｜ Arch V10.00',
   description: '依據 108 課綱與四技二專統測歷年考題，依照科目每個學期編排之教科書級考前筆記大複習手冊，支援一鍵轉存 A4 向量 PDF 供下載列印離線學習。',
 };
 

@@ -139,7 +139,7 @@ export default function Home() {
         <div className="mx-auto grid max-w-7xl gap-10 px-4 pb-16 pt-12 sm:px-6 sm:pb-24 sm:pt-20 lg:grid-cols-[1.15fr_.85fr] lg:items-center lg:px-8">
           <div className="relative z-10">
             <div className="mb-6 flex flex-wrap items-center gap-2 text-[11px] font-bold tracking-[.16em]">
-              <span className="rounded-full bg-blue-600/90 px-3 py-1.5 text-white">ARCH V9.00</span>
+              <span className="rounded-full bg-blue-600/90 px-3 py-1.5 text-white">ARCH V10.00</span>
               <span className="text-slate-500 dark:text-slate-400">台灣高工建築科學習基地 · 信達雅建築素養</span>
             </div>
             <ExpertCouncilBanner compact className="mb-6" />

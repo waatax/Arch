@@ -39,7 +39,7 @@ export async function generateMetadata({
   if (!review) return { title: 'Review Not Found' };
 
   return {
-    title: `${review.subjectTitle} ${review.semesterTitle} 考前筆記大複習手冊 (A4 PDF) ｜ Arch V9.00`,
+    title: `${review.subjectTitle} ${review.semesterTitle} 考前筆記大複習手冊 (A4 PDF) ｜ Arch V10.00`,
     description: `${review.curriculumScope}。涵蓋觀念精講、公式定理速查、高工必背對照表、致命陷阱避坑與歷屆統測真題五步 SOP 詳解。`,
   };
 }

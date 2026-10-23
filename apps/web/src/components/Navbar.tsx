@@ -532,7 +532,7 @@ export default function Navbar() {
                     Arch
                   </span>
                   <span className="rounded-full bg-blue-700/10 dark:bg-blue-400/10 px-2 py-0.5 text-[10px] font-mono font-bold text-blue-700 dark:text-blue-300 border border-blue-700/20">
-                    V9.00
+                    V10.00
                   </span>
                 </div>
                 <span className="text-[10px] font-mono text-slate-500 dark:text-slate-400 -mt-1 hidden sm:inline">
@@ -1184,7 +1184,7 @@ export default function Navbar() {
                 <span><kbd className="rounded bg-white dark:bg-slate-800 border px-1">↵</kbd> 選取前往</span>
                 <span><kbd className="rounded bg-white dark:bg-slate-800 border px-1">ESC</kbd> 關閉</span>
               </div>
-              <span className="hidden sm:inline">Arch V9.00 Omnibar</span>
+              <span className="hidden sm:inline">Arch V10.00 Omnibar</span>
             </div>
           </div>
         </div>

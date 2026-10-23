@@ -46,6 +46,7 @@ jobs:
           pnpm validate:v7-teaching
           pnpm validate:v7-goals
           pnpm validate:70x7
+          pnpm validate:v10
           pnpm lint
           pnpm build
           pnpm validate:built-links

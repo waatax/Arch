@@ -4,7 +4,7 @@ import catalogData from '../../../public/practice-data/index.json';
 import CurriculumExamPathwayGuide from '@/components/pedagogy/CurriculumExamPathwayGuide';
 
 export const metadata = {
-  title: '全科目歷屆大考全真模擬與七年題庫｜Arch V9.00',
+  title: '全科目歷屆大考全真模擬與七年題庫｜Arch V10.00',
   description: '完整對齊 108 課綱學測與統測雙軌，收錄過去七年大考真題，提供全真限時模擬、待核對標記與五段式名師思維詳解。',
 };
 

@@ -15,7 +15,7 @@ export default function Footer() {
                 Arch
               </span>
               <span className="rounded-full bg-blue-700/10 dark:bg-blue-400/10 px-2 py-0.5 text-[10px] font-mono font-bold text-blue-700 dark:text-blue-300 border border-blue-700/20">
-                V9.00
+                V10.00
               </span>
             </div>
             <p className="text-sm leading-relaxed text-slate-600 dark:text-slate-400 max-w-md">

@@ -710,6 +710,165 @@ function getConceptTableData(pointId: string) {
     };
   }
 
+
+  // ── 新增 G10 與 G12 深度擴充之結構化規格對照矩陣表 (無任何通用降級) ──
+  if (pointId.includes('mec-g10-s1-m1-02')) {
+    return {
+      title: '力的可傳性原理與分力分解幾何合成法對照表',
+      headers: ['力學原理 / 分解法則', '公式定義與物理條件', '適用範疇與幾何意涵', '統測命題陷阱與解題關鍵'],
+      rows: [
+        ['力的可傳性原理', '作用線滑移外效應不變', '僅適用剛體外力平衡，嚴禁用於構件內應變分析！', '內力形變分析不可滑移力的作用點'],
+        ['直角坐標正交分解', 'Fx = F·cosθ, Fy = F·sinθ', '將斜向力投影至 X 與 Y 軸互相垂直之分力', '注意銳角 θ 是與水平還是鉛直線之夾角'],
+        ['合力大小與方向', 'R = √(ΣFx² + ΣFy²), tanθ = ΣFy/ΣFx', '多力代數和向量合成之總合力', '依 ΣFx 與 ΣFy 正負符號確定所在象限'],
+        ['3-4-5 特殊直角比', '邊長比 3 : 4 : 5 (夾角 37°-53°)', '建築工程最常用整數邊長力分解比', '37° 對應邊長 3，53° 對應邊長 4 速算'],
+      ]
+    };
+  }
+  if (pointId.includes('mec-g10-s1-m2-02')) {
+    return {
+      title: '力偶矩之自由向量特性與力的平行移動等效系表',
+      headers: ['等效簡化項目', '數學表達式與物理意義', '向量特性與空間自由度', '段考常考焦點與防扣分'],
+      rows: [
+        ['力偶定義 (Couple)', '大小相等、方向相反且作用線平行之兩力', '合力為零 (R = 0)，純粹產生轉動效應', '力偶無法用單一力平衡，只能用力偶平衡！'],
+        ['力偶矩大小 (M)', 'M = F × d (d 為兩力垂直間距)', '★ 自由向量 (可在作用平面內任意平移)', '對平面任意點取矩數值完全相同'],
+        ['力平行移動原理', '力平移至點 O 附加力偶 Mo = F·d', '外效應完全等效之主矢與主矩系', '平移時力的大小方向不變，只多帶一個力偶'],
+        ['多力偶代數合成', 'M_total = Σ Mi (逆時針為正)', '同平面內多個力偶直接數值代數相加', '順時針為負、逆時針為正，符號切勿混淆'],
+      ]
+    };
+  }
+  if (pointId.includes('mec-g10-s1-final-02')) {
+    return {
+      title: '庫侖滑動摩擦定律與箱體滑動傾覆臨界判定表',
+      headers: ['摩擦與運動維度', '計算公式與臨界條件', '物理意涵與受力分佈', '工程解題標準 SOP'],
+      rows: [
+        ['最大靜摩擦力 (fs,max)', 'fs,max = μs · N (正向力)', '物體由靜止即將開始滑動之極限臨界', '未達滑動時，靜摩擦力大小恆等於外加推力！'],
+        ['摩擦角 (φs)', 'tan(φs) = μs (接觸面總反力夾角)', '全反力 R 與接觸面法線之最大偏轉角', '斜面自鎖條件：斜面傾角 θ ≦ φs 必定靜止'],
+        ['箱體傾覆臨界高度', 'hcrit = b / (2·μs) (b 為底寬)', '推力施加高度對抗傾覆力矩之平衡極限', 'h > hcrit 先翻倒；h < hcrit 先滑動'],
+        ['傾覆推力求解 (Ptip)', 'ΣM_樞紐點 = 0 (反力集中於角點)', 'Ptip × h = W × (b / 2)', '分別求 Pslip 與 Ptip，取「較小者」為實際破壞'],
+      ]
+    };
+  }
+  if (pointId.includes('mec-g10-s2-m1-02')) {
+    return {
+      title: '桁架截面法 (Method of Sections) 虛擬切剖速解表',
+      headers: ['截面法步驟', '操作要領與幾何規範', '方程式選擇依據', '速算技巧與常見失分點'],
+      rows: [
+        ['第一步：虛擬剖切', '作截面 1-1 完全切斷桁架為兩半', '切斷之未知桿件數「原則上不得超過 3 根」', '切斷桿件假定受拉 (箭頭朝外拉離截面)'],
+        ['第二步：選取隔離體', '選取外力較少或無外力之一側', '簡化計算量，避開繁複支承反力', '隔離體上必須完整標註被切斷桿件之內力'],
+        ['第三步：交點取矩 ΣMo=0', '取另外兩根未知桿件之延長交點 O 為矩心', '另兩未知桿力臂為零直接消去，一式解一桿', '求上弦或下弦桿力之最快秒殺路徑'],
+        ['第四步：投影平衡 ΣFy=0', '水平弦桿無垂直分量，斜腹桿承擔全部剪力', 'F_diag · sinθ = Σ 外垂直力', '算得負值標明為壓力 (C)，正值為拉力 (T)'],
+      ]
+    };
+  }
+  if (pointId.includes('mec-g10-s2-m2-02')) {
+    return {
+      title: '梁載重-剪力-彎矩微積分微分積分關係與危險斷面表',
+      headers: ['微積分關係維度', '微分形式方程式', '幾何圖形斜率面積意義', '危險斷面 (Mmax) 判定法則'],
+      rows: [
+        ['載重與剪力關係', 'dV / dx = -w(x)', '剪力圖曲線之斜率等於載重集度負值', '均布載重剪力為斜直線；集中力剪力垂直跳躍'],
+        ['剪力與彎矩關係', 'dM / dx = V(x)', '彎矩圖曲線之斜率等於該斷面之剪力值', '剪力為正彎矩上升，剪力為負彎矩下降'],
+        ['彎矩極值點 (Mmax)', '令 V(x) = 0 求解臨界坐標 x0', '剪力穿越零點處，彎矩必出現極大或極小值', '★ 危險斷面位置必定發生於 V=0 或集中力處'],
+        ['剪力圖面積累積', 'ΔM_AB = ∫ V dx (剪力圖面積)', '兩斷面間彎矩差額等於該區間剪力圖面積', '利用三角形或梯形面積直算彎矩，免解方程式'],
+      ]
+    };
+  }
+  if (pointId.includes('mec-g10-s2-final-02')) {
+    return {
+      title: '極慣性矩 J、迴轉半徑 r 與截面模數 Z 對照規格表',
+      headers: ['幾何力學指標', '定義公式與標準單位', '物理力學功能', '常見截面速算公式'],
+      rows: [
+        ['極慣性矩 (J)', 'J = ∫ r² dA = Ix + Iy (mm⁴)', '平面垂直軸定理；反映構件抗扭轉剛度', '實心圓 J = π·d⁴ / 32；空心圓管抗扭效率最高'],
+        ['迴轉半徑 (r 或 k)', 'r = √(I / A) (mm 或 cm)', '長柱歐拉挫曲 (Buckling) 抗壓細長比 λ = L/r', '矩形 rx = h / √12 ≈ 0.289 h；弱軸決定挫曲'],
+        ['抗彎截面模數 (Z)', 'Z = I / y_max (mm³)', '梁受彎矩時最大正應力 σ_max = M / Z', '矩形 Zx = b·h² / 6；工字鋼抗彎材料利用率最佳'],
+        ['細長比與弱軸', 'λ = L_eff / r_min', '反映細長構件失穩破壞危險程度', '長柱必定沿「r 最小」之弱軸方向向外彎曲失穩'],
+      ]
+    };
+  }
+  if (pointId.includes('dra-g10-s1-m1-02')) {
+    return {
+      title: '建築製圖尺度標註 CNS 規則與比例尺換算表',
+      headers: ['尺度與比例維度', 'CNS 11567 規範要求', '圖面實務表現方式', '段考計算題解題關鍵'],
+      rows: [
+        ['尺度單位標註', '建築圖以毫米 (mm) 為基準單位', '圖面尺寸數字後方「不標註單位符號」', '標註 2400 即代表 2400 mm = 2.4 m'],
+        ['尺度起迄符號', '建築常用 45° 粗短斜線 (長約 2~3 mm)', '機械圖常用實心或空心箭頭', '同一張圖面起迄符號形式必須前後一致'],
+        ['比例尺長度換算', '實體長度 ＝ 圖上測量長度 × 比例分母', '如 1:50 圖上量得 4 cm ➜ 現場 200 cm (2m)', '繪圖時將現場尺寸「除以分母」得圖上毫米長'],
+        ['比例尺面積換算', '實體面積 ＝ 圖上面積 × (比例分母)²', '1:100 圖上面積 1 cm² ＝ 現場 10000 cm² (1 m²)', '★ 面積縮放必須乘分母之「平方」！'],
+      ]
+    };
+  }
+  if (pointId.includes('dra-g10-s1-m2-02')) {
+    return {
+      title: 'CNS 工程製圖線型優先重疊等級與虛線交接規則表',
+      headers: ['線型等級與交接', 'CNS 標準優先順序', '作圖規範要領', '常見錯誤與扣分地雷'],
+      rows: [
+        ['第一優先：粗實線', '外形可見輪廓線 (0.5~0.7 mm)', '最高優先權，覆蓋所有其餘線型', '實線壓虛線，實線壓中心線'],
+        ['第二優先：中虛線', '不可見隱藏線 (0.25~0.35 mm)', '線段長約 3~4 mm，間隙約 1 mm', '轉角 L 角頂點必須「實線相接」不可留縫！'],
+        ['第三優先：特粗/細鏈線', '剖切割面線 (特粗) ＞ 中心線 (細鏈)', '長劃長約 15~20 mm，點約 1 mm', '中心線相交必須為「長劃相交」而非點交'],
+        ['虛線延伸留空隙', '虛線由實線同向向外延伸而出', '起點必須留出 1~1.5 mm 之明顯空隙', '避免讀圖者誤認虛線為實線之一部分'],
+      ]
+    };
+  }
+  if (pointId.includes('dra-g10-s1-final-02')) {
+    return {
+      title: '單斜面輔助視圖 (Auxiliary Views) 投影展開求實形表',
+      headers: ['輔助視圖步驟', '幾何作圖規範', '尺寸對齊依據', '真實形狀 (True Shape) 檢核'],
+      rows: [
+        ['邊緣視圖 (Edge View)', '找出斜面呈現單一傾斜直線之視圖', '通常出現在前視圖或側視圖', '該斜直線之長度即為斜面之「真實長度」'],
+        ['輔助基準線 (RP)', '設立一條平行於斜面斜直線之基準面 RP', 'RP 平行於斜線，距離適當留出作圖空間', '基準線代表投影箱輔助折轉面'],
+        ['正交投射射線', '自斜線各端點向外拉出「垂直於斜線」之射線', '投射線與斜面夾角嚴格為 90° 直角', '非 90° 投射所求得之圖形仍為縮形假尺寸'],
+        ['深度尺寸移植', '自第三視圖中量取垂直於基準線之深度寬度', '由 RP 基準線沿投射線截取相同寬度連線', '求得斜面無畸變真實大小與幾何形狀'],
+      ]
+    };
+  }
+  if (pointId.includes('con-g10-s2-m1-02')) {
+    return {
+      title: 'RC、SC 與 SRC 建築三大結構耐震性能與施工特性表',
+      headers: ['結構系統類別', '主要材料與受力特徵', '耐震韌性與結構剛度', '高層建築適用性與優缺點'],
+      rows: [
+        ['RC (鋼筋混凝土)', '混凝土抗壓 + 鋼筋抗拉', '剛度高 (晃動小)、自重大、延性較低', '造價最低、耐火優；適用 15 樓以下低中層'],
+        ['SC (純鋼骨構造)', '型鋼 (H型/箱型) 螺栓焊接組合', '自重輕、延性韌性極佳、吸收強震能量', '工期最短；★ 必作防火被覆、強風易晃 (需阻尼器)'],
+        ['SRC (鋼骨鋼筋混凝土)', '核心型鋼外包厚鋼筋混凝土', '兼具 SC 高韌性與 RC 高剛度耐火特性', '超高層與強震區首選；柱斷面較小；施工最複雜造價高'],
+        ['耐震設計原則', '強柱弱梁、強剪弱彎', '優先使梁端產生塑性鉸耗能，柱維持彈性', '確保大震不倒、中震可修、小震不壞之安全防線'],
+      ]
+    };
+  }
+  if (pointId.includes('g12-mock-01-02')) {
+    return {
+      title: '複式滑輪組機械利益與繩索張力平衡計算表',
+      headers: ['滑輪系統項目', '繩索配置與支撐特徵', '機械利益 (MA) 與施力 F', '位移與功守恆定律'],
+      rows: [
+        ['定滑輪 (Fixed)', '軸心固定於天花板不動', 'MA = 1；施力 F = W (不省力)', '僅改變施力方向；S = h'],
+        ['動滑輪 (Movable)', '軸心隨載重物上下移動', 'MA = 2；施力 F = W / 2 (省力一半)', '繩索位移 S = 2·h (費時兩倍)'],
+        ['複式滑輪組 (向下引)', '繩端繞過最上定滑輪向下拉引', 'MA = n (n 為吊著動滑輪之繩段數)', '施力 F = W / n；向下拉引段不計入 n'],
+        ['複式滑輪組 (向上引)', '施力繩直接自動滑輪向上拉引', 'MA = n (向上的施力段計入吊重繩數)', '施力端參與吊重，n 多 1 段更加省力'],
+      ]
+    };
+  }
+  if (pointId.includes('g12-mock-02-02')) {
+    return {
+      title: '胡克定律軸向伸縮與兩端拘束熱應力公式矩陣表',
+      headers: ['應力應變維度', '計算公式與符號定義', '材料物理常數', '統測命題高頻陷阱防護'],
+      rows: [
+        ['軸向伸縮量 (ΔL)', 'ΔL = P · L / (A · E)', 'E: 楊氏彈性模數 (GPa = 10³ MPa)', '伸長量與軸力 P、長度 L 成正比，與 A、E 成反比'],
+        ['自由熱膨脹量 (ΔL_T)', 'ΔL_T = α · L · ΔT', 'α: 線膨脹係數 (1/°C)', '無拘束自由膨脹時，構件內部應力恆等於零！'],
+        ['兩端卡死熱應力 (σ)', 'σ = E · α · ΔT (壓應力)', '與構件原長度 L 及截面積 A 完全無關！', '溫升卡死為壓應力 (-)，降溫卡死為拉應力 (+)'],
+        ['階梯桿受載變形', 'ΔL_total = Σ (Pi · Li / Ai · Ei)', '分段計算軸向伸縮代數和', '必須先畫軸力圖 (AFD) 確定各段所受之淨軸力 P'],
+      ]
+    };
+  }
+  if (pointId.includes('g12-mock-sur-02')) {
+    return {
+      title: '建築技術規則第 33 條樓梯人體工學尺寸與踏板計算表',
+      headers: ['樓梯法規維度', '法規規定標準數值', '建築技術規則條文依據', '工程實務計算技巧'],
+      rows: [
+        ['步幅公式 (2R + T)', '58 cm ≦ 2R + T ≦ 64 cm (最佳 60~62)', '人體工學正常平地步伐跨距標準', '級高兩倍加一級深，行走最省力不絆倒'],
+        ['住宅樓梯尺寸', '級高 R ≦ 20 cm ｜ 級深 T ≧ 24 cm', '設計施工編第 33 條表列', 'R 超過 20 cm 審照不合格；淨寬 ≧ 90 cm'],
+        ['垂直淨高與平台', '天花板淨高 ≧ 210 cm ｜ 每升 3m 設平台', '平台深度不得小於樓梯淨寬度', '連續爬升不超過 3 公尺避免老人體力不支'],
+        ['踏板數計算法則', '踏面數 (Treads) ＝ 級高數 (Risers) - 1', '最後一步踏上樓板面不計踏板', '單跑梯 18 階高只有 17 塊踏板，切勿算錯！'],
+      ]
+    };
+  }
+
   // 通用結構化對照表
   return {
     title: '核心觀念規範指標與歷屆考點對照表',
@@ -726,6 +885,12 @@ export default function PeriodicExamDetailView({ plan }: Props) {
   const [viewMode, setViewMode] = useState<'paper' | 'digital'>('paper');
   const [showPrintTips, setShowPrintTips] = useState<boolean>(false);
   const [downloadSuccess, setDownloadSuccess] = useState<boolean>(false);
+  const [showAllSop, setShowAllSop] = useState<boolean>(true);
+  const [revealedExamples, setRevealedExamples] = useState<Record<string, boolean>>({});
+
+  const toggleRevealExample = (id: string) => {
+    setRevealedExamples(prev => ({ ...prev, [id]: !prev[id] }));
+  };
   
   const [checkedItems, setCheckedItems] = useState<Record<string, boolean>>(() => {
     if (typeof window === 'undefined') return {};
@@ -1058,21 +1223,34 @@ export default function PeriodicExamDetailView({ plan }: Props) {
   // 映射高解析純向量 SVG 圖解類型
   const getSvgType = (subjectSlug: string, pointId: string): string => {
     if (subjectSlug === 'mechanics') {
+      if (pointId.includes('mock-01-02') || pointId.includes('pulley')) return 'mechanics-pulley-system';
+      if (pointId.includes('mock-02-02') || pointId.includes('thermal') || pointId.includes('axial')) return 'mechanics-axial-thermal-stress';
       if (pointId.includes('mohr') || pointId.includes('mock-02')) return 'mechanics-mohr-circle';
+      if (pointId.includes('radius') || pointId.includes('gyration') || pointId.includes('s2-final-02')) return 'mechanics-radius-gyration';
       if (pointId.includes('inertia') || pointId.includes('parallel') || pointId.includes('s2-final')) return 'mechanics-inertia-parallel';
+      if (pointId.includes('cantilever') || pointId.includes('differential') || pointId.includes('s2-m2-02')) return 'mechanics-vm-cantilever';
       if (pointId.includes('vm') || pointId.includes('shear-moment') || pointId.includes('s2-m2')) return 'mechanics-vm-diagram';
+      if (pointId.includes('section') || pointId.includes('s2-m1-02')) return 'mechanics-method-of-sections';
       if (pointId.includes('truss') || pointId.includes('zeroforce') || pointId.includes('s2-m1') || pointId.includes('mock-01')) return 'mechanics-truss-zeroforce';
+      if (pointId.includes('tipping') || pointId.includes('friction-angle') || pointId.includes('s1-final-02')) return 'mechanics-friction-angle';
       if (pointId.includes('centroid') || pointId.includes('friction') || pointId.includes('s1-final')) return 'mechanics-centroid-friction';
+      if (pointId.includes('couple') || pointId.includes('s1-m2-02')) return 'mechanics-varignon-couple';
       if (pointId.includes('moment') || pointId.includes('varignon') || pointId.includes('s1-m2')) return 'mechanics-moment-varignon';
+      if (pointId.includes('transmissibility') || pointId.includes('s1-m1-02')) return 'mechanics-coplanar-forces';
       return 'mechanics-coplanar-forces';
     }
     if (subjectSlug === 'drafting') {
+      if (pointId.includes('staircase-dim') || pointId.includes('mock-sur-02') || pointId.includes('stair-dim')) return 'drafting-staircase-dimensioning';
       if (pointId.includes('stair') || pointId.includes('code')) return 'drafting-staircase-code';
+      if (pointId.includes('auxiliary') || pointId.includes('s1-final-02')) return 'drafting-auxiliary-views';
       if (pointId.includes('section') || pointId.includes('s1-final')) return 'drafting-section-views';
+      if (pointId.includes('lines-priority') || pointId.includes('s1-m2-02')) return 'drafting-lines-priority';
       if (pointId.includes('third-angle') || pointId.includes('s1-m2')) return 'drafting-third-angle-proj';
+      if (pointId.includes('dimension') || pointId.includes('scale') || pointId.includes('s1-m1-02')) return 'drafting-dimensioning-rules';
       return 'drafting-cns-sheets-lines';
     }
     if (subjectSlug === 'construction') {
+      if (pointId.includes('structure-types') || pointId.includes('s2-m1-02')) return 'arch-building-structure-types';
       return 'arch-eewh-green-building';
     }
     if (subjectSlug === 'materials') {
@@ -1091,7 +1269,8 @@ export default function PeriodicExamDetailView({ plan }: Props) {
       return 'materials-porosity';
     }
     if (subjectSlug === 'surveying') {
-      if (pointId.includes('mock-sur') || pointId.includes('stair')) return 'drafting-staircase-code';
+      if (pointId.includes('mock-sur-02') || pointId.includes('stair')) return 'drafting-staircase-dimensioning';
+      if (pointId.includes('mock-sur') || pointId.includes('staircase')) return 'drafting-staircase-code';
       if (pointId.includes('precision') || pointId.includes('s2-m2-02')) return 'surveying-traverse-precision';
       if (pointId.includes('earthwork') || pointId.includes('simpson') || pointId.includes('s2-final-02')) return 'surveying-earthwork-simpson';
       if (pointId.includes('repetition') || pointId.includes('s2-m1-02')) return 'surveying-theodolite-repetition';
@@ -1217,6 +1396,33 @@ export default function PeriodicExamDetailView({ plan }: Props) {
           </div>
         )}
       </header>
+
+      {/* ── 快速章節導覽跳轉膠囊條 (螢幕顯示、列印時自動隱藏) ── */}
+      <nav aria-label="段考章節快速跳轉" className="print:hidden max-w-4xl mx-auto rounded-2xl bg-gradient-to-r from-blue-50/90 via-indigo-50/90 to-purple-50/90 p-3 border border-blue-200/80 shadow-xs flex flex-wrap items-center justify-between gap-2.5 text-xs">
+        <div className="flex items-center gap-1.5 font-bold text-slate-800">
+          <Compass className="h-4 w-4 text-blue-600" />
+          <span>章節導航跳轉：</span>
+        </div>
+        <div className="flex flex-wrap items-center gap-1.5">
+          <a href="#section-formulas" className="px-2.5 py-1 rounded-lg bg-white border border-slate-200 text-slate-700 hover:text-blue-600 hover:border-blue-300 font-bold transition-colors">
+            ⚡ 公式速記卡 ({plan.cramFormulaCards.length})
+          </a>
+          <a href="#section-points" className="px-2.5 py-1 rounded-lg bg-white border border-slate-200 text-slate-700 hover:text-blue-600 hover:border-blue-300 font-bold transition-colors">
+            📚 核心知識點 ({plan.knowledgePoints.length})
+          </a>
+          {plan.workedExamples && plan.workedExamples.length > 0 && (
+            <a href="#section-worked-examples" className="px-2.5 py-1 rounded-lg bg-emerald-50 border border-emerald-300 text-emerald-800 hover:bg-emerald-100 font-bold transition-colors">
+              🎯 SOP 示範題 ({plan.workedExamples.length})
+            </a>
+          )}
+          <a href="#section-cross-exam" className="px-2.5 py-1 rounded-lg bg-blue-50 border border-blue-300 text-blue-800 hover:bg-blue-100 font-bold transition-colors">
+            🏫 真題對照 ({plan.crossReferencedQuestions.length})
+          </a>
+          <a href="#section-checklist" className="px-2.5 py-1 rounded-lg bg-purple-50 border border-purple-300 text-purple-800 hover:bg-purple-100 font-bold transition-colors">
+            ✅ 能力檢核
+          </a>
+        </div>
+      </nav>
 
       {/* ── 核心主體：出版級 A4 紙張容器 (去除列印時的灰色外框與留白) ── */}
       <div 
@@ -1608,7 +1814,15 @@ export default function PeriodicExamDetailView({ plan }: Props) {
                   <Sparkles className="h-4 w-4 text-emerald-600" />
                   <span>【名師示範】零基礎破題思維與逐步計算大題（共 {plan.workedExamples.length} 題）</span>
                 </div>
-                <span className="text-[11px] font-normal text-emerald-700">循序精熟教學</span>
+                <div className="flex items-center gap-2">
+                  <button
+                    onClick={() => setShowAllSop(!showAllSop)}
+                    className="print:hidden px-2.5 py-1 rounded-lg bg-emerald-200/80 hover:bg-emerald-300 text-emerald-950 text-[11px] font-bold transition-colors cursor-pointer"
+                  >
+                    {showAllSop ? '🙈 切換自測模式 (遮蔽步驟)' : '👁️ 展開全部步驟'}
+                  </button>
+                  <span className="text-[11px] font-normal text-emerald-700 hidden sm:inline">循序精熟教學</span>
+                </div>
               </div>
 
               {plan.workedExamples.map((ex, exIdx) => (
@@ -1649,28 +1863,53 @@ export default function PeriodicExamDetailView({ plan }: Props) {
                     </p>
                   </div>
 
-                  {/* 逐步詳細 SOP 計算過程 */}
-                  <div className="space-y-2">
-                    <div className="text-xs font-bold text-slate-800 flex items-center gap-1.5">
-                      <Target className="h-4 w-4 text-blue-600" />
-                      <span>SOP 逐步詳細解答步驟：</span>
+                  {/* 逐步詳細 SOP 計算過程 (具備自測遮蔽與主動回想切換) */}
+                  {!showAllSop && !revealedExamples[ex.id] ? (
+                    <div className="rounded-xl bg-amber-50/90 p-4 border border-amber-300 text-center space-y-2.5 print:hidden">
+                      <p className="text-xs text-amber-900 font-bold">
+                        💡 【主動回想挑戰】先在草稿紙上嘗試自己列式解答，完成後再點擊下方揭曉！
+                      </p>
+                      <button
+                        onClick={() => toggleRevealExample(ex.id)}
+                        className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-bold shadow-xs transition-colors cursor-pointer"
+                      >
+                        <Eye className="h-3.5 w-3.5" />
+                        <span>揭曉本題 SOP 解答步驟與標準答案</span>
+                      </button>
                     </div>
-                    <div className="grid grid-cols-1 gap-2">
-                      {ex.stepByStepSolution.map((s) => (
-                        <div key={s.stepNo} className="rounded-xl bg-blue-50/60 border border-blue-200 p-3 space-y-1">
-                          <div className="flex items-center gap-2 text-xs font-bold text-blue-900">
-                            <span className="h-5 w-5 rounded-full bg-blue-600 text-white flex items-center justify-center text-[10px] font-mono flex-shrink-0">
-                              {s.stepNo}
-                            </span>
-                            <span>{s.title}</span>
+                  ) : (
+                    <div className="space-y-2">
+                      <div className="text-xs font-bold text-slate-800 flex items-center justify-between">
+                        <span className="flex items-center gap-1.5">
+                          <Target className="h-4 w-4 text-blue-600" />
+                          <span>SOP 逐步詳細解答步驟：</span>
+                        </span>
+                        {!showAllSop && (
+                          <button
+                            onClick={() => toggleRevealExample(ex.id)}
+                            className="print:hidden text-[10px] text-slate-500 hover:text-slate-800 underline cursor-pointer"
+                          >
+                            收起步驟
+                          </button>
+                        )}
+                      </div>
+                      <div className="grid grid-cols-1 gap-2">
+                        {ex.stepByStepSolution.map((s) => (
+                          <div key={s.stepNo} className="rounded-xl bg-blue-50/60 border border-blue-200 p-3 space-y-1">
+                            <div className="flex items-center gap-2 text-xs font-bold text-blue-900">
+                              <span className="h-5 w-5 rounded-full bg-blue-600 text-white flex items-center justify-center text-[10px] font-mono flex-shrink-0">
+                                {s.stepNo}
+                              </span>
+                              <span>{s.title}</span>
+                            </div>
+                            <p className="text-xs text-slate-800 leading-relaxed pl-7">
+                              {s.content}
+                            </p>
                           </div>
-                          <p className="text-xs text-slate-800 leading-relaxed pl-7">
-                            {s.content}
-                          </p>
-                        </div>
-                      ))}
+                        ))}
+                      </div>
                     </div>
-                  </div>
+                  )}
 
                   {/* 老師扣分陷阱與秒殺口訣 */}
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs pt-1">
@@ -1702,6 +1941,7 @@ export default function PeriodicExamDetailView({ plan }: Props) {
           )}
 
           {/* 名校真題對照 */}
+          <div id="section-cross-exam"></div>
           <div className="space-y-6">
             <div className="text-xs font-mono font-bold text-slate-700 bg-slate-100 px-3.5 py-2 rounded-xl border border-slate-300 flex items-center justify-between">
               <div className="flex items-center gap-2">

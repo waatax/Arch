@@ -5,7 +5,7 @@ import { ArrowLeft } from 'lucide-react';
 import PeriodicExamHub from '@/components/review/PeriodicExamHub';
 
 export const metadata: Metadata = {
-  title: '高工各科段考衝刺預備講義與名校考卷真題交叉比對庫 ｜ Arch V9.00',
+  title: '高工各科段考衝刺預備講義與名校考卷真題交叉比對庫 ｜ Arch V10.00',
   description: '依據 108 課綱與各大高工（特別是國立台中高工建築科指標進度）段考時程，編列高一至高三各科第一次段考、第二次段考與期末考知識點、預備講義、考前 10 分鐘公式卡與真題 SOP 詳解。',
 };
 
