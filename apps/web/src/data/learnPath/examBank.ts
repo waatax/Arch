@@ -8,7 +8,11 @@ const data = bank as unknown as {
   latestYear: number;
   standards: Record<string, Record<string, ExamStandard>>;
   pools: Record<string, ExamPool>;
+  routeLabels: Record<string, string>;
 };
+
+/** 教學頁路徑的中文主題名稱 */
+export const routeLabel = (route: string) => data.routeLabels[route] ?? route.split('/').pop() ?? route;
 
 export const EXAM_LATEST_YEAR = data.latestYear;
 export const EXAM_STANDARDS = data.standards;

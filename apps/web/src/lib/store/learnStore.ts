@@ -46,7 +46,7 @@ export interface ExamTestCompletion {
   counted: boolean;
 }
 
-export const TIER_BRICKS: Record<TierId, number> = { low: 15, mid: 25, high: 40 };
+export const TIER_BRICKS: Record<TierId, number> = { low: 15, mid: 25, high: 40, top: 60, ace: 100 };
 
 export interface NodeRecord {
   at: string;
@@ -330,7 +330,7 @@ export const useLearnStore = create<LearnState>()(
         const improved = c.counted && tierRank(c.tier) > tierRank(prev?.tier);
         let bricks = 0;
         if (improved) {
-          for (const t of ['low', 'mid', 'high'] as TierId[]) {
+          for (const t of ['low', 'mid', 'high', 'top', 'ace'] as TierId[]) {
             if (tierRank(t) > tierRank(prev?.tier) && tierRank(t) <= tierRank(c.tier)) bricks += TIER_BRICKS[t];
           }
         }

@@ -5,10 +5,12 @@ import Link from 'next/link';
 import { Check, ExternalLink, Loader2, Medal, X } from 'lucide-react';
 import { clsx } from 'clsx';
 import MathText from '@/components/MathText';
+import { routeLabel } from '@/data/learnPath/examBank';
 import { isAnswerCorrect, normalizedChoices } from '@/lib/examAnswers';
 import {
   TIERS,
   certifiedTier,
+  discriminatorScore,
   estimatePercentile,
   percentileToScore,
   tierRank,
@@ -32,6 +34,7 @@ interface ShardQuestion {
   passage: string | null;
   sourceUrl: string;
   lessonRoute: string;
+  topic?: string;
 }
 
 export interface ExamFinish {
@@ -72,6 +75,8 @@ export default function ExamPlayer({
   standard,
   standardYear,
   counted,
+  practice,
+  timeLimitMin,
   onFinish,
   onClose,
 }: {
@@ -81,6 +86,10 @@ export default function ExamPlayer({
   standard: ExamStandard;
   standardYear: number;
   counted: boolean;
+  /** 特訓模式的說明：成績不更新徽章 */
+  practice?: string;
+  /** 模擬考的作答時間（分鐘），有值時顯示計時與配速 */
+  timeLimitMin?: number;
   onFinish: (f: ExamFinish) => { xp: number; bricks: number; improved: boolean };
   onClose: () => void;
 }) {
@@ -94,6 +103,7 @@ export default function ExamPlayer({
   /** 收合的題組（換到下一個題組時自動展開） */
   const [collapsed, setCollapsed] = useState<string | null>(null);
   const dialogRef = useRef<HTMLDivElement>(null);
+  const [seconds, setSeconds] = useState(0);
 
   const thresholds = useMemo(() => tierThresholds(items), [items]);
 
@@ -112,6 +122,14 @@ export default function ExamPlayer({
       alive = false;
     };
   }, [items]);
+
+  // 計時：每秒加一，作答完畢後停止
+  const finished = answers.length === items.length && items.length > 0;
+  useEffect(() => {
+    if (!timeLimitMin || finished || !questions) return;
+    const id = window.setInterval(() => setSeconds((x) => x + 1), 1000);
+    return () => window.clearInterval(id);
+  }, [timeLimitMin, finished, questions]);
 
   useEffect(() => {
     dialogRef.current?.focus();
@@ -209,6 +227,9 @@ export default function ExamPlayer({
           <span className="text-sm font-bold tabular-nums text-slate-500">
             {Math.min(pos + 1, items.length)}/{items.length}
           </span>
+          {timeLimitMin && (
+            <Pace seconds={seconds} limitMin={timeLimitMin} answered={answers.length} total={items.length} />
+          )}
         </header>
 
         <div className="flex-1 overflow-y-auto">
@@ -227,7 +248,10 @@ export default function ExamPlayer({
             {q && !done && (
               <>
                 <p className="mb-2 text-xs font-bold tracking-wide text-indigo-600 dark:text-indigo-400">
-                  {meta.year} 年統測 · {examLabel} 第 {meta.no} 題 · 全體答對率 {Math.round(meta.p)}%
+                  {meta.year} 年統測 · {examLabel} 第 {meta.no} 題
+                  {discriminatorScore(meta) >= 40 && (
+                    <span className="ml-2 rounded bg-amber-100 px-1.5 py-0.5 text-amber-800 dark:bg-amber-900/60 dark:text-amber-100">頂標鑑別題</span>
+                  )}
                 </p>
                 {q.passage && (
                   <div className="mb-4 rounded-2xl border border-slate-200 bg-slate-50 p-4 dark:border-slate-700 dark:bg-slate-900">
@@ -292,6 +316,10 @@ export default function ExamPlayer({
                 result={result}
                 thresholds={thresholds}
                 counted={counted}
+                practice={practice}
+                diagnosis={diagnose(items, answers, questions ?? {})}
+                seconds={timeLimitMin ? seconds : undefined}
+                limitMin={timeLimitMin}
                 reward={reward}
                 standard={standard}
                 standardYear={standardYear}
@@ -317,6 +345,10 @@ export default function ExamPlayer({
                 <p className={clsx('flex items-center gap-1.5 text-lg font-black', answers[answers.length - 1]?.correct ? 'text-emerald-700 dark:text-emerald-300' : 'text-rose-700 dark:text-rose-300')}>
                   {answers[answers.length - 1]?.correct ? <Check className="h-5 w-5" /> : <X className="h-5 w-5" />}
                   {answers[answers.length - 1]?.correct ? '答對了' : `正解：${q.answer}`}
+                </p>
+                <p className="mt-0.5 text-xs text-slate-600 dark:text-slate-300">
+                  答對率：前 20% 考生 {Math.round(meta.bands[0])}%、中間 20% {Math.round(meta.bands[2])}%、全體 {Math.round(meta.p)}%
+                  {discriminatorScore(meta) >= 40 ? '。頂標與高標的差距就在這種題。' : meta.p >= 70 ? '。這是基本分，不能失。' : ''}
                 </p>
                 <p className="mt-0.5 flex flex-wrap gap-x-3 text-sm">
                   <Link href={q.lessonRoute} className="font-bold text-indigo-700 underline dark:text-indigo-300">
@@ -359,11 +391,19 @@ function ResultPanel({
   result,
   thresholds,
   counted,
+  practice,
+  diagnosis,
+  seconds,
+  limitMin,
   reward,
   standard,
   standardYear,
   examLabel,
 }: {
+  practice?: string;
+  diagnosis: Diagnosis[];
+  seconds?: number;
+  limitMin?: number;
   result: { right: number; pct: number; tier: TierId | null; raw: TierId | null; est: ReturnType<typeof estimatePercentile> };
   thresholds: Record<TierId, number>;
   counted: boolean;
@@ -404,6 +444,36 @@ function ResultPanel({
         </div>
       )}
 
+      {seconds !== undefined && limitMin && (
+        <p className="mt-3 text-sm text-slate-600 dark:text-slate-300">
+          用時 {Math.floor(seconds / 60)} 分 {seconds % 60} 秒（統測 {limitMin} 分鐘）
+          {seconds > limitMin * 60
+            ? '：超時了，正式考試會來不及，先把基本題的速度練熟。'
+            : seconds < limitMin * 30
+              ? '：速度很快，把省下的時間拿來驗算鑑別題。'
+              : '：時間掌握合宜。'}
+        </p>
+      )}
+
+      {diagnosis.length > 0 && (
+        <div className="mt-5 rounded-2xl border-2 border-rose-100 p-4 text-left dark:border-rose-900/60">
+          <p className="text-sm font-black text-rose-800 dark:text-rose-200">弱點診斷：先補這些主題</p>
+          <p className="text-xs text-slate-500">依「前 20% 考生答對率」排序：頂尖考生都會、你卻答錯的，優先補強。</p>
+          <ul className="mt-2 space-y-1.5">
+            {diagnosis.slice(0, 6).map((d) => (
+              <li key={d.route} className="flex flex-wrap items-baseline gap-x-2 text-sm">
+                <Link href={d.route} className="font-bold text-indigo-700 underline dark:text-indigo-300">
+                  {d.label}
+                </Link>
+                <span className="text-xs text-slate-500">
+                  錯 {d.wrong}/{d.total} 題 · 頂尖考生平均答對 {d.topRate}%
+                </span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      )}
+
       {reward && (
         <p className="mt-4 font-bold text-amber-600">
           +{reward.xp} XP{reward.bricks > 0 && ` · +${reward.bricks} 🧱（升級獎勵）`}
@@ -411,7 +481,7 @@ function ResultPanel({
       )}
       {!counted && (
         <p className="mt-3 rounded-xl bg-amber-50 p-3 text-sm text-amber-800 dark:bg-amber-950/40 dark:text-amber-200">
-          這份檢定大多是做過的題目，成績當作練習，不更新徽章。題池換新題後再來挑戰！
+          {practice ?? '這份檢定大多是做過的題目，成績當作練習，不更新徽章。題池換新題後再來挑戰！'}
         </p>
       )}
     </div>
@@ -429,7 +499,7 @@ export function ThresholdBar({ pct, thresholds }: { pct?: number; thresholds: Re
       </div>
       <div className="relative mt-1 h-10 text-[11px] font-bold text-slate-600 dark:text-slate-300">
         {TIERS.map((t, i) => (
-          <span key={t.id} className="absolute -translate-x-1/2 text-center leading-tight" style={{ left: `${thresholds[t.id]}%`, top: i === 1 ? 14 : 0 }}>
+          <span key={t.id} className="absolute -translate-x-1/2 text-center leading-tight" style={{ left: `${thresholds[t.id]}%`, top: i % 2 === 1 ? 14 : 0 }}>
             {t.label} {thresholds[t.id]}%
           </span>
         ))}
@@ -440,4 +510,58 @@ export function ThresholdBar({ pct, thresholds }: { pct?: number; thresholds: Re
 
 function minTier(a: TierId | null, b: TierId | null): TierId | null {
   return tierRank(a) <= tierRank(b) ? a : b;
+}
+
+interface Diagnosis {
+  route: string;
+  label: string;
+  wrong: number;
+  total: number;
+  topRate: number;
+}
+
+const CJK = /[\u4e00-\u9fff]/;
+
+/** 依教學主題彙整答錯題，以「前 20% 考生答對率」排序 */
+function diagnose(
+  items: ExamItemMeta[],
+  answers: { id: string; correct: boolean }[],
+  questions: Record<string, ShardQuestion>,
+): Diagnosis[] {
+  const map = new Map<string, Diagnosis & { topSum: number }>();
+  items.forEach((it, i) => {
+    const a = answers[i];
+    if (!a) return;
+    const topic = questions[it.id]?.topic;
+    const label = topic && CJK.test(topic) ? topic : routeLabel(it.route);
+    const d = map.get(it.route) ?? { route: it.route, label, wrong: 0, total: 0, topRate: 0, topSum: 0 };
+    d.total += 1;
+    if (!a.correct) {
+      d.wrong += 1;
+      d.topSum += it.bands[0];
+    }
+    map.set(it.route, d);
+  });
+  return [...map.values()]
+    .filter((d) => d.wrong > 0)
+    .map((d) => ({ route: d.route, label: d.label, wrong: d.wrong, total: d.total, topRate: Math.round(d.topSum / d.wrong) }))
+    .sort((a, b) => b.topRate - a.topRate || b.wrong - a.wrong);
+}
+
+function Pace({ seconds, limitMin, answered, total }: { seconds: number; limitMin: number; answered: number; total: number }) {
+  const expected = (limitMin * 60 * answered) / total;
+  const behind = seconds - expected > 120;
+  const mm = String(Math.floor(seconds / 60)).padStart(2, '0');
+  const ss = String(seconds % 60).padStart(2, '0');
+  return (
+    <span
+      className={clsx(
+        'rounded-lg px-2 py-1 text-xs font-black tabular-nums',
+        behind ? 'bg-rose-100 text-rose-700 dark:bg-rose-950 dark:text-rose-300' : 'bg-slate-100 text-slate-600 dark:bg-slate-800 dark:text-slate-300',
+      )}
+      title={`統測 ${limitMin} 分鐘；目前配速${behind ? '落後' : '正常'}`}
+    >
+      ⏱ {mm}:{ss}/{limitMin}:00
+    </span>
+  );
 }

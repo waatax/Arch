@@ -48,13 +48,19 @@ export interface ExamPool {
   units: ExamItemMeta[][];
 }
 
-export type TierId = 'low' | 'mid' | 'high';
+export type TierId = 'low' | 'mid' | 'high' | 'top' | 'ace';
 
 export const TIERS: { id: TierId; label: string; official: string; percentile: number; emoji: string }[] = [
   { id: 'low', label: '低標', official: '後標', percentile: 25, emoji: '🥉' },
   { id: 'mid', label: '中標', official: '均標', percentile: 50, emoji: '🥈' },
   { id: 'high', label: '高標', official: '前標', percentile: 75, emoji: '🥇' },
+  // 統測只公布三標；頂標比照大考中心「第 88 百分位」定義，榜首級取第 97 百分位
+  { id: 'top', label: '頂標', official: '第 88 百分位', percentile: 88, emoji: '🏆' },
+  { id: 'ace', label: '榜首級', official: '第 97 百分位', percentile: 97, emoji: '👑' },
 ];
+
+/** 等級門檻：以各等級百分位計算 */
+const tierPct = (id: TierId) => TIERS.find((t) => t.id === id)!.percentile;
 
 export const TEST_SIZE = 20;
 /** 一次檢定至少要有這個比例是沒看過的題目，成績才列入認證（避免背答案） */
@@ -78,14 +84,13 @@ export function passRateAt(bands: Bands, q: number): number {
 /** 這組題目的三個門檻（答對率 %，四捨五入到整數） */
 export function tierThresholds(items: readonly Pick<ExamItemMeta, 'bands'>[]): Record<TierId, number> {
   const at = (q: number) => (100 * items.reduce((s, it) => s + passRateAt(it.bands, q), 0)) / Math.max(1, items.length);
-  return { low: Math.round(at(25)), mid: Math.round(at(50)), high: Math.round(at(75)) };
+  return Object.fromEntries(TIERS.map((t) => [t.id, Math.round(at(t.percentile))])) as Record<TierId, number>;
 }
 
 export function tierReached(pct: number, t: Record<TierId, number>): TierId | null {
-  if (pct >= t.high) return 'high';
-  if (pct >= t.mid) return 'mid';
-  if (pct >= t.low) return 'low';
-  return null;
+  let tier: TierId | null = null;
+  for (const x of TIERS) if (pct >= t[x.id]) tier = x.id;
+  return tier;
 }
 
 export const tierRank = (t: TierId | null | undefined) => (t ? TIERS.findIndex((x) => x.id === t) + 1 : 0);
@@ -102,18 +107,20 @@ export interface AbilityEstimate {
   lo: number;
   hi: number;
   n: number;
-  /** 能力至少達到第 25／50／75 百分位的後驗機率 */
+  /** 能力至少達到各等級百分位的後驗機率 */
   probAtLeast: Record<TierId, number>;
 }
 
 /** 認證信心：能力達到該標的後驗機率至少要這麼高，才頒發徽章 */
 export const CERT_CONFIDENCE = 0.7;
+export const ACE_CONFIDENCE = 0.5;
 
 /** 依能力估計判定已「有把握」達到的最高等級 */
 export function certifiedTier(est: AbilityEstimate | null): TierId | null {
   if (!est) return null;
   let tier: TierId | null = null;
-  for (const t of TIERS) if (est.probAtLeast[t.id] >= CERT_CONFIDENCE) tier = t.id;
+  // 榜首級位於分布最尾端，先驗只有 3% 機率，改用「過半把握」
+  for (const t of TIERS) if (est.probAtLeast[t.id] >= (t.id === 'ace' ? ACE_CONFIDENCE : CERT_CONFIDENCE)) tier = t.id;
   return tier;
 }
 
@@ -156,7 +163,7 @@ export function estimatePercentile(responses: readonly Response[]): AbilityEstim
     lo,
     hi,
     n: responses.length,
-    probAtLeast: { low: above(25), mid: above(50), high: above(75) },
+    probAtLeast: Object.fromEntries(TIERS.map((t) => [t.id, above(tierPct(t.id))])) as Record<TierId, number>,
   };
 }
 
@@ -180,10 +187,9 @@ export function percentileToScore(q: number, s: Pick<ExamStandard, 'low' | 'mid'
 }
 
 export function tierForPercentile(q: number): TierId | null {
-  if (q >= 75) return 'high';
-  if (q >= 50) return 'mid';
-  if (q >= 25) return 'low';
-  return null;
+  let tier: TierId | null = null;
+  for (const t of TIERS) if (q >= t.percentile) tier = t.id;
+  return tier;
 }
 
 /** 估計精確度：依作答題數 */
@@ -224,4 +230,20 @@ export function pickTest(pool: ExamPool, seen: ReadonlySet<string>, seed: number
 
 export function freshRatio(items: readonly ExamItemMeta[], seen: ReadonlySet<string>): number {
   return items.length ? items.filter((it) => !seen.has(it.id)).length / items.length : 0;
+}
+
+/**
+ * 頂標鑑別題：前 20% 考生多半答對、但全體答對率偏低的題目，
+ * 也就是「拉開頂標與高標」的關鍵題。依 (Pa − Pb) 與 (Pa − P) 排序。
+ */
+export function discriminatorScore(it: Pick<ExamItemMeta, 'bands' | 'p'>): number {
+  return it.bands[0] - it.bands[1] + 0.5 * (it.bands[0] - it.p);
+}
+
+export function pickDiscriminators(pool: ExamPool, seen: ReadonlySet<string>, size = 10): ExamItemMeta[] {
+  const singles = pool.units.filter((u) => u.length === 1).map((u) => u[0]);
+  const ranked = singles
+    .filter((it) => it.p < 60)
+    .sort((a, b) => Number(seen.has(a.id)) - Number(seen.has(b.id)) || discriminatorScore(b) - discriminatorScore(a));
+  return ranked.slice(0, size).sort((a, b) => a.year - b.year || a.no - b.no);
 }

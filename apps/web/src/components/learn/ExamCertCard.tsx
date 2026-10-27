@@ -9,6 +9,7 @@ import {
   FRESH_RATIO,
   TIERS,
   freshRatio,
+  pickDiscriminators,
   pickTest,
   tierRank,
   tierThresholds,
@@ -28,7 +29,7 @@ export default function ExamCertCard({ course, hydrated }: { course: LearnCourse
   const cert = useLearnStore((s) => s.certs[course.id]);
   const examResp = useLearnStore((s) => s.examResp);
   const completeExamTest = useLearnStore((s) => s.completeExamTest);
-  const [test, setTest] = useState<{ items: ExamItemMeta[]; counted: boolean; key: number } | null>(null);
+  const [test, setTest] = useState<{ items: ExamItemMeta[]; counted: boolean; key: number; drill?: boolean } | null>(null);
   const runs = useRef(0);
 
   const seen = useMemo(() => new Set(Object.keys(examResp)), [examResp]);
@@ -45,6 +46,10 @@ export default function ExamCertCard({ course, hydrated }: { course: LearnCourse
     runs.current += 1;
     const items = pickTest(pool, seen, hashString(`${course.id}-${runs.current}-${Object.keys(examResp).length}`));
     setTest({ items, counted: freshRatio(items, seen) >= FRESH_RATIO, key: runs.current });
+  };
+  const startDrill = () => {
+    runs.current += 1;
+    setTest({ items: pickDiscriminators(pool, seen), counted: false, key: runs.current, drill: true });
   };
 
   return (
@@ -65,14 +70,14 @@ export default function ExamCertCard({ course, hydrated }: { course: LearnCourse
         </div>
       </div>
 
-      <ul className="mt-4 grid grid-cols-3 gap-2" aria-label="檢定徽章">
+      <ul className="mt-4 grid grid-cols-5 gap-1.5" aria-label="檢定徽章">
         {TIERS.map((t) => {
           const got = tierRank(best) >= tierRank(t.id);
           return (
             <li
               key={t.id}
               className={clsx(
-                'rounded-2xl border-2 p-2 text-center',
+                'rounded-2xl border-2 px-1 py-2 text-center',
                 got ? 'border-amber-300 bg-amber-50 dark:border-amber-700 dark:bg-amber-950/40' : 'border-slate-200 bg-white/60 dark:border-slate-800 dark:bg-slate-900/60',
               )}
             >
@@ -98,13 +103,21 @@ export default function ExamCertCard({ course, hydrated }: { course: LearnCourse
         >
           {cert ? '再次挑戰' : '開始檢定'}
         </button>
+        <button
+          type="button"
+          onClick={startDrill}
+          className="rounded-2xl border-2 border-b-4 border-amber-300 bg-amber-50 px-4 py-2.5 text-sm font-black text-amber-900 hover:bg-amber-100 dark:border-amber-700 dark:bg-amber-950/40 dark:text-amber-100"
+          title="前 20% 考生多半答對、全體答對率偏低的 10 題"
+        >
+          🏆 頂標特訓：鑑別題 10 題
+        </button>
         <span className="text-xs text-slate-500">
           未做過 {unseen}/{all.length} 題
           {hydrated && cert && ` · 最佳 ${cert.pct}%（${cert.attempts} 次）`}
         </span>
       </div>
       <p className="mt-3 text-[11px] leading-relaxed text-slate-500">
-        門檻算法：測驗中心 D3 報表公布每題五個能力組（各 20% 考生）的答對率；低標、中標、高標分別是第 25、50、75 百分位考生在這些題目的預期答對率，對應統測的後標、均標、前標。用 111～115 年整卷驗證，模型三標與官方相差多在 4 分內。
+        門檻算法：測驗中心 D3 報表公布每題五個能力組（各 20% 考生）的答對率；低標、中標、高標、頂標、榜首級分別是第 25、50、75、88、97 百分位考生在這些題目的預期答對率；前三者對應統測的後標、均標、前標，頂標比照大考中心第 88 百分位的定義（統測未公布）。用 111～115 年整卷驗證，模型三標與官方相差多在 4 分內。
         {unseen < all.length * FRESH_RATIO && ' 做過的題目超過四分之一時，該次成績當練習、不更新徽章。'}
       </p>
 
@@ -117,6 +130,8 @@ export default function ExamCertCard({ course, hydrated }: { course: LearnCourse
           standard={standard}
           standardYear={EXAM_LATEST_YEAR}
           counted={test.counted}
+          practice={test.drill ? '頂標特訓只練鑑別題，成績不更新徽章，但作答會納入能力儀表板。' : undefined}
+          timeLimitMin={isPaper && !test.drill ? (pool.exam === 'chinese' ? 90 : 100) : undefined}
           onFinish={(f) =>
             completeExamTest({ courseId: course.id, subject: course.shortTitle, counted: test.counted, ...f })
           }

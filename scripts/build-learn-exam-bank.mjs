@@ -53,6 +53,29 @@ const POOLS = {
   'exam-pro2': { exam: 'professional-2', years: [115], full: true },
 };
 
+/** 教學頁主題的中文名稱（弱點診斷用） */
+const ROUTE_LABEL = {
+  'mechanics/units-vectors': '力學基本觀念', 'mechanics/force-equilibrium': '共點力系與平衡', 'mechanics/friction': '摩擦',
+  'mechanics/truss': '桁架', 'mechanics/centroid': '形心與慣性矩', 'mechanics/stress-strain': '應力與應變', 'mechanics/beam': '梁的剪力與彎矩',
+  'materials/basic-properties': '材料基本性質', 'materials/cement-types': '水泥種類', 'materials/cement-vicat': '水泥凝結試驗',
+  'materials/cement-strength': '水泥強度', 'materials/concrete': '混凝土', 'materials/stone-ceramics-glass': '石材陶瓷玻璃',
+  'materials/wood': '木材', 'materials/polymers-asphalt': '高分子與瀝青', 'materials/metals': '金屬材料', 'materials/green-materials': '綠建材',
+  'surveying/elevation-and-leveling': '水準測量', 'surveying/instrument-setup': '儀器整置', 'surveying/distance-and-angle': '距離與角度測量',
+  'surveying/traverse-surveying': '導線測量', 'surveying/coordinate-computation': '坐標計算', 'surveying/area-and-error': '面積與誤差',
+  'drafting/lines-and-lettering': '線條與字法', 'drafting/scale': '比例', 'drafting/dimensioning-and-symbols': '尺度與符號',
+  'drafting/orthographic-projection': '正投影', 'drafting/sectional-views': '剖視圖', 'drafting/architectural-plan': '建築平面圖',
+  'drafting/architectural-elevation': '建築立面圖',
+  'math-c/functions-graphs': '函數圖形', 'math-c/trigonometry': '三角函數', 'math-c/vectors': '平面向量', 'math-c/algebra': '式的運算',
+  'math-c/lines-circles': '直線與圓', 'math-c/sequences-series': '數列與級數', 'math-c/permutations-combinations': '排列組合',
+  'math-c/trig-applications': '三角函數應用', 'math-c/exponents-logarithms': '指數與對數', 'math-c/space-vectors': '空間向量',
+  'math-c/matrices': '矩陣', 'math-c/linear-programming': '線性規劃', 'math-c/geometry': '二次曲線', 'math-c/calculus': '微分',
+  'math-c/integration': '積分',
+  'english/vocabulary-phrases': '字彙與片語', 'english/grammar-patterns': '文法句型', 'english/conversation-daily-use': '對話',
+  'english/cloze-passage-structure': '克漏字與篇章', 'english/reading-comprehension': '閱讀測驗',
+  'chinese/classical-literature': '古典文學', 'chinese/cultural-knowledge': '國學常識', 'chinese/linguistics': '字音字形與語文',
+  'chinese/modern-literature': '現代文學', 'chinese/reading-comprehension': '閱讀理解', 'chinese/writing-expression': '寫作表達',
+};
+
 const EXAM_LABEL = {
   chinese: '國文',
   english: '英文',
@@ -136,6 +159,7 @@ const out = {
   generatedFrom: ['data/registry/tcte-item-stats.json', 'apps/web/public/practice-data/shards'],
   latestYear,
   standards,
+  routeLabels: Object.fromEntries(Object.entries(ROUTE_LABEL).map(([k, v]) => [`/subjects/${k}`, v])),
   pools,
 };
 const target = path.join(root, 'apps/web/src/data/learnPath/generated/examBank.json');

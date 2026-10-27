@@ -310,7 +310,7 @@ const certStats = [];
     const items = pool.units.flat();
     if (items.length < align.TEST_SIZE) err(`[對標] ${k} 題池只有 ${items.length} 題，不足 ${align.TEST_SIZE} 題`);
     const t = align.tierThresholds(items);
-    if (!(t.low < t.mid && t.mid < t.high)) err(`[對標] ${k} 門檻不是遞增：${JSON.stringify(t)}`);
+    if (!(t.low < t.mid && t.mid < t.high && t.high <= t.top && t.top <= t.ace)) err(`[對標] ${k} 門檻不是遞增：${JSON.stringify(t)}`);
     for (const it of items) {
       if (it.bands.length !== 5 || it.bands.some((b) => !(b >= 0 && b <= 100))) err(`[對標] ${it.id} 能力組答對率異常`);
       if (!tcte.items[`${it.year}-${pool.exam}-${it.no}`]) err(`[對標] ${it.id} 沒有官方統計`);
@@ -345,6 +345,29 @@ const certStats = [];
     const est = align.estimatePercentile(items.map((it) => ({ bands: it.bands, correct: rnd() < align.passRateAt(it.bands, q) })));
     if (Math.abs(est.percentile - q) > 10) err(`[對標] 模擬第 ${q} 百分位考生，估計為 ${est.percentile}`);
   }
+}
+{
+  // 頂標／榜首級：模擬整卷作答，頂尖考生拿得到、一般考生拿不到
+  let seed = 11;
+  const rnd = () => ((seed = (seed * 16807) % 2147483647) / 2147483647);
+  const papers = ['exam-pro1', 'exam-pro2', 'math-review', 'english-6'].map((k) => bankJson.pools[k].units.flat());
+  const rate = (q, want) => {
+    let hit = 0;
+    for (let t = 0; t < 80; t++) {
+      const items = papers[t % papers.length];
+      const ans = items.map((it) => ({ bands: it.bands, correct: rnd() < align.passRateAt(it.bands, q) }));
+      const pct = (100 * ans.filter((x) => x.correct).length) / ans.length;
+      const raw = align.tierReached(pct, align.tierThresholds(items));
+      const cert = align.certifiedTier(align.estimatePercentile(ans));
+      if (Math.min(align.tierRank(raw), align.tierRank(cert)) >= align.tierRank(want)) hit++;
+    }
+    return hit / 80;
+  };
+  const top93 = rate(93, 'top');
+  const top50 = rate(50, 'high');
+  certStats.push(`整卷模擬：第 93 百分位考生得頂標 ${Math.round(top93 * 100)}%、第 50 百分位考生得高標以上 ${Math.round(top50 * 100)}%`);
+  if (top93 < 0.4) err(`[對標] 頂標過難：第 93 百分位考生只有 ${top93} 拿到`);
+  if (top50 > 0.05) err(`[對標] 高標過鬆：第 50 百分位考生有 ${top50} 拿到`);
 }
 {
   // 休息模式：排定的休息日不算漏掉，也不耗休息日卡
