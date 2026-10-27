@@ -273,6 +273,18 @@ T 主旨題的答案，通常是文中出現次數最多的某個細節。 | X /
 M 把題型和中文配對 :: main idea => 主旨 ; detail => 細節 ; inference => 推論 ; vocabulary in context => 字義推測 // 統測閱讀四大題型。
 S 排出閱讀測驗的作答步驟 :: 先瀏覽題目 >> 略讀全文抓大意 >> 回原文找關鍵句 >> 比對並刪除錯誤選項 // 有效率又準確。
 Q 文章中 {{However}} 後面的句子通常是？ | 作者強調的轉折重點 | 不重要的補充 | 例子 | 引言 // 轉折後常是作者真正的觀點。
+## 頂標特訓：文法與語意陷阱 @ 英語文 Ac 字詞、Ad 句構：假設語氣、分詞構句、倒裝與一致性（統測鑑別題） => english/grammar-mastery
+- 假設語氣：與現在事實相反用「If + 過去式, would + 原形」；與過去事實相反用「If + had p.p., would have p.p.」。
+- 分詞構句的主詞必須與主要子句相同：主動用 V-ing，被動用 p.p.。
+- 否定副詞（Not until、Never、Seldom）放句首時，主要子句要倒裝。
+Q {{If I ___ more time yesterday, I would have finished the report.}} | had had | have had | had | would have // 與過去事實相反，if 子句用 had + p.p.（had had）。
+Q {{___ from the top floor, the city looks like a toy model.}} | Seen | Seeing | To see | Having seen // 城市是「被看」，用過去分詞 Seen。
+Q {{This is ___ I have been looking for.}} | what | which | that | the one what // what = the thing which，前面不能再有先行詞。
+Q {{Not until the lights went out ___ how late it was.}} | did we realize | we realized | we did realize | realized we // Not until 放句首，主要子句倒裝。
+Q {{The new policy is expected to ___ a sharp drop in traffic.}} | bring about | bring up | bring in | bring out // bring about 是「造成、導致」。
+Q {{Neither the teacher nor the students ___ aware of the change.}} | were | was | is | has been // neither A nor B 的動詞與靠近的 B（students）一致。
+T {{It is high time that we left.}} 句中用過去式 left 是正確的。 | O // It is high time + 過去式，表示「早該做了」。
+M 字首與意義 :: un- => 否定 ; re- => 再一次 ; pre- => 之前 ; mis- => 錯誤 // 看懂字首，可在閱讀中推測生字。
 `,
 
   'g12s2-english-6': String.raw`
