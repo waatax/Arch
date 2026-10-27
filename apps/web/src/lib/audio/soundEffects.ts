@@ -172,6 +172,64 @@ class SoundEffectsEngine {
   }
 
   /**
+   * 闖關答錯提示：低音量、下行兩音，提醒而不刺耳
+   */
+  public playSoftWrong() {
+    if (this.isMuted) return;
+    const ctx = this.getContext();
+    if (!ctx) return;
+
+    try {
+      const now = ctx.currentTime;
+      [
+        { freq: 392, time: 0, dur: 0.18 },
+        { freq: 311.13, time: 0.12, dur: 0.28 },
+      ].forEach(({ freq, time, dur }) => {
+        const osc = ctx.createOscillator();
+        const gain = ctx.createGain();
+        osc.type = 'sine';
+        osc.frequency.setValueAtTime(freq, now + time);
+        gain.gain.setValueAtTime(0.09, now + time);
+        gain.gain.exponentialRampToValueAtTime(0.0001, now + time + dur);
+        osc.connect(gain);
+        gain.connect(ctx.destination);
+        osc.start(now + time);
+        osc.stop(now + time + dur);
+      });
+    } catch {
+      // Ignore audio synthesis errors
+    }
+  }
+
+  /**
+   * 闖關完成：上行琶音小號角
+   */
+  public playLessonFanfare() {
+    if (this.isMuted) return;
+    const ctx = this.getContext();
+    if (!ctx) return;
+
+    try {
+      const now = ctx.currentTime;
+      [523.25, 659.25, 783.99, 1046.5].forEach((freq, i) => {
+        const osc = ctx.createOscillator();
+        const gain = ctx.createGain();
+        const t = now + i * 0.11;
+        osc.type = 'triangle';
+        osc.frequency.setValueAtTime(freq, t);
+        gain.gain.setValueAtTime(0.14, t);
+        gain.gain.exponentialRampToValueAtTime(0.0001, t + (i === 3 ? 0.7 : 0.25));
+        osc.connect(gain);
+        gain.connect(ctx.destination);
+        osc.start(t);
+        osc.stop(t + 0.75);
+      });
+    } catch {
+      // Ignore audio synthesis errors
+    }
+  }
+
+  /**
    * 5. 桁架零力桿判定捕捉聲 (Zero-Force Snap)
    */
   public playZeroForceSnap() {

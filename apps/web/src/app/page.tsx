@@ -154,6 +154,10 @@ export default function Home() {
                 <Play className="size-4 fill-current" /> 從最簡單的第一章開始
                 <ArrowRight className="size-4 transition-transform group-hover:translate-x-1" />
               </Link>
+              <Link href="/learn" className="group inline-flex min-h-14 items-center justify-center gap-3 rounded-2xl border-2 border-b-4 border-emerald-600 bg-emerald-500 px-7 font-bold text-white transition hover:bg-emerald-400 active:translate-y-[2px] active:border-b-2">
+                <span aria-hidden>🎮</span> 闖關學習：每天 5 分鐘
+                <ArrowRight className="size-4 transition-transform group-hover:translate-x-1" />
+              </Link>
             </div>
             <div className="mt-8 flex flex-wrap gap-x-6 gap-y-2 text-xs font-medium text-slate-500 dark:text-slate-400">
               {['免登入無壓力', '沒有擾人廣告', '錯題與進度自動保存', '信達雅專業圖解'].map((item) => (

@@ -3,7 +3,7 @@
 import React from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { Home, Compass, BookOpen, PenTool, Search } from 'lucide-react';
+import { Home, Compass, Gamepad2, BookOpen, PenTool, Search } from 'lucide-react';
 import { triggerHaptic } from '@/lib/haptics';
 
 interface NavItem {
@@ -15,6 +15,7 @@ interface NavItem {
 
 const navItems: NavItem[] = [
   { href: '/', label: '首頁', icon: Home },
+  { href: '/learn', label: '闖關', icon: Gamepad2 },
   { href: '/pathway', label: '建築之路', icon: Compass },
   { href: '/curriculum', label: '課程', icon: BookOpen },
   { href: '/practice', label: '模擬', icon: PenTool },
@@ -57,7 +58,7 @@ export default function IOSMobileTabBar() {
             );
           }
 
-          const isActive = pathname === item.href;
+          const isActive = pathname === item.href || (item.href !== '/' && !!pathname?.startsWith(`${item.href}/`));
 
           return (
             <Link

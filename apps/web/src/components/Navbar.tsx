@@ -57,6 +57,13 @@ const navGroups: NavGroup[] = [
         badge: '全學程',
       },
       {
+        href: '/learn',
+        label: '闖關學習',
+        desc: '108 課綱三年六學期 61 門課、2,000+ 題，每天 5 分鐘闖一關',
+        icon: IconTopicDiscovery,
+        badge: 'NEW',
+      },
+      {
         href: '/subjects/mechanics',
         label: '工程力學 (專一)',
         desc: '靜力平衡、桁架零力桿、SFD/BMD 剪力彎矩圖與莫爾圓',
@@ -221,6 +228,14 @@ const categoryFilters = [
 ];
 
 const specialHubs = [
+  {
+    title: '🎮 闖關學習：建築科三年六學期全科地圖',
+    desc: '依 108 課綱土木與建築群課程手冊排好的 Duolingo 式闖關：高一上到高三下，部定一般、專業、實習與技能領域 61 門課、2,000+ 題，連續學習、每日任務與錯題複習',
+    href: '/learn',
+    badge: '闖關學習',
+    category: 'hubs',
+    tags: ['闖關', '闖關學習', 'duolingo', '多鄰國', '遊戲化', '每日任務', '連續學習', '高一', '高二', '高三', '學期', '108課綱', '錯題複習', 'xp'],
+  },
   {
     title: '🖥️ 建築電腦繪圖軟體全鑑 (CAD / BIM)',
     desc: '業界學界 8 大主力軟體全鑑（SketchUp, Blender, AutoCAD, Revit, 3ds Max, ArchiCAD, Rhino, 即時光追引擎），含新手 10 步 SOP、快捷鍵速查與 7 輪深度進化指南',

@@ -1,5 +1,6 @@
 import { MetadataRoute } from 'next';
 import { topicSearchIndex } from '@/data/topicSearchIndex';
+import { COURSE_CATALOG } from '@/data/learnPath/catalog';
 
 export const dynamic = 'force-static';
 
@@ -9,6 +10,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
   // 1. Static Hubs and Major Pages
   const staticRoutes = [
     '',
+    '/learn',
+    '/learn/review',
     '/pathway',
     '/quest',
     '/studio',
@@ -86,5 +89,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.75,
   }));
 
-  return [...staticRoutes, ...caseRoutes, ...subjectRoutes, ...topicRoutes];
+  // 5. 闖關學習：三年六學期各科路徑
+  const learnRoutes = COURSE_CATALOG.map((c) => ({
+    url: `${baseUrl}/learn/${c.semester}/${c.key}/`,
+    lastModified: new Date(),
+    changeFrequency: 'monthly' as const,
+    priority: 0.7,
+  }));
+
+  return [...staticRoutes, ...caseRoutes, ...subjectRoutes, ...topicRoutes, ...learnRoutes];
 }
