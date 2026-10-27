@@ -272,6 +272,88 @@ const eq = (name, got, want) => {
   }
 }
 
+
+/* ───────────── 4. 統測對標檢定 ───────────── */
+
+const align = await loadTsModule('apps/web/src/lib/learn/examAlign.ts');
+const fsMod = await import('node:fs');
+const readJson = (rel) => JSON.parse(fsMod.readFileSync(path.join(repoRoot, rel), 'utf8'));
+const tcte = readJson('data/registry/tcte-item-stats.json');
+const bankJson = readJson('apps/web/src/data/learnPath/generated/examBank.json');
+const certStats = [];
+{
+  // 4a. 模型重現官方三標：國文含寫作分數，不納入；其餘為純選擇題試卷
+  const diffs = [];
+  for (const y of tcte.source.years) {
+    for (const exam of ['english', 'math-c', 'professional-1', 'professional-2']) {
+      const its = Object.entries(tcte.items).filter(([k]) => k.startsWith(`${y}-${exam}-`)).map(([, v]) => v);
+      const t = align.tierThresholds(its);
+      const st = tcte.standards[y][exam];
+      for (const [m, o] of [[t.low, st.low], [t.mid, st.mid], [t.high, st.top]]) diffs.push(Math.abs(m - o));
+    }
+  }
+  const mae = diffs.reduce((a, b) => a + b, 0) / diffs.length;
+  certStats.push(`模型三標與官方平均差 ${mae.toFixed(2)} 分、最大 ${Math.max(...diffs)} 分`);
+  if (mae > 3) err(`[對標] 模型三標與官方平均差 ${mae.toFixed(2)} 分，超過 3 分`);
+  if (Math.max(...diffs) > 6) err(`[對標] 模型三標與官方最大差 ${Math.max(...diffs)} 分，超過 6 分`);
+
+  // 4b. 每門統測相關課程都有題池，且大小足以抽 20 題
+  const examKeys = ['chinese-1', 'chinese-2', 'chinese-3', 'chinese-4', 'chinese-5', 'chinese-6',
+    'english-1', 'english-2', 'english-3', 'english-4', 'english-5', 'english-6',
+    'math-1', 'math-2', 'math-3', 'math-4', 'math-review', 'survey-1', 'survey-2', 'drafting-1', 'drafting-2',
+    'mechanics-1', 'mechanics-2', 'materials-1', 'materials-2', 'exam-pro1', 'exam-pro2'];
+  const courseKeys = new Set(courses.map((c) => c.key));
+  for (const k of examKeys) {
+    const pool = bankJson.pools[k];
+    if (!courseKeys.has(k)) err(`[對標] 找不到課程 ${k}`);
+    if (!pool) { err(`[對標] ${k} 沒有統測題池`); continue; }
+    const items = pool.units.flat();
+    if (items.length < align.TEST_SIZE) err(`[對標] ${k} 題池只有 ${items.length} 題，不足 ${align.TEST_SIZE} 題`);
+    const t = align.tierThresholds(items);
+    if (!(t.low < t.mid && t.mid < t.high)) err(`[對標] ${k} 門檻不是遞增：${JSON.stringify(t)}`);
+    for (const it of items) {
+      if (it.bands.length !== 5 || it.bands.some((b) => !(b >= 0 && b <= 100))) err(`[對標] ${it.id} 能力組答對率異常`);
+      if (!tcte.items[`${it.year}-${pool.exam}-${it.no}`]) err(`[對標] ${it.id} 沒有官方統計`);
+    }
+    // 抽題：題組不可拆散、題數接近 20
+    const test = align.pickTest(pool, new Set(), 12345);
+    if (pool.mode === 'stage' && (test.length < 15 || test.length > align.TEST_SIZE + 4)) err(`[對標] ${k} 抽出 ${test.length} 題`);
+    const groups = new Map();
+    for (const it of items) if (it.group) groups.set(it.group, (groups.get(it.group) ?? 0) + 1);
+    for (const [g, n] of groups) {
+      const got = test.filter((it) => it.group === g).length;
+      if (got && got !== n) err(`[對標] ${k} 題組 ${g} 被拆散（${got}/${n}）`);
+    }
+  }
+  certStats.push(`${examKeys.length} 門課程題池、合計 ${examKeys.reduce((n, k) => n + (bankJson.pools[k]?.units.flat().length ?? 0), 0)} 題次`);
+
+  // 4c. 能力估計與分數換算
+  eq('百分位內插：中位數等於 Pc', align.passRateAt([90, 70, 50, 30, 10], 50), 0.5);
+  eq('百分位內插：第 80 百分位', align.passRateAt([90, 70, 50, 30, 10], 80), 0.8);
+  eq('三標換算：均標', align.percentileToScore(50, { low: 24, mid: 36, top: 56 }), 36);
+  eq('三標換算：滿分端', align.percentileToScore(100, { low: 24, mid: 36, top: 56 }), 100);
+  eq('達標判定', align.tierReached(60, { low: 30, mid: 45, high: 60 }), 'high');
+  eq('未達低標', align.tierReached(20, { low: 30, mid: 45, high: 60 }), null);
+  const allRight = align.estimatePercentile(Array.from({ length: 30 }, () => ({ bands: [80, 60, 45, 30, 20], correct: true })));
+  const allWrong = align.estimatePercentile(Array.from({ length: 30 }, () => ({ bands: [80, 60, 45, 30, 20], correct: false })));
+  if (!(allRight.percentile > 85 && allWrong.percentile < 15)) err(`[對標] 能力估計方向錯誤：${allRight.percentile}/${allWrong.percentile}`);
+  // 模擬考生：第 q 百分位的人照模型機率作答 200 題，估計值應落在 q ± 10
+  const items = Object.values(tcte.items).filter((x) => x.bandSource === 'official').slice(0, 200);
+  for (const q of [20, 50, 80]) {
+    let seed = q;
+    const rnd = () => ((seed = (seed * 16807) % 2147483647) / 2147483647);
+    const est = align.estimatePercentile(items.map((it) => ({ bands: it.bands, correct: rnd() < align.passRateAt(it.bands, q) })));
+    if (Math.abs(est.percentile - q) > 10) err(`[對標] 模擬第 ${q} 百分位考生，估計為 ${est.percentile}`);
+  }
+}
+{
+  // 休息模式：排定的休息日不算漏掉，也不耗休息日卡
+  const base = { current: 4, longest: 4, lastDay: '2026-10-01', freezes: 0, frozenDays: [] };
+  eq('休息日不中斷連續', engine.advanceStreak(base, '2026-10-04', ['2026-10-02', '2026-10-03']).current, 5);
+  eq('休息日不耗卡', engine.advanceStreak({ ...base, freezes: 1 }, '2026-10-03', ['2026-10-02']).freezes, 1);
+  eq('休息日顯示', engine.displayStreak(base, '2026-10-03', ['2026-10-02']), 4);
+}
+
 /* ───────────── 輸出 ───────────── */
 
 console.log('🎮 闖關學習題庫驗證');
@@ -285,6 +367,7 @@ for (const s of lp.SEMESTERS) {
   }
 }
 console.log(`  合計：${courses.length} 門課、${totalUnits} 單元、${totalItems} 題；題型 ${JSON.stringify(typeTotals)}`);
+console.log(`  統測對標：${certStats.join("；")}`);
 if (warns.length) {
   console.log(`\n⚠️  ${warns.length} 則提醒（不擋 CI）：`);
   for (const w of warns.slice(0, 40)) console.log('  - ' + w);

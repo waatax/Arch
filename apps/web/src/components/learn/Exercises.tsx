@@ -6,8 +6,7 @@ import { clsx } from 'clsx';
 import MathText from '@/components/MathText';
 import type { MatchExercise, OrderExercise } from '@/data/learnPath/types';
 import { shuffle } from '@/lib/learn/engine';
-import { sfx } from '@/lib/learn/sfx';
-import { triggerHaptic } from '@/lib/haptics';
+import { haptic, sfx } from '@/lib/learn/sfx';
 
 const tileBase =
   'w-full rounded-2xl border-2 border-b-4 px-4 py-3 text-left text-[15px] leading-snug font-medium transition-all active:translate-y-[2px] active:border-b-2 focus:outline-none focus-visible:ring-4 focus-visible:ring-sky-300 dark:focus-visible:ring-sky-700';
@@ -81,7 +80,7 @@ export function ChoiceList({
             disabled={locked}
             onClick={() => {
               sfx.tap();
-              triggerHaptic('selection');
+              haptic('selection');
               onSelect(c);
             }}
             className={clsx(tileBase, state, 'flex items-center gap-3 disabled:cursor-default')}
@@ -128,7 +127,7 @@ export function TrueFalse({
             disabled={locked}
             onClick={() => {
               sfx.tap();
-              triggerHaptic('selection');
+              haptic('selection');
               onSelect(v);
             }}
             className={clsx(tileBase, state, 'flex flex-col items-center gap-1 py-6 text-center disabled:cursor-default')}
@@ -202,7 +201,7 @@ export function OrderBuilder({
               disabled={used || locked}
               onClick={() => {
                 sfx.tap();
-                triggerHaptic('selection');
+                haptic('selection');
                 onChange([...placed, t]);
               }}
               className={clsx(
@@ -247,7 +246,7 @@ export function MatchBoard({
       const next = [...matched, l];
       setMatched(next);
       sfx.tap();
-      triggerHaptic('light');
+      haptic('light');
       setSelL(null);
       setSelR(null);
       if (next.length === item.pairs.length) onDone(mistakes);
@@ -255,7 +254,7 @@ export function MatchBoard({
       setMistakes((m) => m + 1);
       setFlash([l, r]);
       sfx.wrong();
-      triggerHaptic('warning');
+      haptic('warning');
       setSelL(null);
       setSelR(null);
       window.setTimeout(() => setFlash(null), 450);

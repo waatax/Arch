@@ -22,6 +22,7 @@ import {
   weekXp,
 } from '@/lib/learn/engine';
 import { todayStats, useLearnHydration, useLearnStore } from '@/lib/store/learnStore';
+import ExamDashboard from './ExamDashboard';
 import StatsBar from './StatsBar';
 import { COURSE_COLORS } from './theme';
 
@@ -90,7 +91,8 @@ export default function LearnHome({ courses, semesters }: { courses: CourseSumma
       })
     : [];
   const mistakeCount = hydrated ? Object.keys(s.mistakes).length : 0;
-  const streakDays = hydrated ? displayStreak(s.streak, today) : 0;
+  const streakDays = hydrated ? displayStreak(s.streak, today, s.restDays) : 0;
+  const resting = hydrated && s.restDays.includes(today);
   const goalPct = Math.min(100, (stats.xp / s.dailyGoal) * 100);
 
   const nextNodeHref = (c: CourseSummary) => `/learn/${c.semester}/${c.key}/`;
@@ -193,6 +195,8 @@ export default function LearnHome({ courses, semesters }: { courses: CourseSumma
               </section>
             );
           })}
+
+          <ExamDashboard hydrated={hydrated} examResp={s.examResp} certs={s.certs} courses={courses} semesters={semesters} />
 
           <div className="mt-10 flex gap-3 rounded-2xl border-2 border-dashed border-slate-300 p-4 text-xs leading-relaxed text-slate-500 dark:border-slate-700 dark:text-slate-400">
             <Info className="mt-0.5 h-4 w-4 shrink-0" aria-hidden />
@@ -319,6 +323,30 @@ export default function LearnHome({ courses, semesters }: { courses: CourseSumma
             >
               用 🧱{FREEZE_PRICE} 兌換休息日卡
             </button>
+            <div className="mt-3 border-t border-slate-100 pt-3 dark:border-slate-800">
+              <p className="text-xs leading-relaxed text-slate-500">
+                {resting
+                  ? `休息模式到 ${s.restDays[s.restDays.length - 1].slice(5)}：好好休息，連續天數會保留，不消耗休息日卡。`
+                  : '要考試、生病或出遊？先開休息模式（最多 3 天），連續天數不會中斷。'}
+              </p>
+              <div className="mt-2 flex flex-wrap gap-1.5">
+                {resting ? (
+                  <button type="button" onClick={() => s.setRest(0)} className="rounded-lg border border-slate-300 px-2.5 py-1 text-xs font-bold text-slate-600 dark:border-slate-700 dark:text-slate-300">
+                    結束休息
+                  </button>
+                ) : (
+                  [1, 2, 3].map((n) => (
+                    <button key={n} type="button" disabled={!hydrated} onClick={() => s.setRest(n)} className="rounded-lg border border-slate-300 px-2.5 py-1 text-xs font-bold text-slate-600 disabled:opacity-40 dark:border-slate-700 dark:text-slate-300">
+                      休息 {n} 天
+                    </button>
+                  ))
+                )}
+              </div>
+            </div>
+            <label className="mt-3 flex items-center gap-2 text-xs font-bold text-slate-600 dark:text-slate-300">
+              <input type="checkbox" checked={hydrated ? s.hapticsOn : true} onChange={() => s.toggleHaptics()} className="h-4 w-4 accent-emerald-500" />
+              答題震動回饋
+            </label>
           </Card>
 
           {/* 錯題複習 */}

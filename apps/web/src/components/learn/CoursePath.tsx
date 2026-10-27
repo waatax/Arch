@@ -28,11 +28,11 @@ import {
   shuffle,
 } from '@/lib/learn/engine';
 import { todayStats, useLearnHydration, useLearnStore } from '@/lib/store/learnStore';
-import { sfx } from '@/lib/learn/sfx';
-import { triggerHaptic } from '@/lib/haptics';
+import { haptic, sfx } from '@/lib/learn/sfx';
 import LessonPlayer, { type PlayerFinish, type PlayerMode } from './LessonPlayer';
 import StatsBar from './StatsBar';
 import Portal from './Portal';
+import ExamCertCard from './ExamCertCard';
 import { COURSE_COLORS } from './theme';
 
 export interface SiblingCourse {
@@ -167,7 +167,7 @@ export default function CoursePath({
     setOpenNode(null);
     if (got > 0) {
       sfx.chest();
-      triggerHaptic('success');
+      haptic('success');
       setChestToast(`打開寶箱，獲得 ${got} 塊磚！`);
       window.setTimeout(() => setChestToast(null), 2200);
       const after = useLearnStore.getState().completed;
@@ -303,6 +303,8 @@ export default function CoursePath({
               </section>
             );
           })}
+
+          <ExamCertCard course={course} hydrated={hydrated} />
 
           <div className="rounded-2xl border-2 border-dashed border-slate-300 p-6 text-center dark:border-slate-700">
             <p className="text-3xl">🏁</p>

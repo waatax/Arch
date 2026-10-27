@@ -13,8 +13,7 @@ import {
   shuffle,
 } from '@/lib/learn/engine';
 import type { CompletionOutcome } from '@/lib/store/learnStore';
-import { sfx } from '@/lib/learn/sfx';
-import { triggerHaptic } from '@/lib/haptics';
+import { haptic, sfx } from '@/lib/learn/sfx';
 import { COURSE_COLORS, TYPE_LABEL } from './theme';
 import { ChoiceList, MatchBoard, NumberInput, OrderBuilder, Prompt, TrueFalse, speak } from './Exercises';
 import Portal from './Portal';
@@ -133,7 +132,7 @@ export default function LessonPlayer(props: LessonPlayerProps) {
         setPraise(c >= 3 ? `連續答對 ${c} 題！` : PRAISE[(nth + pos) % PRAISE.length]);
         setResolved((r) => (r.includes(item.id) ? r : [...r, item.id]));
         sfx.correct();
-        triggerHaptic('success');
+        haptic('success');
       } else {
         setCombo(0);
         // 配對題已在過程中看到全部正解，不再重出；其他題型答錯排到最後再練一次
@@ -143,7 +142,7 @@ export default function LessonPlayer(props: LessonPlayerProps) {
           setResolved((r) => (r.includes(item.id) ? r : [...r, item.id]));
         }
         sfx.wrong();
-        triggerHaptic('error');
+        haptic('error');
       }
       setPhase('feedback');
     },
@@ -170,7 +169,7 @@ export default function LessonPlayer(props: LessonPlayerProps) {
     setOutcome(props.onFinish(f));
     setPhase('done');
     sfx.fanfare();
-    triggerHaptic('success');
+    haptic('success');
   }, [items, firstTry, maxCombo, mode, passRatio, props]);
 
   const next = useCallback(() => {

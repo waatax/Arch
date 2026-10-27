@@ -222,18 +222,21 @@ export interface StreakState {
  * 今天完成一堂課時呼叫。漏掉的天數若不超過持有的休息日卡，會自動補上；
  * 否則連續天數從 1 重新開始（不扣任何 XP 或磚塊）。
  */
-export function advanceStreak(s: StreakState, today: string): StreakState {
+export function advanceStreak(s: StreakState, today: string, restDays: readonly string[] = []): StreakState {
   if (s.lastDay === today) return s;
   if (!s.lastDay) return { ...s, current: 1, longest: Math.max(s.longest, 1), lastDay: today };
   const gap = daysBetween(s.lastDay, today);
   if (gap <= 0) return s;
-  const missed = gap - 1;
+  // 事先排定的休息日不算漏掉
+  const missed = missedDays(s.lastDay, gap, restDays);
   if (missed === 0) {
     const current = s.current + 1;
     return { ...s, current, longest: Math.max(s.longest, current), lastDay: today };
   }
   if (missed <= s.freezes) {
-    const frozen = Array.from({ length: missed }, (_, i) => addDaysKey(s.lastDay as string, i + 1));
+    const frozen = Array.from({ length: gap - 1 }, (_, i) => addDaysKey(s.lastDay as string, i + 1)).filter(
+      (d) => !restDays.includes(d),
+    );
     const current = s.current + 1;
     return {
       ...s,
@@ -248,11 +251,18 @@ export function advanceStreak(s: StreakState, today: string): StreakState {
 }
 
 /** 顯示用：今天還沒學習時，目前仍有效的連續天數 */
-export function displayStreak(s: StreakState, today: string): number {
+export function displayStreak(s: StreakState, today: string, restDays: readonly string[] = []): number {
   if (!s.lastDay) return 0;
   const gap = daysBetween(s.lastDay, today);
   if (gap <= 1) return s.current;
-  return gap - 1 <= s.freezes ? s.current : 0;
+  // 今天本身還有機會學習，不算漏掉
+  return missedDays(s.lastDay, gap, restDays) <= s.freezes ? s.current : 0;
+}
+
+function missedDays(lastDay: string, gap: number, restDays: readonly string[]): number {
+  let n = 0;
+  for (let i = 1; i < gap; i++) if (!restDays.includes(addDaysKey(lastDay, i))) n++;
+  return n;
 }
 
 /* ───────────── 個人週賽（只跟自己比） ───────────── */

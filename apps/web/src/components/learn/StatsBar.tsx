@@ -13,9 +13,10 @@ export default function StatsBar({ hydrated, compact = false }: { hydrated: bool
   const dailyGoal = useLearnStore((s) => s.dailyGoal);
   const soundOn = useLearnStore((s) => s.soundOn);
   const toggleSound = useLearnStore((s) => s.toggleSound);
+  const restDays = useLearnStore((s) => s.restDays);
 
   const today = localDateKey();
-  const days = hydrated ? displayStreak(streak, today) : 0;
+  const days = hydrated ? displayStreak(streak, today, restDays) : 0;
   const learnedToday = hydrated && streak.lastDay === today;
   const xp = hydrated ? todayStats(day, today).xp : 0;
 
