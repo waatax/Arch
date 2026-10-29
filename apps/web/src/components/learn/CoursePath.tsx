@@ -18,7 +18,7 @@ import {
 } from 'lucide-react';
 import { clsx } from 'clsx';
 import MathText from '@/components/MathText';
-import type { Exercise, LearnCourse, LearnUnit, PathNode } from '@/data/learnPath/types';
+import type { Exercise, LearnCourse, LearnUnit, PathNode, TopicLink } from '@/data/learnPath/types';
 import {
   JUMP_PASS_RATIO,
   buildCoursePath,
@@ -48,6 +48,7 @@ interface Session {
   items: Exercise[];
   node?: PathNode;
   jumpUnit?: number;
+  topic?: TopicLink;
   intro?: { title: string; points: string[] };
   key: number;
   /** 開局時的今日 XP（結算畫面用；store 更新後不能再讀） */
@@ -120,6 +121,7 @@ export default function CoursePath({
       title: `${course.title}・${unit.title}`,
       items,
       node,
+      topic: unit.topic,
       intro: node.kind === 'lesson' ? { title: unit.title, points: unit.guide } : undefined,
     });
   };
@@ -413,6 +415,7 @@ export default function CoursePath({
           color={course.color}
           mode={session.mode}
           intro={session.intro}
+          topic={session.topic}
           passRatio={JUMP_PASS_RATIO}
           dailyGoal={dailyGoal}
           todayXpBefore={session.xpBefore}

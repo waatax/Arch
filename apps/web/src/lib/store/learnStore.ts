@@ -98,6 +98,8 @@ interface LearnState {
   subjectsTouched: string[];
   soundOn: boolean;
   hapticsOn: boolean;
+  autoSpeak: boolean;
+  speechRate: number;
   /** 休息模式的日期：這些天沒學習也不會中斷連續天數，且不消耗休息日卡 */
   restDays: string[];
   lastCourse: string | null;
@@ -118,6 +120,8 @@ interface LearnState {
   setDailyGoal: (xp: number) => void;
   toggleSound: () => void;
   toggleHaptics: () => void;
+  toggleAutoSpeak: () => void;
+  setSpeechRate: (rate: number) => void;
   /** 從今天起休息 n 天（0 = 取消）；每 7 天最多 3 天 */
   setRest: (days: number) => void;
   /** 回傳 XP 與新取得的磚塊（升級才給） */
@@ -145,6 +149,8 @@ const initialData = {
   subjectsTouched: [] as string[],
   soundOn: true,
   hapticsOn: true,
+  autoSpeak: false,
+  speechRate: 1.0,
   restDays: [] as string[],
   lastCourse: null as string | null,
   examResp: {} as Record<string, 0 | 1>,
@@ -309,6 +315,8 @@ export const useLearnStore = create<LearnState>()(
       setDailyGoal: (xp) => set({ dailyGoal: xp }),
       toggleSound: () => set({ soundOn: !get().soundOn }),
       toggleHaptics: () => set({ hapticsOn: !get().hapticsOn }),
+      toggleAutoSpeak: () => set({ autoSpeak: !get().autoSpeak }),
+      setSpeechRate: (rate: number) => set({ speechRate: rate }),
       setRest: (days) => {
         const today = localDateKey();
         const kept = get().restDays.filter((d) => d < today);

@@ -2,7 +2,8 @@
 
 import { useEffect, useMemo, useRef, useState } from 'react';
 import Link from 'next/link';
-import { Check, ExternalLink, Loader2, Medal, X } from 'lucide-react';
+import { Check, ExternalLink, Headphones, Loader2, Medal, Volume2, VolumeX, X } from 'lucide-react';
+import { speakText, speakSequence, stopSpeech } from '@/lib/learn/speech';
 import { clsx } from 'clsx';
 import MathText from '@/components/MathText';
 import { routeLabel } from '@/data/learnPath/examBank';
@@ -104,6 +105,8 @@ export default function ExamPlayer({
   const [collapsed, setCollapsed] = useState<string | null>(null);
   const dialogRef = useRef<HTMLDivElement>(null);
   const [seconds, setSeconds] = useState(0);
+  const [speaking, setSpeaking] = useState(false);
+  const [spokenLetter, setSpokenLetter] = useState<string | null>(null);
 
   const thresholds = useMemo(() => tierThresholds(items), [items]);
 
@@ -175,6 +178,9 @@ export default function ExamPlayer({
   };
 
   const next = () => {
+    stopSpeech();
+    setSpeaking(false);
+    setSpokenLetter(null);
     setSelected(null);
     setChecked(false);
     if (pos + 1 < items.length) setPos(pos + 1);
@@ -265,8 +271,62 @@ export default function ExamPlayer({
                     )}
                   </div>
                 )}
-                <div className="text-lg font-bold leading-8 text-slate-900 dark:text-slate-50">
-                  <MathText content={q.excerpt} />
+                <div className="flex items-start gap-3">
+                  <button
+                    type="button"
+                    onClick={() => {
+                      if (speaking) {
+                        stopSpeech();
+                        setSpeaking(false);
+                        setSpokenLetter(null);
+                      } else {
+                        setSpeaking(true);
+                        speakText(q.excerpt, {
+                          onEnd: () => setSpeaking(false),
+                          onError: () => setSpeaking(false),
+                        });
+                      }
+                    }}
+                    className="mt-1 inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-xl border border-slate-200 bg-white text-slate-600 hover:border-indigo-400 hover:text-indigo-600 dark:border-slate-700 dark:bg-slate-900 dark:text-slate-300"
+                    title={speaking ? '停止朗讀' : '朗讀題目'}
+                  >
+                    {speaking ? <VolumeX className="h-4 w-4" /> : <Volume2 className="h-4 w-4" />}
+                  </button>
+                  <div className="flex-1 text-lg font-bold leading-8 text-slate-900 dark:text-slate-50">
+                    <MathText content={q.excerpt} />
+                  </div>
+                  <button
+                    type="button"
+                    onClick={() => {
+                      if (speaking) {
+                        stopSpeech();
+                        setSpeaking(false);
+                        setSpokenLetter(null);
+                        return;
+                      }
+                      setSpeaking(true);
+                      const segs = [
+                        { text: q.excerpt },
+                        ...LETTERS.map((L) => ({ text: q.options[L], prefix: '選項 ' + L })),
+                      ];
+                      speakSequence(segs, {
+                        onStep: (step) => setSpokenLetter(step > 0 ? LETTERS[step - 1] : null),
+                        onEnd: () => {
+                          setSpeaking(false);
+                          setSpokenLetter(null);
+                        },
+                        onError: () => {
+                          setSpeaking(false);
+                          setSpokenLetter(null);
+                        },
+                      });
+                    }}
+                    className="mt-1 inline-flex items-center gap-1 rounded-full border border-slate-200 bg-white px-2.5 py-1 text-xs font-bold text-slate-600 hover:border-indigo-400 hover:text-indigo-600 dark:border-slate-700 dark:bg-slate-900 dark:text-slate-300 shrink-0"
+                    title="念出題目與所有選項"
+                  >
+                    <Headphones className="h-3.5 w-3.5" />
+                    <span className="hidden sm:inline">念題目與選項</span>
+                  </button>
                 </div>
                 {q.figureImage && (
                   // eslint-disable-next-line @next/next/no-img-element
