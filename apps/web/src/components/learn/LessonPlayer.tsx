@@ -761,7 +761,7 @@ export default function LessonPlayer(props: LessonPlayerProps) {
                       className="inline-flex items-center gap-1.5 text-xs font-bold text-indigo-700 hover:underline dark:text-indigo-300"
                     >
                       <BookOpen className="h-3.5 w-3.5" />
-                      <span>查看「{topic.topic}」完整圖解筆記（新分頁開啟）</span>
+                      <span>查看本單元的完整圖解筆記（新分頁開啟）</span>
                       <ExternalLink className="h-3 w-3" />
                     </Link>
                   </div>

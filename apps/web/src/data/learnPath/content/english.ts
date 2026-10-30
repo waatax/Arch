@@ -80,7 +80,7 @@ Q {{He runs as ___ as his brother.}} | fast | faster | fastest | more fast // as
 M 把原級和比較級配對 :: good => better ; bad => worse ; many => more ; little => less // 不規則變化要背。
 T {{The more you practice, the better you get.}} 表示「越……越……」。 | O // the + 比較級, the + 比較級。
 T {{This is the most cheapest one.}} 是正確的最高級用法。 | X // 不能重複比較，應為 the cheapest。
-Q This modern reinforced concrete beam is twice {{stronger than}} the wooden beam. 此句表達的意思是？ | 比木梁強韌兩倍 | 與木梁強度完全相同 | 比木梁弱了兩倍 | 長度恰為木梁的兩倍 // twice + 比較級 + than 表示「為對方的兩倍」，強調現代鋼筋混凝土梁優異之承載強度。
+Q This reinforced concrete beam is {{twice as strong as}} the wooden beam. 此句表達的意思是？ | 強度是木梁的兩倍 | 與木梁強度完全相同 | 強度只有木梁的一半 | 長度恰為木梁的兩倍 // 倍數 + as + 原級 + as 表示「是對方的幾倍」。twice stronger than 在正式寫作中容易被判為錯誤，統測選倍數句型時優先選 as … as。
 
 ## 不定詞與動名詞 @ 英語文 Ad 句構：to V 與 V-ing => english/grammar-patterns
 - enjoy、finish、avoid 後接 V-ing；want、decide、hope 後接 to V。
