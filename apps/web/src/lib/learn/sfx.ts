@@ -9,7 +9,7 @@ const on = () => useLearnStore.getState().soundOn;
 
 export const sfx = {
   tap: () => on() && soundEngine.playClickBeep(),
-  correct: () => on() && soundEngine.playCorrectChime(),
+  correct: (combo = 1) => on() && soundEngine.playCorrectChime(combo),
   wrong: () => on() && soundEngine.playSoftWrong(),
   fanfare: () => on() && soundEngine.playLessonFanfare(),
   chest: () => on() && soundEngine.playStampThud(),

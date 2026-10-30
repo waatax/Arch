@@ -4,6 +4,7 @@ import { useEffect, useMemo, useRef, useState } from 'react';
 import Link from 'next/link';
 import { Check, ExternalLink, Headphones, Loader2, Medal, Volume2, VolumeX, X } from 'lucide-react';
 import { speakText, speakSequence, stopSpeech } from '@/lib/learn/speech';
+import { fireConfetti } from '@/lib/learn/confetti';
 import { clsx } from 'clsx';
 import MathText from '@/components/MathText';
 import { routeLabel } from '@/data/learnPath/examBank';
@@ -173,6 +174,9 @@ export default function ExamPlayer({
       window.setTimeout(() => {
         sfx.fanfare();
         haptic(tier ? 'success' : 'light');
+        if (tier) {
+          fireConfetti({ count: tierRank(tier) >= 3 ? 120 : 80 });
+        }
       }, 400);
     }
   };

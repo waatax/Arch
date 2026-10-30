@@ -137,19 +137,23 @@ class SoundEffectsEngine {
   }
 
   /**
-   * 4. 答對過關清脆金屬風鈴聲 (Mastery Chime)
+   * 4. 答對過關清脆金屬風鈴聲 (Mastery Chime) - 支援 Duolingo 風格連續答對音階升調
    */
-  public playCorrectChime() {
+  public playCorrectChime(combo: number = 1) {
     if (this.isMuted) return;
     const ctx = this.getContext();
     if (!ctx) return;
 
     try {
       const now = ctx.currentTime;
+      // Duolingo-style combo pitch scaling: 每連對一題調升半音（最多升 8 半音）
+      const semitone = Math.min(Math.max(combo - 1, 0), 8);
+      const pitchMultiplier = Math.pow(2, semitone / 12);
+
       [
-        { freq: 659.25, time: 0, dur: 0.35, vol: 0.15 },
-        { freq: 987.77, time: 0.06, dur: 0.45, vol: 0.18 },
-        { freq: 1318.51, time: 0.12, dur: 0.55, vol: 0.12 },
+        { freq: 659.25 * pitchMultiplier, time: 0, dur: 0.35, vol: 0.15 },
+        { freq: 987.77 * pitchMultiplier, time: 0.06, dur: 0.45, vol: 0.18 },
+        { freq: 1318.51 * pitchMultiplier, time: 0.12, dur: 0.55, vol: 0.12 },
       ].forEach(({ freq, time, dur, vol }) => {
         const osc = ctx.createOscillator();
         const gain = ctx.createGain();

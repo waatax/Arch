@@ -30,7 +30,8 @@ import {
 } from '@/lib/learn/engine';
 import { useLearnStore, type CompletionOutcome } from '@/lib/store/learnStore';
 import { haptic, sfx } from '@/lib/learn/sfx';
-import { speakText, speakSequence, stopSpeech } from '@/lib/learn/speech';
+import { cleanTextForSpeech, speakText, speakSequence, stopSpeech } from '@/lib/learn/speech';
+import { fireConfetti } from '@/lib/learn/confetti';
 import { COURSE_COLORS, TYPE_LABEL } from './theme';
 import { ChoiceList, MatchBoard, NumberInput, OrderBuilder, Prompt, TrueFalse } from './Exercises';
 import Portal from './Portal';
@@ -194,6 +195,44 @@ export default function LessonPlayer(props: LessonPlayerProps) {
           setSpokenOptionIdx(null);
         },
       });
+    } else if (item.type === 'order') {
+      const segs = [
+        { text: item.prompt },
+        ...item.tiles.map((t, i) => ({ text: t, prefix: `步驟 ${i + 1}` })),
+      ];
+      speakSequence(segs, {
+        rate: speechRate,
+        onStart: () => setSpeakingSequence(true),
+        onStep: (step) => setSpokenOptionIdx(step > 0 ? step - 1 : null),
+        onEnd: () => {
+          setSpeakingSequence(false);
+          setSpokenOptionIdx(null);
+        },
+        onError: () => {
+          setSpeakingSequence(false);
+          setSpokenOptionIdx(null);
+        },
+      });
+    } else if (item.type === 'match') {
+      const segs = [
+        { text: item.prompt },
+        ...item.pairs.map((p) => ({ text: `${p[0]}，對應，${p[1]}` })),
+      ];
+      speakSequence(segs, {
+        rate: speechRate,
+        onStart: () => setSpeakingSequence(true),
+        onStep: () => {},
+        onEnd: () => setSpeakingSequence(false),
+        onError: () => setSpeakingSequence(false),
+      });
+    } else if (item.type === 'num') {
+      const unitText = item.unit && item.unit !== '-' ? `，單位為 ${item.unit}` : '';
+      speakText(`${item.prompt}。請計算數值${unitText}。`, {
+        rate: speechRate,
+        onStart: () => setSpeakingSequence(true),
+        onEnd: () => setSpeakingSequence(false),
+        onError: () => setSpeakingSequence(false),
+      });
     } else {
       handleSpeakPrompt();
     }
@@ -285,7 +324,7 @@ export default function LessonPlayer(props: LessonPlayerProps) {
         setMaxCombo((m) => Math.max(m, c));
         setPraise(c >= 3 ? `連續答對 ${c} 題！` : PRAISE[(nth + pos) % PRAISE.length]);
         setResolved((r) => (r.includes(item.id) ? r : [...r, item.id]));
-        sfx.correct();
+        sfx.correct(c);
         haptic('success');
       } else {
         setCombo(0);
@@ -325,6 +364,11 @@ export default function LessonPlayer(props: LessonPlayerProps) {
     setPhase('done');
     sfx.fanfare();
     haptic('success');
+    if (f.passed) {
+      setTimeout(() => {
+        fireConfetti({ count: firstTryCorrect === total ? 120 : 80 });
+      }, 150);
+    }
   }, [items, firstTry, maxCombo, mode, passRatio, props, handleStopAllSpeech]);
 
   const next = useCallback(() => {
@@ -463,13 +507,17 @@ export default function LessonPlayer(props: LessonPlayerProps) {
 
           <div
             className={clsx(
-              'flex min-w-[3rem] items-center justify-end gap-1 text-sm font-black tabular-nums',
-              combo >= 2 ? 'text-orange-500' : 'text-slate-300 dark:text-slate-600',
+              'flex min-w-[3.5rem] items-center justify-end gap-1 text-sm font-black tabular-nums transition-transform duration-300',
+              combo >= 3
+                ? 'scale-110 text-orange-500'
+                : combo >= 2
+                  ? 'text-orange-500'
+                  : 'text-slate-300 dark:text-slate-600',
             )}
             aria-label={`連續答對 ${combo} 題`}
           >
-            <Flame className="h-5 w-5" aria-hidden />
-            {combo}
+            <Flame className={clsx('h-5 w-5', combo >= 3 && 'fill-orange-500 text-orange-500 animate-bounce')} aria-hidden />
+            <span>{combo}</span>
           </div>
         </div>
 
@@ -563,7 +611,17 @@ export default function LessonPlayer(props: LessonPlayerProps) {
                 />
               )}
               {item.type === 'order' && (
-                <OrderBuilder item={item} seed={seed} placed={order} onChange={setOrder} locked={phase === 'feedback'} />
+                <OrderBuilder
+                  item={item}
+                  seed={seed}
+                  placed={order}
+                  onChange={setOrder}
+                  locked={phase === 'feedback'}
+                  onSpeakTile={(t) => {
+                    handleStopAllSpeech();
+                    speakText(cleanTextForSpeech(t), { rate: speechRate });
+                  }}
+                />
               )}
               {item.type === 'num' && (
                 <NumberInput
@@ -582,6 +640,10 @@ export default function LessonPlayer(props: LessonPlayerProps) {
                   onDone={(m) => {
                     setMatchMistakes(m);
                     grade(m);
+                  }}
+                  onSpeakTile={(t) => {
+                    handleStopAllSpeech();
+                    speakText(cleanTextForSpeech(t), { rate: speechRate });
                   }}
                 />
               )}
@@ -613,20 +675,33 @@ export default function LessonPlayer(props: LessonPlayerProps) {
         >
           <div className="mx-auto flex w-full max-w-3xl flex-col gap-4 px-4 py-4 sm:flex-row sm:items-center sm:px-6 sm:py-6">
             {phase === 'feedback' && item ? (
-              <div className="flex-1 space-y-2" aria-live="assertive">
-                <div className="flex items-center justify-between gap-2">
+              <div className="flex-1 space-y-2.5" aria-live="assertive">
+                <div className="flex items-center justify-between gap-2 flex-wrap">
                   <p
                     className={clsx(
                       'flex items-center gap-2 text-xl font-black',
                       lastCorrect ? 'text-emerald-700 dark:text-emerald-300' : 'text-rose-700 dark:text-rose-300',
                     )}
                   >
-                    {lastCorrect ? <Check className="h-6 w-6" aria-hidden /> : <X className="h-6 w-6" aria-hidden />}
-                    {lastCorrect
-                      ? praise
-                      : item.type === 'match'
-                        ? '配對完成，但有配錯'
-                        : '學習契機！來看看核心關鍵'}
+                    {lastCorrect ? (
+                      <Check className="h-6 w-6 text-emerald-600 dark:text-emerald-400 shrink-0" aria-hidden />
+                    ) : (
+                      <X className="h-6 w-6 text-rose-600 dark:text-rose-400 shrink-0" aria-hidden />
+                    )}
+                    <span className="flex items-center gap-2 flex-wrap">
+                      {lastCorrect && combo >= 3 && (
+                        <span className="inline-flex items-center gap-1 rounded-full bg-orange-100 px-2.5 py-0.5 text-xs font-black text-orange-600 dark:bg-orange-950/70 dark:text-orange-300 animate-bounce">
+                          🔥 {combo} 連勝
+                        </span>
+                      )}
+                      <span>
+                        {lastCorrect
+                          ? praise
+                          : item.type === 'match'
+                            ? '配對完成，有少許錯誤'
+                            : '學習契機！來看關鍵原理解析'}
+                      </span>
+                    </span>
                   </p>
 
                   {/* 朗讀解析按鈕 */}
@@ -650,22 +725,28 @@ export default function LessonPlayer(props: LessonPlayerProps) {
                 </div>
 
                 {!lastCorrect && item.type !== 'match' && (
-                  <p className="text-[15px] font-bold text-rose-800 dark:text-rose-200">
-                    <span className="mr-1">⭕ 正確答案：</span>
-                    <MathText content={correctAnswerText(item)} />
-                  </p>
+                  <div className="rounded-xl border border-rose-300/80 bg-white/90 p-2.5 shadow-xs dark:border-rose-900/80 dark:bg-rose-950/40">
+                    <p className="text-xs font-black text-rose-600 dark:text-rose-400 mb-0.5 flex items-center gap-1">
+                      <Target className="h-3.5 w-3.5" /> 正確解答
+                    </p>
+                    <p className="text-base font-bold text-slate-900 dark:text-slate-100">
+                      <MathText content={correctAnswerText(item)} />
+                    </p>
+                  </div>
                 )}
 
                 {item.explain && (
                   <div
                     className={clsx(
-                      'rounded-xl border p-2.5 text-sm leading-relaxed',
+                      'rounded-xl border p-3 text-sm leading-relaxed shadow-xs',
                       lastCorrect
-                        ? 'border-emerald-200 bg-emerald-100/40 text-emerald-900 dark:border-emerald-800/60 dark:bg-emerald-950/40 dark:text-emerald-100'
-                        : 'border-rose-200 bg-rose-100/40 text-rose-950 dark:border-rose-800/60 dark:bg-rose-950/40 dark:text-rose-100',
+                        ? 'border-emerald-200 bg-emerald-100/40 text-emerald-950 dark:border-emerald-800/60 dark:bg-emerald-950/40 dark:text-emerald-100'
+                        : 'border-amber-200 bg-amber-50/80 text-slate-900 dark:border-amber-800/60 dark:bg-amber-950/40 dark:text-amber-100',
                     )}
                   >
-                    <p className="font-bold text-xs mb-1 opacity-75">💡 深度觀念解說：</p>
+                    <p className="font-black text-xs mb-1 flex items-center gap-1.5 text-amber-700 dark:text-amber-300">
+                      <Sparkles className="h-3.5 w-3.5" /> 觀念解題關鍵心法：
+                    </p>
                     <MathText content={item.explain} />
                   </div>
                 )}

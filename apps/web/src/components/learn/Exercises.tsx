@@ -221,12 +221,14 @@ export function OrderBuilder({
   placed,
   onChange,
   locked,
+  onSpeakTile,
 }: {
   item: OrderExercise;
   seed: string;
   placed: string[];
   onChange: (next: string[]) => void;
   locked: boolean;
+  onSpeakTile?: (text: string) => void;
 }) {
   const bank = useMemo(() => {
     let s = shuffle(item.tiles, seed);
@@ -247,7 +249,10 @@ export function OrderBuilder({
             key={t}
             type="button"
             disabled={locked}
-            onClick={() => onChange(placed.filter((x) => x !== t))}
+            onClick={() => {
+              sfx.tap();
+              onChange(placed.filter((x) => x !== t));
+            }}
             className={clsx(
               'rounded-xl border-2 border-b-4 px-3 py-2 text-sm font-semibold text-left',
               locked
@@ -273,6 +278,7 @@ export function OrderBuilder({
               onClick={() => {
                 sfx.tap();
                 haptic('selection');
+                onSpeakTile?.(t);
                 onChange([...placed, t]);
               }}
               className={clsx(
@@ -297,10 +303,12 @@ export function MatchBoard({
   item,
   seed,
   onDone,
+  onSpeakTile,
 }: {
   item: MatchExercise;
   seed: string;
   onDone: (mistakes: number) => void;
+  onSpeakTile?: (text: string) => void;
 }) {
   const left = useMemo(() => shuffle(item.pairs.map((p) => p[0]), `${seed}-L`), [item.pairs, seed]);
   const right = useMemo(() => shuffle(item.pairs.map((p) => p[1]), `${seed}-R`), [item.pairs, seed]);
@@ -316,7 +324,7 @@ export function MatchBoard({
     if (answer.get(l) === r) {
       const next = [...matched, l];
       setMatched(next);
-      sfx.tap();
+      sfx.correct(next.length);
       haptic('light');
       setSelL(null);
       setSelR(null);
@@ -351,6 +359,7 @@ export function MatchBoard({
               onClick={() => {
                 if (isDone) return;
                 sfx.tap();
+                onSpeakTile?.(l);
                 setSelL(l);
                 tryPair(l, selR);
               }}
@@ -384,6 +393,7 @@ export function MatchBoard({
               onClick={() => {
                 if (isDone) return;
                 sfx.tap();
+                onSpeakTile?.(r);
                 setSelR(r);
                 tryPair(selL, r);
               }}

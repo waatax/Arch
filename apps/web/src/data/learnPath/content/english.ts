@@ -296,7 +296,7 @@ Q {{Green buildings save energy. ___, they reduce carbon emissions.}} | In addit
 M 把轉承語和功能配對 :: In conclusion => 總結 ; For instance => 舉例 ; As a result => 結果 ; On the contrary => 相反地 // 抓到功能，就能選對答案。
 T 克漏字作答要看空格前後句的邏輯關係，而不只看單一句子。 | O // 綜合測驗考的是篇章理解。
 T 綜合測驗只考單字意思，與上下文無關。 | X // 多數題目必須依上下文判斷。
-S 排出段落句子的順序 :: Concrete is a common building material. >> It is made of cement, water, sand, and stones. >> When it hardens, it becomes very strong. >> Therefore, it is used in bridges and buildings. // 主題句、說明、特性、結論。
+S 排出段落句子的順序 :: Concrete is a common material. >> It is made of cement, water and sand. >> When it hardens, it becomes strong. >> Thus, it is used in many buildings. // 主題句、成分、特性、應用結論。
 Q Green buildings are designed to reduce environmental impact. {{For instance}}, they use solar panels to generate clean energy. 句中「For instance」的作用是？ | 舉例說明綠建築的具體環保措施 | 反駁前一句所提到的建築設計原則 | 總結整篇文章最核心的法律要求 | 表達作者個人主觀的強烈反對 // For instance 與 For example 同義，用以提出具體案例（如太陽能板）印證前述論點。
 
 ## 閱讀測驗策略 @ 英語文 D 思考能力：主旨、細節、推論、字義推測 => english/reading-comprehension
@@ -343,7 +343,7 @@ Q 「我們應該節約能源。」最正確的翻譯是？ | We should save ene
 T 中譯英時，先找出句子的主詞與動詞，再補上其他成分。 | O // 骨架先立好，句子才不會亂。
 T 「我昨天去工地」可以翻成 {{I go to the site yesterday.}} | X // yesterday 要用過去式 went。
 M 把中文和英文配對 :: 截止日期 => deadline ; 預算 => budget ; 進度 => progress ; 品質 => quality // 專案管理常用字。
-Q 中譯英：「這座新建的橋梁使兩岸的交通更加便利。」最適當的翻譯主幹是？ | The new bridge makes traffic between the two banks more convenient. | The two banks traffic makes the bridge very convenient. | Convenient is the traffic because of the two bridge banks. | Traffic between banks is make the new bridge convenient. // 遵循 S (The new bridge) + V (makes) + O (traffic between the two banks) + OC (more convenient) 標準五大句型。
+Q 中譯英：「這座新橋讓交通更加便利。」最適當的翻譯是？ | The new bridge makes traffic more convenient. | The new bridge makes traffic very convenient. | Convenient is the traffic because of new bridge. | Traffic is make the new bridge convenient. // 遵循 S (The new bridge) + V (makes) + O (traffic) + OC (more convenient) 五大句型。
 
 ## 職場溝通 @ 英語文 B 溝通功能：電子郵件、會議與禮貌用語 => english/workplace-communication
 - 正式 email：主旨清楚、Dear + 稱謂、說明目的、細節、結尾、署名。
@@ -386,7 +386,7 @@ Q {{By the time we arrived, the meeting ___.}} | had started | has started | sta
 Q {{He suggested that she ___ the plan again.}} | check | checks | checked | will check // suggest that + 主詞 + (should) 原形動詞。
 T {{There is many tools in the box.}} 是正確的句子。 | X // tools 是複數，應用 There are。
 T 「each + 單數名詞」當主詞時，動詞用單數。 | O // Each student has a locker.
-M 把句子和文法重點配對 :: Everyone is here. => 不定代名詞用單數 ; Both A and B are … => 兩者並列用複數 ; The number of students is … => 「……的數目」用單數 ; A number of students are … => 「許多」用複數 // 主詞動詞一致是統測必考。
+M 把句子和文法重點配對 :: Everyone is here. => 不定代名詞用單數 ; Both A and B are … => 兩者並列用複數 ; The number of ... is => 「……的數目」用單數 ; A number of ... are => 「許多」用複數 // 主詞動詞一致是統測必考。
 S 排出句子：我已經在這間公司工作三年了。 :: I >> have worked >> for this company >> for three years // 現在完成式搭配 for + 一段時間。
 Q The construction manager had the damaged scaffolding {{repaired}} immediately. 句中採用 repaired 的原因是？ | 鷹架是被修復的，受詞與動作呈被動關係 | had 是使役動詞，其後一定要接現在分詞 | repaired 在此句充當主要動詞而非分詞 | 鷹架具有主動自行修復構件之功能 // have + O + p.p. 表示「使某事物被處理」，scaffolding（鷹架）被修理，故使用過去分詞 repaired。
 `,
