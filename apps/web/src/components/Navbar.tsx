@@ -50,6 +50,13 @@ const navGroups: NavGroup[] = [
     icon: IconDraftingTools,
     items: [
       {
+        href: '/study-studio',
+        label: '考前建築所',
+        desc: '30 個圖解短課、段考範圍自選、每日考程與錯題複習',
+        icon: IconFastFormula,
+        badge: 'NEW',
+      },
+      {
         href: '/curriculum',
         label: '學習地圖總覽',
         desc: '108 課綱 13 科 120 主題三年三階完整路徑',
@@ -534,19 +541,19 @@ export default function Navbar() {
         className="sticky top-0 z-50 w-full border-b border-slate-200/80 dark:border-slate-800/80 bg-white/90 dark:bg-slate-900/90 backdrop-blur-md transition-colors"
         aria-label="主要導覽"
       >
-        <div className="mx-auto flex h-16 max-w-7xl items-center justify-between gap-3 px-4 sm:px-6 lg:px-8">
+        <div className="mx-auto flex h-16 max-w-7xl items-center justify-between gap-[8px] px-[12px] sm:px-6 lg:px-8">
           {/* 品牌標誌與標語 */}
           <div className="flex shrink-0 items-center gap-3">
-            <Link href="/" className="flex items-center gap-2.5 group" aria-label="Arch 學習平台首頁">
-              <span className="flex size-9 items-center justify-center rounded-xl bg-blue-700 dark:bg-blue-600 text-white font-mono text-base font-bold shadow-sm transition-transform duration-200 group-hover:scale-105">
+            <Link href="/" className="flex items-center gap-[8px] sm:gap-2.5 group" aria-label="Arch 學習平台首頁">
+              <span className="flex size-[36px] items-center justify-center rounded-xl bg-blue-700 dark:bg-blue-600 text-white font-mono text-base font-bold shadow-sm transition-transform duration-200 group-hover:scale-105">
                 ◺
               </span>
               <div className="flex flex-col">
                 <div className="flex items-center gap-1.5">
-                  <span className="font-serif text-2xl font-bold tracking-tight text-slate-900 dark:text-white">
+                  <span className="font-serif text-[24px] sm:text-2xl font-bold tracking-tight text-slate-900 dark:text-white">
                     Arch
                   </span>
-                  <span className="rounded-full bg-blue-700/10 dark:bg-blue-400/10 px-2 py-0.5 text-[10px] font-mono font-bold text-blue-700 dark:text-blue-300 border border-blue-700/20">
+                  <span className="hidden sm:inline rounded-full bg-blue-700/10 dark:bg-blue-400/10 px-2 py-0.5 text-[10px] font-mono font-bold text-blue-700 dark:text-blue-300 border border-blue-700/20">
                     V10.00
                   </span>
                 </div>
@@ -558,7 +565,7 @@ export default function Navbar() {
           </div>
 
           {/* ── 桌面版分組導覽 (信達雅建築結構化選單) ── */}
-          <div className="hidden lg:flex items-center gap-1">
+          <div className="hidden xl:flex items-center gap-1">
             <Link
               href="/"
               className={`px-3 py-2 rounded-xl text-xs font-bold transition-colors ${
@@ -669,7 +676,7 @@ export default function Navbar() {
           </div>
 
           {/* ── 右側動作區：快速搜尋、主題切換、音效與行動版漢堡選單 ── */}
-          <div className="flex items-center gap-2">
+          <div className="flex shrink-0 items-center gap-[3px] sm:gap-2">
             {/* Quick Search Button (Omnibar) */}
             <button
               type="button"
@@ -677,12 +684,12 @@ export default function Navbar() {
                 triggerHaptic('medium');
                 setSearchOpen(true);
               }}
-              className="flex items-center gap-2 rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-800/60 px-3 py-1.5 text-xs font-mono text-slate-600 dark:text-slate-300 hover:border-slate-300 dark:hover:border-slate-700 transition-all active:scale-95 cursor-pointer"
+              className="flex h-[44px] min-w-[44px] items-center justify-center gap-2 rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-800/60 px-2 2xl:px-3 text-xs font-mono text-slate-600 dark:text-slate-300 hover:border-slate-300 dark:hover:border-slate-700 transition-all active:scale-95 cursor-pointer"
               aria-label="快速搜尋全站章節 (Ctrl+K)"
             >
               <IconTopicDiscovery size={16} className="text-blue-600 dark:text-blue-400" />
-              <span className="hidden md:inline font-sans">搜尋 120 主題／實驗／公式...</span>
-              <span className="hidden md:inline-block rounded bg-white dark:bg-slate-700 border border-slate-200 dark:border-slate-600 px-1 text-[10px] text-slate-400">
+              <span className="hidden 2xl:inline font-sans">搜尋 120 主題／實驗／公式...</span>
+              <span className="hidden 2xl:inline-block rounded bg-white dark:bg-slate-700 border border-slate-200 dark:border-slate-600 px-1 text-[10px] text-slate-400">
                 Ctrl+K
               </span>
             </button>
@@ -746,7 +753,7 @@ export default function Navbar() {
             </div>
 
             {/* Bookmarks Quick Drawer */}
-            <div className="relative">
+            <div className="relative hidden sm:block">
               <button
                 type="button"
                 onClick={() => {
@@ -829,7 +836,7 @@ export default function Navbar() {
                 triggerHaptic('light');
                 toggleSound();
               }}
-              className="flex size-9 items-center justify-center rounded-xl border border-slate-200 dark:border-slate-800 text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 transition-all active:scale-95 cursor-pointer"
+              className="flex size-[44px] items-center justify-center rounded-xl border border-slate-200 dark:border-slate-800 text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 transition-all active:scale-95 cursor-pointer"
               aria-label={soundEnabled ? '關閉音效' : '開啟音效'}
               title={soundEnabled ? '音效已開啟 (點擊靜音)' : '音效已靜音 (點擊開啟)'}
             >
@@ -843,7 +850,7 @@ export default function Navbar() {
                 triggerHaptic('light');
                 setMobileMenuOpen((prev) => !prev);
               }}
-              className="flex size-9 items-center justify-center rounded-xl border border-slate-200 dark:border-slate-800 text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 transition-all active:scale-95 lg:hidden cursor-pointer"
+              className="flex size-[44px] items-center justify-center rounded-xl border border-slate-200 dark:border-slate-800 text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 transition-all active:scale-95 xl:hidden cursor-pointer"
               aria-label={mobileMenuOpen ? '關閉主選單' : '開啟主選單'}
               aria-expanded={mobileMenuOpen}
             >
@@ -854,7 +861,7 @@ export default function Navbar() {
 
         {/* ── 行動版結構化抽屜選單 ── */}
         {mobileMenuOpen && (
-          <div className="border-t border-slate-200 dark:border-slate-800 bg-white/95 dark:bg-slate-900/95 backdrop-blur-xl px-4 py-4 lg:hidden max-h-[80vh] overflow-y-auto space-y-3">
+          <div className="border-t border-slate-200 dark:border-slate-800 bg-white/95 dark:bg-slate-900/95 backdrop-blur-xl px-4 py-4 xl:hidden max-h-[80vh] overflow-y-auto space-y-3">
             <button
               type="button"
               onClick={() => {

@@ -41,7 +41,7 @@ export default function ThemeToggle() {
     <div ref={containerRef} className="relative flex shrink-0 items-center gap-1.5">
       {/* Desktop Quick Font Size Controls */}
       <div
-        className="hidden md:flex items-center border border-(--color-concrete-300) dark:border-slate-800 rounded-xl overflow-hidden bg-white/60 dark:bg-slate-900/60 p-0.5 shadow-2xs"
+        className="hidden 2xl:flex items-center border border-(--color-concrete-300) dark:border-slate-800 rounded-xl overflow-hidden bg-white/60 dark:bg-slate-900/60 p-0.5 shadow-2xs"
         role="group"
         aria-label="字體大小調節"
       >
@@ -74,20 +74,20 @@ export default function ThemeToggle() {
           triggerHaptic('light');
           setIsOpen(!isOpen)}
         }
-        className="h-9 px-2.5 flex items-center gap-1.5 rounded-xl border border-(--color-concrete-300) dark:border-slate-800 bg-white/70 dark:bg-slate-900/70 text-(--color-ink-650) hover:text-(--color-ink-900) hover:border-slate-400 dark:hover:border-slate-700 transition-all duration-200 active:scale-95 shadow-2xs cursor-pointer"
+        className="h-[44px] w-[44px] sm:w-auto sm:px-2.5 flex items-center justify-center gap-1.5 rounded-xl border border-(--color-concrete-300) dark:border-slate-800 bg-white/70 dark:bg-slate-900/70 text-(--color-ink-650) hover:text-(--color-ink-900) hover:border-slate-400 dark:hover:border-slate-700 transition-all duration-200 active:scale-95 shadow-2xs cursor-pointer"
         aria-label="開啟閱讀偏好與色調設定"
         aria-expanded={isOpen}
         title={`當前色調：${activeThemeObj.label}（點擊調整閱讀色調與字級）`}
       >
         <span className="text-sm select-none" aria-hidden="true">{activeThemeObj.icon}</span>
         <span className="text-xs font-medium font-sans hidden sm:inline">{activeThemeObj.label}</span>
-        <span className="text-[10px] font-mono text-slate-400 dark:text-slate-500">▼</span>
+        <span className="hidden sm:inline text-[10px] font-mono text-slate-400 dark:text-slate-500">▼</span>
       </button>
 
       {/* Reader Settings Popover / Dropdown Modal */}
       {isOpen && (
         <div
-          className="absolute right-0 top-full mt-2 w-72 sm:w-80 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 p-4 shadow-2xl z-50 animate-fade-in-up"
+          className="fixed inset-x-3 top-20 max-h-[calc(100dvh-6rem)] overflow-y-auto sm:absolute sm:inset-x-auto sm:right-0 sm:top-full sm:mt-2 sm:w-80 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 p-4 shadow-2xl z-50 animate-fade-in-up"
           role="dialog"
           aria-label="閱讀與排版偏好設定"
         >

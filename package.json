@@ -3,6 +3,7 @@
   "version": "10.0.0",
   "private": true,
   "scripts": {
+    "validate:study-studio": "node scripts/validate-study-studio.mjs",
     "build": "pnpm --filter web build",
     "validate:data-syntax": "node scripts/validate-data-syntax.mjs",
     "validate:anti-slop": "node scripts/validate-anti-slop.mjs",

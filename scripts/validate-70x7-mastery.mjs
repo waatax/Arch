@@ -273,7 +273,9 @@ const mobileTabBarPath = path.join(webRoot, 'src', 'components', 'IOSMobileTabBa
 assert(fs.existsSync(mobileTabBarPath), 'iOS 行動端底部導覽列 IOSMobileTabBar.tsx 存在');
 const mobileTabBarContent = fs.readFileSync(mobileTabBarPath, 'utf-8');
 assert(mobileTabBarContent.includes('Home'), '底部導覽包含首頁');
-assert(mobileTabBarContent.includes('Compass'), '底部導覽包含建築之路');
+assert(mobileTabBarContent.includes("href: '/study-studio'") && mobileTabBarContent.includes('CalendarCheck'), '底部導覽包含考前計畫');
+const mainNavContent = fs.readFileSync(path.join(webRoot, 'src', 'components', 'Navbar.tsx'), 'utf-8');
+assert(mainNavContent.includes("href: '/pathway'"), '主選單仍可前往建築之路');
 assert(mobileTabBarContent.includes('BookOpen'), '底部導覽包含課程');
 assert(mobileTabBarContent.includes('PenTool'), '底部導覽包含模擬');
 assert(mobileTabBarContent.includes('Search'), '底部導覽包含全域搜尋');

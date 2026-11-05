@@ -3,7 +3,7 @@
 import React from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { Home, Compass, Gamepad2, BookOpen, PenTool, Search } from 'lucide-react';
+import { Home, CalendarCheck, Gamepad2, BookOpen, PenTool, Search } from 'lucide-react';
 import { triggerHaptic } from '@/lib/haptics';
 
 interface NavItem {
@@ -16,7 +16,7 @@ interface NavItem {
 const navItems: NavItem[] = [
   { href: '/', label: '首頁', icon: Home },
   { href: '/learn', label: '闖關', icon: Gamepad2 },
-  { href: '/pathway', label: '建築之路', icon: Compass },
+  { href: '/study-studio', label: '考前計畫', icon: CalendarCheck },
   { href: '/curriculum', label: '課程', icon: BookOpen },
   { href: '/practice', label: '模擬', icon: PenTool },
   { label: '搜尋', icon: Search, isAction: true },
@@ -33,7 +33,7 @@ export default function IOSMobileTabBar() {
   };
 
   return (
-    <div className="fixed bottom-3 inset-x-0 z-40 px-3 md:hidden pointer-events-none transition-all duration-300">
+    <div className="fixed bottom-[max(.75rem,env(safe-area-inset-bottom))] inset-x-0 z-40 px-3 md:hidden pointer-events-none transition-all duration-300">
       <nav
         aria-label="行動端快速導覽"
         className="pointer-events-auto mx-auto max-w-sm rounded-full bg-white/85 dark:bg-slate-900/85 backdrop-blur-2xl border border-slate-200/80 dark:border-white/15 shadow-2xl shadow-black/10 px-2 py-1.5 flex items-center justify-around"
@@ -47,7 +47,7 @@ export default function IOSMobileTabBar() {
                 key="search-btn"
                 type="button"
                 onClick={handleSearchClick}
-                className="flex flex-col items-center justify-center py-1 px-3 rounded-full text-slate-500 dark:text-slate-400 hover:text-blue-600 dark:hover:text-blue-400 active:scale-90 transition-transform cursor-pointer"
+                className="flex min-h-[48px] min-w-[44px] flex-col items-center justify-center py-1 px-1.5 rounded-full text-slate-500 dark:text-slate-400 hover:text-blue-600 dark:hover:text-blue-400 active:scale-90 transition-transform cursor-pointer"
                 aria-label="開啟全域搜尋 (Omnibar)"
               >
                 <div className="p-1 rounded-full bg-slate-100 dark:bg-slate-800">
@@ -65,7 +65,8 @@ export default function IOSMobileTabBar() {
               key={item.href}
               href={item.href!}
               onClick={() => triggerHaptic('selection')}
-              className={`flex flex-col items-center justify-center py-1 px-3 rounded-full active:scale-90 transition-all duration-200 ${
+              aria-current={isActive ? 'page' : undefined}
+              className={`flex min-h-[48px] min-w-[44px] flex-col items-center justify-center py-1 px-1.5 rounded-full active:scale-90 transition-all duration-200 ${
                 isActive
                   ? 'text-blue-700 dark:text-blue-400 font-bold'
                   : 'text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white'

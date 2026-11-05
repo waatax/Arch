@@ -1,6 +1,7 @@
 import { MetadataRoute } from 'next';
 import { topicSearchIndex } from '@/data/topicSearchIndex';
 import { COURSE_CATALOG } from '@/data/learnPath/catalog';
+import { studioLessons } from '@/data/studyStudio';
 
 export const dynamic = 'force-static';
 
@@ -10,6 +11,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   // 1. Static Hubs and Major Pages
   const staticRoutes = [
     '',
+    '/study-studio',
     '/learn',
     '/learn/review',
     '/pathway',
@@ -97,5 +99,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.7,
   }));
 
-  return [...staticRoutes, ...caseRoutes, ...subjectRoutes, ...topicRoutes, ...learnRoutes];
+  const studioRoutes = studioLessons.map((lesson) => ({ url: `${baseUrl}/study-studio/${lesson.slug}/`, lastModified: new Date('2026-11-05'), changeFrequency: 'monthly' as const, priority: 0.8 }));
+  return [...staticRoutes, ...caseRoutes, ...subjectRoutes, ...topicRoutes, ...learnRoutes, ...studioRoutes];
 }

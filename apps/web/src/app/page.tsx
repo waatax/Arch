@@ -6,6 +6,8 @@ import TopicDiscoveryHub from '@/components/discovery/TopicDiscoveryHub';
 import PersonalStudyHub from '@/components/discovery/PersonalStudyHub';
 import AllSubjectsDirectory from '@/components/discovery/AllSubjectsDirectory';
 import CurriculumExamPathwayGuide from '@/components/pedagogy/CurriculumExamPathwayGuide';
+import BeamSandbox from '@/components/studyStudio/BeamSandbox';
+import './study-studio/studio.css';
 import {
   IconTrussBeam,
   IconDraftingTools,
@@ -144,14 +146,14 @@ export default function Home() {
             </div>
             <ExpertCouncilBanner compact className="mb-6" />
             <h1 className="max-w-3xl font-serif text-[clamp(2.5rem,7vw,5.5rem)] font-bold leading-[1.1] tracking-[-.03em] text-slate-800 dark:text-slate-100">
-              把建築學懂，<br /><span className="text-blue-700 dark:text-blue-400">也把信心慢慢蓋起來。</span>
+              把建築學懂，<br /><span className="text-blue-700 dark:text-blue-400">把考前的每一步排好。</span>
             </h1>
             <p className="mt-7 max-w-2xl text-base leading-relaxed text-slate-600 dark:text-slate-400 sm:text-lg">
-              覺得力學很難？公式背不起來？沒關係，我們一步步來。從生活中的真實建築、動態圖解與步驟化的引導開始，讓每一次的學習都不再充滿挫折感。
+              從一個看得懂的圖解開始，再用小測驗找回信心。新增 30 個觀念短課，搭配教材範圍自選、段考計畫與錯題回想，陪你穩穩準備每次考試與統測。
             </p>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-              <Link href="/curriculum" className="group inline-flex min-h-14 items-center justify-center gap-3 rounded-2xl bg-blue-600 px-7 font-bold text-white shadow-lg shadow-blue-600/20 transition hover:bg-blue-700 hover:shadow-blue-600/30">
-                <Play className="size-4 fill-current" /> 從最簡單的第一章開始
+              <Link href="/study-studio" className="group inline-flex min-h-14 items-center justify-center gap-3 rounded-2xl bg-blue-600 px-7 font-bold text-white shadow-lg shadow-blue-600/20 transition hover:bg-blue-700 hover:shadow-blue-600/30">
+                <Play className="size-4 fill-current" /> 考前建築所：開始今天的小任務
                 <ArrowRight className="size-4 transition-transform group-hover:translate-x-1" />
               </Link>
               <Link href="/learn" className="group inline-flex min-h-14 items-center justify-center gap-3 rounded-2xl border-2 border-b-4 border-emerald-600 bg-emerald-500 px-7 font-bold text-white transition hover:bg-emerald-400 active:translate-y-[2px] active:border-b-2">
@@ -169,36 +171,8 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="relative mx-auto w-full max-w-lg lg:max-w-none" aria-label="Arch 學習流程示意">
-            <div className="relative aspect-[4/4.35] overflow-hidden rounded-[2.5rem] border border-blue-100/50 bg-white p-6 shadow-2xl shadow-blue-900/5 dark:border-blue-900/30 dark:bg-slate-900 sm:p-9">
-              <div className="absolute inset-0 bg-[url('/grid-pattern.svg')] opacity-5" />
-              <div className="relative flex h-full flex-col">
-                <div className="flex items-start justify-between border-b border-slate-100 dark:border-slate-800 pb-5">
-                  <div>
-                    <p className="font-mono text-[10px] tracking-[.2em] text-slate-400">TODAY&apos;S GENTLE PLAN</p>
-                    <h2 className="mt-2 font-serif text-2xl font-bold text-slate-800 dark:text-slate-200">今天，只完成一小步就好</h2>
-                  </div>
-                  <IconDraftingTools size={32} className="text-blue-500/80" />
-                </div>
-                <div className="my-auto space-y-3">
-                  {[['01', '看看生活中的梁受力', '輕鬆看 · 3 min'], ['02', '跟著老師慢慢畫圖', '無壓力示範 · 5 min'], ['03', '試著回答 2 個小問題', '隨意練習 · 5 min']].map(([n,t,m], i) => (
-                    <div key={n} className={`flex items-center gap-4 rounded-2xl border p-4 transition-colors ${i === 0 ? 'border-blue-200/60 bg-blue-50/50 dark:border-blue-900/40 dark:bg-blue-900/20' : 'border-slate-100 bg-slate-50/50 dark:border-slate-800/50 dark:bg-slate-800/20'}`}>
-                      <span className={`font-mono text-xs font-bold ${i === 0 ? 'text-blue-600 dark:text-blue-400' : 'text-slate-400'}`}>{n}</span>
-                      <div className="min-w-0 flex-1">
-                        <p className={`font-bold text-sm ${i === 0 ? 'text-blue-900 dark:text-blue-100' : 'text-slate-600 dark:text-slate-300'}`}>{t}</p>
-                        <p className="mt-1 text-xs text-slate-500">{m}</p>
-                      </div>
-                      {i === 0 && <span className="size-2 rounded-full bg-blue-500 shadow-[0_0_12px_#3b82f6]" />}
-                    </div>
-                  ))}
-                </div>
-                <div className="grid grid-cols-3 border-t border-slate-100 dark:border-slate-800 pt-5 text-center">
-                  <div><strong className="block text-xl font-bold text-slate-700 dark:text-slate-300 tabular-nums">120</strong><span className="text-[10px] text-slate-500">拆解主題</span></div>
-                  <div className="border-x border-slate-100 dark:border-slate-800"><strong className="block text-xl font-bold text-slate-700 dark:text-slate-300 tabular-nums">925</strong><span className="text-[10px] text-slate-500">歷屆試題</span></div>
-                  <div><strong className="block text-xl font-bold text-slate-700 dark:text-slate-300">8</strong><span className="text-[10px] text-slate-500">工程沙盒</span></div>
-                </div>
-              </div>
-            </div>
+          <div className="study-studio relative mx-auto w-full max-w-lg !bg-transparent !pb-0 lg:max-w-none" aria-label="可操作的簡支梁學習實驗">
+            <BeamSandbox />
           </div>
         </div>
       </section>

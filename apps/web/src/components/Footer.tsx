@@ -38,7 +38,7 @@ export default function Footer() {
                 108 課綱技術型高中標準
               </span>
               <span className="px-2.5 py-1 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-full text-slate-600 dark:text-slate-400">
-                13 科 · 111 逐頁主題
+                13 科 · 120 主題＋30 觀念短課
               </span>
               <span className="px-2.5 py-1 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-full text-slate-600 dark:text-slate-400">
                 統測五科全收錄 (925 題)

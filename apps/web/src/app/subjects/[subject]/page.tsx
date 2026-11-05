@@ -83,6 +83,9 @@ export default async function SubjectPage({ params }: { params: Promise<{ subjec
 
           {/* Action CTAs */}
           <div className="flex flex-wrap gap-3 pt-2">
+            <Link href={`/study-studio?view=library&subject=${subject.slug}`} className="inline-flex min-h-12 items-center justify-center rounded-xl bg-emerald-700 px-5 py-3 text-xs font-bold text-white hover:bg-emerald-800">
+              圖解短課與考前計畫 →
+            </Link>
             <Link
               href={`/subjects/${subject.slug}/${subject.topics[0]?.slug}`}
               className="inline-flex items-center justify-center rounded-xl bg-blue-600 hover:bg-blue-700 text-white text-xs font-bold px-5 py-3 transition-colors shadow-sm"
