@@ -1,3 +1,4 @@
+import { COURSE_CATALOG, SEMESTER_LIST } from '@/data/learnPath';
 import React from 'react';
 import Link from 'next/link';
 import { Metadata } from 'next';
@@ -23,7 +24,7 @@ export default function ReviewIndexPage() {
 
   return (
     <div className="mx-auto max-w-6xl px-4 py-8 sm:px-6 sm:py-12 space-y-12 min-h-screen">
-      {/* Hero Header */}
+      <section><h2 className="text-2xl font-bold">依學期選擇段考講義</h2>{SEMESTER_LIST.map(term => <details key={term.id} className="border-b py-3"><summary>{term.label}</summary><div className="flex flex-wrap gap-4 py-3">{COURSE_CATALOG.filter(course => course.semester === term.id).map(course => <Link className="underline" key={course.id} href={`/learn/${term.id}/${course.key}/#handout`}>{course.title}</Link>)}</div></details>)}</section>
       <header className="relative overflow-hidden rounded-3xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 p-6 sm:p-10 shadow-xs space-y-5">
         <div className="flex flex-wrap items-center gap-2">
           <span className="rounded-full bg-blue-600/10 px-3 py-1 text-xs font-mono font-bold text-blue-700 dark:text-blue-300 border border-blue-600/20">

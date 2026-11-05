@@ -1,3 +1,4 @@
+import TermHandout from '@/components/review/TermHandout';
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import CoursePath from '@/components/learn/CoursePath';
@@ -33,5 +34,5 @@ export default async function LearnCoursePage({ params }: { params: Promise<Para
     title: x.title,
     emoji: x.emoji,
   }));
-  return <CoursePath course={c} semesterLabel={sem.label} siblings={siblings} />;
+  return <><CoursePath course={c} semesterLabel={sem.label} siblings={siblings} /><TermHandout course={c} label={sem.label} /></>;
 }

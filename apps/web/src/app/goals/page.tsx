@@ -1,3 +1,4 @@
+import { examPracticeNotes } from '@/data/examPracticeNotes';
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import {
@@ -313,7 +314,7 @@ export default function GoalsPage() {
                         {profession.subjects.map((subject, subjectIndex) => (
                           <div key={subject.name} className="flex gap-4 rounded-xl border border-slate-200 bg-slate-50 p-4 dark:border-slate-700 dark:bg-slate-800/60">
                             <span className={`font-mono text-xs font-bold ${tone.icon}`}>{String(subjectIndex + 1).padStart(2, '0')}</span>
-                            <div><p className="text-sm font-bold text-slate-900 dark:text-white">{subject.name}</p>{subject.note && <p className="mt-1 text-xs leading-5 text-slate-500 dark:text-slate-400">{subject.note}</p>}</div>
+                            <div><p className="text-sm font-bold text-slate-900 dark:text-white">{subject.name}</p>{subject.note && <p className="mt-1 text-xs leading-5 text-slate-500 dark:text-slate-400">{subject.note}</p>}<details className="mt-2"><summary>分段講義與自測</summary><p className="my-2">{examPracticeNotes[subject.name]}</p><a className="underline" href="https://wwwc.moex.gov.tw/main/content/wfrmContentLink4.aspx?inc_url=1&amp;menu_id=154&amp;sub_menu_id=613">核對考選部命題大綱</a> · <a className="underline" href="https://wwwq.moex.gov.tw/exam/wFrmExamQandASearch.aspx?e=114180&amp;y=2025">114 年考畢試題</a></details></div>
                           </div>
                         ))}
                       </div>
