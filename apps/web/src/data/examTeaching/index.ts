@@ -5,5 +5,6 @@ import { draftingCases } from './drafting';
 import { mathematicsCases } from './mathematics';
 import { languageCases } from './languages';
 import { additionalCases } from './additional';
+import { deepeningCases } from './deepening';
 export type { ExamTeachingCase } from './types';
-export const examTeachingCases = [...mechanicsCases, ...materialsCases, ...surveyingCases, ...draftingCases, ...mathematicsCases, ...languageCases, ...additionalCases];
+export const examTeachingCases = [...mechanicsCases, ...materialsCases, ...surveyingCases, ...draftingCases, ...mathematicsCases, ...languageCases, ...additionalCases, ...deepeningCases];
