@@ -4,6 +4,7 @@ import { Fragment, useEffect, useMemo, useRef, useState } from 'react';
 import type { VisualFigureData } from '../data/types';
 import ChartRenderer from './ChartRenderer';
 import TableRenderer from './TableRenderer';
+import ExamSourceFigure from './pedagogy/ExamSourceFigure';
 import MathText from './MathText';
 import { isAnswerChoiceCorrect, isOfficialSingleChoiceCorrect } from '../lib/examAnswers';
 import type { ExamTeachingCase } from '../data/examTeaching/types';
@@ -25,6 +26,7 @@ export interface SimulationQuestion {
   requiresOfficialFigure: boolean;
   corruptedOcr?: boolean;
   figureImage?: string | null;
+  figureCaption?: string;
   visualData?: VisualFigureData;
   originalPage?: number;
   groupId?: string | null;
@@ -686,7 +688,8 @@ export default function ExamSimulator({ catalog }: { catalog: PracticeCatalog })
                 {/* Visual figure / Table / Chart */}
                 {question.visualData?.table && <TableRenderer data={question.visualData.table} />}
                 {question.visualData?.chart && <ChartRenderer data={question.visualData.chart} />}
-                {question.figureImage && (
+                {question.figureImage && question.figureCaption && <ExamSourceFigure src={question.figureImage} alt={`${question.sourceLabel}共同題組原頁`} caption={question.figureCaption} collapsed={Boolean(question.groupId && !startsGroup)} />}
+                {question.figureImage && !question.figureCaption && (
                   <figure className="mt-4 overflow-hidden rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-950 p-2 sm:p-4">
                     <a href={assetHref(question.figureImage)} target="_blank" rel="noreferrer" title="在新分頁放大本題圖面">
                       <img
@@ -839,7 +842,7 @@ export default function ExamSimulator({ catalog }: { catalog: PracticeCatalog })
                               <div className="mt-0.5"><MathText content={walkthrough.rule} /></div>
                             </li>
                             <li>
-                              <strong className="text-emerald-700 dark:text-emerald-300">4. 為什麼官方正解是對的？</strong>
+                              <strong className="text-emerald-700 dark:text-emerald-300">4. 核對官方答案與解析狀態</strong>
                               <div className="mt-0.5 text-emerald-950 dark:text-emerald-100"><MathText content={walkthrough.correct} /></div>
                             </li>
                           </ol>}

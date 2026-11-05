@@ -6,5 +6,7 @@ import { mathematicsCases } from './mathematics';
 import { languageCases } from './languages';
 import { additionalCases } from './additional';
 import { deepeningCases } from './deepening';
+import { sourceReadingCases } from './sourceReading';
+import { sharedCalculationCases } from './sharedCalculations';
 export type { ExamTeachingCase } from './types';
-export const examTeachingCases = [...mechanicsCases, ...materialsCases, ...surveyingCases, ...draftingCases, ...mathematicsCases, ...languageCases, ...additionalCases, ...deepeningCases];
+export const examTeachingCases = [...mechanicsCases, ...materialsCases, ...surveyingCases, ...draftingCases, ...mathematicsCases, ...languageCases, ...additionalCases, ...deepeningCases, ...sourceReadingCases, ...sharedCalculationCases];

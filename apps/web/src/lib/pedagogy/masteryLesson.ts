@@ -142,15 +142,15 @@ export function buildExamWalkthrough(
   const conceptHeading = bestConcept?.heading ?? title;
 
   const autoSteps: string[] = [
-    `步驟 1｜審題與題型定位：由題幹「${compact(question.excerpt, 76)}」辨識本題屬於「${title} — ${conceptHeading}」考點。${scopeWords}`,
+    `讀題提示 1｜先確認「${compact(question.excerpt, 76)}」要回答什麼，再檢查本章「${conceptHeading}」是否適用。${scopeWords}`,
     isCalc
       ? `步驟 2｜提取已知條件與單位：圈出題幹給定數據${extractedNums.length ? `（${extractedNums.join('、')}）` : ''}與支承/觀測條件，確認單位一致（例如 m 與 cm、kN 與 N、MPa 與 N/mm²）。`
       : `步驟 2｜鎖定規範與定義關鍵字：圈出題幹中的核心專有名詞、試驗標準或語境邏輯詞，對照課綱「${conceptHeading}」之標準定義。`,
-    `步驟 3｜套用核心原理推導：依據「${compact(rule.replace(/\n/g, '；'), 130)}」進行逐步檢核或代入關係式計算。`,
-    `步驟 4｜比對選項與鎖定正解：將推導結論對照四個選項，鎖定完全符合條件之官方正解 ${correctText}。`,
+    `讀題提示 3｜相關觀念：${compact(rule.replace(/\n/g, '；'), 130)}。本題的具體代入與推導仍待補充。`,
+    `讀題提示 4｜官方答案 ${correctText} 可供核對，但答案代號本身不能取代解題依據。`,
     isCalc
-      ? `步驟 5｜量綱與數量級驗算：將所得結果 ${correctText} 代回原關係式檢查正負號、小數點位數與工程物理意義是否合理。`
-      : `步驟 5｜排除誘答與回扣原文：確認其餘三個干擾選項因偷換條件、正負顛倒或超出原文範圍而不成立。`,
+      ? '讀題提示 5｜完成自己的列式後，再代回原條件檢查單位、正負號與數量級。此處尚無本題的逐步計算。'
+      : '讀題提示 5｜逐項指出原文或定義依據；此處尚無本題每個選項的個別排除解析。',
   ];
 
   return {
@@ -159,17 +159,13 @@ export function buildExamWalkthrough(
     restate: `這題其實在問：你能不能從題幹線索辨認「${title}（${conceptHeading}）」的適用規則。${scopeWords}`,
     clues: `先圈出關鍵物理量、幾何符號、材料名詞、單位（如 N, kN, MPa, cm, m）與「一定、可能、最大、最小、僅」等範圍限定詞。`,
     rule,
-    correct: `${autoSteps.join('\n')}\n官方標準答案是 ${question.answer}，即 ${correctText}。`,
+    correct: `官方標準答案是 ${question.answer}，即 ${correctText}。本站尚未完成本題的逐題推導與個別選項解析；上方為相關觀念及讀題引導。`,
     distractors: (['A', 'B', 'C', 'D'] as const)
       .filter((choice) => !answerChoices.includes(choice) && question.options?.[choice])
       .map((choice) => {
         const optText = compact(question.options?.[choice] ?? '', 80);
-        return isNegative
-          ? `${choice}「${optText}」：此項敘述符合「${conceptHeading}」之正確規範或定義，因本題要求選出錯誤/不符者，故不選（這不是官方答案）。`
-          : `${choice}「${optText}」：與「${conceptHeading}」之推導結果、方向正負號、CNS 規範數值或語境條件不符，為典型誘答干擾項（這不是官方答案），故排除。`;
+        return `${choice}「${optText}」：不是官方答案；本選項的個別排除理由尚待逐題查核，不以共用提示代替。`;
       }),
-    transfer: isCalc
-      ? `變式思考：若將題幹中的關鍵尺寸、角度或載重倍率改為原來的 2 倍，根據「${conceptHeading}」的公式次方關係，答案會變為幾倍？`
-      : `變式思考：若將題幹改為反向提問（或互換「${conceptHeading}」中的兩個比較對象），哪一個選項的關鍵字必須隨之修正才成立？`,
+    transfer: '請先完成本章已精講題型的遷移練習；本題專屬的變式解法仍待補充。改變條件後，需要重新確認規則適用範圍。',
   };
 }

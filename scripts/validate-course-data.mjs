@@ -308,6 +308,7 @@ const topicLayout = fs.readFileSync(
   path.join(root, 'apps', 'web', 'src', 'components', 'TopicPageLayout.tsx'),
   'utf8',
 );
+const sourceFigure = fs.readFileSync(path.join(root,'apps/web/src/components/pedagogy/ExamSourceFigure.tsx'),'utf8');
 const solutionSteps = fs.readFileSync(
   path.join(root, 'apps', 'web', 'src', 'lib', 'pedagogy', 'solutionSteps.ts'),
   'utf8',
@@ -426,8 +427,8 @@ if (
   errors.push('教學頁 client 不可載入完整題庫，且歷屆題必須每次最多增量顯示 5 題');
 }
 if (
-  !topicLayout.includes('loading="lazy"')
-  || !topicLayout.includes('decoding="async"')
+  !sourceFigure.includes('loading="lazy"')
+  || !topicLayout.includes('ExamSourceFigure') || !sourceFigure.includes('decoding="async"')
   || !topicLayout.includes('lesson-deferred-section')
   || !topicLayout.includes('navigator.clipboard?.writeText')
 ) {
@@ -450,7 +451,7 @@ if (
   || !examSimulator.includes('fetch(`${basePath}${shard.href}?v=${encodeURIComponent(catalog.version)}`')
   || !examSimulator.includes('payload.version !== catalog.version')
   || !examSimulator.includes("const [loading, setLoading] = useState(false)")
-  || !nextConfig.includes('publicExcludes: ["!practice-data/shards/**/*.json"]')
+  || !nextConfig.includes('"!practice-data/shards/**/*.json"') || !nextConfig.includes('"!exams/source-pages/**/*"')
 ) {
   errors.push('/practice 首屏不可序列化完整題庫，必須按開始後以 basePath 安全路徑載入分片並排除預快取');
 }

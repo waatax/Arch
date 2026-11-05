@@ -8,7 +8,7 @@ const withPWA = withPWAInit({
   disable: process.env.NODE_ENV === "development",
   // Question shards are fetched only after a learner starts a session. Keeping
   // them out of the precache avoids downloading the entire bank on first visit.
-  publicExcludes: ["!practice-data/shards/**/*.json"],
+  publicExcludes: ["!practice-data/shards/**/*.json", "!exams/source-pages/**/*"],
 });
 
 const nextConfig: NextConfig = {

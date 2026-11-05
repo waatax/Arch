@@ -48,6 +48,7 @@ function compactQuestion(question) {
     requiresOfficialFigure: question.requiresOfficialFigure,
     corruptedOcr: question.corruptedOcr,
     figureImage: question.figureImage,
+    figureCaption: question.figureCaption,
     visualData: question.visualData,
     originalPage: question.originalPage,
     groupId: question.groupId,

@@ -1,0 +1,278 @@
+{
+  "checkedAt": "2026-11-05",
+  "method": "Visually inspected official PDF full-page renders; tables transcribed only after comparison.",
+  "pages": [
+    {
+      "image": "/exams/source-pages/111-06-2-p9.png",
+      "page": 9,
+      "sourceUrl": "https://web1.tcte.edu.tw/EXAM/111_4y/downloader.php?obj=MTExLTR5LTA2LTIucGRm",
+      "sourcePdf": "111-4y-06-2.pdf",
+      "pdfSha256": "22851304c77d8220b6bc884191fbe79b3e4950d3243f98f061ae686f6d8d03b9",
+      "imageSha256": "061c483b94ca7a58407c6541d3ea3627973258eeb15f18d536f1de152716ac0c",
+      "renderArguments": [
+        "-f",
+        "9",
+        "-singlefile",
+        "-scale-to",
+        "1800",
+        "-png",
+        "111-4y-06-2.pdf"
+      ]
+    },
+    {
+      "image": "/exams/source-pages/111-e-p5.png",
+      "page": 5,
+      "sourceUrl": "https://web1.tcte.edu.tw/EXAM/111_4y/downloader.php?obj=MTExLTR5LTAwLWUucGRm",
+      "sourcePdf": "111-4y-00-e.pdf",
+      "pdfSha256": "4fef5462029cfac637fd1f6a1728cbc25b11e5972bccec8740dbed6ba1646296",
+      "imageSha256": "20bc59c74bc4e4c4e03c1c7e647b323553167a58f85cdfac31f54b1ae5317cbc",
+      "renderArguments": [
+        "-f",
+        "5",
+        "-singlefile",
+        "-scale-to",
+        "1800",
+        "-png",
+        "111-4y-00-e.pdf"
+      ]
+    },
+    {
+      "image": "/exams/source-pages/112-06-2-p2.png",
+      "page": 2,
+      "sourceUrl": "https://web1.tcte.edu.tw/EXAM/112_4y/downloader.php?obj=MTEyLTR5LTA2LTIucGRm",
+      "sourcePdf": "112-4y-06-2.pdf",
+      "pdfSha256": "52c51deaf5818990ec9ee970a59c1fee22a4a7814c1985a7556ac476f3e9ae2a",
+      "imageSha256": "74dd6c5d8f4e7848d332d5e182c02ff10d7082d737fc029d23be9ec30599318f",
+      "renderArguments": [
+        "-f",
+        "2",
+        "-singlefile",
+        "-scale-to",
+        "1800",
+        "-png",
+        "112-4y-06-2.pdf"
+      ]
+    },
+    {
+      "image": "/exams/source-pages/112-e-p6.png",
+      "page": 6,
+      "sourceUrl": "https://web1.tcte.edu.tw/EXAM/112_4y/downloader.php?obj=MTEyLTR5LTAwLWUucGRm",
+      "sourcePdf": "112-4y-00-e.pdf",
+      "pdfSha256": "4c748671ce0a16b6c8ced66e030f55b0f39adeeceb456f64086c2f8cacb590c2",
+      "imageSha256": "408cf734a4fb317a1a634c3783ad190f0edcb9fe4841b71c883141d009f55dc3",
+      "renderArguments": [
+        "-f",
+        "6",
+        "-singlefile",
+        "-scale-to",
+        "1800",
+        "-png",
+        "112-4y-00-e.pdf"
+      ]
+    },
+    {
+      "image": "/exams/source-pages/112-e-p7.png",
+      "page": 7,
+      "sourceUrl": "https://web1.tcte.edu.tw/EXAM/112_4y/downloader.php?obj=MTEyLTR5LTAwLWUucGRm",
+      "sourcePdf": "112-4y-00-e.pdf",
+      "pdfSha256": "4c748671ce0a16b6c8ced66e030f55b0f39adeeceb456f64086c2f8cacb590c2",
+      "imageSha256": "ea2d33948dc2166a69a5708abbe0c35e8f18284de8876df626e5ba69c13e3a7d",
+      "renderArguments": [
+        "-f",
+        "7",
+        "-singlefile",
+        "-scale-to",
+        "1800",
+        "-png",
+        "112-4y-00-e.pdf"
+      ]
+    },
+    {
+      "image": "/exams/source-pages/112-e-p8.png",
+      "page": 8,
+      "sourceUrl": "https://web1.tcte.edu.tw/EXAM/112_4y/downloader.php?obj=MTEyLTR5LTAwLWUucGRm",
+      "sourcePdf": "112-4y-00-e.pdf",
+      "pdfSha256": "4c748671ce0a16b6c8ced66e030f55b0f39adeeceb456f64086c2f8cacb590c2",
+      "imageSha256": "b667fd57dd9a89014b3c65b3fff731c1f2430fd7b5da200977b7d315ff4811d9",
+      "renderArguments": [
+        "-f",
+        "8",
+        "-singlefile",
+        "-scale-to",
+        "1800",
+        "-png",
+        "112-4y-00-e.pdf"
+      ]
+    },
+    {
+      "image": "/exams/source-pages/113-06-1-p3.png",
+      "page": 3,
+      "sourceUrl": "https://web1.tcte.edu.tw/EXAM/113_4y/downloader.php?obj=MTEzLTR5LTA2LTEucGRm",
+      "sourcePdf": "113-4y-06-1.pdf",
+      "pdfSha256": "4ae1153672d9273adb398821baa65f261cbe819259b5bf72754fbc6ce4309820",
+      "imageSha256": "7e355838f64696a3407e844fcf8fa28d49e92a0812df8cfa5f23e906d28d9a9b",
+      "renderArguments": [
+        "-f",
+        "3",
+        "-singlefile",
+        "-scale-to",
+        "1800",
+        "-png",
+        "113-4y-06-1.pdf"
+      ]
+    },
+    {
+      "image": "/exams/source-pages/113-06-1-p6.png",
+      "page": 6,
+      "sourceUrl": "https://web1.tcte.edu.tw/EXAM/113_4y/downloader.php?obj=MTEzLTR5LTA2LTEucGRm",
+      "sourcePdf": "113-4y-06-1.pdf",
+      "pdfSha256": "4ae1153672d9273adb398821baa65f261cbe819259b5bf72754fbc6ce4309820",
+      "imageSha256": "eebc0c434968ab45d8cc5301d52bbdf73714eb1a06a85078f057dc3b7ac3e102",
+      "renderArguments": [
+        "-f",
+        "6",
+        "-singlefile",
+        "-scale-to",
+        "1800",
+        "-png",
+        "113-4y-06-1.pdf"
+      ]
+    },
+    {
+      "image": "/exams/source-pages/113-e-p6.png",
+      "page": 6,
+      "sourceUrl": "https://web1.tcte.edu.tw/EXAM/113_4y/downloader.php?obj=MTEzLTR5LTAwLWUucGRm",
+      "sourcePdf": "113-4y-00-e.pdf",
+      "pdfSha256": "f2fb06bb73fbcc7fee21c0a9baf7f668dfa0b43308c59211624ea13377ca3df0",
+      "imageSha256": "b788ae4f193acd27fae53b2661a0ef3483a757ceade36558f46aba85ffad37bb",
+      "renderArguments": [
+        "-f",
+        "6",
+        "-singlefile",
+        "-scale-to",
+        "1800",
+        "-png",
+        "113-4y-00-e.pdf"
+      ]
+    },
+    {
+      "image": "/exams/source-pages/113-e-p7.png",
+      "page": 7,
+      "sourceUrl": "https://web1.tcte.edu.tw/EXAM/113_4y/downloader.php?obj=MTEzLTR5LTAwLWUucGRm",
+      "sourcePdf": "113-4y-00-e.pdf",
+      "pdfSha256": "f2fb06bb73fbcc7fee21c0a9baf7f668dfa0b43308c59211624ea13377ca3df0",
+      "imageSha256": "34fd5f1d054a3c870bf9de38805f6cb92f032e00de773e775e89741c6932cb59",
+      "renderArguments": [
+        "-f",
+        "7",
+        "-singlefile",
+        "-scale-to",
+        "1800",
+        "-png",
+        "113-4y-00-e.pdf"
+      ]
+    },
+    {
+      "image": "/exams/source-pages/113-e-p8.png",
+      "page": 8,
+      "sourceUrl": "https://web1.tcte.edu.tw/EXAM/113_4y/downloader.php?obj=MTEzLTR5LTAwLWUucGRm",
+      "sourcePdf": "113-4y-00-e.pdf",
+      "pdfSha256": "f2fb06bb73fbcc7fee21c0a9baf7f668dfa0b43308c59211624ea13377ca3df0",
+      "imageSha256": "c6cad197f7781a77146660831df245115f6cb4c24f018b500d25b92421007600",
+      "renderArguments": [
+        "-f",
+        "8",
+        "-singlefile",
+        "-scale-to",
+        "1800",
+        "-png",
+        "113-4y-00-e.pdf"
+      ]
+    },
+    {
+      "image": "/exams/source-pages/114-e-p7.png",
+      "page": 7,
+      "sourceUrl": "https://web1.tcte.edu.tw/EXAM/114_4y/downloader.php?obj=MTE0LTR5LTAwLWUucGRm",
+      "sourcePdf": "114-4y-00-e.pdf",
+      "pdfSha256": "1b1768452e5870d1a746f09e4d5583c7b166a2888ef632532ad4466364ff1dcf",
+      "imageSha256": "9644b15480cff52e7e45c2a6ae12b9b037b633bdcb1f1dbce674c4049d374bda",
+      "renderArguments": [
+        "-f",
+        "7",
+        "-singlefile",
+        "-scale-to",
+        "1800",
+        "-png",
+        "114-4y-00-e.pdf"
+      ]
+    },
+    {
+      "image": "/exams/source-pages/114-e-p8.png",
+      "page": 8,
+      "sourceUrl": "https://web1.tcte.edu.tw/EXAM/114_4y/downloader.php?obj=MTE0LTR5LTAwLWUucGRm",
+      "sourcePdf": "114-4y-00-e.pdf",
+      "pdfSha256": "1b1768452e5870d1a746f09e4d5583c7b166a2888ef632532ad4466364ff1dcf",
+      "imageSha256": "f0c082bf14a96acf4c2929925b1141d2c9c90d791580299712d42f6e7777cb74",
+      "renderArguments": [
+        "-f",
+        "8",
+        "-singlefile",
+        "-scale-to",
+        "1800",
+        "-png",
+        "114-4y-00-e.pdf"
+      ]
+    },
+    {
+      "image": "/exams/source-pages/115-c-p11.png",
+      "page": 11,
+      "sourceUrl": "https://web1.tcte.edu.tw/EXAM/115_4y/downloader.php?obj=MTE1LTR5LTAwLWMucGRm",
+      "sourcePdf": "115-4y-00-c.pdf",
+      "pdfSha256": "6b454d65902f2fb326b1ac1ae28aa44749532e30369ba2c599db97d20a542135",
+      "imageSha256": "049a6b33f68a8ccdff2872d1394fd6a3f6fac9aadd56b71cbe371ccbd9641854",
+      "renderArguments": [
+        "-f",
+        "11",
+        "-singlefile",
+        "-scale-to",
+        "1800",
+        "-png",
+        "115-4y-00-c.pdf"
+      ]
+    },
+    {
+      "image": "/exams/source-pages/115-e-p7.png",
+      "page": 7,
+      "sourceUrl": "https://web1.tcte.edu.tw/EXAM/115_4y/downloader.php?obj=MTE1LTR5LTAwLWUucGRm",
+      "sourcePdf": "115-4y-00-e.pdf",
+      "pdfSha256": "c13e298c3b05b890c410deac4f8f694905f19fcd3a63bb4fcc0662ee6cb2768a",
+      "imageSha256": "2cb763db46008703c9e9992b8348928a602d3651947d87d0c427d54006a93b5e",
+      "renderArguments": [
+        "-f",
+        "7",
+        "-singlefile",
+        "-scale-to",
+        "1800",
+        "-png",
+        "115-4y-00-e.pdf"
+      ]
+    },
+    {
+      "image": "/exams/source-pages/115-e-p8.png",
+      "page": 8,
+      "sourceUrl": "https://web1.tcte.edu.tw/EXAM/115_4y/downloader.php?obj=MTE1LTR5LTAwLWUucGRm",
+      "sourcePdf": "115-4y-00-e.pdf",
+      "pdfSha256": "c13e298c3b05b890c410deac4f8f694905f19fcd3a63bb4fcc0662ee6cb2768a",
+      "imageSha256": "d86848c7bd5417dbeca44de40044ea4ccc309a8a470cd0fbedd46526d2edbc12",
+      "renderArguments": [
+        "-f",
+        "8",
+        "-singlefile",
+        "-scale-to",
+        "1800",
+        "-png",
+        "115-4y-00-e.pdf"
+      ]
+    }
+  ]
+}

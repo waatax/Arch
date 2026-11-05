@@ -3,6 +3,8 @@ import common from '../../../../../data/registry/common-exam-questions.json';
 import pageMap from '../../../../../data/registry/exam-page-map.json';
 import { examTeachingCases, type ExamTeachingCase } from '@/data/examTeaching';
 import { examRouteCorrections } from '@/data/examTeaching/corrections';
+import { examSourceVisuals, examSharedQuestionVisuals } from '@/data/examTeaching/sourceVisuals';
+import type { VisualFigureData } from '@/data/types';
 
 export interface CanonicalExamQuestion {
   id: string; year: number; questionNo: number; answer: string; excerpt: string;
@@ -13,6 +15,8 @@ export interface CanonicalExamQuestion {
   teaching?: ExamTeachingCase;
   previousRoute?: string | null;
   needsOriginal?: boolean;
+  visualData?: VisualFigureData;
+  figureCaption?: string;
 }
 interface RawQuestion extends CanonicalExamQuestion { quarantined?: boolean; evidenceLevel?: string }
 export const rawExamQuestions = [...professional.questions, ...common.questions] as RawQuestion[];
@@ -24,10 +28,15 @@ export const canonicalExamQuestions: CanonicalExamQuestion[] = rawExamQuestions
     const teaching = guides.get(raw.id);
     const correction = examRouteCorrections[raw.id];
     const lessonRoute = correction ? `/subjects/${correction}` : raw.lessonRoute;
-    const figureImage = raw.figureImage || figures[raw.id]?.figureImage;
+    const sourceVisual = raw.groupId ? examSourceVisuals[raw.groupId] : examSharedQuestionVisuals[raw.id];
+    const figureImage = sourceVisual?.image || raw.figureImage || figures[raw.id]?.figureImage;
     const question = { ...raw, ...figures[raw.id], figureImage, lessonRoute, teaching, previousRoute: correction ? raw.lessonRoute : undefined };
     return {
       ...question,
+      // Older chart/table reconstructions were illustrative and contradicted the source.
+      // Only visually checked transcriptions may enter the live exam renderer.
+      visualData: sourceVisual?.table ? {table:sourceVisual.table} : undefined,
+      figureCaption: sourceVisual?.caption,
       subject: lessonRoute?.split('/')[2] || raw.subject,
       topic: lessonRoute?.split('/')[3] || raw.topic,
       excerpt: teaching?.display?.excerpt || raw.excerpt,

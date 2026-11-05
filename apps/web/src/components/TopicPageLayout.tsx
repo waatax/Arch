@@ -4,7 +4,9 @@ import { useState, useEffect, useRef, useMemo } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { Binoculars, BookOpenCheck, Building2, CircleCheckBig, Lightbulb, Route, School, SearchCheck, Sparkles, Flame, Check, Maximize2 } from 'lucide-react';
-import type { SubjectData, TopicContent } from '@/data/types';
+import type { SubjectData, TopicContent, VisualFigureData } from '@/data/types';
+import TableRenderer from '@/components/TableRenderer';
+import ExamSourceFigure from '@/components/pedagogy/ExamSourceFigure';
 import { useTheme } from '@/components/ThemeProvider';
 import MathText from '@/components/MathText';
 import InteractiveVisualizer from '@/components/visualizers/InteractiveVisualizer';
@@ -76,6 +78,8 @@ export interface MappedExamQuestion {
   questionNo?: number;
   excerpt: string;
   figureImage?: string | null;
+  figureCaption?: string;
+  visualData?: VisualFigureData;
   answer: string;
   options?: Partial<Record<'A' | 'B' | 'C' | 'D', string>>;
   teaching?: ExamTeachingCase;
@@ -2143,25 +2147,14 @@ export default function TopicPageLayout({ subject, topic, mappedExamQuestions, t
                     ) : null}
                   </div>
 
-                  {q.passage && <details className="rounded-xl border border-blue-200 p-4 dark:border-blue-800" open={!repeatedPassage}><summary className="cursor-pointer font-bold">{q.groupTitle || '本題共同文章與題組資料'}{repeatedPassage ? '（同前題，展開重讀）' : ''}</summary><p className="mt-3 whitespace-pre-wrap text-sm leading-7">{q.passage}</p></details>}
+                  {q.passage && <details className="rounded-xl border border-blue-200 p-4 dark:border-blue-800" open={!repeatedPassage}><summary className="cursor-pointer font-bold">{q.groupTitle || '本題共同文章與題組資料'}{repeatedPassage ? '（同前題，展開重讀）' : ''}</summary><p className="mt-3 whitespace-pre-wrap text-sm leading-7">{q.passage}</p>{q.visualData?.table && <TableRenderer data={q.visualData.table} />}</details>}
                   {q.needsOriginal && <p className="rounded-xl bg-amber-50 p-3 text-sm text-amber-900">本題的圖面或共同條件未完整擷取。請先開啟上方官方題本核對，再作答。</p>}
                   {q.answer === '送分' ? <p className="text-sm font-bold">官方公告本題送分；可供討論，不作為熟練度或經驗值依據。</p> : q.answer.length > 1 ? <p className="text-sm">官方更正：選 {q.answer.split('').join(' 或 ')} 任一選項均接受，仍為單選題。</p> : null}
                   <div className="font-bold leading-relaxed text-slate-900 dark:text-white text-base">
                     <MathText content={q.excerpt} />
                   </div>
 
-                  {q.figureImage && (
-                    <figure className="overflow-hidden rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-950 p-2">
-                      {/* eslint-disable-next-line @next/next/no-img-element */}
-                      <img
-                        src={`${process.env.NEXT_PUBLIC_BASE_PATH ?? ''}${q.figureImage}`}
-                        alt={`第 ${q.questionNo} 題圖面`}
-                        loading="lazy"
-                        decoding="async"
-                        className="mx-auto max-h-80 w-auto object-contain"
-                      />
-                    </figure>
-                  )}
+                  {q.figureImage && <ExamSourceFigure src={q.figureImage} alt={`${q.year} 年第 ${q.questionNo} 題${q.figureCaption?'共同題組原頁':'圖面'}`} caption={q.figureCaption} collapsed={Boolean(q.figureCaption && mappedExamQuestions.slice(0,idx).some(p=>p.figureImage===q.figureImage))} />}
 
                   <div className="exam-choice-grid grid gap-2 sm:grid-cols-2 text-xs">
                     {(['A', 'B', 'C', 'D'] as const).map((choice) => {
@@ -2263,7 +2256,7 @@ export default function TopicPageLayout({ subject, topic, mappedExamQuestions, t
                       <div className="space-y-4 rounded-2xl border border-blue-100 bg-blue-50/50 p-5 dark:border-blue-900/40 dark:bg-blue-950/20">
                         <h3 className="flex items-center gap-2 text-base font-bold text-blue-900 dark:text-blue-100">
                           <Lightbulb className="size-5 text-amber-500" />
-                          {walkthrough.reviewed ? '逐題深度推導：每一步都有明確依據' : '六段深度推導與知識點對照'}
+                          {walkthrough.reviewed ? '逐題深度推導：每一步都有明確依據' : '逐題解析待補：相關觀念與讀題引導'}
                         </h3>
                         {walkthrough.reviewed ? (
                           <ol className="list-decimal space-y-2.5 pl-5 text-sm leading-7 text-slate-800 dark:text-slate-200">
@@ -2299,7 +2292,7 @@ export default function TopicPageLayout({ subject, topic, mappedExamQuestions, t
                               <MathText content={walkthrough.rule} />
                             </div>
                             <div className="rounded-xl border border-emerald-200/70 bg-white/80 p-3.5 text-xs leading-relaxed text-slate-700 dark:border-emerald-800/60 dark:bg-slate-900/70 dark:text-slate-300">
-                              <strong className="text-emerald-800 dark:text-emerald-300 block mb-1">4. 為什麼這個答案是對的？</strong>
+                              <strong className="text-emerald-800 dark:text-emerald-300 block mb-1">4. 核對官方答案與解析狀態</strong>
                               <MathText content={walkthrough.correct} />
                             </div>
                           </div>
