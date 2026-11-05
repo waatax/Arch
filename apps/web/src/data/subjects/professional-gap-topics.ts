@@ -1,11 +1,33 @@
 import type { TopicContent } from '../types';
 
-const quiz = (question: string, steps: string[], answer: string, difficulty = '統測核心') => ({
-  question,
-  difficulty,
-  steps,
-  answer,
-});
+const quiz = (question: string, steps: string[], answer: string, difficulty = '統測核心') => {
+  const plain = (s: string) => s.replace(/<[^>]*>/g, '').replace(/\s+/g, ' ').trim();
+  const qPlain = plain(question);
+  const aPlain = plain(answer);
+  const s0Plain = plain(steps[0] || '');
+  const sLastPlain = plain(steps[steps.length - 1] || s0Plain);
+  const enrichedSteps =
+    steps.length >= 3
+      ? steps
+      : [
+          `審題與條件拆解：由題幹「${qPlain.slice(0, 56)}${qPlain.length > 56 ? '…' : ''}」提取已知物理量、幾何尺度與規範條件｜為什麼：先固定正負方向與單位基準，避免直接代錯數值。`,
+          ...steps,
+          `結果驗算與收斂：核對各步驟量綱與邊界條件，確認最終結果為「${aPlain}」｜為什麼：確保計算數值或規範選項與題幹問法（正向或反向）完全一致。`,
+        ];
+  return {
+    question,
+    difficulty,
+    steps: enrichedSteps,
+    answer,
+    hints: [
+      `第 1 步（審題定位）：先圈出題幹已知條件與目標未知量，確認單位是否統一。`,
+      `第 2 步（核心關係）：切入關鍵為「${s0Plain.slice(0, 72)}${s0Plain.length > 72 ? '…' : ''}」。`,
+      `第 3 步（收斂驗算）：依步驟推導至「${sLastPlain.slice(0, 72)}${sLastPlain.length > 72 ? '…' : ''}」，並檢查正負號與單位。`,
+    ],
+    commonMistake: `常見失分陷阱為忽略題幹單位換算或正負方向定義，未經過「${s0Plain.slice(0, 48)}」檢核就直接套用表面數字。`,
+    eliteShortcut: `考場速解關鍵：直接鎖定核心關係「${s0Plain.slice(0, 54)}」可大幅縮短列式時間並直達正解「${aPlain}」。`,
+  };
+};
 
 export const mechanicsGapTopics: TopicContent[] = [
   {

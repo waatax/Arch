@@ -21,7 +21,7 @@ import { getTopicRealLifeGuide } from '@/lib/pedagogy/realLifeHelpers';
 import { getTopicInterestHook } from '@/lib/pedagogy/interestHooks';
 import { getTopicDeepKnowledge } from '@/lib/pedagogy/topicKnowledgeExpander';
 import { getSevenIterationPacks } from '@/lib/pedagogy/sevenIterationEnrichment';
-import { buildDetailedSolution } from '@/lib/pedagogy/solutionSteps';
+import { buildDetailedSolution, buildPracticeHints } from '@/lib/pedagogy/solutionSteps';
 import { getLearningSources } from '@/lib/pedagogy/learningSources';
 import { buildExamWalkthrough, getMasteryLesson } from '@/lib/pedagogy/masteryLesson';
 import { isAnswerChoiceCorrect, isOfficialSingleChoiceCorrect } from '@/lib/examAnswers';
@@ -1932,6 +1932,7 @@ export default function TopicPageLayout({ subject, topic, mappedExamQuestions, t
               const isPracticeShown = !!showPracticeAnswers[index];
               const isHintShown = !!showPracticeHints[index];
               const selfStatus = practiceSelfEval[index];
+              const effectiveHints = buildPracticeHints(practice, topic.title);
               return (
                 <div
                   key={index}
@@ -1961,13 +1962,13 @@ export default function TopicPageLayout({ subject, topic, mappedExamQuestions, t
                         <span className="rounded-md bg-slate-100 dark:bg-slate-800 px-2 py-0.5 text-[11px] font-mono font-normal text-slate-600 dark:text-slate-400">
                           難度：{practice.difficulty}
                         </span>
-                        {practice.hints && practice.hints.length > 0 && (
+                        {effectiveHints.length > 0 && (
                           <button
                             type="button"
                             onClick={() => setShowPracticeHints((prev) => ({ ...prev, [index]: !prev[index] }))}
                             className="rounded-md border border-amber-200 dark:border-amber-800 bg-amber-50 dark:bg-amber-950/40 px-2.5 py-0.5 text-xs font-medium text-amber-800 dark:text-amber-300 hover:bg-amber-100 cursor-pointer"
                           >
-                            {isHintShown ? '🙈 收合破題提示' : `💡 先看破題提示 (${practice.hints.length})`}
+                            {isHintShown ? '🙈 收合破題提示' : `💡 先看破題提示 (${effectiveHints.length})`}
                           </button>
                         )}
                         <button
@@ -1982,11 +1983,11 @@ export default function TopicPageLayout({ subject, topic, mappedExamQuestions, t
                     </div>
                   </div>
 
-                  {isHintShown && practice.hints && practice.hints.length > 0 && (
+                  {isHintShown && effectiveHints.length > 0 && (
                     <div className="print:hidden mt-3 rounded-xl border border-amber-200/80 dark:border-amber-900/60 bg-amber-50/60 dark:bg-amber-950/25 p-3.5 text-xs space-y-1.5 text-amber-950 dark:text-amber-100">
                       <p className="font-bold text-amber-800 dark:text-amber-300">💡 解題方向提示（先自己列式算看看）：</p>
                       <ul className="list-disc pl-4 space-y-1">
-                        {practice.hints.map((hint) => (
+                        {effectiveHints.map((hint) => (
                           <li key={hint}>
                             <MathText content={hint} />
                           </li>

@@ -2,14 +2,14 @@
   "scope": "111–115 official sources; semantic explanations cover only authored cases",
   "canonical": 925,
   "excluded": 185,
-  "explained": 134,
-  "pending": 791,
-  "routeCorrections": 58,
-  "numericChecks": 106,
+  "explained": 159,
+  "pending": 766,
+  "routeCorrections": 109,
+  "numericChecks": 116,
   "chapters": [
     {
       "route": "/subjects/mechanics/structural-failures",
-      "questions": 0,
+      "questions": 2,
       "types": [
         {
           "id": "114-1-1",
@@ -26,12 +26,16 @@
         {
           "id": "114-1-40",
           "type": "拉力試驗：降伏、極限強度與斷後伸長率"
+        },
+        {
+          "id": "114-1-11",
+          "type": "雙斜索懸吊系統之延性降伏極限載重分析"
         }
       ]
     },
     {
       "route": "/subjects/mechanics/parallel-force-systems",
-      "questions": 0,
+      "questions": 2,
       "types": [
         {
           "id": "112-1-1",
@@ -45,7 +49,7 @@
     },
     {
       "route": "/subjects/mechanics/nonconcurrent-force-systems",
-      "questions": 0,
+      "questions": 2,
       "types": [
         {
           "id": "114-1-2",
@@ -71,7 +75,7 @@
     },
     {
       "route": "/subjects/mechanics/shear-properties",
-      "questions": 0,
+      "questions": 2,
       "types": [
         {
           "id": "115-1-6",
@@ -84,12 +88,16 @@
         {
           "id": "112-1-6",
           "type": "同面積圓形斷面梁與矩形斷面梁之最大容許剪力比"
+        },
+        {
+          "id": "112-1-5",
+          "type": "由剪切變形求剪力模數 G 再換算彈性模數 E"
         }
       ]
     },
     {
       "route": "/subjects/mechanics/units-vectors",
-      "questions": 0,
+      "questions": 2,
       "types": [
         {
           "id": "113-1-5",
@@ -107,7 +115,7 @@
     },
     {
       "route": "/subjects/mechanics/force-equilibrium",
-      "questions": 15,
+      "questions": 12,
       "types": [
         {
           "id": "113-1-5",
@@ -133,7 +141,7 @@
     },
     {
       "route": "/subjects/mechanics/centroid",
-      "questions": 8,
+      "questions": 7,
       "types": [
         {
           "id": "114-1-17",
@@ -147,7 +155,7 @@
     },
     {
       "route": "/subjects/mechanics/friction",
-      "questions": 8,
+      "questions": 6,
       "types": [
         {
           "id": "114-1-2",
@@ -165,7 +173,7 @@
     },
     {
       "route": "/subjects/mechanics/truss",
-      "questions": 10,
+      "questions": 9,
       "types": [
         {
           "id": "111-1-8",
@@ -179,7 +187,7 @@
     },
     {
       "route": "/subjects/mechanics/beam",
-      "questions": 24,
+      "questions": 23,
       "types": [
         {
           "id": "111-1-1",
@@ -209,7 +217,7 @@
     },
     {
       "route": "/subjects/mechanics/stress-strain",
-      "questions": 35,
+      "questions": 28,
       "types": [
         {
           "id": "113-1-12",
@@ -246,12 +254,28 @@
         {
           "id": "114-1-40",
           "type": "拉力試驗：降伏、極限強度與斷後伸長率"
+        },
+        {
+          "id": "112-1-5",
+          "type": "由剪切變形求剪力模數 G 再換算彈性模數 E"
+        },
+        {
+          "id": "113-1-13",
+          "type": "由最大剪應力反推平面應力元素正向應力範圍"
+        },
+        {
+          "id": "114-1-14",
+          "type": "單軸拉力桿件在任意斜截面上的正應力與剪應力"
+        },
+        {
+          "id": "114-1-11",
+          "type": "雙斜索懸吊系統之延性降伏極限載重分析"
         }
       ]
     },
     {
       "route": "/subjects/mechanics/spatial-force-systems",
-      "questions": 0,
+      "questions": 2,
       "types": [
         {
           "id": "113-1-5",
@@ -260,12 +284,20 @@
         {
           "id": "114-1-4",
           "type": "空間力向量方向餘弦平方和恆等式"
+        },
+        {
+          "id": "113-1-4",
+          "type": "空間力系平衡方程式數目"
+        },
+        {
+          "id": "112-1-3",
+          "type": "空間非共點非平行力系＝6 個平衡方程"
         }
       ]
     },
     {
       "route": "/subjects/mechanics/plane-stress",
-      "questions": 0,
+      "questions": 3,
       "types": [
         {
           "id": "113-1-12",
@@ -274,12 +306,20 @@
         {
           "id": "114-1-12",
           "type": "雙軸純剪等大異號應力下之體積應變恆為零"
+        },
+        {
+          "id": "113-1-13",
+          "type": "由最大剪應力反推平面應力元素正向應力範圍"
+        },
+        {
+          "id": "114-1-14",
+          "type": "單軸拉力桿件在任意斜截面上的正應力與剪應力"
         }
       ]
     },
     {
       "route": "/subjects/materials/green-building-materials",
-      "questions": 0,
+      "questions": 1,
       "types": [
         {
           "id": "115-1-35",
@@ -331,7 +371,7 @@
     },
     {
       "route": "/subjects/materials/cement-composition",
-      "questions": 0,
+      "questions": 2,
       "types": [
         {
           "id": "113-1-22",
@@ -348,12 +388,16 @@
         {
           "id": "115-1-23",
           "type": "由四大熟料礦物百分比判別 CNS 61 水泥類型"
+        },
+        {
+          "id": "111-1-40",
+          "type": "卜特蘭水泥四大熟料化合物之水化與強度特性"
         }
       ]
     },
     {
       "route": "/subjects/materials/cement-types",
-      "questions": 17,
+      "questions": 11,
       "types": [
         {
           "id": "115-1-38",
@@ -378,12 +422,24 @@
         {
           "id": "115-1-23",
           "type": "由四大熟料礦物百分比判別 CNS 61 水泥類型"
+        },
+        {
+          "id": "111-1-40",
+          "type": "卜特蘭水泥四大熟料化合物之水化與強度特性"
+        },
+        {
+          "id": "112-1-40",
+          "type": "水硬性水泥細度試驗法（篩析、濁度計、氣透儀與風分機）"
+        },
+        {
+          "id": "112-1-30",
+          "type": "新拌混凝土澆置後產生塑性收縮龜裂之成因"
         }
       ]
     },
     {
       "route": "/subjects/materials/cement-vicat",
-      "questions": 3,
+      "questions": 1,
       "types": [
         {
           "id": "113-1-22",
@@ -392,12 +448,20 @@
         {
           "id": "114-1-22",
           "type": "CNS 15992 水泥砂漿流度試驗百分比計算"
+        },
+        {
+          "id": "114-1-38",
+          "type": "CNS 13961 混凝土拌和回收水之抗壓強度與凝結時間規範"
+        },
+        {
+          "id": "112-1-28",
+          "type": "卜特蘭水泥凝結行為：氯化鈣早強劑、閃凝與假凝辨析"
         }
       ]
     },
     {
       "route": "/subjects/materials/cement-strength",
-      "questions": 0,
+      "questions": 3,
       "types": [
         {
           "id": "115-1-25",
@@ -406,12 +470,20 @@
         {
           "id": "114-1-22",
           "type": "CNS 15992 水泥砂漿流度試驗百分比計算"
+        },
+        {
+          "id": "112-1-40",
+          "type": "水硬性水泥細度試驗法（篩析、濁度計、氣透儀與風分機）"
+        },
+        {
+          "id": "114-1-38",
+          "type": "CNS 13961 混凝土拌和回收水之抗壓強度與凝結時間規範"
         }
       ]
     },
     {
       "route": "/subjects/materials/cement-storage",
-      "questions": 0,
+      "questions": 3,
       "types": [
         {
           "id": "113-1-22",
@@ -420,6 +492,14 @@
         {
           "id": "115-1-21",
           "type": "水泥受潮風化比重降低之工地品管處置"
+        },
+        {
+          "id": "112-1-28",
+          "type": "卜特蘭水泥凝結行為：氯化鈣早強劑、閃凝與假凝辨析"
+        },
+        {
+          "id": "112-1-30",
+          "type": "新拌混凝土澆置後產生塑性收縮龜裂之成因"
         }
       ]
     },
@@ -559,7 +639,7 @@
     },
     {
       "route": "/subjects/materials/green-materials",
-      "questions": 5,
+      "questions": 4,
       "types": [
         {
           "id": "111-1-37",
@@ -577,7 +657,7 @@
     },
     {
       "route": "/subjects/surveying/surveying-fundamentals",
-      "questions": 0,
+      "questions": 3,
       "types": [
         {
           "id": "115-2-2",
@@ -594,6 +674,14 @@
         {
           "id": "113-2-8",
           "type": "水平角觀測中誤差引起之橫向點位偏移誤差"
+        },
+        {
+          "id": "114-2-5",
+          "type": "由基本地形圖平面坐標數值判別 TWD97 TM2° 投影坐標系"
+        },
+        {
+          "id": "113-2-6",
+          "type": "TWD97 臺灣二度分帶（TM2°）坐標合理範圍判讀"
         }
       ]
     },
@@ -793,7 +881,7 @@
     },
     {
       "route": "/subjects/surveying/coordinate-computation",
-      "questions": 6,
+      "questions": 4,
       "types": [
         {
           "id": "115-2-14",
@@ -818,12 +906,20 @@
         {
           "id": "114-2-14",
           "type": "由反方位角加右旋水平角推算方位角"
+        },
+        {
+          "id": "114-2-5",
+          "type": "由基本地形圖平面坐標數值判別 TWD97 TM2° 投影坐標系"
+        },
+        {
+          "id": "113-2-6",
+          "type": "TWD97 臺灣二度分帶（TM2°）坐標合理範圍判讀"
         }
       ]
     },
     {
       "route": "/subjects/surveying/area-and-error",
-      "questions": 13,
+      "questions": 12,
       "types": [
         {
           "id": "115-2-2",
@@ -849,12 +945,21 @@
     },
     {
       "route": "/subjects/drafting/bim-concepts",
-      "questions": 0,
-      "types": []
+      "questions": 2,
+      "types": [
+        {
+          "id": "113-2-31",
+          "type": "帷幕牆（Curtain Wall）方案評估：3D 量體立面面積量化比較"
+        },
+        {
+          "id": "115-2-38",
+          "type": "3D 正方體組構模型算量與地坪載重上限檢核（輕質混凝土比重 1.4）"
+        }
+      ]
     },
     {
       "route": "/subjects/drafting/building-codes-far",
-      "questions": 1,
+      "questions": 3,
       "types": [
         {
           "id": "112-2-32",
@@ -863,6 +968,14 @@
         {
           "id": "113-2-40",
           "type": "陽台外推超過 2.0 m 計入建築面積與建蔽率大小比較"
+        },
+        {
+          "id": "115-2-35",
+          "type": "建築技術規則樓梯級高 R 與級深 T 規範（小學校舍樓梯）"
+        },
+        {
+          "id": "115-2-37",
+          "type": "建築技術規則「陽臺免計入建築面積」之深度與 10% 上限計算"
         }
       ]
     },
@@ -890,7 +1003,7 @@
     },
     {
       "route": "/subjects/drafting/civil-architectural-drawings",
-      "questions": 0,
+      "questions": 2,
       "types": [
         {
           "id": "115-2-23",
@@ -911,12 +1024,16 @@
         {
           "id": "112-2-26",
           "type": "結構平面圖構材符號辨識：樓板 (S/CS) 與基礎 (F) 之區別"
+        },
+        {
+          "id": "113-2-39",
+          "type": "CNS 11567 建築製圖「配置圖（Site Plan）」應載明事項"
         }
       ]
     },
     {
       "route": "/subjects/drafting/lines-and-lettering",
-      "questions": 24,
+      "questions": 22,
       "types": [
         {
           "id": "115-2-22",
@@ -937,12 +1054,16 @@
         {
           "id": "115-2-21",
           "type": "由圖面資訊深度（鋼筋型號、數量、細部接頭）判別圖說種類"
+        },
+        {
+          "id": "112-2-31",
+          "type": "幾何製圖原理：三角板角度組合與圓外切正六邊形作法"
         }
       ]
     },
     {
       "route": "/subjects/drafting/scale",
-      "questions": 6,
+      "questions": 5,
       "types": [
         {
           "id": "114-2-23",
@@ -960,7 +1081,7 @@
     },
     {
       "route": "/subjects/drafting/orthographic-projection",
-      "questions": 12,
+      "questions": 11,
       "types": [
         {
           "id": "111-2-33",
@@ -981,6 +1102,10 @@
         {
           "id": "111-2-30",
           "type": "斜投影圖（半斜圖）保持正面立面實形與記錄深度尺寸之優勢"
+        },
+        {
+          "id": "115-2-38",
+          "type": "3D 正方體組構模型算量與地坪載重上限檢核（輕質混凝土比重 1.4）"
         }
       ]
     },
@@ -1000,7 +1125,7 @@
     },
     {
       "route": "/subjects/drafting/architectural-plan",
-      "questions": 15,
+      "questions": 14,
       "types": [
         {
           "id": "114-2-23",
@@ -1025,12 +1150,16 @@
         {
           "id": "114-2-24",
           "type": "透視投影四大基準術語縮寫（PP、HL、GL、SP）空間定位"
+        },
+        {
+          "id": "115-2-37",
+          "type": "建築技術規則「陽臺免計入建築面積」之深度與 10% 上限計算"
         }
       ]
     },
     {
       "route": "/subjects/drafting/architectural-elevation",
-      "questions": 12,
+      "questions": 11,
       "types": [
         {
           "id": "113-2-28",
@@ -1039,12 +1168,16 @@
         {
           "id": "111-2-30",
           "type": "斜投影圖（半斜圖）保持正面立面實形與記錄深度尺寸之優勢"
+        },
+        {
+          "id": "113-2-31",
+          "type": "帷幕牆（Curtain Wall）方案評估：3D 量體立面面積量化比較"
         }
       ]
     },
     {
       "route": "/subjects/drafting/dimensioning-and-symbols",
-      "questions": 9,
+      "questions": 5,
       "types": [
         {
           "id": "115-2-22",
@@ -1061,22 +1194,38 @@
         {
           "id": "112-2-28",
           "type": "CNS 11567 建築製圖正三角形修改符號 △ 判讀"
+        },
+        {
+          "id": "113-2-24",
+          "type": "CNS 工程製圖與 CAD 尺度標註規範（半徑、直徑、角度與去角）"
+        },
+        {
+          "id": "113-2-39",
+          "type": "CNS 11567 建築製圖「配置圖（Site Plan）」應載明事項"
+        },
+        {
+          "id": "115-2-35",
+          "type": "建築技術規則樓梯級高 R 與級深 T 規範（小學校舍樓梯）"
         }
       ]
     },
     {
       "route": "/subjects/drafting/cad-basics",
-      "questions": 0,
+      "questions": 2,
       "types": [
         {
           "id": "112-2-28",
           "type": "CNS 11567 建築製圖正三角形修改符號 △ 判讀"
+        },
+        {
+          "id": "113-2-24",
+          "type": "CNS 工程製圖與 CAD 尺度標註規範（半徑、直徑、角度與去角）"
         }
       ]
     },
     {
       "route": "/subjects/drafting/drafting-instruments",
-      "questions": 0,
+      "questions": 2,
       "types": [
         {
           "id": "115-2-26",
@@ -1089,6 +1238,10 @@
         {
           "id": "114-2-28",
           "type": "比例尺熱脹冷縮誤差率定與跨比例尺換算出圖實長"
+        },
+        {
+          "id": "112-2-31",
+          "type": "幾何製圖原理：三角板角度組合與圓外切正六邊形作法"
         }
       ]
     },
@@ -1132,7 +1285,7 @@
     },
     {
       "route": "/subjects/chinese/classical-literature",
-      "questions": 22,
+      "questions": 21,
       "types": [
         {
           "id": "115-chinese-7",
@@ -1142,11 +1295,15 @@
     },
     {
       "route": "/subjects/chinese/modern-literature",
-      "questions": 0,
+      "questions": 2,
       "types": [
         {
           "id": "115-chinese-7",
           "type": "敘述視線由整體聚焦局部"
+        },
+        {
+          "id": "114-chinese-8",
+          "type": "現代飲食散文林文月〈炒米粉〉語境成語判讀"
         }
       ]
     },
@@ -1162,7 +1319,7 @@
     },
     {
       "route": "/subjects/chinese/reading-comprehension",
-      "questions": 144,
+      "questions": 143,
       "types": [
         {
           "id": "115-chinese-9",
@@ -1171,22 +1328,34 @@
         {
           "id": "115-chinese-5",
           "type": "語詞史料的證據邊界"
+        },
+        {
+          "id": "112-chinese-8",
+          "type": "應用文啟事寫作與病句診斷：主詞暗換導致語法邏輯斷裂"
+        },
+        {
+          "id": "114-chinese-8",
+          "type": "現代飲食散文林文月〈炒米粉〉語境成語判讀"
         }
       ]
     },
     {
       "route": "/subjects/chinese/writing-expression",
-      "questions": 0,
+      "questions": 2,
       "types": [
         {
           "id": "115-chinese-9",
           "type": "語句排序：代詞回指、並列與結果"
+        },
+        {
+          "id": "112-chinese-8",
+          "type": "應用文啟事寫作與病句診斷：主詞暗換導致語法邏輯斷裂"
         }
       ]
     },
     {
       "route": "/subjects/chinese/cultural-knowledge",
-      "questions": 17,
+      "questions": 15,
       "types": [
         {
           "id": "115-chinese-5",
@@ -1196,7 +1365,7 @@
     },
     {
       "route": "/subjects/english/vocabulary-phrases",
-      "questions": 50,
+      "questions": 48,
       "types": [
         {
           "id": "115-english-7",
@@ -1205,12 +1374,16 @@
         {
           "id": "115-english-9",
           "type": "畫線字同義改寫與詞性核對"
+        },
+        {
+          "id": "112-english-6",
+          "type": "工程與職場英語字彙：工資（wages）與因果語境判讀"
         }
       ]
     },
     {
       "route": "/subjects/english/grammar-patterns",
-      "questions": 0,
+      "questions": 1,
       "types": [
         {
           "id": "115-english-9",
@@ -1224,7 +1397,7 @@
     },
     {
       "route": "/subjects/english/conversation-daily-use",
-      "questions": 50,
+      "questions": 49,
       "types": [
         {
           "id": "115-english-11",
@@ -1234,7 +1407,7 @@
     },
     {
       "route": "/subjects/english/reading-comprehension",
-      "questions": 70,
+      "questions": 67,
       "types": [
         {
           "id": "111-english-33",
@@ -1243,37 +1416,58 @@
         {
           "id": "115-english-42",
           "type": "細節題的數量、時序與同義改寫"
+        },
+        {
+          "id": "113-english-29",
+          "type": "列車時刻表（Timetable）多欄位交叉判讀與星期條件陷阱"
         }
       ]
     },
     {
       "route": "/subjects/english/vocabulary-professional",
-      "questions": 0,
-      "types": []
+      "questions": 2,
+      "types": [
+        {
+          "id": "112-english-6",
+          "type": "工程與職場英語字彙：工資（wages）與因果語境判讀"
+        },
+        {
+          "id": "115-english-25",
+          "type": "淡江大橋（Tamkang Bridge）建築工程克漏字：交通流量（traffic flow）"
+        }
+      ]
     },
     {
       "route": "/subjects/english/grammar-clauses",
-      "questions": 0,
+      "questions": 1,
       "types": [
         {
           "id": "115-english-23",
           "type": "讓步連接詞與完整子句"
+        },
+        {
+          "id": "115-english-26",
+          "type": "分詞片語修飾與關係子句簡化：selected through an international design competition"
         }
       ]
     },
     {
       "route": "/subjects/english/reading-infographics",
-      "questions": 0,
+      "questions": 2,
       "types": [
         {
           "id": "111-english-33",
           "type": "公告的主題、限制與活動日期分層"
+        },
+        {
+          "id": "113-english-29",
+          "type": "列車時刻表（Timetable）多欄位交叉判讀與星期條件陷阱"
         }
       ]
     },
     {
       "route": "/subjects/english/cloze-passage-structure",
-      "questions": 40,
+      "questions": 35,
       "types": [
         {
           "id": "115-english-21",
@@ -1286,22 +1480,38 @@
         {
           "id": "115-english-24",
           "type": "不定詞目的與全段主旨一致"
+        },
+        {
+          "id": "115-english-25",
+          "type": "淡江大橋（Tamkang Bridge）建築工程克漏字：交通流量（traffic flow）"
+        },
+        {
+          "id": "115-english-26",
+          "type": "分詞片語修飾與關係子句簡化：selected through an international design competition"
+        },
+        {
+          "id": "115-english-27",
+          "type": "與現在事實相反之假設語氣比喻：as if a dancer were lifting..."
         }
       ]
     },
     {
       "route": "/subjects/english/grammar-mastery",
-      "questions": 0,
+      "questions": 1,
       "types": [
         {
           "id": "115-english-24",
           "type": "不定詞目的與全段主旨一致"
+        },
+        {
+          "id": "115-english-27",
+          "type": "與現在事實相反之假設語氣比喻：as if a dancer were lifting..."
         }
       ]
     },
     {
       "route": "/subjects/english/workplace-communication",
-      "questions": 0,
+      "questions": 1,
       "types": [
         {
           "id": "115-english-11",
@@ -1311,7 +1521,7 @@
     },
     {
       "route": "/subjects/english/reading-advanced",
-      "questions": 0,
+      "questions": 1,
       "types": [
         {
           "id": "115-english-42",
@@ -1321,8 +1531,17 @@
     },
     {
       "route": "/subjects/english/translation-writing",
-      "questions": 0,
-      "types": []
+      "questions": 2,
+      "types": [
+        {
+          "id": "115-english-26",
+          "type": "分詞片語修飾與關係子句簡化：selected through an international design competition"
+        },
+        {
+          "id": "115-english-27",
+          "type": "與現在事實相反之假設語氣比喻：as if a dancer were lifting..."
+        }
+      ]
     },
     {
       "route": "/subjects/math-c/functions-graphs",

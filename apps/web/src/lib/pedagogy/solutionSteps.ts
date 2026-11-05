@@ -31,11 +31,70 @@ function explainWhy(step: string) {
 }
 
 /**
+ * 為自我練習題生成具針對性的三階破題提示；若原始 hints 含通用樣板句則自動升級為題目專屬提示。
+ */
+export function buildPracticeHints(item: PracticeItem, topicTitle?: string): string[] {
+  const existing = (item.hints ?? []).map((h) => h.trim()).filter(Boolean);
+  const hasGeneric = existing.some((h) =>
+    /分析題目核心條件與|先判斷空格所需之詞性或句型語法功能|將已知數值代入公式並注意單位換算/.test(h),
+  );
+  if (existing.length >= 2 && !hasGeneric) {
+    return existing;
+  }
+
+  const rawSteps = (item.steps ?? []).map((s) => s.split('｜為什麼：')[0].trim()).filter(Boolean);
+  const firstStep = compact(rawSteps[0] ?? '', 84);
+  const secondStep = compact(rawSteps[1] ?? rawSteps[0] ?? '', 84);
+  const qSnippet = compact(item.question, 64);
+
+  return [
+    `第 1 步（審題與條件定位）：先從「${qSnippet}」圈出已知數據、關鍵專有名詞與提問方向（注意單位與正負號）。`,
+    firstStep
+      ? `第 2 步（核心公式／定律切入）：本題破題關鍵為「${firstStep}」。`
+      : `第 2 步（核心公式／定律切入）：對照《${topicTitle ?? '本章'}》核心公式或規範定義列出關係式。`,
+    rawSteps.length > 1
+      ? `第 3 步（推導與驗算收斂）：接著依「${secondStep}」完成計算或選項排除，並檢核答案量綱。`
+      : `第 3 步（推導與驗算收斂）：將條件代入關係式求得結果，並反推檢查是否完全符合題幹限制。`,
+  ];
+}
+
+function expandShortSteps(rawSteps: string[], question: string, answer: string): string[] {
+  if (rawSteps.length >= 3) return rawSteps;
+  const expanded: string[] = [];
+  for (const s of rawSteps) {
+    // Only split on '；' or '。' when there are no HTML tags or LaTeX $ inside that step
+    if (!/<[^>]*>|\$/.test(s) && !s.includes('｜為什麼：') && (s.includes('；') || s.split('。').filter(Boolean).length >= 2)) {
+      const clauses = s
+        .split(/[；。]/)
+        .map((c) => c.trim())
+        .filter((c) => c.length >= 6);
+      if (clauses.length >= 2) {
+        expanded.push(...clauses.map((c) => `${c}。`));
+        continue;
+      }
+    }
+    expanded.push(s);
+  }
+  if (expanded.length < 3) {
+    expanded.unshift(
+      `提取題幹條件：由「${compact(question, 60)}」確認已知條件、適用規範或公式變數｜為什麼：先固定基準與單位，避免直接代錯公式。`,
+    );
+  }
+  if (expanded.length < 3) {
+    expanded.push(
+      `核對結論與單位：對照推導結果，確認完全符合「${compact(answer, 60)}」｜為什麼：檢查正負號、小數點位數與題幹正反向問法一致。`,
+    );
+  }
+  return expanded;
+}
+
+/**
  * 將既有作者詳解包進一致的五段解題 SOP。原始推導不會被改寫或省略；
  * 補入的是讀題定位、規則選擇、陷阱排除與答案檢核，讓短詳解也可被學生逐步重現。
  */
 export function buildDetailedSolution(item: PracticeItem) {
-  const original = item.steps.map((step) => step.trim()).filter(Boolean);
+  const rawOriginal = item.steps.map((step) => step.trim()).filter(Boolean);
+  const original = expandShortSteps(rawOriginal, item.question, item.answer);
   const steps = [
     `先用白話重述：這題要我們根據「${compact(item.question)}」找出一個數值、關係或判斷。先不計算，說清楚最後要回答什麼。`,
     '畫出思考地圖：把已知、未知、限制、單位分成四欄；可以畫圖的題目一定先畫，並在圖上標記方向、位置或前後關係。',

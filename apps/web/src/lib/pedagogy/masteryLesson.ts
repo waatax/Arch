@@ -120,14 +120,19 @@ export function buildExamWalkthrough(
     }
   }
 
+  const bestFormula = (bestConcept as { formula?: string } | undefined)?.formula;
   const rule = bestConcept
-    ? `${bestConcept.heading}：${compact(bestConcept.body.replace(/<[^>]*>/g, ''), 200)}`
+    ? `${bestConcept.heading}：${compact(bestConcept.body.replace(/<[^>]*>/g, ''), 200)}${bestFormula ? `\n核心公式／關係式：${bestFormula}` : ''}`
     : topic?.desc
     ? compact(topic.desc, 170)
     : '依據 108 課綱與統測命題標準，解題首重核心公式量綱、題幹邊界條件與空間/物理因果關係。';
 
-  const isNegative = /不|非|錯誤|不可|何者有誤|並非/.test(question.excerpt);
+  const isNegative = /不|非|錯誤|不可|何者有誤|並非|NOT/i.test(question.excerpt);
   const isCalc = /求|計算|多少|幾|大小|比值|面積|高程|距離|力矩|應力|強度|座標|=|\d+\s*(cm|mm|m|kN|N|MPa|kgf|°|%)/i.test(combinedText);
+  const extractedNums = [...new Set(question.excerpt.match(/\d+(?:\.\d+)?\s*(?:cm²|mm²|m²|cm|mm|m|kN|N|MPa|GPa|kgf|°|%|g|kg|小時|分鐘|秒)?/g) ?? [])]
+    .map((s) => s.trim())
+    .filter((s) => s.length > 0)
+    .slice(0, 5);
 
   const scopeWords = isNegative
     ? '題幹含否定語（反向提問），最後務必核對你選出的是「不符合」或「錯誤」的項目。'
@@ -139,10 +144,13 @@ export function buildExamWalkthrough(
   const autoSteps: string[] = [
     `步驟 1｜審題與題型定位：由題幹「${compact(question.excerpt, 76)}」辨識本題屬於「${title} — ${conceptHeading}」考點。${scopeWords}`,
     isCalc
-      ? `步驟 2｜提取已知條件與單位：圈出題幹給定的數值、幾何尺寸、支承/觀測條件與單位，確認是否需要先做單位統一（例如 m 與 mm、kN 與 N）。`
-      : `步驟 2｜鎖定規範與定義關鍵字：圈出題幹中的核心專有名詞、試驗標準或語境連接詞，對照課綱「${conceptHeading}」之標準定義。`,
-    `步驟 3｜套用核心原理推導：依據「${compact(rule, 110)}」進行逐步檢核或代入關係式計算。`,
-    `步驟 4｜比對選項與排除干擾：將推導結論對照四個選項，鎖定完全符合條件之官方正解 ${correctText}。`,
+      ? `步驟 2｜提取已知條件與單位：圈出題幹給定數據${extractedNums.length ? `（${extractedNums.join('、')}）` : ''}與支承/觀測條件，確認單位一致（例如 m 與 cm、kN 與 N、MPa 與 N/mm²）。`
+      : `步驟 2｜鎖定規範與定義關鍵字：圈出題幹中的核心專有名詞、試驗標準或語境邏輯詞，對照課綱「${conceptHeading}」之標準定義。`,
+    `步驟 3｜套用核心原理推導：依據「${compact(rule.replace(/\n/g, '；'), 130)}」進行逐步檢核或代入關係式計算。`,
+    `步驟 4｜比對選項與鎖定正解：將推導結論對照四個選項，鎖定完全符合條件之官方正解 ${correctText}。`,
+    isCalc
+      ? `步驟 5｜量綱與數量級驗算：將所得結果 ${correctText} 代回原關係式檢查正負號、小數點位數與工程物理意義是否合理。`
+      : `步驟 5｜排除誘答與回扣原文：確認其餘三個干擾選項因偷換條件、正負顛倒或超出原文範圍而不成立。`,
   ];
 
   return {

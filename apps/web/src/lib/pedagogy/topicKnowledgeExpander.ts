@@ -16,7 +16,7 @@ export interface TopicDeepKnowledge {
     step3: string;
   };
   examTrend: {
-    frequency: '⭐⭐⭐⭐⭐ 每屆必考' | '⭐⭐⭐⭐ 高頻核心' | '⭐⭐⭐ 常見題型';
+    frequency: '⭐⭐⭐⭐⭐ 每屆必考' | '⭐⭐⭐⭐ 高頻核心' | '⭐⭐⭐ 常見題型' | (string & {});
     keyQuestionTypes: string[];
     killerTrick: string;
   };
@@ -29,7 +29,7 @@ export interface TopicDeepKnowledge {
 }
 
 const TOPIC_EXAM_TREND_OVERRIDES: Record<string, {
-  frequency: '⭐⭐⭐⭐⭐ 每屆必考' | '⭐⭐⭐⭐ 高頻核心' | '⭐⭐⭐ 常見題型';
+  frequency: '⭐⭐⭐⭐⭐ 每屆必考' | '⭐⭐⭐⭐ 高頻核心' | '⭐⭐⭐ 常見題型' | (string & {});
   keyQuestionTypes: string[];
   killerTrick: string;
   decisionFlow?: { step1: string; step2: string; step3: string };
@@ -496,9 +496,644 @@ const TOPIC_EXAM_TREND_OVERRIDES: Record<string, {
     keyQuestionTypes: [
       '型態一：BIM（建築資訊模型 Building Information Modeling）參數化連動特性（一處修改，平、立、剖面與數量明細表自動同步更新）與傳統 2D CAD 之本質差異（如 111-2-40、113-2-40、114-2-40、115-2-40）',
       '型態二：LOD（Level of Development 模型發展程度）100（概念體量）→ 200（近似幾何）→ 300（精確施工圖幾何）→ 350（含介面干涉）→ 400（製造加工組裝）→ 500（竣工營運維護）分級（如 112-2-39）',
-      '型態三：3D 管線碰撞檢測（Clash Detection）、4D（加時間工期排程）、5D（加成本估算）、6D（加永續能耗分析）、7D（加設施營運維護 FM）維度定義与 IFC 開放交換格式',
+      '型態三：3D 管線碰撞檢測（Clash Detection）、4D（加時間工期排程）、5D（加成本估算）、6D（加永續能耗分析）、7D（加設施營運維護 FM）維度定義與 IFC 開放交換格式',
     ],
     killerTrick: 'BIM 維度記憶法：3D（空間幾何 + 碰撞檢查）→ 4D（+ 時間進度 Time）→ 5D（+ 經費成本 Cost）→ 6D（+ 綠建築能耗）→ 7D（+ 營運維護 FM）！',
+  },
+  // === 5. Math-C (統測數學 C) ===
+  'math-c/functions-graphs': {
+    frequency: '⭐⭐⭐⭐⭐ 每屆必考',
+    keyQuestionTypes: [
+      '型態一：直角坐標平面上兩點距離公式、內分點公式 P = (nA + mB)/(m+n) 與三角形重心坐標 G = (A+B+C)/3（如 111-math-c-3、112-math-c-2、114-math-c-1）',
+      '型態二：二次函數 y = a(x-h)² + k 配方法求頂點坐標、對稱軸 x = h、開口方向及閉區間 [p, q] 上的最大值與最小值（如 111-math-c-8、112-math-c-11、113-math-c-8）',
+      '型態三：函數定義域、值域與圖形平移（左加右減 x、上加下減 y）及對稱變換判讀（如 114-math-c-5、115-math-c-2）',
+    ],
+    killerTrick: '二次函數閉區間求極值：先算頂點橫坐標 h = -b/(2a)，檢查 h 是否落在區間內；離對稱軸 x = h 越遠的端點，函數值偏離頂點越遠！',
+  },
+  'math-c/trigonometry': {
+    frequency: '⭐⭐⭐⭐⭐ 每屆必考',
+    keyQuestionTypes: [
+      '型態一：廣義角三角函數象限正負號（「全、正、切、餘」ASTC）、同界角化簡與平方關係 sin²θ + cos²θ = 1、sinθ ± cosθ 平方互求（如 111-math-c-4、112-math-c-3、113-math-c-3）',
+      '型態二：和差角公式 sin(α±β)、cos(α±β)、tan(α±β) 與二倍角公式 sin2θ = 2sinθcosθ、cos2θ = 2cos²θ - 1 = 1 - 2sin²θ 化簡求值（如 111-math-c-22、112-math-c-6、114-math-c-6）',
+      '型態三：正弦、餘弦函數 y = a·sin(bx + c) + d 之振幅 |a|、週期 2π/|b| 與正餘弦疊合 R = √(a² + b²) 最大最小值（如 111-math-c-23、113-math-c-9、115-math-c-4）',
+    ],
+    killerTrick: '看到已知 sinθ + cosθ = k 求 sinθcosθ 或 sin2θ：直接兩邊平方 1 + 2sinθcosθ = k²，立刻得出 sin2θ = 2sinθcosθ = k² - 1！',
+  },
+  'math-c/vectors': {
+    frequency: '⭐⭐⭐⭐⭐ 每屆必考',
+    keyQuestionTypes: [
+      '型態一：平面向量坐標表示法 a = (x₂-x₁, y₂-y₁)、線性組合、向量長度 |a| = √(x²+y²) 與平行條件 x₁y₂ - x₂y₁ = 0（如 111-math-c-16、112-math-c-4、114-math-c-2）',
+      '型態二：平面向量內積 a·b = x₁x₂ + y₁y₂ = |a||b|cosθ 求兩向量夾角 θ、垂直條件 a·b = 0 與正射影長 |a·b|/|b|（如 113-math-c-25、114-math-c-18、115-math-c-8）',
+      '型態三：利用 |a + b|² = |a|² + 2(a·b) + |b|² 展開求向量和差長度，以及三點共線分點係數和 α + β = 1',
+    ],
+    killerTrick: '向量兩大黃金鐵律：「平行看行列式 x₁y₂ = x₂y₁（分量成比例）；垂直看內積 x₁x₂ + y₁y₂ = 0」，看到長度與內積混考必平方展開！',
+  },
+  'math-c/algebra': {
+    frequency: '⭐⭐⭐⭐⭐ 每屆必考',
+    keyQuestionTypes: [
+      '型態一：多項式除法原理 f(x) = g(x)q(x) + r(x)、餘式定理 f(a) = r 與因式定理 f(a) = 0 求未知係數（如 111-math-c-5、112-math-c-1、113-math-c-1、115-math-c-1）',
+      '型態二：一元二次方程式 ax² + bx + c = 0 判別式 D = b² - 4ac（實根、重根、無實根）與根與係數關係（韋達定理 α+β = -b/a、αβ = c/a，如 111-math-c-10、112-math-c-12、114-math-c-3）',
+      '型態三：分式與根式化簡、部分分式拆解及三次多項式除以二次式求一次餘式 ax + b（如 113-math-c-12、115-math-c-5）',
+    ],
+    killerTrick: '求 f(x) 除以 (x-a)(x-b) 的餘式：直接設餘式 r(x) = mx + n，代入 x = a 與 x = b 解二元一次聯立，完全不用做長除法！',
+  },
+  'math-c/lines-circles': {
+    frequency: '⭐⭐⭐⭐⭐ 每屆必考',
+    keyQuestionTypes: [
+      '型態一：直線斜率 m = Δy/Δx、點斜式 y - y₀ = m(x - x₀)、兩直線平行（m₁ = m₂）與垂直（m₁m₂ = -1）及點到直線距離公式 d = |ax₀+by₀+c|/√(a²+b²)（如 111-math-c-7、113-math-c-2、114-math-c-4）',
+      '型態二：圓的標準式 (x-h)² + (y-k)² = r² 與一般式 x² + y² + dx + ey + f = 0 配方求圓心 (-d/2, -e/2) 及半徑 r = ½√(d²+e²-4f)（如 111-math-c-9、112-math-c-16）',
+      '型態三：圓與直線關係（相割 d < r 求弦長 2√(r²-d²)、相切 d = r 求切線方程式與切線長 √(PC²-r²)，如 113-math-c-4、115-math-c-6）',
+    ],
+    killerTrick: '已知直線 ax + by + c = 0：平行線直接設 ax + by + k = 0；垂直線直接「係數對調、中間變號」設 bx - ay + k = 0，代入通過點秒求 k！',
+  },
+  'math-c/sequences-series': {
+    frequency: '⭐⭐⭐⭐ 高頻核心',
+    keyQuestionTypes: [
+      '型態一：等差數列一般項 a_n = a₁ + (n-1)d、等差中項 b = (a+c)/2 與前 n 項和 S_n = n(a₁+a_n)/2 = n[2a₁+(n-1)d]/2（如 111-math-c-2、112-math-c-13、114-math-c-7）',
+      '型態二：等比數列一般項 a_n = a₁·r^(n-1)、等比中項 b² = ac、前 n 項和 S_n = a₁(1-rⁿ)/(1-r) 與無窮等比級數收斂和 S = a₁/(1-r)（|r| < 1，如 112-math-c-17、113-math-c-20）',
+      '型態三：Σ 級數求和公式（Σk = n(n+1)/2、Σk² = n(n+1)(2n+1)/6）與分項對消法 Σ 1/[k(k+1)] = 1 - 1/(n+1)（如 115-math-c-7）',
+    ],
+    killerTrick: '等差數列若有奇數項（如 9 項），前 9 項和 S₉ 直接等於「9 × 正中央第 5 項 a₅」，不必分別求首項 a₁ 與公差 d！',
+  },
+  'math-c/permutations-combinations': {
+    frequency: '⭐⭐⭐⭐ 高頻核心',
+    keyQuestionTypes: [
+      '型態一：加法原理（分類相加）、乘法原理（分步相乘）、直線排列 P(n,r)、相鄰綁一起與不相鄰插空隙問題（如 111-math-c-15、113-math-c-7）',
+      '型態二：組合數 C(n,r) = C(n, n-r) 選取問題、分組分堆與二項式定理 (ax + by)ⁿ 一般項 C(n,k)(ax)^(n-k)(by)^k 指定次方係數（如 112-math-c-20、114-math-c-14）',
+      '型態三：古典機率 P(A) = n(A)/n(S)、條件機率 P(B|A) = P(A∩B)/P(A)、獨立事件 P(A∩B) = P(A)P(B) 與數學期望值 E(X) = Σ x_i·p_i（如 115-math-c-13）',
+    ],
+    killerTrick: '「至少有 1 個」題型一律用反面扣減法：全部方法數（或機率 1）減去「完全沒有（0 個）」的情況，計算量省 80%！',
+  },
+  'math-c/trig-applications': {
+    frequency: '⭐⭐⭐⭐⭐ 每屆必考',
+    keyQuestionTypes: [
+      '型態一：正弦定理 a/sinA = b/sinB = c/sinC = 2R（已知兩角一邊 AAS/ASA 或求外接圓半徑 R）與三角形面積公式 Δ = ½ab·sinC（如 111-math-c-12、113-math-c-18）',
+      '型態二：餘弦定理 c² = a² + b² - 2ab·cosC 與 cosC = (a²+b²-c²)/(2ab)（已知兩邊夾角 SAS 求第三邊，或已知三邊 SSS 求最大內角，如 112-math-c-8、115-math-c-21）',
+      '型態三：工程測量仰角、俯角、方位角高程與不可通視距離解算（結合 30°-60°-90° 與 45°-45°-90° 直角三角形，如 115-math-c-25）',
+    ],
+    killerTrick: '看到三角形三邊長比例（如 a:b:c = 3:5:7）求最大角：最大邊對最大角，直接把 3, 5, 7 代入 cosC = (3²+5²-7²)/(2·3·5) = -1/2，秒得 C = 120°！',
+  },
+  'math-c/exponents-logarithms': {
+    frequency: '⭐⭐⭐⭐⭐ 每屆必考',
+    keyQuestionTypes: [
+      '型態一：分數指數律 a^(m/n) = ⁿ√(aᵐ)、指數方程式 a^f(x) = a^g(x) 同底化簡與代換法設 t = aˣ > 0 解二次方程（如 111-math-c-1、113-math-c-16、114-math-c-8）',
+      '型態二：對數定義 log_a(b) = x ⇔ aˣ = b、對數運算律（相加變相乘、相減變相除、次方提到前面）與換底公式 log_a(b)·log_b(c) = log_a(c)（如 111-math-c-21、112-math-c-19、113-math-c-22）',
+      '型態三：對數不等式（注意底數 0 < a < 1 時不等號要反向！）與指數對數函數圖形漸近線、交點判讀（如 115-math-c-9）',
+    ],
+    killerTrick: '解對數方程式或不等式最後一步必檢查「真數 > 0，底數 > 0 且 ≠ 1」，且底數若介於 0 與 1 之間（如 log_{1/2}），去 log 時不等號必定翻轉！',
+  },
+  'math-c/space-vectors': {
+    frequency: '⭐⭐⭐⭐⭐ 每屆必考',
+    keyQuestionTypes: [
+      '型態一：空間坐標距離、空間向量內積 a·b = x₁x₂ + y₁y₂ + z₁z₂、外積 a × b 求公垂向量與平行四邊形面積 |a × b|（如 111-math-c-13、112-math-c-9、114-math-c-15）',
+      '型態二：空間平面方程式 n·(P - P₀) = a(x-x₀) + b(y-y₀) + c(z-z₀) = 0、截距式 x/a + y/b + z/c = 1 與點到平面距離公式 d = |ax₀+by₀+cz₀+d|/√(a²+b²+c²)（如 111-math-c-14、112-math-c-22）',
+      '型態三：空間直線參數式 x = x₀ + at, y = y₀ + bt, z = z₀ + ct 與對稱比例式求直線與平面交點座標（如 113-math-c-19、115-math-c-14）',
+    ],
+    killerTrick: '求包含兩向量的平面法向量 n：直接對兩向量做外積 n = a × b（口訣：頭尾寫兩遍、去頭去尾交叉相乘相減），再代入通過點即得平面方程式！',
+  },
+  'math-c/matrices': {
+    frequency: '⭐⭐⭐⭐⭐ 每屆必考',
+    keyQuestionTypes: [
+      '型態一：二階與三階行列式展開（薩拉斯法則與降階性質：兩列成比例為 0、對調變號、某列乘 k 加到另一列值不變）及克拉瑪公式解聯立方程（如 111-math-c-11、112-math-c-7、113-math-c-5）',
+      '型態二：矩陣加減法、純量積與矩陣乘法 AB（注意 AB ≠ BA，前矩陣列乘後矩陣行，如 111-math-c-17、114-math-c-9）',
+      '型態三：二階反矩陣 A⁻¹ = (1/det(A))[d, -b; -c, a]（主對角線對調、副對角線變號）與不可逆條件 det(A) = ad - bc = 0（如 112-math-c-10、115-math-c-15）',
+    ],
+    killerTrick: '二階反矩陣口訣：「主對調、副變號、除以行列式 ad - bc」！若題目問矩陣無反矩陣（不可逆），直接令 ad - bc = 0 秒解！',
+  },
+  'math-c/linear-programming': {
+    frequency: '⭐⭐⭐⭐⭐ 每屆必考',
+    keyQuestionTypes: [
+      '型態一：二元一次聯立不等式可行解區域（半平面左右/上下判別：x 係數為正時，> 在右邊、< 在左邊）與多邊形面積計算（如 111-math-c-6、113-math-c-21）',
+      '型態二：線性規劃目標函數 f(x, y) = ax + by 在凸多邊形可行解區域之最大值與最小值（頂點法：解聯立求各頂點座標代入比大小，如 112-math-c-5、114-math-c-10）',
+      '型態三：營建材料配料、工種人力調度與運輸成本最佳化應用題列式求解（如 115-math-c-16）',
+    ],
+    killerTrick: '線性規劃極值必發生在可行解區域的「邊界頂點」上！把兩條限制直線解聯立求出交點 (x, y) 代入目標函數，完全不用畫平行移動線！',
+  },
+  'math-c/geometry': {
+    frequency: '⭐⭐⭐⭐⭐ 每屆必考',
+    keyQuestionTypes: [
+      '型態一：拋物線標準式 (y-k)² = 4c(x-h) 或 (x-h)² = 4c(y-k) 求頂點 (h,k)、焦點、準線方程式與正焦弦長 |4c|（如 111-math-c-24、113-math-c-13）',
+      '型態二：橢圓標準式 (x-h)²/a² + (y-k)²/b² = 1（a² = b² + c²，長軸長 2a、短軸長 2b、焦距 2c、正焦弦長 2b²/a，如 112-math-c-21、114-math-c-11）',
+      '型態三：雙曲線標準式 x²/a² - y²/b² = 1（c² = a² + b²，貫軸長 2a、共軛軸長 2b、漸近線 bx ± ay = 0，如 115-math-c-19）',
+    ],
+    killerTrick: '橢圓與雙曲線 c² 公式防呆：「橢圓加號配減號 c² = a² - b²（a 最大）；雙曲線減號配加號 c² = a² + b²（c 最大，a 看誰是正項）」！',
+  },
+  'math-c/calculus': {
+    frequency: '⭐⭐⭐⭐⭐ 每屆必考',
+    keyQuestionTypes: [
+      '型態一：函數極限 lim_{x→a} f(x)（0/0 不定型因式分解約分或使用羅必達法則分子分母同微分）與連續性條件（如 111-math-c-18、113-math-c-11、114-math-c-19）',
+      '型態二：多項式微分公式 d/dx(xⁿ) = n·x^(n-1)、乘法微分律 (fg)\' = f\'g + fg\'、連鎖律與曲線在點 (x₀, y₀) 之切線斜率 m = f\'(x₀)（如 112-math-c-23、114-math-c-20）',
+      '型態三：利用一階導數 f\'(x) = 0 求極大值、極小值與二階導數 f\'\'(x) = 0 求反曲點（如 111-math-c-25、112-math-c-24、115-math-c-22）',
+    ],
+    killerTrick: '三次函數 f(x) = ax³ + bx² + cx + d 的反曲點 x 坐標永遠在「兩極值點的正中間」，直接令 f\'\'(x) = 6ax + 2b = 0，得 x = -b/(3a) 秒殺！',
+  },
+  'math-c/integration': {
+    frequency: '⭐⭐⭐⭐⭐ 每屆必考',
+    keyQuestionTypes: [
+      '型態一：不定積分 ∫xⁿ dx = x^(n+1)/(n+1) + C 與微積分基本定理求定積分 ∫_a^b f(x) dx = F(b) - F(a)（含奇函數在對稱區間 [-a, a] 定積分為 0，如 111-math-c-19、112-math-c-14、113-math-c-14）',
+      '型態二：定積分求曲線與 x 軸或兩曲線 y = f(x)、y = g(x) 所圍成之封閉區域面積 A = ∫_a^b |f(x) - g(x)| dx（如 111-math-c-20、112-math-c-15、114-math-c-24）',
+      '型態三：旋轉體體積 V = π∫_a^b [f(x)]² dx 與定積分區間拆解性質（如 113-math-c-24、115-math-c-24）',
+    ],
+    killerTrick: '拋物線 y = ax² + bx + c 與直線圍成的封閉面積（兩交點橫坐標 α < β），直接套「六分之公式」：A = |a|·(β - α)³ / 6，3 秒出答案！',
+  },
+  // === 6. Chinese (統測國文) ===
+  'chinese/classical-literature': {
+    frequency: '⭐⭐⭐⭐⭐ 每屆必考',
+    keyQuestionTypes: [
+      '型態一：核心古文選篇與亭臺樓閣建築空間散文（如范仲淹〈岳陽樓記〉、歐陽脩〈醉翁亭記〉、歸有光〈項脊軒志〉、蘇軾〈赤壁賦〉、柳宗元〈始得西山宴遊記〉）之空間意象與作者託志主旨（如 111-chinese-2、111-chinese-7、112-chinese-2）',
+      '型態二：文言文重要實詞、虛詞（之、其、以、於、乃、焉）一字多義辨析與古今義演變（如 111-chinese-8、112-chinese-3、114-chinese-4）',
+      '型態三：古文與現代空間論述雙文本對讀（比較古人居室園林美學與當代永續聚落/環境倫理，如 113-chinese-15、115-chinese-12）',
+    ],
+    killerTrick: '文言文空間散文破題：「先看景物描寫（明暗/高低/動靜），再抓轉折詞（然則、雖然、嗟夫），轉折詞後面那句永遠是全文核心主旨！」',
+  },
+  'chinese/modern-literature': {
+    frequency: '⭐⭐⭐⭐⭐ 每屆必考',
+    keyQuestionTypes: [
+      '型態一：台灣現當代散文與新詩意象判讀（鄉土記憶、老屋空間、自然生態、職人精神與城市變遷，如 112-chinese-10、114-chinese-8、115-chinese-7）',
+      '型態二：應用文實務規範：書信稱謂提稱語（父母用「膝下」、師長用「道鑒/講席」、平輩用「大鑒/惠鑒」）、柬帖婚喪喜慶題辭與公文結構（主旨、說明、辦法，如 111-chinese-9、113-chinese-10）',
+      '型態三：現代白話散文段落因果轉折銜接與新詩感官移覺、象徵手法分析',
+    ],
+    killerTrick: '書信提稱語與啟封詞秒殺：「提稱語看關係（父母膝下、師長道鑒）；信封中路啟封詞看收信人身分（父母用安稟、師長用道啟，絕不可寫『敬啟』）！」',
+  },
+  'chinese/linguistics': {
+    frequency: '⭐⭐⭐⭐⭐ 每屆必考',
+    keyQuestionTypes: [
+      '型態一：形音義辨正（易混淆同音錯別字、一字多音與工程生活常用成語正誤，如 111-chinese-1、112-chinese-1、113-chinese-1、114-chinese-1、115-chinese-1）',
+      '型態二：修辭格精準判讀：譬喻（明喻、隱喻、借喻）、轉化（擬人、擬物、形象化）、借代、映襯、雙關、摹寫（視聽嗅味觸與移覺，如 111-chinese-10、113-chinese-6）',
+      '型態三：詞性轉品（名詞轉動詞、形容詞轉動詞）、偏義複詞、同義複詞與病句冗詞修正',
+    ],
+    killerTrick: '分清「借喻」與「借代」：能加「就像」還原成本體比喻的是「借喻」（看相似性，如「撒了滿天的珍珠」指星星）；不能加「就像」而是以局部/特徵代全體的是「借代」（看相關性，如「紅顏、白衣天使」）！',
+  },
+  'chinese/reading-comprehension': {
+    frequency: '⭐⭐⭐⭐⭐ 每屆必考',
+    keyQuestionTypes: [
+      '型態一：長篇跨領域科普、工藝美學、都市建築與社會議題文本之「核心主旨」與「作者立場」推論（如 111-chinese-4、112-chinese-15、113-chinese-38、115-chinese-20）',
+      '型態二：圖表資訊與文字對照題（折線圖、長條圖、流程表與調查數據之趨勢判讀，排除過度推論選項，如 111-chinese-11、114-chinese-22）',
+      '型態三：甲乙雙文比較閱讀（找出兩文共通論點、立場差異或以甲文理論解釋乙文案例，如 113-chinese-28、115-chinese-32）',
+    ],
+    killerTrick: '統測閱讀理解排除法鐵律：凡選項出現「所有、必然、唯一、只要…就…」絕對化字眼，或把文中「可能相關」偷換成「直接因果」，95% 是誘答錯誤項！',
+  },
+  'chinese/writing-expression': {
+    frequency: '⭐⭐⭐⭐⭐ 每屆必考',
+    keyQuestionTypes: [
+      '型態一：統測國文寫作測驗（引導式與圖表情境式命題）：審題立意、四段式結構（起：破題引入 → 承：個人經驗或實例 → 轉：深化思辨/正反對比 → 合：總結昇華）',
+      '型態二：重組句子與段落填空邏輯：依「時間先後、空間由遠及近、頂真修辭、主詞一致性與轉折連詞（然而/況且/與其…不如…）」排定正確順序（如 112-chinese-8、114-chinese-9、115-chinese-9）',
+      '型態三：空間感官描寫與論說文「論點—論據—論證」三要素銜接',
+    ],
+    killerTrick: '句子重組題先找「代名詞（此、這、其）」與「成對連接詞（不僅…更…、固然…然而…）」鎖定必相連的兩句，再看首尾句呼應，30 秒鎖定唯一選項！',
+  },
+  'chinese/cultural-knowledge': {
+    frequency: '⭐⭐⭐⭐ 高頻核心',
+    keyQuestionTypes: [
+      '型態一：傳統年齡代稱（襁褓、垂髫、束髮15、弱冠20、而立30、不惑40、知命50、耳順/花甲60、古稀70、耄耋80~90、期頤100）與季節節氣時辰判讀（如 111-chinese-3、112-chinese-4、114-chinese-5）',
+      '型態二：傳統合院建築與園林方位禮制（坐北朝南、左尊右卑/左昭右穆、正身與護龍、借景與框景美學，如 111-chinese-5、113-chinese-8）',
+      '型態三：先秦諸子思想（儒、道、墨、法）與歷代文學流派體裁（唐詩、宋詞、元曲、章回小說）常識判別（如 111-chinese-6、115-chinese-6）',
+    ],
+    killerTrick: '四季風向與植物口訣：「春：東風/楊柳/桃李/杏雨；夏：南風（薰風）/荷蓮/芰荷/蟬鳴；秋：西風（金風）/菊/楓/桂/蘆葦；冬：朔風（北風）/梅/松柏」！',
+  },
+  // === 7. English (統測英文) ===
+  'english/vocabulary-phrases': {
+    frequency: '⭐⭐⭐⭐⭐ 每屆必考',
+    keyQuestionTypes: [
+      '型態一：第 1~10 題字彙片語選擇題：依前後文句意邏輯（因果 because/therefore、轉折 although/however、對比 while）與詞性（動詞、名詞、形容詞、副詞）選填核心單字（如 111-english-1~8、114-english-1~8、115-english-1~8）',
+      '型態二：統測高頻動詞片語搭配（如 take part in 參加、put off 延後、come up with 想出、result in 導致 vs result from 起因於、make up for 彌補，如 111-english-9~10、113-english-9~10、115-english-9~10）',
+      '型態三：字根字首字尾構詞辨析（-tion/-ment 名詞、-ive/-ous/-able 形容詞、-ize/-en 動詞）與形近易混淆字（adapt 適應 vs adopt 採納、affect 影響 vs effect 效果）',
+    ],
+    killerTrick: '字彙題先看四個選項詞性是否一致，再抓題幹中的轉折詞（but / although / despite）或因果詞（since / due to / so that），正負情緒反推空格意思最準！',
+  },
+  'english/grammar-patterns': {
+    frequency: '⭐⭐⭐⭐⭐ 每屆必考',
+    keyQuestionTypes: [
+      '型態一：動詞時態與語態判讀（現在完成式 have/has + Vpp 搭配 since/for/recently、過去完成式 had + Vpp、被動語態 be + Vpp，如 112-english-22、114-english-21、115-english-23）',
+      '型態二：不定詞（to V）與動名詞（V-ing）搭配動詞（enjoy/avoid/finish/mind/practice + V-ing；look forward to / be used to / devote oneself to + V-ing）',
+      '型態三：助動詞、主詞動詞單複數一致（A number of + 複數動詞 vs The number of + 單數動詞）與比較級/最高級句型（The + 比較級..., the + 比較級...）',
+    ],
+    killerTrick: '看到 since + 過去時間點 或 for + 一段時間，主句動詞 90% 選「現在完成式 have/has + Vpp（或現在完成進行式）」，再檢查主詞是主動做還是被動承受！',
+  },
+  'english/conversation-daily-use': {
+    frequency: '⭐⭐⭐⭐⭐ 每屆必考',
+    keyQuestionTypes: [
+      '型態一：第 11~20 題日常情境對話：餐廳點餐結帳、問路交通、醫療看診、購物退換貨、飯店訂房與電話禮儀（如 111-english-11~20、113-english-11~20、115-english-11~20）',
+      '型態二：請求許可與建議回應（Would you mind + V-ing...? 回答「不介意」要用 Not at all. / Go ahead. / Of course not.，切勿答 Yes!）',
+      '型態三：常見口語慣用語（You can say that again. 完全同意；It’s on me. 我請客；Be my guest. 請便；I’ll take a rain check. 改天再約）',
+    ],
+    killerTrick: '遇到 "Do you mind..." 或 "Would you mind..." 問句，回答看後句態度：若後句說 "Go ahead / Please do"，前句必選否定詞 "Not at all / Of course not"（表示一點也不介意）！',
+  },
+  'english/reading-comprehension': {
+    frequency: '⭐⭐⭐⭐⭐ 每屆必考',
+    keyQuestionTypes: [
+      '型態一：主旨大意題（What is the main idea / best title of the passage?）：聚焦首段主題句（Topic Sentence）與末段結論，避免以偏概全（如 111-english-29、113-english-30、115-english-29）',
+      '型態二：細節事實與是非判斷題（According to the passage, which of the following is TRUE / NOT true?）：利用人名、年份、專有名詞回原文定位換句話說（Paraphrase，如 112-english-32、114-english-35）',
+      '型態三：上下文猜字義與代名詞指涉題（The word "..." is closest in meaning to... / What does "it/they" refer to?）',
+    ],
+    killerTrick: '閱讀測驗「先看題目問什麼關鍵字（人名、年代、地名），再回文章掃描定位」！正確答案幾乎都是原文句子的「同義字改寫（Paraphrase）」，原封不動照抄但偷換主詞的往往是陷阱！',
+  },
+  'english/vocabulary-professional': {
+    frequency: '⭐⭐⭐⭐ 高頻核心',
+    keyQuestionTypes: [
+      '型態一：營建與建築專業核心英文字彙：foundation（基礎）、structure（結構）、construction（營造/施工）、blueprint（藍圖）、architecture（建築）、renovate（翻修）、sustainable（永續的）',
+      '型態二：工程安全、綠建築環境與材料專業字彙：insulation（隔熱/絕緣）、ventilation（通風）、earthquake-resistant（耐震的）、inspector（檢驗員）、maintenance（維護保養）',
+      '型態三：職場設備操作說明、工程規範與安全警告標語（Precaution / Protective Gear / Evacuate / Flammable）判讀',
+    ],
+    killerTrick: '建築工程字族記憶：struct（建造）→ structure（結構）、construct（興建）、instruct（指導）、destruct（破壞）、obstruct（阻礙），一組字根背會五個高頻字！',
+  },
+  'english/grammar-clauses': {
+    frequency: '⭐⭐⭐⭐⭐ 每屆必考',
+    keyQuestionTypes: [
+      '型態一：關係代名詞（who/whom/whose/which/that）與「介系詞 + which/whom」及關係副詞（where = in which、when = on which、why = for which，如 112-english-24、114-english-25、115-english-23）',
+      '型態二：名詞子句（that / whether / if / wh-疑問詞 + 主詞 + 動詞，注意間接問句絕不倒裝！）與複合關係代名詞 what（= the thing which，前面無先行詞）',
+      '型態三：副詞子句連接詞辨析（because 接子句 vs because of/due to 接名詞；although/though 接子句 vs despite/in spite of 接名詞）',
+    ],
+    killerTrick: '空格前面「有先行詞名詞」且後面缺主詞/受詞選 which/who；空格前面「沒有先行詞名詞」且後面接不完整子句，直接選 what（= the thing that）！',
+  },
+  'english/reading-infographics': {
+    frequency: '⭐⭐⭐⭐⭐ 每屆必考',
+    keyQuestionTypes: [
+      '型態一：時刻表（Timetable/Schedule）、價目表、活動海報、優惠券折扣規則與樓層平面導覽圖判讀（如 111-english-33、113-english-32、114-english-31）',
+      '型態二：統計數據圖表（長條圖 Bar Chart、圓餅圖 Pie Chart、折線圖 Line Graph）之比例增減趨勢詞彙（increase/decline/account for/majority/peak）',
+      '型態三：多條件篩選題（依預算上限、開放時間、年齡限制或轉乘路線選出符合條件的方案）',
+    ],
+    killerTrick: '圖表與海報題必看底部小字註解（Note / *Asterisk / Valid until... / Terms & Conditions），統測最愛在「早鳥優惠期限、團體票人數門檻、週末加價」設題！',
+  },
+  'english/cloze-passage-structure': {
+    frequency: '⭐⭐⭐⭐⭐ 每屆必考',
+    keyQuestionTypes: [
+      '型態一：第 21~28 題綜合測驗（克漏字 Cloze）：轉折與因果轉承副詞（However / Therefore / Moreover / Instead / Otherwise / In contrast）判別（如 111-english-21~28、114-english-21~28、115-english-21~28）',
+      '型態二：分詞構句（主動用 V-ing、被動用 Vpp）與獨立分詞片語（Compared with / Generally speaking / Based on）',
+      '型態三：介系詞搭配與固定句型（not only... but also...、either... or...、neither... nor...、so... that...、such... that...）',
+    ],
+    killerTrick: '克漏字考「空格 + 逗號」在句首連結前後兩句時，先看兩句是「同向遞進（Moreover/Furthermore）」、「因果（Therefore/Thus）」還是「正反轉折（However/Nevertheless）」！',
+  },
+  'english/grammar-mastery': {
+    frequency: '⭐⭐⭐⭐⭐ 每屆必考',
+    keyQuestionTypes: [
+      '型態一：與現在事實相反之假設語氣（If + S + V-ed/were, S + would/could/might + V）與與過去事實相反之假設語氣（If + S + had + Vpp, S + would/could/might + have + Vpp，如 113-english-26、115-english-24）',
+      '型態二：否定副詞放句首之部分倒裝句（Never / Seldom / Little / Hardly / No sooner / Not only + 助動詞/be + S + V）',
+      '型態三：情緒使役動詞與分詞形容詞（令人感到…用 V-ing，如 exciting/surprising；人感到…用 V-ed，如 excited/surprised）及使役動詞 make/have/let + O + 原形 V（被動用 Vpp）',
+    ],
+    killerTrick: '假設語氣時態對照口訣：「與現在相反用過去式（were/V-ed → would V）；與過去相反用過去完成式（had Vpp → would have Vpp）」，前後兩句時間標記一定要同步！',
+  },
+  'english/workplace-communication': {
+    frequency: '⭐⭐⭐⭐ 高頻核心',
+    keyQuestionTypes: [
+      '型態一：商務電子郵件（商業詢價、工程進度回報、客訴處理、會議改期 reschedule/postpone、求職面試）格式與語氣判讀（如 112-english-18、115-english-11）',
+      '型態二：辦公室與工地職場溝通對話（截止期限 deadline、延長合約 renew a contract、預算審核 budget approval、請假申請 ask for leave）',
+      '型態三：公告通知（Announcement / Memo / Notice）之目的、對象與應辦事項判讀',
+    ],
+    killerTrick: '商務書信與職場對話題：先抓開頭第一句「寫信目的（I am writing to inquire / apologize / confirm...）」與結尾「行動呼籲（Please let us know by Friday）」，主旨題立刻得分！',
+  },
+  'english/reading-advanced': {
+    frequency: '⭐⭐⭐⭐⭐ 每屆必考',
+    keyQuestionTypes: [
+      '型態一：跨領域長篇閱讀（環境永續綠建築、AI 科技應用、文化遺產保存、心理健康與公共政策）之段落結構與推論題（What can be inferred from the passage?，如 113-english-40、114-english-41、115-english-42）',
+      '型態二：作者態度與語氣判斷（positive 正面支持、critical 批判質疑、objective 客觀中立、optimistic 樂觀、concerned 憂慮）',
+      '型態三：前後文邏輯銜接（If the author were to add another paragraph, what would it most likely be about?）',
+    ],
+    killerTrick: '推論題（infer / imply）正確選項「既不能過度腦補原文沒提的因果，也不能直接照抄表層字面」，要選由原文事實往外推一步的必然結論！',
+  },
+  'english/translation-writing': {
+    frequency: '⭐⭐⭐⭐⭐ 每屆必考',
+    keyQuestionTypes: [
+      '型態一：非選擇題第一大題「填充題」：依中文句意與字首提示填入正確單字，必注意「動詞時態三態變化、主詞單複數與名詞單複數 -s/-es」',
+      '型態二：非選擇題第二大題「句子重組」：先找大寫字首主詞 S → 助動詞/動詞 V → 受詞 O → 地方副詞 → 時間副詞（或關係子句/分詞修飾語）組合成完整句',
+      '型態三：非選擇題第三大題「中譯英」：活用統測必考高分句型（It is adj. for sb. to V / so... that... / not only... but also... / plays an important role in...）',
+    ],
+    killerTrick: '句子重組題防錯三步驟：(1) 算總字數是否與題目提示完全一致；(2) 先把固定片語（如 take care of / in order to）綁成一組；(3) 確認主句動詞與連接詞數量（N 個連接詞配 N+1 個動詞）！',
+  },
+  // === 8. Extensions (建築跨域實戰與作品集) ===
+  'extensions/spatial-design': {
+    frequency: '⭐⭐⭐⭐ 跨域核心',
+    keyQuestionTypes: [
+      '型態一：人體工學尺度與空間動線規劃（住宅走道淨寬 ≥ 90~120 cm、無障礙輪椅迴轉直徑 ≥ 150 cm、中島廚房工作三角動線）',
+      '型態二：基地微氣候物理環境回應（日照軌跡南向採光、夏季西南季風導風、冬季東北季風防風、水平遮陽板與垂直遮陽板方位選擇）',
+      '型態三：空間序列組織（入口過渡玄關 → 公共核心區 → 私密靜謐區；借景、框景、引景與天井採光通風剖面設計）',
+    ],
+    killerTrick: '遮陽板方位鐵律：「南向太陽仰角高，用水平遮陽板；東西向太陽仰角低（西曬斜射），用垂直遮陽板或格柵」！',
+  },
+  'extensions/construction-methods': {
+    frequency: '⭐⭐⭐⭐⭐ 專業實務高頻',
+    keyQuestionTypes: [
+      '型態一：深開挖擋土支撐工法比較：連續壁（Diaphragm Wall，水密性最高、剛性最大，適用軟弱土層深開挖）、鋼板樁、排樁與內支撐/地錨系統（如 113-1-30）',
+      '型態二：順打工法（由下往上築）vs 逆打工法（Top-Down，以一樓樓版為工作平台上下同步施工，縮短工期、減少鄰損噪音）特性與適用情境',
+      '型態三：鋼筋混凝土施工程序（放樣 → 綁紮鋼筋 → 組模 → 澆置搗實 → 拆模養護）與屋頂/浴廁防水收頭、滴水線（防止毛細水回流）細部構造',
+    ],
+    killerTrick: '拆模時間原則：「不承重的垂直側模（柱模、梁側模）混凝土凝結後即可較早拆模；承受重力的水平底模（梁底模、版底模）跨度越大越晚拆」！',
+  },
+  'extensions/cad-bim': {
+    frequency: '⭐⭐⭐⭐ 高頻核心',
+    keyQuestionTypes: [
+      '型態一：2D CAD 圖層管理（Layer 線色、線型、線寬分離）、外部參考（Xref 協同套圖）與圖塊（Block 屬性管理）',
+      '型態二：BIM 建築資訊模型（Revit / ArchiCAD）族群（Family）參數化建模、LOD 100~500 發展程度與 MEP 機電管線碰撞檢測（Clash Detection）',
+      '型態三：IFC 開放標準格式跨軟體交換與 4D 施工排程模擬、5D 工程數量自動算量整合',
+    ],
+    killerTrick: 'CAD 畫的是「幾何線條（改平面不會自動改立面）」；BIM 建的是「帶屬性資訊的參數化構件（改一道牆，平面、剖面與數量表同步更新）」！',
+  },
+  'extensions/portfolio-models': {
+    frequency: '⭐⭐⭐⭐ 升學甄選必備',
+    keyQuestionTypes: [
+      '型態一：建築模型比例尺與細節層次對應（1:500 基地環境量體模、1:200/1:100 空間配置與立面模、1:50/1:30 室內構造與家具剖面模）',
+      '型態二：作品集版面視覺階層（Grid 網格系統、留白呼吸感、主圖與分析圖 Diagram 比例、色彩計畫不超過 3 主色）',
+      '型態三：建築概念推演圖解（Massing Diagram：基地限制 → 量體切分 → 採光通風挖空 → 動線串聯 → 結構表皮生成）',
+    ],
+    killerTrick: '作品集評審黃金 30 秒法則：每一跨頁必須有一張「一眼看懂設計生成邏輯的四格量體演變圖（Diagram）」與一張「傳達空間尺度的剖面透視圖」！',
+  },
+  'extensions/certification': {
+    frequency: '⭐⭐⭐⭐ 檢定實戰必備',
+    keyQuestionTypes: [
+      '型態一：建築製圖應用丙級/乙級技術士技能檢定圖框規範、CNS 線條層級（粗線 0.5~0.7mm、中線 0.3~0.35mm、細線 0.13~0.18mm）與出圖比例設定',
+      '型態二：工程測量丙級/乙級檢定水準儀閉合水準路線平差與全測站經緯儀測角測距座標計算精度檢核',
+      '型態三：四技二專土木與建築群統測考科配分策略與技優甄審/甄選入學備審學習歷程檔案整合',
+    ],
+    killerTrick: '製圖檢定零失分關鍵：「剖面切到的RC結構體必用粗實線閉合，未切到的立面投影用中實線，尺寸標註與粉刷線用細實線」，三階線寬分明圖面立刻立體！',
+  },
+  'extensions/parametric-design-and-ai-assisted-competition': {
+    frequency: '⭐⭐⭐⭐ 前瞻進階',
+    keyQuestionTypes: [
+      '型態一：參數化設計（Grasshopper / Rhino）核心邏輯：輸入參數（Number Slider / Attractor Point）→ 幾何運算器（Voronoi / Loft / Surface Morph）→ 結構與環境性能最佳化表皮',
+      '型態二：環境性能模擬回饋（Ladybug 日照輻射分析、CFD 風場模擬）驅動建築開窗率與遮陽百葉角度漸變',
+      '型態三：AI 輔助建築競圖工作流（Midjourney / Stable Diffusion ControlNet 控制線稿與深度圖生成材質氛圍，再回歸 BIM/CAD 落實結構尺度）',
+    ],
+    killerTrick: '參數化設計不是為了做怪形狀，而是建立「環境物理條件（日照/風向/結構應力）→ 幾何形態自動回應」的可追溯數學邏輯鏈！',
+  },
+  'extensions/portfolio-and-design-discourse': {
+    frequency: '⭐⭐⭐⭐ 升學面試必備',
+    keyQuestionTypes: [
+      '型態一：建築設計論述三段式架構：「基地議題痛點（Why）→ 空間策略與構造操作（How）→ 使用者生活場景與環境效益（What）」',
+      '型態二：平立剖面圖面敘事一致性（平面看動線分區、剖面看高低差與天光氣流、軸測爆炸圖看構造系統層次）',
+      '型態三：二階面試口頭簡報（3 分鐘電梯簡報法）與評審常見追問（結構合理性、法規無障礙、氣候調適與材料構造細節）應答策略',
+    ],
+    killerTrick: '設計論述忌諱空泛形容詞！把「打造舒適自然的空間」改寫為「透過南向 2.4m 深出簷與中庭煙囪效應天窗，引導夏季西南風降低室內溫度 3°C」，具象數據與構造才有說服力！',
+  },
+  // === 9. Physics, Chemistry, History, Geography, Civics (基礎科學與人文環境) ===
+  'physics/mechanics-motion': {
+    frequency: '⭐⭐⭐⭐ 工程力學先修',
+    keyQuestionTypes: [
+      '型態一：等加速度直線運動三大公式（v = v₀ + at、s = v₀t + ½at²、v² = v₀² + 2as）與 v-t 圖面積求位移、斜率求加速度',
+      '型態二：牛頓三大運動定律（F = ma、作用力與反作用力）與共點力靜力平衡 ∑F = 0',
+      '型態三：力矩 τ = r × F、重心穩定度與塔吊吊掛平衡安全係數計算',
+    ],
+    killerTrick: 'v-t 圖解運動學：「圖形斜率 = 加速度 a；圖形與時間軸圍成的面積 = 位移 Δx」，畫圖比背公式快三倍！',
+  },
+  'physics/work-energy': {
+    frequency: '⭐⭐⭐⭐ 工程物理核心',
+    keyQuestionTypes: [
+      '型態一：功 W = F·s·cosθ、動能 Ek = ½mv²、重力位能 Ep = mgh 與力學能守恆定律',
+      '型態二：功率 P = W/t = F·v 與起重機吊升建材、抽水馬達揚程功率計算',
+      '型態三：簡單機械（定滑輪改方向、動滑輪省一半力、滑輪組與斜面機械利益 MA）',
+    ],
+    killerTrick: '無摩擦時力學能守恆：「減少的位能 mgh = 增加的動能 ½mv²」，落地速率 v = √(2gh) 與物體質量 m 完全無關！',
+  },
+  'physics/thermodynamics': {
+    frequency: '⭐⭐⭐⭐ 建築物理必備',
+    keyQuestionTypes: [
+      '型態一：熱膨脹計算 ΔL = α·L₀·ΔT（橋梁伸縮縫、鋼軌與混凝土溫度鋼筋設計）',
+      '型態二：熱傳播三途徑（傳導、對流、輻射）與建築外殼熱傳透率 U 值、Low-E 複層玻璃隔熱機制',
+      '型態三：中庭「煙囪效應（Stack Effect）」浮力通風與空調冷凍噸、EER/CSPF 能源效率指標',
+    ],
+    killerTrick: '外牆熱傳透率 U 值（W/m²·K）越「小」，代表隔熱能力越「好」；熱阻 R 值（= 厚度 d / 導熱係數 k）越「大」，隔熱越好！',
+  },
+  'physics/waves-acoustics': {
+    frequency: '⭐⭐⭐⭐ 建築聲學核心',
+    keyQuestionTypes: [
+      '型態一：波速公式 v = f·λ（頻率 f 與波長 λ 成反比）與聲音在空氣中之傳播速率 v ≈ 331 + 0.6T (m/s)',
+      '型態二：聲音強度級分貝公式 L = 10·log₁₀(I / I₀)：聲強 I 每增加 10 倍，分貝值增加 10 dB',
+      '型態三：建築室內殘響時間賽賓公式 T = 0.161V / A（室容積 V 越大殘響越長，吸音力 A 越大殘響越短）與隔音質量定律',
+    ],
+    killerTrick: '分貝對數速算：2 台相同 70 dB 機具同時運轉，聲強變 2 倍，分貝只加 10·log₁₀(2) ≈ +3 dB（變成 73 dB，絕不是 140 dB）！',
+  },
+  'physics/optics': {
+    frequency: '⭐⭐⭐⭐ 建築照明核心',
+    keyQuestionTypes: [
+      '型態一：光的反射定律、司乃耳折射定律 n₁·sinθ₁ = n₂·sinθ₂ 與全反射臨界角（光纖導光管採光）',
+      '型態二：光通量（流明 lm）、發光強度（燭光 cd）與照度平方反比定律 E = I·cosθ / r²（勒克斯 lx = lm/m²）',
+      '型態三：建築晝光率（Daylight Factor）、色溫（暖白光 3000K vs 晝光 5000~6500K）與演色性指數 Ra/CRI',
+    ],
+    killerTrick: '點光源距離 r 變為 2 倍時，受照面積擴散為 4 倍，故桌面照度 E 衰減為原來的 1/4（平方反比定律 E ∝ 1/r²）！',
+  },
+  'physics/electricity': {
+    frequency: '⭐⭐⭐⭐ 建築機電必備',
+    keyQuestionTypes: [
+      '型態一：歐姆定律 V = I·R、串聯電路（電流相同、電阻相加）與並聯電路（電壓相同、總電阻倒數相加）',
+      '型態二：電功率 P = I·V = I²R = V²/R 與電能消耗「度數（1 度 = 1 kWh = 1000 W 連續使用 1 小時）」計算',
+      '型態三：建築單相三線式（110V/220V）配電、無熔絲開關（NFB 過載保護）、漏電斷路器（ELCB 防感電）與接地安全',
+    ],
+    killerTrick: '建築插座電器一律採用「並聯」連接，電壓固定；同迴路插越多高功率電器，總電流 I 越大，超過安全容量即觸發 NFB 跳脫！',
+  },
+  'chemistry/matter-composition': {
+    frequency: '⭐⭐⭐⭐ 材料化學基礎',
+    keyQuestionTypes: [
+      '型態一：純物質（元素、化合物）與混合物（均勻溶液、不均勻膠體/合金/混凝土）分類判別',
+      '型態二：化學鍵結類型（離子鍵：石膏/大理石；共價網狀：石英砂 SiO₂；金屬鍵：結構鋼材延展性）與物理性質關係',
+      '型態三：原子量、莫耳數（mol = g / M）與重量百分濃度、百萬分點濃度（ppm = mg/kg 或 mg/L）換算',
+    ],
+    killerTrick: '結構鋼筋具有優異延展性（受震彎曲不斷裂）是因為「金屬鍵的自由電子海」允許原子層滑移而不破壞鍵結；陶瓷石材則是離子/共價鍵受撞擊易脆裂！',
+  },
+  'chemistry/chemical-reactions': {
+    frequency: '⭐⭐⭐⭐ 水泥化學核心',
+    keyQuestionTypes: [
+      '型態一：化學反應方程式係數平衡（質量守恆與原子不滅）及限量試劑產量計算',
+      '型態二：石灰石熱分解燒製生石灰 CaCO₃ → CaO + CO₂↑、熟化生成熟石灰 Ca(OH)₂ 與氣硬性灰泥硬化循環',
+      '型態三：卜特蘭水泥水化放熱反應（C₃S、C₂S 與水生成 C-S-H 膠體及強鹼性 Ca(OH)₂）與火山灰反應機制',
+    ],
+    killerTrick: '水泥水化產物中的 Ca(OH)₂ 雖然對強度貢獻低且易溶出形成白華，但它是維持混凝土 pH 12~13 強鹼保護鋼筋不生鏽的關鍵！',
+  },
+  'chemistry/acids-bases-salts': {
+    frequency: '⭐⭐⭐⭐ 混凝土耐久性',
+    keyQuestionTypes: [
+      '型態一：水溶液酸鹼性 pH = -log₁₀[H⁺] 計算（[H⁺] 每差 10 倍，pH 值差 1）與酸鹼指示劑變色（酚酞在強鹼呈紫紅色，pH < 8.2 無色）',
+      '型態二：混凝土「中性化（碳化 Carbonation）」反應：空氣 CO₂ + Ca(OH)₂ → CaCO₃ + H₂O，使 pH 降至 9 以下導致鋼筋失去鈍態膜',
+      '型態三：酸雨（pH < 5.0）侵蝕大理石/石灰石（CaCO₃ + 2H⁺ → Ca²⁺ + CO₂↑ + H₂O）與鹽類結晶風化壁癌機制',
+    ],
+    killerTrick: '現場檢測混凝土中性化深度：鑽芯噴灑「1% 酚酞指示劑」，未中性化強鹼區呈「紫紅色」，已碳化中性區（pH < 9）呈「無色」！',
+  },
+  'chemistry/redox': {
+    frequency: '⭐⭐⭐⭐ 鋼構防蝕核心',
+    keyQuestionTypes: [
+      '型態一：氧化數升降判別（氧化：失電子、氧化數上升；還原：得電子、氧化數下降）',
+      '型態二：鋼鐵電化學腐蝕機制（鐵在有水與氧氣環境中作為陽極失電子 Fe → Fe²⁺ + 2e⁻ 生成紅鏽 Fe₂O₃·nH₂O，體積膨脹撐裂混凝土）',
+      '型態三：金屬防蝕工法：陰極防蝕法（犧牲陽極法：連接活性更大的鋅 Zn 或鎂 Mg，如熱浸鍍鋅鋼構）、防鏽底漆與不鏽鋼鈍態氧化鉻膜',
+    ],
+    killerTrick: '熱浸鍍鋅鋼板即使表面刮傷也不易生紅鏽，因為「鋅 (Zn) 的活性大於鐵 (Fe)」，鋅會優先當犧牲陽極放出電子保護鐵！',
+  },
+  'chemistry/organic-chemistry': {
+    frequency: '⭐⭐⭐⭐ 高分子建材核心',
+    keyQuestionTypes: [
+      '型態一：熱塑性高分子（線狀結構，加熱軟化可回收：PVC 水管、PE 防水膜、PMMA 壓克力）vs 熱固性高分子（網狀交聯，加熱不熔化：環氧樹脂 Epoxy、酚醛樹脂、矽利康）',
+      '型態二：建築防水塗料、PU 聚氨酯、矽酮密封膠（Silicone 耐候抗紫外線）與瀝青混凝土黏結性質',
+      '型態三：室內裝修揮發性有機化合物（TVOC）與甲醛（HCHO）逸散控制及綠建材低逸散標準',
+    ],
+    killerTrick: '結構裂縫補強注射與植筋膠必用「環氧樹脂（Epoxy）」，因為它是熱固性三維交聯結構，硬化後強度高、收縮極小且耐化學腐蝕！',
+  },
+  'chemistry/environmental-chemistry': {
+    frequency: '⭐⭐⭐⭐ 永續淨零核心',
+    keyQuestionTypes: [
+      '型態一：建材全生命週期碳足跡：蘊含碳（Embodied Carbon：原料開採、水泥高溫煅燒、運輸施工）vs 營運碳（Operational Carbon：空調照明能耗）',
+      '型態二：高爐爐石粉（GGBFS）與飛灰取代部分卜特蘭水泥之低碳綠混凝土減碳效益',
+      '型態三：營建廢棄物再生粒料循環利用、水資源中水回收與室內空氣品質 PM2.5 / CO₂ 監測',
+    ],
+    killerTrick: '生產 1 公噸普通卜特蘭水泥熟料約排放 0.8~0.9 公噸 CO₂（來自 CaCO₃ 分解與燃煤高溫）；以爐石粉與飛灰取代 30~50% 水泥是建築減碳最直接手段！',
+  },
+  'history/taiwan-history': {
+    frequency: '⭐⭐⭐⭐ 本土建築脈絡',
+    keyQuestionTypes: [
+      '型態一：原住民族風土建築（排灣族魯凱族頁岩板石板屋、達悟族防颱地下屋、泰雅族竹木高架穀倉）之氣候地形調適',
+      '型態二：明鄭與清領時期漢人傳統建築（三合院/四合院「正身、護龍、埕」、閩南穿斗式與抬樑式木構、燕尾與馬背屋脊、大稻埕長條街屋）',
+      '型態三：日治時期近代建築演進：辰野式紅磚白飾帶（總統府、紅樓）→ 歷史主義希臘羅馬柱式（台博館）→ 折衷主義面磚（台大校舍）→ 戰後現代主義與粗獷主義',
+    ],
+    killerTrick: '日治時期台灣公共建築演進三階段：「初期衛生與拱廊陽台殖民樣式 → 中期紅磚配白色水平飾帶『辰野式』→ 1930年代防空色溝面磚與幾何線條『現代折衷式』」！',
+  },
+  'history/chinese-history': {
+    frequency: '⭐⭐⭐⭐ 東方構造傳統',
+    keyQuestionTypes: [
+      '型態一：中國古典木構造核心系統：台基、柱網、斗栱（傳遞屋頂載重、出挑深簷並具消能減震作用）與反宇曲屋頂',
+      '型態二：宋代李誡《營造法式》（以「材、栔」為模數單位）與清代《工程做法則例》（以「斗口」為模數）之標準化預製思維',
+      '型態三：里坊制（唐長安城嚴格棋盤封閉坊市）演變為街巷制（北宋汴京打破坊牆、臨街開店），以及明清紫禁城中軸對稱禮制與江南私家園林對比',
+    ],
+    killerTrick: '斗栱的三大工程功能：「(1) 向上承托深遠出簷保護木柱不受雨淋；(2) 將屋頂集中載重均勻傳遞至柱頭；(3) 榫卯摩擦在地震時充當天然消能阻尼器」！',
+  },
+  'history/world-history': {
+    frequency: '⭐⭐⭐⭐ 西洋建築史脈絡',
+    keyQuestionTypes: [
+      '型態一：古希臘三柱式（多立克 Doric 剛健無柱礎、愛奧尼克 Ionic 渦卷柱頭、科林斯 Corinthian 莨苕葉柱頭）與古羅馬圓拱、交叉拱頂、火山灰混凝土（萬神殿 Pantheon）',
+      '型態二：哥德式建築（Gothic）結構革命：尖拱（Pointed Arch）、肋拱穹窿（Ribbed Vault）與飛扶壁（Flying Buttress）將側推力導向外部，解放牆面鑲嵌玫瑰花窗',
+      '型態三：工業革命鋼鐵玻璃建築（水晶宮）→ 包浩斯（Bauhaus，格羅佩斯、密斯「少即是多 Less is more」、柯比意「新建築五點」自由平面與底層挑空）',
+    ],
+    killerTrick: '柯比意（Le Corbusier）新建築五點必背口訣：「底層挑空柱（Pilotis）、屋頂花園、自由平面（非承重隔間牆）、水平帶狀長窗、自由立面」！',
+  },
+  'history/architectural-history': {
+    frequency: '⭐⭐⭐⭐ 建築理論思潮',
+    keyQuestionTypes: [
+      '型態一：維特魯威（Vitruvius）《建築十書》三大核心原則：「堅固（Firmitas 結構安全）、實用（Utilitas 機能空間）、美觀（Venustas 比例秩序）」',
+      '型態二：現代主義（國際式樣、形隨機能 Form follows function）vs 後現代主義（文丘里「少即無聊 Less is a bore」、歷史符號拼貼與地域主義）',
+      '型態三：解構主義（法蘭克·蓋瑞畢爾包古根漢鈦金屬曲面、札哈·哈蒂流體幾何）與當代批判地域主義、永續生技建築',
+    ],
+    killerTrick: '名言配對秒殺：「形隨機能 = 路易斯·沙利文」；「少即是多 (Less is more) = 密斯」；「住宅是居住的機器 = 柯比意」；「少即無聊 (Less is a bore) = 文丘里」！',
+  },
+  'history/cultural-heritage': {
+    frequency: '⭐⭐⭐⭐ 文資保存實務',
+    keyQuestionTypes: [
+      '型態一：《文化資產保存法》有形文化資產分類：古蹟（國定、直轄市定、縣市定，指建造物及附屬設施）、歷史建築、紀念建築、聚落建築群',
+      '型態二：國際修復憲章《威尼斯憲章》與《奈良真實性文件》四大原則：最小干預、可逆性、可辨識性、真實性（材料、工藝、環境脈絡）',
+      '型態三：古蹟容積移轉機制（將古蹟基地受限未用完之容積移轉至其他可建築基地開發，兼顧文資保存與所有權人權益補償）',
+    ],
+    killerTrick: '古蹟修復「可逆性原則」與「可辨識性原則」：新補強構件在未來科技更進步時必須能拆卸不傷原結構（可逆），且近看要能區分古蹟原物與現代修補部分（不造假古董）！',
+  },
+  'history/social-change': {
+    frequency: '⭐⭐⭐⭐ 都市與住宅演變',
+    keyQuestionTypes: [
+      '型態一：台灣戰後居住型態演進：眷村與日式宿舍 → 1960~70年代四至五層步登公寓（雙併梯間） → 電梯華廈與集合住宅大樓 → 高齡社會通用設計宅',
+      '型態二：都市更新（重建、整建、維護）與危老條例（都市危險及老舊建築物加速重建，100% 所有權人同意免經都更聽證程序並享容積獎勵）',
+      '型態三：社會住宅（只租不售、混居共享公共托育與青銀共居）及舊工業區/鐵道倉庫轉型文化創意園區之空間再生',
+    ],
+    killerTrick: '都市更新三大處理方式並非只有拆掉重蓋：「重建（拆除重蓋）、整建（改建或充實設備如老宅加裝電梯）、維護（立面整修與加強管理）」！',
+  },
+  'geography/environment-terrain': {
+    frequency: '⭐⭐⭐⭐ 基地地形選址',
+    keyQuestionTypes: [
+      '型態一：等高線地形圖判讀：等高線越密集坡度越陡、「V字尖端指向高處（上游）為山谷集水線（易有土石流）」、「V字尖端指向低處為山脊分水嶺」',
+      '型態二：坡度百分比計算 S(%) = (垂直高差 Δh / 水平距離 D) × 100%，以及山坡地建築開發限制（平均坡度超過 30% 不得作為建築基地）',
+      '型態三：沖積扇（扇頂礫石粗透水、扇端湧泉帶）、河階地（避開洪氾首選聚落台地）與順向坡（岩層傾斜方向與坡面同向，開挖坡腳極易滑動崩塌！）',
+    ],
+    killerTrick: '山坡地工程最怕「順向坡（Dip Slope）切坡腳」：當岩層層面傾向與邊坡傾斜方向一致且傾角小於坡角時，開挖坡腳等於拔掉擋塊，整片岩層會沿層面滑落！',
+  },
+  'geography/climate-environment': {
+    frequency: '⭐⭐⭐⭐ 風土氣候設計',
+    keyQuestionTypes: [
+      '型態一：台灣季風氣候與建築配置：冬季東北季風強勁濕冷（北向少開大窗、設防風林或竹圍）、夏季西南季風溫暖潮濕（南向迎風大開口導風）',
+      '型態二：太陽視運動軌跡：北回歸線以北夏至正午太陽偏南仰角最高、冬至正午太陽偏南仰角低（南向深出簷可「夏遮陽、冬迎日」）',
+      '型態三：都市熱島效應（Urban Heat Island）成因（不透水鋪面、混凝土高蓄熱、冷氣排熱、大樓阻擋風廊）與透水鋪面、綠屋頂、留設都市風廊減緩策略',
+    ],
+    killerTrick: '台灣「坐北朝南」建築的科學原因：夏天太陽高掛，南向深出簷剛好擋住烈日並迎入西南涼風；冬天太陽高度角變低，溫暖陽光可斜射進室內，且背面北牆擋住凜冽東北季風！',
+  },
+  'geography/population-urban': {
+    frequency: '⭐⭐⭐⭐ 都市計畫結構',
+    keyQuestionTypes: [
+      '型態一：人口轉型與高齡化社會（65歲以上占 7% 高齡化、14% 高齡社會、20% 超高齡社會）對建築無障礙通用設計與社區長照空間之需求',
+      '型態二：都市內部空間結構模式（同心圓模式、扇形模式、多核心模式）與地租曲線（商業中心付租能力最高形成高容積摩天大樓）',
+      '型態三：大眾運輸導向型發展（TOD, Transit-Oriented Development）：以捷運/車站半徑 400~800m 步行圈為核心，配置高容積混合使用與友善人行空間',
+    ],
+    killerTrick: 'TOD（大眾運輸導向發展）三大核心特徵：「車站核心高密度容積獎勵、住商辦混合土地使用（Mixed-use）、步行與自行車優先之綠色街道」！',
+  },
+  'geography/regional-development': {
+    frequency: '⭐⭐⭐⭐ 區位與國土空間',
+    keyQuestionTypes: [
+      '型態一：中地體系理論（Central Place Theory）：商品圈（維持營運最小範圍）與商閾（最大吸引範圍），高級中地數量少、服務範圍大、距離遠',
+      '型態二：韋伯工業區位論（原料指向：水泥廠貼近石灰石礦區；市場指向：預拌混凝土廠貼近都會工地，因混凝土凝結時間限制約 90 分鐘內需澆置）',
+      '型態三：《國土計畫法》四大功能分區：國土保育地區、海洋資源地區、農業發展地區、城鄉發展地區（取代舊有區域計畫非都市土地零星變更）',
+    ],
+    killerTrick: '「水泥製造廠」屬於失重原料指向（設在花蓮/高雄石灰石礦山旁）；但「預拌混凝土廠」屬於市場指向（設在都市外圍交通幹道旁，因攪拌車 90 分鐘內必須送達工地）！',
+  },
+  'geography/environmental-issues': {
+    frequency: '⭐⭐⭐⭐ 防災韌性工程',
+    keyQuestionTypes: [
+      '型態一：土壤液化（Soil Liquefaction）三要件：「疏鬆細砂土層 + 地下水位高（飽和含水）+ 強烈地震搖晃」，工程對策為打設基樁至堅硬承載層、連續壁圍封或地盤改良擠密',
+      '型態二：海綿城市與低衝擊開發（LID）：利用透水鋪面、生態滯洪池、雨水花園與雨水貯集系統，達到「逕流總量抑制、洪峰延遲與地下水補注」',
+      '型態三：海岸侵蝕、地層下陷區高腳防洪建築與山坡地水土保持（擋土牆洩水孔防止背後水壓掏空）',
+    ],
+    killerTrick: '擋土牆倒塌最常見原因不是土太重，而是「牆後排水不良（洩水孔堵塞）產生巨大靜水壓力」！確保礫石濾層與洩水孔暢通是邊坡保命關鍵！',
+  },
+  'geography/gis': {
+    frequency: '⭐⭐⭐⭐ 空間資訊分析',
+    keyQuestionTypes: [
+      '型態一：GIS 兩大空間資料結構：向量資料（Vector：點、線、面，邊界精確如地籍界址線、道路網、消防栓定位）vs 網格資料（Raster：像素矩陣，適合連續變化之數值高程 DEM、衛星影像、氣溫分布）',
+      '型態二：三大常用空間分析功能：環域分析（Buffer：如捷運站周邊 500m 範圍、斷層帶禁建退縮距離）、疊圖分析（Overlay：篩選坡度 < 15% 且非淹水潛勢區之適建地）、視域分析（Viewshed）',
+      '型態三：3D GIS 結合 BIM 城市數位雙生（Digital Twin）於日照陰影模擬、防救災疏散路徑最佳化之應用',
+    ],
+    killerTrick: 'GIS 題型秒判：「找某設施周圍 N 公尺範圍 = 環域分析（Buffer）」；「同時符合好幾個圖層條件的交集篩選選址 = 疊圖分析（Overlay）」；「連續高程坡度影像 = 網格資料（Raster）」！',
+  },
+  'civics/citizenship-community': {
+    frequency: '⭐⭐⭐⭐ 社區營造與參與',
+    keyQuestionTypes: [
+      '型態一：社區總體營造與參與式設計（Participatory Design）：由下而上透過工作坊凝聚居民共識，改造社區閒置空間與通學步道',
+      '型態二：公寓大廈管理條例：專有部分（住戶室內）vs 共用部分（結構主體、承重牆、外牆面、屋頂平台、樓梯間，住戶不得私自敲除承重牆或佔用頂樓逃生平台）',
+      '型態三：鄰避設施（NIMBY，如變電所、焚化爐、社宅）之環境正義溝通與公共空間美學融合',
+    ],
+    killerTrick: '公寓大廈中「梁、柱、承重牆、樓地板、外牆、屋頂及逃生梯間」一律屬於共用部分，即使位於一樓或頂樓住戶旁，也絕不可私自打除承重牆或加蓋鐵皮鎖死安全門！',
+  },
+  'civics/law-life': {
+    frequency: '⭐⭐⭐⭐ 營建法規與契約',
+    keyQuestionTypes: [
+      '型態一：建築行政法規與救濟：建照核發與勒令停工/強制拆除屬於「行政處分」，不服時應先提起「訴願」，再提起「行政訴訟」',
+      '型態二：民法不動產物權（所有權、地上權、抵押權、不動產役權如袋地通行權）與買賣/工程承攬契約瑕疵擔保責任',
+      '型態三：建築法第 73 條變更使用執照與第 77 條建築物構造與設備安全檢查申報義務',
+    ],
+    killerTrick: '不動產（土地與房屋）產權移轉設定口訣：「必須簽訂書面並向地政事務所完成『登記』才生所有權移轉效力」，光簽買賣契約還沒過戶登記前，所有權還沒轉移！',
+  },
+  'civics/economy-sustainability': {
+    frequency: '⭐⭐⭐⭐ 營建經濟與外部性',
+    keyQuestionTypes: [
+      '型態一：機會成本（Opportunity Cost：選擇某基地開發方案所放棄其他方案中價值最高者）與沉沒成本（已發生且不可回收之成本，決策時應忽略）',
+      '型態二：外部性（Externality）：工地噪音揚塵或高耗能建築碳排屬於「外部成本（負外部性）」，政府透過碳費、污染罰鍰或容積獎勵綠建築將「外部性內部化」',
+      '型態三：公共財特性（非排他性、非敵對性，如都市公園綠地、街道照明）與循環經濟（建材銀行、模組化可拆解設計）',
+    ],
+    killerTrick: '政府對綠建築給予「容積獎勵或稅費減免」是將「正外部性（外部效益）內部化」；對高碳排建材課徵「碳費」則是將「負外部性（外部成本）內部化」！',
+  },
+  'civics/society-culture': {
+    frequency: '⭐⭐⭐⭐ 包容性通用設計',
+    keyQuestionTypes: [
+      '型態一：通用設計（Universal Design）七大原則：公平使用、彈性使用、簡單直覺、明顯資訊、容錯安全、省力操作、適當尺寸空間（不只照顧身障者，更同時友善推嬰兒車家長、高齡者與搬重物者）',
+      '型態二：性別友善空間與無障礙環境規範（公共建築無障礙廁所、親子廁所、坡道斜率 ≤ 1/12、走廊扶手與視覺導盲磚）',
+      '型態三：多元文化空間尊重（原住民族傳統領域諮商同意權、新住民與移工友善公共空間）',
+    ],
+    killerTrick: '「無障礙設計」是針對特定身心障礙者去除障礙；「通用設計（Universal Design）」則是從設計源頭就讓所有人（幼童、孕婦、長者、身障者、一般人）不需特別改裝就能自然共融使用！',
+  },
+  'civics/labor-ethics': {
+    frequency: '⭐⭐⭐⭐ 職業安全與工程倫理',
+    keyQuestionTypes: [
+      '型態一：《職業安全衛生法》營造工地致命四大災害預防：「墜落（占營造職災首位，2公尺以上高處作業必設護欄、安全網與背負式安全帶）、感電、崩塌、物體飛落」',
+      '型態二：勞動基準法基本權益（工時、加班費、職災補償）與工地勞工安全衛生教育訓練、熱危害預防',
+      '型態三：建築師與工程師職業倫理：拒絕借牌簽證、嚴禁偷工減料（如箍筋135度彎鉤、混凝土不擅自加水）、吹哨者保護與公共安全至上原則',
+    ],
+    killerTrick: '營造工地職災死亡率第一名永遠是「高處墜落（開口未設護欄、施工架未綁安全帶）」！2 公尺以上高處作業強制設置護欄、安全母索與全身背負式安全帶！',
+  },
+  'civics/environment-policy': {
+    frequency: '⭐⭐⭐⭐ 淨零建築與環評',
+    keyQuestionTypes: [
+      '型態一：台灣 2050 淨零排放路徑與「淨零建築（Net Zero Building）」：透過建築外殼節能設計（降低空調照明需求）+ 高效率機電設備 + 再生能源（BIPV 建築整合太陽能光電）達成近零碳建築（nZEB）',
+      '型態二：《環境影響評估法》（環評 EIA）：大型開發案動工前須評估對生態、水文、交通、空氣噪音與文化資產之衝擊並提出減輕對策，落實預防原則與公民聽證參與',
+      '型態三：建築能效評估系統（BERS，由 1+ 級近零碳建築至 7 級）與國土氣候變遷調適計畫',
+    ],
+    killerTrick: '邁向淨零建築的正確順序：「先節能（被動式建築外殼遮陽隔熱通風 + 主動式高效設備省下 50% 能耗），再創能（屋頂與立面太陽能光電補足剩餘電力）」！',
   },
 };
 export function getTopicDeepKnowledge(subjectSlug: string, topicSlug: string): TopicDeepKnowledge {
@@ -774,33 +1409,193 @@ function getBaseTopicDeepKnowledge(subjectSlug: string, topicSlug: string): Topi
     };
   }
 
-  // === Default for Academic / Humanities / Extensions ===
+  // === 5. Math-C (統測數學 C) ===
+  if (subjectSlug === 'math-c') {
+    return {
+      cnsAndCodes: {
+        code: '技專校院入學測驗中心 統測數學(C)命題大綱',
+        title: '工業類科工程數學與空間幾何運算準則',
+        description: '涵蓋解析幾何、三角函數測量應用、平面與空間向量內外積、矩陣聯立方程、線性規劃最佳化及微積分面積極值解算，為工程力學與測量計算之數理基石。'
+      },
+      bilingualTerms: [
+        { en: 'Dot & Cross Product', zh: '向量內積與外積', abbr: 'a·b / a×b', context: '內積 a·b = |a||b|cosθ 判別垂直與投影工作量；空間外積 a×b 求公垂法向量與面積。' },
+        { en: 'Law of Sines & Cosines', zh: '正弦定理與餘弦定理', context: '解算任意三角形邊長、夾角與外接圓半徑，直接對應測量實習之三角高程與交會定位。' },
+        { en: 'Derivative & Definite Integral', zh: '導數與定積分', abbr: "f'(x) / ∫f(x)dx", context: '一階導數求切線斜率與極大極小值；定積分計算拋物線與曲線圍成之斷面幾何面積。' }
+      ],
+      decisionFlow: {
+        step1: '【翻譯題幹幾何與代數條件】將文字敘述轉化為標準式（配方法頂點式、圓標準式、向量分量或三角函數關係式）。',
+        step2: '【鎖定核心公式並消去未知數】利用判別式 D、根與係數（韋達定理）、內積為零或導數 f\'(x)=0 建立等式。',
+        step3: '【代入邊界條件與定義域驗算】檢查真數 > 0、分母 ≠ 0、象限正負號或閉區間端點值，排除增根與不合解。'
+      },
+      examTrend: {
+        frequency: '⭐⭐⭐⭐⭐ 每屆必考',
+        keyQuestionTypes: ['三角函數恆等式與正餘弦定理解三角形', '平面與空間向量內積、直線與圓切線弦長', '多項式餘式定理、微積分極值與拋物線圍成面積'],
+        killerTrick: '先看選項數值特徵，善用特殊角（30°/45°/60°）、對稱性、根與係數關係及頂點法代入驗算，大幅縮短代數展開時間！'
+      },
+      landmarkCase: {
+        name: '東海大學路思義教堂雙曲拋物面薄殼結構',
+        location: '台中市西屯區東海大學校園',
+        structuralFeature: '由貝聿銘與陳其寬設計，四片雙曲拋物面（Hyperbolic Paraboloid）鋼筋混凝土薄殼構成無柱大跨度空間，底部厚而頂部薄。',
+        pedagogicalInsight: '雙曲拋物面雖為三維優美曲面，但在空間解析幾何中可由直線族（直紋面 Ruled Surface）交織生成，使現場得以用筆直木模板澆置出雙向曲率薄殼。'
+      }
+    };
+  }
+
+  // === 6. Chinese (統測國文) ===
+  if (subjectSlug === 'chinese') {
+    return {
+      cnsAndCodes: {
+        code: '技專校院入學測驗中心 統測國文命題大綱',
+        title: '語文素養、古典與現代文本群文閱讀及寫作測驗規範',
+        description: '結合形音義修辭語文知識、古典亭臺山水散文、現代職場應用文及跨領域圖表雙文對讀，檢核邏輯推論與論述表達能力。'
+      },
+      bilingualTerms: [
+        { en: 'Rhetorical Devices', zh: '修辭格判讀', context: '辨析譬喻（明喻/隱喻/借喻）、借代、轉化（擬人/擬物/形象化）、映襯與感官移覺摹寫。' },
+        { en: 'Spatial Narrative in Prose', zh: '空間敘事與託物言志', context: '古今散文透過建築軒亭、園林景致之明暗動靜對比，寄託作者生命哲思與處世情懷。' },
+        { en: 'Comparative Reading', zh: '雙文對讀與圖表判讀', context: '比對甲乙兩文之論點異同、因果邏輯，或將統計圖表數據轉譯為精準文字推論。' }
+      ],
+      decisionFlow: {
+        step1: '【圈出題幹問法與轉折詞】先確認題目問「主旨、推論、相符或不相符」，並圈出原文「然而、卻、況且、然則」等轉折關鍵詞。',
+        step2: '【比對選項與原文邏輯】檢查選項是否犯了「無中生有、強加因果、以偏概全（必然/所有/唯一）、主客體顛倒」四大陷阱。',
+        step3: '【語境還原驗算】字音字形與成語題放回前後文語境檢驗詞性與褒貶色彩，句子重組題鎖定指代詞與連接詞配對。'
+      },
+      examTrend: {
+        frequency: '⭐⭐⭐⭐⭐ 每屆必考',
+        keyQuestionTypes: ['跨領域科普與建築美學長文閱讀推論', '古今雙文對讀與圖表資訊判讀', '字音字形、成語語境、句子重組與應用文書信規範'],
+        killerTrick: '閱讀測驗先看選項再回原文定位，凡出現「必然、絕對、唯一、只要…就…」過度武斷字眼之選項，優先列為高風險誘答項檢驗！'
+      },
+      landmarkCase: {
+        name: '板橋林本源園邸（林家花園）江南園林空間美學',
+        location: '新北市板橋區',
+        structuralFeature: '台灣保存最完整之清代園林建築，包含汲古書屋、方鑑齋、來青閣、月波水榭與漏窗迴廊，體現「尺幅窗、無心畫」之借景與框景手法。',
+        pedagogicalInsight: '古典文學中之亭、臺、樓、閣、軒、榭並非抽象名詞，而是結合採光、聽雨、借景與禮制秩序之立體建築空間。'
+      }
+    };
+  }
+
+  // === 7. English (統測英文) ===
+  if (subjectSlug === 'english') {
+    return {
+      cnsAndCodes: {
+        code: '技專校院入學測驗中心 統測英文命題大綱',
+        title: '技職英語字彙片語、生活職場對話、綜合測驗與非選擇題規範',
+        description: '包含選擇題（字彙片語、日常與職場對話、克漏字綜合測驗、多文本與圖表閱讀理解）及非選擇題（單字填充、句子重組、中譯英）。'
+      },
+      bilingualTerms: [
+        { en: 'Parts of Speech & Collocation', zh: '詞性變化與固定搭配', context: '判斷空格所需詞性（N/V/Adj/Adv）及動詞片語、介系詞固定搭配（如 look forward to + V-ing）。' },
+        { en: 'Relative & Participial Clauses', zh: '關係子句與分詞構句', context: '利用關係代名詞（who/which/that/what）與分詞構句（主動 V-ing / 被動 Vpp）精簡連接複合句。' },
+        { en: 'Paraphrasing & Inference', zh: '同義改寫與閱讀推論', context: '統測閱讀測驗正確答案常將原文關鍵句進行同義字詞替換（Paraphrase）與合理邏輯推論。' }
+      ],
+      decisionFlow: {
+        step1: '【判別詞性與句型結構】先看空格在句中擔任主詞、動詞、受詞或修飾語，並檢查連接詞數量（N 個連接詞對應 N+1 個有限動詞）。',
+        step2: '【抓轉折因果信號詞】圈出 although / despite / however / therefore / since 等邏輯詞，鎖定前後文正負語意方向。',
+        step3: '【檢查時態、語態與單複數】確認主詞與動詞單複數一致、主動或被動（be + Vpp），以及假設語氣前後時間標記同步。'
+      },
+      examTrend: {
+        frequency: '⭐⭐⭐⭐⭐ 每屆必考',
+        keyQuestionTypes: ['情境字彙與高頻動詞片語辨析', '生活與工程職場情境對話、圖表海報閱讀判讀', '克漏字轉承語/分詞構句與非選填充、重組、中譯英'],
+        killerTrick: '文法與重組題先抓「主詞 S + 有限動詞 V」骨架；若已有主句動詞且無連接詞，後面動詞必轉為分詞（V-ing / Vpp）或不定詞（to V）！'
+      },
+      landmarkCase: {
+        name: '台北表演藝術中心（TPAC）國際競圖與雙語工程圖說',
+        location: '台北市士林區',
+        structuralFeature: '由 OMA 大都會建築事務所雷姆·庫哈斯（Rem Koolhaas）設計，將巨型球體劇場、大劇院與藍盒子嵌入中央正方體共用後台核心。',
+        pedagogicalInsight: '跨國建築競圖與大型公共工程皆採用中英雙語圖說（Blueprint / Elevation / Section / Specification），掌握專業工程英語即掌握國際建築溝通鑰匙。'
+      }
+    };
+  }
+
+  // === 8. Physics & Chemistry (工程物理與建築材料化學) ===
+  if (subjectSlug === 'physics' || subjectSlug === 'chemistry') {
+    return {
+      cnsAndCodes: {
+        code: '建築技術規則建築設備編 / CNS 建築物理與材料化學規範',
+        title: '建築熱環境、聲學照明、配電安全與混凝土水化防蝕原理',
+        description: '整合牛頓力學、功與能、外殼熱傳透率 U 值、室內混響時間 Sabine 公式、照度平方反比定律、水泥水化反應與鋼筋中性化防蝕機制。'
+      },
+      bilingualTerms: [
+        { en: 'Thermal Transmittance', zh: '熱傳透率 / U值', abbr: 'U-Value (W/m²·K)', context: '衡量建築外牆與屋頂隔熱性能之核心指標，U 值越低代表隔熱保溫效果越佳、空調節能越高。' },
+        { en: 'Carbonation & Corrosion', zh: '混凝土中性化與鋼筋腐蝕', context: '空氣中 CO₂ 滲入混凝土與強鹼性 Ca(OH)₂ 反應生成 CaCO₃ 使 pH 值降至 9 以下，導致鋼筋鈍態膜破壞生鏽膨脹。' },
+        { en: 'Reverberation Time', zh: '殘響時間 / 混響時間', abbr: 'RT60', context: '音源停止後室內聲壓級衰減 60 dB 所需時間，與室容積 V 成正比、與總吸音力 A 成反比（T = 0.161V/A）。' }
+      ],
+      decisionFlow: {
+        step1: '【識別物理守恆定律或化學反應式】確認題目屬於力學平衡、能量守恆、熱傳導、聲光波動、歐姆定律或酸鹼氧化還原反應。',
+        step2: '【統一 SI 國際單位制】將公分、公克、小時換算為公尺 (m)、公斤 (kg)、秒 (s)、瓦特 (W) 或莫耳濃度 (M) 後代入公式。',
+        step3: '【連結建築工程實務效應】檢核計算結果對結構穩定、外殼隔熱節能、室內音質照明或建材耐久防蝕之實質影響。'
+      },
+      examTrend: {
+        frequency: '⭐⭐⭐⭐ 跨域理工基石',
+        keyQuestionTypes: ['力學功與能、滑輪機械利益與結構靜力平衡', '建築熱傳導 U 值、聲學殘響時間、光學照度與並聯配電安全', '水泥水化反應 Ca(OH)₂、混凝土碳化中性化與金屬電化學防蝕'],
+        killerTrick: '混凝土強鹼環境（pH 12~13）是鋼筋天然防鏽衣；一旦 CO₂ 中性化或海砂氯離子 Cl⁻ 侵入破壞鈍態膜，鋼筋生鏽體積膨脹 2.5~4 倍就會撐裂保護層（爆裂剝落）！'
+      },
+      landmarkCase: {
+        name: '衛武營國家藝術文化中心葡萄園式聲學音樂廳',
+        location: '高雄市鳳山區',
+        structuralFeature: '全台唯一葡萄園式階梯座席音樂廳，搭配升降式音響反射板與波浪狀吸音擴散牆面，精準調控各頻段殘響時間。',
+        pedagogicalInsight: '透過建築聲學幾何反射路徑與吸音材料配置，使交響樂演出時殘響時間維持在 2.0 秒黃金區間，讓全場 1981 席聽眾享有均勻飽滿音場。'
+      }
+    };
+  }
+
+  // === 9. History, Geography & Civics (建築史、環境地理與營建法規公民) ===
+  if (subjectSlug === 'history' || subjectSlug === 'geography' || subjectSlug === 'civics') {
+    return {
+      cnsAndCodes: {
+        code: '文化資產保存法 / 國土計畫法 / 建築法與都市計畫法',
+        title: '建築歷史文化資產、地理氣候風土選址與營建法規公共治理',
+        description: '涵蓋台灣與中西建築史樣式演變、地形坡度與微氣候防災選址、GIS 空間疊圖分析、都市土地使用分區管制及工程職業倫理。'
+      },
+      bilingualTerms: [
+        { en: 'Architectural Heritage Conservation', zh: '文化資產與古蹟修復', context: '遵循「最小干預、可逆性、原材料原工法、真實性（Authenticity）」原則進行古蹟與歷史建築保存活化。' },
+        { en: 'Microclimate & Site Analysis', zh: '基地微氣候與地形分析', context: '結合等高線坡度、日照方位、季風風廊與洪氾潛勢圖（GIS 疊圖），決定建築座向與防洪高程。' },
+        { en: 'Zoning & Urban Governance', zh: '土地使用分區與都市治理', context: '透過住宅區、商業區、工業區之建蔽率與容積率管制，兼顧私權開發、公共安全與環境外部性內部化。' }
+      ],
+      decisionFlow: {
+        step1: '【定位時代脈絡、空間尺度與法規位階】先判斷題目聚焦於歷史時期樣式、地理氣候區位還是法律權利義務關係。',
+        step2: '【分析構造形式與環境社會成因】由氣候材料（如台灣多雨高溫衍生亭仔腳騎樓；哥德式飛扶壁解放承重牆開大彩繪玻璃窗）反推建築形式。',
+        step3: '【檢核永續公共利益與防災韌性】評估方案是否符合文化真實性、國土防災韌性、無障礙平權及工程倫理規範。'
+      },
+      examTrend: {
+        frequency: '⭐⭐⭐⭐ 人文環境素養',
+        keyQuestionTypes: ['台灣建築史（閩粵合院、日治辰野式/折衷主義/現代主義）與中西古典哥德現代建築比較', '等高線地形判讀、氣候應答風土建築（騎樓/深出簷/合院）與 GIS 空間疊圖選址', '建築法規行政救濟、財產權社會義務、綠建築碳費外部性與營造安全職業倫理'],
+        killerTrick: '中西建築結構演進主線：「古希臘樑柱（柱式美學）→ 古羅馬拱券與圓頂（大跨度）→ 哥德式尖拱、肋拱與飛扶壁（高聳入雲與彩繪玻璃）→ 現代主義鋼構RC（自由平面與水平帶狀窗）」！'
+      },
+      landmarkCase: {
+        name: '國立台灣博物館（原台灣總督府博物館）與大稻埕歷史街區',
+        location: '台北市中正區 / 大同區',
+        structuralFeature: '台博館展現嚴謹的新古典主義多立克柱式與羅馬圓頂；大稻埕街屋則融合巴洛克山牆洗石子立面、閩南長條街屋三進格局與防雨遮陽「亭仔腳（騎樓）」。',
+        pedagogicalInsight: '建築是凝固的歷史與地理：立面語彙反映時代政經文化思潮，而騎樓與天井剖面則直接回應亞熱帶多雨炎熱的氣候地理環境。'
+      }
+    };
+  }
+
+  // === Default for Extensions (建築跨域實戰與作品集) ===
   return {
     cnsAndCodes: {
-      code: '內政部國土管理署 建築技術規則',
-      title: '建築環境、永續綠建築與都市空間規劃準則',
-      description: '規範建築基地建蔽率、容積率、防火逃生避難距離、日照採光無障礙空間及 EEWH 綠建築節能評估標準。'
+      code: '內政部國土管理署 建築技術規則 / 技術士技能檢定規範',
+      title: '建築空間設計、營造施工細部、BIM 數位協同與作品集論述準則',
+      description: '整合基地環境物理分析、人體工學尺度、RC 與深開挖營造工法、CAD/BIM 參數化建模、技能檢定規範與設計作品集圖面敘事。'
     },
     bilingualTerms: [
-      { en: 'Building Coverage Ratio', zh: '建蔽率', abbr: 'BCR', context: '建築面積與基地面積之百分比，保留基地空地以維持良好通風採光與消防救援通道。' },
-      { en: 'Floor Area Ratio', zh: '容積率', abbr: 'FAR', context: '各樓層總樓地板面積與基地面積之百分比，管制都市土地使用密度與人口容納量。' },
-      { en: 'Green Building EEWH', zh: '綠建築評估系統', abbr: 'EEWH', context: '生態 (Ecology)、節能 (Energy Saving)、減廢 (Waste Reduction)、健康 (Health) 四大範疇九大指標。' }
+      { en: 'Massing & Spatial Sequence', zh: '量體演變與空間序列', context: '從基地限制、日照風向切分出建築量體，並串聯入口玄關、公共核心與私密空間之動線體驗。' },
+      { en: 'Top-Down & Diaphragm Wall', zh: '逆打工法與連續壁', context: '都會區深開挖以鋼筋混凝土連續壁擋土止水，並藉逆打工法一樓樓版作為工作平台上下同步施工。' },
+      { en: 'Parametric & BIM Workflow', zh: '參數化設計與 BIM 協同', context: '結合 Rhino/Grasshopper 幾何環境最佳化與 Revit BIM 參數化元件，實現平立剖面與數量表即時連動。' }
     ],
     decisionFlow: {
-      step1: '【確認核心法規與物理原理】如建蔽率控制建築面積、容積率控制總樓地板面積、煙囪效應控制熱對流。',
-      step2: '【掌握空間邏輯與環境對話】日照方位向南開窗、夏季西南季風自然通風、冬季東北季風擋風。',
-      step3: '【整合跨學科建築思維】結合工程科學計算、環境永續指標與人文空間脈絡，完成整體建築論述。'
+      step1: '【診斷基地議題與使用需求】盤點日照、季風、動線、法規建蔽容積與使用者人體工學尺度。',
+      step2: '【轉化空間策略與構造系統】選擇適切結構系統（RC/鋼構/木構）、遮陽通風剖面及施工工法解決基地痛點。',
+      step3: '【精準圖面視覺化與論述表達】以三階線寬分明之平立剖面圖、軸測爆炸圖及量化環境效益數據完成設計論述。'
     },
     examTrend: {
-      frequency: '⭐⭐⭐⭐ 高頻核心',
-      keyQuestionTypes: ['綠建築九大指標與節能計算', '建蔽率與容積率土地開發計算', '傳統聚落建築格局與風土調適機制'],
-      killerTrick: '建蔽率管「平面多寬（投影面積）」、容積率管「立體多大（總樓地板）」，二者相除即可求出大樓最大合法建造樓層數！'
+      frequency: '⭐⭐⭐⭐⭐ 專業實務與升學核心',
+      keyQuestionTypes: ['深開挖連續壁、順打/逆打工法與鋼筋混凝土施工養護拆模程序', '基地微氣候遮陽導風設計、無障礙尺度與 CAD/BIM 參數化協同', '建築製圖/測量技能檢定規範與作品集圖面敘事論述架構'],
+      killerTrick: '建築設計與施工合一思考：平面決定功能動線，剖面決定採光通風與結構高度，細部大樣（滴水線、防水收頭、鋼筋保護層）決定建築壽命！'
     },
     landmarkCase: {
-      name: '北投市立圖書館木造綠建築',
-      location: '台北市北投區北投公園內',
-      structuralFeature: '台灣首座榮獲內政部綠建築「鑽石級」標章之木構造綠建築圖書館。',
-      pedagogicalInsight: '深遮陽出簷與大面積向南落地窗引入自然光，斜屋頂設置太陽能光電板並收集雨水回收澆灌，達成空調節能 40% 的永續建築典範。'
+      name: '北投市立圖書館木造綠建築與台北 101 逆打深開挖工程',
+      location: '台北市北投區 / 信義區',
+      structuralFeature: '北投圖書館以大跨度集成材木構與深遮陽達成鑽石級綠建築；台北 101 地下 5 層採用超深連續壁與逆打工法克服台北盆地軟弱黏土層。',
+      pedagogicalInsight: '從自然木構微氣候調適到超高層大樓深開挖逆打工法，展現建築人在「環境永續設計」與「精密營造工程」兩端的跨域整合實力。'
     }
   };
 }

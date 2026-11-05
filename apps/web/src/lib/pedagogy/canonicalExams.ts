@@ -37,7 +37,7 @@ export const canonicalExamQuestions: CanonicalExamQuestion[] = rawExamQuestions
     };
   });
 export const getTopicExamQuestions = (route: string) => canonicalExamQuestions
-  .filter((q) => q.lessonRoute === route)
+  .filter((q) => q.lessonRoute === route || Boolean(q.teaching?.routes.includes(route)))
   .sort((a,b) => Number(Boolean(b.teaching))-Number(Boolean(a.teaching)) || b.year-a.year || a.questionNo-b.questionNo);
 export function getTopicTeachingCases(route: string) {
   return examTeachingCases.filter((c) => c.routes.includes(route)).map((guide) => ({ guide, question: canonicalExamQuestions.find((q) => q.id === guide.questionId)! }));
