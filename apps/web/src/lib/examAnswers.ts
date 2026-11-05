@@ -1,5 +1,10 @@
 const choiceOrder = ['A', 'B', 'C', 'D'] as const;
 
+/** TCTE single-choice errata such as CD accept either option; a bonus item is not evidence of mastery. */
+export function isOfficialSingleChoiceCorrect(answer: string, selected?: string | null) {
+  return answer !== '送分' && /^[A-D]$/.test(selected ?? '') && normalizedChoices(answer).includes(selected!);
+}
+
 export function normalizedChoices(value?: string | null) {
   if (!value) return '';
   return choiceOrder.filter((choice) => value.toUpperCase().includes(choice)).join('');

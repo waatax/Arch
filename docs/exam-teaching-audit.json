@@ -1,0 +1,1522 @@
+{
+  "scope": "111–115 official sources; semantic explanations cover only authored cases",
+  "canonical": 925,
+  "excluded": 185,
+  "explained": 112,
+  "pending": 813,
+  "routeCorrections": 58,
+  "numericChecks": 90,
+  "chapters": [
+    {
+      "route": "/subjects/mechanics/structural-failures",
+      "questions": 0,
+      "types": [
+        {
+          "id": "114-1-1",
+          "type": "桁架控制桿件內力與最大容許載重 P 反推"
+        },
+        {
+          "id": "112-1-10",
+          "type": "三軸靜水壓力下之體積應變與水深推算"
+        },
+        {
+          "id": "113-1-34",
+          "type": "建築結構用耐震鋼材 (SN 系列) 之降伏比上限規範"
+        },
+        {
+          "id": "114-1-40",
+          "type": "拉力試驗：降伏、極限強度與斷後伸長率"
+        }
+      ]
+    },
+    {
+      "route": "/subjects/mechanics/parallel-force-systems",
+      "questions": 0,
+      "types": [
+        {
+          "id": "112-1-1",
+          "type": "異質複合斷面之重心偏移判讀"
+        },
+        {
+          "id": "113-1-2",
+          "type": "平行力合力位置與相等支承反力"
+        }
+      ]
+    },
+    {
+      "route": "/subjects/mechanics/nonconcurrent-force-systems",
+      "questions": 0,
+      "types": [
+        {
+          "id": "114-1-2",
+          "type": "滑動與傾倒兩種極限狀態競爭"
+        },
+        {
+          "id": "113-1-1",
+          "type": "三力平衡共面共點或平行定理與封閉力三角形"
+        },
+        {
+          "id": "114-1-15",
+          "type": "剛體斜梯靠光滑牆之取矩平衡與防滑水平推力"
+        }
+      ]
+    },
+    {
+      "route": "/subjects/mechanics/shear-properties",
+      "questions": 0,
+      "types": [
+        {
+          "id": "115-1-6",
+          "type": "矩形梁最大彎曲應力與最大剪應力的比值"
+        },
+        {
+          "id": "115-1-18",
+          "type": "橋梁橡膠支承墊之純剪應變與水平位移計算"
+        },
+        {
+          "id": "112-1-6",
+          "type": "同面積圓形斷面梁與矩形斷面梁之最大容許剪力比"
+        }
+      ]
+    },
+    {
+      "route": "/subjects/mechanics/units-vectors",
+      "questions": 0,
+      "types": [
+        {
+          "id": "113-1-5",
+          "type": "空間力的方向餘弦與三軸分量"
+        },
+        {
+          "id": "114-1-4",
+          "type": "空間力向量方向餘弦平方和恆等式"
+        },
+        {
+          "id": "111-1-20",
+          "type": "軸向受力桿件之等效彈簧勁度係數 k = AE/L"
+        }
+      ]
+    },
+    {
+      "route": "/subjects/mechanics/force-equilibrium",
+      "questions": 15,
+      "types": [
+        {
+          "id": "113-1-5",
+          "type": "空間力的方向餘弦與三軸分量"
+        },
+        {
+          "id": "113-1-1",
+          "type": "三力平衡共面共點或平行定理與封閉力三角形"
+        },
+        {
+          "id": "114-1-4",
+          "type": "空間力向量方向餘弦平方和恆等式"
+        }
+      ]
+    },
+    {
+      "route": "/subjects/mechanics/centroid",
+      "questions": 8,
+      "types": [
+        {
+          "id": "114-1-17",
+          "type": "扣除孔洞的形心與一次矩"
+        },
+        {
+          "id": "112-1-1",
+          "type": "異質複合斷面之重心偏移判讀"
+        }
+      ]
+    },
+    {
+      "route": "/subjects/mechanics/friction",
+      "questions": 8,
+      "types": [
+        {
+          "id": "114-1-2",
+          "type": "滑動與傾倒兩種極限狀態競爭"
+        },
+        {
+          "id": "111-1-7",
+          "type": "多層疊放物體拉動之接觸面最大靜摩擦力總和"
+        },
+        {
+          "id": "114-1-15",
+          "type": "剛體斜梯靠光滑牆之取矩平衡與防滑水平推力"
+        }
+      ]
+    },
+    {
+      "route": "/subjects/mechanics/truss",
+      "questions": 10,
+      "types": [
+        {
+          "id": "111-1-8",
+          "type": "零力桿判別後用節點法求內力"
+        },
+        {
+          "id": "114-1-1",
+          "type": "桁架控制桿件內力與最大容許載重 P 反推"
+        }
+      ]
+    },
+    {
+      "route": "/subjects/mechanics/beam",
+      "questions": 24,
+      "types": [
+        {
+          "id": "111-1-1",
+          "type": "荷重、剪力與彎矩的微分積分關係"
+        },
+        {
+          "id": "115-1-6",
+          "type": "矩形梁最大彎曲應力與最大剪應力的比值"
+        },
+        {
+          "id": "115-1-18",
+          "type": "橋梁橡膠支承墊之純剪應變與水平位移計算"
+        },
+        {
+          "id": "112-1-6",
+          "type": "同面積圓形斷面梁與矩形斷面梁之最大容許剪力比"
+        },
+        {
+          "id": "114-1-36",
+          "type": "石材正方柱試體中央集中載重抗彎強度計算"
+        },
+        {
+          "id": "113-1-2",
+          "type": "平行力合力位置與相等支承反力"
+        }
+      ]
+    },
+    {
+      "route": "/subjects/mechanics/stress-strain",
+      "questions": 35,
+      "types": [
+        {
+          "id": "113-1-12",
+          "type": "由主應力建立莫爾圓"
+        },
+        {
+          "id": "115-1-6",
+          "type": "矩形梁最大彎曲應力與最大剪應力的比值"
+        },
+        {
+          "id": "115-1-18",
+          "type": "橋梁橡膠支承墊之純剪應變與水平位移計算"
+        },
+        {
+          "id": "111-1-20",
+          "type": "軸向受力桿件之等效彈簧勁度係數 k = AE/L"
+        },
+        {
+          "id": "112-1-6",
+          "type": "同面積圓形斷面梁與矩形斷面梁之最大容許剪力比"
+        },
+        {
+          "id": "112-1-10",
+          "type": "三軸靜水壓力下之體積應變與水深推算"
+        },
+        {
+          "id": "114-1-12",
+          "type": "雙軸純剪等大異號應力下之體積應變恆為零"
+        },
+        {
+          "id": "114-1-36",
+          "type": "石材正方柱試體中央集中載重抗彎強度計算"
+        },
+        {
+          "id": "114-1-40",
+          "type": "拉力試驗：降伏、極限強度與斷後伸長率"
+        }
+      ]
+    },
+    {
+      "route": "/subjects/mechanics/spatial-force-systems",
+      "questions": 0,
+      "types": [
+        {
+          "id": "113-1-5",
+          "type": "空間力的方向餘弦與三軸分量"
+        },
+        {
+          "id": "114-1-4",
+          "type": "空間力向量方向餘弦平方和恆等式"
+        }
+      ]
+    },
+    {
+      "route": "/subjects/mechanics/plane-stress",
+      "questions": 0,
+      "types": [
+        {
+          "id": "113-1-12",
+          "type": "由主應力建立莫爾圓"
+        },
+        {
+          "id": "114-1-12",
+          "type": "雙軸純剪等大異號應力下之體積應變恆為零"
+        }
+      ]
+    },
+    {
+      "route": "/subjects/materials/green-building-materials",
+      "questions": 0,
+      "types": [
+        {
+          "id": "115-1-35",
+          "type": "綠混凝土標章分類：G 類、R 類與 H 類判別"
+        },
+        {
+          "id": "114-1-25",
+          "type": "高性能綠建材：評定項目與一般性能分開"
+        }
+      ]
+    },
+    {
+      "route": "/subjects/materials/basic-properties",
+      "questions": 26,
+      "types": [
+        {
+          "id": "115-1-38",
+          "type": "李氏比重瓶：以排液體積求密度"
+        },
+        {
+          "id": "111-1-31",
+          "type": "CNS 487 比重瓶法測定細粒料面乾內飽和比重"
+        },
+        {
+          "id": "114-1-33",
+          "type": "木材與角材「才積」單位換算（1 m³ = 360 才）"
+        },
+        {
+          "id": "111-1-35",
+          "type": "細粒料總含水率、吸水率與表面含水率精密公式"
+        }
+      ]
+    },
+    {
+      "route": "/subjects/materials/cement-composition",
+      "questions": 0,
+      "types": [
+        {
+          "id": "113-1-22",
+          "type": "閃凝與假凝的熱量、原因與處理"
+        },
+        {
+          "id": "114-1-31",
+          "type": "水泥選型與 C3A 的抗硫酸鹽關係"
+        },
+        {
+          "id": "111-1-22",
+          "type": "混凝土水灰比 (W/C) 與水膠比 (W/B) 嚴格區分"
+        },
+        {
+          "id": "115-1-23",
+          "type": "由四大熟料礦物百分比判別 CNS 61 水泥類型"
+        }
+      ]
+    },
+    {
+      "route": "/subjects/materials/cement-types",
+      "questions": 17,
+      "types": [
+        {
+          "id": "115-1-38",
+          "type": "李氏比重瓶：以排液體積求密度"
+        },
+        {
+          "id": "114-1-31",
+          "type": "水泥選型與 C3A 的抗硫酸鹽關係"
+        },
+        {
+          "id": "111-1-22",
+          "type": "混凝土水灰比 (W/C) 與水膠比 (W/B) 嚴格區分"
+        },
+        {
+          "id": "114-1-22",
+          "type": "CNS 15992 水泥砂漿流度試驗百分比計算"
+        },
+        {
+          "id": "115-1-21",
+          "type": "水泥受潮風化比重降低之工地品管處置"
+        },
+        {
+          "id": "115-1-23",
+          "type": "由四大熟料礦物百分比判別 CNS 61 水泥類型"
+        }
+      ]
+    },
+    {
+      "route": "/subjects/materials/cement-vicat",
+      "questions": 3,
+      "types": [
+        {
+          "id": "113-1-22",
+          "type": "閃凝與假凝的熱量、原因與處理"
+        },
+        {
+          "id": "114-1-22",
+          "type": "CNS 15992 水泥砂漿流度試驗百分比計算"
+        }
+      ]
+    },
+    {
+      "route": "/subjects/materials/cement-strength",
+      "questions": 0,
+      "types": [
+        {
+          "id": "115-1-25",
+          "type": "抗壓試驗條件改變對量測結果的影響"
+        },
+        {
+          "id": "114-1-22",
+          "type": "CNS 15992 水泥砂漿流度試驗百分比計算"
+        }
+      ]
+    },
+    {
+      "route": "/subjects/materials/cement-storage",
+      "questions": 0,
+      "types": [
+        {
+          "id": "113-1-22",
+          "type": "閃凝與假凝的熱量、原因與處理"
+        },
+        {
+          "id": "115-1-21",
+          "type": "水泥受潮風化比重降低之工地品管處置"
+        }
+      ]
+    },
+    {
+      "route": "/subjects/materials/concrete",
+      "questions": 8,
+      "types": [
+        {
+          "id": "115-1-24",
+          "type": "矽灰與強塑劑的互補作用"
+        },
+        {
+          "id": "115-1-31",
+          "type": "化學摻料的工程目的配對"
+        },
+        {
+          "id": "115-1-25",
+          "type": "抗壓試驗條件改變對量測結果的影響"
+        },
+        {
+          "id": "111-1-31",
+          "type": "CNS 487 比重瓶法測定細粒料面乾內飽和比重"
+        },
+        {
+          "id": "111-1-22",
+          "type": "混凝土水灰比 (W/C) 與水膠比 (W/B) 嚴格區分"
+        },
+        {
+          "id": "111-1-35",
+          "type": "細粒料總含水率、吸水率與表面含水率精密公式"
+        },
+        {
+          "id": "115-1-35",
+          "type": "綠混凝土標章分類：G 類、R 類與 H 類判別"
+        }
+      ]
+    },
+    {
+      "route": "/subjects/materials/stone-ceramics-glass",
+      "questions": 8,
+      "types": [
+        {
+          "id": "112-1-25",
+          "type": "玻璃隔熱：低放射率與安全性分開"
+        },
+        {
+          "id": "111-1-26",
+          "type": "紅磚抗壓：受壓面積與單位"
+        },
+        {
+          "id": "114-1-36",
+          "type": "石材正方柱試體中央集中載重抗彎強度計算"
+        }
+      ]
+    },
+    {
+      "route": "/subjects/materials/wood",
+      "questions": 10,
+      "types": [
+        {
+          "id": "115-1-27",
+          "type": "木材乾基含水率與恆重"
+        },
+        {
+          "id": "115-1-30",
+          "type": "自由水、結合水與乾縮"
+        },
+        {
+          "id": "114-1-33",
+          "type": "木材與角材「才積」單位換算（1 m³ = 360 才）"
+        },
+        {
+          "id": "111-1-35",
+          "type": "細粒料總含水率、吸水率與表面含水率精密公式"
+        }
+      ]
+    },
+    {
+      "route": "/subjects/materials/polymers-asphalt",
+      "questions": 12,
+      "types": [
+        {
+          "id": "115-1-36",
+          "type": "瀝青四種試驗的目的辨識"
+        }
+      ]
+    },
+    {
+      "route": "/subjects/materials/metals",
+      "questions": 10,
+      "types": [
+        {
+          "id": "115-1-32",
+          "type": "耐候鋼、鍍鋅與犧牲陽極的辨別"
+        },
+        {
+          "id": "115-1-26",
+          "type": "鋼筋 SD、強度數字與 W 的意義"
+        },
+        {
+          "id": "113-1-34",
+          "type": "建築結構用耐震鋼材 (SN 系列) 之降伏比上限規範"
+        },
+        {
+          "id": "114-1-40",
+          "type": "拉力試驗：降伏、極限強度與斷後伸長率"
+        }
+      ]
+    },
+    {
+      "route": "/subjects/materials/green-materials",
+      "questions": 5,
+      "types": [
+        {
+          "id": "111-1-37",
+          "type": "綠建材標章類別與一般優點的區分"
+        },
+        {
+          "id": "115-1-35",
+          "type": "綠混凝土標章分類：G 類、R 類與 H 類判別"
+        },
+        {
+          "id": "114-1-25",
+          "type": "高性能綠建材：評定項目與一般性能分開"
+        }
+      ]
+    },
+    {
+      "route": "/subjects/surveying/surveying-fundamentals",
+      "questions": 0,
+      "types": [
+        {
+          "id": "115-2-2",
+          "type": "加法有效位數與最後取位"
+        },
+        {
+          "id": "115-2-1",
+          "type": "TWD97 TM2 假東距與坐標軸"
+        },
+        {
+          "id": "113-2-7",
+          "type": "高海拔距離歸化至平均海水面之投影改正"
+        },
+        {
+          "id": "113-2-8",
+          "type": "水平角觀測中誤差引起之橫向點位偏移誤差"
+        }
+      ]
+    },
+    {
+      "route": "/subjects/surveying/indirect-distance-elevation",
+      "questions": 3,
+      "types": [
+        {
+          "id": "115-2-16",
+          "type": "天頂距雙高法：用 cot 而非 tan"
+        },
+        {
+          "id": "115-2-18",
+          "type": "傾斜視距測量的 cos² 與加常數"
+        },
+        {
+          "id": "114-2-11",
+          "type": "天頂距視距測量之水平距離公式 D = K·s·sin²Z"
+        }
+      ]
+    },
+    {
+      "route": "/subjects/surveying/distance-and-angle",
+      "questions": 18,
+      "types": [
+        {
+          "id": "115-2-8",
+          "type": "溫度尺長改正：丈量與測設相反"
+        },
+        {
+          "id": "114-2-11",
+          "type": "天頂距視距測量之水平距離公式 D = K·s·sin²Z"
+        },
+        {
+          "id": "113-2-7",
+          "type": "高海拔距離歸化至平均海水面之投影改正"
+        },
+        {
+          "id": "115-2-11",
+          "type": "天頂距式經緯儀正倒鏡觀測消去指標差求垂直角"
+        },
+        {
+          "id": "113-2-13",
+          "type": "電子經緯儀正倒鏡天頂距平均值計算"
+        },
+        {
+          "id": "113-2-8",
+          "type": "水平角觀測中誤差引起之橫向點位偏移誤差"
+        },
+        {
+          "id": "114-2-15",
+          "type": "鋼卷尺拉力改正抵銷低溫冷縮誤差之拉力計算"
+        }
+      ]
+    },
+    {
+      "route": "/subjects/surveying/elevation-and-leveling",
+      "questions": 40,
+      "types": [
+        {
+          "id": "111-2-1",
+          "type": "儀器高法與高程放樣方向"
+        },
+        {
+          "id": "113-2-1",
+          "type": "等距前後視消除系統誤差"
+        },
+        {
+          "id": "113-2-7",
+          "type": "高海拔距離歸化至平均海水面之投影改正"
+        },
+        {
+          "id": "113-2-14",
+          "type": "水準管靈敏度與氣泡偏移一格之標尺讀數改正"
+        },
+        {
+          "id": "115-2-11",
+          "type": "天頂距式經緯儀正倒鏡觀測消去指標差求垂直角"
+        }
+      ]
+    },
+    {
+      "route": "/subjects/surveying/instrument-setup",
+      "questions": 6,
+      "types": [
+        {
+          "id": "113-2-1",
+          "type": "等距前後視消除系統誤差"
+        },
+        {
+          "id": "115-2-18",
+          "type": "傾斜視距測量的 cos² 與加常數"
+        },
+        {
+          "id": "113-2-14",
+          "type": "水準管靈敏度與氣泡偏移一格之標尺讀數改正"
+        },
+        {
+          "id": "115-2-11",
+          "type": "天頂距式經緯儀正倒鏡觀測消去指標差求垂直角"
+        },
+        {
+          "id": "113-2-13",
+          "type": "電子經緯儀正倒鏡天頂距平均值計算"
+        }
+      ]
+    },
+    {
+      "route": "/subjects/surveying/traverse-surveying",
+      "questions": 14,
+      "types": [
+        {
+          "id": "114-2-20",
+          "type": "導線坐標閉合差與閉合比數"
+        },
+        {
+          "id": "113-2-9",
+          "type": "導線順時針水平夾角（左角）推算前進方位角"
+        }
+      ]
+    },
+    {
+      "route": "/subjects/surveying/coordinate-computation",
+      "questions": 6,
+      "types": [
+        {
+          "id": "115-2-14",
+          "type": "由後視方向與順時針角推算坐標"
+        },
+        {
+          "id": "114-2-20",
+          "type": "導線坐標閉合差與閉合比數"
+        },
+        {
+          "id": "115-2-1",
+          "type": "TWD97 TM2 假東距與坐標軸"
+        },
+        {
+          "id": "113-2-16",
+          "type": "平面座標法（鞋帶公式）求三角形面積與公頃換算"
+        }
+      ]
+    },
+    {
+      "route": "/subjects/surveying/area-and-error",
+      "questions": 13,
+      "types": [
+        {
+          "id": "115-2-2",
+          "type": "加法有效位數與最後取位"
+        },
+        {
+          "id": "113-2-16",
+          "type": "平面座標法（鞋帶公式）求三角形面積與公頃換算"
+        },
+        {
+          "id": "113-2-8",
+          "type": "水平角觀測中誤差引起之橫向點位偏移誤差"
+        },
+        {
+          "id": "114-2-15",
+          "type": "鋼卷尺拉力改正抵銷低溫冷縮誤差之拉力計算"
+        }
+      ]
+    },
+    {
+      "route": "/subjects/drafting/bim-concepts",
+      "questions": 0,
+      "types": []
+    },
+    {
+      "route": "/subjects/drafting/building-codes-far",
+      "questions": 1,
+      "types": [
+        {
+          "id": "112-2-32",
+          "type": "用錯比例尺的反算與建蔽率"
+        },
+        {
+          "id": "113-2-40",
+          "type": "陽台外推超過 2.0 m 計入建築面積與建蔽率大小比較"
+        }
+      ]
+    },
+    {
+      "route": "/subjects/drafting/drafting-fundamentals",
+      "questions": 2,
+      "types": [
+        {
+          "id": "115-2-23",
+          "type": "折圖後標題欄的可識別位置"
+        },
+        {
+          "id": "114-2-22",
+          "type": "土木建築工程圖依「使用用途」與「表現形式」之分類辨析"
+        },
+        {
+          "id": "115-2-21",
+          "type": "由圖面資訊深度（鋼筋型號、數量、細部接頭）判別圖說種類"
+        },
+        {
+          "id": "112-2-28",
+          "type": "CNS 11567 建築製圖正三角形修改符號 △ 判讀"
+        }
+      ]
+    },
+    {
+      "route": "/subjects/drafting/civil-architectural-drawings",
+      "questions": 0,
+      "types": [
+        {
+          "id": "115-2-23",
+          "type": "折圖後標題欄的可識別位置"
+        },
+        {
+          "id": "114-2-22",
+          "type": "土木建築工程圖依「使用用途」與「表現形式」之分類辨析"
+        },
+        {
+          "id": "115-2-21",
+          "type": "由圖面資訊深度（鋼筋型號、數量、細部接頭）判別圖說種類"
+        },
+        {
+          "id": "114-2-25",
+          "type": "結構平面與剖切圖之構材代號（G、PG、TG、F、FG）判讀"
+        },
+        {
+          "id": "112-2-26",
+          "type": "結構平面圖構材符號辨識：樓板 (S/CS) 與基礎 (F) 之區別"
+        }
+      ]
+    },
+    {
+      "route": "/subjects/drafting/lines-and-lettering",
+      "questions": 24,
+      "types": [
+        {
+          "id": "115-2-22",
+          "type": "工程字法：清晰一致與比例的界線"
+        },
+        {
+          "id": "114-2-21",
+          "type": "工程圖線條重疊繪製之六階優先順序"
+        },
+        {
+          "id": "114-2-22",
+          "type": "土木建築工程圖依「使用用途」與「表現形式」之分類辨析"
+        },
+        {
+          "id": "114-2-39",
+          "type": "CNS 建築門窗表防火門代號 f(60A) 與阻熱性判讀"
+        },
+        {
+          "id": "115-2-21",
+          "type": "由圖面資訊深度（鋼筋型號、數量、細部接頭）判別圖說種類"
+        }
+      ]
+    },
+    {
+      "route": "/subjects/drafting/scale",
+      "questions": 6,
+      "types": [
+        {
+          "id": "114-2-23",
+          "type": "坪、平方公尺、邊長與紙上周長"
+        },
+        {
+          "id": "112-2-32",
+          "type": "用錯比例尺的反算與建蔽率"
+        },
+        {
+          "id": "114-2-28",
+          "type": "比例尺熱脹冷縮誤差率定與跨比例尺換算出圖實長"
+        }
+      ]
+    },
+    {
+      "route": "/subjects/drafting/orthographic-projection",
+      "questions": 12,
+      "types": [
+        {
+          "id": "111-2-33",
+          "type": "等角圖與等角投影的縮短率"
+        },
+        {
+          "id": "115-2-28",
+          "type": "由 HP 上下、VP 前後判象限"
+        },
+        {
+          "id": "114-2-21",
+          "type": "工程圖線條重疊繪製之六階優先順序"
+        },
+        {
+          "id": "114-2-24",
+          "type": "透視投影四大基準術語縮寫（PP、HL、GL、SP）空間定位"
+        },
+        {
+          "id": "111-2-30",
+          "type": "斜投影圖（半斜圖）保持正面立面實形與記錄深度尺寸之優勢"
+        }
+      ]
+    },
+    {
+      "route": "/subjects/drafting/sectional-views",
+      "questions": 13,
+      "types": [
+        {
+          "id": "115-2-31",
+          "type": "割面位置、剖面與剖面線的角色"
+        },
+        {
+          "id": "114-2-25",
+          "type": "結構平面與剖切圖之構材代號（G、PG、TG、F、FG）判讀"
+        }
+      ]
+    },
+    {
+      "route": "/subjects/drafting/architectural-plan",
+      "questions": 15,
+      "types": [
+        {
+          "id": "114-2-23",
+          "type": "坪、平方公尺、邊長與紙上周長"
+        },
+        {
+          "id": "113-2-40",
+          "type": "陽台外推超過 2.0 m 計入建築面積與建蔽率大小比較"
+        },
+        {
+          "id": "114-2-39",
+          "type": "CNS 建築門窗表防火門代號 f(60A) 與阻熱性判讀"
+        },
+        {
+          "id": "114-2-25",
+          "type": "結構平面與剖切圖之構材代號（G、PG、TG、F、FG）判讀"
+        },
+        {
+          "id": "112-2-26",
+          "type": "結構平面圖構材符號辨識：樓板 (S/CS) 與基礎 (F) 之區別"
+        },
+        {
+          "id": "114-2-24",
+          "type": "透視投影四大基準術語縮寫（PP、HL、GL、SP）空間定位"
+        }
+      ]
+    },
+    {
+      "route": "/subjects/drafting/architectural-elevation",
+      "questions": 12,
+      "types": [
+        {
+          "id": "113-2-28",
+          "type": "一點、二點、三點透視的情境辨識"
+        },
+        {
+          "id": "111-2-30",
+          "type": "斜投影圖（半斜圖）保持正面立面實形與記錄深度尺寸之優勢"
+        }
+      ]
+    },
+    {
+      "route": "/subjects/drafting/dimensioning-and-symbols",
+      "questions": 9,
+      "types": [
+        {
+          "id": "115-2-22",
+          "type": "工程字法：清晰一致與比例的界線"
+        },
+        {
+          "id": "111-2-26",
+          "type": "尺度標註與面積資訊辨別"
+        },
+        {
+          "id": "114-2-39",
+          "type": "CNS 建築門窗表防火門代號 f(60A) 與阻熱性判讀"
+        },
+        {
+          "id": "112-2-28",
+          "type": "CNS 11567 建築製圖正三角形修改符號 △ 判讀"
+        }
+      ]
+    },
+    {
+      "route": "/subjects/drafting/cad-basics",
+      "questions": 0,
+      "types": [
+        {
+          "id": "112-2-28",
+          "type": "CNS 11567 建築製圖正三角形修改符號 △ 判讀"
+        }
+      ]
+    },
+    {
+      "route": "/subjects/drafting/drafting-instruments",
+      "questions": 0,
+      "types": [
+        {
+          "id": "115-2-26",
+          "type": "中垂線遞迴等分的最少次數"
+        },
+        {
+          "id": "114-2-21",
+          "type": "工程圖線條重疊繪製之六階優先順序"
+        },
+        {
+          "id": "114-2-28",
+          "type": "比例尺熱脹冷縮誤差率定與跨比例尺換算出圖實長"
+        }
+      ]
+    },
+    {
+      "route": "/subjects/drafting/geometric-constructions",
+      "questions": 2,
+      "types": [
+        {
+          "id": "115-2-26",
+          "type": "中垂線遞迴等分的最少次數"
+        }
+      ]
+    },
+    {
+      "route": "/subjects/drafting/auxiliary-views",
+      "questions": 2,
+      "types": [
+        {
+          "id": "111-2-34",
+          "type": "輔助視圖：先取得斜面的邊視再求實形"
+        }
+      ]
+    },
+    {
+      "route": "/subjects/drafting/perspective-projection",
+      "questions": 2,
+      "types": [
+        {
+          "id": "113-2-28",
+          "type": "一點、二點、三點透視的情境辨識"
+        },
+        {
+          "id": "114-2-24",
+          "type": "透視投影四大基準術語縮寫（PP、HL、GL、SP）空間定位"
+        },
+        {
+          "id": "111-2-30",
+          "type": "斜投影圖（半斜圖）保持正面立面實形與記錄深度尺寸之優勢"
+        }
+      ]
+    },
+    {
+      "route": "/subjects/chinese/classical-literature",
+      "questions": 22,
+      "types": [
+        {
+          "id": "115-chinese-7",
+          "type": "敘述視線由整體聚焦局部"
+        }
+      ]
+    },
+    {
+      "route": "/subjects/chinese/modern-literature",
+      "questions": 0,
+      "types": [
+        {
+          "id": "115-chinese-7",
+          "type": "敘述視線由整體聚焦局部"
+        }
+      ]
+    },
+    {
+      "route": "/subjects/chinese/linguistics",
+      "questions": 7,
+      "types": [
+        {
+          "id": "111-chinese-1",
+          "type": "由詞義分辨同音近形字"
+        }
+      ]
+    },
+    {
+      "route": "/subjects/chinese/reading-comprehension",
+      "questions": 144,
+      "types": [
+        {
+          "id": "115-chinese-9",
+          "type": "語句排序：代詞回指、並列與結果"
+        },
+        {
+          "id": "115-chinese-5",
+          "type": "語詞史料的證據邊界"
+        }
+      ]
+    },
+    {
+      "route": "/subjects/chinese/writing-expression",
+      "questions": 0,
+      "types": [
+        {
+          "id": "115-chinese-9",
+          "type": "語句排序：代詞回指、並列與結果"
+        }
+      ]
+    },
+    {
+      "route": "/subjects/chinese/cultural-knowledge",
+      "questions": 17,
+      "types": [
+        {
+          "id": "115-chinese-5",
+          "type": "語詞史料的證據邊界"
+        }
+      ]
+    },
+    {
+      "route": "/subjects/english/vocabulary-phrases",
+      "questions": 50,
+      "types": [
+        {
+          "id": "115-english-7",
+          "type": "由動詞搭配與語境選字"
+        },
+        {
+          "id": "115-english-9",
+          "type": "畫線字同義改寫與詞性核對"
+        }
+      ]
+    },
+    {
+      "route": "/subjects/english/grammar-patterns",
+      "questions": 0,
+      "types": [
+        {
+          "id": "115-english-9",
+          "type": "畫線字同義改寫與詞性核對"
+        },
+        {
+          "id": "115-english-23",
+          "type": "讓步連接詞與完整子句"
+        }
+      ]
+    },
+    {
+      "route": "/subjects/english/conversation-daily-use",
+      "questions": 50,
+      "types": [
+        {
+          "id": "115-english-11",
+          "type": "從下句回答倒推問句功能"
+        }
+      ]
+    },
+    {
+      "route": "/subjects/english/reading-comprehension",
+      "questions": 70,
+      "types": [
+        {
+          "id": "111-english-33",
+          "type": "公告的主題、限制與活動日期分層"
+        },
+        {
+          "id": "115-english-42",
+          "type": "細節題的數量、時序與同義改寫"
+        }
+      ]
+    },
+    {
+      "route": "/subjects/english/vocabulary-professional",
+      "questions": 0,
+      "types": []
+    },
+    {
+      "route": "/subjects/english/grammar-clauses",
+      "questions": 0,
+      "types": [
+        {
+          "id": "115-english-23",
+          "type": "讓步連接詞與完整子句"
+        }
+      ]
+    },
+    {
+      "route": "/subjects/english/reading-infographics",
+      "questions": 0,
+      "types": [
+        {
+          "id": "111-english-33",
+          "type": "公告的主題、限制與活動日期分層"
+        }
+      ]
+    },
+    {
+      "route": "/subjects/english/cloze-passage-structure",
+      "questions": 40,
+      "types": [
+        {
+          "id": "115-english-21",
+          "type": "介系詞表示群體中的成員"
+        },
+        {
+          "id": "115-english-23",
+          "type": "讓步連接詞與完整子句"
+        },
+        {
+          "id": "115-english-24",
+          "type": "不定詞目的與全段主旨一致"
+        }
+      ]
+    },
+    {
+      "route": "/subjects/english/grammar-mastery",
+      "questions": 0,
+      "types": [
+        {
+          "id": "115-english-24",
+          "type": "不定詞目的與全段主旨一致"
+        }
+      ]
+    },
+    {
+      "route": "/subjects/english/workplace-communication",
+      "questions": 0,
+      "types": [
+        {
+          "id": "115-english-11",
+          "type": "從下句回答倒推問句功能"
+        }
+      ]
+    },
+    {
+      "route": "/subjects/english/reading-advanced",
+      "questions": 0,
+      "types": [
+        {
+          "id": "115-english-42",
+          "type": "細節題的數量、時序與同義改寫"
+        }
+      ]
+    },
+    {
+      "route": "/subjects/english/translation-writing",
+      "questions": 0,
+      "types": []
+    },
+    {
+      "route": "/subjects/math-c/functions-graphs",
+      "questions": 8,
+      "types": [
+        {
+          "id": "115-math-c-4",
+          "type": "區間改寫成絕對值不等式"
+        }
+      ]
+    },
+    {
+      "route": "/subjects/math-c/trigonometry",
+      "questions": 17,
+      "types": [
+        {
+          "id": "115-math-c-14",
+          "type": "兩角一邊的三角形面積"
+        }
+      ]
+    },
+    {
+      "route": "/subjects/math-c/vectors",
+      "questions": 6,
+      "types": [
+        {
+          "id": "114-math-c-2",
+          "type": "垂直向量內積與長度相乘的差別"
+        }
+      ]
+    },
+    {
+      "route": "/subjects/math-c/algebra",
+      "questions": 11,
+      "types": [
+        {
+          "id": "115-math-c-1",
+          "type": "韋達定理與新根的和、積"
+        }
+      ]
+    },
+    {
+      "route": "/subjects/math-c/lines-circles",
+      "questions": 9,
+      "types": [
+        {
+          "id": "115-math-c-17",
+          "type": "直線與圓相交及行進方向檢核"
+        }
+      ]
+    },
+    {
+      "route": "/subjects/math-c/sequences-series",
+      "questions": 6,
+      "types": [
+        {
+          "id": "115-math-c-2",
+          "type": "等差數列中間項與重疊項和"
+        }
+      ]
+    },
+    {
+      "route": "/subjects/math-c/permutations-combinations",
+      "questions": 5,
+      "types": [
+        {
+          "id": "115-math-c-13",
+          "type": "指定場次的限制排列"
+        }
+      ]
+    },
+    {
+      "route": "/subjects/math-c/trig-applications",
+      "questions": 5,
+      "types": [
+        {
+          "id": "115-math-c-21",
+          "type": "極坐標轉直角坐標辨圖形"
+        }
+      ]
+    },
+    {
+      "route": "/subjects/math-c/exponents-logarithms",
+      "questions": 9,
+      "types": [
+        {
+          "id": "115-math-c-11",
+          "type": "指數成長的倍率與倍增時間"
+        }
+      ]
+    },
+    {
+      "route": "/subjects/math-c/space-vectors",
+      "questions": 9,
+      "types": [
+        {
+          "id": "115-math-c-3",
+          "type": "空間距離的三維畢氏定理"
+        }
+      ]
+    },
+    {
+      "route": "/subjects/math-c/matrices",
+      "questions": 10,
+      "types": [
+        {
+          "id": "115-math-c-24",
+          "type": "列運算保存方程組的解"
+        }
+      ]
+    },
+    {
+      "route": "/subjects/math-c/linear-programming",
+      "questions": 5,
+      "types": [
+        {
+          "id": "113-math-c-21",
+          "type": "三角形區域的三個半平面"
+        }
+      ]
+    },
+    {
+      "route": "/subjects/math-c/geometry",
+      "questions": 5,
+      "types": [
+        {
+          "id": "115-math-c-19",
+          "type": "橢圓焦點距離和與反射路徑"
+        }
+      ]
+    },
+    {
+      "route": "/subjects/math-c/calculus",
+      "questions": 10,
+      "types": [
+        {
+          "id": "115-math-c-22",
+          "type": "把極限拆成導數定義"
+        }
+      ]
+    },
+    {
+      "route": "/subjects/math-c/integration",
+      "questions": 10,
+      "types": [
+        {
+          "id": "115-math-c-18",
+          "type": "代換積分與微分回驗"
+        }
+      ]
+    },
+    {
+      "route": "/subjects/physics/mechanics-motion",
+      "questions": 0,
+      "types": []
+    },
+    {
+      "route": "/subjects/physics/work-energy",
+      "questions": 0,
+      "types": []
+    },
+    {
+      "route": "/subjects/physics/thermodynamics",
+      "questions": 0,
+      "types": []
+    },
+    {
+      "route": "/subjects/physics/waves-acoustics",
+      "questions": 0,
+      "types": []
+    },
+    {
+      "route": "/subjects/physics/optics",
+      "questions": 0,
+      "types": []
+    },
+    {
+      "route": "/subjects/physics/electricity",
+      "questions": 0,
+      "types": []
+    },
+    {
+      "route": "/subjects/chemistry/matter-composition",
+      "questions": 0,
+      "types": []
+    },
+    {
+      "route": "/subjects/chemistry/chemical-reactions",
+      "questions": 0,
+      "types": []
+    },
+    {
+      "route": "/subjects/chemistry/acids-bases-salts",
+      "questions": 0,
+      "types": []
+    },
+    {
+      "route": "/subjects/chemistry/redox",
+      "questions": 0,
+      "types": []
+    },
+    {
+      "route": "/subjects/chemistry/organic-chemistry",
+      "questions": 0,
+      "types": []
+    },
+    {
+      "route": "/subjects/chemistry/environmental-chemistry",
+      "questions": 0,
+      "types": []
+    },
+    {
+      "route": "/subjects/history/taiwan-history",
+      "questions": 0,
+      "types": []
+    },
+    {
+      "route": "/subjects/history/chinese-history",
+      "questions": 0,
+      "types": []
+    },
+    {
+      "route": "/subjects/history/world-history",
+      "questions": 0,
+      "types": []
+    },
+    {
+      "route": "/subjects/history/architectural-history",
+      "questions": 0,
+      "types": []
+    },
+    {
+      "route": "/subjects/history/cultural-heritage",
+      "questions": 0,
+      "types": []
+    },
+    {
+      "route": "/subjects/history/social-change",
+      "questions": 0,
+      "types": []
+    },
+    {
+      "route": "/subjects/geography/environment-terrain",
+      "questions": 0,
+      "types": []
+    },
+    {
+      "route": "/subjects/geography/climate-environment",
+      "questions": 0,
+      "types": []
+    },
+    {
+      "route": "/subjects/geography/population-urban",
+      "questions": 0,
+      "types": []
+    },
+    {
+      "route": "/subjects/geography/regional-development",
+      "questions": 0,
+      "types": []
+    },
+    {
+      "route": "/subjects/geography/environmental-issues",
+      "questions": 0,
+      "types": []
+    },
+    {
+      "route": "/subjects/geography/gis",
+      "questions": 0,
+      "types": []
+    },
+    {
+      "route": "/subjects/civics/citizenship-community",
+      "questions": 0,
+      "types": []
+    },
+    {
+      "route": "/subjects/civics/law-life",
+      "questions": 0,
+      "types": []
+    },
+    {
+      "route": "/subjects/civics/economy-sustainability",
+      "questions": 0,
+      "types": []
+    },
+    {
+      "route": "/subjects/civics/society-culture",
+      "questions": 0,
+      "types": []
+    },
+    {
+      "route": "/subjects/civics/labor-ethics",
+      "questions": 0,
+      "types": []
+    },
+    {
+      "route": "/subjects/civics/environment-policy",
+      "questions": 0,
+      "types": []
+    },
+    {
+      "route": "/subjects/extensions/parametric-design-and-ai-assisted-competition",
+      "questions": 0,
+      "types": []
+    },
+    {
+      "route": "/subjects/extensions/portfolio-and-design-discourse",
+      "questions": 0,
+      "types": []
+    },
+    {
+      "route": "/subjects/extensions/spatial-design",
+      "questions": 0,
+      "types": []
+    },
+    {
+      "route": "/subjects/extensions/construction-methods",
+      "questions": 1,
+      "types": []
+    },
+    {
+      "route": "/subjects/extensions/cad-bim",
+      "questions": 0,
+      "types": []
+    },
+    {
+      "route": "/subjects/extensions/portfolio-models",
+      "questions": 0,
+      "types": []
+    },
+    {
+      "route": "/subjects/extensions/certification",
+      "questions": 0,
+      "types": []
+    }
+  ],
+  "requiresOriginal": [
+    "111-2-32",
+    "112-2-3",
+    "113-1-7",
+    "113-1-19",
+    "113-1-20"
+  ]
+}

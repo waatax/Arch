@@ -37,7 +37,7 @@ export default function CurriculumExamPathwayGuide() {
             學測 GSAT × 統測 TCTE 雙軌大考預備導航
           </h2>
           <p className="mt-2 text-sm leading-relaxed text-slate-600 dark:text-slate-400">
-            無論你立志透過學測申請一般大學五年制建築學系（成大、東海、逢甲、實踐等），或是經由統測報考頂尖科技大學建築系（台科大、北科大、高科大等），Arch 13 科 120 主題與 7 年大考題庫提供無斷層的素養教學。
+            平台以 13 科 120 主題提供建築學習與升學探索；逐題收錄範圍為 111–115 年統測五科，109、110 年提供官方題本索引。各升學管道的採計科目，請依當年招生簡章核對。
           </p>
         </div>
 
@@ -241,11 +241,11 @@ export default function CurriculumExamPathwayGuide() {
             </div>
             <div>
               <h4 className="font-bold text-sm text-slate-900 dark:text-white flex items-center gap-2">
-                過去 7 年（109–115 學年度）大考題目完整對齊與名師解析
+                五年統測真題與七年官方題本索引
                 <TrendingUp className="size-4 text-emerald-500" />
               </h4>
               <p className="mt-0.5 text-xs text-slate-600 dark:text-slate-400">
-                100% 逐題提供「五段式名師思維 SOP（審題線索 ➔ 核心原理 ➔ 官方正解 ➔ 誘答陷阱 ➔ 延伸驗算）」與課綱教學頁直達按鈕。
+                已精講題目提供必要知識、逐步推導、選項辨析與遷移練習；尚未完成者標示待補。請至「歷屆題型與精講」查閱各章範圍。
               </p>
             </div>
           </div>

@@ -5,7 +5,8 @@ import type { VisualFigureData } from '../data/types';
 import ChartRenderer from './ChartRenderer';
 import TableRenderer from './TableRenderer';
 import MathText from './MathText';
-import { isAnswerChoiceCorrect, isAnswerCorrect, isMultipleChoiceAnswer, toggleSelectedChoice } from '../lib/examAnswers';
+import { isAnswerChoiceCorrect, isOfficialSingleChoiceCorrect } from '../lib/examAnswers';
+import type { ExamTeachingCase } from '../data/examTeaching/types';
 import { Flag, Play, Pause, RotateCcw, Clock, CheckCircle, AlertCircle, BookOpen, PenTool, Flame, Sparkles, Check } from 'lucide-react';
 import ScratchpadCanvas from './pedagogy/ScratchpadCanvas';
 import MistakeNotebookModal from './pedagogy/MistakeNotebookModal';
@@ -34,6 +35,13 @@ export interface SimulationQuestion {
   sourceUrl: string;
   subject: string;
   topic: string;
+  teaching?: ExamTeachingCase;
+  needsOriginal?: boolean;
+}
+
+// Official single-choice errata accept either listed answer; bonus items count in exam score only.
+function isAnswerCorrect(answer: string, selected?: string) {
+  return answer === '送分' || isOfficialSingleChoiceCorrect(answer, selected);
 }
 
 export interface PracticeShardDescriptor {
@@ -177,7 +185,7 @@ export default function ExamSimulator({ catalog }: { catalog: PracticeCatalog })
   const answeredCount = Object.keys(answers).filter((id) => session.some((question) => question.id === id)).length;
   const flaggedCount = Object.keys(flagged).filter((id) => flagged[id] && session.some((q) => q.id === id)).length;
   const allAnswered = session.length > 0 && answeredCount === session.length;
-  const score = useMemo(() => session.filter((question) => answers[question.id] && isAnswerCorrect(question.answer, answers[question.id])).length, [session, answers]);
+  const score = useMemo(() => session.filter((question) => isAnswerCorrect(question.answer, answers[question.id])).length, [session, answers]);
 
   const displayedSession = useMemo(() => {
     if (!submitted) {
@@ -348,7 +356,7 @@ export default function ExamSimulator({ catalog }: { catalog: PracticeCatalog })
         <p className="text-xs font-mono uppercase tracking-widest text-blue-600 dark:text-blue-400 font-bold">108 Curriculum Past Exam Simulator</p>
         <h2 id="setup-title" className="mt-1 font-serif text-3xl font-bold text-slate-900 dark:text-white">建立全科目模擬試卷</h2>
         <p className="mt-3 text-sm leading-7 text-slate-600 dark:text-slate-400">
-          完整對齊 108 課綱大考命題標準，收錄歷屆全科目真題。支援全真計時器、待核對標記、Leitner 錯題收錄與五段式名師思維詳解（每題皆可直達 108 課綱教學頁面精熟）。
+          使用 111–115 年統測真題，支援計時、待核對標記與錯題複習。已精講題目提供逐步推導；其餘顯示共用讀題引導與解析待補，請回章節閱讀相關題型。
         </p>
       </div>
 
@@ -575,7 +583,6 @@ export default function ExamSimulator({ catalog }: { catalog: PracticeCatalog })
         {displayedSession.map((question, index) => {
           const selected = answers[question.id];
           const isCorrect = submitted && isAnswerCorrect(question.answer, selected);
-          const multiple = isMultipleChoiceAnswer(question.answer);
           const isFlagged = flagged[question.id];
           const startsGroup = Boolean(question.groupId && displayedSession[index - 1]?.groupId !== question.groupId);
 
@@ -700,9 +707,12 @@ export default function ExamSimulator({ catalog }: { catalog: PracticeCatalog })
                 )}
 
                 {/* Options */}
+                {question.answer.length > 1 && question.answer !== '送分' && <p className="text-sm font-bold">官方更正：{question.answer.split('').join(' 或 ')} 任一選項均接受（單選）。</p>}
+                {question.needsOriginal && <p className="rounded-xl bg-amber-50 p-3 text-sm text-amber-900">部分圖面或共同條件未完整擷取，作答前請先核對官方題本。</p>}
+                {question.answer === '送分' && <p className="text-sm font-bold">本題官方送分，計入模考分數；不作為學會此題的證據。</p>}
                 <fieldset className="mt-4 grid gap-3 sm:grid-cols-2" disabled={submitted}>
-                  <legend className={multiple ? 'mb-2 text-sm font-bold text-slate-600 dark:text-slate-300 sm:col-span-2' : 'sr-only'}>
-                    {multiple ? `第 ${index + 1} 題為多選題，請選出所有正確選項` : `第 ${index + 1} 題選項`}
+                  <legend className="sr-only">
+                    {`第 ${index + 1} 題選項`}
                   </legend>
                   {choices.map((choice) => {
                     const active = selected?.includes(choice) ?? false;
@@ -723,14 +733,14 @@ export default function ExamSimulator({ catalog }: { catalog: PracticeCatalog })
                         }`}
                       >
                         <input
-                          type={multiple ? 'checkbox' : 'radio'}
+                          type="radio"
                           name={question.id}
                           value={choice}
                           checked={active}
                           onChange={() =>
                             setAnswers((value) => ({
                               ...value,
-                              [question.id]: multiple ? toggleSelectedChoice(value[question.id], choice) : choice,
+                              [question.id]: choice,
                             }))
                           }
                           className="mt-1 accent-blue-600"
@@ -808,14 +818,14 @@ export default function ExamSimulator({ catalog }: { catalog: PracticeCatalog })
                         <div className="space-y-3 rounded-2xl border border-blue-100 bg-blue-50/40 p-4 sm:p-5 dark:border-blue-900/40 dark:bg-blue-950/20 text-xs sm:text-sm">
                           <div className="flex flex-wrap items-center justify-between border-b border-blue-200/60 dark:border-blue-900/40 pb-2 gap-2">
                             <span className="font-bold text-blue-900 dark:text-blue-200 flex items-center gap-1.5 font-serif text-sm sm:text-base">
-                              <Sparkles className="size-4 text-amber-500" /> 名師思路拆解：五段式 SOP 解題心法
+                              <Sparkles className="size-4 text-amber-500" /> {walkthrough.reviewed ? '逐題推導與選項辨析' : '逐題解析待補：共用讀題引導'}
                             </span>
                             <span className="font-mono text-[11px] text-slate-500">
                               {question.subjectName} · {question.topic}
                             </span>
                           </div>
 
-                          <ol className="space-y-2.5 text-slate-700 dark:text-slate-300 leading-relaxed">
+                          {walkthrough.reviewed ? <ol className="list-decimal space-y-3 pl-5 leading-7">{walkthrough.solutionSteps.map(step=><li key={step}><MathText content={step} /></li>)}</ol> : <ol className="space-y-2.5 text-slate-700 dark:text-slate-300 leading-relaxed">
                             <li>
                               <strong className="text-blue-700 dark:text-blue-300">1. 題目到底在問什麼？</strong>
                               <p className="text-slate-600 dark:text-slate-400 mt-0.5">{walkthrough.restate}</p>
@@ -832,7 +842,7 @@ export default function ExamSimulator({ catalog }: { catalog: PracticeCatalog })
                               <strong className="text-emerald-700 dark:text-emerald-300">4. 為什麼官方正解是對的？</strong>
                               <div className="mt-0.5 text-emerald-950 dark:text-emerald-100"><MathText content={walkthrough.correct} /></div>
                             </li>
-                          </ol>
+                          </ol>}
 
                           {walkthrough.distractors.length > 0 && (
                             <div className="mt-3 rounded-xl bg-amber-50/80 p-3.5 border border-amber-200/60 dark:bg-amber-950/25 dark:border-amber-900/30 space-y-1.5">

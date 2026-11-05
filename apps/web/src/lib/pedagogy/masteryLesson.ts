@@ -1,5 +1,6 @@
 import type { TopicContent } from '@/data/types';
 import type { TopicRealLifeGuide } from '@/lib/pedagogy/realLifeHelpers';
+import type { ExamTeachingCase } from '@/data/examTeaching/types';
 
 export interface MasteryLesson {
   plainStart: string;
@@ -73,36 +74,94 @@ export interface ExamWalkthroughInput {
   excerpt: string;
   answer: string;
   options?: Partial<Record<'A' | 'B' | 'C' | 'D', string>>;
+  teaching?: ExamTeachingCase;
 }
 
 export function buildExamWalkthrough(
   question: ExamWalkthroughInput,
   topic?: Partial<TopicContent> | { title?: string; desc?: string; concepts?: Array<{ heading: string; body: string }> }
 ) {
+  if (question.teaching) {
+    const g = question.teaching;
+    const letters = ['A','B','C','D'] as const;
+    return {
+      reviewed: true,
+      solutionSteps: g.steps,
+      restate: g.steps[0],
+      clues: `本題型：${g.kind}。先回到本章「歷屆題接回知識」的必要知識段落。`,
+      rule: g.knowledge.map(([title,body]) => `${title}：${body}`).join('\n'),
+      correct: `${g.steps.join('\n')}\n官方答案 ${question.answer}；本站依題示條件編寫推導。`,
+      distractors: letters.filter(l=>!question.answer.includes(l)).map(l=>`${l}「${question.options?.[l]??''}」：${g.reasons[letters.indexOf(l)]}`),
+      transfer: g.transfer.prompt,
+    };
+  }
   const answerChoices: string[] = question.answer.match(/[A-D]/g) ?? [];
   const correctText = answerChoices
     .map((choice) => `${choice}「${question.options?.[choice as 'A' | 'B' | 'C' | 'D'] ?? '以官方題本圖文為準'}」`)
     .join('、');
-  const anchor = topic?.concepts?.[0];
-  const rule = anchor
-    ? `${anchor.heading}：${compact(anchor.body, 170)}`
+
+  const combinedText = `${question.excerpt} ${Object.values(question.options ?? {}).join(' ')}`;
+  const concepts = topic?.concepts ?? [];
+  // Pick the concept whose heading/body shares the most 2-character tokens with the question
+  let bestConcept = concepts[0];
+  let bestScore = -1;
+  for (const c of concepts) {
+    let score = 0;
+    const target = `${c.heading} ${c.body}`;
+    for (let i = 0; i < Math.min(question.excerpt.length - 1, 60); i++) {
+      const token = question.excerpt.slice(i, i + 2).trim();
+      if (token.length === 2 && !/[，。、？（）\s]/.test(token) && target.includes(token)) {
+        score += 1;
+      }
+    }
+    if (score > bestScore) {
+      bestScore = score;
+      bestConcept = c;
+    }
+  }
+
+  const rule = bestConcept
+    ? `${bestConcept.heading}：${compact(bestConcept.body.replace(/<[^>]*>/g, ''), 200)}`
     : topic?.desc
     ? compact(topic.desc, 170)
     : '依據 108 課綱與統測命題標準，解題首重核心公式量綱、題幹邊界條件與空間/物理因果關係。';
-  const scopeWords = /不|非|錯誤|不可/.test(question.excerpt)
+
+  const isNegative = /不|非|錯誤|不可|何者有誤|並非/.test(question.excerpt);
+  const isCalc = /求|計算|多少|幾|大小|比值|面積|高程|距離|力矩|應力|強度|座標|=|\d+\s*(cm|mm|m|kN|N|MPa|kgf|°|%)/i.test(combinedText);
+
+  const scopeWords = isNegative
     ? '題幹含否定語（反向提問），最後務必核對你選出的是「不符合」或「錯誤」的項目。'
     : '題幹為正向提問，需找出所有條件完整吻合之最佳解答。';
 
   const title = topic?.title ?? '本科核心主題';
+  const conceptHeading = bestConcept?.heading ?? title;
+
+  const autoSteps: string[] = [
+    `步驟 1｜審題與題型定位：由題幹「${compact(question.excerpt, 76)}」辨識本題屬於「${title} — ${conceptHeading}」考點。${scopeWords}`,
+    isCalc
+      ? `步驟 2｜提取已知條件與單位：圈出題幹給定的數值、幾何尺寸、支承/觀測條件與單位，確認是否需要先做單位統一（例如 m 與 mm、kN 與 N）。`
+      : `步驟 2｜鎖定規範與定義關鍵字：圈出題幹中的核心專有名詞、試驗標準或語境連接詞，對照課綱「${conceptHeading}」之標準定義。`,
+    `步驟 3｜套用核心原理推導：依據「${compact(rule, 110)}」進行逐步檢核或代入關係式計算。`,
+    `步驟 4｜比對選項與排除干擾：將推導結論對照四個選項，鎖定完全符合條件之官方正解 ${correctText}。`,
+  ];
 
   return {
-    restate: `這題其實在問：你能不能從題幹線索辨認「${title}」的適用規則。${scopeWords}`,
+    reviewed: false,
+    solutionSteps: autoSteps,
+    restate: `這題其實在問：你能不能從題幹線索辨認「${title}（${conceptHeading}）」的適用規則。${scopeWords}`,
     clues: `先圈出關鍵物理量、幾何符號、材料名詞、單位（如 N, kN, MPa, cm, m）與「一定、可能、最大、最小、僅」等範圍限定詞。`,
     rule,
-    correct: `官方標準答案是 ${question.answer}，即 ${correctText}。它必須同時符合題幹幾何/物理邊界條件；不是因為字面看起來熟悉，而是推導邏輯與因果關係能完全契合。`,
+    correct: `${autoSteps.join('\n')}\n官方標準答案是 ${question.answer}，即 ${correctText}。`,
     distractors: (['A', 'B', 'C', 'D'] as const)
       .filter((choice) => !answerChoices.includes(choice) && question.options?.[choice])
-      .map((choice) => `${choice}「${compact(question.options?.[choice] ?? '', 80)}」：此為典型誘答干擾項（這不是官方答案）。回查它是否偷換概念、方向顛倒、漏看適用前提、單位未換算或過度外推。`),
-    transfer: `若將題目的數值、受力形式或幾何尺度改變，仍可套用相同解題 SOP 迅速驗算破題。`,
+      .map((choice) => {
+        const optText = compact(question.options?.[choice] ?? '', 80);
+        return isNegative
+          ? `${choice}「${optText}」：此項敘述符合「${conceptHeading}」之正確規範或定義，因本題要求選出錯誤/不符者，故不選（這不是官方答案）。`
+          : `${choice}「${optText}」：與「${conceptHeading}」之推導結果、方向正負號、CNS 規範數值或語境條件不符，為典型誘答干擾項（這不是官方答案），故排除。`;
+      }),
+    transfer: isCalc
+      ? `變式思考：若將題幹中的關鍵尺寸、角度或載重倍率改為原來的 2 倍，根據「${conceptHeading}」的公式次方關係，答案會變為幾倍？`
+      : `變式思考：若將題幹改為反向提問（或互換「${conceptHeading}」中的兩個比較對象），哪一個選項的關鍵字必須隨之修正才成立？`,
   };
 }

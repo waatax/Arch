@@ -9,6 +9,8 @@ import { clsx } from 'clsx';
 import MathText from '@/components/MathText';
 import { routeLabel } from '@/data/learnPath/examBank';
 import { isAnswerCorrect, normalizedChoices } from '@/lib/examAnswers';
+import { buildExamWalkthrough } from '@/lib/pedagogy/masteryLesson';
+import type { ExamTeachingCase } from '@/data/examTeaching/types';
 import {
   TIERS,
   certifiedTier,
@@ -37,6 +39,7 @@ interface ShardQuestion {
   sourceUrl: string;
   lessonRoute: string;
   topic?: string;
+  teaching?: ExamTeachingCase;
 }
 
 export interface ExamFinish {
@@ -372,6 +375,37 @@ export default function ExamPlayer({
                     );
                   })}
                 </div>
+                {checked && (() => {
+                  const walkthrough = buildExamWalkthrough(q);
+                  return (
+                    <div className="mt-5 space-y-3 rounded-2xl border border-indigo-200 bg-indigo-50/40 p-4 text-sm text-slate-800 dark:border-indigo-900/60 dark:bg-indigo-950/25 dark:text-slate-200">
+                      <p className="font-black text-indigo-900 dark:text-indigo-200">
+                        💡 {walkthrough.reviewed ? '逐題深度推導與詳解步驟' : '四步解題推導與知識解析'}
+                      </p>
+                      <ol className="list-decimal space-y-2 pl-5 leading-relaxed">
+                        {walkthrough.solutionSteps.map((step) => (
+                          <li key={step}>
+                            <MathText content={step} />
+                          </li>
+                        ))}
+                      </ol>
+                      {walkthrough.distractors.length > 0 && (
+                        <div className="rounded-xl border border-amber-200/80 bg-amber-50/70 p-3 text-xs leading-relaxed text-amber-950 dark:border-amber-900/50 dark:bg-amber-950/30 dark:text-amber-100">
+                          <p className="font-bold text-amber-800 dark:text-amber-300 mb-1">👀 選項正誤與誘答拆解：</p>
+                          <ul className="space-y-1">
+                            {walkthrough.distractors.map((d) => (
+                              <li key={d}>• <MathText content={d} /></li>
+                            ))}
+                          </ul>
+                        </div>
+                      )}
+                      <div className="rounded-xl border border-emerald-200/80 bg-emerald-50/70 p-3 text-xs leading-relaxed text-emerald-950 dark:border-emerald-900/50 dark:bg-emerald-950/30 dark:text-emerald-100">
+                        <p className="font-bold text-emerald-800 dark:text-emerald-300 mb-0.5">🔄 舉一反三遷移檢核：</p>
+                        <p>{walkthrough.transfer}</p>
+                      </div>
+                    </div>
+                  );
+                })()}
               </>
             )}
 

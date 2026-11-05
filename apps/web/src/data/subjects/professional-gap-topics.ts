@@ -7,13 +7,6 @@ const quiz = (question: string, steps: string[], answer: string, difficulty = '�
   answer,
 });
 
-const checks = (topic: string, invariant: string, unit: string) => [
-  quiz(`${topic}解題時，第一個必須確認的模型條件是什麼？`, [`辨識題目屬於**${topic}**，先畫出<span className="text-indigo-600 font-bold">自由體圖 (FBD)</span> 或整理已知量。`, `確認 <span className="text-rose-600 font-bold">${invariant}</span> 成立後再代入公式。`], invariant, '觀念'),
-  quiz(`${topic}計算完成後，最直接的量綱檢核為何？`, [`逐項檢查輸入單位是否一致。`, `結果應以 **${unit}** 表達；不符時不可只改單位符號，須回推計算過程。`], unit, '觀念'),
-  quiz(`${topic}結果出現負號時，正確處理方式為何？`, ['回到原先設定的<span className="text-indigo-600 font-bold">正方向</span>或轉向。', '負號僅表示<span className="text-rose-600 font-bold">實際方向與假設相反</span>，不代表答案必然錯誤。'], '保留大小並依符號修正實際方向', '易錯題'),
-  quiz(`${topic}最可靠的最後驗算策略為何？`, ['使用<span className="text-indigo-600 font-bold">未參與主要求解的獨立關係</span>重新計算。', '同時檢查極端情況、方向與<span className="text-rose-600 font-bold">有效數字</span>合理性。'], '以獨立關係複核並檢查方向、量綱與合理性', '進階'),
-];
-
 export const mechanicsGapTopics: TopicContent[] = [
   {
     slug: 'parallel-force-systems',
@@ -71,7 +64,8 @@ export const mechanicsGapTopics: TopicContent[] = [
     practices: [
       quiz('長 3 m 的三角形載重由左端 0 線性增至右端 12 kN/m。等值力與作用位置為何？', ['載重圖面積 <span className="text-rose-600 font-bold">R = 12 × 3 / 2 = 18 kN</span>。', '三角形形心距大端 <span className="text-indigo-600 font-bold">L/3</span>。'], '18 kN，距右端 1 m（距左端 2 m）'),
       quiz('兩向下平行力 10 kN、20 kN 分別位於 x=1 m、x=4 m，合力位置為何？', ['<span className="text-rose-600 font-bold">R = 10 + 20 = 30 kN</span>。', '位置公式：<span className="text-indigo-600 font-bold">x_R = (10×1 + 20×4) / 30 = 3 m</span>。'], 'x = 3 m', '進階'),
-      ...checks('平面平行力系', '合力與原力系的總力及總力矩等值', '力用 kN、位置用 m、力矩用 kN·m')
+      quiz('長 6 m 簡支梁受由左端 A (0) 線性遞增至右端 B (12 kN/m) 之三角形載重，求 A、B 兩支承反力？（對應 112 統測）', ['等值合力 <span className="text-rose-600 font-bold">R = (1/2) × 12 × 6 = 36 kN</span>，作用於距大端 B 為 6/3 = 2 m（距 A 為 4 m）。', '對 A 取力矩平衡：<span className="text-indigo-600 font-bold">R_B × 6 = 36 × 4 ⇒ R_B = 24 kN</span>；R_A = 36 - 24 = 12 kN。'], 'R_A = 12 kN（為總載重 1/3），R_B = 24 kN（為總載重 2/3）', '統測核心'),
+      quiz('兩平行力大小皆為 15 kN、方向一上一下、作用線相距 0.4 m，其合力與合力偶矩為何？（對應 113 統測）', ['合力 <span className="text-rose-600 font-bold">R = 15 - 15 = 0 kN</span>，形成純力偶。', '力偶矩 <span className="text-indigo-600 font-bold">M = F × d = 15 × 0.4 = 6 kN·m</span>，且對平面上任意點取矩皆為 6 kN·m。'], '合力 R = 0，純力偶矩 M = 6 kN·m', '觀念')
     ]
   },
   {
@@ -130,7 +124,8 @@ export const mechanicsGapTopics: TopicContent[] = [
     ],
     practices: [
       quiz('一剛體受向右 6 kN、向上 8 kN，兩力交於同點。合力大小與方向為何？', ['合力大小 <span className="text-rose-600 font-bold">R = √(6² + 8²) = 10 kN</span>。', '方向角 <span className="text-indigo-600 font-bold">θ = tan⁻¹(8/6) = 53.13°</span>。'], '10 kN，向右上 53.13°'),
-      ...checks('非共點非平行力系', 'ΣF_x、ΣF_y、ΣM 三式同時成立', '力用 kN、力矩用 kN·m')
+      quiz('水平剛體梁上作用一個順時針集中力偶 M = 24 kN·m，左端 A 為鉸支承、右端 B 為滾支承，跨度 L = 6 m，求 A、B 兩端垂直反力？（對應 113 統測）', ['對 A 取力矩平衡：<span className="text-indigo-600 font-bold">M - R_B × 6 = 0 ⇒ R_B = 24 / 6 = 4 kN (↑)</span>。', '由 <span className="text-rose-600 font-bold">ΣF_y = 0 ⇒ R_A = -4 kN (↓)</span>，兩端反力形成逆時針力偶平衡外力偶。'], 'R_A = 4 kN（向下）、R_B = 4 kN（向上）', '統測核心'),
+      quiz('A 點作用一向下垂直力 P = 15 kN，若將此力平移至右方距離 d = 2 m 之 B 點，求等效系統？（對應 112 統測）', ['根據力的平移定理，平移至 B 點需保持原力 <span className="text-indigo-600 font-bold">P = 15 kN (↓)</span> 不變。', '同時附加補償力偶 <span className="text-rose-600 font-bold">M = P × d = 15 × 2 = 30 kN·m</span>。'], 'B 點承受向下 15 kN 集中力及 30 kN·m 補償力偶', '觀念')
     ]
   },
   {
@@ -191,7 +186,8 @@ export const mechanicsGapTopics: TopicContent[] = [
     ],
     practices: [
       quiz('同一支直徑 10 mm 鉚釘改為雙剪並承受 12 kN，平均剪應力為何？', ['雙剪有效面積為 <span className="text-rose-600 font-bold">2A</span>。', '剪應力 <span className="text-indigo-600 font-bold">τ = 12000 / (2 × 78.54)</span>。'], '約 76.4 MPa'),
-      ...checks('剪力與剪應力', '先分辨剪力 V、剪切面數與有效面積', '剪力用 N 或 kN、剪應力用 MPa')
+      quiz('寬 b = 10 cm、高 h = 20 cm 之矩形斷面木梁承受橫向剪力 V = 40 kN，求斷面最大剪應力 τ_max？（對應 112、114 統測）', ['斷面積 <span className="text-indigo-600 font-bold">A = 10 × 20 = 200 cm²</span>，平均剪應力 τ_avg = 40000 / 200 = 200 N/cm² = 2 MPa。', '矩形斷面最大剪應力發生於中性軸，<span className="text-rose-600 font-bold">τ_max = 1.5 × τ_avg = 3.0 MPa</span>。'], '3.0 MPa（為平均剪應力之 1.5 倍）', '統測核心'),
+      quiz('比較「矩形斷面」、「實心圓形斷面」與「薄壁圓管斷面」梁受剪力 V 時，最大剪應力與平均剪應力（V/A）之比值？（對應 113 統測）', ['矩形斷面 <span className="text-indigo-600 font-bold">τ_max / τ_avg = 3/2 = 1.5</span>。', '實心圓形斷面 <span className="text-rose-600 font-bold">τ_max / τ_avg = 4/3 ≈ 1.33</span>；薄壁圓管約為 2.0。'], '矩形 1.5 倍、實心圓形 4/3 倍、薄壁圓管 2.0 倍', '觀念')
     ]
   }
 ];
@@ -252,7 +248,8 @@ export const surveyingGapTopics: TopicContent[] = [
     ],
     practices: [
       quiz('閉合差 0.020 m、測線總長 200 m，相對閉合精度為何？', ['相對誤差 = <span className="text-rose-600 font-bold">0.020 / 200 = 1 / 10000</span>。'], '1/10,000'),
-      ...checks('測量總論', '基準、單位、精度與觀測條件已交代', '依觀測量使用 m、度分秒或無因次比值')
+      quiz('使用標稱長 30 m 捲尺量得距離 150.00 m，檢定該尺實長為 30.01 m，求真實距離？（對應 113 統測）', ['口訣「尺長實大」：尺實長比標稱長多 0.01 m。', '真實距離 <span className="text-rose-600 font-bold">L = 150.00 × (30.01 / 30.00) = 150.05 m</span>。'], '150.05 m', '統測核心'),
+      quiz('某正方形土地邊長量測值為 50.00 m ± 0.02 m，求面積中誤差？（對應 112 統測）', ['面積函數 <span className="text-indigo-600 font-bold">A = x · y</span>，∂A/∂x = 50, ∂A/∂y = 50。', '由誤差傳播定律：<span className="text-rose-600 font-bold">m_A = √(50²×0.02² + 50²×0.02²) = √2 ≈ ±1.414 m²</span>。'], '±1.414 m²', '進階')
     ]
   },
   {
@@ -312,7 +309,8 @@ export const surveyingGapTopics: TopicContent[] = [
     ],
     practices: [
       quiz('A 點高程 20.000 m，儀器高 1.500 m；至 B 的水平距離 40 m、仰角 5°，目標高 1.800 m。B 高程約為何？', ['高差項 = <span className="text-indigo-600 font-bold">40 tan 5° ≈ 3.500 m</span>。', '<span className="text-rose-600 font-bold">H_B = 20 + 1.5 + 3.5 - 1.8</span>。'], '約 23.200 m', '進階'),
-      ...checks('間接距離與高程', '斜距、水平距離、垂直角與儀器高定義一致', '距離與高程用 m、角度用度分秒或度')
+      quiz('經緯儀乘常數 K=100、加常數 C=0，水平視線讀得上絲 2.150 m、下絲 1.350 m，求水平距離？（對應 112 統測）', ['夾距 <span className="text-indigo-600 font-bold">s = 2.150 - 1.350 = 0.800 m</span>。', '水平視線 α=0°，<span className="text-rose-600 font-bold">H = 100 × 0.800 = 80.0 m</span>。'], '80.0 m', '統測核心'),
+      quiz('電子測距儀測得斜距 S = 100.000 m、天頂距 z = 60°，求水平距離 D？（對應 114 統測）', ['天頂距 z 與水平距離關係為 <span className="text-indigo-600 font-bold">D = S · sin(z)</span>（或仰角 α = 90° - 60° = 30°）。', '<span className="text-rose-600 font-bold">D = 100.000 × sin(60°) = 86.603 m</span>。'], '86.603 m', '易錯題')
     ]
   }
 ];
@@ -409,7 +407,15 @@ export const draftingGapTopics: TopicContent[] = [
         answer: '需依規定進行路角截角退縮，且截角範圍內不得設置妨礙視線之建築障礙物。',
         difficulty: '易'
       },
-      ...checks('容積率與建蔽率法規', '基地面積、建蔽率與容積率定義清楚', '面積用 m²、比率用百分比 %')
+      {
+        question: '依據建築技術規則第 162 條，每層陽台面積不計入容積樓地板面積之上限規定為何？（對應 113 統測）',
+        steps: [
+          '檢視免計容積標準：每層陽台面積之和，在該層樓地板面積 10% 以內部分得不計入該層樓地板面積。',
+          '若陽台加計梯廳，合計免計上限則受 15% 管制。'
+        ],
+        answer: '不超過該層樓地板面積之 10%（加計梯廳不超過 15%）',
+        difficulty: '觀念'
+      }
     ]
   },
   {
@@ -493,7 +499,15 @@ export const draftingGapTopics: TopicContent[] = [
         answer: '結構配筋詳圖（或梁柱剖面施工詳圖）',
         difficulty: '易'
       },
-      ...checks('製圖基本觀念', '圖名、圖號、比例與版次可追溯', '圖紙尺寸用 mm、比例為無因次')
+      {
+        question: '依 CNS 工程製圖分類，建築圖說若按「使用目的（階段用途）」分類，應包含哪三種圖面？（對應 114 統測）',
+        steps: [
+          '依使用目的分為：設計圖（規劃與建照申請）、施工圖（現場放樣與施作）、竣工圖（依完工實際尺寸繪製存檔）。',
+          '切勿與依表現內容分類的「平、立、剖面、透視圖」混淆。'
+        ],
+        answer: '設計圖、施工圖（工作圖）、竣工圖（完工圖）',
+        difficulty: '觀念'
+      }
     ]
   },
   {
@@ -585,7 +599,15 @@ export const draftingGapTopics: TopicContent[] = [
         answer: '先進行圖面版次與高程基準系統核對，確認最新版次後再依序澄清處理。',
         difficulty: '進階'
       },
-      ...checks('土木與建築製圖整合判讀', '平面、立面、剖面與詳圖的索引及版次一致', '圖面長度依標註用 mm 或 cm、高程用 m')
+      {
+        question: '依 CNS 11567 建築製圖規定，結構平面圖代號「G、B、C、S、F、FG」分別代表何種構件？（對應 112、114 統測）',
+        steps: [
+          '主構件：C 為柱 (Column)、G 為大梁 (Girder)、B 為小梁 (Beam)、S 為樓版 (Slab)。',
+          '基礎構件：F 為基礎 (Footing)、FG 為地梁/基礎梁 (Footing Girder)。'
+        ],
+        answer: 'G 大梁、B 小梁、C 柱、S 樓版、F 基礎、FG 地梁',
+        difficulty: '統測核心'
+      }
     ]
   }
 ];

@@ -1,6 +1,9 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { loadTsModule } from '../../../scripts/lib/load-ts-module.mjs';
+const { canonicalExamQuestions } = await loadTsModule('apps/web/src/lib/pedagogy/canonicalExams.ts');
+const canonicalById = new Map(canonicalExamQuestions.map(q=>[q.id,q]));
 
 const scriptDirectory = path.dirname(fileURLToPath(import.meta.url));
 const webRoot = path.resolve(scriptDirectory, '..');
@@ -55,6 +58,8 @@ function compactQuestion(question) {
     sourceUrl: question.sourceUrl,
     subject: question.subject,
     topic: question.topic,
+    teaching: question.teaching,
+    needsOriginal: question.needsOriginal,
   };
   return Object.fromEntries(Object.entries(compact).filter(([, value]) => value !== undefined));
 }
@@ -68,7 +73,8 @@ const questions = [
     ...pageMap[question.id],
   })),
 ]
-  .filter((question) => years.includes(question.year))
+  .filter((question) => canonicalById.has(question.id))
+  .map((question) => ({ ...question, ...canonicalById.get(question.id) }))
   .map(compactQuestion);
 
 fs.mkdirSync(shardRoot, { recursive: true });

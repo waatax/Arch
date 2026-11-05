@@ -50,6 +50,12 @@ const navGroups: NavGroup[] = [
     icon: IconDraftingTools,
     items: [
       {
+        href: '/exam-evidence',
+        label: '歷屆題型與精講',
+        desc: '111–115 真題回推知識、逐題解法、遷移練習與待補範圍',
+        icon: IconExamLicense,
+      },
+      {
         href: '/study-studio',
         label: '考前建築所',
         desc: '30 個圖解短課、段考範圍自選、每日考程與錯題複習',

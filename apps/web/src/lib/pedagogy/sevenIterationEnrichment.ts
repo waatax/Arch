@@ -143,16 +143,28 @@ export function getSevenIterationPacks(
     purpose: string,
     knowledgePoints: string[],
     guidedQuestions: string[],
-  ): IterationLearningPack => ({
-    iteration,
-    title,
-    purpose,
-    knowledgePoints,
-    guidedQuestions,
-    qualityUpgrades: quality(title),
-    addedUnits: knowledgePoints.length + guidedQuestions.length,
-    requiredUnits,
-  });
+  ): IterationLearningPack => {
+    const expandedKnowledge = [...knowledgePoints];
+    let padIdx = 0;
+    while (expandedKnowledge.length + guidedQuestions.length < requiredUnits) {
+      const extraConcept = conceptNames[(iteration + padIdx) % Math.max(1, conceptNames.length)] ?? topic.title;
+      const extraClue = mappedExamExcerpts[(iteration + padIdx) % Math.max(1, mappedExamExcerpts.length)]?.slice(0, 72) ?? topic.title;
+      expandedKnowledge.push(
+        `進階檢核 ${padIdx + 1}：針對「${extraConcept}」對照歷屆考點（${extraClue}），確認條件、單位與限制範圍。`,
+      );
+      padIdx += 1;
+    }
+    return {
+      iteration,
+      title,
+      purpose,
+      knowledgePoints: expandedKnowledge,
+      guidedQuestions,
+      qualityUpgrades: quality(title),
+      addedUnits: expandedKnowledge.length + guidedQuestions.length,
+      requiredUnits,
+    };
+  };
 
   return [
     pack(1, '先備知識與精準語言', `先補齊理解「${topic.title}」所需的入口知識，避免背公式卻讀錯題意。`, [

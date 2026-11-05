@@ -2,8 +2,7 @@ import { notFound } from 'next/navigation';
 import TopicPageLayout, { type MappedExamQuestion } from '@/components/TopicPageLayout';
 import { allSubjects } from '@/data/subjects';
 import { getConceptVisuals } from '@/data/conceptVisuals';
-import coverageRegistry from '../../../../../../../data/registry/exam-coverage.json';
-import commonRegistry from '../../../../../../../data/registry/common-exam-questions.json';
+import { getTopicExamQuestions, getTopicTeachingCases } from '@/lib/pedagogy/canonicalExams';
 
 export function generateStaticParams() {
   return allSubjects.flatMap(s =>
@@ -33,17 +32,15 @@ export default async function TopicPage({ params }: { params: Promise<{ subject:
   }
 
   const route = `/subjects/${subject.slug}/${topic.slug}`;
-  const professionalQuestions = (coverageRegistry.questions as MappedExamQuestion[])
-    .filter((question) => question.subject === subject.slug && question.topic === topic.slug);
-  const commonQuestions = (commonRegistry.questions as MappedExamQuestion[])
-    .filter((question) => question.lessonRoute === route);
+  const questions: MappedExamQuestion[] = getTopicExamQuestions(route);
 
   return (
     <TopicPageLayout
       key={route}
       subject={subject}
       topic={topic}
-      mappedExamQuestions={[...professionalQuestions, ...commonQuestions]}
+      mappedExamQuestions={questions}
+      teachingEntries={getTopicTeachingCases(route)}
       conceptVisuals={getConceptVisuals(subject.slug, topic.slug)}
     />
   );

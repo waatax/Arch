@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react';
 import { Award, CheckCircle2, Circle, Sparkles, ArrowRight, ShieldCheck } from 'lucide-react';
 import Link from 'next/link';
+import MathText from '@/components/MathText';
 import type { SubjectData, TopicContent } from '@/data/types';
 import type { TopicDeepKnowledge } from '@/lib/pedagogy/topicKnowledgeExpander';
 import type { TopicRealLifeGuide } from '@/lib/pedagogy/realLifeHelpers';
@@ -174,7 +175,7 @@ export default function TopicMasteryChecklist({
       </div>
 
       <p className="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
-        在進入下一章或參加考試前，請逐項檢視是否真正掌握本章所有的核心能力與知識點。點擊項目即可完成打勾：
+        這份清單用於自評。請先遮住解法完成本章練習，再檢查能否說明理由；打勾不等於已通過全部歷屆題的能力驗證。
       </p>
 
       {/* Checklist items */}
@@ -222,7 +223,7 @@ export default function TopicMasteryChecklist({
                   {item.text}
                 </p>
                 <p className="text-xs text-slate-500 dark:text-slate-400 leading-relaxed">
-                  💡 {item.tip}
+                  💡 <MathText content={item.tip} />
                 </p>
               </div>
             </div>

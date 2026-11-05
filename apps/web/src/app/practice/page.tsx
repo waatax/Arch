@@ -5,7 +5,7 @@ import CurriculumExamPathwayGuide from '@/components/pedagogy/CurriculumExamPath
 
 export const metadata = {
   title: '全科目歷屆大考全真模擬與七年題庫｜Arch V10.00',
-  description: '完整對齊 108 課綱學測與統測雙軌，收錄過去七年大考真題，提供全真限時模擬、待核對標記與五段式名師思維詳解。',
+  description: '111–115 年統測五科 925 道真題，提供計時模擬、逐題精講、待補解析標示與章節導航。',
 };
 
 const pastExamYears = [
@@ -35,7 +35,7 @@ export default function PracticePage() {
           全科目歷屆大考全真模擬
         </h1>
         <p className="max-w-3xl text-base leading-8 text-slate-600 dark:text-slate-400">
-          全面對齊 108 課綱核心素養。題幹與選項已逐題 OCR 與幾何圖面校對；英文與國文題組整合文章與對應試題，力學與製圖顯示單題高清圖面。交卷後提供五段式名師思維詳解，每題皆可一鍵直達 108 課綱教學頁面深入精熟。
+          使用 111–115 年統測五科共 925 道真題。題組附共同文章，圖題可核對官方題面。交卷後，已完成精講的題目提供逐步推導與選項辨析；其他題目明確標示解析待補，並連回相關章節補強知識。
         </p>
         <div className="flex flex-wrap items-center gap-4 pt-2">
           <a

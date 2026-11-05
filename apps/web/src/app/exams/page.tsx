@@ -1,10 +1,14 @@
 import Link from 'next/link';
-import coverage from '../../../../../data/registry/exam-coverage.json';
-import common from '../../../../../data/registry/common-exam-questions.json';
+import professionalArchive from '../../../../../data/registry/exam-coverage.json';
+import commonArchive from '../../../../../data/registry/common-exam-questions.json';
+import { canonicalExamQuestions } from '@/lib/pedagogy/canonicalExams';
+const canonicalById = new Map(canonicalExamQuestions.map(q=>[q.id,q]));
+const coverage = { ...professionalArchive, questions: professionalArchive.questions.filter(q=>canonicalById.has(q.id)).map(q=>({...q,lessonRoute:canonicalById.get(q.id)!.lessonRoute || q.lessonRoute})) };
+const common = { ...commonArchive, questions: commonArchive.questions.filter(q=>canonicalById.has(q.id)).map(q=>({...q,lessonRoute:canonicalById.get(q.id)!.lessonRoute || q.lessonRoute})) };
 
 export const metadata = {
-  title: '過去七年大考全科目題庫與 108 課綱對齊教學｜Arch V10.00',
-  description: '109 至 115 學年度國文、英文、數學(C)及土木與建築群專業科目，收錄過去七年大考官方試題、標準答案與對應 108 課綱 120 主題教學對照。',
+  title: '111–115 五年真題與歷年官方題本索引｜Arch',
+  description: '111–115 年 925 道真題、章節導航與逐題教學查核，另提供 109、110 年官方題本連結。',
 };
 
 const paperNames: Record<number, string> = {
@@ -131,15 +135,16 @@ export function ExamsContent({ embedded = false }: { embedded?: boolean }) {
               Arch V10.00 · 108 Curriculum
             </p>
             <span className="rounded-full bg-emerald-100 px-2.5 py-0.5 text-[10px] font-bold text-emerald-800 dark:bg-emerald-950/80 dark:text-emerald-300">
-              過去 7 年（109–115）歷屆全備
+              五年逐題收錄 · 七年官方索引
             </span>
           </div>
           <h1 className="mt-2 font-serif text-3xl font-bold leading-tight text-slate-900 dark:text-white sm:text-5xl">
-            過去七年大考<br />全科目題庫與課綱對照
+            五年統測真題<br />與章節知識對照
           </h1>
           <p className="mt-5 max-w-3xl text-base leading-8 text-slate-600 dark:text-slate-400">
-            完整收錄 109 至 115 學年度國文、英文、數學(C)、專業科目（一）基礎工程力學與工程材料，以及專業科目（二）測量實習與製圖實習。提供官方題本、標準答案與對應 108 課綱 120 主題的教學導航。
+            收錄 111–115 年國文、英文、數學(C)、專一與專二共 925 道真題，另提供 109、110 年官方題本連結。逐題解析與教材是否足以解題的查核範圍，請見下方清單。
           </p>
+          <Link href="/exam-evidence" className="mt-3 inline-flex min-h-11 items-center font-bold text-teal-700 underline dark:text-teal-300">查看逐章題型、精講與待補缺口 →</Link>
           {!embedded && (
             <div className="mt-6 flex flex-wrap items-center gap-3">
               <Link
@@ -167,17 +172,17 @@ export function ExamsContent({ embedded = false }: { embedded?: boolean }) {
             <span className="text-xs text-slate-600 dark:text-slate-400 font-medium">完整大考科目</span>
           </div>
           <div>
-            <strong className="block font-serif text-3xl font-bold text-blue-600 dark:text-blue-400">1,110+</strong>
-            <span className="text-xs text-slate-600 dark:text-slate-400 font-medium">官方題本與答案</span>
+            <strong className="block font-serif text-3xl font-bold text-blue-600 dark:text-blue-400">925</strong>
+            <span className="text-xs text-slate-600 dark:text-slate-400 font-medium">五年真題；不含合成紀錄</span>
           </div>
         </aside>
       </header>
 
       <section className="grid gap-4 sm:grid-cols-3" aria-label="題庫特色說明">
         <div className="rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-800 p-5 shadow-xs">
-          <strong className="text-slate-900 dark:text-white text-base font-serif">全科目·七年度收錄</strong>
+          <strong className="text-slate-900 dark:text-white text-base font-serif">五年逐題 · 舊年度題本索引</strong>
           <p className="mt-2 text-xs leading-6 text-slate-600 dark:text-slate-400">
-            涵蓋 109–115 七學年度。每學年含國文 38 題、英文 42 題、數學(C) 25 題，以及專一 40 題、專二 40 題。
+            111–115 年每年含國文 38 題、英文 42 題、數學(C) 25 題，以及專一、專二各 40 題。109、110 年僅提供官方來源，不宣稱已逐題解析。
           </p>
         </div>
         <div className="rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-800 p-5 shadow-xs">

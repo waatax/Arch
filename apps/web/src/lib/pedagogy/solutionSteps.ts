@@ -20,7 +20,10 @@ function isMultipleChoice(question: string) {
 }
 
 function explainWhy(step: string) {
-  if (/單位|換算|mm|cm|m\b|kN|MPa/i.test(step)) return '這一步先統一量尺，避免數字看似能算、實際卻差十倍或千倍。';
+  if (/單位.{0,12}(換算|統一)|(換算|統一).{0,12}單位/i.test(step)) return '先確認換算倍率；面積與體積須分別使用長度倍率的平方與立方。';
+  if (/∑\s*F|Σ\s*F|力平衡|垂直平衡|水平平衡/i.test(step)) return '檢查所選方向的合力是否為零，並確認自由體圖沒有漏掉反力或把力的方向畫反。';
+  if (/∑\s*M|Σ\s*M|力矩平衡|對.{0,8}取矩|對.{0,8}取力矩/i.test(step)) return '檢查每個力對所選取矩點的垂直力臂；通過該點的力不產生力矩。';
+  if (/圖|方向|角|剖|投影|座標|受力/i.test(step)) return '用圖固定方向與基準，檢查角度從哪一條軸量起，以及每個分量的正負號。';
   if (/公式|=|×|÷|sin|cos|tan|\^|平方|比例/i.test(step)) return '這一步把文字條件翻成可檢查的關係式；每個符號都必須能在題目或圖中找到來源。';
   if (/圖|方向|角|剖|投影|座標|受力/i.test(step)) return '這一步用圖把空間與方向固定下來，避免只靠腦中想像而看反或漏掉條件。';
   if (/因為|所以|因此|故|可知|判斷/i.test(step)) return '這一步建立原因到結果的證據鏈；若前一個條件不成立，結論也要跟著重判。';
@@ -40,9 +43,17 @@ export function buildDetailedSolution(item: PracticeItem) {
       const parts = step.split('｜為什麼：');
       const baseStep = parts[0].trim();
       const why = parts[1] ? parts[1].trim() : explainWhy(baseStep);
-      return `正式推理 ${index + 1}：${baseStep}｜為什麼：${why}`;
+      return `正式推理 ${index + 1}：${baseStep}｜${parts[1] ? '為什麼' : '共用檢核提示'}：${why}`;
     }),
   ];
+
+  if (item.commonMistake && !/直接代數字卻未檢查/.test(item.commonMistake)) {
+    steps.push(`易錯陷阱防範：${compact(item.commonMistake, 140)}。`);
+  }
+
+  if (item.eliteShortcut && !/先用直覺與圖示估算/.test(item.eliteShortcut)) {
+    steps.push(`考場秒殺捷徑：${compact(item.eliteShortcut, 140)}。`);
+  }
 
   if (isCalculation(item.question)) {
     steps.push('放回現實檢核：重新代入原條件，確認公式使用範圍、正負號、角度方向與單位一致；再問「這個大小在真實世界合理嗎？」排除小數點或倍率錯誤。');

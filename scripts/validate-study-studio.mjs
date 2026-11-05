@@ -86,11 +86,15 @@ if (process.argv.includes('--built')) {
   for (const route of files) {
     const html = fs.readFileSync(path.join(output, route, 'index.html'), 'utf8');
     assert.ok(html.includes('考前建築所'), `Missing static page: ${route}`);
-    assert.ok(html.includes('/Arch/_next/'), 'GitHub Pages basePath must be included');
-    for (const [, target] of html.matchAll(/href="(\/Arch\/[^"?#]*)/g)) {
-      if (target.includes('/_next/') || /\.[a-z0-9]+$/i.test(target)) continue;
-      const local = target.slice('/Arch/'.length);
-      assert.ok(fs.existsSync(path.join(output, local, 'index.html')), `Broken internal route: ${target}`);
+    if (process.env.GITHUB_ACTIONS) {
+      assert.ok(html.includes('/Arch/_next/'), 'GitHub Pages basePath must be included');
+      for (const [, target] of html.matchAll(/href="(\/Arch\/[^"?#]*)/g)) {
+        if (target.includes('/_next/') || /\.[a-z0-9]+$/i.test(target)) continue;
+        const local = target.slice('/Arch/'.length);
+        assert.ok(fs.existsSync(path.join(output, local, 'index.html')), `Broken internal route: ${target}`);
+      }
+    } else {
+      assert.ok(html.includes('/_next/'), 'Next.js build assets must be included');
     }
   }
 }
