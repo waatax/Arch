@@ -1,0 +1,1712 @@
+[
+  {
+    "questionId": "111-english-1",
+    "routes": [
+      "/subjects/english/vocabulary-phrases"
+    ],
+    "kind": "語境字彙與搭配：avoid",
+    "knowledge": [
+      [
+        "avoid 的語意與使用條件",
+        "leave early 與 get home on time 表示提早出門，以免碰上 heavy traffic；avoid 後可直接接名詞 the heavy traffic。"
+      ],
+      [
+        "選項詞義對照",
+        "A avoid＝避開／避免；B drop＝掉落／丟下；C invite＝邀請；D mind＝介意。解題時同時核對句意、詞性與搭配，並以原句線索決定。"
+      ]
+    ],
+    "steps": [
+      "先找題幹的語意證據。leave early 與 get home on time 表示提早出門，以免碰上 heavy traffic；avoid 後可直接接名詞 the heavy traffic。",
+      "逐項釐清詞義：A avoid＝避開／避免；B drop＝掉落／丟下；C invite＝邀請；D mind＝介意。",
+      "本題選 A「avoid」，此處表示「避開／避免」。",
+      "以完整語境核對：leave early 與 get home on time 表示提早出門，以免碰上 heavy traffic；avoid 後可直接接名詞 the heavy traffic。 再回讀原句，檢查前後因果或對比是否一致。"
+    ],
+    "reasons": [
+      "avoid 表「避開／避免」。leave early 與 get home on time 表示提早出門，以免碰上 heavy traffic；avoid 後可直接接名詞 the heavy traffic。",
+      "drop 的意思是「掉落／丟下」。原句的判斷依據為「leave early 與 get home on time 表示提早出門，以免碰上 heavy traffic；avoid 後可直接接名詞 the heavy traffic。」，此選項的語意無法保留這個關係。",
+      "invite 的意思是「邀請」。原句的判斷依據為「leave early 與 get home on time 表示提早出門，以免碰上 heavy traffic；avoid 後可直接接名詞 the heavy traffic。」，此選項的語意無法保留這個關係。",
+      "mind 的意思是「介意」。原句的判斷依據為「leave early 與 get home on time 表示提早出門，以免碰上 heavy traffic；avoid 後可直接接名詞 the heavy traffic。」，此選項的語意無法保留這個關係。"
+    ],
+    "transfer": {
+      "prompt": "原創變式，沿用原題四個候選字詞：We took a side street to ______ the traffic jam.",
+      "answer": "avoid",
+      "steps": [
+        "先判讀新句的事件與空格所需的語意：We took a side street to ______ the traffic jam.",
+        "套用本題詞義「避開／避免」，填入 avoid。",
+        "完成新句後回查：We took a side street to avoid the traffic jam. 核對語意與前後因果。"
+      ]
+    }
+  },
+  {
+    "questionId": "111-english-2",
+    "routes": [
+      "/subjects/english/vocabulary-phrases"
+    ],
+    "kind": "語境字彙與搭配：energy",
+    "knowledge": [
+      [
+        "energy 的語意與使用條件",
+        "孫子每天都想去公園活動，full of energy 表示精力充沛；full of 後接名詞。"
+      ],
+      [
+        "選項詞義對照",
+        "A energy＝精力／能量；B hurry＝匆忙；C identity＝身分；D safety＝安全。解題時同時核對句意、詞性與搭配，並以原句線索決定。"
+      ]
+    ],
+    "steps": [
+      "先找題幹的語意證據。孫子每天都想去公園活動，full of energy 表示精力充沛；full of 後接名詞。",
+      "逐項釐清詞義：A energy＝精力／能量；B hurry＝匆忙；C identity＝身分；D safety＝安全。",
+      "本題選 A「energy」，此處表示「精力／能量」。",
+      "以完整語境核對：孫子每天都想去公園活動，full of energy 表示精力充沛；full of 後接名詞。 再回讀原句，檢查前後因果或對比是否一致。"
+    ],
+    "reasons": [
+      "energy 表「精力／能量」。孫子每天都想去公園活動，full of energy 表示精力充沛；full of 後接名詞。",
+      "hurry 的意思是「匆忙」。原句的判斷依據為「孫子每天都想去公園活動，full of energy 表示精力充沛；full of 後接名詞。」，此選項的語意無法保留這個關係。",
+      "identity 的意思是「身分」。原句的判斷依據為「孫子每天都想去公園活動，full of energy 表示精力充沛；full of 後接名詞。」，此選項的語意無法保留這個關係。",
+      "safety 的意思是「安全」。原句的判斷依據為「孫子每天都想去公園活動，full of energy 表示精力充沛；full of 後接名詞。」，此選項的語意無法保留這個關係。"
+    ],
+    "transfer": {
+      "prompt": "原創變式，沿用原題四個候選字詞：After sleeping well, the child was full of ______.",
+      "answer": "energy",
+      "steps": [
+        "先判讀新句的事件與空格所需的語意：After sleeping well, the child was full of ______.",
+        "套用本題詞義「精力／能量」，填入 energy。",
+        "完成新句後回查：After sleeping well, the child was full of energy. 核對語意與前後因果。"
+      ]
+    }
+  },
+  {
+    "questionId": "111-english-3",
+    "routes": [
+      "/subjects/english/vocabulary-phrases"
+    ],
+    "kind": "語境字彙與搭配：tight",
+    "knowledge": [
+      [
+        "tight 的語意與使用條件",
+        "put on weight 指體重增加，牛仔褲因此太緊；too tight to wear 表示緊到無法穿。"
+      ],
+      [
+        "選項詞義對照",
+        "A loose＝鬆的；B ripe＝成熟的；C swift＝迅速的；D tight＝緊的。解題時同時核對句意、詞性與搭配，並以原句線索決定。"
+      ]
+    ],
+    "steps": [
+      "先找題幹的語意證據。put on weight 指體重增加，牛仔褲因此太緊；too tight to wear 表示緊到無法穿。",
+      "逐項釐清詞義：A loose＝鬆的；B ripe＝成熟的；C swift＝迅速的；D tight＝緊的。",
+      "本題選 D「tight」，此處表示「緊的」。",
+      "以完整語境核對：put on weight 指體重增加，牛仔褲因此太緊；too tight to wear 表示緊到無法穿。 再回讀原句，檢查前後因果或對比是否一致。"
+    ],
+    "reasons": [
+      "loose 的意思是「鬆的」。原句的判斷依據為「put on weight 指體重增加，牛仔褲因此太緊；too tight to wear 表示緊到無法穿。」，此選項的語意無法保留這個關係。",
+      "ripe 的意思是「成熟的」。原句的判斷依據為「put on weight 指體重增加，牛仔褲因此太緊；too tight to wear 表示緊到無法穿。」，此選項的語意無法保留這個關係。",
+      "swift 的意思是「迅速的」。原句的判斷依據為「put on weight 指體重增加，牛仔褲因此太緊；too tight to wear 表示緊到無法穿。」，此選項的語意無法保留這個關係。",
+      "tight 表「緊的」。put on weight 指體重增加，牛仔褲因此太緊；too tight to wear 表示緊到無法穿。"
+    ],
+    "transfer": {
+      "prompt": "原創變式，沿用原題四個候選字詞：These shoes squeeze my toes. They are too ______.",
+      "answer": "tight",
+      "steps": [
+        "先判讀新句的事件與空格所需的語意：These shoes squeeze my toes. They are too ______.",
+        "套用本題詞義「緊的」，填入 tight。",
+        "完成新句後回查：These shoes squeeze my toes. They are too tight. 核對語意與前後因果。"
+      ]
+    }
+  },
+  {
+    "questionId": "111-english-4",
+    "routes": [
+      "/subjects/english/vocabulary-phrases"
+    ],
+    "kind": "語境字彙與搭配：indicate",
+    "knowledge": [
+      [
+        "indicate 的語意與使用條件",
+        "accepted 和 nodding 都是同意的證據，點頭是為了 indicate his agreement，表明同意。"
+      ],
+      [
+        "選項詞義對照",
+        "A deny＝否認；B excuse＝原諒／辯解；C forget＝忘記；D indicate＝表明／顯示。解題時同時核對句意、詞性與搭配，並以原句線索決定。"
+      ]
+    ],
+    "steps": [
+      "先找題幹的語意證據。accepted 和 nodding 都是同意的證據，點頭是為了 indicate his agreement，表明同意。",
+      "逐項釐清詞義：A deny＝否認；B excuse＝原諒／辯解；C forget＝忘記；D indicate＝表明／顯示。",
+      "本題選 D「indicate」，此處表示「表明／顯示」。",
+      "以完整語境核對：accepted 和 nodding 都是同意的證據，點頭是為了 indicate his agreement，表明同意。 再回讀原句，檢查前後因果或對比是否一致。"
+    ],
+    "reasons": [
+      "deny 的意思是「否認」。原句的判斷依據為「accepted 和 nodding 都是同意的證據，點頭是為了 indicate his agreement，表明同意。」，此選項的語意無法保留這個關係。",
+      "excuse 的意思是「原諒／辯解」。原句的判斷依據為「accepted 和 nodding 都是同意的證據，點頭是為了 indicate his agreement，表明同意。」，此選項的語意無法保留這個關係。",
+      "forget 的意思是「忘記」。原句的判斷依據為「accepted 和 nodding 都是同意的證據，點頭是為了 indicate his agreement，表明同意。」，此選項的語意無法保留這個關係。",
+      "indicate 表「表明／顯示」。accepted 和 nodding 都是同意的證據，點頭是為了 indicate his agreement，表明同意。"
+    ],
+    "transfer": {
+      "prompt": "原創變式，沿用原題四個候選字詞：A raised hand can ______ that someone wants to speak.",
+      "answer": "indicate",
+      "steps": [
+        "先判讀新句的事件與空格所需的語意：A raised hand can ______ that someone wants to speak.",
+        "套用本題詞義「表明／顯示」，填入 indicate。",
+        "完成新句後回查：A raised hand can indicate that someone wants to speak. 核對語意與前後因果。"
+      ]
+    }
+  },
+  {
+    "questionId": "111-english-5",
+    "routes": [
+      "/subjects/english/vocabulary-phrases"
+    ],
+    "kind": "語境字彙與搭配：helmet",
+    "knowledge": [
+      [
+        "helmet 的語意與使用條件",
+        "protect your head 與 ride a motorcycle 指向頭部防護裝備 helmet；wear a helmet 是動詞與物件搭配。"
+      ],
+      [
+        "選項詞義對照",
+        "A beard＝鬍鬚；B helmet＝安全帽；C necklace＝項鍊；D tie＝領帶。解題時同時核對句意、詞性與搭配，並以原句線索決定。"
+      ]
+    ],
+    "steps": [
+      "先找題幹的語意證據。protect your head 與 ride a motorcycle 指向頭部防護裝備 helmet；wear a helmet 是動詞與物件搭配。",
+      "逐項釐清詞義：A beard＝鬍鬚；B helmet＝安全帽；C necklace＝項鍊；D tie＝領帶。",
+      "本題選 B「helmet」，此處表示「安全帽」。",
+      "以完整語境核對：protect your head 與 ride a motorcycle 指向頭部防護裝備 helmet；wear a helmet 是動詞與物件搭配。 再回讀原句，檢查前後因果或對比是否一致。"
+    ],
+    "reasons": [
+      "beard 的意思是「鬍鬚」。原句的判斷依據為「protect your head 與 ride a motorcycle 指向頭部防護裝備 helmet；wear a helmet 是動詞與物件搭配。」，此選項的語意無法保留這個關係。",
+      "helmet 表「安全帽」。protect your head 與 ride a motorcycle 指向頭部防護裝備 helmet；wear a helmet 是動詞與物件搭配。",
+      "necklace 的意思是「項鍊」。原句的判斷依據為「protect your head 與 ride a motorcycle 指向頭部防護裝備 helmet；wear a helmet 是動詞與物件搭配。」，此選項的語意無法保留這個關係。",
+      "tie 的意思是「領帶」。原句的判斷依據為「protect your head 與 ride a motorcycle 指向頭部防護裝備 helmet；wear a helmet 是動詞與物件搭配。」，此選項的語意無法保留這個關係。"
+    ],
+    "transfer": {
+      "prompt": "原創變式，沿用原題四個候選字詞：A cyclist wears a ______ to protect the head.",
+      "answer": "helmet",
+      "steps": [
+        "先判讀新句的事件與空格所需的語意：A cyclist wears a ______ to protect the head.",
+        "套用本題詞義「安全帽」，填入 helmet。",
+        "完成新句後回查：A cyclist wears a helmet to protect the head. 核對語意與前後因果。"
+      ]
+    }
+  },
+  {
+    "questionId": "111-english-6",
+    "routes": [
+      "/subjects/english/vocabulary-phrases"
+    ],
+    "kind": "語境字彙與搭配：natural",
+    "knowledge": [
+      [
+        "natural 的語意與使用條件",
+        "but 連接原本棕色與後來染紫兩種狀態，natural hair color 是未染色前的原生髮色。"
+      ],
+      [
+        "選項詞義對照",
+        "A ancient＝古老的；B historical＝歷史的；C natural＝天然的／原本的；D opposite＝相反的。解題時同時核對句意、詞性與搭配，並以原句線索決定。"
+      ]
+    ],
+    "steps": [
+      "先找題幹的語意證據。but 連接原本棕色與後來染紫兩種狀態，natural hair color 是未染色前的原生髮色。",
+      "逐項釐清詞義：A ancient＝古老的；B historical＝歷史的；C natural＝天然的／原本的；D opposite＝相反的。",
+      "本題選 C「natural」，此處表示「天然的／原本的」。",
+      "以完整語境核對：but 連接原本棕色與後來染紫兩種狀態，natural hair color 是未染色前的原生髮色。 再回讀原句，檢查前後因果或對比是否一致。"
+    ],
+    "reasons": [
+      "ancient 的意思是「古老的」。原句的判斷依據為「but 連接原本棕色與後來染紫兩種狀態，natural hair color 是未染色前的原生髮色。」，此選項的語意無法保留這個關係。",
+      "historical 的意思是「歷史的」。原句的判斷依據為「but 連接原本棕色與後來染紫兩種狀態，natural hair color 是未染色前的原生髮色。」，此選項的語意無法保留這個關係。",
+      "natural 表「天然的／原本的」。but 連接原本棕色與後來染紫兩種狀態，natural hair color 是未染色前的原生髮色。",
+      "opposite 的意思是「相反的」。原句的判斷依據為「but 連接原本棕色與後來染紫兩種狀態，natural hair color 是未染色前的原生髮色。」，此選項的語意無法保留這個關係。"
+    ],
+    "transfer": {
+      "prompt": "原創變式，沿用原題四個候選字詞：Before she dyed it red, her ______ hair color was black.",
+      "answer": "natural",
+      "steps": [
+        "先判讀新句的事件與空格所需的語意：Before she dyed it red, her ______ hair color was black.",
+        "套用本題詞義「天然的／原本的」，填入 natural。",
+        "完成新句後回查：Before she dyed it red, her natural hair color was black. 核對語意與前後因果。"
+      ]
+    }
+  },
+  {
+    "questionId": "111-english-7",
+    "routes": [
+      "/subjects/english/vocabulary-phrases"
+    ],
+    "kind": "語境字彙與搭配：ahead",
+    "knowledge": [
+      [
+        "ahead 的語意與使用條件",
+        "一開賣就訂票表示事先規劃；plan ahead 是提前安排，ahead 修飾 planned。"
+      ],
+      [
+        "選項詞義對照",
+        "A ahead＝事先／向前；B almost＝幾乎；C either＝任一／也；D even＝甚至。解題時同時核對句意、詞性與搭配，並以原句線索決定。"
+      ]
+    ],
+    "steps": [
+      "先找題幹的語意證據。一開賣就訂票表示事先規劃；plan ahead 是提前安排，ahead 修飾 planned。",
+      "逐項釐清詞義：A ahead＝事先／向前；B almost＝幾乎；C either＝任一／也；D even＝甚至。",
+      "本題選 A「ahead」，此處表示「事先／向前」。",
+      "以完整語境核對：一開賣就訂票表示事先規劃；plan ahead 是提前安排，ahead 修飾 planned。 再回讀原句，檢查前後因果或對比是否一致。"
+    ],
+    "reasons": [
+      "ahead 表「事先／向前」。一開賣就訂票表示事先規劃；plan ahead 是提前安排，ahead 修飾 planned。",
+      "almost 的意思是「幾乎」。原句的判斷依據為「一開賣就訂票表示事先規劃；plan ahead 是提前安排，ahead 修飾 planned。」，此選項的語意無法保留這個關係。",
+      "either 的意思是「任一／也」。原句的判斷依據為「一開賣就訂票表示事先規劃；plan ahead 是提前安排，ahead 修飾 planned。」，此選項的語意無法保留這個關係。",
+      "even 的意思是「甚至」。原句的判斷依據為「一開賣就訂票表示事先規劃；plan ahead 是提前安排，ahead 修飾 planned。」，此選項的語意無法保留這個關係。"
+    ],
+    "transfer": {
+      "prompt": "原創變式，沿用原題四個候選字詞：Tickets sell quickly, so we should plan ______.",
+      "answer": "ahead",
+      "steps": [
+        "先判讀新句的事件與空格所需的語意：Tickets sell quickly, so we should plan ______.",
+        "套用本題詞義「事先／向前」，填入 ahead。",
+        "完成新句後回查：Tickets sell quickly, so we should plan ahead. 核對語意與前後因果。"
+      ]
+    }
+  },
+  {
+    "questionId": "111-english-8",
+    "routes": [
+      "/subjects/english/vocabulary-phrases"
+    ],
+    "kind": "語境字彙與搭配：relaxation",
+    "knowledge": [
+      [
+        "relaxation 的語意與使用條件",
+        "ease his pressure 是減輕壓力，聽睡前音樂的目的為 relaxation；for 後接表示目的的名詞。"
+      ],
+      [
+        "選項詞義對照",
+        "A presentation＝簡報／呈現；B publication＝出版；C relaxation＝放鬆；D reputation＝名聲。解題時同時核對句意、詞性與搭配，並以原句線索決定。"
+      ]
+    ],
+    "steps": [
+      "先找題幹的語意證據。ease his pressure 是減輕壓力，聽睡前音樂的目的為 relaxation；for 後接表示目的的名詞。",
+      "逐項釐清詞義：A presentation＝簡報／呈現；B publication＝出版；C relaxation＝放鬆；D reputation＝名聲。",
+      "本題選 C「relaxation」，此處表示「放鬆」。",
+      "以完整語境核對：ease his pressure 是減輕壓力，聽睡前音樂的目的為 relaxation；for 後接表示目的的名詞。 再回讀原句，檢查前後因果或對比是否一致。"
+    ],
+    "reasons": [
+      "presentation 的意思是「簡報／呈現」。原句的判斷依據為「ease his pressure 是減輕壓力，聽睡前音樂的目的為 relaxation；for 後接表示目的的名詞。」，此選項的語意無法保留這個關係。",
+      "publication 的意思是「出版」。原句的判斷依據為「ease his pressure 是減輕壓力，聽睡前音樂的目的為 relaxation；for 後接表示目的的名詞。」，此選項的語意無法保留這個關係。",
+      "relaxation 表「放鬆」。ease his pressure 是減輕壓力，聽睡前音樂的目的為 relaxation；for 後接表示目的的名詞。",
+      "reputation 的意思是「名聲」。原句的判斷依據為「ease his pressure 是減輕壓力，聽睡前音樂的目的為 relaxation；for 後接表示目的的名詞。」，此選項的語意無法保留這個關係。"
+    ],
+    "transfer": {
+      "prompt": "原創變式，沿用原題四個候選字詞：She listens to quiet music for ______ after work.",
+      "answer": "relaxation",
+      "steps": [
+        "先判讀新句的事件與空格所需的語意：She listens to quiet music for ______ after work.",
+        "套用本題詞義「放鬆」，填入 relaxation。",
+        "完成新句後回查：She listens to quiet music for relaxation after work. 核對語意與前後因果。"
+      ]
+    }
+  },
+  {
+    "questionId": "111-english-9",
+    "routes": [
+      "/subjects/english/vocabulary-phrases"
+    ],
+    "kind": "語境字彙與搭配：chased",
+    "knowledge": [
+      [
+        "chased 的語意與使用條件",
+        "police、bank robber 與 through the streets 構成警方追捕搶匪的情境，pursued 在此等於 chased。"
+      ],
+      [
+        "選項詞義對照",
+        "A begged＝懇求；B chased＝追趕；C praised＝稱讚；D treated＝對待／治療。解題時同時核對句意、詞性與搭配，並以原句線索決定。"
+      ]
+    ],
+    "steps": [
+      "先找題幹的語意證據。police、bank robber 與 through the streets 構成警方追捕搶匪的情境，pursued 在此等於 chased。",
+      "逐項釐清詞義：A begged＝懇求；B chased＝追趕；C praised＝稱讚；D treated＝對待／治療。",
+      "本題選 B「chased」，此處表示「追趕」。",
+      "以完整語境核對：police、bank robber 與 through the streets 構成警方追捕搶匪的情境，pursued 在此等於 chased。 再回讀原句，檢查前後因果或對比是否一致。"
+    ],
+    "reasons": [
+      "begged 的意思是「懇求」。原句的判斷依據為「police、bank robber 與 through the streets 構成警方追捕搶匪的情境，pursued 在此等於 chased。」，此選項的語意無法保留這個關係。",
+      "chased 表「追趕」。police、bank robber 與 through the streets 構成警方追捕搶匪的情境，pursued 在此等於 chased。",
+      "praised 的意思是「稱讚」。原句的判斷依據為「police、bank robber 與 through the streets 構成警方追捕搶匪的情境，pursued 在此等於 chased。」，此選項的語意無法保留這個關係。",
+      "treated 的意思是「對待／治療」。原句的判斷依據為「police、bank robber 與 through the streets 構成警方追捕搶匪的情境，pursued 在此等於 chased。」，此選項的語意無法保留這個關係。"
+    ],
+    "transfer": {
+      "prompt": "原創變式，沿用原題四個候選字詞：The dog ______ the ball across the field.",
+      "answer": "chased",
+      "steps": [
+        "先判讀新句的事件與空格所需的語意：The dog ______ the ball across the field.",
+        "套用本題詞義「追趕」，填入 chased。",
+        "完成新句後回查：The dog chased the ball across the field. 核對語意與前後因果。"
+      ]
+    }
+  },
+  {
+    "questionId": "111-english-10",
+    "routes": [
+      "/subjects/english/vocabulary-phrases"
+    ],
+    "kind": "語境字彙與搭配：thoroughly",
+    "knowledge": [
+      [
+        "thoroughly 的語意與使用條件",
+        "looked through the records extensively 表示廣泛仔細查閱，thoroughly 最能保留查找詳盡的意思；不是只說時間或頻率。"
+      ],
+      [
+        "選項詞義對照",
+        "A eventually＝最後／終於；B marginally＝些微地；C occasionally＝偶爾；D thoroughly＝徹底地。解題時同時核對句意、詞性與搭配，並以原句線索決定。"
+      ]
+    ],
+    "steps": [
+      "先找題幹的語意證據。looked through the records extensively 表示廣泛仔細查閱，thoroughly 最能保留查找詳盡的意思；不是只說時間或頻率。",
+      "逐項釐清詞義：A eventually＝最後／終於；B marginally＝些微地；C occasionally＝偶爾；D thoroughly＝徹底地。",
+      "本題選 D「thoroughly」，此處表示「徹底地」。",
+      "以完整語境核對：looked through the records extensively 表示廣泛仔細查閱，thoroughly 最能保留查找詳盡的意思；不是只說時間或頻率。 再回讀原句，檢查前後因果或對比是否一致。"
+    ],
+    "reasons": [
+      "eventually 的意思是「最後／終於」。原句的判斷依據為「looked through the records extensively 表示廣泛仔細查閱，thoroughly 最能保留查找詳盡的意思；不是只說時間或頻率。」，此選項的語意無法保留這個關係。",
+      "marginally 的意思是「些微地」。原句的判斷依據為「looked through the records extensively 表示廣泛仔細查閱，thoroughly 最能保留查找詳盡的意思；不是只說時間或頻率。」，此選項的語意無法保留這個關係。",
+      "occasionally 的意思是「偶爾」。原句的判斷依據為「looked through the records extensively 表示廣泛仔細查閱，thoroughly 最能保留查找詳盡的意思；不是只說時間或頻率。」，此選項的語意無法保留這個關係。",
+      "thoroughly 表「徹底地」。looked through the records extensively 表示廣泛仔細查閱，thoroughly 最能保留查找詳盡的意思；不是只說時間或頻率。"
+    ],
+    "transfer": {
+      "prompt": "原創變式，沿用原題四個候選字詞：The inspector checked every room ______.",
+      "answer": "thoroughly",
+      "steps": [
+        "先判讀新句的事件與空格所需的語意：The inspector checked every room ______.",
+        "套用本題詞義「徹底地」，填入 thoroughly。",
+        "完成新句後回查：The inspector checked every room thoroughly. 核對語意與前後因果。"
+      ]
+    }
+  },
+  {
+    "questionId": "112-english-1",
+    "routes": [
+      "/subjects/english/vocabulary-phrases"
+    ],
+    "kind": "語境字彙與搭配：shock",
+    "knowledge": [
+      [
+        "shock 的語意與使用條件",
+        "唯一電影院將關閉是令人震驚的消息；a big shock 表示很大的震撼，後方 to learn 引出消息內容。"
+      ],
+      [
+        "選項詞義對照",
+        "A cable＝纜線；B shock＝震驚；C tube＝管子；D zone＝區域。解題時同時核對句意、詞性與搭配，並以原句線索決定。"
+      ]
+    ],
+    "steps": [
+      "先找題幹的語意證據。唯一電影院將關閉是令人震驚的消息；a big shock 表示很大的震撼，後方 to learn 引出消息內容。",
+      "逐項釐清詞義：A cable＝纜線；B shock＝震驚；C tube＝管子；D zone＝區域。",
+      "本題選 B「shock」，此處表示「震驚」。",
+      "以完整語境核對：唯一電影院將關閉是令人震驚的消息；a big shock 表示很大的震撼，後方 to learn 引出消息內容。 再回讀原句，檢查前後因果或對比是否一致。"
+    ],
+    "reasons": [
+      "cable 的意思是「纜線」。原句的判斷依據為「唯一電影院將關閉是令人震驚的消息；a big shock 表示很大的震撼，後方 to learn 引出消息內容。」，此選項的語意無法保留這個關係。",
+      "shock 表「震驚」。唯一電影院將關閉是令人震驚的消息；a big shock 表示很大的震撼，後方 to learn 引出消息內容。",
+      "tube 的意思是「管子」。原句的判斷依據為「唯一電影院將關閉是令人震驚的消息；a big shock 表示很大的震撼，後方 to learn 引出消息內容。」，此選項的語意無法保留這個關係。",
+      "zone 的意思是「區域」。原句的判斷依據為「唯一電影院將關閉是令人震驚的消息；a big shock 表示很大的震撼，後方 to learn 引出消息內容。」，此選項的語意無法保留這個關係。"
+    ],
+    "transfer": {
+      "prompt": "原創變式，沿用原題四個候選字詞：The sudden closure came as a ______ to local residents.",
+      "answer": "shock",
+      "steps": [
+        "先判讀新句的事件與空格所需的語意：The sudden closure came as a ______ to local residents.",
+        "套用本題詞義「震驚」，填入 shock。",
+        "完成新句後回查：The sudden closure came as a shock to local residents. 核對語意與前後因果。"
+      ]
+    }
+  },
+  {
+    "questionId": "112-english-2",
+    "routes": [
+      "/subjects/english/vocabulary-phrases"
+    ],
+    "kind": "語境字彙與搭配：hold",
+    "knowledge": [
+      [
+        "hold 的語意與使用條件",
+        "raise money for street cats 是活動目的，hold a party 為舉辦派對的固定搭配。"
+      ],
+      [
+        "選項詞義對照",
+        "A break＝打破；B fight＝打架／奮鬥；C hold＝舉辦／拿著；D spell＝拼字。解題時同時核對句意、詞性與搭配，並以原句線索決定。"
+      ]
+    ],
+    "steps": [
+      "先找題幹的語意證據。raise money for street cats 是活動目的，hold a party 為舉辦派對的固定搭配。",
+      "逐項釐清詞義：A break＝打破；B fight＝打架／奮鬥；C hold＝舉辦／拿著；D spell＝拼字。",
+      "本題選 C「hold」，此處表示「舉辦／拿著」。",
+      "以完整語境核對：raise money for street cats 是活動目的，hold a party 為舉辦派對的固定搭配。 再回讀原句，檢查前後因果或對比是否一致。"
+    ],
+    "reasons": [
+      "break 的意思是「打破」。原句的判斷依據為「raise money for street cats 是活動目的，hold a party 為舉辦派對的固定搭配。」，此選項的語意無法保留這個關係。",
+      "fight 的意思是「打架／奮鬥」。原句的判斷依據為「raise money for street cats 是活動目的，hold a party 為舉辦派對的固定搭配。」，此選項的語意無法保留這個關係。",
+      "hold 表「舉辦／拿著」。raise money for street cats 是活動目的，hold a party 為舉辦派對的固定搭配。",
+      "spell 的意思是「拼字」。原句的判斷依據為「raise money for street cats 是活動目的，hold a party 為舉辦派對的固定搭配。」，此選項的語意無法保留這個關係。"
+    ],
+    "transfer": {
+      "prompt": "原創變式，沿用原題四個候選字詞：Our class will ______ a party to raise money.",
+      "answer": "hold",
+      "steps": [
+        "先判讀新句的事件與空格所需的語意：Our class will ______ a party to raise money.",
+        "套用本題詞義「舉辦／拿著」，填入 hold。",
+        "完成新句後回查：Our class will hold a party to raise money. 核對語意與前後因果。"
+      ]
+    }
+  },
+  {
+    "questionId": "112-english-3",
+    "routes": [
+      "/subjects/english/vocabulary-phrases"
+    ],
+    "kind": "語境字彙與搭配：almost",
+    "knowledge": [
+      [
+        "almost 的語意與使用條件",
+        "最後一章今晚才要完成，現在只是接近完成；almost finished 保留尚差一部分的意思，already finished 會與後句衝突。"
+      ],
+      [
+        "選項詞義對照",
+        "A almost＝幾乎；B already＝已經；C always＝總是；D altogether＝總共／完全。解題時同時核對句意、詞性與搭配，並以原句線索決定。"
+      ]
+    ],
+    "steps": [
+      "先找題幹的語意證據。最後一章今晚才要完成，現在只是接近完成；almost finished 保留尚差一部分的意思，already finished 會與後句衝突。",
+      "逐項釐清詞義：A almost＝幾乎；B already＝已經；C always＝總是；D altogether＝總共／完全。",
+      "本題選 A「almost」，此處表示「幾乎」。",
+      "以完整語境核對：最後一章今晚才要完成，現在只是接近完成；almost finished 保留尚差一部分的意思，already finished 會與後句衝突。 再回讀原句，檢查前後因果或對比是否一致。"
+    ],
+    "reasons": [
+      "almost 表「幾乎」。最後一章今晚才要完成，現在只是接近完成；almost finished 保留尚差一部分的意思，already finished 會與後句衝突。",
+      "already 的意思是「已經」。原句的判斷依據為「最後一章今晚才要完成，現在只是接近完成；almost finished 保留尚差一部分的意思，already finished 會與後句衝突。」，此選項的語意無法保留這個關係。",
+      "always 的意思是「總是」。原句的判斷依據為「最後一章今晚才要完成，現在只是接近完成；almost finished 保留尚差一部分的意思，already finished 會與後句衝突。」，此選項的語意無法保留這個關係。",
+      "altogether 的意思是「總共／完全」。原句的判斷依據為「最後一章今晚才要完成，現在只是接近完成；almost finished 保留尚差一部分的意思，already finished 會與後句衝突。」，此選項的語意無法保留這個關係。"
+    ],
+    "transfer": {
+      "prompt": "原創變式，沿用原題四個候選字詞：I have ______ finished the book; only two pages remain.",
+      "answer": "almost",
+      "steps": [
+        "先判讀新句的事件與空格所需的語意：I have ______ finished the book; only two pages remain.",
+        "套用本題詞義「幾乎」，填入 almost。",
+        "完成新句後回查：I have almost finished the book; only two pages remain. 核對語意與前後因果。"
+      ]
+    }
+  },
+  {
+    "questionId": "112-english-4",
+    "routes": [
+      "/subjects/english/vocabulary-phrases"
+    ],
+    "kind": "語境字彙與搭配：rude",
+    "knowledge": [
+      [
+        "rude 的語意與使用條件",
+        "should avoid doing it 指應避免長時間直視，原因是在某些文化中被視為 rude；considered 後接形容詞作補語。"
+      ],
+      [
+        "選項詞義對照",
+        "A basic＝基本的；B classical＝古典的；C legal＝合法的；D rude＝無禮的。解題時同時核對句意、詞性與搭配，並以原句線索決定。"
+      ]
+    ],
+    "steps": [
+      "先找題幹的語意證據。should avoid doing it 指應避免長時間直視，原因是在某些文化中被視為 rude；considered 後接形容詞作補語。",
+      "逐項釐清詞義：A basic＝基本的；B classical＝古典的；C legal＝合法的；D rude＝無禮的。",
+      "本題選 D「rude」，此處表示「無禮的」。",
+      "以完整語境核對：should avoid doing it 指應避免長時間直視，原因是在某些文化中被視為 rude；considered 後接形容詞作補語。 再回讀原句，檢查前後因果或對比是否一致。"
+    ],
+    "reasons": [
+      "basic 的意思是「基本的」。原句的判斷依據為「should avoid doing it 指應避免長時間直視，原因是在某些文化中被視為 rude；considered 後接形容詞作補語。」，此選項的語意無法保留這個關係。",
+      "classical 的意思是「古典的」。原句的判斷依據為「should avoid doing it 指應避免長時間直視，原因是在某些文化中被視為 rude；considered 後接形容詞作補語。」，此選項的語意無法保留這個關係。",
+      "legal 的意思是「合法的」。原句的判斷依據為「should avoid doing it 指應避免長時間直視，原因是在某些文化中被視為 rude；considered 後接形容詞作補語。」，此選項的語意無法保留這個關係。",
+      "rude 表「無禮的」。should avoid doing it 指應避免長時間直視，原因是在某些文化中被視為 rude；considered 後接形容詞作補語。"
+    ],
+    "transfer": {
+      "prompt": "原創變式，沿用原題四個候選字詞：Interrupting someone repeatedly is often considered ______.",
+      "answer": "rude",
+      "steps": [
+        "先判讀新句的事件與空格所需的語意：Interrupting someone repeatedly is often considered ______.",
+        "套用本題詞義「無禮的」，填入 rude。",
+        "完成新句後回查：Interrupting someone repeatedly is often considered rude. 核對語意與前後因果。"
+      ]
+    }
+  },
+  {
+    "questionId": "112-english-5",
+    "routes": [
+      "/subjects/english/vocabulary-phrases"
+    ],
+    "kind": "語境字彙與搭配：burst",
+    "knowledge": [
+      [
+        "burst 的語意與使用條件",
+        "持續向氣球吹氣與 loud bang 指向氣球爆裂；burst 可作不及物動詞。"
+      ],
+      [
+        "選項詞義對照",
+        "A aim＝瞄準；B burst＝爆裂；C explore＝探索；D shine＝發光。解題時同時核對句意、詞性與搭配，並以原句線索決定。"
+      ]
+    ],
+    "steps": [
+      "先找題幹的語意證據。持續向氣球吹氣與 loud bang 指向氣球爆裂；burst 可作不及物動詞。",
+      "逐項釐清詞義：A aim＝瞄準；B burst＝爆裂；C explore＝探索；D shine＝發光。",
+      "本題選 B「burst」，此處表示「爆裂」。",
+      "以完整語境核對：持續向氣球吹氣與 loud bang 指向氣球爆裂；burst 可作不及物動詞。 再回讀原句，檢查前後因果或對比是否一致。"
+    ],
+    "reasons": [
+      "aim 的意思是「瞄準」。原句的判斷依據為「持續向氣球吹氣與 loud bang 指向氣球爆裂；burst 可作不及物動詞。」，此選項的語意無法保留這個關係。",
+      "burst 表「爆裂」。持續向氣球吹氣與 loud bang 指向氣球爆裂；burst 可作不及物動詞。",
+      "explore 的意思是「探索」。原句的判斷依據為「持續向氣球吹氣與 loud bang 指向氣球爆裂；burst 可作不及物動詞。」，此選項的語意無法保留這個關係。",
+      "shine 的意思是「發光」。原句的判斷依據為「持續向氣球吹氣與 loud bang 指向氣球爆裂；burst 可作不及物動詞。」，此選項的語意無法保留這個關係。"
+    ],
+    "transfer": {
+      "prompt": "原創變式，沿用原題四個候選字詞：The balloon will ______ if too much air is added.",
+      "answer": "burst",
+      "steps": [
+        "先判讀新句的事件與空格所需的語意：The balloon will ______ if too much air is added.",
+        "套用本題詞義「爆裂」，填入 burst。",
+        "完成新句後回查：The balloon will burst if too much air is added. 核對語意與前後因果。"
+      ]
+    }
+  },
+  {
+    "questionId": "112-english-7",
+    "routes": [
+      "/subjects/english/vocabulary-phrases"
+    ],
+    "kind": "語境字彙與搭配：sensitive",
+    "knowledge": [
+      [
+        "sensitive 的語意與使用條件",
+        "牙齒遇甜食不適，所以不吃糖果餅乾；be sensitive to 是對某物敏感的固定搭配。"
+      ],
+      [
+        "選項詞義對照",
+        "A attractive＝有吸引力的；B effective＝有效的；C positive＝正面的；D sensitive＝敏感的。解題時同時核對句意、詞性與搭配，並以原句線索決定。"
+      ]
+    ],
+    "steps": [
+      "先找題幹的語意證據。牙齒遇甜食不適，所以不吃糖果餅乾；be sensitive to 是對某物敏感的固定搭配。",
+      "逐項釐清詞義：A attractive＝有吸引力的；B effective＝有效的；C positive＝正面的；D sensitive＝敏感的。",
+      "本題選 D「sensitive」，此處表示「敏感的」。",
+      "以完整語境核對：牙齒遇甜食不適，所以不吃糖果餅乾；be sensitive to 是對某物敏感的固定搭配。 再回讀原句，檢查前後因果或對比是否一致。"
+    ],
+    "reasons": [
+      "attractive 的意思是「有吸引力的」。原句的判斷依據為「牙齒遇甜食不適，所以不吃糖果餅乾；be sensitive to 是對某物敏感的固定搭配。」，此選項的語意無法保留這個關係。",
+      "effective 的意思是「有效的」。原句的判斷依據為「牙齒遇甜食不適，所以不吃糖果餅乾；be sensitive to 是對某物敏感的固定搭配。」，此選項的語意無法保留這個關係。",
+      "positive 的意思是「正面的」。原句的判斷依據為「牙齒遇甜食不適，所以不吃糖果餅乾；be sensitive to 是對某物敏感的固定搭配。」，此選項的語意無法保留這個關係。",
+      "sensitive 表「敏感的」。牙齒遇甜食不適，所以不吃糖果餅乾；be sensitive to 是對某物敏感的固定搭配。"
+    ],
+    "transfer": {
+      "prompt": "原創變式，沿用原題四個候選字詞：My skin is ______ to this soap, so I stopped using it.",
+      "answer": "sensitive",
+      "steps": [
+        "先判讀新句的事件與空格所需的語意：My skin is ______ to this soap, so I stopped using it.",
+        "套用本題詞義「敏感的」，填入 sensitive。",
+        "完成新句後回查：My skin is sensitive to this soap, so I stopped using it. 核對語意與前後因果。"
+      ]
+    }
+  },
+  {
+    "questionId": "112-english-8",
+    "routes": [
+      "/subjects/english/vocabulary-phrases"
+    ],
+    "kind": "語境字彙與搭配：resistance",
+    "knowledge": [
+      [
+        "resistance 的語意與使用條件",
+        "did not meet any 與 got all the money 表示申請未遇阻力；meet resistance 指遇到反對。"
+      ],
+      [
+        "選項詞義對照",
+        "A appreciation＝欣賞／感激；B gratitude＝感謝；C resistance＝反對／阻力；D sympathy＝同情。解題時同時核對句意、詞性與搭配，並以原句線索決定。"
+      ]
+    ],
+    "steps": [
+      "先找題幹的語意證據。did not meet any 與 got all the money 表示申請未遇阻力；meet resistance 指遇到反對。",
+      "逐項釐清詞義：A appreciation＝欣賞／感激；B gratitude＝感謝；C resistance＝反對／阻力；D sympathy＝同情。",
+      "本題選 C「resistance」，此處表示「反對／阻力」。",
+      "以完整語境核對：did not meet any 與 got all the money 表示申請未遇阻力；meet resistance 指遇到反對。 再回讀原句，檢查前後因果或對比是否一致。"
+    ],
+    "reasons": [
+      "appreciation 的意思是「欣賞／感激」。原句的判斷依據為「did not meet any 與 got all the money 表示申請未遇阻力；meet resistance 指遇到反對。」，此選項的語意無法保留這個關係。",
+      "gratitude 的意思是「感謝」。原句的判斷依據為「did not meet any 與 got all the money 表示申請未遇阻力；meet resistance 指遇到反對。」，此選項的語意無法保留這個關係。",
+      "resistance 表「反對／阻力」。did not meet any 與 got all the money 表示申請未遇阻力；meet resistance 指遇到反對。",
+      "sympathy 的意思是「同情」。原句的判斷依據為「did not meet any 與 got all the money 表示申請未遇阻力；meet resistance 指遇到反對。」，此選項的語意無法保留這個關係。"
+    ],
+    "transfer": {
+      "prompt": "原創變式，沿用原題四個候選字詞：The proposal met no ______ and was approved immediately.",
+      "answer": "resistance",
+      "steps": [
+        "先判讀新句的事件與空格所需的語意：The proposal met no ______ and was approved immediately.",
+        "套用本題詞義「反對／阻力」，填入 resistance。",
+        "完成新句後回查：The proposal met no resistance and was approved immediately. 核對語意與前後因果。"
+      ]
+    }
+  },
+  {
+    "questionId": "112-english-9",
+    "routes": [
+      "/subjects/english/vocabulary-phrases"
+    ],
+    "kind": "語境字彙與搭配：badly",
+    "knowledge": [
+      [
+        "badly 的語意與使用條件",
+        "需要住院一段時間表示受傷嚴重；seriously hurt 可改成 badly hurt，hardly hurt 卻接近幾乎沒受傷。"
+      ],
+      [
+        "選項詞義對照",
+        "A badly＝嚴重地／很糟地；B cheaply＝便宜地；C hardly＝幾乎不；D shortly＝不久／簡短地。解題時同時核對句意、詞性與搭配，並以原句線索決定。"
+      ]
+    ],
+    "steps": [
+      "先找題幹的語意證據。需要住院一段時間表示受傷嚴重；seriously hurt 可改成 badly hurt，hardly hurt 卻接近幾乎沒受傷。",
+      "逐項釐清詞義：A badly＝嚴重地／很糟地；B cheaply＝便宜地；C hardly＝幾乎不；D shortly＝不久／簡短地。",
+      "本題選 A「badly」，此處表示「嚴重地／很糟地」。",
+      "以完整語境核對：需要住院一段時間表示受傷嚴重；seriously hurt 可改成 badly hurt，hardly hurt 卻接近幾乎沒受傷。 再回讀原句，檢查前後因果或對比是否一致。"
+    ],
+    "reasons": [
+      "badly 表「嚴重地／很糟地」。需要住院一段時間表示受傷嚴重；seriously hurt 可改成 badly hurt，hardly hurt 卻接近幾乎沒受傷。",
+      "cheaply 的意思是「便宜地」。原句的判斷依據為「需要住院一段時間表示受傷嚴重；seriously hurt 可改成 badly hurt，hardly hurt 卻接近幾乎沒受傷。」，此選項的語意無法保留這個關係。",
+      "hardly 的意思是「幾乎不」。原句的判斷依據為「需要住院一段時間表示受傷嚴重；seriously hurt 可改成 badly hurt，hardly hurt 卻接近幾乎沒受傷。」，此選項的語意無法保留這個關係。",
+      "shortly 的意思是「不久／簡短地」。原句的判斷依據為「需要住院一段時間表示受傷嚴重；seriously hurt 可改成 badly hurt，hardly hurt 卻接近幾乎沒受傷。」，此選項的語意無法保留這個關係。"
+    ],
+    "transfer": {
+      "prompt": "原創變式，沿用原題四個候選字詞：The player was ______ injured and needed hospital care.",
+      "answer": "badly",
+      "steps": [
+        "先判讀新句的事件與空格所需的語意：The player was ______ injured and needed hospital care.",
+        "套用本題詞義「嚴重地／很糟地」，填入 badly。",
+        "完成新句後回查：The player was badly injured and needed hospital care. 核對語意與前後因果。"
+      ]
+    }
+  },
+  {
+    "questionId": "112-english-10",
+    "routes": [
+      "/subjects/english/vocabulary-phrases"
+    ],
+    "kind": "語境字彙與搭配：extra",
+    "knowledge": [
+      [
+        "extra 的語意與使用條件",
+        "錢全花完、無法借人，spare money 是可挪用的多餘金錢，extra money 語意相近。"
+      ],
+      [
+        "選項詞義對照",
+        "A extra＝額外的／多餘的；B hot＝熱的；C quick＝快速的；D soft＝柔軟的。解題時同時核對句意、詞性與搭配，並以原句線索決定。"
+      ]
+    ],
+    "steps": [
+      "先找題幹的語意證據。錢全花完、無法借人，spare money 是可挪用的多餘金錢，extra money 語意相近。",
+      "逐項釐清詞義：A extra＝額外的／多餘的；B hot＝熱的；C quick＝快速的；D soft＝柔軟的。",
+      "本題選 A「extra」，此處表示「額外的／多餘的」。",
+      "以完整語境核對：錢全花完、無法借人，spare money 是可挪用的多餘金錢，extra money 語意相近。 再回讀原句，檢查前後因果或對比是否一致。"
+    ],
+    "reasons": [
+      "extra 表「額外的／多餘的」。錢全花完、無法借人，spare money 是可挪用的多餘金錢，extra money 語意相近。",
+      "hot 的意思是「熱的」。原句的判斷依據為「錢全花完、無法借人，spare money 是可挪用的多餘金錢，extra money 語意相近。」，此選項的語意無法保留這個關係。",
+      "quick 的意思是「快速的」。原句的判斷依據為「錢全花完、無法借人，spare money 是可挪用的多餘金錢，extra money 語意相近。」，此選項的語意無法保留這個關係。",
+      "soft 的意思是「柔軟的」。原句的判斷依據為「錢全花完、無法借人，spare money 是可挪用的多餘金錢，extra money 語意相近。」，此選項的語意無法保留這個關係。"
+    ],
+    "transfer": {
+      "prompt": "原創變式，沿用原題四個候選字詞：I have no ______ money after paying the rent.",
+      "answer": "extra",
+      "steps": [
+        "先判讀新句的事件與空格所需的語意：I have no ______ money after paying the rent.",
+        "套用本題詞義「額外的／多餘的」，填入 extra。",
+        "完成新句後回查：I have no extra money after paying the rent. 核對語意與前後因果。"
+      ]
+    }
+  },
+  {
+    "questionId": "113-english-1",
+    "routes": [
+      "/subjects/english/vocabulary-phrases"
+    ],
+    "kind": "語境字彙與搭配：special",
+    "knowledge": [
+      [
+        "special 的語意與使用條件",
+        "looks different from those of other people 是與眾不同的明確線索，special 與此呼應。"
+      ],
+      [
+        "選項詞義對照",
+        "A common＝常見的；B general＝一般的；C regular＝規律的；D special＝特別的。解題時同時核對句意、詞性與搭配，並以原句線索決定。"
+      ]
+    ],
+    "steps": [
+      "先找題幹的語意證據。looks different from those of other people 是與眾不同的明確線索，special 與此呼應。",
+      "逐項釐清詞義：A common＝常見的；B general＝一般的；C regular＝規律的；D special＝特別的。",
+      "本題選 D「special」，此處表示「特別的」。",
+      "以完整語境核對：looks different from those of other people 是與眾不同的明確線索，special 與此呼應。 再回讀原句，檢查前後因果或對比是否一致。"
+    ],
+    "reasons": [
+      "common 的意思是「常見的」。原句的判斷依據為「looks different from those of other people 是與眾不同的明確線索，special 與此呼應。」，此選項的語意無法保留這個關係。",
+      "general 的意思是「一般的」。原句的判斷依據為「looks different from those of other people 是與眾不同的明確線索，special 與此呼應。」，此選項的語意無法保留這個關係。",
+      "regular 的意思是「規律的」。原句的判斷依據為「looks different from those of other people 是與眾不同的明確線索，special 與此呼應。」，此選項的語意無法保留這個關係。",
+      "special 表「特別的」。looks different from those of other people 是與眾不同的明確線索，special 與此呼應。"
+    ],
+    "transfer": {
+      "prompt": "原創變式，沿用原題四個候選字詞：Her unusual design is very ______ compared with the others.",
+      "answer": "special",
+      "steps": [
+        "先判讀新句的事件與空格所需的語意：Her unusual design is very ______ compared with the others.",
+        "套用本題詞義「特別的」，填入 special。",
+        "完成新句後回查：Her unusual design is very special compared with the others. 核對語意與前後因果。"
+      ]
+    }
+  },
+  {
+    "questionId": "113-english-2",
+    "routes": [
+      "/subjects/english/vocabulary-phrases"
+    ],
+    "kind": "語境字彙與搭配：focus",
+    "knowledge": [
+      [
+        "focus 的語意與使用條件",
+        "quiet place、study、full attention 都指集中注意力，focus 可接 on 表專注於某事，也能單獨使用。"
+      ],
+      [
+        "選項詞義對照",
+        "A bend＝彎曲；B focus＝專注；C panic＝恐慌；D wander＝漫遊／走神。解題時同時核對句意、詞性與搭配，並以原句線索決定。"
+      ]
+    ],
+    "steps": [
+      "先找題幹的語意證據。quiet place、study、full attention 都指集中注意力，focus 可接 on 表專注於某事，也能單獨使用。",
+      "逐項釐清詞義：A bend＝彎曲；B focus＝專注；C panic＝恐慌；D wander＝漫遊／走神。",
+      "本題選 B「focus」，此處表示「專注」。",
+      "以完整語境核對：quiet place、study、full attention 都指集中注意力，focus 可接 on 表專注於某事，也能單獨使用。 再回讀原句，檢查前後因果或對比是否一致。"
+    ],
+    "reasons": [
+      "bend 的意思是「彎曲」。原句的判斷依據為「quiet place、study、full attention 都指集中注意力，focus 可接 on 表專注於某事，也能單獨使用。」，此選項的語意無法保留這個關係。",
+      "focus 表「專注」。quiet place、study、full attention 都指集中注意力，focus 可接 on 表專注於某事，也能單獨使用。",
+      "panic 的意思是「恐慌」。原句的判斷依據為「quiet place、study、full attention 都指集中注意力，focus 可接 on 表專注於某事，也能單獨使用。」，此選項的語意無法保留這個關係。",
+      "wander 的意思是「漫遊／走神」。原句的判斷依據為「quiet place、study、full attention 都指集中注意力，focus 可接 on 表專注於某事，也能單獨使用。」，此選項的語意無法保留這個關係。"
+    ],
+    "transfer": {
+      "prompt": "原創變式，沿用原題四個候選字詞：I need silence so that I can ______ on the task.",
+      "answer": "focus",
+      "steps": [
+        "先判讀新句的事件與空格所需的語意：I need silence so that I can ______ on the task.",
+        "套用本題詞義「專注」，填入 focus。",
+        "完成新句後回查：I need silence so that I can focus on the task. 核對語意與前後因果。"
+      ]
+    }
+  },
+  {
+    "questionId": "113-english-3",
+    "routes": [
+      "/subjects/english/vocabulary-phrases"
+    ],
+    "kind": "語境字彙與搭配：tip",
+    "knowledge": [
+      [
+        "tip 的語意與使用條件",
+        "冒號後 add a little salt 是讓湯更好喝的具體建議，a helpful tip 指實用小訣竅。"
+      ],
+      [
+        "選項詞義對照",
+        "A lip＝嘴唇；B gap＝間隙；C tip＝訣竅／建議；D nap＝小睡。解題時同時核對句意、詞性與搭配，並以原句線索決定。"
+      ]
+    ],
+    "steps": [
+      "先找題幹的語意證據。冒號後 add a little salt 是讓湯更好喝的具體建議，a helpful tip 指實用小訣竅。",
+      "逐項釐清詞義：A lip＝嘴唇；B gap＝間隙；C tip＝訣竅／建議；D nap＝小睡。",
+      "本題選 C「tip」，此處表示「訣竅／建議」。",
+      "以完整語境核對：冒號後 add a little salt 是讓湯更好喝的具體建議，a helpful tip 指實用小訣竅。 再回讀原句，檢查前後因果或對比是否一致。"
+    ],
+    "reasons": [
+      "lip 的意思是「嘴唇」。原句的判斷依據為「冒號後 add a little salt 是讓湯更好喝的具體建議，a helpful tip 指實用小訣竅。」，此選項的語意無法保留這個關係。",
+      "gap 的意思是「間隙」。原句的判斷依據為「冒號後 add a little salt 是讓湯更好喝的具體建議，a helpful tip 指實用小訣竅。」，此選項的語意無法保留這個關係。",
+      "tip 表「訣竅／建議」。冒號後 add a little salt 是讓湯更好喝的具體建議，a helpful tip 指實用小訣竅。",
+      "nap 的意思是「小睡」。原句的判斷依據為「冒號後 add a little salt 是讓湯更好喝的具體建議，a helpful tip 指實用小訣竅。」，此選項的語意無法保留這個關係。"
+    ],
+    "transfer": {
+      "prompt": "原創變式，沿用原題四個候選字詞：Here is a useful ______: save a backup before editing.",
+      "answer": "tip",
+      "steps": [
+        "先判讀新句的事件與空格所需的語意：Here is a useful ______: save a backup before editing.",
+        "套用本題詞義「訣竅／建議」，填入 tip。",
+        "完成新句後回查：Here is a useful tip: save a backup before editing. 核對語意與前後因果。"
+      ]
+    }
+  },
+  {
+    "questionId": "113-english-4",
+    "routes": [
+      "/subjects/english/vocabulary-phrases"
+    ],
+    "kind": "語境字彙與搭配：roughly",
+    "knowledge": [
+      [
+        "roughly 的語意與使用條件",
+        "about 9 pm 表示近似時間，roughly 與 about 相呼應；其他副詞描述方式而非近似程度。"
+      ],
+      [
+        "選項詞義對照",
+        "A briefly＝簡短地；B fluently＝流利地；C gently＝溫柔地；D roughly＝大約。解題時同時核對句意、詞性與搭配，並以原句線索決定。"
+      ]
+    ],
+    "steps": [
+      "先找題幹的語意證據。about 9 pm 表示近似時間，roughly 與 about 相呼應；其他副詞描述方式而非近似程度。",
+      "逐項釐清詞義：A briefly＝簡短地；B fluently＝流利地；C gently＝溫柔地；D roughly＝大約。",
+      "本題選 D「roughly」，此處表示「大約」。",
+      "以完整語境核對：about 9 pm 表示近似時間，roughly 與 about 相呼應；其他副詞描述方式而非近似程度。 再回讀原句，檢查前後因果或對比是否一致。"
+    ],
+    "reasons": [
+      "briefly 的意思是「簡短地」。原句的判斷依據為「about 9 pm 表示近似時間，roughly 與 about 相呼應；其他副詞描述方式而非近似程度。」，此選項的語意無法保留這個關係。",
+      "fluently 的意思是「流利地」。原句的判斷依據為「about 9 pm 表示近似時間，roughly 與 about 相呼應；其他副詞描述方式而非近似程度。」，此選項的語意無法保留這個關係。",
+      "gently 的意思是「溫柔地」。原句的判斷依據為「about 9 pm 表示近似時間，roughly 與 about 相呼應；其他副詞描述方式而非近似程度。」，此選項的語意無法保留這個關係。",
+      "roughly 表「大約」。about 9 pm 表示近似時間，roughly 與 about 相呼應；其他副詞描述方式而非近似程度。"
+    ],
+    "transfer": {
+      "prompt": "原創變式，沿用原題四個候選字詞：The trip takes ______ two hours, depending on traffic.",
+      "answer": "roughly",
+      "steps": [
+        "先判讀新句的事件與空格所需的語意：The trip takes ______ two hours, depending on traffic.",
+        "套用本題詞義「大約」，填入 roughly。",
+        "完成新句後回查：The trip takes roughly two hours, depending on traffic. 核對語意與前後因果。"
+      ]
+    }
+  },
+  {
+    "questionId": "113-english-5",
+    "routes": [
+      "/subjects/english/vocabulary-phrases"
+    ],
+    "kind": "語境字彙與搭配：conflicts",
+    "knowledge": [
+      [
+        "conflicts 的語意與使用條件",
+        "友善相處可避免室友間衝突；stay away from conflicts 表示避開爭執，不能把正常關係當成應避免的目標。"
+      ],
+      [
+        "選項詞義對照",
+        "A dialogues＝對話；B conflicts＝衝突；C personality＝個性；D relationship＝關係。解題時同時核對句意、詞性與搭配，並以原句線索決定。"
+      ]
+    ],
+    "steps": [
+      "先找題幹的語意證據。友善相處可避免室友間衝突；stay away from conflicts 表示避開爭執，不能把正常關係當成應避免的目標。",
+      "逐項釐清詞義：A dialogues＝對話；B conflicts＝衝突；C personality＝個性；D relationship＝關係。",
+      "本題選 B「conflicts」，此處表示「衝突」。",
+      "以完整語境核對：友善相處可避免室友間衝突；stay away from conflicts 表示避開爭執，不能把正常關係當成應避免的目標。 再回讀原句，檢查前後因果或對比是否一致。"
+    ],
+    "reasons": [
+      "dialogues 的意思是「對話」。原句的判斷依據為「友善相處可避免室友間衝突；stay away from conflicts 表示避開爭執，不能把正常關係當成應避免的目標。」，此選項的語意無法保留這個關係。",
+      "conflicts 表「衝突」。友善相處可避免室友間衝突；stay away from conflicts 表示避開爭執，不能把正常關係當成應避免的目標。",
+      "personality 的意思是「個性」。原句的判斷依據為「友善相處可避免室友間衝突；stay away from conflicts 表示避開爭執，不能把正常關係當成應避免的目標。」，此選項的語意無法保留這個關係。",
+      "relationship 的意思是「關係」。原句的判斷依據為「友善相處可避免室友間衝突；stay away from conflicts 表示避開爭執，不能把正常關係當成應避免的目標。」，此選項的語意無法保留這個關係。"
+    ],
+    "transfer": {
+      "prompt": "原創變式，沿用原題四個候選字詞：Clear rules can help prevent ______ between roommates.",
+      "answer": "conflicts",
+      "steps": [
+        "先判讀新句的事件與空格所需的語意：Clear rules can help prevent ______ between roommates.",
+        "套用本題詞義「衝突」，填入 conflicts。",
+        "完成新句後回查：Clear rules can help prevent conflicts between roommates. 核對語意與前後因果。"
+      ]
+    }
+  },
+  {
+    "questionId": "113-english-6",
+    "routes": [
+      "/subjects/english/vocabulary-phrases"
+    ],
+    "kind": "語境字彙與搭配：stubborn",
+    "knowledge": [
+      [
+        "stubborn 的語意與使用條件",
+        "never change his decisions 與無論如何勸說都不改變，明確描述 stubborn，不能因 person 前需形容詞就忽略語意。"
+      ],
+      [
+        "選項詞義對照",
+        "A easy-going＝隨和的；B democratic＝民主的；C obedient＝服從的；D stubborn＝固執的。解題時同時核對句意、詞性與搭配，並以原句線索決定。"
+      ]
+    ],
+    "steps": [
+      "先找題幹的語意證據。never change his decisions 與無論如何勸說都不改變，明確描述 stubborn，不能因 person 前需形容詞就忽略語意。",
+      "逐項釐清詞義：A easy-going＝隨和的；B democratic＝民主的；C obedient＝服從的；D stubborn＝固執的。",
+      "本題選 D「stubborn」，此處表示「固執的」。",
+      "以完整語境核對：never change his decisions 與無論如何勸說都不改變，明確描述 stubborn，不能因 person 前需形容詞就忽略語意。 再回讀原句，檢查前後因果或對比是否一致。"
+    ],
+    "reasons": [
+      "easy-going 的意思是「隨和的」。原句的判斷依據為「never change his decisions 與無論如何勸說都不改變，明確描述 stubborn，不能因 person 前需形容詞就忽略語意。」，此選項的語意無法保留這個關係。",
+      "democratic 的意思是「民主的」。原句的判斷依據為「never change his decisions 與無論如何勸說都不改變，明確描述 stubborn，不能因 person 前需形容詞就忽略語意。」，此選項的語意無法保留這個關係。",
+      "obedient 的意思是「服從的」。原句的判斷依據為「never change his decisions 與無論如何勸說都不改變，明確描述 stubborn，不能因 person 前需形容詞就忽略語意。」，此選項的語意無法保留這個關係。",
+      "stubborn 表「固執的」。never change his decisions 與無論如何勸說都不改變，明確描述 stubborn，不能因 person 前需形容詞就忽略語意。"
+    ],
+    "transfer": {
+      "prompt": "原創變式，沿用原題四個候選字詞：He refuses to change his mind and can be very ______.",
+      "answer": "stubborn",
+      "steps": [
+        "先判讀新句的事件與空格所需的語意：He refuses to change his mind and can be very ______.",
+        "套用本題詞義「固執的」，填入 stubborn。",
+        "完成新句後回查：He refuses to change his mind and can be very stubborn. 核對語意與前後因果。"
+      ]
+    }
+  },
+  {
+    "questionId": "113-english-7",
+    "routes": [
+      "/subjects/english/vocabulary-phrases"
+    ],
+    "kind": "語境字彙與搭配：admire",
+    "knowledge": [
+      [
+        "admire 的語意與使用條件",
+        "want to be like her 表示把她當榜樣，因此是 admire her；impress her 則是讓她對我印象深刻，方向不同。"
+      ],
+      [
+        "選項詞義對照",
+        "A admire＝欽佩；B frighten＝使害怕；C impress＝使印象深刻；D suspect＝懷疑。解題時同時核對句意、詞性與搭配，並以原句線索決定。"
+      ]
+    ],
+    "steps": [
+      "先找題幹的語意證據。want to be like her 表示把她當榜樣，因此是 admire her；impress her 則是讓她對我印象深刻，方向不同。",
+      "逐項釐清詞義：A admire＝欽佩；B frighten＝使害怕；C impress＝使印象深刻；D suspect＝懷疑。",
+      "本題選 A「admire」，此處表示「欽佩」。",
+      "以完整語境核對：want to be like her 表示把她當榜樣，因此是 admire her；impress her 則是讓她對我印象深刻，方向不同。 再回讀原句，檢查前後因果或對比是否一致。"
+    ],
+    "reasons": [
+      "admire 表「欽佩」。want to be like her 表示把她當榜樣，因此是 admire her；impress her 則是讓她對我印象深刻，方向不同。",
+      "frighten 的意思是「使害怕」。原句的判斷依據為「want to be like her 表示把她當榜樣，因此是 admire her；impress her 則是讓她對我印象深刻，方向不同。」，此選項的語意無法保留這個關係。",
+      "impress 的意思是「使印象深刻」。原句的判斷依據為「want to be like her 表示把她當榜樣，因此是 admire her；impress her 則是讓她對我印象深刻，方向不同。」，此選項的語意無法保留這個關係。",
+      "suspect 的意思是「懷疑」。原句的判斷依據為「want to be like her 表示把她當榜樣，因此是 admire her；impress her 則是讓她對我印象深刻，方向不同。」，此選項的語意無法保留這個關係。"
+    ],
+    "transfer": {
+      "prompt": "原創變式，沿用原題四個候選字詞：I ______ her courage and hope to be like her.",
+      "answer": "admire",
+      "steps": [
+        "先判讀新句的事件與空格所需的語意：I ______ her courage and hope to be like her.",
+        "套用本題詞義「欽佩」，填入 admire。",
+        "完成新句後回查：I admire her courage and hope to be like her. 核對語意與前後因果。"
+      ]
+    }
+  },
+  {
+    "questionId": "113-english-9",
+    "routes": [
+      "/subjects/english/vocabulary-phrases"
+    ],
+    "kind": "語境字彙與搭配：beat",
+    "knowledge": [
+      [
+        "beat 的語意與使用條件",
+        "conquer her fear 是克服恐懼，beat 可表示戰勝困難；recover 若要表示從恐懼恢復通常還需不同介系詞結構。"
+      ],
+      [
+        "選項詞義對照",
+        "A beat＝擊敗／克服；B hunt＝狩獵；C recover＝恢復；D select＝選擇。解題時同時核對句意、詞性與搭配，並以原句線索決定。"
+      ]
+    ],
+    "steps": [
+      "先找題幹的語意證據。conquer her fear 是克服恐懼，beat 可表示戰勝困難；recover 若要表示從恐懼恢復通常還需不同介系詞結構。",
+      "逐項釐清詞義：A beat＝擊敗／克服；B hunt＝狩獵；C recover＝恢復；D select＝選擇。",
+      "本題選 A「beat」，此處表示「擊敗／克服」。",
+      "以完整語境核對：conquer her fear 是克服恐懼，beat 可表示戰勝困難；recover 若要表示從恐懼恢復通常還需不同介系詞結構。 再回讀原句，檢查前後因果或對比是否一致。"
+    ],
+    "reasons": [
+      "beat 表「擊敗／克服」。conquer her fear 是克服恐懼，beat 可表示戰勝困難；recover 若要表示從恐懼恢復通常還需不同介系詞結構。",
+      "hunt 的意思是「狩獵」。原句的判斷依據為「conquer her fear 是克服恐懼，beat 可表示戰勝困難；recover 若要表示從恐懼恢復通常還需不同介系詞結構。」，此選項的語意無法保留這個關係。",
+      "recover 的意思是「恢復」。原句的判斷依據為「conquer her fear 是克服恐懼，beat 可表示戰勝困難；recover 若要表示從恐懼恢復通常還需不同介系詞結構。」，此選項的語意無法保留這個關係。",
+      "select 的意思是「選擇」。原句的判斷依據為「conquer her fear 是克服恐懼，beat 可表示戰勝困難；recover 若要表示從恐懼恢復通常還需不同介系詞結構。」，此選項的語意無法保留這個關係。"
+    ],
+    "transfer": {
+      "prompt": "原創變式，沿用原題四個候選字詞：With practice, she learned to ______ her fear.",
+      "answer": "beat",
+      "steps": [
+        "先判讀新句的事件與空格所需的語意：With practice, she learned to ______ her fear.",
+        "套用本題詞義「擊敗／克服」，填入 beat。",
+        "完成新句後回查：With practice, she learned to beat her fear. 核對語意與前後因果。"
+      ]
+    }
+  },
+  {
+    "questionId": "114-english-1",
+    "routes": [
+      "/subjects/english/vocabulary-phrases"
+    ],
+    "kind": "語境字彙與搭配：draw",
+    "knowledge": [
+      [
+        "draw 的語意與使用條件",
+        "colored chalks、pictures、blank paper 共同指向作畫；draw pictures 是畫圖的搭配。"
+      ],
+      [
+        "選項詞義對照",
+        "A draw＝畫；B heat＝加熱；C mail＝郵寄；D type＝打字。解題時同時核對句意、詞性與搭配，並以原句線索決定。"
+      ]
+    ],
+    "steps": [
+      "先找題幹的語意證據。colored chalks、pictures、blank paper 共同指向作畫；draw pictures 是畫圖的搭配。",
+      "逐項釐清詞義：A draw＝畫；B heat＝加熱；C mail＝郵寄；D type＝打字。",
+      "本題選 A「draw」，此處表示「畫」。",
+      "以完整語境核對：colored chalks、pictures、blank paper 共同指向作畫；draw pictures 是畫圖的搭配。 再回讀原句，檢查前後因果或對比是否一致。"
+    ],
+    "reasons": [
+      "draw 表「畫」。colored chalks、pictures、blank paper 共同指向作畫；draw pictures 是畫圖的搭配。",
+      "heat 的意思是「加熱」。原句的判斷依據為「colored chalks、pictures、blank paper 共同指向作畫；draw pictures 是畫圖的搭配。」，此選項的語意無法保留這個關係。",
+      "mail 的意思是「郵寄」。原句的判斷依據為「colored chalks、pictures、blank paper 共同指向作畫；draw pictures 是畫圖的搭配。」，此選項的語意無法保留這個關係。",
+      "type 的意思是「打字」。原句的判斷依據為「colored chalks、pictures、blank paper 共同指向作畫；draw pictures 是畫圖的搭配。」，此選項的語意無法保留這個關係。"
+    ],
+    "transfer": {
+      "prompt": "原創變式，沿用原題四個候選字詞：The children use pencils to ______ pictures.",
+      "answer": "draw",
+      "steps": [
+        "先判讀新句的事件與空格所需的語意：The children use pencils to ______ pictures.",
+        "套用本題詞義「畫」，填入 draw。",
+        "完成新句後回查：The children use pencils to draw pictures. 核對語意與前後因果。"
+      ]
+    }
+  },
+  {
+    "questionId": "114-english-2",
+    "routes": [
+      "/subjects/english/vocabulary-phrases"
+    ],
+    "kind": "語境字彙與搭配：crowded",
+    "knowledge": [
+      [
+        "crowded 的語意與使用條件",
+        "找不到空間放新椅子，表示房間擁擠 crowded；empty 則與無空間相反。"
+      ],
+      [
+        "選項詞義對照",
+        "A available＝可取得的；B crowded＝擁擠的；C empty＝空的；D positive＝正面的。解題時同時核對句意、詞性與搭配，並以原句線索決定。"
+      ]
+    ],
+    "steps": [
+      "先找題幹的語意證據。找不到空間放新椅子，表示房間擁擠 crowded；empty 則與無空間相反。",
+      "逐項釐清詞義：A available＝可取得的；B crowded＝擁擠的；C empty＝空的；D positive＝正面的。",
+      "本題選 B「crowded」，此處表示「擁擠的」。",
+      "以完整語境核對：找不到空間放新椅子，表示房間擁擠 crowded；empty 則與無空間相反。 再回讀原句，檢查前後因果或對比是否一致。"
+    ],
+    "reasons": [
+      "available 的意思是「可取得的」。原句的判斷依據為「找不到空間放新椅子，表示房間擁擠 crowded；empty 則與無空間相反。」，此選項的語意無法保留這個關係。",
+      "crowded 表「擁擠的」。找不到空間放新椅子，表示房間擁擠 crowded；empty 則與無空間相反。",
+      "empty 的意思是「空的」。原句的判斷依據為「找不到空間放新椅子，表示房間擁擠 crowded；empty 則與無空間相反。」，此選項的語意無法保留這個關係。",
+      "positive 的意思是「正面的」。原句的判斷依據為「找不到空間放新椅子，表示房間擁擠 crowded；empty 則與無空間相反。」，此選項的語意無法保留這個關係。"
+    ],
+    "transfer": {
+      "prompt": "原創變式，沿用原題四個候選字詞：There were too many people in the ______ hall.",
+      "answer": "crowded",
+      "steps": [
+        "先判讀新句的事件與空格所需的語意：There were too many people in the ______ hall.",
+        "套用本題詞義「擁擠的」，填入 crowded。",
+        "完成新句後回查：There were too many people in the crowded hall. 核對語意與前後因果。"
+      ]
+    }
+  },
+  {
+    "questionId": "114-english-3",
+    "routes": [
+      "/subjects/english/vocabulary-phrases"
+    ],
+    "kind": "語境字彙與搭配：peak",
+    "knowledge": [
+      [
+        "peak 的語意與使用條件",
+        "highest point 指最高點，山的 main peak 是主峰；valley 位在較低處。"
+      ],
+      [
+        "選項詞義對照",
+        "A base＝底部；B peak＝山峰；C shore＝岸邊；D valley＝山谷。解題時同時核對句意、詞性與搭配，並以原句線索決定。"
+      ]
+    ],
+    "steps": [
+      "先找題幹的語意證據。highest point 指最高點，山的 main peak 是主峰；valley 位在較低處。",
+      "逐項釐清詞義：A base＝底部；B peak＝山峰；C shore＝岸邊；D valley＝山谷。",
+      "本題選 B「peak」，此處表示「山峰」。",
+      "以完整語境核對：highest point 指最高點，山的 main peak 是主峰；valley 位在較低處。 再回讀原句，檢查前後因果或對比是否一致。"
+    ],
+    "reasons": [
+      "base 的意思是「底部」。原句的判斷依據為「highest point 指最高點，山的 main peak 是主峰；valley 位在較低處。」，此選項的語意無法保留這個關係。",
+      "peak 表「山峰」。highest point 指最高點，山的 main peak 是主峰；valley 位在較低處。",
+      "shore 的意思是「岸邊」。原句的判斷依據為「highest point 指最高點，山的 main peak 是主峰；valley 位在較低處。」，此選項的語意無法保留這個關係。",
+      "valley 的意思是「山谷」。原句的判斷依據為「highest point 指最高點，山的 main peak 是主峰；valley 位在較低處。」，此選項的語意無法保留這個關係。"
+    ],
+    "transfer": {
+      "prompt": "原創變式，沿用原題四個候選字詞：The climbers finally reached the mountain ______.",
+      "answer": "peak",
+      "steps": [
+        "先判讀新句的事件與空格所需的語意：The climbers finally reached the mountain ______.",
+        "套用本題詞義「山峰」，填入 peak。",
+        "完成新句後回查：The climbers finally reached the mountain peak. 核對語意與前後因果。"
+      ]
+    }
+  },
+  {
+    "questionId": "114-english-4",
+    "routes": [
+      "/subjects/english/vocabulary-phrases"
+    ],
+    "kind": "語境字彙與搭配：portrait",
+    "knowledge": [
+      [
+        "portrait 的語意與使用條件",
+        "牆上能讓人比較祖孫長相的物件是 portrait；畫像呈現人物外貌。"
+      ],
+      [
+        "選項詞義對照",
+        "A cattle＝牛群；B jewelry＝珠寶；C portrait＝肖像；D whistle＝哨子。解題時同時核對句意、詞性與搭配，並以原句線索決定。"
+      ]
+    ],
+    "steps": [
+      "先找題幹的語意證據。牆上能讓人比較祖孫長相的物件是 portrait；畫像呈現人物外貌。",
+      "逐項釐清詞義：A cattle＝牛群；B jewelry＝珠寶；C portrait＝肖像；D whistle＝哨子。",
+      "本題選 C「portrait」，此處表示「肖像」。",
+      "以完整語境核對：牆上能讓人比較祖孫長相的物件是 portrait；畫像呈現人物外貌。 再回讀原句，檢查前後因果或對比是否一致。"
+    ],
+    "reasons": [
+      "cattle 的意思是「牛群」。原句的判斷依據為「牆上能讓人比較祖孫長相的物件是 portrait；畫像呈現人物外貌。」，此選項的語意無法保留這個關係。",
+      "jewelry 的意思是「珠寶」。原句的判斷依據為「牆上能讓人比較祖孫長相的物件是 portrait；畫像呈現人物外貌。」，此選項的語意無法保留這個關係。",
+      "portrait 表「肖像」。牆上能讓人比較祖孫長相的物件是 portrait；畫像呈現人物外貌。",
+      "whistle 的意思是「哨子」。原句的判斷依據為「牆上能讓人比較祖孫長相的物件是 portrait；畫像呈現人物外貌。」，此選項的語意無法保留這個關係。"
+    ],
+    "transfer": {
+      "prompt": "原創變式，沿用原題四個候選字詞：A ______ of my grandmother hangs on the wall.",
+      "answer": "portrait",
+      "steps": [
+        "先判讀新句的事件與空格所需的語意：A ______ of my grandmother hangs on the wall.",
+        "套用本題詞義「肖像」，填入 portrait。",
+        "完成新句後回查：A portrait of my grandmother hangs on the wall. 核對語意與前後因果。"
+      ]
+    }
+  },
+  {
+    "questionId": "114-english-5",
+    "routes": [
+      "/subjects/english/vocabulary-phrases"
+    ],
+    "kind": "語境字彙與搭配：poisonous",
+    "knowledge": [
+      [
+        "poisonous 的語意與使用條件",
+        "risky、touch plants、to humans 都指接觸植物可能危害人體，poisonous 表有毒。"
+      ],
+      [
+        "選項詞義對照",
+        "A fashionable＝時髦的；B jealous＝嫉妒的；C poisonous＝有毒的；D reasonable＝合理的。解題時同時核對句意、詞性與搭配，並以原句線索決定。"
+      ]
+    ],
+    "steps": [
+      "先找題幹的語意證據。risky、touch plants、to humans 都指接觸植物可能危害人體，poisonous 表有毒。",
+      "逐項釐清詞義：A fashionable＝時髦的；B jealous＝嫉妒的；C poisonous＝有毒的；D reasonable＝合理的。",
+      "本題選 C「poisonous」，此處表示「有毒的」。",
+      "以完整語境核對：risky、touch plants、to humans 都指接觸植物可能危害人體，poisonous 表有毒。 再回讀原句，檢查前後因果或對比是否一致。"
+    ],
+    "reasons": [
+      "fashionable 的意思是「時髦的」。原句的判斷依據為「risky、touch plants、to humans 都指接觸植物可能危害人體，poisonous 表有毒。」，此選項的語意無法保留這個關係。",
+      "jealous 的意思是「嫉妒的」。原句的判斷依據為「risky、touch plants、to humans 都指接觸植物可能危害人體，poisonous 表有毒。」，此選項的語意無法保留這個關係。",
+      "poisonous 表「有毒的」。risky、touch plants、to humans 都指接觸植物可能危害人體，poisonous 表有毒。",
+      "reasonable 的意思是「合理的」。原句的判斷依據為「risky、touch plants、to humans 都指接觸植物可能危害人體，poisonous 表有毒。」，此選項的語意無法保留這個關係。"
+    ],
+    "transfer": {
+      "prompt": "原創變式，沿用原題四個候選字詞：Do not eat these berries; they may be ______.",
+      "answer": "poisonous",
+      "steps": [
+        "先判讀新句的事件與空格所需的語意：Do not eat these berries; they may be ______.",
+        "套用本題詞義「有毒的」，填入 poisonous。",
+        "完成新句後回查：Do not eat these berries; they may be poisonous. 核對語意與前後因果。"
+      ]
+    }
+  },
+  {
+    "questionId": "114-english-6",
+    "routes": [
+      "/subjects/english/vocabulary-phrases"
+    ],
+    "kind": "語境字彙與搭配：authority",
+    "knowledge": [
+      [
+        "authority 的語意與使用條件",
+        "governments punish people 談政府依法處罰的職權，have the authority to 加原形動詞。"
+      ],
+      [
+        "選項詞義對照",
+        "A authority＝權力／職權；B bargain＝便宜貨／交易；C courtesy＝禮貌；D infection＝感染。解題時同時核對句意、詞性與搭配，並以原句線索決定。"
+      ]
+    ],
+    "steps": [
+      "先找題幹的語意證據。governments punish people 談政府依法處罰的職權，have the authority to 加原形動詞。",
+      "逐項釐清詞義：A authority＝權力／職權；B bargain＝便宜貨／交易；C courtesy＝禮貌；D infection＝感染。",
+      "本題選 A「authority」，此處表示「權力／職權」。",
+      "以完整語境核對：governments punish people 談政府依法處罰的職權，have the authority to 加原形動詞。 再回讀原句，檢查前後因果或對比是否一致。"
+    ],
+    "reasons": [
+      "authority 表「權力／職權」。governments punish people 談政府依法處罰的職權，have the authority to 加原形動詞。",
+      "bargain 的意思是「便宜貨／交易」。原句的判斷依據為「governments punish people 談政府依法處罰的職權，have the authority to 加原形動詞。」，此選項的語意無法保留這個關係。",
+      "courtesy 的意思是「禮貌」。原句的判斷依據為「governments punish people 談政府依法處罰的職權，have the authority to 加原形動詞。」，此選項的語意無法保留這個關係。",
+      "infection 的意思是「感染」。原句的判斷依據為「governments punish people 談政府依法處罰的職權，have the authority to 加原形動詞。」，此選項的語意無法保留這個關係。"
+    ],
+    "transfer": {
+      "prompt": "原創變式，沿用原題四個候選字詞：Only the manager has the ______ to approve this request.",
+      "answer": "authority",
+      "steps": [
+        "先判讀新句的事件與空格所需的語意：Only the manager has the ______ to approve this request.",
+        "套用本題詞義「權力／職權」，填入 authority。",
+        "完成新句後回查：Only the manager has the authority to approve this request. 核對語意與前後因果。"
+      ]
+    }
+  },
+  {
+    "questionId": "114-english-7",
+    "routes": [
+      "/subjects/english/vocabulary-phrases"
+    ],
+    "kind": "語境字彙與搭配：automatically",
+    "knowledge": [
+      [
+        "automatically 的語意與使用條件",
+        "sensor lights、by themselves、someone passing 表示感測後自行開燈，automatically 是自動地。"
+      ],
+      [
+        "選項詞義對照",
+        "A automatically＝自動地；B organically＝有機地；C productively＝有生產力地；D selfishly＝自私地。解題時同時核對句意、詞性與搭配，並以原句線索決定。"
+      ]
+    ],
+    "steps": [
+      "先找題幹的語意證據。sensor lights、by themselves、someone passing 表示感測後自行開燈，automatically 是自動地。",
+      "逐項釐清詞義：A automatically＝自動地；B organically＝有機地；C productively＝有生產力地；D selfishly＝自私地。",
+      "本題選 A「automatically」，此處表示「自動地」。",
+      "以完整語境核對：sensor lights、by themselves、someone passing 表示感測後自行開燈，automatically 是自動地。 再回讀原句，檢查前後因果或對比是否一致。"
+    ],
+    "reasons": [
+      "automatically 表「自動地」。sensor lights、by themselves、someone passing 表示感測後自行開燈，automatically 是自動地。",
+      "organically 的意思是「有機地」。原句的判斷依據為「sensor lights、by themselves、someone passing 表示感測後自行開燈，automatically 是自動地。」，此選項的語意無法保留這個關係。",
+      "productively 的意思是「有生產力地」。原句的判斷依據為「sensor lights、by themselves、someone passing 表示感測後自行開燈，automatically 是自動地。」，此選項的語意無法保留這個關係。",
+      "selfishly 的意思是「自私地」。原句的判斷依據為「sensor lights、by themselves、someone passing 表示感測後自行開燈，automatically 是自動地。」，此選項的語意無法保留這個關係。"
+    ],
+    "transfer": {
+      "prompt": "原創變式，沿用原題四個候選字詞：The doors open ______ when the sensor detects a person.",
+      "answer": "automatically",
+      "steps": [
+        "先判讀新句的事件與空格所需的語意：The doors open ______ when the sensor detects a person.",
+        "套用本題詞義「自動地」，填入 automatically。",
+        "完成新句後回查：The doors open automatically when the sensor detects a person. 核對語意與前後因果。"
+      ]
+    }
+  },
+  {
+    "questionId": "114-english-8",
+    "routes": [
+      "/subjects/english/vocabulary-phrases"
+    ],
+    "kind": "語境字彙與搭配：stood out as",
+    "knowledge": [
+      [
+        "stood out as 的語意與使用條件",
+        "magnificent performance 與 MVP 身分表示表現突出，stood out as 連接突出的角色；named after 是取名來源。"
+      ],
+      [
+        "選項詞義對照",
+        "A was named after＝以某人或事命名；B made fun of＝取笑；C was in charge of＝負責；D stood out as＝以某身分脫穎而出。解題時同時核對句意、詞性與搭配，並以原句線索決定。"
+      ]
+    ],
+    "steps": [
+      "先找題幹的語意證據。magnificent performance 與 MVP 身分表示表現突出，stood out as 連接突出的角色；named after 是取名來源。",
+      "逐項釐清詞義：A was named after＝以某人或事命名；B made fun of＝取笑；C was in charge of＝負責；D stood out as＝以某身分脫穎而出。",
+      "本題選 D「stood out as」，此處表示「以某身分脫穎而出」。",
+      "以完整語境核對：magnificent performance 與 MVP 身分表示表現突出，stood out as 連接突出的角色；named after 是取名來源。 再回讀原句，檢查前後因果或對比是否一致。"
+    ],
+    "reasons": [
+      "was named after 的意思是「以某人或事命名」。原句的判斷依據為「magnificent performance 與 MVP 身分表示表現突出，stood out as 連接突出的角色；named after 是取名來源。」，此選項的語意無法保留這個關係。",
+      "made fun of 的意思是「取笑」。原句的判斷依據為「magnificent performance 與 MVP 身分表示表現突出，stood out as 連接突出的角色；named after 是取名來源。」，此選項的語意無法保留這個關係。",
+      "was in charge of 的意思是「負責」。原句的判斷依據為「magnificent performance 與 MVP 身分表示表現突出，stood out as 連接突出的角色；named after 是取名來源。」，此選項的語意無法保留這個關係。",
+      "stood out as 表「以某身分脫穎而出」。magnificent performance 與 MVP 身分表示表現突出，stood out as 連接突出的角色；named after 是取名來源。"
+    ],
+    "transfer": {
+      "prompt": "原創變式，沿用原題四個候選字詞：Among the speakers, she ______ the most persuasive presenter.",
+      "answer": "stood out as",
+      "steps": [
+        "先判讀新句的事件與空格所需的語意：Among the speakers, she ______ the most persuasive presenter.",
+        "套用本題詞義「以某身分脫穎而出」，填入 stood out as。",
+        "完成新句後回查：Among the speakers, she stood out as the most persuasive presenter. 核對語意與前後因果。"
+      ]
+    }
+  },
+  {
+    "questionId": "114-english-9",
+    "routes": [
+      "/subjects/english/vocabulary-phrases"
+    ],
+    "kind": "語境字彙與搭配：obviously",
+    "knowledge": [
+      [
+        "obviously 的語意與使用條件",
+        "Mary 再次自我介紹，說話者據此推測她以為自己忘了名字，Apparently 與 obviously 都表明看來顯然如此。"
+      ],
+      [
+        "選項詞義對照",
+        "A actively＝積極地；B entirely＝完全地；C internally＝在內部；D obviously＝顯然地。解題時同時核對句意、詞性與搭配，並以原句線索決定。"
+      ]
+    ],
+    "steps": [
+      "先找題幹的語意證據。Mary 再次自我介紹，說話者據此推測她以為自己忘了名字，Apparently 與 obviously 都表明看來顯然如此。",
+      "逐項釐清詞義：A actively＝積極地；B entirely＝完全地；C internally＝在內部；D obviously＝顯然地。",
+      "本題選 D「obviously」，此處表示「顯然地」。",
+      "以完整語境核對：Mary 再次自我介紹，說話者據此推測她以為自己忘了名字，Apparently 與 obviously 都表明看來顯然如此。 再回讀原句，檢查前後因果或對比是否一致。"
+    ],
+    "reasons": [
+      "actively 的意思是「積極地」。原句的判斷依據為「Mary 再次自我介紹，說話者據此推測她以為自己忘了名字，Apparently 與 obviously 都表明看來顯然如此。」，此選項的語意無法保留這個關係。",
+      "entirely 的意思是「完全地」。原句的判斷依據為「Mary 再次自我介紹，說話者據此推測她以為自己忘了名字，Apparently 與 obviously 都表明看來顯然如此。」，此選項的語意無法保留這個關係。",
+      "internally 的意思是「在內部」。原句的判斷依據為「Mary 再次自我介紹，說話者據此推測她以為自己忘了名字，Apparently 與 obviously 都表明看來顯然如此。」，此選項的語意無法保留這個關係。",
+      "obviously 表「顯然地」。Mary 再次自我介紹，說話者據此推測她以為自己忘了名字，Apparently 與 obviously 都表明看來顯然如此。"
+    ],
+    "transfer": {
+      "prompt": "原創變式，沿用原題四個候選字詞：She is shivering. ______, she feels cold.",
+      "answer": "obviously",
+      "steps": [
+        "先判讀新句的事件與空格所需的語意：She is shivering. ______, she feels cold.",
+        "套用本題詞義「顯然地」，填入 obviously。",
+        "完成新句後回查：She is shivering. obviously, she feels cold. 核對語意與前後因果。"
+      ]
+    }
+  },
+  {
+    "questionId": "114-english-10",
+    "routes": [
+      "/subjects/english/vocabulary-phrases"
+    ],
+    "kind": "語境字彙與搭配：give up",
+    "knowledge": [
+      [
+        "give up 的語意與使用條件",
+        "start a fresh chapter 與 old habits 對比，abandon 在此為放棄舊習，等於 give up；carry on 意思相反。"
+      ],
+      [
+        "選項詞義對照",
+        "A bring about＝導致；B carry on＝繼續；C give up＝放棄；D run into＝偶然遇到。解題時同時核對句意、詞性與搭配，並以原句線索決定。"
+      ]
+    ],
+    "steps": [
+      "先找題幹的語意證據。start a fresh chapter 與 old habits 對比，abandon 在此為放棄舊習，等於 give up；carry on 意思相反。",
+      "逐項釐清詞義：A bring about＝導致；B carry on＝繼續；C give up＝放棄；D run into＝偶然遇到。",
+      "本題選 C「give up」，此處表示「放棄」。",
+      "以完整語境核對：start a fresh chapter 與 old habits 對比，abandon 在此為放棄舊習，等於 give up；carry on 意思相反。 再回讀原句，檢查前後因果或對比是否一致。"
+    ],
+    "reasons": [
+      "bring about 的意思是「導致」。原句的判斷依據為「start a fresh chapter 與 old habits 對比，abandon 在此為放棄舊習，等於 give up；carry on 意思相反。」，此選項的語意無法保留這個關係。",
+      "carry on 的意思是「繼續」。原句的判斷依據為「start a fresh chapter 與 old habits 對比，abandon 在此為放棄舊習，等於 give up；carry on 意思相反。」，此選項的語意無法保留這個關係。",
+      "give up 表「放棄」。start a fresh chapter 與 old habits 對比，abandon 在此為放棄舊習，等於 give up；carry on 意思相反。",
+      "run into 的意思是「偶然遇到」。原句的判斷依據為「start a fresh chapter 與 old habits 對比，abandon 在此為放棄舊習，等於 give up；carry on 意思相反。」，此選項的語意無法保留這個關係。"
+    ],
+    "transfer": {
+      "prompt": "原創變式，沿用原題四個候選字詞：He decided to ______ smoking and build healthier habits.",
+      "answer": "give up",
+      "steps": [
+        "先判讀新句的事件與空格所需的語意：He decided to ______ smoking and build healthier habits.",
+        "套用本題詞義「放棄」，填入 give up。",
+        "完成新句後回查：He decided to give up smoking and build healthier habits. 核對語意與前後因果。"
+      ]
+    }
+  },
+  {
+    "questionId": "115-english-1",
+    "routes": [
+      "/subjects/english/vocabulary-phrases"
+    ],
+    "kind": "語境字彙與搭配：wet",
+    "knowledge": [
+      [
+        "wet 的語意與使用條件",
+        "hang in the sun、remove the water 指衣服仍有水分，因此是 wet；dry 與此相反。"
+      ],
+      [
+        "選項詞義對照",
+        "A bare＝裸露的；B dry＝乾的；C thin＝薄的；D wet＝濕的。解題時同時核對句意、詞性與搭配，並以原句線索決定。"
+      ]
+    ],
+    "steps": [
+      "先找題幹的語意證據。hang in the sun、remove the water 指衣服仍有水分，因此是 wet；dry 與此相反。",
+      "逐項釐清詞義：A bare＝裸露的；B dry＝乾的；C thin＝薄的；D wet＝濕的。",
+      "本題選 D「wet」，此處表示「濕的」。",
+      "以完整語境核對：hang in the sun、remove the water 指衣服仍有水分，因此是 wet；dry 與此相反。 再回讀原句，檢查前後因果或對比是否一致。"
+    ],
+    "reasons": [
+      "bare 的意思是「裸露的」。原句的判斷依據為「hang in the sun、remove the water 指衣服仍有水分，因此是 wet；dry 與此相反。」，此選項的語意無法保留這個關係。",
+      "dry 的意思是「乾的」。原句的判斷依據為「hang in the sun、remove the water 指衣服仍有水分，因此是 wet；dry 與此相反。」，此選項的語意無法保留這個關係。",
+      "thin 的意思是「薄的」。原句的判斷依據為「hang in the sun、remove the water 指衣服仍有水分，因此是 wet；dry 與此相反。」，此選項的語意無法保留這個關係。",
+      "wet 表「濕的」。hang in the sun、remove the water 指衣服仍有水分，因此是 wet；dry 與此相反。"
+    ],
+    "transfer": {
+      "prompt": "原創變式，沿用原題四個候選字詞：The towels are still ______, so leave them outside longer.",
+      "answer": "wet",
+      "steps": [
+        "先判讀新句的事件與空格所需的語意：The towels are still ______, so leave them outside longer.",
+        "套用本題詞義「濕的」，填入 wet。",
+        "完成新句後回查：The towels are still wet, so leave them outside longer. 核對語意與前後因果。"
+      ]
+    }
+  },
+  {
+    "questionId": "115-english-2",
+    "routes": [
+      "/subjects/english/vocabulary-phrases"
+    ],
+    "kind": "語境字彙與搭配：joined",
+    "knowledge": [
+      [
+        "joined 的語意與使用條件",
+        "學校游泳隊是團體，join the team 表加入隊伍；join 可直接接團體名稱。"
+      ],
+      [
+        "選項詞義對照",
+        "A blocked＝阻擋；B joined＝加入；C pulled＝拉；D rented＝租用。解題時同時核對句意、詞性與搭配，並以原句線索決定。"
+      ]
+    ],
+    "steps": [
+      "先找題幹的語意證據。學校游泳隊是團體，join the team 表加入隊伍；join 可直接接團體名稱。",
+      "逐項釐清詞義：A blocked＝阻擋；B joined＝加入；C pulled＝拉；D rented＝租用。",
+      "本題選 B「joined」，此處表示「加入」。",
+      "以完整語境核對：學校游泳隊是團體，join the team 表加入隊伍；join 可直接接團體名稱。 再回讀原句，檢查前後因果或對比是否一致。"
+    ],
+    "reasons": [
+      "blocked 的意思是「阻擋」。原句的判斷依據為「學校游泳隊是團體，join the team 表加入隊伍；join 可直接接團體名稱。」，此選項的語意無法保留這個關係。",
+      "joined 表「加入」。學校游泳隊是團體，join the team 表加入隊伍；join 可直接接團體名稱。",
+      "pulled 的意思是「拉」。原句的判斷依據為「學校游泳隊是團體，join the team 表加入隊伍；join 可直接接團體名稱。」，此選項的語意無法保留這個關係。",
+      "rented 的意思是「租用」。原句的判斷依據為「學校游泳隊是團體，join the team 表加入隊伍；join 可直接接團體名稱。」，此選項的語意無法保留這個關係。"
+    ],
+    "transfer": {
+      "prompt": "原創變式，沿用原題四個候選字詞：She ______ the school team last month.",
+      "answer": "joined",
+      "steps": [
+        "先判讀新句的事件與空格所需的語意：She ______ the school team last month.",
+        "套用本題詞義「加入」，填入 joined。",
+        "完成新句後回查：She joined the school team last month. 核對語意與前後因果。"
+      ]
+    }
+  },
+  {
+    "questionId": "115-english-3",
+    "routes": [
+      "/subjects/english/vocabulary-phrases"
+    ],
+    "kind": "語境字彙與搭配：equally",
+    "knowledge": [
+      [
+        "equally 的語意與使用條件",
+        "giving every student the same opportunity 說明如何對待學生，equally 表平等，修飾 treats。"
+      ],
+      [
+        "選項詞義對照",
+        "A carelessly＝粗心地；B equally＝平等地；C instantly＝立刻；D silently＝安靜地。解題時同時核對句意、詞性與搭配，並以原句線索決定。"
+      ]
+    ],
+    "steps": [
+      "先找題幹的語意證據。giving every student the same opportunity 說明如何對待學生，equally 表平等，修飾 treats。",
+      "逐項釐清詞義：A carelessly＝粗心地；B equally＝平等地；C instantly＝立刻；D silently＝安靜地。",
+      "本題選 B「equally」，此處表示「平等地」。",
+      "以完整語境核對：giving every student the same opportunity 說明如何對待學生，equally 表平等，修飾 treats。 再回讀原句，檢查前後因果或對比是否一致。"
+    ],
+    "reasons": [
+      "carelessly 的意思是「粗心地」。原句的判斷依據為「giving every student the same opportunity 說明如何對待學生，equally 表平等，修飾 treats。」，此選項的語意無法保留這個關係。",
+      "equally 表「平等地」。giving every student the same opportunity 說明如何對待學生，equally 表平等，修飾 treats。",
+      "instantly 的意思是「立刻」。原句的判斷依據為「giving every student the same opportunity 說明如何對待學生，equally 表平等，修飾 treats。」，此選項的語意無法保留這個關係。",
+      "silently 的意思是「安靜地」。原句的判斷依據為「giving every student the same opportunity 說明如何對待學生，equally 表平等，修飾 treats。」，此選項的語意無法保留這個關係。"
+    ],
+    "transfer": {
+      "prompt": "原創變式，沿用原題四個候選字詞：The coach treats all players ______ and gives everyone a chance.",
+      "answer": "equally",
+      "steps": [
+        "先判讀新句的事件與空格所需的語意：The coach treats all players ______ and gives everyone a chance.",
+        "套用本題詞義「平等地」，填入 equally。",
+        "完成新句後回查：The coach treats all players equally and gives everyone a chance. 核對語意與前後因果。"
+      ]
+    }
+  },
+  {
+    "questionId": "115-english-4",
+    "routes": [
+      "/subjects/english/vocabulary-phrases"
+    ],
+    "kind": "語境字彙與搭配：suitable",
+    "knowledge": [
+      [
+        "suitable 的語意與使用條件",
+        "calm、beautiful beach、walking distance 都是休憩的有利條件，因此 suitable place to relax 表適合放鬆的地方。"
+      ],
+      [
+        "選項詞義對照",
+        "A difficult＝困難的；B fearful＝可怕的；C rocky＝多岩石的；D suitable＝適合的。解題時同時核對句意、詞性與搭配，並以原句線索決定。"
+      ]
+    ],
+    "steps": [
+      "先找題幹的語意證據。calm、beautiful beach、walking distance 都是休憩的有利條件，因此 suitable place to relax 表適合放鬆的地方。",
+      "逐項釐清詞義：A difficult＝困難的；B fearful＝可怕的；C rocky＝多岩石的；D suitable＝適合的。",
+      "本題選 D「suitable」，此處表示「適合的」。",
+      "以完整語境核對：calm、beautiful beach、walking distance 都是休憩的有利條件，因此 suitable place to relax 表適合放鬆的地方。 再回讀原句，檢查前後因果或對比是否一致。"
+    ],
+    "reasons": [
+      "difficult 的意思是「困難的」。原句的判斷依據為「calm、beautiful beach、walking distance 都是休憩的有利條件，因此 suitable place to relax 表適合放鬆的地方。」，此選項的語意無法保留這個關係。",
+      "fearful 的意思是「可怕的」。原句的判斷依據為「calm、beautiful beach、walking distance 都是休憩的有利條件，因此 suitable place to relax 表適合放鬆的地方。」，此選項的語意無法保留這個關係。",
+      "rocky 的意思是「多岩石的」。原句的判斷依據為「calm、beautiful beach、walking distance 都是休憩的有利條件，因此 suitable place to relax 表適合放鬆的地方。」，此選項的語意無法保留這個關係。",
+      "suitable 表「適合的」。calm、beautiful beach、walking distance 都是休憩的有利條件，因此 suitable place to relax 表適合放鬆的地方。"
+    ],
+    "transfer": {
+      "prompt": "原創變式，沿用原題四個候選字詞：This quiet room is a ______ place to read.",
+      "answer": "suitable",
+      "steps": [
+        "先判讀新句的事件與空格所需的語意：This quiet room is a ______ place to read.",
+        "套用本題詞義「適合的」，填入 suitable。",
+        "完成新句後回查：This quiet room is a suitable place to read. 核對語意與前後因果。"
+      ]
+    }
+  },
+  {
+    "questionId": "115-english-5",
+    "routes": [
+      "/subjects/english/vocabulary-phrases"
+    ],
+    "kind": "語境字彙與搭配：attract",
+    "knowledge": [
+      [
+        "attract 的語意與使用條件",
+        "店家提供折扣是為吸引更多顧客；attract customers 是吸客，prevent customers 卻是阻擋顧客。"
+      ],
+      [
+        "選項詞義對照",
+        "A attract＝吸引；B blame＝責怪；C excuse＝原諒；D prevent＝阻止。解題時同時核對句意、詞性與搭配，並以原句線索決定。"
+      ]
+    ],
+    "steps": [
+      "先找題幹的語意證據。店家提供折扣是為吸引更多顧客；attract customers 是吸客，prevent customers 卻是阻擋顧客。",
+      "逐項釐清詞義：A attract＝吸引；B blame＝責怪；C excuse＝原諒；D prevent＝阻止。",
+      "本題選 A「attract」，此處表示「吸引」。",
+      "以完整語境核對：店家提供折扣是為吸引更多顧客；attract customers 是吸客，prevent customers 卻是阻擋顧客。 再回讀原句，檢查前後因果或對比是否一致。"
+    ],
+    "reasons": [
+      "attract 表「吸引」。店家提供折扣是為吸引更多顧客；attract customers 是吸客，prevent customers 卻是阻擋顧客。",
+      "blame 的意思是「責怪」。原句的判斷依據為「店家提供折扣是為吸引更多顧客；attract customers 是吸客，prevent customers 卻是阻擋顧客。」，此選項的語意無法保留這個關係。",
+      "excuse 的意思是「原諒」。原句的判斷依據為「店家提供折扣是為吸引更多顧客；attract customers 是吸客，prevent customers 卻是阻擋顧客。」，此選項的語意無法保留這個關係。",
+      "prevent 的意思是「阻止」。原句的判斷依據為「店家提供折扣是為吸引更多顧客；attract customers 是吸客，prevent customers 卻是阻擋顧客。」，此選項的語意無法保留這個關係。"
+    ],
+    "transfer": {
+      "prompt": "原創變式，沿用原題四個候選字詞：The exhibition hopes to ______ more visitors.",
+      "answer": "attract",
+      "steps": [
+        "先判讀新句的事件與空格所需的語意：The exhibition hopes to ______ more visitors.",
+        "套用本題詞義「吸引」，填入 attract。",
+        "完成新句後回查：The exhibition hopes to attract more visitors. 核對語意與前後因果。"
+      ]
+    }
+  },
+  {
+    "questionId": "115-english-6",
+    "routes": [
+      "/subjects/english/vocabulary-phrases"
+    ],
+    "kind": "語境字彙與搭配：accurate",
+    "knowledge": [
+      [
+        "accurate 的語意與使用條件",
+        "providing correct information most of the time 是對 accurate 的解釋，形容預報大多準確。"
+      ],
+      [
+        "選項詞義對照",
+        "A accurate＝準確的；B doubtful＝可疑的；C false＝錯誤的；D inferior＝較差的。解題時同時核對句意、詞性與搭配，並以原句線索決定。"
+      ]
+    ],
+    "steps": [
+      "先找題幹的語意證據。providing correct information most of the time 是對 accurate 的解釋，形容預報大多準確。",
+      "逐項釐清詞義：A accurate＝準確的；B doubtful＝可疑的；C false＝錯誤的；D inferior＝較差的。",
+      "本題選 A「accurate」，此處表示「準確的」。",
+      "以完整語境核對：providing correct information most of the time 是對 accurate 的解釋，形容預報大多準確。 再回讀原句，檢查前後因果或對比是否一致。"
+    ],
+    "reasons": [
+      "accurate 表「準確的」。providing correct information most of the time 是對 accurate 的解釋，形容預報大多準確。",
+      "doubtful 的意思是「可疑的」。原句的判斷依據為「providing correct information most of the time 是對 accurate 的解釋，形容預報大多準確。」，此選項的語意無法保留這個關係。",
+      "false 的意思是「錯誤的」。原句的判斷依據為「providing correct information most of the time 是對 accurate 的解釋，形容預報大多準確。」，此選項的語意無法保留這個關係。",
+      "inferior 的意思是「較差的」。原句的判斷依據為「providing correct information most of the time 是對 accurate 的解釋，形容預報大多準確。」，此選項的語意無法保留這個關係。"
+    ],
+    "transfer": {
+      "prompt": "原創變式，沿用原題四個候選字詞：The measurements were ______ and matched the reference values.",
+      "answer": "accurate",
+      "steps": [
+        "先判讀新句的事件與空格所需的語意：The measurements were ______ and matched the reference values.",
+        "套用本題詞義「準確的」，填入 accurate。",
+        "完成新句後回查：The measurements were accurate and matched the reference values. 核對語意與前後因果。"
+      ]
+    }
+  },
+  {
+    "questionId": "115-english-8",
+    "routes": [
+      "/subjects/english/vocabulary-phrases"
+    ],
+    "kind": "語境字彙與搭配：announced",
+    "knowledge": [
+      [
+        "announced 的語意與使用條件",
+        "頒獎人公開說明得獎者身分，announce someone as the winner 符合語境。"
+      ],
+      [
+        "選項詞義對照",
+        "A announced＝宣布；B circulated＝流通／散播；C inspected＝檢查；D preserved＝保存。解題時同時核對句意、詞性與搭配，並以原句線索決定。"
+      ]
+    ],
+    "steps": [
+      "先找題幹的語意證據。頒獎人公開說明得獎者身分，announce someone as the winner 符合語境。",
+      "逐項釐清詞義：A announced＝宣布；B circulated＝流通／散播；C inspected＝檢查；D preserved＝保存。",
+      "本題選 A「announced」，此處表示「宣布」。",
+      "以完整語境核對：頒獎人公開說明得獎者身分，announce someone as the winner 符合語境。 再回讀原句，檢查前後因果或對比是否一致。"
+    ],
+    "reasons": [
+      "announced 表「宣布」。頒獎人公開說明得獎者身分，announce someone as the winner 符合語境。",
+      "circulated 的意思是「流通／散播」。原句的判斷依據為「頒獎人公開說明得獎者身分，announce someone as the winner 符合語境。」，此選項的語意無法保留這個關係。",
+      "inspected 的意思是「檢查」。原句的判斷依據為「頒獎人公開說明得獎者身分，announce someone as the winner 符合語境。」，此選項的語意無法保留這個關係。",
+      "preserved 的意思是「保存」。原句的判斷依據為「頒獎人公開說明得獎者身分，announce someone as the winner 符合語境。」，此選項的語意無法保留這個關係。"
+    ],
+    "transfer": {
+      "prompt": "原創變式，沿用原題四個候選字詞：The host ______ her as the winner of the contest.",
+      "answer": "announced",
+      "steps": [
+        "先判讀新句的事件與空格所需的語意：The host ______ her as the winner of the contest.",
+        "套用本題詞義「宣布」，填入 announced。",
+        "完成新句後回查：The host announced her as the winner of the contest. 核對語意與前後因果。"
+      ]
+    }
+  },
+  {
+    "questionId": "115-english-10",
+    "routes": [
+      "/subjects/english/vocabulary-phrases"
+    ],
+    "kind": "語境字彙與搭配：deeply",
+    "knowledge": [
+      [
+        "deeply 的語意與使用條件",
+        "extremely moved 表極為感動，deeply moved 是自然的情感程度搭配；其他副詞描述情緒方式或公開性。"
+      ],
+      [
+        "選項詞義對照",
+        "A angrily＝生氣地；B bravely＝勇敢地；C deeply＝深深地；D openly＝公開地。解題時同時核對句意、詞性與搭配，並以原句線索決定。"
+      ]
+    ],
+    "steps": [
+      "先找題幹的語意證據。extremely moved 表極為感動，deeply moved 是自然的情感程度搭配；其他副詞描述情緒方式或公開性。",
+      "逐項釐清詞義：A angrily＝生氣地；B bravely＝勇敢地；C deeply＝深深地；D openly＝公開地。",
+      "本題選 C「deeply」，此處表示「深深地」。",
+      "以完整語境核對：extremely moved 表極為感動，deeply moved 是自然的情感程度搭配；其他副詞描述情緒方式或公開性。 再回讀原句，檢查前後因果或對比是否一致。"
+    ],
+    "reasons": [
+      "angrily 的意思是「生氣地」。原句的判斷依據為「extremely moved 表極為感動，deeply moved 是自然的情感程度搭配；其他副詞描述情緒方式或公開性。」，此選項的語意無法保留這個關係。",
+      "bravely 的意思是「勇敢地」。原句的判斷依據為「extremely moved 表極為感動，deeply moved 是自然的情感程度搭配；其他副詞描述情緒方式或公開性。」，此選項的語意無法保留這個關係。",
+      "deeply 表「深深地」。extremely moved 表極為感動，deeply moved 是自然的情感程度搭配；其他副詞描述情緒方式或公開性。",
+      "openly 的意思是「公開地」。原句的判斷依據為「extremely moved 表極為感動，deeply moved 是自然的情感程度搭配；其他副詞描述情緒方式或公開性。」，此選項的語意無法保留這個關係。"
+    ],
+    "transfer": {
+      "prompt": "原創變式，沿用原題四個候選字詞：He was ______ moved by the singer's performance.",
+      "answer": "deeply",
+      "steps": [
+        "先判讀新句的事件與空格所需的語意：He was ______ moved by the singer's performance.",
+        "套用本題詞義「深深地」，填入 deeply。",
+        "完成新句後回查：He was deeply moved by the singer's performance. 核對語意與前後因果。"
+      ]
+    }
+  }
+]

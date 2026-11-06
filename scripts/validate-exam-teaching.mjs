@@ -61,7 +61,7 @@ if(process.argv.includes('--write')){
   fs.writeFileSync(path.join(repoRoot,'docs/exam-teaching-audit.json'),JSON.stringify(report,null,2)+'\n');
   const docPath=path.join(repoRoot,'docs/course-coverage.md');
   const doc=fs.readFileSync(docPath,'utf8');
-  const table=`<!-- EXAM-AUDIT:START -->\n| 層次 | 範圍 | 此次結果 |\n| --- | --- | --- |\n| 來源篩選 | 111–115 年五科 | ${report.canonical} 題，排除 ${report.excluded} 筆合成紀錄 |\n| 題目歸章 | 有效路由 | ${report.routeCorrections} 筆歸章修正；不等同逐題語意審定 |\n| 已編寫精講 | 實題與原創遷移題 | 各 ${report.explained} 道，含必要知識、推導與選項辨析 |\n| 待補解析 | 未編寫逐題推導 | ${report.pending} 題，僅提供讀題提示 |\n| 原始圖表 | 已目視校對原頁 | ${report.sourcePages} 頁、${report.recoveredVisualQuestions} 題圖表與 ${report.sharedContextQuestions} 道共用條件 |\n| 出版社版本逐頁對照 | 所有出版社 | 尚未完成審定，不宣稱全版本完備 |\n<!-- EXAM-AUDIT:END -->`;
+  const table=`<!-- EXAM-AUDIT:START -->\n| 層次 | 範圍 | 此次結果 |\n| --- | --- | --- |\n| 來源篩選 | 111–115 年五科 | ${report.canonical} 題，排除 ${report.excluded} 筆合成紀錄 |\n| 題目歸章 | 有效路由 | ${report.routeCorrections} 筆歸章修正；不等同逐題語意審定 |\n| 已編寫精講 | 實題與原創遷移題 | 各 ${report.explained} 道，含必要知識、推導與選項辨析 |\n| 待補解析 | 未編寫逐題推導 | ${report.pending} 題${report.pending?'，僅提供讀題提示':'，此批全數已補精講'} |\n| 原始圖表 | 已目視校對原頁 | ${report.sourcePages} 頁、${report.recoveredVisualQuestions} 題圖表與 ${report.sharedContextQuestions} 道共用條件 |\n| 出版社版本逐頁對照 | 所有出版社 | 尚未完成審定，不宣稱全版本完備 |\n<!-- EXAM-AUDIT:END -->`;
   assert(doc.includes('<!-- EXAM-AUDIT:START -->'));
   fs.writeFileSync(docPath,doc.replace(/<!-- EXAM-AUDIT:START -->[\s\S]*?<!-- EXAM-AUDIT:END -->/,table));
 }

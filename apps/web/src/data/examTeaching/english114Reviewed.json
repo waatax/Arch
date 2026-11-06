@@ -1,0 +1,988 @@
+[
+  {
+    "questionId": "114-english-11",
+    "routes": [
+      "/subjects/english/conversation-daily-use"
+    ],
+    "kind": "對話：警告後調整行為",
+    "knowledge": [
+      [
+        "作答所需的語法與文本證據",
+        "父親說手機使用過多可能傷眼，接著建議慢跑；兒子應接受減少使用的建議。less 對應 too much 的調整。"
+      ]
+    ],
+    "steps": [
+      "先定位題幹的問法與原文證據。父親說手機使用過多可能傷眼，接著建議慢跑；兒子應接受減少使用的建議。less 對應 too much 的調整。",
+      "檢查 A 與 B 的詞義、角色及限制：少用手機直接回應過量使用的問題，也能引出慢跑替代活動。 換新手機未減少使用量，沒有回應警告。",
+      "再核對 C 與 D：反問父親是否也看影片，沒有承接建議。 鼓勵父親玩網路遊戲與減少手機使用相反。",
+      "綜合條件選 A。少用手機直接回應過量使用的問題，也能引出慢跑替代活動。"
+    ],
+    "reasons": [
+      "少用手機直接回應過量使用的問題，也能引出慢跑替代活動。",
+      "換新手機未減少使用量，沒有回應警告。",
+      "反問父親是否也看影片，沒有承接建議。",
+      "鼓勵父親玩網路遊戲與減少手機使用相反。"
+    ],
+    "transfer": {
+      "prompt": "原創遷移練習：You spend too much time sitting. Then I should move more. 回應是否一致？",
+      "answer": "一致，增加活動可回應久坐過多的問題。",
+      "steps": [
+        "先辨認新題要比較的語意或條件：You spend too much time sitting. Then I should move more. 回應是否一致？",
+        "套用本題規則並指出證據：一致，增加活動可回應久坐過多的問題。",
+        "回查回答是否保留人物、時間、數量及因果方向；不把原題的字母答案套到新題。"
+      ]
+    }
+  },
+  {
+    "questionId": "114-english-12",
+    "routes": [
+      "/subjects/english/conversation-daily-use"
+    ],
+    "kind": "對話：從共識提出做法",
+    "knowledge": [
+      [
+        "作答所需的語法與文本證據",
+        "雙方同意減少塑膠，後句說也要試試，故中間應提供可實行的減塑做法。自備水瓶可減少購買一次性容器。"
+      ]
+    ],
+    "steps": [
+      "先定位題幹的問法與原文證據。雙方同意減少塑膠，後句說也要試試，故中間應提供可實行的減塑做法。自備水瓶可減少購買一次性容器。",
+      "檢查 A 與 B 的詞義、角色及限制：偏好購買塑膠容器不能直接支持減塑共識。 持續每杯都用塑膠吸管與減少塑膠相反。",
+      "再核對 C 與 D：自備水瓶是與共識相符的具體做法。 把買的東西全部丟掉不屬減少塑膠的合理做法。",
+      "綜合條件選 C。自備水瓶是與共識相符的具體做法。"
+    ],
+    "reasons": [
+      "偏好購買塑膠容器不能直接支持減塑共識。",
+      "持續每杯都用塑膠吸管與減少塑膠相反。",
+      "自備水瓶是與共識相符的具體做法。",
+      "把買的東西全部丟掉不屬減少塑膠的合理做法。"
+    ],
+    "transfer": {
+      "prompt": "原創遷移練習：We should use less disposable packaging. I bring my own container. 兩句是目標與什麼？",
+      "answer": "目標與具體行動，自備容器可落實減少一次性包裝。",
+      "steps": [
+        "先辨認新題要比較的語意或條件：We should use less disposable packaging. I bring my own container. 兩句是目標與什麼？",
+        "套用本題規則並指出證據：目標與具體行動，自備容器可落實減少一次性包裝。",
+        "回查回答是否保留人物、時間、數量及因果方向；不把原題的字母答案套到新題。"
+      ]
+    }
+  },
+  {
+    "questionId": "114-english-13",
+    "routes": [
+      "/subjects/english/conversation-daily-use"
+    ],
+    "kind": "食物採購：fresh 的回應線索",
+    "knowledge": [
+      [
+        "作答所需的語法與文本證據",
+        "店家說每天早上直接從農場取得雞蛋，是支持新鮮度的理由。Of course 可先肯定 Are they fresh。"
+      ]
+    ],
+    "steps": [
+      "先定位題幹的問法與原文證據。店家說每天早上直接從農場取得雞蛋，是支持新鮮度的理由。Of course 可先肯定 Are they fresh。",
+      "檢查 A 與 B 的詞義、角色及限制：問新鮮與每日農場直送的回答一致。 價格問句應回答金額，不能只說每天直送。",
+      "再核對 C 與 D：plant 表種植，通常不搭配雞蛋；後句也沒談種植。 烹調方式應回答煎煮等方式，非供貨來源。",
+      "綜合條件選 A。問新鮮與每日農場直送的回答一致。"
+    ],
+    "reasons": [
+      "問新鮮與每日農場直送的回答一致。",
+      "價格問句應回答金額，不能只說每天直送。",
+      "plant 表種植，通常不搭配雞蛋；後句也沒談種植。",
+      "烹調方式應回答煎煮等方式，非供貨來源。"
+    ],
+    "transfer": {
+      "prompt": "原創遷移練習：Are these fruits fresh? They arrived this morning. 後句提供什麼證據？",
+      "answer": "到貨時間很近，支持新鮮度的判斷。",
+      "steps": [
+        "先辨認新題要比較的語意或條件：Are these fruits fresh? They arrived this morning. 後句提供什麼證據？",
+        "套用本題規則並指出證據：到貨時間很近，支持新鮮度的判斷。",
+        "回查回答是否保留人物、時間、數量及因果方向；不把原題的字母答案套到新題。"
+      ]
+    }
+  },
+  {
+    "questionId": "114-english-14",
+    "routes": [
+      "/subjects/english/conversation-daily-use"
+    ],
+    "kind": "語氣判斷：反對插隊",
+    "knowledge": [
+      [
+        "作答所需的語法與文本證據",
+        "No way 與最後去隊尾表示 July 反對插隊；How can you even think of doing that 是對不當提議的反問。"
+      ]
+    ],
+    "steps": [
+      "先定位題幹的問法與原文證據。No way 與最後去隊尾表示 July 反對插隊；How can you even think of doing that 是對不當提議的反問。",
+      "檢查 A 與 B 的詞義、角色及限制：偏好哪間戲院與是否插隊無關。 問看哪部片沒有反對插隊。",
+      "再核對 C 與 D：問票價沒有回應行為是否適當。 反問怎能想到插隊，能銜接對方接受到隊尾排隊。",
+      "綜合條件選 D。反問怎能想到插隊，能銜接對方接受到隊尾排隊。"
+    ],
+    "reasons": [
+      "偏好哪間戲院與是否插隊無關。",
+      "問看哪部片沒有反對插隊。",
+      "問票價沒有回應行為是否適當。",
+      "反問怎能想到插隊，能銜接對方接受到隊尾排隊。"
+    ],
+    "transfer": {
+      "prompt": "原創遷移練習：No way. We should wait our turn. 是同意還是反對插隊？",
+      "answer": "反對，No way 否定提議，wait our turn 表遵守順序。",
+      "steps": [
+        "先辨認新題要比較的語意或條件：No way. We should wait our turn. 是同意還是反對插隊？",
+        "套用本題規則並指出證據：反對，No way 否定提議，wait our turn 表遵守順序。",
+        "回查回答是否保留人物、時間、數量及因果方向；不把原題的字母答案套到新題。"
+      ]
+    }
+  },
+  {
+    "questionId": "114-english-15",
+    "routes": [
+      "/subjects/english/conversation-daily-use"
+    ],
+    "kind": "例子反推概括：正式服裝",
+    "knowledge": [
+      [
+        "作答所需的語法與文本證據",
+        "For example 後提西裝或正式、專業的衣著，前句須概括適當穿著，而非說話、薪資或提問。"
+      ]
+    ],
+    "steps": [
+      "先定位題幹的問法與原文證據。For example 後提西裝或正式、專業的衣著，前句須概括適當穿著，而非說話、薪資或提問。",
+      "檢查 A 與 B 的詞義、角色及限制：dress properly 涵蓋西裝與正式服裝的例子。 speak carefully 應接說話方式的例子，非衣服。",
+      "再核對 C 與 D：薪資興趣不能由西裝作例子。 提問內容不能由穿著作例子。",
+      "綜合條件選 A。dress properly 涵蓋西裝與正式服裝的例子。"
+    ],
+    "reasons": [
+      "dress properly 涵蓋西裝與正式服裝的例子。",
+      "speak carefully 應接說話方式的例子，非衣服。",
+      "薪資興趣不能由西裝作例子。",
+      "提問內容不能由穿著作例子。"
+    ],
+    "transfer": {
+      "prompt": "原創遷移練習：Wear something formal, such as a suit. suit 是哪種建議的例子？",
+      "answer": "服裝建議，formal 與 suit 都指衣著。",
+      "steps": [
+        "先辨認新題要比較的語意或條件：Wear something formal, such as a suit. suit 是哪種建議的例子？",
+        "套用本題規則並指出證據：服裝建議，formal 與 suit 都指衣著。",
+        "回查回答是否保留人物、時間、數量及因果方向；不把原題的字母答案套到新題。"
+      ]
+    }
+  },
+  {
+    "questionId": "114-english-16",
+    "routes": [
+      "/subjects/english/conversation-daily-use"
+    ],
+    "kind": "篇章因果：成功激勵參與",
+    "knowledge": [
+      [
+        "作答所需的語法與文本證據",
+        "接著說 That's why badminton is getting more popular，故前句應說成功激勵更多人，形成成功→動機→運動普及的因果。"
+      ]
+    ],
+    "steps": [
+      "先定位題幹的問法與原文證據。接著說 That's why badminton is getting more popular，故前句應說成功激勵更多人，形成成功→動機→運動普及的因果。",
+      "檢查 A 與 B 的詞義、角色及限制：停止合作沒有支持吸引更多人投入的因果。 只是運氣與前文讚美技能及合作方向不一致。",
+      "再核對 C 與 D：不再需要練習缺乏原文根據，也未直接說明普及。 成功激勵人們，可合理引出羽球更受歡迎。",
+      "綜合條件選 D。成功激勵人們，可合理引出羽球更受歡迎。"
+    ],
+    "reasons": [
+      "停止合作沒有支持吸引更多人投入的因果。",
+      "只是運氣與前文讚美技能及合作方向不一致。",
+      "不再需要練習缺乏原文根據，也未直接說明普及。",
+      "成功激勵人們，可合理引出羽球更受歡迎。"
+    ],
+    "transfer": {
+      "prompt": "原創遷移練習：A team's victory encouraged children to join clubs. 主因與結果各是什麼？",
+      "answer": "勝利是激勵來源，更多孩子參加是結果。",
+      "steps": [
+        "先辨認新題要比較的語意或條件：A team's victory encouraged children to join clubs. 主因與結果各是什麼？",
+        "套用本題規則並指出證據：勝利是激勵來源，更多孩子參加是結果。",
+        "回查回答是否保留人物、時間、數量及因果方向；不把原題的字母答案套到新題。"
+      ]
+    }
+  },
+  {
+    "questionId": "114-english-17",
+    "routes": [
+      "/subjects/english/conversation-daily-use"
+    ],
+    "kind": "對話：由補充原因推論狀態",
+    "knowledge": [
+      [
+        "作答所需的語法與文本證據",
+        "媽媽說工作整天且幾乎睜不開眼，證實兒子推測她看起來疲倦。That's true 回應的是可被證實的判斷。"
+      ]
+    ],
+    "steps": [
+      "先定位題幹的問法與原文證據。媽媽說工作整天且幾乎睜不開眼，證實兒子推測她看起來疲倦。That's true 回應的是可被證實的判斷。",
+      "檢查 A 與 B 的詞義、角色及限制：是否說話應回答 yes/no 及說的內容，與疲倦原因不合。 看起來疲倦可由工作整天和睜不開眼支持。",
+      "再核對 C 與 D：他喜歡站著不是媽媽工作整天能證明的事。 是否下車應查男學生行程，與媽媽疲累無關。",
+      "綜合條件選 B。看起來疲倦可由工作整天和睜不開眼支持。"
+    ],
+    "reasons": [
+      "是否說話應回答 yes/no 及說的內容，與疲倦原因不合。",
+      "看起來疲倦可由工作整天和睜不開眼支持。",
+      "他喜歡站著不是媽媽工作整天能證明的事。",
+      "是否下車應查男學生行程，與媽媽疲累無關。"
+    ],
+    "transfer": {
+      "prompt": "原創遷移練習：I could hardly keep my eyes open. 最接近 tired 還是 excited？",
+      "answer": "tired，難以睜眼在此表示很疲倦。",
+      "steps": [
+        "先辨認新題要比較的語意或條件：I could hardly keep my eyes open. 最接近 tired 還是 excited？",
+        "套用本題規則並指出證據：tired，難以睜眼在此表示很疲倦。",
+        "回查回答是否保留人物、時間、數量及因果方向；不把原題的字母答案套到新題。"
+      ]
+    }
+  },
+  {
+    "questionId": "114-english-18",
+    "routes": [
+      "/subjects/english/conversation-daily-use"
+    ],
+    "kind": "失物對話：外觀問句",
+    "knowledge": [
+      [
+        "作答所需的語法與文本證據",
+        "blue and green、made of silk 是顏色與材質，用來辨認圍巾外觀；What does it look like 最直接對應。"
+      ]
+    ],
+    "steps": [
+      "先定位題幹的問法與原文證據。blue and green、made of silk 是顏色與材質，用來辨認圍巾外觀；What does it look like 最直接對應。",
+      "檢查 A 與 B 的詞義、角色及限制：問遺失地點應答房間或走廊，非顏色材質。 偏好哪間房與圍巾描述不相符。",
+      "再核對 C 與 D：詢問外觀可接藍綠色及絲質。 搬房原因與描述失物無關。",
+      "綜合條件選 C。詢問外觀可接藍綠色及絲質。"
+    ],
+    "reasons": [
+      "問遺失地點應答房間或走廊，非顏色材質。",
+      "偏好哪間房與圍巾描述不相符。",
+      "詢問外觀可接藍綠色及絲質。",
+      "搬房原因與描述失物無關。"
+    ],
+    "transfer": {
+      "prompt": "原創遷移練習：What does your bag look like? 回答 Red leather 或 Yesterday？",
+      "answer": "Red leather，顏色與材質提供外觀辨識資訊。",
+      "steps": [
+        "先辨認新題要比較的語意或條件：What does your bag look like? 回答 Red leather 或 Yesterday？",
+        "套用本題規則並指出證據：Red leather，顏色與材質提供外觀辨識資訊。",
+        "回查回答是否保留人物、時間、數量及因果方向；不把原題的字母答案套到新題。"
+      ]
+    }
+  },
+  {
+    "questionId": "114-english-19",
+    "routes": [
+      "/subjects/english/conversation-daily-use"
+    ],
+    "kind": "面試：應徵動機與背景匹配",
+    "knowledge": [
+      [
+        "作答所需的語法與文本證據",
+        "回答說畫廊聚焦現代藝術，符合自身背景與興趣，並希望在此運用所學；這是在解釋為何想來此工作。"
+      ]
+    ],
+    "steps": [
+      "先定位題幹的問法與原文證據。回答說畫廊聚焦現代藝術，符合自身背景與興趣，並希望在此運用所學；這是在解釋為何想來此工作。",
+      "檢查 A 與 B 的詞義、角色及限制：結果由面試官最後通知，候選人的回答不是是否已知結果。 現代史不是先前提的現代雕塑，也非回答動機。",
+      "再核對 C 與 D：學歷前文已說，後句重點是畫廊與背景的匹配。 詢問為何想在畫廊任職，正好接興趣及專長匹配。",
+      "綜合條件選 D。詢問為何想在畫廊任職，正好接興趣及專長匹配。"
+    ],
+    "reasons": [
+      "結果由面試官最後通知，候選人的回答不是是否已知結果。",
+      "現代史不是先前提的現代雕塑，也非回答動機。",
+      "學歷前文已說，後句重點是畫廊與背景的匹配。",
+      "詢問為何想在畫廊任職，正好接興趣及專長匹配。"
+    ],
+    "transfer": {
+      "prompt": "原創遷移練習：Your mission matches my skills. 在面試較像回答 why this job 還是 what time is it？",
+      "answer": "why this job，指出職位與能力相符的應徵理由。",
+      "steps": [
+        "先辨認新題要比較的語意或條件：Your mission matches my skills. 在面試較像回答 why this job 還是 what time is it？",
+        "套用本題規則並指出證據：why this job，指出職位與能力相符的應徵理由。",
+        "回查回答是否保留人物、時間、數量及因果方向；不把原題的字母答案套到新題。"
+      ]
+    }
+  },
+  {
+    "questionId": "114-english-20",
+    "routes": [
+      "/subjects/english/conversation-daily-use"
+    ],
+    "kind": "代名詞與發明先後",
+    "knowledge": [
+      [
+        "作答所需的語法與文本證據",
+        "下文點名科學家並說 created the first electric light，因此空格應問最先想出電燈的人。come up with 指想出或提出。"
+      ]
+    ],
+    "steps": [
+      "先定位題幹的問法與原文證據。下文點名科學家並說 created the first electric light，因此空格應問最先想出電燈的人。come up with 指想出或提出。",
+      "檢查 A 與 B 的詞義、角色及限制：switch off 是關閉，非最初創造。 who came up with it first 詢問最初提出者，與後句一致。",
+      "再核對 C 與 D：購買者不等於發明者。 invite 與 invent 字形相似但意義不同，題文也沒有邀人到家。 D 再核對：購買第一個燈泡的人不等於最初發明電燈的人。",
+      "綜合條件選 B。who came up with it first 詢問最初提出者，與後句一致。"
+    ],
+    "reasons": [
+      "switch off 是關閉，非最初創造。",
+      "who came up with it first 詢問最初提出者，與後句一致。",
+      "購買第一個燈泡的人不等於最初發明電燈的人。",
+      "invite 與 invent 字形相似但意義不同，題文也沒有邀人到家。"
+    ],
+    "transfer": {
+      "prompt": "原創遷移練習：Who came up with the idea? 問的是提出者還是購買者？",
+      "answer": "提出者，come up with an idea 表想出點子。",
+      "steps": [
+        "先辨認新題要比較的語意或條件：Who came up with the idea? 問的是提出者還是購買者？",
+        "套用本題規則並指出證據：提出者，come up with an idea 表想出點子。",
+        "回查回答是否保留人物、時間、數量及因果方向；不把原題的字母答案套到新題。"
+      ]
+    }
+  },
+  {
+    "questionId": "114-english-21",
+    "routes": [
+      "/subjects/english/cloze-passage-structure"
+    ],
+    "kind": "舉例連接語 such as",
+    "knowledge": [
+      [
+        "作答所需的語法與文本證據",
+        "robotics、carpentry、refrigeration 是六十多種技能類別的例子，需 such as 引介列舉。"
+      ]
+    ],
+    "steps": [
+      "先定位題幹的問法與原文證據。robotics、carpentry、refrigeration 是六十多種技能類別的例子，需 such as 引介列舉。",
+      "檢查 A 與 B 的詞義、角色及限制：compared with 表比較，沒有說明類別的例子關係。 except for 表排除，會把列出的技能排除於比賽外。",
+      "再核對 C 與 D：such as 表例如，正確引出種類。 rather than 表而不是，與列舉實際項目相反。",
+      "綜合條件選 C。such as 表例如，正確引出種類。"
+    ],
+    "reasons": [
+      "compared with 表比較，沒有說明類別的例子關係。",
+      "except for 表排除，會把列出的技能排除於比賽外。",
+      "such as 表例如，正確引出種類。",
+      "rather than 表而不是，與列舉實際項目相反。"
+    ],
+    "transfer": {
+      "prompt": "原創遷移練習：Skills such as drawing and surveying 中後兩項是例子還是例外？",
+      "answer": "例子；such as 將具體項目列入前面的類別。",
+      "steps": [
+        "先辨認新題要比較的語意或條件：Skills such as drawing and surveying 中後兩項是例子還是例外？",
+        "套用本題規則並指出證據：例子；such as 將具體項目列入前面的類別。",
+        "回查回答是否保留人物、時間、數量及因果方向；不把原題的字母答案套到新題。"
+      ]
+    }
+  },
+  {
+    "questionId": "114-english-22",
+    "routes": [
+      "/subjects/english/cloze-passage-structure"
+    ],
+    "kind": "過去分詞構句：施事者 by",
+    "knowledge": [
+      [
+        "作答所需的語法與文本證據",
+        "Encouraged by his father 可還原為 He was encouraged by his father，父親是鼓勵的施事者；省略部分的主詞與後句 Tsai 相同。"
+      ]
+    ],
+    "steps": [
+      "先定位題幹的問法與原文證據。Encouraged by his father 可還原為 He was encouraged by his father，父親是鼓勵的施事者；省略部分的主詞與後句 Tsai 相同。",
+      "檢查 A 與 B 的詞義、角色及限制：at 不能標示被動鼓勵的施事者。 by 引介鼓勵他的人，符合被動結構。",
+      "再核對 C 與 D：from 通常表來源，非此處 encouraged 的被動施事搭配。 with 可表工具或伴隨，不能替代本句 by。",
+      "綜合條件選 B。by 引介鼓勵他的人，符合被動結構。"
+    ],
+    "reasons": [
+      "at 不能標示被動鼓勵的施事者。",
+      "by 引介鼓勵他的人，符合被動結構。",
+      "from 通常表來源，非此處 encouraged 的被動施事搭配。",
+      "with 可表工具或伴隨，不能替代本句 by。"
+    ],
+    "transfer": {
+      "prompt": "原創遷移練習：Supported ___ her family, she continued studying. 填 by 或 at？",
+      "answer": "by，家人是提供支持的施事者。",
+      "steps": [
+        "先辨認新題要比較的語意或條件：Supported ___ her family, she continued studying. 填 by 或 at？",
+        "套用本題規則並指出證據：by，家人是提供支持的施事者。",
+        "回查回答是否保留人物、時間、數量及因果方向；不把原題的字母答案套到新題。"
+      ]
+    }
+  },
+  {
+    "questionId": "114-english-23",
+    "routes": [
+      "/subjects/english/cloze-passage-structure"
+    ],
+    "kind": "並列動詞時態",
+    "knowledge": [
+      [
+        "作答所需的語法與文本證據",
+        "Chen joined a training program and completed the course；and 並列兩個過去行動，前句 joined 決定後句用 completed。"
+      ]
+    ],
+    "steps": [
+      "先定位題幹的問法與原文證據。Chen joined a training program and completed the course；and 並列兩個過去行動，前句 joined 決定後句用 completed。",
+      "檢查 A 與 B 的詞義、角色及限制：complete 為原形，與過去敘事及 joined 不平行。 completed 是過去式，與 joined 對應。",
+      "再核對 C 與 D：completing 不是此處獨立過去述語。 will complete 指未來，與已完成六個月課程的敘事不同。",
+      "綜合條件選 B。completed 是過去式，與 joined 對應。"
+    ],
+    "reasons": [
+      "complete 為原形，與過去敘事及 joined 不平行。",
+      "completed 是過去式，與 joined 對應。",
+      "completing 不是此處獨立過去述語。",
+      "will complete 指未來，與已完成六個月課程的敘事不同。"
+    ],
+    "transfer": {
+      "prompt": "原創遷移練習：She entered the class and finished it. entered 與 finished 為何同用過去式？",
+      "answer": "and 並列同一過去時間的兩個已發生動作。",
+      "steps": [
+        "先辨認新題要比較的語意或條件：She entered the class and finished it. entered 與 finished 為何同用過去式？",
+        "套用本題規則並指出證據：and 並列同一過去時間的兩個已發生動作。",
+        "回查回答是否保留人物、時間、數量及因果方向；不把原題的字母答案套到新題。"
+      ]
+    }
+  },
+  {
+    "questionId": "114-english-24",
+    "routes": [
+      "/subjects/english/cloze-passage-structure"
+    ],
+    "kind": "篇章總結：learning by doing",
+    "knowledge": [
+      [
+        "作答所需的語法與文本證據",
+        "前文反覆舉長期練習、工場訓練、完成課程，結論是透過直接經驗與持續練習發展技能。"
+      ]
+    ],
+    "steps": [
+      "先定位題幹的問法與原文證據。前文反覆舉長期練習、工場訓練、完成課程，結論是透過直接經驗與持續練習發展技能。",
+      "檢查 A 與 B 的詞義、角色及限制：constant practice 概括長期實作與訓練，呼應 learning by doing。 giving awards 是頒獎行為，不是兩人培養技能的方法。",
+      "再核對 C 與 D：robotics talents 是技能項目相關詞，沒有概括兩人的練習過程。 speech training 在例子中未被提及。",
+      "綜合條件選 A。constant practice 概括長期實作與訓練，呼應 learning by doing。"
+    ],
+    "reasons": [
+      "constant practice 概括長期實作與訓練，呼應 learning by doing。",
+      "giving awards 是頒獎行為，不是兩人培養技能的方法。",
+      "robotics talents 是技能項目相關詞，沒有概括兩人的練習過程。",
+      "speech training 在例子中未被提及。"
+    ],
+    "transfer": {
+      "prompt": "原創遷移練習：一段強調每天畫圖並反覆修正，結論應是持續練習還是只領獎？",
+      "answer": "持續練習，結論須概括前面實際培養能力的行為。",
+      "steps": [
+        "先辨認新題要比較的語意或條件：一段強調每天畫圖並反覆修正，結論應是持續練習還是只領獎？",
+        "套用本題規則並指出證據：持續練習，結論須概括前面實際培養能力的行為。",
+        "回查回答是否保留人物、時間、數量及因果方向；不把原題的字母答案套到新題。"
+      ]
+    }
+  },
+  {
+    "questionId": "114-english-25",
+    "routes": [
+      "/subjects/english/cloze-passage-structure"
+    ],
+    "kind": "轉折 However：表象與事實",
+    "knowledge": [
+      [
+        "作答所需的語法與文本證據",
+        "前文說大眾以為無害，後文卻說含尼古丁並有風險，兩者相反，需 However。本題是判讀篇章語意。"
+      ]
+    ],
+    "steps": [
+      "先定位題幹的問法與原文證據。前文說大眾以為無害，後文卻說含尼古丁並有風險，兩者相反，需 However。本題是判讀篇章語意。",
+      "檢查 A 與 B 的詞義、角色及限制：However 表轉折，銜接無害印象與風險事實的差異。 Therefore 表結果，會把風險誤接為無害的結果。",
+      "再核對 C 與 D：At last 表終於，非核心的相反關係。 By chance 表偶然，與反駁無害印象無關。",
+      "綜合條件選 A。However 表轉折，銜接無害印象與風險事實的差異。"
+    ],
+    "reasons": [
+      "However 表轉折，銜接無害印象與風險事實的差異。",
+      "Therefore 表結果，會把風險誤接為無害的結果。",
+      "At last 表終於，非核心的相反關係。",
+      "By chance 表偶然，與反駁無害印象無關。"
+    ],
+    "transfer": {
+      "prompt": "原創遷移練習：It looks easy. However, it is difficult. However 標記什麼？",
+      "answer": "與前句印象相反的事實。",
+      "steps": [
+        "先辨認新題要比較的語意或條件：It looks easy. However, it is difficult. However 標記什麼？",
+        "套用本題規則並指出證據：與前句印象相反的事實。",
+        "回查回答是否保留人物、時間、數量及因果方向；不把原題的字母答案套到新題。"
+      ]
+    }
+  },
+  {
+    "questionId": "114-english-26",
+    "routes": [
+      "/subjects/english/cloze-passage-structure"
+    ],
+    "kind": "數量修飾 as little as",
+    "knowledge": [
+      [
+        "作答所需的語法與文本證據",
+        "a teaspoonful 是少量液體；as little as 強調即使少到如此也可能造成文中所述後果。此處判讀語法與量詞，不推算任何劑量。"
+      ]
+    ],
+    "steps": [
+      "先定位題幹的問法與原文證據。a teaspoonful 是少量液體；as little as 強調即使少到如此也可能造成文中所述後果。此處判讀語法與量詞，不推算任何劑量。",
+      "檢查 A 與 B 的詞義、角色及限制：as far as 表距離或範圍，不修飾液體少量。 as tall as 表高度，不修飾一茶匙的量。",
+      "再核對 C 與 D：as little as 可修飾少量不可數物質，強調量少。 as many as 通常修飾複數可數項，不能搭 a teaspoonful 的單數結構。",
+      "綜合條件選 C。as little as 可修飾少量不可數物質，強調量少。"
+    ],
+    "reasons": [
+      "as far as 表距離或範圍，不修飾液體少量。",
+      "as tall as 表高度，不修飾一茶匙的量。",
+      "as little as 可修飾少量不可數物質，強調量少。",
+      "as many as 通常修飾複數可數項，不能搭 a teaspoonful 的單數結構。"
+    ],
+    "transfer": {
+      "prompt": "原創遷移練習：As little as one dollar can help. 這裡強調金額多還是少？",
+      "answer": "少，表示即使低至一元也有作用。",
+      "steps": [
+        "先辨認新題要比較的語意或條件：As little as one dollar can help. 這裡強調金額多還是少？",
+        "套用本題規則並指出證據：少，表示即使低至一元也有作用。",
+        "回查回答是否保留人物、時間、數量及因果方向；不把原題的字母答案套到新題。"
+      ]
+    }
+  },
+  {
+    "questionId": "114-english-27",
+    "routes": [
+      "/subjects/english/cloze-passage-structure"
+    ],
+    "kind": "the number of：單數完成式",
+    "knowledge": [
+      [
+        "作答所需的語法與文本證據",
+        "The number of students 的核心為 number，視為單數；in the past five years 描述過去至今的變化，用 has doubled。"
+      ]
+    ],
+    "steps": [
+      "先定位題幹的問法與原文證據。The number of students 的核心為 number，視為單數；in the past five years 描述過去至今的變化，用 has doubled。",
+      "檢查 A 與 B 的詞義、角色及限制：double 原形不符單數主詞，也未表達此處完成式。 has doubled 同時符合單數與過去五年至今的時段。",
+      "再核對 C 與 D：will double 指未來，與 in the past five years 不合。 have doubled 被 students 的複數誘導，忽略核心 number。",
+      "綜合條件選 B。has doubled 同時符合單數與過去五年至今的時段。"
+    ],
+    "reasons": [
+      "double 原形不符單數主詞，也未表達此處完成式。",
+      "has doubled 同時符合單數與過去五年至今的時段。",
+      "will double 指未來，與 in the past five years 不合。",
+      "have doubled 被 students 的複數誘導，忽略核心 number。"
+    ],
+    "transfer": {
+      "prompt": "原創遷移練習：The number of visitors ___ increased. 填 has 或 have？",
+      "answer": "has，主詞核心是單數 number。",
+      "steps": [
+        "先辨認新題要比較的語意或條件：The number of visitors ___ increased. 填 has 或 have？",
+        "套用本題規則並指出證據：has，主詞核心是單數 number。",
+        "回查回答是否保留人物、時間、數量及因果方向；不把原題的字母答案套到新題。"
+      ]
+    }
+  },
+  {
+    "questionId": "114-english-28",
+    "routes": [
+      "/subjects/english/cloze-passage-structure"
+    ],
+    "kind": "不定詞表目的",
+    "knowledge": [
+      [
+        "作答所需的語法與文本證據",
+        "前文描述使用人數上升，後文敘述政府採取限制措施；To stop this rise 表示措施的目的。只依當年題文判斷，不把題文數字當現行規則。"
+      ]
+    ],
+    "steps": [
+      "先定位題幹的問法與原文證據。前文描述使用人數上升，後文敘述政府採取限制措施；To stop this rise 表示措施的目的。只依當年題文判斷，不把題文數字當現行規則。",
+      "檢查 A 與 B 的詞義、角色及限制：停止上升正是接續措施的目的，rise 指前文人數增加。 價格不是此段所述採取措施的原因。",
+      "再核對 C 與 D：時尚不是結論措施的主要目的。 instead of taking action 表不採行動，卻接政府採措施，前後矛盾。",
+      "綜合條件選 A。停止上升正是接續措施的目的，rise 指前文人數增加。"
+    ],
+    "reasons": [
+      "停止上升正是接續措施的目的，rise 指前文人數增加。",
+      "價格不是此段所述採取措施的原因。",
+      "時尚不是結論措施的主要目的。",
+      "instead of taking action 表不採行動，卻接政府採措施，前後矛盾。"
+    ],
+    "transfer": {
+      "prompt": "原創遷移練習：To reduce waste, the school changed its packaging. To reduce waste 表原因結果中的什麼？",
+      "answer": "行動目的，說明更換包裝想達成的目標。",
+      "steps": [
+        "先辨認新題要比較的語意或條件：To reduce waste, the school changed its packaging. To reduce waste 表原因結果中的什麼？",
+        "套用本題規則並指出證據：行動目的，說明更換包裝想達成的目標。",
+        "回查回答是否保留人物、時間、數量及因果方向；不把原題的字母答案套到新題。"
+      ]
+    }
+  },
+  {
+    "questionId": "114-english-29",
+    "routes": [
+      "/subjects/english/reading-comprehension"
+    ],
+    "kind": "海報標題：共同特徵",
+    "knowledge": [
+      [
+        "作答所需的語法與文本證據",
+        "六位人物都是在數學、化學、天文或物理有貢獻的女性；共同範圍為女性力量，不能限縮為諾貝爾得主或化學家。"
+      ]
+    ],
+    "steps": [
+      "先定位題幹的問法與原文證據。六位人物都是在數學、化學、天文或物理有貢獻的女性；共同範圍為女性力量，不能限縮為諾貝爾得主或化學家。",
+      "檢查 A 與 B 的詞義、角色及限制：女性力量可涵蓋全部人物的跨領域成就。 二次大戰只屬部分人物背景，不能概括全部。",
+      "再核對 C 與 D：只有部分人物被列為諾貝爾得主。 人物不全是化學家，還包含天文、物理及數學。",
+      "綜合條件選 A。女性力量可涵蓋全部人物的跨領域成就。"
+    ],
+    "reasons": [
+      "女性力量可涵蓋全部人物的跨領域成就。",
+      "二次大戰只屬部分人物背景，不能概括全部。",
+      "只有部分人物被列為諾貝爾得主。",
+      "人物不全是化學家，還包含天文、物理及數學。"
+    ],
+    "transfer": {
+      "prompt": "原創遷移練習：人物表含女醫師、女工程師、女數學家，標題選女性成就或全體化學家？",
+      "answer": "女性成就，必須涵蓋所有人物的共同特徵。",
+      "steps": [
+        "先辨認新題要比較的語意或條件：人物表含女醫師、女工程師、女數學家，標題選女性成就或全體化學家？",
+        "套用本題規則並指出證據：女性成就，必須涵蓋所有人物的共同特徵。",
+        "回查回答是否保留人物、時間、數量及因果方向；不把原題的字母答案套到新題。"
+      ]
+    }
+  },
+  {
+    "questionId": "114-english-30",
+    "routes": [
+      "/subjects/english/reading-comprehension"
+    ],
+    "kind": "否定細節題：出生地與遷移",
+    "knowledge": [
+      [
+        "作答所需的語法與文本證據",
+        "海報說吳健雄 came to the United States from China，非出生美國。其餘選項分別與發現彗星、諾獎及數學能力的敘述一致。"
+      ]
+    ],
+    "steps": [
+      "先定位題幹的問法與原文證據。海報說吳健雄 came to the United States from China，非出生美國。其餘選項分別與發現彗星、諾獎及數學能力的敘述一致。",
+      "檢查 A 與 B 的詞義、角色及限制：Mitchell 發現新彗星，符合海報。 Hodgkin 與 Mayer 都列有 Nobel Prize，符合。",
+      "再核對 C 與 D：Hopper 是數學家，Roman 被稱為 wizard in math，符合。 把來到美國改成出生美國，混淆遷移地與出生地，因此為 NOT true。",
+      "綜合條件選 D。把來到美國改成出生美國，混淆遷移地與出生地，因此為 NOT true。"
+    ],
+    "reasons": [
+      "Mitchell 發現新彗星，符合海報。",
+      "Hodgkin 與 Mayer 都列有 Nobel Prize，符合。",
+      "Hopper 是數學家，Roman 被稱為 wizard in math，符合。",
+      "把來到美國改成出生美國，混淆遷移地與出生地，因此為 NOT true。"
+    ],
+    "transfer": {
+      "prompt": "原創遷移練習：She moved to Canada from Japan. 能直接改成 She was born in Canada 嗎？",
+      "answer": "不能，遷居目的地不等於出生地。",
+      "steps": [
+        "先辨認新題要比較的語意或條件：She moved to Canada from Japan. 能直接改成 She was born in Canada 嗎？",
+        "套用本題規則並指出證據：不能，遷居目的地不等於出生地。",
+        "回查回答是否保留人物、時間、數量及因果方向；不把原題的字母答案套到新題。"
+      ]
+    }
+  },
+  {
+    "questionId": "114-english-31",
+    "routes": [
+      "/subjects/english/reading-comprehension"
+    ],
+    "kind": "對話與表格：角色及星號註腳",
+    "knowledge": [
+      [
+        "作答所需的語法與文本證據",
+        "Dave 現用 A 的 10GB，原想升 20GB；Betty 現用 C 的 699 不限量，Dave 最後改選相同。官方表僅 A、C 有學生優惠星號，OCR 曾誤把四列都加星。題目問 NOT true。"
+      ]
+    ],
+    "steps": [
+      "先定位題幹的問法與原文證據。Dave 現用 A 的 10GB，原想升 20GB；Betty 現用 C 的 699 不限量，Dave 最後改選相同。官方表僅 A、C 有學生優惠星號，OCR 曾誤把四列都加星。題目問 NOT true。",
+      "檢查 A 與 B 的詞義、角色及限制：Betty 的 Me too 呼應 Dave 玩遊戲看影片，兩人都有此需求。 A、C 兩個星號方案為學生優惠，官方表與註腳支持。",
+      "再核對 C 與 D：Dave 明說現方案 399、10GB，符合。 想升 20GB 的是 Dave，不是已用不限量的 Betty，角色錯置。",
+      "綜合條件選 D。想升 20GB 的是 Dave，不是已用不限量的 Betty，角色錯置。"
+    ],
+    "reasons": [
+      "Betty 的 Me too 呼應 Dave 玩遊戲看影片，兩人都有此需求。",
+      "A、C 兩個星號方案為學生優惠，官方表與註腳支持。",
+      "Dave 明說現方案 399、10GB，符合。",
+      "想升 20GB 的是 Dave，不是已用不限量的 Betty，角色錯置。"
+    ],
+    "transfer": {
+      "prompt": "原創遷移練習：甲想升級，乙說自己已用不限量。能把甲的計畫歸給乙嗎？",
+      "answer": "不能，閱讀對話必須對每個計畫保留正確說話者。",
+      "steps": [
+        "先辨認新題要比較的語意或條件：甲想升級，乙說自己已用不限量。能把甲的計畫歸給乙嗎？",
+        "套用本題規則並指出證據：不能，閱讀對話必須對每個計畫保留正確說話者。",
+        "回查回答是否保留人物、時間、數量及因果方向；不把原題的字母答案套到新題。"
+      ]
+    }
+  },
+  {
+    "questionId": "114-english-34",
+    "routes": [
+      "/subjects/english/reading-comprehension"
+    ],
+    "kind": "表格統計：逐年筆數與強度多數",
+    "knowledge": [
+      [
+        "作答所需的語法與文本證據",
+        "表中 2021 有 5 筆、2022 有 3 筆、2023 有 6 筆；Moderate 共 8 筆，占 14 筆過半。MUIFA 在 2022，LUPIT 在 2021。"
+      ]
+    ],
+    "steps": [
+      "先定位題幹的問法與原文證據。表中 2021 有 5 筆、2022 有 3 筆、2023 有 6 筆；Moderate 共 8 筆，占 14 筆過半。MUIFA 在 2022，LUPIT 在 2021。",
+      "檢查 A 與 B 的詞義、角色及限制：2021 是 5 筆，不是 6；6 筆屬 2023。 2022 的 3 筆少於 2021 的 5 筆，more 方向顛倒。",
+      "再核對 C 與 D：LUPIT 是 2021，不可與 MUIFA 一起歸入 2022。 Moderate 為 8/14，超過一半，符合 most。",
+      "綜合條件選 D。Moderate 為 8/14，超過一半，符合 most。"
+    ],
+    "reasons": [
+      "2021 是 5 筆，不是 6；6 筆屬 2023。",
+      "2022 的 3 筆少於 2021 的 5 筆，more 方向顛倒。",
+      "LUPIT 是 2021，不可與 MUIFA 一起歸入 2022。",
+      "Moderate 為 8/14，超過一半，符合 most。"
+    ],
+    "transfer": {
+      "prompt": "原創遷移練習：14 筆資料中有 8 筆同類，能稱大多數嗎？",
+      "answer": "可以，8 大於 14 的一半 7；但不代表全部。",
+      "steps": [
+        "先辨認新題要比較的語意或條件：14 筆資料中有 8 筆同類，能稱大多數嗎？",
+        "套用本題規則並指出證據：可以，8 大於 14 的一半 7；但不代表全部。",
+        "回查回答是否保留人物、時間、數量及因果方向；不把原題的字母答案套到新題。"
+      ]
+    }
+  },
+  {
+    "questionId": "114-english-36",
+    "routes": [
+      "/subjects/english/reading-comprehension"
+    ],
+    "kind": "主旨：跨領域用途與影響",
+    "knowledge": [
+      [
+        "作答所需的語法與文本證據",
+        "文章介紹超級電腦在醫療、風能、養豬、氣象與生技的用途，最後談創新與未來；主旨為用途與影響。"
+      ]
+    ],
+    "steps": [
+      "先定位題幹的問法與原文證據。文章介紹超級電腦在醫療、風能、養豬、氣象與生技的用途，最後談創新與未來；主旨為用途與影響。",
+      "檢查 A 與 B 的詞義、角色及限制：文章沒有講解運算理論或演算法原理。 未平衡討論缺點，不能概括為優缺點分析。",
+      "再核對 C 與 D：用途與影響涵蓋各產業例子及結尾。 醫療只是其中一部分，不能概括風能與農業等段落。",
+      "綜合條件選 C。用途與影響涵蓋各產業例子及結尾。"
+    ],
+    "reasons": [
+      "文章沒有講解運算理論或演算法原理。",
+      "未平衡討論缺點，不能概括為優缺點分析。",
+      "用途與影響涵蓋各產業例子及結尾。",
+      "醫療只是其中一部分，不能概括風能與農業等段落。"
+    ],
+    "transfer": {
+      "prompt": "原創遷移練習：正文同談醫療、農業、天氣的運算應用，標題應只寫癌症研究嗎？",
+      "answer": "不應，應用與影響的概括才能涵蓋各領域。",
+      "steps": [
+        "先辨認新題要比較的語意或條件：正文同談醫療、農業、天氣的運算應用，標題應只寫癌症研究嗎？",
+        "套用本題規則並指出證據：不應，應用與影響的概括才能涵蓋各領域。",
+        "回查回答是否保留人物、時間、數量及因果方向；不把原題的字母答案套到新題。"
+      ]
+    }
+  },
+  {
+    "questionId": "114-english-37",
+    "routes": [
+      "/subjects/english/reading-comprehension"
+    ],
+    "kind": "代名詞指涉：找能執行動作的先行詞",
+    "knowledge": [
+      [
+        "作答所需的語法與文本證據",
+        "前句 a supercomputer helped scientists，後句 It analyzed and compared samples；能分析樣本的是該超級電腦。回代後語意及單數形式皆吻合。"
+      ]
+    ],
+    "steps": [
+      "先定位題幹的問法與原文證據。前句 a supercomputer helped scientists，後句 It analyzed and compared samples；能分析樣本的是該超級電腦。回代後語意及單數形式皆吻合。",
+      "檢查 A 與 B 的詞義、角色及限制：impact 是影響的抽象名詞，不是文中分析樣本的執行者。 pandemic 是疫情，不是操作分析的主體。",
+      "再核對 C 與 D：a supercomputer 是前句主體，能執行 analyzed and compared。 spike protein 是被辨識對象，不是進行分析的裝置。",
+      "綜合條件選 C。a supercomputer 是前句主體，能執行 analyzed and compared。"
+    ],
+    "reasons": [
+      "impact 是影響的抽象名詞，不是文中分析樣本的執行者。",
+      "pandemic 是疫情，不是操作分析的主體。",
+      "a supercomputer 是前句主體，能執行 analyzed and compared。",
+      "spike protein 是被辨識對象，不是進行分析的裝置。"
+    ],
+    "transfer": {
+      "prompt": "原創遷移練習：A computer read the files. It compared them. It 指誰？",
+      "answer": "computer，前句可執行比較工作的單數主體。",
+      "steps": [
+        "先辨認新題要比較的語意或條件：A computer read the files. It compared them. It 指誰？",
+        "套用本題規則並指出證據：computer，前句可執行比較工作的單數主體。",
+        "回查回答是否保留人物、時間、數量及因果方向；不把原題的字母答案套到新題。"
+      ]
+    }
+  },
+  {
+    "questionId": "114-english-38",
+    "routes": [
+      "/subjects/english/reading-comprehension"
+    ],
+    "kind": "指定段落：全文提及不等於該段提及",
+    "knowledge": [
+      [
+        "作答所需的語法與文本證據",
+        "題目限 third paragraph；第三段談臺灣養豬、預報、地震與醫藥，風能在第二段。找 NOT mentioned 時必須守住段落範圍。"
+      ]
+    ],
+    "steps": [
+      "先定位題幹的問法與原文證據。題目限 third paragraph；第三段談臺灣養豬、預報、地震與醫藥，風能在第二段。找 NOT mentioned 時必須守住段落範圍。",
+      "檢查 A 與 B 的詞義、角色及限制：第三段醫藥研究支持人口健康，有提到。 風能效能在第二段，未在指定第三段提及，因此符合。",
+      "再核對 C 與 D：第三段豬隻篩選提升畜產品質，有提到。 第三段氣象系統提升預報準確度，有提到。",
+      "綜合條件選 B。風能效能在第二段，未在指定第三段提及，因此符合。"
+    ],
+    "reasons": [
+      "第三段醫藥研究支持人口健康，有提到。",
+      "風能效能在第二段，未在指定第三段提及，因此符合。",
+      "第三段豬隻篩選提升畜產品質，有提到。",
+      "第三段氣象系統提升預報準確度，有提到。"
+    ],
+    "transfer": {
+      "prompt": "原創遷移練習：題目問第二段未提及，某資訊只在第四段出現，能算第二段已提嗎？",
+      "answer": "不能，應以題目指定段落為證據範圍。",
+      "steps": [
+        "先辨認新題要比較的語意或條件：題目問第二段未提及，某資訊只在第四段出現，能算第二段已提嗎？",
+        "套用本題規則並指出證據：不能，應以題目指定段落為證據範圍。",
+        "回查回答是否保留人物、時間、數量及因果方向；不把原題的字母答案套到新題。"
+      ]
+    }
+  },
+  {
+    "questionId": "114-english-39",
+    "routes": [
+      "/subjects/english/reading-comprehension"
+    ],
+    "kind": "全文主題：產業發展與保育",
+    "knowledge": [
+      [
+        "作答所需的語法與文本證據",
+        "正文含出口、產業歷史、競爭策略、新品種、會議及保育；臺灣蘭花產業介紹能涵蓋全部，其他選項只取局部。"
+      ]
+    ],
+    "steps": [
+      "先定位題幹的問法與原文證據。正文含出口、產業歷史、競爭策略、新品種、會議及保育；臺灣蘭花產業介紹能涵蓋全部，其他選項只取局部。",
+      "檢查 A 與 B 的詞義、角色及限制：臺灣蘭花產業介紹涵蓋經濟、歷史與保育。 全球市場只提供臺灣競爭的背景，非全文中心。",
+      "再核對 C 與 D：新品種只是中段的部分內容。 2024 會議是引介保育議題的事件，非全文全部。",
+      "綜合條件選 A。臺灣蘭花產業介紹涵蓋經濟、歷史與保育。"
+    ],
+    "reasons": [
+      "臺灣蘭花產業介紹涵蓋經濟、歷史與保育。",
+      "全球市場只提供臺灣競爭的背景，非全文中心。",
+      "新品種只是中段的部分內容。",
+      "2024 會議是引介保育議題的事件，非全文全部。"
+    ],
+    "transfer": {
+      "prompt": "原創遷移練習：文章寫某產業的歷史、出口、技術及環境議題，標題應概括產業還是只列一次會議？",
+      "answer": "概括產業，才能涵蓋多面向內容。",
+      "steps": [
+        "先辨認新題要比較的語意或條件：文章寫某產業的歷史、出口、技術及環境議題，標題應概括產業還是只列一次會議？",
+        "套用本題規則並指出證據：概括產業，才能涵蓋多面向內容。",
+        "回查回答是否保留人物、時間、數量及因果方向；不把原題的字母答案套到新題。"
+      ]
+    }
+  },
+  {
+    "questionId": "114-english-40",
+    "routes": [
+      "/subjects/english/reading-comprehension"
+    ],
+    "kind": "段落主旨：發展與保護並行",
+    "knowledge": [
+      [
+        "作答所需的語法與文本證據",
+        "第三段先提科技發展，再說野生種減少，需要保育，並明寫 ecological protection goes hand in hand with economic growth；重點是產業與物種保護平衡。"
+      ]
+    ],
+    "steps": [
+      "先定位題幹的問法與原文證據。第三段先提科技發展，再說野生種減少，需要保育，並明寫 ecological protection goes hand in hand with economic growth；重點是產業與物種保護平衡。",
+      "檢查 A 與 B 的詞義、角色及限制：原生種與新品種差異只是背景，未概括復育行動。 段落不是會議出口報告，而是由會議帶出保育。",
+      "再核對 C 與 D：高科技耕作只是開頭，未涵蓋後半保育需求。 產業成長與物種保護的平衡涵蓋整段論點。",
+      "綜合條件選 D。產業成長與物種保護的平衡涵蓋整段論點。"
+    ],
+    "reasons": [
+      "原生種與新品種差異只是背景，未概括復育行動。",
+      "段落不是會議出口報告，而是由會議帶出保育。",
+      "高科技耕作只是開頭，未涵蓋後半保育需求。",
+      "產業成長與物種保護的平衡涵蓋整段論點。"
+    ],
+    "transfer": {
+      "prompt": "原創遷移練習：goes hand in hand with 表互相配合還是完全互斥？",
+      "answer": "互相配合，表示兩件事可共同推進。",
+      "steps": [
+        "先辨認新題要比較的語意或條件：goes hand in hand with 表互相配合還是完全互斥？",
+        "套用本題規則並指出證據：互相配合，表示兩件事可共同推進。",
+        "回查回答是否保留人物、時間、數量及因果方向；不把原題的字母答案套到新題。"
+      ]
+    }
+  },
+  {
+    "questionId": "114-english-41",
+    "routes": [
+      "/subjects/english/reading-comprehension"
+    ],
+    "kind": "細節：出口、育種與復育方向",
+    "knowledge": [
+      [
+        "作答所需的語法與文本證據",
+        "原文說混合不同本土物種產生新品種；出口非進口，最大蘭花溫室集中在臺灣；2018 志工將原生種重新種回自然。"
+      ]
+    ],
+    "steps": [
+      "先定位題幹的問法與原文證據。原文說混合不同本土物種產生新品種；出口非進口，最大蘭花溫室集中在臺灣；2018 志工將原生種重新種回自然。",
+      "檢查 A 與 B 的詞義、角色及限制：imports 與文中 exports 方向相反。 mix native species to develop a new variety，為正確同義改述。",
+      "再核對 C 與 D：把臺灣擁有的最大集中產業改給荷蘭，對象錯置。 原文是 replant in nature，非從野外移除。",
+      "綜合條件選 B。mix native species to develop a new variety，為正確同義改述。"
+    ],
+    "reasons": [
+      "imports 與文中 exports 方向相反。",
+      "mix native species to develop a new variety，為正確同義改述。",
+      "把臺灣擁有的最大集中產業改給荷蘭，對象錯置。",
+      "原文是 replant in nature，非從野外移除。"
+    ],
+    "transfer": {
+      "prompt": "原創遷移練習：replant native species in nature 與 remove them from the wild 是相同方向嗎？",
+      "answer": "不是，前者種回自然，後者從自然環境移走。",
+      "steps": [
+        "先辨認新題要比較的語意或條件：replant native species in nature 與 remove them from the wild 是相同方向嗎？",
+        "套用本題規則並指出證據：不是，前者種回自然，後者從自然環境移走。",
+        "回查回答是否保留人物、時間、數量及因果方向；不把原題的字母答案套到新題。"
+      ]
+    }
+  },
+  {
+    "questionId": "114-english-42",
+    "routes": [
+      "/subjects/english/reading-comprehension"
+    ],
+    "kind": "時間排序：以年份建立時間軸",
+    "knowledge": [
+      [
+        "作答所需的語法與文本證據",
+        "2007 失去首位 b；2018 種苗出口逾 80 國 c；2023 出口 70 億 a；2024 主辦世界會議 d。排序為 b→c→a→d。"
+      ]
+    ],
+    "steps": [
+      "先定位題幹的問法與原文證據。2007 失去首位 b；2018 種苗出口逾 80 國 c；2023 出口 70 億 a；2024 主辦世界會議 d。排序為 b→c→a→d。",
+      "檢查 A 與 B 的詞義、角色及限制：把 2024 會議放在 2018 出口前，時間不符。 b→c→a→d 按 2007、2018、2023、2024 遞增。",
+      "再核對 C 與 D：把 2007 事件放到 2023 之後，錯置。 先 2018 後 2024 再 2007，未按年代排列。",
+      "綜合條件選 B。b→c→a→d 按 2007、2018、2023、2024 遞增。"
+    ],
+    "reasons": [
+      "把 2024 會議放在 2018 出口前，時間不符。",
+      "b→c→a→d 按 2007、2018、2023、2024 遞增。",
+      "把 2007 事件放到 2023 之後，錯置。",
+      "先 2018 後 2024 再 2007，未按年代排列。"
+    ],
+    "transfer": {
+      "prompt": "原創遷移練習：事件年份 2007、2024、2018，依先後應怎麼排？",
+      "answer": "2007→2018→2024；先整理年份再對回事件字母。",
+      "steps": [
+        "先辨認新題要比較的語意或條件：事件年份 2007、2024、2018，依先後應怎麼排？",
+        "套用本題規則並指出證據：2007→2018→2024；先整理年份再對回事件字母。",
+        "回查回答是否保留人物、時間、數量及因果方向；不把原題的字母答案套到新題。"
+      ]
+    }
+  }
+]

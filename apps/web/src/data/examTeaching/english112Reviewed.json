@@ -1,0 +1,818 @@
+[
+  {
+    "questionId": "112-english-16",
+    "routes": [
+      "/subjects/english/conversation-daily-use"
+    ],
+    "kind": "對話：由回答反推技能問句",
+    "knowledge": [
+      [
+        "作答所需的語法與文本證據",
+        "I can type pretty fast 描述打字技能，因此前句須詢問 skills。找問答配對時，先判斷回答是能力、時間、原因或地點。"
+      ]
+    ],
+    "steps": [
+      "先定位題幹的問法與原文證據。I can type pretty fast 描述打字技能，因此前句須詢問 skills。找問答配對時，先判斷回答是能力、時間、原因或地點。",
+      "檢查 A 與 B 的詞義、角色及限制：how soon 問多快需要工作，應回答時間。 詢問具備哪些技能，打字快正是技能例子。",
+      "再核對 C 與 D：問需要哪種協助，回答打字能力沒有說明協助項目。 問對學校的認識，與打字速度無關。",
+      "綜合條件選 B。詢問具備哪些技能，打字快正是技能例子。"
+    ],
+    "reasons": [
+      "how soon 問多快需要工作，應回答時間。",
+      "詢問具備哪些技能，打字快正是技能例子。",
+      "問需要哪種協助，回答打字能力沒有說明協助項目。",
+      "問對學校的認識，與打字速度無關。"
+    ],
+    "transfer": {
+      "prompt": "原創遷移練習：回答為 I can use spreadsheet software，應問技能還是薪資？",
+      "answer": "問技能；can use software 是具體能力，沒有薪資數字。",
+      "steps": [
+        "先辨認新題要比較的語意或條件：回答為 I can use spreadsheet software，應問技能還是薪資？",
+        "套用本題規則並指出證據：問技能；can use software 是具體能力，沒有薪資數字。",
+        "回查回答是否保留人物、時間、數量及因果方向；不把原題的字母答案套到新題。"
+      ]
+    }
+  },
+  {
+    "questionId": "112-english-17",
+    "routes": [
+      "/subjects/english/conversation-daily-use"
+    ],
+    "kind": "對話：暫時不在與預約請求",
+    "knowledge": [
+      [
+        "作答所需的語法與文本證據",
+        "後文請秘書轉告老師並查行程，表示老師仍在該單位任職，只是現在不在辦公室。not in right now 是暫時缺席。"
+      ]
+    ],
+    "steps": [
+      "先定位題幹的問法與原文證據。後文請秘書轉告老師並查行程，表示老師仍在該單位任職，只是現在不在辦公室。not in right now 是暫時缺席。",
+      "檢查 A 與 B 的詞義、角色及限制：查無此人無法合理接續幫忙查他的預約行程。 打錯電話與秘書願意協助查該老師行程不一致。",
+      "再核對 C 與 D：已離職與仍可由本辦公室安排會面不一致。 目前不在，可接續留言及預約的請求。",
+      "綜合條件選 D。目前不在，可接續留言及預約的請求。"
+    ],
+    "reasons": [
+      "查無此人無法合理接續幫忙查他的預約行程。",
+      "打錯電話與秘書願意協助查該老師行程不一致。",
+      "已離職與仍可由本辦公室安排會面不一致。",
+      "目前不在，可接續留言及預約的請求。"
+    ],
+    "transfer": {
+      "prompt": "原創遷移練習：The manager is out right now. Can I leave a message? 中 right now 表示永久離職嗎？",
+      "answer": "不是，表示此刻不在，因此可以留下訊息等待回覆。",
+      "steps": [
+        "先辨認新題要比較的語意或條件：The manager is out right now. Can I leave a message? 中 right now 表示永久離職嗎？",
+        "套用本題規則並指出證據：不是，表示此刻不在，因此可以留下訊息等待回覆。",
+        "回查回答是否保留人物、時間、數量及因果方向；不把原題的字母答案套到新題。"
+      ]
+    }
+  },
+  {
+    "questionId": "112-english-18",
+    "routes": [
+      "/subjects/english/conversation-daily-use"
+    ],
+    "kind": "現在完成進行式：持續多久",
+    "knowledge": [
+      [
+        "作答所需的語法與文本證據",
+        "Since she was seven 提供過去起點且持續至今，對應 How long has she been learning。how often 問頻率，how long 問期間。"
+      ]
+    ],
+    "steps": [
+      "先定位題幹的問法與原文證據。Since she was seven 提供過去起點且持續至今，對應 How long has she been learning。how often 問頻率，how long 問期間。",
+      "檢查 A 與 B 的詞義、角色及限制：how often 應接每週幾次等頻率，不能以起始年齡直接回答。 詢問持續多久，since 所引起點可回答。",
+      "再核對 C 與 D：問一般人幾歲開始，與 she 個人已持續學習的回答不同。 問費用，since seven 不提供金額。",
+      "綜合條件選 B。詢問持續多久，since 所引起點可回答。"
+    ],
+    "reasons": [
+      "how often 應接每週幾次等頻率，不能以起始年齡直接回答。",
+      "詢問持續多久，since 所引起點可回答。",
+      "問一般人幾歲開始，與 she 個人已持續學習的回答不同。",
+      "問費用，since seven 不提供金額。"
+    ],
+    "transfer": {
+      "prompt": "原創遷移練習：用 since 2020 回答 How long 或 How much？",
+      "answer": "How long，since 接時間起點，說明持續期間。",
+      "steps": [
+        "先辨認新題要比較的語意或條件：用 since 2020 回答 How long 或 How much？",
+        "套用本題規則並指出證據：How long，since 接時間起點，說明持續期間。",
+        "回查回答是否保留人物、時間、數量及因果方向；不把原題的字母答案套到新題。"
+      ]
+    }
+  },
+  {
+    "questionId": "112-english-19",
+    "routes": [
+      "/subjects/english/conversation-daily-use"
+    ],
+    "kind": "對話：方法問句與主詞一致",
+    "knowledge": [
+      [
+        "作答所需的語法與文本證據",
+        "How did you meet them 問你如何認識這些網友；joined an online group 提供第一人稱的具體方法，且符合仍聯絡的事實。"
+      ]
+    ],
+    "steps": [
+      "先定位題幹的問法與原文證據。How did you meet them 問你如何認識這些網友；joined an online group 提供第一人稱的具體方法，且符合仍聯絡的事實。",
+      "檢查 A 與 B 的詞義、角色及限制：加入線上群組可說明如何在網路認識朋友。 從未在線上交談無法交代已建立並維持的網路友誼。",
+      "再核對 C 與 D：they 改成第三人稱，且街上結識不符合所問的網路相識方式。 he 指別人持續玩遊戲，沒有回答自己如何認識他們。",
+      "綜合條件選 A。加入線上群組可說明如何在網路認識朋友。"
+    ],
+    "reasons": [
+      "加入線上群組可說明如何在網路認識朋友。",
+      "從未在線上交談無法交代已建立並維持的網路友誼。",
+      "they 改成第三人稱，且街上結識不符合所問的網路相識方式。",
+      "he 指別人持續玩遊戲，沒有回答自己如何認識他們。"
+    ],
+    "transfer": {
+      "prompt": "原創遷移練習：How did you learn French? 回答 I took an online class 是否適切？",
+      "answer": "適切，過去式 took 提供自己學習的方法。",
+      "steps": [
+        "先辨認新題要比較的語意或條件：How did you learn French? 回答 I took an online class 是否適切？",
+        "套用本題規則並指出證據：適切，過去式 took 提供自己學習的方法。",
+        "回查回答是否保留人物、時間、數量及因果方向；不把原題的字母答案套到新題。"
+      ]
+    }
+  },
+  {
+    "questionId": "112-english-20",
+    "routes": [
+      "/subjects/english/conversation-daily-use"
+    ],
+    "kind": "對話：搜尋失敗後提出替代位置",
+    "knowledge": [
+      [
+        "作答所需的語法與文本證據",
+        "Why not go check the garage 是換地點繼續找，前句應表明在衣櫥找不到。them 指球具，here 指目前找的地方。"
+      ]
+    ],
+    "steps": [
+      "先定位題幹的問法與原文證據。Why not go check the garage 是換地點繼續找，前句應表明在衣櫥找不到。them 指球具，here 指目前找的地方。",
+      "檢查 A 與 B 的詞義、角色及限制：已找到就不需要建議再到車庫尋找。 目前看不到球具，合理引出到車庫再找。",
+      "再核對 C 與 D：sound closer 與物品搜尋情境不搭，也沒交代是否找到。 已丟掉則不應再到車庫找，與後句矛盾。",
+      "綜合條件選 B。目前看不到球具，合理引出到車庫再找。"
+    ],
+    "reasons": [
+      "已找到就不需要建議再到車庫尋找。",
+      "目前看不到球具，合理引出到車庫再找。",
+      "sound closer 與物品搜尋情境不搭，也沒交代是否找到。",
+      "已丟掉則不應再到車庫找，與後句矛盾。"
+    ],
+    "transfer": {
+      "prompt": "原創遷移練習：A: They are not in the drawer. B: Try the shelf. 這兩句的關係是什麼？",
+      "answer": "先報告搜尋失敗，再提出另一個可能位置。",
+      "steps": [
+        "先辨認新題要比較的語意或條件：A: They are not in the drawer. B: Try the shelf. 這兩句的關係是什麼？",
+        "套用本題規則並指出證據：先報告搜尋失敗，再提出另一個可能位置。",
+        "回查回答是否保留人物、時間、數量及因果方向；不把原題的字母答案套到新題。"
+      ]
+    }
+  },
+  {
+    "questionId": "112-english-21",
+    "routes": [
+      "/subjects/english/cloze-passage-structure"
+    ],
+    "kind": "連接詞 for：補述理由",
+    "knowledge": [
+      [
+        "作答所需的語法與文本證據",
+        "前句說很容易看到鯨魚，後句說每年四月至十月會經過東岸；後句是理由。並列連接詞 for 在此相當於 because，與介系詞 for 的用法不同。"
+      ]
+    ],
+    "steps": [
+      "先定位題幹的問法與原文證據。前句說很容易看到鯨魚，後句說每年四月至十月會經過東岸；後句是理由。並列連接詞 for 在此相當於 because，與介系詞 for 的用法不同。",
+      "檢查 A 與 B 的詞義、角色及限制：for 引出容易看見的理由，因果方向正確。 nor 接續否定內容，但本句兩部分均為肯定敘述。",
+      "再核對 C 與 D：so 引出結果，會把鯨魚經過說成容易看見的結果。 yet 表示轉折，原文沒有相反關係。",
+      "綜合條件選 A。for 引出容易看見的理由，因果方向正確。"
+    ],
+    "reasons": [
+      "for 引出容易看見的理由，因果方向正確。",
+      "nor 接續否定內容，但本句兩部分均為肯定敘述。",
+      "so 引出結果，會把鯨魚經過說成容易看見的結果。",
+      "yet 表示轉折，原文沒有相反關係。"
+    ],
+    "transfer": {
+      "prompt": "原創遷移練習：It is quiet, for everyone has left. 後句是原因還是結果？",
+      "answer": "原因；大家離開解釋為何安靜，for 連接理由。",
+      "steps": [
+        "先辨認新題要比較的語意或條件：It is quiet, for everyone has left. 後句是原因還是結果？",
+        "套用本題規則並指出證據：原因；大家離開解釋為何安靜，for 連接理由。",
+        "回查回答是否保留人物、時間、數量及因果方向；不把原題的字母答案套到新題。"
+      ]
+    }
+  },
+  {
+    "questionId": "112-english-22",
+    "routes": [
+      "/subjects/english/cloze-passage-structure"
+    ],
+    "kind": "現在完成式：發展至今的結果",
+    "knowledge": [
+      [
+        "作答所需的語法與文本證據",
+        "Today 描述現在的情況，賞鯨經過發展如今已成為熱門活動，has become 表達過去變化延續到現在的結果。主詞 whale watching 視為單數。"
+      ]
+    ],
+    "steps": [
+      "先定位題幹的問法與原文證據。Today 描述現在的情況，賞鯨經過發展如今已成為熱門活動，has become 表達過去變化延續到現在的結果。主詞 whale watching 視為單數。",
+      "檢查 A 與 B 的詞義、角色及限制：became 是單純過去，不如完成式切合如今已形成的結果。 become 不能直接作此單數主詞的一般現在式，須 becomes。",
+      "再核對 C 與 D：has become 同時符合單數與過去發展至今的語意。 will become 指未來，與 Today 描述目前狀況不符。",
+      "綜合條件選 C。has become 同時符合單數與過去發展至今的語意。"
+    ],
+    "reasons": [
+      "became 是單純過去，不如完成式切合如今已形成的結果。",
+      "become 不能直接作此單數主詞的一般現在式，須 becomes。",
+      "has become 同時符合單數與過去發展至今的語意。",
+      "will become 指未來，與 Today 描述目前狀況不符。"
+    ],
+    "transfer": {
+      "prompt": "原創遷移練習：She has become a teacher. 是說目前已成為老師，還是未來才會？",
+      "answer": "目前已成為；has 加過去分詞表達已發生且與現在相關的結果。",
+      "steps": [
+        "先辨認新題要比較的語意或條件：She has become a teacher. 是說目前已成為老師，還是未來才會？",
+        "套用本題規則並指出證據：目前已成為；has 加過去分詞表達已發生且與現在相關的結果。",
+        "回查回答是否保留人物、時間、數量及因果方向；不把原題的字母答案套到新題。"
+      ]
+    }
+  },
+  {
+    "questionId": "112-english-23",
+    "routes": [
+      "/subjects/english/cloze-passage-structure"
+    ],
+    "kind": "關係副詞 when 修飾時間",
+    "knowledge": [
+      [
+        "作答所需的語法與文本證據",
+        "June to August 是時間先行詞；後面的 the sea is calm 主詞與補語完整，需要 when 表示在那段時間。"
+      ]
+    ],
+    "steps": [
+      "先定位題幹的問法與原文證據。June to August 是時間先行詞；後面的 the sea is calm 主詞與補語完整，需要 when 表示在那段時間。",
+      "檢查 A 與 B 的詞義、角色及限制：why 通常對應原因，不能表達六月至八月的時間。 when 連接時間與完整子句，表示那時海面平靜。",
+      "再核對 C 與 D：how 表方式，不是本句的時間關係。 which 為代名詞，不能單獨充當此處的時間副詞；可改寫 during which。",
+      "綜合條件選 B。when 連接時間與完整子句，表示那時海面平靜。"
+    ],
+    "reasons": [
+      "why 通常對應原因，不能表達六月至八月的時間。",
+      "when 連接時間與完整子句，表示那時海面平靜。",
+      "how 表方式，不是本句的時間關係。",
+      "which 為代名詞，不能單獨充當此處的時間副詞；可改寫 during which。"
+    ],
+    "transfer": {
+      "prompt": "原創遷移練習：July is a month ___ many people travel. 填 when 或 who？",
+      "answer": "when，month 是時間，後方子句 many people travel 已完整。",
+      "steps": [
+        "先辨認新題要比較的語意或條件：July is a month ___ many people travel. 填 when 或 who？",
+        "套用本題規則並指出證據：when，month 是時間，後方子句 many people travel 已完整。",
+        "回查回答是否保留人物、時間、數量及因果方向；不把原題的字母答案套到新題。"
+      ]
+    }
+  },
+  {
+    "questionId": "112-english-24",
+    "routes": [
+      "/subjects/english/cloze-passage-structure"
+    ],
+    "kind": "片語 be around：存在",
+    "knowledge": [
+      [
+        "作答所需的語法與文本證據",
+        "have been around since 1997 表示從 1997 年起就已存在。around 此處不表示繞圈；since 與現在完成式共同標示起點。"
+      ]
+    ],
+    "steps": [
+      "先定位題幹的問法與原文證據。have been around since 1997 表示從 1997 年起就已存在。around 此處不表示繞圈；since 與現在完成式共同標示起點。",
+      "檢查 A 與 B 的詞義、角色及限制：be around 可表存在已久，與自 1997 年起吻合。 be against 表反對，未說明反對對象，也不合旅行活動已存在的意思。",
+      "再核對 C 與 D：be off 表取消、離開等，與行程持續增加不符。 be over 表結束，與船班持續增加不符。",
+      "綜合條件選 A。be around 可表存在已久，與自 1997 年起吻合。"
+    ],
+    "reasons": [
+      "be around 可表存在已久，與自 1997 年起吻合。",
+      "be against 表反對，未說明反對對象，也不合旅行活動已存在的意思。",
+      "be off 表取消、離開等，與行程持續增加不符。",
+      "be over 表結束，與船班持續增加不符。"
+    ],
+    "transfer": {
+      "prompt": "原創遷移練習：This shop has been around for fifty years. around 是說店繞圈走嗎？",
+      "answer": "不是，指這家店已經存在五十年。",
+      "steps": [
+        "先辨認新題要比較的語意或條件：This shop has been around for fifty years. around 是說店繞圈走嗎？",
+        "套用本題規則並指出證據：不是，指這家店已經存在五十年。",
+        "回查回答是否保留人物、時間、數量及因果方向；不把原題的字母答案套到新題。"
+      ]
+    }
+  },
+  {
+    "questionId": "112-english-25",
+    "routes": [
+      "/subjects/english/cloze-passage-structure"
+    ],
+    "kind": "動詞辨義：接近動物",
+    "knowledge": [
+      [
+        "作答所需的語法與文本證據",
+        "to get a closer look、from behind 都指船隻從後方接近鯨魚；approach 是接近的及物動詞。這是在解讀當年題文敘述。"
+      ]
+    ],
+    "steps": [
+      "先定位題幹的問法與原文證據。to get a closer look、from behind 都指船隻從後方接近鯨魚；approach 是接近的及物動詞。這是在解讀當年題文敘述。",
+      "檢查 A 與 B 的詞義、角色及限制：accept 是接受，不表示船向鯨魚靠近。 admit 是承認或准入，不符合船隻移動。",
+      "再核對 C 與 D：affect 是影響，並不直接表示從後方接近。 approach 是接近，符合 closer 與 from behind 的空間線索。",
+      "綜合條件選 D。approach 是接近，符合 closer 與 from behind 的空間線索。"
+    ],
+    "reasons": [
+      "accept 是接受，不表示船向鯨魚靠近。",
+      "admit 是承認或准入，不符合船隻移動。",
+      "affect 是影響，並不直接表示從後方接近。",
+      "approach 是接近，符合 closer 與 from behind 的空間線索。"
+    ],
+    "transfer": {
+      "prompt": "原創遷移練習：The boat approached the island. 是否需要在 approached 後加 to？",
+      "answer": "不需要，approach 作及物動詞，直接接受詞 the island。",
+      "steps": [
+        "先辨認新題要比較的語意或條件：The boat approached the island. 是否需要在 approached 後加 to？",
+        "套用本題規則並指出證據：不需要，approach 作及物動詞，直接接受詞 the island。",
+        "回查回答是否保留人物、時間、數量及因果方向；不把原題的字母答案套到新題。"
+      ]
+    }
+  },
+  {
+    "questionId": "112-english-26",
+    "routes": [
+      "/subjects/english/cloze-passage-structure"
+    ],
+    "kind": "過去分詞後置修飾",
+    "knowledge": [
+      [
+        "作答所需的語法與文本證據",
+        "two theories 與 call 是被動關係：兩種理論被稱為後面的名稱。called 可還原為 which are called，修飾 theories，不另立主要子句。"
+      ]
+    ],
+    "steps": [
+      "先定位題幹的問法與原文證據。two theories 與 call 是被動關係：兩種理論被稱為後面的名稱。called 可還原為 which are called，修飾 theories，不另立主要子句。",
+      "檢查 A 與 B 的詞義、角色及限制：called 表被稱為，可作過去分詞修飾 theories。 calling 表主動呼叫，理論不會主動命名後面的兩個名詞。",
+      "再核對 C 與 D：and called 會與前面的 there are 結構不平行，缺少相應主詞與助動詞。 while calling 表同時主動呼叫，非命名關係。",
+      "綜合條件選 A。called 表被稱為，可作過去分詞修飾 theories。"
+    ],
+    "reasons": [
+      "called 表被稱為，可作過去分詞修飾 theories。",
+      "calling 表主動呼叫，理論不會主動命名後面的兩個名詞。",
+      "and called 會與前面的 there are 結構不平行，缺少相應主詞與助動詞。",
+      "while calling 表同時主動呼叫，非命名關係。"
+    ],
+    "transfer": {
+      "prompt": "原創遷移練習：a tool called a compass 中 called 可還原為什麼？",
+      "answer": "which is called，表示這工具被稱為 compass。",
+      "steps": [
+        "先辨認新題要比較的語意或條件：a tool called a compass 中 called 可還原為什麼？",
+        "套用本題規則並指出證據：which is called，表示這工具被稱為 compass。",
+        "回查回答是否保留人物、時間、數量及因果方向；不把原題的字母答案套到新題。"
+      ]
+    }
+  },
+  {
+    "questionId": "112-english-27",
+    "routes": [
+      "/subjects/english/cloze-passage-structure"
+    ],
+    "kind": "動詞片語 step in：介入幫忙",
+    "knowledge": [
+      [
+        "作答所需的語法與文本證據",
+        "bystander 只站著看，doesn't step in to help 表示沒有介入協助；後句 Good Samaritan jumps in 形成反義對照。"
+      ]
+    ],
+    "steps": [
+      "先定位題幹的問法與原文證據。bystander 只站著看，doesn't step in to help 表示沒有介入協助；後句 Good Samaritan jumps in 形成反義對照。",
+      "檢查 A 與 B 的詞義、角色及限制：cross out 是劃掉文字，非介入事件。 hand in 是繳交物品或作業，非幫忙介入。",
+      "再核對 C 與 D：step in 是介入，否定後符合旁觀者只看的行為。 throw out 是丟棄或趕走，非本句的協助行為。",
+      "綜合條件選 C。step in 是介入，否定後符合旁觀者只看的行為。"
+    ],
+    "reasons": [
+      "cross out 是劃掉文字，非介入事件。",
+      "hand in 是繳交物品或作業，非幫忙介入。",
+      "step in 是介入，否定後符合旁觀者只看的行為。",
+      "throw out 是丟棄或趕走，非本句的協助行為。"
+    ],
+    "transfer": {
+      "prompt": "原創遷移練習：The teacher stepped in to stop the argument. stepped in 意思是什麼？",
+      "answer": "介入處理；老師採取行動停止爭執。",
+      "steps": [
+        "先辨認新題要比較的語意或條件：The teacher stepped in to stop the argument. stepped in 意思是什麼？",
+        "套用本題規則並指出證據：介入處理；老師採取行動停止爭執。",
+        "回查回答是否保留人物、時間、數量及因果方向；不把原題的字母答案套到新題。"
+      ]
+    }
+  },
+  {
+    "questionId": "112-english-28",
+    "routes": [
+      "/subjects/english/cloze-passage-structure"
+    ],
+    "kind": "篇章對照：On the other hand",
+    "knowledge": [
+      [
+        "作答所需的語法與文本證據",
+        "前句解釋旁觀者不幫忙的動機，後句改說助人者幫忙的動機；兩種人採取相對行動，需用對照轉折。"
+      ]
+    ],
+    "steps": [
+      "先定位題幹的問法與原文證據。前句解釋旁觀者不幫忙的動機，後句改說助人者幫忙的動機；兩種人採取相對行動，需用對照轉折。",
+      "檢查 A 與 B 的詞義、角色及限制：As a result 表結果，但助人者的行動不是旁觀者不幫忙造成的結果。 To sum up 表總結，後句正新增另一種人的動機。",
+      "再核對 C 與 D：In the first place 表首先，無法表達此處兩方對比。 On the other hand 表另一方面，銜接對照的行為。",
+      "綜合條件選 D。On the other hand 表另一方面，銜接對照的行為。"
+    ],
+    "reasons": [
+      "As a result 表結果，但助人者的行動不是旁觀者不幫忙造成的結果。",
+      "To sum up 表總結，後句正新增另一種人的動機。",
+      "In the first place 表首先，無法表達此處兩方對比。",
+      "On the other hand 表另一方面，銜接對照的行為。"
+    ],
+    "transfer": {
+      "prompt": "原創遷移練習：Some prefer studying alone. ___, others prefer groups. 用 On the other hand 或 As a result？",
+      "answer": "On the other hand，後句呈現另一群人的不同偏好。",
+      "steps": [
+        "先辨認新題要比較的語意或條件：Some prefer studying alone. ___, others prefer groups. 用 On the other hand 或 As a result？",
+        "套用本題規則並指出證據：On the other hand，後句呈現另一群人的不同偏好。",
+        "回查回答是否保留人物、時間、數量及因果方向；不把原題的字母答案套到新題。"
+      ]
+    }
+  },
+  {
+    "questionId": "112-english-29",
+    "routes": [
+      "/subjects/english/reading-comprehension"
+    ],
+    "kind": "固定搭配 pay attention to",
+    "knowledge": [
+      [
+        "作答所需的語法與文本證據",
+        "pay close attention to 加人或事物，表示密切注意。close 在此為形容詞，不能把介系詞換成其他常見搭配。"
+      ]
+    ],
+    "steps": [
+      "先定位題幹的問法與原文證據。pay close attention to 加人或事物，表示密切注意。close 在此為形容詞，不能把介系詞換成其他常見搭配。",
+      "檢查 A 與 B 的詞義、角色及限制：at 可接 look at，但不符合 pay attention to。 in 可表示在內，非 attention 的本句固定搭配。",
+      "再核對 C 與 D：of 可見於其他名詞結構，但不符合 pay attention。 to 接注意的對象 other Good Samaritans。",
+      "綜合條件選 D。to 接注意的對象 other Good Samaritans。"
+    ],
+    "reasons": [
+      "at 可接 look at，但不符合 pay attention to。",
+      "in 可表示在內，非 attention 的本句固定搭配。",
+      "of 可見於其他名詞結構，但不符合 pay attention。",
+      "to 接注意的對象 other Good Samaritans。"
+    ],
+    "transfer": {
+      "prompt": "原創遷移練習：Please pay attention ___ the instructions. 填什麼？",
+      "answer": "to；完整搭配為 pay attention to the instructions。",
+      "steps": [
+        "先辨認新題要比較的語意或條件：Please pay attention ___ the instructions. 填什麼？",
+        "套用本題規則並指出證據：to；完整搭配為 pay attention to the instructions。",
+        "回查回答是否保留人物、時間、數量及因果方向；不把原題的字母答案套到新題。"
+      ]
+    }
+  },
+  {
+    "questionId": "112-english-30",
+    "routes": [
+      "/subjects/english/reading-comprehension"
+    ],
+    "kind": "副詞片語 as well：也",
+    "knowledge": [
+      [
+        "作答所需的語法與文本證據",
+        "看到他人幫忙，自己更可能也幫忙，肯定句句尾 as well 相當於 too。neither 用於否定呼應，otherwise 表否則，so far 表至今。"
+      ]
+    ],
+    "steps": [
+      "先定位題幹的問法與原文證據。看到他人幫忙，自己更可能也幫忙，肯定句句尾 as well 相當於 too。neither 用於否定呼應，otherwise 表否則，so far 表至今。",
+      "檢查 A 與 B 的詞義、角色及限制：neither 用於也不，與正面助人行為不合。 otherwise 表否則，需要條件相反的後果，非同樣助人。",
+      "再核對 C 與 D：as well 表也，呼應前句 others helping。 so far 表到目前為止，不表自己與他人採取相同行為。",
+      "綜合條件選 C。as well 表也，呼應前句 others helping。"
+    ],
+    "reasons": [
+      "neither 用於也不，與正面助人行為不合。",
+      "otherwise 表否則，需要條件相反的後果，非同樣助人。",
+      "as well 表也，呼應前句 others helping。",
+      "so far 表到目前為止，不表自己與他人採取相同行為。"
+    ],
+    "transfer": {
+      "prompt": "原創遷移練習：She volunteers, and I volunteer as well. as well 可換成 too 嗎？",
+      "answer": "可以，兩者都表示我也做相同的志工服務。",
+      "steps": [
+        "先辨認新題要比較的語意或條件：She volunteers, and I volunteer as well. as well 可換成 too 嗎？",
+        "套用本題規則並指出證據：可以，兩者都表示我也做相同的志工服務。",
+        "回查回答是否保留人物、時間、數量及因果方向；不把原題的字母答案套到新題。"
+      ]
+    }
+  },
+  {
+    "questionId": "112-english-32",
+    "routes": [
+      "/subjects/english/reading-comprehension"
+    ],
+    "kind": "群組長條圖：同類別內比較",
+    "knowledge": [
+      [
+        "作答所需的語法與文本證據",
+        "先依圖例辨認四人，再在同一消費類別比柱高。點心 Sam 約 1000、Linda 約 500；交通 David 約 250 高於 Mary 約 200；飲料 Linda 約 300 高於 Mary 約 250；娛樂 David 約 300 高於 Sam 約 150。"
+      ]
+    ],
+    "steps": [
+      "先定位題幹的問法與原文證據。先依圖例辨認四人，再在同一消費類別比柱高。點心 Sam 約 1000、Linda 約 500；交通 David 約 250 高於 Mary 約 200；飲料 Linda 約 300 高於 Mary 約 250；娛樂 David 約 300 高於 Sam 約 150。",
+      "檢查 A 與 B 的詞義、角色及限制：交通最高是 David，不是 Mary；不可把其他類別高柱移到交通。 Sam 的點心支出高於 Linda，與柱高一致。",
+      "再核對 C 與 D：Linda 飲料支出高於 Mary，不能讀成相同。 David 娛樂支出高於 Sam，less 把方向顛倒。",
+      "綜合條件選 B。Sam 的點心支出高於 Linda，與柱高一致。"
+    ],
+    "reasons": [
+      "交通最高是 David，不是 Mary；不可把其他類別高柱移到交通。",
+      "Sam 的點心支出高於 Linda，與柱高一致。",
+      "Linda 飲料支出高於 Mary，不能讀成相同。",
+      "David 娛樂支出高於 Sam，less 把方向顛倒。"
+    ],
+    "transfer": {
+      "prompt": "原創遷移練習：甲乙的交通支出各 200、250 元，能說甲 spends more than 乙嗎？",
+      "answer": "不能，200 小於 250，應說甲 spends less than 乙。",
+      "steps": [
+        "先辨認新題要比較的語意或條件：甲乙的交通支出各 200、250 元，能說甲 spends more than 乙嗎？",
+        "套用本題規則並指出證據：不能，200 小於 250，應說甲 spends less than 乙。",
+        "回查回答是否保留人物、時間、數量及因果方向；不把原題的字母答案套到新題。"
+      ]
+    }
+  },
+  {
+    "questionId": "112-english-34",
+    "routes": [
+      "/subjects/english/reading-comprehension"
+    ],
+    "kind": "標籤閱讀：症狀與副作用分欄",
+    "knowledge": [
+      [
+        "作答所需的語法與文本證據",
+        "Warnings 寫 may get drowsy；drowsy 是昏昏欲睡。Uses 的流鼻水、眼癢是緩解對象，Other information 的 cool, dry 是儲存環境，不是服用效果。"
+      ]
+    ],
+    "steps": [
+      "先定位題幹的問法與原文證據。Warnings 寫 may get drowsy；drowsy 是昏昏欲睡。Uses 的流鼻水、眼癢是緩解對象，Other information 的 cool, dry 是儲存環境，不是服用效果。",
+      "檢查 A 與 B 的詞義、角色及限制：cool, dry 修飾儲存環境，非皮膚變化。 sleepy 對應 drowsy，是需留意的反應。",
+      "再核對 C 與 D：流鼻水與流眼淚是用途欄要緩解的症狀。 眼癢是症狀，呼吸問題在警告中是事先詢問醫師的條件，不能混成副作用。",
+      "綜合條件選 B。sleepy 對應 drowsy，是需留意的反應。"
+    ],
+    "reasons": [
+      "cool, dry 修飾儲存環境，非皮膚變化。",
+      "sleepy 對應 drowsy，是需留意的反應。",
+      "流鼻水與流眼淚是用途欄要緩解的症狀。",
+      "眼癢是症狀，呼吸問題在警告中是事先詢問醫師的條件，不能混成副作用。"
+    ],
+    "transfer": {
+      "prompt": "原創遷移練習：標籤分成 Uses 與 Warnings，題目問可能嗜睡應查哪欄？",
+      "answer": "Warnings，因為嗜睡是使用時要留意的反應，而非治療用途。",
+      "steps": [
+        "先辨認新題要比較的語意或條件：標籤分成 Uses 與 Warnings，題目問可能嗜睡應查哪欄？",
+        "套用本題規則並指出證據：Warnings，因為嗜睡是使用時要留意的反應，而非治療用途。",
+        "回查回答是否保留人物、時間、數量及因果方向；不把原題的字母答案套到新題。"
+      ]
+    }
+  },
+  {
+    "questionId": "112-english-35",
+    "routes": [
+      "/subjects/english/reading-comprehension"
+    ],
+    "kind": "標籤閱讀：同時核對年齡、間隔、上限",
+    "knowledge": [
+      [
+        "作答所需的語法與文本證據",
+        "按此題標籤，12 歲以上每次 2 錠、每 4 至 6 小時且 24 小時不超過 12 錠；13 歲一天 10 錠可在遵守間隔時符合。青光眼、懷孕等警告需另核對。本解析只解讀題本標籤。"
+      ]
+    ],
+    "steps": [
+      "先定位題幹的問法與原文證據。按此題標籤，12 歲以上每次 2 錠、每 4 至 6 小時且 24 小時不超過 12 錠；13 歲一天 10 錠可在遵守間隔時符合。青光眼、懷孕等警告需另核對。本解析只解讀題本標籤。",
+      "檢查 A 與 B 的詞義、角色及限制：13 歲屬 12 歲以上，10 錠低於每日 12 錠；仍須遵守每次與間隔限制。 標籤明寫 avoid alcoholic drinks，與搭配酒精相反。",
+      "再核對 C 與 D：glaucoma 列為事先問醫師的狀況，沒有列為本藥治療用途。 孕婦應先詢問醫師，without asking 與警告相反。",
+      "綜合條件選 A。13 歲屬 12 歲以上，10 錠低於每日 12 錠；仍須遵守每次與間隔限制。"
+    ],
+    "reasons": [
+      "13 歲屬 12 歲以上，10 錠低於每日 12 錠；仍須遵守每次與間隔限制。",
+      "標籤明寫 avoid alcoholic drinks，與搭配酒精相反。",
+      "glaucoma 列為事先問醫師的狀況，沒有列為本藥治療用途。",
+      "孕婦應先詢問醫師，without asking 與警告相反。"
+    ],
+    "transfer": {
+      "prompt": "原創遷移練習：虛構標籤寫每次 1 顆、每日最多 3 顆。一次吃 3 顆是否因未超每日上限就符合？",
+      "answer": "不符合；每次上限與每日上限要同時滿足，不能只查總量。",
+      "steps": [
+        "先辨認新題要比較的語意或條件：虛構標籤寫每次 1 顆、每日最多 3 顆。一次吃 3 顆是否因未超每日上限就符合？",
+        "套用本題規則並指出證據：不符合；每次上限與每日上限要同時滿足，不能只查總量。",
+        "回查回答是否保留人物、時間、數量及因果方向；不把原題的字母答案套到新題。"
+      ]
+    }
+  },
+  {
+    "questionId": "112-english-37",
+    "routes": [
+      "/subjects/english/reading-comprehension"
+    ],
+    "kind": "公告閱讀：防詐建議與人物角色",
+    "knowledge": [
+      [
+        "作答所需的語法與文本證據",
+        "保護措施明寫對公司及招募者做 background check，因此求職者應了解雇主背景。scammer 是詐騙者，學校人員是求助對象。"
+      ]
+    ],
+    "steps": [
+      "先定位題幹的問法與原文證據。保護措施明寫對公司及招募者做 background check，因此求職者應了解雇主背景。scammer 是詐騙者，學校人員是求助對象。",
+      "檢查 A 與 B 的詞義、角色及限制：scammers 是施騙者，不是協助尋找罪犯的人。 文中列常見手法與徵兆，沒有列詐騙網站清單。",
+      "再核對 C 與 D：find out more about employers 對應背景查核建議。 學校人員協助學生處理疑慮，不是讓雇主對廣告感覺良好。",
+      "綜合條件選 C。find out more about employers 對應背景查核建議。"
+    ],
+    "reasons": [
+      "scammers 是施騙者，不是協助尋找罪犯的人。",
+      "文中列常見手法與徵兆，沒有列詐騙網站清單。",
+      "find out more about employers 對應背景查核建議。",
+      "學校人員協助學生處理疑慮，不是讓雇主對廣告感覺良好。"
+    ],
+    "transfer": {
+      "prompt": "原創遷移練習：公告建議 check the company background，是先查公司資料還是先交銀行密碼？",
+      "answer": "先查公司資料；background check 是驗證對方身分與資訊。",
+      "steps": [
+        "先辨認新題要比較的語意或條件：公告建議 check the company background，是先查公司資料還是先交銀行密碼？",
+        "套用本題規則並指出證據：先查公司資料；background check 是驗證對方身分與資訊。",
+        "回查回答是否保留人物、時間、數量及因果方向；不把原題的字母答案套到新題。"
+      ]
+    }
+  },
+  {
+    "questionId": "112-english-38",
+    "routes": [
+      "/subjects/english/reading-comprehension"
+    ],
+    "kind": "主旨：找各段共同範圍",
+    "knowledge": [
+      [
+        "作答所需的語法與文本證據",
+        "開頭說科技改變運動產業，後三段依序說即時追蹤、修正動作與減少受傷；共同主題是科技工具如何幫助運動員訓練。"
+      ]
+    ],
+    "steps": [
+      "先定位題幹的問法與原文證據。開頭說科技改變運動產業，後三段依序說即時追蹤、修正動作與減少受傷；共同主題是科技工具如何幫助運動員訓練。",
+      "檢查 A 與 B 的詞義、角色及限制：追蹤的主要對象是運動員表現，不是教練表現。 科技工具訓練運動員涵蓋各段共同主題。",
+      "再核對 C 與 D：改善的是運動員動作，不是教練身體動作。 文中防止的是運動傷害，不是科技工具受損。",
+      "綜合條件選 B。科技工具訓練運動員涵蓋各段共同主題。"
+    ],
+    "reasons": [
+      "追蹤的主要對象是運動員表現，不是教練表現。",
+      "科技工具訓練運動員涵蓋各段共同主題。",
+      "改善的是運動員動作，不是教練身體動作。",
+      "文中防止的是運動傷害，不是科技工具受損。"
+    ],
+    "transfer": {
+      "prompt": "原創遷移練習：文章三段介紹感測器追蹤、調整姿勢與預防受傷，標題應概括單一姿勢還是科技訓練？",
+      "answer": "科技訓練，因為主旨必須涵蓋三段而非只取一個例子。",
+      "steps": [
+        "先辨認新題要比較的語意或條件：文章三段介紹感測器追蹤、調整姿勢與預防受傷，標題應概括單一姿勢還是科技訓練？",
+        "套用本題規則並指出證據：科技訓練，因為主旨必須涵蓋三段而非只取一個例子。",
+        "回查回答是否保留人物、時間、數量及因果方向；不把原題的字母答案套到新題。"
+      ]
+    }
+  },
+  {
+    "questionId": "112-english-39",
+    "routes": [
+      "/subjects/english/reading-comprehension"
+    ],
+    "kind": "上下文釋義：live 與 real time",
+    "knowledge": [
+      [
+        "作答所需的語法與文本證據",
+        "後文把現在的 real time 與過去錄影後才評估對比；live tracking 是活動進行當下追蹤，不是事前或事後查看。"
+      ]
+    ],
+    "steps": [
+      "先定位題幹的問法與原文證據。後文把現在的 real time 與過去錄影後才評估對比；live tracking 是活動進行當下追蹤，不是事前或事後查看。",
+      "檢查 A 與 B 的詞義、角色及限制：after it is over 是事後，與 live 相反。 may happen 是可能發生的未來，不是即時觀察。",
+      "再核對 C 與 D：before it happens 是事前，尚無正在發生的表現可追蹤。 when it is taking place 表活動進行中，對應 real time。",
+      "綜合條件選 D。when it is taking place 表活動進行中，對應 real time。"
+    ],
+    "reasons": [
+      "after it is over 是事後，與 live 相反。",
+      "may happen 是可能發生的未來，不是即時觀察。",
+      "before it happens 是事前，尚無正在發生的表現可追蹤。",
+      "when it is taking place 表活動進行中，對應 real time。"
+    ],
+    "transfer": {
+      "prompt": "原創遷移練習：live results 是比賽進行時更新，還是隔天才公告？",
+      "answer": "比賽進行時更新，live 在此指即時。",
+      "steps": [
+        "先辨認新題要比較的語意或條件：live results 是比賽進行時更新，還是隔天才公告？",
+        "套用本題規則並指出證據：比賽進行時更新，live 在此指即時。",
+        "回查回答是否保留人物、時間、數量及因果方向；不把原題的字母答案套到新題。"
+      ]
+    }
+  },
+  {
+    "questionId": "112-english-40",
+    "routes": [
+      "/subjects/english/reading-comprehension"
+    ],
+    "kind": "資訊對比：現在即時與過去事後",
+    "knowledge": [
+      [
+        "作答所需的語法與文本證據",
+        "第二段說教練可在練習時讀數據並決定休息或加強；過去則錄下後才評估。at once 對應 real time，是技術造成的時間差。"
+      ]
+    ],
+    "steps": [
+      "先定位題幹的問法與原文證據。第二段說教練可在練習時讀數據並決定休息或加強；過去則錄下後才評估。at once 對應 real time，是技術造成的時間差。",
+      "檢查 A 與 B 的詞義、角色及限制：飲食是後段監控項目，但本項把教練也當成接受訓練者，未有根據。 停下練習本身不構成文中科技帶來的即時評估差異。",
+      "再核對 C 與 D：only after practice 是過去方法，不能當成科技改變後的效果。 at once during practice 正確改述即時掌握運動員表現。",
+      "綜合條件選 D。at once during practice 正確改述即時掌握運動員表現。"
+    ],
+    "reasons": [
+      "飲食是後段監控項目，但本項把教練也當成接受訓練者，未有根據。",
+      "停下練習本身不構成文中科技帶來的即時評估差異。",
+      "only after practice 是過去方法，不能當成科技改變後的效果。",
+      "at once during practice 正確改述即時掌握運動員表現。"
+    ],
+    "transfer": {
+      "prompt": "原創遷移練習：以前課後才看錄影，如今課中可看數據。改善重點是反應更即時還是只能事後知道？",
+      "answer": "更即時；資訊取得時間從事後移到活動進行當下。",
+      "steps": [
+        "先辨認新題要比較的語意或條件：以前課後才看錄影，如今課中可看數據。改善重點是反應更即時還是只能事後知道？",
+        "套用本題規則並指出證據：更即時；資訊取得時間從事後移到活動進行當下。",
+        "回查回答是否保留人物、時間、數量及因果方向；不把原題的字母答案套到新題。"
+      ]
+    }
+  },
+  {
+    "questionId": "112-english-41",
+    "routes": [
+      "/subjects/english/reading-comprehension"
+    ],
+    "kind": "評價定位：最高級標記",
+    "knowledge": [
+      [
+        "作答所需的語法與文本證據",
+        "最後一段直接寫 The most important effect 是 injuries have been sharply reduced；問作者認為最好效益，須找這種明確評價詞。"
+      ]
+    ],
+    "steps": [
+      "先定位題幹的問法與原文證據。最後一段直接寫 The most important effect 是 injuries have been sharply reduced；問作者認為最好效益，須找這種明確評價詞。",
+      "檢查 A 與 B 的詞義、角色及限制：避免運動傷害對應作者的 most important effect。 觀看表現是功能之一，但沒有被指定為最重要。",
+      "再核對 C 與 D：記錄練習是過去就有的方法，不是作者最高評價的效益。 改善動作有被提到，但作者把減少傷害排為最重要。",
+      "綜合條件選 A。避免運動傷害對應作者的 most important effect。"
+    ],
+    "reasons": [
+      "避免運動傷害對應作者的 most important effect。",
+      "觀看表現是功能之一，但沒有被指定為最重要。",
+      "記錄練習是過去就有的方法，不是作者最高評價的效益。",
+      "改善動作有被提到，但作者把減少傷害排為最重要。"
+    ],
+    "transfer": {
+      "prompt": "原創遷移練習：文中說 The greatest benefit is saving time，問主要優點時應選哪一項？",
+      "answer": "節省時間；greatest 是作者明確標示的最高評價。",
+      "steps": [
+        "先辨認新題要比較的語意或條件：文中說 The greatest benefit is saving time，問主要優點時應選哪一項？",
+        "套用本題規則並指出證據：節省時間；greatest 是作者明確標示的最高評價。",
+        "回查回答是否保留人物、時間、數量及因果方向；不把原題的字母答案套到新題。"
+      ]
+    }
+  },
+  {
+    "questionId": "112-english-42",
+    "routes": [
+      "/subjects/english/reading-comprehension"
+    ],
+    "kind": "細節核對：主詞、範圍與因果",
+    "knowledge": [
+      [
+        "作答所需的語法與文本證據",
+        "第三段說工具可測位置、距離、速度，感測器示範潛水角度與腿部動作；可得知運動員動作的詳細資訊。"
+      ]
+    ],
+    "steps": [
+      "先定位題幹的問法與原文證據。第三段說工具可測位置、距離、速度，感測器示範潛水角度與腿部動作；可得知運動員動作的詳細資訊。",
+      "檢查 A 與 B 的詞義、角色及限制：是感測器偵測運動員，選項顛倒主詞與受詞。 文中列呼吸、汗水、溫度等多項，only heart rate 過度限縮。",
+      "再核對 C 與 D：泳者戴感測器不代表教練自己跳水，人物角色錯置。 工具提供動作細節，與位置、距離、角度等例子一致。",
+      "綜合條件選 D。工具提供動作細節，與位置、距離、角度等例子一致。"
+    ],
+    "reasons": [
+      "是感測器偵測運動員，選項顛倒主詞與受詞。",
+      "文中列呼吸、汗水、溫度等多項，only heart rate 過度限縮。",
+      "泳者戴感測器不代表教練自己跳水，人物角色錯置。",
+      "工具提供動作細節，與位置、距離、角度等例子一致。"
+    ],
+    "transfer": {
+      "prompt": "原創遷移練習：文章寫裝置測心率和溫度，能改寫成 it measures only heart rate 嗎？",
+      "answer": "不能，only 排除了溫度，縮小原文範圍。",
+      "steps": [
+        "先辨認新題要比較的語意或條件：文章寫裝置測心率和溫度，能改寫成 it measures only heart rate 嗎？",
+        "套用本題規則並指出證據：不能，only 排除了溫度，縮小原文範圍。",
+        "回查回答是否保留人物、時間、數量及因果方向；不把原題的字母答案套到新題。"
+      ]
+    }
+  }
+]

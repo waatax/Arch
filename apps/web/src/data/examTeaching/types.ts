@@ -8,6 +8,8 @@ export interface ExamTeachingCase {
   transfer: { prompt: string; answer: string; steps: string[] };
   numericChecks?: [string, number][];
   display?: { excerpt?: string; options?: Record<string, string> };
+  reviewNote?: string;
+  references?: { title: string; url: string }[];
 }
 /** Authored teaching content. Official answer keys are loaded separately. */
 export const lessonCase = (

@@ -1,6 +1,7 @@
 'use client';
 import ExamConceptTable from './ExamConceptTable';
 
+import { getHandoutLinks } from '@/lib/pedagogy/handoutLinks';
 import { useState } from 'react';
 import Link from 'next/link';
 import MathText from '@/components/MathText';
@@ -22,7 +23,10 @@ export default function ExamTeachingWorkshop({ entries }: { entries: TeachingEnt
     <div className="et-type-list" aria-label="本章題型">{entries.map(({ guide }) => <a href={`#bridge-${guide.questionId}`} key={guide.questionId}>{guide.kind}</a>)}</div>
     {entries.map(({guide:g,question:q}) => <article key={g.questionId} id={`bridge-${g.questionId}`} className="et-case">
       <div className="et-meta"><span>{q.year} 年 · {q.id.includes('english') ? '英文' : q.id.includes('chinese') ? '國文' : q.id.includes('math') ? '數學 C' : q.id.split('-')[1] === '1' ? '專一' : '專二'}第 {q.questionNo} 題</span><span>本站逐題教學解析</span></div>
-      <h3>{g.kind}</h3><div className="et-knowledge" aria-label="解題所需知識">{g.knowledge.map(([title,body]) => <section key={title}><h4>{title}</h4><p>{body}</p></section>)}</div>
+      <h3>{g.kind}</h3>
+      {g.reviewNote && <aside className="my-4 rounded-xl border border-amber-500/50 bg-amber-500/10 p-4 text-sm leading-7"><strong>原題與計分說明</strong><p>{g.reviewNote}</p></aside>}
+      <div className="et-knowledge" aria-label="解題所需知識">{g.knowledge.map(([title,body]) => <section key={title}><h4>{title}</h4><p>{body}</p></section>)}</div>
+      {g.references?.length ? <nav aria-label="延伸原理查核來源" className="my-3 flex flex-wrap gap-3 text-sm">{g.references.map(ref => <a key={ref.url} href={ref.url} target="_blank" rel="noreferrer">{ref.title} ↗</a>)}</nav> : null}
       <ExamKnowledgeDiagram id={g.questionId} /><ExamConceptTable id={g.questionId} />
       <div className="et-source-question">
         <strong>用這道實題確認</strong>
@@ -33,10 +37,10 @@ export default function ExamTeachingWorkshop({ entries }: { entries: TeachingEnt
         <ul className="et-source-options">{(['A','B','C','D'] as const).map(l=><li key={l}><strong>{l}.</strong> <MathText content={q.options[l] || '請核對官方題本選項'} /></li>)}</ul>
         <a href={q.sourceUrl} target="_blank" rel="noreferrer">核對當年度官方題本 ↗</a>
       </div>
-      <details className="et-worked"><summary>展開逐步示範：從已知條件到答案</summary><ol>{g.steps.map((step,i) => <li key={step}><span>{i+1}</span><p>{step}</p></li>)}</ol><p className="et-answer">官方答案：{q.answer}。以下推導與選項說明由本站編寫。</p><div className="et-options-why">{(['A','B','C','D'] as const).map((letter,i) => <p key={letter}><strong>{letter} · {q.answer.includes(letter) ? '符合題意' : '排除理由'}</strong>{g.reasons[i]}</p>)}</div></details>
+      <details className="et-worked"><summary>展開逐步示範：從已知條件到答案</summary><ol>{g.steps.map((step,i) => <li key={step}><span>{i+1}</span><p>{step}</p></li>)}</ol><p className="et-answer">官方答案：{q.answer === 'CD' ? 'C 或 D 皆可（維持單選）' : q.answer}。以下推導與選項說明由本站編寫。</p><div className="et-options-why">{(['A','B','C','D'] as const).map((letter,i) => <p key={letter}><strong>{letter} · {q.answer === '送分' ? '原選項說明' : q.answer.includes(letter) ? '符合題意' : '排除理由'}</strong>{g.reasons[i]}</p>)}</div></details>
       <section className="et-transfer" aria-labelledby={`transfer-${g.questionId}`}><span className="et-eyebrow">換條件，檢查自己會不會</span><h4 id={`transfer-${g.questionId}`}>原創遷移練習</h4><p>{g.transfer.prompt}</p><label htmlFor={`response-${g.questionId}`}>先寫答案與至少一個理由</label><textarea id={`response-${g.questionId}`} maxLength={1200} value={responses[g.questionId]??''} placeholder="例如：先列出關係式，再代入數字；或指出原文證據。" onChange={(e)=>setResponses(s=>({...s,[g.questionId]:e.target.value}))}/><button type="button" disabled={!responses[g.questionId]?.trim()} onClick={()=>setShown(s=>({...s,[g.questionId]:!s[g.questionId]}))}>{shown[g.questionId]?'遮住解析，再做一次':'比對答案與解題步驟'}</button>
       {shown[g.questionId] && <div className="et-transfer-feedback" role="status"><strong>參考答案：{g.transfer.answer}</strong><ol>{g.transfer.steps.map(step=><li key={step}>{step}</li>)}</ol><p>請比對自己的理由。開放式回答由你自評，系統不以文字相同與否判分。</p><div className="et-reflection" aria-label="本題自我檢核">{['能獨立說明','仍需看步驟','先補知識點'].map(item=><button type="button" key={item} aria-pressed={reflection[g.questionId]===item} onClick={()=>setReflection(s=>({...s,[g.questionId]:item}))}>{item}</button>)}</div>{reflection[g.questionId] && <p>已記下本次自評：{reflection[g.questionId]}。離開頁面前，請將仍卡住的原因寫進筆記。</p>}</div>}
-      </section><a className="et-practice-link" href="#exam-questions-section">回到章末真題作答與逐題回饋 ↓</a>
+      </section><nav aria-label="本題學期複習講義" className="my-4 flex flex-wrap gap-3">{getHandoutLinks(g.routes).map(link => <Link key={link.href} href={link.href}>{link.title}複習講義 ↗</Link>)}</nav><a className="et-practice-link" href="#exam-questions-section">回到章末真題作答與逐題回饋 ↓</a>
     </article>)}
   </section>;
 }

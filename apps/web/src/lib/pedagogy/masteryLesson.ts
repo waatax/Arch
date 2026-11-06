@@ -86,12 +86,12 @@ export function buildExamWalkthrough(
     const letters = ['A','B','C','D'] as const;
     return {
       reviewed: true,
-      solutionSteps: g.steps,
+      solutionSteps: g.reviewNote ? [`原題與計分說明：${g.reviewNote}`, ...g.steps] : g.steps,
       restate: g.steps[0],
       clues: `本題型：${g.kind}。先回到本章「歷屆題接回知識」的必要知識段落。`,
       rule: g.knowledge.map(([title,body]) => `${title}：${body}`).join('\n'),
-      correct: `${g.steps.join('\n')}\n官方答案 ${question.answer}；本站依題示條件編寫推導。`,
-      distractors: letters.filter(l=>!question.answer.includes(l)).map(l=>`${l}「${question.options?.[l]??''}」：${g.reasons[letters.indexOf(l)]}`),
+      correct: `${g.reviewNote ? g.reviewNote+'\n' : ''}${g.steps.join('\n')}\n官方答案 ${question.answer}；本站依題示條件編寫推導。`,
+      distractors: question.answer === '送分' ? [] : letters.filter(l=>!question.answer.includes(l)).map(l=>`${l}「${question.options?.[l]??''}」：${g.reasons[letters.indexOf(l)]}`),
       transfer: g.transfer.prompt,
     };
   }

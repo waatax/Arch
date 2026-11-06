@@ -1,0 +1,14 @@
+{
+  "source": "115-2-39 official professional-II page 11; rows run from back to front",
+  "footprint": [[1,1,1],[1,1,0],[1,1,1]],
+  "frontMaximum": [2,2,3],
+  "rowMaximumBackToFront": [3,1,2],
+  "attainableMinimum": [[2,1,3],[1,1,0],[1,2,1]],
+  "minimumCubes": 12,
+  "initialCubes": 27,
+  "droppedCubes": 15,
+  "layerModels": [
+    {"id":"113-2-34-D","heights":[[3,0,2],[2,1,1],[1,0,2]],"layers":[7,4,1],"volume":12},
+    {"id":"114-2-29-D","heights":[[1,0,2],[3,3,3],[2,0,1]],"layers":[7,5,3],"volume":15}
+  ]
+}

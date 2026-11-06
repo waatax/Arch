@@ -1,0 +1,876 @@
+[
+  {
+    "questionId": "111-english-16",
+    "routes": [
+      "/subjects/english/conversation-daily-use"
+    ],
+    "kind": "對話的否定回應與年齡限制",
+    "knowledge": [
+      [
+        "作答所需的語法與文本證據",
+        "Ann 用 Not at all 否定前句，並說許多成人也喜歡動畫，故前句須質疑動畫是否只給小孩看。成人也喜歡正好推翻「只有小孩」的限制。"
+      ]
+    ],
+    "steps": [
+      "先定位題幹所問對象，再讀空格前後或原文對應段落。Ann 用 Not at all 否定前句，並說許多成人也喜歡動畫，故前句須質疑動畫是否只給小孩看。成人也喜歡正好推翻「只有小孩」的限制。",
+      "依此比對 A、B：問是否只給小孩，後句以成人也喜歡來否定，前後一致。 問是否值得再看，後句提成人與小孩不能直接回答重看價值。",
+      "再比對 C、D：問孩子是否同行，應回答參加者，而非成人也喜歡動畫。 問是否現在買票，與成人觀眾的回答無關。",
+      "符合本題語意及條件的是 A。問是否只給小孩，後句以成人也喜歡來否定，前後一致。 回原文核對，確認沒有改換人物、數字單位或因果方向。"
+    ],
+    "reasons": [
+      "問是否只給小孩，後句以成人也喜歡來否定，前後一致。",
+      "問是否值得再看，後句提成人與小孩不能直接回答重看價值。",
+      "問孩子是否同行，應回答參加者，而非成人也喜歡動畫。",
+      "問是否現在買票，與成人觀眾的回答無關。"
+    ],
+    "transfer": {
+      "prompt": "原創遷移練習：A says “Many adults enjoy this game, too.” Which claim is being challenged: “Only children enjoy it” or “It is expensive”?",
+      "answer": "挑戰只有小孩喜歡的說法，adults 與 too 直接擴充觀眾範圍。",
+      "steps": [
+        "先讀新條件並圈出關鍵資訊：A says “Many adults enjoy this game, too.” Which claim is being challenged: “Only children enjoy it” or “It is expensive”?",
+        "依語法或上下文證據判斷：挑戰只有小孩喜歡的說法，adults 與 too 直接擴充觀眾範圍。",
+        "回查問題要求的對象、時間、因果或指涉，確認回答保留同一語意關係。"
+      ]
+    }
+  },
+  {
+    "questionId": "111-english-17",
+    "routes": [
+      "/subjects/english/conversation-daily-use"
+    ],
+    "kind": "代名詞 he 的先行詞",
+    "knowledge": [
+      [
+        "作答所需的語法與文本證據",
+        "銀行員接著說 He’s on the second floor，因此空格應先介紹一位男性人員。loan department 的經理能協助貸款，與 Simon 詢問去哪裡申請貸款一致。"
+      ]
+    ],
+    "steps": [
+      "先定位題幹所問對象，再讀空格前後或原文對應段落。銀行員接著說 He’s on the second floor，因此空格應先介紹一位男性人員。loan department 的經理能協助貸款，與 Simon 詢問去哪裡申請貸款一致。",
+      "依此比對 A、B：問貸款金額，沒有提供後句 he 可指涉的人。 問明年利率，既沒有回答去哪裡，也沒有介紹男性人員。",
+      "再比對 C、D：說今年不提供貸款，卻又說他在二樓，語意與指涉都不連貫。 先介紹貸款部經理，再用 he 指同一人，並告知位置。",
+      "符合本題語意及條件的是 D。先介紹貸款部經理，再用 he 指同一人，並告知位置。 回原文核對，確認沒有改換人物、數字單位或因果方向。"
+    ],
+    "reasons": [
+      "問貸款金額，沒有提供後句 he 可指涉的人。",
+      "問明年利率，既沒有回答去哪裡，也沒有介紹男性人員。",
+      "說今年不提供貸款，卻又說他在二樓，語意與指涉都不連貫。",
+      "先介紹貸款部經理，再用 he 指同一人，並告知位置。"
+    ],
+    "transfer": {
+      "prompt": "原創遷移練習：A says “Mr. Lee can help. He is upstairs.” Who does he refer to?",
+      "answer": "Mr. Lee，前句剛介紹且與後句位置資訊連接的人。",
+      "steps": [
+        "先讀新條件並圈出關鍵資訊：A says “Mr. Lee can help. He is upstairs.” Who does he refer to?",
+        "依語法或上下文證據判斷：Mr. Lee，前句剛介紹且與後句位置資訊連接的人。",
+        "回查問題要求的對象、時間、因果或指涉，確認回答保留同一語意關係。"
+      ]
+    },
+    "display": {
+      "options": {
+        "A": "How much do you plan to ask for?",
+        "B": "What is the interest rate next year?",
+        "C": "I’m afraid that we don’t offer any loans this year.",
+        "D": "The manager in the loan department can help you."
+      }
+    }
+  },
+  {
+    "questionId": "111-english-18",
+    "routes": [
+      "/subjects/english/conversation-daily-use"
+    ],
+    "kind": "轉折反駁與情境適用性",
+    "knowledge": [
+      [
+        "作答所需的語法與文本證據",
+        "丈夫認為免費停車位最好，妻子改推近車站且租金便宜的公寓。指出兩人沒有車，可以合理削弱停車位優點，再轉向搭火車的實際需求。"
+      ]
+    ],
+    "steps": [
+      "先定位題幹所問對象，再讀空格前後或原文對應段落。丈夫認為免費停車位最好，妻子改推近車站且租金便宜的公寓。指出兩人沒有車，可以合理削弱停車位優點，再轉向搭火車的實際需求。",
+      "依此比對 A、B：park 在此只是字形與 parking 相關，並未反駁免費停車優點。 沒有車使免費車位的效益較小，接著推薦火車站附近很合理。",
+      "再比對 C、D：稱它是最佳選擇，卻接著改推另一間，轉折缺少依據。 說停車不便宜，與前句已明說 free parking space 矛盾。",
+      "符合本題語意及條件的是 B。沒有車使免費車位的效益較小，接著推薦火車站附近很合理。 回原文核對，確認沒有改換人物、數字單位或因果方向。"
+    ],
+    "reasons": [
+      "park 在此只是字形與 parking 相關，並未反駁免費停車優點。",
+      "沒有車使免費車位的效益較小，接著推薦火車站附近很合理。",
+      "稱它是最佳選擇，卻接著改推另一間，轉折缺少依據。",
+      "說停車不便宜，與前句已明說 free parking space 矛盾。"
+    ],
+    "transfer": {
+      "prompt": "原創遷移練習：A praises a house for its large garage. B says “But we do not own a car.” What point is B making?",
+      "answer": "車庫對他們的實際用途有限，因此這項優點不足以決定選屋。",
+      "steps": [
+        "先讀新條件並圈出關鍵資訊：A praises a house for its large garage. B says “But we do not own a car.” What point is B making?",
+        "依語法或上下文證據判斷：車庫對他們的實際用途有限，因此這項優點不足以決定選屋。",
+        "回查問題要求的對象、時間、因果或指涉，確認回答保留同一語意關係。"
+      ]
+    }
+  },
+  {
+    "questionId": "111-english-19",
+    "routes": [
+      "/subjects/english/conversation-daily-use"
+    ],
+    "kind": "從補充句確定休假偏好",
+    "knowledge": [
+      [
+        "作答所需的語法與文本證據",
+        "dog-tired 表示非常累，need a break、do absolutely nothing 都指向放鬆而少活動的假期。問最喜歡哪種假期，應選能概括後文需求的 lazy vacation。"
+      ]
+    ],
+    "steps": [
+      "先定位題幹所問對象，再讀空格前後或原文對應段落。dog-tired 表示非常累，need a break、do absolutely nothing 都指向放鬆而少活動的假期。問最喜歡哪種假期，應選能概括後文需求的 lazy vacation。",
+      "依此比對 A、B：慵懶放鬆的假期與去海灘什麼都不做完全一致。 購物仍是活動行程，與強調什麼都不做不相符。",
+      "再比對 C、D：出差是工作目的，不能呼應需要休息的假期。 繼續工作存錢與 need a break 的意思相反。",
+      "符合本題語意及條件的是 A。慵懶放鬆的假期與去海灘什麼都不做完全一致。 回原文核對，確認沒有改換人物、數字單位或因果方向。"
+    ],
+    "reasons": [
+      "慵懶放鬆的假期與去海灘什麼都不做完全一致。",
+      "購物仍是活動行程，與強調什麼都不做不相符。",
+      "出差是工作目的，不能呼應需要休息的假期。",
+      "繼續工作存錢與 need a break 的意思相反。"
+    ],
+    "transfer": {
+      "prompt": "原創遷移練習：B says “I want to rest and do nothing.” Does B prefer an active schedule or a relaxing holiday?",
+      "answer": "放鬆的假期；rest 與 do nothing 都表示希望減少活動。",
+      "steps": [
+        "先讀新條件並圈出關鍵資訊：B says “I want to rest and do nothing.” Does B prefer an active schedule or a relaxing holiday?",
+        "依語法或上下文證據判斷：放鬆的假期；rest 與 do nothing 都表示希望減少活動。",
+        "回查問題要求的對象、時間、因果或指涉，確認回答保留同一語意關係。"
+      ]
+    }
+  },
+  {
+    "questionId": "111-english-20",
+    "routes": [
+      "/subjects/english/conversation-daily-use"
+    ],
+    "kind": "已存在的訂位與更改需求",
+    "knowledge": [
+      [
+        "作答所需的語法與文本證據",
+        "經理回覆 I have your booking here，表示已查到訂位。後續要改日期，所以空格應先提供已訂位的姓名與原日期，方便經理查詢。"
+      ]
+    ],
+    "steps": [
+      "先定位題幹所問對象，再讀空格前後或原文對應段落。經理回覆 I have your booking here，表示已查到訂位。後續要改日期，所以空格應先提供已訂位的姓名與原日期，方便經理查詢。",
+      "依此比對 A、B：更新菜單與查既有訂位無關，無法引出姓名查詢。 問週五有無營業，沒有交代經理查到的原訂位。",
+      "再比對 C、D：表示想新訂位，與經理已找到既有訂位及後面更改日期不相符。 提供今晚以 James White 名義訂位的資料，接著查詢及改期都合理。",
+      "符合本題語意及條件的是 D。提供今晚以 James White 名義訂位的資料，接著查詢及改期都合理。 回原文核對，確認沒有改換人物、數字單位或因果方向。"
+    ],
+    "reasons": [
+      "更新菜單與查既有訂位無關，無法引出姓名查詢。",
+      "問週五有無營業，沒有交代經理查到的原訂位。",
+      "表示想新訂位，與經理已找到既有訂位及後面更改日期不相符。",
+      "提供今晚以 James White 名義訂位的資料，接著查詢及改期都合理。"
+    ],
+    "transfer": {
+      "prompt": "原創遷移練習：A says “I already booked a room. Can I change the date?” Is A making a first booking or modifying an existing booking?",
+      "answer": "修改既有訂位；already booked 表示訂位早已成立。",
+      "steps": [
+        "先讀新條件並圈出關鍵資訊：A says “I already booked a room. Can I change the date?” Is A making a first booking or modifying an existing booking?",
+        "依語法或上下文證據判斷：修改既有訂位；already booked 表示訂位早已成立。",
+        "回查問題要求的對象、時間、因果或指涉，確認回答保留同一語意關係。"
+      ]
+    }
+  },
+  {
+    "questionId": "111-english-21",
+    "routes": [
+      "/subjects/english/cloze-passage-structure"
+    ],
+    "kind": "名詞子句中的受詞 whom",
+    "knowledge": [
+      [
+        "作答所需的語法與文本證據",
+        "depends on 後面接整個名詞子句，而子句中的 you ask 缺的是「詢問誰」的受詞。whom 指人且作 ask 的受詞，不能用所有格或方式副詞替代。"
+      ]
+    ],
+    "steps": [
+      "先定位題幹所問對象，再讀空格前後或原文對應段落。depends on 後面接整個名詞子句，而子句中的 you ask 缺的是「詢問誰」的受詞。whom 指人且作 ask 的受詞，不能用所有格或方式副詞替代。",
+      "依此比對 A、B：which 通常問哪一個物件或限定選項，原文需表示被詢問的人。 whom you ask 表詢問誰，whom 作 ask 的受詞，符合語意及句法。",
+      "再比對 C、D：whose 是所有格，需連接被擁有的名詞，這裡沒有該結構。 how 表示如何，沒有補上 ask 所需的被詢問者。",
+      "符合本題語意及條件的是 B。whom you ask 表詢問誰，whom 作 ask 的受詞，符合語意及句法。 回原文核對，確認沒有改換人物、數字單位或因果方向。"
+    ],
+    "reasons": [
+      "which 通常問哪一個物件或限定選項，原文需表示被詢問的人。",
+      "whom you ask 表詢問誰，whom 作 ask 的受詞，符合語意及句法。",
+      "whose 是所有格，需連接被擁有的名詞，這裡沒有該結構。",
+      "how 表示如何，沒有補上 ask 所需的被詢問者。"
+    ],
+    "transfer": {
+      "prompt": "原創遷移練習：The decision depends on ______ you invite. 填 whom 或 whose？",
+      "answer": "whom，表示你邀請誰，作 invite 的受詞。",
+      "steps": [
+        "先讀新條件並圈出關鍵資訊：The decision depends on ______ you invite. 填 whom 或 whose？",
+        "依語法或上下文證據判斷：whom，表示你邀請誰，作 invite 的受詞。",
+        "回查問題要求的對象、時間、因果或指涉，確認回答保留同一語意關係。"
+      ]
+    }
+  },
+  {
+    "questionId": "111-english-22",
+    "routes": [
+      "/subjects/english/cloze-passage-structure"
+    ],
+    "kind": "連接副詞的因果關係",
+    "knowledge": [
+      [
+        "作答所需的語法與文本證據",
+        "前文認為電腦技能和閱讀計數一樣重要，後文據此主張入小學前就開始。後句是由前句推出的結論，因此要用 Therefore。"
+      ]
+    ],
+    "steps": [
+      "先定位題幹所問對象，再讀空格前後或原文對應段落。前文認為電腦技能和閱讀計數一樣重要，後文據此主張入小學前就開始。後句是由前句推出的結論，因此要用 Therefore。",
+      "依此比對 A、B：Instead 表替代，前後並沒有撤回技能重要的說法。 Nonetheless 表儘管如此的轉折，但後句順著前面的支持理由。",
+      "再比對 C、D：Otherwise 表否則，前文沒有對應的條件或警告。 Therefore 引出前述理由所支持的結論，因果一致。",
+      "符合本題語意及條件的是 D。Therefore 引出前述理由所支持的結論，因果一致。 回原文核對，確認沒有改換人物、數字單位或因果方向。"
+    ],
+    "reasons": [
+      "Instead 表替代，前後並沒有撤回技能重要的說法。",
+      "Nonetheless 表儘管如此的轉折，但後句順著前面的支持理由。",
+      "Otherwise 表否則，前文沒有對應的條件或警告。",
+      "Therefore 引出前述理由所支持的結論，因果一致。"
+    ],
+    "transfer": {
+      "prompt": "原創遷移練習：The road is flooded. ______, the bus cannot pass. 用 Therefore 或 Instead？",
+      "answer": "Therefore，淹水是無法通行的原因。",
+      "steps": [
+        "先讀新條件並圈出關鍵資訊：The road is flooded. ______, the bus cannot pass. 用 Therefore 或 Instead？",
+        "依語法或上下文證據判斷：Therefore，淹水是無法通行的原因。",
+        "回查問題要求的對象、時間、因果或指涉，確認回答保留同一語意關係。"
+      ]
+    }
+  },
+  {
+    "questionId": "111-english-23",
+    "routes": [
+      "/subjects/english/cloze-passage-structure"
+    ],
+    "kind": "effect on 的介系詞搭配",
+    "knowledge": [
+      [
+        "作答所需的語法與文本證據",
+        "have an effect on something 表對某事造成影響，negative 只改變影響的性質，不改變 effect 與 on 的搭配。mental development 是影響的對象。"
+      ]
+    ],
+    "steps": [
+      "先定位題幹所問對象，再讀空格前後或原文對應段落。have an effect on something 表對某事造成影響，negative 只改變影響的性質，不改變 effect 與 on 的搭配。mental development 是影響的對象。",
+      "依此比對 A、B：near 表附近，不能構成對某事有影響的固定搭配。 from 偏向來源，這裡需要引出受影響的對象。",
+      "再比對 C、D：effect on 表對……的影響，符合搭配。 at 不能替代本句 effect on 引出影響對象的功能。",
+      "符合本題語意及條件的是 C。effect on 表對……的影響，符合搭配。 回原文核對，確認沒有改換人物、數字單位或因果方向。"
+    ],
+    "reasons": [
+      "near 表附近，不能構成對某事有影響的固定搭配。",
+      "from 偏向來源，這裡需要引出受影響的對象。",
+      "effect on 表對……的影響，符合搭配。",
+      "at 不能替代本句 effect on 引出影響對象的功能。"
+    ],
+    "transfer": {
+      "prompt": "原創遷移練習：Noise can have an effect ______ sleep. 填介系詞。",
+      "answer": "on，sleep 是受影響的對象。",
+      "steps": [
+        "先讀新條件並圈出關鍵資訊：Noise can have an effect ______ sleep. 填介系詞。",
+        "依語法或上下文證據判斷：on，sleep 是受影響的對象。",
+        "回查問題要求的對象、時間、因果或指涉，確認回答保留同一語意關係。"
+      ]
+    }
+  },
+  {
+    "questionId": "111-english-24",
+    "routes": [
+      "/subjects/english/cloze-passage-structure"
+    ],
+    "kind": "原因子句與資訊方向",
+    "knowledge": [
+      [
+        "作答所需的語法與文本證據",
+        "children do not use their imagination enough 是結果，computer screen shows everything 是造成想像力使用不足的原因。because 連接後方原因，不能誤讀為目的。"
+      ]
+    ],
+    "steps": [
+      "先定位題幹所問對象，再讀空格前後或原文對應段落。children do not use their imagination enough 是結果，computer screen shows everything 是造成想像力使用不足的原因。because 連接後方原因，不能誤讀為目的。",
+      "依此比對 A、B：because 引出螢幕已呈現一切這個原因，解釋想像力不足。 or 連接選擇或替代，不能表達前後的因果。",
+      "再比對 C、D：so that 多表目的或結果，這裡螢幕呈現一切是原因而非兒童的目的。 rather than 表比較或取代，兩個完整子句並非取代關係。",
+      "符合本題語意及條件的是 A。because 引出螢幕已呈現一切這個原因，解釋想像力不足。 回原文核對，確認沒有改換人物、數字單位或因果方向。"
+    ],
+    "reasons": [
+      "because 引出螢幕已呈現一切這個原因，解釋想像力不足。",
+      "or 連接選擇或替代，不能表達前後的因果。",
+      "so that 多表目的或結果，這裡螢幕呈現一切是原因而非兒童的目的。",
+      "rather than 表比較或取代，兩個完整子句並非取代關係。"
+    ],
+    "transfer": {
+      "prompt": "原創遷移練習：The floor is wet ______ it rained. 填 because 或 rather than？",
+      "answer": "because，降雨是地板濕的原因。",
+      "steps": [
+        "先讀新條件並圈出關鍵資訊：The floor is wet ______ it rained. 填 because 或 rather than？",
+        "依語法或上下文證據判斷：because，降雨是地板濕的原因。",
+        "回查問題要求的對象、時間、因果或指涉，確認回答保留同一語意關係。"
+      ]
+    }
+  },
+  {
+    "questionId": "111-english-25",
+    "routes": [
+      "/subjects/english/cloze-passage-structure"
+    ],
+    "kind": "長主詞中的主詞動詞一致",
+    "knowledge": [
+      [
+        "作答所需的語法與文本證據",
+        "主詞核心是 the best way，單數；for children to use computers 是修飾語。後方 to use them 是補語，句子仍需單數連綴動詞 is 連接主詞與補語。"
+      ]
+    ],
+    "steps": [
+      "先定位題幹所問對象，再讀空格前後或原文對應段落。主詞核心是 the best way，單數；for children to use computers 是修飾語。後方 to use them 是補語，句子仍需單數連綴動詞 is 連接主詞與補語。",
+      "依此比對 A、B：are 為複數，容易誤跟鄰近的 computers 或 children 一致，卻未配合 way。 is 配合單數核心 way，形成 The best way is to use…。",
+      "再比對 C、D：have 既未配合單數主詞，也不能直接連接這個不定詞補語。 has 雖為單數，卻不構成 way has to use 的原意，缺少表示就是的方法關係。",
+      "符合本題語意及條件的是 B。is 配合單數核心 way，形成 The best way is to use…。 回原文核對，確認沒有改換人物、數字單位或因果方向。"
+    ],
+    "reasons": [
+      "are 為複數，容易誤跟鄰近的 computers 或 children 一致，卻未配合 way。",
+      "is 配合單數核心 way，形成 The best way is to use…。",
+      "have 既未配合單數主詞，也不能直接連接這個不定詞補語。",
+      "has 雖為單數，卻不構成 way has to use 的原意，缺少表示就是的方法關係。"
+    ],
+    "transfer": {
+      "prompt": "原創遷移練習：The best way to solve these problems ______ to check the units. 填 is 或 are？",
+      "answer": "is，主詞核心是單數 way，不是複數 problems。",
+      "steps": [
+        "先讀新條件並圈出關鍵資訊：The best way to solve these problems ______ to check the units. 填 is 或 are？",
+        "依語法或上下文證據判斷：is，主詞核心是單數 way，不是複數 problems。",
+        "回查問題要求的對象、時間、因果或指涉，確認回答保留同一語意關係。"
+      ]
+    }
+  },
+  {
+    "questionId": "111-english-26",
+    "routes": [
+      "/subjects/english/cloze-passage-structure"
+    ],
+    "kind": "connect with 的對象關係",
+    "knowledge": [
+      [
+        "作答所需的語法與文本證據",
+        "計畫希望年輕人與父母的原生國家建立連結。connect with 引出連結對象，沒有轉化成某物、移到某表面或來自某處的意思。"
+      ]
+    ],
+    "steps": [
+      "先定位題幹所問對象，再讀空格前後或原文對應段落。計畫希望年輕人與父母的原生國家建立連結。connect with 引出連結對象，沒有轉化成某物、移到某表面或來自某處的意思。",
+      "依此比對 A、B：into 多用於轉化或進入，這裡不是把年輕人轉變成國家。 onto 表移動到表面，不符合文化及身分連結。",
+      "再比對 C、D：from 引出來源方向，不能表達主動與原生國建立連結。 connect with 為與……聯繫或連結，符合計畫目的。",
+      "符合本題語意及條件的是 D。connect with 為與……聯繫或連結，符合計畫目的。 回原文核對，確認沒有改換人物、數字單位或因果方向。"
+    ],
+    "reasons": [
+      "into 多用於轉化或進入，這裡不是把年輕人轉變成國家。",
+      "onto 表移動到表面，不符合文化及身分連結。",
+      "from 引出來源方向，不能表達主動與原生國建立連結。",
+      "connect with 為與……聯繫或連結，符合計畫目的。"
+    ],
+    "transfer": {
+      "prompt": "原創遷移練習：This project helps children connect ______ their heritage. 填介系詞。",
+      "answer": "with，表示與自身文化傳承建立連結。",
+      "steps": [
+        "先讀新條件並圈出關鍵資訊：This project helps children connect ______ their heritage. 填介系詞。",
+        "依語法或上下文證據判斷：with，表示與自身文化傳承建立連結。",
+        "回查問題要求的對象、時間、因果或指涉，確認回答保留同一語意關係。"
+      ]
+    }
+  },
+  {
+    "questionId": "111-english-27",
+    "routes": [
+      "/subjects/english/cloze-passage-structure"
+    ],
+    "kind": "過去分詞片語修飾 persons",
+    "knowledge": [
+      [
+        "作答所需的語法與文本證據",
+        "句子主幹是 foreign persons come from，persons 後的空格應修飾這些人。married to Taiwanese citizens 相當於 who are married to… 的縮略修飾語，不可再塞入第二個未連接的限定動詞。"
+      ]
+    ],
+    "steps": [
+      "先定位題幹所問對象，再讀空格前後或原文對應段落。句子主幹是 foreign persons come from，persons 後的空格應修飾這些人。married to Taiwanese citizens 相當於 who are married to… 的縮略修飾語，不可再塞入第二個未連接的限定動詞。",
+      "依此比對 A、B：marry 是原形動詞，不能在 persons 後直接作所需的被動修飾。 married to… 作過去分詞片語，修飾已與臺灣公民結婚的人。",
+      "再比對 C、D：will marry 形成未連接的另一個限定動詞，且把時間改為未來。 are married 加上後方 come from 會讓同一子句出現兩個未連接的限定動詞。",
+      "符合本題語意及條件的是 B。married to… 作過去分詞片語，修飾已與臺灣公民結婚的人。 回原文核對，確認沒有改換人物、數字單位或因果方向。"
+    ],
+    "reasons": [
+      "marry 是原形動詞，不能在 persons 後直接作所需的被動修飾。",
+      "married to… 作過去分詞片語，修飾已與臺灣公民結婚的人。",
+      "will marry 形成未連接的另一個限定動詞，且把時間改為未來。",
+      "are married 加上後方 come from 會讓同一子句出現兩個未連接的限定動詞。"
+    ],
+    "transfer": {
+      "prompt": "原創遷移練習：The students invited to the meeting arrived early. invited to the meeting 修飾誰？",
+      "answer": "students，這是相當於 who were invited 的過去分詞修飾語。",
+      "steps": [
+        "先讀新條件並圈出關鍵資訊：The students invited to the meeting arrived early. invited to the meeting 修飾誰？",
+        "依語法或上下文證據判斷：students，這是相當於 who were invited 的過去分詞修飾語。",
+        "回查問題要求的對象、時間、因果或指涉，確認回答保留同一語意關係。"
+      ]
+    }
+  },
+  {
+    "questionId": "111-english-28",
+    "routes": [
+      "/subjects/english/cloze-passage-structure"
+    ],
+    "kind": "兩個項目的 one 與 the other",
+    "knowledge": [
+      [
+        "作答所需的語法與文本證據",
+        "開頭明說 Two government projects，先用 One of the projects 介紹一個，接著應用 The other project 指明兩個中的另一個，而非任意或唯一項目。"
+      ]
+    ],
+    "steps": [
+      "先定位題幹所問對象，再讀空格前後或原文對應段落。開頭明說 Two government projects，先用 One of the projects 介紹一個，接著應用 The other project 指明兩個中的另一個，而非任意或唯一項目。",
+      "依此比對 A、B：Any 表任一，沒有承接已限定的兩個計畫。 Other 直接接單數可數名詞時通常還需限定詞，且未明示兩者中的另一個。",
+      "再比對 C、D：The other 精確指兩個中剩下的一個，承接 One。 The only 說成唯一，與前文明說有兩個計畫矛盾。",
+      "符合本題語意及條件的是 C。The other 精確指兩個中剩下的一個，承接 One。 回原文核對，確認沒有改換人物、數字單位或因果方向。"
+    ],
+    "reasons": [
+      "Any 表任一，沒有承接已限定的兩個計畫。",
+      "Other 直接接單數可數名詞時通常還需限定詞，且未明示兩者中的另一個。",
+      "The other 精確指兩個中剩下的一個，承接 One。",
+      "The only 說成唯一，與前文明說有兩個計畫矛盾。"
+    ],
+    "transfer": {
+      "prompt": "原創遷移練習：There are two doors. One is open; ______ is locked. 填 the other 或 any。",
+      "answer": "the other，表示兩扇門中剩下的另一扇。",
+      "steps": [
+        "先讀新條件並圈出關鍵資訊：There are two doors. One is open; ______ is locked. 填 the other 或 any。",
+        "依語法或上下文證據判斷：the other，表示兩扇門中剩下的另一扇。",
+        "回查問題要求的對象、時間、因果或指涉，確認回答保留同一語意關係。"
+      ]
+    }
+  },
+  {
+    "questionId": "111-english-29",
+    "routes": [
+      "/subjects/english/reading-comprehension"
+    ],
+    "kind": "舉例訊號與主張的關係",
+    "knowledge": [
+      [
+        "作答所需的語法與文本證據",
+        "前文談東南亞的臺資企業，接著以 Vietnam 的投資情形作為具體例子。for example 可插入句中，用逗號隔開，表示以越南示例。"
+      ]
+    ],
+    "steps": [
+      "先定位題幹所問對象，再讀空格前後或原文對應段落。前文談東南亞的臺資企業，接著以 Vietnam 的投資情形作為具體例子。for example 可插入句中，用逗號隔開，表示以越南示例。",
+      "依此比對 A、B：however 引出轉折，越南投資並未反駁前述東南亞企業。 similarly 需要與另一個相似個案比較，這裡是由概括到個案。",
+      "再比對 C、D：for example 明確標記越南是前述東南亞投資的例子。 in addition 表另加一點，未精確表達越南是前句所涉國家的示例。",
+      "符合本題語意及條件的是 C。for example 明確標記越南是前述東南亞投資的例子。 回原文核對，確認沒有改換人物、數字單位或因果方向。"
+    ],
+    "reasons": [
+      "however 引出轉折，越南投資並未反駁前述東南亞企業。",
+      "similarly 需要與另一個相似個案比較，這裡是由概括到個案。",
+      "for example 明確標記越南是前述東南亞投資的例子。",
+      "in addition 表另加一點，未精確表達越南是前句所涉國家的示例。"
+    ],
+    "transfer": {
+      "prompt": "原創遷移練習：Some materials resist heat. Steel, for example, is used in this design. for example 的功能？",
+      "answer": "引入具體例子，steel 是前面材料範圍中的一個個案。",
+      "steps": [
+        "先讀新條件並圈出關鍵資訊：Some materials resist heat. Steel, for example, is used in this design. for example 的功能？",
+        "依語法或上下文證據判斷：引入具體例子，steel 是前面材料範圍中的一個個案。",
+        "回查問題要求的對象、時間、因果或指涉，確認回答保留同一語意關係。"
+      ]
+    }
+  },
+  {
+    "questionId": "111-english-30",
+    "routes": [
+      "/subjects/english/reading-comprehension"
+    ],
+    "kind": "look for 與雇用條件",
+    "knowledge": [
+      [
+        "作答所需的語法與文本證據",
+        "企業聘新員工時重視其適應越南文化的能力，look for 表尋找或期待具備的條件。其他片語分別是下車、克服、照顧，無法表達招募時尋求能力。"
+      ]
+    ],
+    "steps": [
+      "先定位題幹所問對象，再讀空格前後或原文對應段落。企業聘新員工時重視其適應越南文化的能力，look for 表尋找或期待具備的條件。其他片語分別是下車、克服、照顧，無法表達招募時尋求能力。",
+      "依此比對 A、B：get off 表下車或離開，不表示招募者尋求能力。 get over 表克服，能力在此是希望具備的條件，不是要克服的障礙。",
+      "再比對 C、D：look after 表照顧，不能表達挑選員工時尋找能力。 look for 表尋找，符合雇主期望應聘者具備適應能力的情境。",
+      "符合本題語意及條件的是 D。look for 表尋找，符合雇主期望應聘者具備適應能力的情境。 回原文核對，確認沒有改換人物、數字單位或因果方向。"
+    ],
+    "reasons": [
+      "get off 表下車或離開，不表示招募者尋求能力。",
+      "get over 表克服，能力在此是希望具備的條件，不是要克服的障礙。",
+      "look after 表照顧，不能表達挑選員工時尋找能力。",
+      "look for 表尋找，符合雇主期望應聘者具備適應能力的情境。"
+    ],
+    "transfer": {
+      "prompt": "原創遷移練習：Employers look for communication skills. 他們是在照顧能力還是尋求能力？",
+      "answer": "尋求具備溝通能力的員工；look for 的受詞為期望的條件。",
+      "steps": [
+        "先讀新條件並圈出關鍵資訊：Employers look for communication skills. 他們是在照顧能力還是尋求能力？",
+        "依語法或上下文證據判斷：尋求具備溝通能力的員工；look for 的受詞為期望的條件。",
+        "回查問題要求的對象、時間、因果或指涉，確認回答保留同一語意關係。"
+      ]
+    },
+    "display": {
+      "options": {
+        "A": "get off",
+        "B": "get over",
+        "C": "look after",
+        "D": "look for"
+      }
+    }
+  },
+  {
+    "questionId": "111-english-32",
+    "routes": [
+      "/subjects/english/reading-comprehension"
+    ],
+    "kind": "折線圖的入住數與空房數",
+    "knowledge": [
+      [
+        "作答所需的語法與文本證據",
+        "原圖的數值是入住間數，總房數為 70。判斷 vacancy 要從總數扣入住數，判斷哪一年較多則需逐月比較並加總，不能只看其中一個高點。"
+      ]
+    ],
+    "steps": [
+      "先定位題幹所問對象，再讀空格前後或原文對應段落。原圖的數值是入住間數，總房數為 70。判斷 vacancy 要從總數扣入住數，判斷哪一年較多則需逐月比較並加總，不能只看其中一個高點。",
+      "依此比對 A、B：2021 年 7 月約入住 46 間，少於總房數 70，並非全滿。 2021 年 6 月入住約 40 間，空房約 70−40＝30 間，不是 40。",
+      "再比對 C、D：逐月加總原圖讀值，2021 全年入住總數低於 2020，不能說比較多。 2020 年 4 月虛線空心點約為 45，高於 40，敘述成立。",
+      "符合本題語意及條件的是 D。2020 年 4 月虛線空心點約為 45，高於 40，敘述成立。 回原文核對，確認沒有改換人物、數字單位或因果方向。"
+    ],
+    "reasons": [
+      "2021 年 7 月約入住 46 間，少於總房數 70，並非全滿。",
+      "2021 年 6 月入住約 40 間，空房約 70−40＝30 間，不是 40。",
+      "逐月加總原圖讀值，2021 全年入住總數低於 2020，不能說比較多。",
+      "2020 年 4 月虛線空心點約為 45，高於 40，敘述成立。"
+    ],
+    "transfer": {
+      "prompt": "原創遷移練習：某旅館共 80 間，某月入住 55 間，空房為何？",
+      "answer": "25 間，空房＝總房數 80−入住數 55。",
+      "steps": [
+        "先讀新條件並圈出關鍵資訊：某旅館共 80 間，某月入住 55 間，空房為何？",
+        "依語法或上下文證據判斷：25 間，空房＝總房數 80−入住數 55。",
+        "回查問題要求的對象、時間、因果或指涉，確認回答保留同一語意關係。"
+      ]
+    },
+    "display": {
+      "options": {
+        "A": "All the rooms in this hotel were occupied in July, 2021.",
+        "B": "About 40 rooms in this hotel were left vacant in June, 2021.",
+        "C": "More people were quarantined in this hotel in 2021 than 2020.",
+        "D": "More than 40 rooms in this hotel were occupied in April, 2020."
+      }
+    }
+  },
+  {
+    "questionId": "111-english-34",
+    "routes": [
+      "/subjects/english/reading-comprehension"
+    ],
+    "kind": "活動規則的資格、評分與日期",
+    "knowledge": [
+      [
+        "作答所需的語法與文本證據",
+        "公告明列在校學生可參加、評分含創意品質及主題、9 月 30 日交件、12 月 1 日公布結果，並要求素材依法獲准使用。逐欄比對，不能把不同欄位日期或對象混用。"
+      ]
+    ],
+    "steps": [
+      "先定位題幹所問對象，再讀空格前後或原文對應段落。公告明列在校學生可參加、評分含創意品質及主題、9 月 30 日交件、12 月 1 日公布結果，並要求素材依法獲准使用。逐欄比對，不能把不同欄位日期或對象混用。",
+      "依此比對 A、B：former students 是畢業校友，原公告限定 now studying 的在校生。 評分還有 how well the theme is presented，並非只有創意及品質。",
+      "再比對 C、D：12 月 1 日是結果公布日，交件截止為 9 月 30 日。 use of material must be permitted by law，與依法使用素材相符。",
+      "符合本題語意及條件的是 D。use of material must be permitted by law，與依法使用素材相符。 回原文核對，確認沒有改換人物、數字單位或因果方向。"
+    ],
+    "reasons": [
+      "former students 是畢業校友，原公告限定 now studying 的在校生。",
+      "評分還有 how well the theme is presented，並非只有創意及品質。",
+      "12 月 1 日是結果公布日，交件截止為 9 月 30 日。",
+      "use of material must be permitted by law，與依法使用素材相符。"
+    ],
+    "transfer": {
+      "prompt": "原創遷移練習：公告寫「10/1交件、11/1公布」，能否在11/1才交件？",
+      "answer": "不能，交件日與公布結果日不同，截止仍是10/1。",
+      "steps": [
+        "先讀新條件並圈出關鍵資訊：公告寫「10/1交件、11/1公布」，能否在11/1才交件？",
+        "依語法或上下文證據判斷：不能，交件日與公布結果日不同，截止仍是10/1。",
+        "回查問題要求的對象、時間、因果或指涉，確認回答保留同一語意關係。"
+      ]
+    }
+  },
+  {
+    "questionId": "111-english-35",
+    "routes": [
+      "/subjects/english/reading-comprehension"
+    ],
+    "kind": "郵件閱讀的單位與活動期間",
+    "knowledge": [
+      [
+        "作答所需的語法與文本證據",
+        "Jim 說城市海拔 3400 m、人口 350000，人員週一到週六進校服務，志工旅程四週，去馬丘比丘搭火車約三小時。每個數字要配對原來的單位與對象。"
+      ]
+    ],
+    "steps": [
+      "先定位題幹所問對象，再讀空格前後或原文對應段落。Jim 說城市海拔 3400 m、人口 350000，人員週一到週六進校服務，志工旅程四週，去馬丘比丘搭火車約三小時。每個數字要配對原來的單位與對象。",
+      "依此比對 A、B：3400 是海拔公尺數，人口是 350000，不能把單位混成居民人數。 Monday to Saturday 為每週六天，並非七天。",
+      "再比對 C、D：原文明說 four-week volunteer trip，支持約四週的停留行程。 三小時是 by train，不是 on foot，移動方式不同。",
+      "符合本題語意及條件的是 C。原文明說 four-week volunteer trip，支持約四週的停留行程。 回原文核對，確認沒有改換人物、數字單位或因果方向。"
+    ],
+    "reasons": [
+      "3400 是海拔公尺數，人口是 350000，不能把單位混成居民人數。",
+      "Monday to Saturday 為每週六天，並非七天。",
+      "原文明說 four-week volunteer trip，支持約四週的停留行程。",
+      "三小時是 by train，不是 on foot，移動方式不同。"
+    ],
+    "transfer": {
+      "prompt": "原創遷移練習：文章寫「population 50000、altitude 2000 m」。哪個數字表示居民人數？",
+      "answer": "50000；population 表人口，altitude 表海拔高度。",
+      "steps": [
+        "先讀新條件並圈出關鍵資訊：文章寫「population 50000、altitude 2000 m」。哪個數字表示居民人數？",
+        "依語法或上下文證據判斷：50000；population 表人口，altitude 表海拔高度。",
+        "回查問題要求的對象、時間、因果或指涉，確認回答保留同一語意關係。"
+      ]
+    }
+  },
+  {
+    "questionId": "111-english-36",
+    "routes": [
+      "/subjects/english/reading-comprehension"
+    ],
+    "kind": "郵件的現在與未來行程",
+    "knowledge": [
+      [
+        "作答所需的語法與文本證據",
+        "Molly 說行程從巴黎羅浮宮開始，We are now here 描述當下所在地；Tomorrow we’ll leave for… 才是明天前往倫敦的行程。題問寫信時，應取現在位置。"
+      ]
+    ],
+    "steps": [
+      "先定位題幹所問對象，再讀空格前後或原文對應段落。Molly 說行程從巴黎羅浮宮開始，We are now here 描述當下所在地；Tomorrow we’ll leave for… 才是明天前往倫敦的行程。題問寫信時，應取現在位置。",
+      "依此比對 A、B：Cuzco 是 Jim 做志工的城市，不是 Molly 的所在地。 倫敦是明天才要前往的目的地，不是寫信時的位置。",
+      "再比對 C、D：now here 指前句巴黎羅浮宮，因此當時在 Paris。 Machu Picchu 是 Jim 之後參觀的地方，Molly 只要求看照片。",
+      "符合本題語意及條件的是 C。now here 指前句巴黎羅浮宮，因此當時在 Paris。 回原文核對，確認沒有改換人物、數字單位或因果方向。"
+    ],
+    "reasons": [
+      "Cuzco 是 Jim 做志工的城市，不是 Molly 的所在地。",
+      "倫敦是明天才要前往的目的地，不是寫信時的位置。",
+      "now here 指前句巴黎羅浮宮，因此當時在 Paris。",
+      "Machu Picchu 是 Jim 之後參觀的地方，Molly 只要求看照片。"
+    ],
+    "transfer": {
+      "prompt": "原創遷移練習：信中寫「I am in Taipei now. Tomorrow I leave for Kaohsiung.」寫信時在哪？",
+      "answer": "臺北，now 描述當下，tomorrow 才是未來高雄行程。",
+      "steps": [
+        "先讀新條件並圈出關鍵資訊：信中寫「I am in Taipei now. Tomorrow I leave for Kaohsiung.」寫信時在哪？",
+        "依語法或上下文證據判斷：臺北，now 描述當下，tomorrow 才是未來高雄行程。",
+        "回查問題要求的對象、時間、因果或指涉，確認回答保留同一語意關係。"
+      ]
+    }
+  },
+  {
+    "questionId": "111-english-37",
+    "routes": [
+      "/subjects/english/reading-comprehension"
+    ],
+    "kind": "受文本支持的推論與人物區分",
+    "knowledge": [
+      [
+        "作答所需的語法與文本證據",
+        "Jim 說和寄宿家庭說西班牙文，也在學校教英文，可推出他能使用兩種語言。其他選項混用 Molly 的藝術興趣、把擔心改成早知喜歡，或加入沒有提供的偏好比較。"
+      ]
+    ],
+    "steps": [
+      "先定位題幹所問對象，再讀空格前後或原文對應段落。Jim 說和寄宿家庭說西班牙文，也在學校教英文，可推出他能使用兩種語言。其他選項混用 Molly 的藝術興趣、把擔心改成早知喜歡，或加入沒有提供的偏好比較。",
+      "依此比對 A、B：speak Spanish 與 teach English 合起來支持會兩種語言。 達文西藝術展是 Molly 的旅程，不能轉移成 Jim 的喜好。",
+      "再比對 C、D：Molly 原先 was worried，不能改寫為她早就知道 Jim 會喜歡。 提到兩間博物館不等於比較喜歡哪一間，文中沒有偏好排序。",
+      "符合本題語意及條件的是 A。speak Spanish 與 teach English 合起來支持會兩種語言。 回原文核對，確認沒有改換人物、數字單位或因果方向。"
+    ],
+    "reasons": [
+      "speak Spanish 與 teach English 合起來支持會兩種語言。",
+      "達文西藝術展是 Molly 的旅程，不能轉移成 Jim 的喜好。",
+      "Molly 原先 was worried，不能改寫為她早就知道 Jim 會喜歡。",
+      "提到兩間博物館不等於比較喜歡哪一間，文中沒有偏好排序。"
+    ],
+    "transfer": {
+      "prompt": "原創遷移練習：甲說自己用日文與房東聊天、在校教英文，能推出會哪兩種語言？",
+      "answer": "日文與英文，兩項都有明確使用情境作證據。",
+      "steps": [
+        "先讀新條件並圈出關鍵資訊：甲說自己用日文與房東聊天、在校教英文，能推出會哪兩種語言？",
+        "依語法或上下文證據判斷：日文與英文，兩項都有明確使用情境作證據。",
+        "回查問題要求的對象、時間、因果或指涉，確認回答保留同一語意關係。"
+      ]
+    }
+  },
+  {
+    "questionId": "111-english-38",
+    "routes": [
+      "/subjects/english/reading-comprehension"
+    ],
+    "kind": "說明文的整體目的",
+    "knowledge": [
+      [
+        "作答所需的語法與文本證據",
+        "文章定義 CCUS、介紹捕捉輸送儲存或利用的流程，再談優點與推動限制。主要目的為提供 CCUS 資訊，不能只擷取最後的新計畫數量當作全文主旨。"
+      ]
+    ],
+    "steps": [
+      "先定位題幹所問對象，再讀空格前後或原文對應段落。文章定義 CCUS、介紹捕捉輸送儲存或利用的流程，再談優點與推動限制。主要目的為提供 CCUS 資訊，不能只擷取最後的新計畫數量當作全文主旨。",
+      "依此比對 A、B：涵蓋定義、過程與現況，最能概括全文的資訊介紹。 文章提優點及推動需要，並非勸阻使用 CCUS。",
+      "再比對 C、D：新計畫只佔後段部分，不能概括前面的定義與流程。 文章介紹這項技術處理排碳的方式，並非著重它對其他技術的影響。",
+      "符合本題語意及條件的是 A。涵蓋定義、過程與現況，最能概括全文的資訊介紹。 回原文核對，確認沒有改換人物、數字單位或因果方向。"
+    ],
+    "reasons": [
+      "涵蓋定義、過程與現況，最能概括全文的資訊介紹。",
+      "文章提優點及推動需要，並非勸阻使用 CCUS。",
+      "新計畫只佔後段部分，不能概括前面的定義與流程。",
+      "文章介紹這項技術處理排碳的方式，並非著重它對其他技術的影響。"
+    ],
+    "transfer": {
+      "prompt": "原創遷移練習：文章依序定義雨水回收、介紹設備與限制，目的較接近介紹知識或宣傳單一產品？",
+      "answer": "介紹知識；內容範圍涵蓋定義、流程及限制，沒有單一產品推銷。",
+      "steps": [
+        "先讀新條件並圈出關鍵資訊：文章依序定義雨水回收、介紹設備與限制，目的較接近介紹知識或宣傳單一產品？",
+        "依語法或上下文證據判斷：介紹知識；內容範圍涵蓋定義、流程及限制，沒有單一產品推銷。",
+        "回查問題要求的對象、時間、因果或指涉，確認回答保留同一語意關係。"
+      ]
+    }
+  },
+  {
+    "questionId": "111-english-39",
+    "routes": [
+      "/subjects/english/reading-comprehension"
+    ],
+    "kind": "流程閱讀：先捕捉後分流",
+    "knowledge": [
+      [
+        "作答所需的語法與文本證據",
+        "第一步 trapping carbon emissions，接著 piped to places where it can be stored or used。儲存或利用是兩種後續分支，並非要求先用完再儲存。"
+      ]
+    ],
+    "steps": [
+      "先定位題幹所問對象，再讀空格前後或原文對應段落。第一步 trapping carbon emissions，接著 piped to places where it can be stored or used。儲存或利用是兩種後續分支，並非要求先用完再儲存。",
+      "依此比對 A、B：先捕捉，再選擇儲存或利用，符合 first、then 與 or。 把先用再存當固定順序，原文是儲存或利用兩個分支。",
+      "再比對 C、D：把輸送與捕捉順序顛倒，還錯稱目的是造成氣候危機。 把氣體送回煙囪，與先從煙囪捕捉再往其他場所輸送相反。",
+      "符合本題語意及條件的是 A。先捕捉，再選擇儲存或利用，符合 first、then 與 or。 回原文核對，確認沒有改換人物、數字單位或因果方向。"
+    ],
+    "reasons": [
+      "先捕捉，再選擇儲存或利用，符合 first、then 與 or。",
+      "把先用再存當固定順序，原文是儲存或利用兩個分支。",
+      "把輸送與捕捉順序顛倒，還錯稱目的是造成氣候危機。",
+      "把氣體送回煙囪，與先從煙囪捕捉再往其他場所輸送相反。"
+    ],
+    "transfer": {
+      "prompt": "原創遷移練習：流程寫「collect water, then store or reuse it」。儲存與再利用是必定依序進行還是兩個分支？",
+      "answer": "兩個分支，or 表示可選擇儲存或再利用。",
+      "steps": [
+        "先讀新條件並圈出關鍵資訊：流程寫「collect water, then store or reuse it」。儲存與再利用是必定依序進行還是兩個分支？",
+        "依語法或上下文證據判斷：兩個分支，or 表示可選擇儲存或再利用。",
+        "回查問題要求的對象、時間、因果或指涉，確認回答保留同一語意關係。"
+      ]
+    }
+  },
+  {
+    "questionId": "111-english-40",
+    "routes": [
+      "/subjects/english/reading-comprehension"
+    ],
+    "kind": "目的定位與相反敘述排除",
+    "knowledge": [
+      [
+        "作答所需的語法與文本證據",
+        "原文說氣體存地下就不會造成 climate crisis，配合首段指出 CO₂ 使地球變暖，可知地下儲存目的是限制暖化。不能把利用於溫室、飲料的分支混成地下儲存目的。"
+      ]
+    ],
+    "steps": [
+      "先定位題幹所問對象，再讀空格前後或原文對應段落。原文說氣體存地下就不會造成 climate crisis，配合首段指出 CO₂ 使地球變暖，可知地下儲存目的是限制暖化。不能把利用於溫室、飲料的分支混成地下儲存目的。",
+      "依此比對 A、B：原文談幫助溫室植物生長，並未說照亮溫室，更不是地下儲存目的。 製作汽水屬利用分支，並不是冷卻飲料或地下儲存目的。",
+      "再比對 C、D：限制氣體進入大氣造成暖化，與原文不助長氣候危機一致。 worsen 是惡化，與存地下避免氣候危機的方向相反。",
+      "符合本題語意及條件的是 C。限制氣體進入大氣造成暖化，與原文不助長氣候危機一致。 回原文核對，確認沒有改換人物、數字單位或因果方向。"
+    ],
+    "reasons": [
+      "原文談幫助溫室植物生長，並未說照亮溫室，更不是地下儲存目的。",
+      "製作汽水屬利用分支，並不是冷卻飲料或地下儲存目的。",
+      "限制氣體進入大氣造成暖化，與原文不助長氣候危機一致。",
+      "worsen 是惡化，與存地下避免氣候危機的方向相反。"
+    ],
+    "transfer": {
+      "prompt": "原創遷移練習：文中說「store gas so it cannot enter the air」。儲存目的為增加或減少排入空氣？",
+      "answer": "減少排入空氣；cannot enter 明確表示阻止進入。",
+      "steps": [
+        "先讀新條件並圈出關鍵資訊：文中說「store gas so it cannot enter the air」。儲存目的為增加或減少排入空氣？",
+        "依語法或上下文證據判斷：減少排入空氣；cannot enter 明確表示阻止進入。",
+        "回查問題要求的對象、時間、因果或指涉，確認回答保留同一語意關係。"
+      ]
+    }
+  },
+  {
+    "questionId": "111-english-41",
+    "routes": [
+      "/subjects/english/reading-comprehension"
+    ],
+    "kind": "詞義推測：gained momentum",
+    "knowledge": [
+      [
+        "作答所需的語法與文本證據",
+        "前文提早期只有少數國家推動，接著說其他國家近三年出現 30 個新計畫，這個例證顯示推動力與進展增加。因此 momentum 在此接近 progress。"
+      ]
+    ],
+    "steps": [
+      "先定位題幹所問對象，再讀空格前後或原文對應段落。前文提早期只有少數國家推動，接著說其他國家近三年出現 30 個新計畫，這個例證顯示推動力與進展增加。因此 momentum 在此接近 progress。",
+      "依此比對 A、B：decrease 表減少，與 30 個新計畫的增加方向相反。 progress 表進展，能保留新增計畫顯示的發展動能。",
+      "再比對 C、D：wealth 是財富，文中沒有以金錢總額解釋這個字。 fortune 是運氣或財產，也不是計畫推進程度的語意。",
+      "符合本題語意及條件的是 B。progress 表進展，能保留新增計畫顯示的發展動能。 回原文核對，確認沒有改換人物、數字單位或因果方向。"
+    ],
+    "reasons": [
+      "decrease 表減少，與 30 個新計畫的增加方向相反。",
+      "progress 表進展，能保留新增計畫顯示的發展動能。",
+      "wealth 是財富，文中沒有以金錢總額解釋這個字。",
+      "fortune 是運氣或財產，也不是計畫推進程度的語意。"
+    ],
+    "transfer": {
+      "prompt": "原創遷移練習：A project has gained momentum: five new teams joined. momentum 在此較近「進展」還是「減少」？",
+      "answer": "進展，新團隊加入顯示推動力增加。",
+      "steps": [
+        "先讀新條件並圈出關鍵資訊：A project has gained momentum: five new teams joined. momentum 在此較近「進展」還是「減少」？",
+        "依語法或上下文證據判斷：進展，新團隊加入顯示推動力增加。",
+        "回查問題要求的對象、時間、因果或指涉，確認回答保留同一語意關係。"
+      ]
+    }
+  },
+  {
+    "questionId": "111-english-42",
+    "routes": [
+      "/subjects/english/reading-comprehension"
+    ],
+    "kind": "結論推論與限制語氣",
+    "knowledge": [
+      [
+        "作答所需的語法與文本證據",
+        "第二段說目前計畫仍不夠，又說其他國家已有新計畫，國際能源總署認為需更多。由發展趨勢可推未來採用國家可能增加；may 保留可能性，沒有保證足夠解決暖化。"
+      ]
+    ],
+    "steps": [
+      "先定位題幹所問對象，再讀空格前後或原文對應段落。第二段說目前計畫仍不夠，又說其他國家已有新計畫，國際能源總署認為需更多。由發展趨勢可推未來採用國家可能增加；may 保留可能性，沒有保證足夠解決暖化。",
+      "依此比對 A、B：文中主張需要更多計畫，沒有說從此停止以省錢。 新國家投入與需要更多計畫，支持使用國家可能增加的保守推論。",
+      "再比對 C、D：維護儲存場址是待處理的問題，不能改說技術使問題受益。 原文明說 still aren’t enough，與已經足夠的敘述相反。",
+      "符合本題語意及條件的是 B。新國家投入與需要更多計畫，支持使用國家可能增加的保守推論。 回原文核對，確認沒有改換人物、數字單位或因果方向。"
+    ],
+    "reasons": [
+      "文中主張需要更多計畫，沒有說從此停止以省錢。",
+      "新國家投入與需要更多計畫，支持使用國家可能增加的保守推論。",
+      "維護儲存場址是待處理的問題，不能改說技術使問題受益。",
+      "原文明說 still aren’t enough，與已經足夠的敘述相反。"
+    ],
+    "transfer": {
+      "prompt": "原創遷移練習：文章寫「已有新城市加入，但規模仍不足」。能否推出已經全面解決問題？",
+      "answer": "不能；仍不足限制了結論，只能說範圍正在擴大。",
+      "steps": [
+        "先讀新條件並圈出關鍵資訊：文章寫「已有新城市加入，但規模仍不足」。能否推出已經全面解決問題？",
+        "依語法或上下文證據判斷：不能；仍不足限制了結論，只能說範圍正在擴大。",
+        "回查問題要求的對象、時間、因果或指涉，確認回答保留同一語意關係。"
+      ]
+    }
+  }
+]

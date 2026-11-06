@@ -1,5 +1,6 @@
 'use client';
 /* eslint-disable @next/next/no-img-element */
+import { getHandoutLinks } from '@/lib/pedagogy/handoutLinks';
 import { Fragment, useEffect, useMemo, useRef, useState } from 'react';
 import type { VisualFigureData } from '../data/types';
 import ChartRenderer from './ChartRenderer';
@@ -887,6 +888,7 @@ export default function ExamSimulator({ catalog }: { catalog: PracticeCatalog })
                             </div>
                           )}
 
+                          <nav aria-label="本題複習講義" className="my-3 flex flex-wrap gap-3">{getHandoutLinks(question.lessonRoute ? [question.lessonRoute] : []).map(link => <a className="text-sm underline" key={link.href} href={localHref(link.href)}>{link.title}複習講義 ↗</a>)}</nav>
                           <div className="flex flex-wrap items-center justify-between gap-2 pt-2 border-t border-blue-100 dark:border-blue-900/30 text-[11px] text-slate-500">
                             <span>掌握度檢核：融會貫通不靠死背</span>
                             <span className="font-mono">108 課綱素養導向檢定</span>

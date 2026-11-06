@@ -11,5 +11,5 @@ const pages=unique.map(image=>{
   const localPdf=path.join(repoRoot,'tmp/pdfs',pdf);
   return {image,page:Number(page),sourceUrl:`https://web1.tcte.edu.tw/EXAM/${year}_4y/downloader.php?obj=${Buffer.from(pdf).toString('base64')}`,sourcePdf:pdf,pdfSha256:hash(localPdf),imageSha256:hash(path.join(repoRoot,'apps/web/public',image)),renderArguments:['-f',page,'-singlefile','-scale-to','1800','-png',pdf]};
 });
-fs.writeFileSync(path.join(repoRoot,'docs/exam-source-pages.json'),JSON.stringify({checkedAt:'2026-11-05',method:'Visually inspected official PDF full-page renders; tables transcribed only after comparison.',pages},null,2)+'\n');
+fs.writeFileSync(path.join(repoRoot,'docs/exam-source-pages.json'),JSON.stringify({checkedAt:'2026-11-06',method:'Visually inspected official PDF full-page renders; tables transcribed only after comparison.',pages},null,2)+'\n');
 console.log(`Recorded ${pages.length} visually checked source pages with source and image SHA-256.`);

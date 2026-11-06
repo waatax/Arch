@@ -4,3 +4,6 @@
 @media(max-width:600px){.et-source-options{grid-template-columns:1fr}.et-diagram{margin-inline:18px;padding:10px}.et-diagram svg{min-width:0}}
 .exam-teaching .exam-source-figure>a:first-child{display:block;min-height:0}.exam-teaching .exam-source-figure figcaption{color:#334155}.exam-teaching .exam-source-figure figcaption a{color:#115e59}
 @media print{.et-case{break-inside:auto}.et-transfer textarea,.et-transfer button{display:none}}
+.et-case{content-visibility:auto;contain-intrinsic-size:auto 1000px}.et-case>nav,.et-case>aside{margin-inline:24px}.et-source-options li,.et-options-why p{overflow-wrap:anywhere}
+@media(max-width:600px){.et-case>nav,.et-case>aside{margin-inline:18px}}
+@media print{.et-case{content-visibility:visible;contain-intrinsic-size:none}}

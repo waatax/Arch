@@ -54,6 +54,7 @@ jobs:
           pnpm validate:built-links
           node scripts/validate-study-studio.mjs --built
           node scripts/validate-exam-teaching.mjs --built
+          node scripts/validate-term-handouts.mjs
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3

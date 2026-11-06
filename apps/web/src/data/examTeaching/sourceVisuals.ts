@@ -8,6 +8,10 @@ const source = (year: number, exam: string, page: number, table?: TableData): Ex
 
 /** Transcribed against the rendered official PDF. Never reuse illustrative data as exam evidence. */
 export const examSourceVisuals: Record<string, ExamSourceVisual> = {
+  '114-chinese-g28-30': source(114,'c',9,{
+    title:'臺灣遠洋漁業產量 · 官方乙表（萬公噸）',headers:['漁業','2021','2022','2023'],
+    rows:[['鮪延繩釣','13.59','15.76','17.70'],['鰹鮪圍網','21.53','21.09','16.86'],['魷釣','14.65','6.43','3.92'],['秋刀魚棒受網','3.40','4.21','5.02']],
+  }),
   '111-english-g31-32': source(111,'e',5),
   '112-english-g31-32': source(112,'e',6),
   '112-english-g33-35': source(112,'e',7),
@@ -65,6 +69,15 @@ export const examSourceVisuals: Record<string, ExamSourceVisual> = {
     title:'表（一）銷售量（單位：冊）· 115 年官方原表',headers:['作品（發行年）','累積至 2023 年','破億所需時間'],
     rows:[['鬼滅之刃（2016）','約 1.5 億','4 年 7 個月'],['進擊的巨人（2009）','約 1.4 億','10 年 3 個月'],['火影忍者（1999）','約 2.5 億','10 年 6 個月'],['航海王（1997）','約 5.0 億','7 年 5 個月'],['名偵探柯南（1994）','約 2.7 億','11 年 4 個月']],
   }),
+  '112-chinese-g28-30': source(112,'c',9),
+  '112-chinese-g18-21': source(112,'c',6,{
+    title:'《瓶史國字解》書目重點與書影對讀',headers:['書目欄位','題本所列內容'],
+    rows:[['著者','袁宏道作；桐谷鳥習註解'],['卷數','4卷'],['出版','文化6年（1809）；須原屋茂兵衛、須原屋平助'],['序一','文化5年；龜田鵬齋（長興）'],['序二','文化5年；藤雲齋（望月義達）']],
+  }),
+  '112-chinese-g37-38': source(112,'c',12,{
+    title:'題圖理由文字轉錄（不推定長條數值）',headers:['編號','臺灣人喜歡吃飯的理由'],
+    rows:[['①','吃飯才有飽足感'],['②','米食種類變化多'],['③','飯讓桌菜呈美味'],['④','稻米平價最實惠'],['⑤','米飯營養好消化']],
+  }),
   '115-english-g31-32': source(115,'e',7),
   '115-english-g33-35': source(115,'e',8,{
     title:'Revenue per store · 題本所列資料（Million USD）',headers:['US restaurant chain','Revenue per store'],
@@ -73,9 +86,36 @@ export const examSourceVisuals: Record<string, ExamSourceVisual> = {
 };
 export const examSharedQuestionVisuals: Record<string,ExamSourceVisual> = Object.fromEntries(
   [
-    ...[1,2,3,4].map(n=>[`112-2-${n}`,source(112,'06-2',2)]),
-    ...[7,8].map(n=>[`113-1-${n}`,source(113,'06-1',3)]),
-    ...[18,19,20].map(n=>[`113-1-${n}`,source(113,'06-1',6)]),
+    ...Array.from({length:20},(_,i)=>i+21).map(n=>[`111-2-${n}`,source(111,'06-2',n<=23?6:n<=25?7:n<=28?8:n<=32?9:n<=36?10:n<=38?11:12)]),
+    ...Array.from({length:20},(_,i)=>i+21).map(n=>[`112-2-${n}`,source(112,'06-2',n<=22?6:n<=25?7:n<=27?8:n<=32?9:n<=35?10:n<=37?11:12)]),
+    ...Array.from({length:20},(_,i)=>i+21).map(n=>[`113-2-${n}`,source(113,'06-2',n<=24?5:n<=28?6:n<=31?7:n<=33?8:n<=36?9:n<=38?10:11)]),
+    ...Array.from({length:20},(_,i)=>i+21).map(n=>[`114-2-${n}`,source(114,'06-2',n<=23?5:n<=25?6:n<=27?7:n<=30?8:n<=33?9:n<=36?10:n<=38?11:12)]),
+    ...Array.from({length:20},(_,i)=>i+21).map(n=>[`115-2-${n}`,source(115,'06-2',n<=22?5:n<=25?6:n<=29?7:n<=33?8:n<=36?9:n<=38?10:11)]),
+    ...Array.from({length:20},(_,i)=>i+1).map(n=>[`111-1-${n}`,source(111,'06-1',n<=4?2:n<=7?3:n<=12?4:n<=15?5:n<=18?6:7)]),
+    ...Array.from({length:20},(_,i)=>i+1).map(n=>[`112-1-${n}`,source(112,'06-1',n<=4?2:n<=8?3:n<=12?4:n<=15?5:n<=18?6:7)]),
+    ...Array.from({length:20},(_,i)=>i+1).map(n=>[`113-1-${n}`,source(113,'06-1',n<=6?2:n<=10?3:n<=14?4:n<=17?5:6)]),
+    ...Array.from({length:20},(_,i)=>i+1).map(n=>[`114-1-${n}`,source(114,'06-1',n<=4?2:n<=8?3:n<=12?4:n<=15?5:n<=19?6:7)]),
+    ...Array.from({length:20},(_,i)=>i+1).map(n=>[`115-1-${n}`,source(115,'06-1',n<=4?2:n<=8?3:n<=11?4:n<=14?5:n<=17?6:7)]),
+    ...Array.from({length:20},(_,i)=>i+21).map(n=>[`111-1-${n}`,source(111,'06-1',n<=26?7:n<=33?8:n<=38?9:10)]),
+    ...Array.from({length:20},(_,i)=>i+21).map(n=>[`112-1-${n}`,source(112,'06-1',n<=22?7:n<=29?8:n<=34?9:10)]),
+    ...Array.from({length:20},(_,i)=>i+21).map(n=>[`113-1-${n}`,source(113,'06-1',n<=24?6:n<=32?7:n<=37?8:9)]),
+    ...Array.from({length:20},(_,i)=>i+21).map(n=>[`114-1-${n}`,source(114,'06-1',n<=26?7:n<=35?8:9)]),
+    ...Array.from({length:20},(_,i)=>i+21).map(n=>[`115-1-${n}`,source(115,'06-1',n===21?7:n<=29?8:n<=36?9:n<=38?10:11)]),
+    ...Array.from({length:34},(_,i)=>i+1).map(n=>[`115-chinese-${n}`,source(115,'c',n<=5?2:n<=10?3:n===11?4:n<=15?5:n<=18?6:n<=22?7:n<=25?8:n<=30?9:10)]),
+    ...Array.from({length:38},(_,i)=>i+1).filter(n=>n!==30).map(n=>[`114-chinese-${n}`,source(114,'c',n<=6?2:n<=10?3:n===11?4:n<=15?5:n<=17?6:n<=23?7:n<=27?8:n<=30?9:n===31?10:n<=35?11:12)]),
+    ...Array.from({length:38},(_,i)=>i+1).map(n=>[`113-chinese-${n}`,source(113,'c',n<=6?2:n<=10?3:n<=13?4:n<=15?5:n<=16?6:n<=22?7:n<=24?8:n<=29?9:n<=33?10:n<=36?11:12)]),
+    ...Array.from({length:38},(_,i)=>i+1).filter(n=>!(n>=18&&n<=20)&&n!==37&&n!==38).map(n=>[`112-chinese-${n}`,source(112,'c',n<=7?2:n<=10?3:n<=12?4:n<=17?5:n<=20?6:n<=23?7:n<=27?8:n<=30?9:n<=33?10:n<=36?11:12)]),
+    ...Array.from({length:38},(_,i)=>i+1).map(n=>[`111-chinese-${n}`,source(111,'c',n<=6?2:n<=9?3:n<=12?4:n<=17?5:n<=19?6:n<=24?7:n<=26?8:n<=30?9:n<=34?10:11)]),
+    ...Array.from({length:20},(_,i)=>i+1).map(n=>[`111-2-${n}`,source(111,'06-2',n<=5?2:n<=9?3:n<=14?4:n<=19?5:6)]),
+    ...Array.from({length:20},(_,i)=>i+1).map(n=>[`112-2-${n}`,source(112,'06-2',n<=4?2:n<=9?3:n<=15?4:5)]),
+    ...Array.from({length:20},(_,i)=>i+1).map(n=>[`113-2-${n}`,source(113,'06-2',n<=9?2:n<=16?3:n<=19?4:5)]),
+    ...Array.from({length:20},(_,i)=>i+1).map(n=>[`114-2-${n}`,source(114,'06-2',n<=4?2:n<=10?3:n<=17?4:5)]),
+    ...Array.from({length:20},(_,i)=>i+1).map(n=>[`115-2-${n}`,source(115,'06-2',n<=7?2:n<=12?3:n<=17?4:5)]),
+    ...Array.from({length:25},(_,i)=>i+1).map(n=>[`115-math-c-${n}`,source(115,'mc',n<=3?2:n<=8?3:n<=13?4:n<=17?5:n<=20?6:7)]),
+    ...Array.from({length:25},(_,i)=>i+1).map(n=>[`114-math-c-${n}`,source(114,'mc',n<=3?2:n<=8?3:n<=12?4:n<=16?5:n<=20?6:n<=24?7:8)]),
+    ...Array.from({length:25},(_,i)=>i+1).map(n=>[`113-math-c-${n}`,source(113,'mc',n<=3?2:n<=7?3:n<=11?4:n<=16?5:n<=19?6:n<=22?7:8)]),
+    ...Array.from({length:25},(_,i)=>i+1).map(n=>[`112-math-c-${n}`,source(112,'mc',n<=4?2:n<=10?3:n<=17?4:n<=21?5:6)]),
+    ...Array.from({length:25},(_,i)=>i+1).map(n=>[`111-math-c-${n}`,source(111,'mc',n<=6?2:n<=13?3:n<=20?4:5)]),
     ...[31,32].map(n=>[`111-2-${n}`,source(111,'06-2',9)]),
   ],
 );

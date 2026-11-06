@@ -1,0 +1,342 @@
+[
+  {
+    "questionId": "111-english-11",
+    "routes": [
+      "/subjects/english/conversation-daily-use"
+    ],
+    "kind": "對話銜接：從後句辨認飲料",
+    "knowledge": [
+      [
+        "後句回推前句的具體證據",
+        "後句 drank the whole bottle 說整瓶已喝完，因此前句要索取可飲用且能以瓶裝的材料。two cups of milk 是牛奶用量，符合烘焙與 drank 兩個條件。"
+      ]
+    ],
+    "steps": [
+      "先讀空格前後兩個回合，標記發問者、回答者及談論物件。後句 drank the whole bottle 說整瓶已喝完，因此前句要索取可飲用且能以瓶裝的材料。two cups of milk 是牛奶用量，符合烘焙與 drank 兩個條件。",
+      "據此需要的回應為 I need two cups of milk.，符合前後句的訊息功能。",
+      "逐項核對問題與回答：A 描述蛋糕正在烤，沒有索取材料，無法銜接喝完整瓶的回答。；B 索取兩杯牛奶，而兒子回答昨天喝完整瓶，事件與物件均相符。；C flour 是麵粉，用來烘焙但不能搭配 drank；只符合前半烘焙情境。；D butter 是奶油，通常不以 drank the whole bottle 表達食用方式。",
+      "因此選 B。回讀空格後的答句，確認人物、物件及時間／距離／頻率等資訊沒有改變。"
+    ],
+    "reasons": [
+      "描述蛋糕正在烤，沒有索取材料，無法銜接喝完整瓶的回答。",
+      "索取兩杯牛奶，而兒子回答昨天喝完整瓶，事件與物件均相符。",
+      "flour 是麵粉，用來烘焙但不能搭配 drank；只符合前半烘焙情境。",
+      "butter 是奶油，通常不以 drank the whole bottle 表達食用方式。"
+    ],
+    "transfer": {
+      "prompt": "原創對話變式：A asks for a bottle of juice. B says “I drank it yesterday.” What does it refer to?",
+      "answer": "那瓶果汁。代名詞 it 指向前句的 bottle of juice。",
+      "steps": [
+        "先圈出新對話中實際提供的線索：A asks for a bottle of juice. B says “I drank it yesterday.” What does it refer to?",
+        "依資訊功能或指涉關係判斷：那瓶果汁。代名詞 it 指向前句的 bottle of juice。",
+        "回讀另一個回合，確認此結論能回答前句，並保留同一人物與物件。"
+      ]
+    }
+  },
+  {
+    "questionId": "111-english-12",
+    "routes": [
+      "/subjects/english/conversation-daily-use"
+    ],
+    "kind": "對話功能：再次提供食物與婉拒",
+    "knowledge": [
+      [
+        "後句回推前句的具體證據",
+        "Tina 已表示不要點心，Judy 說還有媽媽做的餅乾，Tina 再以很飽拒絕。空格應是再次詢問對方是否確定不想吃東西。"
+      ]
+    ],
+    "steps": [
+      "先讀空格前後兩個回合，標記發問者、回答者及談論物件。Tina 已表示不要點心，Judy 說還有媽媽做的餅乾，Tina 再以很飽拒絕。空格應是再次詢問對方是否確定不想吃東西。",
+      "據此需要的回應為 Are you sure you don’t want anything to eat?，符合前後句的訊息功能。",
+      "逐項核對問題與回答：A 問自己能不能吃餅乾，改變供餐者與受邀者角色，後句很飽也無法回答此問。；B 告誡對方別吃太多，與主動說還有自製餅乾的邀請不連貫。；C 確認對方是否確定不要食物，能銜接提供餅乾與對方再次婉拒。；D 要求對方替自己買食物，與現有餅乾及對方很飽的回覆不相符。",
+      "因此選 C。回讀空格後的答句，確認人物、物件及時間／距離／頻率等資訊沒有改變。"
+    ],
+    "reasons": [
+      "問自己能不能吃餅乾，改變供餐者與受邀者角色，後句很飽也無法回答此問。",
+      "告誡對方別吃太多，與主動說還有自製餅乾的邀請不連貫。",
+      "確認對方是否確定不要食物，能銜接提供餅乾與對方再次婉拒。",
+      "要求對方替自己買食物，與現有餅乾及對方很飽的回覆不相符。"
+    ],
+    "transfer": {
+      "prompt": "原創對話變式：A offers cake. B replies “No thanks. I have just eaten.” Is B accepting or declining the offer?",
+      "answer": "婉拒邀請，No thanks 與剛吃過都是拒絕進食的證據。",
+      "steps": [
+        "先圈出新對話中實際提供的線索：A offers cake. B replies “No thanks. I have just eaten.” Is B accepting or declining the offer?",
+        "依資訊功能或指涉關係判斷：婉拒邀請，No thanks 與剛吃過都是拒絕進食的證據。",
+        "回讀另一個回合，確認此結論能回答前句，並保留同一人物與物件。"
+      ]
+    }
+  },
+  {
+    "questionId": "111-english-13",
+    "routes": [
+      "/subjects/english/conversation-daily-use"
+    ],
+    "kind": "疑問詞與答句：操作方式",
+    "knowledge": [
+      [
+        "後句回推前句的具體證據",
+        "Ken 接著說戴頭戴裝置、開啟遊戲後的感受，回答的是虛擬實境如何運作，所以要問 How does it work。"
+      ]
+    ],
+    "steps": [
+      "先讀空格前後兩個回合，標記發問者、回答者及談論物件。Ken 接著說戴頭戴裝置、開啟遊戲後的感受，回答的是虛擬實境如何運作，所以要問 How does it work。",
+      "據此需要的回應為 How does it work?，符合前後句的訊息功能。",
+      "逐項核對問題與回答：A how 詢問方式，後句確實解釋裝置操作與體驗過程。；B 問看見了什麼，通常要回答物件或景象，後文卻在說一般操作方法。；C when 問設置時間，後文沒有日期或時間資訊。；D where 問去過哪裡，後文沒有地點經驗的回答。",
+      "因此選 A。回讀空格後的答句，確認人物、物件及時間／距離／頻率等資訊沒有改變。"
+    ],
+    "reasons": [
+      "how 詢問方式，後句確實解釋裝置操作與體驗過程。",
+      "問看見了什麼，通常要回答物件或景象，後文卻在說一般操作方法。",
+      "when 問設置時間，後文沒有日期或時間資訊。",
+      "where 問去過哪裡，後文沒有地點經驗的回答。"
+    ],
+    "transfer": {
+      "prompt": "原創對話變式：A explains “Press this button to start the machine.” Was A answering how to operate it or when it was built?",
+      "answer": "如何操作；按按鈕啟動是程序，不是建造時間。",
+      "steps": [
+        "先圈出新對話中實際提供的線索：A explains “Press this button to start the machine.” Was A answering how to operate it or when it was built?",
+        "依資訊功能或指涉關係判斷：如何操作；按按鈕啟動是程序，不是建造時間。",
+        "回讀另一個回合，確認此結論能回答前句，並保留同一人物與物件。"
+      ]
+    }
+  },
+  {
+    "questionId": "111-english-14",
+    "routes": [
+      "/subjects/english/conversation-daily-use"
+    ],
+    "kind": "對話語氣：解除疑慮後接受邀請",
+    "knowledge": [
+      [
+        "後句回推前句的具體證據",
+        "Sue 先說能再跑一圈，最後又說 Come on, let’s go，表示她仍願意跑。空格應安撫 Ted 對自己體力的擔心。"
+      ]
+    ],
+    "steps": [
+      "先讀空格前後兩個回合，標記發問者、回答者及談論物件。Sue 先說能再跑一圈，最後又說 Come on, let’s go，表示她仍願意跑。空格應安撫 Ted 對自己體力的擔心。",
+      "據此需要的回應為 Don’t worry about me.，符合前後句的訊息功能。",
+      "逐項核對問題與回答：A 叫對方不用擔心自己，與前面能再跑及後面一起出發的語氣一致。；B cover your tracks 意為掩飾行蹤，雖有 tracks 字面卻不回答體力是否足夠。；C 說在原地等待會與後句 let’s go 及願意再跑矛盾。；D 說 Ted 厭倦慢跑，改變了原本被關心的人及問題。",
+      "因此選 A。回讀空格後的答句，確認人物、物件及時間／距離／頻率等資訊沒有改變。"
+    ],
+    "reasons": [
+      "叫對方不用擔心自己，與前面能再跑及後面一起出發的語氣一致。",
+      "cover your tracks 意為掩飾行蹤，雖有 tracks 字面卻不回答體力是否足夠。",
+      "說在原地等待會與後句 let’s go 及願意再跑矛盾。",
+      "說 Ted 厭倦慢跑，改變了原本被關心的人及問題。"
+    ],
+    "transfer": {
+      "prompt": "原創對話變式：B says “Don’t worry. I can carry this box.” Is B asking for help or reassuring A?",
+      "answer": "安撫 A；Don’t worry 與 I can carry 表示自己有能力處理。",
+      "steps": [
+        "先圈出新對話中實際提供的線索：B says “Don’t worry. I can carry this box.” Is B asking for help or reassuring A?",
+        "依資訊功能或指涉關係判斷：安撫 A；Don’t worry 與 I can carry 表示自己有能力處理。",
+        "回讀另一個回合，確認此結論能回答前句，並保留同一人物與物件。"
+      ]
+    }
+  },
+  {
+    "questionId": "111-english-15",
+    "routes": [
+      "/subjects/english/conversation-daily-use"
+    ],
+    "kind": "疑問詞與答句：月份對應時間",
+    "knowledge": [
+      [
+        "後句回推前句的具體證據",
+        "Alice 回答想在六月去，June 是時間資訊。旅遊業務應問何時計畫出遊，When do you plan to travel。"
+      ]
+    ],
+    "steps": [
+      "先讀空格前後兩個回合，標記發問者、回答者及談論物件。Alice 回答想在六月去，June 是時間資訊。旅遊業務應問何時計畫出遊，When do you plan to travel。",
+      "據此需要的回應為 When do you plan to travel?，符合前後句的訊息功能。",
+      "逐項核對問題與回答：A what 問想看什麼，六月並非景點或活動名稱。；B when 問出遊時間，in June 正好提供月份。；C 問六月天氣要回答冷熱或晴雨，對方卻回答想出遊的月份。；D where 問目的地，六月無法充當地點答案。",
+      "因此選 B。回讀空格後的答句，確認人物、物件及時間／距離／頻率等資訊沒有改變。"
+    ],
+    "reasons": [
+      "what 問想看什麼，六月並非景點或活動名稱。",
+      "when 問出遊時間，in June 正好提供月份。",
+      "問六月天氣要回答冷熱或晴雨，對方卻回答想出遊的月份。",
+      "where 問目的地，六月無法充當地點答案。"
+    ],
+    "transfer": {
+      "prompt": "原創對話變式：A answers “In September.” Which question fits, “When will you leave?” or “Where will you go?”",
+      "answer": "When will you leave? 因為 September 提供時間。",
+      "steps": [
+        "先圈出新對話中實際提供的線索：A answers “In September.” Which question fits, “When will you leave?” or “Where will you go?”",
+        "依資訊功能或指涉關係判斷：When will you leave? 因為 September 提供時間。",
+        "回讀另一個回合，確認此結論能回答前句，並保留同一人物與物件。"
+      ]
+    }
+  },
+  {
+    "questionId": "112-english-11",
+    "routes": [
+      "/subjects/english/conversation-daily-use"
+    ],
+    "kind": "頻率問答：once in a long while",
+    "knowledge": [
+      [
+        "後句回推前句的具體證據",
+        "Sergio 說以前每週去，現在回答 Once in a long while，即很久才去一次。空格應問搬走後是否仍經常去。"
+      ]
+    ],
+    "steps": [
+      "先讀空格前後兩個回合，標記發問者、回答者及談論物件。Sergio 說以前每週去，現在回答 Once in a long while，即很久才去一次。空格應問搬走後是否仍經常去。",
+      "據此需要的回應為 Do you still go there often?，符合前後句的訊息功能。",
+      "逐項核對問題與回答：A 問距離遠不遠，應以距離或遠近回答，非頻率。；B 問好不好吃，應回答味道評價，非多久去一次。；C 問曾否去過只需經驗肯否，前面已說以前每週去，重複且與頻率回答不對應。；D 問現在是否仍常去，回覆很久去一次正好描述現在頻率。",
+      "因此選 D。回讀空格後的答句，確認人物、物件及時間／距離／頻率等資訊沒有改變。"
+    ],
+    "reasons": [
+      "問距離遠不遠，應以距離或遠近回答，非頻率。",
+      "問好不好吃，應回答味道評價，非多久去一次。",
+      "問曾否去過只需經驗肯否，前面已說以前每週去，重複且與頻率回答不對應。",
+      "問現在是否仍常去，回覆很久去一次正好描述現在頻率。"
+    ],
+    "transfer": {
+      "prompt": "原創對話變式：A answers “Twice a week.” Should B have asked “How often?” or “How far?”",
+      "answer": "How often? Twice a week 是每週兩次的頻率。",
+      "steps": [
+        "先圈出新對話中實際提供的線索：A answers “Twice a week.” Should B have asked “How often?” or “How far?”",
+        "依資訊功能或指涉關係判斷：How often? Twice a week 是每週兩次的頻率。",
+        "回讀另一個回合，確認此結論能回答前句，並保留同一人物與物件。"
+      ]
+    }
+  },
+  {
+    "questionId": "112-english-12",
+    "routes": [
+      "/subjects/english/conversation-daily-use"
+    ],
+    "kind": "邀請看屋：would like to 的省略",
+    "knowledge": [
+      [
+        "後句回推前句的具體證據",
+        "Betty 回答 Yes. I’d like to，接著問地址，表示接受看屋邀請。空格需用 Would you like to see it 提出邀請。"
+      ]
+    ],
+    "steps": [
+      "先讀空格前後兩個回合，標記發問者、回答者及談論物件。Betty 回答 Yes. I’d like to，接著問地址，表示接受看屋邀請。空格需用 Would you like to see it 提出邀請。",
+      "據此需要的回應為 Would you like to see it?，符合前後句的訊息功能。",
+      "逐項核對問題與回答：A 邀請看屋後回答願意，再問地址，形成完整邀請與接受的對話。；B 問在哪看到廣告，應回答網站或報紙等來源，不是願意與否。；C when 要求時間資訊，Yes, I’d like to 沒有提供何時看屋。；D 問朋友是否會來，Betty 卻回答自己想看，人物與問題不對應。",
+      "因此選 A。回讀空格後的答句，確認人物、物件及時間／距離／頻率等資訊沒有改變。"
+    ],
+    "reasons": [
+      "邀請看屋後回答願意，再問地址，形成完整邀請與接受的對話。",
+      "問在哪看到廣告，應回答網站或報紙等來源，不是願意與否。",
+      "when 要求時間資訊，Yes, I’d like to 沒有提供何時看屋。",
+      "問朋友是否會來，Betty 卻回答自己想看，人物與問題不對應。"
+    ],
+    "transfer": {
+      "prompt": "原創對話變式：A asks “Would you like to visit the studio?” B says “Yes, I’d like to.” What action is omitted after to?",
+      "answer": "visit the studio。重複的動詞片語可省略，由上句恢復。",
+      "steps": [
+        "先圈出新對話中實際提供的線索：A asks “Would you like to visit the studio?” B says “Yes, I’d like to.” What action is omitted after to?",
+        "依資訊功能或指涉關係判斷：visit the studio。重複的動詞片語可省略，由上句恢復。",
+        "回讀另一個回合，確認此結論能回答前句，並保留同一人物與物件。"
+      ]
+    }
+  },
+  {
+    "questionId": "112-english-13",
+    "routes": [
+      "/subjects/english/conversation-daily-use"
+    ],
+    "kind": "電動車對話：how far 與續航里程",
+    "knowledge": [
+      [
+        "後句回推前句的具體證據",
+        "Alex 問離開城市後能開多遠才需充電，how far 要求距離；a range of 200 kilometers 是一次充電可行駛的距離。"
+      ]
+    ],
+    "steps": [
+      "先讀空格前後兩個回合，標記發問者、回答者及談論物件。Alex 問離開城市後能開多遠才需充電，how far 要求距離；a range of 200 kilometers 是一次充電可行駛的距離。",
+      "據此需要的回應為 It has a range of 200 kilometers.，符合前後句的訊息功能。",
+      "逐項核對問題與回答：A gone too far 是已做得太過分或走太遠，沒有提供所問續航里程。；B 沒有選擇不涉及能行駛的距離，無法回答 how far。；C range of 200 kilometers 提供明確距離，回答充電前能開多遠。；D no charge 可指免費，混淆電力充電與費用，且仍未回答距離。",
+      "因此選 C。回讀空格後的答句，確認人物、物件及時間／距離／頻率等資訊沒有改變。"
+    ],
+    "reasons": [
+      "gone too far 是已做得太過分或走太遠，沒有提供所問續航里程。",
+      "沒有選擇不涉及能行駛的距離，無法回答 how far。",
+      "range of 200 kilometers 提供明確距離，回答充電前能開多遠。",
+      "no charge 可指免費，混淆電力充電與費用，且仍未回答距離。"
+    ],
+    "transfer": {
+      "prompt": "原創對話變式：A asks how far a bus can travel before refueling. B says “About 500 kilometers.” What quantity is supplied?",
+      "answer": "距離，也就是補充燃料前可行駛的里程。",
+      "steps": [
+        "先圈出新對話中實際提供的線索：A asks how far a bus can travel before refueling. B says “About 500 kilometers.” What quantity is supplied?",
+        "依資訊功能或指涉關係判斷：距離，也就是補充燃料前可行駛的里程。",
+        "回讀另一個回合，確認此結論能回答前句，並保留同一人物與物件。"
+      ]
+    }
+  },
+  {
+    "questionId": "112-english-14",
+    "routes": [
+      "/subjects/english/conversation-daily-use"
+    ],
+    "kind": "指涉確認：That’s the one",
+    "knowledge": [
+      [
+        "後句回推前句的具體證據",
+        "Roy 確認 Jane 指的是否為達文西的蒙娜麗莎，Jane 隨後說在羅浮宮看到它。That’s the one 表示就是你說的那個。"
+      ]
+    ],
+    "steps": [
+      "先讀空格前後兩個回合，標記發問者、回答者及談論物件。Roy 確認 Jane 指的是否為達文西的蒙娜麗莎，Jane 隨後說在羅浮宮看到它。That’s the one 表示就是你說的那個。",
+      "據此需要的回應為 That’s the one.，符合前後句的訊息功能。",
+      "逐項核對問題與回答：A No way 表不可能或強烈否定，與後句確認在羅浮宮看到它不連貫。；B 確認就是那幅作品，並接續提供看到作品的地點，指涉一致。；C 說你真幸運，把語意轉向 Roy 的經驗，Roy 並沒有敘述自己的旅行。；D Don’t mention it 常回應致謝，對話此處沒有感謝行為。",
+      "因此選 B。回讀空格後的答句，確認人物、物件及時間／距離／頻率等資訊沒有改變。"
+    ],
+    "reasons": [
+      "No way 表不可能或強烈否定，與後句確認在羅浮宮看到它不連貫。",
+      "確認就是那幅作品，並接續提供看到作品的地點，指涉一致。",
+      "說你真幸運，把語意轉向 Roy 的經驗，Roy 並沒有敘述自己的旅行。",
+      "Don’t mention it 常回應致謝，對話此處沒有感謝行為。"
+    ],
+    "transfer": {
+      "prompt": "原創對話變式：A asks “Do you mean the red book on the desk?” B says “That’s the one.” What does one refer to?",
+      "answer": "the red book on the desk；one 代替已辨認的單數物件。",
+      "steps": [
+        "先圈出新對話中實際提供的線索：A asks “Do you mean the red book on the desk?” B says “That’s the one.” What does one refer to?",
+        "依資訊功能或指涉關係判斷：the red book on the desk；one 代替已辨認的單數物件。",
+        "回讀另一個回合，確認此結論能回答前句，並保留同一人物與物件。"
+      ]
+    }
+  },
+  {
+    "questionId": "112-english-15",
+    "routes": [
+      "/subjects/english/conversation-daily-use"
+    ],
+    "kind": "問喜歡的原因：what do you like about",
+    "knowledge": [
+      [
+        "後句回推前句的具體證據",
+        "Annie 回答運動員有天分、強壯、可愛且得過奧運獎牌，列出欣賞之處。空格應問喜歡他的哪些特質。"
+      ]
+    ],
+    "steps": [
+      "先讀空格前後兩個回合，標記發問者、回答者及談論物件。Annie 回答運動員有天分、強壯、可愛且得過奧運獎牌，列出欣賞之處。空格應問喜歡他的哪些特質。",
+      "據此需要的回應為 What do you like about him?，符合前後句的訊息功能。",
+      "逐項核對問題與回答：A 如何認識要回答相遇方式，特質清單沒有說如何相識。；B 問他真正喜歡什麼要回答他的偏好，Annie 卻列出自己喜歡他的特質。；C 問喜歡他的哪些部分，後句以天分、強壯與外貌等特點回答。；D 問他如何認識柔道，要回答接觸柔道的經歷，後文沒有相關過程。",
+      "因此選 C。回讀空格後的答句，確認人物、物件及時間／距離／頻率等資訊沒有改變。"
+    ],
+    "reasons": [
+      "如何認識要回答相遇方式，特質清單沒有說如何相識。",
+      "問他真正喜歡什麼要回答他的偏好，Annie 卻列出自己喜歡他的特質。",
+      "問喜歡他的哪些部分，後句以天分、強壯與外貌等特點回答。",
+      "問他如何認識柔道，要回答接觸柔道的經歷，後文沒有相關過程。"
+    ],
+    "transfer": {
+      "prompt": "原創對話變式：A says “I like this building because it is bright and accessible.” Is A describing the building’s history or reasons for liking it?",
+      "answer": "喜歡的原因。bright 與 accessible 是正面特質，because 直接標示理由。",
+      "steps": [
+        "先圈出新對話中實際提供的線索：A says “I like this building because it is bright and accessible.” Is A describing the building’s history or reasons for liking it?",
+        "依資訊功能或指涉關係判斷：喜歡的原因。bright 與 accessible 是正面特質，because 直接標示理由。",
+        "回讀另一個回合，確認此結論能回答前句，並保留同一人物與物件。"
+      ]
+    }
+  }
+]

@@ -1,0 +1,151 @@
+{
+  "version": "10.0.0",
+  "checkedOn": "2026-11-06",
+  "content": {
+    "officialQuestions": 925,
+    "authoredGuides": 925,
+    "originalTransfers": 925,
+    "newGuides": 748,
+    "pending": 0,
+    "checkedSourcePages": 190,
+    "numericChecks": 422
+  },
+  "build": {
+    "command": "GITHUB_ACTIONS=true next build",
+    "passed": true,
+    "staticPages": 338
+  },
+  "checks": [
+    {
+      "command": "node scripts/validate-data-syntax.mjs",
+      "passed": true
+    },
+    {
+      "command": "node scripts/validate-anti-slop.mjs",
+      "passed": true
+    },
+    {
+      "command": "node scripts/validate-gamification.mjs",
+      "passed": true
+    },
+    {
+      "command": "node scripts/validate-topic-tables.mjs",
+      "passed": true
+    },
+    {
+      "command": "node scripts/validate-topic-infographics.mjs",
+      "passed": true
+    },
+    {
+      "command": "node scripts/validate-concept-visuals.mjs",
+      "passed": true
+    },
+    {
+      "command": "node scripts/validate-curriculum-alignment.mjs",
+      "passed": true
+    },
+    {
+      "command": "node scripts/validate-expert-council.mjs",
+      "passed": true
+    },
+    {
+      "command": "node scripts/validate-course-data.mjs",
+      "passed": true
+    },
+    {
+      "command": "node scripts/validate-exam-coverage.mjs",
+      "passed": true
+    },
+    {
+      "command": "node scripts/validate-full-exam-data.mjs",
+      "passed": true
+    },
+    {
+      "command": "node scripts/validate-v10-periodic-exams.mjs",
+      "passed": true
+    },
+    {
+      "command": "node scripts/validate-learn-path.mjs",
+      "passed": true
+    },
+    {
+      "command": "node scripts/validate-exam-teaching.mjs",
+      "passed": true
+    },
+    {
+      "command": "node scripts/validate-question-content.mjs --require-complete",
+      "passed": true
+    },
+    {
+      "command": "node scripts/validate-drafting-projections.mjs",
+      "passed": true
+    },
+    {
+      "command": "node scripts/validate-study-studio.mjs",
+      "passed": true
+    },
+    {
+      "command": "node scripts/validate-concept-visuals.mjs",
+      "passed": true
+    },
+    {
+      "command": "node scripts/run-7-iteration-passes.mjs",
+      "passed": true
+    },
+    {
+      "command": "node scripts/validate-v7-teaching-quality.mjs",
+      "passed": true
+    },
+    {
+      "command": "node scripts/validate-v7-goals.mjs",
+      "passed": true
+    },
+    {
+      "command": "node scripts/validate-70x7-mastery.mjs",
+      "passed": true
+    },
+    {
+      "command": "node scripts/validate-v10-periodic-exams.mjs",
+      "passed": true
+    },
+    {
+      "command": "node scripts/validate-exam-teaching.mjs --built",
+      "passed": true
+    },
+    {
+      "command": "node apps/web/scripts/validate-practice-build.mjs",
+      "passed": true
+    },
+    {
+      "command": "node scripts/validate-built-learning-links.mjs",
+      "passed": true
+    },
+    {
+      "command": "node scripts/validate-study-studio.mjs --built",
+      "passed": true
+    },
+    {
+      "command": "static semester handout and lesson anchor verification",
+      "passed": true
+    },
+    {
+      "command": "node scripts/validate-term-handouts.mjs",
+      "passed": true
+    }
+  ],
+  "lint": {
+    "passed": true,
+    "errors": 0,
+    "existingWarnings": 3
+  },
+  "browserVerification": false,
+  "verificationMethod": "Content, local static export, projection enumeration, links; GitHub Actions and HTTP after publishing.",
+  "handouts": {
+    "courses": 61,
+    "terms": 6,
+    "units": 265,
+    "selfTests": 530,
+    "exactLessonLinks": 2336,
+    "uniqueQuestions": 925
+  }
+}

@@ -4,6 +4,7 @@ import pageMap from '../../../../../data/registry/exam-page-map.json';
 import { examTeachingCases, type ExamTeachingCase } from '@/data/examTeaching';
 import { examRouteCorrections } from '@/data/examTeaching/corrections';
 import { examSourceVisuals, examSharedQuestionVisuals } from '@/data/examTeaching/sourceVisuals';
+import { examReadingContext } from '@/data/examTeaching/readingContext';
 import type { VisualFigureData } from '@/data/types';
 
 export interface CanonicalExamQuestion {
@@ -28,7 +29,7 @@ export const canonicalExamQuestions: CanonicalExamQuestion[] = rawExamQuestions
     const teaching = guides.get(raw.id);
     const correction = examRouteCorrections[raw.id];
     const lessonRoute = correction ? `/subjects/${correction}` : raw.lessonRoute;
-    const sourceVisual = raw.groupId ? examSourceVisuals[raw.groupId] : examSharedQuestionVisuals[raw.id];
+    const sourceVisual = examSharedQuestionVisuals[raw.id] ?? (raw.groupId ? examSourceVisuals[raw.groupId] : undefined);
     const figureImage = sourceVisual?.image || raw.figureImage || figures[raw.id]?.figureImage;
     const question = { ...raw, ...figures[raw.id], figureImage, lessonRoute, teaching, previousRoute: correction ? raw.lessonRoute : undefined };
     return {
@@ -41,6 +42,7 @@ export const canonicalExamQuestions: CanonicalExamQuestion[] = rawExamQuestions
       topic: lessonRoute?.split('/')[3] || raw.topic,
       excerpt: teaching?.display?.excerpt || raw.excerpt,
       options: teaching?.display?.options || raw.options,
+      passage: examReadingContext[raw.id] ?? (raw.groupId ? examReadingContext[raw.groupId] : undefined) ?? raw.passage,
       // Shared figure references and incomplete OCR require the original source; do not invent geometry.
       needsOriginal: Boolean((raw.requiresOfficialFigure && !figureImage) || (!figureImage && /此桁架|此組合斷面|承上題|①所示/.test(raw.excerpt))),
     };

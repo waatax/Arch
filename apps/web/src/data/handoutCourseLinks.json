@@ -1,0 +1,948 @@
+{
+  "/subjects/drafting/bim-concepts": [
+    {
+      "href": "/learn/g10s1/intro/#handout-g10s1-intro-u4",
+      "title": "土木建築工程與技術概論 · 工程科技的發展"
+    }
+  ],
+  "/subjects/surveying/surveying-fundamentals": [
+    {
+      "href": "/learn/g10s1/survey-1/#handout-g10s1-survey-1-u1",
+      "title": "測量實習Ⅰ · 測量概論與誤差"
+    },
+    {
+      "href": "/learn/g12s2/exam-pro2/#handout-g12s2-exam-pro2-u1",
+      "title": "專業科目（二）統測總複習 · 誤差、精度與距離"
+    }
+  ],
+  "/subjects/surveying/area-and-error": [
+    {
+      "href": "/learn/g10s1/survey-1/#handout-g10s1-survey-1-u1",
+      "title": "測量實習Ⅰ · 測量概論與誤差"
+    }
+  ],
+  "/subjects/surveying/distance-and-angle": [
+    {
+      "href": "/learn/g10s1/survey-1/#handout-g10s1-survey-1-u3",
+      "title": "測量實習Ⅰ · 距離測量"
+    },
+    {
+      "href": "/learn/g10s2/survey-2/#handout-g10s2-survey-2-u1",
+      "title": "測量實習Ⅱ · 角度測量與經緯儀"
+    }
+  ],
+  "/subjects/surveying/elevation-and-leveling": [
+    {
+      "href": "/learn/g10s1/survey-1/#handout-g10s1-survey-1-u4",
+      "title": "測量實習Ⅰ · 水準測量"
+    },
+    {
+      "href": "/learn/g10s1/survey-1/#handout-g10s1-survey-1-u5",
+      "title": "測量實習Ⅰ · 頂標特訓：水準與視距計算"
+    },
+    {
+      "href": "/learn/g12s2/exam-pro2/#handout-g12s2-exam-pro2-u2",
+      "title": "專業科目（二）統測總複習 · 水準測量與高程"
+    }
+  ],
+  "/subjects/drafting/drafting-fundamentals": [
+    {
+      "href": "/learn/g10s1/drafting-1/#handout-g10s1-drafting-1-u1",
+      "title": "製圖實習Ⅰ · 製圖基本觀念與圖紙"
+    }
+  ],
+  "/subjects/drafting/drafting-instruments": [
+    {
+      "href": "/learn/g10s1/drafting-1/#handout-g10s1-drafting-1-u2",
+      "title": "製圖實習Ⅰ · 製圖儀器"
+    }
+  ],
+  "/subjects/drafting/lines-and-lettering": [
+    {
+      "href": "/learn/g10s1/drafting-1/#handout-g10s1-drafting-1-u3",
+      "title": "製圖實習Ⅰ · 線法與字法"
+    },
+    {
+      "href": "/learn/g12s1/license/#handout-g12s1-license-u1",
+      "title": "建築製圖應用丙級（技能檢定） · 識圖與製圖規範"
+    }
+  ],
+  "/subjects/drafting/geometric-constructions": [
+    {
+      "href": "/learn/g10s1/drafting-1/#handout-g10s1-drafting-1-u4",
+      "title": "製圖實習Ⅰ · 幾何畫法"
+    }
+  ],
+  "/subjects/drafting/orthographic-projection": [
+    {
+      "href": "/learn/g10s1/drafting-1/#handout-g10s1-drafting-1-u5",
+      "title": "製圖實習Ⅰ · 投影畫法"
+    },
+    {
+      "href": "/learn/g10s2/drafting-2/#handout-g10s2-drafting-2-u1",
+      "title": "製圖實習Ⅱ · 正投影與三視圖"
+    },
+    {
+      "href": "/learn/g11s2/cad-2/#handout-g11s2-cad-2-u1",
+      "title": "電腦輔助製圖實習Ⅱ · CAD 正投影視圖"
+    },
+    {
+      "href": "/learn/g12s2/exam-pro2/#handout-g12s2-exam-pro2-u4",
+      "title": "專業科目（二）統測總複習 · 製圖基本與投影"
+    }
+  ],
+  "/subjects/drafting/scale": [
+    {
+      "href": "/learn/g10s1/drafting-1/#handout-g10s1-drafting-1-u6",
+      "title": "製圖實習Ⅰ · 頂標特訓：比例與線條判讀"
+    }
+  ],
+  "/subjects/chinese/linguistics": [
+    {
+      "href": "/learn/g10s1/chinese-1/#handout-g10s1-chinese-1-u1",
+      "title": "國語文Ⅰ · 字音字形與詞義"
+    },
+    {
+      "href": "/learn/g10s1/chinese-1/#handout-g10s1-chinese-1-u2",
+      "title": "國語文Ⅰ · 修辭入門"
+    },
+    {
+      "href": "/learn/g10s2/chinese-2/#handout-g10s2-chinese-2-u2",
+      "title": "國語文Ⅱ · 修辭進階"
+    },
+    {
+      "href": "/learn/g12s1/chinese-5/#handout-g12s1-chinese-5-u1",
+      "title": "國語文Ⅴ · 統測字詞與成語"
+    }
+  ],
+  "/subjects/chinese/classical-literature": [
+    {
+      "href": "/learn/g10s1/chinese-1/#handout-g10s1-chinese-1-u3",
+      "title": "國語文Ⅰ · 近體詩格律"
+    },
+    {
+      "href": "/learn/g10s2/chinese-2/#handout-g10s2-chinese-2-u1",
+      "title": "國語文Ⅱ · 唐代古文：韓愈〈師說〉"
+    },
+    {
+      "href": "/learn/g11s1/chinese-3/#handout-g11s1-chinese-3-u1",
+      "title": "國語文Ⅲ · 宋詞"
+    },
+    {
+      "href": "/learn/g11s2/chinese-4/#handout-g11s2-chinese-4-u1",
+      "title": "國語文Ⅳ · 元曲"
+    },
+    {
+      "href": "/learn/g12s1/chinese-5/#handout-g12s1-chinese-5-u3",
+      "title": "國語文Ⅴ · 文學流變與作家風格"
+    }
+  ],
+  "/subjects/chinese/modern-literature": [
+    {
+      "href": "/learn/g10s1/chinese-1/#handout-g10s1-chinese-1-u4",
+      "title": "國語文Ⅰ · 應用文：書信與便條"
+    },
+    {
+      "href": "/learn/g11s2/chinese-4/#handout-g11s2-chinese-4-u3",
+      "title": "國語文Ⅳ · 臺灣文學"
+    }
+  ],
+  "/subjects/english/vocabulary-phrases": [
+    {
+      "href": "/learn/g10s1/english-1/#handout-g10s1-english-1-u1",
+      "title": "英語文Ⅰ · 校園與生活字彙"
+    },
+    {
+      "href": "/learn/g12s1/english-5/#handout-g12s1-english-5-u1",
+      "title": "英語文Ⅴ · 統測字彙題"
+    }
+  ],
+  "/subjects/english/grammar-patterns": [
+    {
+      "href": "/learn/g10s1/english-1/#handout-g10s1-english-1-u2",
+      "title": "英語文Ⅰ · 五大句型與詞性"
+    },
+    {
+      "href": "/learn/g10s1/english-1/#handout-g10s1-english-1-u3",
+      "title": "英語文Ⅰ · 基本時態"
+    },
+    {
+      "href": "/learn/g10s2/english-2/#handout-g10s2-english-2-u1",
+      "title": "英語文Ⅱ · 比較級與最高級"
+    },
+    {
+      "href": "/learn/g10s2/english-2/#handout-g10s2-english-2-u2",
+      "title": "英語文Ⅱ · 不定詞與動名詞"
+    },
+    {
+      "href": "/learn/g10s2/english-2/#handout-g10s2-english-2-u3",
+      "title": "英語文Ⅱ · 被動語態"
+    }
+  ],
+  "/subjects/english/conversation-daily-use": [
+    {
+      "href": "/learn/g10s1/english-1/#handout-g10s1-english-1-u4",
+      "title": "英語文Ⅰ · 問候與日常對話"
+    },
+    {
+      "href": "/learn/g10s2/english-2/#handout-g10s2-english-2-u4",
+      "title": "英語文Ⅱ · 情境對話"
+    },
+    {
+      "href": "/learn/g12s1/english-5/#handout-g12s1-english-5-u2",
+      "title": "英語文Ⅴ · 統測對話題"
+    }
+  ],
+  "/subjects/math-c/functions-graphs": [
+    {
+      "href": "/learn/g10s1/math-1/#handout-g10s1-math-1-u1",
+      "title": "數學 C Ⅰ · 坐標系與函數圖形"
+    }
+  ],
+  "/subjects/math-c/trigonometry": [
+    {
+      "href": "/learn/g10s1/math-1/#handout-g10s1-math-1-u2",
+      "title": "數學 C Ⅰ · 銳角三角函數"
+    },
+    {
+      "href": "/learn/g10s1/math-1/#handout-g10s1-math-1-u3",
+      "title": "數學 C Ⅰ · 廣義角與弧度"
+    },
+    {
+      "href": "/learn/g10s1/math-1/#handout-g10s1-math-1-u5",
+      "title": "數學 C Ⅰ · 頂標特訓：三角與向量綜合"
+    },
+    {
+      "href": "/learn/g12s1/math-review/#handout-g12s1-math-review-u1",
+      "title": "數學 C 統測總複習 · 函數、三角與向量"
+    }
+  ],
+  "/subjects/math-c/vectors": [
+    {
+      "href": "/learn/g10s1/math-1/#handout-g10s1-math-1-u4",
+      "title": "數學 C Ⅰ · 平面向量"
+    }
+  ],
+  "/subjects/physics/mechanics-motion": [
+    {
+      "href": "/learn/g10s1/physics-1/#handout-g10s1-physics-1-u1",
+      "title": "物理 BⅠ · 物理量與測量"
+    },
+    {
+      "href": "/learn/g10s1/physics-1/#handout-g10s1-physics-1-u2",
+      "title": "物理 BⅠ · 直線運動"
+    },
+    {
+      "href": "/learn/g10s1/physics-1/#handout-g10s1-physics-1-u3",
+      "title": "物理 BⅠ · 牛頓運動定律"
+    }
+  ],
+  "/subjects/physics/thermodynamics": [
+    {
+      "href": "/learn/g10s1/physics-1/#handout-g10s1-physics-1-u4",
+      "title": "物理 BⅠ · 功、能量與熱"
+    }
+  ],
+  "/subjects/history/cultural-heritage": [
+    {
+      "href": "/learn/g10s1/history/#handout-g10s1-history-u1",
+      "title": "歷史 · 認識過去：史料與時序"
+    }
+  ],
+  "/subjects/history/taiwan-history": [
+    {
+      "href": "/learn/g10s1/history/#handout-g10s1-history-u2",
+      "title": "歷史 · 臺灣史：多元族群與政權更迭"
+    }
+  ],
+  "/subjects/history/social-change": [
+    {
+      "href": "/learn/g10s1/history/#handout-g10s1-history-u3",
+      "title": "歷史 · 日治到戰後的臺灣"
+    }
+  ],
+  "/subjects/history/world-history": [
+    {
+      "href": "/learn/g10s1/history/#handout-g10s1-history-u4",
+      "title": "歷史 · 東亞與世界的關鍵轉折"
+    }
+  ],
+  "/subjects/extensions/construction-methods": [
+    {
+      "href": "/learn/g10s2/construction/#handout-g10s2-construction-u1",
+      "title": "構造與施工法 · 構造系統與土木構造"
+    }
+  ],
+  "/subjects/mechanics/structural-failures": [
+    {
+      "href": "/learn/g10s2/construction/#handout-g10s2-construction-u1",
+      "title": "構造與施工法 · 構造系統與土木構造"
+    }
+  ],
+  "/subjects/materials/concrete": [
+    {
+      "href": "/learn/g10s2/construction/#handout-g10s2-construction-u5",
+      "title": "構造與施工法 · 鋼筋混凝土構造"
+    },
+    {
+      "href": "/learn/g11s1/materials-1/#handout-g11s1-materials-1-u4",
+      "title": "材料與試驗Ⅰ · 混凝土組成與骨材"
+    },
+    {
+      "href": "/learn/g11s1/materials-1/#handout-g11s1-materials-1-u5",
+      "title": "材料與試驗Ⅰ · 配比、坍度與強度"
+    },
+    {
+      "href": "/learn/g11s1/materials-1/#handout-g11s1-materials-1-u6",
+      "title": "材料與試驗Ⅰ · 頂標特訓：水泥與混凝土計算"
+    },
+    {
+      "href": "/learn/g11s1/building-tech-1/#handout-g11s1-building-tech-1-u3",
+      "title": "營建技術實習Ⅰ · 混凝土拌和與工地品管"
+    },
+    {
+      "href": "/learn/g12s1/exam-pro1/#handout-g12s1-exam-pro1-u3",
+      "title": "專業科目（一）統測總複習 · 水泥與混凝土高頻"
+    }
+  ],
+  "/subjects/surveying/instrument-setup": [
+    {
+      "href": "/learn/g10s2/survey-2/#handout-g10s2-survey-2-u1",
+      "title": "測量實習Ⅱ · 角度測量與經緯儀"
+    }
+  ],
+  "/subjects/surveying/indirect-distance-elevation": [
+    {
+      "href": "/learn/g10s2/survey-2/#handout-g10s2-survey-2-u2",
+      "title": "測量實習Ⅱ · 間接距離與高程"
+    }
+  ],
+  "/subjects/surveying/traverse-surveying": [
+    {
+      "href": "/learn/g10s2/survey-2/#handout-g10s2-survey-2-u3",
+      "title": "測量實習Ⅱ · 座標計算與導線"
+    },
+    {
+      "href": "/learn/g10s2/survey-2/#handout-g10s2-survey-2-u5",
+      "title": "測量實習Ⅱ · 頂標特訓：導線與坐標計算"
+    }
+  ],
+  "/subjects/surveying/coordinate-computation": [
+    {
+      "href": "/learn/g10s2/survey-2/#handout-g10s2-survey-2-u4",
+      "title": "測量實習Ⅱ · 近代測繪技術"
+    },
+    {
+      "href": "/learn/g12s2/exam-pro2/#handout-g12s2-exam-pro2-u3",
+      "title": "專業科目（二）統測總複習 · 角度、導線與座標"
+    }
+  ],
+  "/subjects/drafting/sectional-views": [
+    {
+      "href": "/learn/g10s2/drafting-2/#handout-g10s2-drafting-2-u2",
+      "title": "製圖實習Ⅱ · 建築剖視"
+    },
+    {
+      "href": "/learn/g10s2/drafting-2/#handout-g10s2-drafting-2-u6",
+      "title": "製圖實習Ⅱ · 頂標特訓：投影與剖視判讀"
+    }
+  ],
+  "/subjects/drafting/auxiliary-views": [
+    {
+      "href": "/learn/g10s2/drafting-2/#handout-g10s2-drafting-2-u4",
+      "title": "製圖實習Ⅱ · 輔助視圖與透視"
+    }
+  ],
+  "/subjects/drafting/perspective-projection": [
+    {
+      "href": "/learn/g10s2/drafting-2/#handout-g10s2-drafting-2-u4",
+      "title": "製圖實習Ⅱ · 輔助視圖與透視"
+    }
+  ],
+  "/subjects/drafting/civil-architectural-drawings": [
+    {
+      "href": "/learn/g10s2/drafting-2/#handout-g10s2-drafting-2-u5",
+      "title": "製圖實習Ⅱ · 土木與建築圖識讀"
+    },
+    {
+      "href": "/learn/g11s2/cad-2/#handout-g11s2-cad-2-u5",
+      "title": "電腦輔助製圖實習Ⅱ · 建築結構圖"
+    },
+    {
+      "href": "/learn/g11s2/working-drawing/#handout-g11s2-working-drawing-u1",
+      "title": "施工圖實習 · 施工圖概論"
+    }
+  ],
+  "/subjects/chinese/cultural-knowledge": [
+    {
+      "href": "/learn/g10s2/chinese-2/#handout-g10s2-chinese-2-u3",
+      "title": "國語文Ⅱ · 先秦諸子"
+    },
+    {
+      "href": "/learn/g12s1/chinese-5/#handout-g12s1-chinese-5-u2",
+      "title": "國語文Ⅴ · 國學常識：經史子集"
+    },
+    {
+      "href": "/learn/g12s1/chinese-5/#handout-g12s1-chinese-5-u5",
+      "title": "國語文Ⅴ · 頂標特訓：國學常識與成語辨析"
+    }
+  ],
+  "/subjects/chinese/writing-expression": [
+    {
+      "href": "/learn/g10s2/chinese-2/#handout-g10s2-chinese-2-u4",
+      "title": "國語文Ⅱ · 應用文：履歷、自傳與讀書計畫"
+    },
+    {
+      "href": "/learn/g11s2/chinese-4/#handout-g11s2-chinese-4-u4",
+      "title": "國語文Ⅳ · 對聯、題辭與論說文"
+    },
+    {
+      "href": "/learn/g12s2/chinese-6/#handout-g12s2-chinese-6-u1",
+      "title": "國語文Ⅵ · 寫作測驗：審題與立意"
+    },
+    {
+      "href": "/learn/g12s2/chinese-6/#handout-g12s2-chinese-6-u2",
+      "title": "國語文Ⅵ · 抒情與記敘寫作"
+    },
+    {
+      "href": "/learn/g12s2/chinese-6/#handout-g12s2-chinese-6-u3",
+      "title": "國語文Ⅵ · 知性與論說寫作"
+    }
+  ],
+  "/subjects/math-c/algebra": [
+    {
+      "href": "/learn/g10s2/math-2/#handout-g10s2-math-2-u1",
+      "title": "數學 C Ⅱ · 式的運算"
+    }
+  ],
+  "/subjects/math-c/lines-circles": [
+    {
+      "href": "/learn/g10s2/math-2/#handout-g10s2-math-2-u2",
+      "title": "數學 C Ⅱ · 直線與圓"
+    }
+  ],
+  "/subjects/math-c/sequences-series": [
+    {
+      "href": "/learn/g10s2/math-2/#handout-g10s2-math-2-u3",
+      "title": "數學 C Ⅱ · 數列與級數"
+    },
+    {
+      "href": "/learn/g10s2/math-2/#handout-g10s2-math-2-u5",
+      "title": "數學 C Ⅱ · 頂標特訓：數列、直線與排列組合"
+    },
+    {
+      "href": "/learn/g12s1/math-review/#handout-g12s1-math-review-u2",
+      "title": "數學 C 統測總複習 · 代數、直線與圓、數列"
+    }
+  ],
+  "/subjects/math-c/permutations-combinations": [
+    {
+      "href": "/learn/g10s2/math-2/#handout-g10s2-math-2-u4",
+      "title": "數學 C Ⅱ · 排列組合"
+    },
+    {
+      "href": "/learn/g12s1/math-review/#handout-g12s1-math-review-u3",
+      "title": "數學 C 統測總複習 · 排列組合、指數對數與矩陣"
+    }
+  ],
+  "/subjects/physics/waves-acoustics": [
+    {
+      "href": "/learn/g10s2/physics-2/#handout-g10s2-physics-2-u1",
+      "title": "物理 BⅡ · 波動與聲音"
+    }
+  ],
+  "/subjects/physics/optics": [
+    {
+      "href": "/learn/g10s2/physics-2/#handout-g10s2-physics-2-u2",
+      "title": "物理 BⅡ · 光學"
+    }
+  ],
+  "/subjects/physics/electricity": [
+    {
+      "href": "/learn/g10s2/physics-2/#handout-g10s2-physics-2-u3",
+      "title": "物理 BⅡ · 電學"
+    },
+    {
+      "href": "/learn/g10s2/physics-2/#handout-g10s2-physics-2-u4",
+      "title": "物理 BⅡ · 電與磁、能源"
+    }
+  ],
+  "/subjects/geography/gis": [
+    {
+      "href": "/learn/g10s2/geography/#handout-g10s2-geography-u1",
+      "title": "地理 · 地圖與地理資訊"
+    }
+  ],
+  "/subjects/geography/climate-environment": [
+    {
+      "href": "/learn/g10s2/geography/#handout-g10s2-geography-u2",
+      "title": "地理 · 地形、氣候與水文"
+    }
+  ],
+  "/subjects/geography/population-urban": [
+    {
+      "href": "/learn/g10s2/geography/#handout-g10s2-geography-u3",
+      "title": "地理 · 人口、都市與產業"
+    }
+  ],
+  "/subjects/geography/environmental-issues": [
+    {
+      "href": "/learn/g10s2/geography/#handout-g10s2-geography-u4",
+      "title": "地理 · 環境議題與災害防救"
+    }
+  ],
+  "/subjects/mechanics/units-vectors": [
+    {
+      "href": "/learn/g11s1/mechanics-1/#handout-g11s1-mechanics-1-u1",
+      "title": "基礎工程力學Ⅰ · 力學基本觀念"
+    }
+  ],
+  "/subjects/mechanics/force-equilibrium": [
+    {
+      "href": "/learn/g11s1/mechanics-1/#handout-g11s1-mechanics-1-u2",
+      "title": "基礎工程力學Ⅰ · 平面共點力系"
+    },
+    {
+      "href": "/learn/g11s1/mechanics-1/#handout-g11s1-mechanics-1-u7",
+      "title": "基礎工程力學Ⅰ · 頂標特訓：力系綜合"
+    },
+    {
+      "href": "/learn/g12s1/exam-pro1/#handout-g12s1-exam-pro1-u1",
+      "title": "專業科目（一）統測總複習 · 靜力學高頻"
+    }
+  ],
+  "/subjects/mechanics/parallel-force-systems": [
+    {
+      "href": "/learn/g11s1/mechanics-1/#handout-g11s1-mechanics-1-u3",
+      "title": "基礎工程力學Ⅰ · 平行力系與非共點力系"
+    }
+  ],
+  "/subjects/mechanics/nonconcurrent-force-systems": [
+    {
+      "href": "/learn/g11s1/mechanics-1/#handout-g11s1-mechanics-1-u3",
+      "title": "基礎工程力學Ⅰ · 平行力系與非共點力系"
+    }
+  ],
+  "/subjects/mechanics/spatial-force-systems": [
+    {
+      "href": "/learn/g11s1/mechanics-1/#handout-g11s1-mechanics-1-u4",
+      "title": "基礎工程力學Ⅰ · 空間力系"
+    }
+  ],
+  "/subjects/mechanics/truss": [
+    {
+      "href": "/learn/g11s1/mechanics-1/#handout-g11s1-mechanics-1-u5",
+      "title": "基礎工程力學Ⅰ · 桁架"
+    }
+  ],
+  "/subjects/mechanics/friction": [
+    {
+      "href": "/learn/g11s1/mechanics-1/#handout-g11s1-mechanics-1-u6",
+      "title": "基礎工程力學Ⅰ · 摩擦力"
+    }
+  ],
+  "/subjects/materials/basic-properties": [
+    {
+      "href": "/learn/g11s1/materials-1/#handout-g11s1-materials-1-u1",
+      "title": "材料與試驗Ⅰ · 材料試驗概論與基本性質"
+    }
+  ],
+  "/subjects/materials/cement-composition": [
+    {
+      "href": "/learn/g11s1/materials-1/#handout-g11s1-materials-1-u2",
+      "title": "材料與試驗Ⅰ · 水泥成分與種類"
+    }
+  ],
+  "/subjects/materials/cement-types": [
+    {
+      "href": "/learn/g11s1/materials-1/#handout-g11s1-materials-1-u2",
+      "title": "材料與試驗Ⅰ · 水泥成分與種類"
+    }
+  ],
+  "/subjects/materials/cement-vicat": [
+    {
+      "href": "/learn/g11s1/materials-1/#handout-g11s1-materials-1-u3",
+      "title": "材料與試驗Ⅰ · 水泥試驗與儲存"
+    }
+  ],
+  "/subjects/materials/cement-storage": [
+    {
+      "href": "/learn/g11s1/materials-1/#handout-g11s1-materials-1-u3",
+      "title": "材料與試驗Ⅰ · 水泥試驗與儲存"
+    }
+  ],
+  "/subjects/materials/cement-strength": [
+    {
+      "href": "/learn/g11s1/materials-1/#handout-g11s1-materials-1-u3",
+      "title": "材料與試驗Ⅰ · 水泥試驗與儲存"
+    }
+  ],
+  "/subjects/materials/wood": [
+    {
+      "href": "/learn/g11s1/building-tech-1/#handout-g11s1-building-tech-1-u1",
+      "title": "營建技術實習Ⅰ · 木材與木工手工具"
+    },
+    {
+      "href": "/learn/g11s2/materials-2/#handout-g11s2-materials-2-u2",
+      "title": "材料與試驗Ⅱ · 木材"
+    }
+  ],
+  "/subjects/drafting/cad-basics": [
+    {
+      "href": "/learn/g11s1/cad-1/#handout-g11s1-cad-1-u1",
+      "title": "電腦輔助製圖實習Ⅰ · 電腦與 CAD 介面"
+    },
+    {
+      "href": "/learn/g11s1/cad-1/#handout-g11s1-cad-1-u2",
+      "title": "電腦輔助製圖實習Ⅰ · 座標輸入與直線"
+    },
+    {
+      "href": "/learn/g11s1/cad-1/#handout-g11s1-cad-1-u3",
+      "title": "電腦輔助製圖實習Ⅰ · 圓、多邊形與編修"
+    }
+  ],
+  "/subjects/drafting/dimensioning-and-symbols": [
+    {
+      "href": "/learn/g11s1/cad-1/#handout-g11s1-cad-1-u4",
+      "title": "電腦輔助製圖實習Ⅰ · 圖層、標註與出圖"
+    },
+    {
+      "href": "/learn/g11s2/cad-2/#handout-g11s2-cad-2-u2",
+      "title": "電腦輔助製圖實習Ⅱ · 建築符號與圖塊"
+    }
+  ],
+  "/subjects/drafting/architectural-plan": [
+    {
+      "href": "/learn/g11s1/arch-drawing/#handout-g11s1-arch-drawing-u1",
+      "title": "建築製圖實習 · 建築製圖概論與人體尺度"
+    },
+    {
+      "href": "/learn/g11s2/cad-2/#handout-g11s2-cad-2-u3",
+      "title": "電腦輔助製圖實習Ⅱ · 建築平面圖繪製"
+    },
+    {
+      "href": "/learn/g12s2/exam-pro2/#handout-g12s2-exam-pro2-u5",
+      "title": "專業科目（二）統測總複習 · 建築圖識讀與 CAD"
+    }
+  ],
+  "/subjects/history/architectural-history": [
+    {
+      "href": "/learn/g11s1/chinese-3/#handout-g11s1-chinese-3-u2",
+      "title": "國語文Ⅲ · 唐宋古文名篇"
+    }
+  ],
+  "/subjects/chinese/reading-comprehension": [
+    {
+      "href": "/learn/g11s1/chinese-3/#handout-g11s1-chinese-3-u4",
+      "title": "國語文Ⅲ · 小說閱讀"
+    },
+    {
+      "href": "/learn/g12s1/chinese-5/#handout-g12s1-chinese-5-u4",
+      "title": "國語文Ⅴ · 閱讀理解策略"
+    },
+    {
+      "href": "/learn/g12s2/chinese-6/#handout-g12s2-chinese-6-u4",
+      "title": "國語文Ⅵ · 閱讀素養：圖表與多文本"
+    }
+  ],
+  "/subjects/english/grammar-clauses": [
+    {
+      "href": "/learn/g11s1/english-3/#handout-g11s1-english-3-u1",
+      "title": "英語文Ⅲ · 關係子句"
+    },
+    {
+      "href": "/learn/g11s1/english-3/#handout-g11s1-english-3-u2",
+      "title": "英語文Ⅲ · 分詞"
+    },
+    {
+      "href": "/learn/g11s2/english-4/#handout-g11s2-english-4-u2",
+      "title": "英語文Ⅳ · 名詞子句"
+    }
+  ],
+  "/subjects/english/cloze-passage-structure": [
+    {
+      "href": "/learn/g11s1/english-3/#handout-g11s1-english-3-u3",
+      "title": "英語文Ⅲ · 連接詞與轉折語"
+    },
+    {
+      "href": "/learn/g12s1/english-5/#handout-g12s1-english-5-u3",
+      "title": "英語文Ⅴ · 綜合測驗與篇章結構"
+    }
+  ],
+  "/subjects/english/vocabulary-professional": [
+    {
+      "href": "/learn/g11s1/english-3/#handout-g11s1-english-3-u4",
+      "title": "英語文Ⅲ · 營建專業字彙"
+    },
+    {
+      "href": "/learn/g12s2/english-6/#handout-g12s2-english-6-u3",
+      "title": "英語文Ⅵ · 營建工地英文"
+    }
+  ],
+  "/subjects/math-c/trig-applications": [
+    {
+      "href": "/learn/g11s1/math-3/#handout-g11s1-math-3-u1",
+      "title": "數學 C Ⅲ · 三角函數的應用"
+    }
+  ],
+  "/subjects/math-c/exponents-logarithms": [
+    {
+      "href": "/learn/g11s1/math-3/#handout-g11s1-math-3-u2",
+      "title": "數學 C Ⅲ · 指數與對數"
+    },
+    {
+      "href": "/learn/g11s1/math-3/#handout-g11s1-math-3-u5",
+      "title": "數學 C Ⅲ · 頂標特訓：指數與對數"
+    }
+  ],
+  "/subjects/math-c/space-vectors": [
+    {
+      "href": "/learn/g11s1/math-3/#handout-g11s1-math-3-u3",
+      "title": "數學 C Ⅲ · 空間向量"
+    }
+  ],
+  "/subjects/math-c/matrices": [
+    {
+      "href": "/learn/g11s1/math-3/#handout-g11s1-math-3-u4",
+      "title": "數學 C Ⅲ · 聯立方程式與矩陣"
+    }
+  ],
+  "/subjects/chemistry/matter-composition": [
+    {
+      "href": "/learn/g11s1/chemistry/#handout-g11s1-chemistry-u1",
+      "title": "化學 B · 物質組成與原子結構"
+    }
+  ],
+  "/subjects/chemistry/chemical-reactions": [
+    {
+      "href": "/learn/g11s1/chemistry/#handout-g11s1-chemistry-u2",
+      "title": "化學 B · 化學反應與計量"
+    }
+  ],
+  "/subjects/chemistry/acids-bases-salts": [
+    {
+      "href": "/learn/g11s1/chemistry/#handout-g11s1-chemistry-u3",
+      "title": "化學 B · 酸鹼與混凝土中性化"
+    }
+  ],
+  "/subjects/chemistry/redox": [
+    {
+      "href": "/learn/g11s1/chemistry/#handout-g11s1-chemistry-u4",
+      "title": "化學 B · 氧化還原與高分子"
+    }
+  ],
+  "/subjects/civics/citizenship-community": [
+    {
+      "href": "/learn/g11s1/civics/#handout-g11s1-civics-u1",
+      "title": "公民與社會 · 人權、民主與憲政"
+    }
+  ],
+  "/subjects/civics/law-life": [
+    {
+      "href": "/learn/g11s1/civics/#handout-g11s1-civics-u2",
+      "title": "公民與社會 · 法律與生活"
+    }
+  ],
+  "/subjects/civics/labor-ethics": [
+    {
+      "href": "/learn/g11s1/civics/#handout-g11s1-civics-u3",
+      "title": "公民與社會 · 勞動權益與職業倫理"
+    },
+    {
+      "href": "/learn/g12s2/safety-law/#handout-g12s2-safety-law-u1",
+      "title": "職業安全衛生與建築法規 · 職業安全衛生法與工地管理"
+    }
+  ],
+  "/subjects/civics/economy-sustainability": [
+    {
+      "href": "/learn/g11s1/civics/#handout-g11s1-civics-u4",
+      "title": "公民與社會 · 市場經濟與永續"
+    }
+  ],
+  "/subjects/mechanics/centroid": [
+    {
+      "href": "/learn/g11s2/mechanics-2/#handout-g11s2-mechanics-2-u1",
+      "title": "基礎工程力學Ⅱ · 重心與形心"
+    },
+    {
+      "href": "/learn/g11s2/mechanics-2/#handout-g11s2-mechanics-2-u2",
+      "title": "基礎工程力學Ⅱ · 慣性矩"
+    }
+  ],
+  "/subjects/mechanics/stress-strain": [
+    {
+      "href": "/learn/g11s2/mechanics-2/#handout-g11s2-mechanics-2-u3",
+      "title": "基礎工程力學Ⅱ · 應力與應變"
+    },
+    {
+      "href": "/learn/g11s2/mechanics-2/#handout-g11s2-mechanics-2-u6",
+      "title": "基礎工程力學Ⅱ · 梁內應力"
+    }
+  ],
+  "/subjects/mechanics/shear-properties": [
+    {
+      "href": "/learn/g11s2/mechanics-2/#handout-g11s2-mechanics-2-u4",
+      "title": "基礎工程力學Ⅱ · 剪力與剪應力"
+    }
+  ],
+  "/subjects/mechanics/beam": [
+    {
+      "href": "/learn/g11s2/mechanics-2/#handout-g11s2-mechanics-2-u5",
+      "title": "基礎工程力學Ⅱ · 梁之剪力與彎矩"
+    },
+    {
+      "href": "/learn/g11s2/mechanics-2/#handout-g11s2-mechanics-2-u8",
+      "title": "基礎工程力學Ⅱ · 頂標特訓：梁與應力綜合"
+    },
+    {
+      "href": "/learn/g11s2/working-drawing/#handout-g11s2-working-drawing-u3",
+      "title": "施工圖實習 · 結構圖與配筋"
+    },
+    {
+      "href": "/learn/g12s1/exam-pro1/#handout-g12s1-exam-pro1-u2",
+      "title": "專業科目（一）統測總複習 · 材料力學高頻"
+    }
+  ],
+  "/subjects/mechanics/plane-stress": [
+    {
+      "href": "/learn/g11s2/mechanics-2/#handout-g11s2-mechanics-2-u7",
+      "title": "基礎工程力學Ⅱ · 平面應力與莫爾圓"
+    }
+  ],
+  "/subjects/materials/stone-ceramics-glass": [
+    {
+      "href": "/learn/g11s2/materials-2/#handout-g11s2-materials-2-u1",
+      "title": "材料與試驗Ⅱ · 石材、陶瓷與玻璃"
+    }
+  ],
+  "/subjects/materials/polymers-asphalt": [
+    {
+      "href": "/learn/g11s2/materials-2/#handout-g11s2-materials-2-u3",
+      "title": "材料與試驗Ⅱ · 高分子材料與瀝青"
+    }
+  ],
+  "/subjects/materials/metals": [
+    {
+      "href": "/learn/g11s2/materials-2/#handout-g11s2-materials-2-u4",
+      "title": "材料與試驗Ⅱ · 金屬材料"
+    },
+    {
+      "href": "/learn/g11s2/materials-2/#handout-g11s2-materials-2-u6",
+      "title": "材料與試驗Ⅱ · 頂標特訓：金屬與木材性質"
+    },
+    {
+      "href": "/learn/g12s1/exam-pro1/#handout-g12s1-exam-pro1-u4",
+      "title": "專業科目（一）統測總複習 · 其他材料高頻"
+    }
+  ],
+  "/subjects/materials/green-materials": [
+    {
+      "href": "/learn/g11s2/materials-2/#handout-g11s2-materials-2-u5",
+      "title": "材料與試驗Ⅱ · 綠建材與未來趨勢"
+    }
+  ],
+  "/subjects/materials/green-building-materials": [
+    {
+      "href": "/learn/g11s2/materials-2/#handout-g11s2-materials-2-u5",
+      "title": "材料與試驗Ⅱ · 綠建材與未來趨勢"
+    }
+  ],
+  "/subjects/drafting/architectural-elevation": [
+    {
+      "href": "/learn/g11s2/cad-2/#handout-g11s2-cad-2-u4",
+      "title": "電腦輔助製圖實習Ⅱ · 立面、剖面與樓梯詳圖"
+    }
+  ],
+  "/subjects/history/chinese-history": [
+    {
+      "href": "/learn/g11s2/chinese-4/#handout-g11s2-chinese-4-u2",
+      "title": "國語文Ⅳ · 史傳文學"
+    }
+  ],
+  "/subjects/english/grammar-mastery": [
+    {
+      "href": "/learn/g11s2/english-4/#handout-g11s2-english-4-u1",
+      "title": "英語文Ⅳ · 條件句與假設語氣"
+    },
+    {
+      "href": "/learn/g11s2/english-4/#handout-g11s2-english-4-u3",
+      "title": "英語文Ⅳ · 倒裝與強調"
+    },
+    {
+      "href": "/learn/g12s1/english-5/#handout-g12s1-english-5-u5",
+      "title": "英語文Ⅴ · 頂標特訓：文法與語意陷阱"
+    },
+    {
+      "href": "/learn/g12s2/english-6/#handout-g12s2-english-6-u4",
+      "title": "英語文Ⅵ · 文法總複習"
+    }
+  ],
+  "/subjects/english/reading-infographics": [
+    {
+      "href": "/learn/g11s2/english-4/#handout-g11s2-english-4-u4",
+      "title": "英語文Ⅳ · 實用文本與圖表"
+    }
+  ],
+  "/subjects/math-c/linear-programming": [
+    {
+      "href": "/learn/g11s2/math-4/#handout-g11s2-math-4-u1",
+      "title": "數學 C Ⅳ · 線性規劃"
+    }
+  ],
+  "/subjects/math-c/geometry": [
+    {
+      "href": "/learn/g11s2/math-4/#handout-g11s2-math-4-u2",
+      "title": "數學 C Ⅳ · 二次曲線"
+    }
+  ],
+  "/subjects/math-c/calculus": [
+    {
+      "href": "/learn/g11s2/math-4/#handout-g11s2-math-4-u3",
+      "title": "數學 C Ⅳ · 微分"
+    },
+    {
+      "href": "/learn/g11s2/math-4/#handout-g11s2-math-4-u5",
+      "title": "數學 C Ⅳ · 頂標特訓：微積分綜合"
+    },
+    {
+      "href": "/learn/g12s1/math-review/#handout-g12s1-math-review-u4",
+      "title": "數學 C 統測總複習 · 二次曲線與微積分"
+    }
+  ],
+  "/subjects/math-c/integration": [
+    {
+      "href": "/learn/g11s2/math-4/#handout-g11s2-math-4-u4",
+      "title": "數學 C Ⅳ · 積分"
+    }
+  ],
+  "/subjects/english/reading-comprehension": [
+    {
+      "href": "/learn/g12s1/english-5/#handout-g12s1-english-5-u4",
+      "title": "英語文Ⅴ · 閱讀測驗策略"
+    }
+  ],
+  "/subjects/english/reading-advanced": [
+    {
+      "href": "/learn/g12s1/english-5/#handout-g12s1-english-5-u4",
+      "title": "英語文Ⅴ · 閱讀測驗策略"
+    }
+  ],
+  "/subjects/drafting/building-codes-far": [
+    {
+      "href": "/learn/g12s2/safety-law/#handout-g12s2-safety-law-u3",
+      "title": "職業安全衛生與建築法規 · 建築法與執照管理"
+    }
+  ],
+  "/subjects/english/translation-writing": [
+    {
+      "href": "/learn/g12s2/english-6/#handout-g12s2-english-6-u1",
+      "title": "英語文Ⅵ · 翻譯與句子重組"
+    }
+  ],
+  "/subjects/english/workplace-communication": [
+    {
+      "href": "/learn/g12s2/english-6/#handout-g12s2-english-6-u2",
+      "title": "英語文Ⅵ · 職場溝通"
+    }
+  ]
+}
