@@ -15,7 +15,7 @@ export default function FatalTrapXRay({ traps }: FatalTrapXRayProps) {
   if (!traps || traps.length === 0) return null;
 
   return (
-    <section id="traps" aria-labelledby="fatal-traps-heading" className="scroll-mt-28 rounded-3xl border border-rose-200 dark:border-rose-900/50 bg-rose-50/20 dark:bg-rose-950/10 p-5 sm:p-7 shadow-xs space-y-4">
+    <section id="common-misconceptions" aria-labelledby="fatal-traps-heading" className="scroll-mt-28 rounded-3xl border border-rose-200 dark:border-rose-900/50 bg-rose-50/20 dark:bg-rose-950/10 p-5 sm:p-7 shadow-xs space-y-4">
       <div className="flex items-center justify-between">
         <div className="flex items-center gap-2.5">
           <div className="flex size-9 items-center justify-center rounded-xl bg-rose-600 text-white shadow-xs">

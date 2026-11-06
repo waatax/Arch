@@ -41,6 +41,7 @@ jobs:
       - name: Build with Next.js
         run: |
           pnpm validate:content
+          pnpm validate:knowledge-accuracy
           pnpm validate:exam-teaching
           pnpm validate:study-studio
           pnpm validate:visuals
@@ -55,6 +56,7 @@ jobs:
           node scripts/validate-study-studio.mjs --built
           node scripts/validate-exam-teaching.mjs --built
           node scripts/validate-term-handouts.mjs
+          pnpm validate:reading-output
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3

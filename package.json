@@ -1,8 +1,10 @@
 {
   "name": "arch",
-  "version": "10.0.0",
+  "version": "10.1.0",
   "private": true,
   "scripts": {
+    "validate:knowledge-accuracy": "node scripts/validate-knowledge-accuracy.mjs",
+    "validate:reading-output": "node scripts/validate-reading-output.mjs",
     "validate:exam-teaching": "node scripts/validate-exam-teaching.mjs && node scripts/validate-question-content.mjs --require-complete && node scripts/validate-drafting-projections.mjs",
     "validate:study-studio": "node scripts/validate-study-studio.mjs",
     "build": "pnpm --filter web build",

@@ -1,0 +1,143 @@
+/* Shared reading surfaces follow all four user-selected themes. */
+.lesson-reader,
+.term-handout {
+  --study-paper: var(--color-paper-50);
+  --study-panel: var(--color-paper-100);
+  --study-ink: var(--color-ink-900);
+  --study-muted: var(--color-ink-650);
+  --study-line: var(--color-concrete-300);
+  --study-accent: var(--color-teal-700);
+  color: var(--study-ink);
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+.lesson-reader :where(h1, h2, h3, h4),
+.term-handout :where(h2, h3, h4) {
+  text-wrap: pretty;
+  line-height: 1.5;
+}
+
+.lesson-reader .concept-body {
+  font-size: 1rem;
+  line-height: 1.95;
+  letter-spacing: .01em;
+}
+
+.lesson-reader :where(summary),
+.term-handout :where(summary) {
+  min-height: 44px;
+  padding-block: .55rem;
+  cursor: pointer;
+  line-height: 1.65;
+}
+
+.lesson-reader :where(a, button, summary, textarea):focus-visible,
+.term-handout :where(a, summary):focus-visible {
+  outline: 3px solid var(--study-accent);
+  outline-offset: 4px;
+}
+
+.study-table {
+  margin-block: 1.25rem;
+  border: 1px solid var(--color-concrete-300);
+  border-radius: .875rem;
+  background: var(--color-paper-50);
+  color: var(--color-ink-900);
+  overflow: hidden;
+  font-size: .9375rem;
+  line-height: 1.8;
+}
+
+.study-table-scroll {
+  overflow-x: auto;
+  overscroll-behavior-inline: contain;
+  scrollbar-width: thin;
+}
+
+.study-table-scroll:focus-visible {
+  outline: 3px solid var(--color-teal-700);
+  outline-offset: -3px;
+}
+
+.study-table table { width: 100%; border-collapse: collapse; }
+.study-table caption { text-align: start; padding: .875rem 1rem; font-weight: 700; }
+.study-table :where(th, td) { padding: .875rem 1rem; vertical-align: top; text-align: start; }
+.study-table th { font-weight: 700; }
+.study-table thead { background: var(--color-paper-100); }
+.study-table tbody tr { border-top: 1px solid var(--color-concrete-300); }
+.study-table tbody tr:nth-child(even) { background: color-mix(in srgb, var(--color-paper-100) 50%, var(--color-paper-50)); }
+.study-table-note { padding: .75rem 1rem; border-top: 1px solid var(--color-concrete-300); font-size: .875rem; line-height: 1.85; }
+.study-table-hint { display: none; }
+
+.term-handout {
+  max-width: 64rem;
+  margin-inline: auto;
+  padding: 3rem clamp(1rem, 4vw, 2.5rem);
+  font-size: 1rem;
+  line-height: 1.95;
+  scroll-margin-top: 7rem;
+}
+
+.handout-header { padding-bottom: 1.5rem; border-bottom: 2px solid var(--study-accent); }
+.handout-header h2 { margin-block: .5rem 1rem; font-size: clamp(1.5rem, 4vw, 2rem); }
+.handout-kicker { font-size: .8125rem; font-weight: 700; letter-spacing: .08em; color: var(--study-accent); }
+.handout-header > p:last-child { color: var(--study-muted); }
+.handout-plan { display: grid; gap: .875rem; list-style: none; padding: 0; margin-block: 1.5rem; }
+.handout-plan li { padding: 1rem 1.125rem; border: 1px solid var(--study-line); border-radius: .875rem; background: var(--study-panel); font-size: .9375rem; }
+.handout-plan strong { display: block; color: var(--study-accent); margin-bottom: .375rem; }
+.handout-nav { display: flex; flex-wrap: wrap; gap: .625rem; margin-block: 1.5rem 2rem; }
+.handout-nav a { display: flex; align-items: center; gap: .5rem; min-height: 44px; padding: .625rem .875rem; border: 1px solid var(--study-line); border-radius: .625rem; font-size: .875rem; color: var(--study-ink); background: var(--study-paper); text-decoration: none; }
+.handout-nav a:hover { border-color: var(--study-accent); color: var(--study-accent); }
+.handout-nav span { color: var(--study-accent); font-variant-numeric: tabular-nums; }
+.handout-unit { margin-block: 1.5rem; border: 1px solid var(--study-line); border-radius: 1.125rem; padding: clamp(1rem, 3vw, 1.75rem); background: var(--study-paper); scroll-margin-top: 7rem; }
+.handout-unit > * + * { margin-top: 1rem; }
+.handout-unit-heading { display: flex; align-items: flex-start; gap: .875rem; }
+.handout-unit-number { display: grid; place-items: center; flex-shrink: 0; width: 2.75rem; height: 2.75rem; border-radius: .75rem; background: var(--study-panel); color: var(--study-accent); font-weight: 700; font-variant-numeric: tabular-nums; }
+.handout-unit-heading p { font-size: .8125rem; color: var(--study-accent); }
+.handout-unit-heading h3 { font-size: 1.25rem; margin-top: .25rem; }
+.handout-exercise { padding-top: 1rem; border-top: 1px solid var(--study-line); }
+.handout-exercise > * + * { margin-top: .75rem; }
+.handout-exercise-label { color: var(--study-accent); font-weight: 700; font-size: .8125rem; }
+.handout-answer, .handout-past-papers { padding: .5rem 1rem 1rem; background: var(--study-panel); border: 1px solid var(--study-line); border-radius: .75rem; }
+.handout-past-papers { background: var(--study-paper); }
+.handout-answer summary, .handout-past-papers > summary { font-weight: 700; color: var(--study-accent); }
+.handout-case { padding-block: 1.25rem; border-top: 1px solid var(--study-line); }
+.handout-case > * + * { margin-top: 1rem; }
+.handout-knowledge { padding: 1rem; border-left: 3px solid var(--study-accent); background: var(--study-panel); }
+.handout-knowledge h4 { font-size: 1rem; margin-bottom: .5rem; }
+.handout-knowledge p { color: var(--study-muted); }
+.handout-links { display: flex; flex-wrap: wrap; gap: .5rem 1.25rem; }
+.handout-links a { display: inline-flex; align-items: center; min-height: 44px; font-size: .9375rem; color: var(--study-accent); text-underline-offset: .25em; }
+.handout-recap { border-top: 2px solid var(--study-accent); padding-top: 1.25rem; margin-top: 2rem; }
+.et-diagram { margin-block: 1.25rem; padding: 1rem; border: 1px solid var(--color-concrete-300); border-radius: .875rem; color: var(--color-teal-700); overflow-x: auto; scrollbar-width: thin; }
+.et-diagram svg { display: block; width: 100%; max-width: 520px; margin-inline: auto; }
+.et-diagram figcaption { color: var(--color-ink-650); font-size: .9375rem; line-height: 1.85; margin-top: .875rem; }
+.semester-diagram-canvas:focus-visible { outline: 3px solid #72d5d4; outline-offset: 3px; }
+.semester-diagram-canvas svg { display: block; width: 100%; min-width: 30rem; margin-inline: auto; }
+
+@media (min-width: 768px) {
+  .handout-plan { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}
+
+@media (max-width: 639px) {
+  .study-table-hint { display: block; padding: .5rem 1rem; color: var(--color-ink-650); font-size: .8125rem; border-top: 1px solid var(--color-concrete-300); }
+  .lesson-reader { letter-spacing: .01em; }
+  .lesson-reader .concept-body { padding-left: .875rem; }
+  .et-diagram svg { min-width: 22rem; max-width: none; }
+}
+
+@media print {
+  .lesson-reader, .term-handout { color: #111; --study-paper: #fff; --study-panel: #fff; --study-ink: #111; --study-muted: #333; --study-line: #aaa; --study-accent: #222; }
+  .term-handout { max-width: none; padding: 0; font-size: 11pt; }
+  .handout-nav, .study-table-hint { display: none; }
+  .handout-plan { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .handout-unit { break-inside: auto; padding: 1rem; }
+  .handout-unit-heading, .handout-knowledge { break-inside: avoid; }
+  .study-table-scroll { overflow: visible; }
+  .study-table table { min-width: 0 !important; }
+  .study-table { color: #111; background: #fff; font-size: 10pt; }
+  .study-table :where(th, td) { padding: .5rem; }
+  .et-diagram { color: #111; overflow: visible; }
+  .et-diagram svg, .semester-diagram-canvas svg { min-width: 0; max-width: 100%; }
+}

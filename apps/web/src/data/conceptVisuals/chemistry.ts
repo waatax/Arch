@@ -4,6 +4,9 @@ import {
   svg, text, type Pt,
 } from './kit';
 
+const decayValue = (rate: number, day: number) => Number((2.4 * Math.exp(-rate * day)).toFixed(3));
+const decayPoints = (rate: number): [number, number][] => [0, 3, 7, 10, 14].map(day => [day, decayValue(rate, day)]);
+
 /** 波耳模型：殼層電子數 */
 function bohr(cx: number, cy: number, shells: number[], symbol: string): string {
   let s = circle(cx, cy, 14, { tone: 'red', fill: 'red', soft: true, w: 1.6 }) + text(cx, cy + 4, symbol, { anchor: 'middle', weight: 'bold', size: 12 });
@@ -47,33 +50,28 @@ export const chemistryVisuals: TopicVisualMap = {
     {
       concept: '奈米二氧化鈦 (TiO₂) 光觸媒催化空氣淨化與自潔化學',
       kind: 'chart',
-      title: '室內裝修後 TVOC 濃度一階衰減示意曲線（通風不良、自然換氣、TiO₂ 光觸媒）',
-      caption: '以一階衰減模型 C(t) = C₀·e^(−kt) 示意三種情境的 TVOC 下降速率（k 值為教學假設），並標示我國室內空氣品質標準 TVOC 1 小時值 0.56 ppm。',
+      title: '無持續污染源時的一階衰減模型：不同移除率的比較',
+      caption: '純教學模型：充分混合、無持續源且室外濃度為零，C(t)=2.4e^(−λt)，λ依序假設為0.055、0.16、0.28 day⁻¹；每個點均由公式計算。圖上0.56 ppm僅供對照TVOC法定1小時值，瞬時模型值不能取代規定時段的實測，亦不代表任何建材或光觸媒產品的實測效能。',
       svg: lineChart({
         w: 520,
         h: 250,
         x: { min: 0, max: 14, ticks: [0, 3, 7, 10, 14], label: '裝修完工後天數 t (天)', fmt: (v) => `${v}天` },
         y: { min: 0, max: 2.5, ticks: [0, 0.56, 1.0, 1.5, 2.0, 2.5], label: '室內 TVOC 濃度 (ppm)' },
         series: [
-          { name: '通風不良 (衰減極慢)', tone: 'red', points: [[0, 2.4], [3, 2.0], [7, 1.6], [10, 1.35], [14, 1.1]], markers: true, smooth: true },
-          { name: '標準自然換氣', tone: 'blue', points: [[0, 2.4], [3, 1.3], [7, 0.65], [10, 0.42], [14, 0.25]], markers: true, smooth: true },
-          { name: '搭配 TiO₂ 光觸媒分解', tone: 'green', dash: 'dash', points: [[0, 2.4], [3, 0.8], [7, 0.28], [10, 0.12], [14, 0.05]], markers: true, smooth: true },
+          { name: 'A：λ=0.055 /天', tone: 'red', points: decayPoints(0.055), markers: true },
+          { name: 'B：λ=0.16 /天', tone: 'blue', points: decayPoints(0.16), markers: true },
+          { name: 'C：λ=0.28 /天', tone: 'green', dash: 'dash', points: decayPoints(0.28), markers: true },
         ],
         overlay: (f) => line(f.box.left, f.Y(0.56), f.box.left + f.box.width, f.Y(0.56), { tone: 'amber', w: 1.5, dash: 'dot' }) +
           text(f.box.left + f.box.width - 6, f.Y(0.56) - 6, '室內空氣品質標準 TVOC ≤ 0.56 ppm', { tone: 'amber', size: 11, anchor: 'end', weight: 'bold' }),
       }),
       table: {
-        headers: ['裝修後時間 t', '通風不良 TVOC (ppm)', '標準換氣 TVOC (ppm)', 'TiO₂ 光觸媒分解 TVOC'],
-        rows: [
-          ['第 0 天 (剛完工)', '2.40 (嚴重超標)', '2.40', '2.40'],
-          ['第 3 天', '2.00', '1.30', '0.80'],
-          ['第 7 天 (一週)', '1.60', '0.65', '0.28 (已達標 < 0.56)'],
-          ['第 14 天 (兩週)', '1.10 (仍超標)', '0.25 (達標 < 0.56)', '0.05 (完全淨化)'],
-        ],
+        headers: ['時間 t', '情境A（ppm）', '情境B（ppm）', '情境C（ppm）'],
+        rows: [0, 3, 7, 14].map(day => [`第${day}天`, ...[0.055, 0.16, 0.28].map(rate => decayValue(rate, day).toFixed(3))]),
       },
       takeaways: [
         '健康綠建材標章重點管制兩大逸散物：**甲醛（$\\text{HCHO}$，致癌物）**與**總揮發性有機化合物（$\\text{TVOC}$，含苯、甲苯、二甲苯）**。',
-        '奈米二氧化鈦（$\\text{TiO}_2$）光觸媒在紫外光照射下產生強氧化力之氫氧自由基（$\\cdot\\text{OH}$），可將有機污染物與 VOCs 氧化分解為無害的 $\\text{CO}_2$ 與 $\\text{H}_2\\text{O}$。',
+        'TiO₂光觸媒須有適當光照與接觸條件；理想完全礦化產物為CO₂與水，但實際去除率、中間產物須另驗證，不能用本圖推算產品效能或固定入住天數。',
       ],
     },
     {

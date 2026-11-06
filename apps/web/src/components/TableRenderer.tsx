@@ -1,22 +1,20 @@
 import type { TableData } from '../data/types';
+import MathText from './MathText';
 
 export default function TableRenderer({ data }: { data: TableData }) {
   return (
-    <div role="region" aria-label={data.title || '資料表'} tabIndex={0} className="my-4 overflow-x-auto rounded-xl border border-(--color-concrete-300) bg-(--color-paper-50) shadow-sm focus-visible:outline-2 focus-visible:outline-teal-600">
-      {data.title && (
-        <div className="border-b border-(--color-concrete-300) bg-(--color-paper-50) px-4 py-3 text-sm font-bold text-(--color-ink-900)">
-          {data.title}
-        </div>
-      )}
-      <table style={{minWidth:(data.headers?.length??0)>5?'45rem':undefined}} className="w-full text-sm text-(--color-ink-900)">
+    <div className="study-table">
+      <div role="region" aria-label={data.title || '資料表，可左右捲動'} tabIndex={0} className="study-table-scroll">
+      <table style={{minWidth:(data.headers?.length??0)>5?'45rem':(data.headers?.length??0)>2?'32rem':undefined}}>
+        {data.title && <caption>{data.title}</caption>}
         {data.headers && data.headers.length > 0 && (
-          <thead className="bg-(--color-paper-50) font-bold">
+          <thead>
             <tr>
               {data.headers.map((header, i) => {
                 const align = data.alignments?.[i] ?? 'left';
                 return (
-                  <th scope="col" key={i} style={{textAlign:align}} className="border-b border-(--color-concrete-300) p-3">
-                    {header}
+                  <th scope="col" key={i} style={{textAlign:align}}>
+                    <MathText content={header} />
                   </th>
                 );
               })}
@@ -25,13 +23,12 @@ export default function TableRenderer({ data }: { data: TableData }) {
         )}
         <tbody>
           {data.rows.map((row, i) => (
-            <tr key={i} className="border-b border-(--color-concrete-300) last:border-0 hover:bg-(--color-paper-50)/50">
+            <tr key={i}>
               {row.map((cell, j) => {
                 const align = data.alignments?.[j] ?? 'left';
-                // Use a simple heuristic for multi-line cells or bolding if needed, but for now just raw text.
                 return (
-                  <td key={j} style={{textAlign:align}} className="p-3 whitespace-pre-line">
-                    {cell}
+                  <td key={j} style={{textAlign:align}} className="whitespace-pre-line">
+                    <MathText content={cell} />
                   </td>
                 );
               })}
@@ -39,6 +36,8 @@ export default function TableRenderer({ data }: { data: TableData }) {
           ))}
         </tbody>
       </table>
+      </div>
+      {(data.headers?.length ?? 0) > 2 && <p className="study-table-hint">表格可左右滑動，請對照欄名閱讀。</p>}
     </div>
   );
 }

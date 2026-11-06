@@ -1,0 +1,34 @@
+{
+  "subjects": 13,
+  "formulaFields": 250,
+  "delimitedLatexBlocksValidated": 35,
+  "decayTableCellsIndependentlyRecomputed": 12,
+  "sample": {
+    "mean": 29.333333333333332,
+    "sd": 1.2583057392117916,
+    "cv": 4.289678656403835
+  },
+  "readingThemeContrast": {
+    ":root": {
+      "ink-900": 14.58,
+      "ink-650": 5.96,
+      "teal-700": 5.16
+    },
+    ":root.dark": {
+      "ink-900": 15.67,
+      "ink-650": 8.68,
+      "teal-700": 9.99
+    },
+    ":root.theme-sepia": {
+      "ink-900": 13.77,
+      "ink-650": 5.59,
+      "teal-700": 5.52
+    },
+    ":root.dark.theme-oled": {
+      "ink-900": 17.03,
+      "ink-650": 8.19,
+      "teal-700": 9.8
+    }
+  },
+  "scope": "Targeted scientific regressions, delimited formula syntax and theme token contrast; not a complete semantic or browser visual audit."
+}

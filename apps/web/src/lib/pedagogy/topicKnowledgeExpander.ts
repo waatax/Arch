@@ -1224,7 +1224,7 @@ function getBaseTopicDeepKnowledge(subjectSlug: string, topicSlug: string): Topi
       cnsAndCodes: {
         code: '建築技術規則建築構造編 基礎構造篇',
         title: '靜力平衡與結構穩定性原則',
-        description: '結構物必須具備足夠之抗傾覆安全係數 (FS ≥ 1.5) 與抗滑動安全係數，確保在極限載重下整體處於絕對靜止穩定。'
+        description: '分別檢查抗傾覆、抗滑動及其他破壞模式，依題定載重組合與適用規範比較抗力、需求及安全係數；不同工況不能一律套用1.5，也不能把靜力平衡當成所有工況下絕對穩定的保證。'
       },
       bilingualTerms: [
         { en: 'Free Body Diagram', zh: '自由體圖', abbr: 'FBD', context: '將研究構件自周遭環境隔離並標註所有已知與未知外力、反力之分析圖。' },

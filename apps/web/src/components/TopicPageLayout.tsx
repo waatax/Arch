@@ -396,7 +396,7 @@ export default function TopicPageLayout({ subject, topic, mappedExamQuestions, t
         </button>
       </div>
 
-      <article className={`mx-auto space-y-16 px-4 py-8 sm:px-6 sm:py-16 text-lg leading-[1.8] text-slate-800 dark:text-slate-200 tracking-wide transition-all duration-300 ${
+      <article className={`lesson-reader mx-auto space-y-16 px-4 py-8 sm:px-6 sm:py-16 text-lg leading-[1.8] text-slate-800 dark:text-slate-200 tracking-wide transition-all duration-300 ${
         readingWidth === 'full' ? 'max-w-[96rem] px-4 sm:px-8 lg:px-12' : readingWidth === 'wide' ? 'max-w-6xl' : 'max-w-3xl'
       }`}>
         {/* Print-only A4 handout cover strip (first page) */}
@@ -1236,8 +1236,8 @@ export default function TopicPageLayout({ subject, topic, mappedExamQuestions, t
           <div className="flex flex-wrap items-center justify-between gap-2">
             <div className="flex flex-wrap items-center gap-2">
               <span className="rounded-full bg-violet-600 px-3 py-1 text-xs font-bold text-white">七輪深度精熟</span>
-              <span className="rounded-full border border-emerald-300 bg-emerald-50 px-3 py-1 text-xs font-bold text-emerald-800 dark:border-emerald-800 dark:bg-emerald-950/50 dark:text-emerald-200">每輪新增教學單元 ≥ 10%</span>
-              <span className="rounded-full border border-blue-300 bg-blue-50 px-3 py-1 text-xs font-bold text-blue-800 dark:border-blue-800 dark:bg-blue-950/50 dark:text-blue-200">每輪 5 項品質優化</span>
+              <span className="rounded-full border border-emerald-300 bg-emerald-50 px-3 py-1 text-xs font-bold text-emerald-800 dark:border-emerald-800 dark:bg-emerald-950/50 dark:text-emerald-200">觀念 → 推導 → 遷移</span>
+              <span className="rounded-full border border-blue-300 bg-blue-50 px-3 py-1 text-xs font-bold text-blue-800 dark:border-blue-800 dark:bg-blue-950/50 dark:text-blue-200">依自己的卡點選一輪練習</span>
             </div>
             <span className="font-mono text-xs font-bold text-violet-700 dark:text-violet-300 bg-violet-50 dark:bg-violet-950/60 border border-violet-200 dark:border-violet-800 px-3 py-1 rounded-full">
               七輪進度：{Object.values(completedIterations).filter(Boolean).length} / 7 輪完成
@@ -1312,7 +1312,7 @@ export default function TopicPageLayout({ subject, topic, mappedExamQuestions, t
                   >
                     {isDone ? '✓ 已完成本輪' : '標記完成本輪'}
                   </button>
-                  <span className="hidden rounded-full bg-emerald-100 px-2.5 py-1 text-[11px] font-bold text-emerald-800 dark:bg-emerald-950 dark:text-emerald-200 sm:inline">新增 {pack.addedUnits} 單元／門檻 {pack.requiredUnits}</span>
+                  <span className="hidden rounded-full bg-emerald-100 px-2.5 py-1 text-xs font-bold text-emerald-800 dark:bg-emerald-950 dark:text-emerald-200 sm:inline">{pack.knowledgePoints.length} 個學習重點</span>
                   <span className="text-violet-600 transition-transform group-open:rotate-180" aria-hidden="true">⌄</span>
                 </summary>
                 <div className="grid gap-4 border-t border-violet-100 p-4 sm:p-5 lg:grid-cols-[1.2fr_0.8fr] dark:border-violet-950">
@@ -1355,7 +1355,7 @@ export default function TopicPageLayout({ subject, topic, mappedExamQuestions, t
                     </div>
                   </div>
                   <aside className="rounded-xl border border-blue-200 bg-blue-50/60 p-4 dark:border-blue-900 dark:bg-blue-950/30">
-                    <h3 className="mb-2 text-xs font-bold text-blue-900 dark:text-blue-200">本輪 5%＋品質校正</h3>
+                    <h3 className="mb-2 text-sm font-bold text-blue-900 dark:text-blue-200">完成後，用這五點檢查理解</h3>
                     <ul className="space-y-2 text-xs leading-6 text-blue-950 dark:text-blue-100">
                       {pack.qualityUpgrades.map((upgrade) => <li key={upgrade} className="flex gap-2"><span aria-hidden="true">✓</span><span>{upgrade}</span></li>)}
                     </ul>

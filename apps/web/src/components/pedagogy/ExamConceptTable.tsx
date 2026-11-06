@@ -17,7 +17,7 @@ const visuals: Record<string, VisualLesson> = {
   },
   '115-2-39': {
     title:'先證明最少下界，再給可達的堆疊',columns:['約束','必需方塊','理由'],
-    rows:[['俯視佔用格','至少8','每個佔用格要有底層'],['第三列前視高3','另加2','同一柱從1疊到3'],['其餘兩列各高2','各另加1','不能用第三列的柱重複滿足'],['下界可達','8＋2＋1＋1＝12','仍須核對右視'],['掉落數','27−12＝15','問題問掉落，不是殘留']],
+    rows:[['俯視佔用格','至少8','每個佔用格要有底層'],['前視第三欄高3','另加2','同一柱從1疊到3'],['前視其餘兩欄各高2','各另加1','不能用第三欄的柱重複滿足'],['下界可達','8＋2＋1＋1＝12','仍須核對右視'],['掉落數','27−12＝15','問題問掉落，不是殘留']],
     check:'可達高度矩陣見圖解：由後往前為[2,1,3]、[1,1,0]、[1,2,1]。0是俯視缺口，不得任意補底格。',
   },
   '115-2-40': {
@@ -187,26 +187,27 @@ const visuals: Record<string, VisualLesson> = {
 export default function ExamConceptTable({id}: {id: string}) {
   const visual = visuals[id];
   if (!visual) return null;
-  return <figure className="my-5 space-y-3 rounded-xl border border-teal-600/40 p-4">
-    <figcaption className="font-bold">{visual.title}</figcaption>
-    <div role="region" aria-label={visual.title} tabIndex={0} className="overflow-x-auto">
-      <table className="w-full min-w-[440px] text-left text-sm">
-        <thead><tr>{visual.columns.map(title => <th scope="col" className="border-b p-3" key={title}>{title}</th>)}</tr></thead>
-        <tbody>{visual.rows.map(([name,value,result]) => <tr key={name}><th scope="row" className="border-b p-3 font-medium">{name}</th><td className="border-b p-3">{value}</td><td className="border-b p-3">{result}</td></tr>)}</tbody>
+  return <figure className="study-table">
+    <div role="region" aria-label={visual.title} tabIndex={0} className="study-table-scroll">
+      <table className="min-w-[32rem]">
+        <caption>{visual.title}</caption>
+        <thead><tr>{visual.columns.map(title => <th scope="col" key={title}>{title}</th>)}</tr></thead>
+        <tbody>{visual.rows.map(([name,value,result]) => <tr key={name}><th scope="row">{name}</th><td>{value}</td><td>{result}</td></tr>)}</tbody>
       </table>
     </div>
+    <p className="study-table-hint">表格可左右滑動，請對照欄名閱讀。</p>
     {id === '113-1-19' && <svg viewBox="0 0 360 200" role="img" aria-label="三四五方向三角形，水平四公尺，垂直三公尺，斜長五公尺" className="mx-auto w-full max-w-md">
       <path d="M65 145H265V35Z" fill="none" stroke="currentColor" strokeWidth="2"/>
       <path d="M248 145V128H265" fill="none" stroke="currentColor"/>
       <g fill="currentColor" fontSize="16"><text x="145" y="174">4 m</text><text x="278" y="98">3 m</text><text x="130" y="77">5 m</text></g>
     </svg>}
-    {id === '113-1-7' && <svg viewBox="0 0 360 240" role="img" aria-label="正方板底邊 y 等於一，中心高度六，同心圓孔保持對稱" className="mx-auto w-full max-w-md">
+    {id === '113-1-7' && <svg viewBox="0 0 430 250" role="img" aria-label="正方板底邊 y 等於一，中心高度六，同心圓孔保持對稱" className="mx-auto w-full max-w-md">
       <path d="M35 215H325M65 225V15" stroke="currentColor" fill="none"/>
       <rect x="65" y="25" width="170" height="170" fill="none" stroke="currentColor" strokeWidth="2"/>
       <circle cx="150" cy="110" r="42.5" fill="none" stroke="currentColor" strokeWidth="2"/>
       <path d="M45 110H255M150 15V205" stroke="currentColor" strokeDasharray="4 4"/>
-      <g fill="currentColor" fontSize="13"><text x="240" y="114">中心 y＝6 cm</text><text x="95" y="190">底邊 y＝1 cm</text><text x="270" y="235">x 軸</text></g>
+      <g fill="currentColor" fontSize="16"><text x="250" y="114">中心 y＝6 cm</text><text x="95" y="190">底邊 y＝1 cm</text><text x="270" y="235">x 軸</text></g>
     </svg>}
-    <p className="text-sm leading-7">{visual.check}</p>
+    <figcaption className="study-table-note"><strong>讀表檢查：</strong>{visual.check}</figcaption>
   </figure>;
 }

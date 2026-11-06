@@ -66,39 +66,39 @@ export default function SemesterDiagramView({ diagram, chapterNo }: SemesterDiag
   };
 
   return (
-    <div className="rounded-2xl border border-slate-200 dark:border-slate-800 bg-slate-900 text-slate-100 p-3.5 sm:p-4 space-y-3 shadow-xs print:bg-white print:text-black print:border-slate-400 print:p-2.5">
+    <figure className="semester-diagram rounded-2xl border border-slate-200 dark:border-slate-800 bg-slate-900 text-slate-100 p-4 sm:p-5 space-y-4 print:bg-white print:text-black print:border-slate-400 print:p-2.5">
       {/* Header */}
-      <div className="flex items-center justify-between border-b border-slate-800 pb-2 print:border-slate-300">
+      <div className="flex flex-wrap items-center justify-between gap-3 border-b border-slate-800 pb-3 print:border-slate-300">
         <div className="flex items-center gap-1.5">
           {getTypeIcon()}
-          <span className="font-serif text-xs sm:text-sm font-bold tracking-tight text-white print:text-black">
+          <span className="font-serif text-base font-bold leading-relaxed text-white print:text-black">
             {chapterNo ? `第 ${chapterNo} 章・${diagram.title}` : diagram.title}
           </span>
         </div>
-        <span className="text-[10px] font-mono px-2 py-0.5 rounded-md bg-slate-800 text-blue-300 border border-slate-700 print:border-black print:text-black print:bg-transparent">
+        <span className="text-xs px-2 py-1 rounded-md bg-slate-800 text-blue-300 border border-slate-700 print:border-black print:text-black print:bg-transparent">
           {getTypeBadge()}
         </span>
       </div>
 
       {/* Visual Canvas (SVG or Clean ASCII Graphic) */}
-      <div className="bg-slate-950/80 rounded-xl p-3 border border-slate-800/80 font-mono text-[11px] leading-tight overflow-x-auto text-emerald-400 select-all print:bg-slate-50 print:text-slate-900 print:border-slate-300">
+      <div role="region" tabIndex={0} aria-label={`${diagram.title}，可左右捲動`} className="semester-diagram-canvas bg-slate-950/80 rounded-xl p-3 border border-slate-800/80 font-mono text-sm leading-relaxed overflow-x-auto text-emerald-300 print:bg-slate-50 print:text-slate-900 print:border-slate-300">
         {diagram.svgContent ? (
           <div
-            className="w-full flex justify-center py-1 [&_svg]:max-w-full [&_svg]:h-auto text-current"
+            className="w-full py-1 [&_svg]:h-auto text-current"
             dangerouslySetInnerHTML={{ __html: diagram.svgContent }}
           />
         ) : diagram.asciiArt ? (
-          <pre className="whitespace-pre font-mono text-[11px] leading-[1.3] text-emerald-300 print:text-slate-900 m-0">
+          <pre className="whitespace-pre font-mono text-sm leading-[1.6] text-emerald-300 print:text-slate-900 m-0">
             {diagram.asciiArt}
           </pre>
         ) : null}
       </div>
 
       {/* Caption & Explanation */}
-      <p className="text-[11px] sm:text-xs text-slate-300 print:text-slate-700 leading-relaxed">
+      <figcaption className="text-sm sm:text-base text-slate-300 print:text-slate-700 leading-relaxed">
         <strong className="text-blue-400 print:text-black">圖解重點：</strong>
         {diagram.caption}
-      </p>
+      </figcaption>
 
       {/* Key Labels / Annotations */}
       {diagram.labels && diagram.labels.length > 0 && (
@@ -106,7 +106,7 @@ export default function SemesterDiagramView({ diagram, chapterNo }: SemesterDiag
           {diagram.labels.map((item, idx) => (
             <div
               key={idx}
-              className="flex items-start gap-1.5 text-[10px] sm:text-[11px] bg-slate-800/50 dark:bg-slate-950 p-1.5 rounded-lg border border-slate-700/50 print:bg-transparent print:border-slate-200"
+              className="flex items-start gap-2 text-sm bg-slate-800/50 dark:bg-slate-950 p-3 rounded-lg border border-slate-700/50 print:bg-transparent print:border-slate-200"
             >
               <span className="font-bold text-amber-400 print:text-black shrink-0 font-mono">
                 [{item.label}]
@@ -118,6 +118,6 @@ export default function SemesterDiagramView({ diagram, chapterNo }: SemesterDiag
           ))}
         </div>
       )}
-    </div>
+    </figure>
   );
 }

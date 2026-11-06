@@ -1,7 +1,7 @@
 export interface LearningSource {
   label: string;
   url: string;
-  kind: '官方命題依據' | '官方歷屆題' | '教學設計依據' | '補充解題研究';
+  kind: '官方命題依據' | '官方歷屆題' | '教學設計依據' | '補充解題研究' | '原理查核依據';
 }
 
 const officialArchive: LearningSource = {
@@ -42,6 +42,26 @@ const cramReview: LearningSource = {
 
 export function getLearningSources(subjectSlug: string): LearningSource[] {
   const sources: LearningSource[] = [officialCurriculum, curriculumManual, officialArchive, workedExampleEvidence, representationEvidence];
+  if (['materials', 'chemistry'].includes(subjectSlug)) {
+    sources.push(
+      {label:'台灣建築中心｜健康綠建材評定基準：甲醛與TVOC逸散速率',url:'https://gbm.tabc.org.tw/modules/pages/health',kind:'原理查核依據'},
+      {label:'環境部｜室內空氣品質標準：濃度、單位與平均時段',url:'https://oaout.moenv.gov.tw/Law/LawContent.aspx?id=FL068252',kind:'原理查核依據'},
+    );
+  }
+  if (subjectSlug === 'materials') {
+    sources.push(
+      {label:'台灣建築中心｜再生綠建材：依產品與用途核對回收料比例',url:'https://gbm.tabc.org.tw/modules/pages/regeneration',kind:'原理查核依據'},
+      {label:'American Cement Association｜Type IL石灰石含量及混合水泥',url:'https://www.cement.org/cement-concrete/blended-cements/',kind:'原理查核依據'},
+      {label:'NIST｜樣本標準差與自由度',url:'https://www.itl.nist.gov/div898/software/dataplot/refman2/auxillar/trimsd.htm',kind:'原理查核依據'},
+      {label:'NIST｜平均值管制圖及子組大小',url:'https://itl.nist.gov/div898/handbook/pmc/section3/pmc321.htm',kind:'原理查核依據'},
+    );
+  }
+  if (subjectSlug === 'mechanics') {
+    sources.push(
+      {label:'華盛頓州交通部｜塔科馬吊橋失敗教訓：扭轉顫振',url:'https://www.wsdot.wa.gov/TNBhistory/bridges-failure.htm',kind:'原理查核依據'},
+      {label:'Jönköping University｜尤拉挫屈、有效長度與適用範圍',url:'https://mechanics.ju.se/SolidMechanics/Buckling.html',kind:'原理查核依據'},
+    );
+  }
   if (['mechanics', 'materials'].includes(subjectSlug)) {
     sources.splice(1, 0, {
       label: '115 學年度 06 土木與建築群專業科目（一）官方考試大綱',
