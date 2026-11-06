@@ -1,4 +1,6 @@
 'use client';
+import ExamConceptTable from './ExamConceptTable';
+
 import { useState } from 'react';
 import Link from 'next/link';
 import MathText from '@/components/MathText';
@@ -21,7 +23,7 @@ export default function ExamTeachingWorkshop({ entries }: { entries: TeachingEnt
     {entries.map(({guide:g,question:q}) => <article key={g.questionId} id={`bridge-${g.questionId}`} className="et-case">
       <div className="et-meta"><span>{q.year} 年 · {q.id.includes('english') ? '英文' : q.id.includes('chinese') ? '國文' : q.id.includes('math') ? '數學 C' : q.id.split('-')[1] === '1' ? '專一' : '專二'}第 {q.questionNo} 題</span><span>本站逐題教學解析</span></div>
       <h3>{g.kind}</h3><div className="et-knowledge" aria-label="解題所需知識">{g.knowledge.map(([title,body]) => <section key={title}><h4>{title}</h4><p>{body}</p></section>)}</div>
-      <ExamKnowledgeDiagram id={g.questionId} />
+      <ExamKnowledgeDiagram id={g.questionId} /><ExamConceptTable id={g.questionId} />
       <div className="et-source-question">
         <strong>用這道實題確認</strong>
         <div className="my-3"><MathText content={q.excerpt} /></div>

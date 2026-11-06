@@ -1,3 +1,4 @@
+import ExamConceptTable from '@/components/pedagogy/ExamConceptTable';
 import Link from 'next/link';
 import type { LearnCourse, Exercise } from '@/data/learnPath/types';
 import { getTopicTeachingCases } from '@/lib/pedagogy/canonicalExams';
@@ -59,7 +60,7 @@ export default function TermHandout({course, label}: {course: LearnCourse; label
           {cases.map(({guide,question}) => <div key={question.id} className="mt-5 space-y-3 border-t pt-4">
             <Link className="block font-semibold underline" href={route+'#bridge-'+question.id}>{question.year} 年第 {question.questionNo} 題・{guide.kind}</Link>
             {guide.knowledge.map(([title, explanation]) => <p key={title} className="leading-7"><strong>{title}　</strong>{explanation}</p>)}
-            <p className="font-semibold">換條件自己做</p><p>{guide.transfer.prompt}</p>
+            <ExamConceptTable id={question.id} /><p className="font-semibold">換條件自己做</p><p>{guide.transfer.prompt}</p>
             <details><summary className="cursor-pointer">展開遷移練習解法</summary><p className="my-3">{guide.transfer.answer}</p><ol className="list-decimal space-y-2 pl-5">{guide.transfer.steps.map((step,i) => <li key={i}>{step}</li>)}</ol></details>
           </div>)}
         </details>}
