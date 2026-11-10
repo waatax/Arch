@@ -67,7 +67,13 @@ export interface TopicContent {
     formula?: string;
     table?: { headers: string[]; rows: string[][] }; 
     diagram?: { title: string; caption?: string; svg?: string };
+    /** 速記卡（頂標加值觀念的資訊圖卡） */
+    keyCards?: { label: string; value: string }[];
+    /** 2026-11 頂標加值包新增的觀念 */
+    boost?: boolean;
   }[];
+  /** 手寫的頂標挑戰題（四選一） */
+  boostQuiz?: { q: string; options: string[]; answer: number; why: string }[];
   practice?: PracticeItem;
   practices?: PracticeItem[];
   covered_question_ids?: string[];

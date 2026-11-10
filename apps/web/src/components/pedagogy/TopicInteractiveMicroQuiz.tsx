@@ -1,7 +1,7 @@
 'use client';
 
-import React, { useState } from 'react';
-import { Sparkles, CheckCircle2, AlertCircle, RotateCcw, Flame, Check } from 'lucide-react';
+import { useEffect, useMemo, useState } from 'react';
+import { ArrowRight, CheckCircle2, Flame, RotateCcw, Star, Target, Trophy, XCircle } from 'lucide-react';
 import type { TopicContent, SubjectData } from '@/data/types';
 import { useGamificationStore } from '@/lib/store/gamificationStore';
 import { useStudentStore } from '@/lib/store/studentStore';
@@ -13,243 +13,295 @@ interface TopicInteractiveMicroQuizProps {
   topic: TopicContent;
 }
 
-interface MicroQuestion {
-  id: string;
-  question: string;
-  options: { label: string; text: string; correct: boolean; explanation: string }[];
+type QuizItem = NonNullable<TopicContent['boostQuiz']>[number];
+
+interface StoredRecord {
+  /** 最佳一次的「第一次就答對」題數 */
+  best: number;
+  total: number;
+  /** 已領過探索值的題目索引，避免重複刷分 */
+  rewarded: number[];
 }
 
+const STORE_KEY = 'arch:boost-challenge:v1';
+const LABELS = ['A', 'B', 'C', 'D'];
+const EXP_PER_ITEM = 15;
+
+function readStore(): Record<string, StoredRecord> {
+  try {
+    return JSON.parse(window.localStorage.getItem(STORE_KEY) ?? '{}');
+  } catch {
+    return {};
+  }
+}
+
+function writeRecord(route: string, record: StoredRecord) {
+  try {
+    const all = readStore();
+    all[route] = record;
+    window.localStorage.setItem(STORE_KEY, JSON.stringify(all));
+  } catch {
+    /* 無法儲存時仍可正常作答 */
+  }
+}
+
+function starsFor(correct: number, total: number): number {
+  if (total === 0) return 0;
+  if (correct === total) return 3;
+  if (correct / total >= 0.6) return 2;
+  return correct > 0 ? 1 : 0;
+}
+
+/**
+ * 頂標挑戰：每個主題的手寫四選一題組。
+ * 一次一題、答錯不扣分；錯題自動進入錯題本，並可在結算後只重練錯題。
+ */
 export default function TopicInteractiveMicroQuiz({ subject, topic }: TopicInteractiveMicroQuizProps) {
   const { addExp, soundEnabled } = useGamificationStore();
   const { addMistakeCard } = useStudentStore();
+  const route = `/subjects/${subject.slug}/${topic.slug}`;
+  const items: QuizItem[] = useMemo(() => topic.boostQuiz ?? [], [topic.boostQuiz]);
 
-  // Generate 2 structured micro-questions dynamically from topic concepts
-  const microQuestions: MicroQuestion[] = React.useMemo(() => {
-    const concepts = topic.concepts.slice(0, 3);
-    const firstConcept = concepts[0] || { heading: topic.title, body: topic.desc };
-    const secondConcept = concepts[1] || firstConcept;
+  /** 目前這一輪要作答的題目索引 */
+  const [queue, setQueue] = useState<number[]>(() => items.map((_, i) => i));
+  const [cursor, setCursor] = useState(0);
+  const [picked, setPicked] = useState<number | null>(null);
+  const [roundResults, setRoundResults] = useState<Record<number, boolean>>({});
+  const [combo, setCombo] = useState(0);
+  const [bestCombo, setBestCombo] = useState(0);
+  const [finished, setFinished] = useState(false);
+  const [isFullRound, setIsFullRound] = useState(true);
+  const [record, setRecord] = useState<StoredRecord | null>(null);
+  const [gained, setGained] = useState(0);
 
-    return [
-      {
-        id: `mq-${topic.slug}-1`,
-        question: `關於【${firstConcept.heading}】的核心觀念判斷，下列何者正確？`,
-        options: [
-          {
-            label: 'A',
-            text: `適用此觀念時，必須滿足題幹隱含的物理因果與邊界限制條件。`,
-            correct: true,
-            explanation: `正確！108 課綱強調理解本質：${firstConcept.heading} 強調物理因果與邊界條件，而非死背算式。`,
-          },
-          {
-            label: 'B',
-            text: `只要公式看起來熟悉，數值代入即可，無需考慮量綱單位換算。`,
-            correct: false,
-            explanation: `錯誤！工程計算中最常發生的致命陷阱就是未進行量綱換算（如 N 與 kN、m 與 cm）。`,
-          },
-          {
-            label: 'C',
-            text: `此原理僅適用於理想狀況，營造現場完全無法派上用場。`,
-            correct: false,
-            explanation: `錯誤！高職建築科專業科目皆對齊 CNS 規範與現場施工實務，學理與實務高度契合。`,
-          },
-        ],
-      },
-      {
-        id: `mq-${topic.slug}-2`,
-        question: `若在工程分析或考試題幹中遇到【${secondConcept.heading}】，最佳解題思維是？`,
-        options: [
-          {
-            label: 'A',
-            text: `直接猜測最接近整數的選項，節省時間。`,
-            correct: false,
-            explanation: `錯誤！大考素養題型多具備精確誘答項，猜測易落入陷阱。`,
-          },
-          {
-            label: 'B',
-            text: `先畫自由體圖或示意草圖，理清受力/幾何關係，再列出平衡關係式求解。`,
-            correct: true,
-            explanation: `完全正確！名師解題 SOP：建構幾何圖 ➔ 抓關鍵線索 ➔ 列平衡式 ➔ 驗算單位。`,
-          },
-          {
-            label: 'C',
-            text: `放棄題幹文字，只看最後一句問什麼就直接套公式。`,
-            correct: false,
-            explanation: `錯誤！108 課綱題組往往在前面段落埋有重要限制前提，忽略題幹極易誤判。`,
-          },
-        ],
-      },
-    ];
-  }, [topic]);
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      const saved = readStore()[route];
+      if (saved) setRecord(saved);
+    }, 0);
+    return () => clearTimeout(timer);
+  }, [route]);
 
-  const [selectedAnswers, setSelectedAnswers] = useState<Record<string, string>>({});
-  const [answeredStatus, setAnsweredStatus] = useState<Record<string, boolean>>({});
-  const [taggedMistakes, setTaggedMistakes] = useState<Record<string, boolean>>({});
+  if (items.length === 0) return null;
 
-  const handleSelectOption = (q: MicroQuestion, optLabel: string) => {
-    if (answeredStatus[q.id]) return; // already answered
+  const currentIndex = queue[cursor];
+  const current = items[currentIndex];
+  const answered = picked !== null;
+  const isCorrect = answered && picked === current.answer;
+  const correctCount = Object.values(roundResults).filter(Boolean).length;
+  const wrongIndexes = queue.filter((i) => roundResults[i] === false);
 
-    const chosen = q.options.find((o) => o.label === optLabel);
-    if (!chosen) return;
-
-    setSelectedAnswers((prev) => ({ ...prev, [q.id]: optLabel }));
-    setAnsweredStatus((prev) => ({ ...prev, [q.id]: true }));
-
-    if (chosen.correct) {
-      if (soundEnabled) soundEngine.playCorrectChime();
-      addExp(15);
+  const choose = (optionIndex: number) => {
+    if (answered) return;
+    setPicked(optionIndex);
+    const right = optionIndex === current.answer;
+    setRoundResults((prev) => ({ ...prev, [currentIndex]: right }));
+    if (right) {
+      const nextCombo = combo + 1;
+      setCombo(nextCombo);
+      setBestCombo((value) => Math.max(value, nextCombo));
+      if (soundEnabled) soundEngine.playCorrectChime(nextCombo);
+      const rewarded = record?.rewarded ?? [];
+      if (!rewarded.includes(currentIndex)) {
+        addExp(EXP_PER_ITEM);
+        setGained((value) => value + EXP_PER_ITEM);
+        const next: StoredRecord = {
+          best: record?.best ?? 0,
+          total: items.length,
+          rewarded: [...rewarded, currentIndex],
+        };
+        setRecord(next);
+        writeRecord(route, next);
+      }
     } else {
-      if (soundEnabled) soundEngine.playClickBeep();
+      setCombo(0);
+      if (soundEnabled) soundEngine.playSoftWrong();
+      addMistakeCard({
+        id: `boost-${subject.slug}-${topic.slug}-${currentIndex}`,
+        prompt: current.q,
+        correction: `${LABELS[current.answer]}. ${current.options[current.answer]}｜${current.why}`,
+        reason: 'K',
+        subject: subject.title,
+        topic: topic.title,
+        userChoice: `${LABELS[optionIndex]}. ${current.options[optionIndex]}`,
+        correctAnswer: LABELS[current.answer],
+        lessonRoute: route,
+      });
     }
   };
 
-  const handleAddToMistakes = (q: MicroQuestion) => {
-    addMistakeCard({
-      id: q.id,
-      prompt: q.question,
-      correction: q.options.find((o) => o.correct)?.explanation || '請複習本章核心觀念',
-      reason: 'K',
-      subject: subject.title,
-      topic: topic.title,
-      userChoice: selectedAnswers[q.id] || '未作答',
-      correctAnswer: q.options.find((o) => o.correct)?.label || 'A',
-      lessonRoute: `/subjects/${subject.slug}/${topic.slug}`,
-    });
-    setTaggedMistakes((prev) => ({ ...prev, [q.id]: true }));
-    if (soundEnabled) soundEngine.playClickBeep();
+  const goNext = () => {
+    if (cursor + 1 < queue.length) {
+      setCursor(cursor + 1);
+      setPicked(null);
+      return;
+    }
+    setFinished(true);
+    if (soundEnabled) soundEngine.playLessonFanfare();
+    if (isFullRound) {
+      const next: StoredRecord = {
+        best: Math.max(record?.best ?? 0, correctCount),
+        total: items.length,
+        rewarded: record?.rewarded ?? [],
+      };
+      setRecord(next);
+      writeRecord(route, next);
+    }
   };
 
-  const handleReset = (qId: string) => {
-    setSelectedAnswers((prev) => {
-      const next = { ...prev };
-      delete next[qId];
-      return next;
-    });
-    setAnsweredStatus((prev) => {
-      const next = { ...prev };
-      delete next[qId];
-      return next;
-    });
-    setTaggedMistakes((prev) => {
-      const next = { ...prev };
-      delete next[qId];
-      return next;
-    });
+  const restart = (indexes: number[], full: boolean) => {
+    setQueue(indexes);
+    setCursor(0);
+    setPicked(null);
+    setRoundResults({});
+    setCombo(0);
+    setBestCombo(0);
+    setFinished(false);
+    setIsFullRound(full);
+    setGained(0);
   };
+
+  const bestStars = record ? starsFor(record.best, record.total) : 0;
+  const roundStars = starsFor(correctCount, queue.length);
 
   return (
-    <section className="rounded-3xl border border-blue-200/80 bg-gradient-to-br from-blue-50/40 via-white to-indigo-50/30 p-6 sm:p-8 shadow-xs dark:border-blue-900/40 dark:from-blue-950/20 dark:via-slate-900 dark:to-indigo-950/20 space-y-6">
-      <div className="flex flex-wrap items-center justify-between gap-3 border-b border-blue-100 pb-4 dark:border-blue-900/40">
-        <div>
-          <span className="inline-flex items-center gap-1.5 rounded-full bg-blue-100 px-3 py-1 font-mono text-xs font-bold text-blue-700 dark:bg-blue-900/60 dark:text-blue-300">
-            <Sparkles className="size-3.5 text-amber-500" /> 30 秒觀念微檢測 · 即學即測
+    <section id="boost-challenge" className="boost-quiz scroll-mt-24" aria-label="頂標挑戰題組">
+      <header className="boost-quiz__head">
+        <div className="min-w-0">
+          <span className="boost-quiz__eyebrow">
+            <Target className="size-3.5" aria-hidden="true" /> 頂標挑戰 · 手寫 {items.length} 題
           </span>
-          <h3 className="mt-2 font-serif text-xl sm:text-2xl font-bold text-slate-900 dark:text-white">
-            動動腦！你剛剛真的讀懂了嗎？
-          </h3>
+          <h3 className="boost-quiz__title">讀完了嗎？用 {items.length} 題確認你真的會</h3>
+          <p className="boost-quiz__hint">答錯不扣分，錯題會自動收進錯題本；第一次答對每題 +{EXP_PER_ITEM} 探索值。</p>
         </div>
-        <span className="text-xs font-mono text-slate-500">答對每題獲得 +15 EXP</span>
-      </div>
+        <div className="boost-quiz__best" aria-label={record ? `最佳紀錄 ${record.best} / ${record.total}` : '尚未挑戰'}>
+          <span className="boost-quiz__stars" aria-hidden="true">
+            {[0, 1, 2].map((i) => (
+              <Star key={i} className={`size-5 ${i < bestStars ? 'is-on' : ''}`} />
+            ))}
+          </span>
+          <span className="boost-quiz__best-text">{record && record.best > 0 ? `最佳 ${record.best}/${record.total}` : '尚未挑戰'}</span>
+        </div>
+      </header>
 
-      <div className="grid gap-6 md:grid-cols-2">
-        {microQuestions.map((q, qIndex) => {
-          const isAnswered = answeredStatus[q.id];
-          const selected = selectedAnswers[q.id];
-          const selectedOption = q.options.find((o) => o.label === selected);
+      {!finished ? (
+        <div className="boost-quiz__body">
+          <div className="boost-quiz__progress">
+            <ol className="boost-quiz__dots" aria-label={`第 ${cursor + 1} 題，共 ${queue.length} 題`}>
+              {queue.map((itemIndex, position) => {
+                const result = roundResults[itemIndex];
+                const state = result === true ? 'is-right' : result === false ? 'is-wrong' : position === cursor ? 'is-current' : '';
+                return <li key={itemIndex} className={state} />;
+              })}
+            </ol>
+            <span className="boost-quiz__count">
+              {cursor + 1} / {queue.length}
+            </span>
+            {combo >= 2 && (
+              <span className="boost-quiz__combo">
+                <Flame className="size-3.5" aria-hidden="true" /> 連對 {combo}
+              </span>
+            )}
+          </div>
 
-          return (
-            <div
-              key={q.id}
-              className="flex flex-col justify-between rounded-2xl border border-slate-200/80 bg-white p-5 shadow-xs dark:border-slate-800 dark:bg-slate-900/90 space-y-4"
-            >
-              <div>
-                <div className="flex items-center justify-between text-xs font-mono font-bold text-blue-600 dark:text-blue-400 mb-2">
-                  <span>觀念檢測 #{qIndex + 1}</span>
-                  {isAnswered && (
+          <div className="boost-quiz__stage">
+            <div className="boost-quiz__question">
+              <p className="boost-quiz__qno">第 {cursor + 1} 題</p>
+              <div className="boost-quiz__qtext">
+                <MathText content={current.q} />
+              </div>
+            </div>
+
+            <div className="boost-quiz__answers">
+              <div className="boost-quiz__options" role="group" aria-label="選項">
+                {current.options.map((option, optionIndex) => {
+                  let state = '';
+                  if (answered) {
+                    if (optionIndex === current.answer) state = 'is-right';
+                    else if (optionIndex === picked) state = 'is-wrong';
+                    else state = 'is-dim';
+                  }
+                  return (
                     <button
+                      key={option}
                       type="button"
-                      onClick={() => handleReset(q.id)}
-                      className="text-slate-400 hover:text-slate-600 dark:hover:text-slate-200 cursor-pointer inline-flex items-center gap-1 text-[11px]"
+                      disabled={answered}
+                      onClick={() => choose(optionIndex)}
+                      className={`boost-quiz__option ${state}`}
                     >
-                      <RotateCcw className="size-3" /> 重測
+                      <span className="boost-quiz__label">{LABELS[optionIndex]}</span>
+                      <span className="boost-quiz__option-text">
+                        <MathText content={option} />
+                      </span>
+                      {answered && optionIndex === current.answer && <CheckCircle2 className="size-5 shrink-0" aria-label="正確答案" />}
+                      {answered && optionIndex === picked && optionIndex !== current.answer && <XCircle className="size-5 shrink-0" aria-label="你的選擇" />}
                     </button>
-                  )}
-                </div>
-
-                <p className="text-sm font-bold text-slate-900 dark:text-white leading-relaxed">
-                  <MathText content={q.question} />
-                </p>
-
-                {/* Option Buttons */}
-                <div className="mt-4 space-y-2.5">
-                  {q.options.map((opt) => {
-                    const isChosen = selected === opt.label;
-                    let style = 'border-slate-200 bg-slate-50/50 hover:bg-slate-100 dark:border-slate-800 dark:bg-slate-800/40 dark:hover:bg-slate-800';
-
-                    if (isAnswered) {
-                      if (opt.correct) {
-                        style = 'border-emerald-400 bg-emerald-50 dark:border-emerald-700 dark:bg-emerald-950/40 text-emerald-950 dark:text-emerald-200 font-bold';
-                      } else if (isChosen && !opt.correct) {
-                        style = 'border-rose-400 bg-rose-50 dark:border-rose-700 dark:bg-rose-950/40 text-rose-950 dark:text-rose-200 font-bold';
-                      } else {
-                        style = 'border-slate-100 opacity-60 dark:border-slate-800';
-                      }
-                    }
-
-                    return (
-                      <button
-                        key={opt.label}
-                        type="button"
-                        disabled={isAnswered}
-                        onClick={() => handleSelectOption(q, opt.label)}
-                        className={`w-full flex items-start gap-2.5 rounded-xl border p-3 text-left text-xs transition-all cursor-pointer disabled:cursor-default ${style}`}
-                      >
-                        <span className="font-mono font-bold shrink-0">{opt.label}.</span>
-                        <span className="flex-1 leading-relaxed">{opt.text}</span>
-                        {isAnswered && opt.correct && (
-                          <CheckCircle2 className="size-4 text-emerald-500 shrink-0" />
-                        )}
-                        {isAnswered && isChosen && !opt.correct && (
-                          <AlertCircle className="size-4 text-rose-500 shrink-0" />
-                        )}
-                      </button>
-                    );
-                  })}
-                </div>
+                  );
+                })}
               </div>
 
-              {/* Instant Feedback Panel */}
-              {isAnswered && selectedOption && (
-                <div
-                  className={`rounded-xl p-3.5 text-xs leading-relaxed border space-y-2 animate-in fade-in duration-200 ${
-                    selectedOption.correct
-                      ? 'border-emerald-200 bg-emerald-50/70 text-emerald-900 dark:border-emerald-800/60 dark:bg-emerald-950/30 dark:text-emerald-200'
-                      : 'border-rose-200 bg-rose-50/70 text-rose-900 dark:border-rose-800/60 dark:bg-rose-950/30 dark:text-rose-200'
-                  }`}
-                >
-                  <div className="flex items-center justify-between font-bold">
-                    <span>{selectedOption.correct ? '🎉 觀念正確！已獲 +15 EXP' : '💡 觀念盲點拆解'}</span>
-                    {!selectedOption.correct && !taggedMistakes[q.id] && (
-                      <button
-                        type="button"
-                        onClick={() => handleAddToMistakes(q)}
-                        className="inline-flex items-center gap-1 rounded-md bg-rose-600 px-2 py-0.5 text-[10px] text-white hover:bg-rose-700 cursor-pointer"
-                      >
-                        <Flame className="size-3" /> 存入錯題本
-                      </button>
-                    )}
-                    {taggedMistakes[q.id] && (
-                      <span className="text-[10px] text-emerald-700 dark:text-emerald-300 font-bold inline-flex items-center gap-0.5">
-                        <Check className="size-3" /> 已存入複習本
-                      </span>
-                    )}
+              {answered && (
+                <div className={`boost-quiz__feedback ${isCorrect ? 'is-right' : 'is-wrong'}`} role="status">
+                  <p className="boost-quiz__verdict">{isCorrect ? '答對了' : '這題先記下來，已收進錯題本'}</p>
+                  <div className="boost-quiz__why">
+                    <MathText content={current.why} />
                   </div>
-                  <p>{selectedOption.explanation}</p>
+                  <button type="button" onClick={goNext} className="boost-quiz__next">
+                    {cursor + 1 < queue.length ? '下一題' : '看結果'}
+                    <ArrowRight className="size-4" aria-hidden="true" />
+                  </button>
                 </div>
               )}
             </div>
-          );
-        })}
-      </div>
+          </div>
+        </div>
+      ) : (
+        <div className="boost-quiz__result" role="status">
+          <div className="boost-quiz__result-main">
+            <Trophy className="size-9 boost-quiz__trophy" aria-hidden="true" />
+            <div>
+              <p className="boost-quiz__score">
+                答對 {correctCount} / {queue.length} 題
+              </p>
+              <span className="boost-quiz__stars is-large" aria-label={`${roundStars} 顆星`}>
+                {[0, 1, 2].map((i) => (
+                  <Star key={i} className={`size-7 ${i < roundStars ? 'is-on' : ''}`} />
+                ))}
+              </span>
+            </div>
+          </div>
+          <ul className="boost-quiz__stats">
+            <li>
+              <strong>{bestCombo}</strong>
+              <span>最長連對</span>
+            </li>
+            <li>
+              <strong>+{gained}</strong>
+              <span>本輪探索值</span>
+            </li>
+            <li>
+              <strong>{wrongIndexes.length}</strong>
+              <span>待修正題數</span>
+            </li>
+          </ul>
+          <p className="boost-quiz__advice">
+            {wrongIndexes.length === 0
+              ? '全部答對。隔幾天再回來挑戰一次，確認不是短期記憶。'
+              : '先回到上方對應的觀念與速記卡看一遍，再只重練答錯的題目。'}
+          </p>
+          <div className="boost-quiz__actions">
+            {wrongIndexes.length > 0 && (
+              <button type="button" className="boost-quiz__next" onClick={() => restart(wrongIndexes, false)}>
+                只重練錯題（{wrongIndexes.length}）
+                <ArrowRight className="size-4" aria-hidden="true" />
+              </button>
+            )}
+            <button type="button" className="boost-quiz__ghost" onClick={() => restart(items.map((_, i) => i), true)}>
+              <RotateCcw className="size-4" aria-hidden="true" /> 全部重新挑戰
+            </button>
+          </div>
+        </div>
+      )}
     </section>
   );
 }

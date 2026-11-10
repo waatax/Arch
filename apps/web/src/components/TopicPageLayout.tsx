@@ -1490,6 +1490,9 @@ export default function TopicPageLayout({ subject, topic, mappedExamQuestions, t
                           ✓ 已熟練
                         </span>
                       )}
+                      {concept.boost && (
+                        <span className="boost-badge">頂標加值</span>
+                      )}
                       {isHighlighted && (
                         <span className="rounded bg-amber-100 dark:bg-amber-900/60 px-2 py-0.5 text-[10px] font-bold text-amber-800 dark:text-amber-200 border border-amber-300/50 inline-flex items-center gap-1 font-mono">
                           <Sparkles className="size-2.5 text-amber-600 dark:text-amber-300" />
@@ -1565,6 +1568,20 @@ export default function TopicPageLayout({ subject, topic, mappedExamQuestions, t
               <div className="concept-body whitespace-pre-line text-[15px] sm:text-[15.5px] leading-[1.8] text-slate-700 dark:text-slate-300 border-l-2 border-slate-200 dark:border-slate-800 pl-4 py-0.5">
                 <MathText content={concept.body} />
               </div>
+
+              {/* 速記卡：頂標加值觀念的資訊圖卡（手機兩欄、平板以上四欄） */}
+              {concept.keyCards?.length ? (
+                <ul className="key-cards" aria-label={`${concept.heading} 速記卡`}>
+                  {concept.keyCards.map((card, cardIndex) => (
+                    <li key={card.label} className={`key-card key-card--${(cardIndex % 4) + 1}`}>
+                      <span className="key-card__label">{card.label}</span>
+                      <span className="key-card__value">
+                        <MathText content={card.value} />
+                      </span>
+                    </li>
+                  ))}
+                </ul>
+              ) : null}
 
               {/* Concept figures: diagrams / charts / comparison tables placed right after the explanation (dual coding) */}
               {visualsByConcept[index]?.length ? (

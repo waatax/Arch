@@ -1,4 +1,5 @@
 import { SubjectData } from './types';
+import { applyTopicBoosts } from './topicBoosts';
 
 // Professional
 import { mechanicsData } from './subjects/mechanics';
@@ -23,7 +24,7 @@ import { civicsData } from './subjects/civics';
 // Extensions
 import { extensionsData } from './subjects/extensions';
 
-export const allSubjects: SubjectData[] = [
+export const allSubjects: SubjectData[] = applyTopicBoosts([
   mechanicsData,
   materialsData,
   surveyingData,
@@ -37,4 +38,4 @@ export const allSubjects: SubjectData[] = [
   geographyData,
   civicsData,
   extensionsData
-];
+]);
