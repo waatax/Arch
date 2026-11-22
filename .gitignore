@@ -39,3 +39,8 @@ arch.learn.tw-mapping.txt
 # Local-only private specs, planning, corrections, and AI prompts
 Local/
 local/
+
+# Python bytecode & local video render output
+__pycache__/
+*.pyc
+output/

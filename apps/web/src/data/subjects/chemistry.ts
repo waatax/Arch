@@ -292,20 +292,25 @@ export const chemistryData: SubjectData = {
         "answer": "(C) 蒸餾水"
       },
       "step0Prerequisites": [
-        "基本化學元素符號",
-        "莫耳數與化學計量"
+        "道耳吞原子說、倍比定律與純物質／混合物之相態分類",
+        "原子序 Z（質子數）、質量數 A（質子＋中子）與價電子路易斯結構"
       ],
       "fatalTraps": [
         {
-          "wrongThinking": "化學反應式未平衡即進行莫耳數計算。",
-          "correctThinking": "計算前必先平衡方程式係數。",
-          "trapDescription": "化學計量係數遺漏。"
+          "wrongThinking": "誤以為不鏽鋼、黃銅、青銅等建築五金或鹽酸（HCl 水溶液）具有固定名稱就是「純物質（化合物）」。",
+          "correctThinking": "所有金屬合金（不鏽鋼 Fe-Cr-Ni、黃銅 Cu-Zn）、水溶液（鹽酸、氨水）與波特蘭水泥熟料皆為「混合物」；唯有固定化學式之單一元素或化合物（如蒸餾水 H₂O、碳酸鈣 CaCO₃）才是純物質。",
+          "trapDescription": "將「合金、水溶液、水泥與混凝土」誤判為純物質或單一化合物。"
+        },
+        {
+          "wrongThinking": "誤以為離子晶體（如 NaCl、CaCO₃）在「固態」時因為含有陰陽離子就能直接導電，或誤以為共價網狀固體（SiO₂）有獨立分子。",
+          "correctThinking": "離子化合物在固態時離子被晶格束縛不導電，須在「熔融態或水溶液」下離子自由移動才能導電；石英（SiO₂）為三維共價網狀固體，化學式僅表實驗式（簡式）而非獨立分子。",
+          "trapDescription": "混淆離子固體、金屬與共價網狀固體（石英 SiO₂）在固態與熔融態之導電性。"
         }
       ],
       "eliteMentalModels": [
         {
-          "technique": "化學反應本質推理模型",
-          "explanation": "由原子核外電子轉移或共享推論反應路徑。"
+          "technique": "建材微觀鍵結與宏觀物性對應矩陣 (Bonding-to-Material Property Matrix)",
+          "explanation": "由化學鍵種類直接秒推建材物理性質：① 金屬鍵（自由電子海）→ 鋼筋延展性與全態導電導熱；② 共價網狀鍵（Si-O 四面體）→ 石英骨材與玻璃超高硬度與高熔點；③ 離子鍵（Ca²⁺/CO₃²⁻）→ 大理石與無機鹽硬脆且熔融導電。"
         }
       ]
     },
@@ -874,20 +879,25 @@ export const chemistryData: SubjectData = {
         "answer": "pH = 4.0，[OH⁻] = 1.0 × 10⁻¹⁰ M"
       },
       "step0Prerequisites": [
-        "基本化學元素符號",
-        "莫耳數與化學計量"
+        "阿瑞尼斯與布忍斯特-羅瑞酸鹼定義、水的自身解離 Kw = [H⁺][OH⁻] = 10⁻¹⁴ (25°C)",
+        "對數運算與 pH = -log[H⁺] 酸鹼度指標、酸鹼指示劑（酚酞變色範圍 pH 8.2~10.0）"
       ],
       "fatalTraps": [
         {
-          "wrongThinking": "化學反應式未平衡即進行莫耳數計算。",
-          "correctThinking": "計算前必先平衡方程式係數。",
-          "trapDescription": "化學計量係數遺漏。"
+          "wrongThinking": "在混凝土中性化（碳化）檢測中，看到噴灑酚酞指示劑「呈現無色」誤以為混凝土完好未碳化，「呈現紫紅色」誤以為已受酸雨腐蝕。",
+          "correctThinking": "健全混凝土因富含水化產物 Ca(OH)₂ 呈強鹼性（pH 12~13），噴酚酞呈「紫紅色」；當空氣中 CO₂ 侵入生成 CaCO₃ 使 pH 降至 8.2~9 以下（中性化），噴酚酞呈「無色」，此時鋼筋鈍化膜將瓦解生鏽。",
+          "trapDescription": "將混凝土中性化試驗中「酚酞紫紅色（健全強鹼）」與「無色（已碳化中性化）」判讀顛倒。"
+        },
+        {
+          "wrongThinking": "計算酸鹼稀釋或滴定當量點時，誤以為將 pH = 5 的弱酸加水稀釋 1000 倍後 pH 會變成 8（鹼性），或直接用酸鹼體積莫耳濃度 M₁V₁ = M₂V₂ 卻漏乘酸鹼價數 n。",
+          "correctThinking": "酸溶液無論稀釋多少倍，25°C 下必須計入水自身解離的 10⁻⁷ M H⁺，故 pH 永遠趨近且小於 7；酸鹼中和當量公式必乘價數：n₁ · M₁ · V₁ = n₂ · M₂ · V₂。",
+          "trapDescription": "酸鹼中和計算遺漏酸鹼價數 n（如 H₂SO₄ 與 Ca(OH)₂ 為二元酸鹼），或極稀酸液忽略水自身解離。"
         }
       ],
       "eliteMentalModels": [
         {
-          "technique": "化學反應本質推理模型",
-          "explanation": "由原子核外電子轉移或共享推論反應路徑。"
+          "technique": "混凝土鹼度護盾與酚酞碳化雙態模型 (Alkaline Passivation Shield Model)",
+          "explanation": "將混凝土保護層視為「高鹼性護盾（Ca(OH)₂, pH 12.5~13 → 酚酞紫紅 → 鋼筋表面形成緻密 Fe₂O₃/Fe₃O₄ 鈍化膜）」；一旦 CO₂ 或酸雨中和使 pH < 9（酚酞無色），護盾破裂，O₂ 與 H₂O 即啟動鋼筋體積膨脹 2.5~6 倍之鏽蝕剝落鏈。"
         }
       ]
     },
@@ -1172,20 +1182,25 @@ export const chemistryData: SubjectData = {
         "answer": "(1) 還原劑為 Zn（鋅金屬）；(2) 氧化數由 0 增加至 +2"
       },
       "step0Prerequisites": [
-        "基本化學元素符號",
-        "莫耳數與化學計量"
+        "氧化數計算規則與電子得失守恆（失電子＝氧化＝還原劑；得電子＝還原＝氧化劑）",
+        "金屬活性大小順序（K > Na > Ca > Mg > Al > Zn > Fe > Sn > Pb > H > Cu > Ag > Au）"
       ],
       "fatalTraps": [
         {
-          "wrongThinking": "化學反應式未平衡即進行莫耳數計算。",
-          "correctThinking": "計算前必先平衡方程式係數。",
-          "trapDescription": "化學計量係數遺漏。"
+          "wrongThinking": "混淆「發生氧化反應」與「氧化劑」，以及在電化學腐蝕電池中搞混「陽極」與「陰極」的反應。",
+          "correctThinking": "活性大的金屬（如鋅 Zn 或腐蝕區的鐵 Fe）作為「陽極（Anode）」，失去電子、氧化數升高，發生「氧化反應」，本身是「還原劑」；陰極（Cathode）則獲得電子發生還原反應（如 O₂ + 2H₂O + 4e⁻ → 4OH⁻）。",
+          "trapDescription": "將「氧化反應（失電子＝陽極＝還原劑）」與「氧化劑（本身得電子被還原）」名稱顛倒。"
+        },
+        {
+          "wrongThinking": "以為鋼材「鍍錫（馬口鐵）」與「熱浸鍍鋅（Galvanized Steel）」在鍍層刮傷後都能繼續保護內部鋼鐵不生鏽。",
+          "correctThinking": "活性 Zn > Fe > Sn：熱浸鍍鋅刮傷時，鋅活性大於鐵，鋅仍優先作犧牲陽極保護鋼骨；但鍍錫刮傷後，鐵活性大於錫，鐵反而變成陽極加速腐蝕穿孔！",
+          "trapDescription": "忽略金屬活性序（Zn > Fe > Sn），誤判鍍層破損後之電偶腐蝕加速效應。"
         }
       ],
       "eliteMentalModels": [
         {
-          "technique": "化學反應本質推理模型",
-          "explanation": "由原子核外電子轉移或共享推論反應路徑。"
+          "technique": "鋼構防蝕「活性陽極犧牲＋電子流向」追蹤法 (Sacrificial Anode Electron Tracking)",
+          "explanation": "只要兩種金屬接觸並存在電解質水膜，電子永遠由「高活性金屬（陽極：Zn / Mg → 失電子溶解犧牲）」流向「低活性金屬（陰極：Fe 鋼構 / 鋼筋 → 得電子受保護不鏽）」。"
         }
       ]
     },
@@ -1470,20 +1485,25 @@ export const chemistryData: SubjectData = {
         "answer": "(1) 丁烷，屬於飽和烷類；(2) 共有 2 種同分異構物 (正丁烷、異丁烷)"
       },
       "step0Prerequisites": [
-        "基本化學元素符號",
-        "莫耳數與化學計量"
+        "碳原子四價共價鍵結（sp³ 單鍵、sp² 雙鍵、sp 參鍵）與同分異構物概念",
+        "有機官能基（羥基 -OH、羧基 -COOH、酯基 -COO-、胺基 -NH₂）與加成／縮合聚合反應"
       ],
       "fatalTraps": [
         {
-          "wrongThinking": "化學反應式未平衡即進行莫耳數計算。",
-          "correctThinking": "計算前必先平衡方程式係數。",
-          "trapDescription": "化學計量係數遺漏。"
+          "wrongThinking": "把「熱塑性塑膠（PVC、PE、PMMA 壓克力）」與「熱固性樹脂（環氧樹脂 Epoxy、酚醛樹脂、不飽和聚酯）」的網狀交聯結構與加熱重塑性質搞反。",
+          "correctThinking": "熱塑性高分子為線狀或支鏈結構，加熱可軟化重塑（如 PVC 水管、PMMA 採光罩）；熱固性高分子（如結構補強 Epoxy 主劑＋硬化劑）一旦交聯固化成三維網狀結構，加熱也不再熔化。",
+          "trapDescription": "混淆建築常用高分子「熱塑性（線性可熱熔）」與「熱固性（三維交聯不可逆固化）」之分類。"
+        },
+        {
+          "wrongThinking": "施作屋頂或外牆防水填縫時，不區分「PU 聚氨酯」、「Epoxy 環氧樹脂」與「Silicone 矽利康（聚矽氧烷）」的耐紫外線（UV）老化特性而隨意混用。",
+          "correctThinking": "Epoxy 含芳香環極易受紫外線黃變粉化（僅限室內地坪或結構裂縫灌注）；Silicone 具高鍵能 Si-O 主鏈，耐候耐 UV 最佳（首選外牆帷幕填縫）；PU 具高彈性但外露時宜加塗耐候面漆。",
+          "trapDescription": "忽略高分子主鏈鍵能（Si-O > C-C）導致將不耐紫外線之 Epoxy 誤用於戶外暴曬防水。"
         }
       ],
       "eliteMentalModels": [
         {
-          "technique": "化學反應本質推理模型",
-          "explanation": "由原子核外電子轉移或共享推論反應路徑。"
+          "technique": "建築高分子「主鏈結構 → 交聯機制 → 耐候場景」三階選材法",
+          "explanation": "① 看交聯：單組分溶劑揮發／濕氣固化 vs. 雙組分（A主劑+B硬化劑）網狀交聯（Epoxy/PU）；② 看主鏈耐 UV：無機矽氧主鏈（Silicone 外牆耐候王）> 壓克力（Acrylic 外牆晴雨漆）> 環氧樹脂（Epoxy 室內高強結構膠）。"
         }
       ]
     },
@@ -1800,20 +1820,25 @@ export const chemistryData: SubjectData = {
         "answer": "(D) 氮氣 N₂"
       },
       "step0Prerequisites": [
-        "基本化學元素符號",
-        "莫耳數與化學計量"
+        "溫室氣體紅外線吸收機制、酸雨定義（pH < 5.0）與水體溶氧（DO）、生化需氧量（BOD）指標",
+        "波特蘭水泥熟料鍛燒反應（CaCO₃ → CaO + CO₂）與建材生命週期碳足跡概念"
       ],
       "fatalTraps": [
         {
-          "wrongThinking": "化學反應式未平衡即進行莫耳數計算。",
-          "correctThinking": "計算前必先平衡方程式係數。",
-          "trapDescription": "化學計量係數遺漏。"
+          "wrongThinking": "誤以為一般自然雨水為絕對中性（pH = 7.0），只要雨水 pH < 7.0 就叫做「酸雨」。",
+          "correctThinking": "乾淨大氣中含有 CO₂，溶於雨水形成微弱碳酸（H₂CO₃）時正常雨水 pH 約為 5.6；國際與台灣環保規範定義雨水受 SO₂、NOx 污染使「pH < 5.0」才稱為酸雨。",
+          "trapDescription": "誤將 pH < 7.0 當作酸雨定義（正確酸雨門檻為 pH < 5.0，正常未受污染雨水約 pH 5.6）。"
+        },
+        {
+          "wrongThinking": "評估建築碳排時只看建築完工後的空調照明用電（「營運碳排 Operational Carbon」），忽略水泥鋼鐵製造階段的「蘊含碳排 (Embodied Carbon)」。",
+          "correctThinking": "全生命週期建築碳足跡（LCA）＝ 建材開採製造與施工之「蘊含碳排」＋ 使用階段「營運碳排」；使用爐石粉、飛灰進行卜作嵐摻料替代部分水泥熟料，是降低混凝土蘊含碳排最有效的化學途徑。",
+          "trapDescription": "混淆建築全生命週期中「蘊含碳排（建材製造）」與「營運碳排（日常空調照明耗能）」。"
         }
       ],
       "eliteMentalModels": [
         {
-          "technique": "化學反應本質推理模型",
-          "explanation": "由原子核外電子轉移或共享推論反應路徑。"
+          "technique": "建築全生命週期「碳循環與卜作嵐固碳」化學平衡模型",
+          "explanation": "追蹤鈣與碳的化學閉環：石灰石高溫煅燒釋放 CO₂ 產出水泥熟料（高碳排源頭）→ 水化產生 Ca(OH)₂ → 掺入爐石粉／飛灰（SiO₂/Al₂O₃）進行卜作嵐二次反應轉化為高強 C-S-H 膠體，同時實現「減熟料降碳＋高緻密耐久」雙贏。"
         }
       ]
     }

@@ -15,9 +15,14 @@ export const geographyData: SubjectData = {
       "curriculumCode": "108-地Ba",
       "fatalTraps": [
         {
-          "wrongThinking": "忽略空間尺度與環境成因。",
-          "correctThinking": "綜合地形氣候人文要素全盤分析。",
-          "trapDescription": "地理空間因果混淆。"
+          "wrongThinking": "判讀等高線地形圖時，把「等高線向高處（數值大處）凸出」誤判為山稜線（分水嶺），而在該處規劃建築基地。",
+          "correctThinking": "等高線「向高處凸出（V字尖端指向高程大處）」為集水「山谷（河谷線）」，暴雨易匯聚山洪與土石流；「向低處凸出」才是排水良好的「山脊（稜線）」。",
+          "trapDescription": "將等高線「V字尖端指向高處（山谷集水線）」與「指向低處（山稜分水嶺）」判讀顛倒。"
+        },
+        {
+          "wrongThinking": "在山坡地開挖整地時，誤以為岩層傾向與坡面方向一致的「順向坡（Dip Slope）」比逆向坡更穩定，直接切除坡腳興建建築。",
+          "correctThinking": "順向坡一旦被挖斷坡腳（Daylighting）或雨水滲入層面泥質夾層降低摩擦力，極易發生大規模岩體順層滑動（如林肯大郡災變）；坡度超過 30%（四級坡以上）依法不得作為建築基地。",
+          "trapDescription": "忽視「順向坡切坡腳」引發岩層順層滑動之致命地質風險，或誤記山坡地禁建坡度門檻（30%）。"
         }
       ],
       "covered_question_ids": [],
@@ -338,13 +343,13 @@ export const geographyData: SubjectData = {
         "answer": "坡度為 25%（四級坡）。屬於限制開發區，需經過嚴格地質安全評估與水土保持工程後方可特定開發。"
       },
       "step0Prerequisites": [
-        "基本地理圖表與地圖判讀",
-        "地理空間分析概念"
+        "地形圖比例尺、等高線間距與平均坡度百分比公式（S = ΔH / L × 100%）",
+        "內營力（板塊斷層褶皺）與外營力（風化侵蝕堆積）之地質基本概念"
       ],
       "eliteMentalModels": [
         {
-          "technique": "人地互動空間分析模型",
-          "explanation": "自然環境條件 ↔ 人類聚落空間 ↔ 永續經營策略。"
+          "technique": "建築基地「地質三避＋坡度門檻」安全選址篩網",
+          "explanation": "選址第一關先刷掉三大高風險地質：① 避開活動斷層帶退縮區；② 避開順向坡坡腳開挖與山谷集水線（等高線V尖指高處）；③ 避開高地下水位疏鬆細砂之土壤液化潛勢區（或改用基樁／筏基＋地盤改良）；並嚴守山坡地平均坡度 ≤ 30% 開發紅線。"
         }
       ]
     },
@@ -357,9 +362,14 @@ export const geographyData: SubjectData = {
       "curriculumCode": "108-地Ba",
       "fatalTraps": [
         {
-          "wrongThinking": "忽略空間尺度與環境成因。",
-          "correctThinking": "綜合地形氣候人文要素全盤分析。",
-          "trapDescription": "地理空間因果混淆。"
+          "wrongThinking": "誤以為台灣位於北回歸線附近，全年正午太陽都在正頭頂或偏北，因此在北向與西向都裝設相同的水平遮陽板。",
+          "correctThinking": "台灣冬季太陽偏南（仰角低），夏季正午接近天頂或略偏北（仰角極高）；故「南向窗」最適合設「水平遮陽板」（夏遮高仰角烈日、冬迎低仰角暖陽），「東西向窗」因晨昏太陽仰角極低，必須設「垂直遮陽板或格柵」。",
+          "trapDescription": "混淆南向（高仰角用水平遮陽）與東西向（低仰角用垂直遮陽）之太陽軌跡幾何。"
+        },
+        {
+          "wrongThinking": "在判讀山谷風、海陸風與焚風時，搞混白天與夜晚的風向，或誤算焚風背風坡乾絕熱增溫率（1°C/100m）與迎風坡濕絕熱減溫率（0.6°C/100m）。",
+          "correctThinking": "白天陸地與山坡受熱快氣壓低，吹「海風（海→陸）」與「谷風（谷→山）」；夜晚吹「陸風」與「山風」；氣流越山後在背風坡以乾絕熱率（每下降 100m 升溫 1°C）沉降形成高溫乾燥「焚風」。",
+          "trapDescription": "混淆迎風坡濕絕熱減溫率（0.6°C/100m）與背風坡乾絕熱增溫率（1.0°C/100m）之焚風計算。"
         }
       ],
       "covered_question_ids": [],
@@ -682,13 +692,13 @@ export const geographyData: SubjectData = {
         "answer": "遮陽板最小出簷深度 L 約為 13.1 公分。"
       },
       "step0Prerequisites": [
-        "基本地理圖表與地圖判讀",
-        "地理空間分析概念"
+        "地球公轉四季太陽直射緯度移動（春分秋分赤道、夏至北緯23.5°、冬至南緯23.5°）與正午太陽仰角公式 H = 90° - |φ - δ|",
+        "行星風系、季風環流與局部微氣候（海陸風、山谷風、煙囪效應浮力通風）"
       ],
       "eliteMentalModels": [
         {
-          "technique": "人地互動空間分析模型",
-          "explanation": "自然環境條件 ↔ 人類聚落空間 ↔ 永續經營策略。"
+          "technique": "被動式氣候應答建築「日照遮陽幾何 × 風壓熱浮力通風」雙引擎模型",
+          "explanation": "① 控光控熱：由緯度算出冬夏正午太陽仰角 H，套用出簷深度 L = W / tan(H) 精算水平遮陽；② 引風散熱：夏季迎西南／東南季風設低進風口、背風高處設排風天窗（結合風壓通風與熱空氣上升之煙囪效應 Stack Effect）。"
         }
       ]
     },
@@ -1067,9 +1077,14 @@ export const geographyData: SubjectData = {
       "curriculumCode": "108-地Bc",
       "fatalTraps": [
         {
-          "wrongThinking": "忽略空間尺度與環境成因。",
-          "correctThinking": "綜合地形氣候人文要素全盤分析。",
-          "trapDescription": "地理空間因果混淆。"
+          "wrongThinking": "計算韋伯（Alfred Weber）工業區位「原料指數（MI = 局地原料重 / 成品重）」時把分子分母顛倒，或把到處都有的「普遍原料（如水、空氣）」也加進分子。",
+          "correctThinking": "原料指數 MI = 「局地原料重量 ÷ 產品重量」（普遍原料不計入分子）：當 MI > 1 代表加工過程大幅減重（失重原料，如水泥廠、製糖廠），應設於「原料區位」；當 MI < 1 或產品易碎易腐、增重（如玻璃組裝、飲料廠），應設於「市場區位」。",
+          "trapDescription": "韋伯原料指數（MI = 局地原料重 / 成品重）誤計入普遍原料，或混淆原料區位（MI > 1）與市場區位（MI < 1）。"
+        },
+        {
+          "wrongThinking": "判讀「區位商數（Location Quotient, LQ）」時，誤以為 LQ = 1 代表該產業完全不存在，或搞混成長極理論的「擴散效果（Spread）」與「回流／極化效果（Backwash）」。",
+          "correctThinking": "LQ > 1 代表該地區某產業就業比例高於全國平均，具專業化與出口基礎功能；成長極初期往往因磁吸周邊人才資金產生「回流（極化）效果」擴大城鄉差距，後期才產生帶動周邊的「擴散效果」。",
+          "trapDescription": "混淆區位商數 LQ > 1 之專業化門檻，或將成長極「回流極化效果」與「擴散效果」顛倒。"
         }
       ],
       "covered_question_ids": [],
@@ -1392,13 +1407,13 @@ export const geographyData: SubjectData = {
         "answer": "韋伯原料指數 MI = 3.0。該產業屬於失重性原料產業，最佳區位策略為設於原料產地（原料區位）。"
       },
       "step0Prerequisites": [
-        "基本地理圖表與地圖判讀",
-        "地理空間分析概念"
+        "第一、二、三、四級產業分類與空間分工（研發總部 vs. 製造基地）",
+        "韋伯工業區位三角模型（運費、勞工、聚集經濟三大因子）與區位商數 LQ 公式"
       ],
       "eliteMentalModels": [
         {
-          "technique": "人地互動空間分析模型",
-          "explanation": "自然環境條件 ↔ 人類聚落空間 ↔ 永續經營策略。"
+          "technique": "產業空間選址「韋伯原料指數 MI × 聚集經濟 × 區位商數 LQ」三階診斷法",
+          "explanation": "① 算 MI（局地原料重 ÷ 成品重）：MI > 1（水泥、鋼鐵高爐）鎖定原料／港口區位，MI < 1（預拌混凝土廠、家具組裝）鎖定都會市場區位；② 算 LQ：LQ > 1 識別區域核心基礎產業；③ 看聚集與知識外溢：高科技園區（竹科、南科）鎖定大學研發人才與穩定水電交通廊帶。"
         }
       ]
     },
@@ -1411,9 +1426,14 @@ export const geographyData: SubjectData = {
       "curriculumCode": "108-地Ba",
       "fatalTraps": [
         {
-          "wrongThinking": "忽略空間尺度與環境成因。",
-          "correctThinking": "綜合地形氣候人文要素全盤分析。",
-          "trapDescription": "地理空間因果混淆。"
+          "wrongThinking": "使用合理化公式（Q = 1/360 · C · I · A）計算基地開發前後洪峰逕流量時，以為鋪設柏油與水泥路面後「逕流係數 C」會變小，或忘記把面積公頃（ha）與單位換算對齊。",
+          "correctThinking": "自然森林草地的逕流係數 C 極低（約 0.15~0.25，大部分雨水入滲土壤）；改為不透水混凝土／柏油鋪面後 C 暴增至 0.85~0.95，導致洪峰逕流量 Q 暴增 3~5 倍且洪峰到達時間提前！",
+          "trapDescription": "混淆都市化前後水文歷線變化（誤以為不透水鋪面逕流係數 C 較小或洪峰時間延後）。"
+        },
+        {
+          "wrongThinking": "誤以為「海綿城市／低衝擊開發（LID）」的透水鋪面與雨水花園只是為了景觀美化，無法削減都市洪峰流量。",
+          "correctThinking": "海綿城市（LID）透過透水磚、生態滯洪池、綠屋頂與雨水儲留系統，落實「滲、滯、蓄、淨、用、排」，能有效降低綜合逕流係數 C、延緩洪峰時間並藉由蒸發散減緩都市熱島效應。",
+          "trapDescription": "忽略海綿城市低衝擊開發（LID）對「降低逕流係數 C、削減洪峰流量與延後洪峰時間」之水文工程效益。"
         }
       ],
       "covered_question_ids": [],
@@ -1736,13 +1756,13 @@ export const geographyData: SubjectData = {
         "answer": "開發前逕流量約為 0.0556 m³/s，開發後暴增至 0.2361 m³/s，逕流量增加了 4.25 倍。"
       },
       "step0Prerequisites": [
-        "基本地理圖表與地圖判讀",
-        "地理空間分析概念"
+        "水循環水平衡方程式（降雨量 P ＝ 蒸發散 E ＋ 地表逕流 R ＋ 地下入滲 I）",
+        "合理化洪峰流量公式 Q = (1/360) · C · I · A 與都市熱島效應能量平衡原理"
       ],
       "eliteMentalModels": [
         {
-          "technique": "人地互動空間分析模型",
-          "explanation": "自然環境條件 ↔ 人類聚落空間 ↔ 永續經營策略。"
+          "technique": "韌性都市水文歷線「削峰延時」與海綿 LID 設計模型",
+          "explanation": "對照「都市化前 vs. 都市化後 vs. 導入海綿 LID 後」三條流量歷線：不透水化使入滲 I↓、逕流係數 C↑、洪峰流量 Q_p↑、稽延時間 T_p↓（尖瘦危險洪峰）；導入綠屋頂、透水鋪面與滯洪池（LID）則把尖峰削平拉寬，恢復基地出流管制安全。"
         }
       ]
     },
@@ -1755,9 +1775,14 @@ export const geographyData: SubjectData = {
       "curriculumCode": "108-地Ab",
       "fatalTraps": [
         {
-          "wrongThinking": "忽略空間尺度與環境成因。",
-          "correctThinking": "綜合地形氣候人文要素全盤分析。",
-          "trapDescription": "地理空間因果混淆。"
+          "wrongThinking": "分不清 GIS「向量資料模式（Vector：點、線、面）」與「網格資料模式（Raster：像素陣列）」，誤以為地籍建號地界線與道路網路適合用網格儲存，而衛星遙測影像與連續 DEM 高程適合用向量儲存。",
+          "correctThinking": "邊界明確的離散地物（如建築地籍圖框、管線網路、測量控制點）必用「向量（Vector）」以確保幾何精確與拓撲關係；連續變化的場域資料（如 DEM 數值高程、坡度、氣溫分布、衛星航照）則用「網格（Raster）」。",
+          "trapDescription": "混淆 GIS「向量模式（點線面離散地籍管線）」與「網格模式（像素連續高程坡度影像）」之適用場景。"
+        },
+        {
+          "wrongThinking": "在 GIS 空間分析題中，搞混「環域分析（Buffer）」、「疊圖分析（Overlay）」、「視域分析（Viewshed）」與「路網最佳路徑分析（Network Analysis）」。",
+          "correctThinking": "「距離斷層或河川 N 公尺內禁建」用環域分析（Buffer）；「同時滿足坡度<15% 且非保護區且位於環域外」的多圖層交集用疊圖分析（Overlay）；「景觀塔或基地日照遮蔽可見範圍」用 DEM 視域分析（Viewshed）；「消防車救災最短時間路徑」用路網分析。",
+          "trapDescription": "無法將建築選址條件精準對應至 GIS 四大空間分析工具（環域、疊圖、視域、路網）。"
         }
       ],
       "covered_question_ids": [],
@@ -2087,13 +2112,13 @@ export const geographyData: SubjectData = {
         "answer": "預估建築基地 X 的氣溫為 29.60°C。"
       },
       "step0Prerequisites": [
-        "基本地理圖表與地圖判讀",
-        "地理空間分析概念"
+        "TWD97 二度分帶投影坐標系 (X, Y)、空間資料（幾何）與屬性資料（表格）之關聯資料庫概念",
+        "向量模式（點 Point、線 Line、面 Polygon）與網格模式（Raster / DEM 像素解析度）之基本結構"
       ],
       "eliteMentalModels": [
         {
-          "technique": "人地互動空間分析模型",
-          "explanation": "自然環境條件 ↔ 人類聚落空間 ↔ 永續經營策略。"
+          "technique": "GIS 建築選址「環域 (Buffer) → 坡度視域 (DEM) → 疊圖交集 (Overlay)」標準管線",
+          "explanation": "任何 GIS 基地選址題皆拆解為三步流水線：① 先對線狀／點狀限制物（斷層、道路、捷運站）跑「環域分析 (Buffer)」劃定距界範圍；② 對網格 DEM 跑「地勢分析（坡度 Slope、坡向 Aspect、視域 Viewshed）」；③ 最後用「疊圖分析 (Overlay: AND 交集 / NOT 差集)」篩出最佳合法基地。"
         }
       ]
     }

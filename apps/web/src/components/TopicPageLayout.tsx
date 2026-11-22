@@ -47,6 +47,7 @@ import TopicCompletionCelebration from '@/components/pedagogy/TopicCompletionCel
 import ConceptFigure from '@/components/pedagogy/ConceptFigure';
 import CurricularLicensureMatrix from '@/components/pedagogy/CurricularLicensureMatrix';
 import CurriculumAlignmentPanel, { ConceptOutlineChips } from '@/components/pedagogy/CurriculumAlignmentPanel';
+import TopicVideoStoryboardPanel from '@/components/pedagogy/TopicVideoStoryboardPanel';
 import TopicProgressiveHintDeck from '@/components/pedagogy/TopicProgressiveHintDeck';
 import { groupVisualsByConcept, type ConceptVisual } from '@/data/conceptVisuals';
 import {
@@ -499,6 +500,13 @@ export default function TopicPageLayout({ subject, topic, mappedExamQuestions, t
           <div className="print:hidden">
             <CurricularLicensureMatrix subject={subject} topic={topic} />
           </div>
+
+          {/* 教學影片設計大綱與 10 分鐘黃金分鏡腳本 */}
+          <TopicVideoStoryboardPanel
+            subject={subject}
+            topic={topic}
+            chapterIndex={currentIndex >= 0 ? currentIndex : 0}
+          />
 
           {/* Architectural Skill Constellation Coordinate Card */}
           {starNode && (
