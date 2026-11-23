@@ -718,13 +718,14 @@ async def main():
     start_idx = nums[0] if len(nums) >= 1 else 1
     end_idx = nums[1] if len(nums) >= 2 else (nums[0] if len(nums) == 1 else 15)
 
-    out_dir = ROOT / "output" / "videos"
+    out_dir = ROOT / "output" / "videos-高工"
     out_dir.mkdir(parents=True, exist_ok=True)
     report = []
     t_all = time.time()
 
     for idx in range(start_idx, end_idx + 1):
         meta, scenes = get_lesson_data(idx, topics)
+        meta["out_dir"] = str(out_dir)
         target_mp4 = out_dir / meta["output_name"]
         if not force and target_mp4.exists() and target_mp4.stat().st_size > 2_000_000:
             print(f"[SKIP] {meta['output_name']} already exists")

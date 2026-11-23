@@ -91,7 +91,7 @@ def safe_filename_title(title: str) -> str:
 
 def sync_existing_math_c_subtitles():
     """Ensure all 15 existing MC01..MC15 MP4s have sidecar .srt + .ass and embedded mov_text subtitle stream."""
-    out_dir = ROOT / "output" / "videos"
+    out_dir = ROOT / "output" / "videos-高工"
     count = 0
     for mp4 in sorted(out_dir.glob("MC*.mp4")):
         if mp4.name.endswith(".tmp.mp4"):
@@ -744,7 +744,7 @@ async def build_episode_fast(meta: dict, scenes: list[dict], renderer: Persisten
     work_dir = ROOT / "tmp" / "video_build" / meta["id"]
     slides_dir = work_dir / "slides"
     audio_dir = work_dir / "audio"
-    out_dir = ROOT / "output" / "videos"
+    out_dir = ROOT / "output" / ("videos" if meta["id"].startswith("BARCH") else "videos-高工")
     for d in (slides_dir, audio_dir, out_dir):
         d.mkdir(parents=True, exist_ok=True)
 
@@ -857,64 +857,9 @@ async def build_episode_fast(meta: dict, scenes: list[dict], renderer: Persisten
 
 
 def verify_all_144_videos_and_subtitles():
-    data = json.loads((ROOT / "tmp" / "video_build" / "all_curriculum_data.json").read_text(encoding="utf-8"))
-    out_dir = ROOT / "output" / "videos"
-    mp4_files = sorted(out_dir.glob("*.mp4"))
-    srt_files = sorted(out_dir.glob("*.srt"))
-    ass_files = sorted(out_dir.glob("*.ass"))
-
-    expected_prefixes = {}
-    for subj in data["allSubjects"]:
-        p = SUBJECT_PREFIX_MAP[subj["slug"]]
-        expected_prefixes[p] = len(subj["topics"])
-    expected_prefixes["BARCH"] = sum(len(d["knowledgePoints"]) for d in data["pathwaySubjects"])
-
-    print("\n============================================================")
-    print("🎬 全站 144 集教學影片與對應字幕 (.mp4 + .srt + .ass + 內嵌字幕軌) 驗收報告")
-    print("============================================================")
-
-    total_expected = 0
-    total_found = 0
-    missing = []
-    manifest_items = []
-
-    for prefix, count in expected_prefixes.items():
-        total_expected += count
-        found_for_prefix = 0
-        for idx in range(1, count + 1):
-            ep_id = f"{prefix}{idx:02d}"
-            matches = list(out_dir.glob(f"{ep_id}-*.mp4"))
-            if not matches:
-                missing.append(ep_id)
-                continue
-            mp4 = matches[0]
-            srt = mp4.with_suffix(".srt")
-            ass = mp4.with_suffix(".ass")
-            if not srt.exists() or srt.stat().st_size < 100 or not ass.exists() or ass.stat().st_size < 100:
-                missing.append(f"{ep_id}(missing .srt/.ass)")
-                continue
-            cues = srt.read_text(encoding="utf-8").count("-->")
-            found_for_prefix += 1
-            total_found += 1
-            manifest_items.append({
-                "id": ep_id,
-                "mp4": mp4.name,
-                "srt": srt.name,
-                "ass": ass.name,
-                "size_mb": round(mp4.stat().st_size / (1024 * 1024), 2),
-                "subtitle_cues": cues,
-            })
-        print(f"  ✓ 系列 {prefix:<6} : {found_for_prefix:2d} / {count:2d} 集影片 + .srt + .ass 字幕驗證通過")
-
-    manifest_path = out_dir / "all-144-videos-manifest.json"
-    manifest_path.write_text(json.dumps(manifest_items, ensure_ascii=False, indent=2), encoding="utf-8")
-    print("------------------------------------------------------------")
-    print(f"總集數驗收: {total_found} / {total_expected} 集 (.mp4={len(mp4_files)}, .srt={len(srt_files)}, .ass={len(ass_files)})")
-    if missing:
-        print(f"❌ 尚缺集數: {missing}")
-        sys.exit(1)
-    print(f"✅ 全部 {total_found} 集 1080p 教學影片與對應 .srt / .ass / 內嵌字幕軌 100% 完整齊備！")
-    print(f"📄 總清單已輸出至: {manifest_path}")
+    """Delegates to the separated 高工 (126) + 大學 (24) verifier in build_vocational_v2."""
+    from build_vocational_v2 import verify_all_separated
+    verify_all_separated()
 
 
 async def main():
