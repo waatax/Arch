@@ -379,10 +379,11 @@ def render_header(meta: dict, chapter_idx: int) -> str:
     for i, name in enumerate(meta["chapters"]):
         cls = "chap-pill active" if i == chapter_idx else ("chap-pill done" if i < chapter_idx else "chap-pill")
         pills.append(f'<span class="{cls}">{esc(name)}</span>')
+    brand_label = meta.get("brand", "ARCH 高工數學 C")
     return f"""
     <div class="header">
       <div class="brand">
-        <span class="brand-pill">ARCH 高工數學 C</span>
+        <span class="brand-pill">{esc(brand_label)}</span>
         <span class="lesson-name">{esc(meta["id"])}｜{esc(meta["title"])}</span>
       </div>
       <div class="chapters">{''.join(pills)}</div>
@@ -702,8 +703,10 @@ async def render_slides_via_cdp(html_files: list[tuple[pathlib.Path, pathlib.Pat
                 )
 
                 for html_path, png_path in html_files:
+                    if png_path.exists() and png_path.stat().st_size > 15_000 and png_path.stat().st_mtime >= html_path.stat().st_mtime:
+                        continue
                     await cdp_call("Page.navigate", {"url": html_path.resolve().as_uri()})
-                    await asyncio.sleep(0.18)
+                    await asyncio.sleep(0.06)
                     shot = await cdp_call("Page.captureScreenshot", {"format": "png"})
                     png_path.write_bytes(base64.b64decode(shot["data"]))
                     print(f"  [SLIDE] {png_path.name} ({png_path.stat().st_size // 1024} KB)")
@@ -930,7 +933,7 @@ def create_ambient_bed_loop(wav_path: pathlib.Path, sample_rate: int = 48000):
 
 
 # ============================================================
-# 5. ASS Subtitle Writer
+# 5. ASS & SRT Subtitle Writers
 # ============================================================
 
 def fmt_ass_time(sec: float) -> str:
@@ -938,6 +941,17 @@ def fmt_ass_time(sec: float) -> str:
     m = int((sec % 3600) // 60)
     s = sec % 60
     return f"{h}:{m:02d}:{s:05.2f}"
+
+
+def fmt_srt_time(sec: float) -> str:
+    sec = max(0.0, sec)
+    h = int(sec // 3600)
+    m = int((sec % 3600) // 60)
+    s = int(sec % 60)
+    ms = int(round((sec - int(sec)) * 1000))
+    if ms >= 1000:
+        ms = 999
+    return f"{h:02d}:{m:02d}:{s:02d},{ms:03d}"
 
 
 def write_ass_subtitles(all_subs: list[tuple[float, float, str]], ass_path: pathlib.Path):
@@ -961,6 +975,34 @@ Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
     ass_path.write_text("".join(lines), encoding="utf-8")
 
 
+def write_srt_subtitles(all_subs: list[tuple[float, float, str]], srt_path: pathlib.Path):
+    lines = []
+    for idx, (start, end, text) in enumerate(all_subs, 1):
+        lines.append(f"{idx}\n{fmt_srt_time(start)} --> {fmt_srt_time(end)}\n{text.strip()}\n\n")
+    srt_path.write_text("".join(lines), encoding="utf-8")
+
+
+def ass_to_srt_file(ass_path: pathlib.Path, srt_path: pathlib.Path) -> int:
+    """Convert an existing ASS subtitle file into a standard UTF-8 SRT file and return cue count."""
+    subs: list[tuple[float, float, str]] = []
+    for line in ass_path.read_text(encoding="utf-8").splitlines():
+        if not line.startswith("Dialogue:"):
+            continue
+        parts = line.split(",", 9)
+        if len(parts) < 10:
+            continue
+        def parse_t(ts: str) -> float:
+            h, m, s = ts.strip().split(":")
+            return int(h) * 3600 + int(m) * 60 + float(s)
+        st = parse_t(parts[1])
+        en = parse_t(parts[2])
+        txt = parts[9].strip()
+        if txt:
+            subs.append((st, en, txt))
+    write_srt_subtitles(subs, srt_path)
+    return len(subs)
+
+
 # ============================================================
 # 6. Main Orchestrator
 # ============================================================
@@ -970,12 +1012,15 @@ async def build_from_data(meta: dict, scenes: list[dict], force_tts: bool = Fals
     work_dir = ROOT / "tmp" / "video_build" / meta["id"]
     slides_dir = work_dir / "slides"
     audio_dir = work_dir / "audio"
-    out_dir = ROOT / "output" / "videos"
+    out_dir = pathlib.Path(meta.get("out_dir") or (ROOT / "output" / "videos"))
     for d in (slides_dir, audio_dir, out_dir):
         d.mkdir(parents=True, exist_ok=True)
 
     # Auto-load Arch learning-visual webp for this lesson slug
-    arch_webp = ROOT / "apps" / "web" / "public" / "learning-visuals" / "math-c" / f"{meta['slug']}.webp"
+    subject_slug = meta.get("subject_slug", "math-c")
+    arch_webp = ROOT / "apps" / "web" / "public" / "learning-visuals" / subject_slug / f"{meta['slug']}.webp"
+    if not arch_webp.exists():
+        arch_webp = ROOT / "apps" / "web" / "public" / "learning-visuals" / "math-c" / f"{meta['slug']}.webp"
     arch_uri = image_to_data_uri(arch_webp) if arch_webp.exists() else ""
     for s in scenes:
         if s["layout"] in ("cover", "split_arch") and not s.get("arch_image_uri") and arch_uri:
@@ -990,22 +1035,29 @@ async def build_from_data(meta: dict, scenes: list[dict], force_tts: bool = Fals
     for s in scenes:
         hp = slides_dir / f"scene_{s['id']}.html"
         pp = slides_dir / f"scene_{s['id']}.png"
-        hp.write_text(render_scene_html(meta, s), encoding="utf-8")
+        new_html = render_scene_html(meta, s)
+        if not hp.exists() or hp.read_text(encoding="utf-8") != new_html:
+            hp.write_text(new_html, encoding="utf-8")
         html_pairs.append((hp, pp))
 
-    print("[1/4] Rendering 1080p HTML5+SVG slides via Headless Edge CDP...")
-    await render_slides_via_cdp(html_pairs, work_dir / "edge_profile")
+    need_render = [pair for pair in html_pairs if not (pair[1].exists() and pair[1].stat().st_size > 15_000 and pair[1].stat().st_mtime >= pair[0].stat().st_mtime)]
+    if need_render:
+        print(f"[1/4] Rendering {len(need_render)}/{len(html_pairs)} 1080p HTML5+SVG slides via Headless Edge CDP...")
+        await render_slides_via_cdp(need_render, work_dir / "edge_profile")
+    else:
+        print(f"[1/4] All {len(html_pairs)} 1080p slides cached.")
 
-    # Step 2: Generate TTS audio concurrently (semaphore=4)
+    # Step 2: Generate TTS audio concurrently (semaphore=10)
     print(f"[2/4] Generating natural Taiwan Mandarin TTS ({meta['voice']}, rate={meta['rate']})...")
     chime_wav = audio_dir / "chime.wav"
-    create_chime_wav(chime_wav)
+    if not chime_wav.exists():
+        create_chime_wav(chime_wav)
 
     if force_tts:
         for f in audio_dir.glob("scene_*.mp3"):
             f.unlink(missing_ok=True)
 
-    sem = asyncio.Semaphore(4)
+    sem = asyncio.Semaphore(10)
     tts_tasks = [
         generate_scene_tts(s, meta["voice"], meta["rate"], audio_dir / f"scene_{s['id']}.mp3", sem)
         for s in scenes
@@ -1026,34 +1078,35 @@ async def build_from_data(meta: dict, scenes: list[dict], force_tts: bool = Fals
 
         seg_wav = audio_dir / f"seg_{s['id']}.wav"
         delay_ms = int(lead_pad * 1000)
-        if s.get("chime"):
-            filter_complex = (
-                f"[0:a]aresample=48000,aformat=channel_layouts=stereo,adelay={delay_ms}|{delay_ms},"
-                f"apad=pad_dur={tail_pad:.3f}[voice];"
-                f"[1:a]aresample=48000,aformat=channel_layouts=stereo[chime];"
-                f"[voice][chime]amix=inputs=2:duration=first:normalize=0[out]"
-            )
-            subprocess.run(
-                [
-                    "ffmpeg", "-y", "-v", "error",
-                    "-i", str(mp3_path), "-i", str(chime_wav),
-                    "-filter_complex", filter_complex, "-map", "[out]",
-                    "-ar", "48000", "-ac", "2", str(seg_wav),
-                ],
-                check=True,
-            )
-        else:
-            af = f"aresample=48000,aformat=channel_layouts=stereo,adelay={delay_ms}|{delay_ms},apad=pad_dur={tail_pad:.3f}"
-            subprocess.run(
-                [
-                    "ffmpeg", "-y", "-v", "error",
-                    "-i", str(mp3_path), "-af", af,
-                    "-ar", "48000", "-ac", "2", str(seg_wav),
-                ],
-                check=True,
-            )
+        if not (seg_wav.exists() and seg_wav.stat().st_size > 4000 and seg_wav.stat().st_mtime >= mp3_path.stat().st_mtime):
+            if s.get("chime"):
+                filter_complex = (
+                    f"[0:a]aresample=48000,aformat=channel_layouts=stereo,adelay={delay_ms}|{delay_ms},"
+                    f"apad=pad_dur={tail_pad:.3f}[voice];"
+                    f"[1:a]aresample=48000,aformat=channel_layouts=stereo[chime];"
+                    f"[voice][chime]amix=inputs=2:duration=first:normalize=0[out]"
+                )
+                subprocess.run(
+                    [
+                        "ffmpeg", "-y", "-v", "error",
+                        "-i", str(mp3_path), "-i", str(chime_wav),
+                        "-filter_complex", filter_complex, "-map", "[out]",
+                        "-ar", "48000", "-ac", "2", str(seg_wav),
+                    ],
+                    check=True,
+                )
+            else:
+                af = f"aresample=48000,aformat=channel_layouts=stereo,adelay={delay_ms}|{delay_ms},apad=pad_dur={tail_pad:.3f}"
+                subprocess.run(
+                    [
+                        "ffmpeg", "-y", "-v", "error",
+                        "-i", str(mp3_path), "-af", af,
+                        "-ar", "48000", "-ac", "2", str(seg_wav),
+                    ],
+                    check=True,
+                )
 
-        seg_dur = get_audio_duration(seg_wav)
+        seg_dur = dur + lead_pad + tail_pad
         for st, en, txt in local_subs:
             all_subs.append((cursor + lead_pad + st, cursor + lead_pad + en, txt))
 
@@ -1062,7 +1115,7 @@ async def build_from_data(meta: dict, scenes: list[dict], force_tts: bool = Fals
         cursor += seg_dur
 
     # Step 3: Concatenate, loudnorm (-16 LUFS), and blend subtle warm studio bed (-30 dB)
-    print(f"[3/4] Mastering smooth broadcast audio (-16 LUFS + warm studio bed) & ASS subtitles ({cursor:.1f}s / {cursor/60:.2f} min)...")
+    print(f"[3/4] Mastering smooth broadcast audio (-16 LUFS + warm studio bed) & ASS/SRT subtitles ({cursor:.1f}s / {cursor/60:.2f} min)...")
     audio_list_txt = work_dir / "audio_concat.txt"
     audio_list_txt.write_text(
         "".join(f"file '{p.resolve().as_posix()}'\n" for p in audio_concat_list),
@@ -1101,10 +1154,19 @@ async def build_from_data(meta: dict, scenes: list[dict], force_tts: bool = Fals
     )
 
     ass_path = work_dir / "subtitles.ass"
+    srt_path = work_dir / "subtitles.srt"
     write_ass_subtitles(all_subs, ass_path)
+    write_srt_subtitles(all_subs, srt_path)
 
-    # Step 4: Assemble final 1080p MP4 with burned-in ASS subtitles
-    print("[4/4] Encoding final 1080p 30fps MP4...")
+    # Also copy sidecar .srt and .ass next to the output MP4!
+    out_mp4 = out_dir / meta["output_name"]
+    out_srt = out_mp4.with_suffix(".srt")
+    out_ass = out_mp4.with_suffix(".ass")
+    shutil.copy2(srt_path, out_srt)
+    shutil.copy2(ass_path, out_ass)
+
+    # Step 4: Assemble final 1080p MP4 with burned-in ASS subtitles AND embedded mov_text soft subtitle track
+    print("[4/4] Encoding final 1080p MP4 (with burned-in ASS + embedded soft SRT track)...")
     video_list_txt = work_dir / "video_concat.txt"
     vlines = []
     for png_p, dur in scene_timings:
@@ -1113,7 +1175,6 @@ async def build_from_data(meta: dict, scenes: list[dict], force_tts: bool = Fals
     vlines.append(f"file '{scene_timings[-1][0].resolve().as_posix()}'\n")
     video_list_txt.write_text("".join(vlines), encoding="utf-8")
 
-    out_mp4 = out_dir / meta["output_name"]
     ass_escaped = ass_path.resolve().as_posix().replace(":", r"\:")
 
     subprocess.run(
@@ -1121,9 +1182,11 @@ async def build_from_data(meta: dict, scenes: list[dict], force_tts: bool = Fals
             "ffmpeg", "-y", "-v", "warning",
             "-f", "concat", "-safe", "0", "-i", str(video_list_txt),
             "-i", str(norm_master_wav),
-            "-vf", f"fps=30,scale=1920:1080,ass='{ass_escaped}'",
-            "-c:v", "libx264", "-preset", "veryfast", "-crf", "21", "-pix_fmt", "yuv420p",
+            "-i", str(srt_path),
+            "-vf", f"fps=12,scale=1920:1080,ass='{ass_escaped}'",
+            "-c:v", "libx264", "-preset", "ultrafast", "-tune", "stillimage", "-crf", "22", "-pix_fmt", "yuv420p",
             "-c:a", "aac", "-b:a", "192k",
+            "-c:s", "mov_text", "-metadata:s:s:0", "language=zho", "-metadata:s:s:0", "title=繁體中文",
             "-shortest", "-movflags", "+faststart",
             str(out_mp4),
         ],
@@ -1132,8 +1195,15 @@ async def build_from_data(meta: dict, scenes: list[dict], force_tts: bool = Fals
 
     final_dur = get_audio_duration(out_mp4)
     size_mb = out_mp4.stat().st_size / (1024 * 1024)
-    print(f"DONE! {out_mp4.name} | {int(final_dur // 60)}m {final_dur % 60:04.1f}s | {size_mb:.2f} MB | {time.time() - t0:.1f}s")
-    return {"file": str(out_mp4), "duration": final_dur, "size_mb": size_mb}
+    print(f"DONE! {out_mp4.name} (+ .srt/{len(all_subs)} cues) | {int(final_dur // 60)}m {final_dur % 60:04.1f}s | {size_mb:.2f} MB | {time.time() - t0:.1f}s")
+    return {
+        "file": str(out_mp4),
+        "srt_file": str(out_srt),
+        "ass_file": str(out_ass),
+        "subtitle_cues": len(all_subs),
+        "duration": final_dur,
+        "size_mb": size_mb,
+    }
 
 
 async def build_lesson(module_name: str):
