@@ -8,6 +8,7 @@ import SubjectTopicExplorer from '@/components/discovery/SubjectTopicExplorer';
 import SubjectQuickSwitcher from '@/components/discovery/SubjectQuickSwitcher';
 import SubjectContinueBanner from '@/components/discovery/SubjectContinueBanner';
 import SubjectCurriculumMap from '@/components/discovery/SubjectCurriculumMap';
+import { getVideosForSubject } from '@/data/youtubeVideos';
 
 export function generateStaticParams() {
   return allSubjects.map((subject) => ({ subject: subject.slug }));
@@ -31,6 +32,7 @@ export default async function SubjectPage({ params }: { params: Promise<{ subjec
   const doneCount = subject.topics.filter((topic) => topic.status === 'done').length;
   const totalConcepts = subject.topics.reduce((acc, t) => acc + t.concepts.length, 0);
   const totalWorked = subject.topics.reduce((acc, t) => acc + (t.worked_examples?.length ?? 0), 0);
+  const subjectVideos = getVideosForSubject(subject.slug);
 
   return (
     <div className="mx-auto max-w-6xl px-4 py-8 sm:px-6 sm:py-12 space-y-8">
@@ -91,6 +93,12 @@ export default async function SubjectPage({ params }: { params: Promise<{ subjec
               className="inline-flex items-center justify-center rounded-xl bg-blue-600 hover:bg-blue-700 text-white text-xs font-bold px-5 py-3 transition-colors shadow-sm"
             >
               🚀 從第 1 章開始學習 →
+            </Link>
+            <Link
+              href={`/videos?subject=${subject.slug}`}
+              className="inline-flex items-center justify-center rounded-xl bg-red-600 hover:bg-red-700 text-white text-xs font-bold px-5 py-3 transition-colors shadow-sm"
+            >
+              🎬 本科 YouTube 教學影片 ({subjectVideos.length} 集)
             </Link>
             <Link
               href="/practice"

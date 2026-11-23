@@ -40,7 +40,18 @@ arch.learn.tw-mapping.txt
 Local/
 local/
 
-# Python bytecode & local video render output
+# Python bytecode & local video render output (NEVER commit or deploy to GitHub Pages)
 __pycache__/
 *.pyc
 output/
+*.mp4
+*.mkv
+*.webm
+*.mov
+*.avi
+*.srt
+*.ass
+*.vtt
+*.wav
+*.mp3
+*.m4a

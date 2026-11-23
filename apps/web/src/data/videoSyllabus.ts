@@ -1,6 +1,8 @@
 import { allSubjects } from './subjects';
 import { pathwaySubjects, PathwayKnowledgePoint, PathwaySubject } from './pathwayCurriculum';
 import { SubjectData, TopicContent } from './types';
+import { getTopicRealLifeGuide } from '@/lib/pedagogy/realLifeHelpers';
+import { getTopicDeepKnowledge } from '@/lib/pedagogy/topicKnowledgeExpander';
 
 export interface VideoStoryboardPart {
   partNumber: number;
@@ -156,52 +158,58 @@ export function buildTopicVideoEpisode(
 
   const qIds = topic.covered_question_ids || [];
   const prerequisites = topic.step0Prerequisites?.slice(0, 2) || ['基礎工程圖學與單位換算'];
+  const realLife = getTopicRealLifeGuide(subject.slug, topic.slug);
+  const deep = getTopicDeepKnowledge(subject.slug, topic.slug);
+  const variations = realLife.applicationVariations?.length
+    ? realLife.applicationVariations
+    : deep.examTrend.keyQuestionTypes.slice(0, 3);
 
   const storyboardParts: VideoStoryboardPart[] = [
     {
       partNumber: 1,
-      timeRange: '0:00 – 0:50',
-      durationSec: 50,
-      stageTitle: '開場破題 × 統測考情雷達',
-      visualCue: `【片頭動態藍圖】顯示集數 ${episodeCode}、課綱代碼 ${topic.curriculumCode || '108-CORE'} 與歷屆統測命題熱度雷達圖（收錄 ${qIds.length} 題歷屆真題對應）。`,
-      narrationFocus: `以建築現場實務提問切入：「為什麼在工程與統測考場上，${cleanTitle}總是決定高下？」同步檢核先備知識：${prerequisites.join('、')}。`,
+      timeRange: '0:00 – 1:40',
+      durationSec: 100,
+      stageTitle: '為何要學 × 真實生活與工程哪裡用到 × 課綱地圖',
+      visualCue: `【片頭生活破題＋雙欄應用圖卡】顯示集數 ${episodeCode}、課綱代碼 ${topic.curriculumCode || '108-CORE'}，呈現為何要學、工程實務場域與動手觀察任務（對應 ${qIds.length} 題統測真題）。`,
+      narrationFocus: `為何要學：${realLife.realLifeImportance} 哪裡用到：${realLife.whereUsed || deep.landmarkCase.name}。生活類比：${realLife.everydayAnalogy}`,
       keyElements: [
-        `課綱代碼：${topic.curriculumCode || '108 課綱核心單元'}`,
-        `先備起點：${prerequisites.join(' ／ ')}`,
-        `歷屆統測關聯：${qIds.length > 0 ? `涵蓋 ${qIds.slice(0, 3).join(', ')} 等 ${qIds.length} 題真題` : '核心必考觀念與跨章節綜合題型'}`,
+        `為何要學：${realLife.realLifeImportance}`,
+        `哪裡用到：${realLife.whereUsed || deep.landmarkCase.name}`,
+        `生活類比與先備銜接：${realLife.everydayAnalogy}（先備：${prerequisites.join(' ／ ')}）`,
       ],
     },
     {
       partNumber: 2,
-      timeRange: '0:50 – 5:30',
-      durationSec: 280,
-      stageTitle: '核心知識點 × SVG 動態圖解精講',
-      visualCue: `【分鏡節拍 1~${Math.min(coreConceptHeadings.length, 6)}】依序展開 ${coreConceptHeadings.length} 大核心觀念 SVG 圖解與比較表格，高亮關鍵公式與法定基準值。`,
-      narrationFocus: `逐一拆解本章核心觀念（${coreConceptHeadings.slice(0, 4).join(' → ')}），由物理與幾何直覺推導至定量公式。`,
+      timeRange: '1:40 – 6:40',
+      durationSec: 300,
+      stageTitle: '100% 全知識點深度闡述 × 圖解與步驟推導',
+      visualCue: `【全觀念分鏡 1~${coreConceptHeadings.length}】零截斷完整展開全部 ${coreConceptHeadings.length} 大核心觀念（多圖配對＋工程向量 SVG＋比較表格＋步驟推導板），高亮關鍵公式與 CNS 規範。`,
+      narrationFocus: `完整闡述全部 ${coreConceptHeadings.length} 個課綱觀念（${coreConceptHeadings.slice(0, 5).join(' → ')}），由物理與空間直覺推導至定量計算與規範邊界。`,
       keyElements: [
-        ...coreConceptHeadings.slice(0, 4).map((h, i) => `節拍 2.${i + 1}：${h}`),
+        ...coreConceptHeadings.slice(0, 6).map((h, i) => `知識點 2.${i + 1}：${h}`),
         ...(keyFormulas.length > 0 ? [`核心公式高亮：${keyFormulas.join(' ； ')}`] : []),
       ],
     },
     {
       partNumber: 3,
-      timeRange: '5:30 – 6:45',
-      durationSec: 75,
-      stageTitle: '考場致命陷阱 × 名師秒殺心智模型',
-      visualCue: '【紅綠雙欄 X 光對照卡】左側紅框閃爍考生常見錯誤直覺，右側綠框浮現正確推導與名師秒殺模型圖卡。',
-      narrationFocus: `直接點破考場最高頻失分陷阱，並傳授「${firstModel ? stripHtml(firstModel.technique) : '結構化秒殺心智模型'}」。`,
+      timeRange: '6:40 – 8:30',
+      durationSec: 110,
+      stageTitle: '應用變化與條件變形 × 致命陷阱與秒殺心法',
+      visualCue: '【條件變形矩陣＋紅綠 X 光排雷卡】拆解 3 大工程與考場應用變化（條件改變如何切換模型），並並列考生高頻致命陷阱與名師秒殺心智模型。',
+      narrationFocus: `當條件一變怎麼解？逐一演練 ${variations.length} 種應用變化與破題口訣「${deep.examTrend.killerTrick}」，再徹底排雷致命陷阱。`,
       keyElements: [
+        ...variations.slice(0, 3).map((v, i) => `應用變化 ${i + 1}：${v}`),
         fatalTrapSummary,
         `💡 名師心法：${mentalModelSummary}`,
       ],
     },
     {
       partNumber: 4,
-      timeRange: '6:45 – 9:25',
-      durationSec: 160,
-      stageTitle: '歷年統測真題 × 三步驟 SOP 實戰',
-      visualCue: '【互動解題白板】題幹關鍵字螢光筆自動畫線 → 步驟 1、2、3 逐行動畫展開 → 標示易錯防呆點與秒殺捷徑。',
-      narrationFocus: `帶練經典例題：「${workedExampleTitle}」，示範如何在 60 秒內完成審題、列式與驗算。`,
+      timeRange: '8:30 – 11:20',
+      durationSec: 170,
+      stageTitle: '多題步驟化例題 × 111–115 官方歷屆統測真題實戰',
+      visualCue: '【互動解題白板】帶練經典例題與官方歷屆統測真題（四選項對照＋誘答排除），逐行展開「審題抓關鍵字 → 列式／畫圖 → 秒殺驗算」。',
+      narrationFocus: `帶練經典例題「${workedExampleTitle}」與歷屆統測實戰變式，示範 60 秒內完成審題、列式與防呆驗算。`,
       keyElements: [
         `實戰例題：${workedExampleTitle}`,
         ...(firstExample?.steps?.slice(0, 3).map((s) => stripHtml(s)) || []),
@@ -210,13 +218,13 @@ export function buildTopicVideoEpisode(
     },
     {
       partNumber: 5,
-      timeRange: '9:25 – 10:00',
-      durationSec: 35,
+      timeRange: '11:20 – 12:00',
+      durationSec: 40,
       stageTitle: '30 秒考前懶人包 × 闖關行動召喚',
-      visualCue: `【一頁式全螢幕重點速查卡】匯總 ${cleanTitle} 必背公式、規範數據與口訣，附 QR/連結導流至 Arch 線上練習室。`,
-      narrationFocus: `30 秒快速複誦本章 3 大得分關鍵，提醒同學立即前往 Arch 平台完成本章 ${topic.practices?.length || 5} 題隨堂實戰測驗！`,
+      visualCue: `【一頁式全螢幕重點速查卡】匯總 ${cleanTitle} 全章必背公式、應用變化口訣與動手觀察任務，導流至 Arch 線上練習室。`,
+      narrationFocus: `一句話精髓收斂：「${realLife.oneSentenceRecap}」提醒同學前往 Arch 平台完成本章 ${topic.practices?.length || 5} 題實戰測驗！`,
       keyElements: [
-        `截圖速查卡：${cleanTitle} ${coreConceptHeadings.length} 大觀念與核心公式總整理`,
+        `一句話精髓：${realLife.oneSentenceRecap}`,
         `課後演練：銜接 Arch 本章 ${topic.practices?.length || 5} 題精選練習與歷屆統測題庫`,
       ],
     },

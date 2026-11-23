@@ -48,6 +48,7 @@ import ConceptFigure from '@/components/pedagogy/ConceptFigure';
 import CurricularLicensureMatrix from '@/components/pedagogy/CurricularLicensureMatrix';
 import CurriculumAlignmentPanel, { ConceptOutlineChips } from '@/components/pedagogy/CurriculumAlignmentPanel';
 import TopicVideoStoryboardPanel from '@/components/pedagogy/TopicVideoStoryboardPanel';
+import RealLifeVariationsPanel from '@/components/pedagogy/RealLifeVariationsPanel';
 import TopicProgressiveHintDeck from '@/components/pedagogy/TopicProgressiveHintDeck';
 import { groupVisualsByConcept, type ConceptVisual } from '@/data/conceptVisuals';
 import {
@@ -706,6 +707,13 @@ export default function TopicPageLayout({ subject, topic, mappedExamQuestions, t
             </div>
           </div>
         </section>
+
+        {/* Real-Life Connection & Application Variations Deep Panel */}
+        <RealLifeVariationsPanel
+          topicTitle={topic.title}
+          realLifeGuide={realLifeGuide}
+          deepKnowledge={deepKnowledge}
+        />
 
         {/* Chapter Learning Progress Bar */}
         <div className="rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 p-4 space-y-2 shadow-xs">

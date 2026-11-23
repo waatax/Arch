@@ -70,6 +70,13 @@ const navGroups: NavGroup[] = [
         badge: '全學程',
       },
       {
+        href: '/videos',
+        label: '高工統測教學影片',
+        desc: '13 科 126 支 YouTube 完整影音課程，依科目收錄並對照講義',
+        icon: IconStudioForge,
+        badge: '126 集',
+      },
+      {
         href: '/learn',
         label: '闖關學習',
         desc: '108 課綱三年六學期 61 門課、2,000+ 題，每天 5 分鐘闖一關',

@@ -1,8 +1,11 @@
 'use client';
 
 import { useState } from 'react';
+import Link from 'next/link';
+import { ExternalLink, PlayCircle, ListVideo, Tv } from 'lucide-react';
 import type { SubjectData, TopicContent } from '@/data/types';
 import { buildTopicVideoEpisode, VIDEO_PRODUCTION_SPEC } from '@/data/videoSyllabus';
+import { getVideosForTopic, YOUTUBE_PLAYLIST_URL } from '@/data/youtubeVideos';
 
 interface TopicVideoStoryboardPanelProps {
   subject: SubjectData;
@@ -16,21 +19,158 @@ export default function TopicVideoStoryboardPanel({
   chapterIndex,
 }: TopicVideoStoryboardPanelProps) {
   const [isOpen, setIsOpen] = useState(false);
+  const [activeEmbedCode, setActiveEmbedCode] = useState<string | null>(null);
+
   const episode = buildTopicVideoEpisode(subject, topic, chapterIndex);
+  const topicVideos = getVideosForTopic(subject.slug, topic.slug);
+  const primaryVideo = topicVideos[0];
+  const extraVideos = topicVideos.slice(1);
+  const activeEmbedVideo = topicVideos.find((v) => v.episodeCode === activeEmbedCode && v.youtubeEmbedUrl);
 
   return (
     <div className="print:hidden rounded-2xl border border-indigo-200/80 dark:border-indigo-900/60 bg-gradient-to-r from-indigo-50/80 via-white to-blue-50/60 dark:from-indigo-950/35 dark:via-slate-900 dark:to-blue-950/25 shadow-2xs overflow-hidden">
+      {/* Top YouTube Teaching Video Action Strip */}
+      <div className="px-4 py-3.5 sm:px-5 border-b border-indigo-200/60 dark:border-indigo-900/50 bg-white/75 dark:bg-slate-900/75 flex flex-col gap-3">
+        <div className="flex flex-wrap items-center justify-between gap-3">
+          <div className="flex flex-wrap items-center gap-2">
+            <span className="inline-flex items-center gap-1 rounded-lg bg-red-600 px-2.5 py-1 text-[11px] font-mono font-bold text-white shadow-2xs">
+              <PlayCircle className="w-3.5 h-3.5" />
+              {primaryVideo?.episodeCode ?? episode.episodeCode}
+            </span>
+            <span className="font-serif text-sm sm:text-base font-bold text-slate-900 dark:text-white">
+              本章 YouTube 教學影片（為何要學 × 觀念圖解 × 應用變化 × 統測真題）
+            </span>
+          </div>
+
+          <div className="flex flex-wrap items-center gap-2">
+            {primaryVideo?.youtubeUrl ? (
+              <>
+                <button
+                  type="button"
+                  onClick={() =>
+                    setActiveEmbedCode((prev) =>
+                      prev === primaryVideo.episodeCode ? null : primaryVideo.episodeCode
+                    )
+                  }
+                  className="inline-flex items-center gap-1.5 rounded-xl bg-red-600 hover:bg-red-700 text-white px-3.5 py-1.5 text-xs font-bold transition-colors cursor-pointer shadow-2xs"
+                >
+                  <Tv className="w-3.5 h-3.5" />
+                  {activeEmbedCode === primaryVideo.episodeCode ? '收合站內播放器' : '站內播放影片'}
+                </button>
+                <a
+                  href={primaryVideo.youtubeUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-1.5 rounded-xl border border-red-200 dark:border-red-900/70 bg-red-50 dark:bg-red-950/40 hover:bg-red-100 dark:hover:bg-red-950/70 text-red-700 dark:text-red-300 px-3 py-1.5 text-xs font-bold transition-colors"
+                >
+                  <span>前往 YouTube 觀看</span>
+                  <ExternalLink className="w-3.5 h-3.5" />
+                </a>
+              </>
+            ) : (
+              <a
+                href={YOUTUBE_PLAYLIST_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1.5 rounded-xl bg-red-600 hover:bg-red-700 text-white px-3.5 py-1.5 text-xs font-bold transition-colors shadow-2xs"
+              >
+                <ListVideo className="w-3.5 h-3.5" />
+                <span>前往高工 13 科 YouTube 播放清單</span>
+                <ExternalLink className="w-3.5 h-3.5" />
+              </a>
+            )}
+
+            <Link
+              href={`/videos?subject=${subject.slug}`}
+              className="inline-flex items-center gap-1.5 rounded-xl border border-indigo-200 dark:border-indigo-800 bg-indigo-50/90 dark:bg-indigo-950/40 hover:bg-indigo-100 dark:hover:bg-indigo-900/50 text-indigo-800 dark:text-indigo-200 px-3 py-1.5 text-xs font-bold transition-colors"
+            >
+              <span>全部教學影片總覽</span>
+            </Link>
+          </div>
+        </div>
+
+        {/* Linked Standalone TCTE Extra Chapter(s), if any */}
+        {extraVideos.length > 0 && (
+          <div className="flex flex-wrap items-center gap-2 pt-1 text-xs">
+            <span className="rounded-md bg-amber-100 dark:bg-amber-950/60 border border-amber-300/70 dark:border-amber-800 px-2 py-0.5 font-mono font-bold text-amber-800 dark:text-amber-300">
+              統測加碼獨立專章
+            </span>
+            {extraVideos.map((extra) => (
+              <div
+                key={extra.episodeCode}
+                className="inline-flex flex-wrap items-center gap-2 rounded-lg border border-amber-200/80 dark:border-amber-900/60 bg-amber-50/70 dark:bg-amber-950/25 px-2.5 py-1"
+              >
+                <span className="font-mono font-bold text-amber-900 dark:text-amber-200">
+                  {extra.episodeCode}
+                </span>
+                <span className="text-slate-700 dark:text-slate-300 font-medium">
+                  {extra.topicTitle}
+                </span>
+                {extra.youtubeUrl ? (
+                  <>
+                    <button
+                      type="button"
+                      onClick={() =>
+                        setActiveEmbedCode((prev) =>
+                          prev === extra.episodeCode ? null : extra.episodeCode
+                        )
+                      }
+                      className="text-red-700 dark:text-red-300 font-bold underline underline-offset-2 cursor-pointer"
+                    >
+                      {activeEmbedCode === extra.episodeCode ? '收合' : '播放'}
+                    </button>
+                    <a
+                      href={extra.youtubeUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-0.5 text-red-700 dark:text-red-300 font-bold hover:underline"
+                    >
+                      YouTube <ExternalLink className="w-3 h-3" />
+                    </a>
+                  </>
+                ) : (
+                  <a
+                    href={YOUTUBE_PLAYLIST_URL}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-0.5 text-indigo-700 dark:text-indigo-300 font-bold hover:underline"
+                  >
+                    播放清單 <ExternalLink className="w-3 h-3" />
+                  </a>
+                )}
+              </div>
+            ))}
+          </div>
+        )}
+
+        {/* Inline YouTube Embed Player (when toggled for an uploaded episode) */}
+        {activeEmbedVideo?.youtubeEmbedUrl && (
+          <div className="pt-1">
+            <div className="relative w-full overflow-hidden rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-950 aspect-video shadow-sm">
+              <iframe
+                src={activeEmbedVideo.youtubeEmbedUrl}
+                title={`${activeEmbedVideo.episodeCode} ${activeEmbedVideo.topicTitle}`}
+                className="absolute inset-0 h-full w-full"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowFullScreen
+              />
+            </div>
+          </div>
+        )}
+      </div>
+
+      {/* Collapsible 5-Part Storyboard Drawer */}
       <button
         type="button"
         onClick={() => setIsOpen((prev) => !prev)}
         aria-expanded={isOpen}
-        className="w-full flex flex-wrap items-center justify-between gap-3 px-4 py-3.5 sm:px-5 text-left hover:bg-indigo-100/40 dark:hover:bg-indigo-950/40 transition-colors cursor-pointer"
+        className="w-full flex flex-wrap items-center justify-between gap-3 px-4 py-3 sm:px-5 text-left hover:bg-indigo-100/40 dark:hover:bg-indigo-950/40 transition-colors cursor-pointer"
       >
         <div className="flex flex-wrap items-center gap-2.5">
           <span className="inline-flex items-center gap-1 rounded-lg bg-indigo-600 px-2.5 py-1 text-[11px] font-mono font-bold text-white shadow-2xs">
-            🎬 {episode.episodeCode}
+            🎬 分鏡大綱
           </span>
-          <span className="font-serif text-sm sm:text-base font-bold text-slate-900 dark:text-white">
+          <span className="font-serif text-sm font-bold text-slate-900 dark:text-white">
             教學影片設計大綱與 10 分鐘黃金分鏡腳本
           </span>
           <span className="rounded-md bg-indigo-100 dark:bg-indigo-900/60 px-2 py-0.5 text-[11px] font-mono font-semibold text-indigo-800 dark:text-indigo-200">

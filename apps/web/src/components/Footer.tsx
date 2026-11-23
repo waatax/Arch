@@ -53,6 +53,11 @@ export default function Footer() {
             </h4>
             <ul className="space-y-2 text-xs text-slate-600 dark:text-slate-400 font-mono">
               <li>
+                <Link href="/videos" className="hover:text-red-600 dark:hover:text-red-400 transition-colors text-red-700 dark:text-red-400 font-bold">
+                  • 🎬 高工統測 13 科教學影片專區 (126 集 YouTube)
+                </Link>
+              </li>
+              <li>
                 <Link href="/cad-software" className="hover:text-blue-700 dark:hover:text-blue-400 transition-colors text-blue-700 dark:text-blue-400 font-bold">
                   • 🖥️ 電腦繪圖軟體全鑑 (CAD/BIM)
                 </Link>
