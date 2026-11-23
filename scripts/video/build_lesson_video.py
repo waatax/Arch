@@ -461,7 +461,7 @@ def render_scene_html(meta: dict, scene: dict) -> str:
             for num, head, desc in scene["items"]
         )
         body = f"""
-        <div class="tag">本課導覽</div>
+        <div class="tag">{esc(scene.get("tag", "本課導覽"))}</div>
         <div class="slide-title">{esc(scene["title"])}</div>
         <div style="font-size:24px;color:#94A3B8;margin-bottom:18px;">{esc(scene["subtitle"])}</div>
         <div class="roadmap-list">{rows}</div>
