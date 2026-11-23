@@ -7,7 +7,7 @@ import MathText from '@/components/MathText';
 import type { MatchExercise, OrderExercise } from '@/data/learnPath/types';
 import { shuffle } from '@/lib/learn/engine';
 import { haptic, sfx } from '@/lib/learn/sfx';
-import { speakText, stopSpeech, type SpeechOptions } from '@/lib/learn/speech';
+import { speakText, type SpeechOptions } from '@/lib/learn/speech';
 
 const tileBase =
   'w-full rounded-2xl border-2 border-b-4 px-4 py-3 text-left text-[15px] leading-snug font-medium transition-all active:translate-y-[2px] active:border-b-2 focus:outline-none focus-visible:ring-4 focus-visible:ring-sky-300 dark:focus-visible:ring-sky-700';

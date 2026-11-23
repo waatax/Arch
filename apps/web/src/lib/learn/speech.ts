@@ -125,6 +125,9 @@ export function isMainlyEnglish(text: string): boolean {
   return letters > 8 && letters > cjk * 1.5;
 }
 
+// Held only to keep the live utterance reachable: Chromium can garbage-collect an
+// unreferenced utterance mid-speech, after which onend/onerror never fire.
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 let activeUtterance: SpeechSynthesisUtterance | null = null;
 let sequenceRunning = false;
 

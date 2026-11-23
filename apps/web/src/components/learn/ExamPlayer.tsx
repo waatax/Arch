@@ -355,6 +355,7 @@ export default function ExamPlayer({
                         }}
                         className={clsx(
                           'flex items-start gap-3 rounded-2xl border-2 border-b-4 px-4 py-3 text-left text-base transition',
+                          spokenLetter === L && 'ring-2 ring-amber-400 ring-offset-2 dark:ring-offset-slate-950',
                           isRight
                             ? 'border-emerald-500 bg-emerald-50 dark:bg-emerald-950/40'
                             : isWrongPick
