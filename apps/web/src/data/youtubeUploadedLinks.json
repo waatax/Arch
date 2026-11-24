@@ -4,98 +4,252 @@
   "playlistTitle": "ARCH 高工課程 學習統測 大補帖",
   "visibility": "public",
   "madeForKids": false,
-  "updatedAt": "2026-11-24T08:44:35+08:00",
+  "updatedAt": "2026-11-24T14:38:09+08:00",
   "videos": {
     "CHEM01": {
       "videoId": "bHFqfcl62iE",
       "url": "https://youtu.be/bHFqfcl62iE",
-      "uploadedAt": "2026-11-24T08:44:35+08:00",
+      "uploadedAt": "2026-11-24T14:38:09+08:00",
       "title": "CHEM01 物質的組成與分類",
       "duration": "13:51"
     },
     "CHEM02": {
       "videoId": "9qin70tehRU",
       "url": "https://youtu.be/9qin70tehRU",
-      "uploadedAt": "2026-11-24T08:44:35+08:00",
+      "uploadedAt": "2026-11-24T14:38:09+08:00",
       "title": "CHEM02 化學反應與混凝土水化化學",
       "duration": "12:32"
     },
     "CHEM03": {
       "videoId": "rhH1yZ_kOrg",
       "url": "https://youtu.be/rhH1yZ_kOrg",
-      "uploadedAt": "2026-11-24T08:44:35+08:00",
+      "uploadedAt": "2026-11-24T14:38:09+08:00",
       "title": "CHEM03 酸鹼化學與混凝土中性化",
       "duration": "12:38"
     },
     "CHEM04": {
       "videoId": "bSsc0tatbL4",
       "url": "https://youtu.be/bSsc0tatbL4",
-      "uploadedAt": "2026-11-24T08:44:35+08:00",
+      "uploadedAt": "2026-11-24T14:38:09+08:00",
       "title": "CHEM04 氧化還原與金屬腐蝕防蝕",
       "duration": "12:12"
     },
     "CHEM05": {
       "videoId": "eahlv3bFc84",
       "url": "https://youtu.be/eahlv3bFc84",
-      "uploadedAt": "2026-11-24T08:44:35+08:00",
+      "uploadedAt": "2026-11-24T14:38:09+08:00",
       "title": "CHEM05 有機化學與建築高分子樹脂塗料",
       "duration": "12:40"
     },
     "CHEM06": {
       "videoId": "vuUk3vfL7Yg",
       "url": "https://youtu.be/vuUk3vfL7Yg",
-      "uploadedAt": "2026-11-24T08:44:35+08:00",
+      "uploadedAt": "2026-11-24T14:38:09+08:00",
       "title": "CHEM06 環境化學與建材碳足跡",
       "duration": "13:18"
     },
     "CHIN01": {
       "videoId": "hB8ftNqCEvU",
       "url": "https://youtu.be/hB8ftNqCEvU",
-      "uploadedAt": "2026-11-24T08:44:35+08:00",
+      "uploadedAt": "2026-11-24T14:38:09+08:00",
       "title": "CHIN01 古典文學選讀與建築空間散文",
       "duration": "11:42"
     },
     "CHIN02": {
       "videoId": "pglhpxUp7Q4",
       "url": "https://youtu.be/pglhpxUp7Q4",
-      "uploadedAt": "2026-11-24T08:44:35+08:00",
+      "uploadedAt": "2026-11-24T14:38:09+08:00",
       "title": "CHIN02 現代文學與應用文實務",
       "duration": "11:18"
     },
     "CHIN03": {
       "videoId": "2NgeCuQY-bc",
       "url": "https://youtu.be/2NgeCuQY-bc",
-      "uploadedAt": "2026-11-24T08:44:35+08:00",
+      "uploadedAt": "2026-11-24T14:38:09+08:00",
       "title": "CHIN03 語文知識與修辭應用",
       "duration": "13:06"
     },
     "CHIN04": {
       "videoId": "De_2MTOCKPo",
       "url": "https://youtu.be/De_2MTOCKPo",
-      "uploadedAt": "2026-11-24T08:44:35+08:00",
+      "uploadedAt": "2026-11-24T14:38:09+08:00",
       "title": "CHIN04 閱讀理解與建築論述判讀",
       "duration": "12:03"
     },
     "CHIN05": {
       "videoId": "1cfVXonHVKk",
       "url": "https://youtu.be/1cfVXonHVKk",
-      "uploadedAt": "2026-11-24T08:44:35+08:00",
+      "uploadedAt": "2026-11-24T14:38:09+08:00",
       "title": "CHIN05 作文與表達（含建築空間論述）",
       "duration": "12:35"
     },
     "CHIN06": {
       "videoId": "AEj0petqeog",
       "url": "https://youtu.be/AEj0petqeog",
-      "uploadedAt": "2026-11-24T08:44:35+08:00",
+      "uploadedAt": "2026-11-24T14:38:09+08:00",
       "title": "CHIN06 文化常識與園林建築思潮",
       "duration": "13:21"
     },
     "CIVC01": {
       "videoId": "lZaLzL1iLVg",
       "url": "https://youtu.be/lZaLzL1iLVg",
-      "uploadedAt": "2026-11-24T08:44:35+08:00",
+      "uploadedAt": "2026-11-24T14:38:09+08:00",
       "title": "CIVC01 公民身分與社群",
       "duration": "13:20"
+    },
+    "CIVC02": {
+      "videoId": "vt1dhhNrrGg",
+      "url": "https://youtu.be/vt1dhhNrrGg",
+      "uploadedAt": "2026-11-24T14:38:09+08:00",
+      "title": "CIVC02 建築法規與公民生活空間",
+      "duration": "14:27"
+    },
+    "CIVC03": {
+      "videoId": "JZaI6_PZ02w",
+      "url": "https://youtu.be/JZaI6_PZ02w",
+      "uploadedAt": "2026-11-24T14:38:09+08:00",
+      "title": "CIVC03 經濟發展與永續建築環境",
+      "duration": "13:35"
+    },
+    "CIVC04": {
+      "videoId": "s3lFb-5BHEY",
+      "url": "https://youtu.be/s3lFb-5BHEY",
+      "uploadedAt": "2026-11-24T14:38:09+08:00",
+      "title": "CIVC04 多元社會與包容性空間設計",
+      "duration": "14:11"
+    },
+    "CIVC05": {
+      "videoId": "rqGP7Yt58L0",
+      "url": "https://youtu.be/rqGP7Yt58L0",
+      "uploadedAt": "2026-11-24T14:38:09+08:00",
+      "title": "CIVC05 勞工權益與建築職業倫理",
+      "duration": "13:58"
+    },
+    "CIVC06": {
+      "videoId": "Npc7t_-l77Y",
+      "url": "https://youtu.be/Npc7t_-l77Y",
+      "uploadedAt": "2026-11-24T14:38:09+08:00",
+      "title": "CIVC06 環境政策與氣候變遷因應",
+      "duration": "15:23"
+    },
+    "DRFT01": {
+      "videoId": "Ad9fV_xOF-g",
+      "url": "https://youtu.be/Ad9fV_xOF-g",
+      "uploadedAt": "2026-11-24T14:38:09+08:00",
+      "title": "DRFT01 2D到3DBIM建築資訊模型實務",
+      "duration": "10:06"
+    },
+    "DRFT02": {
+      "videoId": "UXICM-E0kbc",
+      "url": "https://youtu.be/UXICM-E0kbc",
+      "uploadedAt": "2026-11-24T14:38:09+08:00",
+      "title": "DRFT02 容積率建蔽率與建築法規實務",
+      "duration": "11:10"
+    },
+    "DRFT03": {
+      "videoId": "IXQpp76sY9o",
+      "url": "https://youtu.be/IXQpp76sY9o",
+      "uploadedAt": "2026-11-24T14:38:09+08:00",
+      "title": "DRFT03 製圖基本觀念與圖紙管理",
+      "duration": "8:48"
+    },
+    "DRFT04": {
+      "videoId": "c-orN8Zdpxw",
+      "url": "https://youtu.be/c-orN8Zdpxw",
+      "uploadedAt": "2026-11-24T14:38:09+08:00",
+      "title": "DRFT04 土木與建築製圖整合判讀",
+      "duration": "8:13"
+    },
+    "DRFT05": {
+      "videoId": "JwmVNsvbFWI",
+      "url": "https://youtu.be/JwmVNsvbFWI",
+      "uploadedAt": "2026-11-24T14:38:09+08:00",
+      "title": "DRFT05 線條種類與字法",
+      "duration": "12:21"
+    },
+    "DRFT06": {
+      "videoId": "UyJ4Fr4MH0o",
+      "url": "https://youtu.be/UyJ4Fr4MH0o",
+      "uploadedAt": "2026-11-24T14:38:09+08:00",
+      "title": "DRFT06 比例與尺度",
+      "duration": "10:28"
+    },
+    "DRFT07": {
+      "videoId": "dEprM-dLCg0",
+      "url": "https://youtu.be/dEprM-dLCg0",
+      "uploadedAt": "2026-11-24T14:38:09+08:00",
+      "title": "DRFT07 正投影視圖",
+      "duration": "11:14"
+    },
+    "DRFT08": {
+      "videoId": "tYO9UTw_NDA",
+      "url": "https://youtu.be/tYO9UTw_NDA",
+      "uploadedAt": "2026-11-24T14:38:09+08:00",
+      "title": "DRFT08 剖面圖判讀",
+      "duration": "10:26"
+    },
+    "DRFT09": {
+      "videoId": "Ti9vlY8Slqs",
+      "url": "https://youtu.be/Ti9vlY8Slqs",
+      "uploadedAt": "2026-11-24T14:38:09+08:00",
+      "title": "DRFT09 建築平面圖",
+      "duration": "11:07"
+    },
+    "DRFT10": {
+      "videoId": "PjCajB3ciP4",
+      "url": "https://youtu.be/PjCajB3ciP4",
+      "uploadedAt": "2026-11-24T14:38:09+08:00",
+      "title": "DRFT10 建築立面圖",
+      "duration": "10:32"
+    },
+    "DRFT11": {
+      "videoId": "DHmzOOGSs0I",
+      "url": "https://youtu.be/DHmzOOGSs0I",
+      "uploadedAt": "2026-11-24T14:38:09+08:00",
+      "title": "DRFT11 尺寸標註與圖例",
+      "duration": "12:02"
+    },
+    "DRFT12": {
+      "videoId": "pjEvYl_1oaw",
+      "url": "https://youtu.be/pjEvYl_1oaw",
+      "uploadedAt": "2026-11-24T14:38:09+08:00",
+      "title": "DRFT12 CAD繪圖基礎",
+      "duration": "11:08"
+    },
+    "DRFT13": {
+      "videoId": "T_eopz_WTwY",
+      "url": "https://youtu.be/T_eopz_WTwY",
+      "uploadedAt": "2026-11-24T14:38:09+08:00",
+      "title": "DRFT13 製圖儀器之使用與維護",
+      "duration": "11:40"
+    },
+    "DRFT14": {
+      "videoId": "6bCTUcAlXqc",
+      "url": "https://youtu.be/6bCTUcAlXqc",
+      "uploadedAt": "2026-11-24T14:38:09+08:00",
+      "title": "DRFT14 幾何畫法與平面幾何應用",
+      "duration": "11:12"
+    },
+    "DRFT15": {
+      "videoId": "ar-cGVsMbm8",
+      "url": "https://youtu.be/ar-cGVsMbm8",
+      "uploadedAt": "2026-11-24T14:38:09+08:00",
+      "title": "DRFT15 輔助視圖與斜面真形圖法",
+      "duration": "10:26"
+    },
+    "DRFT16": {
+      "videoId": "3-bxCckcg1Y",
+      "url": "https://youtu.be/3-bxCckcg1Y",
+      "uploadedAt": "2026-11-24T14:38:09+08:00",
+      "title": "DRFT16 透視圖投影與陰影求法",
+      "duration": "11:14"
+    },
+    "DRFT17": {
+      "videoId": "2LKYzhDJZXE",
+      "url": "https://youtu.be/2LKYzhDJZXE",
+      "uploadedAt": "2026-11-24T14:38:09+08:00",
+      "title": "DRFT17 投影畫法應用點線面投影與第一第三象限正視圖",
+      "duration": "11:51"
     }
   }
 }
