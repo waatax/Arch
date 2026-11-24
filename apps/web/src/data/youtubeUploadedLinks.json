@@ -4,6 +4,98 @@
   "playlistTitle": "ARCH 高工課程 學習統測 大補帖",
   "visibility": "public",
   "madeForKids": false,
-  "updatedAt": "2026-11-23T14:36:00+08:00",
-  "videos": {}
+  "updatedAt": "2026-11-24T08:44:35+08:00",
+  "videos": {
+    "CHEM01": {
+      "videoId": "bHFqfcl62iE",
+      "url": "https://youtu.be/bHFqfcl62iE",
+      "uploadedAt": "2026-11-24T08:44:35+08:00",
+      "title": "CHEM01 物質的組成與分類",
+      "duration": "13:51"
+    },
+    "CHEM02": {
+      "videoId": "9qin70tehRU",
+      "url": "https://youtu.be/9qin70tehRU",
+      "uploadedAt": "2026-11-24T08:44:35+08:00",
+      "title": "CHEM02 化學反應與混凝土水化化學",
+      "duration": "12:32"
+    },
+    "CHEM03": {
+      "videoId": "rhH1yZ_kOrg",
+      "url": "https://youtu.be/rhH1yZ_kOrg",
+      "uploadedAt": "2026-11-24T08:44:35+08:00",
+      "title": "CHEM03 酸鹼化學與混凝土中性化",
+      "duration": "12:38"
+    },
+    "CHEM04": {
+      "videoId": "bSsc0tatbL4",
+      "url": "https://youtu.be/bSsc0tatbL4",
+      "uploadedAt": "2026-11-24T08:44:35+08:00",
+      "title": "CHEM04 氧化還原與金屬腐蝕防蝕",
+      "duration": "12:12"
+    },
+    "CHEM05": {
+      "videoId": "eahlv3bFc84",
+      "url": "https://youtu.be/eahlv3bFc84",
+      "uploadedAt": "2026-11-24T08:44:35+08:00",
+      "title": "CHEM05 有機化學與建築高分子樹脂塗料",
+      "duration": "12:40"
+    },
+    "CHEM06": {
+      "videoId": "vuUk3vfL7Yg",
+      "url": "https://youtu.be/vuUk3vfL7Yg",
+      "uploadedAt": "2026-11-24T08:44:35+08:00",
+      "title": "CHEM06 環境化學與建材碳足跡",
+      "duration": "13:18"
+    },
+    "CHIN01": {
+      "videoId": "hB8ftNqCEvU",
+      "url": "https://youtu.be/hB8ftNqCEvU",
+      "uploadedAt": "2026-11-24T08:44:35+08:00",
+      "title": "CHIN01 古典文學選讀與建築空間散文",
+      "duration": "11:42"
+    },
+    "CHIN02": {
+      "videoId": "pglhpxUp7Q4",
+      "url": "https://youtu.be/pglhpxUp7Q4",
+      "uploadedAt": "2026-11-24T08:44:35+08:00",
+      "title": "CHIN02 現代文學與應用文實務",
+      "duration": "11:18"
+    },
+    "CHIN03": {
+      "videoId": "2NgeCuQY-bc",
+      "url": "https://youtu.be/2NgeCuQY-bc",
+      "uploadedAt": "2026-11-24T08:44:35+08:00",
+      "title": "CHIN03 語文知識與修辭應用",
+      "duration": "13:06"
+    },
+    "CHIN04": {
+      "videoId": "De_2MTOCKPo",
+      "url": "https://youtu.be/De_2MTOCKPo",
+      "uploadedAt": "2026-11-24T08:44:35+08:00",
+      "title": "CHIN04 閱讀理解與建築論述判讀",
+      "duration": "12:03"
+    },
+    "CHIN05": {
+      "videoId": "1cfVXonHVKk",
+      "url": "https://youtu.be/1cfVXonHVKk",
+      "uploadedAt": "2026-11-24T08:44:35+08:00",
+      "title": "CHIN05 作文與表達（含建築空間論述）",
+      "duration": "12:35"
+    },
+    "CHIN06": {
+      "videoId": "AEj0petqeog",
+      "url": "https://youtu.be/AEj0petqeog",
+      "uploadedAt": "2026-11-24T08:44:35+08:00",
+      "title": "CHIN06 文化常識與園林建築思潮",
+      "duration": "13:21"
+    },
+    "CIVC01": {
+      "videoId": "lZaLzL1iLVg",
+      "url": "https://youtu.be/lZaLzL1iLVg",
+      "uploadedAt": "2026-11-24T08:44:35+08:00",
+      "title": "CIVC01 公民身分與社群",
+      "duration": "13:20"
+    }
+  }
 }

@@ -33,6 +33,7 @@ export default async function SubjectPage({ params }: { params: Promise<{ subjec
   const totalConcepts = subject.topics.reduce((acc, t) => acc + t.concepts.length, 0);
   const totalWorked = subject.topics.reduce((acc, t) => acc + (t.worked_examples?.length ?? 0), 0);
   const subjectVideos = getVideosForSubject(subject.slug);
+  const uploadedSubjectVideos = subjectVideos.filter((v) => Boolean(v.youtubeUrl));
 
   return (
     <div className="mx-auto max-w-6xl px-4 py-8 sm:px-6 sm:py-12 space-y-8">
@@ -98,7 +99,9 @@ export default async function SubjectPage({ params }: { params: Promise<{ subjec
               href={`/videos?subject=${subject.slug}`}
               className="inline-flex items-center justify-center rounded-xl bg-red-600 hover:bg-red-700 text-white text-xs font-bold px-5 py-3 transition-colors shadow-sm"
             >
-              🎬 本科 YouTube 教學影片 ({subjectVideos.length} 集)
+              {uploadedSubjectVideos.length > 0
+                ? `🎬 本科 YouTube 教學影片（已上架 ${uploadedSubjectVideos.length}/${subjectVideos.length} 集）`
+                : `🎬 本科 YouTube 教學影片 (${subjectVideos.length} 集)`}
             </Link>
             <Link
               href="/practice"
@@ -112,6 +115,90 @@ export default async function SubjectPage({ params }: { params: Promise<{ subjec
 
       {/* 個人接續學習導航橫幅 */}
       <SubjectContinueBanner subject={subject} />
+
+      {/* 本科已上架 YouTube 影音課程快速通道 */}
+      {uploadedSubjectVideos.length > 0 && (
+        <section className="rounded-3xl border border-red-200/80 dark:border-red-900/50 bg-gradient-to-br from-red-50/70 via-white to-amber-50/40 dark:from-red-950/25 dark:via-slate-900 dark:to-slate-900 p-6 sm:p-8 space-y-5 shadow-xs">
+          <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 border-b border-red-200/60 dark:border-red-900/40 pb-4">
+            <div>
+              <div className="flex flex-wrap items-center gap-2">
+                <span className="rounded-full bg-red-600 px-2.5 py-0.5 text-[11px] font-mono font-bold text-white">
+                  YouTube 已上架
+                </span>
+                <span className="text-xs font-mono font-bold text-emerald-700 dark:text-emerald-400">
+                  {uploadedSubjectVideos.length} / {subjectVideos.length} 集可直接觀看
+                </span>
+              </div>
+              <h2 className="font-serif text-2xl font-bold text-slate-900 dark:text-white mt-1.5">
+                🎬 {subject.title} 同步 YouTube 影音課程
+              </h2>
+              <p className="text-xs text-slate-600 dark:text-slate-400 mt-1">
+                點擊影片可直接前往 YouTube 觀看，或進入對應教學講義同步開啟站內播放器與統測練習。
+              </p>
+            </div>
+            <Link
+              href={`/videos?subject=${subject.slug}`}
+              className="inline-flex items-center gap-1.5 rounded-xl bg-red-600 hover:bg-red-700 text-white px-4 py-2.5 text-xs font-bold transition-colors shrink-0 shadow-2xs"
+            >
+              <span>開啟本科影片總覽 →</span>
+            </Link>
+          </div>
+
+          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            {uploadedSubjectVideos.map((vid) => (
+              <div
+                key={vid.episodeCode}
+                className="group flex flex-col justify-between overflow-hidden rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 shadow-2xs hover:border-red-300 dark:hover:border-red-700 transition-all"
+              >
+                <a
+                  href={vid.youtubeUrl ?? vid.playlistUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="relative block aspect-video w-full overflow-hidden bg-slate-950"
+                >
+                  {vid.youtubeVideoId && (
+                    /* eslint-disable-next-line @next/next/no-img-element */
+                    <img
+                      src={`https://i.ytimg.com/vi/${vid.youtubeVideoId}/hqdefault.jpg`}
+                      alt={`${vid.episodeCode} ${vid.topicTitle}`}
+                      loading="lazy"
+                      referrerPolicy="no-referrer"
+                      className="h-full w-full object-cover opacity-90 transition-transform duration-300 group-hover:scale-105 group-hover:opacity-100"
+                    />
+                  )}
+                  <span className="absolute left-2.5 top-2.5 rounded-md bg-black/75 px-2 py-0.5 font-mono text-[11px] font-bold text-white backdrop-blur-xs">
+                    {vid.episodeCode}
+                  </span>
+                  <span className="absolute right-2.5 bottom-2.5 rounded-md bg-black/80 px-2 py-0.5 font-mono text-[11px] font-bold text-white backdrop-blur-xs">
+                    {vid.durationLabel}
+                  </span>
+                </a>
+                <div className="flex flex-1 flex-col justify-between p-4 gap-3">
+                  <h3 className="font-serif text-sm font-bold leading-snug text-slate-900 dark:text-white line-clamp-2">
+                    {vid.topicTitle}
+                  </h3>
+                  <div className="flex items-center justify-between gap-2 pt-2 border-t border-slate-100 dark:border-slate-800 text-xs font-bold">
+                    <a
+                      href={vid.youtubeUrl ?? vid.playlistUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-red-600 dark:text-red-400 hover:underline"
+                    >
+                      ▶ YouTube 觀看
+                    </a>
+                    <Link
+                      href={vid.topicHref}
+                      className="text-blue-600 dark:text-blue-400 hover:underline"
+                    >
+                      對應講義 →
+                    </Link>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </section>
+      )}
 
       {/* Semester Comprehensive Review Handout Banner */}
       {(() => {

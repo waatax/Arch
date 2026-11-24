@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
-import { ExternalLink, PlayCircle, ListVideo, Tv } from 'lucide-react';
+import { ExternalLink, PlayCircle, ListVideo, Tv, CheckCircle2 } from 'lucide-react';
 import type { SubjectData, TopicContent } from '@/data/types';
 import { buildTopicVideoEpisode, VIDEO_PRODUCTION_SPEC } from '@/data/videoSyllabus';
 import { getVideosForTopic, YOUTUBE_PLAYLIST_URL } from '@/data/youtubeVideos';
@@ -28,7 +28,10 @@ export default function TopicVideoStoryboardPanel({
   const activeEmbedVideo = topicVideos.find((v) => v.episodeCode === activeEmbedCode && v.youtubeEmbedUrl);
 
   return (
-    <div className="print:hidden rounded-2xl border border-indigo-200/80 dark:border-indigo-900/60 bg-gradient-to-r from-indigo-50/80 via-white to-blue-50/60 dark:from-indigo-950/35 dark:via-slate-900 dark:to-blue-950/25 shadow-2xs overflow-hidden">
+    <div
+      id="topic-video-panel"
+      className="print:hidden scroll-mt-24 rounded-2xl border border-indigo-200/80 dark:border-indigo-900/60 bg-gradient-to-r from-indigo-50/80 via-white to-blue-50/60 dark:from-indigo-950/35 dark:via-slate-900 dark:to-blue-950/25 shadow-2xs overflow-hidden"
+    >
       {/* Top YouTube Teaching Video Action Strip */}
       <div className="px-4 py-3.5 sm:px-5 border-b border-indigo-200/60 dark:border-indigo-900/50 bg-white/75 dark:bg-slate-900/75 flex flex-col gap-3">
         <div className="flex flex-wrap items-center justify-between gap-3">
@@ -37,6 +40,12 @@ export default function TopicVideoStoryboardPanel({
               <PlayCircle className="w-3.5 h-3.5" />
               {primaryVideo?.episodeCode ?? episode.episodeCode}
             </span>
+            {primaryVideo?.youtubeUrl && (
+              <span className="inline-flex items-center gap-1 rounded-full bg-emerald-50 dark:bg-emerald-950/50 border border-emerald-200 dark:border-emerald-800 px-2.5 py-0.5 text-[11px] font-mono font-bold text-emerald-700 dark:text-emerald-300">
+                <CheckCircle2 className="w-3 h-3" />
+                YouTube 已上架 · {primaryVideo.durationLabel}
+              </span>
+            )}
             <span className="font-serif text-sm sm:text-base font-bold text-slate-900 dark:text-white">
               本章 YouTube 教學影片（為何要學 × 觀念圖解 × 應用變化 × 統測真題）
             </span>
@@ -143,8 +152,8 @@ export default function TopicVideoStoryboardPanel({
           </div>
         )}
 
-        {/* Inline YouTube Embed Player (when toggled for an uploaded episode) */}
-        {activeEmbedVideo?.youtubeEmbedUrl && (
+        {/* Inline YouTube Embed Player or Click-to-Play Thumbnail Preview */}
+        {activeEmbedVideo?.youtubeEmbedUrl ? (
           <div className="pt-1">
             <div className="relative w-full overflow-hidden rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-950 aspect-video shadow-sm">
               <iframe
@@ -156,7 +165,44 @@ export default function TopicVideoStoryboardPanel({
               />
             </div>
           </div>
-        )}
+        ) : primaryVideo?.youtubeVideoId ? (
+          <div className="pt-1 flex flex-col sm:flex-row items-stretch sm:items-center gap-4 rounded-xl border border-red-200/70 dark:border-red-900/50 bg-gradient-to-r from-red-50/50 via-white to-slate-50/60 dark:from-red-950/20 dark:via-slate-900 dark:to-slate-900 p-3">
+            <button
+              type="button"
+              onClick={() => setActiveEmbedCode(primaryVideo.episodeCode)}
+              className="group relative w-full sm:w-56 shrink-0 overflow-hidden rounded-lg border border-slate-200 dark:border-slate-800 bg-slate-950 aspect-video cursor-pointer focus:outline-none focus:ring-2 focus:ring-red-500"
+              aria-label={`站內播放 ${primaryVideo.episodeCode} ${primaryVideo.topicTitle}`}
+            >
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src={`https://i.ytimg.com/vi/${primaryVideo.youtubeVideoId}/hqdefault.jpg`}
+                alt={`${primaryVideo.episodeCode} ${primaryVideo.topicTitle}`}
+                loading="lazy"
+                referrerPolicy="no-referrer"
+                className="h-full w-full object-cover opacity-90 transition-transform duration-300 group-hover:scale-105 group-hover:opacity-100"
+              />
+              <div className="absolute inset-0 flex items-center justify-center bg-black/25 group-hover:bg-black/15 transition-colors">
+                <span className="inline-flex items-center justify-center rounded-full bg-red-600/95 p-2.5 text-white shadow-lg transition-transform group-hover:scale-110">
+                  <PlayCircle className="w-6 h-6 fill-white/20" />
+                </span>
+              </div>
+              <span className="absolute right-1.5 bottom-1.5 rounded bg-black/80 px-1.5 py-0.5 font-mono text-[10px] font-bold text-white">
+                {primaryVideo.durationLabel}
+              </span>
+            </button>
+            <div className="flex-1 min-w-0 space-y-1.5 text-xs">
+              <div className="font-mono text-[11px] font-bold text-red-700 dark:text-red-400">
+                點擊縮圖即可在站內直接播放完整 {primaryVideo.durationLabel} 影音課程
+              </div>
+              <p className="text-slate-700 dark:text-slate-300 leading-relaxed line-clamp-2">
+                {primaryVideo.realLifeSummary}
+              </p>
+              <div className="text-[11px] text-slate-500 dark:text-slate-400">
+                搭配下方互動圖解、公式速查與統測真題演練，學習吸收效率最佳。
+              </div>
+            </div>
+          </div>
+        ) : null}
       </div>
 
       {/* Collapsible 5-Part Storyboard Drawer */}

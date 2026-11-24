@@ -494,6 +494,13 @@ export default function TopicPageLayout({ subject, topic, mappedExamQuestions, t
             <Step0Tooltip prerequisites={topic.step0Prerequisites} subjectSlug={subject.slug} />
           )}
 
+          {/* 教學影片與 YouTube 同步播放器（優先置頂方便立即觀看） */}
+          <TopicVideoStoryboardPanel
+            subject={subject}
+            topic={topic}
+            chapterIndex={currentIndex >= 0 ? currentIndex : 0}
+          />
+
           {/* 官方課綱／統測考試大綱對照（data/curriculum/officialOutlines） */}
           <CurriculumAlignmentPanel subject={subject} topic={topic} />
 
@@ -501,13 +508,6 @@ export default function TopicPageLayout({ subject, topic, mappedExamQuestions, t
           <div className="print:hidden">
             <CurricularLicensureMatrix subject={subject} topic={topic} />
           </div>
-
-          {/* 教學影片設計大綱與 10 分鐘黃金分鏡腳本 */}
-          <TopicVideoStoryboardPanel
-            subject={subject}
-            topic={topic}
-            chapterIndex={currentIndex >= 0 ? currentIndex : 0}
-          />
 
           {/* Architectural Skill Constellation Coordinate Card */}
           {starNode && (

@@ -36,6 +36,7 @@ export default function VideosCatalogClient({ groups, stats }: VideosCatalogClie
   const searchParams = useSearchParams();
   const initialSubjectParam = searchParams.get('subject');
   const [selectedSubjectOverride, setSelectedSubjectOverride] = useState<string | null>(null);
+  const [statusFilter, setStatusFilter] = useState<'all' | 'uploaded'>('all');
   const [query, setQuery] = useState<string>('');
   const [activeEmbedCode, setActiveEmbedCode] = useState<string | null>(null);
 
@@ -51,24 +52,38 @@ export default function VideosCatalogClient({ groups, stats }: VideosCatalogClie
 
   const filteredGroups = useMemo(() => {
     const q = query.trim().toLowerCase();
-    return groups
+    const mapped = groups
       .filter((g) => selectedSubject === 'all' || g.subjectSlug === selectedSubject)
       .map((g) => {
-        const episodes = q
-          ? g.episodes.filter(
-              (ep) =>
-                ep.episodeCode.toLowerCase().includes(q) ||
-                ep.topicTitle.toLowerCase().includes(q) ||
-                ep.curriculumCode.toLowerCase().includes(q) ||
-                ep.realLifeSummary.toLowerCase().includes(q) ||
-                ep.whereUsed.toLowerCase().includes(q) ||
-                ep.subjectTitle.toLowerCase().includes(q)
-            )
-          : g.episodes;
+        let episodes = g.episodes;
+        if (statusFilter === 'uploaded') {
+          episodes = episodes.filter((ep) => Boolean(ep.youtubeUrl));
+        }
+        if (q) {
+          episodes = episodes.filter(
+            (ep) =>
+              ep.episodeCode.toLowerCase().includes(q) ||
+              ep.topicTitle.toLowerCase().includes(q) ||
+              ep.curriculumCode.toLowerCase().includes(q) ||
+              ep.realLifeSummary.toLowerCase().includes(q) ||
+              ep.whereUsed.toLowerCase().includes(q) ||
+              ep.subjectTitle.toLowerCase().includes(q)
+          );
+        }
         return { ...g, episodes };
       })
       .filter((g) => g.episodes.length > 0);
-  }, [groups, selectedSubject, query]);
+
+    // Put subjects with uploaded YouTube videos first when viewing all subjects
+    if (selectedSubject === 'all') {
+      return [...mapped].sort((a, b) => {
+        if (b.uploadedCount > 0 && a.uploadedCount === 0) return 1;
+        if (a.uploadedCount > 0 && b.uploadedCount === 0) return -1;
+        return 0;
+      });
+    }
+    return mapped;
+  }, [groups, selectedSubject, statusFilter, query]);
 
   const visibleCount = useMemo(
     () => filteredGroups.reduce((sum, g) => sum + g.episodes.length, 0),
@@ -130,18 +145,44 @@ export default function VideosCatalogClient({ groups, stats }: VideosCatalogClie
             {ep.whereUsed}
           </p>
 
-          {/* Inline YouTube Player */}
-          {isPlaying && ep.youtubeEmbedUrl && (
+          {/* Inline YouTube Player or Thumbnail Preview */}
+          {ep.youtubeVideoId && (
             <div className="pt-1">
-              <div className="relative w-full overflow-hidden rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-950 aspect-video">
-                <iframe
-                  src={ep.youtubeEmbedUrl}
-                  title={`${ep.episodeCode} ${ep.topicTitle}`}
-                  className="absolute inset-0 h-full w-full"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                  allowFullScreen
-                />
-              </div>
+              {isPlaying && ep.youtubeEmbedUrl ? (
+                <div className="relative w-full overflow-hidden rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-950 aspect-video shadow-sm">
+                  <iframe
+                    src={ep.youtubeEmbedUrl}
+                    title={`${ep.episodeCode} ${ep.topicTitle}`}
+                    className="absolute inset-0 h-full w-full"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowFullScreen
+                  />
+                </div>
+              ) : (
+                <button
+                  type="button"
+                  onClick={() => setActiveEmbedCode(ep.episodeCode)}
+                  className="group relative block w-full overflow-hidden rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-950 aspect-video cursor-pointer focus:outline-none focus:ring-2 focus:ring-red-500"
+                  aria-label={`站內播放 ${ep.episodeCode} ${ep.topicTitle}`}
+                >
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img
+                    src={`https://i.ytimg.com/vi/${ep.youtubeVideoId}/hqdefault.jpg`}
+                    alt={`${ep.episodeCode} ${ep.topicTitle}`}
+                    loading="lazy"
+                    referrerPolicy="no-referrer"
+                    className="h-full w-full object-cover opacity-90 transition-transform duration-300 group-hover:scale-105 group-hover:opacity-100"
+                  />
+                  <div className="absolute inset-0 flex items-center justify-center bg-black/25 group-hover:bg-black/15 transition-colors">
+                    <span className="inline-flex items-center justify-center rounded-full bg-red-600/95 p-3 text-white shadow-lg transition-transform group-hover:scale-110">
+                      <PlayCircle className="w-7 h-7 fill-white/20" />
+                    </span>
+                  </div>
+                  <span className="absolute right-2 bottom-2 rounded-md bg-black/80 px-2 py-0.5 font-mono text-[11px] font-bold text-white backdrop-blur-xs">
+                    {ep.durationLabel}
+                  </span>
+                </button>
+              )}
             </div>
           )}
         </div>
@@ -243,6 +284,20 @@ export default function VideosCatalogClient({ groups, stats }: VideosCatalogClie
 
           {/* Primary CTAs */}
           <div className="flex flex-wrap items-center gap-3 pt-2">
+            {stats.uploadedCount > 0 && (
+              <button
+                type="button"
+                onClick={() => {
+                  setSelectedSubject('all');
+                  setStatusFilter('uploaded');
+                  document.getElementById('video-catalog-filters')?.scrollIntoView({ behavior: 'smooth' });
+                }}
+                className="inline-flex items-center gap-2 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white px-5 py-3 text-sm font-bold transition-colors shadow-md cursor-pointer"
+              >
+                <CheckCircle2 className="w-4 h-4" />
+                <span>立即看已上架課程 ({stats.uploadedCount} 集)</span>
+              </button>
+            )}
             <a
               href={stats.playlistUrl}
               target="_blank"
@@ -265,7 +320,7 @@ export default function VideosCatalogClient({ groups, stats }: VideosCatalogClie
       </header>
 
       {/* Filter & Search Bar */}
-      <section className="rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 p-4 sm:p-5 space-y-4 shadow-2xs">
+      <section id="video-catalog-filters" className="scroll-mt-24 rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 p-4 sm:p-5 space-y-4 shadow-2xs">
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
           <div className="relative flex-1 max-w-xl">
             <Search className="w-4 h-4 text-slate-400 absolute left-3.5 top-1/2 -translate-y-1/2" />
@@ -273,13 +328,40 @@ export default function VideosCatalogClient({ groups, stats }: VideosCatalogClie
               type="search"
               value={query}
               onChange={(e) => setQuery(e.target.value)}
-              placeholder="搜尋集數代碼（如 MECH05、MC02）、章節標題、課綱代碼或生活應用關鍵字..."
+              placeholder="搜尋集數代碼（如 CHEM01、CHIN03、CIVC01）、章節標題、課綱代碼或生活應用關鍵字..."
               aria-label="搜尋教學影片"
               className="w-full rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-950 pl-10 pr-4 py-2.5 text-sm text-slate-900 dark:text-white placeholder:text-slate-400 focus:border-indigo-500 focus:outline-none"
             />
           </div>
-          <div className="text-xs font-mono text-slate-500 dark:text-slate-400">
-            目前顯示 <strong className="text-slate-900 dark:text-white">{visibleCount}</strong> / {stats.totalEpisodes} 支影片
+          <div className="flex flex-wrap items-center gap-2">
+            <div className="inline-flex rounded-xl bg-slate-100 dark:bg-slate-800 p-1 text-xs font-bold">
+              <button
+                type="button"
+                onClick={() => setStatusFilter('all')}
+                className={`rounded-lg px-3 py-1 transition-colors cursor-pointer ${
+                  statusFilter === 'all'
+                    ? 'bg-white dark:bg-slate-900 text-slate-900 dark:text-white shadow-2xs'
+                    : 'text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white'
+                }`}
+              >
+                全部 ({stats.totalEpisodes})
+              </button>
+              <button
+                type="button"
+                onClick={() => setStatusFilter('uploaded')}
+                className={`inline-flex items-center gap-1 rounded-lg px-3 py-1 transition-colors cursor-pointer ${
+                  statusFilter === 'uploaded'
+                    ? 'bg-emerald-600 text-white shadow-2xs'
+                    : 'text-emerald-700 dark:text-emerald-400 hover:bg-emerald-50 dark:hover:bg-emerald-950/50'
+                }`}
+              >
+                <CheckCircle2 className="w-3.5 h-3.5" />
+                <span>YouTube 已上架 ({stats.uploadedCount})</span>
+              </button>
+            </div>
+            <div className="text-xs font-mono text-slate-500 dark:text-slate-400">
+              顯示 <strong className="text-slate-900 dark:text-white">{visibleCount}</strong> 支
+            </div>
           </div>
         </div>
 
@@ -305,13 +387,25 @@ export default function VideosCatalogClient({ groups, stats }: VideosCatalogClie
               role="tab"
               aria-selected={selectedSubject === g.subjectSlug}
               onClick={() => setSelectedSubject(g.subjectSlug)}
-              className={`rounded-xl px-3 py-1.5 text-xs font-bold transition-colors cursor-pointer ${
+              className={`inline-flex items-center gap-1.5 rounded-xl px-3 py-1.5 text-xs font-bold transition-colors cursor-pointer ${
                 selectedSubject === g.subjectSlug
                   ? 'bg-indigo-600 text-white shadow-2xs'
-                  : 'bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700'
+                  : g.uploadedCount > 0
+                    ? 'bg-emerald-50 dark:bg-emerald-950/40 border border-emerald-200 dark:border-emerald-800/70 text-emerald-800 dark:text-emerald-300 hover:bg-emerald-100 dark:hover:bg-emerald-950/70'
+                    : 'bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700'
               }`}
             >
-              {g.subjectTitle} ({g.totalCount})
+              {g.uploadedCount > 0 && (
+                <span
+                  className={`h-2 w-2 rounded-full ${
+                    selectedSubject === g.subjectSlug ? 'bg-emerald-300' : 'bg-emerald-500'
+                  }`}
+                />
+              )}
+              <span>{g.subjectTitle}</span>
+              <span className="font-mono text-[11px] opacity-80">
+                {g.uploadedCount > 0 ? `${g.uploadedCount}/${g.totalCount}` : `(${g.totalCount})`}
+              </span>
             </button>
           ))}
         </div>

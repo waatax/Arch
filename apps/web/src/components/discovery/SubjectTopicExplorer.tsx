@@ -8,9 +8,11 @@ import {
   Filter,
   Bookmark,
   CheckCircle2,
-  Compass
+  Compass,
+  PlayCircle,
 } from 'lucide-react';
 import type { SubjectData } from '@/data/types';
+import { getVideosForTopic } from '@/data/youtubeVideos';
 import { useStudentStore } from '@/lib/store/studentStore';
 import { soundEngine } from '@/lib/audio/soundEffects';
 
@@ -18,7 +20,7 @@ interface SubjectTopicExplorerProps {
   subject: SubjectData;
 }
 
-type FilterTag = 'all' | 'high_hit' | 'formulas' | 'practical' | 'bookmarked' | 'completed';
+type FilterTag = 'all' | 'has_video' | 'high_hit' | 'formulas' | 'practical' | 'bookmarked' | 'completed';
 
 export default function SubjectTopicExplorer({ subject }: SubjectTopicExplorerProps) {
   const [searchQuery, setSearchQuery] = useState('');
@@ -48,6 +50,17 @@ export default function SubjectTopicExplorer({ subject }: SubjectTopicExplorerPr
     (completedConceptsInSubject / (totalSubjectConcepts || 1)) * 100
   );
 
+  const uploadedTopicSlugs = useMemo(() => {
+    const set = new Set<string>();
+    for (const t of subject.topics) {
+      const vids = getVideosForTopic(subject.slug, t.slug);
+      if (vids.some((v) => Boolean(v.youtubeUrl))) {
+        set.add(t.slug);
+      }
+    }
+    return set;
+  }, [subject.slug, subject.topics]);
+
   // 篩選章節清單
   const filteredTopics = useMemo(() => {
     return subject.topics.filter((topic) => {
@@ -69,6 +82,7 @@ export default function SubjectTopicExplorer({ subject }: SubjectTopicExplorerPr
       }
 
       // 標籤比對
+      if (selectedTag === 'has_video') return uploadedTopicSlugs.has(topic.slug);
       if (selectedTag === 'bookmarked') return isBookmarked;
       if (selectedTag === 'completed') return isCompleted;
       if (selectedTag === 'high_hit') {
@@ -83,7 +97,7 @@ export default function SubjectTopicExplorer({ subject }: SubjectTopicExplorerPr
 
       return true;
     });
-  }, [subject, searchQuery, selectedTag, bookmarkedTopics, completedTopics]);
+  }, [subject, searchQuery, selectedTag, bookmarkedTopics, completedTopics, uploadedTopicSlugs]);
 
   return (
     <div className="space-y-6">
@@ -178,6 +192,9 @@ export default function SubjectTopicExplorer({ subject }: SubjectTopicExplorerPr
           </span>
           {[
             { id: 'all', label: `全部 (${subject.topics.length})` },
+            ...(uploadedTopicSlugs.size > 0
+              ? [{ id: 'has_video', label: `🎬 YouTube 已上架 (${uploadedTopicSlugs.size})` }]
+              : []),
             { id: 'high_hit', label: '⭐⭐⭐⭐⭐ 統測必考' },
             { id: 'formulas', label: '⚡ 核心公式重點' },
             { id: 'practical', label: '🛠️ 步驟與重點表格' },
@@ -227,6 +244,7 @@ export default function SubjectTopicExplorer({ subject }: SubjectTopicExplorerPr
             const isCompleted = (completedTopics || []).includes(route);
             const completedConceptList = topicConceptProgress?.[route] || [];
             const topicProgress = Math.round((completedConceptList.length / (topic.concepts.length || 1)) * 100);
+            const topicUploadedVideo = getVideosForTopic(subject.slug, topic.slug).find((v) => Boolean(v.youtubeUrl));
 
             return (
               <article
@@ -292,6 +310,12 @@ export default function SubjectTopicExplorer({ subject }: SubjectTopicExplorerPr
                             {topic.worked_examples.length} 道步驟化例題
                           </span>
                         ) : null}
+                        {topicUploadedVideo && (
+                          <span className="inline-flex items-center gap-1 rounded-md bg-red-50 dark:bg-red-950/60 border border-red-200/70 dark:border-red-800/60 px-2 py-0.5 text-[10px] font-mono font-bold text-red-700 dark:text-red-300">
+                            <PlayCircle className="size-3" />
+                            YouTube {topicUploadedVideo.durationLabel}
+                          </span>
+                        )}
                         {topic.examHitRate && topic.examHitRate >= 5 && (
                           <span className="rounded-md bg-amber-50 dark:bg-amber-950/60 px-1.5 py-0.5 text-[10px] font-mono font-bold text-amber-700 dark:text-amber-300">
                             🔥 統測高頻
