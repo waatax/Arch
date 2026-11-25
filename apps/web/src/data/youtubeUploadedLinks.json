@@ -4,252 +4,889 @@
   "playlistTitle": "ARCH 高工課程 學習統測 大補帖",
   "visibility": "public",
   "madeForKids": false,
-  "updatedAt": "2026-11-24T14:38:09+08:00",
+  "updatedAt": "2026-11-25T22:17:03+08:00",
   "videos": {
     "CHEM01": {
       "videoId": "bHFqfcl62iE",
       "url": "https://youtu.be/bHFqfcl62iE",
-      "uploadedAt": "2026-11-24T14:38:09+08:00",
+      "uploadedAt": "2026-11-25T22:17:03+08:00",
       "title": "CHEM01 物質的組成與分類",
       "duration": "13:51"
     },
     "CHEM02": {
       "videoId": "9qin70tehRU",
       "url": "https://youtu.be/9qin70tehRU",
-      "uploadedAt": "2026-11-24T14:38:09+08:00",
+      "uploadedAt": "2026-11-25T22:17:03+08:00",
       "title": "CHEM02 化學反應與混凝土水化化學",
       "duration": "12:32"
     },
     "CHEM03": {
       "videoId": "rhH1yZ_kOrg",
       "url": "https://youtu.be/rhH1yZ_kOrg",
-      "uploadedAt": "2026-11-24T14:38:09+08:00",
+      "uploadedAt": "2026-11-25T22:17:03+08:00",
       "title": "CHEM03 酸鹼化學與混凝土中性化",
       "duration": "12:38"
     },
     "CHEM04": {
       "videoId": "bSsc0tatbL4",
       "url": "https://youtu.be/bSsc0tatbL4",
-      "uploadedAt": "2026-11-24T14:38:09+08:00",
+      "uploadedAt": "2026-11-25T22:17:03+08:00",
       "title": "CHEM04 氧化還原與金屬腐蝕防蝕",
       "duration": "12:12"
     },
     "CHEM05": {
       "videoId": "eahlv3bFc84",
       "url": "https://youtu.be/eahlv3bFc84",
-      "uploadedAt": "2026-11-24T14:38:09+08:00",
+      "uploadedAt": "2026-11-25T22:17:03+08:00",
       "title": "CHEM05 有機化學與建築高分子樹脂塗料",
       "duration": "12:40"
     },
     "CHEM06": {
       "videoId": "vuUk3vfL7Yg",
       "url": "https://youtu.be/vuUk3vfL7Yg",
-      "uploadedAt": "2026-11-24T14:38:09+08:00",
+      "uploadedAt": "2026-11-25T22:17:03+08:00",
       "title": "CHEM06 環境化學與建材碳足跡",
       "duration": "13:18"
     },
     "CHIN01": {
       "videoId": "hB8ftNqCEvU",
       "url": "https://youtu.be/hB8ftNqCEvU",
-      "uploadedAt": "2026-11-24T14:38:09+08:00",
+      "uploadedAt": "2026-11-25T22:17:03+08:00",
       "title": "CHIN01 古典文學選讀與建築空間散文",
       "duration": "11:42"
     },
     "CHIN02": {
       "videoId": "pglhpxUp7Q4",
       "url": "https://youtu.be/pglhpxUp7Q4",
-      "uploadedAt": "2026-11-24T14:38:09+08:00",
+      "uploadedAt": "2026-11-25T22:17:03+08:00",
       "title": "CHIN02 現代文學與應用文實務",
       "duration": "11:18"
     },
     "CHIN03": {
       "videoId": "2NgeCuQY-bc",
       "url": "https://youtu.be/2NgeCuQY-bc",
-      "uploadedAt": "2026-11-24T14:38:09+08:00",
+      "uploadedAt": "2026-11-25T22:17:03+08:00",
       "title": "CHIN03 語文知識與修辭應用",
       "duration": "13:06"
     },
     "CHIN04": {
       "videoId": "De_2MTOCKPo",
       "url": "https://youtu.be/De_2MTOCKPo",
-      "uploadedAt": "2026-11-24T14:38:09+08:00",
+      "uploadedAt": "2026-11-25T22:17:03+08:00",
       "title": "CHIN04 閱讀理解與建築論述判讀",
       "duration": "12:03"
     },
     "CHIN05": {
       "videoId": "1cfVXonHVKk",
       "url": "https://youtu.be/1cfVXonHVKk",
-      "uploadedAt": "2026-11-24T14:38:09+08:00",
+      "uploadedAt": "2026-11-25T22:17:03+08:00",
       "title": "CHIN05 作文與表達（含建築空間論述）",
       "duration": "12:35"
     },
     "CHIN06": {
       "videoId": "AEj0petqeog",
       "url": "https://youtu.be/AEj0petqeog",
-      "uploadedAt": "2026-11-24T14:38:09+08:00",
+      "uploadedAt": "2026-11-25T22:17:03+08:00",
       "title": "CHIN06 文化常識與園林建築思潮",
       "duration": "13:21"
     },
     "CIVC01": {
       "videoId": "lZaLzL1iLVg",
       "url": "https://youtu.be/lZaLzL1iLVg",
-      "uploadedAt": "2026-11-24T14:38:09+08:00",
+      "uploadedAt": "2026-11-25T22:17:03+08:00",
       "title": "CIVC01 公民身分與社群",
       "duration": "13:20"
     },
     "CIVC02": {
       "videoId": "vt1dhhNrrGg",
       "url": "https://youtu.be/vt1dhhNrrGg",
-      "uploadedAt": "2026-11-24T14:38:09+08:00",
+      "uploadedAt": "2026-11-25T22:17:03+08:00",
       "title": "CIVC02 建築法規與公民生活空間",
       "duration": "14:27"
     },
     "CIVC03": {
       "videoId": "JZaI6_PZ02w",
       "url": "https://youtu.be/JZaI6_PZ02w",
-      "uploadedAt": "2026-11-24T14:38:09+08:00",
+      "uploadedAt": "2026-11-25T22:17:03+08:00",
       "title": "CIVC03 經濟發展與永續建築環境",
       "duration": "13:35"
     },
     "CIVC04": {
       "videoId": "s3lFb-5BHEY",
       "url": "https://youtu.be/s3lFb-5BHEY",
-      "uploadedAt": "2026-11-24T14:38:09+08:00",
+      "uploadedAt": "2026-11-25T22:17:03+08:00",
       "title": "CIVC04 多元社會與包容性空間設計",
       "duration": "14:11"
     },
     "CIVC05": {
       "videoId": "rqGP7Yt58L0",
       "url": "https://youtu.be/rqGP7Yt58L0",
-      "uploadedAt": "2026-11-24T14:38:09+08:00",
+      "uploadedAt": "2026-11-25T22:17:03+08:00",
       "title": "CIVC05 勞工權益與建築職業倫理",
       "duration": "13:58"
     },
     "CIVC06": {
       "videoId": "Npc7t_-l77Y",
       "url": "https://youtu.be/Npc7t_-l77Y",
-      "uploadedAt": "2026-11-24T14:38:09+08:00",
+      "uploadedAt": "2026-11-25T22:17:03+08:00",
       "title": "CIVC06 環境政策與氣候變遷因應",
       "duration": "15:23"
     },
     "DRFT01": {
       "videoId": "Ad9fV_xOF-g",
       "url": "https://youtu.be/Ad9fV_xOF-g",
-      "uploadedAt": "2026-11-24T14:38:09+08:00",
+      "uploadedAt": "2026-11-25T22:17:03+08:00",
       "title": "DRFT01 2D到3DBIM建築資訊模型實務",
       "duration": "10:06"
     },
     "DRFT02": {
       "videoId": "UXICM-E0kbc",
       "url": "https://youtu.be/UXICM-E0kbc",
-      "uploadedAt": "2026-11-24T14:38:09+08:00",
+      "uploadedAt": "2026-11-25T22:17:03+08:00",
       "title": "DRFT02 容積率建蔽率與建築法規實務",
       "duration": "11:10"
     },
     "DRFT03": {
       "videoId": "IXQpp76sY9o",
       "url": "https://youtu.be/IXQpp76sY9o",
-      "uploadedAt": "2026-11-24T14:38:09+08:00",
+      "uploadedAt": "2026-11-25T22:17:03+08:00",
       "title": "DRFT03 製圖基本觀念與圖紙管理",
       "duration": "8:48"
     },
     "DRFT04": {
       "videoId": "c-orN8Zdpxw",
       "url": "https://youtu.be/c-orN8Zdpxw",
-      "uploadedAt": "2026-11-24T14:38:09+08:00",
+      "uploadedAt": "2026-11-25T22:17:03+08:00",
       "title": "DRFT04 土木與建築製圖整合判讀",
       "duration": "8:13"
     },
     "DRFT05": {
       "videoId": "JwmVNsvbFWI",
       "url": "https://youtu.be/JwmVNsvbFWI",
-      "uploadedAt": "2026-11-24T14:38:09+08:00",
+      "uploadedAt": "2026-11-25T22:17:03+08:00",
       "title": "DRFT05 線條種類與字法",
       "duration": "12:21"
     },
     "DRFT06": {
       "videoId": "UyJ4Fr4MH0o",
       "url": "https://youtu.be/UyJ4Fr4MH0o",
-      "uploadedAt": "2026-11-24T14:38:09+08:00",
+      "uploadedAt": "2026-11-25T22:17:03+08:00",
       "title": "DRFT06 比例與尺度",
       "duration": "10:28"
     },
     "DRFT07": {
       "videoId": "dEprM-dLCg0",
       "url": "https://youtu.be/dEprM-dLCg0",
-      "uploadedAt": "2026-11-24T14:38:09+08:00",
+      "uploadedAt": "2026-11-25T22:17:03+08:00",
       "title": "DRFT07 正投影視圖",
       "duration": "11:14"
     },
     "DRFT08": {
       "videoId": "tYO9UTw_NDA",
       "url": "https://youtu.be/tYO9UTw_NDA",
-      "uploadedAt": "2026-11-24T14:38:09+08:00",
+      "uploadedAt": "2026-11-25T22:17:03+08:00",
       "title": "DRFT08 剖面圖判讀",
       "duration": "10:26"
     },
     "DRFT09": {
       "videoId": "Ti9vlY8Slqs",
       "url": "https://youtu.be/Ti9vlY8Slqs",
-      "uploadedAt": "2026-11-24T14:38:09+08:00",
+      "uploadedAt": "2026-11-25T22:17:03+08:00",
       "title": "DRFT09 建築平面圖",
       "duration": "11:07"
     },
     "DRFT10": {
       "videoId": "PjCajB3ciP4",
       "url": "https://youtu.be/PjCajB3ciP4",
-      "uploadedAt": "2026-11-24T14:38:09+08:00",
+      "uploadedAt": "2026-11-25T22:17:03+08:00",
       "title": "DRFT10 建築立面圖",
       "duration": "10:32"
     },
     "DRFT11": {
       "videoId": "DHmzOOGSs0I",
       "url": "https://youtu.be/DHmzOOGSs0I",
-      "uploadedAt": "2026-11-24T14:38:09+08:00",
+      "uploadedAt": "2026-11-25T22:17:03+08:00",
       "title": "DRFT11 尺寸標註與圖例",
       "duration": "12:02"
     },
     "DRFT12": {
       "videoId": "pjEvYl_1oaw",
       "url": "https://youtu.be/pjEvYl_1oaw",
-      "uploadedAt": "2026-11-24T14:38:09+08:00",
+      "uploadedAt": "2026-11-25T22:17:03+08:00",
       "title": "DRFT12 CAD繪圖基礎",
       "duration": "11:08"
     },
     "DRFT13": {
       "videoId": "T_eopz_WTwY",
       "url": "https://youtu.be/T_eopz_WTwY",
-      "uploadedAt": "2026-11-24T14:38:09+08:00",
+      "uploadedAt": "2026-11-25T22:17:03+08:00",
       "title": "DRFT13 製圖儀器之使用與維護",
       "duration": "11:40"
     },
     "DRFT14": {
       "videoId": "6bCTUcAlXqc",
       "url": "https://youtu.be/6bCTUcAlXqc",
-      "uploadedAt": "2026-11-24T14:38:09+08:00",
+      "uploadedAt": "2026-11-25T22:17:03+08:00",
       "title": "DRFT14 幾何畫法與平面幾何應用",
       "duration": "11:12"
     },
     "DRFT15": {
       "videoId": "ar-cGVsMbm8",
       "url": "https://youtu.be/ar-cGVsMbm8",
-      "uploadedAt": "2026-11-24T14:38:09+08:00",
+      "uploadedAt": "2026-11-25T22:17:03+08:00",
       "title": "DRFT15 輔助視圖與斜面真形圖法",
       "duration": "10:26"
     },
     "DRFT16": {
       "videoId": "3-bxCckcg1Y",
       "url": "https://youtu.be/3-bxCckcg1Y",
-      "uploadedAt": "2026-11-24T14:38:09+08:00",
+      "uploadedAt": "2026-11-25T22:17:03+08:00",
       "title": "DRFT16 透視圖投影與陰影求法",
       "duration": "11:14"
     },
     "DRFT17": {
       "videoId": "2LKYzhDJZXE",
       "url": "https://youtu.be/2LKYzhDJZXE",
-      "uploadedAt": "2026-11-24T14:38:09+08:00",
+      "uploadedAt": "2026-11-25T22:17:03+08:00",
       "title": "DRFT17 投影畫法應用點線面投影與第一第三象限正視圖",
       "duration": "11:51"
+    },
+    "ENGL01": {
+      "videoId": "KveIFE6ltL0",
+      "url": "https://youtu.be/KveIFE6ltL0",
+      "uploadedAt": "2026-11-25T22:17:03+08:00",
+      "title": "ENGL01 基礎字彙與片語",
+      "duration": "14:14"
+    },
+    "ENGL02": {
+      "videoId": "ZoKFSNO5iDU",
+      "url": "https://youtu.be/ZoKFSNO5iDU",
+      "uploadedAt": "2026-11-25T22:17:03+08:00",
+      "title": "ENGL02 基礎文法句型",
+      "duration": "13:47"
+    },
+    "ENGL03": {
+      "videoId": "V2dOm14p5EY",
+      "url": "https://youtu.be/V2dOm14p5EY",
+      "uploadedAt": "2026-11-25T22:17:03+08:00",
+      "title": "ENGL03 日常對話與社交情境",
+      "duration": "14:32"
+    },
+    "ENGL04": {
+      "videoId": "Jq9RNaMFE7A",
+      "url": "https://youtu.be/Jq9RNaMFE7A",
+      "uploadedAt": "2026-11-25T22:17:03+08:00",
+      "title": "ENGL04 閱讀理解與策略",
+      "duration": "16:42"
+    },
+    "ENGL05": {
+      "videoId": "mUNKMchvKsw",
+      "url": "https://youtu.be/mUNKMchvKsw",
+      "uploadedAt": "2026-11-25T22:17:03+08:00",
+      "title": "ENGL05 專業與工程字彙ESP",
+      "duration": "12:21"
+    },
+    "ENGL06": {
+      "videoId": "W6LEWig_Hr4",
+      "url": "https://youtu.be/W6LEWig_Hr4",
+      "uploadedAt": "2026-11-25T22:17:03+08:00",
+      "title": "ENGL06 複合句型與子句",
+      "duration": "14:09"
+    },
+    "ENGL07": {
+      "videoId": "SmHjFGf2TlE",
+      "url": "https://youtu.be/SmHjFGf2TlE",
+      "uploadedAt": "2026-11-25T22:17:03+08:00",
+      "title": "ENGL07 實用文本與圖表判讀",
+      "duration": "14:50"
+    },
+    "ENGL08": {
+      "videoId": "xs8ho7-70g8",
+      "url": "https://youtu.be/xs8ho7-70g8",
+      "uploadedAt": "2026-11-25T22:17:03+08:00",
+      "title": "ENGL08 克漏字與篇章結構",
+      "duration": "13:32"
+    },
+    "ENGL09": {
+      "videoId": "5aB9vNABLpY",
+      "url": "https://youtu.be/5aB9vNABLpY",
+      "uploadedAt": "2026-11-25T22:17:03+08:00",
+      "title": "ENGL09 高階文法與統測常考句型",
+      "duration": "13:17"
+    },
+    "ENGL10": {
+      "videoId": "6CD_zjRfTHI",
+      "url": "https://youtu.be/6CD_zjRfTHI",
+      "uploadedAt": "2026-11-25T22:17:03+08:00",
+      "title": "ENGL10 職場溝通與工程商務",
+      "duration": "14:31"
+    },
+    "ENGL11": {
+      "videoId": "I4Gk_qmx-3c",
+      "url": "https://youtu.be/I4Gk_qmx-3c",
+      "uploadedAt": "2026-11-25T22:17:03+08:00",
+      "title": "ENGL11 高階閱讀與多文本分析",
+      "duration": "13:31"
+    },
+    "ENGL12": {
+      "videoId": "eQISBCgh3wk",
+      "url": "https://youtu.be/eQISBCgh3wk",
+      "uploadedAt": "2026-11-25T22:17:03+08:00",
+      "title": "ENGL12 統測非選實戰翻譯與寫作",
+      "duration": "13:04"
+    },
+    "ENGL13": {
+      "videoId": "lMITKLTvMo8",
+      "url": "https://youtu.be/lMITKLTvMo8",
+      "uploadedAt": "2026-11-25T22:17:03+08:00",
+      "title": "ENGL13 文化習俗國際議題與永續建築素養英文",
+      "duration": "10:49"
+    },
+    "EXTN01": {
+      "videoId": "6BSGX-LJ8rk",
+      "url": "https://youtu.be/6BSGX-LJ8rk",
+      "uploadedAt": "2026-11-25T22:17:03+08:00",
+      "title": "EXTN01 參數化設計與AI輔助競圖",
+      "duration": "10:56"
+    },
+    "EXTN02": {
+      "videoId": "WswcAzSbC88",
+      "url": "https://youtu.be/WswcAzSbC88",
+      "uploadedAt": "2026-11-25T22:17:03+08:00",
+      "title": "EXTN02 作品集建構與設計論述",
+      "duration": "10:31"
+    },
+    "EXTN03": {
+      "videoId": "XUnnfJUWt7k",
+      "url": "https://youtu.be/XUnnfJUWt7k",
+      "uploadedAt": "2026-11-25T22:17:03+08:00",
+      "title": "EXTN03 空間設計與觀察",
+      "duration": "13:12"
+    },
+    "EXTN04": {
+      "videoId": "QBqkiSzaw50",
+      "url": "https://youtu.be/QBqkiSzaw50",
+      "uploadedAt": "2026-11-25T22:17:03+08:00",
+      "title": "EXTN04 營造工法與建築構造細部",
+      "duration": "13:53"
+    },
+    "EXTN05": {
+      "videoId": "DZMGGZ-jkFk",
+      "url": "https://youtu.be/DZMGGZ-jkFk",
+      "uploadedAt": "2026-11-25T22:17:03+08:00",
+      "title": "EXTN05 電腦輔助設計與BIM應用",
+      "duration": "13:54"
+    },
+    "EXTN06": {
+      "videoId": "gf3RWayX7ok",
+      "url": "https://youtu.be/gf3RWayX7ok",
+      "uploadedAt": "2026-11-25T22:17:03+08:00",
+      "title": "EXTN06 作品集製作與模型表達",
+      "duration": "13:36"
+    },
+    "EXTN07": {
+      "videoId": "7buAcWf8OzQ",
+      "url": "https://youtu.be/7buAcWf8OzQ",
+      "uploadedAt": "2026-11-25T22:17:03+08:00",
+      "title": "EXTN07 建築科升學與證照檢定",
+      "duration": "15:12"
+    },
+    "GEOG01": {
+      "videoId": "MniEWofzjlY",
+      "url": "https://youtu.be/MniEWofzjlY",
+      "uploadedAt": "2026-11-25T22:17:03+08:00",
+      "title": "GEOG01 地理環境與地形建築選址",
+      "duration": "14:17"
+    },
+    "GEOG02": {
+      "videoId": "zYAgy6sxQQU",
+      "url": "https://youtu.be/zYAgy6sxQQU",
+      "uploadedAt": "2026-11-25T22:17:03+08:00",
+      "title": "GEOG02 氣候環境與氣候應答建築",
+      "duration": "14:14"
+    },
+    "GEOG03": {
+      "videoId": "vzMb47VqonA",
+      "url": "https://youtu.be/vzMb47VqonA",
+      "uploadedAt": "2026-11-25T22:17:03+08:00",
+      "title": "GEOG03 人口結構與都市空間結構",
+      "duration": "12:40"
+    },
+    "GEOG04": {
+      "videoId": "cRg1S3-7uag",
+      "url": "https://youtu.be/cRg1S3-7uag",
+      "uploadedAt": "2026-11-25T22:17:03+08:00",
+      "title": "GEOG04 區域發展與產業區位選址",
+      "duration": "13:08"
+    },
+    "GEOG05": {
+      "videoId": "PSisi8mLz-g",
+      "url": "https://youtu.be/PSisi8mLz-g",
+      "uploadedAt": "2026-11-25T22:17:03+08:00",
+      "title": "GEOG05 環境議題與災害防救工程",
+      "duration": "13:13"
+    },
+    "GEOG06": {
+      "videoId": "FSUhNOqF0Eg",
+      "url": "https://youtu.be/FSUhNOqF0Eg",
+      "uploadedAt": "2026-11-25T22:17:03+08:00",
+      "title": "GEOG06 地理資訊系統與空間分析",
+      "duration": "14:30"
+    },
+    "HIST01": {
+      "videoId": "AtmcVAZz8l8",
+      "url": "https://youtu.be/AtmcVAZz8l8",
+      "uploadedAt": "2026-11-25T22:17:03+08:00",
+      "title": "HIST01 台灣史建築環境演變與本土樣式",
+      "duration": "14:32"
+    },
+    "HIST02": {
+      "videoId": "5byXc01xxg0",
+      "url": "https://youtu.be/5byXc01xxg0",
+      "uploadedAt": "2026-11-25T22:17:03+08:00",
+      "title": "HIST02 中國史古代建築形制工藝與營造法式",
+      "duration": "14:20"
+    },
+    "HIST03": {
+      "videoId": "zZlJgRedrCA",
+      "url": "https://youtu.be/zZlJgRedrCA",
+      "uploadedAt": "2026-11-25T22:17:03+08:00",
+      "title": "HIST03 西洋史從古典哥德文藝復興到現代主義與當代建築",
+      "duration": "13:35"
+    },
+    "HIST04": {
+      "videoId": "Jd2b2vFB0eQ",
+      "url": "https://youtu.be/Jd2b2vFB0eQ",
+      "uploadedAt": "2026-11-25T22:17:03+08:00",
+      "title": "HIST04 建築思潮與歷史理論演變",
+      "duration": "13:16"
+    },
+    "HIST05": {
+      "videoId": "B7Gloc9Vgn0",
+      "url": "https://youtu.be/B7Gloc9Vgn0",
+      "uploadedAt": "2026-11-25T22:17:03+08:00",
+      "title": "HIST05 文化資產保存與古蹟修復工程",
+      "duration": "14:29"
+    },
+    "HIST06": {
+      "videoId": "R3vb_mNLvB4",
+      "url": "https://youtu.be/R3vb_mNLvB4",
+      "uploadedAt": "2026-11-25T22:17:03+08:00",
+      "title": "HIST06 社會變遷與都市形貌變革",
+      "duration": "14:55"
+    },
+    "MATL01": {
+      "videoId": "cNLzr_F55tU",
+      "url": "https://youtu.be/cNLzr_F55tU",
+      "uploadedAt": "2026-11-25T22:17:03+08:00",
+      "title": "MATL01 綠建材低碳水泥與循環經濟",
+      "duration": "10:27"
+    },
+    "MATL02": {
+      "videoId": "bY9VoYLhgYQ",
+      "url": "https://youtu.be/bY9VoYLhgYQ",
+      "uploadedAt": "2026-11-25T22:17:03+08:00",
+      "title": "MATL02 材料與試驗概論與基本性質",
+      "duration": "14:34"
+    },
+    "MATL03": {
+      "videoId": "8AyxmsHa6-4",
+      "url": "https://youtu.be/8AyxmsHa6-4",
+      "uploadedAt": "2026-11-25T22:17:03+08:00",
+      "title": "MATL03 卜特蘭水泥水化化學成分",
+      "duration": "10:02"
+    },
+    "MATL04": {
+      "videoId": "BIIyMC1qbFw",
+      "url": "https://youtu.be/BIIyMC1qbFw",
+      "uploadedAt": "2026-11-25T22:17:03+08:00",
+      "title": "MATL04 CNS61卜特蘭水泥五大類型比較",
+      "duration": "9:50"
+    },
+    "MATL05": {
+      "videoId": "WroUuyvVUDg",
+      "url": "https://youtu.be/WroUuyvVUDg",
+      "uploadedAt": "2026-11-25T22:17:03+08:00",
+      "title": "MATL05 維卡儀Vicat凝結時間試驗",
+      "duration": "9:42"
+    },
+    "MATL06": {
+      "videoId": "dRHxP8e7h3A",
+      "url": "https://youtu.be/dRHxP8e7h3A",
+      "uploadedAt": "2026-11-25T22:17:03+08:00",
+      "title": "MATL06 水泥砂漿抗壓強度試驗",
+      "duration": "10:12"
+    },
+    "MATL07": {
+      "videoId": "edfQo4BQF9w",
+      "url": "https://youtu.be/edfQo4BQF9w",
+      "uploadedAt": "2026-11-25T22:17:03+08:00",
+      "title": "MATL07 水泥儲存與假凝FalseSet現象",
+      "duration": "9:53"
+    },
+    "MATL08": {
+      "videoId": "vWfD4v2i0MM",
+      "url": "https://youtu.be/vWfD4v2i0MM",
+      "uploadedAt": "2026-11-25T22:17:03+08:00",
+      "title": "MATL08 混凝土構造與配比設計",
+      "duration": "11:34"
+    },
+    "MATL09": {
+      "videoId": "vQfaEfkCJOc",
+      "url": "https://youtu.be/vQfaEfkCJOc",
+      "uploadedAt": "2026-11-25T22:17:03+08:00",
+      "title": "MATL09 石材陶瓷製品與玻璃",
+      "duration": "11:57"
+    },
+    "MATL10": {
+      "videoId": "NaaAoXaNgvw",
+      "url": "https://youtu.be/NaaAoXaNgvw",
+      "uploadedAt": "2026-11-25T22:17:03+08:00",
+      "title": "MATL10 木材構造與品質試驗",
+      "duration": "11:51"
+    },
+    "MATL11": {
+      "videoId": "Zq3ycI_35U4",
+      "url": "https://youtu.be/Zq3ycI_35U4",
+      "uploadedAt": "2026-11-25T22:17:03+08:00",
+      "title": "MATL11 高分子瀝青與防水塗料",
+      "duration": "12:56"
+    },
+    "MATL12": {
+      "videoId": "pY_-qVQmj94",
+      "url": "https://youtu.be/pY_-qVQmj94",
+      "uploadedAt": "2026-11-25T22:17:03+08:00",
+      "title": "MATL12 金屬材料與防蝕試驗",
+      "duration": "10:55"
+    },
+    "MATL13": {
+      "videoId": "Zhu5ve__1VE",
+      "url": "https://youtu.be/Zhu5ve__1VE",
+      "uploadedAt": "2026-11-25T22:17:03+08:00",
+      "title": "MATL13 綠建材與永續材料發展",
+      "duration": "10:47"
+    },
+    "MATL14": {
+      "videoId": "9Sv6HV7XzJQ",
+      "url": "https://youtu.be/9Sv6HV7XzJQ",
+      "uploadedAt": "2026-11-25T22:17:03+08:00",
+      "title": "MATL14 混凝土粒料篩分析氯離子試驗與摻料品管",
+      "duration": "11:45"
+    },
+    "MC01": {
+      "videoId": "A9ovD9Wmub0",
+      "url": "https://youtu.be/A9ovD9Wmub0",
+      "uploadedAt": "2026-11-25T22:17:03+08:00",
+      "title": "MC01 坐標系與函數圖形",
+      "duration": "15:06"
+    },
+    "MC02": {
+      "videoId": "PLv45WDd3n8",
+      "url": "https://youtu.be/PLv45WDd3n8",
+      "uploadedAt": "2026-11-25T22:17:03+08:00",
+      "title": "MC02 三角函數",
+      "duration": "15:55"
+    },
+    "MC03": {
+      "videoId": "1fpNckcJCR4",
+      "url": "https://youtu.be/1fpNckcJCR4",
+      "uploadedAt": "2026-11-25T22:17:03+08:00",
+      "title": "MC03 平面向量",
+      "duration": "13:44"
+    },
+    "MC04": {
+      "videoId": "PzQUUt4v_V8",
+      "url": "https://youtu.be/PzQUUt4v_V8",
+      "uploadedAt": "2026-11-25T22:17:03+08:00",
+      "title": "MC04 式的運算",
+      "duration": "13:56"
+    },
+    "MC05": {
+      "videoId": "DkUVcZivIYY",
+      "url": "https://youtu.be/DkUVcZivIYY",
+      "uploadedAt": "2026-11-25T22:17:03+08:00",
+      "title": "MC05 直線與圓",
+      "duration": "14:50"
+    },
+    "MC06": {
+      "videoId": "_2NI5xZVGTA",
+      "url": "https://youtu.be/_2NI5xZVGTA",
+      "uploadedAt": "2026-11-25T22:17:03+08:00",
+      "title": "MC06 數列與級數",
+      "duration": "13:27"
+    },
+    "MC07": {
+      "videoId": "UMvpqcDW0qE",
+      "url": "https://youtu.be/UMvpqcDW0qE",
+      "uploadedAt": "2026-11-25T22:17:03+08:00",
+      "title": "MC07 排列組合",
+      "duration": "14:29"
+    },
+    "MC08": {
+      "videoId": "cL2kCA49-H0",
+      "url": "https://youtu.be/cL2kCA49-H0",
+      "uploadedAt": "2026-11-25T22:17:03+08:00",
+      "title": "MC08 三角函數的應用",
+      "duration": "14:30"
+    },
+    "MC09": {
+      "videoId": "7eTMx_xJ-10",
+      "url": "https://youtu.be/7eTMx_xJ-10",
+      "uploadedAt": "2026-11-25T22:17:03+08:00",
+      "title": "MC09 指數與對數",
+      "duration": "14:25"
+    },
+    "MC10": {
+      "videoId": "rtHhlxKSwew",
+      "url": "https://youtu.be/rtHhlxKSwew",
+      "uploadedAt": "2026-11-25T22:17:03+08:00",
+      "title": "MC10 空間向量",
+      "duration": "14:22"
+    },
+    "MC11": {
+      "videoId": "C8KyZKqMImc",
+      "url": "https://youtu.be/C8KyZKqMImc",
+      "uploadedAt": "2026-11-25T22:17:03+08:00",
+      "title": "MC11 一次聯立方程式與矩陣",
+      "duration": "13:54"
+    },
+    "MC12": {
+      "videoId": "Q_hovgn74CQ",
+      "url": "https://youtu.be/Q_hovgn74CQ",
+      "uploadedAt": "2026-11-25T22:17:03+08:00",
+      "title": "MC12 二元一次不等式與線性規劃",
+      "duration": "13:36"
+    },
+    "MC13": {
+      "videoId": "L9QKoCd8hXs",
+      "url": "https://youtu.be/L9QKoCd8hXs",
+      "uploadedAt": "2026-11-25T22:17:03+08:00",
+      "title": "MC13 二次曲線",
+      "duration": "13:42"
+    },
+    "MC14": {
+      "videoId": "KE5ylFvrBkg",
+      "url": "https://youtu.be/KE5ylFvrBkg",
+      "uploadedAt": "2026-11-25T22:17:03+08:00",
+      "title": "MC14 微分",
+      "duration": "13:23"
+    },
+    "MC15": {
+      "videoId": "GP49H3KQ8dY",
+      "url": "https://youtu.be/GP49H3KQ8dY",
+      "uploadedAt": "2026-11-25T22:17:03+08:00",
+      "title": "MC15 積分",
+      "duration": "14:26"
+    },
+    "MC16": {
+      "videoId": "NtrJ7j2qcyE",
+      "url": "https://youtu.be/NtrJ7j2qcyE",
+      "uploadedAt": "2026-11-25T22:17:03+08:00",
+      "title": "MC16 統測數學C高頻跨單元綜合實戰總複習",
+      "duration": "12:34"
+    },
+    "MECH01": {
+      "videoId": "ga1IVzW9n7k",
+      "url": "https://youtu.be/ga1IVzW9n7k",
+      "uploadedAt": "2026-11-25T22:17:03+08:00",
+      "title": "MECH01 真實結構災難與生命財產安全",
+      "duration": "12:28"
+    },
+    "MECH02": {
+      "videoId": "Qaf4IRPN88w",
+      "url": "https://youtu.be/Qaf4IRPN88w",
+      "uploadedAt": "2026-11-25T22:17:03+08:00",
+      "title": "MECH02 2A平面平行力系",
+      "duration": "11:08"
+    },
+    "MECH03": {
+      "videoId": "TtC9-Ax6QB0",
+      "url": "https://youtu.be/TtC9-Ax6QB0",
+      "uploadedAt": "2026-11-25T22:17:03+08:00",
+      "title": "MECH03 2B共面非共點非平行力系",
+      "duration": "10:08"
+    },
+    "MECH04": {
+      "videoId": "OAlq0HNm7vo",
+      "url": "https://youtu.be/OAlq0HNm7vo",
+      "uploadedAt": "2026-11-25T22:17:03+08:00",
+      "title": "MECH04 7A剪力與剪應力",
+      "duration": "9:58"
+    },
+    "MECH05": {
+      "videoId": "YRnPGHH6PyE",
+      "url": "https://youtu.be/YRnPGHH6PyE",
+      "uploadedAt": "2026-11-25T22:17:03+08:00",
+      "title": "MECH05 單位與向量",
+      "duration": "15:27"
+    },
+    "MECH06": {
+      "videoId": "igVRrrqEZrA",
+      "url": "https://youtu.be/igVRrrqEZrA",
+      "uploadedAt": "2026-11-25T22:17:03+08:00",
+      "title": "MECH06 力系與共點力平衡",
+      "duration": "13:37"
+    },
+    "MECH07": {
+      "videoId": "TraV5rSDTiI",
+      "url": "https://youtu.be/TraV5rSDTiI",
+      "uploadedAt": "2026-11-25T22:17:03+08:00",
+      "title": "MECH07 重心與形心",
+      "duration": "14:07"
+    },
+    "MECH08": {
+      "videoId": "GP8T7Va2LLE",
+      "url": "https://youtu.be/GP8T7Va2LLE",
+      "uploadedAt": "2026-11-25T22:17:03+08:00",
+      "title": "MECH08 摩擦力",
+      "duration": "13:21"
+    },
+    "MECH09": {
+      "videoId": "JvW9HW4njqU",
+      "url": "https://youtu.be/JvW9HW4njqU",
+      "uploadedAt": "2026-11-25T22:17:03+08:00",
+      "title": "MECH09 平面桁架分析",
+      "duration": "13:05"
+    },
+    "MECH10": {
+      "videoId": "uFPRNLDIH9w",
+      "url": "https://youtu.be/uFPRNLDIH9w",
+      "uploadedAt": "2026-11-25T22:17:03+08:00",
+      "title": "MECH10 靜定樑之受力",
+      "duration": "13:46"
+    },
+    "MECH11": {
+      "videoId": "e0GT07lU9y8",
+      "url": "https://youtu.be/e0GT07lU9y8",
+      "uploadedAt": "2026-11-25T22:17:03+08:00",
+      "title": "MECH11 應力與應變",
+      "duration": "14:15"
+    },
+    "MECH12": {
+      "videoId": "R3iPB-a_-Jg",
+      "url": "https://youtu.be/R3iPB-a_-Jg",
+      "uploadedAt": "2026-11-25T22:17:03+08:00",
+      "title": "MECH12 空間力系與空間平衡",
+      "duration": "13:11"
+    },
+    "MECH13": {
+      "videoId": "S1JFiujhsas",
+      "url": "https://youtu.be/S1JFiujhsas",
+      "uploadedAt": "2026-11-25T22:17:03+08:00",
+      "title": "MECH13 平面應力與莫耳圓圖解",
+      "duration": "13:41"
+    },
+    "MECH14": {
+      "videoId": "ovj-p-d6rtk",
+      "url": "https://youtu.be/ovj-p-d6rtk",
+      "uploadedAt": "2026-11-25T22:17:03+08:00",
+      "title": "MECH14 梁內應力中立軸彎曲應力與橫向剪應力",
+      "duration": "14:08"
+    },
+    "PHYS01": {
+      "videoId": "jlHe30jDHs0",
+      "url": "https://youtu.be/jlHe30jDHs0",
+      "uploadedAt": "2026-11-25T22:17:03+08:00",
+      "title": "PHYS01 力學與運動StructuralKinematicsStaticEqui",
+      "duration": "13:57"
+    },
+    "PHYS02": {
+      "videoId": "fh6lXyPiaac",
+      "url": "https://youtu.be/fh6lXyPiaac",
+      "uploadedAt": "2026-11-25T22:17:03+08:00",
+      "title": "PHYS02 功與能量WorkEnergyGreenBuildingThermody",
+      "duration": "12:42"
+    },
+    "PHYS03": {
+      "videoId": "mNRWcq7Di9A",
+      "url": "https://youtu.be/mNRWcq7Di9A",
+      "uploadedAt": "2026-11-25T22:17:03+08:00",
+      "title": "PHYS03 熱學與建築熱環境BuildingThermodynamicsHVAC",
+      "duration": "12:42"
+    },
+    "PHYS04": {
+      "videoId": "5zvk1ib6BLc",
+      "url": "https://youtu.be/5zvk1ib6BLc",
+      "uploadedAt": "2026-11-25T22:17:03+08:00",
+      "title": "PHYS04 波動與建築聲學BuildingWavesAcoustics",
+      "duration": "13:27"
+    },
+    "PHYS05": {
+      "videoId": "xqOYxRK_Vis",
+      "url": "https://youtu.be/xqOYxRK_Vis",
+      "uploadedAt": "2026-11-25T22:17:03+08:00",
+      "title": "PHYS05 光學與建築照明設計OpticsArchitecturalLightin",
+      "duration": "12:33"
+    },
+    "PHYS06": {
+      "videoId": "KSYdASPLE8o",
+      "url": "https://youtu.be/KSYdASPLE8o",
+      "uploadedAt": "2026-11-25T22:17:03+08:00",
+      "title": "PHYS06 電學基礎與建築配電系統BuildingElectricalCircui",
+      "duration": "13:52"
+    },
+    "SURV01": {
+      "videoId": "XFMgOq-9zy8",
+      "url": "https://youtu.be/XFMgOq-9zy8",
+      "uploadedAt": "2026-11-25T22:17:03+08:00",
+      "title": "SURV01 測量總論與誤差基礎",
+      "duration": "9:37"
+    },
+    "SURV02": {
+      "videoId": "Us_SG0sQ4vg",
+      "url": "https://youtu.be/Us_SG0sQ4vg",
+      "uploadedAt": "2026-11-25T22:17:03+08:00",
+      "title": "SURV02 4A間接距離與高程測量",
+      "duration": "10:22"
+    },
+    "SURV03": {
+      "videoId": "n4evo0QP82U",
+      "url": "https://youtu.be/n4evo0QP82U",
+      "uploadedAt": "2026-11-25T22:17:03+08:00",
+      "title": "SURV03 距離與角度測量",
+      "duration": "12:08"
+    },
+    "SURV04": {
+      "videoId": "fFyiomEw8yc",
+      "url": "https://youtu.be/fFyiomEw8yc",
+      "uploadedAt": "2026-11-25T22:17:03+08:00",
+      "title": "SURV04 高程測量與水準儀",
+      "duration": "12:26"
+    },
+    "SURV05": {
+      "videoId": "JE5qQwvTkUE",
+      "url": "https://youtu.be/JE5qQwvTkUE",
+      "uploadedAt": "2026-11-25T22:17:03+08:00",
+      "title": "SURV05 儀器操作與整置",
+      "duration": "11:11"
+    },
+    "SURV06": {
+      "videoId": "wt7T1JE6BKk",
+      "url": "https://youtu.be/wt7T1JE6BKk",
+      "uploadedAt": "2026-11-25T22:17:03+08:00",
+      "title": "SURV06 導線測量",
+      "duration": "11:43"
+    },
+    "SURV07": {
+      "videoId": "mthvZ5Ku374",
+      "url": "https://youtu.be/mthvZ5Ku374",
+      "uploadedAt": "2026-11-25T22:17:03+08:00",
+      "title": "SURV07 座標計算與閉合差",
+      "duration": "12:53"
+    },
+    "SURV08": {
+      "videoId": "UKQXqLLQdT4",
+      "url": "https://youtu.be/UKQXqLLQdT4",
+      "uploadedAt": "2026-11-25T22:17:03+08:00",
+      "title": "SURV08 面積計算與誤差處理",
+      "duration": "12:57"
+    },
+    "SURV09": {
+      "videoId": "Ia3s9XuNL7I",
+      "url": "https://youtu.be/Ia3s9XuNL7I",
+      "uploadedAt": "2026-11-25T22:17:03+08:00",
+      "title": "SURV09 角度測量專章直線定向垂直角與經緯儀誤差校正",
+      "duration": "11:50"
     }
   }
 }
