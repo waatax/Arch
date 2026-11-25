@@ -198,19 +198,19 @@ export const EXAM_SCOPE: ScopePaper[] = [
         no: '二',
         title: '平面共點力系',
         items: ['力之分解', '共線力系之合成', '共點力系之合成與分解', '自由體圖', '二力與三力之平衡', '共點力系平衡之分析'],
-        archTopics: [{ subject: 'mechanics', slug: 'parallel-force-systems', title: '2A. 平面平行力系' }]
+        archTopics: [{ subject: 'mechanics', slug: 'force-equilibrium', title: '2. 力系與共點力平衡' }]
       },
       {
         no: '三',
         title: '平面平行力系',
         items: ['力矩與力矩原理', '力偶及其特性', '力之平移', '平行力系之合成與分解', '平行力系平衡之分析'],
-        archTopics: [{ subject: 'mechanics', slug: 'nonconcurrent-force-systems', title: '2B. 共面非共點非平行力系' }]
+        archTopics: [{ subject: 'mechanics', slug: 'parallel-force-systems', title: '3. 平面平行力系' }]
       },
       {
         no: '四',
         title: '共面非共點非平行力系',
         items: ['力系之合成與分解', '力系平衡之分析'],
-        archTopics: [{ subject: 'mechanics', slug: 'force-equilibrium', title: '2. 力系與共點力平衡' }]
+        archTopics: [{ subject: 'mechanics', slug: 'nonconcurrent-force-systems', title: '4. 共面非共點非平行力系' }]
       },
       {
         no: '五',
@@ -223,56 +223,60 @@ export const EXAM_SCOPE: ScopePaper[] = [
           '平行力系之平衡分析',
           '非共點非平行力系的認識'
         ],
-        archTopics: [{ subject: 'mechanics', slug: 'spatial-force-systems', title: '8. 空間力系與空間平衡' }],
+        archTopics: [{ subject: 'mechanics', slug: 'spatial-force-systems', title: '5. 空間力系與空間平衡' }],
         coverageStatus: 'mapped'
       },
       {
         no: '六',
         title: '桁架',
         items: ['桁架的認識', '節點法與截面法'],
-        archTopics: [{ subject: 'mechanics', slug: 'truss', title: '5. 平面桁架分析' }]
+        archTopics: [{ subject: 'mechanics', slug: 'truss', title: '6. 平面桁架分析' }]
       },
       {
         no: '七',
         title: '摩擦力',
         items: ['摩擦之定義', '摩擦角及靜止角', '平面與斜面滑動摩擦'],
-        archTopics: [{ subject: 'mechanics', slug: 'friction', title: '4. 摩擦力' }]
+        archTopics: [{ subject: 'mechanics', slug: 'friction', title: '7. 摩擦力' }]
       },
       {
         no: '八',
         title: '重心、形心及慣性矩',
         items: ['重心與形心', '組合面之形心', '慣性矩', '平行軸定理', '組合形之慣性矩', '極慣性矩與斷面模數'],
-        archTopics: [{ subject: 'mechanics', slug: 'centroid', title: '3. 重心與形心' }]
+        archTopics: [{ subject: 'mechanics', slug: 'centroid', title: '8. 重心、形心與慣性矩' }]
       },
       {
         no: '九',
         title: '應力與應變',
         items: ['應力與應變的認識', '虎克定律', '楊氏係數', '應力應變圖', '蒲松比', '多向應力之應變相互影響', '體積應變與體積模數'],
-        archTopics: [{ subject: 'mechanics', slug: 'shear-properties', title: '7A. 剪力與剪應力' }]
+        archTopics: [{ subject: 'mechanics', slug: 'stress-strain', title: '9. 應力與應變' }]
       },
       {
         no: '十',
         title: '剪力',
         items: ['剪應力、剪應變與剛性模數', '剛性模數與彈性係數之關係', '三種彈性係數之關係'],
-        archTopics: [{ subject: 'mechanics', slug: 'stress-strain', title: '7. 應力與應變' }]
+        archTopics: [{ subject: 'mechanics', slug: 'shear-properties', title: '10. 剪力與剪應力' }]
       },
       {
         no: '十一',
         title: '梁之剪力與彎曲力矩',
         items: ['梁之剪力與彎曲力矩的認識', '剪力與彎曲力矩', '剪力圖與彎曲力矩圖', '荷重、剪力與彎曲力矩之關係', '危險斷面'],
-        archTopics: [{ subject: 'mechanics', slug: 'beam', title: '6. 靜定樑之受力' }]
+        archTopics: [{ subject: 'mechanics', slug: 'beam', title: '11. 靜定梁之剪力與彎矩' }]
       },
       {
         no: '十二',
         title: '梁內應力',
         items: ['中立面、中立軸與彈性曲線', '梁內彎曲應力', '梁內剪應力'],
-        archTopics: [{ subject: 'mechanics', slug: 'stress-strain', title: '7. 應力與應變' }]
+        archTopics: [
+          { subject: 'mechanics', slug: 'stress-strain', title: '9. 應力與應變（含梁內彎曲應力）' },
+          { subject: 'mechanics', slug: 'shear-properties', title: '10. 剪力與剪應力（含梁內剪應力）' },
+          { subject: 'mechanics', slug: 'beam', title: '11. 靜定梁之剪力與彎矩' }
+        ]
       },
       {
         no: '十三',
         title: '平面應力',
         items: ['平面應力的認識', '剪應力與正交應力', '主平面、主應力', '合成應力', '莫爾圓圖解法'],
-        archTopics: [{ subject: 'mechanics', slug: 'plane-stress', title: '9. 平面應力與莫耳圓圖解' }],
+        archTopics: [{ subject: 'mechanics', slug: 'plane-stress', title: '12. 平面應力與莫耳圓圖解' }],
         coverageStatus: 'mapped'
       }
     ]
@@ -356,7 +360,10 @@ export const EXAM_SCOPE: ScopePaper[] = [
         no: '八',
         title: '未來發展趨勢',
         items: ['朝向環保、節能、永續與健康等高性能綠建材之演進及發展', '土木與建築材料之創新'],
-        archTopics: [{ subject: 'materials', slug: 'green-materials', title: '8. 綠建材與永續材料發展' }]
+        archTopics: [
+          { subject: 'materials', slug: 'green-materials', title: '12. 綠建材與永續材料發展' },
+          { subject: 'materials', slug: 'green-building-materials', title: '13. 綠建材、低碳水泥與循環經濟' }
+        ]
       }
     ]
   },
@@ -380,13 +387,13 @@ export const EXAM_SCOPE: ScopePaper[] = [
           '基本測量數學（三角幾何、三角函數、直角坐標、極坐標）',
           '基本計算工具使用（計算器、試算表）'
         ],
-        archTopics: [{ subject: 'surveying', slug: 'surveying-fundamentals', title: '0. 測量總論與誤差基礎' }]
+        archTopics: [{ subject: 'surveying', slug: 'surveying-fundamentals', title: '1. 測量總論與誤差基礎' }]
       },
       {
         no: '二',
         title: '距離測量',
         items: ['距離測量之認識', '分類及量距工具', '捲尺距離測量', '電子測距', '應用距離測量測算角度'],
-        archTopics: [{ subject: 'surveying', slug: 'indirect-distance-elevation', title: '4A. 間接距離與高程測量' }]
+        archTopics: [{ subject: 'surveying', slug: 'distance-and-angle', title: '2. 距離與角度測量' }]
       },
       {
         no: '三',
@@ -402,7 +409,7 @@ export const EXAM_SCOPE: ScopePaper[] = [
           '方格水準測量',
           '旋轉雷射儀、雷射墨線儀原理及應用'
         ],
-        archTopics: [{ subject: 'surveying', slug: 'elevation-and-leveling', title: '2. 高程測量與水準儀' }]
+        archTopics: [{ subject: 'surveying', slug: 'elevation-and-leveling', title: '3. 高程測量與水準儀' }]
       },
       {
         no: '四',
@@ -417,13 +424,16 @@ export const EXAM_SCOPE: ScopePaper[] = [
           '經緯儀的檢點與校正',
           '角度觀測之誤差'
         ],
-        archTopics: [{ subject: 'surveying', slug: 'instrument-setup', title: '3. 儀器操作與整置' }]
+        archTopics: [
+          { subject: 'surveying', slug: 'instrument-setup', title: '4. 儀器操作與整置' },
+          { subject: 'surveying', slug: 'distance-and-angle', title: '2. 距離與角度測量（含直線定向）' }
+        ]
       },
       {
         no: '五',
         title: '間接距離與高程測量',
         items: ['視距測量與視角測量原理', '視距法測量', '雙高法測量', '三角高程測量'],
-        archTopics: [{ subject: 'surveying', slug: 'distance-and-angle', title: '1. 距離與角度測量' }]
+        archTopics: [{ subject: 'surveying', slug: 'indirect-distance-elevation', title: '5. 間接距離與高程測量' }]
       },
       {
         no: '六',
@@ -435,8 +445,9 @@ export const EXAM_SCOPE: ScopePaper[] = [
           '近代測繪技術（全站儀之應用、旋轉雷射儀與雷射墨線儀操作、稜鏡加常數之測定）'
         ],
         archTopics: [
-          { subject: 'surveying', slug: 'traverse-surveying', title: '4. 導線測量' },
-          { subject: 'surveying', slug: 'coordinate-computation', title: '5. 座標計算與閉合差' }
+          { subject: 'surveying', slug: 'traverse-surveying', title: '6. 導線測量' },
+          { subject: 'surveying', slug: 'coordinate-computation', title: '7. 座標計算與閉合差' },
+          { subject: 'surveying', slug: 'area-and-error', title: '8. 面積計算與誤差處理' }
         ]
       }
     ]
@@ -451,7 +462,10 @@ export const EXAM_SCOPE: ScopePaper[] = [
         no: '一',
         title: '製圖基本觀念',
         items: ['工程圖學之意義', '工程圖之種類', '圖紙規格及折摺法', '工程圖之比例大小', '圖框、標題欄之規格'],
-        archTopics: [{ subject: 'drafting', slug: 'drafting-fundamentals', title: '0. 製圖基本觀念與圖紙管理' }]
+        archTopics: [
+          { subject: 'drafting', slug: 'drafting-fundamentals', title: '1. 製圖基本觀念與圖紙管理' },
+          { subject: 'drafting', slug: 'scale', title: '4. 比例與尺度' }
+        ]
       },
       {
         no: '二',
@@ -464,14 +478,14 @@ export const EXAM_SCOPE: ScopePaper[] = [
           '比例尺及模板之使用方法',
           '儀器使用時應注意事項'
         ],
-        archTopics: [{ subject: 'drafting', slug: 'drafting-instruments', title: '8. 製圖儀器之使用與維護' }],
+        archTopics: [{ subject: 'drafting', slug: 'drafting-instruments', title: '2. 製圖儀器之使用與維護' }],
         coverageStatus: 'mapped'
       },
       {
         no: '三',
         title: '線法與字法之應用',
         items: ['基本線法', '線之種類', '製圖線條之畫法', '建築圖上線條之應用', '字法的一般通則', '中文字法', '英文字母及數字', '筆觸及軌線之應用'],
-        archTopics: [{ subject: 'drafting', slug: 'lines-and-lettering', title: '1. 線條種類與字法' }]
+        archTopics: [{ subject: 'drafting', slug: 'lines-and-lettering', title: '3. 線條種類與字法' }]
       },
       {
         no: '四',
@@ -487,14 +501,14 @@ export const EXAM_SCOPE: ScopePaper[] = [
           '與圓弧等長之線段',
           '土木與建築常用曲線幾何之畫法'
         ],
-        archTopics: [{ subject: 'drafting', slug: 'geometric-constructions', title: '9. 幾何畫法與平面幾何應用' }],
+        archTopics: [{ subject: 'drafting', slug: 'geometric-constructions', title: '5. 幾何畫法與平面幾何應用' }],
         coverageStatus: 'mapped'
       },
       {
         no: '五',
         title: '投影畫法應用',
         items: ['圖面投影之意涵', '投影之分類及常用名詞', '象限之規定', '點投影', '直線投影', '平面投影', '第一象限正視圖', '第三象限正視圖'],
-        archTopics: [{ subject: 'drafting', slug: 'orthographic-projection', title: '3. 正投影視圖' }]
+        archTopics: [{ subject: 'drafting', slug: 'orthographic-projection', title: '6. 正投影視圖' }]
       },
       {
         no: '六',
@@ -509,19 +523,19 @@ export const EXAM_SCOPE: ScopePaper[] = [
           '徒手畫',
           '視圖在工程圖中所傳達的角色'
         ],
-        archTopics: [{ subject: 'drafting', slug: 'orthographic-projection', title: '3. 正投影視圖' }]
+        archTopics: [{ subject: 'drafting', slug: 'orthographic-projection', title: '6. 正投影視圖' }]
       },
       {
         no: '七',
         title: '建築剖視圖繪製',
         items: ['剖視圖之意義及種類', '建築剖視圖之畫法', '建築剖面圖中各種慣用表示法', '剖面圖在工程圖中之角色'],
-        archTopics: [{ subject: 'drafting', slug: 'sectional-views', title: '4. 剖面圖判讀' }]
+        archTopics: [{ subject: 'drafting', slug: 'sectional-views', title: '8. 剖面圖判讀' }]
       },
       {
         no: '八',
         title: '建築圖尺度標註',
         items: ['尺度標註之意涵', '標註內容及原則', '其他尺度標註', '主要工業國家之尺度標註差異', '尺度標註及註解之重要性'],
-        archTopics: [{ subject: 'drafting', slug: 'dimensioning-and-symbols', title: '7. 尺寸標註與圖例' }]
+        archTopics: [{ subject: 'drafting', slug: 'dimensioning-and-symbols', title: '9. 尺寸標註與圖例' }]
       },
       {
         no: '九',
@@ -533,14 +547,14 @@ export const EXAM_SCOPE: ScopePaper[] = [
           '複斜面之法線視圖與旋轉視圖',
           '複斜面之法線視圖與旋轉視圖之實物求法'
         ],
-        archTopics: [{ subject: 'drafting', slug: 'auxiliary-views', title: '10. 輔助視圖與斜面真形圖法' }],
+        archTopics: [{ subject: 'drafting', slug: 'auxiliary-views', title: '7. 輔助視圖與斜面真形圖法' }],
         coverageStatus: 'mapped'
       },
       {
         no: '十',
         title: '透視圖投影',
         items: ['透視投影之意涵', '透視投影之名詞及種類', '透視原理', '透視圖法', '光源之性質', '透視陰影求法'],
-        archTopics: [{ subject: 'drafting', slug: 'perspective-projection', title: '11. 透視圖投影與陰影求法' }],
+        archTopics: [{ subject: 'drafting', slug: 'perspective-projection', title: '13. 透視圖投影與陰影求法' }],
         coverageStatus: 'mapped'
       },
       {
@@ -548,9 +562,9 @@ export const EXAM_SCOPE: ScopePaper[] = [
         title: '土木與建築製圖繪製',
         items: ['土木與建築圖各種相關符號之意義', '三視圖應用於平面圖', '三視圖應用於立面圖', '三視圖應用於剖面繪製應用'],
         archTopics: [
-          { subject: 'drafting', slug: 'civil-architectural-drawings', title: '12. 土木與建築製圖整合判讀' },
-          { subject: 'drafting', slug: 'architectural-plan', title: '5. 建築平面圖' },
-          { subject: 'drafting', slug: 'architectural-elevation', title: '6. 建築立面圖' }
+          { subject: 'drafting', slug: 'architectural-plan', title: '10. 建築平面圖' },
+          { subject: 'drafting', slug: 'architectural-elevation', title: '11. 建築立面圖' },
+          { subject: 'drafting', slug: 'civil-architectural-drawings', title: '12. 土木與建築製圖整合判讀' }
         ]
       }
     ]

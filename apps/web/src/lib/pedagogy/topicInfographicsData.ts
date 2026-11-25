@@ -40,7 +40,7 @@ export const topicInfographicsMap: Record<string, TopicInfographicItem> = {
     icon: '💥',
     diagramTitle: '結構應力超載與脆性/延性破壞分岔模型',
     diagramDescription: '展示結構受荷時，從彈性變形 → 塑性降伏 → 頸縮破壞的力學能量吸收路徑，對比脆性突潰與延性預警。',
-    formulaBanner: '安全係數 FS = 極限應力 σ_ult / 容許應力 σ_allow ≥ 1.5 ~ 3.0',
+    formulaBanner: '安全係數 FS = 極限強度 / 容許應力 ＞ 1.0 ； 歐拉長柱挫屈應力 σ_cr = π²E / (KL / r)²',
     visualHighlights: [
       { label: '彈性階段 (Elastic)', desc: '卸載後完全恢復，符合虎克定律 σ = E·ε', badge: '安全工作區' },
       { label: '塑性降伏 (Yielding)', desc: '材料開始永久變形，大量吸收地震能量', badge: '能量緩衝區' },
@@ -304,7 +304,7 @@ export const topicInfographicsMap: Record<string, TopicInfographicItem> = {
     icon: '🌱',
     diagramTitle: '台灣四大綠建材標章評估指標與建築全生命週期 (LCA) 減碳路徑',
     diagramDescription: '展示生態綠建材、健康綠建材 (低 TVOC/甲醛)、高性能綠建材 (隔音/防熱) 與再生綠建材之循環回用機制。',
-    formulaBanner: '綠建材使用率 = (綠建材總表面積 / 室內裝修總表面積) ≥ 60% (室內) / 45% (室外)',
+    formulaBanner: '法定綠建材使用率：室內裝修總面積 ≥ 60% ； 戶外地面總面積 ≥ 20%（建築技術規則第 321 條）',
     visualHighlights: [
       { label: '健康綠建材', desc: '嚴格限制總揮發性有機物 (TVOC) 與游離甲醛逸散速率 (E1/E0 級)', badge: '室內空氣' },
       { label: '生態綠建材', desc: '採用天然未加工無匱乏危機原料（竹材、羊毛隔熱）', badge: '自然資源' },
@@ -385,12 +385,12 @@ export const topicInfographicsMap: Record<string, TopicInfographicItem> = {
     conceptType: 'material-reaction',
     icon: '⏱️',
     diagramTitle: 'CNS 786 維卡儀標準試針下陷深度與水泥漿凝結時間讀數尺圖解',
-    diagramDescription: '展示標準稠度試針 (10mm) 下陷至 10±1mm 測定用水量，及初凝試針 (1mm) 下陷距底板 4mm 判讀初凝點。',
-    formulaBanner: 'CNS 61 凝結時間規定: 初凝時間 ≥ 45 分鐘 ； 終凝時間 ≤ 375 分鐘 (6.25 小時)',
+    diagramDescription: '展示標準稠度試桿 (10mm) 30 秒貫入漿面下 10±1mm 測定用水量，及初凝試針 (1mm) 30 秒貫入 25mm（距底板 15mm）判讀初凝點。',
+    formulaBanner: 'CNS 61 / CNS 786 規定: 初凝時間 ≥ 45 分鐘（貫入 25mm） ； 終凝時間 ≤ 375 分鐘 (6 小時 15 分)',
     visualHighlights: [
-      { label: '標準稠度用水量 (P)', desc: '直徑 10mm 柱體試針在 30 秒內下陷至距底板 10±1mm 處之水量比', badge: '前置基準' },
-      { label: '初凝時間 (Initial Set)', desc: '直徑 1mm 針下陷至距底板 4mm 時的時間，混凝土需在此前完成澆置修飾', badge: '施工極限' },
-      { label: '終凝時間 (Final Set)', desc: '有環狀附件之試針僅針尖留痕而圓環完全不留痕時的時間，材料完全硬化', badge: '硬化起點' },
+      { label: '標準稠度用水量 (P)', desc: '直徑 10mm 試桿在 30 秒內自漿面貫入 10±1mm 處之標準水量比', badge: '前置基準' },
+      { label: '初凝時間 (Initial Set)', desc: '直徑 1mm 針 30 秒貫入深度為 25mm（試模高 40mm，距底板 15mm）之時間', badge: '施工極限' },
+      { label: '終凝時間 (Final Set)', desc: '1mm 試針不再明顯沉入漿面留痕之時間，水泥漿完全失去可塑性進入硬化', badge: '硬化起點' },
     ],
     keyTakeaways: [
       '初凝時間不得小於 45 分鐘，確保工地有足夠時間完成混凝土攪拌、運送、澆置與搗實。',

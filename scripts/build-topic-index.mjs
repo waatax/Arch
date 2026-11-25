@@ -20,7 +20,7 @@ const items = allSubjects.flatMap((subject) =>
       topicTitle: topic.title,
       chapter: placement?.chapter ?? 0,
       unitTitle: placement?.unit.title ?? '',
-      desc: topic.desc.replace(/\s+/g, ' ').slice(0, 140),
+      desc: topic.desc.replace(/\s+/g, ' ').trim(),
     };
   }),
 );
@@ -33,14 +33,14 @@ export interface TopicSearchItem {
   topicSlug: string;
   topicTitle: string;
   /** 依知識框架推導的章節序號（1 起算） */
-  chapter: number;
-  unitTitle: string;
+  chapter?: number;
+  unitTitle?: string;
   desc: string;
 }
 
 // Deliberately metadata-only: importing this in the global Navbar must never pull
 // concepts, worked examples, practices or exam content into every page bundle.
-export const topicSearchIndex: TopicSearchItem[] = ${JSON.stringify(items, null, 2)};
+export const topicSearchIndex = ${JSON.stringify(items, null, 2)} as const;
 `;
 
 const target = path.join(repoRoot, 'apps/web/src/data/topicSearchIndex.ts');

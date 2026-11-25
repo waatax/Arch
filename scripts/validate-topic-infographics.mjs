@@ -45,36 +45,52 @@ for (const file of files) {
 console.log(`總科目數: ${allSubjectTopics.length}`);
 console.log(`總知識點主題數: ${totalTopics}`);
 
-// 2. Load Infographics Data files
+// 2. Load Infographics Data files & Dedicated SVG Scene files
 const dataContent1 = fs.readFileSync(path.join(root, 'apps/web/src/lib/pedagogy/topicInfographicsData.ts'), 'utf-8');
 const dataContent2 = fs.readFileSync(path.join(root, 'apps/web/src/lib/pedagogy/topicInfographicsCommon.ts'), 'utf-8');
 const combinedData = dataContent1 + '\n' + dataContent2;
 
+const scenesDir = path.join(root, 'apps/web/src/components/pedagogy/infographicScenes');
+const combinedScenes = fs.existsSync(scenesDir)
+  ? fs.readdirSync(scenesDir)
+      .filter((f) => f.endsWith('.tsx'))
+      .map((f) => fs.readFileSync(path.join(scenesDir, f), 'utf-8'))
+      .join('\n')
+  : '';
+
 let missingInfographics = 0;
+let missingScenes = 0;
 let validInfographics = 0;
 
 for (const subj of allSubjectTopics) {
   for (const topicSlug of subj.topics) {
     const key = `${subj.subjectSlug}/${topicSlug}`;
     const hasEntry = combinedData.includes(`'${key}':`) || combinedData.includes(`"${key}":`);
+    const hasScene = combinedScenes.includes(`'${key}':`) || combinedScenes.includes(`"${key}":`);
     
-    if (hasEntry) {
+    if (hasEntry && hasScene) {
       validInfographics++;
     } else {
-      console.error(`❌ 缺失專屬 Infographic: ${key}`);
-      missingInfographics++;
+      if (!hasEntry) {
+        console.error(`❌ 缺失專屬 Infographic 資料: ${key}`);
+        missingInfographics++;
+      }
+      if (!hasScene) {
+        console.error(`❌ 缺失專屬 SVG 圖解場景: ${key}`);
+        missingScenes++;
+      }
     }
   }
 }
 
 console.log(`\n============================================================`);
-console.log(`已建立專屬 Infographic 主題數: ${validInfographics} / ${totalTopics} (${((validInfographics / totalTopics) * 100).toFixed(1)}%)`);
+console.log(`已建立專屬 Infographic 資料與 SVG 場景數: ${validInfographics} / ${totalTopics} (${((validInfographics / totalTopics) * 100).toFixed(1)}%)`);
 console.log(`============================================================\n`);
 
-if (missingInfographics > 0) {
-  console.error(`❌ 檢驗失敗：尚有 ${missingInfographics} 個主題未配置專屬 Infographic！`);
+if (missingInfographics > 0 || missingScenes > 0) {
+  console.error(`❌ 檢驗失敗：資料缺失 ${missingInfographics} 個、專屬 SVG 場景缺失 ${missingScenes} 個！`);
   process.exit(1);
 } else {
-  console.log(`🎉 驗證全數通過！全站 13 科 120 個知識點教學頁面皆具備專屬高品質教學 Infographic！`);
+  console.log(`🎉 驗證全數通過！全站 13 科 120 個知識點教學頁面皆具備專屬高品質教學 Infographic 資料與獨立 SVG 向量圖解！`);
   process.exit(0);
 }

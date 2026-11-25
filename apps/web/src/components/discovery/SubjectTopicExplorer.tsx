@@ -86,7 +86,7 @@ export default function SubjectTopicExplorer({ subject }: SubjectTopicExplorerPr
       if (selectedTag === 'bookmarked') return isBookmarked;
       if (selectedTag === 'completed') return isCompleted;
       if (selectedTag === 'high_hit') {
-        return (topic.examHitRate ?? 5) >= 5 || topic.gradeLevel === 11;
+        return (topic.examHitRate ?? 4) >= 5;
       }
       if (selectedTag === 'formulas') {
         return topic.concepts.some((c) => Boolean(c.formula));
@@ -302,6 +302,12 @@ export default function SubjectTopicExplorer({ subject }: SubjectTopicExplorerPr
                     <div>
                       {/* 標籤群 */}
                       <div className="mb-2 flex flex-wrap items-center gap-1.5">
+                        {topic.gradeLevel && (
+                          <span className="rounded-md bg-indigo-50 dark:bg-indigo-950/60 px-2 py-0.5 text-[10px] font-mono font-bold text-indigo-700 dark:text-indigo-300">
+                            高{topic.gradeLevel === 10 ? '一' : topic.gradeLevel === 11 ? '二' : '三'}
+                            {topic.semester === 1 ? '上' : topic.semester === 2 ? '下' : ''}
+                          </span>
+                        )}
                         <span className="rounded-md bg-blue-50 dark:bg-blue-950/60 px-2 py-0.5 text-[10px] font-mono font-bold text-blue-700 dark:text-blue-300">
                           {topic.concepts.length} 個觀念
                         </span>

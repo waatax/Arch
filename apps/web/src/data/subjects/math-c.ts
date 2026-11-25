@@ -428,7 +428,8 @@ export const mathCData: SubjectData = {
           ],
           "answer": "−2 < x < −1 或 2 < x < 4"
         }
-      ]
+      ],
+      "semester": 1
     },
     {
       "slug": "trigonometry",
@@ -923,7 +924,8 @@ export const mathCData: SubjectData = {
           ],
           "answer": "h(t) = 50 − 30 cos(πt/3)；t = 2 秒時葉尖離地 65 m。"
         }
-      ]
+      ],
+      "semester": 1
     },
     {
       "slug": "vectors",
@@ -1343,7 +1345,8 @@ export const mathCData: SubjectData = {
           ],
           "answer": "最大值為 10，此時 (x, y) = (2, 4)"
         }
-      ]
+      ],
+      "semester": 1
     },
     {
       "slug": "algebra",
@@ -1771,7 +1774,8 @@ export const mathCData: SubjectData = {
           ],
           "answer": "a = −1，b = 5"
         }
-      ]
+      ],
+      "semester": 1
     },
     {
       "slug": "lines-circles",
@@ -2194,7 +2198,8 @@ export const mathCData: SubjectData = {
           ],
           "answer": "弦長為 7√2"
         }
-      ]
+      ],
+      "semester": 2
     },
     {
       "slug": "sequences-series",
@@ -2616,7 +2621,8 @@ export const mathCData: SubjectData = {
           ],
           "answer": "（1）r⁵ = 0.8；（2）r ≈ 0.9564，每年約減少 4.36%。"
         }
-      ]
+      ],
+      "semester": 2
     },
     {
       "slug": "permutations-combinations",
@@ -3040,7 +3046,8 @@ export const mathCData: SubjectData = {
           ],
           "answer": "（1）35 條；（2）18 條"
         }
-      ]
+      ],
+      "semester": 2
     },
     {
       "slug": "trig-applications",
@@ -3460,7 +3467,8 @@ export const mathCData: SubjectData = {
           ],
           "answer": "塔高 10(√3 + 1) m，約 27.3 m"
         }
-      ]
+      ],
+      "semester": 1
     },
     {
       "slug": "exponents-logarithms",
@@ -3885,7 +3893,8 @@ export const mathCData: SubjectData = {
           ],
           "answer": "至少要經過 36 年"
         }
-      ]
+      ],
+      "semester": 1
     },
     {
       "slug": "space-vectors",
@@ -4260,7 +4269,8 @@ export const mathCData: SubjectData = {
           ],
           "answer": "P(2, 5/2, 0)，最小值 √69"
         }
-      ]
+      ],
+      "semester": 1
     },
     {
       "slug": "matrices",
@@ -4638,7 +4648,8 @@ export const mathCData: SubjectData = {
           ],
           "answer": "A² = [1 2; 0 1]、A³ = [1 3; 0 1]、A²⁰²⁵ = [1 2025; 0 1]"
         }
-      ]
+      ],
+      "semester": 1
     },
     {
       "slug": "linear-programming",
@@ -4961,7 +4972,8 @@ export const mathCData: SubjectData = {
           ],
           "answer": "甲 3 箱、乙 1 箱，最大獲利 9 千元"
         }
-      ]
+      ],
+      "semester": 2
     },
     {
       "slug": "geometry",
@@ -5285,7 +5297,8 @@ export const mathCData: SubjectData = {
           ],
           "answer": "20"
         }
-      ]
+      ],
+      "semester": 2
     },
     {
       "slug": "calculus",
@@ -5658,7 +5671,8 @@ export const mathCData: SubjectData = {
           ],
           "answer": "x = 2 cm，最大體積 128 cm³"
         }
-      ]
+      ],
+      "semester": 2
     },
     {
       "slug": "integration",
@@ -6036,7 +6050,8 @@ export const mathCData: SubjectData = {
           ],
           "answer": "(x² − 1)¹¹⁶/232 + C"
         }
-      ]
+      ],
+      "semester": 2
     }
   ]
 };

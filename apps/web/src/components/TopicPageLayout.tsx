@@ -454,6 +454,12 @@ export default function TopicPageLayout({ subject, topic, mappedExamQuestions, t
             <span className="rounded-full bg-blue-600/10 px-3 py-0.5 text-xs font-mono font-bold text-blue-700 dark:text-blue-300 border border-blue-600/20">
               {subject.category}
             </span>
+            {topic.gradeLevel && (
+              <span className="rounded-full bg-indigo-600/10 px-2.5 py-0.5 text-xs font-mono font-bold text-indigo-700 dark:text-indigo-300 border border-indigo-600/20">
+                📅 高{topic.gradeLevel === 10 ? '一' : topic.gradeLevel === 11 ? '二' : '三'}
+                {topic.semester === 1 ? '上' : topic.semester === 2 ? '下' : ''}課綱配當
+              </span>
+            )}
             <span className="rounded-full bg-emerald-600/10 px-2.5 py-0.5 text-xs font-medium text-emerald-700 dark:text-emerald-300 border border-emerald-600/20">
               ⭐⭐⭐⭐⭐ 統測核心考點
             </span>
@@ -570,6 +576,53 @@ export default function TopicPageLayout({ subject, topic, mappedExamQuestions, t
               </h2>
             </div>
           </div>
+
+          {/* 初學者零基礎 3 分鐘破冰導讀卡 */}
+          <aside
+            aria-label="初學者零基礎破冰導讀"
+            className="rounded-2xl border border-emerald-200/80 bg-gradient-to-r from-emerald-50/80 via-white to-teal-50/50 p-4 sm:p-5 shadow-2xs dark:border-emerald-900/60 dark:from-emerald-950/35 dark:via-slate-900 dark:to-teal-950/20"
+          >
+            <div className="flex flex-wrap items-center justify-between gap-2 mb-3">
+              <div className="flex items-center gap-2">
+                <span className="rounded-full bg-emerald-600 px-2.5 py-0.5 text-[11px] font-bold text-white">
+                  🌱 第一次接觸本章？先看這裡
+                </span>
+                <span className="text-xs font-mono font-semibold text-emerald-800 dark:text-emerald-300">
+                  零基礎 3 步無痛入門路線
+                </span>
+              </div>
+              <button
+                type="button"
+                onClick={() => jumpTo('topic-infographic-title')}
+                className="text-xs font-mono font-bold text-indigo-700 dark:text-indigo-300 hover:underline cursor-pointer"
+              >
+                直達本章專屬 SVG 視覺圖解 ↓
+              </button>
+            </div>
+            <div className="grid gap-3 sm:grid-cols-3 text-xs leading-6">
+              <div className="rounded-xl border border-emerald-200/60 bg-white/85 p-3.5 dark:border-slate-800 dark:bg-slate-900/80">
+                <p className="font-bold text-emerald-800 dark:text-emerald-300">① 用國中常識就能接上</p>
+                <p className="mt-1 text-slate-600 dark:text-slate-300">
+                  {topic.step0Prerequisites && topic.step0Prerequisites.length > 0
+                    ? `只需具備「${topic.step0Prerequisites.slice(0, 2).join('、')}」直覺即可起步，專有名詞下面都會白話拆解。`
+                    : '不需預背艱深術語，本章從日常看得到的建築空間與生活經驗逐步帶入。'}
+                </p>
+              </div>
+              <div className="rounded-xl border border-blue-200/60 bg-white/85 p-3.5 dark:border-slate-800 dark:bg-slate-900/80">
+                <p className="font-bold text-blue-800 dark:text-blue-300">② 本章核心一句話看穿</p>
+                <p className="mt-1 text-slate-600 dark:text-slate-300 line-clamp-3">
+                  {topic.desc}
+                </p>
+              </div>
+              <div className="rounded-xl border border-amber-200/60 bg-white/85 p-3.5 dark:border-slate-800 dark:bg-slate-900/80">
+                <p className="font-bold text-amber-800 dark:text-amber-300">③ 學完立即能解題實戰</p>
+                <p className="mt-1 text-slate-600 dark:text-slate-300">
+                  循序攻克 {topic.concepts.length} 個核心知識點、{topic.worked_examples?.length ?? 0} 道手把手示範題
+                  {mappedExamQuestions.length > 0 ? ` 與 ${mappedExamQuestions.length} 題統測歷屆真題驗證。` : ' 與自主診斷練習。'}
+                </p>
+              </div>
+            </div>
+          </aside>
         </div>
 
         {/* Every lesson opens with a route-specific interest hook and its own illustration. */}

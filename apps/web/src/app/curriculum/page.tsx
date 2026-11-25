@@ -56,6 +56,9 @@ export default function CurriculumPage() {
     '三角函數',
   ];
 
+  const targetGradeFilter =
+    activeTab === 'g10' ? 10 : activeTab === 'g11' ? 11 : activeTab === 'g12' ? 12 : null;
+
   const getFilteredSubjects = useMemo(() => {
     return allSubjects.filter((subject) => {
       let matchesCategory = true;
@@ -65,27 +68,28 @@ export default function CurriculumPage() {
         matchesCategory = ['chinese', 'english', 'math-c'].includes(subject.slug);
       } else if (activeTab === 'general') {
         matchesCategory = ['physics', 'chemistry', 'history', 'geography', 'civics', 'extensions'].includes(subject.slug);
-      } else if (activeTab === 'g10') {
-        matchesCategory = ['chinese', 'english', 'math-c', 'mechanics', 'materials', 'drafting', 'surveying'].includes(subject.slug);
-      } else if (activeTab === 'g11') {
-        matchesCategory = ['mechanics', 'materials', 'surveying', 'drafting', 'extensions'].includes(subject.slug);
-      } else if (activeTab === 'g12') {
-        matchesCategory = ['extensions', 'mechanics', 'materials', 'surveying', 'drafting'].includes(subject.slug);
+      } else if (targetGradeFilter !== null) {
+        matchesCategory = subject.topics.some((t) => t.gradeLevel === targetGradeFilter);
       }
 
       if (!matchesCategory) return false;
 
+      const candidateTopics =
+        targetGradeFilter !== null
+          ? subject.topics.filter((t) => t.gradeLevel === targetGradeFilter)
+          : subject.topics;
+
       if (searchKeyword.trim()) {
         const q = searchKeyword.toLowerCase().trim();
         const matchesSubject = subject.title.toLowerCase().includes(q);
-        const matchesAnyTopic = subject.topics.some(
+        const matchesAnyTopic = candidateTopics.some(
           (t) => t.title.toLowerCase().includes(q) || t.desc.toLowerCase().includes(q)
         );
         return matchesSubject || matchesAnyTopic;
       }
-      return true;
+      return candidateTopics.length > 0;
     });
-  }, [activeTab, searchKeyword]);
+  }, [activeTab, searchKeyword, targetGradeFilter]);
 
   return (
     <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-16 space-y-12 min-h-screen">
@@ -504,13 +508,18 @@ export default function CurriculumPage() {
           </div>
         ) : getFilteredSubjects.length > 0 ? (
           getFilteredSubjects.map((subject) => {
+            const gradeScopedTopics =
+              targetGradeFilter !== null
+                ? subject.topics.filter((t) => t.gradeLevel === targetGradeFilter)
+                : subject.topics;
             const topicList = searchKeyword.trim()
-              ? subject.topics.filter(
+              ? gradeScopedTopics.filter(
                   (t) =>
                     t.title.toLowerCase().includes(searchKeyword.toLowerCase()) ||
-                    t.desc.toLowerCase().includes(searchKeyword.toLowerCase())
+                    t.desc.toLowerCase().includes(searchKeyword.toLowerCase()) ||
+                    subject.title.toLowerCase().includes(searchKeyword.toLowerCase())
                 )
-              : subject.topics;
+              : gradeScopedTopics;
 
             if (topicList.length === 0) return null;
 
@@ -546,7 +555,9 @@ export default function CurriculumPage() {
                 </header>
 
                 <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-                  {topicList.map((topic, idx) => (
+                  {topicList.map((topic) => {
+                    const chapterNum = subject.topics.findIndex((item) => item.slug === topic.slug) + 1;
+                    return (
                     <Link
                       key={topic.slug}
                       href={`/subjects/${subject.slug}/${topic.slug}`}
@@ -555,11 +566,14 @@ export default function CurriculumPage() {
                       <div className="space-y-2.5">
                         <div className="flex items-center justify-between text-[11px] font-mono">
                           <span className="text-slate-500 bg-slate-200/60 dark:bg-slate-800/60 px-2 py-0.5 rounded-md font-bold">
-                            CH {String(idx + 1).padStart(2, '0')}
+                            CH {String(chapterNum).padStart(2, '0')}
                           </span>
                           <div className="flex gap-2">
                             {topic.gradeLevel && (
-                              <span className="text-blue-600 dark:text-blue-400 font-bold">高{topic.gradeLevel === 10 ? '一' : topic.gradeLevel === 11 ? '二' : '三'}</span>
+                              <span className="text-blue-600 dark:text-blue-400 font-bold">
+                                高{topic.gradeLevel === 10 ? '一' : topic.gradeLevel === 11 ? '二' : '三'}
+                                {topic.semester === 1 ? '上' : topic.semester === 2 ? '下' : ''}
+                              </span>
                             )}
                             <span className="text-emerald-600 dark:text-emerald-400 font-bold">
                               {topic.concepts.length} 觀念
@@ -579,7 +593,8 @@ export default function CurriculumPage() {
                         <span className="group-hover:translate-x-1 transition-transform">→</span>
                       </div>
                     </Link>
-                  ))}
+                    );
+                  })}
                 </div>
               </section>
             );
