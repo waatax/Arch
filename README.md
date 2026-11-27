@@ -10,6 +10,14 @@ Arch 是面向台灣高工建築科學生的開放學習平台，將四技二專
 
 2026-11-23 新增 **教學影片課綱**：高工統測 126 集與大學建築系至建築師考證 24 集，共 150 集 1080p 影片的分集大綱與字幕生成腳本（`scripts/video/`）；總綱見 [`docs/architecture-video-curriculum-master.md`](./docs/architecture-video-curriculum-master.md)。影片檔本身不進 Git，也不放在 GitHub Pages。
 
+**YouTube 連結更新流程**（手動上傳，程式只負責確認連結）：
+
+1. 在 YouTube 手動上傳影片，標題以集數代碼開頭（例如 `MECH01 力的基本概念`），並加入公開播放清單 [ARCH 高工課程](https://www.youtube.com/playlist?list=PLOgJHtX1BDaQ)。
+2. 執行 `python scripts/video/sync_youtube_links.py` 預覽變更；確認無誤後加上 `--write`，寫入 `apps/web/src/data/youtubeUploadedLinks.json`。
+3. 提交並推送，GitHub Pages 重新部署後，`/videos` 與各主題頁即顯示該集播放器與連結。
+
+播放清單中找不到的集數預設保留原連結；確定要移除時才加 `--prune`。
+
 ## 目前已有
 
 - Next.js 靜態網站骨架，可部署至 GitHub Pages。
