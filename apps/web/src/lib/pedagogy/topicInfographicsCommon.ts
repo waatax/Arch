@@ -974,7 +974,7 @@ export const commonTopicInfographicsMap: Record<string, TopicInfographicItem> = 
     diagramDescription: '展示抬梁式（北方宮殿大跨度空間）、穿斗式（南方民居用料省）、斗栱演變（唐宋結構承重至明清裝飾化）。',
     formulaBanner: '木構兩大體系: 抬梁式 (柱上架梁，梁上架短柱，空間開闊) ； 穿斗式 (柱直接穿通檁條，用料省)',
     visualHighlights: [
-      { label: '斗栱 (Dou-gong)', desc: '斗（方形墊木）與栱（弓形橫木）層層疊出，將巨大屋頂荷載分散傳遞至柱頂，具極佳耐震抗扭彈性', badge: '減震關節' },
+      { label: '斗栱 (Dou-gong)', desc: '斗（方形墊木）與栱（弓形橫木）層層疊出，將巨大屋頂載重分散傳遞至柱頂，具極佳耐震抗扭彈性', badge: '減震關節' },
       { label: '都城中軸對稱', desc: '《考工記》「匠人營國，方九里，旁三門，九經九緯」，前朝後市、左祖右社嚴格禮制', badge: '禮制空間' },
       { label: '屋頂等級次序', desc: '重簷廡殿頂（最高等級） > 重簷歇山頂 > 單簷廡殿 > 單簷歇山 > 懸山 > 硬山', badge: '位階制度' },
     ],

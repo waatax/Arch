@@ -10,7 +10,7 @@ export const chineseS1Review: SemesterReviewData = {
   subtitle: "核心古文意旨、形音義與六書成語、統測長篇素養閱讀",
   category: "共同科目",
   curriculumScope: "108 課綱技術型高中技術類科國語文第一冊：核心古文、形音義辨析、六書修辭、成語文化常識與統測素養閱讀",
-  topicSlugs: ["chinese"],
+  topicSlugs: ["linguistics", "reading-comprehension", "cultural-knowledge"],
   examAnalysis: {
     examWeight: "佔國語文統測約 50% 核心語文基礎與長文閱讀",
     coreExamThemes: [
@@ -26,7 +26,7 @@ export const chineseS1Review: SemesterReviewData = {
     {
       chapterNo: 1,
       title: "六書造字法則、字形字音字義精確辨析",
-      topicSlug: "chinese",
+      topicSlug: "linguistics",
       examFrequency: 5,
       coreConcepts: [
         {
@@ -154,8 +154,8 @@ export const chineseS3Review: SemesterReviewData = {
   gradeLevel: 11,
   subtitle: "古文核心名篇（赤壁賦/師說/出師表）、高頻虛詞體系與論孟文化思辨",
   category: "共同科目",
-  curriculumScope: "108 課綱技術型高中技術型高中國語文第三冊：經典文言散文（赤壁賦、師說、項脊軒志、出師表）、高頻虛詞（之/其/以/為/所/而）、諸子文化經典（論語/孟子）與長篇素養閱讀思維",
-  topicSlugs: ["chinese"],
+  curriculumScope: "108 課綱技術型高中國語文第三冊：經典文言散文（赤壁賦、師說、項脊軒志、出師表）、高頻虛詞（之/其/以/為/所/而）、諸子文化經典（論語/孟子）與長篇素養閱讀思維",
+  topicSlugs: ["classical-literature", "cultural-knowledge", "reading-comprehension"],
   examAnalysis: {
     examWeight: "佔統測國語文約 45% ~ 50%（古文核心題 4~6 題，文言虛詞 1~2 題，長篇文化素養對讀 2 題）",
     coreExamThemes: [
@@ -171,7 +171,7 @@ export const chineseS3Review: SemesterReviewData = {
     {
       chapterNo: 1,
       title: "核心文言散文經典名篇（赤壁賦、師說、出師表、項脊軒志）精讀",
-      topicSlug: "chinese",
+      topicSlug: "classical-literature",
       examFrequency: 5,
       coreConcepts: [
         {
@@ -240,7 +240,7 @@ export const chineseS3Review: SemesterReviewData = {
     {
       chapterNo: 2,
       title: "文言文高頻虛詞體系（之、其、以、為、所、而）深度破解",
-      topicSlug: "chinese",
+      topicSlug: "classical-literature",
       examFrequency: 5,
       coreConcepts: [
         {

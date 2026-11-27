@@ -19,6 +19,13 @@ export default function CurriculumPage() {
 
   const subjectVideoSyllabi = useMemo(() => getAllSubjectVideoSyllabi(), []);
   const pathwayVideoSyllabi = useMemo(() => getPathwayVideoSyllabi(), []);
+  const totalSubjectVideoEpisodes = useMemo(
+    () => subjectVideoSyllabi.reduce((acc, s) => acc + s.totalEpisodes, 0),
+    [subjectVideoSyllabi]
+  );
+  const totalVideoEpisodes = totalSubjectVideoEpisodes + pathwayVideoSyllabi.length;
+  const totalVideoMinutes = totalVideoEpisodes * 10;
+  const totalVideoHours = (totalVideoMinutes / 60).toFixed(1).replace(/\.0$/, '');
 
   useEffect(() => {
     // 觸發 Skeleton Screen 過渡
@@ -34,8 +41,8 @@ export default function CurriculumPage() {
   const progressPercent = Math.round((doneTopics / totalTopics) * 100);
 
   const navigationTabs = [
-    { id: 'all', label: '全部科目 (13科 · 120章)' },
-    { id: 'video-syllabus', label: '🎬 教學影片設計大綱 (144集)' },
+    { id: 'all', label: `全部科目 (${allSubjects.length}科 · ${totalTopics}章)` },
+    { id: 'video-syllabus', label: `🎬 教學影片設計大綱 (${totalVideoEpisodes}集)` },
     { id: 'professional', label: '專業核心 (專一/專二)' },
     { id: 'common', label: '共同科目 (國/英/數C)' },
     { id: 'general', label: '基礎科學與人文 (物化史地公)' },
@@ -277,7 +284,7 @@ export default function CurriculumPage() {
                       🎬 MASTER VIDEO SYLLABUS
                     </span>
                     <span className="rounded-lg bg-emerald-600/15 text-emerald-700 dark:text-emerald-300 text-xs font-mono font-bold px-2.5 py-1 border border-emerald-600/20">
-                      高工 13 科 120 集 ＋ 大學建築 8 領域 24 集 ＝ 共 144 集
+                      高工 {subjectVideoSyllabi.length} 科 {totalSubjectVideoEpisodes} 集 ＋ 大學建築 8 領域 {pathwayVideoSyllabi.length} 集 ＝ 共 {totalVideoEpisodes} 集
                     </span>
                   </div>
                   <h2 className="font-serif text-2xl sm:text-3xl font-bold text-slate-900 dark:text-white">
@@ -291,7 +298,7 @@ export default function CurriculumPage() {
                   <div className="font-bold text-indigo-700 dark:text-indigo-300">影音製作標準規格</div>
                   <div className="text-slate-600 dark:text-slate-400">畫質：{VIDEO_PRODUCTION_SPEC.resolution}</div>
                   <div className="text-slate-600 dark:text-slate-400">語音：{VIDEO_PRODUCTION_SPEC.audioSpec}</div>
-                  <div className="text-slate-600 dark:text-slate-400">總時數：1,440 分鐘（24 小時完整微課）</div>
+                  <div className="text-slate-600 dark:text-slate-400">總時數：{totalVideoMinutes.toLocaleString()} 分鐘（約 {totalVideoHours} 小時完整微課）</div>
                 </div>
               </div>
 

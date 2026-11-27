@@ -217,14 +217,14 @@ export const physicsData: SubjectData = {
           "outlineRefs": [
             "PEb-V.2-7"
           ],
-          "body": "在彈性限度內，材料受拉伸或壓縮時，<span className='text-rose-600 font-bold'>應力</span> σ (Stress) 與<span className='text-rose-600 font-bold'>應變</span> ε (Strain) 成正比，比例常數為<span className='text-rose-600 font-bold'>彈性模數</span> E (Young's Modulus)。材料受到軸向拉力時，橫向會發生收縮，橫向<span className='text-rose-600 font-bold'>應變</span>與縱向<span className='text-rose-600 font-bold'>應變</span>之比值即為<span className='text-rose-600 font-bold'>波松比</span> ν (Poisson's Ratio)。",
+          "body": "在彈性限度內，材料受拉伸或壓縮時，<span className='text-rose-600 font-bold'>應力</span> σ (Stress) 與<span className='text-rose-600 font-bold'>應變</span> ε (Strain) 成正比，比例常數為<span className='text-rose-600 font-bold'>彈性模數</span> E (Young's Modulus)。材料受到軸向拉力時，橫向會發生收縮，橫向<span className='text-rose-600 font-bold'>應變</span>與縱向<span className='text-rose-600 font-bold'>應變</span>之比值即為<span className='text-rose-600 font-bold'>蒲松比</span> ν (Poisson's Ratio)。",
           "formula": "<span className=\"text-indigo-600 font-bold\">σ = E · ε</span>\n<span className=\"text-indigo-600 font-bold\">ε = ΔL / L₀</span>\n<span className=\"text-indigo-600 font-bold\">ν = - ε_transverse / ε_longitudinal</span>\n<span className=\"text-indigo-600 font-bold\">ΔL = (P · L₀) / (A · E)</span>",
           "table": {
             "headers": [
               "建築工程材料",
               "彈性模數 E (GPa)",
-              "波松比 ν",
-              "屈服強度 f_y (MPa)",
+              "蒲松比 ν",
+              "降伏強度 f_y (MPa)",
               "力學行為特徵"
             ],
             "rows": [
@@ -254,7 +254,7 @@ export const physicsData: SubjectData = {
                 "70 GPa",
                 "0.22",
                 "40 - 80 MPa",
-                "完全彈性脆性材料，無塑性屈服段"
+                "完全彈性脆性材料，無塑性降伏段"
               ]
             ]
           }
@@ -490,7 +490,7 @@ export const physicsData: SubjectData = {
             "計算平均壓<span className='text-rose-600 font-bold'>應力</span> σ = P / A = (1,600,000 N) / (8,000 mm²) = 200 N/mm² = 200 MPa。",
             "計算軸向<span className='text-rose-600 font-bold'>應變</span> ε = σ / E = 200 MPa / 200,000 MPa = 0.001 (或 0.1%)。",
             "計算軸向彈性縮短量 ΔL = ε · L₀ = 0.001 × 4,000 mm = 4.0 mm。",
-            "結論：在 1600 kN 壓重下，4m 高鋼柱彈性縮短 4.0 mm，<span className='text-rose-600 font-bold'>應力</span>未超過屈服強度 (325 MPa)，處於安全彈性範圍內。"
+            "結論：在 1600 kN 壓重下，4m 高鋼柱彈性縮短 4.0 mm，<span className='text-rose-600 font-bold'>應力</span>未超過降伏強度 (325 MPa)，處於安全彈性範圍內。"
           ],
           "answer": "(1) 平均壓<span className='text-rose-600 font-bold'>應力</span> σ = 200 MPa；(2) <span className='text-rose-600 font-bold'>應變</span> ε = 0.001，鋼柱縮短量 ΔL = 4.0 mm",
           "hints": [

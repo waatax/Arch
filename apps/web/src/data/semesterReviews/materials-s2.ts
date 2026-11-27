@@ -232,7 +232,7 @@ export const materialsS2Review: SemesterReviewData = {
         formula: "\\text{CE} = \\text{C} + \\frac{\\text{Mn}}{6} + \\frac{\\text{Cr}+\\text{Mo}+\\text{V}}{5} + \\frac{\\text{Ni}+\\text{Cu}}{15} \\le 0.55\\%",
         meaning: "CNS 560 碳當量 (Carbon Equivalent, CE) 計算公式，評估耐震結構用鋼筋 (如 SD420W) 之可銲性與冷裂紋敏感性。SD280 降伏強度 $f_y \\ge 280\\text{ MPa}$；SD420 降伏強度 $f_y \\ge 420\\text{ MPa}$。",
         unit: "化學元素成分為重量百分比 wt%；降伏強度單位為 MPa (N/mm²)",
-        cautions: "碳含量增加會大幅提升鋼材之硬度與降伏強度，但會嚴重損害『延展性 (伸長率)、韌性與可銲性』！耐震鋼筋嚴格要求強屈比 $f_u / f_y \\ge 1.25$！",
+        cautions: "碳含量增加會大幅提升鋼材之硬度與降伏強度，但會嚴重損害『延展性 (伸長率)、韌性與可銲性』！耐震鋼筋嚴格要求抗拉對降伏強度比 $f_u / f_y \\ge 1.25$！",
         latex: "f_y \\ge 280 \\text{ MPa (SD280)}, \\quad f_y \\ge 420 \\text{ MPa (SD420)}, \\quad \\frac{f_u}{f_y} \\ge 1.25"
       },
       diagram: {
@@ -301,7 +301,7 @@ export const materialsS2Review: SemesterReviewData = {
           explanation: "以工業副產物部分取代波特蘭水泥熟料，可顯著減少碳足跡並提高混凝土耐久性：",
           keyPoints: [
             "高爐爐石粉 (Slag / GGBS)：高爐煉鋼之副產物。具備潛在水硬性，水化生成 C-S-H 凝膠更緻密，大幅提升抗化學侵蝕與水密性，顯著降低水化熱。",
-            "飛灰 (Fly Ash)：燃煤火力發電廠煙道捕集之微細球形顆粒。具備卜特蘭反應 (Pozzolanic Reaction) 與『滾珠效應』，能大幅增加新鮮混凝土流動性，減少用水量並抑制溫差裂紋。"
+            "飛灰 (Fly Ash)：燃煤火力發電廠煙道捕集之微細球形顆粒。具備卜作嵐反應 (Pozzolanic Reaction) 與『滾珠效應』，能大幅增加新鮮混凝土流動性，減少用水量並抑制溫差裂紋。"
           ]
         }
       ],
@@ -327,7 +327,7 @@ export const materialsS2Review: SemesterReviewData = {
       mustMasterChecklist: [
         "熟背四大綠建材：生態、健康、高性能、再生",
         "知道健康綠建材最核心的指標是管制『甲醛』與『TVOC 揮發性有機物』逸散率",
-        "知道高爐爐石粉具潛在水硬性，飛灰具卜特蘭反應與滾珠效應，皆可降低水化熱並提升長期耐久性",
+        "知道高爐爐石粉具潛在水硬性，飛灰具卜作嵐反應與滾珠效應，皆可降低水化熱並提升長期耐久性",
         "知道 Low-E 玻璃屬於『高性能綠建材』，具備隔熱保溫與節能功效"
       ]
     }
@@ -432,7 +432,7 @@ export const materialsS2Review: SemesterReviewData = {
         }
       ],
       examinerTrapNotes: "綠建材考題為純記憶與歸類題型。出題者常將高性能、健康與再生三者的典型指標混合排列，考生只要將四大標章關鍵字連連看即可輕鬆拿分。",
-      quickShortcut: "【秒殺模型：健康無毒口訣】健康 = 不吸毒氣 = 管制甲醛與 TVOC！看到甲醛與 TVOC  прямо 選 (C)！"
+      quickShortcut: "【秒殺模型：健康無毒口訣】健康 = 不吸毒氣 = 管制甲醛與 TVOC！看到甲醛與 TVOC 直接選 (C)！"
     }
   ],
   preExamChecklist: [

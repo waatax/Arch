@@ -161,17 +161,17 @@ export const mathScenes: Record<string, SceneRenderer> = {
           C(n, r) = P(n, r) / r! = C(n, n - r) （餘組合對稱性！）
         </text>
       </LeftCard>
-      <RightCard title="二項式定理與古典機率期望值" subtitle="相鄰用「綁一起」；不相鄰用「插空隙」">
-        <StepRow y={54} num="項" label="(x + y)ⁿ 展開一般項" detail="T_{k+1} = C(n, k) · x^(n-k) · y^k" tone="indigo" />
-        <StepRow y={112} num="機" label="條件機率 P(B | A)" detail="P(B|A) = P(A ∩ B) / P(A) （縮小樣本空間）" tone="blue" />
-        <StepRow y={170} num="望" label="數學期望值 E(X) ＆ 標準差" detail="E(X) = Σ xᵢ·pᵢ （公平賭局期望淨利 = 0）" tone="emerald" />
+      <RightCard title="108 課綱計數核心與經典排列模型" subtitle="先選後排、限制優先；108 課綱不考重複組合與二項式定理">
+        <StepRow y={54} num="重" label="重複排列 nʳ（允許重複、講究順序）" detail="例：r 封不同信投入 n 個不同郵筒 = nʳ 種" tone="indigo" />
+        <StepRow y={112} num="鄰" label="相鄰綁一起 ＆ 不相鄰插空隙" detail="相鄰先視作 1 物再內部排列；不相鄰排其餘物後插空" tone="blue" />
+        <StepRow y={170} num="扣" label="限制條件優先 ＆ 扣除法（反面）" detail="「至少 1 個」＝ 全部方法數 － 全部都不符合！" tone="emerald" />
       </RightCard>
     </g>
   ),
 
   'math-c/trig-applications': (m) => (
     <g>
-      <LeftCard title="複數極式 z = r(cosθ + i·sinθ) 與棣美弗旋轉定理" subtitle="複數相乘 = 長度相乘 r₁r₂ 、 角度相加 (θ₁ + θ₂)！">
+      <LeftCard title="複數極式 z = r(cosθ + i·sinθ) 乘除與幾何旋轉" subtitle="相乘＝長度相乘、角度相加；相除＝長度相除、角度相減（108 課綱核心）">
         <line x1="58" y1="215" x2="348" y2="215" stroke="currentColor" strokeWidth="1.5" className="text-slate-400" markerEnd={`url(#${m.arrowBlue})`} />
         <line x1="92" y1="242" x2="92" y2="56" stroke="currentColor" strokeWidth="1.5" className="text-slate-400" markerEnd={`url(#${m.arrowBlue})`} />
         <text x="348" y="232" textAnchor="end" className="fill-slate-500 text-[10px] font-mono">實軸 Re</text>
@@ -182,7 +182,7 @@ export const mathScenes: Record<string, SceneRenderer> = {
         <text x="242" y="166" className="fill-blue-700 dark:fill-blue-300 text-[10.5px] font-mono font-bold">z₁ = r₁∠θ₁</text>
         <text x="224" y="76" className="fill-rose-700 dark:fill-rose-300 text-[10.5px] font-mono font-bold">z₁·z₂ = r₁r₂∠(θ₁+θ₂)</text>
         <text x="204" y="258" textAnchor="middle" className="fill-indigo-800 dark:fill-indigo-300 text-[10.5px] font-mono font-bold">
-          棣美弗定理：[r(cosθ + i·sinθ)]ⁿ = rⁿ(cos nθ + i·sin nθ)
+          複數極式除法：z₁ / z₂ = (r₁ / r₂)∠(θ₁ - θ₂) ； 極坐標 [r, θ] ⇔ (r cosθ, r sinθ)
         </text>
       </LeftCard>
       <RightCard title="和差角、二倍角與正餘弦疊合" subtitle="建築日照角與交流電波峰值必用">

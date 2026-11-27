@@ -188,27 +188,36 @@ export default function SurveyingVisualizer({ topicSlug }: SurveyingVisualizerPr
               <svg viewBox="0 0 300 180" className="w-full h-full">
                 {topoType === 'ridge' ? (
                   <g>
-                    <path d="M 50 150 Q 150 100 250 150" fill="none" stroke="#64748B" strokeWidth="2" />
-                    <text x="35" y="155" fontSize="8" className="fill-slate-500 font-mono">100m</text>
-                    <path d="M 70 120 Q 150 70 230 120" fill="none" stroke="#64748B" strokeWidth="2" />
-                    <text x="55" y="125" fontSize="8" className="fill-slate-500 font-mono">110m</text>
-                    <path d="M 90 90 Q 150 40 210 90" fill="none" stroke="#059669" strokeWidth="2.5" />
-                    <text x="75" y="95" fontSize="8" className="fill-emerald-700 font-mono font-bold">120m (山頂高處)</text>
+                    {/* Ridge: High elevation (120m) at top, contours bulge DOWNWARD toward lower elevation (100m) */}
+                    <path d="M 90 48 Q 150 96 210 48" fill="none" stroke="#059669" strokeWidth="2.5" />
+                    <text x="24" y="52" fontSize="8" className="fill-emerald-700 font-mono font-bold">120m (高處)</text>
+                    <path d="M 70 80 Q 150 128 230 80" fill="none" stroke="#64748B" strokeWidth="2" />
+                    <text x="34" y="84" fontSize="8" className="fill-slate-500 font-mono">110m</text>
+                    <path d="M 50 112 Q 150 160 250 112" fill="none" stroke="#64748B" strokeWidth="2" />
+                    <text x="16" y="116" fontSize="8" className="fill-slate-500 font-mono">100m (低處)</text>
 
-                    <line x1="150" y1="40" x2="150" y2="160" stroke="#DC2626" strokeWidth="2" strokeDasharray="4 2" />
-                    <text x="155" y="60" fontSize="9" className="fill-red-600 font-mono font-bold">分水嶺山脊線</text>
+                    <line x1="150" y1="36" x2="150" y2="162" stroke="#DC2626" strokeWidth="2" strokeDasharray="4 2" />
+                    <text x="156" y="44" fontSize="9" className="fill-red-600 font-mono font-bold">分水嶺山脊線 (向低處凸)</text>
+                    {/* Runoff arrows diverging from ridge */}
+                    <path d="M 142 108 L 116 122 M 158 108 L 184 122" stroke="#0284C7" strokeWidth="1.5" strokeDasharray="2 2" />
+                    <text x="96" y="138" fontSize="7.5" className="fill-sky-600 font-mono">水流分流</text>
                   </g>
                 ) : (
                   <g>
-                    <path d="M 50 40 Q 150 90 250 40" fill="none" stroke="#64748B" strokeWidth="2" />
-                    <text x="35" y="45" fontSize="8" className="fill-slate-500 font-mono">120m (兩側高山)</text>
-                    <path d="M 70 70 Q 150 120 230 70" fill="none" stroke="#64748B" strokeWidth="2" />
-                    <text x="55" y="75" fontSize="8" className="fill-slate-500 font-mono">110m</text>
-                    <path d="M 90 100 Q 150 150 210 100" fill="none" stroke="#0284C7" strokeWidth="2.5" />
-                    <text x="75" y="105" fontSize="8" className="fill-sky-700 font-mono font-bold">100m (溪流低處)</text>
+                    {/* Valley: High elevation (120m) at top, contours bend UPWARD (V-shape) toward higher elevation */}
+                    <path d="M 50 86 Q 150 28 250 86" fill="none" stroke="#64748B" strokeWidth="2" />
+                    <text x="14" y="88" fontSize="8" className="fill-slate-500 font-mono">120m (高處)</text>
+                    <path d="M 70 118 Q 150 60 230 118" fill="none" stroke="#64748B" strokeWidth="2" />
+                    <text x="36" y="120" fontSize="8" className="fill-slate-500 font-mono">110m</text>
+                    <path d="M 90 150 Q 150 92 210 150" fill="none" stroke="#0284C7" strokeWidth="2.5" />
+                    <text x="20" y="154" fontSize="8" className="fill-sky-700 font-mono font-bold">100m (溪底低處)</text>
 
-                    <line x1="150" y1="20" x2="150" y2="160" stroke="#0284C7" strokeWidth="2.5" />
-                    <text x="155" y="145" fontSize="9" className="fill-blue-600 font-mono font-bold">合水線溪谷</text>
+                    <line x1="150" y1="36" x2="150" y2="160" stroke="#0284C7" strokeWidth="2.5" />
+                    <polygon points="150,166 146,156 154,156" fill="#0284C7" />
+                    <text x="156" y="44" fontSize="9" className="fill-blue-600 font-mono font-bold">合水線溪谷 (V尖指高處)</text>
+                    {/* Runoff arrows converging into valley stream */}
+                    <path d="M 114 96 L 142 112 M 186 96 L 158 112" stroke="#0284C7" strokeWidth="1.5" strokeDasharray="2 2" />
+                    <text x="184" y="138" fontSize="7.5" className="fill-sky-600 font-mono">水流匯集向下</text>
                   </g>
                 )}
               </svg>
@@ -250,8 +259,11 @@ export default function SurveyingVisualizer({ topicSlug }: SurveyingVisualizerPr
                   {topoType === 'ridge' ? '🏔️ 山脊線 (分水嶺)：' : '💧 山谷線 (集水線)：'}
                 </div>
                 <p className="text-slate-600 dark:text-slate-300 font-sans text-[11px]">
-                  {topoType === 'ridge' ? '等高線 V 字型或舌狀尖端<strong>指向低處</strong>者為山脊（雨水向兩側分流）。' :
-                   '等高線 V 字型尖端<strong>指向高處</strong>者為山谷（雨水向中央匯集形成溪流）。'}
+                  {topoType === 'ridge' ? (
+                    <>等高線 U／V 字型舌狀凸端<strong>指向低處</strong>者為山脊（雨水向兩側分流）。</>
+                  ) : (
+                    <>等高線 V 字型尖端<strong>指向高處</strong>者為山谷（雨水向中央匯集形成溪流）。</>
+                  )}
                 </p>
               </div>
             </div>
@@ -372,8 +384,8 @@ export default function SurveyingVisualizer({ topicSlug }: SurveyingVisualizerPr
               <circle cx="0" cy="0" r="110" fill="none" stroke="#CBD5E1" strokeWidth="1" strokeDasharray="3 3" />
               <line x1="-125" y1="0" x2="125" y2="0" stroke="#94A3B8" strokeWidth="1" />
               <line x1="0" y1="-125" x2="0" y2="125" stroke="#94A3B8" strokeWidth="1" />
-              <text x="110" y="-5" fontSize="10" className="fill-slate-500 font-mono font-bold">E (+X)</text>
-              <text x="5" y="-115" fontSize="10" className="fill-slate-500 font-mono font-bold">N (+Y)</text>
+              <text x="98" y="-5" fontSize="9.5" className="fill-slate-500 font-mono font-bold">東 E (+X)</text>
+              <text x="5" y="-115" fontSize="9.5" className="fill-slate-500 font-mono font-bold">北 N (+Y)</text>
 
               <circle cx="0" cy="0" r="4" fill="#0D9488" />
               <text x="-25" y="16" fontSize="9" className="fill-slate-600 font-mono">測站 A</text>
@@ -386,7 +398,7 @@ export default function SurveyingVisualizer({ topicSlug }: SurveyingVisualizerPr
                     <line x1="0" y1="0" x2={px} y2={py} stroke="#059669" strokeWidth="3" />
                     <circle cx={px} cy={py} r="4" fill="#059669" />
                     <text x={px + 6} y={py + 4} fontSize="10" className="fill-emerald-700 dark:fill-emerald-300 font-mono font-bold">
-                      目標 B ({targetX.toFixed(1)}, {targetY.toFixed(1)})
+                      B (E={targetX.toFixed(1)}, N={targetY.toFixed(1)})
                     </text>
                     <line x1="0" y1="0" x2="0" y2={py} stroke="#2563EB" strokeWidth="1.5" strokeDasharray="3 2" />
                     <line x1="0" y1={py} x2={px} y2={py} stroke="#DC2626" strokeWidth="1.5" strokeDasharray="3 2" />
@@ -400,7 +412,7 @@ export default function SurveyingVisualizer({ topicSlug }: SurveyingVisualizerPr
             <div className="grid grid-cols-2 gap-3">
               <div className="space-y-1">
                 <div className="flex justify-between text-xs font-mono font-bold">
-                  <span>測站 XA 坐標:</span>
+                  <span>測站東距 EA (+X):</span>
                   <span className="text-slate-900 dark:text-white">{stationX} m</span>
                 </div>
                 <input
@@ -415,7 +427,7 @@ export default function SurveyingVisualizer({ topicSlug }: SurveyingVisualizerPr
               </div>
               <div className="space-y-1">
                 <div className="flex justify-between text-xs font-mono font-bold">
-                  <span>測站 YA 坐標:</span>
+                  <span>測站北距 NA (+Y):</span>
                   <span className="text-slate-900 dark:text-white">{stationY} m</span>
                 </div>
                 <input
@@ -463,7 +475,7 @@ export default function SurveyingVisualizer({ topicSlug }: SurveyingVisualizerPr
             <div className="grid grid-cols-2 gap-2 pt-1 font-mono">
               <div className="rounded-lg bg-red-50 dark:bg-red-950/40 border border-red-200 dark:border-red-800/60 p-3">
                 <span className="text-[10px] text-red-700 dark:text-red-300 block">
-                  橫坐標差 ∆X = S · sin(α)
+                  東距增量 ΔE (+X) = S · sin(α)
                 </span>
                 <span className="text-base font-bold text-red-900 dark:text-red-100">
                   {deltaX > 0 ? `+${deltaX.toFixed(2)}` : deltaX.toFixed(2)} m
@@ -472,7 +484,7 @@ export default function SurveyingVisualizer({ topicSlug }: SurveyingVisualizerPr
 
               <div className="rounded-lg bg-blue-50 dark:bg-blue-950/40 border border-blue-200 dark:border-blue-800/60 p-3">
                 <span className="text-[10px] text-blue-700 dark:text-blue-300 block">
-                  縱坐標差 ∆Y = S · cos(α)
+                  北距增量 ΔN (+Y) = S · cos(α)
                 </span>
                 <span className="text-base font-bold text-blue-900 dark:text-blue-100">
                   {deltaY > 0 ? `+${deltaY.toFixed(2)}` : deltaY.toFixed(2)} m

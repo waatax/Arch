@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useId, useState } from 'react';
 import MathText from '@/components/MathText';
 
 interface MechanicsVisualizerProps {
@@ -8,6 +8,7 @@ interface MechanicsVisualizerProps {
 }
 
 export default function MechanicsVisualizer({ topicSlug }: MechanicsVisualizerProps) {
+  const arrowId = useId();
   // === 1. Vector Resolution Simulator State ===
   const [forceMag, setForceMag] = useState<number>(100);
   const [forceAngle, setForceAngle] = useState<number>(30);
@@ -31,8 +32,8 @@ export default function MechanicsVisualizer({ topicSlug }: MechanicsVisualizerPr
   const [beamSectionType, setBeamSectionType] = useState<'rect' | 'ibeam' | 'tbeam'>('ibeam');
   const [appliedMoment, setAppliedMoment] = useState<number>(50); // kN.m
 
-  // === 6. Truss Zero-force Member State ===
-  const [trussLoadJoint, setTrussLoadJoint] = useState<'C' | 'D' | 'E'>('D');
+  // === 6. Truss Zero-force Member State (Load P = 60 kN at B, C, or D) ===
+  const [trussLoadJoint, setTrussLoadJoint] = useState<'B' | 'C' | 'D'>('C');
 
   // === Computations ===
   // 1. Vector
@@ -63,25 +64,59 @@ export default function MechanicsVisualizer({ topicSlug }: MechanicsVisualizerPr
   const thetaP2Deg = ((Math.atan2(2 * tauXY, sigmaX - sigmaY) * 180) / Math.PI);
   const thetaPDeg = thetaP2Deg / 2;
 
-  // 5. Section Properties Computations
-  let sectionIx = 10000;
-  let sectionHeight = 300;
-  let sectionName = 'H 300 x 150 鋼樑';
+  // 5. Section Properties Computations (SI units: M in N·mm, y in mm, Ix in mm⁴ => σ in MPa)
+  let sectionIx = 7210; // cm⁴
+  let sectionHeight = 300; // mm
+  let yTopMm = 150; // mm from N.A. to top fiber
+  let yBotMm = 150; // mm from N.A. to bottom fiber
+  let sectionName = 'H 型鋼樑 H 300 × 150 × 6.5 × 9 mm';
   if (beamSectionType === 'rect') {
     sectionHeight = 400;
-    sectionIx = (20 * Math.pow(40, 3)) / 12;
-    sectionName = '矩形斷面 200 x 400 mm';
+    yTopMm = 200;
+    yBotMm = 200;
+    sectionIx = (20 * Math.pow(40, 3)) / 12; // 106,667 cm⁴
+    sectionName = '矩形混凝土梁 200 × 400 mm';
   } else if (beamSectionType === 'tbeam') {
-    sectionHeight = 350;
-    sectionIx = 14500;
-    sectionName = 'T 型鋼樑 350 x 200 mm';
-  } else {
+    // Flange 240 × 60 mm (top), Web 80 × 240 mm (bottom), total H = 300 mm
+    // A_f = 144 cm² (y=27 cm), A_w = 192 cm² (y=12 cm) => y_bot = 6192/336 = 18.43 cm = 184.3 mm
     sectionHeight = 300;
-    sectionIx = 7210;
-    sectionName = 'H 型鋼樑 300 x 150 mm';
+    yBotMm = 184.3;
+    yTopMm = 115.7;
+    sectionIx = 28164; // cm⁴ exact parallel-axis sum
+    sectionName = 'T 型梁（翼板 240×60 + 腹板 80×240 mm）';
   }
-  const yMax = sectionHeight / 2 / 10;
-  const maxFlexuralStressMPa = (appliedMoment * 100 * yMax) / (sectionIx / 10);
+  const naSvgY = 30 + (yTopMm / sectionHeight) * 120;
+  const momentNmm = appliedMoment * 1_000_000;
+  const ixMm4 = sectionIx * 10_000;
+  const topStressMPa = (momentNmm * yTopMm) / ixMm4;
+  const botStressMPa = (momentNmm * yBotMm) / ixMm4;
+  const maxFlexuralStressMPa = Math.max(topStressMPa, botStressMPa);
+
+  // 6. Exact Static Equilibrium Forces for 3-Panel 45° Determinate Truss (P = 60 kN downward)
+  // Nodes: A(0,0) pin, B(L,0), D(2L,0), F(3L,0) roller; C(L,L), E(2L,L)
+  // Positive = Tension (+T), Negative = Compression (-C), 0 = Zero-Force Member
+  const trussForcesByJoint: Record<
+    'B' | 'C' | 'D',
+    {
+      ra: number;
+      rf: number;
+      AB: number;
+      BD: number;
+      DF: number;
+      CE: number;
+      AC: number;
+      BC: number;
+      CD: number;
+      DE: number;
+      EF: number;
+    }
+  > = {
+    B: { ra: 40, rf: 20, AB: 40, BD: 40, DF: 20, CE: -20, AC: -56.6, BC: 60, CD: -28.3, DE: 20, EF: -28.3 },
+    C: { ra: 40, rf: 20, AB: 40, BD: 40, DF: 20, CE: -20, AC: -56.6, BC: 0, CD: -28.3, DE: 20, EF: -28.3 },
+    D: { ra: 20, rf: 40, AB: 20, BD: 20, DF: 40, CE: -40, AC: -28.3, BC: 0, CD: 28.3, DE: 40, EF: -56.6 },
+  };
+  const trussForces = trussForcesByJoint[trussLoadJoint];
+  const memberStroke = (f: number) => (f === 0 ? '#10B981' : f > 0 ? '#2563EB' : '#DC2626');
 
   return (
     <div className="rounded-xl border border-teal-200/80 bg-teal-50/20 dark:border-teal-800/60 dark:bg-teal-950/20 p-5 sm:p-6 space-y-6">
@@ -105,18 +140,22 @@ export default function MechanicsVisualizer({ topicSlug }: MechanicsVisualizerPr
       </div>
 
       {topicSlug.includes('truss') ? (
-        // === 4. Truss Analysis & Zero-Force Members ===
+        // === 4. Truss Analysis & Zero-Force Members (Exact Static Equilibrium) ===
         <div className="space-y-4">
           <div className="flex flex-wrap items-center justify-between gap-2 text-xs font-mono">
-            <span className="font-bold text-slate-700 dark:text-slate-300">選擇集中載重作用節點 (Joint Load P=50kN)：</span>
+            <span className="font-bold text-slate-700 dark:text-slate-300">選擇集中載重作用節點 (Joint Load P = 60 kN)：</span>
             <div className="flex gap-1 bg-white dark:bg-slate-900 p-1 rounded-lg border border-slate-200 dark:border-slate-800">
-              {(['C', 'D', 'E'] as const).map((jt) => (
+              {([
+                { id: 'B', label: '節點 B（下弦受載 · 無零桿）' },
+                { id: 'C', label: '節點 C（BC 為零桿）' },
+                { id: 'D', label: '節點 D（BC 為零桿）' },
+              ] as const).map((jt) => (
                 <button
-                  key={jt}
-                  onClick={() => setTrussLoadJoint(jt)}
-                  className={`px-3 py-1 rounded font-bold transition-colors ${trussLoadJoint === jt ? 'bg-teal-600 text-white' : 'text-slate-600 dark:text-slate-400'}`}
+                  key={jt.id}
+                  onClick={() => setTrussLoadJoint(jt.id)}
+                  className={`px-3 py-1 rounded font-bold transition-colors ${trussLoadJoint === jt.id ? 'bg-teal-600 text-white' : 'text-slate-600 dark:text-slate-400'}`}
                 >
-                  節點 {jt}
+                  {jt.label}
                 </button>
               ))}
             </div>
@@ -124,56 +163,132 @@ export default function MechanicsVisualizer({ topicSlug }: MechanicsVisualizerPr
 
           <div className="grid gap-6 lg:grid-cols-2 items-center rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 p-4 shadow-inner">
             <div className="relative aspect-video rounded-lg bg-slate-50 dark:bg-slate-950 p-2 flex items-center justify-center">
-              <svg viewBox="0 0 340 180" className="w-full h-full">
-                <line x1="40" y1="130" x2="280" y2="130" stroke="#0D9488" strokeWidth="4" />
-                <line x1="120" y1="50" x2="200" y2="50" stroke="#0D9488" strokeWidth="4" />
-                <line x1="40" y1="130" x2="120" y2="50" stroke="#0D9488" strokeWidth="3" />
-                <line x1="120" y1="130" x2="120" y2="50" stroke={trussLoadJoint === 'C' ? '#DC2626' : '#10B981'} strokeWidth="3" strokeDasharray={trussLoadJoint === 'C' ? 'none' : '4 2'} />
-                <line x1="120" y1="50" x2="200" y2="130" stroke="#0D9488" strokeWidth="3" />
-                <line x1="200" y1="50" x2="200" y2="130" stroke={trussLoadJoint === 'E' ? '#DC2626' : '#10B981'} strokeWidth="3" strokeDasharray={trussLoadJoint === 'E' ? 'none' : '4 2'} />
-                <line x1="200" y1="50" x2="280" y2="130" stroke="#0D9488" strokeWidth="3" />
+              <svg viewBox="0 0 340 190" className="w-full h-full">
+                {/* Pin support A & Roller support F */}
+                <polygon points="40,136 31,152 49,152" fill="none" stroke="#475569" strokeWidth="1.8" />
+                <line x1="27" y1="152" x2="53" y2="152" stroke="#475569" strokeWidth="1.8" />
+                <text x="16" y="168" fontSize="9" className="fill-teal-700 font-bold font-mono">RA={trussForces.ra}kN</text>
 
-                <circle cx="40" cy="130" r="5" fill="#0D9488" />
-                <text x="30" y="145" fontSize="10" className="font-bold fill-slate-700 font-mono">A</text>
-                <circle cx="120" cy="130" r="5" fill="#0D9488" />
-                <text x="115" y="145" fontSize="10" className="font-bold fill-slate-700 font-mono">B</text>
-                <circle cx="200" cy="130" r="5" fill="#0D9488" />
-                <text x="195" y="145" fontSize="10" className="font-bold fill-slate-700 font-mono">D</text>
-                <circle cx="280" cy="130" r="5" fill="#0D9488" />
-                <text x="285" y="145" fontSize="10" className="font-bold fill-slate-700 font-mono">F</text>
-                <circle cx="120" cy="50" r="5" fill="#0D9488" />
-                <text x="115" y="42" fontSize="10" className="font-bold fill-slate-700 font-mono">C</text>
-                <circle cx="200" cy="50" r="5" fill="#0D9488" />
-                <text x="195" y="42" fontSize="10" className="font-bold fill-slate-700 font-mono">E</text>
+                <circle cx="280" cy="144" r="6" fill="none" stroke="#475569" strokeWidth="1.8" />
+                <line x1="268" y1="152" x2="292" y2="152" stroke="#475569" strokeWidth="1.8" />
+                <text x="252" y="168" fontSize="9" className="fill-teal-700 font-bold font-mono">RF={trussForces.rf}kN</text>
 
+                {/* Bottom chords AB, BD, DF */}
+                <line x1="40" y1="130" x2="120" y2="130" stroke={memberStroke(trussForces.AB)} strokeWidth="3.5" />
+                <line x1="120" y1="130" x2="200" y2="130" stroke={memberStroke(trussForces.BD)} strokeWidth="3.5" />
+                <line x1="200" y1="130" x2="280" y2="130" stroke={memberStroke(trussForces.DF)} strokeWidth="3.5" />
+                {/* Top chord CE */}
+                <line x1="120" y1="50" x2="200" y2="50" stroke={memberStroke(trussForces.CE)} strokeWidth="3.5" />
+                {/* Diagonals AC, CD, EF */}
+                <line x1="40" y1="130" x2="120" y2="50" stroke={memberStroke(trussForces.AC)} strokeWidth="3" />
+                <line x1="120" y1="50" x2="200" y2="130" stroke={memberStroke(trussForces.CD)} strokeWidth="3" />
+                <line x1="200" y1="50" x2="280" y2="130" stroke={memberStroke(trussForces.EF)} strokeWidth="3" />
+                {/* Verticals BC and DE */}
+                <line
+                  x1="120"
+                  y1="130"
+                  x2="120"
+                  y2="50"
+                  stroke={memberStroke(trussForces.BC)}
+                  strokeWidth="3.5"
+                  strokeDasharray={trussForces.BC === 0 ? '5 3' : 'none'}
+                />
+                <line
+                  x1="200"
+                  y1="50"
+                  x2="200"
+                  y2="130"
+                  stroke={memberStroke(trussForces.DE)}
+                  strokeWidth="3.5"
+                  strokeDasharray={trussForces.DE === 0 ? '5 3' : 'none'}
+                />
+
+                {/* Axial Force Badges on BC and DE */}
+                <text
+                  x="88"
+                  y="94"
+                  fontSize="8.5"
+                  className={`font-mono font-bold ${trussForces.BC === 0 ? 'fill-emerald-600' : 'fill-blue-600'}`}
+                >
+                  {trussForces.BC === 0 ? 'BC=0' : `BC=+${trussForces.BC}`}
+                </text>
+                <text x="206" y="94" fontSize="8.5" className="fill-blue-600 font-mono font-bold">
+                  DE=+{trussForces.DE}
+                </text>
+                <text x="145" y="44" fontSize="8.5" className="fill-red-600 font-mono font-bold">
+                  CE={trussForces.CE}
+                </text>
+
+                {/* Nodes */}
+                <circle cx="40" cy="130" r="5" fill="#0F172A" />
+                <text x="24" y="133" fontSize="10" className="font-bold fill-slate-700 dark:fill-slate-200 font-mono">A</text>
+                <circle cx="120" cy="130" r="5" fill="#0F172A" />
+                <text x="115" y="146" fontSize="10" className="font-bold fill-slate-700 dark:fill-slate-200 font-mono">B</text>
+                <circle cx="200" cy="130" r="5" fill="#0F172A" />
+                <text x="195" y="146" fontSize="10" className="font-bold fill-slate-700 dark:fill-slate-200 font-mono">D</text>
+                <circle cx="280" cy="130" r="5" fill="#0F172A" />
+                <text x="290" y="133" fontSize="10" className="font-bold fill-slate-700 dark:fill-slate-200 font-mono">F</text>
+                <circle cx="120" cy="50" r="5" fill="#0F172A" />
+                <text x="115" y="40" fontSize="10" className="font-bold fill-slate-700 dark:fill-slate-200 font-mono">C</text>
+                <circle cx="200" cy="50" r="5" fill="#0F172A" />
+                <text x="195" y="40" fontSize="10" className="font-bold fill-slate-700 dark:fill-slate-200 font-mono">E</text>
+
+                {/* Applied Downward Load Arrow P = 60 kN */}
                 {(() => {
-                  const jPos: Record<'C' | 'D' | 'E', [number, number]> = {
+                  const jPos: Record<'B' | 'C' | 'D', [number, number]> = {
+                    B: [120, 130],
                     C: [120, 50],
                     D: [200, 130],
-                    E: [200, 50],
                   };
                   const [lx, ly] = jPos[trussLoadJoint];
-                  return (
+                  const isBottom = trussLoadJoint === 'B' || trussLoadJoint === 'D';
+                  return isBottom ? (
                     <g>
-                      <line x1={lx} y1={ly - 30} x2={lx} y2={ly - 5} stroke="#DC2626" strokeWidth="3" />
-                      <polygon points={`${lx},${ly} ${lx - 4},${ly - 10} ${lx + 4},${ly - 10}`} fill="#DC2626" />
-                      <text x={lx + 6} y={ly - 20} fontSize="10" className="fill-red-600 font-bold font-mono">P=50kN</text>
+                      <line x1={lx} y1={ly + 6} x2={lx} y2={ly + 32} stroke="#DC2626" strokeWidth="3" />
+                      <polygon points={`${lx},${ly + 38} ${lx - 4},${ly + 28} ${lx + 4},${ly + 28}`} fill="#DC2626" />
+                      <text x={lx + 8} y={ly + 32} fontSize="9.5" className="fill-red-600 font-bold font-mono">P=60kN</text>
+                    </g>
+                  ) : (
+                    <g>
+                      <line x1={lx} y1={ly - 34} x2={lx} y2={ly - 10} stroke="#DC2626" strokeWidth="3" />
+                      <polygon points={`${lx},${ly - 4} ${lx - 4},${ly - 14} ${lx + 4},${ly - 14}`} fill="#DC2626" />
+                      <text x={lx + 8} y={ly - 22} fontSize="9.5" className="fill-red-600 font-bold font-mono">P=60kN</text>
                     </g>
                   );
                 })()}
+
+                {/* Legend */}
+                <g fontSize="8" className="font-mono">
+                  <line x1="18" y1="14" x2="34" y2="14" stroke="#2563EB" strokeWidth="3" />
+                  <text x="38" y="17" className="fill-blue-600 font-bold">拉力 (+T)</text>
+                  <line x1="94" y1="14" x2="110" y2="14" stroke="#DC2626" strokeWidth="3" />
+                  <text x="114" y="17" className="fill-red-600 font-bold">壓力 (-C)</text>
+                  <line x1="170" y1="14" x2="188" y2="14" stroke="#10B981" strokeWidth="3" strokeDasharray="4 2" />
+                  <text x="192" y="17" className="fill-emerald-600 font-bold">零力桿 (0 kN)</text>
+                </g>
               </svg>
             </div>
 
             <div className="space-y-2 text-xs">
               <span className="text-xs font-mono font-bold text-teal-700 dark:text-teal-300 uppercase tracking-wider block">
-                零桿判別法則 (Zero-Force Member Rules)
+                靜力平衡即時解算與零桿判別法則
               </span>
+              <div className="p-2.5 rounded-lg bg-teal-50/70 dark:bg-teal-950/40 border border-teal-200 dark:border-teal-800/60 font-mono text-[11px] space-y-1">
+                <div className="font-bold text-teal-900 dark:text-teal-100">
+                  {trussLoadJoint === 'B'
+                    ? '✅ 載重掛在節點 B：ΣFy(B) = 0 ⇒ BC = +60.0 kN（受拉，無零力桿）'
+                    : `✅ 載重在節點 ${trussLoadJoint}：節點 B 無外力且 AB、BD 共線 ⇒ BC = 0 kN（綠色虛線零力桿）`}
+                </div>
+                <div className="text-slate-600 dark:text-slate-300">
+                  ⚠️ 為何 DE = +{trussForces.DE} kN 不是零桿？因為在節點 E 上，CE（水平）與 EF（斜桿）<strong>不共線</strong>，垂直桿 DE 必須受拉平衡 EF 的鉛直分力！
+                </div>
+              </div>
               <ul className="space-y-1.5 text-slate-600 dark:text-slate-300">
                 <li className="p-2 rounded bg-slate-50 dark:bg-slate-800/60 border border-slate-200 dark:border-slate-800">
-                  <strong>法則 1 (L型無載重)：</strong> 兩桿相交於無載重節點且不共線，則兩桿皆為零桿（如無外力時的端節點）。
+                  <strong>法則 1（L 型無載重）：</strong> 兩桿相交於無載重節點且不共線，則兩桿皆為零桿。
                 </li>
                 <li className="p-2 rounded bg-slate-50 dark:bg-slate-800/60 border border-slate-200 dark:border-slate-800">
-                  <strong>法則 2 (T型無載重)：</strong> 三桿相交於無載重節點，其中兩桿共線，則<strong>非共線之第三桿必為零桿</strong>（綠色虛線桿）。
+                  <strong>法則 2（T 型無載重）：</strong> 三桿相交於無載重節點，其中兩桿共線，則<strong>非共線之第三桿必為零桿</strong>（例如節點 B 的 BC 桿）。
                 </li>
               </ul>
             </div>
@@ -348,33 +463,50 @@ export default function MechanicsVisualizer({ topicSlug }: MechanicsVisualizerPr
                   </g>
                 )}
 
-                <line x1="30" y1="90" x2="270" y2="90" stroke="#DC2626" strokeWidth="1.5" strokeDasharray="4 2" />
-                <text x="32" y="85" fontSize="8" className="fill-red-600 font-mono font-bold">中性軸 (N.A.) σ=0</text>
+                <line x1="30" y1={naSvgY} x2="270" y2={naSvgY} stroke="#DC2626" strokeWidth="1.5" strokeDasharray="4 2" />
+                <text x="26" y={naSvgY - 5} fontSize="8" className="fill-red-600 font-mono font-bold">中性軸 (N.A.) σ=0</text>
 
                 <line x1="200" y1="30" x2="200" y2="150" stroke="#94A3B8" strokeWidth="1.5" />
-                <polygon points="200,90 240,30 200,30" fill="rgba(220, 38, 38, 0.2)" stroke="#DC2626" strokeWidth="1.5" />
-                <polygon points="200,90 160,150 200,150" fill="rgba(37, 99, 235, 0.2)" stroke="#2563EB" strokeWidth="1.5" />
-                <text x="210" y="45" fontSize="9" className="fill-red-600 font-bold font-mono">壓應力 (-σ)</text>
-                <text x="145" y="145" fontSize="9" className="fill-blue-600 font-bold font-mono">拉應力 (+σ)</text>
+                <polygon
+                  points={`200,${naSvgY} ${200 + 38 * (yTopMm / Math.max(yTopMm, yBotMm))},30 200,30`}
+                  fill="rgba(220, 38, 38, 0.2)"
+                  stroke="#DC2626"
+                  strokeWidth="1.5"
+                />
+                <polygon
+                  points={`200,${naSvgY} ${200 - 38 * (yBotMm / Math.max(yTopMm, yBotMm))},150 200,150`}
+                  fill="rgba(37, 99, 235, 0.2)"
+                  stroke="#2563EB"
+                  strokeWidth="1.5"
+                />
+                <text x="206" y="42" fontSize="8.5" className="fill-red-600 font-bold font-mono">頂壓 {topStressMPa.toFixed(1)}</text>
+                <text x="132" y="146" fontSize="8.5" className="fill-blue-600 font-bold font-mono">底拉 {botStressMPa.toFixed(1)}</text>
               </svg>
             </div>
 
             <div className="space-y-3 font-mono text-xs">
               <div className="p-3 rounded-lg bg-slate-50 dark:bg-slate-800/60 border border-slate-200 dark:border-slate-800 space-y-1">
                 <div className="font-bold text-slate-900 dark:text-white">{sectionName}</div>
-                <div className="text-slate-500">斷面慣性矩 Ix ≈ {Math.round(sectionIx)} cm⁴</div>
-                <div className="text-slate-500">梁深高度 H = {sectionHeight} mm</div>
+                <div className="text-slate-500">斷面慣性矩 Ix ≈ {Math.round(sectionIx).toLocaleString()} cm⁴</div>
+                <div className="text-slate-500">
+                  梁深 H = {sectionHeight} mm（頂距 y_top = {yTopMm.toFixed(1)} mm · 底距 y_bot = {yBotMm.toFixed(1)} mm）
+                </div>
               </div>
 
-              <div className="p-3 rounded-lg bg-teal-50 dark:bg-teal-950/40 border border-teal-200 dark:border-teal-800">
+              <div className="p-3 rounded-lg bg-teal-50 dark:bg-teal-950/40 border border-teal-200 dark:border-teal-800 space-y-1">
                 <div className="text-[10px] text-teal-700 dark:text-teal-300 font-bold uppercase">最外緣最大彎曲應力 σmax</div>
                 <div className="text-lg font-bold text-teal-900 dark:text-teal-100">
                   {maxFlexuralStressMPa.toFixed(1)} <span className="text-xs font-normal">MPa (N/mm²)</span>
                 </div>
+                {beamSectionType === 'tbeam' && (
+                  <div className="text-[11px] text-teal-800 dark:text-teal-200">
+                    非對稱斷面：頂緣壓應力 {topStressMPa.toFixed(1)} MPa ＜ 底緣拉應力 {botStressMPa.toFixed(1)} MPa（形心上移至翼板側）
+                  </div>
+                )}
               </div>
 
               <div className="text-[11px] text-slate-500 font-sans">
-                <MathText content="💡 **梁彎曲應力公式：** $\sigma = \frac{M \cdot y}{I_x}$。中性軸處應力為零，最外緣 ($y = c$) 應力最大；中性軸之上受壓、之下受拉。" />
+                <MathText content="💡 **梁彎曲應力公式：** $\sigma = \frac{M \cdot y}{I_x}$。中性軸通過斷面形心（應力為零），距離中性軸愈遠 ($y$ 愈大) 應力愈大；非對稱 T 型梁須先求形心位置。" />
               </div>
             </div>
           </div>
@@ -413,7 +545,7 @@ export default function MechanicsVisualizer({ topicSlug }: MechanicsVisualizerPr
                 y2={-(fy / 150) * 120}
                 stroke="#EA580C"
                 strokeWidth="3.5"
-                markerEnd="url(#arrowhead)"
+                markerEnd={`url(#${arrowId})`}
               />
 
               <path
@@ -433,7 +565,7 @@ export default function MechanicsVisualizer({ topicSlug }: MechanicsVisualizerPr
 
               <defs>
                 <marker
-                  id="arrowhead"
+                  id={arrowId}
                   markerWidth="8"
                   markerHeight="6"
                   refX="6"

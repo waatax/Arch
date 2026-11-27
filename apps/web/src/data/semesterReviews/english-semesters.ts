@@ -13,7 +13,7 @@ export const englishS1Review: SemesterReviewData = {
   subtitle: "核心基礎 1200 單字、五大時態變化、被動語態與情態助動詞",
   category: "共同科目",
   curriculumScope: "108 課綱技術型高中英語文第一冊：基礎 1200 單字、名詞單複數、五大基本時態、主動被動轉換、情態助動詞與生活會話",
-  topicSlugs: ["english"],
+  topicSlugs: ["vocabulary-phrases", "grammar-patterns", "conversation-daily-use"],
   examAnalysis: {
     examWeight: "佔統測英語文約 30% ~ 35%（字彙前 10 題與基礎綜合對話題型）",
     coreExamThemes: [
@@ -30,7 +30,7 @@ export const englishS1Review: SemesterReviewData = {
     {
       chapterNo: 1,
       title: "核心 1200 單字、詞性轉換規則與字根字尾",
-      topicSlug: "english",
+      topicSlug: "vocabulary-phrases",
       examFrequency: 5,
       coreConcepts: [
         {
@@ -82,7 +82,7 @@ export const englishS1Review: SemesterReviewData = {
     {
       chapterNo: 2,
       title: "五大核心時態體系與時間副詞信號",
-      topicSlug: "english",
+      topicSlug: "grammar-patterns",
       examFrequency: 5,
       coreConcepts: [
         {
@@ -152,7 +152,7 @@ export const englishS1Review: SemesterReviewData = {
     {
       chapterNo: 3,
       title: "被動語態 (Passive Voice) 與情態助動詞被動",
-      topicSlug: "english",
+      topicSlug: "grammar-patterns",
       examFrequency: 5,
       coreConcepts: [
         {
@@ -304,7 +304,7 @@ export const englishS2Review: SemesterReviewData = {
   subtitle: "進階 2000 單字、動名詞與不定詞、名詞子句與情境會話",
   category: "共同科目",
   curriculumScope: "108 課綱技術型高中英語文第二冊：動名詞 (V-ing) vs 不定詞 (to V)、名詞子句 (that, whether/if, wh-)、對話溝通、圖表短文閱讀",
-  topicSlugs: ["english"],
+  topicSlugs: ["vocabulary-professional", "grammar-patterns", "grammar-clauses", "conversation-daily-use"],
   examAnalysis: {
     examWeight: "佔統測英語文約 30% ~ 35%（綜合測驗克漏字與對話核心）",
     coreExamThemes: [
@@ -321,7 +321,7 @@ export const englishS2Review: SemesterReviewData = {
     {
       chapterNo: 1,
       title: "動名詞 (V-ing) 與不定詞 (to V) 核心動詞分類與語意破譯",
-      topicSlug: "english",
+      topicSlug: "grammar-patterns",
       examFrequency: 5,
       coreConcepts: [
         {
@@ -381,7 +381,7 @@ export const englishS2Review: SemesterReviewData = {
     {
       chapterNo: 2,
       title: "名詞子句三大形態與間接問句語序",
-      topicSlug: "english",
+      topicSlug: "grammar-clauses",
       examFrequency: 5,
       coreConcepts: [
         {
@@ -548,7 +548,7 @@ export const englishS3Review: SemesterReviewData = {
   subtitle: "核心高頻 3500 字、關係詞全方位體系、分詞構句與段落轉折語",
   category: "共同科目",
   curriculumScope: "108 課綱技術型高中英語文第三冊：高頻 3500 字、關係代名詞 (who/which/that/whose)、限定與非限定 (逗點)、分詞構句、轉折副詞與長篇閱讀",
-  topicSlugs: ["english"],
+  topicSlugs: ["vocabulary-professional", "grammar-clauses", "cloze-passage-structure"],
   examAnalysis: {
     examWeight: "佔統測英語文約 35% ~ 40%（克漏字與閱讀測驗長難句解析核心）",
     coreExamThemes: [
@@ -565,7 +565,7 @@ export const englishS3Review: SemesterReviewData = {
     {
       chapterNo: 1,
       title: "關係代名詞、關係副詞與逗點非限定用法",
-      topicSlug: "english",
+      topicSlug: "grammar-clauses",
       examFrequency: 5,
       coreConcepts: [
         {
@@ -644,7 +644,7 @@ export const englishS3Review: SemesterReviewData = {
     {
       chapterNo: 2,
       title: "分詞構句 (Participle Clauses) 與動狀詞化簡",
-      topicSlug: "english",
+      topicSlug: "grammar-clauses",
       examFrequency: 5,
       coreConcepts: [
         {
@@ -694,7 +694,7 @@ export const englishS3Review: SemesterReviewData = {
     {
       chapterNo: 3,
       title: "篇章轉折詞 (Transitional Words) 與語氣脈絡解密",
-      topicSlug: "english",
+      topicSlug: "cloze-passage-structure",
       examFrequency: 5,
       coreConcepts: [
         {
@@ -901,7 +901,7 @@ export const englishS4Review: SemesterReviewData = {
   subtitle: "統測高階 4500 單字、假設語氣三大公式、倒裝句與長篇閱讀破題攻略",
   category: "共同科目",
   curriculumScope: "108 課綱技術型高中英語文第四冊與統測總衝刺：假設語氣 (與現在/過去事實相反)、if 省略倒裝、否定倒裝句、克漏字與長篇跨領域閱讀測驗",
-  topicSlugs: ["english"],
+  topicSlugs: ["grammar-mastery", "reading-advanced", "translation-writing"],
   examAnalysis: {
     examWeight: "佔統測英語文約 40% ~ 45%（閱讀測驗、克漏字壓軸難題、高分關鍵門檻）",
     coreExamThemes: [
@@ -918,7 +918,7 @@ export const englishS4Review: SemesterReviewData = {
     {
       chapterNo: 1,
       title: "假設語氣 (Subjunctive Mood) 三大核心公式與 if 倒裝",
-      topicSlug: "english",
+      topicSlug: "grammar-mastery",
       examFrequency: 5,
       coreConcepts: [
         {
@@ -995,7 +995,7 @@ export const englishS4Review: SemesterReviewData = {
     {
       chapterNo: 2,
       title: "否定倒裝句、分裂強調句與常見特殊句型",
-      topicSlug: "english",
+      topicSlug: "grammar-mastery",
       examFrequency: 4,
       coreConcepts: [
         {
@@ -1045,7 +1045,7 @@ export const englishS4Review: SemesterReviewData = {
     {
       chapterNo: 3,
       title: "統測長篇素養閱讀測驗破題五步 SOP",
-      topicSlug: "english",
+      topicSlug: "reading-advanced",
       examFrequency: 5,
       coreConcepts: [
         {

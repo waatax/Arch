@@ -39,6 +39,7 @@ export default function TopicInfographicCard({
   className = '',
 }: TopicInfographicCardProps) {
   const [isExpanded, setIsExpanded] = useState(true);
+  const [activeHighlightIndex, setActiveHighlightIndex] = useState<number | null>(null);
   const key = `${subjectSlug}/${topicSlug}`;
   const infographic = topicInfographicsMap[key] || commonTopicInfographicsMap[key];
 
@@ -130,44 +131,69 @@ export default function TopicInfographicCard({
             subjectSlug={subjectSlug}
             title={infographic.diagramTitle}
             visualHighlights={infographic.visualHighlights}
+            activeHighlightIndex={activeHighlightIndex}
+            onSelectHighlight={setActiveHighlightIndex}
+            hideInlineHighlights
           />
 
-          {/* Visual Annotations Grid */}
+          {/* Interactive Visual Annotations Grid (synced with SVG StepRow spotlight) */}
           <div>
-            <div className="mb-3 flex items-center gap-2">
-              <Lightbulb className="size-4 text-amber-600 dark:text-amber-400" />
-              <h4 className="text-xs font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400">
-                關鍵視覺特徵與空間解析點 (Visual Highlights)
-              </h4>
+            <div className="mb-3 flex flex-wrap items-center justify-between gap-2">
+              <div className="flex items-center gap-2">
+                <Lightbulb className="size-4 text-amber-600 dark:text-amber-400" />
+                <h4 className="text-xs font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400">
+                  關鍵視覺特徵與空間解析點 (Visual Highlights)
+                </h4>
+              </div>
+              <span className="text-[11px] font-mono text-indigo-600/80 dark:text-indigo-400/80">
+                點擊任一卡片可同步聚焦上方向量圖解
+              </span>
             </div>
             <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
-              {infographic.visualHighlights.map((highlight, index) => (
-                <div 
-                  key={index}
-                  className="group relative flex flex-col justify-between rounded-2xl border border-slate-200 bg-white p-4 transition-all hover:border-indigo-300 hover:shadow-sm dark:border-slate-800 dark:bg-slate-900 dark:hover:border-indigo-700"
-                >
-                  <div>
-                    <div className="flex items-center justify-between gap-2">
-                      <span className="font-bold text-slate-900 dark:text-white">
-                        {highlight.label}
-                      </span>
-                      {highlight.badge && (
-                        <span className="rounded-md bg-indigo-50 px-2 py-0.5 text-[10px] font-bold text-indigo-700 dark:bg-indigo-950/80 dark:text-indigo-300">
-                          {highlight.badge}
+              {infographic.visualHighlights.map((highlight, index) => {
+                const isActive = activeHighlightIndex === index;
+                return (
+                  <button
+                    key={index}
+                    type="button"
+                    aria-pressed={isActive}
+                    onClick={() => setActiveHighlightIndex(isActive ? null : index)}
+                    className={`group relative flex flex-col justify-between rounded-2xl border p-4 text-left transition-all cursor-pointer ${
+                      isActive
+                        ? 'border-indigo-500 bg-indigo-50/70 shadow-sm ring-2 ring-indigo-500/20 dark:border-indigo-400 dark:bg-indigo-950/50'
+                        : 'border-slate-200 bg-white hover:border-indigo-300 hover:shadow-sm dark:border-slate-800 dark:bg-slate-900 dark:hover:border-indigo-700'
+                    }`}
+                  >
+                    <div>
+                      <div className="flex items-center justify-between gap-2">
+                        <span className="font-bold text-slate-900 dark:text-white">
+                          {highlight.label}
                         </span>
-                      )}
+                        {highlight.badge && (
+                          <span className={`rounded-md px-2 py-0.5 text-[10px] font-bold ${
+                            isActive
+                              ? 'bg-indigo-600 text-white'
+                              : 'bg-indigo-50 text-indigo-700 dark:bg-indigo-950/80 dark:text-indigo-300'
+                          }`}>
+                            {highlight.badge}
+                          </span>
+                        )}
+                      </div>
+                      <p className="mt-2 text-xs leading-relaxed text-slate-600 dark:text-slate-400">
+                        {highlight.desc}
+                      </p>
                     </div>
-                    <p className="mt-2 text-xs leading-relaxed text-slate-600 dark:text-slate-400">
-                      {highlight.desc}
-                    </p>
-                  </div>
-                  <div className="mt-3 flex items-center justify-end">
-                    <span className="text-[10px] font-bold text-slate-300 dark:text-slate-600">
-                      POINT #{index + 1}
-                    </span>
-                  </div>
-                </div>
-              ))}
+                    <div className="mt-3 flex items-center justify-between">
+                      <span className={`text-[10px] font-mono font-semibold ${isActive ? 'text-indigo-600 dark:text-indigo-300' : 'text-slate-400 dark:text-slate-500'}`}>
+                        {isActive ? '● 圖解聚焦中' : '點擊聚焦圖解'}
+                      </span>
+                      <span className="text-[10px] font-bold text-slate-300 dark:text-slate-600">
+                        POINT #{index + 1}
+                      </span>
+                    </div>
+                  </button>
+                );
+              })}
             </div>
           </div>
 

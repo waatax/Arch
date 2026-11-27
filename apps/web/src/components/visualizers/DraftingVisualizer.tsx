@@ -1,12 +1,13 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useId, useState } from 'react';
 
 interface DraftingVisualizerProps {
   topicSlug: string;
 }
 
 export default function DraftingVisualizer({ topicSlug }: DraftingVisualizerProps) {
+  const patternPrefix = useId();
   // === 1. 3rd Angle Orthographic Projection Views State ===
   const [activeView, setActiveView] = useState<'all' | 'top' | 'front' | 'right'>('all');
   const [showHiddenLines, setShowHiddenLines] = useState<boolean>(true);
@@ -110,28 +111,56 @@ export default function DraftingVisualizer({ topicSlug }: DraftingVisualizerProp
                   <line x1="220" y1={eyeLevelY + 30} x2="300" y2="160" stroke="#0284C7" strokeWidth="2" />
                 </g>
               ) : (
-                // 2-Point Perspective (VPL and VPR)
-                <g>
-                  {/* Left and Right Vanishing Points */}
-                  <circle cx="40" cy={eyeLevelY} r="4" fill="#DC2626" />
-                  <text x="25" y={eyeLevelY - 8} fontSize="9" className="fill-red-600 font-mono font-bold">VPL</text>
-                  <circle cx="300" cy={eyeLevelY} r="4" fill="#DC2626" />
-                  <text x="290" y={eyeLevelY - 8} fontSize="9" className="fill-red-600 font-mono font-bold">VPR</text>
+                // 2-Point Perspective (VPL and VPR — dynamic perspective ray interpolation)
+                (() => {
+                  const xL = 110;
+                  const xR = 240;
+                  const tL = (170 - xL) / (170 - 40);
+                  const tR = (xR - 170) / (300 - 170);
+                  const yLTop = 40 + (eyeLevelY - 40) * tL;
+                  const yLBot = 150 + (eyeLevelY - 150) * tL;
+                  const yRTop = 40 + (eyeLevelY - 40) * tR;
+                  const yRBot = 150 + (eyeLevelY - 150) * tR;
+                  return (
+                    <g>
+                      {/* Shaded left & right perspective walls */}
+                      <polygon
+                        points={`170,40 ${xL},${yLTop} ${xL},${yLBot} 170,150`}
+                        fill="rgba(2, 132, 199, 0.14)"
+                        stroke="none"
+                      />
+                      <polygon
+                        points={`170,40 ${xR},${yRTop} ${xR},${yRBot} 170,150`}
+                        fill="rgba(14, 165, 233, 0.08)"
+                        stroke="none"
+                      />
 
-                  {/* Leading Corner Edge */}
-                  <line x1="170" y1="40" x2="170" y2="150" stroke="#0284C7" strokeWidth="3" />
-                  <text x="175" y="95" fontSize="8" className="fill-sky-800 font-mono font-bold">真高線 (TL)</text>
+                      {/* Left and Right Vanishing Points */}
+                      <circle cx="40" cy={eyeLevelY} r="4" fill="#DC2626" />
+                      <text x="25" y={eyeLevelY - 8} fontSize="9" className="fill-red-600 font-mono font-bold">VPL</text>
+                      <circle cx="300" cy={eyeLevelY} r="4" fill="#DC2626" />
+                      <text x="290" y={eyeLevelY - 8} fontSize="9" className="fill-red-600 font-mono font-bold">VPR</text>
 
-                  {/* Top and Bottom lines to VPL and VPR */}
-                  <line x1="170" y1="40" x2="40" y2={eyeLevelY} stroke="#0284C7" strokeWidth="1.5" />
-                  <line x1="170" y1="150" x2="40" y2={eyeLevelY} stroke="#0284C7" strokeWidth="1.5" />
-                  <line x1="170" y1="40" x2="300" y2={eyeLevelY} stroke="#0284C7" strokeWidth="1.5" />
-                  <line x1="170" y1="150" x2="300" y2={eyeLevelY} stroke="#0284C7" strokeWidth="1.5" />
+                      {/* Vanishing rays */}
+                      <line x1="170" y1="40" x2="40" y2={eyeLevelY} stroke="#94A3B8" strokeWidth="1" strokeDasharray="3 3" />
+                      <line x1="170" y1="150" x2="40" y2={eyeLevelY} stroke="#94A3B8" strokeWidth="1" strokeDasharray="3 3" />
+                      <line x1="170" y1="40" x2="300" y2={eyeLevelY} stroke="#94A3B8" strokeWidth="1" strokeDasharray="3 3" />
+                      <line x1="170" y1="150" x2="300" y2={eyeLevelY} stroke="#94A3B8" strokeWidth="1" strokeDasharray="3 3" />
 
-                  {/* Left and Right building edges */}
-                  <line x1="110" y1="65" x2="110" y2="125" stroke="#0284C7" strokeWidth="2" />
-                  <line x1="240" y1="60" x2="240" y2="120" stroke="#0284C7" strokeWidth="2" />
-                </g>
+                      {/* Solid building silhouette edges locked onto rays */}
+                      <line x1="170" y1="40" x2={xL} y2={yLTop} stroke="#0284C7" strokeWidth="2" />
+                      <line x1="170" y1="150" x2={xL} y2={yLBot} stroke="#0284C7" strokeWidth="2" />
+                      <line x1="170" y1="40" x2={xR} y2={yRTop} stroke="#0284C7" strokeWidth="2" />
+                      <line x1="170" y1="150" x2={xR} y2={yRBot} stroke="#0284C7" strokeWidth="2" />
+                      <line x1={xL} y1={yLTop} x2={xL} y2={yLBot} stroke="#0284C7" strokeWidth="2" />
+                      <line x1={xR} y1={yRTop} x2={xR} y2={yRBot} stroke="#0284C7" strokeWidth="2" />
+
+                      {/* Leading Corner Edge (True Height Line) */}
+                      <line x1="170" y1="40" x2="170" y2="150" stroke="#0369A1" strokeWidth="3" />
+                      <text x="175" y="95" fontSize="8" className="fill-sky-800 dark:fill-sky-300 font-mono font-bold">真高線 (TL)</text>
+                    </g>
+                  );
+                })()
               )}
             </svg>
 
@@ -189,7 +218,7 @@ export default function DraftingVisualizer({ topicSlug }: DraftingVisualizerProp
                     {Array.from({ length: 7 }).map((_, sIdx) => (
                       <line key={sIdx} x1="40" y1={30 + sIdx * 12} x2="160" y2={30 + sIdx * 12} stroke="#64748B" strokeWidth="1.5" />
                     ))}
-                    <line x1="100" y1="105" x2="100" y2="40" stroke="#DC2626" strokeWidth="2" markerEnd="url(#arrow)" />
+                    <line x1="100" y1="105" x2="100" y2="42" stroke="#DC2626" strokeWidth="2" />
                     <circle cx="100" cy="105" r="3" fill="#DC2626" />
                     <polygon points="100,35 96,43 104,43" fill="#DC2626" />
                     <text x="110" y="45" fontSize="10" fill="#DC2626" className="font-bold font-mono">UP (上行)</text>
@@ -357,27 +386,48 @@ export default function DraftingVisualizer({ topicSlug }: DraftingVisualizerProp
             <div className="relative aspect-video rounded-lg border border-slate-300 dark:border-slate-700 overflow-hidden flex items-center justify-center">
               <svg viewBox="0 0 200 120" className="w-full h-full">
                 <defs>
-                  <pattern id="rcPattern" width="20" height="20" patternTransform="rotate(45 0 0)" patternUnits="userSpaceOnUse">
+                  <pattern id={`${patternPrefix}-rc`} width="20" height="20" patternTransform="rotate(45 0 0)" patternUnits="userSpaceOnUse">
                     <line x1="0" y1="0" x2="0" y2="20" stroke="#0284C7" strokeWidth="1" />
-                    <circle cx="10" cy="10" r="1.5" fill="#0284C7" />
+                    <polygon points="8,14 12,8 15,14" fill="none" stroke="#0284C7" strokeWidth="0.9" />
+                    <circle cx="5" cy="6" r="1.1" fill="#0284C7" />
                   </pattern>
-                  <pattern id="brickPattern" width="10" height="10" patternTransform="rotate(45 0 0)" patternUnits="userSpaceOnUse">
-                    <line x1="0" y1="0" x2="0" y2="10" stroke="#EA580C" strokeWidth="1.5" />
+                  <pattern id={`${patternPrefix}-brick`} width="14" height="14" patternTransform="rotate(45 0 0)" patternUnits="userSpaceOnUse">
+                    <line x1="0" y1="0" x2="0" y2="14" stroke="#EA580C" strokeWidth="1.2" />
+                    <line x1="4" y1="0" x2="4" y2="14" stroke="#EA580C" strokeWidth="1.2" />
+                  </pattern>
+                  <pattern id={`${patternPrefix}-steel`} width="16" height="16" patternTransform="rotate(45 0 0)" patternUnits="userSpaceOnUse">
+                    <line x1="0" y1="0" x2="0" y2="16" stroke="#334155" strokeWidth="1.2" />
+                    <line x1="3.5" y1="0" x2="3.5" y2="16" stroke="#334155" strokeWidth="1.2" />
+                  </pattern>
+                  <pattern id={`${patternPrefix}-soil`} width="24" height="16" patternUnits="userSpaceOnUse">
+                    <line x1="2" y1="4" x2="10" y2="4" stroke="#92400E" strokeWidth="1.1" />
+                    <line x1="2" y1="7" x2="10" y2="7" stroke="#92400E" strokeWidth="1.1" />
+                    <line x1="2" y1="10" x2="10" y2="10" stroke="#92400E" strokeWidth="1.1" />
+                    <line x1="15" y1="2" x2="15" y2="10" stroke="#92400E" strokeWidth="1.1" />
+                    <line x1="18" y1="2" x2="18" y2="10" stroke="#92400E" strokeWidth="1.1" />
+                    <line x1="21" y1="2" x2="21" y2="10" stroke="#92400E" strokeWidth="1.1" />
                   </pattern>
                 </defs>
 
                 {selectedMaterial === 'rc' ? (
-                  <rect x="20" y="20" width="160" height="80" fill="url(#rcPattern)" stroke="#0284C7" strokeWidth="2" />
+                  <rect x="20" y="20" width="160" height="80" fill={`url(#${patternPrefix}-rc)`} stroke="#0284C7" strokeWidth="2" />
                 ) : selectedMaterial === 'brick' ? (
-                  <rect x="20" y="20" width="160" height="80" fill="url(#brickPattern)" stroke="#EA580C" strokeWidth="2" />
+                  <rect x="20" y="20" width="160" height="80" fill={`url(#${patternPrefix}-brick)`} stroke="#EA580C" strokeWidth="2" />
+                ) : selectedMaterial === 'steel' ? (
+                  <rect x="20" y="20" width="160" height="80" fill={`url(#${patternPrefix}-steel)`} stroke="#334155" strokeWidth="2" />
+                ) : selectedMaterial === 'soil' ? (
+                  <rect x="20" y="20" width="160" height="80" fill={`url(#${patternPrefix}-soil)`} stroke="#92400E" strokeWidth="2" />
                 ) : (
                   <g>
-                    <rect x="20" y="20" width="160" height="80" fill="rgba(2, 132, 199, 0.05)" stroke="#0284C7" strokeWidth="2" />
-                    <line x1="20" y1="20" x2="180" y2="100" stroke="#0284C7" strokeWidth="1.5" />
-                    <line x1="20" y1="100" x2="180" y2="20" stroke="#0284C7" strokeWidth="1.5" />
+                    <rect x="20" y="20" width="160" height="80" fill="rgba(217, 119, 6, 0.08)" stroke="#B45309" strokeWidth="2" />
+                    <path d="M 20 38 Q 60 28 100 38 T 180 38" fill="none" stroke="#B45309" strokeWidth="1.2" />
+                    <path d="M 20 56 Q 60 46 100 56 T 180 56" fill="none" stroke="#B45309" strokeWidth="1.2" />
+                    <path d="M 20 74 Q 60 64 100 74 T 180 74" fill="none" stroke="#B45309" strokeWidth="1.2" />
+                    <path d="M 20 90 Q 60 82 100 90 T 180 90" fill="none" stroke="#B45309" strokeWidth="1.2" />
+                    <ellipse cx="100" cy="60" rx="18" ry="8" fill="none" stroke="#B45309" strokeWidth="1.1" />
                   </g>
                 )}
-                <text x="30" y="112" fontSize="9" className="fill-slate-500 font-mono">CNS 建築剖面材料圖例</text>
+                <text x="20" y="113" fontSize="9" className="fill-slate-500 font-mono">CNS 11567 建築剖面材料圖例</text>
               </svg>
             </div>
 

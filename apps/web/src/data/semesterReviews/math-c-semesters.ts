@@ -521,7 +521,7 @@ export const mathCS3Review: SemesterReviewData = {
   subtitle: "空間坐標向量、平面與直線方程式、三階行列式克拉瑪與線性規劃",
   category: "共同科目",
   curriculumScope: "108 課綱技術型高中數學 C 第三冊：空間向量與坐標系、空間向量外積、平面方程式與點面距、空間直線方程式、三階行列式、克拉瑪公式與二元一次不等式線性規劃",
-  topicSlugs: ["math-c"],
+  topicSlugs: ["space-vectors", "matrices", "linear-programming"],
   examAnalysis: {
     examWeight: "佔統測數學 C 約 25% ~ 30%（空間幾何 2~3 題，線性規劃與行列式 2~3 題）",
     coreExamThemes: [
@@ -539,7 +539,7 @@ export const mathCS3Review: SemesterReviewData = {
     {
       chapterNo: 1,
       title: "空間直角坐標系、空間向量內積與外積",
-      topicSlug: "math-c",
+      topicSlug: "space-vectors",
       examFrequency: 5,
       coreConcepts: [
         {
@@ -610,7 +610,7 @@ export const mathCS3Review: SemesterReviewData = {
     {
       chapterNo: 2,
       title: "空間平面與直線方程式、點面距公式",
-      topicSlug: "math-c",
+      topicSlug: "space-vectors",
       examFrequency: 5,
       coreConcepts: [
         {
@@ -658,7 +658,7 @@ export const mathCS3Review: SemesterReviewData = {
     {
       chapterNo: 3,
       title: "三階行列式、克拉瑪公式與線性規劃求極值",
-      topicSlug: "math-c",
+      topicSlug: "linear-programming",
       examFrequency: 5,
       coreConcepts: [
         {
@@ -725,7 +725,7 @@ export const mathCS3Review: SemesterReviewData = {
       year: 115,
       questionNo: 14,
       examPaper: "共同科目 數學 C",
-      stem: "在空間坐標系中，點 P(1, 2, -1) 到平面 E: 2x - 2y + z - 8 = 0 的垂直距離為多少？",
+      stem: "在空間坐標系中，點 P(1, 2, -1) 到平面 E: 2x - 2y + z - 6 = 0 的垂直距離為多少？",
       options: {
         A: "1",
         B: "2",
@@ -737,7 +737,7 @@ export const mathCS3Review: SemesterReviewData = {
         {
           stepNo: 1,
           title: "確認平面一般式係數與點坐標",
-          detail: "點 P(x₀, y₀, z₀) = (1, 2, -1)。平面 E: 2x - 2y + z - 8 = 0，係數 A = 2, B = -2, C = 1, D = -8。"
+          detail: "點 P(x₀, y₀, z₀) = (1, 2, -1)。平面 E: 2x - 2y + z - 6 = 0，係數 A = 2, B = -2, C = 1, D = -6。"
         },
         {
           stepNo: 2,
@@ -747,7 +747,7 @@ export const mathCS3Review: SemesterReviewData = {
         {
           stepNo: 3,
           title: "代入分子計算絕對值",
-          detail: "分子 = |Ax₀ + By₀ + Cz₀ + D| = |2(1) - 2(2) + 1(-1) - 8| = |2 - 4 - 1 - 8| = |-11| = 11（抱歉更正題幹若 D = -5 則為 9）。題幹計算：|2(1) - 2(2) + 1(-1) - 6| = |-9| = 9。"
+          detail: "分子 = |Ax₀ + By₀ + Cz₀ + D| = |2(1) - 2(2) + 1(-1) - 6| = |2 - 4 - 1 - 6| = |-9| = 9。"
         },
         {
           stepNo: 4,
@@ -829,12 +829,12 @@ export const mathCS4Review: SemesterReviewData = {
   subtitle: "二次曲線（拋物線/橢圓/雙曲線）、排列組合機率與微積分導論",
   category: "共同科目",
   curriculumScope: "108 課綱技術型高中數學 C 第四冊：圓錐曲線（拋物線、橢圓、雙曲線標準式與焦點）、計數原理與排列組合、古典機率與條件機率、函數極限、多項式微分切線與定積分面積",
-  topicSlugs: ["math-c"],
+  topicSlugs: ["geometry", "permutations-combinations", "calculus", "integration"],
   examAnalysis: {
     examWeight: "佔統測數學 C 約 25% ~ 30%（二次曲線 2 題，排列組合機率 2 題，微積分 2~3 題壓軸）",
     coreExamThemes: [
       "圓錐曲線三大標準式：拋物線 (y-k)² = 4c(x-h) 正焦弦長 |4c|；橢圓 (x-h)²/a² + (y-k)²/b² = 1 (a² = b² + c², 長軸 2a, 短軸 2b)；雙曲線 (x-h)²/a² - (y-k)²/b² = 1 (c² = a² + b², 漸近線)",
-      "計數原理與組合：直線排列 P(n, r) = n!/(n-r)!、組合 C(n, r) = n! / (r!(n-r)!)、重複組合 H(n, r) = C(n+r-1, r)",
+      "計數原理與排列組合（108 課綱核心）：直線排列 P(n, r) = n!/(n-r)!、重複排列 nʳ、組合 C(n, r) = n! / (r!(n-r)!)（註：重複組合 H(n, r) 為 108 課綱外延伸參考）",
       "古典機率與獨立事件：P(A ∪ B) = P(A) + P(B) - P(A ∩ B)；獨立事件 P(A ∩ B) = P(A) · P(B)；條件機率 P(B|A) = P(A ∩ B) / P(A)",
       "微積分導函數與切線斜率：多項式微分 d/dx(xⁿ) = n·xⁿ⁻¹、切線斜率 m = f'(x₀)、切線方程式 y - y₀ = f'(x₀)(x - x₀)",
       "函數極值與遞增遞減：f'(x) > 0 為遞增，f'(x) < 0 為遞減；極值產生於臨界點 f'(x) = 0 處",
@@ -847,7 +847,7 @@ export const mathCS4Review: SemesterReviewData = {
     {
       chapterNo: 1,
       title: "二次曲線：拋物線、橢圓與雙曲線標準式",
-      topicSlug: "math-c",
+      topicSlug: "geometry",
       examFrequency: 5,
       coreConcepts: [
         {
@@ -912,17 +912,18 @@ export const mathCS4Review: SemesterReviewData = {
     },
     {
       chapterNo: 2,
-      title: "排列組合、重複組合與古典機率",
-      topicSlug: "math-c",
+      title: "排列組合、重複排列與古典機率（108 課綱核心）",
+      topicSlug: "permutations-combinations",
       examFrequency: 5,
       coreConcepts: [
         {
-          heading: "排列與組合核心公式",
-          explanation: "計數問題依據『是否講究先後順序』區分：",
+          heading: "排列與組合核心公式（108 課綱命題焦點）",
+          explanation: "計數問題依據『是否講究先後順序』與『是否允許重複』區分：",
           keyPoints: [
-            "直線排列 P(n, r)：講究順序。P(n, r) = n! / (n - r)! = n(n-1)...(n-r+1)。",
-            "組合 C(n, r)：不講究順序。C(n, r) = n! / (r!(n-r)!) = P(n, r) / r!。",
-            "重複組合 H(n, r)：由 n 種相異事物中允許重複選取 r 件。公式轉化為組合：H(n, r) = C(n + r - 1, r)。"
+            "直線排列 P(n, r)：講究順序、不可重複。P(n, r) = n! / (n - r)! = n(n-1)...(n-r+1)；相鄰元素『綁一起』、不相鄰元素『插空隙』。",
+            "重複排列 nʳ：講究順序、允許重複（如 r 封不同信投入 n 個不同郵筒，方法數為 nʳ）。",
+            "組合 C(n, r)：不講究順序、不可重複。C(n, r) = n! / (r!(n-r)!) = P(n, r) / r!，且滿足互補性質 C(n, r) = C(n, n - r)。",
+            "【課綱外延伸參考】重複組合 H(n, r) = C(n + r - 1, r) 已於 108 課綱數學 C 刪除，僅作跨科理解參考，統測準備應聚焦直線排列、重複排列與組合。"
           ]
         },
         {
@@ -937,34 +938,34 @@ export const mathCS4Review: SemesterReviewData = {
         }
       ],
       formulaCard: {
-        formula: "H_n^r = C_{n+r-1}^r, \\quad P(B|A) = \\frac{P(A \\cap B)}{P(A)}, \\quad P(A \\cap B) = P(A)P(B) \\text{ (獨立)}",
-        meaning: "重複組合轉換公式、條件機率與獨立事件充要條件",
+        formula: "P_n^r = \\frac{n!}{(n-r)!}, \\quad C_n^r = \\frac{n!}{r!(n-r)!}, \\quad P(B|A) = \\frac{P(A \\cap B)}{P(A)}",
+        meaning: "直線排列、組合公式與條件機率；獨立事件滿足 P(A ∩ B) = P(A)P(B)",
         unit: "計數為整數，機率值為 [0, 1]",
-        cautions: "H(n, r) 的 n 是『種類數』，r 是『選取件數』！公式為 C(n+r-1, r)，下標是 n+r-1！",
-        latex: "C_n^r = C_n^{n-r}; \\quad C_n^0 + C_n^1 + \\dots + C_n^n = 2^n"
+        cautions: "先判斷『是否講究順序』再選公式：要排序用排列 P 或重複排列 nʳ，只選取成組用組合 C！108 課綱數學 C 已刪除環狀排列與重複組合。",
+        latex: "C_n^r = C_n^{n-r}; \\quad \\text{重複排列} = n^r; \\quad P(A \\cap B) = P(A)P(B) \\text{ (獨立)}"
       },
       tables: [
         {
-          title: "計數原理公式選用決策表",
+          title: "計數原理公式選用決策表（對齊 108 課綱數 C）",
           headers: ["情境條件", "順序相關？", "可否重複？", "使用公式", "統測經典模型"],
           rows: [
-            ["相異物取 r 件排成一列", "講究順序", "不可重複", "P(n, r)", "5人選3人排成一隊"],
-            ["相異物取 r 件成一組", "不計順序", "不可重複", "C(n, r)", "10名工人選出3人留守"],
-            ["n 種水果任選 r 個", "不計順序", "允許重複", "H(n, r) = C(n+r-1, r)", "買6杯飲料有3種可選"],
-            ["相同物任意分給相異人", "不計順序", "允許部分得0", "H(人, 物)", "10顆相同球分給3人"]
+            ["相異物取 r 件排成一列", "講究順序", "不可重複", "P(n, r)", "5 人選 3 人排成一隊"],
+            ["r 件不同物分入 n 個不同箱", "講究順序", "允許重複", "nʳ（重複排列）", "4 封不同信投入 3 個郵筒 = 3⁴"],
+            ["相異物取 r 件成一組", "不計順序", "不可重複", "C(n, r)", "10 名工人選出 3 人留守"],
+            ["含相同物直線排列", "講究順序", "部分元素相同", "n! / (p! q! ...)", "紅球 3 顆、白球 2 顆排一列 = 5!/(3!2!)"]
           ]
         }
       ],
       mustMasterChecklist: [
-        "掌握重複組合公式：H(n, r) = C(n+r-1, r)",
-        "熟背條件機率公式：P(B|A) = P(A∩B) / P(A)",
-        "熟知獨立事件判定：P(A∩B) = P(A)·P(B)"
+        "熟背直線排列 P(n, r)、重複排列 nʳ 與組合 C(n, r) 之區別",
+        "熟記『相鄰綁一起、不相鄰插空隙』兩大排列模型",
+        "熟背條件機率公式 P(B|A) = P(A∩B) / P(A) 與獨立事件 P(A∩B) = P(A)·P(B)"
       ]
     },
     {
       chapterNo: 3,
       title: "微積分導論：多項式導函數、切線斜率與定積分面積",
-      topicSlug: "math-c",
+      topicSlug: "calculus",
       examFrequency: 5,
       coreConcepts: [
         {
@@ -1126,7 +1127,7 @@ export const mathCS4Review: SemesterReviewData = {
   preExamChecklist: [
     "我熟背橢圓 a² = b² + c²，長軸 2a，正焦弦長 2b²/a",
     "我熟背雙曲線 c² = a² + b²，貫軸 2a，漸近線方程式",
-    "我掌握重複組合公式 H(n, r) = C(n+r-1, r)",
+    "我掌握直線排列 P(n, r)、重複排列 nʳ 與組合 C(n, r) 的選用原則",
     "我熟練多項式微分求切線斜率 m = f'(x₀)",
     "我能以定積分微積分基本定理計算拋物線圍成面積"
   ]

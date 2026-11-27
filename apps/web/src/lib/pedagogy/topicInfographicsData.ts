@@ -109,7 +109,7 @@ export const topicInfographicsMap: Record<string, TopicInfographicItem> = {
     keyTakeaways: [
       '剪切變形改變物體之「形狀（角度）」，而不改變微元素之體積；正應力則改變「長度（體積）」。',
       '雙剪接頭之受剪面積為單剪之 2 倍，故在相同載重下剪應力減半，接合更為安全。',
-      '彈性模數 E、剪切模數 G 與波松比 ν 三者存在連動關係：G = E / [2(1+ν)]。',
+      '彈性模數 E、剪切模數 G 與蒲松比 ν 三者存在連動關係：G = E / [2(1+ν)]。',
     ],
   },
   'mechanics/units-vectors': {
@@ -380,11 +380,11 @@ export const topicInfographicsMap: Record<string, TopicInfographicItem> = {
   },
   'materials/cement-vicat': {
     topicSlug: 'cement-vicat',
-    title: '維卡儀 (Vicat) 水泥凝結時間試驗',
-    subtitle: '標準稠度用水量、初凝時間 (≥ 45 min) 與終凝時間 (≤ 375 min)',
+    title: '費開氏針（維卡儀 Vicat）水泥凝結時間試驗',
+    subtitle: 'CNS 788 標準稠度用水量、CNS 786 初凝時間 (≥ 45 min) 與終凝時間 (≤ 375 min)',
     conceptType: 'material-reaction',
     icon: '⏱️',
-    diagramTitle: 'CNS 786 維卡儀標準試針下陷深度與水泥漿凝結時間讀數尺圖解',
+    diagramTitle: 'CNS 788 / CNS 786 費開氏針（維卡儀）貫入深度與凝結時間讀數尺圖解',
     diagramDescription: '展示標準稠度試桿 (10mm) 30 秒貫入漿面下 10±1mm 測定用水量，及初凝試針 (1mm) 30 秒貫入 25mm（距底板 15mm）判讀初凝點。',
     formulaBanner: 'CNS 61 / CNS 786 規定: 初凝時間 ≥ 45 分鐘（貫入 25mm） ； 終凝時間 ≤ 375 分鐘 (6 小時 15 分)',
     visualHighlights: [
@@ -400,7 +400,7 @@ export const topicInfographicsMap: Record<string, TopicInfographicItem> = {
   },
   'materials/cement-strength': {
     topicSlug: 'cement-strength',
-    title: 'CNS 1012 水泥砂漿抗壓強度試驗',
+    title: 'CNS 1010 水泥砂漿抗壓強度試驗',
     subtitle: '50mm (2英吋) 立方體試體、標準砂配比與 3/7/28 天強度發展',
     conceptType: 'structural-stress',
     icon: '🧱',
@@ -689,7 +689,7 @@ export const topicInfographicsMap: Record<string, TopicInfographicItem> = {
     subtitle: '粗中細線條比例 (4:2:1)、尺寸界線、尺寸線與建築尺度單位 (mm/cm)',
     conceptType: 'drafting-projection',
     icon: '📏',
-    diagramTitle: 'CNS 3 建築圖尺寸標註三道尺寸線層級（開口細部/軸心跨距/總長總寬）',
+    diagramTitle: 'CNS 11567 建築圖尺寸標註三道尺寸線層級（開口細部/軸心跨距/總長總寬）',
     diagramDescription: '展示建築平面圖外圍三道尺寸線：第一道（門窗開口與壁體）、第二道（柱中心軸線跨距）、第三道（建築物總長總寬）。',
     formulaBanner: '線條粗細比例: 粗線 (0.5mm) : 中線 (0.25mm) : 細線 (0.13mm) = 4 : 2 : 1',
     visualHighlights: [

@@ -5,8 +5,8 @@ export const mechanicsS2Review: SemesterReviewData = {
   subjectSlug: "mechanics",
   subjectTitle: "基礎工程力學",
   semesterCode: "s2",
-  semesterTitle: "第二學期（高一下）",
-  gradeLevel: 10,
+  semesterTitle: "第二學期（高二下）",
+  gradeLevel: 11,
   subtitle: "斷面幾何性質、構件內力分析、應力應變與莫耳圓",
   category: "專業科目（一）",
   curriculumScope: "108 課綱土木建築群力學第 5~8 章：形心與慣性矩、桁架應力、梁之剪力與彎矩、正/剪應力與平面應力轉換",
@@ -78,7 +78,7 @@ export const mechanicsS2Review: SemesterReviewData = {
         "熟背矩形形心慣性矩 bh³/12 與對底邊慣性矩 bh³/3",
         "熟背三角形形心慣性矩 bh³/36 與對底邊慣性矩 bh³/12",
         "掌握 T 形或 I 形斷面之形心求法：分塊求 A₁y₁ + A₂y₂ 後除以總面積",
-        "理解平行軸定理中 d 為兩平行軸之垂直垂直距離，不得代斜距"
+        "理解平行軸定理中 d 為兩平行軸之垂直距離，不得代斜距"
       ]
     },
     {

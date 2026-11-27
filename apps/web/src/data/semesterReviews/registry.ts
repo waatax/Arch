@@ -50,8 +50,8 @@ export const allSubjectSemestersMeta: SubjectSemesterMeta[] = [
     semesters: [
       {
         code: 's1',
-        title: '第一學期（高一上）',
-        gradeLevel: 10,
+        title: '第一學期（高二上）',
+        gradeLevel: 11,
         scope: '力系平衡、載重等值化、摩擦力學與結構破壞安全哲學',
         examWeight: '約佔專一 40% ~ 45%（約 16~18 題）',
         chapterCount: 6,
@@ -59,8 +59,8 @@ export const allSubjectSemestersMeta: SubjectSemesterMeta[] = [
       },
       {
         code: 's2',
-        title: '第二學期（高一下）',
-        gradeLevel: 10,
+        title: '第二學期（高二下）',
+        gradeLevel: 11,
         scope: '形心慣性矩、桁架應力、梁剪力彎矩圖、應力應變與莫耳圓',
         examWeight: '約佔專一 55% ~ 60%（約 22~24 題，得分關鍵）',
         chapterCount: 5,
@@ -77,7 +77,7 @@ export const allSubjectSemestersMeta: SubjectSemesterMeta[] = [
         code: 's1',
         title: '第一學期（高二上）',
         gradeLevel: 11,
-        scope: '材料物理性質、卜特蘭水泥四大熟料、CNS 61 水泥分類、維卡儀試驗與水化熱溫控健全性',
+        scope: '材料物理性質、卜特蘭水泥四大熟料、CNS 61 水泥分類、費開氏針（維卡儀）試驗與水化熱溫控健全性',
         examWeight: '約佔專一 25% ~ 30%（約 10~12 題）',
         chapterCount: 6,
         questionCount: 3,
@@ -100,8 +100,8 @@ export const allSubjectSemestersMeta: SubjectSemesterMeta[] = [
     semesters: [
       {
         code: 's1',
-        title: '第一學期（高二上）',
-        gradeLevel: 11,
+        title: '第一學期（高一上）',
+        gradeLevel: 10,
         scope: '測量誤差理論、儀器整平檢校、水準測高、前後等距消差法與權重閉合差',
         examWeight: '約佔專二 25% ~ 30%（約 10~12 題）',
         chapterCount: 5,
@@ -109,8 +109,8 @@ export const allSubjectSemestersMeta: SubjectSemesterMeta[] = [
       },
       {
         code: 's2',
-        title: '第二學期（高二下）',
-        gradeLevel: 11,
+        title: '第二學期（高一下）',
+        gradeLevel: 10,
         scope: '導線測量外業、坐標正反算、閉合差平差與土地多邊形面積計算',
         examWeight: '約佔專二 20% ~ 25%（約 8~10 題）',
         chapterCount: 3,
@@ -222,7 +222,7 @@ export const allSubjectSemestersMeta: SubjectSemesterMeta[] = [
         gradeLevel: 10,
         scope: '核心基礎 1200 單字、詞性轉換字尾、五大時態變化、被動語態與情態助動詞',
         examWeight: '佔統測英語約 30% ~ 35%（字彙前 10 題與基礎文法）',
-        chapterCount: 2,
+        chapterCount: 3,
         questionCount: 2,
       },
       {
@@ -240,7 +240,7 @@ export const allSubjectSemestersMeta: SubjectSemesterMeta[] = [
         gradeLevel: 11,
         scope: '高頻 3500 單字、關係代名詞 (that 兩大禁忌)、關係副詞、分詞構句、高頻轉折詞 (However/Therefore)',
         examWeight: '佔統測英語約 25% ~ 30%（克漏字與長篇閱測分水嶺）',
-        chapterCount: 2,
+        chapterCount: 3,
         questionCount: 3,
       },
       {
@@ -249,7 +249,7 @@ export const allSubjectSemestersMeta: SubjectSemesterMeta[] = [
         gradeLevel: 11,
         scope: '統測高階 4500 單字、與現在/過去相反假設語氣兩大公式、if 省略倒裝、否定副詞置首倒裝、長篇素養閱讀破題五步 SOP',
         examWeight: '佔統測英語約 25% ~ 30%（高分 15 級分鑑別度考點）',
-        chapterCount: 2,
+        chapterCount: 3,
         questionCount: 2,
       },
     ],
